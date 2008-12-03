@@ -1,0 +1,11 @@
+Revision: 25efed603d1bc60650c4106db93e41da30c8d12c
+Patch-set: 1
+File: init/builtins.c
+
+269
+Wed Dec 03 16:11:14 2008 +0000
+Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z3080267648b5581095f3aab2b912dc9d
+Bytes: 25
+style: loop < 0 preferred
+

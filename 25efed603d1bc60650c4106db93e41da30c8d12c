@@ -24,3 +24,10 @@ UUID: z5003967d3ede2647d5b949a69daff56e
 Bytes: 281
 While I agree with you 100%, that is what the mtd@ case does (fall through and attempt the mount anyway), so I'm loath to do something different in the loop@ case. This should be handled as a separate patch that prerequisites this one (well, this one fixed for the < and ( issues).
 
+285
+Wed Dec 03 16:11:15 2008 +0000
+Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z84950bdb5e4afd130325ec71866a8400
+Bytes: 129
+should we explicitly return an error if we couldn't get a loop device, rather than just falling through and attempting the mount?
+

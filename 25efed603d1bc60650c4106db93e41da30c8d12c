@@ -54,3 +54,17 @@ UUID: z888b11890e4c6de1d387c5590fc78d43
 Bytes: 154
 if the mount fails for a loopback device, shouldn't we deconfigure it -- maybe do the mount for loopback inside the check for configuration success above?
 
+288
+Wed Dec 03 16:11:15 2008 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zb552577c0a92d8dae1de75d3d3b6481a
+Bytes: 76
+I went ahead and refactored the entire function to make this all consistent.
+
+288
+Wed Dec 03 16:11:15 2008 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zcfa15e71a3605ae5015ad9cf008bd996
+Bytes: 226
+Arg. Ok, doing this here is going to make being similar to the mtd@ case really difficult. Now I'm not certain what to do: fix the mtd@ case in the same patch or simply submit a loop@ case that works fundamentally differently.
+

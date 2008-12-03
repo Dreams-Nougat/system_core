@@ -1,0 +1,11 @@
+Revision: 3088ff8d395cea07819d84d46af04f17419ae542
+Base-for-patch-set: 1
+File: mountd/AutoMount.c
+
+257
+Wed Dec 03 16:11:25 2008 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z2cbd4220d8f32428ef7554ebf456a317
+Bytes: 125
+you should *really* give a justification for this removal. It looks like it may break things significantly on some platforms.
+

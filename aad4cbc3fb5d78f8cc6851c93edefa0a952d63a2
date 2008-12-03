@@ -9,3 +9,19 @@ UUID: z6157c72bec161dcc2b8e12e2faa52f3f
 Bytes: 110
 I'd prefer to see this conditionalized to something like _ARM_ARCHITECTURE < _ARM_ARCH_V5 or something similar
 
+File: libpixelflinger/t32cb16blend.S
+
+39
+Wed Dec 03 16:11:25 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zdac0570e159a82b902a18ef3894077ae
+Bytes: 164
+All the changes in this file are okay temporarily. Ideally the whole routine should be rewritten for each armv6. This is a crucial performance operation in Android.
+
+158
+Wed Dec 03 16:11:25 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z5038d74488b044cb2ca798773bfc4a1f
+Bytes: 74
+I would prefer that a PLD macro be defined at the top if the file instead.
+

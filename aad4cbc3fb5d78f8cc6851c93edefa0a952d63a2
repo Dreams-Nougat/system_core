@@ -18,6 +18,94 @@ UUID: z6157c72bec161dcc2b8e12e2faa52f3f
 Bytes: 110
 I'd prefer to see this conditionalized to something like _ARM_ARCHITECTURE < _ARM_ARCH_V5 or something similar
 
+File: libpixelflinger/codeflinger/ARMAssembler.cpp
+
+381
+Wed Dec 03 16:11:26 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z1efccefe4def836df96abd399f9440fa
+Bytes: 115
+It's not *currently* used, but could be used in the future. This comments should be adjusted or preferably removed.
+
+382
+Wed Dec 03 16:11:27 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zcbfd438073f9f10594444564fedf886e
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+392
+Wed Dec 03 16:11:26 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z601f66a8891990e194a11486e72533a8
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+402
+Wed Dec 03 16:11:27 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z97d9a97fda7da3392852351e3154384c
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+412
+Wed Dec 03 16:11:26 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z2f5d8eebb7652abdfee9b27a845f31b6
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+422
+Wed Dec 03 16:11:25 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z0c085448316945d49637aabb9a7b7138
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+432
+Wed Dec 03 16:11:27 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zc94db4996fe9bdd1f61db4dfc7cfb966
+Bytes: 230
+Add a #warning here, as this will generate very inefficient code. The preferred way is to not issue instructions that are not supported. There are no support for this in GGLAssembler yet though, so this is good temporary solution.
+
+476
+Wed Dec 03 16:11:26 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z43bacd2a54e925e7447a2fff50025fc0
+Bytes: 230
+Add a #warning here, as this will generate very inefficient code. The preferred way is to not issue instructions that are not supported. There are no support for this in GGLAssembler yet though, so this is good temporary solution.
+
+512
+Wed Dec 03 16:11:26 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z3e7a7ecdd63edb70ce9e38efbdbd7b36
+Bytes: 230
+Add a #warning here, as this will generate very inefficient code. The preferred way is to not issue instructions that are not supported. There are no support for this in GGLAssembler yet though, so this is good temporary solution.
+
+559
+Wed Dec 03 16:11:27 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z746b460ca6231a0f2e0bdfbc170e787c
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+570
+Wed Dec 03 16:11:27 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z7553c5ac17f43d3953a82cb5f8cf8d4c
+Bytes: 66
+A runtime check is not acceptable here. Please use #error instead.
+
+File: libpixelflinger/rotate90CW_4x4_16v6.S
+
+62
+Wed Dec 03 16:11:25 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zd8575cd5ee4162f68da1f3fc62a4b8dc
+Bytes: 76
+remove this test. This code CANNOT run on armv4, since it is armv6 specific.
+
 File: libpixelflinger/t32cb16blend.S
 
 39

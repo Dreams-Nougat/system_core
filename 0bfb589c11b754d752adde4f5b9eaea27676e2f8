@@ -1,0 +1,15 @@
+Revision: 0bfb589c11b754d752adde4f5b9eaea27676e2f8
+Patch-set: 1
+File: rootdir/init.rc
+
+157
+Wed Dec 03 16:11:14 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zd48131f91919f901af4494fc9858da0b
+Bytes: 237
+1. Why do you use busybox instead of /system/bin/iptables?
+2. Why ip is hardcoded?
+
+PS:
+MASQUERADE is deprecated in favour of SNAT since ipchains was surpassed by iptables. If busybox understands SNAT target, it's more correct to use it.
+

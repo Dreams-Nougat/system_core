@@ -1,0 +1,11 @@
+Revision: aad4cbc3fb5d78f8cc6851c93edefa0a952d63a2
+Patch-set: 1
+File: libcutils/atomic-android-arm.S
+
+62
+Wed Dec 03 16:11:25 2008 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z6157c72bec161dcc2b8e12e2faa52f3f
+Bytes: 110
+I'd prefer to see this conditionalized to something like _ARM_ARCHITECTURE < _ARM_ARCH_V5 or something similar
+

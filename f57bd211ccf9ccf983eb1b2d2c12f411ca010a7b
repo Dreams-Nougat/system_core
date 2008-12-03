@@ -1,0 +1,23 @@
+Revision: f57bd211ccf9ccf983eb1b2d2c12f411ca010a7b
+Patch-set: 1
+File: include/arch/linux-arm/AndroidConfig.h
+
+308
+Wed Dec 03 16:11:22 2008 +0000
+Author: Ben Leslie <1000237@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z16b1af5974acf77f20f262a5c25b523f
+Bytes: 358
+On 2008/10/30 22:51:40, Marcelo E. Magallon wrote:
+> One thing, though...
+> 
+> Wouldn't it express the intention more clearly and polute less the namespace if
+> it read:
+> 
+> HAVE_ARM_HALFWORD_MULTIPLY
+> 
+> ?
+> 
+> (same for the rest)
+
+Yeah, I think you are correct. I will make it consistent with the makefile variables (i.e: HAVE_ARCH_ARM_HALFWORD_MULTIPLY)
+

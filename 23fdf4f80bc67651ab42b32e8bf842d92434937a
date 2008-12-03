@@ -9,6 +9,17 @@ UUID: z47ece9725f455c3a5c2ea2867e4de57d
 Bytes: 84
 in retrospect, can this be tested more simply with #ifdef/#ifndef in the user code ?
 
+305
+Wed Dec 03 16:11:29 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z761db185b7f7d3e4af3628538f6f4e7d
+Bytes: 164
+On 2008/11/05 11:33:17, David Turner wrote:
+> in retrospect, can this be tested more simply with #ifdef/#ifndef in the user
+> code ?
+
+Hm, yes it can. Will be fixed.
+
 310
 Wed Dec 03 16:11:29 2008 +0000
 Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>

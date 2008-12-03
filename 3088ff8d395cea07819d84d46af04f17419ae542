@@ -9,3 +9,10 @@ UUID: z2cbd4220d8f32428ef7554ebf456a317
 Bytes: 125
 you should *really* give a justification for this removal. It looks like it may break things significantly on some platforms.
 
+258
+Wed Dec 03 16:11:25 2008 +0000
+Author: Mike Lockwood <1000830@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zbd6b529f743c635fbe59b93a4cf8e666
+Bytes: 260
+I agree that this code should not be here.  It would be better if mountd did not attempt to mount the SD card if it is already mounted.  But I would rather fix that before removing this code. I'm curious why you needed to change this for your Freerunner port. 
+

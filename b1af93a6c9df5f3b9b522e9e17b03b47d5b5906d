@@ -1,0 +1,15 @@
+Revision: b1af93a6c9df5f3b9b522e9e17b03b47d5b5906d
+Patch-set: 1
+File: include/arch/linux-arm/asm/macros.h
+
+34
+Wed Dec 03 16:11:22 2008 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z973cc662b5ff14a3964f49176bc2db07
+Bytes: 69
+doesn't pld only has one parameter?
+
+pld [r0, #offset]
+
+for instance.
+

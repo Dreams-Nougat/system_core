@@ -1,5 +1,14 @@
 Revision: aad4cbc3fb5d78f8cc6851c93edefa0a952d63a2
 Patch-set: 1
+File: adb/adb.c
+
+483
+Wed Dec 03 16:11:27 2008 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zd2f8bdfedcb8237b6cb5183f7355a598
+Bytes: 205
+no, for security reasons. Please justify why you want to listen on any network connection. We may introduce an option is this is a really needed, but adb should only listen to local TCP sockets by default.
+
 File: init/Android.mk
 
 24
@@ -8,6 +17,16 @@ Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: z962762f0744207799eaaa47a1878d60d
 Bytes: 84
 This will break the emulator and dream targets.  Will need to be featurized somehow.
+
+File: init/devices.c
+
+372
+Wed Dec 03 16:11:27 2008 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zf36768386427aa4da1007d64d73c9ad6
+Bytes: 100
+this will break so many things it's not funny.
+Please find a way to conditionalize these differences
 
 File: libcutils/atomic-android-arm.S
 

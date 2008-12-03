@@ -1,0 +1,14 @@
+Revision: 23fdf4f80bc67651ab42b32e8bf842d92434937a
+Patch-set: 1
+File: liblog/logprint.c
+
+26
+Wed Dec 03 16:11:29 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z4f9807dfae1db5dd1d32aeba797c083f
+Bytes: 110
+On 2008/11/05 11:33:17, David Turner wrote:
+> good catch. can you simply remove the #include <alloca.h> ?
+
+Ok.
+

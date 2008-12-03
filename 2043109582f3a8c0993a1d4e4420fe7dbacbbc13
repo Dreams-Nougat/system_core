@@ -9,3 +9,23 @@ UUID: z5125d3957d058aa991f60d5f9723c209
 Bytes: 295
 I have responded to this inside the main comment block in my response. I have been trying to respond to this occasionally for the last 10 hours, and keep getting 500 errors from Gerrit, or completely mis-formated responses :(. I think I've finally figured out the magic that will make this work.
 
+142
+Wed Dec 03 16:11:14 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z7249c3e1fdfd6e4ced7beb1472322552
+Bytes: 469
+Just curious, why do you always return zero?
+
+chroot may fail in so many cases, that it's better return sometimes at least -1.
+
+If you look to do_mkdir() below, there is code block like:
+-- @207
+if (mkdir(args[1], mode)) {
+  return -errno;
+}
+--
+I think it's better do it in same way.
+(Personally, I'd like "if (mkdir() == -1) {}" more :), but anyway some error checking must be done and error - if any - throwed to higher level code)
+
+Same note is applicable for chdir.
+

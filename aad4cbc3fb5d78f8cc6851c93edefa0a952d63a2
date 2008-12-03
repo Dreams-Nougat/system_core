@@ -1,5 +1,14 @@
 Revision: aad4cbc3fb5d78f8cc6851c93edefa0a952d63a2
 Patch-set: 1
+File: init/Android.mk
+
+24
+Wed Dec 03 16:11:25 2008 +0000
+Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z962762f0744207799eaaa47a1878d60d
+Bytes: 84
+This will break the emulator and dream targets.  Will need to be featurized somehow.
+
 File: libcutils/atomic-android-arm.S
 
 62

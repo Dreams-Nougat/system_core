@@ -1,0 +1,13 @@
+Revision: bc7b0cbe156da639f0cbe17bf89725d87e86512a
+Patch-set: 1
+File: toolbox/mount.c
+
+152
+Wed Dec 03 16:11:11 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zaabbf08064e02bc4df6ff9ca8049cfa4
+Bytes: 371
+Well, this comment is unrelated to your code, but this line is a bit weird. As you are updating this file, may be you'll check and update this as well.
+
+What do you think  - "if (device_fd < 0)" is more correct or? To be POSIX syscall, open must return -1 on error. But what this all "if (fd < -1)" in this file are about? I'm not sure it handles error situations at all.
+

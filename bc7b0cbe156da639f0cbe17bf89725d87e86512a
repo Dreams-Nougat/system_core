@@ -11,3 +11,10 @@ Well, this comment is unrelated to your code, but this line is a bit weird. As y
 
 What do you think  - "if (device_fd < 0)" is more correct or? To be POSIX syscall, open must return -1 on error. But what this all "if (fd < -1)" in this file are about? I'm not sure it handles error situations at all.
 
+152
+Wed Dec 03 16:11:11 2008 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zcc90404488ccd97d633e1d7537e591c3
+Bytes: 377
+Yes, those definitely look like mistakes in the original code. They are, however, entirely unrelated to this particular fix. Personally I would compare it == -1 (which is correct by the wording of the POSIX standard), but I have been told that the Google style is to compare it < 0, so yes: it should be (device_fd < 0). Shouldn't this be submitted as a separate patch, though?
+

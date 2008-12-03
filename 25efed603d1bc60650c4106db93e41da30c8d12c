@@ -11,6 +11,13 @@ The reason I did this was to closely match the behavior of the mtd@ case, which 
 
 
 
+265
+Wed Dec 03 16:11:15 2008 +0000
+Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z9ae7e948c181170b03765bcb13ca629c
+Bytes: 87
+style: return an error if fd < 0 rather than doing everything else indented on fd != -1
+
 269
 Wed Dec 03 16:11:14 2008 +0000
 Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -39,4 +46,11 @@ Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: z84950bdb5e4afd130325ec71866a8400
 Bytes: 129
 should we explicitly return an error if we couldn't get a loop device, rather than just falling through and attempting the mount?
+
+288
+Wed Dec 03 16:11:15 2008 +0000
+Author: Brian Swetland <1001286@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z888b11890e4c6de1d387c5590fc78d43
+Bytes: 154
+if the mount fails for a loopback device, shouldn't we deconfigure it -- maybe do the mount for loopback inside the check for configuration success above?
 

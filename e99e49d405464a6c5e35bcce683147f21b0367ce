@@ -22,3 +22,15 @@ see amended commit: http://review.source.android.com/3088
 
 
 
+112
+Wed Dec 03 16:11:18 2008 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z8911db335200603df5c59559a2208292
+Bytes: 387
+this doesn't accomplish any kind of protection against buffer overflow:
+-strncpy doesn't null-terminate the string.
+-writing the extra slash makes things worse.
+-things get worse if devlen >= PATH_MAX in the next strncpy.
+
+Also, I'm concerned that there's no error-checking, such that open_device or close-device might be called on a partial filename instead of having the function fail.
+

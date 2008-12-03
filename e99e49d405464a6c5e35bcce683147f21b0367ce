@@ -1,0 +1,24 @@
+Revision: e99e49d405464a6c5e35bcce683147f21b0367ce
+Patch-set: 1
+File: debuggerd/getevent.c
+
+112
+Wed Dec 03 16:11:18 2008 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: z078a340681fae6278c0b83c84e27ca90
+Bytes: 510
+Updated to use snprintf() in this situation.
+
+see amended commit: http://review.source.android.com/3088
+
+> this doesn't accomplish any kind of protection against buffer overflow:
+> -strncpy doesn't null-terminate the string.
+> -writing the extra slash makes things worse.
+> -things get worse if devlen >= PATH_MAX in the next strncpy.
+> 
+> Also, I'm concerned that there's no error-checking, such that open_device or
+> close-device might be called on a partial filename instead of having the
+> function fail.
+
+
+

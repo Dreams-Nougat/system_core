@@ -9,3 +9,10 @@ UUID: z6bcb3c94fa9db476a6dd3001e9b04b2f
 Bytes: 75
 The other changes seem to indicate the command is "usleep" and not "sleep".
 
+192
+Tue Dec 09 00:28:59 2008 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: zbc2c82db1aca8a97f1c877a05ce4d3f5
+Bytes: 281
+The way this file works is to switch on the first character and then compare against the remaining ones, in order to drastically reduce the amount of time it takes to parse keywords. There probably aren't also commands called "ymlink" or "rigger"... This is therefore 100% correct.
+

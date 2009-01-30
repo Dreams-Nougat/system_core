@@ -1,0 +1,11 @@
+Revision: 18b969b66c8ce7cc27b35915c421ea813f5a874e
+Patch-set: 1
+File: liblog/logd_write.c
+
+153
+Fri Jan 30 22:24:50 2009 +0000
+Author: Wink Saville <1001401@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAB3///70=
+Bytes: 60
+Consider reducing number and lengths, maybe PHONE, ICC, SMS.
+

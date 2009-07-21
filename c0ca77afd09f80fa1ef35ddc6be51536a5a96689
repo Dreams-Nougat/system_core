@@ -1,0 +1,121 @@
+Revision: c0ca77afd09f80fa1ef35ddc6be51536a5a96689
+Patch-set: 1
+File: adb/Android.mk
+
+34
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////4=
+Bytes: 123
+changes in lines 28-32 allows building on freebsd (linkage with pthreads). It adds platform specific files to sources also.
+
+File: adb/get_my_path_freebsd.c
+
+33
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////0=
+Bytes: 412
+This file purpose is same as get_my_path_linux() on Linux powered system, it follows same function declaration format (although it's rather expensive to use char exe[] in stack instead of pointer). So, it forms filename in /proc and resolves link.
+
+Result of function is always some zero-ended string, probably empty string.
+
+It works on systems where proc filesystem is enabled, e.g. recent versions of freebsd.
+
+File: adb/usb_freebsd.c
+
+49
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////w=
+Bytes: 271
+usb_handle structure is used to store usb-devices related data. usb_freebsd.c differs from original usb_linux.c code in way of working with usb. Instead of polling every second and listing of /dev/usb branch in this implementation I'm handling usb events (attach/dettach)
+
+83
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////A=
+Bytes: 107
+check_endpoint() tries to open endpoint, firstly in read/write access mode, falling over to read-only mode.
+
+112
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////E=
+Bytes: 76
+USB reading and writing functions are doing exactly what function name says.
+
+276
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////I=
+Bytes: 99
+usb_close() removes device from list and closes device file descriptor. Also it releases usb_handle
+
+299
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////M=
+Bytes: 170
+poll_usb_event() performs polling of usb-events device.
+poll() is called with infinte timeoute to wait for event.
+So, polling thread is sleeping most of it's working time
+
+311
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////Q=
+Bytes: 84
+check_usb_interface() performs checking of endpoints number, endpoints caps and etc.
+
+377
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////U=
+Bytes: 61
+register_device() adds device to list of device, known by adb
+
+435
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////Y=
+Bytes: 186
+check_usb_device_attach() is one of the most important functions. It trys to get information about devices, check if it is Android device and open endpoints, used for reading and writing
+
+533
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////c=
+Bytes: 77
+kiking is simple - killing of reaper_thread and closing usb device endpoints.
+
+557
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////g=
+Bytes: 111
+check_usb_device_detach() checks if device was ever registered in adb, if yes, it is removed from devices list.
+
+580
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////k=
+Bytes: 176
+dispatch_usb_events() is interested only in attaching and detaching devices. If we got such message, additional processing of event is performed. Otherwise, event is discarded.
+
+608
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////o=
+Bytes: 78
+device_poll_threas() fetches usb events and passes it to dispatch_usb_events()
+
+638
+Tue Jul 21 04:31:06 2009 +0000
+Author: Alexey Tarasov <1001302@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAcX////s=
+Bytes: 154
+usb_init() just starts usb events polling worker thread device_poll_thread()
+
+well, SIGALARM handler inherited from Linux code, I'm not sure it is needed.
+

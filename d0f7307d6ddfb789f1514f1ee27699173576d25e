@@ -1,0 +1,26 @@
+Revision: d0f7307d6ddfb789f1514f1ee27699173576d25e
+Patch-set: 1
+File: libcutils/atomic.c
+
+248
+Thu Jul 30 16:25:02 2009 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAdX///2M=
+Bytes: 166
+can I ask you to move this code to a file named atomic-android-sh.c instead? Normally atomic.c is used for the host-specific version of libcutils, not the device one.
+
+262
+Thu Jul 30 16:25:02 2009 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAdX///2U=
+Bytes: 187
+well, this comment is a bit misleading :-)
+the Bionic implementation of pthread.h is different from the GLibc one. However, 0 is used to initialize a normal mutex too, so the trick works.
+
+384
+Thu Jul 30 16:25:02 2009 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAdX///2Q=
+Bytes: 39
+can you remove the trailing whitespace?
+

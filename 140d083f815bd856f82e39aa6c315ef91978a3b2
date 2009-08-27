@@ -16,3 +16,11 @@ UUID: zbc2c82db1aca8a97f1c877a05ce4d3f5
 Bytes: 281
 The way this file works is to switch on the first character and then compare against the remaining ones, in order to drastically reduce the amount of time it takes to parse keywords. There probably aren't also commands called "ymlink" or "rigger"... This is therefore 100% correct.
 
+192
+Thu Aug 27 15:23:26 2009 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: zbc2c82db1aca8a97f1c877a05ce4d3f5
+UUID: AAAAin///xw=
+Bytes: 66
+Agreed, this is the right way (26-bucket hash on the first letter)
+

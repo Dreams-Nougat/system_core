@@ -1,0 +1,11 @@
+Revision: 3166410a82f43d39201be98a8d35c51baa86cb53
+Patch-set: 1
+File: adb/commandline.c
+
+53
+Mon Nov 02 18:34:19 2009 +0000
+Author: Mike Lockwood <1000830@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAoX///8Q=
+Bytes: 62
+This is declared in adb.h, so we should just remove this line.
+

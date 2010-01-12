@@ -1,0 +1,11 @@
+Revision: 9dbc1998caf3fa3015e73d313d163c97809eb991
+Patch-set: 1
+File: libpixelflinger/Android.mk
+
+43
+Tue Jan 12 01:12:54 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAr3////k=
+Bytes: 79
+this will work, but it would be better to use ifeq ($(ARCH_ARM_HAVE_NEON),true)
+

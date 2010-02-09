@@ -11,3 +11,14 @@ Isn't there a risk of msgbuf not being terminated? Reading all the way to MSGBUF
 
 I guess the worst case scenario is puts going off on a tangent, so probably not particularly dangerous, but still?
 
+66
+Tue Feb 09 16:20:07 2010 +0000
+Author: Dries Harnie <1003084@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAr3//+ow=
+UUID: AAAAr3//+mM=
+Bytes: 251
+You are absolutely right. I will change it to write() the number of bytes received. I only tested it with the other file (sender.c) which sends "Hello, world" with the null-byte attached.
+
+I will send a patch when I get home.
+Thanks for the review!
+

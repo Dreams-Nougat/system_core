@@ -1,0 +1,13 @@
+Revision: 699608f3072b39c8da1a7cc313bd0b736e90f225
+Patch-set: 1
+File: toolbox/listener.c
+
+66
+Tue Feb 09 01:08:26 2010 +0000
+Author: Mikael Ohlson <1003297@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAr3//+ow=
+Bytes: 341
+Isn't there a risk of msgbuf not being terminated? Reading all the way to MSGBUFSIZE seems to risk overwriting the implicit init done, or does the kernel always null-terminate the buffer, even if it is larger than MSGBUFSIZE?
+
+I guess the worst case scenario is puts going off on a tangent, so probably not particularly dangerous, but still?
+

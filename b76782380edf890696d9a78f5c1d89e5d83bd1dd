@@ -1,0 +1,18 @@
+Revision: b76782380edf890696d9a78f5c1d89e5d83bd1dd
+Patch-set: 1
+File: liblog/logprint.c
+
+758
+Thu Feb 18 19:01:57 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAr3//+aU=
+Bytes: 38
+can you remove the trailing space here
+
+760
+Thu Feb 18 19:01:57 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAr3//+aQ=
+Bytes: 28
+same here. thanks in advance
+

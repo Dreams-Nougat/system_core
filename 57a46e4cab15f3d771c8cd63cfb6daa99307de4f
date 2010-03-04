@@ -1,0 +1,27 @@
+Revision: 57a46e4cab15f3d771c8cd63cfb6daa99307de4f
+Patch-set: 1
+File: adb/usb_linux.c
+
+584
+Thu Mar 04 05:51:00 2010 +0000
+Author: Vikram Dhillon <1003324@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAu3///9U=
+Bytes: 28
+nice use of comments here :)
+
+619
+Thu Mar 04 05:51:00 2010 +0000
+Author: Vikram Dhillon <1003324@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAu3///9Q=
+Bytes: 198
+If you don't mind, add a comment here saying something like, this checks the serial number of the device, or something like that, it just enhances the readability (before the if statement, that is).
+
+635
+Thu Mar 04 05:51:00 2010 +0000
+Author: Vikram Dhillon <1003324@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAu3///9M=
+Bytes: 147
+I see what you are doing here, but I am a little uncertain if this is the best approach, could we have used:
+return; 
+here instead? just wondering.
+

@@ -16,6 +16,14 @@ UUID: AAAAu3///9Q=
 Bytes: 198
 If you don't mind, add a comment here saying something like, this checks the serial number of the device, or something like that, it just enhances the readability (before the if statement, that is).
 
+619
+Wed Mar 10 17:47:27 2010 +0000
+Author: Tim Hutt <1003334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAu3///9Q=
+UUID: AAAAvX///8c=
+Bytes: 4
+Done
+
 635
 Thu Mar 04 05:51:00 2010 +0000
 Author: Vikram Dhillon <1003324@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,4 +32,16 @@ Bytes: 147
 I see what you are doing here, but I am a little uncertain if this is the best approach, could we have used:
 return; 
 here instead? just wondering.
+
+635
+Wed Mar 10 17:47:27 2010 +0000
+Author: Tim Hutt <1003334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAu3///9M=
+UUID: AAAAvX///8Y=
+Bytes: 318
+Not sure what you mean by using return. That would just ignore the device which isn't what we want... Maybe you meant something else?
+
+Anyway. I uploaded a new patch here: https://review.source.android.com/#change,13898
+
+Still working out how to use this whole repo/gerrit this. How on earth do you update a changeset?
 

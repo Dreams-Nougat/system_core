@@ -9,3 +9,11 @@ UUID: AAAAr3////k=
 Bytes: 79
 this will work, but it would be better to use ifeq ($(ARCH_ARM_HAVE_NEON),true)
 
+43
+Thu Mar 18 23:44:04 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAr3////k=
+UUID: AAAAwH///+w=
+Bytes: 102
+actually, this will not work in the near future. Please change this to use ARCH_ARM_HAVE_NEON instead.
+

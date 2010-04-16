@@ -1,0 +1,18 @@
+Revision: 28eb1e58409cc1d6449282b7f514fc59857c3d0c
+Patch-set: 1
+File: adb/file_sync_client.c
+
+721
+Fri Apr 16 20:51:40 2010 +0000
+Author: Chris Tate <1000322@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAwn///zU=
+Bytes: 89
+Instead of "pseudo-push" how about something more directly descriptive, like "would push"
+
+722
+Fri Apr 16 20:51:40 2010 +0000
+Author: Chris Tate <1000322@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAwn///zc=
+Bytes: 23
+line length > 100 chars
+

@@ -1,0 +1,11 @@
+Revision: a211cf090d4ac213f385ae081781df6ac2b8d27a
+Patch-set: 3
+File: init/parser.c
+
+302
+Mon May 10 21:18:45 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAyX///dk=
+Bytes: 74
+I think the logic around \ CR LF is still broken and advance by 1 too few.
+

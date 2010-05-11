@@ -1,0 +1,11 @@
+Revision: 275f965b6456c2d665ce900a0abf9d9c274ea8fd
+Patch-set: 1
+File: adb/framebuffer_service.c
+
+73
+Tue May 11 23:30:56 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAyn///rs=
+Bytes: 10
+Whitespace
+

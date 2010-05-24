@@ -1,0 +1,11 @@
+Revision: b66804d8dcbe232a8af462ea50fb1b1b02a20dd6
+Patch-set: 5
+File: debuggerd/unwind-arm.c
+
+476
+Mon May 24 20:23:07 2010 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzH///CY=
+Bytes: 58
+wouldn't you want to break after you found your sym table?
+

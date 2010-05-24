@@ -9,3 +9,11 @@ UUID: AAAAzH///CY=
 Bytes: 58
 wouldn't you want to break after you found your sym table?
 
+476
+Mon May 24 20:37:48 2010 +0000
+Author: Matt Fischer <1003080@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAzH///CY=
+UUID: AAAAzH///B8=
+Bytes: 196
+It occurs to me that it would be more straightforward to just store these things in the mapinfo from the beginning.  Then there wouldn't need to be a table scan at all.  I'll submit a new version.
+

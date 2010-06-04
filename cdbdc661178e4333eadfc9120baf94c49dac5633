@@ -1,0 +1,19 @@
+Revision: cdbdc661178e4333eadfc9120baf94c49dac5633
+Patch-set: 4
+File: mksh/Android.mk
+
+1
+Fri Jun 04 20:15:18 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX///b4=
+Bytes: 756
+It'd be good to have a copyright notice/license here. Please use one consistent with the rest of mksh.
+
+A bit deeper, the more traditional way of handling conditional modules in Android is to try to compile unconditionally as much as possible, and to make the installation itself conditional.
+
+Here's how it works, basically:
+-if a module has LOCAL_MODULE_TAGS := optional, it'll get compiled but not installed.
+-if a module has LOCAL_MODULE_TAGS := user, it'll get compiled and installed.
+
+I'd be great if TARGET_SHELL=mksh could simply swap the value of LOCAL_MODULE_TAGS between user and optional, such that the code always gets compiled, which means that build breakages can be caught even by people working on configurations that don't use mksh (yet).
+

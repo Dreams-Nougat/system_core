@@ -1,0 +1,18 @@
+Revision: 9b5ea3d2d26a96edce4ebf6ece864bd3a2b496b8
+Patch-set: 2
+File: sh/Android.mk
+
+8
+Mon Jun 07 22:57:21 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX///So=
+Bytes: 115
+Make allows for a space after the variable name, and that's our common style so it'd be great to continue using it.
+
+63
+Mon Jun 07 22:57:21 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX///Sk=
+Bytes: 75
+Is this arrow a non-ASCII character? Looks pretty, but I'd prefer ASCII-art
+

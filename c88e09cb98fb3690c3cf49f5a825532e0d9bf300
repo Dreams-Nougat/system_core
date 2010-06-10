@@ -1,0 +1,11 @@
+Revision: c88e09cb98fb3690c3cf49f5a825532e0d9bf300
+Patch-set: 1
+File: libnetutils/dhcp_utils.c
+
+174
+Thu Jun 10 22:45:42 2010 +0000
+Author: Irfan Sheriff <1003344@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+0U=
+Bytes: 89
+we set the net.xx.yy properties with your change in ifc_utils. why do we need this here ?
+

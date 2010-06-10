@@ -1,0 +1,46 @@
+Revision: 705c944c0e2a50150ffb41707b6b3daebb45cf79
+Base-for-patch-set: 1
+File: toolbox/insmod.c
+
+72
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3w=
+Bytes: 136
+Ok, so here we mark the end of our buffer. We leave ourselves one character for null termination. At this point, end - ptr will be 1023.
+
+76
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3s=
+Bytes: 200
+Here we determine how much data we can put into the buffer before hitting the null termination character. So, if the buffer is 1024 bytes long, and we have 1500 bytes of data, we will set len to 1023.
+
+78
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3o=
+Bytes: 158
+At this point, with "too much data", we will copy as much as we can and move ptr to after the data. So, ptr will now be pointing at our null termination byte.
+
+79
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3k=
+Bytes: 121
+Set the null termination byte to ' ', and then move one past it: ptr is now pointing to right past the end of the buffer.
+
+80
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3g=
+Bytes: 146
+This line is a serious issue: we have just overflowed our buffer. This line needs to be removed, and this patch should therefore be included ASAP.
+
+82
+Thu Jun 10 06:52:17 2010 +0000
+Author: Jay Freeman <1001184@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAAzX//+3c=
+Bytes: 310
+Under the assumption that ptr is pointing right after the end of the buffer, we will go back one byte and set that to null. Without the bad line, this will replace the ' ' at the end of the buffer with '\0'. However, without removing that line, this will have no effect, leaving a ' ' at the end of the buffer.
+

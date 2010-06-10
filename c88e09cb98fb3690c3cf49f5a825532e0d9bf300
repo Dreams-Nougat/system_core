@@ -9,3 +9,11 @@ UUID: AAAAzX//+0U=
 Bytes: 89
 we set the net.xx.yy properties with your change in ifc_utils. why do we need this here ?
 
+174
+Thu Jun 10 23:50:24 2010 +0000
+Author: Szymon Jakubczak <1003988@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAzX//+0U=
+UUID: AAAAzX//+ws=
+Bytes: 238
+WifiStateTracker calls ifc_configure under static IP configuration. Otherwise it calls dhcp_do_request which starts dhcpcd. dhcpcd (or its hooks) has no permissions to modify the net.XXX properties, so we need to set them after it's done.
+

@@ -21,3 +21,13 @@ Not bringing in lots of *.sh files... this one is to bring up the IMG graphics d
 
 Would you feel better about having the rule init.*.rc or init.*.sh ?
 
+166
+Fri Jun 11 21:07:57 2010 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAAzX//+vE=
+UUID: AAAAzX//+q0=
+Bytes: 249
+well .rc files will only be ever read by init, so I don't think we need to do anything for that.
+
+What do you need to do for img drivers besides insmod them? what else do you need to initialize? That may be better done by the gralloc/framebuffer HAL
+

@@ -1,5 +1,21 @@
 Revision: da2e222805266700fccc203da9926510b2425dc8
 Patch-set: 1
+File: include/netutils/ifc.h
+
+43
+Wed Jun 30 19:18:32 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n///LI=
+Bytes: 152
+Change to accept a string address.  No need for a v4 and a v6 interface.  Actually all the in_addr_t params in the header should change to const char *.
+
+44
+Wed Jun 30 19:18:32 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n///LE=
+Bytes: 34
+don't add a new function for this.
+
 File: libnetutils/ifc_utils.c
 
 49
@@ -73,6 +89,14 @@ Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA0n///NU=
 Bytes: 283
 This code duplicates what you have above. Can you factor it out into a common add_ipv6_route method that takes ifindex, flags, and ipv6_addr as a parameter? That method could decide whether to populate rtmsg_gateway or rtmsg_dst based on whether flags has the RTF_GATEWAY bit or not.
+
+557
+Wed Jun 30 19:18:32 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n///NU=
+UUID: AAAA0n///K0=
+Bytes: 56
+Or better, even collapse it in with the v4 versions too.
 
 575
 Wed Jun 30 09:33:19 2010 +0000

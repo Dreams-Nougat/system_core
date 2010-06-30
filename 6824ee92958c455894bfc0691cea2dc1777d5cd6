@@ -1,0 +1,11 @@
+Revision: 6824ee92958c455894bfc0691cea2dc1777d5cd6
+Patch-set: 5
+File: mksh/Android.mk
+
+64
+Wed Jun 30 08:00:01 2010 +0000
+Author: Chih-Wei Huang <1003004@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n///O4=
+Bytes: 25
+should be -DHAVE_RLIM_T=1
+

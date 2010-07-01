@@ -9,6 +9,16 @@ UUID: AAAA0n///LI=
 Bytes: 152
 Change to accept a string address.  No need for a v4 and a v6 interface.  Actually all the in_addr_t params in the header should change to const char *.
 
+43
+Thu Jul 01 21:18:36 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n///LI=
+UUID: AAAA0n///Co=
+Bytes: 365
+The actual implementation of this function needs to know the address type. 
+
+One way to find that out would be to invoke inet_pton() function with the address string and first argument set to AF_INET. If that returns 1, we know its an IPv4 address. If it returns 0 we can try the same function with AF_INET6 to check if it is an IPv6 address. Is there a better way?
+
 44
 Wed Jun 30 19:18:32 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>

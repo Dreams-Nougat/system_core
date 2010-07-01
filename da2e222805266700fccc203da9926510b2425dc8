@@ -31,6 +31,16 @@ As for the type constant, I think Lorenzo wanted you to use a pre-existing const
 
 For a single ifc_add_host function, is it easier to work with a byte array or string?  I know you can use the inet_pton function to generate a final form from the string, but do you know the format of the output?  If the byte array is the right final form for the address we should just use that and skip the conversion.
 
+43
+Thu Jul 01 21:48:48 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n///Co=
+UUID: AAAA0n///BI=
+Bytes: 465
+Yes. Just call getnameinfo as soon as you get into C code. getnameinfo will parse the text string and return an address structure that contains both the family and the binary address form. You can then pass this around in C code.
+
+Using getnameinfo also ensures that you will never need to define any address family constants, because C has its own constants (AF_INET and AF_INET6) and you'll never need to communicate address family information between C and Java.
+
 44
 Wed Jun 30 19:18:32 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>

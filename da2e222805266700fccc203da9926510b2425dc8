@@ -49,6 +49,14 @@ UUID: AAAA0n///BA=
 Bytes: 92
 More in general, don't use inet_pton and inet_ntop. Use getnameinfo and getaddrinfo instead.
 
+43
+Thu Jul 01 22:43:54 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n///CQ=
+UUID: AAAA0n///AA=
+Bytes: 357
+After discussing this with Lorenzo we decided what we liked best was to pass InetAddress through java, have the NetworkUtils.java get the String form of the address and pass that to it's native interface and use string down into the ifc_add_host function (no type param needed).  Then use getnameinfo there to gernate the address structure with family type.
+
 44
 Wed Jun 30 19:18:32 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>

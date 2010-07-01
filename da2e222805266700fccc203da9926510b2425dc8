@@ -41,6 +41,14 @@ Yes. Just call getnameinfo as soon as you get into C code. getnameinfo will pars
 
 Using getnameinfo also ensures that you will never need to define any address family constants, because C has its own constants (AF_INET and AF_INET6) and you'll never need to communicate address family information between C and Java.
 
+43
+Thu Jul 01 21:51:18 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n///BI=
+UUID: AAAA0n///BA=
+Bytes: 92
+More in general, don't use inet_pton and inet_ntop. Use getnameinfo and getaddrinfo instead.
+
 44
 Wed Jun 30 19:18:32 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>

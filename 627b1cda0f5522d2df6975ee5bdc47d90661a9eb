@@ -1,0 +1,18 @@
+Revision: 627b1cda0f5522d2df6975ee5bdc47d90661a9eb
+Patch-set: 1
+File: toolbox/chmod.c
+
+26
+Fri Jul 09 22:19:37 2010 +0000
+Author: Chris Tate <1000322@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+So=
+Bytes: 126
+Please use strncpy() / strncat() etc once you start working with the 'path' data -- it's user originated and can't be trusted.
+
+83
+Fri Jul 09 22:19:37 2010 +0000
+Author: Chris Tate <1000322@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+Sk=
+Bytes: 33
+Neither of these is used; remove.
+

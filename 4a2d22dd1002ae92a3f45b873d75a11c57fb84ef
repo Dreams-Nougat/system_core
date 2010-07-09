@@ -1,0 +1,41 @@
+Revision: 4a2d22dd1002ae92a3f45b873d75a11c57fb84ef
+Patch-set: 2
+File: include/netutils/ifc.h
+
+52
+Fri Jul 09 17:46:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+Ww=
+Bytes: 185
+use prefix-length instead.  If it's 128 or 32 (v6/v4) you know it's a host route.  Also use the prefix length when making a gateway route to allow more than just default gateway routes.
+
+File: libnetutils/ifc_utils.c
+
+209
+Fri Jul 09 17:46:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+YM=
+Bytes: 58
+This code should be removed to use the general code below.
+
+224
+Fri Jul 09 17:46:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+YI=
+Bytes: 58
+This code should be removed to use the general code below.
+
+514
+Fri Jul 09 17:46:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+XM=
+Bytes: 170
+If flags is just used to tell host-routes from default-routes I think it is redundant.  The prefix_length can tell you that (a prefix-length of 128 is a route to a host).
+
+561
+Fri Jul 09 17:46:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+XI=
+Bytes: 214
+I think that instead of route_type you should pass in prefix length.  Prefix Length can work for both v4 and v6: in v4 it's the size of the netmask.  This also lets us add routes to gateways other than the default.
+

@@ -1,0 +1,11 @@
+Revision: 0c268ddba1f74ca6918a5b93c63f180afd97e529
+Patch-set: 3
+File: libnetutils/ifc_utils.c
+
+229
+Fri Jul 09 21:28:53 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA0n//+S4=
+Bytes: 80
+should the genmask value in the gateway case actually reflect the prefix length?
+

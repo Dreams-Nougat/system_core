@@ -9,3 +9,11 @@ UUID: AAAA0n//+S4=
 Bytes: 80
 should the genmask value in the gateway case actually reflect the prefix length?
 
+229
+Tue Jul 13 07:12:35 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n//+S4=
+UUID: AAAA0n//9+s=
+Bytes: 163
+rt_genmask field seems to be used by rtalloc() family of functions only when RTF_CLONING flag is set. We are not setting this flag. So setting it to 0 should be OK
+

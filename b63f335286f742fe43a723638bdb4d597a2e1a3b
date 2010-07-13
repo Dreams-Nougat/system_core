@@ -1,0 +1,71 @@
+Revision: b63f335286f742fe43a723638bdb4d597a2e1a3b
+Patch-set: 5
+File: toolbox/listener.c
+
+1
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8g=
+Bytes: 56
+This'll need the standard AOSP copyright/license notice.
+
+17
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8Q=
+Bytes: 31
+Style issue: space after comma.
+
+21
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8M=
+Bytes: 67
+Style issue: space around operator (also further down in this file)
+
+25
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8c=
+Bytes: 36
+tabs (also further down in the file)
+
+30
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8E=
+Bytes: 14
+What original?
+
+35
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8I=
+Bytes: 11
+Indentation
+
+43
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8Y=
+Bytes: 47
+trailing spaces (also further down in the file)
+
+File: toolbox/route.c
+
+96
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8U=
+Bytes: 45
+Please indent 8 spaces for line continuations
+
+File: toolbox/sender.c
+
+1
+Tue Jul 13 18:14:24 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA03///8k=
+Bytes: 56
+This'll need the standard AOSP copyright/license notice.
+

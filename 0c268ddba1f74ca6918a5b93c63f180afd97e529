@@ -17,3 +17,11 @@ UUID: AAAA0n//9+s=
 Bytes: 163
 rt_genmask field seems to be used by rtalloc() family of functions only when RTF_CLONING flag is set. We are not setting this flag. So setting it to 0 should be OK
 
+229
+Tue Jul 13 18:39:53 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA0n//9+s=
+UUID: AAAA03///7s=
+Bytes: 144
+So you are claiming that the netmask field in the routing table is never used and need not be set?  I find that hard to believe.  Please set it.
+

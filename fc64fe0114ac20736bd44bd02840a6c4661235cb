@@ -1,0 +1,11 @@
+Revision: fc64fe0114ac20736bd44bd02840a6c4661235cb
+Patch-set: 3
+File: toolbox/chmod.c
+
+28
+Wed Jul 14 17:11:25 2010 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA1H///wo=
+Bytes: 61
+what about the null character? I assume the +1 is for '/' :-)
+

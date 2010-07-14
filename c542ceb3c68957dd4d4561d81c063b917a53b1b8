@@ -1,0 +1,11 @@
+Revision: c542ceb3c68957dd4d4561d81c063b917a53b1b8
+Patch-set: 5
+File: libsysutils/src/NetlinkEvent.cpp
+
+99
+Wed Jul 14 05:56:52 2010 +0000
+Author: Chia-chi Yeh <1001923@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA1H///0c=
+Bytes: 40
+Read ptr at this point might cause SEGV.
+

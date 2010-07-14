@@ -9,3 +9,13 @@ UUID: AAAA1H///wo=
 Bytes: 61
 what about the null character? I assume the +1 is for '/' :-)
 
+28
+Wed Jul 14 18:28:37 2010 +0000
+Author: Anthony Newnam <1002619@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA1H///wo=
+UUID: AAAA1H///tk=
+Bytes: 162
+Sure, I'll make it +2.
+
+Toolbox can't even pass an invalid argument here, so all this check is really going to do is waste some type finding string lengths anyway
+

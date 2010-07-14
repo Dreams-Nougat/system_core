@@ -1,0 +1,11 @@
+Revision: 7f3e29112b0d1dac8e6a843f364e4982fab31ba2
+Patch-set: 2
+File: toolbox/mkdir.c
+
+53
+Wed Jul 14 17:00:46 2010 +0000
+Author: Chris Tate <1000322@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA1H///ww=
+Bytes: 92
+Don't you want +1 for the trailing NUL and an additional +1 for the '/' path separator here?
+

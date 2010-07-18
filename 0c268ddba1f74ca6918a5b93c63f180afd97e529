@@ -1,5 +1,14 @@
 Revision: 0c268ddba1f74ca6918a5b93c63f180afd97e529
 Patch-set: 3
+File: include/netutils/ifc.h
+
+52
+Sun Jul 18 17:23:55 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////A=
+Bytes: 187
+For IPv4, although the default route cannot be deleted, host routes can be deleted. For IPv6, the code can add IPv6 routes, but there is no way to delete them. Is this what we want to do?
+
 File: libnetutils/ifc_utils.c
 
 51
@@ -90,6 +99,13 @@ Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////Q=
 Bytes: 135
 Nit: sizeof(hints) is better. Also, since you've just memset() hints to zero, there's no need to set the individual members to 0 below.
+
+536
+Sun Jul 18 17:23:55 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////E=
+Bytes: 172
+You should probably also set hints.ai_flags to AI_NUMERICHOST, in order to avoid doing DNS lookups in case someone passes this function something that is not an IP address.
 
 559
 Sun Jul 18 17:17:26 2010 +0000

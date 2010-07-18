@@ -2,6 +2,37 @@ Revision: 0c268ddba1f74ca6918a5b93c63f180afd97e529
 Patch-set: 3
 File: libnetutils/ifc_utils.c
 
+51
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////w=
+Bytes: 525
+Why is this constant needed? We don't use any specific metric for IPv4. If you are setting the metric to the minimum to ensure that host routes you create will be preferred above all other routes, then this is not necessary, because host routes have a prefix length of /128 and will already be preferred above other routes with shorter prefix lengths due to longest prefix matching.
+
+If you do need the constant, then please make the V uppercase. Also, please add a comment saying why "the lowest possible value" is not zero.
+
+209
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////c=
+Bytes: 76
+How about renaming "addr" to "gateway" so it's clear what this parameter is?
+
+219
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////o=
+Bytes: 1299
+For this to be a general "add a route" function, it will need three parameters in addition to the interface name: the destination address (e.g., 192.0.2.0), the prefix length (e.g., 24), and the gateway address.
+
+However, the function as written only takes two parameters and interprets addr as either the destination or the gateway depending on whether the mask is 32 or not. To me, this is confusing; also, it does not allow prefixes with lengths that are not 0 or 32.
+
+I would suggest you take all four parameters, put all of them into the corresponding fields in the struct rtentry, and set rt_flags based on whether prefix_length == 32. Then just call the ioctl, let the kernel figure out what to do, and return whatever result code comes back. The kernel certainly has more information on the routing table than this code has. Also, I think the resulting code will be simpler.
+
+Altenatively, if we know that we'll only ever need to add either host routes and default routes, but never other routes, then this code is will work. In that case, please do add a comment to the effect that if prefix_length == 32, then "addr" is the destination, if prefix_length == 0, then "addr" is the gateway, and that other values of prefix_length are unsupported.
+
+Similar comments apply to the IPv6 function.
+
 229
 Fri Jul 09 21:28:53 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,4 +55,46 @@ Parent: AAAA0n//9+s=
 UUID: AAAA03///7s=
 Bytes: 144
 So you are claiming that the netmask field in the routing table is never used and need not be set?  I find that hard to believe.  Please set it.
+
+465
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////Y=
+Bytes: 197
+Can you put this next to the corresponding IPv4 code (ifc_init) so that anyone modifying the file in the future will remember to modify both codepaths at the same time? Ditto with ifc_close6 below.
+
+484
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////U=
+Bytes: 39
+Can you put this next to ifc_add_route?
+
+513
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////k=
+Bytes: 121
+Since all ifc_init6() does is call socket(), then errno will already be EAFNOSUPPORT. So you can remove this if you want.
+
+519
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////g=
+Bytes: 41
+Should you be setting errno to 0 as well?
+
+535
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////Q=
+Bytes: 135
+Nit: sizeof(hints) is better. Also, since you've just memset() hints to zero, there's no need to set the individual members to 0 below.
+
+559
+Sun Jul 18 17:17:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA2H////M=
+Bytes: 72
+Please call freeaddrinfo before returning, or the code will leak memory.
 

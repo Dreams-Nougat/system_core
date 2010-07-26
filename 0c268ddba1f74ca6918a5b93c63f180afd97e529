@@ -9,6 +9,16 @@ UUID: AAAA2H////A=
 Bytes: 187
 For IPv4, although the default route cannot be deleted, host routes can be deleted. For IPv6, the code can add IPv6 routes, but there is no way to delete them. Is this what we want to do?
 
+52
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////A=
+UUID: AAAA3H///wI=
+Bytes: 364
+Currently this function (remove_host_route) is only accessed from removePrivateDnsRoutes. Is this even needed in IPv6? I was under the assumption that routes to DNS servers are completely handled by the kernel for IPv6.
+
+I agree that we may need to add this for the sake of completeness. But if it is not needed right away, Id like to do that as a separate change.
+
 File: libnetutils/ifc_utils.c
 
 51
@@ -20,12 +30,28 @@ Why is this constant needed? We don't use any specific metric for IPv4. If you a
 
 If you do need the constant, then please make the V uppercase. Also, please add a comment saying why "the lowest possible value" is not zero.
 
+51
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////w=
+UUID: AAAA3H///vY=
+Bytes: 16
+Will remove this
+
 209
 Sun Jul 18 17:17:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////c=
 Bytes: 76
 How about renaming "addr" to "gateway" so it's clear what this parameter is?
+
+209
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////c=
+UUID: AAAA3H///vU=
+Bytes: 4
+Done
 
 219
 Sun Jul 18 17:17:26 2010 +0000
@@ -41,6 +67,16 @@ I would suggest you take all four parameters, put all of them into the correspon
 Altenatively, if we know that we'll only ever need to add either host routes and default routes, but never other routes, then this code is will work. In that case, please do add a comment to the effect that if prefix_length == 32, then "addr" is the destination, if prefix_length == 0, then "addr" is the gateway, and that other values of prefix_length are unsupported.
 
 Similar comments apply to the IPv6 function.
+
+219
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////o=
+UUID: AAAA3H///QU=
+Bytes: 448
+The function as it stands now does handle any prefix_length. It considers prefix_length 32 as host route and all other values as gateway route. I probably did not understand why you think we handle only 0 and 32. Are you suggesting that I need to set rt_dst if prefix_length is neither 0 nor 32? 
+
+I do think that I need to add an error check here to handle the case where the value is greater than 32 or less than 0. But that is a different point.
 
 229
 Fri Jul 09 21:28:53 2010 +0000
@@ -65,12 +101,28 @@ UUID: AAAA03///7s=
 Bytes: 144
 So you are claiming that the netmask field in the routing table is never used and need not be set?  I find that hard to believe.  Please set it.
 
+229
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA03///7s=
+UUID: AAAA3H///QQ=
+Bytes: 4
+Done
+
 465
 Sun Jul 18 17:17:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////Y=
 Bytes: 197
 Can you put this next to the corresponding IPv4 code (ifc_init) so that anyone modifying the file in the future will remember to modify both codepaths at the same time? Ditto with ifc_close6 below.
+
+465
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////Y=
+UUID: AAAA3H///QM=
+Bytes: 4
+Done
 
 484
 Sun Jul 18 17:17:26 2010 +0000
@@ -79,12 +131,28 @@ UUID: AAAA2H////U=
 Bytes: 39
 Can you put this next to ifc_add_route?
 
+484
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////U=
+UUID: AAAA3H///qs=
+Bytes: 35
+It is above ifc_add_route even now.
+
 513
 Sun Jul 18 17:17:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////k=
 Bytes: 121
 Since all ifc_init6() does is call socket(), then errno will already be EAFNOSUPPORT. So you can remove this if you want.
+
+513
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////k=
+UUID: AAAA3H///qw=
+Bytes: 4
+Done
 
 519
 Sun Jul 18 17:17:26 2010 +0000
@@ -93,12 +161,28 @@ UUID: AAAA2H////g=
 Bytes: 41
 Should you be setting errno to 0 as well?
 
+519
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////g=
+UUID: AAAA3H///q0=
+Bytes: 4
+Done
+
 535
 Sun Jul 18 17:17:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////Q=
 Bytes: 135
 Nit: sizeof(hints) is better. Also, since you've just memset() hints to zero, there's no need to set the individual members to 0 below.
+
+535
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////Q=
+UUID: AAAA3H///rA=
+Bytes: 4
+Done
 
 536
 Sun Jul 18 17:23:55 2010 +0000
@@ -107,10 +191,26 @@ UUID: AAAA2H////E=
 Bytes: 172
 You should probably also set hints.ai_flags to AI_NUMERICHOST, in order to avoid doing DNS lookups in case someone passes this function something that is not an IP address.
 
+536
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////E=
+UUID: AAAA3H///q8=
+Bytes: 4
+Done
+
 559
 Sun Jul 18 17:17:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA2H////M=
 Bytes: 72
 Please call freeaddrinfo before returning, or the code will leak memory.
+
+559
+Mon Jul 26 17:44:17 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA2H////M=
+UUID: AAAA3H///q4=
+Bytes: 4
+Done
 

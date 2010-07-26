@@ -78,6 +78,16 @@ The function as it stands now does handle any prefix_length. It considers prefix
 
 I do think that I need to add an error check here to handle the case where the value is greater than 32 or less than 0. But that is a different point.
 
+219
+Mon Jul 26 22:42:59 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA3H///QU=
+UUID: AAAA3X///6M=
+Bytes: 714
+You're currently dealing with two extreme cases: a default route doesn't need a destination as it gets "everything not me", and a host route doesn't need a gateway as it only gets traffic destined for itself.
+
+A gateway connecting two networks is a different story.  It has an address that's routable on the local network and an address range that's not locally routable without the gateway.  They may be totally different (ie a 192.168.0.5 gateway may sit between you and the 24.* network).  The netmask/prefix defines the size of the address space of the remote network.  To be useful, the routing table must know the address space behind the gateway (dest and netmask/prefix-length) and the addr of the gateway.
+
 229
 Fri Jul 09 21:28:53 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>

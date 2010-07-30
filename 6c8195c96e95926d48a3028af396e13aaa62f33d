@@ -1,0 +1,11 @@
+Revision: 6c8195c96e95926d48a3028af396e13aaa62f33d
+Patch-set: 4
+File: libpixelflinger/t32cb16blend_neon.S
+
+3
+Fri Jul 30 23:57:22 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA33///x8=
+Bytes: 69
+Shouldn't this be copyright The Android Open Source Project instead ?
+

@@ -9,3 +9,13 @@ UUID: AAAA3X///6w=
 Bytes: 103
 not passing in the prefix_length here means we can't handle network routes other than default, I think.
 
+514
+Tue Aug 03 06:44:36 2010 +0000
+Author: Naveen K <1003413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA3X///6w=
+UUID: AAAA33///g4=
+Bytes: 68
+Will adding this line suffice?
+
+rtmsg.rtmsg_dst_len = prefix_length;
+

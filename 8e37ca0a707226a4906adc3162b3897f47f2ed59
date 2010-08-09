@@ -29,3 +29,11 @@ That is great - it also means you can move that line outside of the if/else.
 
 You also need another in6_addr: you have to have both dest and gateway (though for default and host you only use one or the other).  Same is needed in the v4 case.
 
+514
+Mon Aug 09 06:49:44 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA33///e8=
+UUID: AAAA4X///1w=
+Bytes: 45
+Initialized dst_len to reflect prefix_length.
+

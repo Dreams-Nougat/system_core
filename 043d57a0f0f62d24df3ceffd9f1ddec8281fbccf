@@ -1,0 +1,11 @@
+Revision: 043d57a0f0f62d24df3ceffd9f1ddec8281fbccf
+Patch-set: 1
+File: libpixelflinger/t32cb16_neon.c
+
+42
+Mon Aug 09 13:45:42 2010 +0000
+Author: Martyn Capewell <1002470@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4X///1k=
+Bytes: 209
+You may want to try dual issuing your load/store instructions with other NEON instructions, to improve throughput on A8. See http://infocenter.arm.com/help/topic/com.arm.doc.ddi0344k/BABHBCCB.html for details.
+

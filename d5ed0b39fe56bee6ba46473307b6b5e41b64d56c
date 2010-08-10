@@ -154,6 +154,22 @@ Please let me know if this is OK to do:
     b. If addr is present and gw is not of the same family (IPv4 / IPv6) as addr (e.g., an IPv4 route with an IPv6 gateway), return failure.
     c. Set RTF_GATEWAY flag and set rtmsg_gateway to the IP address specified by gw.
 
+535
+Tue Aug 10 16:40:28 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///4g=
+UUID: AAAA4n///3g=
+Bytes: 843
+Actually, I am suggesting that the function should always require a non-null destination, but should accept a null gateway. You can always use "0.0.0.0" or "::" and a prefix length of 0 to indicate the default.
+
+So, for IPv4 you could do:
+
+  ifc_add_route("wlan0", "0.0.0.0", 0, "192.168.1.254");    // default via gateway 192.168.1.254 on wlan0
+  ifc_add_route("wlan0", "10.1.99.5", 32, NULL);            // host 10.1.123.4 via wlan0
+  ifc_add_route("wlan0", "10.1.123.4", 32, "192.168.1.10"); // host 10.1.123.4 through gateway 192.168.1.10 on wlan0
+
+If you think it simplifies the code to never accept any null arguments, or to accept both null gateways and null addresses, that's fine too. The important thing is that RTF_GATEWAY is set iff there is a real gateway and that RTF_HOST is set iff the prefix length is the maximum (32 or 128).
+
 538
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>

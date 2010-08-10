@@ -22,6 +22,14 @@ Can you add a parameter, like so?
 
 int ifc_add_ipv4_route(const char *name, in_addr_t dst, int prefix_length, in_addr_t gw) {
 
+234
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8k=
+UUID: AAAA4n///0Y=
+Bytes: 4
+done
+
 246
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -42,6 +50,14 @@ This block would then become something like the following:
       init_sockaddr_in(&rt.rt_gateway, gw);
     }
 
+246
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8g=
+UUID: AAAA4n///0U=
+Bytes: 4
+done
+
 271
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,6 +66,14 @@ Bytes: 67
 This would then be:
 
     return ifc_add_ipv4_route(name, 0, 0, gw);
+
+271
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8c=
+UUID: AAAA4n///0Q=
+Bytes: 4
+done
 
 276
 Tue Aug 10 00:23:09 2010 +0000
@@ -60,6 +84,14 @@ And this would be:
 
     return ifc_add_ipv4_route(name, addr, 32, 0);
 
+276
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8Y=
+UUID: AAAA4n///0M=
+Bytes: 4
+done
+
 492
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -68,6 +100,14 @@ Bytes: 189
 Similarly to the IPv4 case above, can you make this take an extra parameter, like so?
 
 int ifc_add_ipv6_route(const char *name, struct in6_addr dst, int prefix_length, struct in6_addr gw) {
+
+492
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8U=
+UUID: AAAA4n///0I=
+Bytes: 4
+done
 
 509
 Tue Aug 10 00:23:09 2010 +0000
@@ -88,6 +128,14 @@ This will then be something like the following:
         rtmsg.rtmsg_flags |= RTF_GATEWAY;
         rtmsg.rtmsg_gateway = gw;
     }
+
+509
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8Q=
+UUID: AAAA4n///0E=
+Bytes: 4
+done
 
 535
 Tue Aug 10 00:23:09 2010 +0000
@@ -178,6 +226,14 @@ UUID: AAAA4n///2k=
 Bytes: 76
 Thanks for the clarifications Lorenzo. Will upload changes as you suggested.
 
+535
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8M=
+UUID: AAAA4n///0A=
+Bytes: 4
+done
+
 538
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -188,6 +244,14 @@ Keep track of IPv4 and IPv6 gateways as well:
     struct sockaddr_in ipv4_addr, ipv4_gw;
     struct sockaddr_in6 ipv6_addr, ipv6_gw;
 
+538
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8I=
+UUID: AAAA4n///z8=
+Bytes: 4
+done
+
 540
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -196,6 +260,14 @@ Bytes: 133
 Add an addrinfo structure for the gateway and rename result to addr_ai for consistency:
 
     struct addrinfo hints, *addr_ai, *gw_ai;
+
+540
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8A=
+UUID: AAAA4n///z4=
+Bytes: 4
+done
 
 552
 Tue Aug 10 00:23:09 2010 +0000
@@ -227,6 +299,14 @@ Convert the gateway to a socket address as well. For convenience, if the gateway
         return -1;
     }
 
+552
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8E=
+UUID: AAAA4n///z0=
+Bytes: 4
+done
+
 554
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -237,6 +317,14 @@ After this memcpy, convert the gateway to a socket address array as well:
         memcpy(&ipv6_addr, result->ai_addr, sizeof(struct sockaddr_in6));
         memcpy(&ipv6_gw, gw_ai->ai_addr, sizeof(struct sockaddr_in6));
         ret = ifc_add_ipv6_route(name, ipv6_addr.sin6_addr, prefix_length, ipv6_gw.sin6_addr);
+
+554
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///78=
+UUID: AAAA4n///zw=
+Bytes: 4
+done
 
 558
 Tue Aug 10 00:23:09 2010 +0000
@@ -249,6 +337,14 @@ And do the same for IPv4:
         memcpy(&ipv4_gw, gw_ai->ai_addr, sizeof(struct sockaddr_in));
         ret = ifc_add_ipv4_route(name, ipv4_addr.sin_addr.s_addr, prefix_length, ipv4_gw.sin_addr.s_addr);
 
+558
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///74=
+UUID: AAAA4n///zs=
+Bytes: 4
+done
+
 565
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -256,4 +352,12 @@ UUID: AAAA4n///7Y=
 Bytes: 30
 Also:
     freeaddrinfo(gw_ai);
+
+565
+Tue Aug 10 19:58:08 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///7Y=
+UUID: AAAA4n///zo=
+Bytes: 4
+done
 

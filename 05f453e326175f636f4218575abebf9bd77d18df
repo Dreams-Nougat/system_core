@@ -144,6 +144,18 @@ UUID: AAAA4n///vo=
 Bytes: 237
 Can't you tell by the addr family of the gateway?  Either can be null, but not both.  I see default and host routes as being opposite ends of the spectrum..  if we allow null gateway, I think we should allow null dst.   Symmetry is nice.
 
+554
+Tue Aug 10 23:26:05 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///vo=
+UUID: AAAA4n///uo=
+Bytes: 519
+I suppose you can.
+
+Symmetry is nice, but this isn't really symmetric, because while there can be a route without a gateway, there cannot be a route without a destination. So a null gateway means "there is no gateway", but a null destination cannot mean "there is no destination" (because a route without a destination doesn't make sense). Allowing null destinations would probably require more code.
+
+That said, I don't feel strongly about it, so would be fine either way. Do you want the code to accept null gateways?
+
 559
 Tue Aug 10 21:52:44 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>

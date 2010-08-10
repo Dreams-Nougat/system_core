@@ -1,0 +1,179 @@
+Revision: d5ed0b39fe56bee6ba46473307b6b5e41b64d56c
+Patch-set: 5
+File: include/netutils/ifc.h
+
+52
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///7U=
+Bytes: 161
+Add another parameter at the end specifying the gateway to use:
+
+extern int ifc_add_route(const char *name, const char *addr, int prefix_length, const char *gw);
+
+File: libnetutils/ifc_utils.c
+
+234
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8k=
+Bytes: 125
+Can you add a parameter, like so?
+
+int ifc_add_ipv4_route(const char *name, in_addr_t dst, int prefix_length, in_addr_t gw) {
+
+246
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8g=
+Bytes: 395
+This block would then become something like the following:
+
+    netmask = get_ipv4_netmask(prefix_length);
+    init_sockaddr_in(&rt.rt_genmask, netmask);
+    init_sockaddr_in(&rt.rt_dst, dst);
+    rt.rt_flags = RTF_UP;
+
+    if (prefix_length == 32) {
+      rt.rt_flags |= RTF_HOST;
+    }
+    if (gateway != 0) {
+      rt.rt_flags |= RTF_GATEWAY;
+      init_sockaddr_in(&rt.rt_gateway, gw);
+    }
+
+271
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8c=
+Bytes: 67
+This would then be:
+
+    return ifc_add_ipv4_route(name, 0, 0, gw);
+
+276
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8Y=
+Bytes: 69
+And this would be:
+
+    return ifc_add_ipv4_route(name, addr, 32, 0);
+
+492
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8U=
+Bytes: 189
+Similarly to the IPv4 case above, can you make this take an extra parameter, like so?
+
+int ifc_add_ipv6_route(const char *name, struct in6_addr dst, int prefix_length, struct in6_addr gw) {
+
+509
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8Q=
+Bytes: 400
+This will then be something like the following:
+
+    rtmsg.rtmsg_ifindex = ifindex;
+    rtmsg.rtmsg_dst = dst;
+    rtmsg.rtmsg_dst_len = prefix_length;
+    rtmsg.rtmsg_flags = RTF_UP;
+
+    if (prefix_length == 128) {
+        rtmsg.rtmsg_flags |= RTF_HOST;
+    }
+    if (memcmp(&gw, &in6addr_any, sizeof(in6addr_any)) {
+        rtmsg.rtmsg_flags |= RTF_GATEWAY;
+        rtmsg.rtmsg_gateway = gw;
+    }
+
+535
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8M=
+Bytes: 113
+Add a gateway parameter:
+
+int ifc_add_route(const char *name, const char *dst, int prefix_length, const char *gw)
+
+538
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8I=
+Bytes: 133
+Keep track of IPv4 and IPv6 gateways as well:
+
+    struct sockaddr_in ipv4_addr, ipv4_gw;
+    struct sockaddr_in6 ipv6_addr, ipv6_gw;
+
+540
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8A=
+Bytes: 133
+Add an addrinfo structure for the gateway and rename result to addr_ai for consistency:
+
+    struct addrinfo hints, *addr_ai, *gw_ai;
+
+552
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///8E=
+Bytes: 726
+Convert the gateway to a socket address as well. For convenience, if the gateway is NULL, convert it to an empty address.
+
+    if (gw == NULL) {
+        if (addr_ai->ai_family == AF_INET6) {
+            gw = "::";
+        }
+        if (addr_ai->ai_family == AF_INET) {
+            gw = "0.0.0.0";
+        }
+    }
+
+    ret = getaddrinfo(gw, NULL, &hints, &gw_ai);
+    if (ret != 0) {
+        printerr("getaddrinfo failed: invalid gateway %s\n", gw);
+        freeaddrinfo(addr_ai);
+        return -1;
+    }
+
+    if (addr_ai->ai_family != gw_ai->ai_family) {
+        printerr("ifc_add_route: different address families: %s and %s\n", addr, gw);
+        freeaddrinfo(addr_ai);
+        freeaddrinfo(gw_ai);
+        return -1;
+    }
+
+554
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///78=
+Bytes: 314
+After this memcpy, convert the gateway to a socket address array as well:
+
+        memcpy(&ipv6_addr, result->ai_addr, sizeof(struct sockaddr_in6));
+        memcpy(&ipv6_gw, gw_ai->ai_addr, sizeof(struct sockaddr_in6));
+        ret = ifc_add_ipv6_route(name, ipv6_addr.sin6_addr, prefix_length, ipv6_gw.sin6_addr);
+
+558
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///74=
+Bytes: 276
+And do the same for IPv4:
+
+        memcpy(&ipv4_addr, result->ai_addr, sizeof(struct sockaddr_in));
+        memcpy(&ipv4_gw, gw_ai->ai_addr, sizeof(struct sockaddr_in));
+        ret = ifc_add_ipv4_route(name, ipv4_addr.sin_addr.s_addr, prefix_length, ipv4_gw.sin_addr.s_addr);
+
+565
+Tue Aug 10 00:23:09 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///7Y=
+Bytes: 30
+Also:
+    freeaddrinfo(gw_ai);
+

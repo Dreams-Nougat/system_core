@@ -136,6 +136,24 @@ The logic should be the same for IPv4 and IPv6.
 
 Note that it's possible to have a host route that is reachable through a gateway, so it's possible to have both RTF_HOST and RTF_GATEWAY set.
 
+535
+Tue Aug 10 10:21:54 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///44=
+UUID: AAAA4n///4g=
+Bytes: 822
+Please correct me if my understanding is wrong:
+If i check for addr to NULL and return failure, how to add just a default route? My understanding is that, to add just a default route, addr will be null and gw will be gateway address.
+Also in ifc_create_default_route() we are calling ifc_add_ipv4_route(name, 0, 0, gw) where the addr is null.
+
+Please let me know if this is OK to do:
+1. If both addr and gw are NULL/INVALID return failure.
+2. If addr is not NULL and prefix_len == 32/128 for IPv4/IPv6 respectively, set the RTF_HOST flag.
+3. If gw is not NULL:
+    a. Convert gw to an IP address.
+    b. If addr is present and gw is not of the same family (IPv4 / IPv6) as addr (e.g., an IPv4 route with an IPv6 gateway), return failure.
+    c. Set RTF_GATEWAY flag and set rtmsg_gateway to the IP address specified by gw.
+
 538
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>

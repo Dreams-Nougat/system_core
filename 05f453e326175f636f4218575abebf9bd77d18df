@@ -2,10 +2,109 @@ Revision: 05f453e326175f636f4218575abebf9bd77d18df
 Patch-set: 6
 File: libnetutils/ifc_utils.c
 
+234
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///zI=
+Bytes: 39
+Nit: can you rename "name" to "ifname"?
+
+263
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///yQ=
+Bytes: 234
+Instead of saving errno, why not do:
+
+    if (result < 0) {
+        if (errno == EEXIST) {
+            result = 0;
+        } else {
+            result = -errno;
+        }
+    }
+    ifc_close();
+    return result;
+
+Also for IPv6 below.
+
+508
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///yI=
+Bytes: 14
+return -ENXIO;
+
+528
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///yE=
+Bytes: 14
+return -errno;
+
+532
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///x8=
+Bytes: 186
+As above:
+
+    if (result < 0) {
+        if (errno == EEXIST) {
+            result = 0;
+        } else {
+            result = -errno;
+        }
+    }
+    ifc_close6();
+    return result;
+
+552
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///xY=
+Bytes: 57
+Nit: two spaces between end of line and start of comment.
+
 554
 Tue Aug 10 20:12:33 2010 +0000
 Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA4n///zU=
 Bytes: 114
 Did not explicitly check dst for null since getaddrinfo() returns error any way if both node and service are null.
+
+559
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///x0=
+Bytes: 15
+return -EINVAL;
+
+574
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///x4=
+Bytes: 15
+return -EINVAL;
+
+581
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///xw=
+Bytes: 15
+return -EINVAL;
+
+592
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///yU=
+Bytes: 126
+Should these be just ipv4_addr.sin_addr and ipv4_gw.sin_addr instead of ipv4_addr.sin_addr.s_addr and ipv4_gw_sin_addr.s_addr?
+
+597
+Tue Aug 10 21:52:44 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///xo=
+Bytes: 20
+ret = -EAFNOSUPPORT;
 

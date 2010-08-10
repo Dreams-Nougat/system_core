@@ -66,6 +66,14 @@ UUID: AAAA4n///xk=
 Bytes: 22
 ipv4_addr -> ipv4_dest
 
+547
+Tue Aug 10 22:10:42 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///xk=
+UUID: AAAA4n///wo=
+Bytes: 12
+dest or dst?
+
 548
 Tue Aug 10 21:55:13 2010 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -98,6 +106,20 @@ if (ret != 0) {
 line should be
 if (ret != 0 && dst != NULL) {
 
+554
+Tue Aug 10 22:10:42 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///xU=
+UUID: AAAA4n///w0=
+Bytes: 651
+Actually, thinking about it some more, I don't think we should support dst = null to indicate the default route, because then we wouldn't know if it's an IPv4 or IPv6 default route.
+
+I think it's fine to mandate that the calling code always specify a destination. In the end, a route is just a destination with some associated attributes, so the destination is the most basic part of a route and must always be present. The gateway, on the other hand, may or may not be needed (so we allow it to be null).
+
+Also, supporting null doesn't save much code in the caller: all it needs to do is pass in "0.0.0.0" or "::" instead of null.
+
+What do you think?
+
 559
 Tue Aug 10 21:52:44 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -115,6 +137,14 @@ if (dst == NULL) {
     printerr("both dst and gw are NULL");
     return -1;
 }
+
+563
+Tue Aug 10 22:10:42 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///xQ=
+UUID: AAAA4n///ws=
+Bytes: 190
+If we don't support null destinations, then this is fine as is, right? Then we'll never get here if dst is null, because getaddrinfo(dst, ...) will fail and the function will return failure.
 
 574
 Tue Aug 10 21:52:44 2010 +0000

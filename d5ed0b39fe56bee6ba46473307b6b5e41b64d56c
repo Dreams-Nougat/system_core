@@ -98,6 +98,20 @@ Add a gateway parameter:
 
 int ifc_add_route(const char *name, const char *dst, int prefix_length, const char *gw)
 
+535
+Tue Aug 10 05:05:53 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///8M=
+UUID: AAAA4n///5A=
+Bytes: 561
+Thanks for the suggestions Lorenzo.
+Small clarification before implementing this,
+1) If ifc_add_route is used for adding host route, then "gw" will be empty address from java space right??
+
+2) Similarly if ifc_add_route is used for adding default route, then "dst" will be empty address from java space right??
+
+3) Also do we need to convert "dst" also to empty address in case if it is NULL as it is done for "gw" below? If so first we need to process the non NULL address to get the family type and build the empty address for the other NULL address using it?
+
 538
 Tue Aug 10 00:23:09 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -156,6 +156,14 @@ Symmetry is nice, but this isn't really symmetric, because while there can be a 
 
 That said, I don't feel strongly about it, so would be fine either way. Do you want the code to accept null gateways?
 
+554
+Wed Aug 11 17:54:19 2010 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///uo=
+UUID: AAAA4n///qQ=
+Bytes: 30
+ok - I'm fine with this as is.
+
 559
 Tue Aug 10 21:52:44 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>

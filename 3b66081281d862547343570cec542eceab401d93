@@ -1,0 +1,36 @@
+Revision: 3b66081281d862547343570cec542eceab401d93
+Patch-set: 7
+File: libnetutils/ifc_utils.c
+
+260
+Tue Aug 17 19:40:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///Hw=
+Bytes: 101
+For consistency, check whether this failed:
+
+    if (ifc_ctl_sock < 0) {
+        return -errno;
+    }
+
+506
+Tue Aug 17 19:40:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///H0=
+Bytes: 68
+Change name to ifname for consistency with the IPv4 code path above.
+
+553
+Tue Aug 17 19:40:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///Ho=
+Bytes: 48
+Change name to ifname for consistency with IPv4.
+
+569
+Tue Aug 17 19:40:26 2010 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA4n///Hk=
+Bytes: 7
+;; -> ;
+

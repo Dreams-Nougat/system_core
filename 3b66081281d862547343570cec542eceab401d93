@@ -13,12 +13,28 @@ For consistency, check whether this failed:
         return -errno;
     }
 
+260
+Wed Aug 18 04:50:24 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///Hw=
+UUID: AAAA4n///Dg=
+Bytes: 4
+done
+
 506
 Tue Aug 17 19:40:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA4n///H0=
 Bytes: 68
 Change name to ifname for consistency with the IPv4 code path above.
+
+506
+Wed Aug 18 04:50:24 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///H0=
+UUID: AAAA4n///Dc=
+Bytes: 4
+done
 
 553
 Tue Aug 17 19:40:26 2010 +0000
@@ -27,10 +43,26 @@ UUID: AAAA4n///Ho=
 Bytes: 48
 Change name to ifname for consistency with IPv4.
 
+553
+Wed Aug 18 04:50:24 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///Ho=
+UUID: AAAA4n///DY=
+Bytes: 4
+done
+
 569
 Tue Aug 17 19:40:26 2010 +0000
 Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA4n///Hk=
 Bytes: 7
 ;; -> ;
+
+569
+Wed Aug 18 04:50:24 2010 +0000
+Author: Srinivas Naik <1004300@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA4n///Hk=
+UUID: AAAA4n///DU=
+Bytes: 4
+done
 

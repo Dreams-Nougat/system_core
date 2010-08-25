@@ -1,0 +1,19 @@
+Revision: 2f440ca8570538d988efd2af46137feafa297a06
+Patch-set: 1
+File: init/parser.c
+
+239
+Wed Aug 25 14:10:29 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA6X///00=
+Bytes: 213
+isn't this going to generate two T_NEWLINE tokens ?
+I think what you really want is to jump over the newline after the comment, and still increment the line number.
+
+Like adding:
+
+if (*x) {
+  x++;
+}
+state->line++;
+

@@ -1,0 +1,11 @@
+Revision: f41986bbc79055a4feed7266cac5c1b540296daf
+Patch-set: 2
+File: mksh/src/00-NOTE.txt
+
+20
+Fri Sep 10 22:36:13 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7X///fE=
+Bytes: 18
+main.c not main.sh
+

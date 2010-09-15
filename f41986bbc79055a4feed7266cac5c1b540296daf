@@ -1,0 +1,11 @@
+Revision: f41986bbc79055a4feed7266cac5c1b540296daf
+Base-for-patch-set: 2
+File: mksh/src/funcs.c
+
+2038
+Wed Sep 15 21:13:24 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7n///90=
+Bytes: 65
+Regression bug: shellf() implies shf_flush() which wasn’t done.
+

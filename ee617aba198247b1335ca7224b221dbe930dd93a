@@ -1,0 +1,45 @@
+Revision: ee617aba198247b1335ca7224b221dbe930dd93a
+Patch-set: 4
+File: mksh/src/edit.c
+
+3937
+Wed Sep 29 23:32:24 2010 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7n//+wE=
+Bytes: 22
+I would just check it.
+
+File: mksh/src/misc.c
+
+48
+Wed Sep 29 23:32:24 2010 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7n//+wI=
+Bytes: 130
+This is ok, but I prefer (for maintainability and clarity of intent) to simply say
+
+    if (setuid(...))
+        err(1, "setuid");
+
+File: mksh/src/var.c
+
+658
+Wed Sep 29 23:32:24 2010 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7n//+wU=
+Bytes: 545
+I'm less convinced by this assertion of safety than I am about the oktoadd(...)-type checks. Although I agree a practical attack on this code is unlikely, I see no reason not to use your existing safety checks such as oktoadd. I prefer "obviously, definitely safe" to "if you check, you can see it's almost certainly safe".
+
+Also, can alloc return NULL? If not, good; if yes, check for that or make alloc abort or do something else appropriate.
+
+These comments apply to the other instances of this kind of code, but I won't copy them everywhere.
+
+1029
+Wed Sep 29 23:32:24 2010 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA7n//+wQ=
+Bytes: 127
+Is this function used for security purposes?
+
+Any reason not to just read from /dev/random when you need secure random numbers?
+

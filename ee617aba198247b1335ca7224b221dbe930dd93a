@@ -9,6 +9,14 @@ UUID: AAAA7n//+wE=
 Bytes: 22
 I would just check it.
 
+3937
+Thu Sep 30 12:12:27 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA7n//+wE=
+UUID: AAAA7n//+qc=
+Bytes: 186
+Like in the other comment (var.c:658), those are lengths of *substrings* of in-memory object, so the checks can be “proven” (probably even in a mathematical sense) to be unnecessary.
+
 File: mksh/src/misc.c
 
 48
@@ -20,6 +28,14 @@ This is ok, but I prefer (for maintainability and clarity of intent) to simply s
 
     if (setuid(...))
         err(1, "setuid");
+
+48
+Thu Sep 30 12:12:27 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA7n//+wI=
+UUID: AAAA7n//+qg=
+Bytes: 101
+No, because this is a special case for *one* out of a dozen or so supported target operating systems.
 
 File: mksh/src/var.c
 
@@ -34,6 +50,19 @@ Also, can alloc return NULL? If not, good; if yes, check for that or make alloc 
 
 These comments apply to the other instances of this kind of code, but I won't copy them everywhere.
 
+658
+Thu Sep 30 12:12:27 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA7n//+wU=
+UUID: AAAA7n//+qo=
+Bytes: 1007
+This is safe for the following reason:
+We assume size_t is “represent[ing] the size of the largest possible object on the target platform”, where the object is in (data) memort. Both namelen and vallen are string lengths and already in memory – but not alone. (In fact, at least name is probably in memory at least two times.) Even so, being in memory with at least a handfull other bytes, which in mksh is a given, even for a machine with separate I/D spaces (although mksh only targets “systems close enough to BSD” anyway) means that the addition cannot overflow and will result in a value at least a couple of numbers below SIZE_MAX. Since the addition checks are a penalty in both code size and execution time, I prefer to not use them here when the “assertion” can be verified with a bit of thinking.
+
+The lalloc.c routines cannot return NULL.
+
+Similarily, I’ve added these comments to each instance where I checked those “assertions” in mind, and it took me quite some time too…
+
 1029
 Wed Sep 29 23:32:24 2010 +0000
 Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -42,4 +71,14 @@ Bytes: 127
 Is this function used for security purposes?
 
 Any reason not to just read from /dev/random when you need secure random numbers?
+
+1029
+Thu Sep 30 12:12:27 2010 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA7n//+wQ=
+UUID: AAAA7n//+qk=
+Bytes: 748
+It’s not used for anything security related, other than to keep $RANDOM (the shell variable) around (and different for each shell instance), which is a convenience for the application. Nevertheless, it makes use of “some” system-provided entropy (arc4random* on some BSDs, ASLR on others) iff it’s cheap enough.
+
+Earlier mksh releases used arc4random() and provided an implementation of it to be used with, for example, GNU/Linux – but this is overkill and slowed things down on platforms such as m68k to a noticeable level. Furthermore, inferiour operating systems with only /dev/urandom but not /dev/arandom can suffer from entropy pool depletion very quickly, which is another reason we were asked to not drain it for things like this.
 

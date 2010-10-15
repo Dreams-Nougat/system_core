@@ -1,0 +1,27 @@
+Revision: 64644f14986f7591a09d44961eb029f0ef94bfb6
+Patch-set: 2
+File: init/parser.c
+
+239
+Fri Oct 15 09:00:02 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA8H///wA=
+Bytes: 322
+You leave the pointer on the \n here, so this still is going to generate two T_NEWLINE tokens (though the line number will be incremented once in your change). It would be better to do something like:
+
+if (*x == '\n') {
+  state->ptr = x+1;
+  state->line++;
+  return T_NEWLINE;
+} else {
+  state->ptrx = x;
+  return T_EOF;
+}
+
+264
+Fri Oct 15 09:00:02 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA8H///v8=
+Bytes: 217
+this is going to skew the line number if there is a parse error in the T_TEXT that is returned by this part of the code. It is better to do the increment in the handling of state->nexttoken above if it is a T_NEWLINE.
+

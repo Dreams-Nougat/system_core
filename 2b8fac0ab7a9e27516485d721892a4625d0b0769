@@ -24,3 +24,27 @@ else
 
 I thought my version to be more clear. I don't have a strong feeling about it though. Do you still prefer the modification?
 
+75
+Tue Oct 19 18:13:25 2010 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA8H///Ss=
+UUID: AAAA8H///Sg=
+Bytes: 804
+In the original unwind-arm.c, rel_pc is initialized to pc and will only be converted to relative address if the mapping is found:
+
+unwind-arm.c:
+
+451     rel_pc = pc;
+
+452     mi = pc_to_mapinfo(map, pc, &rel_pc);
+
+
+Because of that the *rel_pc doesn't need to be initialized again in pc_to_mapinfo.
+
+I see that in the x86 version rel_pc is not initialized to pc prior to calling pc_to_mapinfo, so the explicit initialization to pc is needed in pc_to_mapinfo().
+
+Now that we multiple callsites of pc_to_mapinfo(), I think moving the initialization statement into the callee can get the code cleaner. How about:
+
+1) Move the "*rel_pc = pc" statement out of the while loop and place it at the beginning of pc_to_mapinfo, since we want to set *rel_pc regardless of mi.
+2) Get rid of line 451 in unwind-arm.c.
+

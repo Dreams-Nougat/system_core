@@ -1,0 +1,11 @@
+Revision: 2b8fac0ab7a9e27516485d721892a4625d0b0769
+Patch-set: 1
+File: debuggerd/utility.c
+
+75
+Tue Oct 19 17:42:06 2010 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA8H///TQ=
+Bytes: 167
+I think the original code is more clear - *rel_pc is set to pc before entering this function. If the mapping is found, the offset is changed from absolute to relative.
+

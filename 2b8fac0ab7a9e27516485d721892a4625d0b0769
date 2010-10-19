@@ -48,3 +48,15 @@ Now that we multiple callsites of pc_to_mapinfo(), I think moving the initializa
 1) Move the "*rel_pc = pc" statement out of the while loop and place it at the beginning of pc_to_mapinfo, since we want to set *rel_pc regardless of mi.
 2) Get rid of line 451 in unwind-arm.c.
 
+75
+Tue Oct 19 22:30:30 2010 +0000
+Author: Bruce J Beare <1003360@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA8H///Sg=
+UUID: AAAA8H///NY=
+Bytes: 244
+Ah, that 'splains it. I hadn't seen that in the ARM version. Thank you.
+
+Agreed also that the assignment is invariant. It makes no sense for it to be in the while loop (although the compiler might clean that up).
+
+I'll make the request changes.
+

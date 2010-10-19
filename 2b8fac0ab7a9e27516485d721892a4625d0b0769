@@ -9,3 +9,18 @@ UUID: AAAA8H///TQ=
 Bytes: 167
 I think the original code is more clear - *rel_pc is set to pc before entering this function. If the mapping is found, the offset is changed from absolute to relative.
 
+75
+Tue Oct 19 17:56:52 2010 +0000
+Author: Bruce J Beare <1003360@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA8H///TQ=
+UUID: AAAA8H///Ss=
+Bytes: 319
+The original code didn't handle the case of a NON-relative section (the main program). If we did as you suggest... we would need to
+
+if (strstr())
+  *rel_pc = pc - mi->start
+else
+  *rel_pc = pc;
+
+I thought my version to be more clear. I don't have a strong feeling about it though. Do you still prefer the modification?
+

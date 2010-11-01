@@ -1,0 +1,11 @@
+Revision: 63aeaeb978d509b1e5150f94abcecb9719a703a6
+Patch-set: 1
+File: mkbootimg/mkbootimg.c
+
+4
+Mon Nov 01 21:58:22 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA8H//9qY=
+Bytes: 60
+Our standard practice is to only use an AOSP copyright line.
+

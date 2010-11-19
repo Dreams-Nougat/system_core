@@ -1,0 +1,11 @@
+Revision: ee3a843c7a558bb39e2d63c6ba02e92d3cd8cfa7
+Base-for-patch-set: 2
+File: debuggerd/Android.mk
+
+3
+Fri Nov 19 22:33:09 2010 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA9n///bo=
+Bytes: 86
+Are you sure it works on non-arm and non-x86? Doesn't look like it would build for sh.
+

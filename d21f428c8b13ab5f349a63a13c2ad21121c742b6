@@ -1,0 +1,15 @@
+Revision: d21f428c8b13ab5f349a63a13c2ad21121c742b6
+Patch-set: 2
+File: debuggerd/debuggerd.c
+
+243
+Fri Nov 19 22:33:09 2010 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA9n///b4=
+Bytes: 64
+#elif __x86__
+...
+#else
+#error "Unsupported architecture"
+#endif
+

@@ -1,0 +1,11 @@
+Revision: 38a21bf63b1f06334e2e58161e3e8402c7083fe1
+Patch-set: 1
+File: toolbox/newfs_msdos.c
+
+428
+Tue Nov 23 19:29:20 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA9n///G4=
+Bytes: 22
+did you mean (1<<19) ?
+

@@ -9,3 +9,10 @@ UUID: AAAA9n//+7o=
 Bytes: 132
 Maybe the reviewers could comment about that "unknown reasons" - I think that we'd want to understand what's actually going on here.
 
+902
+Wed Nov 24 17:16:08 2010 +0000
+Author: Martyn Capewell <1002470@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA9n//+7Y=
+Bytes: 63
+It would be clearer if the loop below was inside the if clause.
+

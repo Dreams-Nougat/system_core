@@ -1,0 +1,11 @@
+Revision: 745c7c63cd3899a24f607bd54c210cd3a89729b5
+Patch-set: 1
+File: fastboot/fastboot.c
+
+554
+Tue Nov 30 00:00:30 2010 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA9n//+R0=
+Bytes: 32
+This should probably be UINT_MAX
+

@@ -1,5 +1,23 @@
 Revision: 03fffe553319ace42e04b45962242e9549a7679e
 Patch-set: 1
+File: libcutils/arch-x86/android_memset16.S
+
+2
+Tue Dec 14 18:33:20 2010 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///5g=
+Bytes: 61
+I believe bionic needs to be (C) Android Open Source Project.
+
+File: libcutils/arch-x86/cache_wrapper.S
+
+32
+Tue Dec 14 18:33:20 2010 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///5o=
+Bytes: 195
+Most of Android uses spaces rather than tabs.  If the convention for x86 asm is to use tabs, then that's fine.  In this particular file the columns don't quite line up though (setting tabs to 4).
+
 File: libcutils/memory.c
 
 29
@@ -8,4 +26,11 @@ Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA+n///7M=
 Bytes: 37
 You probably meant HAVE_MEMSET32 here
+
+39
+Tue Dec 14 18:33:20 2010 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///5k=
+Bytes: 195
+We have strlcpy() in bionic.  Can we remove this?  One less copyright in the sources.  (I'm told this is MIT-license and hence easy to deal with, but if we don't need it we should get rid of it.)
 

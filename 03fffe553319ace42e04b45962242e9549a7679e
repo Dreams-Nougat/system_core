@@ -1,0 +1,11 @@
+Revision: 03fffe553319ace42e04b45962242e9549a7679e
+Patch-set: 1
+File: libcutils/memory.c
+
+29
+Tue Dec 14 15:08:27 2010 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///7M=
+Bytes: 37
+You probably meant HAVE_MEMSET32 here
+

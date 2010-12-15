@@ -18,6 +18,14 @@ UUID: AAAA+n///5o=
 Bytes: 195
 Most of Android uses spaces rather than tabs.  If the convention for x86 asm is to use tabs, then that's fine.  In this particular file the columns don't quite line up though (setting tabs to 4).
 
+32
+Wed Dec 15 18:36:46 2010 +0000
+Author: Bruce J Beare <1003360@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA+n///5o=
+UUID: AAAA+n///yY=
+Bytes: 132
+I've changed tabs to spaces on the trivial files... but left the tabs on ssse*.S to keep them easily diff'ed with upstream versions.
+
 File: libcutils/memory.c
 
 29
@@ -33,4 +41,13 @@ Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA+n///5k=
 Bytes: 195
 We have strlcpy() in bionic.  Can we remove this?  One less copyright in the sources.  (I'm told this is MIT-license and hence easy to deal with, but if we don't need it we should get rid of it.)
+
+39
+Wed Dec 15 18:36:46 2010 +0000
+Author: Bruce J Beare <1003360@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA+n///5k=
+UUID: AAAA+n///yQ=
+Bytes: 110
+I'm certainly OK with combining code, etc.
+This commit isn't the right place to drop strlcpy() from this file.
 

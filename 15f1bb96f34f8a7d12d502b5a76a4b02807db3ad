@@ -1,0 +1,20 @@
+Revision: 15f1bb96f34f8a7d12d502b5a76a4b02807db3ad
+Patch-set: 2
+File: libcutils/arch-x86/sse2-memset16-atom.S
+
+2
+Wed Dec 15 19:25:23 2010 +0000
+Author: mark gross <1000888@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///x8=
+Bytes: 14
+is 2008 right?
+
+File: libcutils/arch-x86/sse2-memset32-atom.S
+
+2
+Wed Dec 15 19:25:23 2010 +0000
+Author: mark gross <1000888@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+n///yA=
+Bytes: 25
+should it really be 2008?
+

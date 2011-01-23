@@ -1,0 +1,25 @@
+Revision: 1bdc0d52987ed96e80029c4e7d67ba2d17b3f771
+Patch-set: 1
+File: libcutils/tztime.c
+
+233
+Sun Jan 23 19:20:22 2011 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//7xQ=
+Bytes: 55
+Maybe "/* access to these is guarded by tzload_lock */"
+
+244
+Sun Jan 23 19:20:22 2011 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//7xU=
+Bytes: 42
+Looks like this and lcl_is_set are unused.
+
+1324
+Sun Jan 23 19:20:22 2011 +0000
+Author: Andy McFadden <1000483@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//7xM=
+Bytes: 55
+Data race here?  I'm not sure if/how this code is used.
+

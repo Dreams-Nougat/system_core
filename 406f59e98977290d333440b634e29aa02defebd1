@@ -9,3 +9,10 @@ UUID: AAAA+3//7Sk=
 Bytes: 21
 Why remove the space?
 
+15
+Fri Jan 28 02:17:38 2011 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//7Sg=
+Bytes: 104
+Removed space between $PWD and the $/#, to match ash and other common Linux distributions (Ubuntu bash).
+

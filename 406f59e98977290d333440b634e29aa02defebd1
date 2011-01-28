@@ -2,6 +2,15 @@ Revision: 406f59e98977290d333440b634e29aa02defebd1
 Patch-set: 1
 File: mksh/mkshrc
 
+7
+Fri Jan 28 08:53:23 2011 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//7Q4=
+Bytes: 234
+Please do not, ever, use the U+0060 character (it should not have been noncombining in the first place). Rationale: http://www.cl.cam.ac.uk/~mgk25/ucs/apostrophe.html
+
+${HOSTNAME:=$(getprop ro.product.device)} is fine with me, though.
+
 15
 Fri Jan 28 02:17:01 2011 +0000
 Author: Wink Saville <1001401@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -15,4 +24,14 @@ Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA+3//7Sg=
 Bytes: 104
 Removed space between $PWD and the $/#, to match ash and other common Linux distributions (Ubuntu bash).
+
+15
+Fri Jan 28 08:53:23 2011 +0000
+Author: Thorsten Glaser <1002670@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA+3//7Sg=
+UUID: AAAA+3//7Q8=
+Bytes: 247
+I don’t like this because this is pretty much a very quick indicator that mksh is indeed used (besides, older GNU/Linux distributions used to have the space there).
+
+Also, it was not indicated in the commit message. Please leave the space there.
 

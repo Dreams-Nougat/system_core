@@ -1,0 +1,18 @@
+Revision: d8ab18135d097ccee78fff1d0fa4ac078d4782ee
+Patch-set: 2
+File: libcutils/tztime.c
+
+245
+Mon Jan 31 15:26:58 2011 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//66o=
+Bytes: 66
+The lcl_is_set was/is used in the bionic version. Not needed here.
+
+1324
+Mon Jan 31 15:26:58 2011 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//66k=
+Bytes: 191
+The code seem to be used only if ALL_STATE is set, but it seems not to be. Not sure what to do with this. Looking at the corresponding file libc/tzcode/localtime.c there is quite big overlap.
+

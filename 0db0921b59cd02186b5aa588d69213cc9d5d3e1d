@@ -1,0 +1,12 @@
+Revision: 0db0921b59cd02186b5aa588d69213cc9d5d3e1d
+Patch-set: 1
+File: rootdir/Android.mk
+
+14
+Fri Feb 25 02:09:57 2011 +0000
+Author: Chih-Wei Huang <1003004@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA+3//3es=
+Bytes: 93
+How about merge the two ifeq section? Like
+ifneq ($(filter full full_x86,$(TARGET_PRODUCT)),)
+

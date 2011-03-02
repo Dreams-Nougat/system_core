@@ -10,3 +10,11 @@ Bytes: 93
 How about merge the two ifeq section? Like
 ifneq ($(filter full full_x86,$(TARGET_PRODUCT)),)
 
+14
+Wed Mar 02 12:48:00 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA+3//3es=
+UUID: AAAA/H///pU=
+Bytes: 87
+Personally, I prefer two simple sections, the $(filter ...) stuff is rapidly confusing.
+

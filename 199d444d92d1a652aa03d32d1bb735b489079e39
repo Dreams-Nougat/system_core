@@ -1,0 +1,11 @@
+Revision: 199d444d92d1a652aa03d32d1bb735b489079e39
+Patch-set: 1
+File: rootdir/init.rc
+
+194
+Wed Mar 02 19:48:37 2011 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/H///kQ=
+Bytes: 65
+could you move this down to be near the other network properties?
+

@@ -1,0 +1,12 @@
+Revision: 6c234f901c7b4d19b754eea688e830d6cadd9e9c
+Patch-set: 1
+File: init/ueventd.c
+
+70
+Fri Mar 18 17:37:42 2011 +0000
+Author: Vikram pandita <1001861@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X///bg=
+Bytes: 64
+why not just use: 
+string = strtok(ptr, "androidboot.hardware");
+

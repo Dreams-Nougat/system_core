@@ -18,3 +18,15 @@ UUID: AAAA/X///S0=
 Bytes: 263
 Wouldn't that return the string preceding any one of the delimiter characters a or n or d or...? We want the string following androidboot.hardware= and I do not think that is what you get using strtok. By the way, this is just pruned down code copied from init.c.
 
+70
+Mon Mar 21 06:57:40 2011 +0000
+Author: Vikram pandita <1001861@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/X///S0=
+UUID: AAAA/X///Ss=
+Bytes: 290
+I think strtok() could reduce the search code, since you get a reference to "androidboot.hardware\0". Next some pointer additions can get you contents after "=" and till next "\n or \0".
+
+two strtok's do the same thing getting done in while loops...
+
+Just another way of doing same thing !!
+

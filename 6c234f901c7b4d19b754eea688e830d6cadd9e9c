@@ -10,3 +10,11 @@ Bytes: 64
 why not just use: 
 string = strtok(ptr, "androidboot.hardware");
 
+70
+Mon Mar 21 06:50:43 2011 +0000
+Author: Sean McNeil <1001191@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/X///bg=
+UUID: AAAA/X///S0=
+Bytes: 263
+Wouldn't that return the string preceding any one of the delimiter characters a or n or d or...? We want the string following androidboot.hardware= and I do not think that is what you get using strtok. By the way, this is just pruned down code copied from init.c.
+

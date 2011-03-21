@@ -30,3 +30,14 @@ two strtok's do the same thing getting done in while loops...
 
 Just another way of doing same thing !!
 
+70
+Mon Mar 21 07:12:50 2011 +0000
+Author: Sean McNeil <1001191@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/X///Ss=
+UUID: AAAA/X///Sg=
+Bytes: 230
+strtok() would be less efficient here. It is designed to look for more than one possible delimiter. We could just do something like:
+
+if (strncmp(name, "androidboot.hardware=", 21)
+  strlcpy(hardware, name + 21, sizeof(hardware));
+

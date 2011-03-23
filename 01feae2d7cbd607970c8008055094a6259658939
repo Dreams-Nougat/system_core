@@ -1,0 +1,32 @@
+Revision: 01feae2d7cbd607970c8008055094a6259658939
+Patch-set: 1
+File: libsysutils/src/SocketClient.cpp
+
+38
+Wed Mar 23 16:53:08 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+9Q=
+Bytes: 42
+why are we pretending to be C programmers?
+
+50
+Wed Mar 23 16:53:08 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+9E=
+Bytes: 225
+libcore/include has a LocalArray that lets you specify a reasonable stack allocation, above which it will automatically switch to the heap. (i don't know if you have some way of knowing that strlen(msg) is always reasonable.)
+
+89
+Wed Mar 23 16:53:08 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+9M=
+Bytes: 39
+why not just TEMP_FAILURE_RETRY on L81?
+
+91
+Wed Mar 23 16:53:08 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+9I=
+Bytes: 83
+libcore/include has a ScopedPthreadMutexLock that makes this kind of thing cleaner.
+

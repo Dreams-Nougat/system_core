@@ -1,0 +1,34 @@
+Revision: 100c0e2dab243da3a5351f1acbcdc560af10a405
+Patch-set: 1
+File: libsysutils/src/SocketListener.cpp
+
+57
+Wed Mar 23 16:56:38 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+84=
+Bytes: 123
+do you want the lock here, or do you have some way to guarantee that you don't delete before the listeners are all stopped?
+
+82
+Wed Mar 23 16:56:38 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+80=
+Bytes: 16
+missing locking?
+
+126
+Wed Mar 23 16:56:38 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+88=
+Bytes: 34
+factor this out?
+
+missing locking?
+
+185
+Wed Mar 23 16:56:38 2011 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+9U=
+Bytes: 42
+may as well move the declaration here too.
+

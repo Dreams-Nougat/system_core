@@ -1,0 +1,11 @@
+Revision: 7772bef73f54c3f292624acd22aa7aed295f2c13
+Patch-set: 1
+File: adb/usb_vendors.c
+
+107
+Tue Mar 29 17:17:14 2011 +0000
+Author: Xavier Ducrohet <1001414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/X//+Xc=
+Bytes: 28
+tabs here, should be spaces.
+

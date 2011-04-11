@@ -1,0 +1,11 @@
+Revision: b9b93d2c354cd1a714c459b90890f29dfaf76cb3
+Patch-set: 2
+File: init/builtins.c
+
+176
+Mon Apr 11 14:27:51 2011 +0000
+Author: Jim Huang <1002471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n///C0=
+Bytes: 69
+Is there any alternative method not to hard code LD_LIBRARY_PATH env?
+

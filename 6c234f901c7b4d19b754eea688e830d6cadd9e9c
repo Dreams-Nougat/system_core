@@ -41,3 +41,11 @@ strtok() would be less efficient here. It is designed to look for more than one 
 if (strncmp(name, "androidboot.hardware=", 21)
   strlcpy(hardware, name + 21, sizeof(hardware));
 
+70
+Mon Apr 11 06:40:10 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/X///Sg=
+UUID: AAAA/n///FY=
+Bytes: 152
+This is the same code as in init.c, so I would recommend that you break that out into util.c (make more generic if needed) and call it from both places.
+

@@ -1,0 +1,11 @@
+Revision: 7a81cda3583fa669cf0d95c6a97e2e7bf51186ac
+Patch-set: 5
+File: init/builtins.c
+
+394
+Wed Apr 13 17:32:45 2011 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+mg=
+Bytes: 116
+is this for unicode chars? if so, I don't think this is right. Did you copy this out of an old busybox or something?
+

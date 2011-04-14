@@ -1,0 +1,11 @@
+Revision: 85e278e4c18c65dd86bbea60c15c02f66fa076dd
+Patch-set: 6
+File: rootdir/init.rc
+
+172
+Thu Apr 14 16:25:38 2011 +0000
+Author: Dianne Hackborn <1000559@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+hw=
+Bytes: 57
+Are you making this world-WRITEABLE?  If so, that is bad.
+

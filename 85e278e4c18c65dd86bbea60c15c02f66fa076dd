@@ -9,3 +9,11 @@ UUID: AAAA/n//+hw=
 Bytes: 57
 Are you making this world-WRITEABLE?  If so, that is bad.
 
+172
+Thu Apr 14 16:28:42 2011 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/n//+hw=
+UUID: AAAA/n//+ho=
+Bytes: 109
+w is 2, but does this directory need to be world readable? It seems like execute is enough like dalvik-cache.
+

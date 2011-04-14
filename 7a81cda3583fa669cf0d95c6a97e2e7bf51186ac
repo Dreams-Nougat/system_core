@@ -9,3 +9,17 @@ UUID: AAAA/n//+mg=
 Bytes: 116
 is this for unicode chars? if so, I don't think this is right. Did you copy this out of an old busybox or something?
 
+394
+Thu Apr 14 01:24:15 2011 +0000
+Author: Chih-Wei Huang <1003004@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/n//+mg=
+UUID: AAAA/n//+k0=
+Bytes: 257
+From a setkeycodes porting (single app, not built-in) posted to our forum.
+
+I just checked the latest kbd package (http://ftp.altlinux.org/pub/people/legion/kbd), it said
+
+  if (scancode >= 0xe000) { ...
+
+I'll update accordingly. Thanks for pointing it out.
+

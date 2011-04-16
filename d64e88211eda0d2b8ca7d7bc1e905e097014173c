@@ -1,0 +1,18 @@
+Revision: d64e88211eda0d2b8ca7d7bc1e905e097014173c
+Patch-set: 1
+File: init/init.c
+
+644
+Sat Apr 16 20:24:41 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+TQ=
+Bytes: 22
+please do not use tabs
+
+650
+Sat Apr 16 20:24:41 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+TM=
+Bytes: 31
+and respect original identation
+

@@ -1,0 +1,20 @@
+Revision: a5d5fd96f44b1975328db5959a474da43245cc6b
+Patch-set: 1
+File: libpixelflinger/buffer.cpp
+
+298
+Sat Apr 16 01:27:38 2011 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+WA=
+Bytes: 169
+I am very uncomfortable with this change. it also doesn't match the check-in comment. Can it be moved into another CL with a clear explanation of why the new code works.
+
+File: libpixelflinger/scanline.cpp
+
+188
+Sat Apr 16 01:27:38 2011 +0000
+Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+V8=
+Bytes: 123
+Please remove the "cheat" shortcuts. "dithering" can be disabled in SurfaceFlinger based on the "SLOW_CONFIG" flag instead.
+

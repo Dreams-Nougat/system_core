@@ -9,6 +9,14 @@ UUID: AAAA/n//+WA=
 Bytes: 169
 I am very uncomfortable with this change. it also doesn't match the check-in comment. Can it be moved into another CL with a clear explanation of why the new code works.
 
+298
+Sat Apr 16 10:58:42 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/n//+WA=
+UUID: AAAA/n//+Uk=
+Bytes: 51
+ok, will do (and it's actually not very important).
+
 File: libpixelflinger/scanline.cpp
 
 188
@@ -17,4 +25,12 @@ Author: Mathias Agopian <1001056@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAA/n//+V8=
 Bytes: 123
 Please remove the "cheat" shortcuts. "dithering" can be disabled in SurfaceFlinger based on the "SLOW_CONFIG" flag instead.
+
+188
+Sat Apr 16 10:58:42 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/n//+V8=
+UUID: AAAA/n//+Ug=
+Bytes: 170
+ok. I don't want to disable dithering globally because the difference in rendering quality is noticeable. I'll simply implement the dithering versions of these functions.
 

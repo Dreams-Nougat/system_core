@@ -1,0 +1,100 @@
+Revision: 9b6d5f51f233a737c1d5e5f96c2ec262a3822e59
+Patch-set: 1
+File: init/builtins.c
+
+177
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Qo=
+Bytes: 39
+Put the end brace on a line on its own.
+
+186
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+RI=
+Bytes: 39
+General indentation errors in this file
+
+File: init/init.c
+
+282
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Qk=
+Bytes: 45
+Please make these two lines a } else if (!...
+
+651
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+RE=
+Bytes: 106
+The 'exec_flags' should rather be part of your "multithreading"-commit since it's not related to this one.
+
+718
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+RA=
+Bytes: 51
+Also, this change is related to the previous commit
+
+739
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Q8=
+Bytes: 18
+... as is this one
+
+File: init/init_parser.c
+
+652
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Q4=
+Bytes: 251
+Does the line really do what you believe it does? (xor?)
+
+But it's not easy to read...
+
+I would have done something like:
+ list_type_t* list = (kw == K_onrestart) ? &svc->onrestart.commands : &svc->onlaunch.commands;
+ list_add_tail(list, &cmd->clist);
+
+709
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Q0=
+Bytes: 8
+Why xor?
+
+710
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Qw=
+Bytes: 45
+delay<space><space>option -> remove one space
+
+713
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+Qs=
+Bytes: 43
+Please put the end brace on a separate line
+
+File: init/readme.txt
+
+64
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+RQ=
+Bytes: 131
+A simple workaround, as used by other vendors, is to have a one-shot service that simply execute a shell script with these actions.
+
+116
+Mon Apr 18 13:23:07 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+RM=
+Bytes: 54
+This looks interesting - what is it used for, and why?
+

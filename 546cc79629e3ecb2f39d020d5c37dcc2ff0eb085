@@ -1,0 +1,50 @@
+Revision: 546cc79629e3ecb2f39d020d5c37dcc2ff0eb085
+Patch-set: 1
+File: init/init.c
+
+683
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+QM=
+Bytes: 30
+What does "bar" mean? Barrier?
+
+728
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+QI=
+Bytes: 10
+Debug code
+
+860
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+P8=
+Bytes: 29
+Why have you moved this line?
+
+880
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+P4=
+Bytes: 49
+Should this perhaps be part of a separate commit?
+
+File: init/init.h
+
+121
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+QY=
+Bytes: 52
+Please document these flags. W4A doesn't reveal much
+
+File: init/property_service.c
+
+526
+Mon Apr 18 13:20:48 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/n//+P0=
+Bytes: 18
+Unnecessary change
+

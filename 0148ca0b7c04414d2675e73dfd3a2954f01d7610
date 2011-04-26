@@ -1,0 +1,18 @@
+Revision: 0148ca0b7c04414d2675e73dfd3a2954f01d7610
+Patch-set: 1
+File: libcutils/uevent.c
+
+2
+Tue Apr 26 22:09:53 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///1o=
+Bytes: 18
+fix copyright date
+
+43
+Tue Apr 26 22:09:53 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///1g=
+Bytes: 156
+In the original code, this was written as "snl.nl_groups != 1".  My understanding of nl_groups isn't great.  Could you explain why you changed this to == 0?
+

@@ -1,0 +1,36 @@
+Revision: b285eee7253f2b6b43b1e85a5255f2a073b23737
+Patch-set: 2
+File: libcutils/uevent.c
+
+44
+Wed Apr 27 03:35:08 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///yc=
+Bytes: 393
+maybe I'm just being paranoid, but if any of these error checks fail, the buffer will still be populated with the potentially malicious content (even though the return value will be correct).  Someone who uses this method without checking the return value may find the buffer populated with malicious content.
+
+Perhaps it makes sense to bzero() the buffer if any of these security checks fail?
+
+45
+Wed Apr 27 03:35:08 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///yo=
+Bytes: 457
+The documentation indicates that this method is like recv(), but the return values seem a bit odd to me.  In "man recv", a return value of 0 indicates that the peer performed an orderly shutdown.  Here, were using a return value of 0 to indicate an ignored message.
+
+It would probably be better to return -1 here.  This will make this function more of a drop in replacement for recv().  (there's other parts of Android where this function would be valuable)
+
+51
+Wed Apr 27 03:35:08 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///yk=
+Bytes: 8
+and here
+
+57
+Wed Apr 27 03:35:08 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///yg=
+Bytes: 8
+and here
+

@@ -11,6 +11,14 @@ maybe I'm just being paranoid, but if any of these error checks fail, the buffer
 
 Perhaps it makes sense to bzero() the buffer if any of these security checks fail?
 
+44
+Wed Apr 27 04:00:11 2011 +0000
+Author: Vernon Tang <1006168@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/3///yc=
+UUID: AAAA/3///yU=
+Bytes: 16
+Good idea. Done.
+
 45
 Wed Apr 27 03:35:08 2011 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,6 +27,14 @@ Bytes: 457
 The documentation indicates that this method is like recv(), but the return values seem a bit odd to me.  In "man recv", a return value of 0 indicates that the peer performed an orderly shutdown.  Here, were using a return value of 0 to indicate an ignored message.
 
 It would probably be better to return -1 here.  This will make this function more of a drop in replacement for recv().  (there's other parts of Android where this function would be valuable)
+
+45
+Wed Apr 27 04:00:11 2011 +0000
+Author: Vernon Tang <1006168@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/3///yo=
+UUID: AAAA/3///yQ=
+Bytes: 304
+The reason for returning 0 was so that SocketListener in libsysutils would continue to attempt reading on the socket even after receiving a forged message. After a bit of thinking, the original behaviour where it would close the socket is probably a bug. I'll fix that and change this code to return -1.
 
 51
 Wed Apr 27 03:35:08 2011 +0000

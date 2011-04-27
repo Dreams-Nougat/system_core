@@ -9,3 +9,11 @@ UUID: AAAA/3///0w=
 Bytes: 28
 shouldn't this return false?
 
+46
+Wed Apr 27 02:38:39 2011 +0000
+Author: Vernon Tang <1006168@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/3///0w=
+UUID: AAAA/3///y4=
+Bytes: 130
+No, that would result in it ceasing to listen on the socket (see SocketListener.cpp). I think it's sufficient not to call onEvent.
+

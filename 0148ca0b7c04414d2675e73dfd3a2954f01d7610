@@ -16,3 +16,11 @@ UUID: AAAA/3///1g=
 Bytes: 156
 In the original code, this was written as "snl.nl_groups != 1".  My understanding of nl_groups isn't great.  Could you explain why you changed this to == 0?
 
+43
+Wed Apr 27 02:25:33 2011 +0000
+Author: Vernon Tang <1006168@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/3///1g=
+UUID: AAAA/3///zY=
+Bytes: 224
+(nl_groups != 1) relies on an implementation detail. nl_groups being 0 means that this is a process-to-process unicast message, which anyone can send without privileges and I thought it'd be better to check for that instead.
+

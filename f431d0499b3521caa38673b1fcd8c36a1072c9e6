@@ -9,3 +9,15 @@ UUID: AAAA/3///ok=
 Bytes: 108
 should this really be 0666? you can't get away with 0660 or 0664? do we need world writable? same for below.
 
+1
+Thu Apr 28 07:52:40 2011 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAA/3///ok=
+UUID: AAAA/3///oY=
+Bytes: 488
+Yes, we need this word writable. The device implements a magic i/o page that can be mmap() -ed into a user process, which can the read/write in it to communicate with the emulator,
+
+This is how our C library can send allocation details to the emulator very quickly to implement the -memcheck option. This is also used by the VM tracing code to send quick "method enter/exit" events to the emulator.
+
+Similarly, we need to be able to read()/write() to /dev/qemu_pipe from any user process.
+

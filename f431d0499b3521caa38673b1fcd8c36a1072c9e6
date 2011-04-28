@@ -1,0 +1,11 @@
+Revision: f431d0499b3521caa38673b1fcd8c36a1072c9e6
+Patch-set: 1
+File: rootdir/etc/ueventd.goldfish.rc
+
+1
+Thu Apr 28 06:42:43 2011 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAA/3///ok=
+Bytes: 108
+should this really be 0666? you can't get away with 0660 or 0664? do we need world writable? same for below.
+

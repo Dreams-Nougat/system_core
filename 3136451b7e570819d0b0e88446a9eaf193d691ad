@@ -1,0 +1,12 @@
+Revision: 3136451b7e570819d0b0e88446a9eaf193d691ad
+Patch-set: 1
+File: toolbox/mount.c
+
+65
+Fri May 27 17:55:04 2011 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABBn///a0=
+Bytes: 160
+is it possible extra->str is allocated but contains an empty string?  In that case we don't add the comma.  Should this be
+if (extra->str && extra->used_size) ?
+

@@ -10,3 +10,13 @@ Bytes: 160
 is it possible extra->str is allocated but contains an empty string?  In that case we don't add the comma.  Should this be
 if (extra->str && extra->used_size) ?
 
+65
+Mon May 30 13:56:45 2011 +0000
+Author: Oskar Andero <1006308@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///a0=
+UUID: AAABBn///R8=
+Bytes: 238
+No. extra->str is allocated and populated only in this function and it will never be entered for a string containing only NULL (i.e. s[0] == 0). This is checked before calling it in parse_mount_options(), line 123:
+
+ if (res != 0 && s[0])
+

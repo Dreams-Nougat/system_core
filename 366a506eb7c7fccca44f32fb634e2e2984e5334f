@@ -1,0 +1,40 @@
+Revision: 366a506eb7c7fccca44f32fb634e2e2984e5334f
+Patch-set: 1
+File: init/init.h
+
+95
+Tue May 31 11:19:44 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABBn///Pg=
+Bytes: 52
+Why uint64_t? Capabilities are __u32 in bionic/linux
+
+File: init/util.c
+
+461
+Tue May 31 11:19:44 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABBn///PY=
+Bytes: 11
+(uint32_t?)
+
+495
+Tue May 31 11:19:44 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABBn///Pk=
+Bytes: 285
+A typo in the capability would return 0, which is a valid capability (CAP_CHOWN).
+
+It would be better to return 0xFFFFFFFF instead, perhaps? And then let the caller check this, and print out a warning?
+
+(it would've been great to have the cap_valid macro you can find in the kernel...)
+
+File: init/util.h
+
+41
+Tue May 31 11:19:44 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABBn///Pc=
+Bytes: 11
+(uint32_t?)
+

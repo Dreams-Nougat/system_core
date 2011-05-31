@@ -20,3 +20,11 @@ No. extra->str is allocated and populated only in this function and it will neve
 
  if (res != 0 && s[0])
 
+65
+Tue May 31 19:31:44 2011 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///R8=
+UUID: AAABB3////U=
+Bytes: 192
+would it be wrong to check extra->used_size here to match the check below?  If you are doing these ++ ops for the ',' it seems we should be doing the same check as is done when adding the ','.
+

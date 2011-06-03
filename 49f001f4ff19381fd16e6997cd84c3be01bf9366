@@ -1,0 +1,20 @@
+Revision: 49f001f4ff19381fd16e6997cd84c3be01bf9366
+Patch-set: 1
+File: adb/sockets.c
+
+228
+Fri Jun 03 14:51:01 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABB3///ng=
+Bytes: 54
+else should go on same line as closing brace
+
+} else {
+
+230
+Fri Jun 03 14:51:01 2011 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABB3///nc=
+Bytes: 104
+this line is in both the if and else portion of the conditional.  Move the code outside of the if block.
+

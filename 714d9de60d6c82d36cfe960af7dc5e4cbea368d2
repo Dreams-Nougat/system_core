@@ -9,3 +9,11 @@ UUID: AAABB3///A8=
 Bytes: 45
 It appears there is an extra blank line here?
 
+66
+Tue Jun 07 16:52:15 2011 +0000
+Author: vchtchetkine <1003763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABB3///A8=
+UUID: AAABB3///As=
+Bytes: 109
+It's just how the text is rendered. If you look at the line numbers you will see that there is no blank lines
+

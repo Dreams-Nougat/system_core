@@ -9,6 +9,14 @@ UUID: AAABBn///Pg=
 Bytes: 52
 Why uint64_t? Capabilities are __u32 in bionic/linux
 
+95
+Wed Jun 08 06:26:23 2011 +0000
+Author: Thierry STRUDEL <1003105@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///Pg=
+UUID: AAABCH///7U=
+Bytes: 333
+In did __u32 could be used along with this patch set. As all defined capabilities goes beyond 32 bits the attempt was to be able somewhat to set up to CAP_MAC_OVERRIDE and CAP_MAC_ADMIN but the syscall is using this __u32 bitmask so I'm confused and probably CAP_MAC_OVERRIDE and CAP_MAC_ADMIN are not meant to be set from userland ?
+
 File: init/util.c
 
 461
@@ -17,6 +25,14 @@ Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAABBn///PY=
 Bytes: 11
 (uint32_t?)
+
+461
+Wed Jun 08 06:26:23 2011 +0000
+Author: Thierry STRUDEL <1003105@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///PY=
+UUID: AAABCH///7Q=
+Bytes: 3
+Yes
 
 495
 Tue May 31 11:19:44 2011 +0000
@@ -29,6 +45,14 @@ It would be better to return 0xFFFFFFFF instead, perhaps? And then let the calle
 
 (it would've been great to have the cap_valid macro you can find in the kernel...)
 
+495
+Wed Jun 08 06:26:23 2011 +0000
+Author: Thierry STRUDEL <1003105@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///Pk=
+UUID: AAABCH///7M=
+Bytes: 132
+Well the typo is in fact all over this function as the caller expect a bitmask so all the returned values should be (1 << CAP_name).
+
 File: init/util.h
 
 41
@@ -37,4 +61,12 @@ Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAABBn///Pc=
 Bytes: 11
 (uint32_t?)
+
+41
+Wed Jun 08 06:26:23 2011 +0000
+Author: Thierry STRUDEL <1003105@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABBn///Pc=
+UUID: AAABB3///Z8=
+Bytes: 3
+Yes
 

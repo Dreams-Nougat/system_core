@@ -1,0 +1,38 @@
+Revision: 6d17c88d7914f67770f3f0c1dfbf9fb7ca37c4d0
+Patch-set: 1
+File: debuggerd/x86/crashglue.S
+
+1
+Tue Jun 14 00:00:31 2011 +0000
+Author: Dan Morrill <1000962@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABCH///A0=
+Bytes: 24
+missing copyright header
+
+File: debuggerd/x86/machine.c
+
+3
+Tue Jun 14 00:00:31 2011 +0000
+Author: Dan Morrill <1000962@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABCH///BA=
+Bytes: 42
+copyright year should be 2011 for new file
+
+File: debuggerd/x86/unwind.c
+
+1
+Tue Jun 14 00:00:31 2011 +0000
+Author: Dan Morrill <1000962@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABCH///A8=
+Bytes: 24
+Missing copyright header
+
+File: debuggerd/x86/x86_utility.h
+
+3
+Tue Jun 14 00:00:31 2011 +0000
+Author: Dan Morrill <1000962@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABCH///A4=
+Bytes: 4
+year
+

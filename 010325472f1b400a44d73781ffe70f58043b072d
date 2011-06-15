@@ -1,0 +1,11 @@
+Revision: 010325472f1b400a44d73781ffe70f58043b072d
+Patch-set: 2
+File: init/init_parser.c
+
+483
+Wed Jun 15 16:49:49 2011 +0000
+Author: Victor Boivie <1003152@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAABCX///1o=
+Bytes: 55
+should use the 'capability' variable here from line 479
+

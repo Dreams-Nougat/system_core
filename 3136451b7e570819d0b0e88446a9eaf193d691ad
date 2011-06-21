@@ -28,3 +28,11 @@ UUID: AAABB3////U=
 Bytes: 192
 would it be wrong to check extra->used_size here to match the check below?  If you are doing these ++ ops for the ',' it seems we should be doing the same check as is done when adding the ','.
 
+65
+Tue Jun 21 14:23:04 2011 +0000
+Author: Oskar Andero <1006308@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAABB3////U=
+UUID: AAABDX///aw=
+Bytes: 97
+True! It should be equal and also consistent with row 82. I will upload a new patch-set for that!
+

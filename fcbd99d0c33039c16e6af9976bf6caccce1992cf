@@ -1,0 +1,22 @@
+Revision: fcbd99d0c33039c16e6af9976bf6caccce1992cf
+Patch-set: 1
+File: init/devices.c
+
+858
+Fri Jan 13 19:01:01 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACCX///8s=
+Bytes: 58
+What happens if SELinux is not enabled? Does this explode?
+
+File: init/init.c
+
+753
+Fri Jan 13 19:01:01 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACCX///8o=
+Bytes: 156
+This should probably be moved to a header file somewhere.
+
+There's system/core/include/private/android_filesystem_config.h which holds some stuff like this.
+

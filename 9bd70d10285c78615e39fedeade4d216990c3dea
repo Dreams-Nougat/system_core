@@ -11,6 +11,19 @@ This needs:
 
   LOCAL_C_INCLUDES := external/libselinux/include
 
+File: init/init.c
+
+739
+Fri Jan 20 21:17:42 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACLX///8I=
+Bytes: 202
+Could we put this in /etc/selinux/policy or something? In the policy's Android.mk, you could change it to:
+
+  LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/selinux
+
+Then it would be in /etc/selinux/sepolicy.24
+
 File: init/init.h
 
 98

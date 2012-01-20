@@ -11,3 +11,12 @@ This needs:
 
   LOCAL_C_INCLUDES := external/libselinux/include
 
+File: init/init.h
+
+98
+Fri Jan 20 21:03:35 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACLX///8Q=
+Bytes: 84
+Should this be const? It comes from a non-const and is used in a non-const function.
+

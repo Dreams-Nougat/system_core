@@ -1,0 +1,13 @@
+Revision: 9bd70d10285c78615e39fedeade4d216990c3dea
+Patch-set: 2
+File: init/Android.mk
+
+31
+Fri Jan 20 20:59:41 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACLX///8Y=
+Bytes: 62
+This needs:
+
+  LOCAL_C_INCLUDES := external/libselinux/include
+

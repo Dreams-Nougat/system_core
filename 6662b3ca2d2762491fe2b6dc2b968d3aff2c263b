@@ -1,0 +1,13 @@
+Revision: 6662b3ca2d2762491fe2b6dc2b968d3aff2c263b
+Patch-set: 2
+File: toolbox/Android.mk
+
+77
+Fri Jan 20 20:56:02 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACLX///8k=
+Bytes: 61
+This needs:
+
+ LOCAL_C_INCLUDES := external/libselinux/include
+

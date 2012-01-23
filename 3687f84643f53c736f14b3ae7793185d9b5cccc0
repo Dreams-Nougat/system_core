@@ -1,0 +1,20 @@
+Revision: 3687f84643f53c736f14b3ae7793185d9b5cccc0
+Patch-set: 1
+File: fastboot/usb_linux.c
+
+142
+Mon Jan 23 18:30:34 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACP3///+Y=
+Bytes: 123
+you don't need to describe that ioctl wil fail, take that part out. also please put the comment alone on the previous line.
+
+File: fastboot/usb_osx.c
+
+334
+Mon Jan 23 18:30:34 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACP3///+U=
+Bytes: 9
+samesies.
+

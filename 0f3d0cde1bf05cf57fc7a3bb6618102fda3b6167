@@ -1,0 +1,11 @@
+Revision: 0f3d0cde1bf05cf57fc7a3bb6618102fda3b6167
+Patch-set: 3
+File: toolbox/ls.c
+
+267
+Thu Jan 26 00:50:15 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACXn////k=
+Bytes: 167
+Can we just have this return "unconfined" when HAVE_SELINUX is false? Then we can still support the -Z flag when SELinux is not found, but it will just say unconfined.
+

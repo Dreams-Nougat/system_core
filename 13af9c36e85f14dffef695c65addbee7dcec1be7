@@ -1,0 +1,37 @@
+Revision: 13af9c36e85f14dffef695c65addbee7dcec1be7
+Patch-set: 3
+File: init/Android.mk
+
+34
+Thu Jan 26 23:58:42 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACZX///+4=
+Bytes: 49
+is libselinux large?
+Also, is it Apache licensed?
+
+File: init/builtins.c
+
+721
+Thu Jan 26 23:58:42 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACZX///+0=
+Bytes: 146
+why not just one one of them. let's go with true. We don't really need all the different ways to specify bool. Let's make it simple and consistent
+
+723
+Thu Jan 26 23:58:42 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACZX///+w=
+Bytes: 20
+same, let's do false
+
+File: init/devices.c
+
+200
+Thu Jan 26 23:58:42 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACZX///+s=
+Bytes: 52
+4 char indent, not 2. applies to rest of file(s) too
+

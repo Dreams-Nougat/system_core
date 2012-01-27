@@ -30,6 +30,14 @@ UUID: AAACZX////c=
 Bytes: 21
 sizeof(linkto)-4, etc
 
+282
+Fri Jan 27 14:45:34 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACZX////c=
+UUID: AAACc3////0=
+Bytes: 119
+This code was copied verbatim from listfile_long.  Do you want it fixed in both places or only in the newly added code?
+
 329
 Thu Jan 26 23:48:59 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

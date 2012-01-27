@@ -27,6 +27,14 @@ UUID: AAACc3////s=
 Bytes: 179
 The current code is consistent with existing SELinux setsebool command on Linux distros.  So it is a question of whether we care about being consistent with that interface or not.
 
+721
+Fri Jan 27 18:36:08 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACc3////s=
+UUID: AAACdH////g=
+Bytes: 2
+ok
+
 723
 Thu Jan 26 23:58:42 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

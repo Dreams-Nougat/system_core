@@ -19,6 +19,14 @@ UUID: AAACZX///+0=
 Bytes: 146
 why not just one one of them. let's go with true. We don't really need all the different ways to specify bool. Let's make it simple and consistent
 
+721
+Fri Jan 27 15:00:41 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACZX///+0=
+UUID: AAACc3////s=
+Bytes: 179
+The current code is consistent with existing SELinux setsebool command on Linux distros.  So it is a question of whether we care about being consistent with that interface or not.
+
 723
 Thu Jan 26 23:58:42 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

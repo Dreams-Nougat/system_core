@@ -1,0 +1,26 @@
+Revision: 65026f980a6df01a7d437ce51a47de911820041e
+Patch-set: 1
+File: libpixelflinger/fixed.cpp
+
+65
+Tue Jan 31 22:02:29 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACen////g=
+Bytes: 368
+Why is the shift value negative?
+
+If negative values are not permitted, hunt down the cause and log/fail early.
+
+If negative values are permitted and this code is exploiting an arch specific hack, then compensate for it:
+
+Some people say:
+""" the convention that you should interpret a negative left shift value as a rounded right shift"""
+and ANSI says its undefined.
+
+67
+Tue Jan 31 22:02:29 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACen////k=
+Bytes: 30
+And if shift is negative here?
+

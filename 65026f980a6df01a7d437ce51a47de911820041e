@@ -17,10 +17,28 @@ Some people say:
 """ the convention that you should interpret a negative left shift value as a rounded right shift"""
 and ANSI says its undefined.
 
+65
+Tue Jan 31 22:10:58 2012 +0000
+Author: Bhanu Chetlapalli <1005760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACen////g=
+UUID: AAACeX////4=
+Bytes: 418
+"shift" variable is never negative.. "shift" variable can be zero. But if "shift" is 0, then shift-1 become -ve. -ve left shift of 0x1 results in 0x0 on ARM, but 0x80000000 on MIPS & x86. This causes artifacts during rendering (For example the teapot example in 0xBench mark shows this when used on the MIPS emulator - in some frames only)
+
+The code does assume to rely on the value of left shift of 0x1 returning 0...
+
 67
 Tue Jan 31 22:02:29 2012 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAACen////k=
 Bytes: 30
 And if shift is negative here?
+
+67
+Tue Jan 31 22:10:58 2012 +0000
+Author: Bhanu Chetlapalli <1005760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACen////k=
+UUID: AAACeX////0=
+Bytes: 62
+the "shift" variable can never be 0. so it is not needed here.
 

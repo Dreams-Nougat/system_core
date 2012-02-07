@@ -11,12 +11,35 @@ We can't use g_ffs since it does not support other functions that we need. Addin
 
 Also, we don't usually build kernel modules for Android. We prefer build all the drivers in the kernel.
 
+21
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACdn////o=
+UUID: AAACrn////8=
+Bytes: 286
+I used g_ffs "as is" and it worked, but in order to set the vendor id and device serial number g_ffs uses kernel module parameters, hence they are used here. When compiled-in, the parameters can be passed on kernel command line. As you point out, g_ffs cannot be used in Android anyway.
+
 32
 Tue Feb 07 02:06:04 2012 +0000
 Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAACrX////o=
 Bytes: 45
 What do you mean by "adbd is run standalone"?
+
+32
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACrX////o=
+UUID: AAACrn////4=
+Bytes: 241
+I mean adbd is (statically) compiled and run on a device which has no other Android stuff on it, in particular, no properties database. If there is no properties database, adbd falls back to defaults, which is to change uid,gid to 2000,2000.
+
+35
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACrn////g=
+Bytes: 146
+The implementation as posted here does not handle ep0 events, but I think it would be good to handle them and I intend to do so when time permits.
 
 File: adb/Android.mk
 
@@ -27,6 +50,14 @@ UUID: AAACdX////8=
 Bytes: 114
 We can't enable it by default for now but it can be enabled for devices that supports it, in the device Android.mk
 
+99
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACdX////8=
+UUID: AAACrn////0=
+Bytes: 6
+Right.
+
 File: adb/adb.c
 
 954
@@ -35,6 +66,14 @@ Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAACrX////4=
 Bytes: 67
 To avoid adding a ifndef, maybe define a USB_ADB_PATH for both case
+
+954
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACrX////4=
+UUID: AAACrn////w=
+Bytes: 17
+I like your idea.
 
 File: adb/usb_funcfs_linux_client.c
 
@@ -45,6 +84,14 @@ UUID: AAACdX////4=
 Bytes: 50
 Need a patch for bionic to introduce these headers
 
+32
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACdX////4=
+UUID: AAACrn////s=
+Bytes: 84
+Right. I just copied the relevant file from linux kernel. What do you suggest to do?
+
 39
 Tue Feb 07 02:06:04 2012 +0000
 Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,10 +99,26 @@ UUID: AAACrX////w=
 Bytes: 24
 Already defined in adb.h
 
+39
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACrX////w=
+UUID: AAACrn////o=
+Bytes: 60
+Oh, I found it now. It's just that it is called "ADB_CLASS".
+
 306
 Tue Feb 07 02:06:04 2012 +0000
 Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAACrX////0=
 Bytes: 103
 You should avoid the chdir, it makes 'adb shell' open into the functionfs directory. Use absolute path.
+
+306
+Tue Feb 07 08:09:01 2012 +0000
+Author: Andrzej Pietrasiewicz <1010203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAACrX////0=
+UUID: AAACrn////k=
+Bytes: 337
+I wanted something simple for a start. To use absolute paths for endpoint files some memory needs to be set aside in init_functionfs to store the absolute path. Since the length of the path is the length of a static string USB_ADB_PATH plus 3 (ep0/ep1/ep2), I am wondering if it would be possible to determine the length at compile time?
 

@@ -1,0 +1,61 @@
+Revision: 4b42eb267ffa50fca7a5fba46f388a2f083e8b2d
+Patch-set: 1
+File: /COMMIT_MSG
+
+21
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACdn////o=
+Bytes: 240
+We can't use g_ffs since it does not support other functions that we need. Adding f_fs to the android gadget driver should work though.
+
+Also, we don't usually build kernel modules for Android. We prefer build all the drivers in the kernel.
+
+32
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACrX////o=
+Bytes: 45
+What do you mean by "adbd is run standalone"?
+
+File: adb/Android.mk
+
+99
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACdX////8=
+Bytes: 114
+We can't enable it by default for now but it can be enabled for devices that supports it, in the device Android.mk
+
+File: adb/adb.c
+
+954
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACrX////4=
+Bytes: 67
+To avoid adding a ifndef, maybe define a USB_ADB_PATH for both case
+
+File: adb/usb_funcfs_linux_client.c
+
+32
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACdX////4=
+Bytes: 50
+Need a patch for bionic to introduce these headers
+
+39
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACrX////w=
+Bytes: 24
+Already defined in adb.h
+
+306
+Tue Feb 07 02:06:04 2012 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAACrX////0=
+Bytes: 103
+You should avoid the chdir, it makes 'adb shell' open into the functionfs directory. Use absolute path.
+

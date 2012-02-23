@@ -1,0 +1,20 @@
+Revision: 9c66f02fbf74fe6ec30e1e6296fa44a301baa486
+Patch-set: 1
+File: init/builtins.c
+
+653
+Thu Feb 23 00:42:10 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAADJn////o=
+Bytes: 44
+Move the decode_uid() calls out of the loop.
+
+File: init/readme.txt
+
+154
+Thu Feb 23 00:42:10 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAADJn////k=
+Bytes: 14
+Should be [-R]
+

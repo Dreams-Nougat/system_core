@@ -18,3 +18,11 @@ Bytes: 247
 It seems that the indentation of this comment was also incorrect
 Would you prefer 2 separate patches, one to fix the typo and one to adjust the comment indentation or a change to the commit message to say that it fixes both a typo and indentation?
 
+768
+Thu Mar 01 19:34:09 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAADdX////8=
+UUID: AAADdH////M=
+Bytes: 104
+the comment style of this file seems to use this strange extra indentation, i would just leave it alone.
+

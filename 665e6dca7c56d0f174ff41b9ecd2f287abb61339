@@ -1,0 +1,11 @@
+Revision: 665e6dca7c56d0f174ff41b9ecd2f287abb61339
+Patch-set: 2
+File: include/sync/sync.h
+
+27
+Thu Mar 15 01:59:44 2012 +0000
+Author: Jamie Gennis <1003793@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAD8X///9M=
+Bytes: 93
+A timeout would be nice here.  Barring that a "test" function for polling would work as well.
+

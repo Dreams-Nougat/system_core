@@ -25,3 +25,11 @@ UUID: AAAEWX////0=
 Bytes: 56
 and why doesn't it need to waitpid() in case of failure?
 
+174
+Tue Mar 27 02:54:31 2012 +0000
+Author: Weichuan Yan <1001436@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAEWX////0=
+UUID: AAAETn///+4=
+Bytes: 83
+Do you mean the fork failure? If fork failed, no need to wait for a no-exist child.
+

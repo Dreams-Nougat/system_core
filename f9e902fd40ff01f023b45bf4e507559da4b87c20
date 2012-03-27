@@ -2,6 +2,69 @@ Revision: f9e902fd40ff01f023b45bf4e507559da4b87c20
 Patch-set: 1
 File: adb/framebuffer_service.c
 
+81
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////g=
+Bytes: 22
+Not doing a waitpid()?
+
+82
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////c=
+Bytes: 22
+Not doing a waitpid()?
+
+83
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////Y=
+Bytes: 22
+Not doing a waitpid()?
+
+159
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////U=
+Bytes: 22
+Not doing a waitpid()?
+
+163
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////Q=
+Bytes: 22
+Not doing a waitpid()?
+
+167
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////M=
+Bytes: 22
+Not doing a waitpid()?
+
+168
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////I=
+Bytes: 22
+Not doing a waitpid()?
+
+171
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////E=
+Bytes: 22
+Not doing a waitpid()?
+
+172
+Tue Mar 27 03:35:32 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEWX////A=
+Bytes: 22
+Not doing a waitpid()?
+
 174
 Tue Mar 27 02:40:34 2012 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>

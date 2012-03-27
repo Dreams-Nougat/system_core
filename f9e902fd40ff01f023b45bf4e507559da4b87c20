@@ -17,3 +17,11 @@ UUID: AAAETn////A=
 Bytes: 216
 When do a screen capture by DDMS or screencap command, there will increase a zombie process like "root 1148 179 0 0 c012cfc0 00000000 Z screencap". I think the parent process should wait child exit and do some clean.
 
+174
+Tue Mar 27 02:47:49 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAETn////A=
+UUID: AAAEWX////0=
+Bytes: 56
+and why doesn't it need to waitpid() in case of failure?
+

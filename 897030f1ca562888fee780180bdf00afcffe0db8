@@ -1,0 +1,14 @@
+Revision: 897030f1ca562888fee780180bdf00afcffe0db8
+Patch-set: 2
+File: liblog/logprint.c
+
+778
+Fri Mar 30 06:16:45 2012 +0000
+Author: Hemanth Raj <1011364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEbX////I=
+Bytes: 172
+Minor styling issues and the character limit per line is exceeded.
+It would be nice if the indents are maintained too.
+See:
+http://source.android.com/source/code-style.html
+

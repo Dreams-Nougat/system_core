@@ -1,0 +1,13 @@
+Revision: 839775312b1c6332ee1a9d6c69ba5c9e637dc928
+Patch-set: 7
+File: rootdir/init.rc
+
+211
+Fri Apr 06 21:57:26 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAEjH///1k=
+Bytes: 62
+This should be:
+
+    mkdir /data/tombstones 0700 system system
+

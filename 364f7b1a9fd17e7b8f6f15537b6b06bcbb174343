@@ -9,3 +9,15 @@ UUID: AAAE73///1o=
 Bytes: 61
 Shouldn't this barf if args[1] isn't one of the valid limits?
 
+759
+Tue Apr 24 20:31:54 2012 +0000
+Author: Bjorn Andersson <1011077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAE73///1o=
+UUID: AAAE8n///9I=
+Bytes: 355
+Looking through the implementation this follows the general pattern of not checking return values when parsing parameters. See e.g. decode_uid() or most of the different forms of atoi().
+
+So this follows the general pattern of the "parser" over proper validation.
+
+Please let me know if you prefer a version with this check in place. What about the atois?
+

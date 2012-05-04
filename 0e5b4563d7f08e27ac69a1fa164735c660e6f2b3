@@ -1,0 +1,18 @@
+Revision: 0e5b4563d7f08e27ac69a1fa164735c660e6f2b3
+Patch-set: 2
+File: toolbox/rm.c
+
+47
+Fri May 04 18:13:21 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFQ3///4M=
+Bytes: 159
+Don't rely on errno anywhere except right after the call that set it.  Otherwise, somebody might add a logging call that calls write, possibly resetting errno.
+
+102
+Fri May 04 18:13:21 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFQ3///4I=
+Bytes: 10
+Same here.
+

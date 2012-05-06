@@ -1,0 +1,53 @@
+Revision: 2d1c1fb807af59f40a0474768a0ef954efd65fe9
+Patch-set: 2
+File: adb/usb_funcfs_linux_client.c
+
+2
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///mY=
+Bytes: 44
+It's unlikely that this was written in 2007.
+
+16
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///mc=
+Bytes: 73
+Please remove this. The ownership should be clear from the commit itself.
+
+184
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///mU=
+Bytes: 12
+tab/trailing
+
+312
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFT3///2o=
+Bytes: 3
+tab
+
+313
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFT3///2k=
+Bytes: 3
+tab
+
+334
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUX///4I=
+Bytes: 3
+tab
+
+338
+Sun May 06 15:32:51 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///mQ=
+Bytes: 3
+tab
+

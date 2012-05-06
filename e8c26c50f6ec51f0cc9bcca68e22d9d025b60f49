@@ -1,0 +1,29 @@
+Revision: e8c26c50f6ec51f0cc9bcca68e22d9d025b60f49
+Patch-set: 3
+File: include/sync/sync.h
+
+4
+Sun May 06 19:54:24 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFT3///1k=
+Bytes: 46
+Copyright 2012 The Android Open Source Project
+
+File: libsync/sync.c
+
+4
+Sun May 06 19:54:24 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///lQ=
+Bytes: 46
+Copyright 2012 The Android Open Source Project
+
+File: libsync/sync_test.c
+
+4
+Sun May 06 19:54:24 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFT3///1g=
+Bytes: 46
+Copyright 2012 The Android Open Source Project
+

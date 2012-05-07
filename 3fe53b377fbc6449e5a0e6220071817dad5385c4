@@ -1,0 +1,20 @@
+Revision: 3fe53b377fbc6449e5a0e6220071817dad5385c4
+Patch-set: 1
+File: libsysutils/src/FrameworkListener.cpp
+
+34
+Mon May 07 17:20:32 2012 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///hk=
+Bytes: 23
+make this a named const
+
+51
+Mon May 07 17:20:32 2012 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFUH///hg=
+Bytes: 408
+maybe note that we found a command.  Clear the notice if we have more data after the command and then we can log that we're tossing out data because we didn't find a \0.
+
+We need to log something to let us know if our buffer is still too small.  I don't know how you found this was an issue for you, but I suspect it wasn't as easy as you'd like.  By logging the error we make future problems easier to find.
+

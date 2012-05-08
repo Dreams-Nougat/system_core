@@ -1,0 +1,11 @@
+Revision: 96fce15f2efc585e06ca43c3a433c549c4f7159a
+Patch-set: 1
+File: adb/usb_windows.c
+
+325
+Tue May 08 06:57:58 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFX3///+4=
+Bytes: 110
+this change in the function (outside of setting timeout to 0) seems completely unnecessary. Could you explain?
+

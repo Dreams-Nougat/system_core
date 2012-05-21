@@ -1,0 +1,29 @@
+Revision: 981231e0da5f06ac97358cc1777bc81c8a0c58f3
+Patch-set: 2
+File: init/init_parser.c
+
+770
+Mon May 21 16:16:54 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFi3///+A=
+Bytes: 175
+Can we have any ordering dependence issues here? You add new limits to the front of the list, so you'll effectively apply the limits in reverse from the way they were defined.
+
+File: init/util.c
+
+456
+Mon May 21 16:16:54 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFjH///28=
+Bytes: 143
+call this resource_name_to_id()
+
+and then add resource_id_to_name() which we can use on errors to setrlimit calls to print meaningful messages.
+
+458
+Mon May 21 16:16:54 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFjX///4A=
+Bytes: 59
+I'd prefer separate line for the body of the if statements.
+

@@ -12,3 +12,31 @@ It would be nice if the indents are maintained too.
 See:
 http://source.android.com/source/code-style.html
 
+778
+Wed May 23 21:41:04 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFu3///+4=
+Bytes: 57
+Yup, there's a line-length and an indentation issue here.
+
+856
+Wed May 23 21:41:04 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFu3///+0=
+Bytes: 17
+Indentation issue
+
+857
+Wed May 23 21:41:04 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFu3///+w=
+Bytes: 41
+Very confusing indentation, missing space
+
+858
+Wed May 23 21:41:04 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFu3///+s=
+Bytes: 14
+Missing braces
+

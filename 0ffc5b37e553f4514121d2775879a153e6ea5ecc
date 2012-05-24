@@ -1,0 +1,11 @@
+Revision: 0ffc5b37e553f4514121d2775879a153e6ea5ecc
+Patch-set: 5
+File: toolbox/rm.c
+
+106
+Thu May 24 18:18:13 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFxH///7g=
+Bytes: 32
+shouldn't be checking errno here
+

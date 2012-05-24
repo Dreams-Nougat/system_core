@@ -1,0 +1,11 @@
+Revision: 258c7c547f2a271f350249f32cd85faa13e1b50c
+Patch-set: 3
+File: mkenviroimg/Android.mk
+
+13
+Thu May 24 18:08:27 2012 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFw3///7k=
+Bytes: 33
+I don't think we need this line..
+

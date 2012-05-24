@@ -1,0 +1,11 @@
+Revision: 1000467c61f56cc24e9795d898f1f15a112de90d
+Patch-set: 1
+File: libnl_2/socket.c
+
+113
+Thu May 24 18:01:08 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFxH///8Y=
+Bytes: 47
+Grrr. How does copy-pasting GPL -> Apache work?
+

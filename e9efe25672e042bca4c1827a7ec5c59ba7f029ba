@@ -1,0 +1,11 @@
+Revision: e9efe25672e042bca4c1827a7ec5c59ba7f029ba
+Patch-set: 4
+File: include/arch/linux-mips/AndroidConfig.h
+
+114
+Thu May 24 21:46:33 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAFzX///9k=
+Bytes: 45
+4.6 strace now requires this explicit 1 value
+

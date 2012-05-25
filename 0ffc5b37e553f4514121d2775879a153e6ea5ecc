@@ -9,3 +9,14 @@ UUID: AAAFxH///7g=
 Bytes: 32
 shouldn't be checking errno here
 
+106
+Fri May 25 00:49:49 2012 +0000
+Author: Tanguy Pruvot <1006481@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAFxH///7g=
+UUID: AAAF0H////0=
+Bytes: 295
+Colin Cross		4. May 20:13
+"Don't rely on errno anywhere except right after the call that set it. Otherwise, somebody might add a logging call that calls write, possibly resetting errno."
+
+It's what i do... unlink() for simple rm -f <file> should have the same behavior as recursive one... rm -rf
+

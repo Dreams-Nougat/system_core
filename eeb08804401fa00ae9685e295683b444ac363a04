@@ -1,0 +1,13 @@
+Revision: eeb08804401fa00ae9685e295683b444ac363a04
+Patch-set: 3
+File: rootdir/init.rc
+
+257
+Fri May 25 18:34:27 2012 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF1X///8c=
+Bytes: 189
+Is this intended to be the native, system wide cache, the VM caches, both?  Is this for default networks, non-default or both?  Perhaps more docs.
+
+Is there another change where it is used?
+

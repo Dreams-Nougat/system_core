@@ -47,3 +47,17 @@ UUID: AAAF53///sc=
 Bytes: 223
 _memset16 and _memset32 are entry points in bionic/libc/arch-mips/string/memset.S .  That module is present in the Froyo..ICS versions of Mips Android on our mipsia repo, but is apparently missing from our aosp submissions.
 
+32
+Tue May 29 22:23:28 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAF53///sc=
+UUID: AAAF+X////M=
+Bytes: 219
+bionic/libc/arch-mips/string/memset.S has been submitted in patch 
+
+https://android-review.googlesource.com/#/c/36511/
+
+which is under review but not yet in aosp.
+
+So this system/core patch depends on that bionic patch.
+

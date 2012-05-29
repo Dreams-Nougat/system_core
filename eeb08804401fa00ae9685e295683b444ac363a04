@@ -11,3 +11,12 @@ Is this intended to be the native, system wide cache, the VM caches, both?  Is t
 
 Is there another change where it is used?
 
+257
+Tue May 29 12:06:50 2012 +0000
+Author: Mattias Falk <1004783@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAF1X///8c=
+UUID: AAAF7H///9w=
+Bytes: 151
+Yes it's intended for the system wide native cache. It's is for any type of network. 
+Yes it's used by commit: 3a4910c6161d57e40ba01cc9693f1a4514892b03
+

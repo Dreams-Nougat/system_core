@@ -9,6 +9,14 @@ UUID: AAAF53///uk=
 Bytes: 62
 date should be 2012 or whenever this file was actually created
 
+2
+Tue May 29 22:20:46 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAF53///uk=
+UUID: AAAF53///sg=
+Bytes: 86
+This should be 2010, the date this module was first created for Mips version of Froyo.
+
 24
 Tue May 29 19:09:20 2012 +0000
 Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: AAAF53///uc=
 Bytes: 46
 Surely this could be replaced by a C function.
 
+24
+Tue May 29 22:20:46 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAF53///uc=
+UUID: AAAF+X////c=
+Bytes: 46
+The mips-tuned version has higher performance.
+
 32
 Tue May 29 19:09:20 2012 +0000
 Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAF53///ug=
 Bytes: 27
 where is _memset16 defined?
+
+32
+Tue May 29 22:20:46 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAF53///ug=
+UUID: AAAF53///sc=
+Bytes: 223
+_memset16 and _memset32 are entry points in bionic/libc/arch-mips/string/memset.S .  That module is present in the Froyo..ICS versions of Mips Android on our mipsia repo, but is apparently missing from our aosp submissions.
 

@@ -1,0 +1,20 @@
+Revision: eeb6a5a67aacacd268fbc22730484f66fd99f9d6
+Patch-set: 1
+File: include/arch/linux-mips/AndroidConfig.h
+
+2
+Tue May 29 19:06:42 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF53///uw=
+Bytes: 62
+date should be 2012 or whenever this file was actually created
+
+File: include/cutils/atomic-mips.h
+
+2
+Tue May 29 19:06:42 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF53///us=
+Bytes: 62
+date should be 2012 or whenever this file was actually created
+

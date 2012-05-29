@@ -1,0 +1,25 @@
+Revision: dd3026a892cea87703a1235a73adad2f7662a498
+Patch-set: 1
+File: libcutils/arch-mips/memset32.S
+
+2
+Tue May 29 19:09:20 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF53///uk=
+Bytes: 62
+date should be 2012 or whenever this file was actually created
+
+24
+Tue May 29 19:09:20 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF53///uc=
+Bytes: 46
+Surely this could be replaced by a C function.
+
+32
+Tue May 29 19:09:20 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAF53///ug=
+Bytes: 27
+where is _memset16 defined?
+

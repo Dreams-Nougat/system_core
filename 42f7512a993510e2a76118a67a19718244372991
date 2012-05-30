@@ -1,0 +1,11 @@
+Revision: 42f7512a993510e2a76118a67a19718244372991
+Patch-set: 2
+File: include/private/android_filesystem_config.h
+
+64
+Wed May 30 23:37:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGEn///5s=
+Bytes: 230
+I'm a little hesitent in claiming this for CLATD, as clatd is a specific  implementation. I'd be more comfortable with AID_NAT or something like that. I would still like to figure out how to integrate this functionality into netd.
+

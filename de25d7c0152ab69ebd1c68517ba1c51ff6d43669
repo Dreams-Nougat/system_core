@@ -1,0 +1,19 @@
+Revision: de25d7c0152ab69ebd1c68517ba1c51ff6d43669
+Patch-set: 2
+File: libcutils/arch-mips/memset32.S
+
+24
+Mon Jun 04 18:59:31 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGPn///2E=
+Bytes: 464
+What I'm getting at here is that all this code is doing is invoking _memset16.  There's no interesting work happening in this module.  We could write the following and it would be all the same.
+
+void android_memset16(uint16_t* dst, uint16_t value, size_t size) {
+    _memset16(dst, value, size);
+}
+
+It's kind of unfortunate to have this delegating function at all.  We could just as well do something like this in a header file:
+
+#define android_memset16 _memset16
+

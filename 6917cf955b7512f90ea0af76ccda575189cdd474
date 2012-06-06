@@ -1,0 +1,11 @@
+Revision: 6917cf955b7512f90ea0af76ccda575189cdd474
+Patch-set: 1
+File: toolbox/restorecon.c
+
+102
+Wed Jun 06 18:16:15 2012 +0000
+Author: Matthew Finifter <1013034@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGT3///rs=
+Bytes: 230
+This error message lists only the last path from which the file contexts couldn't be loaded, but in reality, we hit this condition when it couldn't be loaded from *any* of the paths.  The error message should reflect this reality.
+

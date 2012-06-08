@@ -1,0 +1,59 @@
+Revision: 4d43747ad22508d0ffa6c2c996e318e3bb5f26ac
+Patch-set: 3
+File: init/devices.c
+
+877
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbH///5o=
+Bytes: 39
+Can we move this out to a static const?
+
+883
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbX///50=
+Bytes: 139
+Is there any reason why the second argument to this doesn't take a const struct selinux_opt? Do selabel backends sometimes change the opts?
+
+File: init/init.c
+
+764
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbX///58=
+Bytes: 50
+move out of function to "static const char *const"
+
+769
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbX///54=
+Bytes: 104
+I'd like this to be shared between this and the other file so you only need to update this in one place.
+
+831
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbn///5s=
+Bytes: 59
+Looks like we leak the map and fd in the error cases above.
+
+File: init/property_service.c
+
+88
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbn///58=
+Bytes: 52
+It's okay to have this not protected by HAVE_SELINUX
+
+File: rootdir/init.rc
+
+350
+Fri Jun 08 19:18:33 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbH///5s=
+Bytes: 83
+Hmm, this might be problematic. I don't think we ever expect these to be restarted.
+

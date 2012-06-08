@@ -1,0 +1,11 @@
+Revision: f60e28891866f9ea761919b2e76a50718a8ee0af
+Patch-set: 2
+File: include/diskconfig/diskconfig.h
+
+42
+Fri Jun 08 17:38:28 2012 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGbX///70=
+Bytes: 79
+wikipedia calls this FAT16, not 12: http://en.wikipedia.org/wiki/Partition_type
+

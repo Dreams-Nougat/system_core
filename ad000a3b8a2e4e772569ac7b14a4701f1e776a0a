@@ -1,0 +1,11 @@
+Revision: ad000a3b8a2e4e772569ac7b14a4701f1e776a0a
+Patch-set: 1
+File: libdiskconfig/config_mbr.c
+
+228
+Fri Jun 08 23:07:50 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGfX///+0=
+Bytes: 82
+This fails to compile in Google's internal tree, where this got replaced by ALOGE.
+

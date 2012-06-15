@@ -1,0 +1,13 @@
+Revision: f639f20fa378f18bb70536a59495eb7d169779d7
+Patch-set: 1
+File: adb/file_sync_client.c
+
+902
+Fri Jun 15 02:48:38 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAGlX///1M=
+Bytes: 100
+Look at line 701, see if you can make a single function.
+
+Check that it builds on Windows/Mac/Linux.
+

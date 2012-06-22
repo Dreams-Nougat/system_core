@@ -9,3 +9,11 @@ UUID: AAAG3n///9M=
 Bytes: 36
 do you also need to change this one?
 
+298
+Fri Jun 22 13:31:03 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAG3n///9M=
+UUID: AAAG3X///9g=
+Bytes: 226
+Only seems to be used presently when creating device links, and we don't need to label those directories differently.  We could change it for completeness sake if you think this might get used for other purposes in the future.
+

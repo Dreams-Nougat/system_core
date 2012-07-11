@@ -9,3 +9,12 @@ UUID: AAAGEn///5s=
 Bytes: 230
 I'm a little hesitent in claiming this for CLATD, as clatd is a specific  implementation. I'd be more comfortable with AID_NAT or something like that. I would still like to figure out how to integrate this functionality into netd.
 
+64
+Wed Jul 11 08:58:46 2012 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAGEn///5s=
+UUID: AAAHNH///+s=
+Bytes: 27
+AID_IPV4COMPAT?
+AID_4OVER6?
+

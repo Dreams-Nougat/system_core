@@ -19,3 +19,15 @@ Sorry, misread 751.  It's not writable to the "logs" group.
 
 Still, the system server creates /data/anr, and we shouldn't be recreating it here (with different permissions).  And I believe the system server also creates /data/tombstones.
 
+203
+Wed Jul 11 11:47:42 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHJ3///sI=
+UUID: AAAHMH///4E=
+Bytes: 787
+The ownerships and modes were based on system/extras/tests/fstest/perm_checker.conf.
+
+The reason for pre-creating the directories in init.rc was to allow us to label them with the correct security context (originally with an explicit restorecon, superseded by the other change to automatically set the context on all directories created by init.rc) without needing to modify both debuggerd and system_server and anything else that might create the directories.  It also seemed consistent with the general pattern of pre-creating directories with specific ownerships/modes in init.rc.
+
+However, I will drop these two mkdir statements unless I hear otherwise from you and look into modifying debuggerd and system_server to set the security context instead when they create the directories.
+

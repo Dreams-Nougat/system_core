@@ -18,3 +18,13 @@ Bytes: 27
 AID_IPV4COMPAT?
 AID_4OVER6?
 
+64
+Fri Jul 13 03:01:12 2012 +0000
+Author: Dan Drown <1010482@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAGEn///5s=
+UUID: AAAGw3///oE=
+Bytes: 134
+I uploaded my changesets today that launch clatd via netd.
+
+The UID could be shared, my goal was mainly to make clatd not run as root.
+

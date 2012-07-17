@@ -1,0 +1,25 @@
+Revision: ae6d815f725668eae30490b89981791dd345a9a6
+Patch-set: 1
+File: adb/framebuffer_service.c
+
+176
+Tue Jul 17 20:30:02 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHZH///+4=
+Bytes: 180
+We don't care about the exit code, so pass NULL for the status argument.  Also, waitpid can return -1 with errno == EINTR if interrupted by a signal, this needs to check and retry.
+
+178
+Tue Jul 17 20:30:02 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHZX////g=
+Bytes: 46
+if you want a message here, use the D() macro.
+
+186
+Tue Jul 17 20:30:02 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHZH////E=
+Bytes: 37
+avoid unnecessary whitespace changes.
+

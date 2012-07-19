@@ -1,0 +1,13 @@
+Revision: 8c7fa44f38ad2e1894feea36822f0a8645eea5ee
+Patch-set: 2
+File: adb/framebuffer_service.c
+
+175
+Thu Jul 19 20:57:57 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHqX////8=
+Bytes: 120
+I just learned about TEMP_FAILURE_RETRY, which would make this much simpler:
+
+TEMP_FAILURE_RETRY(waitpid(pid, NULL, 0));
+

@@ -11,3 +11,24 @@ I just learned about TEMP_FAILURE_RETRY, which would make this much simpler:
 
 TEMP_FAILURE_RETRY(waitpid(pid, NULL, 0));
 
+175
+Fri Jul 20 14:02:45 2012 +0000
+Author: Yuriy Zabroda <1011143@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHqX////8=
+UUID: AAAHtn////A=
+Bytes: 719
+Thank you for the suggestion, Colin.
+
+However I'm slightly confused by comment from "dalvik/libnativehelper/include/nativehelper/JNIHelp.h":
+
+"TEMP_FAILURE_RETRY is defined by some, but not all, versions of <unistd.h>. (Alas, it is not as standard as we'd hoped!)".
+
+As we can see there, they explicitly define the macro if it is not yet defined.
+
+In our case, the TEMP_FAILURE_RETRY macro is not defined inside "system/core" subproject, therefore we shoud either:
+   * [re-]define it in some header inside "system/core" (like done in "dalvik/libnativehelper/include/nativehelper/JNIHelp.h")
+or
+   * avoid using it and stay within the solution from "Patch Set 2" (my personal preference).
+
+Looking forward your opinion.
+

@@ -32,3 +32,11 @@ or
 
 Looking forward your opinion.
 
+175
+Fri Jul 20 18:19:23 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHtn////A=
+UUID: AAAHs3///mo=
+Bytes: 84
+This only has to link against bionic, which provides TEMP_FAILURE_RETRY in unistd.h.
+

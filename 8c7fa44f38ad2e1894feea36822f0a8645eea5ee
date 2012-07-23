@@ -40,3 +40,13 @@ UUID: AAAHs3///mo=
 Bytes: 84
 This only has to link against bionic, which provides TEMP_FAILURE_RETRY in unistd.h.
 
+175
+Mon Jul 23 10:07:13 2012 +0000
+Author: Yuriy Zabroda <1011143@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHs3///mo=
+UUID: AAAHtn///2k=
+Bytes: 155
+I assume that there is a low risk that the TEMP_FAILURE_RETRY macro will be absent in future versions of unistd.h.
+
+I will update it in the next patch set.
+

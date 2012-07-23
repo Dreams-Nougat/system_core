@@ -1,0 +1,20 @@
+Revision: 1ed1e382843afbef11598739f2d1649c1bfeae21
+Patch-set: 11
+File: rootdir/etc/init.goldfish.rc
+
+8
+Mon Jul 23 21:10:22 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHs3//+4U=
+Bytes: 55
+maybe this should be called in_emulator instead of qemu
+
+File: rootdir/init.rc
+
+115
+Mon Jul 23 21:10:22 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHtH//+mE=
+Bytes: 337
+why are somethings doing a restorecon and some aren't? Maybe we should be doing a context restore on all the things we chown? Can chown be modified to do a context restore or would that be odd? I'm just trying to minimize the errors when others change their rc files and arbitrarily sprinkle the files with restorecons until things work.
+

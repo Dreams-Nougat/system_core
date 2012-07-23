@@ -18,3 +18,13 @@ UUID: AAAHtH//+mE=
 Bytes: 337
 why are somethings doing a restorecon and some aren't? Maybe we should be doing a context restore on all the things we chown? Can chown be modified to do a context restore or would that be odd? I'm just trying to minimize the errors when others change their rc files and arbitrarily sprinkle the files with restorecons until things work.
 
+115
+Mon Jul 23 21:32:08 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHtH//+mE=
+UUID: AAAHtH//+kk=
+Bytes: 242
+scratch that, making chown do it would be sucky and ugly.
+
+Is there a way we can just do a "restorecon_all" at the end of the init process (before remounting root ro, and then after setting up /data) to just restore the context of everything?
+

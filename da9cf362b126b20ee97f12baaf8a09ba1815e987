@@ -1,0 +1,14 @@
+Revision: da9cf362b126b20ee97f12baaf8a09ba1815e987
+Patch-set: 1
+File: fastboot/usb_linux.c
+
+163
+Mon Jul 23 23:39:29 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHtH//+c0=
+Bytes: 172
+Too many assumptions. (usb_*_descriptor has the length as 1st member, the bLength is a u8, and ptr is a u8*).
+Maybe
+
+  len -= ((struct usb_descriptor_header*)ptr)->bLength;
+

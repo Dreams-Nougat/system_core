@@ -1,0 +1,11 @@
+Revision: b302961f84da1432afcbc90c68e2e2b8f5a1fbf2
+Patch-set: 1
+File: init/readme.txt
+
+210
+Mon Jul 23 23:42:38 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHtH//+bo=
+Bytes: 39
+No '*' as the argument is not repeated.
+

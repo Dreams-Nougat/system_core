@@ -44,3 +44,11 @@ UUID: AAAHsH///00=
 Bytes: 891
 Most of the directories are created with the right context during build (the already merged mkyaffs2image and make_ext4fs changes) or by init when it creates the directory (pending change If6af6c4887).  So we only need restorecon calls now for a few cases.  /dev and /dev/socket are created by init before policy is first loaded, so we have to restorecon them afterward.  /cache needs to be initially labeled after filesystem creation there, so we do it here much the same way as chown/chmod is applied.  /data generally shouldn't be required as the initially flashed image will be labeled already but is done here just in case it was reset, again similar to the chown/chmod situation.  Not sure what a restorecon_all would do or where it would obtain its list of directories to apply; we don't really need or want to restorecon the entire directory tree on each boot and that would be slow.
 
+115
+Tue Jul 24 12:10:36 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHsH///00=
+UUID: AAAHsH///0s=
+Bytes: 331
+One other observation: the restorecon calls need to happen as early as possible so that any files subsequently created in those directories will be labeled correctly.  So the restorecon /dev /dev/socket has to happen before ueventd starts, and the restorecon /cache and /data should occur before anything else gets created in them.
+

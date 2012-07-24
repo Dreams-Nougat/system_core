@@ -17,6 +17,14 @@ UUID: AAAHsH///04=
 Bytes: 129
 We could do that, but it would require making the same change over in external/sepolicy where the boolean is defined.  Up to you.
 
+8
+Tue Jul 24 20:13:43 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHsH///04=
+UUID: AAAHtH//+B4=
+Bytes: 120
+Are there places in the framework that reference this boolean? Or is it only ever referenced in goldfish specific stuff?
+
 File: rootdir/init.rc
 
 115
@@ -51,4 +59,16 @@ Parent: AAAHsH///00=
 UUID: AAAHsH///0s=
 Bytes: 331
 One other observation: the restorecon calls need to happen as early as possible so that any files subsequently created in those directories will be labeled correctly.  So the restorecon /dev /dev/socket has to happen before ueventd starts, and the restorecon /cache and /data should occur before anything else gets created in them.
+
+115
+Tue Jul 24 20:13:43 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHsH///0s=
+UUID: AAAHtH//+Bk=
+Bytes: 810
+i see, ok.
+
+My questions come out of the concern that it is not exactly clear while looking through these files when a restorecon is appropriate and when it isn't. I'm worried, as mentioned previously, that people will not understand when and where to use it so they will either use it everywhere, nowhere, or randomly. I'm trying to figure out how to make it be pretty fool-proof. Perhaps a block comment at the top of the file? Maybe something at the end of boot can walk /, /dev/, etc to make sure  things are sane and print errors if not (one-time service?) Shrug. 
+
+Note that I was only referring to the ramdisk files (though elsewhere, Matt F tells me that it is done through genfscon?). I expect the emmc/disk based filesystems to already have the correct labels (outside the /data stuff you mentioned).
 

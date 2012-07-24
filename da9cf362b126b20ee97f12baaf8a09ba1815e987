@@ -12,3 +12,11 @@ Maybe
 
   len -= ((struct usb_descriptor_header*)ptr)->bLength;
 
+165
+Tue Jul 24 00:25:57 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAHtH//+aI=
+Bytes: 91
+Once it starts failing if tails forever?
+Is that why some other patch says "hangs forever"?
+

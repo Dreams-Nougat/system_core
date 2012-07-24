@@ -9,6 +9,14 @@ UUID: AAAHs3//+4U=
 Bytes: 55
 maybe this should be called in_emulator instead of qemu
 
+8
+Tue Jul 24 11:31:20 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHs3//+4U=
+UUID: AAAHsH///04=
+Bytes: 129
+We could do that, but it would require making the same change over in external/sepolicy where the boolean is defined.  Up to you.
+
 File: rootdir/init.rc
 
 115
@@ -27,4 +35,12 @@ Bytes: 242
 scratch that, making chown do it would be sucky and ugly.
 
 Is there a way we can just do a "restorecon_all" at the end of the init process (before remounting root ro, and then after setting up /data) to just restore the context of everything?
+
+115
+Tue Jul 24 11:31:20 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHtH//+kk=
+UUID: AAAHsH///00=
+Bytes: 891
+Most of the directories are created with the right context during build (the already merged mkyaffs2image and make_ext4fs changes) or by init when it creates the directory (pending change If6af6c4887).  So we only need restorecon calls now for a few cases.  /dev and /dev/socket are created by init before policy is first loaded, so we have to restorecon them afterward.  /cache needs to be initially labeled after filesystem creation there, so we do it here much the same way as chown/chmod is applied.  /data generally shouldn't be required as the initially flashed image will be labeled already but is done here just in case it was reset, again similar to the chown/chmod situation.  Not sure what a restorecon_all would do or where it would obtain its list of directories to apply; we don't really need or want to restorecon the entire directory tree on each boot and that would be slow.
 

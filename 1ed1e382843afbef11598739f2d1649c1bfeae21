@@ -25,6 +25,14 @@ UUID: AAAHtH//+B4=
 Bytes: 120
 Are there places in the framework that reference this boolean? Or is it only ever referenced in goldfish specific stuff?
 
+8
+Wed Jul 25 12:10:25 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHtH//+B4=
+UUID: AAAHyX///+g=
+Bytes: 288
+It is only explicitly referenced in this file and in external/sepolicy, not in the frameworks. The SELinux java interfaces allow system apps to get the full list of booleans, which is used by the SEAndroidManager app, but it doesn't make any hardcoded references to any specific booleans.
+
 File: rootdir/init.rc
 
 115
@@ -71,4 +79,18 @@ i see, ok.
 My questions come out of the concern that it is not exactly clear while looking through these files when a restorecon is appropriate and when it isn't. I'm worried, as mentioned previously, that people will not understand when and where to use it so they will either use it everywhere, nowhere, or randomly. I'm trying to figure out how to make it be pretty fool-proof. Perhaps a block comment at the top of the file? Maybe something at the end of boot can walk /, /dev/, etc to make sure  things are sane and print errors if not (one-time service?) Shrug. 
 
 Note that I was only referring to the ramdisk files (though elsewhere, Matt F tells me that it is done through genfscon?). I expect the emmc/disk based filesystems to already have the correct labels (outside the /data stuff you mentioned).
+
+115
+Wed Jul 25 12:10:25 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHtH//+Bk=
+UUID: AAAHyX///+c=
+Bytes: 1149
+The restorecon /dev and restorecon /dev/socket could be taken to init code (to the tail of selinux_load_policy) if that is preferred, maybe rolled up into the other change for labeling directories.  Has to be done after policy load and before /dev nodes start to get created by ueventd.
+
+The restorecon of /cache, /cache/recovery, and /data closely follows the existing model for fixing up ownerships and permissions for those directories in case they were reset or (in the /cache/recovery case) created with odd permissions by the recovery system.  So I think those restorecon calls are reasonable to retain here and shouldn't confuse people.  And that's all that would be left - three restorecon calls, each closely associated with an existing chown/chmod sequence, and only for resettable partitions.
+
+rootfs doesn't get per-file labels anyway as they aren't stored in the initrd, so restorecon doesn't make much sense there.
+
+Then in the board-specific init.rc files, restorecon gets used for the factory partition as it is typically not labeled, at least presently, although that will hopefully change when devices ship with SE Android enabled.
 

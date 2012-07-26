@@ -94,3 +94,15 @@ rootfs doesn't get per-file labels anyway as they aren't stored in the initrd, s
 
 Then in the board-specific init.rc files, restorecon gets used for the factory partition as it is typically not labeled, at least presently, although that will hopefully change when devices ship with SE Android enabled.
 
+115
+Thu Jul 26 04:38:49 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAHyX///+c=
+UUID: AAAH3n///yk=
+Bytes: 1220
+Yeah, I thnk it makes sense to do the restorecon on /dev and /dev/socket inside init right where you load the policy. I think it will be a lot clearer as doing it init.rc looks out of place for those two.
+
+Regarding the other restorecons, I think we are talking past each other a little bit. I'm not questioning that the restorecons need to be done, nor am I suggesting that init.rc isn't the right place for them per-say. All of that looks good to me. My *only* concern is that as one skims through init.rc, it is not clear which mkdir/chown/chmod require a restorecon and which don't. My fear (based on experience) is that OEMs and silicon vendors are going to be confused and not do the right thing no matter how clear it seems to you (after all, you have looked at this for a long time). To be fair, I don't know what the answer is. I was trying to pick your brain to help think of a way to mitigate this issue. I guess a nice comment to say when to add things.
+
+Perhaps, separately, we should write a little tool that will run through the system and flag things that don't look like they are labeled correctly (or at all). We can then educate the users about running it to verify things are at least sane. Thoughts?
+

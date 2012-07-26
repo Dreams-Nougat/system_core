@@ -18,6 +18,14 @@ UUID: AAAH3n///x0=
 Bytes: 205
 I think this should be init.selinux.reload_policy. Also, the value shouldn't matter since the mere action of setting this property means we should reload the policy. Does anyone ever look to see if it's 0?
 
+339
+Thu Jul 26 06:28:22 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH3n///x0=
+UUID: AAAH3n///xQ=
+Bytes: 172
+hmm, on second thought, I don't know if we need init. prefix in init.selinux.reload_policy. I thought that other stuff had init. prefix. Let's go with selinux.reload_policy
+
 342
 Thu Jul 26 06:17:22 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

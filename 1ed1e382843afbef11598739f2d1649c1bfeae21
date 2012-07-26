@@ -106,3 +106,11 @@ Regarding the other restorecons, I think we are talking past each other a little
 
 Perhaps, separately, we should write a little tool that will run through the system and flag things that don't look like they are labeled correctly (or at all). We can then educate the users about running it to verify things are at least sane. Thoughts?
 
+115
+Thu Jul 26 12:00:14 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH3n///yk=
+UUID: AAAH43////A=
+Bytes: 275
+Ok, I'll make those changes.  toolbox/restorecon is that tool; unlike the simpler init built-in, it supports the -R (recurse), -n (don't make any changes), and -v (verbosely report what is or would be relabeled), so restorecon -Rnv should effectively be the command you want.
+

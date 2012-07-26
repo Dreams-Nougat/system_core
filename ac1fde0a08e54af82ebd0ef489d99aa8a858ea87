@@ -1,0 +1,11 @@
+Revision: ac1fde0a08e54af82ebd0ef489d99aa8a858ea87
+Patch-set: 5
+File: init/devices.c
+
+896
+Thu Jul 26 04:54:48 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///yU=
+Bytes: 180
+This stuff should go into libselinux, together the your while loop that you've repeated all over the place. You should then expose a single function that all the clients will call.
+

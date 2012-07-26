@@ -1,0 +1,11 @@
+Revision: e096e36e50b4b66638ebc4d3c09c2ee35f538dfa
+Patch-set: 3
+File: init/init.c
+
+884
+Thu Jul 26 19:04:11 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///lA=
+Bytes: 146
+do we need to restore the context on this too? it's only around until we remove it further down in the init process (at check_startup_action time)
+

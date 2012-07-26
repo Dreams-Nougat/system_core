@@ -1,0 +1,11 @@
+Revision: 8da96b07105fa4e9e8bc0e5b358a0f874b0e401e
+Patch-set: 12
+File: rootdir/init.rc
+
+7
+Thu Jul 26 18:52:25 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH33///sw=
+Bytes: 118
+can this also be done inside init? If not, maybe add a comment saying this needs to be done before ueventd is started.
+

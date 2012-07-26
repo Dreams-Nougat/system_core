@@ -9,3 +9,19 @@ UUID: AAAH3n///yU=
 Bytes: 180
 This stuff should go into libselinux, together the your while loop that you've repeated all over the place. You should then expose a single function that all the clients will call.
 
+File: init/property_service.c
+
+339
+Thu Jul 26 06:17:22 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///x0=
+Bytes: 205
+I think this should be init.selinux.reload_policy. Also, the value shouldn't matter since the mere action of setting this property means we should reload the policy. Does anyone ever look to see if it's 0?
+
+342
+Thu Jul 26 06:17:22 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///xs=
+Bytes: 27
+why are you returning here?
+

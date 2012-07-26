@@ -1,0 +1,34 @@
+Revision: 39653ba86590bb58099e89a171f73c7ed02a7fd2
+Patch-set: 1
+File: init/property_service.c
+
+203
+Thu Jul 26 06:25:35 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///xk=
+Bytes: 59
+if (is_selinux_enabled() <= 0)
+    return 1;
+<rest of body>
+
+206
+Thu Jul 26 06:25:35 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///xg=
+Bytes: 25
+separate the declarations
+
+241
+Thu Jul 26 06:25:35 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///xc=
+Bytes: 16
+sizeof(ctl_name)
+
+243
+Thu Jul 26 06:25:35 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///xY=
+Bytes: 16
+sizeof(ctl_name)
+

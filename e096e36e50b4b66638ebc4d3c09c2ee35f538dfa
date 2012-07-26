@@ -9,3 +9,11 @@ UUID: AAAH3n///lA=
 Bytes: 146
 do we need to restore the context on this too? it's only around until we remove it further down in the init process (at check_startup_action time)
 
+884
+Thu Jul 26 19:36:27 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH3n///lA=
+UUID: AAAH43///6U=
+Bytes: 44
+No, not if it is only ever accessed by init.
+

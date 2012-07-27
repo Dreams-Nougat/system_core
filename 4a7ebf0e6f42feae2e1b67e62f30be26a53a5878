@@ -9,3 +9,13 @@ UUID: AAAH3n///Fk=
 Bytes: 37
 we don't do options this way in init.
 
+721
+Fri Jul 27 12:36:42 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH3n///Fk=
+UUID: AAAH43///1c=
+Bytes: 262
+Ok.  I didn't see an example to follow.  Looking around, I see how mountoptions are handled now.  Do you want us to similarly add an extra options argument at the end of chown, ala:
+chown <owner> <group> <path> [ <chownoption> ]*
+<chownoption>s include "recurse"
+

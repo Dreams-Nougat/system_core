@@ -19,3 +19,12 @@ Ok.  I didn't see an example to follow.  Looking around, I see how mountoptions 
 chown <owner> <group> <path> [ <chownoption> ]*
 <chownoption>s include "recurse"
 
+721
+Fri Jul 27 13:26:47 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH43///1c=
+UUID: AAAH43///0o=
+Bytes: 457
+Other question is whether we care to support the recursive option in the case where group is not specified.  In which case we'd need to check within the nargs == 4 case as to whether we have <owner> <group> <path> or <owner> <path> recursive.  Might be less ambiguous if we prefix the options with a dash (-) or double dash (--) ala conventional short/long options, but still at the end rather than beginning.
+chown <owner> [<group>] <path> [--recursive|-R]
+

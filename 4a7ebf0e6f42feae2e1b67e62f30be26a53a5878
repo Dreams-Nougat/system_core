@@ -1,0 +1,11 @@
+Revision: 4a7ebf0e6f42feae2e1b67e62f30be26a53a5878
+Patch-set: 5
+File: init/builtins.c
+
+721
+Fri Jul 27 05:44:43 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH3n///Fk=
+Bytes: 37
+we don't do options this way in init.
+

@@ -26,6 +26,14 @@ UUID: AAAH3n///xQ=
 Bytes: 172
 hmm, on second thought, I don't know if we need init. prefix in init.selinux.reload_policy. I thought that other stuff had init. prefix. Let's go with selinux.reload_policy
 
+339
+Fri Jul 27 10:12:39 2012 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH3n///x0=
+UUID: AAAH43///1k=
+Bytes: 193
+There is a check elsewhere to see if the value is 1. There's a modification to init.rc, this same patch set, that restarts ueventd and installd when the property selinux.loadpolicy is set to 1.
+
 342
 Thu Jul 26 06:17:22 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

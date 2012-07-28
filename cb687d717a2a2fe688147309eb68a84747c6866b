@@ -1,0 +1,30 @@
+Revision: cb687d717a2a2fe688147309eb68a84747c6866b
+Patch-set: 4
+File: init/init.c
+
+768
+Sat Jul 28 00:53:20 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH4n///6w=
+Bytes: 382
+IMO I would try to avoid having strings for this stuff scattered around. why not make functions in libselinux that that can return the appropriate file to use to the caller. This way if we update file locations, we can just modify one spot. 
+
+Again, ill concede to Google's arguments if it is ok with them it is ok with me, their the ones that have to live with the code in the end.
+
+900
+Sat Jul 28 00:53:20 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH4n///6s=
+Bytes: 50
+Why not put the audit call back in libselinux too?
+
+959
+Sat Jul 28 00:53:20 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH4n///6o=
+Bytes: 102
+This could be changed to something like:
+
+selinux_android_setcallback()
+and hide the details from init
+

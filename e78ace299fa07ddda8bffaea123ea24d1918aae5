@@ -13,6 +13,14 @@ I don't see why we need to special case this stuff.
 
 You can feel free to upload the fix for this in a separate patch.
 
+784
+Tue Jul 31 22:35:48 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAH7n///nA=
+Bytes: 108
+Please see my comment regarding this code in
+https://android-review.googlesource.com/#/c/39810/4/init/init.c
+
 File: rootdir/init.rc
 
 347

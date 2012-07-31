@@ -30,3 +30,13 @@ UUID: AAAH7H///VI=
 Bytes: 111
 why do we only restart these guys? what happens to other running services like mediaserver, system_server, etc.
 
+347
+Tue Jul 31 22:40:14 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH7H///VI=
+UUID: AAAH8H///98=
+Bytes: 127
+Those are the only services that need to re-read the slinux policy files.
+
+The other services seem to cope with this just fine.
+

@@ -40,3 +40,11 @@ Those are the only services that need to re-read the slinux policy files.
 
 The other services seem to cope with this just fine.
 
+347
+Tue Jul 31 22:44:52 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH8H///98=
+UUID: AAAH7H///Sg=
+Bytes: 318
+yes, but if teh mediaserver is the one that does video recording and you change the policy, it will run with the old contexts, right? Or if the running apps touch their files while the policy changes, won't all of them need to be restarted? I'm a little out of my depth here so I don't know what the ramifications are.
+

@@ -11,6 +11,18 @@ IMO I would try to avoid having strings for this stuff scattered around. why not
 
 Again, ill concede to Google's arguments if it is ok with them it is ok with me, their the ones that have to live with the code in the end.
 
+768
+Tue Jul 31 22:34:16 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAH4n///6w=
+UUID: AAAH7H///Ug=
+Bytes: 819
+I would normally agree with you, but property service exists in one place and is something that we really should keep together in init (unlike the other stuff that was in restorecon/init/ueventd). I don't like having strings like this all over the place either, but I'm a little worried about debugging the property service and not knowing what to look for.
+
+What I think would be useful is a function that takes a list of files and returns a handle so that you don't have to open code the while loop all over the place.
+
+Also, the code below that loops over the policy list and does open, and then fstat, and then mmap, and then load_policy. All of that code should all be done inside the selinux library and init should just feed it the list of files/paths to try. There should be no reason to have this code in init.
+
 900
 Sat Jul 28 00:53:20 2012 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>

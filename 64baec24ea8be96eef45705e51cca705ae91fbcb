@@ -1,0 +1,11 @@
+Revision: 64baec24ea8be96eef45705e51cca705ae91fbcb
+Patch-set: 1
+File: sdcard/sdcard.c
+
+974
+Wed Aug 08 20:20:17 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIE3//++k=
+Bytes: 126
+i would rather add a constant INVALID_UID with value ~0, initialize uid and gid to INVALID_UID, and compare against that here.
+

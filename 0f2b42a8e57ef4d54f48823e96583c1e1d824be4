@@ -1,0 +1,11 @@
+Revision: 0f2b42a8e57ef4d54f48823e96583c1e1d824be4
+Patch-set: 1
+File: logcat/logcat.cpp
+
+102
+Wed Aug 08 20:18:05 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIE3//+/I=
+Bytes: 74
+this should either be changed to use the argument or not take an argument.
+

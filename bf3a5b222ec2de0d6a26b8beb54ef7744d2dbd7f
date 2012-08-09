@@ -9,3 +9,12 @@ UUID: AAAIEX//+LU=
 Bytes: 232
 this change in this file shouldn't be necessary. The only thing that's needed is the ntohl. I don't see how harcoding a memcpy(x,y,4) is any better than just dereferencing the ptr as a uint32_t *. Please revert changes in this file.
 
+201
+Thu Aug 09 17:33:49 2012 +0000
+Author: Raghu Gandham <1003296@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIEX//+LU=
+UUID: AAAIEX//+Kc=
+Bytes: 231
+memcpy is more Endian friendly. In the past (Froyo time-frame) MIPS team ported Android to work on Big-endian MIPS boards. 
+If you insist, I can revert the change in this file as it does not effect any configurations we test today.
+

@@ -18,3 +18,13 @@ Bytes: 231
 memcpy is more Endian friendly. In the past (Froyo time-frame) MIPS team ported Android to work on Big-endian MIPS boards. 
 If you insist, I can revert the change in this file as it does not effect any configurations we test today.
 
+201
+Thu Aug 09 17:50:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIEX//+Kc=
+UUID: AAAIH3//+n4=
+Bytes: 516
+How is memcpy more endian friendly in this case? You are never accessing any of the bytes directly, you are just dereferencing a 4-byte opaque ptr and passing it as on opaque 4-byte blob to ntohl in the function call below. You never perform bit/byte operations on it until then. So, memcpy is superfluous here.
+
+The only benefit to using memcpy here is that it is safer on platforms with hard alignment restrictions, as x could be unaligned here. So for that purpose, we should leave the memcpy, not for endianness.
+

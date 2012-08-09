@@ -1,0 +1,11 @@
+Revision: bf3a5b222ec2de0d6a26b8beb54ef7744d2dbd7f
+Patch-set: 2
+File: libnetutils/dhcpclient.c
+
+201
+Thu Aug 09 16:59:13 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIEX//+LU=
+Bytes: 232
+this change in this file shouldn't be necessary. The only thing that's needed is the ntohl. I don't see how harcoding a memcpy(x,y,4) is any better than just dereferencing the ptr as a uint32_t *. Please revert changes in this file.
+

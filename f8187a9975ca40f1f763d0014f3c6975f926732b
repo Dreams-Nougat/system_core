@@ -9,6 +9,18 @@ UUID: AAAIE3//+uo=
 Bytes: 26
 Do we need all these if 0?
 
+269
+Thu Aug 09 16:29:19 2012 +0000
+Author: paul lind <1003298@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIE3//+uo=
+UUID: AAAIEX//+Mw=
+Bytes: 402
+The pragma marks/sections-names are in the original Arm code as well. They are an editor-helper, which ease code navigation in editors that support them, such as Textmate. There are emacs and vim plugins for these as well.
+
+I put them in the MIPS code for consistency with the existing code. and the convenience of the original author (as well as my own ;-)
+
+Of course, I can remove them if you prefer.
+
 File: libpixelflinger/codeflinger/load_store.cpp
 
 39
@@ -17,4 +29,14 @@ Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAIE3//+uY=
 Bytes: 91
 I see these macros defined in other places as well. Can't you move them to a common header?
+
+39
+Thu Aug 09 16:29:19 2012 +0000
+Author: paul lind <1003298@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIE3//+uY=
+UUID: AAAIEX//+Mk=
+Bytes: 392
+Good point, these are repeated. I think that rather than move to a common header, I will remove all the big-endian code support that I added. 
+
+MIPS used to support big-endian builds of Android, but we will support that going forward. So then these changes just add cruft that makes the code harder to review for you guys. I'll upload a new patchset in a few hours, after testing is complete.
 

@@ -40,3 +40,11 @@ Good point, these are repeated. I think that rather than move to a common header
 
 MIPS used to support big-endian builds of Android, but we will support that going forward. So then these changes just add cruft that makes the code harder to review for you guys. I'll upload a new patchset in a few hours, after testing is complete.
 
+39
+Thu Aug 09 16:33:08 2012 +0000
+Author: paul lind <1003298@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIEX//+Mk=
+UUID: AAAIEX//+MI=
+Bytes: 56
+edit: meant to say NOT support big-endian going forward.
+

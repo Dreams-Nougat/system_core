@@ -1,0 +1,20 @@
+Revision: f8187a9975ca40f1f763d0014f3c6975f926732b
+Patch-set: 3
+File: libpixelflinger/codeflinger/MIPSAssembler.h
+
+269
+Thu Aug 09 00:26:36 2012 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIE3//+uo=
+Bytes: 26
+Do we need all these if 0?
+
+File: libpixelflinger/codeflinger/load_store.cpp
+
+39
+Thu Aug 09 00:26:36 2012 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIE3//+uY=
+Bytes: 91
+I see these macros defined in other places as well. Can't you move them to a common header?
+

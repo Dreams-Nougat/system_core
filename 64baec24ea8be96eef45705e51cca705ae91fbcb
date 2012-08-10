@@ -9,3 +9,11 @@ UUID: AAAIE3//++k=
 Bytes: 126
 i would rather add a constant INVALID_UID with value ~0, initialize uid and gid to INVALID_UID, and compare against that here.
 
+974
+Fri Aug 10 05:22:23 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIE3//++k=
+UUID: AAAIMH///+s=
+Bytes: 245
+I think a better way would be to use getopts to get at the options, and then fix it to enforce the argument count and use the arguments indexed from argv[]. You can then also clean up all the comparisons <= on an unsigned value below (line 988).
+

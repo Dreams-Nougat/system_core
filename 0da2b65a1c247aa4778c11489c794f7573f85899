@@ -1,0 +1,20 @@
+Revision: 0da2b65a1c247aa4778c11489c794f7573f85899
+Patch-set: 8
+File: libpixelflinger/codeflinger/MIPSAssembler.cpp
+
+3
+Fri Aug 10 16:29:36 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAINH///3Q=
+Bytes: 22
+Revise copyright date.
+
+File: libpixelflinger/codeflinger/MIPSAssembler.h
+
+3
+Fri Aug 10 16:29:36 2012 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAINH///3A=
+Bytes: 21
+revise copyright date
+

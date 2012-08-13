@@ -1,0 +1,39 @@
+Revision: 72b2ce44084a0070cf4d57cf7109ab4ce3d206e4
+Patch-set: 3
+File: sdcard/sdcard.c
+
+970
+Mon Aug 13 16:52:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIR3///2Y=
+Bytes: 175
+flip the comparison. I don't want to get into the merits of doing it this way; it just doesn't match the style of the rest of this file. Applies to the rest of the code below.
+
+976
+Mon Aug 13 16:52:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIRn///5E=
+Bytes: 4
+NULL
+
+978
+Mon Aug 13 16:52:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAISH///vs=
+Bytes: 35
+don't split the line, also s/0/NULL
+
+984
+Mon Aug 13 16:52:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAISH///vo=
+Bytes: 4
+NULL
+
+986
+Mon Aug 13 16:52:28 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIRn///5A=
+Bytes: 12
+see line 978
+

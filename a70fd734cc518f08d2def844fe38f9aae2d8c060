@@ -32,3 +32,11 @@ If  endptr is not NULL, strtoul() stores the address of the first invalid charac
 
 Note that it defines endptr as ** in the manpage, so your &endptr will always be non-null when you pass it into the function. So, it will always store an address into endptr.
 
+978
+Mon Aug 13 18:00:41 2012 +0000
+Author: Edwin Vane <1010717@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIR3///x0=
+UUID: AAAIRn///xg=
+Bytes: 224
+Argh! How embarrassing. You're right of course. Which implies this couldn't have been tested properly. This is what happens when I'm working with several versions of the android code base at the same time. Fix forthcoming...
+

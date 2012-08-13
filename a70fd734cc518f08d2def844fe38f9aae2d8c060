@@ -19,3 +19,16 @@ UUID: AAAIRn///0U=
 Bytes: 296
 It was before the weekend but I'm sure it's tested. The strtoul manpage claims that endptr will be NULL on success. Since argv[2] isn't NULL the only situation endptr will be NULL is upon success. If it *is* NULL then we check for an out-of-range number (negative numbers count as valid numbers).
 
+978
+Mon Aug 13 17:44:13 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIRn///0U=
+UUID: AAAIR3///x0=
+Bytes: 495
+From manpage:
+If  endptr is not NULL, strtoul() stores the address of the first invalid character in *endptr.  If there were no digits at all, strtoul() stores the original
+       value of nptr in *endptr (and returns 0).  In particular, if *nptr is not '\0' but **endptr is '\0' on return, the entire string is valid.
+
+
+Note that it defines endptr as ** in the manpage, so your &endptr will always be non-null when you pass it into the function. So, it will always store an address into endptr.
+

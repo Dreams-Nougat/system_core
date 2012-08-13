@@ -1,0 +1,13 @@
+Revision: a70fd734cc518f08d2def844fe38f9aae2d8c060
+Patch-set: 5
+File: sdcard/sdcard.c
+
+978
+Mon Aug 13 17:28:48 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAISH///rY=
+Bytes: 228
+wait, this is wrong. endptr will non-NULL on success. you also need to check for endptr != argv[2] and that *endptr == '\0'. Only then do you know that the conversion is valid and the entire string was valid.
+
+Did you test this?
+

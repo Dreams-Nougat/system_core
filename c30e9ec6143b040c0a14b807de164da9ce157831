@@ -1,0 +1,18 @@
+Revision: c30e9ec6143b040c0a14b807de164da9ce157831
+Patch-set: 4
+File: sdcard/sdcard.c
+
+978
+Mon Aug 13 17:14:27 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAISH///tk=
+Bytes: 14
+endptr != NULL
+
+985
+Mon Aug 13 17:14:27 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIRn///2Q=
+Bytes: 14
+endptr != NULL
+

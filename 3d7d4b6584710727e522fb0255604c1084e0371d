@@ -30,3 +30,13 @@ UUID: AAAIW3///Xw=
 Bytes: 185
 I seem to remember gdb uses sa_restorer for something that this appears it might break. Doing the memset(&act, 0, sizeof(act)); would be better than just removing this sa_restorer line.
 
+137
+Tue Aug 14 22:34:23 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIW3///Xw=
+UUID: AAAIXH///Vk=
+Bytes: 324
+even if ppl do use sa_restorer, they have to set the SA_RESTORER flag in flags iirc (and that's what the arm kernel does), which we are not setting so I'm not sure how gdb can rely on that.
+
+x86 doesn't seem to do anything with it from what I can tell. In fact the only arch for which the SA_RESTORER flag is defined is arm.
+

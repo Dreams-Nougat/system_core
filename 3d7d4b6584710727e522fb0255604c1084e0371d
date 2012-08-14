@@ -22,3 +22,11 @@ I think the best solution would be to use
   memset(act, 0 , sizeof(act));
 to initialise the structure then set sa_handler and sa_flags
 
+137
+Tue Aug 14 22:25:08 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIEX///+s=
+UUID: AAAIW3///Xw=
+Bytes: 185
+I seem to remember gdb uses sa_restorer for something that this appears it might break. Doing the memset(&act, 0, sizeof(act)); would be better than just removing this sa_restorer line.
+

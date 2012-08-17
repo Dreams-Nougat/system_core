@@ -1,0 +1,39 @@
+Revision: e82f92ec86c112c46cc4de6e67d3f98c1ee799e6
+Patch-set: 1
+File: libcorkscrew/arch-mips/backtrace-mips.c
+
+93
+Fri Aug 17 09:30:06 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIk3///48=
+Bytes: 17
+line length < 100
+
+104
+Fri Aug 17 09:30:06 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIk3///4s=
+Bytes: 153
+This is kind of interesting and wacky.  I've no idea what MIPS stack unwinding looks like but I wasn't expecting it to be parsing the instruction stream!
+
+118
+Fri Aug 17 09:30:06 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIk3///4w=
+Bytes: 11
+indentation
+
+165
+Fri Aug 17 09:30:06 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIk3///44=
+Bytes: 11
+line length
+
+187
+Fri Aug 17 09:30:06 2012 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIk3///40=
+Bytes: 11
+line length
+

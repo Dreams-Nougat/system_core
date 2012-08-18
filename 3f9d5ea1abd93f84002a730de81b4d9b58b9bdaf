@@ -1,0 +1,11 @@
+Revision: 3f9d5ea1abd93f84002a730de81b4d9b58b9bdaf
+Patch-set: 2
+File: libusbhost/usbhost.c
+
+197
+Sat Aug 18 15:18:01 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIu3////c=
+Bytes: 41
+It looks like this part got over-indented
+

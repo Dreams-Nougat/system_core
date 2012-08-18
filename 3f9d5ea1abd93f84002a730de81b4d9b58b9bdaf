@@ -2,6 +2,13 @@ Revision: 3f9d5ea1abd93f84002a730de81b4d9b58b9bdaf
 Patch-set: 2
 File: libusbhost/usbhost.c
 
+180
+Sat Aug 18 20:56:05 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIrn///+o=
+Bytes: 180
+no spaces after between parenthesis and condition.  also, this can overrun the buffer if the second event is truncated.  the if statement above needs to be checked inside the loop.
+
 197
 Sat Aug 18 15:18:01 2012 +0000
 Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>

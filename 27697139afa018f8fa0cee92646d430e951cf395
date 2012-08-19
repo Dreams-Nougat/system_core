@@ -9,3 +9,11 @@ UUID: AAAIrn///6Q=
 Bytes: 179
 who are the host callers? probably the warnings here are okay if it just for davlik host build used for our own testing, since we aren't going to exercise ddms etc stuff that way.
 
+28
+Sun Aug 19 23:07:56 2012 +0000
+Author: Ian Rogers <1010118@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIrn///6Q=
+UUID: AAAIrn///50=
+Bytes: 318
+The callers are the trimming code and the DDMS heap statistic code. No implementation is what Dalvik previously had on the host, and not having an implementation is benign in these two cases. I wanted to add the warnings in case someone tried DDMS with the host build, or wondered why the host trimming wasn't working.
+

@@ -1,0 +1,11 @@
+Revision: 845cc8c00350b400317f8c18f813e6fd79bd5470
+Patch-set: 1
+File: adb/adb.c
+
+549
+Mon Aug 20 19:16:30 2012 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIrn///j4=
+Bytes: 39
+Might want to fix the indentation here.
+

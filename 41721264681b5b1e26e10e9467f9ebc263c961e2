@@ -1,0 +1,11 @@
+Revision: 41721264681b5b1e26e10e9467f9ebc263c961e2
+Patch-set: 2
+File: libpixelflinger/codeflinger/CodeCache.cpp
+
+66
+Mon Aug 20 21:30:52 2012 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIrn///aw=
+Bytes: 44
+#define LOG_TAG "CodeCache" and pass it here
+

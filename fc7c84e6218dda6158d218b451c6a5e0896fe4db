@@ -1,0 +1,11 @@
+Revision: fc7c84e6218dda6158d218b451c6a5e0896fe4db
+Patch-set: 3
+File: adb/file_sync_client.c
+
+915
+Mon Aug 20 15:42:50 2012 +0000
+Author: Jean-Baptiste Queru <1000660@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIrn///1o=
+Bytes: 71
+Style-wise, I think we prefer to have a space before the opening brace.
+

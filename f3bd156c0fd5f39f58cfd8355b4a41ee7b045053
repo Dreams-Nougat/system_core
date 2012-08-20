@@ -1,0 +1,18 @@
+Revision: f3bd156c0fd5f39f58cfd8355b4a41ee7b045053
+Patch-set: 2
+File: adb/commandline.c
+
+84
+Mon Aug 20 20:27:04 2012 +0000
+Author: Chris Elford <1005576@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIsH///Yc=
+Bytes: 51
+Are there any security implications of this change?
+
+99
+Mon Aug 20 20:27:04 2012 +0000
+Author: Chris Elford <1005576@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAIsH///Yg=
+Bytes: 43
+Why don't you just use adb connect instead?
+

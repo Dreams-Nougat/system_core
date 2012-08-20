@@ -9,10 +9,40 @@ UUID: AAAIsH///Yc=
 Bytes: 51
 Are there any security implications of this change?
 
+84
+Mon Aug 20 20:46:49 2012 +0000
+Author: Matt Gumbel <1006781@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIsH///Yc=
+UUID: AAAIu3///eY=
+Bytes: 148
+By default, no. If, however, the user explicitly passes the '-a' flag, then any host will be able to connect to their adb server. That is by design.
+
 99
 Mon Aug 20 20:27:04 2012 +0000
 Author: Chris Elford <1005576@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAIsH///Yg=
 Bytes: 43
 Why don't you just use adb connect instead?
+
+99
+Mon Aug 20 20:46:49 2012 +0000
+Author: Matt Gumbel <1006781@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIsH///Yg=
+UUID: AAAIu3///eM=
+Bytes: 833
+Because adb connect does not work for the use-case this feature was developed for (USB device-under-test on remote host).
+
+adb connect looks like this:
+            Host A                                            Host B
+ -----------------------------------------            ---------------------------
+ |Emulator or adbd listening on port 5555|<---------->|adb server<--->adb client|
+ -----------------------------------------            ---------------------------
+
+This feature looks like this:
+             Host A                         Host B
+ -----------------------------     TCP   ------------
+ |USB device <---> adb server|<--------->|adb client|
+ -----------------------------           ------------
+
+Notice that in the adb connect case, it is impossible to have a USB android device on host A and an adb client on host B.
 

@@ -1,0 +1,11 @@
+Revision: 091c21c92c6bdb49b56c4045615159ea144a42f0
+Patch-set: 4
+File: include/netutils/ifc.h
+
+37
+Thu Aug 23 01:11:34 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAI1X///+c=
+Bytes: 69
+Can you add an IFC_ prefix to these defines now that they are public?
+

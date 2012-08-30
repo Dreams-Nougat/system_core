@@ -1,5 +1,14 @@
 Revision: f3bd156c0fd5f39f58cfd8355b4a41ee7b045053
 Patch-set: 2
+File: adb/adb.c
+
+866
+Thu Aug 30 20:05:48 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAI6X//80Q=
+Bytes: 57
+While in here, might as well add the missing "_exit(1);".
+
 File: adb/commandline.c
 
 84
@@ -53,4 +62,13 @@ Parent: AAAIu3///eM=
 UUID: AAAIu3///dA=
 Bytes: 242
 Anticipating the follow up question, "Why not run the adb server/client connection over an ssh tunnel," the answer is that such a tunnel would require listening on the adb port on host B thus preventing a real adb server from listening there.
+
+99
+Thu Aug 30 20:05:48 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAIu3///dA=
+UUID: AAAI6X//8yk=
+Bytes: 83
+http://stackoverflow.com/questions/1754162/remote-debugging-with-android-emulator
+?
 

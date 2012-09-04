@@ -1,0 +1,11 @@
+Revision: 1d39f6e42f9299bfd746a0b69cb3b23fdc9b2270
+Patch-set: 1
+File: fs_mgr/fs_mgr.c
+
+168
+Tue Sep 04 20:20:22 2012 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAI6X//7Do=
+Bytes: 178
+maybe add a comment saying we should come back and remove this once bionic has getline(3)? if you're planning on coming back and doing that cleanup yourself, then that's fine :-)
+

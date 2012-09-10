@@ -9,3 +9,11 @@ UUID: AAAI6X//7Do=
 Bytes: 178
 maybe add a comment saying we should come back and remove this once bionic has getline(3)? if you're planning on coming back and doing that cleanup yourself, then that's fine :-)
 
+168
+Mon Sep 10 22:39:32 2012 +0000
+Author: Irina Tirdea <1006561@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAI6X//7Do=
+UUID: AAAI5n//+os=
+Bytes: 106
+Yes, I will do the cleanup myself. I will upload the patch together with the NetBSD version for getline().
+

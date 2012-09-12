@@ -1,0 +1,11 @@
+Revision: 4d85735de167bc40a25d9a341b92b1b22e316a97
+Patch-set: 1
+File: charger/charger.c
+
+36
+Wed Sep 12 16:50:59 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAI9n//9Fc=
+Bytes: 124
+remove comment. We aren't going to add a comment in every file we use netlink.h, just move sys/socket.h to right above this.
+

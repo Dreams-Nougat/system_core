@@ -1,0 +1,11 @@
+Revision: 7e41c8420e015f6b96e35e90c8a9a8ebf643cdac
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+85
+Thu Sep 13 18:31:34 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJBH///sw=
+Bytes: 92
+why do we give isolated procs 1000 entries and shared ones 10000? which one is more correct?
+

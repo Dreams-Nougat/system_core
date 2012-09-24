@@ -1,0 +1,11 @@
+Revision: ded8a9aad363fbf636d6244a39252d1e06241c63
+Patch-set: 3
+File: include/private/android_filesystem_config.h
+
+65
+Mon Sep 24 17:43:13 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJUX//+SA=
+Bytes: 59
+Can you call this AID_CLAT instead of CLATD? then it's lgtm
+

@@ -1,0 +1,18 @@
+Revision: a5d9b3070256dcd65f704c47f8441123191cf078
+Patch-set: 1
+File: init/property_service.c
+
+553
+Wed Oct 03 21:08:30 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ2n///34=
+Bytes: 5
+wrap?
+
+578
+Wed Oct 03 21:08:30 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ2n///30=
+Bytes: 4
+wrap
+

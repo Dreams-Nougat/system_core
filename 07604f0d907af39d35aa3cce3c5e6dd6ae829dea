@@ -1,0 +1,18 @@
+Revision: 07604f0d907af39d35aa3cce3c5e6dd6ae829dea
+Patch-set: 2
+File: init/property_service.c
+
+332
+Wed Oct 03 21:26:57 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ23///44=
+Bytes: 241
+how is this safer? /data/property is 0700 so noone can ever see it unless they have root. And if they have root, they can get at your file anyway, and create whatever property files they want anyway without the need for the property service.
+
+569
+Wed Oct 03 21:26:57 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ2X///pg=
+Bytes: 61
+print the mode/uid/gid/nlink so we know what the problem was.
+

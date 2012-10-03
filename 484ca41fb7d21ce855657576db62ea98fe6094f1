@@ -1,0 +1,18 @@
+Revision: 484ca41fb7d21ce855657576db62ea98fe6094f1
+Patch-set: 3
+File: init/property_service.c
+
+322
+Wed Oct 03 23:22:16 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ2n///tc=
+Bytes: 72
+move below the declarations, this is hard to read. Put it after line 325
+
+327
+Wed Oct 03 23:22:16 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAAJ2n///s4=
+Bytes: 309
+not sure how this can happen. strlen(name) is verified in property_set, so it would mean than the snprintf to tempPath  filled it up, meaning that PERSISTENT_PROPERTY_DIR + sizeof(".temp.XXXXXX") >= PATH_MAX - PROP_NAME_MAX. . If you want to be that pedantic, check the length of snprintf to tempPath as well.
+

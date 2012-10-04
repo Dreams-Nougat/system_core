@@ -9,10 +9,28 @@ UUID: AAAJ2n///tc=
 Bytes: 72
 move below the declarations, this is hard to read. Put it after line 325
 
+322
+Thu Oct 04 17:52:57 2012 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAJ2n///tc=
+UUID: AAAJ2n///bw=
+Bytes: 4
+Done
+
 327
 Wed Oct 03 23:22:16 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: AAAJ2n///s4=
 Bytes: 309
 not sure how this can happen. strlen(name) is verified in property_set, so it would mean than the snprintf to tempPath  filled it up, meaning that PERSISTENT_PROPERTY_DIR + sizeof(".temp.XXXXXX") >= PATH_MAX - PROP_NAME_MAX. . If you want to be that pedantic, check the length of snprintf to tempPath as well.
+
+327
+Thu Oct 04 17:52:57 2012 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAAJ2n///s4=
+UUID: AAAJ2n///YI=
+Bytes: 434
+I removed this check. This was just me being paranoid and trying to pre-emptively deal with a situation where the length check wasn't done.  But, I agree with you, it's useless futureproofing code.
+
+I changed line 351 and 352 (where the strlen is called) from an int to a size_t.  Otherwise, a strlen(name) > 2G would have caused namelen to be negative, bypassing the PROP_NAME_MAX check. We accidentally detect this case on line 356.
 

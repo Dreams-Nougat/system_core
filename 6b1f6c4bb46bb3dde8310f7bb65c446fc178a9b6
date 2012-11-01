@@ -1,5 +1,22 @@
 Revision: 6b1f6c4bb46bb3dde8310f7bb65c446fc178a9b6
 Patch-set: 1
+File: toolbox/chown.c
+
+26
+Thu Nov 01 15:49:05 2012 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALP3///6g=
+Bytes: 385
+Can you please modify this code so that it doesn't silently truncate the result? Truncation is obviously better than a buffer overflow, but still isn't ideal.
+
+Can you either:
+
+1) Use strlcpy instead, and hard fail if the return value is >= sizeof(user).
+
+2) Get rid of the use of fixed size buffers. (preferred)
+
+(this comment applies to every other strncpy change in this changelist)
+
 File: toolbox/mount.c
 
 71

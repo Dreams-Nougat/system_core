@@ -1,0 +1,11 @@
+Revision: 55425eccacc9ef5f2bdae39f85851ba25d7e011a
+Patch-set: 1
+File: adb/adb.c
+
+743
+Thu Nov 15 21:20:16 2012 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALoH///s0=
+Bytes: 35
+Shouldn't you check for truncation?
+

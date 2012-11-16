@@ -1,0 +1,11 @@
+Revision: 3d61471ee7f4fe29aa487aa2443873dd64505772
+Patch-set: 1
+File: adb/usb_vendors.c
+
+238
+Fri Nov 16 22:55:08 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALn3//+rc=
+Bytes: 12
+tab vs space
+

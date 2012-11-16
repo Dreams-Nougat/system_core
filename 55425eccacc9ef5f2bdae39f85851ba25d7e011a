@@ -9,3 +9,23 @@ UUID: AAALoH///s0=
 Bytes: 35
 Shouldn't you check for truncation?
 
+743
+Fri Nov 16 11:08:10 2012 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALoH///s0=
+UUID: AAALr3///8U=
+Bytes: 1015
+This is done by snprintf().
+
+The idea is that the format_xxx functions use the same convention that snprintf() on Posix: always perform safe truncation (i.e. always append a final zero), but return the size of the full string anyway.
+
+This allows you to call the function twice, the first time with buffer == NULL and buffer_len == 0, and the function returns the number of bytes you need for the output.
+
+The second time, you call it with buffer != NULL, and buffer_len = required_size + 1, the extra 1 is required for the terminating zero (if you use required_size instead, the zero gets tucked at the end, erasing your last byte).
+
+That's what the format_listeners code does.
+
+We can't just return the value of snprintf() here directly because on Windows, the function is broken and will return -1 in case of truncation (yeah), and this code runs on the host.
+
+If you prefer, I can use a different convention, but then I'll have to implement two functions: one to compute the size, and the other to do the write.
+

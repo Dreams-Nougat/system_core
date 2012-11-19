@@ -29,3 +29,19 @@ We can't just return the value of snprintf() here directly because on Windows, t
 
 If you prefer, I can use a different convention, but then I'll have to implement two functions: one to compute the size, and the other to do the write.
 
+744
+Mon Nov 19 18:45:53 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALn3//+KQ=
+Bytes: 19
+cr vs lf vs cr- lf?
+
+1614
+Mon Nov 19 18:45:53 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALn3//+IM=
+Bytes: 110
+install_listener() can return -2 also and can be called with or without no_rebind.
+
+   (!no_rebind && r < 0) ?
+

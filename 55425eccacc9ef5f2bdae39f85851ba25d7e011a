@@ -52,6 +52,14 @@ Using \r\n when the daemon runs on Windows would create problems for Linux clien
 
 Always generating \r\n is going to create problems for scripts and programs using the output of "adb forward --list" on non-Windows machines. That is, very unfortunately, a _very_ common complaint with "adb shell" that does just that for reasons that still elude me at the moment.
 
+744
+Tue Nov 20 21:35:33 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALyX///74=
+UUID: AAALuX///vo=
+Bytes: 109
+My bad. I thought that the snprintf() was going to convert \n like it handles LOCALE for some of the formats.
+
 1614
 Mon Nov 19 18:45:53 2012 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -74,6 +82,14 @@ install_listener returns -1 when it cannot do one of the following:
 - or detect that there is an attempt to rebind a normal socket with no_rebind == 1.
 
 I thought that "cannot rebind socket" was generic and informative enough, but if you prefer, I can distinguish both cases (e.g. make the function return -3 or something). Let me know what you think.
+
+1614
+Tue Nov 20 21:35:33 2012 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALyX///70=
+UUID: AAALuX///q0=
+Bytes: 162
+The 2nd bullet reads as "rebind with no rebind".  If the user specifically asked for no rebind, then probably the reported error should not mention rebind either.
 
 File: adb/commandline.c
 

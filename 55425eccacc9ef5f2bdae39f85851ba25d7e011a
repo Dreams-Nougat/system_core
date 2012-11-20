@@ -36,6 +36,22 @@ UUID: AAALn3//+KQ=
 Bytes: 19
 cr vs lf vs cr- lf?
 
+744
+Tue Nov 20 14:53:01 2012 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALn3//+KQ=
+UUID: AAALyX///74=
+Bytes: 853
+I'm not sure what you mean here, but just in case:
+
+This string is generated in the ADB server daemon, and later passed to the client, which could be running on a different machine / OS.
+
+For Windows, the conversion from \n to \r\n should be done in the client code. This actually happens through a simple printf(), which does that automatically on this platform (that's the reason why printf("Hello World\n") works correctly too).
+
+Using \r\n when the daemon runs on Windows would create problems for Linux clients accessing the daemon through a SSH tunnel, for example.
+
+Always generating \r\n is going to create problems for scripts and programs using the output of "adb forward --list" on non-Windows machines. That is, very unfortunately, a _very_ common complaint with "adb shell" that does just that for reasons that still elude me at the moment.
+
 1614
 Mon Nov 19 18:45:53 2012 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -44,4 +60,27 @@ Bytes: 110
 install_listener() can return -2 also and can be called with or without no_rebind.
 
    (!no_rebind && r < 0) ?
+
+1614
+Tue Nov 20 14:53:01 2012 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALn3//+IM=
+UUID: AAALyX///70=
+Bytes: 600
+install_listener returns -2 when it can't actually bind() to the address, that's handled by the "else" portion here, i.e. it will print "cannot bind socket".
+
+install_listener returns -1 when it cannot do one of the following:
+- detects that there is an attempt to rebind the smart socket (independent of no_rebind).
+- or detect that there is an attempt to rebind a normal socket with no_rebind == 1.
+
+I thought that "cannot rebind socket" was generic and informative enough, but if you prefer, I can distinguish both cases (e.g. make the function return -3 or something). Let me know what you think.
+
+File: adb/commandline.c
+
+1284
+Tue Nov 20 14:53:01 2012 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALyX///7w=
+Bytes: 50
+this is what converts the \n into \r\n on Windows.
 

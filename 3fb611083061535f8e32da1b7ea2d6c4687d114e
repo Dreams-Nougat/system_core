@@ -9,6 +9,14 @@ UUID: AAALuX//9vs=
 Bytes: 168
 do we ever want to change contexts more than once at runtime? Would someone want to do it in early-init and then again in some other section like 'on boot' or whatever?
 
+200
+Tue Nov 27 19:06:16 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALuX//9vs=
+UUID: AAALy3///ws=
+Bytes: 216
+Probably not. At least, iv'e never seen that happen with dac permissions (off the top of my head) on Android so I doubt that the mac permissions would need to as well. However, someone could do this, it is supported.
+
 216
 Tue Nov 27 19:02:38 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -17,6 +17,16 @@ UUID: AAALy3///ws=
 Bytes: 216
 Probably not. At least, iv'e never seen that happen with dac permissions (off the top of my head) on Android so I doubt that the mac permissions would need to as well. However, someone could do this, it is supported.
 
+200
+Tue Nov 27 19:21:32 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALy3///ws=
+UUID: AAALuX//9ug=
+Bytes: 370
+I'm actually thinking that it shouldn't be supported as it would by much harder to audit.You can technicall change the context on a property change with the current implomentetation, which would be a terrible thing to debug for.
+
+I'm wondering if we should make it be a top-level command only, so that it is only done in one place and cannot be triggered at other times.
+
 216
 Tue Nov 27 19:02:38 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

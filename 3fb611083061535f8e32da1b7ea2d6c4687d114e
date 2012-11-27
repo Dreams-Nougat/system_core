@@ -1,0 +1,18 @@
+Revision: 3fb611083061535f8e32da1b7ea2d6c4687d114e
+Patch-set: 1
+File: init/readme.txt
+
+200
+Tue Nov 27 19:02:38 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALuX//9vs=
+Bytes: 168
+do we ever want to change contexts more than once at runtime? Would someone want to do it in early-init and then again in some other section like 'on boot' or whatever?
+
+216
+Tue Nov 27 19:02:38 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: AAALuX//9wA=
+Bytes: 298
+i didn't notice before (i don't think) that this uses the name=val syntax. That is different than the other commands we have. I'd like to change this to be aligned with others like setprop. You should upload a separate change (after this) that fixes it and updates this readme.txt at the same time.
+

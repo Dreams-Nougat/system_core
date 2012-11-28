@@ -37,6 +37,14 @@ The typical way in init is to use restorecon and file_contexts to get the object
 
 I cannot think of any good reason to keep it since I didn't see it get used in any init.rc as of yet.
 
+200
+Wed Nov 28 01:03:30 2012 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: AAALy3///wU=
+UUID: AAALy3///vk=
+Bytes: 83
+I retract my previous statement. This is how init's context is set. This is needed.
+
 216
 Tue Nov 27 19:02:38 2012 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

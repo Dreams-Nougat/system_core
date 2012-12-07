@@ -1,0 +1,39 @@
+Revision: 9fa6a8004848c19ff4bcdefb3f987f844d7e9f6e
+Patch-set: 1
+File: init/util.c
+
+387
+Fri Dec 07 19:15:19 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M1-QTzmA
+Bytes: 4
+NULL
+
+389
+Fri Dec 07 19:15:19 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M15Qeymo
+Bytes: 29
+no need to initialize fd here
+
+400
+Fri Dec 07 19:15:19 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M1xQr.oM
+Bytes: 129
+I think it would make more sense to initialize limit to 1024, and put the doubling and reallocating when the overflow is detected
+
+402
+Fri Dec 07 19:15:19 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M1-RKrlQ
+Bytes: 23
+log an error on failure
+
+406
+Fri Dec 07 19:15:19 2012 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M1xRZOig
+Bytes: 23
+log an error on failure
+

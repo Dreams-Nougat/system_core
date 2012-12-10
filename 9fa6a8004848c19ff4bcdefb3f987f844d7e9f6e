@@ -9,12 +9,28 @@ UUID: M1-QTzmA
 Bytes: 4
 NULL
 
+387
+Mon Dec 10 20:54:44 2012 +0000
+Author: Jon Medhurst <1017979@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M1-QTzmA
+UUID: M368rtO0
+Bytes: 4
+Done
+
 389
 Fri Dec 07 19:15:19 2012 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: M15Qeymo
 Bytes: 29
 no need to initialize fd here
+
+389
+Mon Dec 10 20:54:44 2012 +0000
+Author: Jon Medhurst <1017979@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M15Qeymo
+UUID: M388m8CU
+Bytes: 4
+Done
 
 400
 Fri Dec 07 19:15:19 2012 +0000
@@ -23,6 +39,14 @@ UUID: M1xQr.oM
 Bytes: 129
 I think it would make more sense to initialize limit to 1024, and put the doubling and reallocating when the overflow is detected
 
+400
+Mon Dec 10 20:54:44 2012 +0000
+Author: Jon Medhurst <1017979@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M1xQr.oM
+UUID: M3y-phKI
+Bytes: 224
+I did it that way to try an make the loop neater. My revised patch ends up using an infinite loop with a 'break' to get out. There's probably a dozen ways to write this loop and am happy to do it whatever way you think best.
+
 402
 Fri Dec 07 19:15:19 2012 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -30,10 +54,26 @@ UUID: M1-RKrlQ
 Bytes: 23
 log an error on failure
 
+402
+Mon Dec 10 20:54:44 2012 +0000
+Author: Jon Medhurst <1017979@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M1-RKrlQ
+UUID: M3w8xKF4
+Bytes: 4
+Done
+
 406
 Fri Dec 07 19:15:19 2012 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: M1xRZOig
 Bytes: 23
 log an error on failure
+
+406
+Mon Dec 10 20:54:44 2012 +0000
+Author: Jon Medhurst <1017979@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M1xRZOig
+UUID: M3.81rEk
+Bytes: 4
+Done
 

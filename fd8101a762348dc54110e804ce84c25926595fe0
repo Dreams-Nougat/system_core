@@ -1,0 +1,11 @@
+Revision: fd8101a762348dc54110e804ce84c25926595fe0
+Patch-set: 1
+File: debuggerd/tombstone.c
+
+137
+Mon Dec 10 18:34:41 2012 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M1AkY.jQ
+Bytes: 23
+oops. ps2 on its way...
+

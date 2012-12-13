@@ -11,3 +11,17 @@ This toolbox change also looks ok to me, but it is not required from my perspect
 
 My only concern was the part in init, and that looks fine to me as well.
 
+0
+Thu Dec 13 18:40:22 2012 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: M71AuLZQ
+UUID: M3LfUpA4
+Bytes: 399
+setsebool in Linux distros accept either syntax,
+   setsebool name value
+or
+  setsebool name=value...
+The first form was the original syntax; the second form was added later to support setting multiple booleans at one time.
+Of the two forms, the latter was more general so I used it for init and toolbox originally.
+But with the change to the init syntax I thought we should keep toolbox consistent.
+

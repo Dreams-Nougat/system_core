@@ -1,5 +1,14 @@
 Revision: 1ff3501a84441c9d9fa9bd11ab7c84e13bb42ce6
 Patch-set: 1
+File: init/builtins.c
+
+775
+Thu Dec 13 19:33:07 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M7zDxsV0
+Bytes: 114
+save errno to a 'ret' variable before calling ERROR(), as it may potentially overwrite the value. Then return -ret
+
 File: toolbox/setsebool.c
 
 0

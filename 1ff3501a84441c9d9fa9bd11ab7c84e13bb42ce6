@@ -1,0 +1,13 @@
+Revision: 1ff3501a84441c9d9fa9bd11ab7c84e13bb42ce6
+Patch-set: 1
+File: toolbox/setsebool.c
+
+0
+Thu Dec 13 17:35:40 2012 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: M71AuLZQ
+Bytes: 344
+This toolbox change also looks ok to me, but it is not required from my perspective. I was under the impression that you guys wanted to keep the syntax for the command line tool the same as other existing implementations, i.e. name=value, and that is totally fine by me.
+
+My only concern was the part in init, and that looks fine to me as well.
+

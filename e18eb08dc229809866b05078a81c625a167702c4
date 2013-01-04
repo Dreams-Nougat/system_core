@@ -1,0 +1,42 @@
+Revision: e18eb08dc229809866b05078a81c625a167702c4
+Patch-set: 3
+File: init/devices.c
+
+120
+Fri Jan 04 04:14:37 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: NpFhI5a4
+Bytes: 218
+add_property() calloc's a struct prop_node.
+The property is part of the prop_node and should not be freed.
+Lucky that ->property is at the start of struct prop_node.
+
+free(&(node_to_item(node, struct prop_node, plist))
+
+File: init/ueventd.c
+
+102
+Fri Jan 04 04:14:37 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: NpJMt7q4
+Bytes: 122
+This should probably go in something similar to handle_pending_properties()
+
+and only be called if revents has POLLIN set.
+
+108
+Fri Jan 04 04:14:37 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: NpPMkcsg
+Bytes: 25
+extra scope is not needed
+
+114
+Fri Jan 04 04:14:37 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: NpBMqPpI
+Bytes: 99
+When would prop set fail and then later succeed?
+
+If never, then remove the prop_node in all cases.
+

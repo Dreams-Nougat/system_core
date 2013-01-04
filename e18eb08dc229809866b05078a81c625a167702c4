@@ -40,6 +40,15 @@ UUID: Ns9LdokA
 Bytes: 364
 okay but I hate to continue depending on a subsequent uevent to attempt setting properties. It would be nicer better cleaner if init could signal ueventd (via an fd in the ufd array) that the property system is all the way up (accepting __system_property_set()). Perhaps use a finite timeout so there would be no possibility of orphaned property sets from uevents.
 
+102
+Fri Jan 04 22:55:17 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Ns9LdokA
+UUID: Ns9LP4lQ
+Bytes: 137
+May be setup a timeout (order of tens of seconds) each time rv is non-0.
+And let the timeout trigger once (nr==0) and replace it with -1.
+
 108
 Fri Jan 04 04:14:37 2013 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -63,4 +72,12 @@ Parent: NpBMqPpI
 UUID: Ns9JoQrQ
 Bytes: 202
 Because early uevents are processed before the init process has created the property socket. That's the reason this queue, "properties" (renamed "properties_to_set" in the next patch set), is necessary.
+
+114
+Fri Jan 04 22:55:17 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Ns9JoQrQ
+UUID: Ns9KqgnI
+Bytes: 82
+Add a comment about this in the code. And see the comment about the timeout on rv.
 

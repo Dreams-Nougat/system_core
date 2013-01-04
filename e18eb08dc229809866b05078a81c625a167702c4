@@ -13,6 +13,14 @@ Lucky that ->property is at the start of struct prop_node.
 
 free(&(node_to_item(node, struct prop_node, plist))
 
+120
+Fri Jan 04 22:39:34 2013 +0000
+Author: bruce robertson <1006720@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: NpFhI5a4
+UUID: Ns7LFfl0
+Bytes: 25
+SNAFU. was in patchset 2.
+
 File: init/ueventd.c
 
 102
@@ -23,6 +31,14 @@ Bytes: 122
 This should probably go in something similar to handle_pending_properties()
 
 and only be called if revents has POLLIN set.
+
+102
+Fri Jan 04 22:39:34 2013 +0000
+Author: bruce robertson <1006720@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: NpJMt7q4
+UUID: Ns9LdokA
+Bytes: 364
+okay but I hate to continue depending on a subsequent uevent to attempt setting properties. It would be nicer better cleaner if init could signal ueventd (via an fd in the ufd array) that the property system is all the way up (accepting __system_property_set()). Perhaps use a finite timeout so there would be no possibility of orphaned property sets from uevents.
 
 108
 Fri Jan 04 04:14:37 2013 +0000
@@ -39,4 +55,12 @@ Bytes: 99
 When would prop set fail and then later succeed?
 
 If never, then remove the prop_node in all cases.
+
+114
+Fri Jan 04 22:39:34 2013 +0000
+Author: bruce robertson <1006720@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: NpBMqPpI
+UUID: Ns9JoQrQ
+Bytes: 202
+Because early uevents are processed before the init process has created the property socket. That's the reason this queue, "properties" (renamed "properties_to_set" in the next patch set), is necessary.
 

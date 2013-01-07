@@ -1,0 +1,98 @@
+Revision: 1993cdc89fb624325b2c62b1b4456a544af896f4
+Patch-set: 2
+File: init/init.c
+
+349
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3Vn5M6g
+Bytes: 75
+should this print an error? otherwise the service start will silently fail.
+
+File: init/init_parser.c
+
+186
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3TmW90k
+Bytes: 69
+tab indent for easier reading. applies to the whole comment about 'c'
+
+196
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3XmDTw4
+Bytes: 44
+don't put code before variable declarations.
+
+197
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3VmAEwA
+Bytes: 14
+newilne after.
+
+198
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3VnL80M
+Bytes: 173
+add a local ptr for *c. Update that as you go through so you don't constantly have to dereference c twice or do (*c)++ everywhere. Then, prior to returning do your *c = ptr;
+
+209
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3Xnnz80
+Bytes: 13
+0 check first
+
+229
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3Vmds18
+Bytes: 14
+newline after.
+
+230
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3ZmvK4E
+Bytes: 44
+update dst_sz after you successfully realloc
+
+233
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3Xm5j8k
+Bytes: 177
+i don't like how it frees the previous buffer on failure here. You should follow the realloc semantics for your helper.
+Return NULL and let your caller free the original buffer.
+
+251
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3dmCQ9Q
+Bytes: 69
+why initialize to NULL? you are going to always overwrite on line 257
+
+256
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3Vka09I
+Bytes: 53
+why the + 1? shouldn't src already be nul terminated?
+
+269
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3ZkTq8Q
+Bytes: 356
+it's kind of awkward to be managing the index for the dst while managing the ptr for the src. Most processing here happens with ptr manipulation, but dst is managed with index. If you want to preserve the realloc'd buffer for dst, call it dst_buf, and still maintain a running dst_buf just like before. This will make things symmetric and easier to follow.
+
+299
+Mon Jan 07 21:53:36 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N3dQASg4
+Bytes: 318
+this is weird since you assume that the destination buffer will always need to be expanded by prop_len, though in reality it needs to be modified by (prop_len - (c-(dst + dst_idx)) ish, i.e. it may shrink. It's not really a big problem, but it may make debugging things a bit weird since the sizes/indexes will be odd.
+

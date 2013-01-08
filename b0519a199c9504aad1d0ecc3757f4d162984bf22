@@ -37,3 +37,11 @@ Otherwise, something bad happens: even if the adb command completes, the calling
 
 The PROC_THREAD_ATTRIBUTE_HANDLE_LIST isn't directly related to the problem, and not needed in this specific case because I don't think there are multiple threads being used in the adb client process (at least when reaching this code). It's probably better to avoid mentioning it, or add a note like "ideally, use PROC_THREAD_ATTRIBUTE_HANDLE_LIST if running on Vista or higher"
 
+937
+Tue Jan 08 18:03:56 2013 +0000
+Author: Ray Donnelly <1012093@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: N5sVEUEw
+UUID: N5mU.HLw
+Bytes: 129
+I'll use exactly that text and remove all mention of PROC_THREAD_ATTRIBUTE_HANDLE_LIST as adb.exe needs to work pre-Vista anyway.
+

@@ -11,3 +11,11 @@ I'd recommend rephrasing this to better explain the problem at hand, i.e. the fa
 
 Apart from that, I don't see a problem with the code.
 
+937
+Tue Jan 08 16:30:39 2013 +0000
+Author: Ray Donnelly <1012093@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: N5iLeytg
+UUID: N5qKXOvg
+Bytes: 219
+The reason I didn't mention Python specifically is because I also run into the same issue with Necessitas Qt Creator, and the WinGDB guys also appear to run into it too, so IMHO the problem is just a general bug in adb.
+

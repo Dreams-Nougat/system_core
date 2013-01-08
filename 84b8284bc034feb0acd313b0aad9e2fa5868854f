@@ -1,0 +1,11 @@
+Revision: 84b8284bc034feb0acd313b0aad9e2fa5868854f
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Tue Jan 08 16:26:11 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N5uLs4oU
+Bytes: 99
+I'd suggest rephrase this to indicate that this is needed to build with certain Windows toolchains.
+

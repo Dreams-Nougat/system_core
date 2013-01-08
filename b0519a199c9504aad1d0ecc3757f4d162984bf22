@@ -19,3 +19,21 @@ UUID: N5qKXOvg
 Bytes: 219
 The reason I didn't mention Python specifically is because I also run into the same issue with Necessitas Qt Creator, and the WinGDB guys also appear to run into it too, so IMHO the problem is just a general bug in adb.
 
+937
+Tue Jan 08 18:00:26 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: N5qKXOvg
+UUID: N5sVEUEw
+Bytes: 1225
+Yes, it is a bug in adb, no ambiguity here, but it's really subtle, so it'd be nice to have a better description of the problem, it's not really Python specific as you mention, i.e. something like:
+
+"""
+Some programs want to launch an adb command and collect its output by calling CreateProcess with inheritable stdout/stderr handles, then using read() to get its output. When this happens, the stdout/stderr handles passed to the adb client process will also be inheritable.
+
+When starting the adb server here, care must be taken to reset them to non-inheritable.
+
+Otherwise, something bad happens: even if the adb command completes, the calling process is stuck while read()-ing from the stdout/stderr descriptors, because they're connected to corresponding handles in the adb server process (even if the latter never uses/writes to them).
+"""
+
+The PROC_THREAD_ATTRIBUTE_HANDLE_LIST isn't directly related to the problem, and not needed in this specific case because I don't think there are multiple threads being used in the adb client process (at least when reaching this code). It's probably better to avoid mentioning it, or add a note like "ideally, use PROC_THREAD_ATTRIBUTE_HANDLE_LIST if running on Vista or higher"
+

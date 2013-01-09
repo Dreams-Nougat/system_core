@@ -1,0 +1,17 @@
+Revision: 2c842b20815b2bac311c0251aeb2a0c04e26a7ea
+Patch-set: 4
+File: init/ueventd.c
+
+133
+Wed Jan 09 05:11:15 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: N8cUTWsM
+Bytes: 213
+/* handel_pending_properties() can fail if uevents happened 
+   * before the system properties are ready to handle setting.
+   * Attempt to set them later without relying on subsequent
+   * events.
+   */
+
+zap tabs
+

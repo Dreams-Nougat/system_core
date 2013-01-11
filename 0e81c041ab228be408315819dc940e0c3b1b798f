@@ -1,0 +1,11 @@
+Revision: 0e81c041ab228be408315819dc940e0c3b1b798f
+Patch-set: 3
+File: init/property_service.c
+
+472
+Fri Jan 11 23:49:10 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ODN-q95c
+Bytes: 145
+instead of a bool, take a string (which can be NULL), call it 'prefix'. Everyone will pass NULL except for the factory one which will take "ro.".
+

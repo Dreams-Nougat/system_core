@@ -82,6 +82,14 @@ UUID: N3Vka09I
 Bytes: 53
 why the + 1? shouldn't src already be nul terminated?
 
+256
+Fri Jan 11 23:09:19 2013 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: N3Vka09I
+UUID: ODRsAgws
+Bytes: 118
+strlen() doesn't include the null byte. I need to add 1 to make room for it; dst_sz gets passed to malloc()/realloc().
+
 269
 Mon Jan 07 21:53:36 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

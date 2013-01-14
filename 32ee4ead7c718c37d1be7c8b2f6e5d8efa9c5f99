@@ -1,0 +1,11 @@
+Revision: 32ee4ead7c718c37d1be7c8b2f6e5d8efa9c5f99
+Patch-set: 4
+File: init/property_service.c
+
+491
+Mon Jan 14 18:17:59 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OIz5NQG8
+Bytes: 81
+don't have to do the strlen every time, compute it once at the start of function.
+

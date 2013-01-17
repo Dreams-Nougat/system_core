@@ -1,0 +1,11 @@
+Revision: ef2ea99bfe1e19c451882c3c8eb19368d0087ff6
+Base-for-patch-set: 1
+File: adb/usb_linux.c
+
+166
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ4R8jK0
+Bytes: 36
+avoid unnecessary whitespace changes
+

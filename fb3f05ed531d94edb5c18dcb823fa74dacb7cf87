@@ -1,0 +1,43 @@
+Revision: fb3f05ed531d94edb5c18dcb823fa74dacb7cf87
+Patch-set: 1
+File: /COMMIT_MSG
+
+12
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ6SAqJw
+Bytes: 105
+mention the name of the environment variable and the ADB_NOUSB environment variable in the commit message
+
+File: adb/adb.c
+
+1180
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ2S84G0
+Bytes: 145
+This allocates 1 byte, which is not enough to hold a NULL pointer.  You want calloc(sizeof(char*), 1), but return NULL probably makes more sense.
+
+1191
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ0TH5Pc
+Bytes: 21
+mixed tabs and spaces
+
+File: adb/usb_linux.c
+
+105
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ2R3gMk
+Bytes: 71
+if you allowed black_list to be NULL, this would be while (ptr && *ptr)
+
+107
+Thu Jan 17 04:24:03 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OZ0RyhNo
+Bytes: 21
+mixed tabs and spaces
+

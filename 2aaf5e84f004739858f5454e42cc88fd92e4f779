@@ -1,0 +1,11 @@
+Revision: 2aaf5e84f004739858f5454e42cc88fd92e4f779
+Patch-set: 1
+File: fastboot/engine.c
+
+302
+Thu Jan 24 00:39:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: OpwdTzDg
+Bytes: 16
+A lot cleaner...
+

@@ -1,0 +1,11 @@
+Revision: 80c3b278fde7b92504614b7d47b9fecf6f736081
+Patch-set: 3
+File: include/cutils/atomic-arm.h
+
+88
+Sat Feb 02 00:03:21 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PD6oMbqE
+Bytes: 4
+heh.
+

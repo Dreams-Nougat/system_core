@@ -1,0 +1,25 @@
+Revision: 8801e5a9474478a55aac07afb9d84cfc6525ea84
+Patch-set: 3
+File: adb/usb_linux.c
+
+105
+Mon Feb 04 21:22:02 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PTxk4y4c
+Bytes: 39
+this file uses 4 spaces instead of tabs
+
+110
+Mon Feb 04 21:22:02 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PT1kyQ6k
+Bytes: 90
+this file uses spaces after the if, and no spaces before/after the conditional parenthesis
+
+114
+Mon Feb 04 21:22:02 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PTJ-6-6s
+Bytes: 92
+it seems strange to use stdio here when everything else is using unix_open/adb_read wrappers
+

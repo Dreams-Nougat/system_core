@@ -1,0 +1,11 @@
+Revision: 5cd809fc1c6cb583f59b599194240b644b75366d
+Patch-set: 1
+File: libnetutils/ifc_utils.c
+
+317
+Wed Feb 06 02:46:33 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PhMSJkis
+Bytes: 56
+preserve errno as printerr() will potentially modify it.
+

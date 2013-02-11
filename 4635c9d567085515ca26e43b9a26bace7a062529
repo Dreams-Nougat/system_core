@@ -86,6 +86,22 @@ UUID: Pwkm92bQ
 Bytes: 9
 no => now
 
+File: auditd/libaudit.h
+
+34
+Mon Feb 11 17:41:10 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PpwmAyP8
+Bytes: 25
+Not defined and not used.
+
+38
+Mon Feb 11 17:41:10 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PpymFhA8
+Bytes: 25
+Not defined and not used.
+
 File: auditd/netlink.c
 
 304

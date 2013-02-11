@@ -32,6 +32,14 @@ UUID: PwumVzUQ
 Bytes: 173
 We don't want to write "len" bytes every time, or we could have a data leak where unknown garbage is written to the log file.  Instead, we need to write "len - total_bytes".
 
+48
+Mon Feb 11 17:47:05 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwumVzUQ
+UUID: Pwsn6iWo
+Bytes: 27
+Also need to increment buf.
+
 54
 Mon Feb 11 17:31:58 2013 +0000
 Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -46,6 +54,13 @@ UUID: PwimIVSo
 Bytes: 110
 Should this be total_bytes instead of bytes ?
 Currently it assigns l->total_bytes = the last chunk written + 1
+
+58
+Mon Feb 11 17:47:05 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Pwgn1kXg
+Bytes: 337
+Forgot to mention the first time: this depends on only one auditd running at a time and nothing else modifying the log file.  Otherwise, the log could get corrupted.  Not sure if that's too important, but it may be good to have a semaphore or some other protection of the log file to prevent multiple messages from being written at once.
 
 64
 Mon Feb 11 17:31:58 2013 +0000

@@ -1,0 +1,104 @@
+Revision: 4635c9d567085515ca26e43b9a26bace7a062529
+Patch-set: 2
+File: /COMMIT_MSG
+
+23
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwsmWCVM
+Bytes: 61
+Is this in addition to the standard behavior, or instead of ?
+
+File: auditd/audit_log.c
+
+16
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwmmCXQw
+Bytes: 87
+Personal preference: I prefer to see AUDITD_MODE and AUDITD_FLAGS.  But not a big deal.
+
+36
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwgmKsR4
+Bytes: 88
+May want to check for valid sizes of len.  Must be in range 0 < len <= MAX_LOG_FILE_SIZE
+
+48
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwumVzUQ
+Bytes: 173
+We don't want to write "len" bytes every time, or we could have a data leak where unknown garbage is written to the log file.  Instead, we need to write "len - total_bytes".
+
+54
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwkmLGSk
+Bytes: 25
+Should be < instead of !=
+
+57
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwimIVSo
+Bytes: 110
+Should this be total_bytes instead of bytes ?
+Currently it assigns l->total_bytes = the last chunk written + 1
+
+64
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwkmUuT4
+Bytes: 73
+Might be good to check the file size here, and rotate if it gets too big.
+
+124
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Pwsl-KQE
+Bytes: 103
+The following sequence of frees happens at least twice.  I's suggest making a macro or inline function.
+
+File: auditd/auditd.c
+
+55
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwumObTA
+Bytes: 119
+MAX_LOG_FILE_SIZE should be defined in a header, not here.  Should be available to audit_log.c -- see my comment there.
+
+184
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwomewVo
+Bytes: 147
+I'd prefer a comment indicating that quit is set from the signal handler.  Since it isn't set internally to the loop, the comment would be helpful.
+
+File: auditd/libaudit.c
+
+58
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Pwkm92bQ
+Bytes: 9
+no => now
+
+File: auditd/netlink.c
+
+304
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Pwumnjag
+Bytes: 10
+Whitespace
+
+334
+Mon Feb 11 17:31:58 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PwqmthYw
+Bytes: 9
+do => due
+

@@ -9,6 +9,14 @@ UUID: PwsmWCVM
 Bytes: 61
 Is this in addition to the standard behavior, or instead of ?
 
+23
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwsmWCVM
+UUID: PzzM2COQ
+Bytes: 51
+Addition to, I will attempt to make the more clear.
+
 File: auditd/audit_log.c
 
 16
@@ -18,12 +26,28 @@ UUID: PwmmCXQw
 Bytes: 87
 Personal preference: I prefer to see AUDITD_MODE and AUDITD_FLAGS.  But not a big deal.
 
+16
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwmmCXQw
+UUID: Pz9MX1Eo
+Bytes: 97
+Agreed, I like to name space my declarations too, I missed these. Helps prevent colissions. Done.
+
 36
 Mon Feb 11 17:31:58 2013 +0000
 Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: PwgmKsR4
 Bytes: 88
 May want to check for valid sizes of len.  Must be in range 0 < len <= MAX_LOG_FILE_SIZE
+
+36
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwgmKsR4
+UUID: PzzMtaJg
+Bytes: 120
+size_t is unsigned, so it cannot be negative (ssize_t is signed), I want them to be able to specify a file of ~0 length.
 
 48
 Mon Feb 11 17:31:58 2013 +0000
@@ -40,12 +64,36 @@ UUID: Pwsn6iWo
 Bytes: 27
 Also need to increment buf.
 
+48
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pwsn6iWo
+UUID: Pz3Mn4Lc
+Bytes: 4
+Done
+
+48
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwumVzUQ
+UUID: PzxMq7H8
+Bytes: 4
+Done
+
 54
 Mon Feb 11 17:31:58 2013 +0000
 Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: PwkmLGSk
 Bytes: 25
 Should be < instead of !=
+
+54
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwkmLGSk
+UUID: Pz1MkZLE
+Bytes: 4
+Done
 
 57
 Mon Feb 11 17:31:58 2013 +0000
@@ -55,12 +103,28 @@ Bytes: 110
 Should this be total_bytes instead of bytes ?
 Currently it assigns l->total_bytes = the last chunk written + 1
 
+57
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwimIVSo
+UUID: Pz5NG-FI
+Bytes: 11
+I think so.
+
 58
 Mon Feb 11 17:47:05 2013 +0000
 Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: Pwgn1kXg
 Bytes: 337
 Forgot to mention the first time: this depends on only one auditd running at a time and nothing else modifying the log file.  Otherwise, the log could get corrupted.  Not sure if that's too important, but it may be good to have a semaphore or some other protection of the log file to prevent multiple messages from being written at once.
+
+58
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pwgn1kXg
+UUID: Pz7NBeD8
+Bytes: 120
+No needed, this code isn't intended to be thread or multiple-writer safe. I think it would be overkill to add it in now.
 
 64
 Mon Feb 11 17:31:58 2013 +0000
@@ -76,6 +140,14 @@ UUID: Pwsl-KQE
 Bytes: 103
 The following sequence of frees happens at least twice.  I's suggest making a macro or inline function.
 
+124
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pwsl-KQE
+UUID: Pz9NQdAY
+Bytes: 82
+Should just be able to call audit_log_close() here and NULL the returning pointer.
+
 File: auditd/auditd.c
 
 55
@@ -84,6 +156,14 @@ Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: PwumObTA
 Bytes: 119
 MAX_LOG_FILE_SIZE should be defined in a header, not here.  Should be available to audit_log.c -- see my comment there.
+
+55
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwumObTA
+UUID: PzxMBTBA
+Bytes: 70
+No one needs it outside of this file. It is passed to audit_log_open()
 
 184
 Mon Feb 11 17:31:58 2013 +0000
@@ -101,6 +181,14 @@ UUID: Pwkm92bQ
 Bytes: 9
 no => now
 
+58
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pwkm92bQ
+UUID: Pz-MS0Fw
+Bytes: 4
+Done
+
 File: auditd/libaudit.h
 
 34
@@ -110,12 +198,28 @@ UUID: PpwmAyP8
 Bytes: 25
 Not defined and not used.
 
+34
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PpwmAyP8
+UUID: Pz7MYWH8
+Bytes: 4
+Done
+
 38
 Mon Feb 11 17:41:10 2013 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: PpymFhA8
 Bytes: 25
 Not defined and not used.
+
+38
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PpymFhA8
+UUID: Pz5MdXG8
+Bytes: 4
+Done
 
 File: auditd/netlink.c
 
@@ -126,10 +230,26 @@ UUID: Pwumnjag
 Bytes: 10
 Whitespace
 
+304
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pwumnjag
+UUID: Pz3MOwD8
+Bytes: 4
+Done
+
 334
 Mon Feb 11 17:31:58 2013 +0000
 Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: PwqmthYw
 Bytes: 9
 do => due
+
+334
+Tue Feb 12 01:45:01 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PwqmthYw
+UUID: Pz1MLxC0
+Bytes: 4
+Done
 

@@ -1,0 +1,28 @@
+Revision: 30e2ede0ae2aa81233e1e4812a50ce70cc101f28
+Patch-set: 7
+File: auditd/Android.mk
+
+9
+Tue Feb 12 14:33:28 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Pzki9z7Q
+Bytes: 58
+Was this intentionally restored?  Is it required to build?
+
+File: auditd/audit_log.c
+
+48
+Tue Feb 12 14:33:28 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PzmjNK1g
+Bytes: 56
+I don't believe this is possible on Linux.  CHAR_BIT==8.
+
+64
+Tue Feb 12 14:33:28 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PzqPqxAE
+Bytes: 209
+More commonly one would increment b by bytes and decrement len by bytes in the loop and then just pass b, len each time, and make len > 0 the loop condition.
+May want to keep writing in the EINTR case as well.
+

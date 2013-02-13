@@ -9,6 +9,14 @@ UUID: Pzki9z7Q
 Bytes: 58
 Was this intentionally restored?  Is it required to build?
 
+9
+Wed Feb 13 14:06:12 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Pzki9z7Q
+UUID: P0I9jSgM
+Bytes: 20
+No, slipped back in.
+
 File: auditd/audit_log.c
 
 48
@@ -25,4 +33,12 @@ UUID: PzqPqxAE
 Bytes: 209
 More commonly one would increment b by bytes and decrement len by bytes in the loop and then just pass b, len each time, and make len > 0 the loop condition.
 May want to keep writing in the EINTR case as well.
+
+64
+Wed Feb 13 14:06:12 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PzqPqxAE
+UUID: P0G9gpvY
+Bytes: 4
+Done
 

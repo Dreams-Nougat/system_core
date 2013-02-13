@@ -1,0 +1,11 @@
+Revision: 46b1763ea054325d84a15813d635cff45230ad1d
+Patch-set: 1
+File: auditd/audit_log.c
+
+70
+Wed Feb 13 17:15:51 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: PzGKLeyk
+Bytes: 429
+Minor comment: if you put this label before the newline write, then the logfile might be cleaner in the case of an error.  Assuming that part of the line was written, then the logfile with this code would start a line with part of one error, and then append the subsequent error.  But if the newline is there, then you would get a partial line followed by a newline followed by the subsequent line, which would be easier to read.
+

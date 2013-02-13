@@ -42,3 +42,12 @@ UUID: P0G9gpvY
 Bytes: 4
 Done
 
+File: rootdir/init.rc
+
+400
+Wed Feb 13 14:29:49 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: P0PKivQE
+Bytes: 144
+This needs to go to class main. Class main gets restarted on "Device Encryption" where /data gets umounted. Having an open fd blocks the umount.
+

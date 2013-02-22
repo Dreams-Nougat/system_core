@@ -1,0 +1,12 @@
+Revision: e35c1f56b72b0a99a92beb3d8b7bb99474ad0acd
+Patch-set: 1
+File: rootdir/init.rc
+
+95
+Fri Feb 22 02:53:49 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QEXTMRg8
+Bytes: 44
+Is currently a 32bit.
+We don't care for now?
+

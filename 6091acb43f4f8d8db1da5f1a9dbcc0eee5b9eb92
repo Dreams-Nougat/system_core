@@ -1,0 +1,25 @@
+Revision: 6091acb43f4f8d8db1da5f1a9dbcc0eee5b9eb92
+Patch-set: 2
+File: auditd/audit_log.c
+
+216
+Fri Feb 22 01:47:15 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QHyNsStA
+Bytes: 51
+need to set rc before ERROR as it could clear errno
+
+221
+Fri Feb 22 01:47:15 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QHwNxTqg
+Bytes: 4
+same
+
+230
+Fri Feb 22 01:47:15 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QH.OFEkc
+Bytes: 4
+same
+

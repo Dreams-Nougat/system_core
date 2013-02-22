@@ -23,3 +23,12 @@ UUID: QH.OFEkc
 Bytes: 4
 same
 
+File: rootdir/init.rc
+
+403
+Fri Feb 22 16:12:42 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QRd0gC6k
+Bytes: 81
+Probably should switch to 'class core' to ensure it works with device encryption.
+

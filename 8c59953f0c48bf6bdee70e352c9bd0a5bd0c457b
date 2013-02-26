@@ -9,3 +9,11 @@ UUID: QOQFu9Qc
 Bytes: 213
 defining these for non-linux builds runs the risk of producing different build results for linux and mac builds.  can you find a way to get capability.h included from bionic/libc/kernel/common/linux/capability.h ?
 
+34
+Tue Feb 26 20:35:31 2013 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: QOQFu9Qc
+UUID: QVkzLv-Q
+Bytes: 144
+I couldn't find a way to include the bionic header files directly. Per your suggestion, I incorporated the relevant bits from linux/capability.h
+

@@ -1,0 +1,11 @@
+Revision: 8c59953f0c48bf6bdee70e352c9bd0a5bd0c457b
+Patch-set: 3
+File: include/private/android_filesystem_config.h
+
+34
+Tue Feb 26 17:50:10 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QOQFu9Qc
+Bytes: 213
+defining these for non-linux builds runs the risk of producing different build results for linux and mac builds.  can you find a way to get capability.h included from bionic/libc/kernel/common/linux/capability.h ?
+

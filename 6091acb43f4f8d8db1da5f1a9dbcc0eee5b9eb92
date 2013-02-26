@@ -32,3 +32,11 @@ UUID: QRd0gC6k
 Bytes: 81
 Probably should switch to 'class core' to ensure it works with device encryption.
 
+403
+Tue Feb 26 15:15:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: QRd0gC6k
+UUID: QStvvZ.c
+Bytes: 133
+Wasn't class core the one that was causing the issue and class main what corrected it? I also think I need to handle sigterm as well.
+

@@ -1,0 +1,13 @@
+Revision: 8f8e14e63ca78b2ebd851eb75f478c1b6ff112f8
+Patch-set: 1
+File: /COMMIT_MSG
+
+10
+Wed Feb 27 01:47:49 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QVvKQgM8
+Bytes: 108
+typo: securtiy => security
+
+Not a blocker, but if you update this patch for any reason, you should fix this.
+

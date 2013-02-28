@@ -1,0 +1,11 @@
+Revision: 12441c1ca9a9739896a51ad42568cf3eb6f013f3
+Patch-set: 5
+File: auditd/auditd.c
+
+51
+Thu Feb 28 16:59:09 2013 +0000
+Author: T.O. Radzy Radzykewycz <1010466@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QXq2zRSc
+Bytes: 61
+Do we need the ifndef, now that it is defined in Android.mk ?
+

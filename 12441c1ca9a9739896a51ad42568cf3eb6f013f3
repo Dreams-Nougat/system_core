@@ -9,3 +9,11 @@ UUID: QXq2zRSc
 Bytes: 61
 Do we need the ifndef, now that it is defined in Android.mk ?
 
+51
+Thu Feb 28 17:02:43 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: QXq2zRSc
+UUID: QZB7GDT8
+Bytes: 145
+Just in case someone doesn't pass it through the -D option, it shouldn't be a fatal compilation error. Just assume some default, unless overiden.
+

@@ -1,0 +1,11 @@
+Revision: fe8135739c5a9195e74786205c077964ba4f9c44
+Patch-set: 6
+File: include/private/android_filesystem_config.h
+
+30
+Fri Mar 01 21:26:35 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: QklOWdtw
+Bytes: 244
+this file is only used by android, so it can just #include "android_filesystem_capability.h".  make_ext4fs can be compiled without android support, so it would need to conditionally include android_filesystem_capability.h or linux/capability.h.
+

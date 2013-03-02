@@ -1,0 +1,11 @@
+Revision: 4034aa37ae4fa5f8db5916e833ca7425548a26d9
+Patch-set: 1
+File: charger/charger.c
+
+760
+Sat Mar 02 00:15:29 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Qo59d8yw
+Bytes: 167
+this should set batt_anim->cur_cycle = batt_anim->num_cycles; so we stop it immediately instead of going through this loop a few times until we let cur_cycle count up.
+

@@ -1,0 +1,11 @@
+Revision: 0dc1693d3940216ffa553e167cedab9e7554f324
+Patch-set: 1
+File: fs_mgr/fs_mgr.c
+
+211
+Wed Mar 06 03:05:31 2013 +0000
+Author: Ken Sumrall <1004285@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Q6b8gP14
+Bytes: 172
+You need to call free(line) when the function exits, in both the error and success cases.  The means changing all the return 0 lines to a goto err_out or something similar.
+

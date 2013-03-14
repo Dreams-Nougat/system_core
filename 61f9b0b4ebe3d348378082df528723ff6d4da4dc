@@ -1,0 +1,17 @@
+Revision: 61f9b0b4ebe3d348378082df528723ff6d4da4dc
+Patch-set: 1
+File: init/devices.c
+
+291
+Thu Mar 14 07:16:13 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RrpTLpGw
+Bytes: 240
+This is a bit hard to read.  Because you're only handling two specific cases, why not just test those
+
+if (!strncmp(path, "/devices/platform/", 18))
+    return path + 18;
+if (!strncmp(path, "/devices/", 9))
+    return path + 9;
+return NULL;
+

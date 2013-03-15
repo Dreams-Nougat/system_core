@@ -1,0 +1,11 @@
+Revision: 4860a47198c3a97e50eb92583d7a8c38df31a58c
+Patch-set: 9
+File: auditd/audit_log.c
+
+70
+Fri Mar 15 01:42:25 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvsSqvn4
+Bytes: 19
+Hang on removing...
+

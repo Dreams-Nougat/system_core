@@ -17,3 +17,11 @@ UUID: RvkQR7gs
 Bytes: 134
 System should not be able to write to the logs. Assuming no MAC controls, this prevents a tainted system UID from corrupting the logs.
 
+154
+Fri Mar 15 01:32:26 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvkQR7gs
+UUID: RvqTQ4ho
+Bytes: 136
+Also, a system_app could be granted MAC privilege to read these, again we would want the DAC controls to be in-line with the MAC policy.
+

@@ -1,0 +1,155 @@
+Revision: 941bdceca06df20c96dde1b38a61efbf6ee40383
+Patch-set: 10
+File: auditd/README
+
+6
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM.d9Uw
+Bytes: 126
+please include a note about which kernel config options are required, and which are optional and add additional functionality.
+
+9
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvE.yZd8
+Bytes: 210
+What will consume this data?
+
+If we ever give applications the ability to read these logs then they'll leak information between users.  These logs will need to go in per-user storage if we ever want to do that.
+
+File: auditd/audit_log.c
+
+30
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM-GVT8
+Bytes: 141
+if this must not be null, the first the the function should do is check for NULL, and if found, log a descriptive message and return an error
+
+32
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvO-LEUQ
+Bytes: 5
+ditto
+
+46
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK-FGTE
+Bytes: 42
+colins comments on this weren't addressed.
+
+59
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvG-YgRc
+Bytes: 24
+this can just be a break
+
+File: auditd/audit_log.h
+
+28
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA-VTd4
+Bytes: 102
+these function-description comments are mixed between headers and c files. is there a reason for that?
+
+File: auditd/auditd.c
+
+54
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvG.vIXI
+Bytes: 66
+this wont ever happen because the Android.mk already has a default
+
+File: auditd/auditd.h
+
+31
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM.q1X4
+Bytes: 58
+just use existing log functions, don't create new aliases.
+
+41
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA-g7ec
+Bytes: 81
+Just use negative error codes like elsewhere in /system/core.  This isn't needed.
+
+File: auditd/libaudit.h
+
+11
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvC-Sifc
+Bytes: 31
+each enum value on its own line
+
+File: auditd/netlink.c
+
+37
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK.eeVM
+Bytes: 36
+nlmsghdr -> "netlink message header"
+
+89
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA9njZo
+Bytes: 48
+dont need this label (also eww goto backwards :)
+
+90
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvG9qwWM
+Bytes: 9
+return 0;
+
+92
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM94lUI
+Bytes: 184
+What does setting errno get you here?
+
+Dont set errno and just have the return value capture the error you want to send and make sure the type of error is logged with a useful message.
+
+93
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvG.8Acc
+Bytes: 71
+80 char lines.
+
+Also, give a more descriptive error of what went wrong.
+
+95
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK93WU0
+Bytes: 10
+return rc;
+
+134
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvC9kyZI
+Bytes: 89
+ditto above.  I think colin addressed this pattern in a previous patch already, actually.
+
+138
+Fri Mar 15 02:21:56 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvC.LaRE
+Bytes: 61
+80 char lines, descriptive error, ditto for the rest of these
+

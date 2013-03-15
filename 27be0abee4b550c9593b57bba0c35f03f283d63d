@@ -9,3 +9,11 @@ UUID: RvOwnnyQ
 Bytes: 120
 why does audit need its own user?  I don't see any permissions granted to audit anywhere else, why not run it as system?
 
+154
+Fri Mar 15 01:12:32 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvOwnnyQ
+UUID: RvkQR7gs
+Bytes: 134
+System should not be able to write to the logs. Assuming no MAC controls, this prevents a tainted system UID from corrupting the logs.
+

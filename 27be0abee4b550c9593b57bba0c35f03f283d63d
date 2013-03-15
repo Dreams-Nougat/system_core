@@ -1,0 +1,11 @@
+Revision: 27be0abee4b550c9593b57bba0c35f03f283d63d
+Patch-set: 4
+File: include/private/android_filesystem_config.h
+
+154
+Fri Mar 15 00:54:27 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvOwnnyQ
+Bytes: 120
+why does audit need its own user?  I don't see any permissions granted to audit anywhere else, why not run it as system?
+

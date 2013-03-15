@@ -1,0 +1,28 @@
+Revision: 0976d83832259aae943b623bfcf0da9b8fc06bda
+Patch-set: 8
+File: auditd/audit_log.c
+
+70
+Fri Mar 15 00:58:23 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvCwuF-w
+Bytes: 73
+this if isn't doing anything useful, bytes >= 0 based on the check above.
+
+111
+Fri Mar 15 00:58:23 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvOyMf.4
+Bytes: 166
+the else on a separate line from the brace is misleading, and you are not relying on the if clause above any more, so just change this to an if.  also, space before {
+
+155
+Fri Mar 15 00:58:23 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvAyGu8k
+Bytes: 161
+the logic is unnecessarily inverted here.  l or str == NULL is an error condition, so just check it and return:
+
+ if (l == NULL || str == NULL)
+   return EINVAL;
+

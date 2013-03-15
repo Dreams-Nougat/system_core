@@ -1,5 +1,14 @@
 Revision: 941bdceca06df20c96dde1b38a61efbf6ee40383
 Patch-set: 10
+File: auditd/Android.mk
+
+6
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvNrttUY
+Bytes: 132
+just "Override this in the BoardConfig.mk to change the max log filesize"; we usually dont set build variables from the command line
+
 File: auditd/README
 
 6
@@ -34,6 +43,15 @@ UUID: RvO-LEUQ
 Bytes: 5
 ditto
 
+38
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK.AuYA
+Bytes: 228
+buf is only passed in as char * (below), so just deal with buf as a char * and it simplifies the logic in this function.
+
+Like Colin said, if sizeof(char) != 8 far more drastic things will break in the system than this daemon :)
+
 46
 Fri Mar 15 02:21:56 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -47,6 +65,101 @@ Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvG-YgRc
 Bytes: 24
 this can just be a break
+
+63
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA.Q7c0
+Bytes: 9
+do -> due
+
+70
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvC.NqbI
+Bytes: 55
+just set l->total_bytes once at the end of the function
+
+76
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM9xdfY
+Bytes: 194
+Why do we want to write again if we just had a write failure?
+
+Let's not generate more errors than we need; if write() encounters an error just print a descriptive message and clean up and exit.
+
+80
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM9a1WQ
+Bytes: 70
+check for error in write, log with descriptive message if encountered.
+
+84
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvI9U3Tc
+Bytes: 71
+"Attempt to rotate if over threshold, even in the face of errors above"
+
+129
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvE80pQg
+Bytes: 70
+if you opened fd with AUDIT_LOG_MODE, why does it have to be chmod-ed?
+
+172
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvM8-Nec
+Bytes: 237
+in this function we don't have any state to clean up on the error path out, so we can just return an error code.
+
+Also (in convention with the rest of the stuff in system/core) use negative error codes
+
+if (l == NULL)
+    return -EINVAL;
+
+177
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvO9EcX8
+Bytes: 53
+log a descriptive error message as to what went wrong
+
+182
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK9OeZk
+Bytes: 233
+why do you close before the next log is successfully opened? in the case where the next log fails to open, another write will give this another chance to open/rotate the log.
+
+So first try to open the new log, then close the old log.
+
+186
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvI9JPZY
+Bytes: 23
+log descriptive message
+
+198
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA9pzfs
+Bytes: 48
+extra newline above.
+
+    if (l == NULL) return;
+
+255
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvG9sAQ0
+Bytes: 66
+why does this return zero even if rc is set (e.g. in ENOMEM case)?
 
 File: auditd/audit_log.h
 
@@ -82,6 +195,40 @@ UUID: RvA-g7ec
 Bytes: 81
 Just use negative error codes like elsewhere in /system/core.  This isn't needed.
 
+File: auditd/libaudit.c
+
+28
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvC8UyVg
+Bytes: 346
+this seems a bit of a hack.  What is the point of the libaudit.c file?  It seems like this function could go neatly into netlink.c, and this this function would be static and you wouldn't need this line.
+
+If you expect other things to use this functionality later, we can move some of this into a separate libaudit, but that's not needed for now.
+
+51
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvK8nWdM
+Bytes: 181
+log a descriptive message here with what went wrong.  include __line__ if you want, but what this really needs is something like "failed to register process for kernel audit events"
+
+52
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvO8tUbU
+Bytes: 78
+because we have no state to cleanup here, we can just directly
+
+    return rc;
+
+74
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvA8.reY
+Bytes: 58
+just return a negative error code instead of setting errno
+
 File: auditd/libaudit.h
 
 11
@@ -92,6 +239,13 @@ Bytes: 31
 each enum value on its own line
 
 File: auditd/netlink.c
+
+30
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvLpx2as
+Bytes: 88
+this seems hackish. just memset() the needed structs to 0 when they are created instead.
 
 37
 Fri Mar 15 02:21:56 2013 +0000
@@ -152,4 +306,11 @@ Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvC.LaRE
 Bytes: 61
 80 char lines, descriptive error, ditto for the rest of these
+
+358
+Fri Mar 15 05:00:50 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: RvHqbYbQ
+Bytes: 59
+test for this condition, and log a message if it overflows.
 

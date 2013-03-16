@@ -9,6 +9,14 @@ UUID: RvNrttUY
 Bytes: 132
 just "Override this in the BoardConfig.mk to change the max log filesize"; we usually dont set build variables from the command line
 
+6
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvNrttUY
+UUID: RvgSiFjo
+Bytes: 64
+Its not that you don't its that you can... but I'll change this.
+
 File: auditd/README
 
 6
@@ -27,6 +35,14 @@ What will consume this data?
 
 If we ever give applications the ability to read these logs then they'll leak information between users.  These logs will need to go in per-user storage if we ever want to do that.
 
+9
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvE.yZd8
+UUID: RvsTM-g8
+Bytes: 4
+Done
+
 File: auditd/audit_log.c
 
 30
@@ -36,12 +52,28 @@ UUID: RvM-GVT8
 Bytes: 141
 if this must not be null, the first the the function should do is check for NULL, and if found, log a descriptive message and return an error
 
+30
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvM-GVT8
+UUID: RvuTR.qg
+Bytes: 103
+Internal interface, the callers in this file must check... which they do and return an error of EINVAL.
+
 32
 Fri Mar 15 02:21:56 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvO-LEUQ
 Bytes: 5
 ditto
+
+32
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvO-LEUQ
+UUID: RvoTGBuw
+Bytes: 103
+Internal interface, the callers in this file must check... which they do and return an error of EINVAL.
 
 38
 Fri Mar 15 05:00:50 2013 +0000
@@ -52,12 +84,28 @@ buf is only passed in as char * (below), so just deal with buf as a char * and i
 
 Like Colin said, if sizeof(char) != 8 far more drastic things will break in the system than this daemon :)
 
+38
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvK.AuYA
+UUID: RvqTLAvM
+Bytes: 779
+It requires 0 overhead to do this and has no logic required to make this change. Why make such assumptions? The buffers used by read and write are void, here is some data of some length, write it. It doesn't matter the width of the data. However, the return is the number of BYTES written. So why use a data type, that in the current version of Linux and the current hardware your running on just happens to by a byte. Computing has been in the place before about making assumptions on data types. The C standard says that char >= 1 byte. Where is int8_t == 1 byte. Just because the other code is wrong doesn't mean this should be incorrect too. Also, when char does change to something that breaks the other code, this will be the one module that keeps plugging along correctly.
+
 46
 Fri Mar 15 02:21:56 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvK-FGTE
 Bytes: 42
 colins comments on this weren't addressed.
+
+46
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvK-FGTE
+UUID: RvkTB7tE
+Bytes: 26
+My comment addressed this.
 
 59
 Fri Mar 15 02:21:56 2013 +0000
@@ -66,6 +114,14 @@ UUID: RvG-YgRc
 Bytes: 24
 this can just be a break
 
+59
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvG-YgRc
+UUID: RvgS79l8
+Bytes: 31
+I think out is more readable...
+
 63
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -73,12 +129,28 @@ UUID: RvA.Q7c0
 Bytes: 9
 do -> due
 
+63
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvA.Q7c0
+UUID: RvmS.alE
+Bytes: 4
+Done
+
 70
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvC.NqbI
 Bytes: 55
 just set l->total_bytes once at the end of the function
+
+70
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvC.NqbI
+UUID: RviS4cmA
+Bytes: 55
+No, if an error occurs, then bytes will be out of sync.
 
 76
 Fri Mar 15 05:00:50 2013 +0000
@@ -89,12 +161,28 @@ Why do we want to write again if we just had a write failure?
 
 Let's not generate more errors than we need; if write() encounters an error just print a descriptive message and clean up and exit.
 
+76
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvM9xdfY
+UUID: RvsRxXvY
+Bytes: 233
+You might not have an error on this write and will keep the logs cleaner, TO Radzy pointed this out and I think it was a valid suggestion. If it keeps throwing errors, then you end up with an ugly log. I think the "attempt" is valid.
+
 80
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvM9a1WQ
 Bytes: 70
 check for error in write, log with descriptive message if encountered.
+
+80
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvM9a1WQ
+UUID: RvqRZwm4
+Bytes: 4
+Done
 
 84
 Fri Mar 15 05:00:50 2013 +0000
@@ -103,12 +191,28 @@ UUID: RvI9U3Tc
 Bytes: 71
 "Attempt to rotate if over threshold, even in the face of errors above"
 
+84
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvI9U3Tc
+UUID: RvuR22us
+Bytes: 4
+Done
+
 129
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvE80pQg
 Bytes: 70
 if you opened fd with AUDIT_LOG_MODE, why does it have to be chmod-ed?
+
+129
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvE80pQg
+UUID: RvoR7ZtI
+Bytes: 150
+This was submitted by rpcraig of the SEAndroid community, he said he had issues until he added this. I also suspected it wasn't needed. I will remove.
 
 172
 Fri Mar 15 05:00:50 2013 +0000
@@ -129,6 +233,14 @@ UUID: RvO9EcX8
 Bytes: 53
 log a descriptive error message as to what went wrong
 
+177
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvO9EcX8
+UUID: RvmSDyos
+Bytes: 4
+Done
+
 182
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -138,12 +250,28 @@ why do you close before the next log is successfully opened? in the case where t
 
 So first try to open the new log, then close the old log.
 
+182
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvK9OeZk
+UUID: RvqSA4oA
+Bytes: 4
+Done
+
 186
 Fri Mar 15 05:00:50 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvI9JPZY
 Bytes: 23
 log descriptive message
+
+186
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvI9JPZY
+UUID: RvkSGzpw
+Bytes: 4
+Done
 
 198
 Fri Mar 15 05:00:50 2013 +0000
@@ -170,6 +298,14 @@ UUID: RvA-VTd4
 Bytes: 102
 these function-description comments are mixed between headers and c files. is there a reason for that?
 
+28
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvA-VTd4
+UUID: RvoRJJpY
+Bytes: 170
+Hmmm not following you here. All the extern'd functions have their descriptions in the header file, where the declaration is. Where as the static function is in the file.
+
 File: auditd/auditd.c
 
 54
@@ -178,6 +314,14 @@ Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvG.vIXI
 Bytes: 66
 this wont ever happen because the Android.mk already has a default
+
+54
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvG.vIXI
+UUID: RvkQ0jgg
+Bytes: 81
+Ill change this to an error message, don't know why this needs to be fatal issue.
 
 File: auditd/auditd.h
 
@@ -205,6 +349,14 @@ Bytes: 346
 this seems a bit of a hack.  What is the point of the libaudit.c file?  It seems like this function could go neatly into netlink.c, and this this function would be static and you wouldn't need this line.
 
 If you expect other things to use this functionality later, we can move some of this into a separate libaudit, but that's not needed for now.
+
+28
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvC8UyVg
+UUID: RviQ7kvc
+Bytes: 110
+Initially this was to a rewrite of libaudit from scratch, but I agree, just put them in the same file for now.
 
 51
 Fri Mar 15 05:00:50 2013 +0000
@@ -246,6 +398,14 @@ Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: RvLpx2as
 Bytes: 88
 this seems hackish. just memset() the needed structs to 0 when they are created instead.
+
+30
+Sat Mar 16 17:14:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: RvLpx2as
+UUID: RvsQofqg
+Bytes: 232
+Same thing as memset, but sure. On instances where the compiler doesn't have a buildin in memset, and their is a full function call for the memset (not inlined or the compiler does away with the inline), my design sheds some cycles.
 
 37
 Fri Mar 15 02:21:56 2013 +0000

@@ -1,0 +1,20 @@
+Revision: 02c2fb4849c6b75d563f1e2da0fd5d69f99515f4
+Patch-set: 11
+File: auditd/auditd.c
+
+89
+Mon Mar 18 19:58:05 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: R0DXbmhY
+Bytes: 126
+I prefer at least a trailing new line of functions.. so I added it to be consistent. I can drop them if its an abhorred thing.
+
+File: auditd/netlink.c
+
+212
+Mon Mar 18 19:58:05 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: R0FXnPtA
+Bytes: 32
+Missed the roll over.. will fix.
+

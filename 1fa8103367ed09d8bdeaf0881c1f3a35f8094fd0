@@ -1,0 +1,27 @@
+Revision: 1fa8103367ed09d8bdeaf0881c1f3a35f8094fd0
+Patch-set: 1
+File: adb/SERVICES.TXT
+
+284
+Thu Mar 21 20:33:55 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SNkz8PzM
+Bytes: 7
+same as
+
+286
+Thu Mar 21 20:33:55 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SNmwB.00
+Bytes: 2
+ws
+
+File: adb/services.c
+
+198
+Thu Mar 21 20:33:55 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SNgz2N1E
+Bytes: 41
+looks like the local style always uses {}
+

@@ -39,3 +39,10 @@ UUID: SNiy2k4A
 Bytes: 18
 space after commas
 
+1517
+Thu Mar 21 21:09:00 2013 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SNixSE0A
+Bytes: 102
+I don't think this binds to a transport, so any device can connect to the now opened port on the host.
+

@@ -70,3 +70,17 @@ UUID: SNixSE0A
 Bytes: 102
 I don't think this binds to a transport, so any device can connect to the now opened port on the host.
 
+1517
+Thu Mar 21 22:26:11 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNixSE0A
+UUID: STzMeiCA
+Bytes: 760
+I'm not sure I understand what you're referring to. Can you clarify?
+
+there is an acquire_one_transport() call just above. When running on the device, ttype will be kTransportAny, and serial will be NULL. The acquire_one_transport() above will return the single active transport that adbd knows about (it fails if there is no transport, i.e. the device is not connected through USB or has USB debugging disabled, or even if there are more than one transport, which I don't think would happen on the device).
+
+We could add support for kTransportHost on acquire_one_transport() and modify its implementation to only support it for !ADB_HOST, but I'm not sure this adds much.
+
+When running on the host, this function should perform exactly like the original code.
+

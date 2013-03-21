@@ -1,0 +1,12 @@
+Revision: 3960ec226d07c7327ac6967a2977c521fd4884b6
+Base-for-patch-set: 3
+File: adb/commandline.c
+
+122
+Thu Mar 21 21:57:46 2013 +0000
+Author: Benoit Goby <1003977@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SNg.TiZ0
+Bytes: 84
+Have you consider making it an option of forward? Like:
+adb forward [-r] <from> <to>
+

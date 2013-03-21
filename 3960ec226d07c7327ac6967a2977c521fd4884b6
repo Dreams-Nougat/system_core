@@ -10,3 +10,13 @@ Bytes: 84
 Have you consider making it an option of forward? Like:
 adb forward [-r] <from> <to>
 
+122
+Thu Mar 21 22:02:21 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNg.TiZ0
+UUID: STxMjjGw
+Bytes: 225
+Yes, it actually started like this, but I found it confusing because of the interpretation of <local> and <remote> depending on a tiny bit of context.
+
+I find "adb reverse" more explicit, and easier to document here actually.
+

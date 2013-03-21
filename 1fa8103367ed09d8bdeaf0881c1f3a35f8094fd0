@@ -9,12 +9,28 @@ UUID: SNkz8PzM
 Bytes: 7
 same as
 
+284
+Thu Mar 21 20:37:23 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNkz8PzM
+UUID: ST1PqJP8
+Bytes: 36
+thanks for the quick review. Done :)
+
 286
 Thu Mar 21 20:33:55 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SNmwB.00
 Bytes: 2
 ws
+
+286
+Thu Mar 21 20:37:23 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNmwB.00
+UUID: ST7POGKw
+Bytes: 5
+Ditto
 
 File: adb/services.c
 
@@ -24,4 +40,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SNgz2N1E
 Bytes: 41
 looks like the local style always uses {}
+
+198
+Thu Mar 21 20:37:23 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNgz2N1E
+UUID: ST5PLHJw
+Bytes: 4
+Done
 

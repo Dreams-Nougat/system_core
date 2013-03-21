@@ -9,12 +9,28 @@ UUID: SNowJx3Q
 Bytes: 39
 space after "if" and space after comma.
 
+1445
+Thu Mar 21 21:19:11 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNowJx3Q
+UUID: ST7M42Ks
+Bytes: 70
+that's not my code, I'm just cut-and-pasting here, but I'll fix it :-)
+
 1450
 Thu Mar 21 20:49:20 2013 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SNqwGA2A
 Bytes: 26
 check malloc return value?
+
+1450
+Thu Mar 21 21:19:11 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNqwGA2A
+UUID: ST9M-VI8
+Bytes: 37
+I'll add that (again, original code).
 
 1467
 Thu Mar 21 20:49:20 2013 +0000
@@ -24,6 +40,14 @@ Bytes: 138
 The adb host will write OKAY twice? Is this intentional?
 
 Like you did on line 1523, can you add a similar comment if this is intentional.
+
+1467
+Thu Mar 21 21:19:11 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SNmysmzQ
+UUID: STzNMyFA
+Bytes: 176
+the original code was writing "OKAYOKAY" on the host, so I've tried to keep it the same. However, I'm not convinced that this was necessary in any way. I'll test it to be sure.
 
 1471
 Thu Mar 21 20:49:20 2013 +0000

@@ -1,0 +1,199 @@
+Revision: 00fa7c1d96d2d0d42cc82a7ea7354964772c0a90
+Patch-set: 13
+File: auditd/audit_log.c
+
+32
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbsgk38E
+Bytes: 41
+move the LOG_TAG line to just above this.
+
+41
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbsj9v-M
+Bytes: 4
+tabs
+
+65
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbugKey4
+Bytes: 110
+move opening brace to this line.  Still mostly an empty line, and matches our existing android system style :)
+
+75
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbuhTWxY
+Bytes: 50
+} else { all on the same line. here and elsewhere.
+
+78
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbghRdw4
+Bytes: 30
+space between log and filename
+
+97
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbggIlzQ
+Bytes: 46
+(ditto) opening brace on this line, tabs below
+
+109
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbqgno8M
+Bytes: 376
+I really don't want this to be a sticking point for all of auditd.  We're not interested in added complexity to support some hypothetical future architecture support that is incompatible with the rest of the platform.  If you want to get auditd merged and continue this discussion, factor the sizeof(char) != 1 support into a second patch to get it off the table for this one.
+
+141
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbughm64
+Bytes: 182
+Break out the error case, log on this error as well (because we could successfully get here and only reach our first error on this write, which wouldn't record an error to the SLOG).
+
+148
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbgg6V9A
+Bytes: 226
+It'd probably be a good idea to SLOG something here to indicate the audit log has been rotated.  The info level would probably be safe.
+
+In your usage of this now, how do you monitor whether/when the audit log has rolled over?
+
+169
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbqjqQ9s
+Bytes: 49
+Don't need to check rc again, just checked above.
+
+257
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbmhgK.Y
+Bytes: 26
+if (l == NULL)
+    return;
+
+280
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbsiZP7s
+Bytes: 53
+Don't need the 'else' here, just:
+
+    if (len > 0) {
+
+284
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbmiTy5w
+Bytes: 173
+A more descriptive message would be "Failed to allocate memory to read klog".
+
+With error messages, it's helpful if they're specific enough to track down the error uniquely.
+
+287
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbiiJ03A
+Bytes: 8
+} else {
+
+291
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbgikF-Q
+Bytes: 34
+"Could not read kernel log length"
+
+299
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: Sbihw86Q
+Bytes: 32
+"Could not read kernel log data"
+
+309
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbsjnfxI
+Bytes: 19
+check return value.
+
+File: auditd/auditd.c
+
+134
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjlQwjPA
+Bytes: 24
+tabs (and spaces mixed?)
+
+138
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjjQ9EMk
+Bytes: 15
+unused variable
+
+File: auditd/libaudit.h
+
+31
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SbqgAgxA
+Bytes: 4
+tabs
+
+57
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjnQziP8
+Bytes: 138
+Does type always define which member of the union is valid (or that none of them are)?  If not how do you determine which member is valid?
+
+File: auditd/netlink.c
+
+50
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjhQftGU
+Bytes: 15
+unused variable
+
+95
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjvQ.eMo
+Bytes: 63
+What should this parameter be used for?  Currently it's unused.
+
+224
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjtRDfFY
+Bytes: 15
+unused variable
+
+269
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjrRIAHQ
+Bytes: 15
+unused variable
+
+272
+Mon Mar 25 00:36:23 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SjpRNBIQ
+Bytes: 15
+unused variable
+

@@ -9,12 +9,28 @@ UUID: Sbsgk38E
 Bytes: 41
 move the LOG_TAG line to just above this.
 
+32
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbsgk38E
+UUID: SnGZmTmI
+Bytes: 4
+Done
+
 41
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: Sbsj9v-M
 Bytes: 4
 tabs
+
+41
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbsj9v-M
+UUID: SnEZjUlA
+Bytes: 4
+Done
 
 65
 Mon Mar 25 00:36:23 2013 +0000
@@ -23,12 +39,28 @@ UUID: SbugKey4
 Bytes: 110
 move opening brace to this line.  Still mostly an empty line, and matches our existing android system style :)
 
+65
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbugKey4
+UUID: SnCZgVkE
+Bytes: 4
+Done
+
 75
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SbuhTWxY
 Bytes: 50
 } else { all on the same line. here and elsewhere.
+
+75
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbuhTWxY
+UUID: SnAZdWoM
+Bytes: 4
+Done
 
 78
 Mon Mar 25 00:36:23 2013 +0000
@@ -37,12 +69,28 @@ UUID: SbghRdw4
 Bytes: 30
 space between log and filename
 
+78
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbghRdw4
+UUID: SnObUfq8
+Bytes: 4
+Done
+
 97
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SbggIlzQ
 Bytes: 46
 (ditto) opening brace on this line, tabs below
+
+97
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbggIlzQ
+UUID: SnMbZguc
+Bytes: 4
+Done
 
 109
 Mon Mar 25 00:36:23 2013 +0000
@@ -51,12 +99,28 @@ UUID: Sbqgno8M
 Bytes: 376
 I really don't want this to be a sticking point for all of auditd.  We're not interested in added complexity to support some hypothetical future architecture support that is incompatible with the rest of the platform.  If you want to get auditd merged and continue this discussion, factor the sizeof(char) != 1 support into a second patch to get it off the table for this one.
 
+109
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbqgno8M
+UUID: SnMZ2IhE
+Bytes: 118
+Done, but its not hypothetical. Ive worked on non-byte addressable architectures. Also, remember the 32-64 bit fiasco.
+
 141
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: Sbughm64
 Bytes: 182
 Break out the error case, log on this error as well (because we could successfully get here and only reach our first error on this write, which wouldn't record an error to the SLOG).
+
+141
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbughm64
+UUID: SnIZwKhQ
+Bytes: 4
+Done
 
 148
 Mon Mar 25 00:36:23 2013 +0000
@@ -67,12 +131,28 @@ It'd probably be a good idea to SLOG something here to indicate the audit log ha
 
 In your usage of this now, how do you monitor whether/when the audit log has rolled over?
 
+148
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbgg6V9A
+UUID: SnKZrJis
+Bytes: 130
+If your referring to outside of the daemon, I use inotify. I added a log inside the function, that way all call sites are updated.
+
 169
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SbqjqQ9s
 Bytes: 49
 Don't need to check rc again, just checked above.
+
+169
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbqjqQ9s
+UUID: SnKbehss
+Bytes: 152
+Agreed but this was a comment from Collin Cross to change this, so I did. Ill change it back. It could even be in if/else-if rather than 2 separate ifs.
 
 257
 Mon Mar 25 00:36:23 2013 +0000
@@ -81,6 +161,14 @@ UUID: SbmhgK.Y
 Bytes: 26
 if (l == NULL)
     return;
+
+257
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbmhgK.Y
+UUID: SnIbjipk
+Bytes: 4
+Done
 
 280
 Mon Mar 25 00:36:23 2013 +0000
@@ -91,6 +179,14 @@ Don't need the 'else' here, just:
 
     if (len > 0) {
 
+280
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbsiZP7s
+UUID: SnObNng0
+Bytes: 4
+Done
+
 284
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -100,12 +196,28 @@ A more descriptive message would be "Failed to allocate memory to read klog".
 
 With error messages, it's helpful if they're specific enough to track down the error uniquely.
 
+284
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbmiTy5w
+UUID: SnGbprng
+Bytes: 4
+Done
+
 287
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SbiiJ03A
 Bytes: 8
 } else {
+
+287
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbiiJ03A
+UUID: SnEbmsqg
+Bytes: 4
+Done
 
 291
 Mon Mar 25 00:36:23 2013 +0000
@@ -114,6 +226,14 @@ UUID: SbgikF-Q
 Bytes: 34
 "Could not read kernel log length"
 
+291
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbgikF-Q
+UUID: SnCbztmY
+Bytes: 4
+Done
+
 299
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -121,12 +241,37 @@ UUID: Sbihw86Q
 Bytes: 32
 "Could not read kernel log data"
 
+299
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: Sbihw86Q
+UUID: SnAbwulU
+Bytes: 4
+Done
+
 309
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SbsjnfxI
 Bytes: 19
 check return value.
+
+309
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SbsjnfxI
+UUID: SnOb7Xjo
+Bytes: 4
+Done
+
+File: auditd/audit_log.h
+
+86
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SnIbMqg4
+Bytes: 3
+tab
 
 File: auditd/auditd.c
 
@@ -137,12 +282,28 @@ UUID: SjlQwjPA
 Bytes: 24
 tabs (and spaces mixed?)
 
+134
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjlQwjPA
+UUID: SnMYAYk0
+Bytes: 28
+Eclipse formatter failed me.
+
 138
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SjjQ9EMk
 Bytes: 15
 unused variable
+
+138
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjjQ9EMk
+UUID: SnKb1ZkU
+Bytes: 4
+Done
 
 File: auditd/libaudit.h
 
@@ -153,12 +314,34 @@ UUID: SbqgAgxA
 Bytes: 4
 tabs
 
+37
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SnGYQjpY
+Bytes: 7
+tabs...
+
+41
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SnEYNkn4
+Bytes: 7
+tabs...
+
 57
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SjnQziP8
 Bytes: 138
 Does type always define which member of the union is valid (or that none of them are)?  If not how do you determine which member is valid?
+
+57
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjnQziP8
+UUID: SnIb6ajM
+Bytes: 136
+You are correct, the type field lets us know which member of the union is valid. You can see the use in libaudit.c set_internal_fields()
 
 File: auditd/netlink.c
 
@@ -169,12 +352,28 @@ UUID: SjhQftGU
 Bytes: 15
 unused variable
 
+50
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjhQftGU
+UUID: SnCYKlmg
+Bytes: 4
+Done
+
 95
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SjvQ.eMo
 Bytes: 63
 What should this parameter be used for?  Currently it's unused.
+
+95
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjvQ.eMo
+UUID: SnAYHml4
+Bytes: 175
+I just wanted to know if kernel/user space are out of sync with each other... Since I never used it, let me put the check in, test and make sure my logic elsewhere is correct.
 
 224
 Mon Mar 25 00:36:23 2013 +0000
@@ -183,6 +382,14 @@ UUID: SjtRDfFY
 Bytes: 15
 unused variable
 
+224
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjtRDfFY
+UUID: SnOamvlM
+Bytes: 4
+Done
+
 269
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -190,10 +397,26 @@ UUID: SjrRIAHQ
 Bytes: 15
 unused variable
 
+269
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjrRIAHQ
+UUID: SnKawxoQ
+Bytes: 4
+Done
+
 272
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: SjpRNBIQ
 Bytes: 15
 unused variable
+
+272
+Wed Mar 27 01:50:30 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SjpRNBIQ
+UUID: SnMarwhs
+Bytes: 4
+Done
 

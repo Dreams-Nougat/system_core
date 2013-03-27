@@ -1,0 +1,11 @@
+Revision: a186f760acc2b56d5025288a5374b8ebc4744729
+Patch-set: 14
+File: auditd/libaudit.c
+
+122
+Wed Mar 27 01:29:48 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: SnGbCzto
+Bytes: 144
+I don't think this needs to be fatal, but it might be nice to know. Perhaps we should at least return a errnum ... EILSEQ or another suggestion?
+

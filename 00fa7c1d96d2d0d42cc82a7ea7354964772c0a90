@@ -375,6 +375,14 @@ UUID: SnAYHml4
 Bytes: 175
 I just wanted to know if kernel/user space are out of sync with each other... Since I never used it, let me put the check in, test and make sure my logic elsewhere is correct.
 
+95
+Wed Mar 27 01:54:59 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: SnAYHml4
+UUID: SnOZX3jg
+Bytes: 149
+I stressed the daemon by running a script with ctl.start and ctl.stop calls, as well as generating denials. I was never to get this warning to print.
+
 224
 Mon Mar 25 00:36:23 2013 +0000
 Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 6ced14f24ede7db5353287f3b6d6fbac95417571
+Patch-set: 1
+File: init/devices.c
+
+153
+Wed Apr 03 23:36:40 2013 +0000
+Author: Alexander Ray <1012391@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: S8hkKL5o
+Bytes: 182
+doesn't this return negative on error and not set secontext?  If you're relying on the initial NULL to catch the first time, then you need to re-set secontext to NULL for every loop.
+

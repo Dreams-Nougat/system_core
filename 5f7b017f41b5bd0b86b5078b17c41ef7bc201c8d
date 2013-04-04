@@ -1,0 +1,16 @@
+Revision: 5f7b017f41b5bd0b86b5078b17c41ef7bc201c8d
+Patch-set: 4
+File: /COMMIT_MSG
+
+6
+Thu Apr 04 00:44:18 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: S.otvscg
+Bytes: 365
+Gerrit complained about the commit message being to big on the first paragraph, so I shortened it.
+
+remote: Processing changes: updated: 1, done    
+remote: (W) 6353a2a: commit subject >65 characters; use shorter first paragraph
+remote: (W) 6353a2a: commit subject >65 characters; use shorter first paragraph
+To https://android.googlesource.com/platform/system/core
+

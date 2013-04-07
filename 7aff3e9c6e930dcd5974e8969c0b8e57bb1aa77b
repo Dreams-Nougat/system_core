@@ -1,0 +1,50 @@
+Revision: 7aff3e9c6e930dcd5974e8969c0b8e57bb1aa77b
+Patch-set: 2
+File: include/cutils/logprint.h
+
+42
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TB.ElIr0
+Bytes: 23
+off should be 0, not on
+
+44
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TBwEpLpc
+Bytes: 47
+what's the point of this enum?  just use a bool
+
+66
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TB8EiJrM
+Bytes: 53
+make this take a bool so it could be turned off again
+
+File: liblog/logprint.c
+
+775
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TB6EfGmM
+Bytes: 117
+this would all be simpler if you created a new buffer for the prefix color characters and the suffix color characters
+
+778
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TB0EPNjs
+Bytes: 28
+indentation isn't right here
+
+File: logcat/logcat.cpp
+
+458
+Sun Apr 07 05:10:01 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TByEUKks
+Bytes: 52
+get rid of the wrapper, just call the function below
+

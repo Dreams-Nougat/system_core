@@ -84,3 +84,13 @@ We could add support for kTransportHost on acquire_one_transport() and modify it
 
 When running on the host, this function should perform exactly like the original code.
 
+1517
+Mon Apr 15 22:31:54 2013 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: STzMeiCA
+UUID: TXsQr-us
+Bytes: 331
+I think I meant a USB device can say "send this packet to listener N."  I don't think there is any validation of device -> host "connections"  So you may intend to open a listener only for Device A, but Device B can also send things to that listener if it knows the number.
+
+I could be wrong, but I remember looking at this before.
+

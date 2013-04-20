@@ -1,0 +1,19 @@
+Revision: 5a569314169d987d13f606890d1c9909a7aed4e2
+Patch-set: 1
+File: toolbox/newfs_msdos.c
+
+556
+Sat Apr 20 00:21:50 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TvYW.Ap8
+Bytes: 86
+move this to an align macro, you can copy it from 
+system/core/libsparse/sparse_defs.h
+
+581
+Sat Apr 20 00:21:50 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TvSXQbus
+Bytes: 207
+style in the rest of this file leaves out the braces, might as well stay consistent.  also, this code is completely unreadable already, but comments here would be very helpful.  use the align macro here too.
+

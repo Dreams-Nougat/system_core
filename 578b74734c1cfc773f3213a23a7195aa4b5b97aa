@@ -1,0 +1,11 @@
+Revision: 578b74734c1cfc773f3213a23a7195aa4b5b97aa
+Base-for-patch-set: 1
+File: rootdir/init.rc
+
+394
+Mon Apr 22 18:04:21 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TvSs-3ZA
+Bytes: 80
+are there changes that remove setting this property? Could you point me at them?
+

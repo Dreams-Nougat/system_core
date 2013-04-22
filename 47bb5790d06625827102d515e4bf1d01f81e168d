@@ -1,0 +1,11 @@
+Revision: 47bb5790d06625827102d515e4bf1d01f81e168d
+Patch-set: 1
+File: init/devices.c
+
+360
+Mon Apr 22 02:26:18 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: TvQjyJ2I
+Bytes: 136
+we can't add handlers like this for every possible subsystem, I think we need a more generic way to symlink files based on an attribute.
+

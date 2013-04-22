@@ -9,3 +9,11 @@ UUID: TvSs-3ZA
 Bytes: 80
 are there changes that remove setting this property? Could you point me at them?
 
+394
+Mon Apr 22 18:57:13 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: TvSs-3ZA
+UUID: TwgPkUDE
+Bytes: 248
+The property should still be set when reloading policy at runtime, but it is no longer necessary to restart any services on policy reloads given these changes for ueventd and installd (all with the same change-id for Deckard dependency resolution).
+

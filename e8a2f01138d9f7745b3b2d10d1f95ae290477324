@@ -9,3 +9,12 @@ UUID: TvWs11bA
 Bytes: 95
 is there a uevent that triggers this or are you just checking this en every uevent you receive?
 
+822
+Mon Apr 22 18:57:13 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: TvWs11bA
+UUID: TwoN-wG8
+Bytes: 685
+selinux_status_updated() simply checks a sequence number in a read-only shared page mapped from the kernel by the  selinux_status_open() call to see if it has changed since the last call to selinux_status_updated().  So it is checking on every uevent but the check requires no system calls in the common case.  Implementation of selinux_status_updated() can be found in the corresponding change uploaded for external/libselinux with the same change-id since it is a dependency.
+selinux_status_open()/selinux_status_updated() will fall back to checking a NETLINK_SELINUX socket on older kernels that do not support /sys/fs/selinux/status, but that would only be true for Linux < 2.6.37.
+

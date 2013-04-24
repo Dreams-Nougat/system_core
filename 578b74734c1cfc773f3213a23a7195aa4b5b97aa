@@ -17,3 +17,11 @@ UUID: TwgPkUDE
 Bytes: 248
 The property should still be set when reloading policy at runtime, but it is no longer necessary to restart any services on policy reloads given these changes for ueventd and installd (all with the same change-id for Deckard dependency resolution).
 
+394
+Wed Apr 24 07:54:11 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: TwgPkUDE
+UUID: T9qyqwxU
+Bytes: 76
+what is the property used for if it no longer required for the restart here?
+

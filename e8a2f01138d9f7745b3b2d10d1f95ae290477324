@@ -42,3 +42,11 @@ UUID: UKTlzLx8
 Bytes: 171
 Hmm, this doesn't seem like enough actually. What happens when the policy modifies an existing node. With this code, you wouldn't update it until it got re-created, right?
 
+822
+Sat Apr 27 21:30:42 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: UKTlzLx8
+UUID: UOelatQM
+Bytes: 140
+The policy determines the contexts for created nodes from this point forward. Handling nodes already assigned a context is a separate issue.
+

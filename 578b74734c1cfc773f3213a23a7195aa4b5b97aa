@@ -33,3 +33,14 @@ UUID: UAz..h-A
 Bytes: 63
 property_set() checks for it and calls selinux_reload_policy().
 
+394
+Sat Apr 27 21:21:34 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: UAz..h-A
+UUID: UOSlJrT8
+Bytes: 203
+What happened to changing the DAC perms on selinuxfs booleans on a reload?
+Was this because they didn't take chown -R? Perhaps, we should revisit this?
+
+https://android-review.googlesource.com/#/c/39569/
+

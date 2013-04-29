@@ -1,0 +1,11 @@
+Revision: 2ce17f91c17b49307055212021688b4d251a496b
+Patch-set: 1
+File: rootdir/init.rc
+
+40
+Mon Apr 29 21:19:12 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UQKW.yLo
+Bytes: 55
+still says core-crypto, thought it changed to conscrypt
+

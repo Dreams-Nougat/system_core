@@ -58,3 +58,17 @@ UUID: UM69m.ZU
 Bytes: 299
 That is true, but was also true of the prior code; restarting ueventd did not cause existing nodes to be relabeled either.  Unclear as to whether we want that behavior automatically or if it should only be done via explicit restorecon by whatever dropped the updated policy or upon on the next boot.
 
+822
+Tue Apr 30 15:54:19 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: UM69m.ZU
+UUID: UOSwlOxc
+Bytes: 385
+Yes, exactly. 
+
+Their are usually two types of policy reloads, those affecting early boot and those after. Dynamic reloads can affect the late boot process, after data is mounted. An example of where this is handy is the following:
+1. You are well past boot and a driver gets insmod'd
+2. You need to update that label
+
+Now you can rmmod, reload policy, insmod and it works as expected.
+

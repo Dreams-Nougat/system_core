@@ -50,3 +50,11 @@ UUID: UOelatQM
 Bytes: 140
 The policy determines the contexts for created nodes from this point forward. Handling nodes already assigned a context is a separate issue.
 
+822
+Tue Apr 30 12:49:17 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: UKTlzLx8
+UUID: UM69m.ZU
+Bytes: 299
+That is true, but was also true of the prior code; restarting ueventd did not cause existing nodes to be relabeled either.  Unclear as to whether we want that behavior automatically or if it should only be done via explicit restorecon by whatever dropped the updated policy or upon on the next boot.
+

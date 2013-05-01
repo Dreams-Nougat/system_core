@@ -9,3 +9,10 @@ UUID: UPykPaa4
 Bytes: 52
 these were prefixed to avoid a compile time warning.
 
+583
+Wed May 01 03:46:05 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UQFx2taE
+Bytes: 64
+please add comments here.  why are you adding bpb.res / 2 to x2?
+

@@ -44,3 +44,11 @@ Was this because they didn't take chown -R? Perhaps, we should revisit this?
 
 https://android-review.googlesource.com/#/c/39569/
 
+394
+Fri May 10 12:37:37 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: UOSlJrT8
+UUID: Uc09uLTc
+Bytes: 371
+That was never part of AOSP, only in our tree, because AOSP rejected chown -R and no one has yet attempted to reimplement the setting of boolean ownerships via ueventd.  Also, as AOSP rejected device admin APIs, there is in fact no reason to chown the ownerships to system UID because neither system_server nor Settings/SEManager are supposed to be able to modify policy.
+

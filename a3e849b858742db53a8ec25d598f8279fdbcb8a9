@@ -1,0 +1,18 @@
+Revision: a3e849b858742db53a8ec25d598f8279fdbcb8a9
+Patch-set: 1
+File: libsysutils/src/SocketClient.cpp
+
+112
+Thu May 16 06:11:57 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UuE1wLVA
+Bytes: 212
+if you want to document the interface to the function, do it above the function.  also, are there any places that might pass NULL to quoteArg?  it seems better to have them check for NULL before calling quoteArg.
+
+122
+Thu May 16 06:11:57 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: UuG1t8XQ
+Bytes: 44
+this is not accurate, free(NULL) is allowed.
+

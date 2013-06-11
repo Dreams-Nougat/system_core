@@ -16,3 +16,11 @@ UUID: bd1bf126_161e5c7f
 Bytes: 178
 create a new local variable unsigned int mode inside this if block, to avoid casting mode_t* to unsigned*, which will cause strange behavior if sizeof(mode_t) != sizeof(unsigned)
 
+320
+Tue Jun 11 19:18:06 2013 +0000
+Author: Liang Cheng <1022096@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1bf126_161e5c7f
+UUID: bd1bf126_9cd60dbb
+Bytes: 133
+We need cast anyway, either in fs_config or in handle_send_file, because handle_send_file needs mode_t, and fs_config needs unsigned.
+

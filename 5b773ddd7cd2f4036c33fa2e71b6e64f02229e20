@@ -24,3 +24,11 @@ UUID: bd1bf126_9cd60dbb
 Bytes: 133
 We need cast anyway, either in fs_config or in handle_send_file, because handle_send_file needs mode_t, and fs_config needs unsigned.
 
+320
+Tue Jun 11 20:04:31 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1bf126_9cd60dbb
+UUID: bd1bf126_3c8a59a3
+Bytes: 91
+if you declare the variable inside the block, it can be mode_t above and unsigned int here.
+

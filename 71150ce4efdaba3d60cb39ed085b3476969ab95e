@@ -1,0 +1,13 @@
+Revision: 71150ce4efdaba3d60cb39ed085b3476969ab95e
+Patch-set: 1
+File: adb/usb_vendors.c
+
+146
+Mon Jun 17 18:38:44 2013 +0000
+Author: Jeffrey Smith <1022047@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca7ff995_f6b62011
+Bytes: 188
+My reference for the Haier, Hisense, and MTK IDs was
+http://developer.android.com/tools/device.html
+The Nook is in the list there as well, but I also know it well from personal experience.
+

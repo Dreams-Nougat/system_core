@@ -1,0 +1,11 @@
+Revision: 4d8a99704df4cf859e5122b85386ab2147f1f14a
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+211
+Mon Jun 17 20:49:20 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a583140_dce1cd8b
+Bytes: 136
+there are lots of things that build into data/nativebenchmark and data/nativetest, we need match those directories including all subdirs
+

@@ -1,0 +1,11 @@
+Revision: f90d884a8ff2256ec387fc8e97fbed24a027c630
+Patch-set: 4
+File: adb/file_sync_service.c
+
+176
+Wed Jun 26 22:42:43 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea891da9_9ff293d1
+Bytes: 147
+this is expected to fail if adb is running as shell and the uid would be set to something other than shell.  maybe a log message and then continue?
+

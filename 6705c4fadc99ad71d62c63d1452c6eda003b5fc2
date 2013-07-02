@@ -1,0 +1,11 @@
+Revision: 6705c4fadc99ad71d62c63d1452c6eda003b5fc2
+Patch-set: 23
+File: auditd/README
+
+23
+Tue Jul 02 00:04:18 2013 +0000
+Author: Sharjeel Ahmed Qureshi <1022548@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a2cb179_c879a4d7
+Bytes: 165
+It is ambiguous as to how the log file is rotated or renamed. If I were to build a system from this using inotify, I'd like to have more clear description over here.
+

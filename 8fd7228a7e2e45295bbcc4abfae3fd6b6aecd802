@@ -1,0 +1,14 @@
+Revision: 8fd7228a7e2e45295bbcc4abfae3fd6b6aecd802
+Patch-set: 1
+File: init/util.c
+
+312
+Fri Jul 12 17:03:27 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27b2905c_f4f3d693
+Bytes: 251
+instead of adding more clauses, strspn would be cleaner.
+also we might as well add, at least '-' and '.'.
+
+I wonder if it would be worth replacing unknown characters with '_' instead of truncating at them, which would avoid this problem  in the future
+

@@ -12,3 +12,11 @@ also we might as well add, at least '-' and '.'.
 
 I wonder if it would be worth replacing unknown characters with '_' instead of truncating at them, which would avoid this problem  in the future
 
+312
+Tue Jul 16 08:32:11 2013 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27b2905c_f4f3d693
+UUID: 2737f0c4_09fca9f0
+Bytes: 375
+How would you feel about removing this sanitization step altogether? If the partition name contains bad characters the create link step would fail with an error message. Currently we create links that may differ from the underlying partition name without  hinting about this in the log. If the partition name is "abc!@@#$#$" how does it help to create a symlink called "abc"?
+

@@ -20,3 +20,11 @@ UUID: 2737f0c4_09fca9f0
 Bytes: 375
 How would you feel about removing this sanitization step altogether? If the partition name contains bad characters the create link step would fail with an error message. Currently we create links that may differ from the underlying partition name without  hinting about this in the log. If the partition name is "abc!@@#$#$" how does it help to create a symlink called "abc"?
 
+312
+Tue Jul 16 20:33:05 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2737f0c4_09fca9f0
+UUID: 53ecab79_81e77a5e
+Bytes: 256
+I'd rather not have names that have characters that might cause problems for other tools (for example, a space in the name would probably make it unmountable by fstab).  I'd be fine with replacing bad characters with _ so at least it doesn't get truncated.
+

@@ -19,3 +19,11 @@ It is a "fallback" flag; 1 means fall back to using selinux netlink socket if ke
 Since Linux 2.6.37 or later supports /sys/fs/selinux/status, I suppose we could just pass 0.
 If you really want, we could add #define or an enum to selinux/avc.h and use the symbol here, but that's two patches - one for external/libselinux and one for here.
 
+909
+Fri Jul 26 19:20:39 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d3717b54_aded1d7d
+UUID: d3189b2e_3529d097
+Bytes: 60
+then maybe you can use 'true', so it's clear it's a boolean.
+

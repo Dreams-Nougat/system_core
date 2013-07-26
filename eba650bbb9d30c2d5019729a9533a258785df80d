@@ -1,0 +1,11 @@
+Revision: eba650bbb9d30c2d5019729a9533a258785df80d
+Patch-set: 3
+File: init/devices.c
+
+909
+Fri Jul 26 16:49:51 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 530d8be8_39c54f7e
+Bytes: 17
+what does 1 mean?
+

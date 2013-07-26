@@ -1,0 +1,13 @@
+Revision: 907c2b2e8d08f760e42793a6ba79e5420c912693
+Patch-set: 2
+File: init/util.c
+
+86
+Fri Jul 26 19:47:28 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 13bcf330_cf0c3d4e
+Bytes: 110
+Over 100 chars...
+
+I've had reviews hit me on this at either 100 or 80, seems to be a matter of who review it.
+

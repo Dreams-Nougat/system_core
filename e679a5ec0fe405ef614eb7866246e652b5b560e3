@@ -1,0 +1,11 @@
+Revision: e679a5ec0fe405ef614eb7866246e652b5b560e3
+Patch-set: 16
+File: include/private/android_filesystem_config.h
+
+212
+Fri Jul 26 18:41:46 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d3717b54_0dfd512a
+Bytes: 37
+This isn't a change related to audit.
+

@@ -1,0 +1,11 @@
+Revision: 78fb74ac0d4e6f4b68976a020ae45a1061970751
+Patch-set: 1
+File: adb/usb_vendors.c
+
+161
+Wed Aug 14 06:15:05 2013 +0000
+Author: Pin Ting <1022754@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 388b9471_79edbbe7
+Bytes: 34
+Please use spaces to replace tabs.
+

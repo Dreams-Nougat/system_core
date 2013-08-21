@@ -9,6 +9,14 @@ UUID: ad4bc472_87bae8ce
 Bytes: 46
 use __BEGIN_DECLS/__END_DECLS from sys/cdefs.h
 
+24
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_87bae8ce
+UUID: ad4bc472_8a6aefe8
+Bytes: 4
+Done
+
 File: libcutils/service.c
 
 32
@@ -17,6 +25,14 @@ Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad4bc472_27a574ae
 Bytes: 45
 don't use caps, make them look like #defines.
+
+32
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_27a574ae
+UUID: ad4bc472_cd780184
+Bytes: 137
+Done. These are constants so I made them look like #defines intentionally. I've now made them lowercase so see which way you like better.
 
 42
 Mon Aug 19 17:40:52 2013 +0000
@@ -29,12 +45,28 @@ You can also use snprintf, but that will likely be less readable :)
 
 snprintf(start_command, sizeof(start_command), "%s%s%s", service_name, args ? ":" : "", args ?: "");
 
+42
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_476f5031
+UUID: ad4bc472_ad4b855a
+Bytes: 4
+Done
+
 57
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad4bc472_6795ac29
 Bytes: 111
 why not put the sched_yield in the service_wait_for_predicate() so you don't have to keep doing it before hand?
+
+57
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_6795ac29
+UUID: ad4bc472_cd4ec16c
+Bytes: 4
+Done
 
 64
 Mon Aug 19 17:40:52 2013 +0000
@@ -43,6 +75,14 @@ UUID: ad4bc472_67bc8cb3
 Bytes: 37
 newline between declarations and code
 
+64
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_67bc8cb3
+UUID: ad4bc472_0d5df91f
+Bytes: 4
+Done
+
 70
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,12 +90,32 @@ UUID: ad4bc472_47c1901d
 Bytes: 37
 newline between declarations and code
 
+70
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_47c1901d
+UUID: ad4bc472_2d58b52f
+Bytes: 4
+Done
+
 76
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad4bc472_87c66830
 Bytes: 51
 specify the timeout in ms, and use an unsigned long
+
+76
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_87c66830
+UUID: ad4bc472_2db9d578
+Bytes: 609
+I've switched to an unsigned long but I have not yet switched the interface to accept timeouts in ms. Given that the poll period is 100ms, I won't be able to honor arbitrary millisecond-resolution timeouts.
+
+By only allowing second-resolution timeouts, I can honor any requested timeout value. Moreover, all current clients in the existing Android codebase specify their timeouts in multiples of seconds. I'm hoping that once we provide a proper blocking interface for init properties, we will be able to honor millisecond-resolution timeouts. At that point, it may be worth migrating clients over.
+
+Thoughts?
 
 77
 Mon Aug 19 17:40:52 2013 +0000
@@ -68,6 +128,18 @@ Then define your poll interval as a #define in terms of usecs, etc.
 
 Also, we really should get a real polling interface to init for properties so you don't have to spin+sleep like this.
 
+77
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_2708d4a9
+UUID: ad4bc472_ed5dfd7f
+Bytes: 362
+Done.
+
+I agree that init should provide an interface where clients don't have to spin/poll for property changes. Ideally, a caller be able to block until the next property change with a timeout.
+
+The motivation behind this file is to hide the polling so that if/when we do have a blocking interface, we can update this one function and all clients would benefit.
+
 90
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -75,10 +147,26 @@ UUID: ad4bc472_4736306b
 Bytes: 238
 dangerous to just pass a string ptr and hope it has enough space. I know this file is short and you can validate all the uses, but the much safer way would be to take length of the output string, and then only strlcpy() that much into it.
 
+90
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_4736306b
+UUID: 0d25b0ee_cd479d24
+Bytes: 4
+Done
+
 94
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad4bc472_67180ceb
 Bytes: 30
 why aren't you using snprintf?
+
+94
+Wed Aug 21 19:52:08 2013 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_67180ceb
+UUID: ad4bc472_4dead129
+Bytes: 4
+Done
 

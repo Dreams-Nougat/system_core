@@ -34,6 +34,14 @@ UUID: ad4bc472_cd780184
 Bytes: 137
 Done. These are constants so I made them look like #defines intentionally. I've now made them lowercase so see which way you like better.
 
+32
+Wed Aug 21 20:07:49 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_cd780184
+UUID: 0d25b0ee_edc9c143
+Bytes: 345
+yeah, I see what you are saying. I usually do caps for pre-processor stuff in C so it's easy to spot. In that case, you can just use #defines for strings since the all the uses will all be collapsed into the same single string anyway. If you want to keep them const strings with real ptrs, you can go ahead and use caps here if you really want..
+
 42
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>

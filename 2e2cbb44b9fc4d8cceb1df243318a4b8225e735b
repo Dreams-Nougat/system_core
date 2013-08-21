@@ -1,0 +1,11 @@
+Revision: 2e2cbb44b9fc4d8cceb1df243318a4b8225e735b
+Patch-set: 3
+File: init/readme.txt
+
+73
+Wed Aug 21 22:26:09 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da354b4_f348aa5f
+Bytes: 102
+should be another set of [ ] around the context to show that it is optional even if group is specified
+

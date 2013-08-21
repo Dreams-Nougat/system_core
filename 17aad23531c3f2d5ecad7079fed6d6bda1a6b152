@@ -117,6 +117,16 @@ By only allowing second-resolution timeouts, I can honor any requested timeout v
 
 Thoughts?
 
+76
+Wed Aug 21 20:03:13 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_2db9d578
+UUID: 0d25b0ee_cd6cbd78
+Bytes: 350
+your poll interval is an implementation detail and sohuldn't drive the interface design. Most other polling interfaces take timeouts in milliseconds, and you should adhere to that. I don't think that anyone assumes that just because the unit is milliseconds that the timeout will be millisecond accurate.
+
+Please go ahead and convert to milliseconds.
+
 77
 Mon Aug 19 17:40:52 2013 +0000
 Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -139,6 +149,14 @@ Done.
 I agree that init should provide an interface where clients don't have to spin/poll for property changes. Ideally, a caller be able to block until the next property change with a timeout.
 
 The motivation behind this file is to hide the polling so that if/when we do have a blocking interface, we can update this one function and all clients would benefit.
+
+77
+Wed Aug 21 20:03:13 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad4bc472_ed5dfd7f
+UUID: 0d25b0ee_2d95992a
+Bytes: 66
+my suggestion was to put the polling interface up top as a #define
 
 90
 Mon Aug 19 17:40:52 2013 +0000

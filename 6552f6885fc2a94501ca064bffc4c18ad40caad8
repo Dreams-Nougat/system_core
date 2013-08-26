@@ -1,0 +1,11 @@
+Revision: 6552f6885fc2a94501ca064bffc4c18ad40caad8
+Patch-set: 1
+File: rootdir/init.rc
+
+249
+Mon Aug 26 19:34:09 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: edd85c6d_91161eba
+Bytes: 100
+Yeah we had this in the S4, which is what prompted the switch to handling the reload within ueventd.
+

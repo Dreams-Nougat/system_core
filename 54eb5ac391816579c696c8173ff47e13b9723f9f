@@ -1,0 +1,20 @@
+Revision: 54eb5ac391816579c696c8173ff47e13b9723f9f
+Patch-set: 1
+File: include/cutils/str.h
+
+46
+Thu Aug 29 17:32:57 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d24ed981_a8ca5334
+Bytes: 12
+whitespace..
+
+File: libcutils/str.c
+
+30
+Thu Aug 29 17:32:57 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d24ed981_88c7972e
+Bytes: 4
+tabs
+

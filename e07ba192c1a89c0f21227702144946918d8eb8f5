@@ -1,0 +1,41 @@
+Revision: e07ba192c1a89c0f21227702144946918d8eb8f5
+Patch-set: 1
+File: libdiskconfig/config_mbr.c
+
+213
+Fri Aug 30 08:30:23 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3239f501_c6295699
+Bytes: 41
+follow the convention and call it 'item'.
+
+214
+Fri Aug 30 08:30:23 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3239f501_4636e6fc
+Bytes: 30
+use the magic from the header.
+
+219
+Fri Aug 30 08:30:23 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3239f501_0634deeb
+Bytes: 746
+you don't need to blank the partition table since the code in config_mbr will fill in empty partitions with 0's (see loop at line 283). The only thing you need to do is to write the magic at the end. Note that it should not be done at the beginning as you should only set the magic once you've actually written a valid partition table.
+
+Also, please don't hardcode the offsets here, you can easily get them from the pc_boot_record struct like the rest of the code does. For example.
+
+item = alloc_wl(2);
+item->offset = offsetof(struct pc_boot_record, mbr_sig);
+uint16_t sig = PC_BOOT_SIG;
+memcpy(wr->data, &sig, sizeof(sig));
+
+If you are worried about endianness on the sig, you can do something like htole16(PC_BOOT_SIG), or something like that.
+
+295
+Fri Aug 30 08:30:23 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3239f501_061b3e81
+Bytes: 77
+don't mix assignment and test. assign to temp_wr, then test temp_wr for error
+

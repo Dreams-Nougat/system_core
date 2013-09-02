@@ -1,0 +1,72 @@
+Revision: b90487ce5fe40db1591c6728751db11ed1e33906
+Patch-set: 2
+File: include/cutils/str.h
+
+37
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_52409242
+Bytes: 35
+spelling mistake on sting and sring
+
+38
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_72459651
+Bytes: 29
+spelling mistake with aquired
+
+File: libcutils/str.c
+
+22
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_b24ffe66
+Bytes: 118
+What should be the expected behavior if I invoke like so:
+
+ replace("he cried", "", "she");
+
+I'm getting "shehe cried"
+
+29
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_92291a9a
+Bytes: 61
+space between if and '('. Same goes for the rest of the code.
+
+37
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_b2261ec7
+Bytes: 27
+Should this be strdup(str)?
+
+44
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_d233a203
+Bytes: 166
+Is old not being found in str really an error? Should it maybe just return strdup(str)? If it must stay then I'm not sure that 'No such file or directory' is helpful.
+
+47
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_f230a6f9
+Bytes: 90
+Isn't size too big? Shouldn't it be something like
+
+ size += strlen(str) + 1 - strlen(old)
+
+65
+Mon Sep 02 20:17:54 2013 +0000
+Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12a8718f_9252fa0d
+Bytes: 98
+If I invoke this function like so:
+
+  replace_all("he cried", "he", "she")
+
+I get a infinite loop.
+

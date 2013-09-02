@@ -1,0 +1,11 @@
+Revision: 7ea81a0356842db301f004cea1df0606d0e30639
+Patch-set: 1
+File: libnetutils/packet.c
+
+233
+Mon Sep 02 02:43:26 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7299ad82_38b691f3
+Bytes: 81
+this results in the right value, but why call finish_sum instead of sum = 0xffff?
+

@@ -29,6 +29,16 @@ What should be the expected behavior if I invoke like so:
 
 I'm getting "shehe cried"
 
+22
+Tue Sep 03 22:11:09 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 12a8718f_b24ffe66
+UUID: b2fb25cd_8425c677
+Bytes: 68
+"he cried"
+
+Replacing none with something should yield the original.
+
 29
 Mon Sep 02 20:17:54 2013 +0000
 Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,6 +60,14 @@ UUID: 12a8718f_d233a203
 Bytes: 166
 Is old not being found in str really an error? Should it maybe just return strdup(str)? If it must stay then I'm not sure that 'No such file or directory' is helpful.
 
+44
+Tue Sep 03 22:11:09 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 12a8718f_d233a203
+UUID: b2fb25cd_641bea33
+Bytes: 128
+I was thinking ENOENT or ESRCH, don't really want to introduce a new code. But perhaps its not an error, I like your suggestion.
+
 47
 Mon Sep 02 20:17:54 2013 +0000
 Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -58,6 +76,14 @@ Bytes: 90
 Isn't size too big? Shouldn't it be something like
 
  size += strlen(str) + 1 - strlen(old)
+
+47
+Tue Sep 03 22:11:09 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 12a8718f_f230a6f9
+UUID: b2fb25cd_4418ee34
+Bytes: 4
+Done
 
 65
 Mon Sep 02 20:17:54 2013 +0000
@@ -69,4 +95,12 @@ If I invoke this function like so:
   replace_all("he cried", "he", "she")
 
 I get a infinite loop.
+
+65
+Tue Sep 03 22:11:09 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 12a8718f_9252fa0d
+UUID: b2fb25cd_2415f2fc
+Bytes: 4
+Done
 

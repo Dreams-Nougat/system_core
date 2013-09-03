@@ -54,6 +54,14 @@ UUID: b2fb25cd_e42fda0e
 Bytes: 94
 Funny I picked load_file.c to look at for an example, and it does not have that formatting....
 
+29
+Tue Sep 03 23:25:12 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b2fb25cd_e42fda0e
+UUID: 5213c9db_0f6c4903
+Bytes: 165
+The formatting of old files is not always consistent, but for new code we try to keep to the guidelines, which includes spaces around operators and between if and (.
+
 37
 Mon Sep 02 20:17:54 2013 +0000
 Author: Robert Craig <1013887@85c56323-6fa9-3386-8a01-6480fb634889>

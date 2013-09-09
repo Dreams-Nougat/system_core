@@ -1,0 +1,75 @@
+Revision: bb04c3fa422a46ed2a36add714315065650ec92f
+Patch-set: 3
+File: libcutils/service.c
+
+29
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_b8dbb905
+Bytes: 6
+1000UL
+
+32
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_184185b7
+Bytes: 307
+SERVICE_CMD_START (or SVC_CMD_START or something), together with below changes will make things a little more consistent imho and make it easier to understand when reading the code. For instance,
+
+!strcmp(status, STOPPED_RESULT_VALUE);
+
+is a little confusing, versus
+
+!strcmp(status, SERVICE_STATUS_STOPPED)
+
+33
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_3846c9d0
+Bytes: 16
+SERVICE_CMD_STOP
+
+34
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_d84a2dd3
+Bytes: 51
+SERVICE_STATUS_PROP_PREFIX (or something like that)
+
+35
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_b8517986
+Bytes: 22
+SERVICE_STATUS_RUNNING
+
+36
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_581e1ddf
+Bytes: 22
+SERVICE_STATUS_STOPPED
+
+52
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_98f59568
+Bytes: 184
+you should check for truncation and return an error if this got truncated so the user can know whether or not their command will succeed with the intended arguments (same with strlcpy)
+
+93
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_98a6f54f
+Bytes: 201
+if timeout_ms was 0, count would be 0 but since it's unsigned, you'll be here for a while.
+
+Easiest thing to do would be to flip this to be a do {} while loop and check for (timeout_ms && count-- > 0);
+
+109
+Mon Sep 09 21:38:26 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27661513_98bd9559
+Bytes: 19
+check for overflows
+

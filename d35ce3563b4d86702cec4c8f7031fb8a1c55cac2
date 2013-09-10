@@ -34,3 +34,13 @@ If the bootloader only supports version 0, it won't know to look for extra_cmdli
 
 Why won't the diffs be correct? Maybe I'm missing something, I haven't looked at what assumptions recovery makes about boot images. From what I understand, the OTA source should be generated from a previous build, which would have been created before these changes were in, and thus would have the version field set to 0.
 
+51
+Tue Sep 10 19:47:38 2013 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c768d904_35e31050
+UUID: c768d904_b51d607f
+Bytes: 596
+OTA updates are generated from a target files package. The boot images have not been built. Instead, during the ota_from_target_files process, mkbootimg is run to create boot images for both source and target. This is why you have to be very very very careful if you ever change mkbootimg as the boot images generated must match bit-for-bit what is already on the device.
+
+The reason why the boot images aren't prebuilt inside the taget-files-package (as far as I can determine) is so that sign-target-files-apks can replace the key used to verify OTA updates inside the recovery console ramdisk.
+

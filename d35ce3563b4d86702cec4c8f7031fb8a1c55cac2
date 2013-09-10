@@ -16,3 +16,11 @@ This way we can manage future expansion. Should now set the version to 1 (maybe 
 
 This way you can test the version in the bootloader/fastboot implementaiton thingie and go from there.
 
+51
+Tue Sep 10 19:34:08 2013 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27529551_4193684c
+UUID: 27529551_c15f787c
+Bytes: 358
+I don't think we can do this. Let's say a device has bootimages with header version 0 on it. Then you want to create an incremental OTA update. If mkbootimg is now creating version 1 headers, how can we instruct it to generate version 0 for the source target files package? If it is always generating version 1 headers then the binary diffs won't be correct.
+

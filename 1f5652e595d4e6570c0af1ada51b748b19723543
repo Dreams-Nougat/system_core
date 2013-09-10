@@ -1,0 +1,27 @@
+Revision: 1f5652e595d4e6570c0af1ada51b748b19723543
+Patch-set: 1
+File: /COMMIT_MSG
+
+17
+Tue Sep 10 20:00:48 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c7c1b91a_8dc30144
+Bytes: 98
+Just drop the lines below or fold them into the description above the original signed-off-by line.
+
+File: auditd/libaudit.c
+
+293
+Tue Sep 10 20:00:48 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c7c1b91a_cdc90968
+Bytes: 53
+coding style nits - android wants 4 spaces, not tabs.
+
+380
+Tue Sep 10 20:00:48 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c7c1b91a_edc64555
+Bytes: 29
+Ditto (here it was my fault).
+

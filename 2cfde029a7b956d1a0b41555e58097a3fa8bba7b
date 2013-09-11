@@ -1,0 +1,112 @@
+Revision: 2cfde029a7b956d1a0b41555e58097a3fa8bba7b
+Patch-set: 1
+File: auditd/audit_rules.c
+
+36
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_3c3671f8
+Bytes: 23
+no double declarations.
+
+38
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_5c3b3ddf
+Bytes: 18
+change o to opt...
+
+49
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_fc140957
+Bytes: 75
+bracket everything.... and everywhere else you have single line statements.
+
+130
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_bc1a8182
+Bytes: 82
+I thought Android had getline now? This way we can drop the LINE_LEN limitation...
+
+File: auditd/audit_rules.h
+
+22
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_dc174d59
+Bytes: 189
+I know its a bit more overhead, but I think decoupling the reading and parsing of the rules to the additions makes sense, you can deconstruct this, and then write a wrapper on the 2 chunks.
+
+File: auditd/libaudit.c
+
+227
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_7c40f942
+Bytes: 71
+use - version of errno codes, like -EINVAL here (and do this elsewhere)
+
+255
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_9c24e5bb
+Bytes: 43
+check yourself before you wreck yourself...
+
+373
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_bc21a1aa
+Bytes: 7
+no tabs
+
+File: auditd/libaudit.h
+
+128
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_dc2e6d99
+Bytes: 74
+size_t not unsigned int, unless this lines up with some kernel declaration
+
+131
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_fc2b2986
+Bytes: 133
+how do I make it not default to all permissions, is it an option to the rule?
+
+caps is inconsistent, either start with them, or dont.
+
+133
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_1c58d537
+Bytes: 138
+double pointer to an unallocated audit_rule_data, which will be allocated. This must be freed!
+
+or something less choppy then whats there.
+
+142
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_7c571906
+Bytes: 4
+caps
+
+148
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_5c525d17
+Bytes: 75
+so its -1 (which is a valid -errno I believe), just make it -EINVAL perhaps
+
+159
+Wed Sep 11 18:17:29 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7e845cc_9c4b055f
+Bytes: 85
+Can we reuse some std error codes here -EINVAL on NULL and -E2BIG on too many fields?
+

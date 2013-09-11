@@ -44,3 +44,12 @@ OTA updates are generated from a target files package. The boot images have not 
 
 The reason why the boot images aren't prebuilt inside the taget-files-package (as far as I can determine) is so that sign-target-files-apks can replace the key used to verify OTA updates inside the recovery console ramdisk.
 
+51
+Wed Sep 11 18:35:01 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c768d904_b51d607f
+UUID: 87e501f5_1b6e1bc0
+Bytes: 461
+Ah, gotcha. Eeek, that would be bad indeed.
+This, to me, sounds like a bug in our OTA package generation. Image (source or target) generation should be hermetic (well "ish" anyway) so the tools used to generate the source images should come from the build that created the source target files. Anything else and we always run the risk of having such issues all over the place. This sounds very fragile. I'll file a bug here and see if we can get that addressed.
+

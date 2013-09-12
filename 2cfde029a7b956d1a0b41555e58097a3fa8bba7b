@@ -9,6 +9,14 @@ UUID: a7e845cc_3c3671f8
 Bytes: 23
 no double declarations.
 
+36
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_3c3671f8
+UUID: 876c2149_635142e0
+Bytes: 4
+Done
+
 38
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: a7e845cc_5c3b3ddf
 Bytes: 18
 change o to opt...
 
+38
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_5c3b3ddf
+UUID: 876c2149_83655eb8
+Bytes: 4
+Done
+
 49
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a7e845cc_fc140957
 Bytes: 75
 bracket everything.... and everywhere else you have single line statements.
+
+49
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_fc140957
+UUID: 876c2149_c3f676ba
+Bytes: 4
+Done
 
 130
 Wed Sep 11 18:17:29 2013 +0000
@@ -63,12 +87,28 @@ UUID: a7e845cc_9c24e5bb
 Bytes: 43
 check yourself before you wreck yourself...
 
+255
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_9c24e5bb
+UUID: 876c2149_e3f372c7
+Bytes: 4
+Done
+
 373
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a7e845cc_bc21a1aa
 Bytes: 7
 no tabs
+
+373
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_bc21a1aa
+UUID: 876c2149_03208e60
+Bytes: 4
+Done
 
 File: auditd/libaudit.h
 
@@ -104,6 +144,14 @@ UUID: 876c2149_e3453220
 Bytes: 76
 You call audit_update_watch_perms subsequently. Can add that to the comment.
 
+131
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 876c2149_e3453220
+UUID: 876c2149_83139e1f
+Bytes: 4
+Done
+
 133
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -113,12 +161,28 @@ double pointer to an unallocated audit_rule_data, which will be allocated. This 
 
 or something less choppy then whats there.
 
+133
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_1c58d537
+UUID: 876c2149_23258a71
+Bytes: 4
+Done
+
 142
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a7e845cc_7c571906
 Bytes: 4
 caps
+
+142
+Thu Sep 12 14:59:51 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_7c571906
+UUID: 876c2149_431a8638
+Bytes: 4
+Done
 
 148
 Wed Sep 11 18:17:29 2013 +0000

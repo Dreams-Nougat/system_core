@@ -1,0 +1,11 @@
+Revision: 74a94dbffde835a27539559427f22b73a4c7ea24
+Patch-set: 1
+File: auditd/libaudit.h
+
+134
+Thu Sep 12 21:40:16 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 876c2149_2323ca1e
+Bytes: 10
+Whitespace
+

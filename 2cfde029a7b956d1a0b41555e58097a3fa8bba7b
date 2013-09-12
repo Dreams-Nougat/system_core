@@ -48,6 +48,14 @@ UUID: a7e845cc_7c40f942
 Bytes: 71
 use - version of errno codes, like -EINVAL here (and do this elsewhere)
 
+227
+Thu Sep 12 14:35:12 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_7c40f942
+UUID: 876c2149_a33b3aab
+Bytes: 84
+I was matching the upstream behavior here so that the libraries would be compatible.
+
 255
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -71,6 +79,14 @@ UUID: a7e845cc_dc2e6d99
 Bytes: 74
 size_t not unsigned int, unless this lines up with some kernel declaration
 
+128
+Thu Sep 12 14:35:12 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_dc2e6d99
+UUID: 876c2149_c348363b
+Bytes: 59
+I didn't add this function, I just added it to header file.
+
 131
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -79,6 +95,14 @@ Bytes: 133
 how do I make it not default to all permissions, is it an option to the rule?
 
 caps is inconsistent, either start with them, or dont.
+
+131
+Thu Sep 12 14:35:12 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_fc2b2986
+UUID: 876c2149_e3453220
+Bytes: 76
+You call audit_update_watch_perms subsequently. Can add that to the comment.
 
 133
 Wed Sep 11 18:17:29 2013 +0000
@@ -103,10 +127,26 @@ UUID: a7e845cc_5c525d17
 Bytes: 75
 so its -1 (which is a valid -errno I believe), just make it -EINVAL perhaps
 
+148
+Thu Sep 12 14:35:12 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_5c525d17
+UUID: 876c2149_03524ee8
+Bytes: 32
+Again, trying to match upstream.
+
 159
 Wed Sep 11 18:17:29 2013 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a7e845cc_9c4b055f
 Bytes: 85
 Can we reuse some std error codes here -EINVAL on NULL and -E2BIG on too many fields?
+
+159
+Thu Sep 12 14:35:12 2013 +0000
+Author: Joshua Brindle <1019010@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7e845cc_9c4b055f
+UUID: 876c2149_23574ad9
+Bytes: 14
+Same as above.
 

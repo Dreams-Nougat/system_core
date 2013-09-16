@@ -1,0 +1,11 @@
+Revision: 49ffa3a0af5136dcaf86475d411910b97e4b17ff
+Patch-set: 1
+File: fastboot/usb_linux.c
+
+81
+Mon Sep 16 21:47:53 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7468540_0c3f579a
+Bytes: 21
+My Manta: R32C9026J9M
+

@@ -9,3 +9,11 @@ UUID: a7468540_0c3f579a
 Bytes: 21
 My Manta: R32C9026J9M
 
+81
+Tue Sep 17 13:25:12 2013 +0000
+Author: Mark Wachsler <1025478@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7468540_0c3f579a
+UUID: 474ea957_f195888d
+Bytes: 203
+This isn't referring to the serial number; it's referring to the name of the file in /sys/bus/usb/devices. The comment said "in sysfs", but I guess that wasn't clear; I've updated it to be more explicit.
+

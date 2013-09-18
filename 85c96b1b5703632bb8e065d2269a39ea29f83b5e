@@ -9,10 +9,26 @@ UUID: 4415c72d_6d745d90
 Bytes: 74
 why are you skipping two every time? You're iterating on line 220 already.
 
+228
+Wed Sep 18 15:08:34 2013 +0000
+Author: Irina Tirdea <1006561@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4415c72d_6d745d90
+UUID: 040f4f25_1aabd97c
+Bytes: 114
+Good point! I just moved this function without any changes and did not see this issue. Fixing it in next patchset.
+
 376
 Wed Sep 18 14:49:20 2013 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 040f4f25_7a9c156c
 Bytes: 38
 this file uses 4 space indents, not 2.
+
+376
+Wed Sep 18 15:08:34 2013 +0000
+Author: Irina Tirdea <1006561@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 040f4f25_7a9c156c
+UUID: 4415c72d_cdd12948
+Bytes: 4
+Done
 

@@ -1,0 +1,20 @@
+Revision: 79b1bd9412b2b07a841e28ca213fed1d8354fb47
+Patch-set: 4
+File: fs_mgr/fs_mgr.c
+
+347
+Wed Sep 18 16:05:43 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04f66f49_a215e053
+Bytes: 71
+i'd call this err: to make it clear that this is the abnormal exit path
+
+349
+Wed Sep 18 16:05:43 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44ece779_613b5650
+Bytes: 169
+you could make this return NULL to make it clear that it is an error return and not returning 0 on success.
+
+not a new problem, but the fstab struct is also leaking here
+

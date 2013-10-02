@@ -9,6 +9,14 @@ UUID: 819df127_c149e68e
 Bytes: 56
 And cleaned up unused fd param in us filter_usb_device()
 
+18
+Wed Oct 02 22:13:14 2013 +0000
+Author: Mark Wachsler <1025478@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 819df127_c149e68e
+UUID: 21db6507_308ca8c9
+Bytes: 57
+Done; also mentioned change to use do/while in usb_write.
+
 File: fastboot/usb_linux.c
 
 454
@@ -18,4 +26,18 @@ UUID: 21b445af_ce3c97a5
 Bytes: 99
 Make it an option.
 Default to 1s. Unlike "adb reboot", fastboot isn't doing much on the other side.
+
+454
+Wed Oct 02 22:13:14 2013 +0000
+Author: Mark Wachsler <1025478@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 21b445af_ce3c97a5
+UUID: 21db6507_909a34f8
+Bytes: 775
+I'm also a little wary of having a number hard-coded in there, but to me this seems somewhat esoteric to expose as an option. 
+
+I've also gathered some more data (2000 trials), and it turns out 1 second isn't nearly sufficient. On the Xoom it takes over 1 second 10% of the time. I've seen it take as long as 2.4 seconds, although this is unusual; 99% of the time it takes 1.75 seconds or less.
+
+If the timeout is too short it can lead to a subsequent command failing. If it's too long, worst case the command takes a little longer than necessary, and then only if the device fails to reboot, which is unlikely.
+
+But given that I've rarely seen it take over 2 seconds and never over 2.4, perhaps 5 is overkill. I've changed it to 3 seconds, and also made it a named constant.
 

@@ -9,6 +9,14 @@ UUID: 21660513_02b26b26
 Bytes: 36
 not going to |sort at the same time?
 
+31
+Thu Oct 03 18:08:31 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 21660513_02b26b26
+UUID: c1aa8952_949c7266
+Bytes: 11
+Sorted now.
+
 File: debuggerd/tombstone.c
 
 212
@@ -17,6 +25,16 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 819df127_3a80e8f4
 Bytes: 115
 should we use this macro everywhere instead of explicitly testing the bit (or vice versa; seems odd to have a mix)?
+
+212
+Thu Oct 03 18:08:31 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 819df127_3a80e8f4
+UUID: 21660513_958a336f
+Bytes: 90
+Oops, I didn't see the ones in the archictecture sub-directories.
+
+They are all fixed now.
 
 624
 Thu Oct 03 17:22:24 2013 +0000

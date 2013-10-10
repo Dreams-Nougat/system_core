@@ -1,0 +1,13 @@
+Revision: 8ec9341a1ef806a03eabff6d9ee47a584351bf01
+Patch-set: 2
+File: init/readme.txt
+
+201
+Thu Oct 10 17:51:02 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e13ceda4_6e21afc0
+Bytes: 78
+restorecon_recursive <path> [ <path> ]*
+
+since multiple paths can be specified
+

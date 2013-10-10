@@ -9,3 +9,12 @@ UUID: e13ceda4_6e5b6ffd
 Bytes: 94
 I thought one of the nacks on this was the -R part of it, stating "this is not how do options"
 
+197
+Thu Oct 10 12:45:28 2013 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e13ceda4_6e5b6ffd
+UUID: e13ceda4_aeff1791
+Bytes: 188
+Sorry, I don't recall that - but how else would you suggest it be done?
+Note that restorecon can actually take a list of paths, not just one, so putting an option at the end is less clear.
+

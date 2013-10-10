@@ -1,0 +1,11 @@
+Revision: 5ea9b33e97dd8cf6acea6720d106c4f4e39545cf
+Patch-set: 1
+File: init/readme.txt
+
+197
+Thu Oct 10 12:41:13 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e13ceda4_6e5b6ffd
+Bytes: 94
+I thought one of the nacks on this was the -R part of it, stating "this is not how do options"
+

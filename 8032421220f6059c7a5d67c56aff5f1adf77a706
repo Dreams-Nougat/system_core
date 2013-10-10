@@ -1,0 +1,13 @@
+Revision: 8032421220f6059c7a5d67c56aff5f1adf77a706
+Patch-set: 3
+File: init/builtins.c
+
+763
+Thu Oct 10 18:03:21 2013 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 215365fe_73a6fa52
+Bytes: 261
+I would recommend avoiding the early return on an error. IMHO, we should attempt all the restorecon_recursive calls even if an earlier call fails.
+
+i.e, "restorecon /foo /bar /baz" should restore the SELinux context of /foo and /baz, even if /bar doesn't exist.
+

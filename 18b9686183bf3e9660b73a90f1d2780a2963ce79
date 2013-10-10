@@ -94,3 +94,27 @@ I think I meant a USB device can say "send this packet to listener N."  I don't 
 
 I could be wrong, but I remember looking at this before.
 
+1517
+Thu Oct 10 09:41:54 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: TXsQr-us
+UUID: e125cd90_c6536217
+Bytes: 1545
+I'm sorry, but I still don't understand. Can you give a concrete example?
+
+Let's assume a malvolent USB device that implements a custom adbd daemon that tries to attack the adb server running on the host. According to protocols.txt, the device could send an OPEN(local-id, 0, <destination>) with <destination> crafted  in various ways:
+
+* tcp:<port>, where <port> is adb-forwarded to a different device.
+=> This allows the bad device to connect directly to a different one, however, this is already possible with the existing code base, so this patch doesn't change anything.
+
+I wonder if we check for connections to tcp:5037 though, since this might give a _lot_ of control to the attacking device, but again, this is irrelevant for this specific change.
+
+* host-serial:<serial>:forward:<local>;<remote>
+=> This asks the host ADB server to create a redirection from host <local> port to <remote> port on a given device <serial>.
+This won't work because only smart sockets can handle <host-prefix> commands, and they're never connected to a transport socket (from my reading of the current sources, it might be worthwhile to add some runtime checks / assertions here). Again, unrelated to this change.
+
+* reverse:forward:<local>;<remote>
+=> This will ask the ADB server to bind to host port <local>, and redirect connections to device port <remote>, i.e. this is asking for an explicit "adb forward" to the bad device. This won't work because 'reverse:' is only implemented if ADB_HOST is _not_ defined.
+
+Maybe you're thinking of something else?
+

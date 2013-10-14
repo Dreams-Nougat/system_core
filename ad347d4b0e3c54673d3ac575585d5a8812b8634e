@@ -1,0 +1,153 @@
+Revision: ad347d4b0e3c54673d3ac575585d5a8812b8634e
+Patch-set: 2
+File: libbacktrace/backtrace_test.cpp
+
+291
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_8a90ca3f
+Bytes: 39
+happen
+
+shouldn't this be an assertion?
+
+318
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_178dc6c2
+Bytes: 4
+why?
+
+326
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_3786caac
+Bytes: 9
+likewise.
+
+377
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_0a7b5a2b
+Bytes: 37
+std::vector would remove these leaks.
+
+File: libbacktrace/thread.c
+
+33
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_aa102ed6
+Bytes: 5
+enum?
+
+90
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_d748be8a
+Bytes: 91
+move the declaration of map_start down here to make it less unclear where it's initialized?
+
+104
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be4e9480_8eaafa1a
+Bytes: 68
+i think "%s"...  strerror(errno) is more helpful than "%d" errno :-)
+
+136
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_aa390e56
+Bytes: 36
+while ((state = ...) != STATE_DONE)?
+
+144
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_8a344a60
+Bytes: 53
+(mostly you're starting log messages with a capital.)
+
+203
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_cac6d237
+Bytes: 87
+i think this would be easier to follow if you brought the initialization down here too.
+
+219
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_8a1d2ae0
+Bytes: 170
+you know you can use C++? remove_tid_entry could just call delete, and delete would call the constructor, and the constructor would be equivalent to destroy_thread_entry.
+
+File: libbacktrace/thread.h
+
+18
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be4e9480_4ecd2205
+Bytes: 62
+shouldn't we call this something a bit more obviously private?
+
+File: libbacktrace/tid.h
+
+22
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be4e9480_0ec72ae7
+Bytes: 40
+(or feel free to use __BEGIN_DECLS too.)
+
+File: libbacktrace/unwind.c
+
+66
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_4903b223
+Bytes: 108
+are you sure you don't want to zero-initialize everything? seemed like you were manually doing so in places.
+
+File: libbacktrace/unwind_local.c
+
+79
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be4e9480_0e904ad9
+Bytes: 72
+SP
+
+(in both cases, REG_xx might be clearer. mainly in the IP case :-) )
+
+98
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be4e9480_ae96d6d2
+Bytes: 17
+unw_step(cursor);
+
+151
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e88e4e1_2a2e5e04
+Bytes: 59
+we should try to clean up this mess. especially for 64-bit.
+
+256
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_09260ac6
+Bytes: 16
+unw_step(cursor)
+
+File: libbacktrace/unwind_remote.c
+
+76
+Mon Oct 14 17:24:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e83d8c4_2923ceb5
+Bytes: 29
+huh. you get them right here.
+

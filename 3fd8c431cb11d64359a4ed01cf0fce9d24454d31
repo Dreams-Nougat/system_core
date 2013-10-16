@@ -1,0 +1,18 @@
+Revision: 3fd8c431cb11d64359a4ed01cf0fce9d24454d31
+Patch-set: 1
+File: /COMMIT_MSG
+
+24
+Wed Oct 16 19:30:23 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe3d6cee_ffd33f4b
+Bytes: 139
+won't this require rewriting ueventd.rc for every device with a unique mac address?  is there some better way to identify the network card?
+
+28
+Wed Oct 16 19:30:23 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe3d6cee_dfd0fb41
+Bytes: 139
+i'd like to see a format that supports more extensible matching.  this will work fine for usb devices, but not for v4l devices for example.
+

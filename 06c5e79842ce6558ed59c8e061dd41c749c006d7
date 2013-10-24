@@ -1,0 +1,88 @@
+Revision: 06c5e79842ce6558ed59c8e061dd41c749c006d7
+Patch-set: 1
+File: include/backtrace/Backtrace.h
+
+85
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9efc70ee_103c94d2
+Bytes: 39
+should this be a free function instead?
+
+File: include/backtrace/backtrace.h
+
+24
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ee9602b_145f644d
+Bytes: 119
+heh. i've been resisting that temptation everywhere, but if you're going to start doing it, i'll probably start too :-)
+
+File: libbacktrace/Backtrace.cpp
+
+110
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9efc70ee_50ca9c95
+Bytes: 26
+would snprintf be clearer?
+
+135
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9efc70ee_d0d50c38
+Bytes: 55
+i wonder whether we should return std::string here too?
+
+253
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: def26816_addc69d1
+Bytes: 52
+replace some of this manual deletion with UniquePtr?
+
+File: libbacktrace/BacktraceThread.h
+
+45
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: def26816_4decc57b
+Bytes: 55
+these are public? can't these just go in the .cpp file?
+
+File: libbacktrace/Corkscrew.cpp
+
+81
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: def26816_6df38159
+Bytes: 58
+yeah, i think these might usefully return std::string too.
+
+File: libbacktrace/UnwindCurrent.cpp
+
+32
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ee9602b_3428a8a6
+Bytes: 53
+is this comment right? isn't "old" here <= "current"?
+
+File: libbacktrace/backtrace_test.cpp
+
+31
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ee9602b_cfdf2985
+Bytes: 66
+shouldn't need this since it looked like you were using -std=g++11
+
+File: libbacktrace/backtrace_testlib.c
+
+18
+Thu Oct 24 18:47:30 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ee9602b_4ff4b902
+Bytes: 28
+what's sys/types.h for here?
+

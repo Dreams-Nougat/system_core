@@ -19,6 +19,16 @@ Since nobody else really uses this, it seems to make sense to leave it like this
 
 I guess I'm kind of pedantic because I like having it part of the class so that if someone uses it outside of this code they have to call it like Backtrace::Demangle and it's really clear where it came from. Or at least a little bit clearer that it's not a local thing.
 
+85
+Fri Oct 25 18:52:06 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dea0a80a_8ebd1bab
+UUID: 1e5ec0fd_9e6c5dc9
+Bytes: 288
+that was what i don't like --- Demangle has nothing to do with Backtrace. (which is why it can be static.)
+
+if you want a namespace, add a namespace :-) alternatively, if you can make this completely private to the library, move it out of header files accessible to the rest of the world.
+
 File: include/backtrace/backtrace.h
 
 24
@@ -105,6 +115,14 @@ At the same time, it does make more sense because at some point we could abandon
 
 Okay, I'll switch these to return strings.
 
+81
+Fri Oct 25 18:52:06 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_7749708c
+UUID: 3e69c4a2_1f3ccba0
+Bytes: 117
+yeah, it was the call to strdup in the other code that made me think std::string and clear ownership would be a plus.
+
 File: libbacktrace/UnwindCurrent.cpp
 
 32
@@ -139,6 +157,18 @@ UUID: 3e69c4a2_7c46b557
 Bytes: 301
 The host C++ compiler isn't C++11 compliant yet, however, I don't use anything in this file, so I've removed the include. I did have to add it to Backtrace.cpp for the snprintf (and the crappy define). It would be nice to have full support because I could have used some of the smaller C++11 features.
 
+31
+Fri Oct 25 18:52:06 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e69c4a2_7c46b557
+UUID: fe62ccbe_9ddf0386
+Bytes: 238
+you're right :-(
+
+https://cs.corp.google.com/#android/prebuilts/gcc/linux-x86/host/i686-linux-glibc2.7-4.6/sysroot/usr/include/inttypes.h&q=_STDC_FORMAT_MACROS%20file:sys&sq=package:%5Eandroid$&l=47
+
+i'll add you to the thread about this.
+
 File: libbacktrace/backtrace_testlib.c
 
 18
@@ -155,4 +185,12 @@ Parent: 1ee9602b_4ff4b902
 UUID: 1e5ec0fd_9bbe2ff5
 Bytes: 145
 Oops, old include when I was doing something differently in this file. In fact, I don't need any of these includes, I only need stdio.h for NULL.
+
+18
+Fri Oct 25 18:52:06 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_9bbe2ff5
+UUID: 3e69c4a2_7f43071f
+Bytes: 115
+i know it's available via both, but <stdlib.h> always seems a bit more intention revealing when all i want is NULL.
 

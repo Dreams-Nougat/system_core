@@ -9,6 +9,16 @@ UUID: 9efc70ee_103c94d2
 Bytes: 39
 should this be a free function instead?
 
+85
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9efc70ee_103c94d2
+UUID: dea0a80a_8ebd1bab
+Bytes: 522
+Since nobody else really uses this, it seems to make sense to leave it like this. Although, there is nothing preventing people from using it standalone since it's static. It does mean that pure C code can't use it, but that doesn't seem to be too bad.
+
+I guess I'm kind of pedantic because I like having it part of the class so that if someone uses it outside of this code they have to call it like Backtrace::Demangle and it's really clear where it came from. Or at least a little bit clearer that it's not a local thing.
+
 File: include/backtrace/backtrace.h
 
 24
@@ -18,6 +28,14 @@ UUID: 1ee9602b_145f644d
 Bytes: 119
 heh. i've been resisting that temptation everywhere, but if you're going to start doing it, i'll probably start too :-)
 
+24
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ee9602b_145f644d
+UUID: fe62ccbe_9736040e
+Bytes: 81
+You're the one who mentioned I should use it in another change, so I blame you :)
+
 File: libbacktrace/Backtrace.cpp
 
 110
@@ -26,6 +44,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9efc70ee_50ca9c95
 Bytes: 26
 would snprintf be clearer?
+
+110
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9efc70ee_50ca9c95
+UUID: be9db4d5_adcbbd6b
+Bytes: 161
+Yeah, I was resisting the urge to create a buffer on the stack, but this twisted code makes it harder to figure out what's going on. I switched back to snprintf.
 
 135
 Thu Oct 24 18:47:30 2013 +0000
@@ -50,6 +76,14 @@ UUID: def26816_4decc57b
 Bytes: 55
 these are public? can't these just go in the .cpp file?
 
+45
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: def26816_4decc57b
+UUID: 1e5ec0fd_bb5f731c
+Bytes: 98
+Yeah, I have a habit of putting these kinds of things in the class, but it's not really necessary.
+
 File: libbacktrace/Corkscrew.cpp
 
 81
@@ -58,6 +92,18 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: def26816_6df38159
 Bytes: 58
 yeah, i think these might usefully return std::string too.
+
+81
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: def26816_6df38159
+UUID: fe62ccbe_7749708c
+Bytes: 444
+The problem is that if Demangle and GetProcName return std::string, then I need to go through a kind of awkward step where I use the C demangle to get the value, create a string, then strdup that value later on to put it into the data structure as a char*.
+
+At the same time, it does make more sense because at some point we could abandon the C compatability and then we wouldn't have to change this.
+
+Okay, I'll switch these to return strings.
 
 File: libbacktrace/UnwindCurrent.cpp
 
@@ -68,6 +114,14 @@ UUID: 1ee9602b_3428a8a6
 Bytes: 53
 is this comment right? isn't "old" here <= "current"?
 
+32
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ee9602b_3428a8a6
+UUID: fe62ccbe_d7307c13
+Bytes: 84
+Yeah, I stole this from libcorkscrew, but the comment is clearly wrong. I'll fix it.
+
 File: libbacktrace/backtrace_test.cpp
 
 31
@@ -77,6 +131,14 @@ UUID: 1ee9602b_cfdf2985
 Bytes: 66
 shouldn't need this since it looked like you were using -std=g++11
 
+31
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ee9602b_cfdf2985
+UUID: 3e69c4a2_7c46b557
+Bytes: 301
+The host C++ compiler isn't C++11 compliant yet, however, I don't use anything in this file, so I've removed the include. I did have to add it to Backtrace.cpp for the snprintf (and the crappy define). It would be nice to have full support because I could have used some of the smaller C++11 features.
+
 File: libbacktrace/backtrace_testlib.c
 
 18
@@ -85,4 +147,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1ee9602b_4ff4b902
 Bytes: 28
 what's sys/types.h for here?
+
+18
+Fri Oct 25 18:22:19 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ee9602b_4ff4b902
+UUID: 1e5ec0fd_9bbe2ff5
+Bytes: 145
+Oops, old include when I was doing something differently in this file. In fact, I don't need any of these includes, I only need stdio.h for NULL.
 

@@ -1,0 +1,101 @@
+Revision: 6fb42c250dae89f6cd0984055b8dc060e1040b2b
+Patch-set: 2
+File: include/backtrace/Backtrace.h
+
+26
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e69c4a2_1f176b0c
+Bytes: 135
+i still feel like there's way too much in this public header file. surely we don't need anything more than "struct BacktraceImpl" here?
+
+52
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_fd59df37
+Bytes: 127
+can we rename this to "function" (both in the comment and the code)? "Proc" makes me think process, "procedure" just seems odd.
+
+53
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_3d4c3776
+Bytes: 46
+you renamed the parameter but not the comment.
+
+54
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_9ecb7d6c
+Bytes: 47
+i wouldn't free a std::string if i were you :-)
+
+61
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_bd5f671c
+Bytes: 81
+better word than "Info" for something that's a const char*? what exactly is this?
+
+67
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_7d46af57
+Bytes: 28
+does this need to be public?
+
+107
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e69c4a2_3f626fb1
+Bytes: 120
+(the funny thing is, a factory method like this is the kind of thing i _would_ put in Backtrace as Backtrace::Create().)
+
+File: libbacktrace/Backtrace.cpp
+
+123
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_be2cc177
+Bytes: 26
+you can just "return buf;"
+
+145
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_1d1db379
+Bytes: 31
+this is the only tricky one :-)
+
+149
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e69c4a2_ff08f7f6
+Bytes: 33
+again, return ""; will work fine.
+
+File: libbacktrace/BacktraceThread.cpp
+
+33
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_fe3639c3
+Bytes: 7
+static?
+
+210
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e69c4a2_5ff803a4
+Bytes: 75
+why aren't we using oldact? don't we need to put things back how they were?
+
+File: libbacktrace/BacktraceThread.h
+
+48
+Fri Oct 25 19:13:27 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_5e5f25e8
+Bytes: 86
+(if you're going for google3 style, there's no trailing underscore for public fields.)
+

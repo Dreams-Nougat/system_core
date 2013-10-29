@@ -9,12 +9,28 @@ UUID: 3e69c4a2_1f176b0c
 Bytes: 135
 i still feel like there's way too much in this public header file. surely we don't need anything more than "struct BacktraceImpl" here?
 
+26
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e69c4a2_1f176b0c
+UUID: 7ea7bc23_d4b7b2c6
+Bytes: 75
+I moved the entire BacktraceImpl class definition to internal header files.
+
 52
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fe62ccbe_fd59df37
 Bytes: 127
 can we rename this to "function" (both in the comment and the code)? "Proc" makes me think process, "procedure" just seems odd.
+
+52
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_fd59df37
+UUID: 7ea7bc23_34cd5654
+Bytes: 31
+Done, it's GetFunctionName now.
 
 53
 Fri Oct 25 19:13:27 2013 +0000
@@ -23,12 +39,28 @@ UUID: fe62ccbe_3d4c3776
 Bytes: 46
 you renamed the parameter but not the comment.
 
+53
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_3d4c3776
+UUID: 5ed67883_b327aa94
+Bytes: 4
+Done
+
 54
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1e5ec0fd_9ecb7d6c
 Bytes: 47
 i wouldn't free a std::string if i were you :-)
+
+54
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_9ecb7d6c
+UUID: 1ed08087_2e42336e
+Bytes: 25
+Fixed up the comment now.
 
 61
 Fri Oct 25 19:13:27 2013 +0000
@@ -37,6 +69,14 @@ UUID: fe62ccbe_bd5f671c
 Bytes: 81
 better word than "Info" for something that's a const char*? what exactly is this?
 
+61
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_bd5f671c
+UUID: 7ea7bc23_94e6cace
+Bytes: 69
+Yes, this should be GetMapName because that's really what it's doing.
+
 67
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -44,12 +84,28 @@ UUID: fe62ccbe_7d46af57
 Bytes: 28
 does this need to be public?
 
+67
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_7d46af57
+UUID: 5ed67883_f33122ce
+Bytes: 104
+I think so. For example, debuggerd uses this feature to dump parts of the stack of the crashing process.
+
 107
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3e69c4a2_3f626fb1
 Bytes: 120
 (the funny thing is, a factory method like this is the kind of thing i _would_ put in Backtrace as Backtrace::Create().)
+
+107
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e69c4a2_3f626fb1
+UUID: 7ea7bc23_b4e146bb
+Bytes: 18
+Sounds good to me.
 
 File: libbacktrace/Backtrace.cpp
 
@@ -60,6 +116,14 @@ UUID: 1e5ec0fd_be2cc177
 Bytes: 26
 you can just "return buf;"
 
+123
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_be2cc177
+UUID: 1ed08087_0e280fa6
+Bytes: 4
+Done
+
 145
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -67,12 +131,28 @@ UUID: fe62ccbe_1d1db379
 Bytes: 31
 this is the only tricky one :-)
 
+145
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fe62ccbe_1d1db379
+UUID: 1ed08087_b1dfa285
+Bytes: 167
+I redid this slightly so that each of the impl classes don't have to demangle themselves and removed this function and put the same code in Backtrace::GetFunctionName.
+
 149
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3e69c4a2_ff08f7f6
 Bytes: 33
 again, return ""; will work fine.
+
+149
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e69c4a2_ff08f7f6
+UUID: 5ed67883_f34ac22d
+Bytes: 80
+See above, but all places where I returned std::string() I changed to return "";
 
 File: libbacktrace/BacktraceThread.cpp
 
@@ -83,12 +163,28 @@ UUID: 1e5ec0fd_fe3639c3
 Bytes: 7
 static?
 
+33
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_fe3639c3
+UUID: 1ed08087_91e41e59
+Bytes: 4
+Done
+
 210
 Fri Oct 25 19:13:27 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3e69c4a2_5ff803a4
 Bytes: 75
 why aren't we using oldact? don't we need to put things back how they were?
+
+210
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e69c4a2_5ff803a4
+UUID: 7ea7bc23_b40ae6a6
+Bytes: 114
+Yikes, this was a bad bug. I fixed this and added some checking that the old action was reset after doing a trace.
 
 File: libbacktrace/BacktraceThread.h
 
@@ -98,4 +194,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1e5ec0fd_5e5f25e8
 Bytes: 86
 (if you're going for google3 style, there's no trailing underscore for public fields.)
+
+48
+Tue Oct 29 00:57:07 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_5e5f25e8
+UUID: 1ed08087_f1e91a2f
+Bytes: 347
+I don't see anything in the C++ style guide about not having the trailing underscores for member variables if they are public. The guide says all class members have to have a trailing underscore. But if you'd prefer without, let me know since this is our own style.
+
+I do know the python guide says public variable should avoid underscores though.
 

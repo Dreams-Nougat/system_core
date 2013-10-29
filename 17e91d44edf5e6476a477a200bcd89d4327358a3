@@ -1,0 +1,104 @@
+Revision: 17e91d44edf5e6476a477a200bcd89d4327358a3
+Patch-set: 3
+File: include/backtrace/Backtrace.h
+
+28
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_6a2b39a5
+Bytes: 82
+shouldn't this actually be protected? you should only construct subclasses, right?
+
+35
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_4a36750d
+Bytes: 96
+(should this default to something like <map_name+offset> so we always have _something_ to show?)
+
+71
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_ef367cf5
+Bytes: 56
+i'd move this to the top, since it's the factory method.
+
+File: libbacktrace/Backtrace.cpp
+
+75
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e5ec0fd_8a288da8
+Bytes: 69
+seems a bit weird in a .cpp file; just extern "C" char* ... would do.
+
+175
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_a76e582e
+Bytes: 8
+readable
+
+209
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_878154c0
+Bytes: 135
+can't help but see PRIxPTR now :-)
+
+for stuff like error messages where i don't care too much, i've been lazy and used %p a lot though.
+
+210
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_27634847
+Bytes: 56
+strerror(errno) is almost always more useful than errno.
+
+298
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_076e442d
+Bytes: 48
+we haven't needed the trailing \n for years now.
+
+File: libbacktrace/BacktraceThread.h
+
+48
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_e7e14088
+Bytes: 194
+well, it's under "struct names":
+
+http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Variable_Names
+
+because classes aren't supposed to have public data, so this must be a struct :-)
+
+File: libbacktrace/Corkscrew.cpp
+
+187
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_0f5570fc
+Bytes: 8
+creation
+
+File: libbacktrace/UnwindCurrent.cpp
+
+31
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fe62ccbe_6f4c2c77
+Bytes: 41
+nothing defines this so we could lose it.
+
+32
+Tue Oct 29 04:04:24 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e49184c_87f31458
+Bytes: 140
+but only for arm?
+
+oh, the others are inline below. we should probably either move this down there, move those up here (or fix ucontext.h!).
+

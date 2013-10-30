@@ -11,6 +11,14 @@ you're allowed your own logging macro, you know :-)
 
 (see also __PRETTY_FUNCTION__, which is closer to what you were manually doing in the previous file.)
 
+187
+Wed Oct 30 21:19:05 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_8aa4029e
+UUID: 1e5ec0fd_3b034625
+Bytes: 157
+Yeah, I was planning to go back and standardize all of the log macros. But now is as good a time as any. I created a new macro that is used instead of ALOGW.
+
 File: libbacktrace/UnwindCurrent.cpp
 
 30
@@ -20,12 +28,28 @@ UUID: 1e5ec0fd_0a8632dd
 Bytes: 80
 we should look at fixing bionic at some point. i wonder if uapi helps with this?
 
+30
+Wed Oct 30 21:19:05 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_0a8632dd
+UUID: fe62ccbe_5dc719e5
+Bytes: 115
+Yes, it's kind of a pain that we have this kind of ucontext stuff all over. Including in some of the external code.
+
 49
 Wed Oct 30 16:33:12 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5e49184c_4064ac1d
 Bytes: 23
 it's still __i386__ :-)
+
+49
+Wed Oct 30 21:19:05 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5e49184c_4064ac1d
+UUID: 1e5ec0fd_c0adf9c6
+Bytes: 4
+Done
 
 53
 Wed Oct 30 16:33:12 2013 +0000
@@ -37,6 +61,14 @@ Bytes: 42
 
 ?
 
+53
+Wed Oct 30 21:19:05 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_4a902a0d
+UUID: fe62ccbe_fdd70d94
+Bytes: 4
+Done
+
 177
 Wed Oct 30 16:33:12 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -45,4 +77,14 @@ Bytes: 164
 oops. might need to grep for this, though cs/ suggests this is the only place we screwed up.
 
 (it sucks that the obviously right name is the one that doesn't work!)
+
+177
+Wed Oct 30 21:19:05 2013 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e5ec0fd_ea81febe
+UUID: 5e49184c_144bc633
+Bytes: 212
+I grep'ed and this file is the only place that contains this.
+
+The unfortunate part is that our makfiles use arm/mips/x86 (and x86_64 now) so I expected a symmetry to the arch defines. I should have known better.
 

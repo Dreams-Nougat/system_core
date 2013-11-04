@@ -1,0 +1,11 @@
+Revision: dfa757c7b95617dd09ef4f85d4684c86e6209f82
+Patch-set: 1
+File: libbacktrace/Corkscrew.cpp
+
+96
+Mon Nov 04 22:44:09 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e3704c5_dcaec42e
+Bytes: 85
+maybe copy the art comment about trying the ELF file in case this is a static symbol?
+

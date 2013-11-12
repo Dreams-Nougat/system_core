@@ -9,3 +9,11 @@ UUID: de65092b_6f6da38d
 Bytes: 2
 +2
 
+180
+Tue Nov 12 00:29:10 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: de65092b_6f6da38d
+UUID: 7e5dfd5e_dc93cbc9
+Bytes: 211
+yeah, i chose that one on purpose (the MTD mode constants are enum values, not #defines, so i couldn't use them). looks like they decided to be a bit more polite in the uapi headers and renamed this constant :-)
+

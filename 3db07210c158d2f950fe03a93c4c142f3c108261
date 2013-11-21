@@ -27,3 +27,18 @@ UUID: bea77522_11f02c0a
 Bytes: 196
 The check is correct at the time, but should be dropped again as part of https://android-review.googlesource.com/#/c/69665/ which uses alloc_pages + vm_insert_page to get and map system heap pages
 
+47
+Thu Nov 21 21:06:49 2013 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bea77522_11f02c0a
+UUID: deaa69eb_a612bab1
+Bytes: 61
+Just verifying dropping the checks resolves the issue for me.
+
+119
+Thu Nov 21 21:06:49 2013 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bea77522_85d1760c
+Bytes: 86
+CARVEOUT heaps don't seem to zero their buffers on free, so this always seems to fail.
+

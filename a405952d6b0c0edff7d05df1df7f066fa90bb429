@@ -1,0 +1,11 @@
+Revision: a405952d6b0c0edff7d05df1df7f066fa90bb429
+Patch-set: 3
+File: logwrapper/logwrapper.c
+
+89
+Thu Nov 21 17:16:44 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e8fa1ae_be42f927
+Bytes: 55
+perhaps we could set the segfault on exit as well here?
+

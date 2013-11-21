@@ -19,3 +19,11 @@ To be clear, the buffer_fault_user_mappings checks were added in the not-yet-mer
 
 If that change is incorrect, then this comment can probably be disregarded.
 
+47
+Thu Nov 21 00:19:27 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: deaa69eb_0f9489b1
+UUID: bea77522_11f02c0a
+Bytes: 196
+The check is correct at the time, but should be dropped again as part of https://android-review.googlesource.com/#/c/69665/ which uses alloc_pages + vm_insert_page to get and map system heap pages
+

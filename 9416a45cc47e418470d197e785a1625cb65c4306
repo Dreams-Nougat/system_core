@@ -11,10 +11,26 @@ If we stick with this implementation then might want to use strncmp just to be s
 
  strncmp(build_type, "user", PROPERTY_VALUE_MAX - 1)
 
+85
+Thu Nov 21 14:49:38 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5e859988_c01b5e57
+UUID: 3e8aa59d_5f9e4b7c
+Bytes: 159
+I dont think it gets us anything, but it doesn't hurt.... it only reads up to "user" which is in bounds build_type buffer and guaranteed to by null terminated.
+
 86
 Thu Nov 21 14:36:15 2013 +0000
 Author: Robert Craig <1013157@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5e859988_0026269f
 Bytes: 150
 If we really want to discourage the use of logwrapper with user builds then maybe make this warning a bit more demanding about switching the behavior.
+
+86
+Thu Nov 21 14:49:38 2013 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5e859988_0026269f
+UUID: 5e859988_603532c1
+Bytes: 97
+I was thinking of using fatal() above, but it might be to drastic... Ill let Nick and them decide
 

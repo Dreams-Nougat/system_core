@@ -9,3 +9,13 @@ UUID: bea77522_ae0d7794
 Bytes: 348
 Here we seem to run through all the available heaps allocating w/  ION_FLAG_CACHED. However, if the SYSTEM or SYSTEM_CONTIG heaps are registered, then this will always fail (due to the ion_buffer_fault_user_mappings() checks in the system heaps allocation paths).   Is this intentional? Should the test make sure this is a sane request of the heap?
 
+47
+Thu Nov 21 00:08:13 2013 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bea77522_ae0d7794
+UUID: deaa69eb_0f9489b1
+Bytes: 213
+To be clear, the buffer_fault_user_mappings checks were added in the not-yet-merged Change-Id: I895c2d4184c672f647f83a17aeb862985dc92f2c
+
+If that change is incorrect, then this comment can probably be disregarded.
+

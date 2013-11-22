@@ -1,0 +1,20 @@
+Revision: da310335b8c1b2c9f24dfa256e9552e12923ef6b
+Patch-set: 2
+File: /COMMIT_MSG
+
+11
+Fri Nov 22 18:55:08 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bea77522_b7e30349
+Bytes: 77
+Better argument: """bad practice to have code rely on the inclusion chain """
+
+File: logwrapper/logwrapper.c
+
+24
+Fri Nov 22 18:55:08 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: deaa69eb_29ba1af5
+Bytes: 44
+belongs with the non-android includes above.
+

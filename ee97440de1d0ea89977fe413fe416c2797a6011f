@@ -17,6 +17,14 @@ UUID: 1eca41de_6cc70f7d
 Bytes: 110
 Agree. Do you think we should add it to /bionic/libc/include/inttypes.h or is there any better place for that?
 
+184
+Mon Nov 25 16:07:43 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1eca41de_6cc70f7d
+UUID: 5ed03988_7e968e7a
+Bytes: 122
+i don't think there's any standard macro like this, so i was just thinking we should add it somewhere in debuggerd itself.
+
 622
 Fri Nov 22 20:06:39 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,6 +39,14 @@ Parent: 5ed03988_efedb234
 UUID: 430f8224_57b7ece0
 Bytes: 35
 At bionic/libc/include/sys/types.h?
+
+622
+Mon Nov 25 16:07:43 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 430f8224_57b7ece0
+UUID: 5ed03988_be6646ff
+Bytes: 41
+no, Backtrace.h seemed like a good place.
 
 File: debuggerd/utility.c
 

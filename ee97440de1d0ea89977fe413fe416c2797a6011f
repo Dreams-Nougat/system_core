@@ -9,12 +9,28 @@ UUID: bea77522_178bf706
 Bytes: 134
 we should probably add a macro similar to PRIxPTR but including the %08 or %016 and use it everywhere we currently have %08<whatever>.
 
+184
+Mon Nov 25 14:21:41 2013 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bea77522_178bf706
+UUID: 1eca41de_6cc70f7d
+Bytes: 110
+Agree. Do you think we should add it to /bionic/libc/include/inttypes.h or is there any better place for that?
+
 622
 Fri Nov 22 20:06:39 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5ed03988_efedb234
 Bytes: 198
 i think we should have a word_t or equivalent to be more intention-revealing than taking advantage of the fact that long is 32-bit on our 32-bit architectures and 64-bit on our 64-bit architectures.
+
+622
+Mon Nov 25 14:21:41 2013 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ed03988_efedb234
+UUID: 430f8224_57b7ece0
+Bytes: 35
+At bionic/libc/include/sys/types.h?
 
 File: debuggerd/utility.c
 
@@ -27,6 +43,14 @@ should we just unconditionally format into buf and then unconditionally use buf 
 
 also, the comment on L76 is misleading; it should come here, _after_ we've written to the log and before we write to activity manager. (and even then, it's a bit misleading in that it's not always true!)
 
+80
+Mon Nov 25 14:21:41 2013 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: deaa69eb_697542e0
+UUID: 630ac615_78d781de
+Bytes: 149
+I agree. I'm fixing segfault here (somehow it occurs on 64-bit only) on second handling of va_list ap. I'll fix that and probably remove the comment.
+
 File: include/backtrace/Backtrace.h
 
 56
@@ -36,6 +60,14 @@ UUID: 5ed03988_cf054e2b
 Bytes: 50
 yeah, this would be a good place to have a word_t.
 
+56
+Mon Nov 25 14:21:41 2013 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ed03988_cf054e2b
+UUID: 630ac615_58dcbdfe
+Bytes: 3
+Ok.
+
 File: include/corkscrew/ptrace.h
 
 81
@@ -44,4 +76,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bea77522_77535bca
 Bytes: 187
 libcorkscrew is no longer used for ARM, and we want to switch MIPS and x86 over to libbacktrace (which is a wrapper for libunwind), and have the 64-bit architectures be libbacktrace-only.
+
+81
+Mon Nov 25 14:21:41 2013 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bea77522_77535bca
+UUID: 1eca41de_6c9eef7c
+Bytes: 18
+I'll look into it.
 

@@ -9,6 +9,16 @@ UUID: 63dba606_f0ee202d
 Bytes: 157
 I found this wording a bit confusing. Are you trying to say that iterating over the entries just to look at their metadata isn't as efficient as it could be?
 
+33
+Tue Nov 26 17:52:18 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63dba606_f0ee202d
+UUID: e3a0765c_9c7825db
+Bytes: 423
+I'm just saying we're optimizing for the case where we intend to access the data of every entry. In particular, we do additional work to find the "real" offset where the data starts, not just the offset of the local file header.
+
+It's pretty straightforward to support fast iteration without data retrieval, all we need is another knob in the API (const bool find_data_offset passed in to the FindEntry and Iterate methods)
+
 File: libziparchive/zip_archive.h
 
 166
@@ -20,6 +30,14 @@ art wants to extract to memory, so needs an alternative to this that takes a poi
 
 also, all logging internally should be return as error messages instead (and we sure make sure that all error returns set an error message). It seems like the allocation for the error can be on the ZipArchiveHandle and deleted on CloseArchive. alternatively you can provide a function to map from unique negative error codes to error strings.
 
+166
+Tue Nov 26 17:52:18 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43e062af_0f01451c
+UUID: e3a0765c_bc75e1e3
+Bytes: 122
+My plan is to have a unique negative error code for each failure type and provide a function to map them to error strings.
+
 File: libziparchive/zip_archive_test.cc
 
 22
@@ -28,4 +46,12 @@ Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 43e062af_2f068935
 Bytes: 50
 we need some negative test cases for prior issues.
+
+22
+Tue Nov 26 17:52:18 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43e062af_2f068935
+UUID: e37956b6_14be344b
+Bytes: 180
+Oh most certainly. I need some time to come up with them though, I won't submit this change before that's done. I wanted a preliminary review of the code before I get down to that.
 

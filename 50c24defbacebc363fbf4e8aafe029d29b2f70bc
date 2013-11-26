@@ -1,0 +1,12 @@
+Revision: 50c24defbacebc363fbf4e8aafe029d29b2f70bc
+Patch-set: 1
+File: init/devices.c
+
+582
+Tue Nov 26 01:44:21 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bea77522_d1017296
+Bytes: 37
+returns an int.
+At least use ssize_t.
+

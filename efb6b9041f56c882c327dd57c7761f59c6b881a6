@@ -1,0 +1,31 @@
+Revision: efb6b9041f56c882c327dd57c7761f59c6b881a6
+Patch-set: 8
+File: /COMMIT_MSG
+
+33
+Tue Nov 26 15:31:59 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63dba606_f0ee202d
+Bytes: 157
+I found this wording a bit confusing. Are you trying to say that iterating over the entries just to look at their metadata isn't as efficient as it could be?
+
+File: libziparchive/zip_archive.h
+
+166
+Tue Nov 26 15:31:59 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43e062af_0f01451c
+Bytes: 554
+art wants to extract to memory, so needs an alternative to this that takes a pointer to memory and a length. I think its worth having the redundant length to make sure it matches the ZipEntry uncompressed size.
+
+also, all logging internally should be return as error messages instead (and we sure make sure that all error returns set an error message). It seems like the allocation for the error can be on the ZipArchiveHandle and deleted on CloseArchive. alternatively you can provide a function to map from unique negative error codes to error strings.
+
+File: libziparchive/zip_archive_test.cc
+
+22
+Tue Nov 26 15:31:59 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43e062af_2f068935
+Bytes: 50
+we need some negative test cases for prior issues.
+

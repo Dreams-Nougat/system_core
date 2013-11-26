@@ -1,0 +1,13 @@
+Revision: a7cdb2fd54e984d5980f908bb72b29aa3115521c
+Patch-set: 2
+File: init/devices.c
+
+584
+Tue Nov 26 21:14:35 2013 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0394aafd_c049e047
+Bytes: 59
+18446744073709551615 always bigger than 96.
+
+Flip the if()s
+

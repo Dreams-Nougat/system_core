@@ -1,0 +1,39 @@
+Revision: 312b59f99e1d870e90e064e8b15043c957b518b9
+Patch-set: 1
+File: toolbox/ls.c
+
+78
+Wed Nov 27 23:25:08 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3bafe99_3e800197
+Bytes: 204
+I generally like to avoid functions that allocate and return a buffer because it is not clear that the caller needs to free it.  I prefer taking an output buffer and a size, and use strlcpy/snprintf here.
+
+171
+Wed Nov 27 23:25:08 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3a45289_b7c2d06a
+Bytes: 67
+The the rest of the file uses "char *user" style, not "char* user".
+
+189
+Wed Nov 27 23:25:08 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03abca57_0e7b8f0b
+Bytes: 63
+don't put the user = NULL on the same line as the if statement.
+
+239
+Wed Nov 27 23:25:08 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03abca57_ce74971b
+Bytes: 54
+free is defined to take NULL, no need to check for it.
+
+244
+Wed Nov 27 23:25:08 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3bafe99_3ef5613e
+Bytes: 45
+unrelated change, put it in a separate patch.
+

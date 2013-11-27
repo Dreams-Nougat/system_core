@@ -1,0 +1,15 @@
+Revision: b85d12a3074c13e37f59b47edb81e1d4ff34eeb0
+Patch-set: 1
+File: adf/libadf/adf.c
+
+31
+Wed Nov 27 18:11:01 2013 +0000
+Author: Synergy Dev <1022430@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03abca57_05a2924d
+Bytes: 156
+if you're defining the path here, why not wrap it in guards to allow external defining? i.e:
+
+#ifndef ADF_BASE_PATH
+    #define ADF_BASE_PATH "/dev/"
+#endif
+

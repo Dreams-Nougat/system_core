@@ -13,3 +13,11 @@ if you're defining the path here, why not wrap it in guards to allow external de
     #define ADF_BASE_PATH "/dev/"
 #endif
 
+31
+Wed Nov 27 18:54:21 2013 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03abca57_05a2924d
+UUID: c3a45289_e6be6097
+Bytes: 86
+this has to match where ueventd puts it, i'm not sure what the point is of doing that.
+

@@ -67,6 +67,21 @@ UUID: 630ac615_78d781de
 Bytes: 149
 I agree. I'm fixing segfault here (somehow it occurs on 64-bit only) on second handling of va_list ap. I'll fix that and probably remove the comment.
 
+80
+Thu Nov 28 09:10:09 2013 +0000
+Author: Fengwei Yin <1011068@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 630ac615_78d781de
+UUID: c3e532f4_fb6defd7
+Bytes: 498
+I suppose we need va_copy here.
+
+Here is the manual:
+The  functions  vprintf(),  vfprintf(),  vsprintf(), vsnprintf() are equivalent to the functions printf(), fprintf(), sprintf(), snprintf(), respectively,
+       except that they are called with a va_list instead of a variable number of arguments.  These functions do not call the va_end macro.  Because they  invoke
+       the va_arg macro, the value of ap is undefined after the call.
+
+So all the ap used by these functions should use va_copy.
+
 File: include/backtrace/Backtrace.h
 
 56

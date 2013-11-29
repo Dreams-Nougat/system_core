@@ -82,6 +82,15 @@ The  functions  vprintf(),  vfprintf(),  vsprintf(), vsnprintf() are equivalent 
 
 So all the ap used by these functions should use va_copy.
 
+80
+Fri Nov 29 04:43:23 2013 +0000
+Author: Fengwei Yin <1011068@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3e532f4_fb6defd7
+UUID: c3e532f4_3bebd762
+Bytes: 126
+To make my comments clearer:
+ap is undefined after line 67 vsnprintf. So the behavior ap direct using in line 77 is undefined.
+
 File: include/backtrace/Backtrace.h
 
 56

@@ -27,3 +27,11 @@ UUID: 4325c2ed_aac16f1c
 Bytes: 223
 we found it a lot clearer to have the -host suffixes, there were issues doing minimal builds sometimes without it. for example, when you require a module in the PRODUCT_PACKAGES, it doesn't know to do only one and not both.
 
+40
+Mon Dec 02 18:30:50 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4325c2ed_aac16f1c
+UUID: 23c8ce74_f6aee012
+Bytes: 159
+That's a good point. Kind of inconsistent though, that the STATIC_LIBRARY version of libz doesn't have a -host suffix (though the SHARED_LIBRARY version does).
+

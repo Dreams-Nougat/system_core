@@ -9,3 +9,13 @@ UUID: 4325c2ed_ea7087b4
 Bytes: 218
 so this was static above, but non-static here. and then in the art change, it seemed like we include libz again as a static library? shouldn't it just be done here as static and then not again in users of this library?
 
+40
+Mon Dec 02 17:53:44 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4325c2ed_ea7087b4
+UUID: 63ae4695_5b2df712
+Bytes: 318
+Sorry. That was the intention. I was fiddling around with static vs shared to measure sizes and I must have left this half reverted.
+
+(I was also fiddling around with renaming libz-host -> libz since we don't really need a different name, and it complicates other makefiles but I decided to leave that for a follow up)
+

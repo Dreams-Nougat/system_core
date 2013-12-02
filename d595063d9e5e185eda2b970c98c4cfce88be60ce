@@ -35,3 +35,11 @@ UUID: 23c8ce74_f6aee012
 Bytes: 159
 That's a good point. Kind of inconsistent though, that the STATIC_LIBRARY version of libz doesn't have a -host suffix (though the SHARED_LIBRARY version does).
 
+40
+Mon Dec 02 19:13:10 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c8ce74_f6aee012
+UUID: 23c8ce74_967e8cc7
+Bytes: 114
+Done. I've renamed this target to libziparchive-host and used the libz STATIC_LIBRARY for the host module as well.
+

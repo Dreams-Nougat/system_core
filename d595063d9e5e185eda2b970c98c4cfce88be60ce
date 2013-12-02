@@ -1,0 +1,11 @@
+Revision: d595063d9e5e185eda2b970c98c4cfce88be60ce
+Patch-set: 10
+File: libziparchive/Android.mk
+
+40
+Mon Dec 02 17:49:10 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4325c2ed_ea7087b4
+Bytes: 218
+so this was static above, but non-static here. and then in the art change, it seemed like we include libz again as a static library? shouldn't it just be done here as static and then not again in users of this library?
+

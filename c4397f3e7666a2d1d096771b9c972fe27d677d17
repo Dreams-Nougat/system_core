@@ -9,6 +9,20 @@ UUID: a3991e85_b2a1c0bf
 Bytes: 8
 off64_t?
 
+692
+Tue Dec 03 19:00:58 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3991e85_b2a1c0bf
+UUID: 63ae4695_3e8671b7
+Bytes: 534
+Will do.
+
+I thought the zip specification limits us to 4 GiB (various websites (WinZip, Wikipedia etc.) say this, but I can't find it in the spec. I'll double check.).
+
+In any case, local file header offsets specified in the central dir are 4 bytes in size and individual entries are also limited to 4 byte compressed sizes, so I guess the theoretical maximum size is = 2^31-1 + 2^31-1 which is approximately 2^32 (+ the size of the central directory).
+
+Zip64 supports much larger sizes, but we don't support that anywhere on android.
+
 729
 Tue Dec 03 18:41:37 2013 +0000
 Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +36,16 @@ Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3fd9e74_c6482278
 Bytes: 30
 why is this not using pread64?
+
+748
+Tue Dec 03 19:00:58 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3fd9e74_c6482278
+UUID: 63ae4695_de9575e0
+Bytes: 330
+This is a straight port of the dalvik / art code. I'm going to submit a follow up that adds things the frameworks needs:
+
+(a) pread64 to deal with fds from forks. (Why didn't we use dup(fd) instead ? Was there a performance penalty there ?)
+
+(b) Use madvise(MADV_SEQUENTIAL) when decompressing large entries from a mapped segment.
 

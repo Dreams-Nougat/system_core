@@ -23,12 +23,28 @@ In any case, local file header offsets specified in the central dir are 4 bytes 
 
 Zip64 supports much larger sizes, but we don't support that anywhere on android.
 
+692
+Wed Dec 04 12:24:36 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63ae4695_3e8671b7
+UUID: 83c5fa7a_b94ebf82
+Bytes: 4
+Done
+
 729
 Tue Dec 03 18:41:37 2013 +0000
 Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3fd9e74_6654d616
 Bytes: 7
 indent?
+
+729
+Wed Dec 04 12:24:36 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3fd9e74_6654d616
+UUID: 43a6a2d4_5fb9cbfd
+Bytes: 4
+Done
 
 748
 Tue Dec 03 18:41:37 2013 +0000
@@ -48,4 +64,12 @@ This is a straight port of the dalvik / art code. I'm going to submit a follow u
 (a) pread64 to deal with fds from forks. (Why didn't we use dup(fd) instead ? Was there a performance penalty there ?)
 
 (b) Use madvise(MADV_SEQUENTIAL) when decompressing large entries from a mapped segment.
+
+748
+Wed Dec 04 12:24:36 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63ae4695_de9575e0
+UUID: 43a6a2d4_3fc60782
+Bytes: 4
+Done
 

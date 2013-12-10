@@ -1,0 +1,26 @@
+Revision: 58aaf46e4d3c9f6ada086f88ecf137a9e04db2d9
+Patch-set: 1
+File: libziparchive/Android.mk
+
+52
+Tue Dec 10 17:54:01 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43eea235_6844128b
+Bytes: 219
+probably should have
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_DATA_NATIVE_TESTS)
+
+for the target version of the test
+
+see external/gtest/test/Android.mk for the generic gtest rule you might want to use (at least as reference)
+
+File: libziparchive/zip_archive_test.cc
+
+143
+Tue Dec 10 17:54:01 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e41a52_a3cbd9df
+Bytes: 93
+having your own main probably means you won't be runnable by the default tradefed test runner
+

@@ -15,6 +15,18 @@ for the target version of the test
 
 see external/gtest/test/Android.mk for the generic gtest rule you might want to use (at least as reference)
 
+52
+Tue Dec 10 17:58:53 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43eea235_6844128b
+UUID: 63b7264d_56f904f4
+Bytes: 153
+Without this directive, the build system puts my test in
+
+$(TARGET_OUT)/data/nativetest/ziparchive-tests/ziparchive-tests 
+
+Is that not the right place ?
+
 File: libziparchive/zip_archive_test.cc
 
 143
@@ -23,4 +35,14 @@ Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83e41a52_a3cbd9df
 Bytes: 93
 having your own main probably means you won't be runnable by the default tradefed test runner
+
+143
+Tue Dec 10 17:58:53 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e41a52_a3cbd9df
+UUID: a3ad9efe_78fcf9e5
+Bytes: 415
+Hmm, all I wanted was a command line argument of my own. Is there a better way to do this ? I looked around but couldn't find a good way to do it (though I did find several tests that had their own main)
+
+I guess I could hardcode the path for the host test (assuming the test is being run from the root of the tree) and add a rule to push the data files to a known location on the device. Would that be preferable ?
 

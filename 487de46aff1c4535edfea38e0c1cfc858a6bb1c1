@@ -1,0 +1,11 @@
+Revision: 487de46aff1c4535edfea38e0c1cfc858a6bb1c1
+Patch-set: 1
+File: libsparse/output_file.c
+
+50
+Wed Dec 11 18:13:16 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a332fed0_50cba4e0
+Bytes: 95
+this shouldn't be necessary. the 64-bit ABI will include the *64 variants just like glibc does.
+

@@ -9,12 +9,28 @@ UUID: 4825dfed_4788ae59
 Bytes: 29
 ...: %s", fd, strerror(errno)
 
+1012
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4825dfed_4788ae59
+UUID: c810ef97_c3ff7617
+Bytes: 4
+Done
+
 1018:11-1018:14
 Fri Dec 13 17:32:48 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 882b57c2_a9be9de5
 Bytes: 9
 likewise.
+
+1018:11-1018:14
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 882b57c2_a9be9de5
+UUID: 68d543ff_0000665b
+Bytes: 4
+Done
 
 File: libziparchive/zip_archive_test.cc
 
@@ -25,6 +41,14 @@ UUID: 882b57c2_e9c89590
 Bytes: 17
 ASSERT_NE(fd, -1)
 
+143:11-143:18
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 882b57c2_e9c89590
+UUID: c810ef97_03118eac
+Bytes: 32
+Done, except that I did (-1, fd)
+
 147:23-147:28
 Fri Dec 13 17:32:48 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,12 +56,28 @@ UUID: 882b57c2_89bbd9f5
 Bytes: 18
 TEMP_FAILURE_RETRY
 
+147:23-147:28
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 882b57c2_89bbd9f5
+UUID: 68d543ff_40118eab
+Bytes: 4
+Done
+
 156
 Fri Dec 13 17:32:48 2013 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c8f70f98_0b7ebd92
 Bytes: 55
 clearer to move this down under "Assert that", i think.
+
+156
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8f70f98_0b7ebd92
+UUID: 88d0b710_21de4ea8
+Bytes: 4
+Done
 
 160
 Fri Dec 13 17:32:48 2013 +0000
@@ -47,6 +87,14 @@ Bytes: 56
 , sizeof(read_buffer)
 
 or replace the 8s with data_size.
+
+160
+Fri Dec 13 18:00:23 2013 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8f70f98_cb40354f
+UUID: c810ef97_63068278
+Bytes: 4
+Done
 
 164:2-164:9
 Fri Dec 13 17:32:48 2013 +0000

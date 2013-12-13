@@ -1,0 +1,11 @@
+Revision: 00a258cec7bbecf10e04fef7ed4781cd750ba1d8
+Patch-set: 2
+File: libziparchive/zip_archive_test.cc
+
+146
+Fri Dec 13 18:07:49 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4825dfed_c793fe85
+Bytes: 110
+is that right? i thought only EQ was backwards? (there are probably a lot of mixed up tests in bionic if not.)
+

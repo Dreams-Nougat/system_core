@@ -1,0 +1,18 @@
+Revision: 4e53e3935182cdc134db8dd44ca173815d99614c
+Patch-set: 1
+File: adb/sockets.c
+
+76:8-76:9
+Fri Dec 13 18:22:26 2013 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8f70f98_8b70edb1
+Bytes: 72
+I guess you can remove the brackets here to match the rest of the style.
+
+539:8-539:20
+Fri Dec 13 18:22:26 2013 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4825dfed_675a1233
+Bytes: 69
+Should this just be fatal? No callers expect a NULL return currently.
+

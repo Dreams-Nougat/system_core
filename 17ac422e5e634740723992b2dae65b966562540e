@@ -1,0 +1,57 @@
+Revision: 17ac422e5e634740723992b2dae65b966562540e
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+1012
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4825dfed_4788ae59
+Bytes: 29
+...: %s", fd, strerror(errno)
+
+1018:11-1018:14
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 882b57c2_a9be9de5
+Bytes: 9
+likewise.
+
+File: libziparchive/zip_archive_test.cc
+
+143:11-143:18
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 882b57c2_e9c89590
+Bytes: 17
+ASSERT_NE(fd, -1)
+
+147:23-147:28
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 882b57c2_89bbd9f5
+Bytes: 18
+TEMP_FAILURE_RETRY
+
+156
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8f70f98_0b7ebd92
+Bytes: 55
+clearer to move this down under "Assert that", i think.
+
+160
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8f70f98_cb40354f
+Bytes: 56
+, sizeof(read_buffer)
+
+or replace the 8s with data_size.
+
+164:2-164:9
+Fri Dec 13 17:32:48 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8f70f98_6b83013f
+Bytes: 20
+std::vector<uint8_t>
+

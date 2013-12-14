@@ -16,3 +16,11 @@ UUID: 4825dfed_675a1233
 Bytes: 69
 Should this just be fatal? No callers expect a NULL return currently.
 
+539:8-539:20
+Sat Dec 14 12:11:47 2013 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4825dfed_675a1233
+UUID: a8e57b1d_b23800ee
+Bytes: 143
+I'm wary of fatal errors like this, they can easily turn a bug into a DoS. I think it'd be better to fix the callers instead. I'll take a look.
+

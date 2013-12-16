@@ -1,0 +1,18 @@
+Revision: 9f79212d40b45a02c6189383c62af85f2d531b12
+Patch-set: 1
+File: libsuspend/autosuspend.c
+
+68
+Mon Dec 16 19:01:15 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a8973b5d_fc330910
+Bytes: 24
+isn't this the real bug?
+
+78
+Mon Dec 16 19:01:15 2013 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 28ab4b9f_92c18c1e
+Bytes: 39
+(also, we don't write tests backwards.)
+

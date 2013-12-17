@@ -1,0 +1,11 @@
+Revision: a585e662e0141d8b3445749ef83b8d9b138d7905
+Patch-set: 1
+File: rootdir/ueventd.rc
+
+38
+Tue Dec 17 23:24:44 2013 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 681623de_584a1d73
+Bytes: 91
+since this is a new interface maybe we can get away with not giving the radio group access?
+

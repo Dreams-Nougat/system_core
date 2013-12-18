@@ -9,3 +9,11 @@ UUID: 681623de_584a1d73
 Bytes: 91
 since this is a new interface maybe we can get away with not giving the radio group access?
 
+38
+Wed Dec 18 01:11:52 2013 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 681623de_584a1d73
+UUID: c84d4f11_5ef3f186
+Bytes: 241
+Giving more than one process access to this is worse than giving access to the alarm driver, since the rtc and wall clock can get of sync. The alarm driver used to have a lock protecting this, but it is currently broken. This should be 0600,
+

@@ -9,3 +9,11 @@ UUID: c86e2fb0_9378dca8
 Bytes: 80
 I think I'd prefer to have the enums declared near the top of the class instead.
 
+384:4-384:10
+Thu Dec 19 06:28:19 2013 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c86e2fb0_9378dca8
+UUID: 088cc7b8_8347a234
+Bytes: 197
+sure, I can do that. I was just preserving the style of the C that had the enums declared before the methods that used them. However, the method comments do clarify what enum goes with what method.
+

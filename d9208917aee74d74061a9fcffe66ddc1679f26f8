@@ -1,0 +1,11 @@
+Revision: d9208917aee74d74061a9fcffe66ddc1679f26f8
+Patch-set: 9
+File: include/utils/Looper.h
+
+384:4-384:10
+Thu Dec 19 02:11:27 2013 +0000
+Author: Jeff Brown <1003957@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c86e2fb0_9378dca8
+Bytes: 80
+I think I'd prefer to have the enums declared near the top of the class instead.
+

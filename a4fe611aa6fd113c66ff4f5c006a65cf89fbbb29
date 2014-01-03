@@ -9,6 +9,18 @@ UUID: 6d3f15b6_50882cc2
 Bytes: 53
 this will also stop doing mkdir when running as shell
 
+70
+Fri Jan 03 04:14:53 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d3f15b6_50882cc2
+UUID: 2d299d85_4e9f7302
+Bytes: 748
+On line 49 and 50, we initialize UID / GID to the current user. For the shell user, the only place you can sync to is /data/local/tmp, which is not on system. As a result, the fs_config call on line 59 will never get executed, and UID / GID will remain unchanged.
+
+The chown call executed by shell will be with uid=2000, gid=2000 after a successful mkdir call. As mkdir would have created the directory with the current UID/GID, subsequently calling chown with the same UID/GID should be a no-op.
+
+Is there a specific scenario you want me to test? I've verified that adb push works correctly as shell user to /data/local/tmp. "adb sync" as the shell user fails as expected; the shell user isn't able to write to anything outside of /data/local/tmp.
+
 200
 Fri Jan 03 02:46:59 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +28,26 @@ UUID: 2d299d85_cebc839f
 Bytes: 63
 this looks the same as before, shell user will still be broken?
 
+200
+Fri Jan 03 04:14:53 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d299d85_cebc839f
+UUID: 4d441157_4f888dc2
+Bytes: 100
+For /data/local/tmp, uid and gid will be that of the shell user, so this will be a no-op. See above.
+
 204:11-204:17
 Fri Jan 03 02:46:59 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2d299d85_aec93743
 Bytes: 34
 did you mean fchown clears setuid?
+
+204:11-204:17
+Fri Jan 03 04:14:53 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d299d85_aec93743
+UUID: 4d441157_2f7d49fc
+Bytes: 14
+ya.  :-) OOPS.
 

@@ -1,0 +1,25 @@
+Revision: a4fe611aa6fd113c66ff4f5c006a65cf89fbbb29
+Patch-set: 8
+File: adb/file_sync_service.c
+
+70
+Fri Jan 03 02:46:59 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d3f15b6_50882cc2
+Bytes: 53
+this will also stop doing mkdir when running as shell
+
+200
+Fri Jan 03 02:46:59 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d299d85_cebc839f
+Bytes: 63
+this looks the same as before, shell user will still be broken?
+
+204:11-204:17
+Fri Jan 03 02:46:59 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d299d85_aec93743
+Bytes: 34
+did you mean fchown clears setuid?
+

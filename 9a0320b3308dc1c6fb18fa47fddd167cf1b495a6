@@ -10,12 +10,30 @@ Bytes: 87
 Can you add a comment here:
 /* TODO: use fs_config to configure permissions on /data */
 
+36
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d243da3_9628ec99
+UUID: 2d299d85_2e6547a7
+Bytes: 4
+Done
+
 53
 Fri Jan 03 00:05:09 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2d243da3_f62160b9
 Bytes: 103
 this isn't right, directories need to be executable even when the file mode is normally not executable.
+
+53
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d243da3_f62160b9
+UUID: 2d299d85_0e6a8b75
+Bytes: 261
+This was (sorta) working in my testing, as even through "name" is a filename, the second argument to fs_config sets the is_dir flag, which causes the file to be interpreted as a directory.
+
+After having reviewed the code again, it's clear this was wrong. Fixed.
 
 187:11-187:17
 Fri Jan 03 00:05:09 2014 +0000
@@ -24,12 +42,28 @@ UUID: 8d152931_f974b7a8
 Bytes: 134
 this assumes that adb can always chown, which is not the case if it is running as shell.  Does this break adb push file /data/local/ ?
 
+187:11-187:17
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d152931_f974b7a8
+UUID: 6d3f15b6_f05ba0b8
+Bytes: 82
+*sigh* I only tested root, not shell user. Shell was broken with this code. Fixed.
+
 302:4-302:12
 Fri Jan 03 00:05:09 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d152931_79cae78d
 Bytes: 12
 unsigned int
+
+302:4-302:12
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d152931_79cae78d
+UUID: 2d299d85_ee5e1fd2
+Bytes: 36
+Done. Here and lots of other places.
 
 332
 Fri Jan 03 00:05:09 2014 +0000
@@ -38,10 +72,26 @@ UUID: 2d243da3_d6478467
 Bytes: 119
 This is a C file, it's going to complain if you add statements between the beginning of the block and the declarations.
 
+332
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d243da3_d6478467
+UUID: 4d441157_eff1817f
+Bytes: 4
+Done
+
 336
 Fri Jan 03 00:05:09 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d152931_59cf239c
 Bytes: 12
 unsigned int
+
+336
+Fri Jan 03 02:33:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d152931_59cf239c
+UUID: 2d299d85_ce5b63e0
+Bytes: 4
+Done
 

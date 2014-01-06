@@ -1,0 +1,11 @@
+Revision: 04828ea56cb80180f92516e06221dca9ceb3d05e
+Patch-set: 1
+File: adb/usb_vendors.c
+
+132:0-134:38
+Mon Jan 06 19:24:52 2014 +0000
+Author: Dima Zavin <1000413@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0dc2191e_3326f04b
+Bytes: 17
+these are flipped
+

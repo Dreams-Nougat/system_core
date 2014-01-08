@@ -1,0 +1,11 @@
+Revision: 8a24ad641724e45f93fea70392b0167ab2ddb365
+Patch-set: 1
+File: sdcard/sdcard.c
+
+1754
+Wed Jan 08 22:31:08 2014 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdcac190_33508844
+Bytes: 159
+this still requires -d or -l, since DERIVE_NONE means we don't read_package_list(), and get_caller_has_rw_locked() above doesn't perform any additional checks.
+

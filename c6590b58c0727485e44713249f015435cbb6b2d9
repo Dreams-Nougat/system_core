@@ -1,0 +1,20 @@
+Revision: c6590b58c0727485e44713249f015435cbb6b2d9
+Patch-set: 1
+File: debuggerd/tombstone.c
+
+679:57-679:65
+Wed Jan 08 23:16:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0dd1393f_587a01d3
+Bytes: 58
+"Gather the map info once for all this process' threads."?
+
+File: include/backtrace/Backtrace.h
+
+37
+Wed Jan 08 23:16:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0dd1393f_d8561146
+Bytes: 23
+s/managed/still owned/?
+

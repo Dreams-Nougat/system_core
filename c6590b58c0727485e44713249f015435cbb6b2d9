@@ -9,6 +9,14 @@ UUID: 0dd1393f_587a01d3
 Bytes: 58
 "Gather the map info once for all this process' threads."?
 
+679:57-679:65
+Wed Jan 08 23:32:53 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dd1393f_587a01d3
+UUID: 2dd43d2d_dc32850e
+Bytes: 4
+Done
+
 File: include/backtrace/Backtrace.h
 
 37
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0dd1393f_d8561146
 Bytes: 23
 s/managed/still owned/?
+
+37
+Wed Jan 08 23:32:53 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dd1393f_d8561146
+UUID: 0dd1393f_1b9ec377
+Bytes: 4
+Done
 

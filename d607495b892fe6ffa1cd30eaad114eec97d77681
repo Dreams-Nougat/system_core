@@ -1,0 +1,11 @@
+Revision: d607495b892fe6ffa1cd30eaad114eec97d77681
+Patch-set: 1
+File: debuggerd/Android.mk
+
+21
+Sat Jan 11 00:16:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdcac190_2b27e44a
+Bytes: 53
+nice! that was my favorite part of intel's change :-)
+

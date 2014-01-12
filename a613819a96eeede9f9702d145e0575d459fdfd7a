@@ -1,0 +1,11 @@
+Revision: a613819a96eeede9f9702d145e0575d459fdfd7a
+Patch-set: 2
+File: init/util.c
+
+557
+Sun Jan 12 00:14:08 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8dea89ed_7a89485a
+Bytes: 45
+Can we cache this value statically somewhere?
+

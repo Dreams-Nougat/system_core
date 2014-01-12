@@ -9,3 +9,11 @@ UUID: 8dea89ed_7a89485a
 Bytes: 45
 Can we cache this value statically somewhere?
 
+557
+Sun Jan 12 00:22:27 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dea89ed_7a89485a
+UUID: 8dea89ed_5a96847a
+Bytes: 147
+I'm not sure it's worth it, honestly... Several thousand calls to this function was expensive, but just one call doesn't seem worth optimizing for.
+

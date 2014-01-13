@@ -17,3 +17,11 @@ UUID: 8dea89ed_5a96847a
 Bytes: 147
 I'm not sure it's worth it, honestly... Several thousand calls to this function was expensive, but just one call doesn't seem worth optimizing for.
 
+557
+Mon Jan 13 12:51:32 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dea89ed_5a96847a
+UUID: 8dea89ed_5ace846b
+Bytes: 65
+Expectation is that the caller will cache it if desired/required.
+

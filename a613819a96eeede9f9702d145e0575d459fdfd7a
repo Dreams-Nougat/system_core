@@ -25,3 +25,11 @@ UUID: 8dea89ed_5ace846b
 Bytes: 65
 Expectation is that the caller will cache it if desired/required.
 
+557
+Mon Jan 13 23:31:01 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dea89ed_5ace846b
+UUID: 8dea89ed_10521d54
+Bytes: 93
+Oh I thought each invocation was 0.5 seconds. It was for the N calls while recursing. Got ya.
+

@@ -19,3 +19,13 @@ Excuse my ignorance, but I'm still not getting why it '-d' or '-l' still needed.
 Could you please elaborate a bit on this?
 My use case for '-w' is for a device on which the internal SDCard partition is ext4 but not SDCARD_RW, so we pass it's GID to '-w' for maintaining backwards compability with what expects the original GID, and having it work with Kitkat and above.
 
+1754
+Mon Jan 13 18:41:46 2014 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2dd99d6f_b708eaf2
+UUID: cdcac190_085b0936
+Bytes: 200
+Look at get_caller_has_rw_locked(): it only enforces -w when -d or -l are set.
+
+If you're not deriving custom permissions, it probably makes more sense to just use -g to set the GID required to write.
+

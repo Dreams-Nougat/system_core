@@ -1,0 +1,26 @@
+Revision: 15d1e158ba76615029a884cce4337393e63c0b33
+Patch-set: 5
+File: fs_mgr/fs_mgr.c
+
+561
+Tue Jan 14 20:11:02 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed294520_9a518d9f
+Bytes: 205
+How about:
+
+
+mret = __mount(...);
+
+if (!mret) {
+  continue;
+} else {
+  ERROR("Try 1: Cannot mount filesystem on %s at %s options: %s error: %s");
+}
+
+if ((fstab->recs[i] ...) {
+  ....
+} else {
+  goto out;
+}
+

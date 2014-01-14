@@ -19,3 +19,11 @@ UUID: ad810d4e_db261f4d
 Bytes: 209
 Looking back at my logs the code never went this route, I went the second branch below. __mount() is safe from my observation. I think the proper fix is to move this up to under the mount.. not on this branch.
 
+565
+Tue Jan 14 19:25:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad810d4e_db261f4d
+UUID: ad810d4e_bb255b3f
+Bytes: 148
+Ya, that makes sense. We might as well print out the error message anytime the mount on line 554 fails, even if we subsequently succeed on line 569.
+

@@ -24,3 +24,11 @@ if ((fstab->recs[i] ...) {
   goto out;
 }
 
+561
+Tue Jan 14 20:23:15 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed294520_9a518d9f
+UUID: ad810d4e_bb679b3d
+Bytes: 203
+I don't know about that one. You will end up with an error message on a possibly non-fatal error. You would at least want that warn. We would then end up dropping the truly fatal error on the fatal case.
+

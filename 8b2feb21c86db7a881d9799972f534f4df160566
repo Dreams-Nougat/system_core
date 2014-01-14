@@ -1,0 +1,11 @@
+Revision: 8b2feb21c86db7a881d9799972f534f4df160566
+Patch-set: 4
+File: fs_mgr/fs_mgr.c
+
+578
+Tue Jan 14 19:43:16 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed294520_fad9a10d
+Bytes: 87
+Ahh I guess we need this too. For the case it is not encrypted, or it is and not wiped.
+

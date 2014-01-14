@@ -32,3 +32,38 @@ UUID: ad810d4e_bb679b3d
 Bytes: 203
 I don't know about that one. You will end up with an error message on a possibly non-fatal error. You would at least want that warn. We would then end up dropping the truly fatal error on the fatal case.
 
+561
+Tue Jan 14 20:51:36 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad810d4e_bb679b3d
+UUID: ed5785b2_64bd0a98
+Bytes: 169
+Encrypted encryptable volumes will always fail to mount. That error should be hidden until it has been determined that it was a corrupted unencrypted-encryptable volume.
+
+564:1-564:5
+Tue Jan 14 20:51:36 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed5785b2_04ca1637
+Bytes: 85
+Don't re-use mret. Let the compiler handle an "int mount_errno" or something similar.
+
+567:8-567:11
+Tue Jan 14 20:51:36 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: addf4d7e_a202be9a
+Bytes: 314
+There actually should be an extra test here ...
+
+   partition_encrypted(fstab->recs[i].flag_vals->key_loc, (fstab->recs[i].blk_device)
+
+which would actually go and check if the key_loc is correct.
+
+Right now, this code will think that a bad partition is an encrypted partition. Cleaning that up is on my todo list.
+
+580:19-580:46
+Tue Jan 14 20:51:36 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed5785b2_84ce0645
+Bytes: 58
+"Failed to mount an un-encryptable or wiped partition...."
+

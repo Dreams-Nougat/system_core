@@ -47,6 +47,14 @@ UUID: ed5785b2_04ca1637
 Bytes: 85
 Don't re-use mret. Let the compiler handle an "int mount_errno" or something similar.
 
+564
+Tue Jan 14 21:12:29 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed5785b2_04ca1637
+UUID: cd26414f_f911afae
+Bytes: 4
+Done
+
 567:8-567:11
 Tue Jan 14 20:51:36 2014 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -66,4 +74,12 @@ Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed5785b2_84ce0645
 Bytes: 58
 "Failed to mount an un-encryptable or wiped partition...."
+
+580
+Tue Jan 14 21:12:29 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed5785b2_84ce0645
+UUID: ad810d4e_06ebead4
+Bytes: 4
+Done
 

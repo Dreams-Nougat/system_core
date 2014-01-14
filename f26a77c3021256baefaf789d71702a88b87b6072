@@ -1,0 +1,11 @@
+Revision: f26a77c3021256baefaf789d71702a88b87b6072
+Patch-set: 1
+File: include/cutils/atomic-inline.h
+
+49
+Tue Jan 14 18:04:25 2014 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1635de_f20ea8ff
+Bytes: 90
+In other places we sort the arch names by alphabetical orders. I can take care the change.
+

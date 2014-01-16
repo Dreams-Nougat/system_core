@@ -9,12 +9,28 @@ UUID: 0d23f98e_4545aa5d
 Bytes: 46
 no need to ever write "typedef struct" in C++.
 
+28
+Thu Jan 16 23:50:59 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d23f98e_4545aa5d
+UUID: cd43a132_4b66a588
+Bytes: 4
+Done
+
 38
 Thu Jan 16 23:25:09 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d37e9c2_a941dd29
 Bytes: 26
 Backtrace::const_iterator?
+
+38
+Thu Jan 16 23:50:59 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d37e9c2_a941dd29
+UUID: cd43a132_cbed3577
+Bytes: 85
+I wanted a name that indicated this was frame data, so that doesn't seem quite right.
 
 File: include/backtrace/backtrace_consts.h
 
@@ -25,6 +41,14 @@ UUID: cd43a132_ab6f0986
 Bytes: 19
 s/consts/constants/
 
+17
+Thu Jan 16 23:50:59 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd43a132_ab6f0986
+UUID: 8d37e9c2_495941e7
+Bytes: 75
+Name changed and file name changed because why am I saving four characters?
+
 File: libbacktrace/backtrace_test.cpp
 
 133
@@ -33,4 +57,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d37e9c2_69e1a5ed
 Bytes: 52
 can't you use ASSERT_EQ here and lose the .c_str()s?
+
+133
+Thu Jan 16 23:50:59 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d37e9c2_69e1a5ed
+UUID: 8d37e9c2_695605ba
+Bytes: 115
+Damn, I tried the STREQ without the c_str(), but I didn't just try _EQ. Changing these. I always forget that works.
 

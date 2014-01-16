@@ -1,0 +1,36 @@
+Revision: 48b029f4fb2148f1f420d3dfcf010795915106ea
+Patch-set: 5
+File: include/backtrace/Backtrace.h
+
+28
+Thu Jan 16 23:25:09 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d23f98e_4545aa5d
+Bytes: 46
+no need to ever write "typedef struct" in C++.
+
+38
+Thu Jan 16 23:25:09 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d37e9c2_a941dd29
+Bytes: 26
+Backtrace::const_iterator?
+
+File: include/backtrace/backtrace_consts.h
+
+17
+Thu Jan 16 23:25:09 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43a132_ab6f0986
+Bytes: 19
+s/consts/constants/
+
+File: libbacktrace/backtrace_test.cpp
+
+133
+Thu Jan 16 23:25:09 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d37e9c2_69e1a5ed
+Bytes: 52
+can't you use ASSERT_EQ here and lose the .c_str()s?
+

@@ -32,6 +32,14 @@ UUID: cd43a132_cbed3577
 Bytes: 85
 I wanted a name that indicated this was frame data, so that doesn't seem quite right.
 
+38
+Thu Jan 16 23:52:52 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd43a132_cbed3577
+UUID: 8d37e9c2_c92a91fe
+Bytes: 99
+for any container, the iterator is always over the elements, and always just called const_iterator.
+
 File: include/backtrace/backtrace_consts.h
 
 17

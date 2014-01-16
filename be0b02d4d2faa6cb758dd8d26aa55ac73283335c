@@ -9,6 +9,14 @@ UUID: 6dd0f588_3c9429b2
 Bytes: 30
 This should zu, len is size_t.
 
+91:42-91:44
+Thu Jan 16 20:54:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dd0f588_3c9429b2
+UUID: 4dd5f177_76451e5e
+Bytes: 49
+gah. i didn't realize gcc didn't warn about that.
+
 106:41-106:43
 Thu Jan 16 19:19:34 2014 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

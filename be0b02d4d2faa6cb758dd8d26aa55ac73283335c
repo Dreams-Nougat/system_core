@@ -1,0 +1,50 @@
+Revision: be0b02d4d2faa6cb758dd8d26aa55ac73283335c
+Patch-set: 1
+File: fastbootd/transport_socket.c
+
+91:42-91:44
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dd0f588_3c9429b2
+Bytes: 30
+This should zu, len is size_t.
+
+106:41-106:43
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dd0f588_1c9165c2
+Bytes: 17
+Same as above zu.
+
+File: fastbootd/usb_linux_client.c
+
+220:42-220:44
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4dd5f177_5b7da33d
+Bytes: 2
+zu
+
+236:41-236:43
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dd0f588_9c6d5521
+Bytes: 2
+zu
+
+File: toolbox/setconsole.c
+
+132:0-132:8
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dd0f588_5c4d9dab
+Bytes: 39
+Can you clean up the extra spaces here?
+
+133:58-133:67
+Thu Jan 16 19:19:34 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4dd5f177_3bf26f84
+Bytes: 99
+Is the expected size of this argument different on 32 and 64 bit systems since switch_vc is an int?
+

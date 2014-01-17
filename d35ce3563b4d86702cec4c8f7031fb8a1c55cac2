@@ -62,3 +62,11 @@ UUID: cd43a132_3f48af76
 Bytes: 145
 The command line should be split on whitespace. Having a partial command line is bad, but having one with a partial argument could be a disaster.
 
+204
+Fri Jan 17 17:46:36 2014 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd43a132_3f48af76
+UUID: 8d37e9c2_92ab625c
+Bytes: 134
+Bruce, the remainder of the command line is placed in the supplemental field and made whole again by the loader. There is no disaster.
+

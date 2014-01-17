@@ -1,0 +1,11 @@
+Revision: 204a4d67fb8cfce8bf12a119edd331418035dcdc
+Patch-set: 1
+File: toolbox/r.c
+
+70:17-70:21
+Fri Jan 17 02:23:21 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d23f98e_4ba139be
+Bytes: 7
+mmap64?
+

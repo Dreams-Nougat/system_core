@@ -9,3 +9,11 @@ UUID: 32249ea3_d61ae4cb
 Bytes: 84
 You can probably get rid of this pointless local while you're at it. It's never used
 
+52
+Fri Jan 17 18:01:07 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 32249ea3_d61ae4cb
+UUID: 0d23f98e_4ecdc7f4
+Bytes: 93
+It's used in the switch statement below to write the register if a 2nd argument was provided.
+

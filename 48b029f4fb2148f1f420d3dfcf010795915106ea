@@ -40,6 +40,14 @@ UUID: 8d37e9c2_c92a91fe
 Bytes: 99
 for any container, the iterator is always over the elements, and always just called const_iterator.
 
+38
+Fri Jan 17 00:13:42 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d37e9c2_c92a91fe
+UUID: cd43a132_ae139725
+Bytes: 67
+Oops, I kind of muffed the iterators a bit. They are all fixed now.
+
 File: include/backtrace/backtrace_consts.h
 
 17

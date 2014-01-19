@@ -15,10 +15,27 @@ should the "run-on-host" targets themselves just be replaced by scripts that cal
 
 what do people think?
 
+49
+Sun Jan 19 10:47:32 2014 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dd1393f_f7e31373
+UUID: 32973e04_be9719e9
+Bytes: 205
+That's good idea in general. Nevertheless we've got shared with bionic's run-on-host target not very much here, debuggerd startup and tombstones handling are specific here.
+Anyway, I'll try to redesign it.
+
 65
 Fri Jan 10 18:07:34 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cdcac190_5f1bfec8
 Bytes: 132
 also, have i fucked up the dynamic linker? why do we need to set LD_LIBRARY_PATH? shouldn't the linker's built-in defaults cover us?
+
+65
+Sun Jan 19 10:47:32 2014 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdcac190_5f1bfec8
+UUID: 728d36f2_001a6684
+Bytes: 141
+As far as I remember it's always been required on host. I don't remember linker tried to do lookup in TARGET_OUT_SHARED_LIBRARIES by default.
 

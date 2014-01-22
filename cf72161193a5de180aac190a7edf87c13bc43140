@@ -9,10 +9,28 @@ UUID: 1226bab5_563b8a50
 Bytes: 65
 Possibly wrap with if (is_selinux_enabled() > 0) and check error.
 
+1364
+Wed Jan 22 22:23:06 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1226bab5_563b8a50
+UUID: 92bf0a8c_a9f27db3
+Bytes: 4
+Done
+
 1675
 Wed Jan 22 17:29:18 2014 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f23206f0_a0db823d
 Bytes: 61
 Could validate context here via security_check_context() == 0
+
+1675
+Wed Jan 22 22:23:06 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f23206f0_a0db823d
+UUID: 72b456b0_a8a83b6c
+Bytes: 195
+root_seclabel is "u:r:su:s0", which does not exist on user builds. Validating the context here will fail on user builds.
+
+A mistake in specifying the context should be caught by the other change.
 

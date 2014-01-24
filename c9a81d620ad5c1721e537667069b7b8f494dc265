@@ -1,0 +1,11 @@
+Revision: c9a81d620ad5c1721e537667069b7b8f494dc265
+Patch-set: 6
+File: init/util.c
+
+597
+Fri Jan 24 18:47:41 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 92346a08_e4fd741f
+Bytes: 134
+Earlier, you mentioned using ro.build.date.utc . I think that's a great idea. Is there a reason you didn't use that? Can we change it?
+

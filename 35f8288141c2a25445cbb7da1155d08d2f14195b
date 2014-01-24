@@ -17,3 +17,18 @@ UUID: 3243be82_5e223588
 Bytes: 15
 Oh, never mind.
 
+420:16-420:19
+Fri Jan 24 03:08:26 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3243be82_5e223588
+UUID: f265a62a_08d517fa
+Bytes: 54
+yeah, might have been clearer as *(src + 1) in the if.
+
+422
+Fri Jan 24 03:08:26 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 72b456b0_42acf63b
+Bytes: 175
+utf16_to_utf8 doesn't check that it's receiving valid surrogate pairs. this change makes String8's constructors return the empty string for input with invalid surrogate pairs.
+

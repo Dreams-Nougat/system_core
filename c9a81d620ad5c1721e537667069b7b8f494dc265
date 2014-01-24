@@ -17,3 +17,13 @@ UUID: 32ae5e66_7ab9a1f6
 Bytes: 123
 I'm happy to switch it; just wasn't sure whether it was considered acceptable vs using something tied to the build version.
 
+597
+Fri Jan 24 19:07:44 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 32ae5e66_7ab9a1f6
+UUID: 92346a08_64c044cb
+Bytes: 194
+It's shorter and no spaces, which is nice. It also has granularity down to the second, so it's useful as a unique identifier. It feels like the best choice to me.
+
+Yes, can you please change it?
+

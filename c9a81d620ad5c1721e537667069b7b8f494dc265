@@ -9,3 +9,11 @@ UUID: 92346a08_e4fd741f
 Bytes: 134
 Earlier, you mentioned using ro.build.date.utc . I think that's a great idea. Is there a reason you didn't use that? Can we change it?
 
+597
+Fri Jan 24 19:03:55 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 92346a08_e4fd741f
+UUID: 32ae5e66_7ab9a1f6
+Bytes: 123
+I'm happy to switch it; just wasn't sure whether it was considered acceptable vs using something tied to the build version.
+

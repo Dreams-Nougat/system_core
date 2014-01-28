@@ -1,0 +1,18 @@
+Revision: 0740d3546ab8b3f464613da6a4c8e542ef351f45
+Patch-set: 1
+File: include/android/log.h
+
+129
+Tue Jan 28 18:38:22 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d2f7c297_37715367
+Bytes: 92
+we've removed __STDC_FORMAT_MACROS from bionic. you can just #include <inttypes.h> directly.
+
+136
+Tue Jan 28 18:38:22 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2fa0681_4cdbb495
+Bytes: 18
+isn't it __LP64__?
+

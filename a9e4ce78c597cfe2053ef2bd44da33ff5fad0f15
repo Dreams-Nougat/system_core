@@ -1,0 +1,65 @@
+Revision: a9e4ce78c597cfe2053ef2bd44da33ff5fad0f15
+Patch-set: 4
+File: include/backtrace/BacktraceMap.h
+
+31
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2fa0681_3655d517
+Bytes: 5
+|sort
+
+File: libbacktrace/Android.mk
+
+26
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d2f7c297_6064b82b
+Bytes: 28
+has anyone tried x86_64 yet?
+
+File: libbacktrace/Backtrace.h
+
+20
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12eebac6_f9f3427f
+Bytes: 73
+two files called Backtrace.h? should this be BacktraceImpl.h or somesuch?
+
+File: libbacktrace/Corkscrew.cpp
+
+68
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12eebac6_3925ca39
+Bytes: 10
+s/it/them/
+
+File: libbacktrace/UnwindMap.cpp
+
+93
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d2f7c297_a045008b
+Bytes: 10
+s/it/them/
+
+File: libbacktrace/UnwindMap.h
+
+24
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d2f7c297_00533457
+Bytes: 45
+wouldn't #include'ing it here guarantee that?
+
+File: libbacktrace/UnwindPtrace.cpp
+
+42
+Tue Jan 28 05:42:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12eebac6_d913e6e6
+Bytes: 10
+...set(...
+

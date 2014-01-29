@@ -11,3 +11,11 @@ i think we should fix these macros to be more like the BACK_LOGW one (where the 
 
 but other than that, lgtm.
 
+33
+Wed Jan 29 13:43:30 2014 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2b4c6fd_ff01bb22
+UUID: 12a87aa1_dde5ebf9
+Bytes: 149
+I'll remove this chunk. It seems it doesn't work anymore here. I've got a better way to print debug messages. Will include it into following patches.
+

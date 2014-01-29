@@ -9,10 +9,26 @@ UUID: d2f7c297_37715367
 Bytes: 92
 we've removed __STDC_FORMAT_MACROS from bionic. you can just #include <inttypes.h> directly.
 
+129
+Wed Jan 29 11:20:41 2014 +0000
+Author: Kévin PETIT <1038054@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d2f7c297_37715367
+UUID: 929c6a85_a121de84
+Bytes: 32
+Ahh nice. Thanks for warning me.
+
 136
 Tue Jan 28 18:38:22 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f2fa0681_4cdbb495
 Bytes: 18
 isn't it __LP64__?
+
+136
+Wed Jan 29 11:20:41 2014 +0000
+Author: Kévin PETIT <1038054@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2fa0681_4cdbb495
+UUID: 929c6a85_c11ce254
+Bytes: 65
+Both are defined but I should have used __LP64__, I'll change it.
 

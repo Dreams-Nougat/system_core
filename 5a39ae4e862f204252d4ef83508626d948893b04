@@ -9,3 +9,15 @@ UUID: f26f6639_8abe4f94
 Bytes: 59
 Where is PRIzxPTR coming from? I can't find the definition.
 
+186:75-186:83
+Thu Jan 30 22:18:24 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f26f6639_8abe4f94
+UUID: 92870a29_66b947f7
+Bytes: 290
+intel and arm went different routes here.
+
+intel added an equivalent PRIPTR macro to a debuggerd .h file. arm added PRIzxPTR to a libcutils .h file.
+
+so intel's patch is more self-contained, but arm's patch is potentially more reusable. (i'm not sure how useful that is in practice though.)
+

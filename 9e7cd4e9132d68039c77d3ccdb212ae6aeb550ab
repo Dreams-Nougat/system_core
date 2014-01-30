@@ -1,0 +1,25 @@
+Revision: 9e7cd4e9132d68039c77d3ccdb212ae6aeb550ab
+Patch-set: 8
+File: libbacktrace/UnwindCurrent.cpp
+
+31
+Thu Jan 30 18:13:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f26f6639_47361018
+Bytes: 85
+i'll fix up the arm ucontext.h and upload a patch to remove this whole chunk of crap.
+
+143
+Thu Jan 30 18:13:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f26f6639_e74ffca6
+Bytes: 143
+cferris: just to confirm, this is an expected difference between glibc and libunwind? this isn't because we're doing something wrong in bionic?
+
+161
+Thu Jan 30 18:13:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 12731a25_4bfc59df
+Bytes: 119
+cferris: should we have a #else #error here? or should L159's #elif just be a #else? the current situation seems weird.
+

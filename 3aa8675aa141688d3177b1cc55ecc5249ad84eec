@@ -9,3 +9,11 @@ UUID: f2b4c6fd_f1fd6a54
 Bytes: 134
 This comment and definition aren't relevant to bionic, but I don't think it's worth doing anything about since this is corkscrew code.
 
+46:3-47:55
+Thu Jan 30 01:39:31 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2b4c6fd_f1fd6a54
+UUID: f2b4c6fd_b134825d
+Bytes: 138
+yeah, that was my thinking too. i only want to remove this stuff so it doesn't get copy and pasted again before we remove libcorkscrew :-)
+

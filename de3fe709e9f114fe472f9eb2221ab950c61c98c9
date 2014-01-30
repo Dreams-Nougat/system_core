@@ -1,0 +1,18 @@
+Revision: de3fe709e9f114fe472f9eb2221ab950c61c98c9
+Patch-set: 2
+File: debuggerd/utility.cpp
+
+166:8-166:11
+Thu Jan 30 21:58:16 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 32d9fe6f_2e6dc75c
+Bytes: 36
+Move the int len from above to here.
+
+179:59-179:66
+Thu Jan 30 21:58:16 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 32d9fe6f_0e6a0b45
+Bytes: 38
+I think this should be unreadable mem.
+

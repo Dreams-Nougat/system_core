@@ -1,0 +1,11 @@
+Revision: 3aa8675aa141688d3177b1cc55ecc5249ad84eec
+Patch-set: 1
+File: libcorkscrew/arch-x86/backtrace-x86.c
+
+46:3-47:55
+Thu Jan 30 01:34:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2b4c6fd_f1fd6a54
+Bytes: 134
+This comment and definition aren't relevant to bionic, but I don't think it's worth doing anything about since this is corkscrew code.
+

@@ -1,0 +1,11 @@
+Revision: 5a39ae4e862f204252d4ef83508626d948893b04
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+186:75-186:83
+Thu Jan 30 22:06:44 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f26f6639_8abe4f94
+Bytes: 59
+Where is PRIzxPTR coming from? I can't find the definition.
+

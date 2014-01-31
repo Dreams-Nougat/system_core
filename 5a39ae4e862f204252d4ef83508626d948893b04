@@ -21,3 +21,11 @@ intel added an equivalent PRIPTR macro to a debuggerd .h file. arm added PRIzxPT
 
 so intel's patch is more self-contained, but arm's patch is potentially more reusable. (i'm not sure how useful that is in practice though.)
 
+186:75-186:83
+Fri Jan 31 15:30:58 2014 +0000
+Author: Kévin PETIT <1038054@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 92870a29_66b947f7
+UUID: 12a87aa1_83938290
+Bytes: 192
+The need for something like PRIzxPTR is everywhere. Try grepping for something like "%08x" or "%08X". It has also come up in other reviews (https://android-review.googlesource.com/#/c/79723/).
+

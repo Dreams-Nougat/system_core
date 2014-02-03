@@ -1,0 +1,15 @@
+Revision: 91c68eff7f748bb49732da86a9e05bada90d6abd
+Patch-set: 3
+File: include/android/log.h
+
+133:8-133:9
+Mon Feb 03 20:46:29 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2e2061a_614bdc47
+Bytes: 389
+Wouldn't it be better to define something like PTR_ZERO_PAD or ANDROID_LOG_PTR_ZERO_PAD and then let individual code use this definition rather than defining these two new inttype-like defines?
+
+As Elliott mentions, I don't think there are that many places that would need to use this.
+
+I'm not sure this it the right place for the definition, but I can't think of another place to put it.
+

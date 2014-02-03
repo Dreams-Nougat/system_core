@@ -13,3 +13,19 @@ As Elliott mentions, I don't think there are that many places that would need to
 
 I'm not sure this it the right place for the definition, but I can't think of another place to put it.
 
+133:8-133:9
+Mon Feb 03 20:56:47 2014 +0000
+Author: Kévin PETIT <1038054@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2e2061a_614bdc47
+UUID: d2f8a2d4_03a2ee13
+Bytes: 423
+You mean that you'd prefer each code to redefine a format using that PTR_ZERO_PAD?
+
+>I don't think there are that many places that would need to use this.
+
+Enough for it to be a recurrent issue, especially when you don't know if anyone is relying on the exact format and or alignment.
+
+>I'm not sure this it the right place for the definition, but I can't think of another place to put it.
+
+That was exactly my feeling :-).
+

@@ -1,0 +1,11 @@
+Revision: 127206096f655cf02b4d1bc2cd7ee4637818f991
+Patch-set: 1
+File: libnl_2/Android.mk
+
+6
+Thu Feb 06 02:00:54 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 129ebad0_87185ad4
+Bytes: 118
+set LOCAL_32_BIT_ONLY := true in each module instead, otherwise this won't build for the 2nd arch in a multiarch build
+

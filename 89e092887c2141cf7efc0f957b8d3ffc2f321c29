@@ -9,3 +9,11 @@ UUID: f2468641_ec068be6
 Bytes: 216
 Only to give *me* a lesson on C++ style. When are we supposed to use C++-style cast instead of C? (void *) seems to be one of those cases since there is little chance that the case will reinterpret. Are there others?
 
+96:9-96:13
+Fri Feb 07 17:17:43 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2468641_ec068be6
+UUID: 323d7e9f_0ef74b41
+Bytes: 112
+we should always use C++ casts, but i was assuming this code was already a mix and was too lazy to say anything.
+

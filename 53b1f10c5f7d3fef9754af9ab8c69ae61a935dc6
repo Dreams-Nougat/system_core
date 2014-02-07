@@ -1,0 +1,11 @@
+Revision: 53b1f10c5f7d3fef9754af9ab8c69ae61a935dc6
+Patch-set: 1
+File: include/log/log.h
+
+77
+Fri Feb 07 06:01:54 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 323d7e9f_4e10736a
+Bytes: 193
+It was pointed out to me that this has the side effect of evaluating all the arguments, which could be expensive in rare cases.  From the ALOGVs I've come across that doesn't seem to be common.
+

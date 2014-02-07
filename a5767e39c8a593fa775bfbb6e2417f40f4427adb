@@ -1,0 +1,20 @@
+Revision: a5767e39c8a593fa775bfbb6e2417f40f4427adb
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+657
+Fri Feb 07 22:23:04 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 323d7e9f_ddea57c9
+Bytes: 222
+maybe it's time for typeof and std::numeric_limits?
+
+calin likes the idea of having One True userspace struct stat, though i fear the amount of copying back and forth (mainly in terms of code cleanliness, not performance).
+
+659
+Fri Feb 07 22:23:04 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 323d7e9f_7ddc0336
+Bytes: 46
+you know __mips__ is true for mips and mips64?
+

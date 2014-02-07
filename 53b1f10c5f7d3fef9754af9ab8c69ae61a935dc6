@@ -16,3 +16,11 @@ UUID: f2468641_acbba3c7
 Bytes: 50
 do you not mean __android_log_buf_print_disabled ?
 
+288:49-288:50
+Fri Feb 07 17:34:16 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f2468641_acbba3c7
+UUID: 323d7e9f_2e7fa7c1
+Bytes: 9
+oops, yes
+

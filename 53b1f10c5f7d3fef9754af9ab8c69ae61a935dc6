@@ -9,3 +9,10 @@ UUID: 323d7e9f_4e10736a
 Bytes: 193
 It was pointed out to me that this has the side effect of evaluating all the arguments, which could be expensive in rare cases.  From the ALOGVs I've come across that doesn't seem to be common.
 
+288:49-288:50
+Fri Feb 07 16:09:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2468641_acbba3c7
+Bytes: 50
+do you not mean __android_log_buf_print_disabled ?
+

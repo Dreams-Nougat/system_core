@@ -1,0 +1,11 @@
+Revision: 89e092887c2141cf7efc0f957b8d3ffc2f321c29
+Patch-set: 1
+File: libbacktrace/BacktraceMap.cpp
+
+96:9-96:13
+Fri Feb 07 15:54:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f2468641_ec068be6
+Bytes: 216
+Only to give *me* a lesson on C++ style. When are we supposed to use C++-style cast instead of C? (void *) seems to be one of those cases since there is little chance that the case will reinterpret. Are there others?
+

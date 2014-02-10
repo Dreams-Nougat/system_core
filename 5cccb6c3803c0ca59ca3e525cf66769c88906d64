@@ -1,0 +1,16 @@
+Revision: 5cccb6c3803c0ca59ca3e525cf66769c88906d64
+Patch-set: 4
+File: include/log/log.h
+
+78
+Mon Feb 10 05:13:58 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: af83c5c3_02ca6ae1
+Bytes: 255
+crap, that's not right either.
+
+while (0) { __ALOGV(..) } doesn't work because if (x) ALOGV(...); else ALOGV(...); gets an extra semicolon after the while (0), which breaks the if.
+
+I think this will work:
+do { if (0) { __ALOGV(__VA_ARGS__); } } while (0)
+

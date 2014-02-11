@@ -1,0 +1,11 @@
+Revision: f4fa615832fbcc15ee11084f663fcf967251362a
+Patch-set: 2
+File: include/utils/Errors.h
+
+54
+Tue Feb 11 13:22:04 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4f3ec9eb_bf789708
+Bytes: 99
+Is anyone crazy enough to compare these errors using "<" or ">" like say "if (error < BAD_INDEX)" ?
+

@@ -9,10 +9,26 @@ UUID: cff71998_ee441fd7
 Bytes: 75
 Type is not used, you should use the __attribute__((unused)) or (void)type;
 
+943
+Wed Feb 12 23:18:40 2014 +0000
+Author: Stephen Smalley <1010099@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cff71998_ee441fd7
+UUID: af2665f6_ed7c21cc
+Bytes: 287
+Will rework to use type (remap SELINUX log values to those used by klog, which unfortunately do not appear to be #define'd or enum defined anywhere but just hardcoded twice in klog.h, once as a number and once as a string).  Did something similar already in the jni callback for SELinux.
+
 947
 Wed Feb 12 22:27:35 2014 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4f0c0978_d2d0e20b
 Bytes: 142
 Do we really need this? Is this something to do with the stack frame not able to pass through var args without explicitly passing the va_list?
+
+947
+Wed Feb 12 23:18:40 2014 +0000
+Author: Stephen Smalley <1010099@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4f0c0978_d2d0e20b
+UUID: 4f0c0978_12a1ca45
+Bytes: 330
+We need to wrap klog_write for two reasons:  remap type/level values from libselinux values to klog values and deal with difference in return value (int vs void).  Since we have to wrap it, we need to factor out a helper that takes a va_list argument as you cannot "forward" a stdarg call directly to the original klog_write call.
 

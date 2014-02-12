@@ -1,0 +1,18 @@
+Revision: fbe4b44cd5dd3b99b0a20825f007311435818707
+Patch-set: 1
+File: init/init.c
+
+943
+Wed Feb 12 22:27:35 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cff71998_ee441fd7
+Bytes: 75
+Type is not used, you should use the __attribute__((unused)) or (void)type;
+
+947
+Wed Feb 12 22:27:35 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4f0c0978_d2d0e20b
+Bytes: 142
+Do we really need this? Is this something to do with the stack frame not able to pass through var args without explicitly passing the va_list?
+

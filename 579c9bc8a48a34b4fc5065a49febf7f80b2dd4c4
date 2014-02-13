@@ -2,6 +2,13 @@ Revision: 579c9bc8a48a34b4fc5065a49febf7f80b2dd4c4
 Patch-set: 1
 File: debuggerd/Android.mk
 
+34:0-34:24
+Thu Feb 13 17:29:08 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8f9e016b_94bf4ae0
+Bytes: 89
+this line tells the build system to only generate the rule for one or more architectures.
+
 28:0-35:27
 Thu Feb 13 17:24:40 2014 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,16 @@
+Revision: 9f4bff002573cdfa1e2bfdbc0f823d9aa52215cd
+Patch-set: 3
+File: sdcard/sdcard.c
+
+1222:36-1222:45
+Sat Feb 15 00:52:31 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0fd6913f_339ad013
+Bytes: 308
+We are using gcc-4.8 with plenty warning spam, and we have 64bit in mind.
+
+So we can't have
+
+system/core/sdcard/sdcard.c:1222:25: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+     __u8 *read_buffer = (__u8 *) (((uintptr_t) handler->read_buffer + PAGESIZE) & ~(PAGESIZE-1));
+

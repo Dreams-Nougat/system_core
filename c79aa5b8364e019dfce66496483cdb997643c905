@@ -1,0 +1,11 @@
+Revision: c79aa5b8364e019dfce66496483cdb997643c905
+Patch-set: 2
+File: toolbox/ifconfig.c
+
+88:12-88:18
+Sun Feb 16 21:09:08 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2fd9956f_7da943a1
+Bytes: 11
+use strlcpy
+

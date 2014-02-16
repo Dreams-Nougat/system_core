@@ -1,0 +1,25 @@
+Revision: 28361a6f5d7a96ccf399aa396297ac7b35211a01
+Patch-set: 2
+File: libutils/Unicode.cpp
+
+579
+Sun Feb 16 18:47:06 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2fd9956f_7d7b8395
+Bytes: 94
+u16end is only used to compare against u16cur, why not just change it to be a const char16_t*?
+
+582
+Sun Feb 16 18:47:06 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0fd6913f_e1522ea8
+Bytes: 23
+is this cast necessary?
+
+594
+Sun Feb 16 18:47:06 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8f21a133_c23638fe
+Bytes: 52
+if the cast above is necessary, why is this one not?
+

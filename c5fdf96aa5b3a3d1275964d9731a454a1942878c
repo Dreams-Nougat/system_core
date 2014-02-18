@@ -1,0 +1,22 @@
+Revision: c5fdf96aa5b3a3d1275964d9731a454a1942878c
+Patch-set: 4
+File: init/property_service.c
+
+525
+Tue Feb 18 23:37:43 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f8b8d70_a57e94f4
+Bytes: 160
+i think i need to make st_uid and st_gid have types uid_t and gid_t rather than unsigned int/unsigned long. otherwise this is still going to be broken for LP64.
+
+File: init/util.c
+
+96
+Tue Feb 18 23:37:43 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cf26394f_087453e6
+Bytes: 246
+this still looks wrong. maybe the cast wouldn't seem so insane if you did it at the point where you're parsing the arguments, though it's still surprising to say the least.
+
+or presumably if you declared this const char* const you'd need no cast?
+

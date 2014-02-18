@@ -1,0 +1,22 @@
+Revision: 15db86d204324ef475dddaa0747e37ced0f41378
+Patch-set: 2
+File: /COMMIT_MSG
+
+12
+Tue Feb 18 21:26:45 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ef293d20_0ed8df0d
+Bytes: 73
+can you please update the commit message and add the line:
+
+Bug: 12587913
+
+File: init/Android.mk
+
+29
+Tue Feb 18 21:26:45 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ef293d20_aecc4b50
+Bytes: 106
+Please move this to a separate change. Fixing the warnings, and enabling -Wall -Werror should be separate.
+

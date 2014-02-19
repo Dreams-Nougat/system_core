@@ -1,0 +1,17 @@
+Revision: 0e7518cf065aaf81608275a9214d95fe9fcf02f7
+Patch-set: 3
+File: fs_mgr/fs_mgr.c
+
+135:9-135:40
+Wed Feb 19 20:44:07 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cff9d9ff_0f1c7550
+Bytes: 144
+Why not something less sdk specific?
+
+if (access(E2FSCK_BIN, X_OK)) {
+  INFO("%s is not there or not executable\n", E2FSC_BIN);
+} else {
+  ...
+}
+

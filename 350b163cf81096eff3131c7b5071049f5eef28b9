@@ -1,0 +1,13 @@
+Revision: 350b163cf81096eff3131c7b5071049f5eef28b9
+Patch-set: 2
+File: sdcard/sdcard.c
+
+1761:3-1761:8
+Wed Feb 19 22:33:41 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cff9d9ff_ea0657af
+Bytes: 176
+This ERROR() and the others in main() should probably log  to stderr.
+
+Or just have main save the isatty(stderr) res, and have  ERROR() direct to fprintf vs SLOGE appropriately
+

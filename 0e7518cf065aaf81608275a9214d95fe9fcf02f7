@@ -15,3 +15,11 @@ if (access(E2FSCK_BIN, X_OK)) {
   ...
 }
 
+135:9-135:40
+Mon Feb 24 22:30:58 2014 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cff9d9ff_0f1c7550
+UUID: dc0199f4_bbcce7a7
+Bytes: 190
+I tend to be conservative to avoid introducing new unexpected code paths, but that works too. I've uploaded a new patch, please take a look, we really need this to fix the sdk boots. Thanks.
+

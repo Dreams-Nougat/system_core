@@ -1,0 +1,11 @@
+Revision: 031a748b2a9bf6dcfd3983d8f0f616718fcddd88
+Patch-set: 3
+File: libsparse/output_file.c
+
+39
+Fri Feb 28 16:18:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c52b523_e91e1177
+Bytes: 148
+(wow. grepping for this Windows turd, it shows up in a lot of files. maybe longer term you should look at some kind of WindowsCompatibilityCruft.h!)
+

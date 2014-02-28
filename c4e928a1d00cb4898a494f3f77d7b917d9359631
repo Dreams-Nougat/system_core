@@ -1,0 +1,27 @@
+Revision: c4e928a1d00cb4898a494f3f77d7b917d9359631
+Patch-set: 1
+File: libsparse/output_file.c
+
+50
+Fri Feb 28 01:23:49 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c5da930_8a0c2bc7
+Bytes: 162
+(if you know you only ever build against bionic, you can use __unused; it's in <sys/cdefs.h> so it will be transitively included by any other bionic header file.)
+
+File: libsparse/sparse_read.c
+
+49
+Fri Feb 28 01:23:49 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c29d585_9aa90a63
+Bytes: 65
+sure you don't want to at least put this in your own header file?
+
+51
+Fri Feb 28 01:23:49 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c58ad41_cea6b7d3
+Bytes: 44
+(there's a POSIX MIN and MAX in bionic too.)
+

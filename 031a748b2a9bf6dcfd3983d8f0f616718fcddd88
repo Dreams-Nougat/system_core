@@ -9,3 +9,12 @@ UUID: 3c52b523_e91e1177
 Bytes: 148
 (wow. grepping for this Windows turd, it shows up in a lot of files. maybe longer term you should look at some kind of WindowsCompatibilityCruft.h!)
 
+720
+Fri Feb 28 16:23:01 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c0a6d15_f22e08bc
+Bytes: 112
+FYI. system/core/FileMap.cpp allows mmap like functionality on windows.
+
+Not sure if this is worth fixing though
+

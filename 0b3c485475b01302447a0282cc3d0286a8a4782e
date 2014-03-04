@@ -17,6 +17,16 @@ UUID: dc76f9c4_99e03be7
 Bytes: 21
 ...like the compiler!
 
+31
+Tue Mar 04 09:59:52 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dc76f9c4_99e03be7
+UUID: fcce5d4a_2c63f3ee
+Bytes: 402
+(as I said on another review :) I think there might be a case for moving everyone (including gcc) to __clear_cache (which is defined in both libgcc as well as compiler-rt). I think we'll end up losing inlining though (not that I particularly care, i don't expect this to be a performance bottleneck.)
+
+What's the story with clang and __builtin__clear_cache ? Are there any plans to implement it there ?
+
 File: sdcard/sdcard.c
 
 1247

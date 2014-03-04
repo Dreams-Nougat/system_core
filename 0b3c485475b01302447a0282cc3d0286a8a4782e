@@ -9,6 +9,14 @@ UUID: 7c66ed13_db79c70b
 Bytes: 103
 I'd rather not hack around clang differences in every file, can this at least go somewhere more global?
 
+31
+Tue Mar 04 02:36:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c66ed13_db79c70b
+UUID: dc76f9c4_99e03be7
+Bytes: 21
+...like the compiler!
+
 File: sdcard/sdcard.c
 
 1247

@@ -1,0 +1,20 @@
+Revision: 0b3c485475b01302447a0282cc3d0286a8a4782e
+Patch-set: 1
+File: libpixelflinger/codeflinger/CodeCache.cpp
+
+31
+Tue Mar 04 01:41:13 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c66ed13_db79c70b
+Bytes: 103
+I'd rather not hack around clang differences in every file, can this at least go somewhere more global?
+
+File: sdcard/sdcard.c
+
+1247
+Tue Mar 04 01:41:13 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c7df19f_d84b1148
+Bytes: 140
+I especially don't want to carry changes in every file to work around clang bugs.  This sounds like clang is not ready to compile this file.
+

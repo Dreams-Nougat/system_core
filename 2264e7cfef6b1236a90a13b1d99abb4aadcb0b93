@@ -11,3 +11,23 @@ Argh. Doesn't build on windows.
 
 Doesn't make a difference if there or not on my Ubuntu: I'm removing it.
 
+1191:48-1191:59
+Fri Mar 07 08:58:49 2014 +0000
+Author: Snild Dolkow <1041495@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c348108_4a0f0201
+UUID: dccb593b_1ffad3e1
+Bytes: 342
+My man pages say:
+
+ > POSIX.1-2001 allows either error to be returned for this case, and does not require these constants to have the same value, so a portable application should check for both possibilities. 
+
+http://linux.die.net/man/2/write
+
+Maybe a better solution would be:
+
+  #ifndef EWOULDBLOCK
+  #define EWOULDBLOCK EAGAIN
+  #endif
+
+?
+

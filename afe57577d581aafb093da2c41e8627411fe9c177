@@ -1,0 +1,13 @@
+Revision: afe57577d581aafb093da2c41e8627411fe9c177
+Patch-set: 1
+File: libcutils/qtaguid.c
+
+3
+Fri Mar 07 23:23:05 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c526d52_a7c5344d
+Bytes: 186
+you should just leave these alone. hardly anyone updates them, and it's just useless churn at best.
+
+(it's actively harmful in bionic where we have a script to generate our NOTICE file.)
+

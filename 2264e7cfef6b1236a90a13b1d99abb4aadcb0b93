@@ -31,3 +31,15 @@ Maybe a better solution would be:
 
 ?
 
+1191:48-1191:59
+Fri Mar 07 19:06:09 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dccb593b_1ffad3e1
+UUID: bc586570_606b0607
+Bytes: 254
+adb_write() is not write(), look at the OS specific implementations.
+
+The better solution would be to make adb_write() return consistent errno for all cases. 
+
+But I don't care: not worse than what was before, and it still works the same in a quick test.
+

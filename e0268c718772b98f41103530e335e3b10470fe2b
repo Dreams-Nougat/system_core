@@ -1,0 +1,11 @@
+Revision: e0268c718772b98f41103530e335e3b10470fe2b
+Patch-set: 2
+File: toolbox/r.c
+
+81
+Sat Mar 08 19:57:34 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c2ba1c2_8cbf67de
+Bytes: 28
+this line writes to /dev/mem
+

@@ -9,3 +9,11 @@ UUID: 9c2ba1c2_8cbf67de
 Bytes: 28
 this line writes to /dev/mem
 
+81
+Sat Mar 08 21:54:26 2014 +0000
+Author: Spencer Shimko <1019248@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c2ba1c2_8cbf67de
+UUID: 1ceed1c6_4d6d7989
+Bytes: 114
+Missed those.  Which means perhaps 'r' is overloaded but probably little value, if any, in splitting out.  Agreed?
+

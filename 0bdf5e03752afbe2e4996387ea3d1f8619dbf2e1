@@ -1,0 +1,11 @@
+Revision: 0bdf5e03752afbe2e4996387ea3d1f8619dbf2e1
+Patch-set: 1
+File: adb/commandline.c
+
+1375:0-1397:26
+Wed Mar 12 01:17:38 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c17b18c_2ed0ebe4
+Bytes: 69
+common func. something like push_pull_args(argc-1, &argv[1], argv[0])
+

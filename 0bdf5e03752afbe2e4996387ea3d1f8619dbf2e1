@@ -17,3 +17,21 @@ UUID: fce81dcd_1246f13e
 Bytes: 143
 Not sure how much code that would save, since push takes the paths in the opposite order from pull, and pull's local-path argument is optional.
 
+File: adb/file_sync_client.c
+
+229:4-229:27
+Wed Mar 12 02:10:16 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cda0934_4830d300
+Bytes: 46
+adb_lseek() returns what? :) ... needs fixing.
+
+239:15-239:24
+Wed Mar 12 02:10:16 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c17b18c_eedd33fa
+Bytes: 74
+what is returned in case of error?
+
+Why not use a single sys call lstat()?
+

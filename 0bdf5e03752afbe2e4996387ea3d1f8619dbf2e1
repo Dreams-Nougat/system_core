@@ -9,3 +9,11 @@ UUID: 1c17b18c_2ed0ebe4
 Bytes: 69
 common func. something like push_pull_args(argc-1, &argv[1], argv[0])
 
+1375:0-1397:26
+Wed Mar 12 01:40:56 2014 +0000
+Author: Mark Lindner <1042743@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c17b18c_2ed0ebe4
+UUID: fce81dcd_1246f13e
+Bytes: 143
+Not sure how much code that would save, since push takes the paths in the opposite order from pull, and pull's local-path argument is optional.
+

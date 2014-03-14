@@ -10,10 +10,26 @@ Bytes: 138
 You can't use conditional on $(TARGET_BUILD_VARIANT) to change how a module get build.
 Erik, can we remove this and install r universally?
 
+73
+Fri Mar 14 00:21:50 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cc8f574_508b14c4
+UUID: 7caeed94_a7c8b465
+Bytes: 67
+I'd prefer to keep this available only on userdebug and eng builds.
+
 122
 Fri Mar 14 00:14:18 2014 +0000
 Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5cb3e9f9_8c9bd35f
 Bytes: 78
 This make it always regenerate  $(TOOLS_H_TMP), even in a nothing-to-do build.
+
+122
+Fri Mar 14 00:21:50 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cb3e9f9_8c9bd35f
+UUID: fcfadd80_ac2e98ba
+Bytes: 88
+That's an unavoidable feature of this patch.  It would be nice to do it silently though.
 

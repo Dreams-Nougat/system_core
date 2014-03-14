@@ -1,0 +1,19 @@
+Revision: 692388064f67044a3189783bc01300f96aab0c87
+Patch-set: 3
+File: toolbox/Android.mk
+
+73
+Fri Mar 14 00:14:18 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3cc8f574_508b14c4
+Bytes: 138
+You can't use conditional on $(TARGET_BUILD_VARIANT) to change how a module get build.
+Erik, can we remove this and install r universally?
+
+122
+Fri Mar 14 00:14:18 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cb3e9f9_8c9bd35f
+Bytes: 78
+This make it always regenerate  $(TOOLS_H_TMP), even in a nothing-to-do build.
+

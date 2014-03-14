@@ -18,6 +18,16 @@ UUID: 7caeed94_a7c8b465
 Bytes: 67
 I'd prefer to keep this available only on userdebug and eng builds.
 
+73
+Fri Mar 14 00:28:28 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7caeed94_a7c8b465
+UUID: 3cc8f574_d0a3a429
+Bytes: 343
+In that case you have to build another module and tag it as "LOCAL_MODULE_TAGS := debug".
+TARGET_BUILD_VARIANT is supposed only affect what modules to install, but not how a module gets built. We have a couple of such variables. If it's violated, incremental build will break.
+We used to talk about enforcing the rule, but it's not easy to do.
+
 122
 Fri Mar 14 00:14:18 2014 +0000
 Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 0862e75deb1a35737265789e6013ddcb111c0baf
+Patch-set: 2
+File: init/builtins.c
+
+682:38-682:41
+Mon Mar 17 18:04:47 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fccd7da7_685f2bd3
+Bytes: 17
+farg, white space
+

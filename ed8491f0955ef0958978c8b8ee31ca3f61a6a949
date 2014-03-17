@@ -1,0 +1,20 @@
+Revision: ed8491f0955ef0958978c8b8ee31ca3f61a6a949
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:8-7:27
+Mon Mar 17 23:53:45 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc0ea5b3_9e5bcdc0
+Bytes: 39
+provide more descriptive error messages
+
+File: logcat/logcat.cpp
+
+702:24-702:54
+Mon Mar 17 23:53:45 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcb1990e_f6d8b4bd
+Bytes: 107
+Change to e.g. "failed to clear the log"; there are potentially other causes of failure besides permissions
+

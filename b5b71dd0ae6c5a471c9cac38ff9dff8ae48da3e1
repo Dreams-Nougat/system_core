@@ -9,3 +9,11 @@ UUID: 7cefcdff_16a1fcb8
 Bytes: 366
 I'd be tempted to take the entire logic to libselinux for opening property_contexts, as we already do for all other policy files.  But I remember that there was a desire to keep it here because of the tight coupling to init property service.  If we have to keep it here, it should be less strongly linked to the libselinux internals, i.e. index shouldn't be exposed.
 
+854
+Tue Mar 18 15:34:23 2014 +0000
+Author: Robert Craig <1013157@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7cefcdff_16a1fcb8
+UUID: dcca7990_9939bbee
+Bytes: 163
+I would agree that tucking the property_contexts logic inside libselinux would be preferable, but I'll rework this patch knowing that change probably won't happen.
+

@@ -9,3 +9,12 @@ UUID: PhMSJkis
 Bytes: 56
 preserve errno as printerr() will potentially modify it.
 
+317
+Wed Mar 19 18:51:04 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: PhMSJkis
+UUID: fcfbbdcb_98fe45d3
+Bytes: 164
+actually. Don't print anything which is consistent with the rest of this function.
+And while in here, save errno whenever there is a close() which can modify errno.
+

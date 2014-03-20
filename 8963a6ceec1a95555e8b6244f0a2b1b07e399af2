@@ -19,3 +19,11 @@ What is the proper way to deal with a complete set of policy files that exists u
 
 Are we sure we don't want to tuck this inside libselinux? It would make handling certain issues much easier across all policy files.
 
+854
+Thu Mar 20 18:38:38 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c2df129_58fea184
+UUID: 7c8b4d70_f3046a34
+Bytes: 131
+I would prefer that but IIRC Dima wanted it here due to the tight coupling between the init property service and property_contexts.
+

@@ -10,6 +10,16 @@ Bytes: 105
 What do you think about lack of memory case also here?
 if( NULL == tmp_key || NULL == tmp_val) goto bail;
 
+204:0-204:0
+Thu Mar 20 10:51:18 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dc4d1911_6161726b
+UUID: 5c904999_4fc34d79
+Bytes: 267
+Yes, the OOM-situation you mention is valid, but not causing the double free that this patch is aiming for. Since these strings are often short they are less likely to fail.
+
+Let's await further review before deciding if it should be added here or into another patch.
+
 213:8-213:12
 Thu Mar 20 02:01:09 2014 +0000
 Author: Hidenori Yamaji <1004248@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,4 +27,16 @@ UUID: 3c30f57d_19858ff1
 Bytes: 43
 -      free(tmp_key);
 +bail: free(tmp_key);
+
+213:8-213:12
+Thu Mar 20 10:51:18 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c30f57d_19858ff1
+UUID: dc26f94e_f3ba30ea
+Bytes: 375
+I understand that this was just to show the concept, but personally I would try to avoid the goto. It should be possible to unconditionally free everything that is non-null, and avoid early return.
+
+At least moving the bail-case out of the if-statement, as with err_strdup above.
+
+(Also consider if we want the ENOMEM set for that case too, or if the return value is enough.)
 

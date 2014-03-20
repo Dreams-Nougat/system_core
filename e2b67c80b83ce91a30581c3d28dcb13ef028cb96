@@ -1,0 +1,32 @@
+Revision: e2b67c80b83ce91a30581c3d28dcb13ef028cb96
+Patch-set: 2
+File: adb/SYNC.TXT
+
+40:73-40:155
+Thu Mar 20 18:11:39 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc4d1911_95ecf4a4
+Bytes: 133
+The last part is the ... mode, everything else is the filename.
+Which then suggests that
+
+  adb push my_file,0 /data/
+
+won't blow up.
+
+41
+Thu Mar 20 18:11:39 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c30f57d_25a3781c
+Bytes: 311
+Add a comment about """Some file types will be deleted before the copying starts, and if the transfer fails."""
+
+So people won't wonder why their large file is not on the destination, even partially.
+
+And
+"""Some file types will not be deleted, which allows
+
+  adb push disk_image /some_block_device
+
+to work"""
+

@@ -27,3 +27,11 @@ UUID: 7c8b4d70_f3046a34
 Bytes: 131
 I would prefer that but IIRC Dima wanted it here due to the tight coupling between the init property service and property_contexts.
 
+854
+Thu Mar 20 19:31:20 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c8b4d70_f3046a34
+UUID: 7c8b4d70_d3b4c6d7
+Bytes: 128
+I guess you can leave this alone and presume that libselinux will ensure that all files exist before selecting the /data policy.
+

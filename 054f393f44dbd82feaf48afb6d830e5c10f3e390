@@ -1,0 +1,20 @@
+Revision: 054f393f44dbd82feaf48afb6d830e5c10f3e390
+Patch-set: 1
+File: libcutils/str_parms.c
+
+204:0-204:0
+Thu Mar 20 02:01:09 2014 +0000
+Author: Hidenori Yamaji <1004248@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc4d1911_6161726b
+Bytes: 105
+What do you think about lack of memory case also here?
+if( NULL == tmp_key || NULL == tmp_val) goto bail;
+
+213:8-213:12
+Thu Mar 20 02:01:09 2014 +0000
+Author: Hidenori Yamaji <1004248@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c30f57d_19858ff1
+Bytes: 43
+-      free(tmp_key);
++bail: free(tmp_key);
+

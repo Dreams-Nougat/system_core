@@ -1,0 +1,42 @@
+Revision: bad7d40145d7012037846dbea269d89e536e3253
+Patch-set: 1
+File: rootdir/init.rc
+
+371:50-371:57
+Mon Mar 24 21:38:54 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0d61ec_e2f15cbc
+Bytes: 257
+UMTS with 200ms RTT and 384kbps only needs 78643 max buffer to keep the channel saturated.  Even if we go with 500ms RTT as suggested by http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=01509654 we only need 196608.  Lets cut this to 58254,349525,1048576
+
+372:50-372:57
+Mon Mar 24 21:38:54 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcf999ff_d52a1c95
+Bytes: 79
+hspa is highly asymmetric.
+Lets go with  32622,195734,587203,13422,80531,241592
+
+373:0-373:76
+Mon Mar 24 21:38:54 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcf999ff_b52f90a3
+Bytes: 65
+hsupa is also asymmetric.
+40778,244668,734003,16777,100663,301990
+
+374:31-374:36
+Mon Mar 24 21:38:54 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cbcc931_92b7fa68
+Bytes: 57
+Again, asymmetric:
+61167,367002,1101005,8738,52429,262114
+
+375:31-375:36
+Mon Mar 24 21:38:54 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc0865da_a3380853
+Bytes: 135
+I suspect your 25ms RTT time is low for this network.  It was advertised as sub 50ms latency (one way).  Lets use 110683,664098,1992294
+

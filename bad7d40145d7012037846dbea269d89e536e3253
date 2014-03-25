@@ -1,5 +1,14 @@
 Revision: bad7d40145d7012037846dbea269d89e536e3253
 Patch-set: 1
+File: /COMMIT_MSG
+
+18:0-20:6
+Tue Mar 25 23:29:47 2014 +0000
+Author: Steve Lin <1014510@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc1f3d43_ed8bdd58
+Bytes: 126
+Hi Narayan, this line is not true anymore. Please remove it. For the above RTT, we may need to update after Robert's comments.
+
 File: rootdir/init.rc
 
 371:50-371:57
@@ -16,6 +25,14 @@ UUID: dcf999ff_d52a1c95
 Bytes: 79
 hspa is highly asymmetric.
 Lets go with  32622,195734,587203,13422,80531,241592
+
+372:50-372:57
+Tue Mar 25 23:29:47 2014 +0000
+Author: Steve Lin <1014510@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcf999ff_d52a1c95
+UUID: fc1f3d43_0d1f5974
+Bytes: 163
+Can't find my old reference for the 40ms RTT. Just search again, 50ms RTT seems to be the reasonable average. Is it ok to use your suggested number for hsupa here?
 
 373:0-373:76
 Mon Mar 24 21:38:54 2014 +0000
@@ -39,4 +56,12 @@ Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bc0865da_a3380853
 Bytes: 135
 I suspect your 25ms RTT time is low for this network.  It was advertised as sub 50ms latency (one way).  Lets use 110683,664098,1992294
+
+375:31-375:36
+Tue Mar 25 23:29:47 2014 +0000
+Author: Steve Lin <1014510@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc0865da_a3380853
+UUID: 1c23318f_4ed30715
+Bytes: 232
+Hi Robert, what is your calculation base for this number, so we can update the commit message accordingly. Besides, more networks support HSPA+ CAT20 (42Mbps). If using sub 50ms latency, we probably can use the lte window size here.
 

@@ -96,3 +96,11 @@ Then maybe just use the buffer size for LTE, not to exceed it. We can still use 
 
 My goal is to make sure to pass the lab test with the default values and they should work fairly well on real networks (lower speed & longer RTT). Thanks.
 
+375:31-375:36
+Wed Mar 26 19:41:19 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 590f7b24_7a35355a
+UUID: 392487a3_bcde29f3
+Bytes: 253
+Is there an advantage to "use the buffer size for LTE"?  Why not use the numbers calculated for this network type?  I'm ok with your 122334,734003,2202010.  The upload rate is limited to 11Mbps I think, yielding 32040,192239,576717,122334,734003,2202010
+

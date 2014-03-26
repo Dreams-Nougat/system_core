@@ -83,3 +83,16 @@ Bytes: 337
 
 If it truly is 100ms and 42Mbps, it needs huge buffers.  I find it hard to believe though that they would approach .5 the speed of LTE but have 5x the latency.  Do you suppose the 50ms latency comments actually meant 50ms RTT?  If so we'd need buffers roughly 2x the size of LTE.
 
+375:31-375:36
+Wed Mar 26 18:34:47 2014 +0000
+Author: Steve Lin <1014510@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c23318f_31938b00
+UUID: 590f7b24_7a35355a
+Bytes: 377
+My assumption is 42Mbps and 50ms RTT. So the size is:
+122334,734003,2202010
+
+Then maybe just use the buffer size for LTE, not to exceed it. We can still use the number is your previous comment which is reasonable as well.
+
+My goal is to make sure to pass the lab test with the default values and they should work fairly well on real networks (lower speed & longer RTT). Thanks.
+

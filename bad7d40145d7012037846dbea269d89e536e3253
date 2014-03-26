@@ -34,6 +34,14 @@ UUID: fc1f3d43_0d1f5974
 Bytes: 163
 Can't find my old reference for the 40ms RTT. Just search again, 50ms RTT seems to be the reasonable average. Is it ok to use your suggested number for hsupa here?
 
+372:50-372:57
+Wed Mar 26 17:56:20 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc1f3d43_0d1f5974
+UUID: 590f7b24_9a96c97b
+Bytes: 24
+Sure -that's reasonable.
+
 373:0-373:76
 Mon Mar 24 21:38:54 2014 +0000
 Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -64,4 +72,14 @@ Parent: bc0865da_a3380853
 UUID: 1c23318f_4ed30715
 Bytes: 232
 Hi Robert, what is your calculation base for this number, so we can update the commit message accordingly. Besides, more networks support HSPA+ CAT20 (42Mbps). If using sub 50ms latency, we probably can use the lte window size here.
+
+375:31-375:36
+Wed Mar 26 17:56:20 2014 +0000
+Author: Robert Greenwalt <1002609@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c23318f_4ed30715
+UUID: 1c23318f_31938b00
+Bytes: 337
+100ms RTT and 19Mbps.  Does that match your expectation?
+
+If it truly is 100ms and 42Mbps, it needs huge buffers.  I find it hard to believe though that they would approach .5 the speed of LTE but have 5x the latency.  Do you suppose the 50ms latency comments actually meant 50ms RTT?  If so we'd need buffers roughly 2x the size of LTE.
 

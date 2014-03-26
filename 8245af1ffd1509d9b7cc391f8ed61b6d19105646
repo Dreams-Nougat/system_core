@@ -1,0 +1,11 @@
+Revision: 8245af1ffd1509d9b7cc391f8ed61b6d19105646
+Patch-set: 3
+File: liblog/logd_write.c
+
+237:4-237:15
+Wed Mar 26 20:35:52 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99157331_9c3fe933
+Bytes: 75
+return ret could have been moved out as common code for both ifdef'd paths.
+

@@ -1,0 +1,11 @@
+Revision: 649a97d1acd9fb34fc2b31874cb483a6a419f48e
+Patch-set: 2
+File: liblog/logd_write.c
+
+222:12-224:32
+Wed Mar 26 16:02:03 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b910773f_baaf510e
+Bytes: 11
+Unnecessary
+

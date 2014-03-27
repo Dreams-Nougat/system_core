@@ -104,3 +104,11 @@ UUID: 392487a3_bcde29f3
 Bytes: 253
 Is there an advantage to "use the buffer size for LTE"?  Why not use the numbers calculated for this network type?  I'm ok with your 122334,734003,2202010.  The upload rate is limited to 11Mbps I think, yielding 32040,192239,576717,122334,734003,2202010
 
+375:31-375:36
+Thu Mar 27 01:42:07 2014 +0000
+Author: Steve Lin <1019296@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 392487a3_bcde29f3
+UUID: 19218395_585ba171
+Bytes: 36
+Ok, will update accordingly. Thanks.
+

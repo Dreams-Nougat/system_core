@@ -2,6 +2,13 @@ Revision: 32274ec65f082d1707a9617a7b13fa04c91868af
 Patch-set: 1
 File: logd/LogReader.cpp
 
+192:30-192:36
+Thu Mar 27 17:22:50 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b910773f_a00ddec2
+Bytes: 36
+runcon u:r:logd:s0 /system/bin/logd&
+
 187:8-197:9
 Thu Mar 27 17:21:48 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

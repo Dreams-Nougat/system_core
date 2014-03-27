@@ -1,0 +1,11 @@
+Revision: 32274ec65f082d1707a9617a7b13fa04c91868af
+Patch-set: 1
+File: logd/LogReader.cpp
+
+187:8-197:9
+Thu Mar 27 17:21:48 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39fba735_87ce6ca3
+Bytes: 109
+FYI, this is the first socket to be opened this a getLogSocket() method, so this is why this message is here.
+

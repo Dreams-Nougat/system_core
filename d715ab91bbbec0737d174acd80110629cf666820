@@ -50,6 +50,14 @@ import /init.${ro.zygote}.rc
 
 to select between  /init.zygote32.rc,  /init.zygote64.rc, and possible ones with lazy vs non-lazy secondary startup.
 
+9:0-9:30
+Fri Mar 28 19:19:53 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d948cb7a_03ef0e6b
+UUID: f94bcf71_c7ad8080
+Bytes: 141
+It would be nice to keep everything centralized, and not have to edit 4 different zygote rc files to change things, but I'm fine with either.
+
 503:88-503:111
 Fri Mar 28 18:05:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -73,4 +81,12 @@ So, (i) can be replaced by a system property, and so can (ii) .
 In fact, if we want to be less general, we can assume there will be a maximum of two zygotes and one of them *must* be 64 bits and the other *must be 32*. Then the ActivityManager can say "startProcess boolean is64=false" on it's zygote connection.
 
 Depends on how flexible we want to be, and how strong our aversion for additional arguments like this is.
+
+503:88-503:111
+Fri Mar 28 19:19:53 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f904af03_45bce04b
+UUID: 194fc37f_e8edeba0
+Bytes: 173
+That seems like fairly high level policy to cram through init.rc.  Can Zygote just read the properties directly?  Maybe also supporting command line arguments for debugging?
 

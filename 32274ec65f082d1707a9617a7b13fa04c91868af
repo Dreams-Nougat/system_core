@@ -18,6 +18,18 @@ UUID: d948cb7a_295f8926
 Bytes: 225
 It's dangerous to do compile-time checking of userdebug builds like this.  The build server sometimes does incremental builds between userdebug and user, and the dependencies are not smart enough to know to rebuild this file.
 
+303
+Fri Mar 28 21:57:22 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d948cb7a_295f8926
+UUID: 5944db56_75868007
+Bytes: 532
+We do this elsewhere from previous CLs ... /I see no problem, though, making this a permanent feature/capability for logd, I just wanted to keep this native application trimmed.
+
+Is there something I can do to make an incremental build do this right? I do NOT want the advanced pruning, blacklist and whitelist code available in 'user'.
+
+Or maybe I *do* want the feature available, despite its ability to result in a DOS attack (you can increase the logs to 256MB/each!) . . . property_get("logd.set_size", , "") & "logd.whitelist".
+
 File: logd/LogReader.cpp
 
 187

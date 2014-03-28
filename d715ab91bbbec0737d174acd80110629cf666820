@@ -128,3 +128,13 @@ I guess I have a bit of a google3 mindset here. With this change (and with other
 
 Anyway, I don't think looking at properties makes things any worse so <shrug> so be it.
 
+503:88-503:111
+Fri Mar 28 21:42:47 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f904af03_05813870
+UUID: 99157331_087b8f03
+Bytes: 320
+right. given that all sorts of things are set via properities, the main place I look is AndroidRuntime
+
+I do agree in general. all of those properties are communicated to libdvm/libart via command line switches effectively (via JNI_CreateJavaVM) but for the rest of the Android world I just try to follow their patterns.
+

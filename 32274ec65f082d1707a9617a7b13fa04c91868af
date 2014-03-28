@@ -1,6 +1,31 @@
 Revision: 32274ec65f082d1707a9617a7b13fa04c91868af
 Patch-set: 1
+File: libsysutils/src/FrameworkListener.cpp
+
+43
+Fri Mar 28 20:42:09 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d948cb7a_29d8a962
+Bytes: 114
+it would b enice to avoid the duplication of initializers here an in init().  Why not just call init(NULL, false)?
+
+File: logd/CommandListener.cpp
+
+303
+Fri Mar 28 20:42:09 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d948cb7a_295f8926
+Bytes: 225
+It's dangerous to do compile-time checking of userdebug builds like this.  The build server sometimes does incremental builds between userdebug and user, and the dependencies are not smart enough to know to rebuild this file.
+
 File: logd/LogReader.cpp
+
+187
+Fri Mar 28 20:42:09 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194fc37f_ebede5a0
+Bytes: 79
+you could just require logd be started as root with setenforce 0 for debugging.
 
 192:30-192:36
 Thu Mar 27 17:22:50 2014 +0000

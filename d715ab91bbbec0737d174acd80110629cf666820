@@ -58,6 +58,16 @@ UUID: f94bcf71_c7ad8080
 Bytes: 141
 It would be nice to keep everything centralized, and not have to edit 4 different zygote rc files to change things, but I'm fine with either.
 
+9:0-9:30
+Fri Mar 28 21:18:22 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f94bcf71_c7ad8080
+UUID: f904af03_65723cfc
+Bytes: 356
+I think Brian's approach sounds like a good idea.
+
+After our discussion yesterday, I started this change with the thought that centralized is better, but at that point I wasn't aware this would need parser changes. Also, Brian's suggestion gives us a bit more flexibility with respect to passing different command line arguments to 32 an 64 bit zygote etc.
+
 503:88-503:111
 Fri Mar 28 18:05:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -89,4 +99,12 @@ Parent: f904af03_45bce04b
 UUID: 194fc37f_e8edeba0
 Bytes: 173
 That seems like fairly high level policy to cram through init.rc.  Can Zygote just read the properties directly?  Maybe also supporting command line arguments for debugging?
+
+503:88-503:111
+Fri Mar 28 21:18:22 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 194fc37f_e8edeba0
+UUID: f904af03_4567403c
+Bytes: 271
+Zygote could read them directly, but we need slightly different behaviour in process launched by init from those started directly from the command line (some of that can be expressed by doing different things in ZygoteInit.java / RuntimeInit.java but it might get messy).
 

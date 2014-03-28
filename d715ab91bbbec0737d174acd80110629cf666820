@@ -138,3 +138,11 @@ right. given that all sorts of things are set via properities, the main place I 
 
 I do agree in general. all of those properties are communicated to libdvm/libart via command line switches effectively (via JNI_CreateJavaVM) but for the rest of the Android world I just try to follow their patterns.
 
+503:88-503:111
+Fri Mar 28 21:45:03 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99157331_087b8f03
+UUID: 19f8a337_5134a4f4
+Bytes: 5
+SGTM.
+

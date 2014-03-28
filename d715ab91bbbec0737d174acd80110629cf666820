@@ -1,0 +1,20 @@
+Revision: d715ab91bbbec0737d174acd80110629cf666820
+Patch-set: 1
+File: init/init_parser.c
+
+662
+Fri Mar 28 18:05:19 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194fc37f_25568e9a
+Bytes: 237
+This will cause every argument to every service to be in memory twice, which doesn't seem necessary.  Can you find a way to use the original copy if there were no properties in it?  It will probably be ugly, since you can't free args[i].
+
+File: rootdir/init.rc
+
+503:88-503:111
+Fri Mar 28 18:05:19 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194fc37f_055b92c0
+Bytes: 45
+What do you expect extra_args to be used for?
+

@@ -108,3 +108,11 @@ UUID: f904af03_4567403c
 Bytes: 271
 Zygote could read them directly, but we need slightly different behaviour in process launched by init from those started directly from the command line (some of that can be expressed by doing different things in ZygoteInit.java / RuntimeInit.java but it might get messy).
 
+503:88-503:111
+Fri Mar 28 21:27:02 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f904af03_4567403c
+UUID: 99157331_889e7f09
+Bytes: 186
+I'm thinking that two files might be enough. I'm not following why the rest can't be done with system properties inside app_process (since it can be conditional on the --zygote argument)
+

@@ -21,6 +21,13 @@ There's also a performance (not memory) optimization I have in mind for expand_p
 
 File: rootdir/init.rc
 
+9:0-9:30
+Fri Mar 28 18:20:24 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f94bcf71_242fb20c
+Bytes: 88
+i figured we just have different imports for the different static configuration choices.
+
 503:88-503:111
 Fri Mar 28 18:05:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>

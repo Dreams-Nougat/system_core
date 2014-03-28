@@ -28,6 +28,16 @@ UUID: f94bcf71_242fb20c
 Bytes: 88
 i figured we just have different imports for the different static configuration choices.
 
+9:0-9:30
+Fri Mar 28 18:25:17 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f94bcf71_242fb20c
+UUID: 19f8a337_26655c2a
+Bytes: 279
+You can't "override" default rules with this mechanism so while it's still possible to to use it, we'll need to add zygote rules to each init.${ro.hardware}.rc file
+
+We'll also need to add a few additional hacks to support testing with 64 only or 32 only if we go down that path.
+
 503:88-503:111
 Fri Mar 28 18:05:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>

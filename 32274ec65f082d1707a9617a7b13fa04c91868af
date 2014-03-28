@@ -30,6 +30,14 @@ Is there something I can do to make an incremental build do this right? I do NOT
 
 Or maybe I *do* want the feature available, despite its ability to result in a DOS attack (you can increase the logs to 256MB/each!) . . . property_get("logd.set_size", , "") & "logd.whitelist".
 
+303
+Fri Mar 28 22:02:01 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5944db56_75868007
+UUID: b910773f_cec803ec
+Bytes: 109
+user builds prevent setting properties, so leaving code in that depends on properties shouldn't be a problem.
+
 File: logd/LogReader.cpp
 
 187

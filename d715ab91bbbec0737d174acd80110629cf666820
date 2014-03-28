@@ -38,6 +38,18 @@ You can't "override" default rules with this mechanism so while it's still possi
 
 We'll also need to add a few additional hacks to support testing with 64 only or 32 only if we go down that path.
 
+9:0-9:30
+Fri Mar 28 18:33:12 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19f8a337_26655c2a
+UUID: d948cb7a_03ef0e6b
+Bytes: 232
+sorry, I didn't mean to use ro.hardware to switch, just this pattern. so for example
+
+import /init.${ro.zygote}.rc
+
+to select between  /init.zygote32.rc,  /init.zygote64.rc, and possible ones with lazy vs non-lazy secondary startup.
+
 503:88-503:111
 Fri Mar 28 18:05:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>

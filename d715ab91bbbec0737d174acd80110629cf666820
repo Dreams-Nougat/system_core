@@ -116,3 +116,15 @@ UUID: 99157331_889e7f09
 Bytes: 186
 I'm thinking that two files might be enough. I'm not following why the rest can't be done with system properties inside app_process (since it can be conditional on the --zygote argument)
 
+503:88-503:111
+Fri Mar 28 21:39:32 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99157331_889e7f09
+UUID: f904af03_05813870
+Bytes: 608
+Just to be clear, you're imagining two files whose only difference is the zygote argument ? and you're saying things like --start_secondary and --abi are expressed as system_properties ? 
+
+I guess I have a bit of a google3 mindset here. With this change (and with other command line based argument schemes) I liked the fact that all config switches the zygote needed were provided up front. There are already too many layers of things influencing behaviour (see some of the other changes I sent today to sort that out).
+
+Anyway, I don't think looking at properties makes things any worse so <shrug> so be it.
+

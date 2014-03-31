@@ -9,12 +9,28 @@ UUID: f94bcf71_81b40dd8
 Bytes: 163
 I don't think we should be suggesting this, even for debugging.  The shell already has to be running as root, so logd should be able to write to /dev/socket as is.
 
+193
+Mon Mar 31 18:29:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f94bcf71_81b40dd8
+UUID: 3929e785_e28e2ed7
+Bytes: 88
+No choice, logd reduces itself to AID_LOGD and can no longer add sockets to /dev/socket.
+
 197
 Mon Mar 31 18:00:59 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f9a02f5c_1c8175a2
 Bytes: 62
 logd should be able to do this itself if it created the socket
+
+197
+Mon Mar 31 18:29:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a02f5c_1c8175a2
+UUID: 5944db56_1e52b12c
+Bytes: 49
+By the time the threads are started, too late ...
 
 198
 Mon Mar 31 18:00:59 2014 +0000
@@ -23,10 +39,26 @@ UUID: f9a02f5c_9c16e5a4
 Bytes: 52
 if its 755, why do you care what the owner/group is?
 
+198
+Mon Mar 31 18:29:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a02f5c_9c16e5a4
+UUID: 1926e3b5_d6c41a52
+Bytes: 46
+the sockets themselves are not created 755 ...
+
 200
 Mon Mar 31 18:00:59 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f9a02f5c_dcceadf8
 Bytes: 156
 why are you bothering re-enabling selinux?  I would expect this mostly to be used to run gdb or valgrind on logd, and you probably won't care about selinux.
+
+200
+Mon Mar 31 18:29:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a02f5c_dcceadf8
+UUID: 5944db56_de43095f
+Bytes: 127
+Because one should, pedantically, require everything to be 'normal' when testing. The developer can choose to ignore this line.
 

@@ -84,3 +84,11 @@ After workaround, minimal valgrind shell commands for startup:
 
 The provided script is to represent the pedantic startup so that all security systems are running normally, and was meant as living proof that we could start up logd in the proper context.
 
+200
+Mon Mar 31 22:09:19 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9d157e4_75746256
+UUID: 39ae4766_c9c1f571
+Bytes: 323
+SCHED_BATCH requires some permissions, although CAP_SYS_NICE is probably enough to set it.  I'm not sure why logd would need CAP_SYSLOG, I think that just allows access to /proc/kmsg (does it log errors to /proc/kmsg?).  It may be easier to keep the setuid in logd than to try to get all the right capabilities set in init.
+

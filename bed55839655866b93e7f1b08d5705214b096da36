@@ -62,3 +62,25 @@ UUID: 5944db56_de43095f
 Bytes: 127
 Because one should, pedantically, require everything to be 'normal' when testing. The developer can choose to ignore this line.
 
+200
+Mon Mar 31 21:33:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5944db56_de43095f
+UUID: b9d157e4_75746256
+Bytes: 927
+Inspected regarding the dropping/annealing of privileges, and SCHED_BATCH, CAP_SYSLOG and PR_SET_KEEPCAPS had no equivalent in init. I could however, drop the setuid/setgid calls in favor of adjustments in init.rc.
+
+valgrind usage is full of problems itself though ...
+1) turn off error checking in drop_privs in logd/main.cpp because of unknown system call warnings.
+2) Other unknown system calls breaking selinux auditd code
+3) /system/lib64/memcheck-arm64-linux is 644 and should be 755 when installed.
+
+We have to disable logd startup as well in order to 'break in'
+
+After workaround, minimal valgrind shell commands for startup:
+1) setenforce 0
+2) chmod 777 /dev/socket (if we do not drop setuid/setgid)
+3) valgrind /system/bin/logd
+
+The provided script is to represent the pedantic startup so that all security systems are running normally, and was meant as living proof that we could start up logd in the proper context.
+

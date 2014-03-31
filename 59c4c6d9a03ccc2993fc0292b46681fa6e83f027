@@ -1,0 +1,18 @@
+Revision: 59c4c6d9a03ccc2993fc0292b46681fa6e83f027
+Patch-set: 1
+File: adb/usb_vendors.c
+
+185:3-185:60
+Mon Mar 31 17:48:41 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 199423fe_bdf5df9d
+Bytes: 78
+As the comment says, please keep the list sorted.  Put yours after SK_TELESYS.
+
+262:4-262:23
+Mon Mar 31 17:48:41 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 199423fe_3dc30f4c
+Bytes: 14
+same as above.
+

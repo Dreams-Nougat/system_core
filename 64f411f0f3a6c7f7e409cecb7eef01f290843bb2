@@ -1,0 +1,78 @@
+Revision: 64f411f0f3a6c7f7e409cecb7eef01f290843bb2
+Patch-set: 4
+File: libbacktrace/GetPss.cpp
+
+36
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_4ab70704
+Bytes: 22
+do you need that cast?
+
+58
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_aabe93df
+Bytes: 89
+don't care about leaking the FILE* and other fd? maybe just abort in these cases instead?
+
+66
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9a74f88_de32051f
+Bytes: 22
+uintptr_t and SCNxPTR?
+
+File: libbacktrace/UnwindMap.cpp
+
+70
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b92f97b4_8bcbd539
+Bytes: 92
+or have GenerateMap always return true and then "return unw_map_... == 0 && GenerateMap();"?
+
+84
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_ca23178c
+Bytes: 30
+why do we do this three times?
+
+File: libbacktrace/backtrace_test.cpp
+
+698
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9a74f88_99f587f7
+Bytes: 10
+uintptr_t?
+
+715
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9a74f88_59014f23
+Bytes: 8
+SCNxPTR?
+
+740
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_6a380baf
+Bytes: 6
+_exit?
+
+744
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b92f97b4_6b0931c0
+Bytes: 89
+how has it been paused? do you mean "because the child isn't doing anything interesting"?
+
+775
+Tue Apr 01 22:47:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_4ae267f6
+Bytes: 115
+interesting. i wonder if we should have this available somewhere? in bionic i've used mallinfo(3) for leak testing.
+

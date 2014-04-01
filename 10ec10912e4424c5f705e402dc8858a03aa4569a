@@ -1,0 +1,11 @@
+Revision: 10ec10912e4424c5f705e402dc8858a03aa4569a
+Patch-set: 4
+File: logd/main.cpp
+
+49
+Tue Apr 01 16:40:15 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39ae4766_0d7632ab
+Bytes: 4
+futz
+

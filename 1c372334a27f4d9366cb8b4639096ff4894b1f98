@@ -1,0 +1,13 @@
+Revision: 1c372334a27f4d9366cb8b4639096ff4894b1f98
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+421:27-421:32
+Tue Apr 01 22:40:51 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9a74f88_1e397d03
+Bytes: 54
+32bit in some places...
+
+  log10(2**(8*sizeof(pid_t)))
+

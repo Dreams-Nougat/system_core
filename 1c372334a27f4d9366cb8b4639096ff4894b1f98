@@ -45,3 +45,17 @@ UUID: 99349308_8a03cf6a
 Bytes: 131
 KISS would be to let the field go large. Truncating would require using an extra character in the format ("%.*s" instead of "%*s").
 
+553:22-553:31
+Tue Apr 01 23:47:03 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_8a03cf6a
+UUID: f9a74f88_795beb71
+Bytes: 736
+Letting the fields go large made it difficult (in the case of 'logcat -b all -S') to relate which log class id the spam was being placed into.
+
+Truncating the fields was far worse, we just would never see the name or the pid whole enough to lay blame.
+
+By allowing overloaded fields to indent into the trailing spaces of the previous column (and enforcing field-spaces), we got the best of all worlds allowing long names to be seen in the correct columns. The above comment gives lip-service to the rationalization for the more complicated indent handling below; KISS was either one of the above (letting fields go, or be truncated) comparatively.
+
+If I am to spin another patchset, I will fortify the comments with the above sentiment.
+

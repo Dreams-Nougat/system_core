@@ -11,3 +11,15 @@ Bytes: 54
 
   log10(2**(8*sizeof(pid_t)))
 
+421:27-421:32
+Tue Apr 01 22:48:39 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a74f88_1e397d03
+UUID: f9a74f88_19fbd7e5
+Bytes: 565
+Do we have kernels configured to use it though?
+
+I made a conscientious decision to act-like we are u16 only, any larger and the table could start looking odd and we would should consider using more than 19 characters per column. We did go to some trouble to indent to pretty it up a bit.
+
+Our kernels wrap at u16 (yes, a kernel option to use larger portion could be set up by our partners). Any larger and we would be forced to change *all* formatting below to account for increased space (more than 5 characters per-pid, per-tid or per-uid) for the column prints.
+

@@ -23,3 +23,25 @@ I made a conscientious decision to act-like we are u16 only, any larger and the 
 
 Our kernels wrap at u16 (yes, a kernel option to use larger portion could be set up by our partners). Any larger and we would be forced to change *all* formatting below to account for increased space (more than 5 characters per-pid, per-tid or per-uid) for the column prints.
 
+421:27-421:32
+Tue Apr 01 23:30:41 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a74f88_19fbd7e5
+UUID: 99349308_2ae0c362
+Bytes: 219
+#define PID_MAX_LIMIT (CONFIG_BASE_SMALL ? PAGE_SIZE * 8 : \
+(sizeof(long) > 4 ? 4 * 1024 * 1024 : PID_MAX_DEFAULT))
+
+So kernels with sizeof(long)>4 will be:
+ cat /proc/sys/kernel/pid_max
+   4194304
+
+Just use log10(pid)
+
+553:22-553:31
+Tue Apr 01 23:30:41 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99349308_8a03cf6a
+Bytes: 131
+KISS would be to let the field go large. Truncating would require using an extra character in the format ("%.*s" instead of "%*s").
+

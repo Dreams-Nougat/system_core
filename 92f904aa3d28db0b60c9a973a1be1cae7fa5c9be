@@ -1,0 +1,18 @@
+Revision: 92f904aa3d28db0b60c9a973a1be1cae7fa5c9be
+Patch-set: 3
+File: libcutils/str_parms.c
+
+148:13-148:21
+Wed Apr 02 21:47:39 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9a74f88_139f21d1
+Bytes: 53
+NB: sdk build complains that strtol_r is not defined.
+
+159:18-159:25
+Wed Apr 02 21:47:39 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3943a782_01f84c5a
+Bytes: 81
+NB: sdk build complains that strndup is not defined, and does not match built-in.
+

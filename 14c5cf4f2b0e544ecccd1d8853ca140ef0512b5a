@@ -1,0 +1,11 @@
+Revision: 14c5cf4f2b0e544ecccd1d8853ca140ef0512b5a
+Patch-set: 3
+File: logd/LogStatistics.cpp
+
+531:51-531:52
+Thu Apr 03 20:12:08 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5925bbed_9043fa5f
+Bytes: 1
+r
+

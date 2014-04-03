@@ -9,3 +9,11 @@ UUID: 5925bbed_eda1c113
 Bytes: 22
 or "return true" here.
 
+103
+Thu Apr 03 21:19:03 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5925bbed_eda1c113
+UUID: 1917c38c_ee8373ed
+Bytes: 84
+Actually, that would clean this up even more. Done and modified the below code also.
+

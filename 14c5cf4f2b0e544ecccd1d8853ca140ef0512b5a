@@ -11,3 +11,11 @@ FYI: I noticed that logd is NOT listed in the installclean_files section of buil
 
 You should add an entry for logd to installclean_files to make sure this code is recompiled on switching build types.
 
+7
+Thu Apr 03 00:07:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79527f52_d8292db2
+UUID: 995d7362_99469b97
+Bytes: 228
+Known issue, an independent CL for this https://android-review.googlesource.com/#/c/89691. It is currently requiring some security review before considering allowing white and black listing to 'officially' fall into user builds.
+

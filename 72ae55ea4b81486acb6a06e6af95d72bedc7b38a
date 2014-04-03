@@ -9,6 +9,16 @@ UUID: b9587770_2306383d
 Bytes: 69
 do you really want to return true if you actually failed three times?
 
+107
+Thu Apr 03 19:32:46 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9587770_2306383d
+UUID: 391ac7b4_6cd82f64
+Bytes: 124
+I was debating this, but I do think it would be good to fail it, and log the failure.
+
+I refactored the log stuff a bit too.
+
 File: libbacktrace/backtrace_test.cpp
 
 17
@@ -17,4 +27,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b9587770_6300301e
 Bytes: 6
 |sort?
+
+17
+Thu Apr 03 19:32:46 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9587770_6300301e
+UUID: 391ac7b4_cc6fa3cc
+Bytes: 4
+Done
 

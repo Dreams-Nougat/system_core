@@ -9,6 +9,14 @@ UUID: 99349308_4ab70704
 Bytes: 22
 do you need that cast?
 
+36
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_4ab70704
+UUID: 995d7362_7c0575de
+Bytes: 214
+Nope doesn't seem to be necessary. As far as I can tell off_t is signed, so I'm changing the code slightly. If this off_t ever becomes unsigned, then this should result in a warning and this should fail to compile.
+
 58
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,30 @@ UUID: 99349308_aabe93df
 Bytes: 89
 don't care about leaking the FILE* and other fd? maybe just abort in these cases instead?
 
+58
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_aabe93df
+UUID: 79527f52_fb106bda
+Bytes: 116
+Yikes, I didn't realize I was leaking all of these descriptors.
+
+I changed these to asserts since this is test code.
+
 66
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f9a74f88_de32051f
 Bytes: 22
 uintptr_t and SCNxPTR?
+
+66
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a74f88_de32051f
+UUID: b9587770_fd74e312
+Bytes: 4
+Done
 
 File: libbacktrace/UnwindMap.cpp
 
@@ -32,12 +58,28 @@ UUID: b92f97b4_8bcbd539
 Bytes: 92
 or have GenerateMap always return true and then "return unw_map_... == 0 && GenerateMap();"?
 
+70
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b92f97b4_8bcbd539
+UUID: f9ce6f4a_1b8187a2
+Bytes: 51
+That makes the code a bit easier on the eyes, done.
+
 84
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 99349308_ca23178c
 Bytes: 30
 why do we do this three times?
+
+84
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_ca23178c
+UUID: b9587770_3de01b7c
+Bytes: 36
+I'll add a comment to describe this.
 
 File: libbacktrace/backtrace_test.cpp
 
@@ -48,12 +90,28 @@ UUID: f9a74f88_99f587f7
 Bytes: 10
 uintptr_t?
 
+698
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a74f88_99f587f7
+UUID: d9cb6b3b_7fa2f795
+Bytes: 4
+Done
+
 715
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f9a74f88_59014f23
 Bytes: 8
 SCNxPTR?
+
+715
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a74f88_59014f23
+UUID: d9cb6b3b_1f973337
+Bytes: 4
+Done
 
 740
 Tue Apr 01 22:47:51 2014 +0000
@@ -62,6 +120,14 @@ UUID: 99349308_6a380baf
 Bytes: 6
 _exit?
 
+740
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_6a380baf
+UUID: f9ce6f4a_3b080384
+Bytes: 92
+Good point, I changed all of my exits. Non of them should theoretically be reachable though.
+
 744
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -69,10 +135,26 @@ UUID: b92f97b4_6b0931c0
 Bytes: 89
 how has it been paused? do you mean "because the child isn't doing anything interesting"?
 
+744
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b92f97b4_6b0931c0
+UUID: d9cb6b3b_3f9c6f56
+Bytes: 81
+Oops, there should have been code that paused the fork'd process. It's there now.
+
 775
 Tue Apr 01 22:47:51 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 99349308_4ae267f6
 Bytes: 115
 interesting. i wonder if we should have this available somewhere? in bionic i've used mallinfo(3) for leak testing.
+
+775
+Thu Apr 03 02:11:32 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99349308_4ae267f6
+UUID: b9ba379a_190517df
+Bytes: 72
+I used this because it catches the mmap leaks that I found in libunwind.
 

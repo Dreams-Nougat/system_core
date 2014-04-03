@@ -16,3 +16,46 @@ UUID: 3943a782_01f84c5a
 Bytes: 81
 NB: sdk build complains that strndup is not defined, and does not match built-in.
 
+203:12-203:13
+Thu Apr 03 17:07:28 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9cb1765_8200fa1e
+Bytes: 176
+I assume you dropped the old_errno willingly. That's fine by me, I just wanted to make sure that anyone calling this library would not get a surprise when the behavior changed.
+
+217:11-217:18
+Thu Apr 03 17:07:28 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f913cf9e_24d81295
+Bytes: 189
+Since hashmapPut is a bit strange I was thinking the comment could be clearer the other way around. What do you think?
+
+// For a new key, hashmap takes ownership of both tmp_key and tmp_val
+
+220:15-220:16
+Thu Apr 03 17:07:28 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99d01311_61e21645
+Bytes: 303
+Strictly you may want check ERRNO too (even if it should not happen) and use "else if" to help reader see that it's two separate cases (with only a third case implicitly)
+
+else if (old_val != NULL && errno != ENOMEM) {
+
+Technically it should not matter, but logically this could help future refactoring.
+
+221:19-221:26
+Thu Apr 03 17:07:28 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9902d340_743486f5
+Bytes: 96
+// For an existing key, hashmap takes ownership only of tmp_val and returns ownership of old_val
+
+393
+Thu Apr 03 17:07:28 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9cb1765_a21dfe7b
+Bytes: 191
+Good test case. Did it make any difference running it twice or why so?
+
+May also want to assert correct value (whatever that is...) of errno afterwards. (And that none of the strings failed.)
+

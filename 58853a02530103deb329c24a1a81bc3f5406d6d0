@@ -1,0 +1,11 @@
+Revision: 58853a02530103deb329c24a1a81bc3f5406d6d0
+Patch-set: 6
+File: libbacktrace/UnwindMap.cpp
+
+103
+Thu Apr 03 19:47:44 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5925bbed_eda1c113
+Bytes: 22
+or "return true" here.
+

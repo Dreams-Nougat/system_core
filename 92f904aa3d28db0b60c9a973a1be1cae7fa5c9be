@@ -23,6 +23,14 @@ UUID: b9cb1765_8200fa1e
 Bytes: 176
 I assume you dropped the old_errno willingly. That's fine by me, I just wanted to make sure that anyone calling this library would not get a surprise when the behavior changed.
 
+203:12-203:13
+Thu Apr 03 18:21:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9cb1765_8200fa1e
+UUID: 391ac7b4_89e11db6
+Bytes: 241
+yeah, i did it on purpose because the rest of this code doesn't go out of its way to ensure that errno isn't clobbered transitively. but this is the first time we'd be clobbering errno directly, so i've added the errno saving/restoring back.
+
 217:11-217:18
 Thu Apr 03 17:07:28 2014 +0000
 Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,6 +39,14 @@ Bytes: 189
 Since hashmapPut is a bit strange I was thinking the comment could be clearer the other way around. What do you think?
 
 // For a new key, hashmap takes ownership of both tmp_key and tmp_val
+
+217:11-217:18
+Thu Apr 03 18:21:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f913cf9e_24d81295
+UUID: 391ac7b4_49c3a54a
+Bytes: 4
+Done
 
 220:15-220:16
 Thu Apr 03 17:07:28 2014 +0000
@@ -42,6 +58,14 @@ Strictly you may want check ERRNO too (even if it should not happen) and use "el
 else if (old_val != NULL && errno != ENOMEM) {
 
 Technically it should not matter, but logically this could help future refactoring.
+
+220:15-220:16
+Thu Apr 03 18:21:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99d01311_61e21645
+UUID: 5925bbed_4a34335c
+Bytes: 156
+i didn't like the "else if" but i had already wondered about moving the errno check inside the outer if and then having just "else", so i've gone with that.
 
 221:19-221:26
 Thu Apr 03 17:07:28 2014 +0000
@@ -58,4 +82,14 @@ Bytes: 191
 Good test case. Did it make any difference running it twice or why so?
 
 May also want to assert correct value (whatever that is...) of errno afterwards. (And that none of the strings failed.)
+
+393
+Thu Apr 03 18:21:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9cb1765_a21dfe7b
+UUID: 391ac7b4_a9621997
+Bytes: 240
+that was just to make it more likely i got a crash, because people don't run tests under valgrind by default.
+
+this whole thing should be switched over to gtest so it ends up in CTS and actually run, but that's something for someone else...
 

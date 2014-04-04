@@ -1,0 +1,36 @@
+Revision: 8e7ec43e2014bf6f7019470ac6b5dcac08156e29
+Patch-set: 4
+File: logd/LogStatistics.cpp
+
+37:29-37:44
+Fri Apr 04 23:24:37 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19c5035d_0f8179e5
+Bytes: 68
+(const) PidStatistics &
+
+to match the declaration in the header file
+
+892:0-892:5
+Fri Apr 04 23:24:37 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19c5035d_77b2c3ca
+Bytes: 220
+Make this non-const.  It lets you get rid of a bunch of const_cast<>s, which IMO are a bad code smell.   Design-wise it's also weird to require to user to free() a returned pointer that can't legally be passed to free().
+
+902:16-902:48
+Fri Apr 04 23:24:37 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39764713_5a0425ab
+Bytes: 97
+<pre-initialized> is apparently something the frameworks sets internally, not specific to one app
+
+File: logd/LogStatistics.h
+
+45
+Fri Apr 04 23:24:37 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1917c38c_39e2f7f5
+Bytes: 59
+By convention the copy constructor should take const type &
+

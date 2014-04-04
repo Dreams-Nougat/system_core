@@ -64,3 +64,11 @@ Further, It's not just the zygote that needs to know what ABIs it supports. The 
 
 I do like Colin's idea of using ro.product.cpu.abis32 / abis64 but the issue there is that there are no *existing* BoardConfig.mk variables I could use unless I can assume that TARGET_CPU is 64 bit if TARGET_2ND_CPU is present.
 
+4
+Fri Apr 04 18:06:39 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 797c3ff1_6b383daf
+UUID: 39c80775_fd8318ed
+Bytes: 134
+There is TARGET_IS_64_BIT that determines if the primary target is 64-bit or 32-bit.  Secondary target is always assumed to be 32-bit.
+

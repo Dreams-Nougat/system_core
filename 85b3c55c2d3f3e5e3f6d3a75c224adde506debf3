@@ -30,3 +30,13 @@ We could have separate zygote config files for x86 / mips but that's a lot of po
 
 We could move these to the board configs (which is slightly less sucky) but then the information about zygote configuration is scattered all over the place. (i.e, it isn't clear what each zygote handles)
 
+4
+Fri Apr 04 17:18:32 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 797c3ff1_ab207580
+UUID: 39c80775_2b23893a
+Bytes: 193
+yeah, that's what made my gut think that the board configs would be the less worse place.
+
+you could always ask intel what they think, since they'll have to deal with this pretty soon anyway...
+

@@ -1,0 +1,11 @@
+Revision: d3c8d5b8d4ade074129b65199a8048c81089ee0e
+Patch-set: 4
+File: libcutils/str_parms.c
+
+219:20-219:21
+Fri Apr 04 11:10:29 2014 +0000
+Author: Jens Gulin <1042369@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9823717_6a0af7ee
+Bytes: 147
+I might put this as the first unconditional test, but that all depends on how you see the unlikely ENOMEM for old_val != NULL. So this is fine too.
+

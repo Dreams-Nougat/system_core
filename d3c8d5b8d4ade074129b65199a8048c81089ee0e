@@ -9,3 +9,11 @@ UUID: b9823717_6a0af7ee
 Bytes: 147
 I might put this as the first unconditional test, but that all depends on how you see the unlikely ENOMEM for old_val != NULL. So this is fine too.
 
+219:20-219:21
+Fri Apr 04 16:39:32 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9823717_6a0af7ee
+UUID: 39c80775_f02c20c4
+Bytes: 98
+that would imply a bug in hashmapPut. i don't think there's much we can do to defend against that.
+

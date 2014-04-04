@@ -1,0 +1,11 @@
+Revision: 85b3c55c2d3f3e5e3f6d3a75c224adde506debf3
+Patch-set: 3
+File: rootdir/init.zygote32.rc
+
+4
+Fri Apr 04 17:00:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19c5035d_6f04adab
+Bytes: 56
+where do you override this if you have an x86_64 device?
+

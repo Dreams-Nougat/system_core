@@ -40,3 +40,13 @@ yeah, that's what made my gut think that the board configs would be the less wor
 
 you could always ask intel what they think, since they'll have to deal with this pretty soon anyway...
 
+4
+Fri Apr 04 17:20:18 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 797c3ff1_ab207580
+UUID: 39c80775_4b51a5a0
+Bytes: 319
+We already have all the abis in ro.product.cpu.abilist, how hard would it be for zygote to autodetect which of those abis it supports?
+
+Alternatively, we could easily add ro.product.cpu.abilist32 and ro.product.cpu.abilist64 from the same BoardConfig.mk variables, and use __LP64__ to decide which to look at in zygote.
+

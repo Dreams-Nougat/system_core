@@ -50,3 +50,17 @@ We already have all the abis in ro.product.cpu.abilist, how hard would it be for
 
 Alternatively, we could easily add ro.product.cpu.abilist32 and ro.product.cpu.abilist64 from the same BoardConfig.mk variables, and use __LP64__ to decide which to look at in zygote.
 
+4
+Fri Apr 04 17:29:33 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39c80775_4b51a5a0
+UUID: 797c3ff1_6b383daf
+Bytes: 665
+I think it's not very easy for the zygote to autodetect what ABIs it supports without a few manual tweaks (a single compiled zygote could support multiple ABIs)
+
+Further, It's not just the zygote that needs to know what ABIs it supports. The system_server needs to know which ABI each zygote supports.
+
+(I suppose I could implement that by having the system_server query the ABI list from the zygote as soon as it opens the connection.)
+
+I do like Colin's idea of using ro.product.cpu.abis32 / abis64 but the issue there is that there are no *existing* BoardConfig.mk variables I could use unless I can assume that TARGET_CPU is 64 bit if TARGET_2ND_CPU is present.
+

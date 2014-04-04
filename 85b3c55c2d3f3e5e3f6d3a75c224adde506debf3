@@ -1,5 +1,14 @@
 Revision: 85b3c55c2d3f3e5e3f6d3a75c224adde506debf3
 Patch-set: 3
+File: CleanSpec.mk
+
+56
+Fri Apr 04 17:16:37 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39c80775_abe4f9c5
+Bytes: 118
+you don't need the cleanspec, there are proper dependencies between system/core/rootdir/init.rc and $OUT/root/init.rc.
+
 File: rootdir/init.zygote32.rc
 
 4

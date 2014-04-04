@@ -9,3 +9,15 @@ UUID: 19c5035d_6f04adab
 Bytes: 56
 where do you override this if you have an x86_64 device?
 
+4
+Fri Apr 04 17:13:04 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19c5035d_6f04adab
+UUID: 797c3ff1_ab207580
+Bytes: 376
+Both options we have here kinda suck.
+
+We could have separate zygote config files for x86 / mips but that's a lot of pointless duplication and it's easy to muck things up.
+
+We could move these to the board configs (which is slightly less sucky) but then the information about zygote configuration is scattered all over the place. (i.e, it isn't clear what each zygote handles)
+

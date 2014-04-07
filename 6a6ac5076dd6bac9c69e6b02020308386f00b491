@@ -1,0 +1,11 @@
+Revision: 6a6ac5076dd6bac9c69e6b02020308386f00b491
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+37:49-37:50
+Mon Apr 07 16:57:09 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f96f4f39_d8fd7d1d
+Bytes: 1
+&
+

@@ -1,0 +1,25 @@
+Revision: 47de67ffe1fd026f7e293fcaf075e4be5149f3a9
+Patch-set: 6
+File: logd/LogStatistics.cpp
+
+553:51-553:52
+Mon Apr 07 18:14:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59a69bd4_056f7685
+Bytes: 1
+r
+
+582:20-582:24
+Mon Apr 07 18:14:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19734325_0ef6eaa8
+Bytes: 35
+, or even worse would be to trucate
+
+678
+Mon Apr 07 18:14:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59a69bd4_a5b68aba
+Bytes: 19
+vertical whitespace
+

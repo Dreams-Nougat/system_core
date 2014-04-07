@@ -1,0 +1,18 @@
+Revision: 6ee471c6ad934309a9bc70d64136174cb195dcf0
+Patch-set: 1
+File: toolbox/date.c
+
+114:13-114:14
+Mon Apr 07 22:20:22 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9995785_a14888ec
+Bytes: 80
+Extra space? The other files seem to have the style with the * next to the name.
+
+114:62-114:63
+Mon Apr 07 22:20:22 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9be0bc6_4d51bda0
+Bytes: 64
+Should this be on the next line to match the style in this file?
+

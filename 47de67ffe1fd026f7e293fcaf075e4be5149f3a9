@@ -9,6 +9,27 @@ UUID: 59a69bd4_056f7685
 Bytes: 1
 r
 
+565
+Mon Apr 07 23:18:21 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9b4affd_62607290
+Bytes: 396
+A densely-packed table makes sense for the PID statistics where there's a lot of data, but I don't think it's a good fit for the spammer list.  A simple list along the lines of
+
+"Chattiest clients:
+
+main [\t] com.example.foo/123 (9000 bytes)
+
+main [\t] org.bar/456 (8999 bytes)
+
+...
+
+system [\t] system_server/99 (100 bytes)
+
+..."
+
+would be substantially simpler code and arguably easier to read.
+
 582:20-582:24
 Mon Apr 07 18:14:12 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

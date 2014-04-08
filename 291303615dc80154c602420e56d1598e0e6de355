@@ -1,0 +1,25 @@
+Revision: 291303615dc80154c602420e56d1598e0e6de355
+Patch-set: 7
+File: logd/LogStatistics.cpp
+
+581:0-585:17
+Tue Apr 08 23:01:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99ead3ed_54478294
+Bytes: 28
+can be done in a block below
+
+599:28-599:30
+Tue Apr 08 23:01:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9ca8b90_79eedf9d
+Bytes: 6
+indent
+
+603:28-603:29
+Tue Apr 08 23:01:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9e5d71d_38abd16c
+Bytes: 6
+indent
+

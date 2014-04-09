@@ -1,0 +1,19 @@
+Revision: 33838676b146b9660fa5d247eb77957dbb6c8b06
+Patch-set: 3
+File: logd/tests/logd_test.cpp
+
+597
+Wed Apr 09 16:06:23 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d4872d_cc3768bf
+Bytes: 845
+The above EXPECT is only to confirm we see the benchmark's footprint on the statistics.
+
+We would also like to check if the SPAM filter is doing its job.
+
+Worst UID pruning will report a 'Now' value that is between 10-20% of the total available storage. Without worst UID filtration we would be at 80-109% obliterating all other content.
+
+find_benchmark_spam returns the pointer to the '/' under the Total field. That pointer needs to be captured and additional parsing is required at this point.
+
+In this case of a test that checks if the UID pruning is working, the caller needs to additionally parse out the 'Now' field and evaluate its footprint over the size of the associated log. Given that the UID filter is currently off and under dispute, leave this lack of checking as-is, and make it part of the release of a functioning spam filter.
+

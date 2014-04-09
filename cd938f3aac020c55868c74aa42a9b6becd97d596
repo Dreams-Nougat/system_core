@@ -1,0 +1,20 @@
+Revision: cd938f3aac020c55868c74aa42a9b6becd97d596
+Patch-set: 8
+File: logd/LogStatistics.cpp
+
+585:12-587:13
+Wed Apr 09 20:04:22 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9502fa6_9cfae5df
+Bytes: 64
+You can get rid of this check (and the const_cast) by making ...
+
+608:72-608:76
+Wed Apr 09 20:04:22 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9e5d71d_a6079e75
+Bytes: 26
+... this
+
+name ? name : ""
+

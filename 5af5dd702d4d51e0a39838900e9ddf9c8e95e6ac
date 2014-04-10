@@ -9,3 +9,11 @@ UUID: 59ee9b35_e26328ed
 Bytes: 116
 I hate this change, but this code is pretty weird to begin with... (once you find out what the input argument is...)
 
+37
+Thu Apr 10 19:02:22 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59ee9b35_e26328ed
+UUID: 996f3376_be378dbf
+Bytes: 94
+I'm not sure Android OS tolerates not having CLOCK_BOOTTIME... http://lwn.net/Articles/420142/
+

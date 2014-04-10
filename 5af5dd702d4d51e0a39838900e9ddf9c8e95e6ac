@@ -17,3 +17,11 @@ UUID: 996f3376_be378dbf
 Bytes: 94
 I'm not sure Android OS tolerates not having CLOCK_BOOTTIME... http://lwn.net/Articles/420142/
 
+37
+Thu Apr 10 19:03:39 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 996f3376_be378dbf
+UUID: 39f3a71c_e18a0055
+Bytes: 205
+This code is to make this build on linux hosts. Android always has both defined. What I'm fixing is the abuse of HAVE_POSIX_CLOCKS, it doesn't guarantee that every clock type android supports is supported.
+

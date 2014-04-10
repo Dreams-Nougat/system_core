@@ -25,3 +25,11 @@ UUID: 39f3a71c_e18a0055
 Bytes: 205
 This code is to make this build on linux hosts. Android always has both defined. What I'm fixing is the abuse of HAVE_POSIX_CLOCKS, it doesn't guarantee that every clock type android supports is supported.
 
+37
+Thu Apr 10 19:06:10 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39f3a71c_e18a0055
+UUID: 79e99f2a_632b9c62
+Bytes: 153
+Also, to complete the picture : I would've used if defined(ANDROID) for this block, but I can't because ANDROID is defined for host builds as well (???!)
+

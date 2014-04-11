@@ -13,6 +13,14 @@ sys/cdefs.h defines __unused:
 
  disasm(const disasm_interface_t *di, u_int loc, int __unused altfmt)
 
+306
+Fri Apr 11 23:06:29 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99e49352_b56958d1
+UUID: 59d5bb77_c7b53ef9
+Bytes: 4
+Done
+
 File: libsuspend/autosuspend_earlysuspend.c
 
 80

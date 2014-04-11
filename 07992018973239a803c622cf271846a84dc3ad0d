@@ -1,0 +1,24 @@
+Revision: 07992018973239a803c622cf271846a84dc3ad0d
+Patch-set: 2
+File: libpixelflinger/codeflinger/disassem.c
+
+306
+Fri Apr 11 20:36:57 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99e49352_b56958d1
+Bytes: 183
+I think this will produce a "statement with no effect" warning on some compilers.
+
+sys/cdefs.h defines __unused:
+
+ disasm(const disasm_interface_t *di, u_int loc, int __unused altfmt)
+
+File: libsuspend/autosuspend_earlysuspend.c
+
+80
+Fri Apr 11 20:36:57 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9544bb3_92eba2ce
+Bytes: 4
+same
+

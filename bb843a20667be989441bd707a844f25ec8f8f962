@@ -9,6 +9,14 @@ UUID: 99dbb3ac_c9c0b1d0
 Bytes: 13
 Why this one?
 
+85:10-85:20
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99dbb3ac_c9c0b1d0
+UUID: 99e49352_ea3dbbef
+Bytes: 106
+On general readability principle - leave no uninitialized var. GCC should optimize out a noop init anyway.
+
 File: fs_mgr/include/fs_mgr.h
 
 58:0-58:41
@@ -19,6 +27,14 @@ Bytes: 100
 Indicate in commit message that other project(s) have pending CL for this.
 bootable/recovery is one.
 
+58:0-58:41
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d9a7eb21_ae08d788
+UUID: b9df977e_3646f0e0
+Bytes: 4
+Done
+
 File: healthd/healthd_board_default.cpp
 
 19:47-19:53
@@ -28,6 +44,14 @@ UUID: d9a7eb21_4efb3328
 Bytes: 28
 C++ ... get rid of parameter
 
+19:47-19:53
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d9a7eb21_4efb3328
+UUID: d9544bb3_92b0820a
+Bytes: 4
+Done
+
 File: libpixelflinger/codeflinger/disassem.c
 
 306:7-306:13
@@ -36,6 +60,17 @@ Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 99dbb3ac_4999611a
 Bytes: 35
 I thought we had some magic macros.
+
+306:7-306:13
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99dbb3ac_4999611a
+UUID: d9544bb3_7244e667
+Bytes: 122
+That unroll into this most of the time:
+#define UNUSED(x) (void)x
+The odd one is also there:
+#define UNUSED(x) ((x) = (x))
 
 File: libutils/tests/BasicHashtable_test.cpp
 
@@ -47,6 +82,14 @@ Bytes: 92
 ASSERT_EQ() shows expected vs actual.
 Will a QA test result scraper need to know about this?
 
+400:8-400:20
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d9a7eb21_b1003822
+UUID: b9df977e_3678b004
+Bytes: 166
+ASSERT_EQ is not set up to deal with bools, ASSERT_TRUE|FALSE is specifically made for that. And, besides, guess what bool value was there if it didn't match (false)?
+
 File: libutils/tests/LruCache_test.cpp
 
 187:30-187:32
@@ -55,4 +98,13 @@ Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 39a1e70c_a2bbc6ec
 Bytes: 10
 "%"PRIdS ?
+
+187:30-187:32
+Fri Apr 11 20:21:46 2014 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39a1e70c_a2bbc6ec
+UUID: d9544bb3_b2633eee
+Bytes: 91
+Man printf:
+z: A following integer conversion corresponds to a size_t or  ssize_t argument.
 

@@ -1,0 +1,58 @@
+Revision: bb843a20667be989441bd707a844f25ec8f8f962
+Patch-set: 1
+File: fs_mgr/fs_mgr_main.c
+
+85:10-85:20
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99dbb3ac_c9c0b1d0
+Bytes: 13
+Why this one?
+
+File: fs_mgr/include/fs_mgr.h
+
+58:0-58:41
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9a7eb21_ae08d788
+Bytes: 100
+Indicate in commit message that other project(s) have pending CL for this.
+bootable/recovery is one.
+
+File: healthd/healthd_board_default.cpp
+
+19:47-19:53
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9a7eb21_4efb3328
+Bytes: 28
+C++ ... get rid of parameter
+
+File: libpixelflinger/codeflinger/disassem.c
+
+306:7-306:13
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99dbb3ac_4999611a
+Bytes: 35
+I thought we had some magic macros.
+
+File: libutils/tests/BasicHashtable_test.cpp
+
+400:8-400:20
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9a7eb21_b1003822
+Bytes: 92
+ASSERT_EQ() shows expected vs actual.
+Will a QA test result scraper need to know about this?
+
+File: libutils/tests/LruCache_test.cpp
+
+187:30-187:32
+Fri Apr 11 19:48:20 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39a1e70c_a2bbc6ec
+Bytes: 10
+"%"PRIdS ?
+

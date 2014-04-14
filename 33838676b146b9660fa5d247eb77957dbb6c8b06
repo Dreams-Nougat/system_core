@@ -2,6 +2,59 @@ Revision: 33838676b146b9660fa5d247eb77957dbb6c8b06
 Patch-set: 3
 File: logd/tests/logd_test.cpp
 
+52:30-52:50
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9df977e_f185b2ae
+Bytes: 132
+n.b.: new is guaranteed to always return a non-NULL pointer since bionic abort()s on failure and other runtimes throw std::bad_alloc
+
+64
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9980137b_0a3e3feb
+Bytes: 188
+Maybe multiply by some reasonable factor, e.g. ret * 3 / 2?  This case happens if the statistics are growing while you're reading them, so it makes sense to anticipate some further growth.
+
+147
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79851f89_46476694
+Bytes: 439
+external/gtest/include/gtest/gtest.h: In instantiation of 'testing::AssertionResult testing::internal::CmpHelperLT(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = long unsigned int]':
+system/core/logd/tests/logd_test.cpp:147:149:   required from here
+external/gtest/include/gtest/gtest.h:1581:145: error: comparison between signed and unsigned integer expressions [-Werror=sign-compare]
+ GTEST_IMPL_CMP_HELPER_(LT, <);
+
+513
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9982ff7_bc804139
+Bytes: 378
+popen() doesn't necessarily return NULL if it fails.  popen("foo") is equivalent to running "/bin/sh -c foo" which can succeed even if "foo" doesn't exist.  (/bin/sh successfully ran and complained it couldn't find "foo"!)
+
+To ensure the child actually ran, you also need to save the return value of pclose(), check that WIFEXITED(ret) is true, and that WEXITSTATUS(err) != 127.
+
+548
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9980137b_d5695cd0
+Bytes: 440
+external/gtest/include/gtest/gtest.h: In instantiation of 'testing::AssertionResult testing::internal::CmpHelperGE(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = long unsigned int]':
+system/core/logd/tests/logd_test.cpp:548:179:   required from here
+external/gtest/include/gtest/gtest.h:1583:145: error: comparison between signed and unsigned integer expressions [-Werror=sign-compare]
+ GTEST_IMPL_CMP_HELPER_(GE, >=);
+
+561
+Mon Apr 14 22:30:24 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79851f89_063e3eeb
+Bytes: 440
+external/gtest/include/gtest/gtest.h: In instantiation of 'testing::AssertionResult testing::internal::CmpHelperNE(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = long unsigned int]':
+system/core/logd/tests/logd_test.cpp:561:137:   required from here
+external/gtest/include/gtest/gtest.h:1577:145: error: comparison between signed and unsigned integer expressions [-Werror=sign-compare]
+ GTEST_IMPL_CMP_HELPER_(NE, !=);
+
 597
 Wed Apr 09 16:06:23 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 29b44d682a64216725363931f82ea8301ed45e78
+Patch-set: 2
+File: logcat/logcat.cpp
+
+457:70-457:71
+Tue Apr 15 23:23:40 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b97b175f_bc3e81ec
+Bytes: 22
+This needs to be a 'c'
+

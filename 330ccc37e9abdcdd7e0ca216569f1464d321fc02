@@ -1,0 +1,11 @@
+Revision: 330ccc37e9abdcdd7e0ca216569f1464d321fc02
+Patch-set: 3
+File: logd/tests/logd_test.cpp
+
+637:14-637:15
+Fri Apr 18 16:47:26 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 255d3b32_db0c33cc
+Bytes: 50
+0UL, comparison is between unsigned and signed ...
+

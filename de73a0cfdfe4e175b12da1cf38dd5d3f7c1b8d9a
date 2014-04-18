@@ -1,0 +1,13 @@
+Revision: de73a0cfdfe4e175b12da1cf38dd5d3f7c1b8d9a
+Patch-set: 2
+File: init/property_service.c
+
+272:0-272:14
+Fri Apr 18 19:08:40 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c54b7f72_8439c6c7
+Bytes: 371
+The fsync doesn't help in this position... it will be irrelevant until the rename() below succeeds and the rename is commited to disk.
+This code needs to be more complicated and handle the directory itself to force the sync.
+Also, checking the result of the write() AND the close() should be done: or else you end up with a property directory entry that is empty/garbage.
+

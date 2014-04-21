@@ -1,0 +1,11 @@
+Revision: 115ba40cf03938e8757d46e0dddef3d8b7dcbcd1
+Patch-set: 3
+File: liblog/log_read.c
+
+295:4-295:65
+Mon Apr 21 21:15:48 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 658813e3_c090f387
+Bytes: 90
+Problem here: if read ends up being smaller than len, it will sleep on reply in this loop.
+

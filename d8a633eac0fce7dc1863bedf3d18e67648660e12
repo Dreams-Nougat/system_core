@@ -1,0 +1,11 @@
+Revision: d8a633eac0fce7dc1863bedf3d18e67648660e12
+Patch-set: 1
+File: include/cutils/properties.h
+
+74
+Mon Apr 21 17:09:58 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 856c27f2_a3906886
+Bytes: 187
+this is a terrible idea that's caused nothing but trouble elsewhere. i suspect we don't need to support octal at all, but if we do, we should probably go with the more modern "0o" prefix.
+

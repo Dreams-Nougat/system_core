@@ -1,0 +1,13 @@
+Revision: 9644b422320ce85e8795cef9a708bc2ea64fe0b6
+Patch-set: 2
+File: liblog/log_read.c
+
+287
+Mon Apr 21 18:21:55 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 856c27f2_6e70f75f
+Bytes: 230
+here too? (and all the other i/o in liblog.)
+
+i don't understand why you're only having trouble with the response here. is it just that that's the biggest transfer so statistically you're hitting that one more than all the others?
+

@@ -11,3 +11,19 @@ here too? (and all the other i/o in liblog.)
 
 i don't understand why you're only having trouble with the response here. is it just that that's the biggest transfer so statistically you're hitting that one more than all the others?
 
+287
+Mon Apr 21 20:36:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 856c27f2_6e70f75f
+UUID: 658813e3_8d1c6402
+Bytes: 961
+Yes, for this, I will fix it. But not for others though.
+
+It is not statistically. I am not getting TEMP_FAILURE_RETRYable issues, the maximum size that the dgram socket will support in a single read is the issue, it is breaking the request up into several smaller reads _always_
+
+All users of this (logcat), except for Statistics, are dealing with <4KB requests which complete atomically.
+
+logcat has no use for TEMP_FAILURE_RETRY since the interrupt causes termination of the executable so there is no return to these read/write sycalls. Daemons are the only ones that benefit from this macro.
+
+jni and debuggerd uses the other readers/writers (recv above). TEMP_FAILURE_RETRY has no use here for them, though, because we also need to check EAGAIN, we have explicitly handled EINTR and EAGAIN in those cases (a separate bug, if we need to fix it, outside the scope of this change; we are investigating one that may be suspect so we do NOT want it fixed here).
+

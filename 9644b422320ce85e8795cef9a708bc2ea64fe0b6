@@ -35,3 +35,13 @@ UUID: 856c27f2_b4bae059
 Bytes: 40
 send_log_msg can only be used by logcat?
 
+287
+Mon Apr 21 21:54:26 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 856c27f2_b4bae059
+UUID: 65d653dd_7751c81d
+Bytes: 463
+In reality, logcat is the only one using the API associated with controlling the user space logger. This, of course, does not block others from starting to use this interface. I am agreeing with hardening it with TEMP_FAILURE_RETRY, but am indicating that no one currently gains from the change.
+
+The event reader code (the one that I am resisting fixing in this ticket, since there is another ticket associated with them) is used by logcat, debugger and the jni.
+

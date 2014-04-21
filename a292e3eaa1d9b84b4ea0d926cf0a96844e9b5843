@@ -1,0 +1,11 @@
+Revision: a292e3eaa1d9b84b4ea0d926cf0a96844e9b5843
+Patch-set: 1
+File: liblog/log_read.c
+
+294
+Mon Apr 21 17:29:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 658813e3_7bed1fde
+Bytes: 42
+i think you want a TEMP_FAILURE_RETRY too.
+

@@ -19,3 +19,11 @@ Yes, it *may*, this is a heuristic. I chatted with Colin on this. We currently u
 
 Keep in mind that logcat -S output is currently a developer feature, and is *only* producing output in the 40KB range on first boot after a complete wipe. After a reboot, the statistics will not exceed 16KB even after running for a week (with dex2oat finished). The most important (interpreted) data is within the first 16KB in any case, the remainder is more for completeness of raw information than anything and this was an overly valiant effort to try to resolve getting truncated.
 
+313
+Tue Apr 22 00:34:05 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45b4efaf_4bd7395d
+UUID: e5aa4352_654826ea
+Bytes: 103
+BTW, I ran load, and had a sched_yield() here and that was enough to get the kernel to reload the pipe.
+

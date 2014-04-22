@@ -1,0 +1,11 @@
+Revision: 696817d3524e2fb8bbbcc2ec3526f4383f789163
+Patch-set: 4
+File: liblog/log_read.c
+
+313
+Tue Apr 22 00:16:22 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5a4cb87_236f8a7e
+Bytes: 43
+won't this cause trouble on loaded systems?
+

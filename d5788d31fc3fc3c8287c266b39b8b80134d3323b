@@ -27,3 +27,25 @@ UUID: 85fd0775_23f595f2
 Bytes: 108
 can this be in a bionic (private/... ?) include file; or is this the only place we expect this to be called?
 
+File: liblog/logd_write_kern.c
+
+275:4-275:14
+Wed Apr 23 22:16:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e5ede3ca_b029d6f0
+Bytes: 102
+I think #ifdef __BIONIC__ or #if defined(__BIONIC__) would be better.
+
+Same applies to the other file.
+
+281:20-281:23
+Wed Apr 23 22:16:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05f117a2_51e6b650
+Bytes: 113
+Would this be better as:
+
+__android_fatal((tag) ? tag : "<unknown>", "%s", buf);
+
+Same applies to the other file.
+

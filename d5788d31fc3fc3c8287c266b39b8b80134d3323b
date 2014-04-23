@@ -27,6 +27,14 @@ UUID: 85fd0775_23f595f2
 Bytes: 108
 can this be in a bionic (private/... ?) include file; or is this the only place we expect this to be called?
 
+411:0-412:104
+Wed Apr 23 22:57:54 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85fd0775_23f595f2
+UUID: 85cb4765_028eaa68
+Bytes: 86
+Belay that as wishful thinking, we do not have access to bionic's private includes ...
+
 File: liblog/logd_write_kern.c
 
 275:4-275:14
@@ -48,4 +56,12 @@ Would this be better as:
 __android_fatal((tag) ? tag : "<unknown>", "%s", buf);
 
 Same applies to the other file.
+
+281:20-281:23
+Wed Apr 23 22:57:54 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05f117a2_51e6b650
+UUID: 85cb4765_a286de50
+Bytes: 68
+Better to prevent 'stupid people tricks' with const char * warnings?
 

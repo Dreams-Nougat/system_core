@@ -1,0 +1,29 @@
+Revision: d5788d31fc3fc3c8287c266b39b8b80134d3323b
+Patch-set: 1
+File: debuggerd/crasher.c
+
+14:10-14:16
+Wed Apr 23 22:07:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5104b96_46343401
+Bytes: 41
+log/log.h (in the post August 2012 world)
+
+File: include/android/log.h
+
+117:0-117:5
+Wed Apr 23 22:07:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5104b96_863c6ce1
+Bytes: 15
+tabs bad M'kay?
+
+File: liblog/logd_write.c
+
+411:0-412:104
+Wed Apr 23 22:07:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 85fd0775_23f595f2
+Bytes: 108
+can this be in a bionic (private/... ?) include file; or is this the only place we expect this to be called?
+

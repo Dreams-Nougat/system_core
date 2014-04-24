@@ -1,0 +1,11 @@
+Revision: f9b893d6e28bb52cdcf99bc5240cb74fd8ea7ab7
+Patch-set: 1
+File: adb/sockets.c
+
+450
+Thu Apr 24 03:34:52 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5104b96_bdb40f11
+Bytes: 58
+can you avoid calling property_get when name is not root:?
+

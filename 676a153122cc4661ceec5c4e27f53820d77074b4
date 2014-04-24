@@ -1,0 +1,11 @@
+Revision: 676a153122cc4661ceec5c4e27f53820d77074b4
+Patch-set: 1
+File: libusbhost/usbhost.c
+
+230:8-230:14
+Thu Apr 24 02:37:01 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5653f2b_3dedb3df
+Bytes: 225
+Give it a significant name (because "ret" and "result" mean exactly the same thing), or move it within the if(){} where it is used and add a comment explaining why it needs a "int local_ret" instead of the function-level ret.
+

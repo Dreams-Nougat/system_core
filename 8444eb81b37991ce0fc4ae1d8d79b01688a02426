@@ -1,0 +1,11 @@
+Revision: 8444eb81b37991ce0fc4ae1d8d79b01688a02426
+Patch-set: 2
+File: liblog/logd_write.c
+
+225
+Thu Apr 24 23:07:11 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5e5abf4_d5d47c7d
+Bytes: 112
+sorry, i'm retarded. i'm confusing the Java "writev" API with the C one. you can't do what i've been suggesting.
+

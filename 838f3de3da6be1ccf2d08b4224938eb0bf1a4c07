@@ -9,6 +9,14 @@ UUID: c5e8dfcd_3643e8cf
 Bytes: 47
 'ret' is a confusing name here. 'total_length'?
 
+204
+Thu Apr 24 22:35:22 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5e8dfcd_3643e8cf
+UUID: c5c1bf53_77348a01
+Bytes: 206
+ret is already defined and used and is a ssize_t, this is merely a result of good 'C' hygiene by not proliferating too many automatic variables. payload_length is more descriptive, it is not a total_length.
+
 210
 Thu Apr 24 22:04:41 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,6 +26,16 @@ wouldn't this be clearer in the loop? i think you're trying to say "if the last 
 
 that seems weird. why not just pass min(total_length, LOGGER_ENTRY_MAX_PAYLOAD) to writev?
 
+210
+Thu Apr 24 22:35:22 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5e5abf4_0ab88360
+UUID: 659e536e_14f51a68
+Bytes: 433
+if the last iov_len < what we can subtract to result in truncation, we KISS return -EINVAL. Doing it in the loop would deal with truncating the packet better I will agree.
+
+In this KISS implementation, we have to ensure that the total length is limited, if the length comes from other fields other than the last one, we will reject the message as unworkable. min on this one iovec will *not* limit the overall length as per our goal.
+
 File: liblog/tests/liblog_test.cpp
 
 499:27-499:34
@@ -26,4 +44,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 85b427df_af116975
 Bytes: 32
 where did this number come from?
+
+499:27-499:34
+Thu Apr 24 22:35:22 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85b427df_af116975
+UUID: a5be8bc4_16cefa3f
+Bytes: 306
+From the associated bug, Igor picked it as associated with a separate bug that posted a message this long and left him confused because nothing showed up in logcat (not even truncated). I like it because it is ridiculously long, longer than what even some folks would set the logd circular buffer sizes to.
 

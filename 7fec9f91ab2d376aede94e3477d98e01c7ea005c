@@ -1,0 +1,11 @@
+Revision: 7fec9f91ab2d376aede94e3477d98e01c7ea005c
+Patch-set: 2
+File: include/android/log.h
+
+117
+Thu Apr 24 20:27:47 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 85b427df_89458529
+Bytes: 94
+oh, i'll remove these tabs. it's your file but i hate tabs too so i'm happy to remove them :-)
+

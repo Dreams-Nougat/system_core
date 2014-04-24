@@ -11,10 +11,26 @@ Are these definitely coming?  It feels weird to rigidly define properties that d
 
 If the goal is just to reserve the keys, IMO better to just state all of logd.* is reserved.  (Setting properties is privileged, so you don't really have to be worry about random apps stomping on your namespace anyway.)
 
+13
+Thu Apr 24 22:08:01 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5e5abf4_24ed78df
+UUID: a5be8bc4_36a776af
+Bytes: 239
+Will drop, these are more of a note to myself about future possibilities and for those that read this to say 'ya, please implement this today'. Its all about politics/promoting ideas, does not belong committed to tree I will have to agree.
+
 31:9-31:14
 Thu Apr 24 18:26:54 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5e5abf4_44f284c0
 Bytes: 5
 When?
+
+31:9-31:14
+Thu Apr 24 22:08:01 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5e5abf4_44f284c0
+UUID: a5be8bc4_f6d5feed
+Bytes: 69
+When (and if) implemented. Goes away if we drop the Reserved section.
 

@@ -1,0 +1,29 @@
+Revision: 838f3de3da6be1ccf2d08b4224938eb0bf1a4c07
+Patch-set: 1
+File: liblog/logd_write.c
+
+204
+Thu Apr 24 22:04:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5e8dfcd_3643e8cf
+Bytes: 47
+'ret' is a confusing name here. 'total_length'?
+
+210
+Thu Apr 24 22:04:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5e5abf4_0ab88360
+Bytes: 217
+wouldn't this be clearer in the loop? i think you're trying to say "if the last iov_len >= max, -EINVAL; otherwise truncate"?
+
+that seems weird. why not just pass min(total_length, LOGGER_ENTRY_MAX_PAYLOAD) to writev?
+
+File: liblog/tests/liblog_test.cpp
+
+499:27-499:34
+Thu Apr 24 22:04:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 85b427df_af116975
+Bytes: 32
+where did this number come from?
+

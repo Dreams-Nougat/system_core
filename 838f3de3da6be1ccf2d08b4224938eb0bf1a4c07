@@ -25,6 +25,14 @@ UUID: a5e5abf4_751008b2
 Bytes: 78
 you know you're allowed to switch to C++? or just add -std=c99 to your CFLAGS?
 
+204
+Thu Apr 24 23:12:43 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5e5abf4_751008b2
+UUID: c5c1bf53_57cb0e85
+Bytes: 223
+This may prejudice me, but I define 'C' as to what the kernel source enforces on us. I can speak some Ukrainian, and English, for example, I feel evil when I mix the two. Purity on one side or the other just feels right :-)
+
 210
 Thu Apr 24 22:04:41 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,3 +9,11 @@ UUID: a593eb68_25bd8259
 Bytes: 123
 system/core/logd/tests/logd_test.cpp:656:32: error: uninitialized const 'expected_absolute_minimum_log_size' [-fpermissive]
 
+656
+Fri Apr 25 18:15:35 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a593eb68_25bd8259
+UUID: 659c9384_e15da65c
+Bytes: 244
+Got to learn not to upload until all my unit and system tests are complete (full system build still going on). I uploaded this prematurely because I was in the wrong branch when expecting to upload the libc_logging.cpp test I just added <sigh>.
+

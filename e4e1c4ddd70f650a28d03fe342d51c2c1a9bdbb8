@@ -1,0 +1,11 @@
+Revision: e4e1c4ddd70f650a28d03fe342d51c2c1a9bdbb8
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+189
+Fri Apr 25 23:11:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5fb7fcc_e7d6bc5f
+Bytes: 79
+oops. i meant to keep the old format, so i should add back the missing "--" :-)
+

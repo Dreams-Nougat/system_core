@@ -9,6 +9,14 @@ UUID: 05767712_89baddab
 Bytes: 163
 i think you're supposed to just say bionic/..... --- the build system does weird things if you use .. so you should probably just not involve $(LOCAL_PATH) at all.
 
+68
+Fri Apr 25 19:19:04 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05767712_89baddab
+UUID: 659c9384_442340c5
+Bytes: 181
+I could ensure $(LOCAL_PATH) is 'as expected', then the #include "../../../../bionic/libc/bionic/libc_logging.cpp" in libc_test.cpp could be checked at make time to ensure it works.
+
 File: liblog/tests/libc_test.cpp
 
 24
@@ -17,4 +25,11 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8597c75d_4591fc88
 Bytes: 61
 yeah, this sucks, but i think it's our best choice right now.
+
+122:12-122:17
+Fri Apr 25 19:19:04 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 25a61bd4_df44bb7e
+Bytes: 11
+unnecessary
 

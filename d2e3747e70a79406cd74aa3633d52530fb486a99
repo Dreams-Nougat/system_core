@@ -1,0 +1,20 @@
+Revision: d2e3747e70a79406cd74aa3633d52530fb486a99
+Patch-set: 1
+File: liblog/tests/Android.mk
+
+68
+Fri Apr 25 19:08:43 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05767712_89baddab
+Bytes: 163
+i think you're supposed to just say bionic/..... --- the build system does weird things if you use .. so you should probably just not involve $(LOCAL_PATH) at all.
+
+File: liblog/tests/libc_test.cpp
+
+24
+Fri Apr 25 19:08:43 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8597c75d_4591fc88
+Bytes: 61
+yeah, this sucks, but i think it's our best choice right now.
+

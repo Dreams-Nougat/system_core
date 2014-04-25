@@ -42,6 +42,18 @@ Do we care if ret overflows? The check on 209 could be skipped.
 
 (assuming the implementation-specific undefined behavior of signed overflow will lead to something reasonable like wrapping around to negative)
 
+206:1-206:64
+Fri Apr 25 15:37:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5e8dfcd_714d7af8
+UUID: 2581bb17_364866e9
+Bytes: 285
+ret will never(tm) overflow as it is a ssize_t ;->. 209 is the code that truncates the buffer, but your point does mean:
+
+if ((size_t)ret > LOGGER_ENTRY_MAX_PAYLOAD)
+
+Should have been used. This code has been refactored and committed, will consider hardening CL based on this critique.
+
 210
 Thu Apr 24 22:04:41 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -103,4 +115,18 @@ Bytes: 335
 In my tests using numbers slightly larger than LOGGER_ENTRY_MAX_PAYLOAD was perfectly fine (it would truncate down to LOGGER_ENTRY_MAX_PAYLOAD once it hit logcat)
 
 It's possible that this value is related to maximum size of an atomic packet for SOCK_DGRAM instead of LOGGER_ENTRY_MAX_PAYLOAD, but I didn't investigate it that far down.
+
+499:27-499:34
+Fri Apr 25 15:37:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5e5abf4_35404069
+UUID: 2581bb17_d660ea61
+Bytes: 768
+I want a buffer that exceeds both LOGGER_ENTRY_MAX_PAYLOAD and any inconceivable max dgram size in the network layer. There are multiple sources of truncation in each vintage of all loggers, and an equally inconsistent set of checks. I also want, should this test be used on the legacy kernel logger, to stress it to the max as well.
+
+This test could be performed independently on any Android release, OEM submissions etc. So tailoring it for our current expected behavior and underlying mechanisms and libraries is how I got into this trouble in the first place ;->
+
+BTW, any value above 64K will meet this condition, 3266519 doubly so <grin>
+
+However, svelte phones could choke? I will look into running this test on a hammerhead svelt to be sure, at my convenience.
 

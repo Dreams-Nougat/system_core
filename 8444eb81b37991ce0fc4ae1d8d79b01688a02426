@@ -2,10 +2,28 @@ Revision: 8444eb81b37991ce0fc4ae1d8d79b01688a02426
 Patch-set: 2
 File: liblog/logd_write.c
 
+210:12-210:24
+Fri Apr 25 15:48:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2581bb17_f65deea6
+Bytes: 175
+As pointed out by Igor, do we want to worry about overflow?
+
+Given I have switched to a size_t here, rather than a ssize_t as was used in patchset 1, I believe we are covered.
+
 225
 Thu Apr 24 23:07:11 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5e5abf4_d5d47c7d
 Bytes: 112
 sorry, i'm retarded. i'm confusing the Java "writev" API with the C one. you can't do what i've been suggesting.
+
+File: liblog/tests/liblog_test.cpp
+
+499:27-499:34
+Fri Apr 25 15:48:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2581bb17_3696a6f8
+Bytes: 362
+check if svelte releases have troubles with this. If they do, adjust to max(65536U, LOGGER_ENTRY_MAX_PAYLOAD, `cat /proc/sys/net/core/rmem_max`, `cat /proc/sys/net/core/wmem_max`, `cat /proc/sys/net/ipv*/tcp_wmem`, `cat /proc/sys/net/ipv*/tcp_rmem) + 1; a little larger than 1MB on our current crop of android phones and tablets ... but may be smaller on svelte.
 

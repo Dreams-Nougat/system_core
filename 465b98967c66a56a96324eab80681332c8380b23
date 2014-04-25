@@ -1,0 +1,25 @@
+Revision: 465b98967c66a56a96324eab80681332c8380b23
+Patch-set: 4
+File: logd/tests/logd_test.cpp
+
+619:4-619:50
+Fri Apr 25 17:23:34 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2581bb17_41c0b630
+Bytes: 6
+Remove
+
+622:4-626:5
+Fri Apr 25 17:23:34 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6587332a_38d3f5e8
+Bytes: 12
+ASSERT_TRUE?
+
+642:30-642:35
+Fri Apr 25 17:23:34 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2581bb17_61c85a31
+Bytes: 156
+64K shows up a few times here as a magic constant.  (Default log capacity?)  Consider using a const variable with a name that describes where it comes from.
+

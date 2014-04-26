@@ -1,0 +1,11 @@
+Revision: 670aec1e3cda7668e9fd7ac5ce58c78410ccca3b
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+189:4-189:10
+Sat Apr 26 01:52:03 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6538135d_8ab28f22
+Bytes: 109
+Should you use strncpy instead? I know that it's not really possible to overflow, but better safe than sorry.
+

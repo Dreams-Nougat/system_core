@@ -9,3 +9,11 @@ UUID: 6538135d_8ab28f22
 Bytes: 109
 Should you use strncpy instead? I know that it's not really possible to overflow, but better safe than sorry.
 
+189:4-189:10
+Sat Apr 26 03:17:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6538135d_8ab28f22
+UUID: 4516afdd_b8581933
+Bytes: 82
+strncpy's behavior on failure is scary; i'll use snprintf like in the common case.
+

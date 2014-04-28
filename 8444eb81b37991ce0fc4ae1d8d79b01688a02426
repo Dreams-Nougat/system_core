@@ -11,6 +11,13 @@ As pointed out by Igor, do we want to worry about overflow?
 
 Given I have switched to a size_t here, rather than a ssize_t as was used in patchset 1, I believe we are covered.
 
+215
+Mon Apr 28 19:08:23 2014 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a554cbb1_e6026029
+Bytes: 122
+If I'm understanding correctly, this assumes that further iovs can't fit anymore, is this a reasonable assumption to make?
+
 225
 Thu Apr 24 23:07:11 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -54,6 +54,24 @@ if ((size_t)ret > LOGGER_ENTRY_MAX_PAYLOAD)
 
 Should have been used. This code has been refactored and committed, will consider hardening CL based on this critique.
 
+206:1-206:64
+Mon Apr 28 19:03:15 2014 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2581bb17_364866e9
+UUID: e55a43dc_ebab0561
+Bytes: 758
+I'm not sure I understand the explanation here, could you elaborate please?
+
+My original, and possibly flawed, interpretation of this was as follows:
+
+if newVec[i].iov_len is equal to SIZE_MAX, then adding it to ret would cause ret to overflow (even if it was a size_t; and certainly since it's a ssize_t, which has a smaller max value). 
+
+On that very academic train of thought, signed integer overflows in C lead to undefined behavior, so simply checking if it went negative is not standards-compliant.
+
+------------
+
+That being said looking at the code paths this seems highly unlikely in practice since a variadic iov_len is always set as the strlen of iov_base; it would be quite hard to allocate 64-bits worth of usable memory by the time it gets here.
+
 210
 Thu Apr 24 22:04:41 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

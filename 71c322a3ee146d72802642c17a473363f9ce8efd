@@ -1,0 +1,26 @@
+Revision: 71c322a3ee146d72802642c17a473363f9ce8efd
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Tue Apr 29 18:33:23 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5c37fc9_ea712323
+Bytes: 13
+...because...
+
+File: libbacktrace/BacktraceThread.cpp
+
+90
+Tue Apr 29 18:33:23 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05caf7dd_2f3ea949
+Bytes: 272
+in a header file?
+
+also, we use SIGRTMIN for our POSIX timers. the timer thread takes a non-timer SIGRTMIN to mean "please exit".
+
+libcore uses (SIGRTMIN + 2). so (SIGRTMIN + 1)?
+
+(i'm starting to wish we had some kind of central registry to claim free RT signals from...)
+

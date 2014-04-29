@@ -1,0 +1,11 @@
+Revision: 8daa9af02dc0e63ce220e3fa95bf5fe4d6b7a99a
+Patch-set: 2
+File: /COMMIT_MSG
+
+12:0-12:13
+Tue Apr 29 00:40:15 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05f3d71b_923a6ce2
+Bytes: 63
+Keep all key:values in one paragraph or else tools are unhappy.
+

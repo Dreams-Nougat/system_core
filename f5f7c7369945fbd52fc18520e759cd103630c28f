@@ -1,0 +1,11 @@
+Revision: f5f7c7369945fbd52fc18520e759cd103630c28f
+Patch-set: 1
+File: libcutils/socket_network_client_timeout.c
+
+40
+Tue Apr 29 16:35:00 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 45d06f88_0b7ac144
+Bytes: 103
+can't we just add a timeout parameter to the existing function and have a magic value for "no timeout"?
+

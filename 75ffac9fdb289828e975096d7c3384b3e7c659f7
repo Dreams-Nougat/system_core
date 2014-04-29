@@ -1,0 +1,20 @@
+Revision: 75ffac9fdb289828e975096d7c3384b3e7c659f7
+Patch-set: 1
+File: logd/LogAudit.cpp
+
+154:4-156:5
+Tue Apr 29 00:50:12 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05f3d71b_32b27824
+Bytes: 50
+Isn't this dead code because of the previous line?
+
+File: logd/README.property
+
+15
+Tue Apr 29 00:50:12 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5fc5fef_4585c0b4
+Bytes: 65
+, zero, or invalid (e.g. something that didn't read as a number).
+

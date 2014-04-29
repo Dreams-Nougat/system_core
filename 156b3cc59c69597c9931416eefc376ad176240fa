@@ -1,5 +1,16 @@
 Revision: 156b3cc59c69597c9931416eefc376ad176240fa
 Patch-set: 3
+File: logd/LogAudit.cpp
+
+154:0-154:73
+Tue Apr 29 01:17:31 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8508a7da_ce59e33a
+Bytes: 50
+In that case:
+
+   len = (n <= USHRT_MAX) ? n : -1;
+
 File: logd/main.cpp
 
 118:20-118:34
@@ -19,4 +30,13 @@ atol allows a string to be entered and always report false. This means a string 
 Do we want to consider a more intelligent parser for this?
 
 Answer: no, KISS *only* developers are allows to set properties, and they should know what they are doing.
+
+123:12-123:26
+Tue Apr 29 01:17:31 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05f3d71b_3261d88d
+UUID: 8508a7da_6e37f7f9
+Bytes: 175
+Only allow "true" "false", not 0, ... and call it a day.
+It would end up even matching the doc so you would not have to add an extra section as to what "true" and "false" are.
 

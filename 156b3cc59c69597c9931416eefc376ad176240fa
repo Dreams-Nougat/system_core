@@ -1,0 +1,22 @@
+Revision: 156b3cc59c69597c9931416eefc376ad176240fa
+Patch-set: 3
+File: logd/main.cpp
+
+118:20-118:34
+Tue Apr 29 01:00:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05f3d71b_b2ab2862
+Bytes: 5
+ditto
+
+123:12-123:26
+Tue Apr 29 01:00:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05f3d71b_3261d88d
+Bytes: 359
+atol allows a string to be entered and always report false. This means a string of "true" for the property will be *wrong* and the 'administrator' would not know why without knowing the code.
+
+Do we want to consider a more intelligent parser for this?
+
+Answer: no, KISS *only* developers are allows to set properties, and they should know what they are doing.
+

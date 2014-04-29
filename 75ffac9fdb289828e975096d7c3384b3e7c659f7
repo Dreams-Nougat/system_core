@@ -9,6 +9,16 @@ UUID: 05f3d71b_32b27824
 Bytes: 50
 Isn't this dead code because of the previous line?
 
+154:4-156:5
+Tue Apr 29 00:54:03 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05f3d71b_32b27824
+UUID: c5fc5fef_45030073
+Bytes: 294
+No, because len is unsigned short, truncated from the size_t value of n. The assignment with check is to ensure that we deal with truncation appropriately.
+
+As to whether this can or can not happen, depends on how much we trust the kernel and MAX_AUDIT_MESSAGE_LENGTH in the libaudit.c library.
+
 File: logd/README.property
 
 15
@@ -17,4 +27,14 @@ Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c5fc5fef_4585c0b4
 Bytes: 65
 , zero, or invalid (e.g. something that didn't read as a number).
+
+15
+Tue Apr 29 00:54:03 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5fc5fef_4585c0b4
+UUID: 05f3d71b_92026cd3
+Bytes: 270
+Agreed, but I'd prefer not to give the reader of this the option to put the string "false" in there, resulting in a misconception.
+
+We know we are using atol() to parse this, but I am not going to reflect that is an option here to explore the bug that atol() represents.
 

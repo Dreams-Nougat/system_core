@@ -55,3 +55,16 @@ so how about you take (__SIGRTMIN + 0), posix timers take (__SIGRTMIN + 1), libc
 
 if this is blocking something feel free to submit now. we'll have to switch libcore to __SIGRTMIN anyway.
 
+90
+Wed Apr 30 16:23:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8ae7d493_c25fc29d
+UUID: 4af15c4f_a035da63
+Bytes: 185
+looks like strsignal needs to change too:
+
+  strsignal(31)="Bad system call"
+  strsignal(32)="Unknown signal 32"
+  strsignal(33)="Unknown signal 33"
+  strsignal(34)="Real-time signal 0"
+

@@ -32,3 +32,26 @@ UUID: c5c37fc9_8e96bc68
 Bytes: 485
 I moved this to BacktraceThread.h and I'm using SIGRTMIN+1. However, as I understand these signals, it is recommended that SIGRTMIN be redefined to be the first unused real time signal. The man pages say that two or three are being used by glibc so the value has been modified there. It would seem we should at least resereve that first one and bump up SIGRTMIN by one. If the others are fundamental to the system, it would seem a good idea to reserve them too and bump RTMIN by three.
 
+90
+Wed Apr 30 16:18:36 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5c37fc9_8e96bc68
+UUID: 8ae7d493_c25fc29d
+Bytes: 707
+huh. i did not know that. you're right:
+
+printing the constants:
+
+  SIGRTMIN=34 (__SIGRTMIN=32) SIGRTMAX=64 (__SIGRTMAX=64)
+
+and there's a gap in kill -l's list:
+
+  ~$ kill -l
+  31) SIGSYS	34) SIGRTMIN	35) SIGRTMIN+1	36) SIGRTMIN+2	37) SIGRTMIN+3
+
+(i checked and kill will let you send signals 32 and 33. they're just not in the list.)
+
+so how about you take (__SIGRTMIN + 0), posix timers take (__SIGRTMIN + 1), libcore takes (__SIGRTMIN + 2), and we hide them behind a function like glibc does so we can take more in future if we need to. i'll document who's got who in the function implementation.
+
+if this is blocking something feel free to submit now. we'll have to switch libcore to __SIGRTMIN anyway.
+

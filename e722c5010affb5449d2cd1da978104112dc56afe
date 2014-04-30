@@ -1,0 +1,40 @@
+Revision: e722c5010affb5449d2cd1da978104112dc56afe
+Patch-set: 1
+File: libcutils/Android.mk
+
+81
+Wed Apr 30 18:17:51 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6aec607a_e7dc162d
+Bytes: 114
+might as well just put -Werror here, then it is easy to turn off for a single library if it is breaking something.
+
+File: libcutils/ashmem-host.c
+
+35
+Wed Apr 30 18:17:51 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4af15c4f_e9b62dc8
+Bytes: 74
+__unused is already defined in sys/cdefs.h
+
+Consider -Wno-unused-parameter
+
+File: libcutils/cpu_info.c
+
+17
+Wed Apr 30 18:17:51 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6aec607a_67a8067d
+Bytes: 89
+as long as you are rearranging headers, library headers usually go below standard headers
+
+File: libcutils/iosched_policy.c
+
+34
+Wed Apr 30 18:17:51 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4af15c4f_291c15fc
+Bytes: 46
+I think there is also a maybe_unused attribute
+

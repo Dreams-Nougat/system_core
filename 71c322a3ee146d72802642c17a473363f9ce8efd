@@ -78,3 +78,11 @@ Not blocking anything, and the reservation seems good to me.
 
 And following glibc's pattern of a function to get the min and max seem good.
 
+90
+Wed Apr 30 18:43:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4af15c4f_89ee8169
+UUID: 4af15c4f_f4dcc02c
+Bytes: 55
+bionic changes now in. i've saved you (__SIGRTMIN + 0).
+

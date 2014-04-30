@@ -38,3 +38,13 @@ UUID: 4af15c4f_291c15fc
 Bytes: 46
 I think there is also a maybe_unused attribute
 
+34
+Wed Apr 30 18:22:27 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4af15c4f_291c15fc
+UUID: 4af15c4f_c90b6987
+Bytes: 167
+Some external projects declare one but bionic doesn't.
+
+FWIW __unused should be sufficient since __attribute__((__unused__)) means maybe unused, not definitely unused.
+

@@ -50,6 +50,14 @@ So. which would you prefer I do, I can standardize on the approach for all (curr
 
 I can audit these changes on mac and windows builds, it is easier to not audit, and stay away from sys/cdefs.h.
 
+35
+Wed Apr 30 20:35:54 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0afbe434_de57a5df
+UUID: 0afbe434_61c59071
+Bytes: 343
+-Wno-unused-parameter isn't cheating, its a style issue.  C code often uses function pointers or #ifdefs as a rudimentary subclassing, which often results in lots of valid unused parameters.  If the code is written in that style, I use -Wno-unused-parameter to disable those warnings wholesale, as that makes the code as a whole more readable.
+
 File: libcutils/cpu_info.c
 
 17

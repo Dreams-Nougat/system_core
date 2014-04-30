@@ -24,3 +24,11 @@ libcore uses (SIGRTMIN + 2). so (SIGRTMIN + 1)?
 
 (i'm starting to wish we had some kind of central registry to claim free RT signals from...)
 
+90
+Wed Apr 30 04:39:23 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05caf7dd_2f3ea949
+UUID: c5c37fc9_8e96bc68
+Bytes: 485
+I moved this to BacktraceThread.h and I'm using SIGRTMIN+1. However, as I understand these signals, it is recommended that SIGRTMIN be redefined to be the first unused real time signal. The man pages say that two or three are being used by glibc so the value has been modified there. It would seem we should at least resereve that first one and bump up SIGRTMIN by one. If the others are fundamental to the system, it would seem a good idea to reserve them too and bump RTMIN by three.
+

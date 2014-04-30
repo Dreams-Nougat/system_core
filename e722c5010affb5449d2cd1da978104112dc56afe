@@ -58,6 +58,14 @@ UUID: 0afbe434_61c59071
 Bytes: 343
 -Wno-unused-parameter isn't cheating, its a style issue.  C code often uses function pointers or #ifdefs as a rudimentary subclassing, which often results in lots of valid unused parameters.  If the code is written in that style, I use -Wno-unused-parameter to disable those warnings wholesale, as that makes the code as a whole more readable.
 
+35
+Wed Apr 30 20:36:25 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0afbe434_61c59071
+UUID: eaf77045_7d79b70a
+Bytes: 90
+Also this file is only used on the host, so just defining __unused locally should be fine.
+
 File: libcutils/cpu_info.c
 
 17

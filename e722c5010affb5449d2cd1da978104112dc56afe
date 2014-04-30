@@ -20,6 +20,36 @@ __unused is already defined in sys/cdefs.h
 
 Consider -Wno-unused-parameter
 
+35
+Wed Apr 30 19:59:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4af15c4f_e9b62dc8
+UUID: 0afbe434_de57a5df
+Bytes: 1298
+I am trying to go warning free with -Wunused from the top tree, -Wno-unused-parameter is like 'cheating' :-}. The *main* idea is to catch any unused variables, but I am more than willing to catch all unused entities (parameters, functions, typedefs etc).
+
+The main problem with sys/cdefs.h is that the file does not exist in the windows sdk builds (or has this been fixed?) The other problem with sys/cdefs.h we have is __unused is only defined in the bionic, and since this (and other system/core) library and execs are also built for the host/sdks I have one of two choices:
+
+a) Orthogonal-named manifest
+
+#define UNUSED __attribute__((__unused__))
+
+- or -
+
+b) use bionic, but deal with non-bionic environments (host linux)
+
+#include <sys/cdefs.h>
+. . .
+#ifndef __unused
+#define __unused __attribute__((__unused__))
+#endif
+
+I would refer to the later one as anything I put into a header (even if the header is project local) since headers never know if sys/cdefs.h has been included, the former one is used for KISS on standalone 'C' files.
+
+So. which would you prefer I do, I can standardize on the approach for all (currently 9 additional CLs in-work, using these two as reference)
+
+I can audit these changes on mac and windows builds, it is easier to not audit, and stay away from sys/cdefs.h.
+
 File: libcutils/cpu_info.c
 
 17
@@ -28,6 +58,14 @@ Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6aec607a_67a8067d
 Bytes: 89
 as long as you are rearranging headers, library headers usually go below standard headers
+
+17
+Wed Apr 30 19:59:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6aec607a_67a8067d
+UUID: eaf77045_7d72d7c2
+Bytes: 212
+Good catch. This was an ooops, I have been doing so in the other CLs when I feel compelled to re-arrange. I also see above that we have trailing spaces in this file (probably best to do that as a separate CL ...)
 
 File: libcutils/iosched_policy.c
 

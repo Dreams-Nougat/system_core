@@ -1,0 +1,11 @@
+Revision: 526166d99a3610c3542b6f92b376745be2c36b91
+Base-for-patch-set: 2
+File: adb/Android.mk
+
+77
+Thu May 01 19:47:37 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a587c41_2ecaf380
+Bytes: 34
+don't remove -Wno-unused-parameter
+

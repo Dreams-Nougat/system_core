@@ -19,3 +19,13 @@ The fatal message without abort, how would that work? What about abusers wanting
 
 __android_log_write logs normally, but before returning, pass the copy to bionic. If another comes along, overwrite (so the last line stashed) sounds fine to me. Here we go to __builtin_trap() so nothing more happens ...
 
+415
+Thu May 01 23:04:33 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_cce6c34e
+UUID: 0a520423_cc82433e
+Bytes: 453
+yeah, i hadn't thought of that. still, the only time it would be weird is if someone logs a message as FATAL and then just carries on but then eventually dies of something unrelated --- then we'd show the out of date/irrelevant message. but that seems like a small price to pay for helping sane applications actually get their reason for dying into the native crash report.
+
+do we have reason to believe much code lies about the severity of its logging?
+

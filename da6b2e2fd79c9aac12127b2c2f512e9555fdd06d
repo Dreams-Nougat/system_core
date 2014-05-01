@@ -9,3 +9,13 @@ UUID: 0a520423_668a4e9c
 Bytes: 287
 i'm starting to think that a better fix would have been to change __android_log_write to recognize the first line it gets at ANDROID_LOG_FATAL priority and pass that to bionic. that way the VM's LOG(FATAL) would get its first line stashed away, and the LOG_ALWAYS_FATAL macros would too.
 
+415
+Thu May 01 22:58:38 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_668a4e9c
+UUID: 0a520423_cce6c34e
+Bytes: 349
+The fatal message without abort, how would that work? What about abusers wanting to log to ANDROID_LOG_FATAL at their pleasure?
+
+__android_log_write logs normally, but before returning, pass the copy to bionic. If another comes along, overwrite (so the last line stashed) sounds fine to me. Here we go to __builtin_trap() so nothing more happens ...
+

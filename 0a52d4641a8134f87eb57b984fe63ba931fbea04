@@ -19,3 +19,11 @@ UUID: 4a587c41_3ca349d3
 Bytes: 65
 Not useful because the commit sha1 can't be resolved within oasp.
 
+8:0-8:0
+Thu May 01 21:36:43 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a587c41_3ca349d3
+UUID: 4a587c41_7cbae1d1
+Bytes: 105
+It will become useful later when internal is pushed to aosp, and it can be useful to internal developers.
+

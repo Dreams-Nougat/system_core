@@ -11,3 +11,11 @@ If this is a cherry pick, you need to add:
 
 (cherry picked from commit XXXXXXXXXXXXXXXXXXXXXXXXX)
 
+8:0-8:0
+Thu May 01 21:29:57 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea205093_4ab05fce
+UUID: 4a587c41_3ca349d3
+Bytes: 65
+Not useful because the commit sha1 can't be resolved within oasp.
+

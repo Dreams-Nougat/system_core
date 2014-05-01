@@ -1,0 +1,13 @@
+Revision: 33225b173b21557ab67a509b20122916a8384949
+Patch-set: 2
+File: liblog/event_tag_map.c
+
+428:7-428:13
+Thu May 01 22:30:08 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a8354c4_c2a4822e
+Bytes: 262
+Are you sure you want me to remove this, the code looks like useful for debugging, extremely handy.
+
+If debugging code is of no interest, then I have a few candidates littered in other CLs (I have audited them before this one, you should see the email comments).
+

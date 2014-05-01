@@ -1,0 +1,11 @@
+Revision: aa616f331d46b807d902417704a818f7cb302241
+Patch-set: 2
+File: debuggerd/crasher.c
+
+52:7-52:13
+Thu May 01 22:27:43 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_2941c91c
+Bytes: 168
+flipped a coin here, chose to inline it originally. Figure I should remove instead (it is simple enough of a code violation, a dereferenced access pointer at offset 32.
+

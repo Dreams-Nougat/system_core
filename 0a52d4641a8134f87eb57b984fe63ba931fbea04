@@ -27,3 +27,15 @@ UUID: 4a587c41_7cbae1d1
 Bytes: 105
 It will become useful later when internal is pushed to aosp, and it can be useful to internal developers.
 
+8:0-8:0
+Thu May 01 22:17:57 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a587c41_7cbae1d1
+UUID: 0a520423_a90c9958
+Bytes: 337
+There is also some use before any back-merges.
+
+There is a commit sha1, and a change-id sha. Both can get you back to the internal repo.
+
+Use the same change-id sha when I cherry pick as the one present in internal. This gets me to the internal review. The commit sha gives me the ability to go through the git log and relate the pieces.
+

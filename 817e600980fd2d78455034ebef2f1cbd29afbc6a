@@ -1,0 +1,25 @@
+Revision: 817e600980fd2d78455034ebef2f1cbd29afbc6a
+Patch-set: 2
+File: libpixelflinger/trap.cpp
+
+94:7-94:13
+Thu May 01 22:25:56 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_89bafdf7
+Bytes: 169
+changed to an inline because this code would be expected to be used by a developer (ALOGD below) to diagnose problems. Removal of the fragment may be counter-productive.
+
+477:7-477:13
+Thu May 01 22:25:56 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa481879_e383d2b1
+Bytes: 47
+this inline is not debug code, remove fragment.
+
+647:7-647:13
+Thu May 01 22:25:56 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa481879_a38ddadd
+Bytes: 33
+This code is debug code, leave in
+

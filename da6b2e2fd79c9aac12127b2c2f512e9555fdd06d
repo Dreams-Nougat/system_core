@@ -29,3 +29,11 @@ yeah, i hadn't thought of that. still, the only time it would be weird is if som
 
 do we have reason to believe much code lies about the severity of its logging?
 
+415
+Thu May 01 23:12:45 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_cc82433e
+UUID: 8a8354c4_45e4fc6f
+Bytes: 281
+I looked at a few saved logcat files I have sitting on my Downloads directory, or pulled, and on an active device. All '^F/' were from libc (and many were associated with binary modules we do not have control over). So, no, I do not believe anyone lies regarding ANDROID_LOG_FATAL.
+

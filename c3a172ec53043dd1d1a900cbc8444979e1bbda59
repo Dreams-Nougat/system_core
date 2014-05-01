@@ -1,0 +1,20 @@
+Revision: c3a172ec53043dd1d1a900cbc8444979e1bbda59
+Patch-set: 1
+File: libsysutils/src/NetlinkEvent.cpp
+
+113:26-113:57
+Thu May 01 18:19:07 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a587c41_88355764
+Bytes: 111
+RTA_PAYLOAD(rta) expands to a size_t, so use %zu.
+
+(man rtnetlink says unsigned int -- don't believe its lies!)
+
+155:52-155:55
+Thu May 01 18:19:07 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a292485_083f1b46
+Bytes: 22
+%zu (%tu is ptrdiff_t)
+

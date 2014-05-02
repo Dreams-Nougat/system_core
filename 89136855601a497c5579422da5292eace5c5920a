@@ -1,0 +1,25 @@
+Revision: 89136855601a497c5579422da5292eace5c5920a
+Patch-set: 3
+File: liblog/logprint.c
+
+57:7-57:13
+Fri May 02 17:10:10 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_f0df0de6
+Bytes: 80
+Dead code; remove (or #ifdef out with a meaningful token if it's debugging code)
+
+951:12-951:18
+Fri May 02 17:10:10 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_90a6999a
+Bytes: 18
+This isn't unused.
+
+952:4-952:10
+Fri May 02 17:10:10 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_50b021ce
+Bytes: 11
+Why static?
+

@@ -49,6 +49,16 @@ UUID: 6a71c0c6_e8087bf7
 Bytes: 103
 Or ... I could detect if NDEBUG is defined (which nullifies the assert()) and not use UNUSED at all ...
 
+951:12-951:18
+Fri May 02 17:54:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a71c0c6_e8087bf7
+UUID: 6a71c0c6_c8d9f701
+Bytes: 350
+OK, I missed the context here.
+
+Standard C assert() is specifically meant to go away for non-debug builds, so it feels like a mismatch to use it for a test that's compiled even on release builds.  Switch assert() to something stronger that doesn't get stripped out of debug builds, or make the --test flag only compile in when NDEBUG is not #defined.
+
 952:4-952:10
 Fri May 02 17:10:10 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>

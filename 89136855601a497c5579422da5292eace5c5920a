@@ -41,6 +41,14 @@ It is when the assert resolves to nothing ... :-(
 
 I could use a define UNUSED_BY_ASSERT to make this clearer.
 
+951:12-951:18
+Fri May 02 17:47:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a66bc13_a1c38418
+UUID: 6a71c0c6_e8087bf7
+Bytes: 103
+Or ... I could detect if NDEBUG is defined (which nullifies the assert()) and not use UNUSED at all ...
+
 952:4-952:10
 Fri May 02 17:10:10 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>

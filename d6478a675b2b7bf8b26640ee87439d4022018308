@@ -1,0 +1,11 @@
+Revision: d6478a675b2b7bf8b26640ee87439d4022018308
+Patch-set: 5
+File: liblog/log_read.c
+
+26:0-26:22
+Fri May 02 21:54:56 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a66bc13_9f29f4aa
+Bytes: 88
+Is this safe to include?  I'm assuming from context that this builds in the Windows SDK.
+

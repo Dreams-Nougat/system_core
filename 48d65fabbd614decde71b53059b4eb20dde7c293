@@ -1,0 +1,11 @@
+Revision: 48d65fabbd614decde71b53059b4eb20dde7c293
+Patch-set: 6
+File: adb/Android.mk
+
+165
+Fri May 02 21:20:00 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a520423_77766f5e
+Bytes: 31
+this replaces a tab with spaces
+

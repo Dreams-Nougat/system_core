@@ -9,6 +9,21 @@ UUID: 0a520423_f0df0de6
 Bytes: 80
 Dead code; remove (or #ifdef out with a meaningful token if it's debugging code)
 
+57:7-57:13
+Fri May 02 17:31:42 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_f0df0de6
+UUID: 4a66bc13_0153509d
+Bytes: 34
+missed this in my audit yesterday.
+
+144:0-145:58
+Fri May 02 17:31:42 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a66bc13_41514894
+Bytes: 67
+#if 0 rather than inline (missed this in my audit yesterday <sigh>)
+
 951:12-951:18
 Fri May 02 17:10:10 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +31,33 @@ UUID: 0a520423_90a6999a
 Bytes: 18
 This isn't unused.
 
+951:12-951:18
+Fri May 02 17:31:42 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_90a6999a
+UUID: 4a66bc13_a1c38418
+Bytes: 110
+It is when the assert resolves to nothing ... :-(
+
+I could use a define UNUSED_BY_ASSERT to make this clearer.
+
 952:4-952:10
 Fri May 02 17:10:10 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0a520423_50b021ce
 Bytes: 11
 Why static?
+
+952:4-952:10
+Fri May 02 17:31:42 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a520423_50b021ce
+UUID: 4a66bc13_411ce8fc
+Bytes: 445
+x86_64 as example:
+
+w/o static: size 13257
+w/static: size 12927
+
+The difference is that static const is placed in the initialized text (ro) segment and accessed directly from there as referenced; whereas without it is placed on the stack (and initialized by a static text segment). I view this as a compiler bug, as some compilers, and some compilers in specific architectures, will treat this in the former manner (direct access to ro segment).
 

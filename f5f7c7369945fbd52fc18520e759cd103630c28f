@@ -9,3 +9,13 @@ UUID: 45d06f88_0b7ac144
 Bytes: 103
 can't we just add a timeout parameter to the existing function and have a magic value for "no timeout"?
 
+40
+Sun May 04 16:58:44 2014 +0000
+Author: Matt Gumbel <1006781@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45d06f88_0b7ac144
+UUID: 6abf008d_3d51e795
+Bytes: 225
+Elliott, I think the goal here was to keep the API on the existing function constant, so that users of it would not have to update their code.
+
+One option here might be to make the existing function a wrapper around this one.
+

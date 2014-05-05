@@ -1,0 +1,11 @@
+Revision: c679916a11d734805c9dcfaa3d35b73b84f25bbe
+Patch-set: 7
+File: liblog/log_read.c
+
+26:0-26:22
+Mon May 05 16:28:01 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aacbb83b_45672e2d
+Bytes: 72
+not built with win_sdk, so OK to include here (and in log_read_kernel.c)
+

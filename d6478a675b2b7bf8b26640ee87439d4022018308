@@ -27,3 +27,11 @@ Re-confirmed no breakages on any of the series of CLs for the win_sdk build.
 
 The 'reason' this one is safe is because we are *now* building this file *only* for the target, and never for the host. With that said, the NOMINMAX is no longer necessary, but I reserve the right to keep it in should I reverse that decision (this needs to work for the fake logger at some time in the future, but will likely be a log_read_fake.c file?)
 
+26:0-26:22
+Mon May 05 16:26:06 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea7cd0a5_98d7d9f7
+UUID: 8aba749a_199af71a
+Bytes: 137
+Re-re-confirmed with a clean out tree in aosp win_sdk build, discovered there *is* a breakage by including sys/cdefs.h. Dropping include.
+

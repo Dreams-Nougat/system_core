@@ -9,3 +9,15 @@ UUID: 6a346007_d5857c48
 Bytes: 40
 (i didn't understand your comment here.)
 
+767
+Mon May 05 21:42:09 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a346007_d5857c48
+UUID: 8aba749a_a7661d64
+Bytes: 458
+Sorry, it made sense in my head.
+
+While calling dump_crash, eventually there is a call to _LOG, which makes a call to write_to_am. If write_to_am returns <= 0, then that function sets log->amfd = -1 (without actually closing the fd). Thus you can have a non-negative log.amfd to start with, but wind up with a -1 if a write fails.
+
+This error case happens normally if the process being dumped isn't an activity, and the activity manager close the connection.
+

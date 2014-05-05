@@ -60,3 +60,15 @@ Short term just disable -Werror, we can investigate the right solution once the 
 
 Medium term we should determine whether this belongs in a host build, and if so use the corresponding Windows CRT functions on mingw builds.  Windows has stdio extensions which are often very similar to the missing POSIX functions.
 
+27:0-35:6
+Mon May 05 17:25:56 2014 +0000
+Author: raphael <1001100@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aacbb83b_8022e43c
+UUID: aacbb83b_602b380b
+Bytes: 775
+I'd go for that. I'm in favor of disabling whole library functions that are never used in windows host apps and only provide a complex re-implementation if truly useful. Otherwise you risk wasting your time writing an implementation that is never actually tested and if someone calls it later, it might be buggy and nobody knows.
+
+If you do that, please add a HAVE_METHOD_NAME in build/core/combo/include/arch/*/AndroidConfig.h that is defined for all platforms except Windows. I'd like to avoid sprinkling the code base with #ifndef _WIN32 as much as possible. It's more work to add a HAVE_xyz define but it's way more expressive of why something is missing.
+
+Also please don't undef WIN32 (it's ok for local testing but I'm always worried that would get merged by mistake).
+

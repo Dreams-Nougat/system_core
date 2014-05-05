@@ -2,6 +2,22 @@ Revision: d9fcd29c89e0404921caa75f58163f2adb69045e
 Patch-set: 1
 File: debuggerd/tombstone.cpp
 
+739
+Mon May 05 20:56:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2fd4b4_7c2d7982
+Bytes: 26
+can't we remove the "\n"s?
+
+751
+Mon May 05 20:56:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8aba749a_34dfbd9c
+Bytes: 172
+(if not, you missed one here and below.)
+
+also s/dump/write/ in this function's logging? to me, "dump" means log and "write" means disk, and you're talking about disk here?
+
 767
 Mon May 05 20:39:37 2014 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -10,4 +26,12 @@ Bytes: 249
 The if block doesn't seem like it's needed here. You could just unconditionally call close(log.amfd), since you're not checking the return value of close anyway, and calling close on a negative fd will just return EBADF.
 
 (same comment for line 770)
+
+767
+Mon May 05 20:56:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a395c00_000326da
+UUID: 8a2fd4b4_7cfbb999
+Bytes: 88
+yeah, if the caller doesn't care about errno i prefer to just unconditionally close too.
 

@@ -9,6 +9,14 @@ UUID: 8a2fd4b4_7c2d7982
 Bytes: 26
 can't we remove the "\n"s?
 
+739
+Mon May 05 21:23:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2fd4b4_7c2d7982
+UUID: 8aba749a_8760b9de
+Bytes: 80
+Hmm, some don't use the \n, but most do. I'll add the \n to my two log messages.
+
 751
 Mon May 05 20:56:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,14 @@ Bytes: 172
 (if not, you missed one here and below.)
 
 also s/dump/write/ in this function's logging? to me, "dump" means log and "write" means disk, and you're talking about disk here?
+
+751
+Mon May 05 21:23:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8aba749a_34dfbd9c
+UUID: 8aba749a_e7cdf566
+Bytes: 22
+Changed dump to write.
 
 767
 Mon May 05 20:39:37 2014 +0000
@@ -34,4 +50,12 @@ Parent: 4a395c00_000326da
 UUID: 8a2fd4b4_7cfbb999
 Bytes: 88
 yeah, if the caller doesn't care about errno i prefer to just unconditionally close too.
+
+767
+Mon May 05 21:23:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2fd4b4_7cfbb999
+UUID: 8aba749a_a78ffd63
+Bytes: 129
+Actually, log.amfd can be set to -1 in the _LOG function. And it does happen if there is no activity associated with the failure.
 

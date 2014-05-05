@@ -1,5 +1,16 @@
 Revision: b9d19b5ce6fe298c8c4c4c0d8cac21cd25fa0e27
 Patch-set: 1
+File: libcutils/socket_inaddr_any_server.c
+
+49:44-49:58
+Mon May 05 16:59:20 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2fd4b4_6533201b
+Bytes: 304
+This generates a warning on mingw because winsock inexplicably expects const char *.  See http://msdn.microsoft.com/en-us/library/windows/desktop/ms740476(v=vs.85).aspx
+
+The fix is to cast to const char *.  winsock gets what it wants and Berkeley sockets will still accept the more specific pointer type.
+
 File: libcutils/str_parms.c
 
 27:0-35:6
@@ -8,4 +19,16 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8a2fd4b4_e20726a3
 Bytes: 120
 This is a result in a flaw in the toolset, recommend the sdk team investigate and find a way to nullify this adjustment.
+
+27:0-35:6
+Mon May 05 16:59:20 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2fd4b4_e20726a3
+UUID: 8aba749a_a40cde58
+Bytes: 300
+Not really a flaw in the toolchain; Windows's C runtime doesn't include these functions.
+
+Is str_parms ever actually used by any host code?  Otherwise I'd expect breakage at link time.
+
+I prefer just disabling -Werror while investigating.  It's ugly but less ugly than silencing a legitimate warning.
 

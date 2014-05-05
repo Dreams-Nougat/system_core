@@ -31,3 +31,13 @@ but doesn't that mean this code is still wrong? you need to cache the result fro
 
 (and i still i don't see what that has to do with nnk's "just call close(2) and let it worry about -1" comment.)
 
+767
+Mon May 05 22:06:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2fd4b4_9725b637
+UUID: 8a2fd4b4_895aba27
+Bytes: 389
+I had a fix in utility.cpp to close the fd when setting it to -1. However, the tone of the functions is that the callers handle the fd themselves, so I added the caching and close here.
+
+The close and let it fail is not usually my style, however, it does simplify the code. I added a comment so that future readers of the code understand that closing -1 is okay and expected in some cases.
+

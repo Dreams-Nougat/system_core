@@ -1,0 +1,13 @@
+Revision: d9fcd29c89e0404921caa75f58163f2adb69045e
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+767
+Mon May 05 20:39:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a395c00_000326da
+Bytes: 249
+The if block doesn't seem like it's needed here. You could just unconditionally call close(log.amfd), since you're not checking the return value of close anyway, and calling close on a negative fd will just return EBADF.
+
+(same comment for line 770)
+

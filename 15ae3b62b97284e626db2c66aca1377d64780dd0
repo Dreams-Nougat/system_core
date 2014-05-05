@@ -1,0 +1,11 @@
+Revision: 15ae3b62b97284e626db2c66aca1377d64780dd0
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+767
+Mon May 05 21:37:05 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a346007_d5857c48
+Bytes: 40
+(i didn't understand your comment here.)
+

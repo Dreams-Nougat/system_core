@@ -2,10 +2,30 @@ Revision: 6998466ffa73bfdefbb99d0679e00fa47d203935
 Patch-set: 8
 File: libzipfile/centraldir.c
 
+7
+Mon May 05 16:59:27 2014 +0000
+Author: raphael <1001100@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8aba749a_79469388
+Bytes: 76
+Please don't undefine _WIN32. Why would you even do that in the first place?
+
 166:0-170:6
 Mon May 05 16:30:21 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aacbb83b_c5523e46
 Bytes: 71
 The sdk team needs to solve this discrepancy and nullify this fragment.
+
+166:0-170:6
+Mon May 05 16:59:27 2014 +0000
+Author: raphael <1001100@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aacbb83b_c5523e46
+UUID: aacbb83b_8076645b
+Bytes: 653
+The issue is legit.
+Please see it the other way: there is NO %zd support for printf in the Win32 libs. So that will crash at runtime. Instead you have 2 choices:
+1- If the method is useful for a *desktop* host exec, then use %ld instead of %zd. Use #ifdef HAVE_PRINTF_ZD (see core/combo/include/arch/windows/AndroidConfig.h) to differentiate. See core/include/utils/Compat.h for an example of usage.
+2- If the method is NOT useful for a desktop/host exec (e.g. it will never be used by any sdk tool running on Windows) then deactive the whole method here and it the headers.
+
+In this case I believe libzipfile is used by aapt on windows so please do #1.
 

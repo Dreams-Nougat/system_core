@@ -17,6 +17,14 @@ UUID: 8aba749a_8760b9de
 Bytes: 80
 Hmm, some don't use the \n, but most do. I'll add the \n to my two log messages.
 
+739
+Mon May 05 21:35:34 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8aba749a_8760b9de
+UUID: 8aba749a_e755f581
+Bytes: 205
+using \n used to be the Android standard, but the trend has been the opposite for years now. we should probably come back and fix them all in a separate change. (that's what we did for dalvik and libcore.)
+
 751
 Mon May 05 20:56:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

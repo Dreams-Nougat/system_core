@@ -1,0 +1,11 @@
+Revision: 6998466ffa73bfdefbb99d0679e00fa47d203935
+Patch-set: 8
+File: libzipfile/centraldir.c
+
+166:0-170:6
+Mon May 05 16:30:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aacbb83b_c5523e46
+Bytes: 71
+The sdk team needs to solve this discrepancy and nullify this fragment.
+

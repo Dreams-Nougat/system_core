@@ -21,3 +21,13 @@ While calling dump_crash, eventually there is a call to _LOG, which makes a call
 
 This error case happens normally if the process being dumped isn't an activity, and the activity manager close the connection.
 
+767
+Mon May 05 21:48:13 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8aba749a_a7661d64
+UUID: 8a2fd4b4_9725b637
+Bytes: 256
+but doesn't that mean this code is still wrong? you need to cache the result from activity_manager_connect above, and pass that to close here?
+
+(and i still i don't see what that has to do with nnk's "just call close(2) and let it worry about -1" comment.)
+

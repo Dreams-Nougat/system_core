@@ -9,6 +9,14 @@ UUID: 8aba749a_a7c132c7
 Bytes: 7
 Delete?
 
+286:13-286:89
+Tue May 06 20:34:05 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8aba749a_a7c132c7
+UUID: 2a3ee8ea_61714d64
+Bytes: 122
+No. This comment means "Keep the output within some decent column width" AND provides a visual cue as to what "decent" is.
+
 901
 Tue May 06 20:25:26 2014 +0000
 Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: eaaa1052_99c34b19
 Bytes: 64
 Do you want to put this as an else statement after the override?
 
+901
+Tue May 06 20:34:05 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eaaa1052_99c34b19
+UUID: 6a346007_92e5bc71
+Bytes: 48
+No. Or else the override has nothing to compare.
+
 913
 Tue May 06 20:25:26 2014 +0000
 Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eaaa1052_b9c0870c
 Bytes: 12
 Same comment
+
+913
+Tue May 06 20:34:05 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eaaa1052_b9c0870c
+UUID: 8aba749a_b252d222
+Bytes: 11
+Same reply.
 
 1117:28-1117:34
 Tue May 06 19:56:18 2014 +0000

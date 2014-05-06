@@ -23,10 +23,26 @@ u64 parse_num(const char *arg)
 	return num;
 }
 
+39
+Tue May 06 21:15:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a346007_5281746f
+UUID: 6a346007_f53b5255
+Bytes: 79
+I will switch to strtoul, and use unsigned long instead of size_t for the vars.
+
 78
 Tue May 06 20:36:34 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a3ee8ea_21c46520
 Bytes: 193
 this is delicate, it will result in stack overflows if anyone adds a new log with a name longer than "system".  Property names are limited to PROP_NAME_MAX, just allocate a buffer of that size.
+
+78
+Tue May 06 21:15:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a3ee8ea_21c46520
+UUID: 8aba749a_7278da04
+Bytes: 71
+Not a stack overflow (since we are using snprintf), but point taken ;->
 

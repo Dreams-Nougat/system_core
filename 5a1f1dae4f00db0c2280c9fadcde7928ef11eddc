@@ -34,10 +34,26 @@ UUID: 8aba749a_0db4df0f
 Bytes: 67
 this doesn't seem worth the complexity just to find a ":".  strchr?
 
+1132
+Tue May 06 22:17:44 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8aba749a_0db4df0f
+UUID: 6a346007_03eafc11
+Bytes: 4
+Done
+
 1139
 Tue May 06 21:40:00 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a3ee8ea_1ca54428
 Bytes: 99
 you could use strchr instead of strsep since you are only looking for a single delimeter character.
+
+1139
+Tue May 06 22:17:44 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a3ee8ea_1ca54428
+UUID: 6a346007_e3e6f84d
+Bytes: 4
+Done
 

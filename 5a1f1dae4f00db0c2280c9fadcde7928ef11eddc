@@ -9,3 +9,27 @@ UUID: 2a3ee8ea_9c783406
 Bytes: 27
 Yuck. Anything better here?
 
+49:0-49:85
+Tue May 06 21:40:00 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a3ee8ea_9c783406
+UUID: 2a3ee8ea_7c8a909b
+Bytes: 32
+This will make enh very unhappy.
+
+File: fastboot/fastboot.c
+
+1132
+Tue May 06 21:40:00 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8aba749a_0db4df0f
+Bytes: 67
+this doesn't seem worth the complexity just to find a ":".  strchr?
+
+1139
+Tue May 06 21:40:00 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a3ee8ea_1ca54428
+Bytes: 99
+you could use strchr instead of strsep since you are only looking for a single delimeter character.
+

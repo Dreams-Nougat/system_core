@@ -2,6 +2,27 @@ Revision: b539f73dc1efdda958d342bd2d0a0b8caea535eb
 Patch-set: 1
 File: fastboot/fastboot.c
 
+286:13-286:89
+Tue May 06 20:25:26 2014 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8aba749a_a7c132c7
+Bytes: 7
+Delete?
+
+901
+Tue May 06 20:25:26 2014 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eaaa1052_99c34b19
+Bytes: 64
+Do you want to put this as an else statement after the override?
+
+913
+Tue May 06 20:25:26 2014 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eaaa1052_b9c0870c
+Bytes: 12
+Same comment
+
 1117:28-1117:34
 Tue May 06 19:56:18 2014 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: b539f73dc1efdda958d342bd2d0a0b8caea535eb
+Patch-set: 1
+File: fastboot/fastboot.c
+
+1117:28-1117:34
+Tue May 06 19:56:18 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a3ee8ea_fe2b38b1
+Bytes: 28
+Not there for USE_MINGW=1 :(
+

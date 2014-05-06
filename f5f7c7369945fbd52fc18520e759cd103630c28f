@@ -19,3 +19,11 @@ Elliott, I think the goal here was to keep the API on the existing function cons
 
 One option here might be to make the existing function a wrapper around this one.
 
+40
+Tue May 06 04:22:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6abf008d_3d51e795
+UUID: 8aba749a_d8e9afcc
+Bytes: 74
+that's what i meant. we don't need to duplicate the entire implementation.
+

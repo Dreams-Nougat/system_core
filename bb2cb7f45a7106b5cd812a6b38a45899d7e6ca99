@@ -9,3 +9,11 @@ UUID: 0a6cc413_df7d97c2
 Bytes: 2
 zx
 
+212:30-212:31
+Wed May 07 23:26:33 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a6cc413_df7d97c2
+UUID: 0a6cc413_4ad6e362
+Bytes: 153
+Side effects could be grave, what will happen to a bootloader that is provided a >8 digit hex number? Maybe value should be checked against 0xFFFFFFFFUL?
+

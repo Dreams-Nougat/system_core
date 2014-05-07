@@ -1,0 +1,16 @@
+Revision: 7e85974fc2fc48a0cea7bb9bafcfcda863138eb6
+Patch-set: 3
+File: fastboot/fastboot.c
+
+918:16-918:17
+Wed May 07 23:02:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a02a043_54e50243
+Bytes: 397
+FYI: Added a (char *) here (I have an in-work CL for fastboot to turn on -Werror)
+
+system/core/fastboot/fastboot.c:916:15: error: assignment discards 'const' qualifier from pointer target type [-Werror]
+system/core/fastboot/fastboot.c:930:15: error: assignment discards 'const' qualifier from pointer target type [-Werror]
+
+For style reasons, WWJPAD? ;-} and I will fix it when that CL propagates.
+

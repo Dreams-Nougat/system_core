@@ -1,0 +1,11 @@
+Revision: bb2cb7f45a7106b5cd812a6b38a45899d7e6ca99
+Patch-set: 2
+File: fastboot/protocol.c
+
+212:30-212:31
+Wed May 07 23:24:04 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a6cc413_df7d97c2
+Bytes: 2
+zx
+

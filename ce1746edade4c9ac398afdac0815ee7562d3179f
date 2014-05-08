@@ -9,10 +9,30 @@ UUID: aa62d821_1f69c6c3
 Bytes: 24
 without taking the lock?
 
+47
+Thu May 08 21:42:10 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa62d821_1f69c6c3
+UUID: ca138c9f_d88abdc2
+Bytes: 128
+You can only get here while in a lock, but I'll add a comment saying that this must only be called while holding the list mutex.
+
 105
 Thu May 08 21:21:25 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6ad0e00f_e1246617
 Bytes: 23
 pthread_cond_timedwait?
+
+105
+Thu May 08 21:42:10 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6ad0e00f_e1246617
+UUID: 6ad0e00f_e468f4c1
+Bytes: 533
+I did have another version that used pthread_cond_timedwait, but it wound up being a little more complicated and required a few extra variables. I needed another mutex and two cond variables. I might have been able to get rid of one of the cond variables though.
+
+It was also a bit tricky because the timeout for cond was a particular time in the future not just a time to wait so it required another call to get the current time.
+
+In the end, this version just seemed a bit cleaner and easier to understand so I went with the futex.
 

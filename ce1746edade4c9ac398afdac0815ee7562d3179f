@@ -1,0 +1,18 @@
+Revision: ce1746edade4c9ac398afdac0815ee7562d3179f
+Patch-set: 2
+File: libbacktrace/BacktraceThread.cpp
+
+47
+Thu May 08 21:21:25 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa62d821_1f69c6c3
+Bytes: 24
+without taking the lock?
+
+105
+Thu May 08 21:21:25 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ad0e00f_e1246617
+Bytes: 23
+pthread_cond_timedwait?
+

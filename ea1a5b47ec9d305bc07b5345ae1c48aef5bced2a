@@ -9,3 +9,11 @@ UUID: 6a346007_e72bb6b1
 Bytes: 148
 *ALL* of the following will be unnecessary if https://code.google.com/p/msinttypes/source/browse/trunk/inttypes.h is used in the win_sdk tools tree.
 
+26:10-26:20
+Fri May 09 04:19:18 2014 +0000
+Author: Andrew Hsieh <1010186@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a346007_e72bb6b1
+UUID: eac4d062_9e178161
+Bytes: 765
+mingw toolchain has inttypes.h which defines PR/SCN much like its *-linux-* counterpart.  It has to follow Windows libraries unfortunately some aren't C99 compatible unless __USE_MINGW_ANSI_STDIO is defined.  CLs https://android-review.googlesource.com/#/c/93919 and https://android-review.googlesource.com/#/c/93940 try to solve it.  Unfortunately DWORD isn't part of the deal.  DWORD is defined as "unsigned long" instead of "unsigned int" because in 16-bit Windows int is 16-bit, and DWORD has to be 32-bit.  Curiously that MSVC/C++ treat long as 32-bit in 64-bit land, and for it to consider "long" and "int" different between 32-/64-bit lands is annoying.  So, I am afraid all of the following are needed for -Werror, assuming -Wno-errir=format isn't an option
+

@@ -1,0 +1,11 @@
+Revision: 088bf90e5de251f4b2f2419187d8ee5d7b2bd831
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+346:22-346:32
+Fri May 09 00:41:27 2014 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2aa8a88f_7214b616
+Bytes: 35
+'%zu'? same for other s?size_t args
+

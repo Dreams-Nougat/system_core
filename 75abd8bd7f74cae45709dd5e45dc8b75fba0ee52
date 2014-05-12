@@ -1,0 +1,20 @@
+Revision: 75abd8bd7f74cae45709dd5e45dc8b75fba0ee52
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+37
+Mon May 12 19:24:02 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa4d7811_15ab0463
+Bytes: 379
+this is too big, and logd is marked unkillable by OOMs.  Setting this from developer settings is likely to run the system out of memory with no recourse and cause a panic.  On the next boot, the persist property will still be there, and it will do it again.
+
+The max is going to either need to be very small, or need to be adaptive so it doesn't cause problems on svelte devices.
+
+89
+Mon May 12 19:24:02 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa7bb835_516d3440
+Bytes: 312
+It seems strange to call setsize multiple times, somebody might modify setsize to do immediate preallocation or truncation in the future, and I don't see how this doesn't always end up using the second size.  Check if the highest priority property is set, if so use it, otherwise try the lower priority property.
+

@@ -1,0 +1,13 @@
+Revision: 1047f8509e581cf2ee687251ed7525439fc11e5d
+Patch-set: 1
+File: init/devices.c
+
+489
+Mon May 12 22:12:12 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a1b4808_7acb5552
+Bytes: 260
+This is going to cause ueventd to send socket messages to init, which it currently doesn't do.  That seems risky, I'd be worried about ueventd starting up too early before the socket is present, or deadlocking between ueventd and init.
+
+Also, space after the ,
+

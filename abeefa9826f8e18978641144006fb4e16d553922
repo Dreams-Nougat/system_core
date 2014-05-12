@@ -1,0 +1,39 @@
+Revision: abeefa9826f8e18978641144006fb4e16d553922
+Patch-set: 3
+File: init/devices.c
+
+423
+Mon May 12 22:22:11 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a30447d_f9f21350
+Bytes: 50
+parse_platform_block_device isn't correct any more
+
+439
+Mon May 12 22:22:11 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a30447d_d9edd76e
+Bytes: 89
+i prefer kernel style here, if any clause needs braces then use braces on all the clauses
+
+441
+Mon May 12 22:22:11 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea2cd02f_5b41bb49
+Bytes: 41
+maybe abstract this into find_pci_device?
+
+442
+Mon May 12 22:22:11 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea2cd02f_7b3ef7d8
+Bytes: 68
+more descriptive variable names might make this more understandable.
+
+469
+Mon May 12 22:22:11 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a30447d_99f75f3f
+Bytes: 162
+these should probably go in /dev/block/pci/, maybe have const char *type, set it to "platform" or "pci", and replace all uses of "platform" in a string with type.
+

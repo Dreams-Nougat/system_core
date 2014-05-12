@@ -11,10 +11,28 @@ this is too big, and logd is marked unkillable by OOMs.  Setting this from devel
 
 The max is going to either need to be very small, or need to be adaptive so it doesn't cause problems on svelte devices.
 
+37
+Mon May 12 23:49:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa4d7811_15ab0463
+UUID: aa7bb835_25f2a27c
+Bytes: 340
+I have addressed this (sort of) by limiting what I request from the Settings application between 64K and 4MB. Allowing more adventurous the ability to use setprop if they need a wider range of values.
+
+What do you propose? I could take MemTotal: in /proc/meminfo and divide it by 16 and use that as a maximum? (eg: Manta would drop to 64Mb)
+
 89
 Mon May 12 19:24:02 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aa7bb835_516d3440
 Bytes: 312
 It seems strange to call setsize multiple times, somebody might modify setsize to do immediate preallocation or truncation in the future, and I don't see how this doesn't always end up using the second size.  Check if the highest priority property is set, if so use it, otherwise try the lower priority property.
+
+89
+Mon May 12 23:49:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa7bb835_516d3440
+UUID: aa4d7811_1a300c77
+Bytes: 362
+setSize has limit-checking in it. As such, the last one with a valid value is taken. This was 'easy'. Coded up a limit checker inline (or callout) here, it looked more complicated (but less strange). The above code for default_size is what it looked like, except nested 4 deep. I will change it, but will wait for some ideas to flow regarding the adaptive limit.
 

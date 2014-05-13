@@ -27,3 +27,18 @@ UUID: 4ae95c2a_40564e8e
 Bytes: 87
 Do we want to make this all a runtime decision (eg: property ro.logd.auditd.id=events)?
 
+119:0-119:33
+Tue May 13 20:44:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ae95c2a_40564e8e
+UUID: ea43f0df_cc967736
+Bytes: 122
+I'm a believer in less code is better code. I'd just delete all of these "#if" blocks, and not make it a runtime decision.
+
+144
+Tue May 13 20:44:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea43f0df_8c794f51
+Bytes: 52
+recommend deleting "#else" block (here and line 171)
+

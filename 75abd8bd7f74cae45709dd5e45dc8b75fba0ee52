@@ -21,6 +21,14 @@ I have addressed this (sort of) by limiting what I request from the Settings app
 
 What do you propose? I could take MemTotal: in /proc/meminfo and divide it by 16 and use that as a maximum? (eg: Manta would drop to 64Mb)
 
+37
+Tue May 13 00:05:40 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa7bb835_25f2a27c
+UUID: 0a30447d_7c103170
+Bytes: 52
+use sysconf(_SC_PHYS_PAGES) to get MemTotal in pages
+
 89
 Mon May 12 19:24:02 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>

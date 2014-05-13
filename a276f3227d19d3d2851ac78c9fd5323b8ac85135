@@ -1,0 +1,29 @@
+Revision: a276f3227d19d3d2851ac78c9fd5323b8ac85135
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:0-9:9
+Tue May 13 19:44:57 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ae46051_01256a34
+Bytes: 23
+Missing:
+
+BUG: 14626551
+
+File: logd/LogAudit.cpp
+
+58:0-58:39
+Tue May 13 19:44:57 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ae95c2a_800b36b0
+Bytes: 55
+All event messages are ANDROID_LOG_INFO when presented.
+
+119:0-119:33
+Tue May 13 19:44:57 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ae95c2a_40564e8e
+Bytes: 87
+Do we want to make this all a runtime decision (eg: property ro.logd.auditd.id=events)?
+

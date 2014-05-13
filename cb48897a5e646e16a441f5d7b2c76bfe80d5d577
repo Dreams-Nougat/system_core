@@ -1,0 +1,11 @@
+Revision: cb48897a5e646e16a441f5d7b2c76bfe80d5d577
+Patch-set: 4
+File: init/devices.c
+
+488:16-488:24
+Tue May 13 18:16:59 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a698874_7c791d4e
+Bytes: 13
+use type here
+

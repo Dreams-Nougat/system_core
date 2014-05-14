@@ -9,10 +9,26 @@ UUID: 2a8a689d_02fd4c1c
 Bytes: 27
 print "??  " if this fails?
 
+206
+Wed May 14 23:11:25 2014 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a8a689d_02fd4c1c
+UUID: 6a4e2058_5103b4d9
+Bytes: 4
+Done
+
 266
 Wed May 14 22:14:57 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0a8f64ae_e19ce05f
 Bytes: 37
 should we show it by default on LP64?
+
+266
+Wed May 14 23:11:25 2014 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a8f64ae_e19ce05f
+UUID: ca71cc8d_54dd4cec
+Bytes: 137
+Do you think this will break any automatic tools? That's what I worry about since we have no "-eo" to let people define their own format.
 

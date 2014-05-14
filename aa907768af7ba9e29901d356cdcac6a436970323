@@ -1,0 +1,52 @@
+Revision: aa907768af7ba9e29901d356cdcac6a436970323
+Patch-set: 4
+File: toolbox/getevent.c
+
+630:0-630:23
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad50879_5b83e3f0
+Bytes: 63
+debate in my head if we want to keep this debug code around ...
+
+File: toolbox/ps.c
+
+92:0-92:4
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad50879_1bb4cbd6
+Bytes: 21
+remove trailing space
+
+132:0-132:4
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad50879_5bae4384
+Bytes: 26
+remove this trailing space
+
+134:0-134:4
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a69c0a1_fc02c59f
+Bytes: 26
+remove this trailing space
+
+File: toolbox/umount.c
+
+36:0-36:4
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a69c0a1_1ce3f9b8
+Bytes: 48
+if rebased/adjusted, remove this trailing space.
+
+File: toolbox/watchprops.c
+
+81:0-81:4
+Wed May 14 21:49:16 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8ad6f480_79beb3ef
+Bytes: 52
+if any other adjustments, remove this trailing space
+

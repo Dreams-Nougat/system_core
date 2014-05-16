@@ -1,0 +1,11 @@
+Revision: d5d4f6df716262f31c83715a0203cea3422b9db3
+Patch-set: 2
+File: charger/Android.mk
+
+15:0-15:36
+Fri May 16 01:51:09 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ff1cc50_f49960f2
+Bytes: 46
+This is for board files to define, not common.
+

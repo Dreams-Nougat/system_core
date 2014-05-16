@@ -1,0 +1,27 @@
+Revision: 3e02549d2bbe90bce6de277139adf3b0339979d2
+Patch-set: 1
+File: adb/adb.c
+
+647
+Fri May 16 21:34:17 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa43b832_b47766e7
+Bytes: 142
+this whole block seems unnecessarily open coded.  should this be an operation on the transport that is only implemented for the tcp transport?
+
+1634
+Fri May 16 21:34:17 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa43b832_14875a88
+Bytes: 286
+is there a race here?  The reconnect thread may reconnect the transport right after you try to unregister it below.  There are also memory barrier issues here - ARM doesn't guarnatee that the reconnect thread will see reconnect_bail = 1 in the same order as other writes in this thread.
+
+File: adb/services.c
+
+602
+Fri May 16 21:34:17 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f01d8f5_5b228398
+Bytes: 214
+a thread per reconnecting device doesn't seem necessary, why not spin up a thread as long as the list of reconnections is not empty, with proper locking to allow this to update the list while the thread is running?
+

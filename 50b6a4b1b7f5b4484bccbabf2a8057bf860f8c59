@@ -1,0 +1,13 @@
+Revision: 50b6a4b1b7f5b4484bccbabf2a8057bf860f8c59
+Patch-set: 1
+File: rootdir/init.environ.rc.in
+
+12:4-12:36
+Fri May 16 07:54:09 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a4e2058_2e5a352a
+Bytes: 170
+what will happen if the lib is missing? (will linker fail gracefully)
+
+have you added it to a product configuration so it will be installed in all product configurations?
+

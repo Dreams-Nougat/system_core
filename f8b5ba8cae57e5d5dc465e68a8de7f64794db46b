@@ -1,0 +1,41 @@
+Revision: f8b5ba8cae57e5d5dc465e68a8de7f64794db46b
+Patch-set: 2
+File: /COMMIT_MSG
+
+7:39-7:51
+Fri May 16 01:41:33 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca71cc8d_80815373
+Bytes: 69
+see comment below about how patch still leaves device in charger mode
+
+10:18-10:64
+Fri May 16 01:41:33 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a4e2058_45a2fc9d
+Bytes: 181
+so far as I understand, this would be a bug in the kernel driver?  It looks like the main point of the patch is to handle not-charging states such as charging thermal shutdown etc.?
+
+12:14-12:36
+Fri May 16 01:41:33 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a4e2058_e5b930dd
+Bytes: 197
+the patch still leaves the device in charger mode, but stops the animation (and has some other side effects for which I've raised questions).  Is the intent to power off when in not-charging state?
+
+File: charger/charger.c
+
+727:44-727:75
+Fri May 16 01:41:33 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca71cc8d_409e5bdd
+Bytes: 243
+is there a reason to not request suspend if not charging?  The point of this check is to avoid suspending if no charger connected, since we plan to shutdown soon.  If a charger is connected but in not-charging state then might as well suspend?
+
+897:41-897:73
+Fri May 16 01:41:33 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca71cc8d_20e4ff6e
+Bytes: 156
+this change doesn't seem necessary: if no chargers are online then device should not be charging.  In any case if no charger connected then should shutdown.
+

@@ -1,0 +1,11 @@
+Revision: 74c5456a40f38f433fd2321d4c4ca64ff3302064
+Patch-set: 2
+File: rootdir/init.rc
+
+391:0-391:29
+Fri May 16 01:20:15 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ff1cc50_549a4c62
+Bytes: 148
+If we do this, this would need to come from an init.<device>.rc file, don't want to set a default of 2% here in common init.rc when previous was 0%.
+

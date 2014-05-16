@@ -1,0 +1,11 @@
+Revision: 6fa6b057fd3288a035445d0900db855197f0a00d
+Patch-set: 1
+File: /COMMIT_MSG
+
+10:32-10:60
+Fri May 16 01:05:03 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ff1cc50_7449d046
+Bytes: 309
+Why do you want it to not block suspend?  Do you need suspend to occur while healthd is processing some power_supply event?  Wakelocks are normally held while processing these.  Any uevent needs to hold a wakelock for at least a short time in order to ensure userspace can see the event and process if needed.
+

@@ -1,0 +1,11 @@
+Revision: 770cd7c7e7c18a657f233d86aeecb1d9f3091449
+Base-for-patch-set: 2
+File: debuggerd/debuggerd.cpp
+
+108
+Sat May 17 02:55:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f15a02d_ed0e2dc4
+Bytes: 38
+i haven't seen a home button in years.
+

@@ -19,3 +19,13 @@ extern "C" but using bool without <stdbool.h> and no conditional around the exte
 
 also, wouldn't you rather use uint32_t and int32_t than implicitly-sized types?
 
+21
+Mon May 19 19:30:43 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf1dbc5e_1aa99db1
+UUID: bf1dbc5e_fa5701dd
+Bytes: 135
+Done.
+
+For netIds, we decided to use an implicit type instead of explicitly-sized ones. We control the range of the numbers separately.
+

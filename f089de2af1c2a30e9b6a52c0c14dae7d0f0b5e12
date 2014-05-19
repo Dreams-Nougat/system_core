@@ -1,0 +1,21 @@
+Revision: f089de2af1c2a30e9b6a52c0c14dae7d0f0b5e12
+Patch-set: 1
+File: include/netd_client/NetdClient.h
+
+21
+Mon May 19 19:22:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf1dbc5e_1aa99db1
+Bytes: 251
+extern "C" but using bool without <stdbool.h> and no conditional around the extern "C"?
+
+  #include <sys/cdefs.h>
+  #include <stdbool.h>
+
+  __BEGIN_DECLS
+  __END_DECLS
+
+?
+
+also, wouldn't you rather use uint32_t and int32_t than implicitly-sized types?
+

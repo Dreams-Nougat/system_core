@@ -1,0 +1,11 @@
+Revision: fdbf23cb0ed30b17a53e3cbe31f8cf751ad27844
+Patch-set: 3
+File: libnetd_client/NetdClient.cpp
+
+96
+Mon May 19 22:20:13 2014 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f10a43e_8895552a
+Bytes: 119
+It's not immediately obvious what this does. Is it a permissions check, right? If so, perhaps it's worthy of a comment.
+

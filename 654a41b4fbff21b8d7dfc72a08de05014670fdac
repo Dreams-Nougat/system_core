@@ -1,0 +1,41 @@
+Revision: 654a41b4fbff21b8d7dfc72a08de05014670fdac
+Patch-set: 5
+File: include/netd_client/NetdClient.h
+
+21
+Tue May 20 10:59:55 2014 +0000
+Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa1c9852_a03803ea
+Bytes: 26
+Not in alphabetical order.
+
+File: libnetd_client/NetdClient.cpp
+
+93
+Tue May 20 10:59:55 2014 +0000
+Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3f3f0cb7_5046ece0
+Bytes: 78
+You only took half of my recommendation.  You need ANDROID_MEMBAR_FULL() here.
+
+106
+Tue May 20 10:59:55 2014 +0000
+Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa1c9852_803b07e6
+Bytes: 6
+Ditto.
+
+137:4-138:44
+Tue May 20 10:59:55 2014 +0000
+Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3f3f0cb7_b05e38a0
+Bytes: 203
+How come we don't have legitimate types for this?  Like:
+typedef struct {
+  uint8_t command;
+} NetdCommandHeader;
+typedef struct {
+  NetdCommandHeader header;
+  unsigned netId;
+} NetdNetForSocketCommand;
+

@@ -9,3 +9,10 @@ UUID: 1f440856_35523811
 Bytes: 30
 Isn't max_len already ssize_t?
 
+547:19-547:50
+Tue May 20 17:47:14 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f3504d1_9b5c77d1
+Bytes: 66
+isn't this already ssize_t? I was expecting to just need one cast.
+

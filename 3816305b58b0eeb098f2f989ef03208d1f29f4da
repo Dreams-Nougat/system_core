@@ -1,0 +1,11 @@
+Revision: 3816305b58b0eeb098f2f989ef03208d1f29f4da
+Base-for-patch-set: 1
+File: libcutils/socket_network_client.c
+
+71
+Tue May 20 19:15:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f440856_186f6910
+Bytes: 83
+this reverts my hack from yesterday that kept libcutils building for the win32 sdk.
+

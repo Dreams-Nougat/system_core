@@ -1,0 +1,11 @@
+Revision: 1ef8579046e952bd26cf26ffbc05ecfa080ad97c
+Patch-set: 1
+File: liblog/tests/liblog_test.cpp
+
+547:40-547:47
+Tue May 20 17:47:06 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f440856_35523811
+Bytes: 30
+Isn't max_len already ssize_t?
+

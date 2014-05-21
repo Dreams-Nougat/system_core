@@ -74,6 +74,16 @@ Anyhow, yes, my test case is contrived and someone would be silly to not use loc
 
 Another way to look at this is:  If the netId were a larger struct such that it couldn't fit in sig_atomic_t, some locking would have to be used to access it, in which case the release of the lock would guarantee the ordering that a memory barrier would provide in this implementation.
 
+93
+Wed May 21 20:05:19 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f3504d1_fc513691
+UUID: 7f8344c5_16b14ce4
+Bytes: 365
+Thanks for the detailed response. As we discussed and agreed offline, we'll go without the barrier for now.
+
+Re: the point in your last paragraph, I agree. I've added a TODO to convert "volatile sig_atomic_t" to std::atomic<>. Conveniently, std::atomic<> works for any POD type, and not just primitive types, so that's definitely the right way to go for the future.
+
 106
 Tue May 20 10:59:55 2014 +0000
 Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>

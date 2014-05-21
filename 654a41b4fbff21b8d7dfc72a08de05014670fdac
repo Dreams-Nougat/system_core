@@ -9,6 +9,14 @@ UUID: aa1c9852_a03803ea
 Bytes: 26
 Not in alphabetical order.
 
+21
+Wed May 21 18:29:10 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa1c9852_a03803ea
+UUID: ff281483_446aa7f7
+Bytes: 4
+Done
+
 File: libnetd_client/NetdClient.cpp
 
 93
@@ -57,6 +65,14 @@ UUID: aa1c9852_803b07e6
 Bytes: 6
 Ditto.
 
+106
+Wed May 21 18:29:10 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa1c9852_803b07e6
+UUID: bf4bfc72_84bd46f2
+Bytes: 8
+ditto :)
+
 137:4-138:44
 Tue May 20 10:59:55 2014 +0000
 Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -70,4 +86,12 @@ typedef struct {
   NetdCommandHeader header;
   unsigned netId;
 } NetdNetForSocketCommand;
+
+137:4-138:44
+Wed May 21 18:29:10 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3f3f0cb7_b05e38a0
+UUID: bf4bfc72_04803637
+Bytes: 299
+Done. To avoid proliferation of data types for each command, I've coalesced the types into a single command, with a note that the netId argument is ignored for all but one. This also makes it easy on the receiving side to receive data of that type directly, instead of going through a char[] buffer.
 

@@ -18,6 +18,38 @@ UUID: 3f3f0cb7_5046ece0
 Bytes: 78
 You only took half of my recommendation.  You need ANDROID_MEMBAR_FULL() here.
 
+93
+Wed May 21 14:17:11 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3f3f0cb7_5046ece0
+UUID: 3f58ec40_ce2d9785
+Bytes: 2126
+I don't see the need for a memory barrier here.
+
+As far as I understand, a memory barrier ensures that the compiler/CPU will not reorder loads/stores across it. Within this context, there are no other independent global loads/stores anyway.
+
+Perhaps your concern is that you want other threads/CPUs to see the effects of the change immediately? I.e., maybe there's a chance that the store will remain in the local CPU's store-buffer indefinitely and never make it to the caches / main memory?
+
+First, if another CPU tries to read the variable, cache coherency guarantees that it will see the correct value. There's no chance that it will use an older value.
+
+Second, a memory barrier doesn't guarantee that the store-buffer is flushed anyway. References:
+http://www.freebsd.org/doc/en/books/arch-handbook/smp-lock-fundamentals.html: "a memory barrier does not force the contents of a CPU's local cache or store buffer to flush"
+http://www.rdrop.com/~paulmck/scalability/paper/whymb.2009.04.05a.pdf: " it could use the store buﬀer to hold subsequent stores until all of the prior entries in the store buﬀer had been applied."
+
+Or perhaps your concern is that there is some other store operation in the caller's context which should be guaranteed to occur after the operation here? So, something like this:
+
+    // thread 1
+    setNetworkForProcess(...);
+    flag = 1;
+
+    // thread 2
+    if (flag) {
+        // depend on netIdForProcess being up-to-date
+
+So, without a memory barrier, it's possible that the flag gets updated first, before netIdForProcess. But this argument doesn't hold water, because:
+1. We have no obligation to imagine that this is possible and support it. Otherwise, this reduces to saying that any library function that performs any global store must immediately then apply a memory barrier. And conversely, that if it reads any global store, it must first apply a barrier prior to the load.
+2. The caller needs to synchronize access to the flag anyway. So, they are going to need a store-release in thread 1, and an acquire-load in thread 2. So, that provides the necessary barrier/synchronization.
+
 106
 Tue May 20 10:59:55 2014 +0000
 Author: Paul Jensen <1016583@85c56323-6fa9-3386-8a01-6480fb634889>

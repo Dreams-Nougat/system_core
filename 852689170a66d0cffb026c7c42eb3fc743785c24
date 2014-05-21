@@ -1,0 +1,22 @@
+Revision: 852689170a66d0cffb026c7c42eb3fc743785c24
+Patch-set: 1
+File: debuggerd/mips/machine.cpp
+
+35
+Wed May 21 22:00:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f48f879_1d364308
+Bytes: 682
+really? shouldn't you get the kernel's ptrace.h fixed then? it seems odd that the kernel's public data structure doesn't match what the kernel is actually using...
+
+this also doesn't seem to be true, looking at common/arch/mips/kernel/ptrace.c:
+
+	for (i = 0; i < 32; i++)
+		__put_user((long)regs->regs[i], data + i);
+	__put_user((long)regs->lo, data + EF_LO - EF_R0);
+	__put_user((long)regs->hi, data + EF_HI - EF_R0);
+	__put_user((long)regs->cp0_epc, data + EF_CP0_EPC - EF_R0);
+	__put_user((long)regs->cp0_badvaddr, data + EF_CP0_BADVADDR - EF_R0);
+	__put_user((long)regs->cp0_status, data + EF_CP0_STATUS - EF_R0);
+	__put_user((long)regs->cp0_cause, data + EF_CP0_CAUSE - EF_R0);
+

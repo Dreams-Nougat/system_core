@@ -1,0 +1,11 @@
+Revision: 7f1e13039a916064d7ab5029172385b077778d45
+Patch-set: 1
+File: init/ueventd.c
+
+161
+Thu May 22 22:11:16 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf04dc02_8241bec9
+Bytes: 100
+why treat prefix differently from wildcard?  will fnmatch("a/*", "a/b/c", FNM_PATHNAME) return true?
+

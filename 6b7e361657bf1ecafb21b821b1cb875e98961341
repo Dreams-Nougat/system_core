@@ -1,0 +1,11 @@
+Revision: 6b7e361657bf1ecafb21b821b1cb875e98961341
+Patch-set: 4
+File: cpio/mkbootfs.c
+
+83:8-83:29
+Thu May 22 21:22:38 2014 +0000
+Author: Martijn Coenen <1013030@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f5ee42c_747675b3
+Bytes: 254
+it compiles, but I wondered why this conversion is not throwing a warning. Looks like GCC only supports -Wconversion since 4.3, and our OS X version is stuck at 4.2 (though it uses a llvm backend). Anyway I don't think it's a part of -Wall so no worries.
+

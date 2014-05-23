@@ -1,5 +1,14 @@
 Revision: 4675629651cc2309d52b5ab8bf7360633f19a356
 Patch-set: 3
+File: include/system/audio.h
+
+437:0-444:24
+Fri May 23 17:49:17 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fd184e1_f50cd25d
+Bytes: 244
+see https://android-review.googlesource.com/#/c/79807 and switch this from GNU to POSIX? If so, will the warning continue if we only have version = AUDIO_OFFLOAD_INFO_VERSION_CURRENT, size = sizeof(audio_offload_info_t), or do we need them all?
+
 File: include/system/window.h
 
 612:0-612:1

@@ -1,0 +1,11 @@
+Revision: 4675629651cc2309d52b5ab8bf7360633f19a356
+Patch-set: 3
+File: include/system/window.h
+
+612:0-612:1
+Fri May 23 17:46:14 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5fd680dc_912f9cc3
+Bytes: 62
+Should we be pedantic and add __attribute__((__deprecated__))?
+

@@ -1,0 +1,11 @@
+Revision: 35f53625fbeecc6fd3c764d8aa93e6e7987cf205
+Base-for-patch-set: 1
+File: include/log/logger.h
+
+66:36-66:38
+Fri May 23 14:26:54 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff7f3495_aa0b57b2
+Bytes: 33
+complained about nested comments.
+

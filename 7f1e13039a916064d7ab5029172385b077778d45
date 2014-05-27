@@ -9,3 +9,11 @@ UUID: bf04dc02_8241bec9
 Bytes: 100
 why treat prefix differently from wildcard?  will fnmatch("a/*", "a/b/c", FNM_PATHNAME) return true?
 
+161
+Tue May 27 22:18:55 2014 +0000
+Author: Daniel Leung <1012356@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf04dc02_8241bec9
+UUID: dfed10cb_dc32b976
+Bytes: 216
+This is for performance, especially at start up where ueventd has to process hundreds of events. If a particular build target does not need arbitrary wildcard matches, there is no need to pay the performance penalty.
+

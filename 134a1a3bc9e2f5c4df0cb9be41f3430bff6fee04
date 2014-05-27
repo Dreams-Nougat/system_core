@@ -1,0 +1,13 @@
+Revision: 134a1a3bc9e2f5c4df0cb9be41f3430bff6fee04
+Patch-set: 2
+File: logd/LogAudit.cpp
+
+91
+Tue May 27 17:42:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f62b822_53b4e4be
+Bytes: 319
+Overlapping strcpy. This isn't a defined operation, per "man 3 strcpy".
+
+"The  strcpy()  function  copies  the string pointed to by src, including the terminating null byte ('\0'), to the buffer pointed to by dest.  The strings may not overlap, and the destination string dest must be large enough to receive the copy."
+

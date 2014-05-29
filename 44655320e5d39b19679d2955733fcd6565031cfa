@@ -1,0 +1,11 @@
+Revision: 44655320e5d39b19679d2955733fcd6565031cfa
+Patch-set: 1
+File: include/utils/Debug.h
+
+20
+Thu May 29 00:45:33 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff8c944a_82570aff
+Bytes: 151
+if this is only meant for C++, why don't you just use static_assert? we've switched over from our own equivalent of this in art, bionic, and libcore...
+

@@ -9,3 +9,11 @@ UUID: ff8c944a_82570aff
 Bytes: 151
 if this is only meant for C++, why don't you just use static_assert? we've switched over from our own equivalent of this in art, bionic, and libcore...
 
+20
+Thu May 29 17:16:15 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff8c944a_82570aff
+UUID: 3fbaacee_fec2d96b
+Bytes: 157
+I didn't know about static_assert before. Thanks for the tip. I'll just use static_assert in my client project, and thus don't need to use or change Debug.h.
+

@@ -16,12 +16,28 @@ UUID: 6a4e2058_45a2fc9d
 Bytes: 181
 so far as I understand, this would be a bug in the kernel driver?  It looks like the main point of the patch is to handle not-charging states such as charging thermal shutdown etc.?
 
+10:18-10:64
+Fri May 30 10:36:48 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a4e2058_45a2fc9d
+UUID: dffef0bb_cbc7497a
+Bytes: 135
+yes, to handle cases where charger is connected and not-charging. There is no point in remaining in charger-mode if we're not charging.
+
 12:14-12:36
 Fri May 16 01:41:33 2014 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6a4e2058_e5b930dd
 Bytes: 197
 the patch still leaves the device in charger mode, but stops the animation (and has some other side effects for which I've raised questions).  Is the intent to power off when in not-charging state?
+
+12:14-12:36
+Fri May 30 10:36:48 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a4e2058_e5b930dd
+UUID: dffef0bb_abcc0d9f
+Bytes: 42
+yes, power-off when in not-charging state.
 
 File: charger/charger.c
 
@@ -32,10 +48,29 @@ UUID: ca71cc8d_409e5bdd
 Bytes: 243
 is there a reason to not request suspend if not charging?  The point of this check is to avoid suspending if no charger connected, since we plan to shutdown soon.  If a charger is connected but in not-charging state then might as well suspend?
 
+727:44-727:75
+Fri May 30 10:36:48 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca71cc8d_409e5bdd
+UUID: dffef0bb_0b6321e7
+Bytes: 142
+In handle_power_supply_state, we want to shutdown if a charger is connected but is not-charging.
+Hence, we don't want to suspend in this case.
+
 897:41-897:73
 Fri May 16 01:41:33 2014 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca71cc8d_20e4ff6e
 Bytes: 156
 this change doesn't seem necessary: if no chargers are online then device should not be charging.  In any case if no charger connected then should shutdown.
+
+897:41-897:73
+Fri May 30 10:36:48 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca71cc8d_20e4ff6e
+UUID: 7f33447f_6212d6e8
+Bytes: 397
+This is to make the behavior consistent with the Android service in which on any uevent, all of the power_supplies are parsed through.
+In charger-mode, if an uevent from 'Battery' power-supply is seen, 'online' property of other power-supplies are not updated.  
+Hence, we need this to ensure we don't remain in charger-mode without charging, if for some reason the online update/uevent is missed.
 

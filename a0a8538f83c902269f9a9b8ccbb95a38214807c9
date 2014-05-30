@@ -1,0 +1,11 @@
+Revision: a0a8538f83c902269f9a9b8ccbb95a38214807c9
+Patch-set: 1
+File: liblog/logd_write.c
+
+198:4-198:43
+Fri May 30 17:49:43 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_9a708d5c
+Bytes: 238
+This looked like a necessary evil because logd starts as AID_ROOT, and then moves on to AID_LOGD when it drops permissions. aid_logd should be tristate (anything else, let pass always + is AID_ROOT, recheck + was AID_LOGD, drop on floor).
+

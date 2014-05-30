@@ -9,6 +9,15 @@ UUID: 6a4e2058_6513807e
 Bytes: 65
 Could consider putting this in the charger config struct instead.
 
+1049:4-1049:34
+Fri May 30 10:55:27 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a4e2058_6513807e
+UUID: 7f33447f_c24f22f1
+Bytes: 101
+The idea was to make it configurable, out of the code.
+So it becomes easy to change without re-build.
+
 File: rootdir/init.rc
 
 391:0-391:29
@@ -17,4 +26,12 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3ff1cc50_549a4c62
 Bytes: 148
 If we do this, this would need to come from an init.<device>.rc file, don't want to set a default of 2% here in common init.rc when previous was 0%.
+
+391:0-391:29
+Fri May 30 10:55:27 2014 +0000
+Author: Pavan Kumar S <1015334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ff1cc50_549a4c62
+UUID: 5fc5a077_02752bdc
+Bytes: 27
+Agree, default should be 0.
 

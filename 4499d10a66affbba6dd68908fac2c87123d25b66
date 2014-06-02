@@ -9,3 +9,13 @@ UUID: 9fcab88f_bf1c52fc
 Bytes: 104
 why not just say = getuid()? otherwise i scratch my head wondering about the significance of AID_ROOT...
 
+162
+Mon Jun 02 19:35:02 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9fcab88f_bf1c52fc
+UUID: 1ff408d0_9b1bce8b
+Bytes: 474
+Setting the runtime initialization to call a function carries with it an initialization cost for all applications that link with liblog. A cost that is unnecessary if they never have a need to log.
+
+In the case of logd (and all daemons spawned by init), we want the call to getuid() to be as deferred as possible until some underlying library decides to send a log message. At initialization logd is AID_ROOT, but after the privileged set of operations it drops to AID_LOGD.
+

@@ -1,0 +1,11 @@
+Revision: cd4d0c4c75f05a8f1fad97eecf4bb2b28a659b73
+Patch-set: 2
+File: init/init.c
+
+156
+Mon Jun 02 19:39:03 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_6f8f2a68
+Bytes: 28
+shouldn't this be strdup(s)?
+

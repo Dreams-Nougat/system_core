@@ -1,0 +1,11 @@
+Revision: 4499d10a66affbba6dd68908fac2c87123d25b66
+Patch-set: 2
+File: liblog/logd_write.c
+
+162
+Mon Jun 02 18:15:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fcab88f_bf1c52fc
+Bytes: 104
+why not just say = getuid()? otherwise i scratch my head wondering about the significance of AID_ROOT...
+

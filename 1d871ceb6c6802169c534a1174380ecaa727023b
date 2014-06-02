@@ -72,12 +72,28 @@ UUID: bfcdbca8_f1f1df49
 Bytes: 75
 Do we want to see if squashing trailing space is a small impact on this CL?
 
+129:0-129:4
+Mon Jun 02 20:31:30 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_f1f1df49
+UUID: df4350e0_3d65cf58
+Bytes: 91
+SOP is to avoid unrelated formatting fixes, since it increases the risk of merge conflicts.
+
 133:0-133:49
 Mon Jun 02 17:57:40 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bfcdbca8_716b8f31
 Bytes: 234
 Because this is defined explicitly in the header, we have a problem for gnu++11 since char16_t != uint16_t and char16_t != int16_t. We likely need to create a trio of explicit constructors, one each for char16_t, int16_t and uint16_t.
+
+133:0-133:49
+Mon Jun 02 20:31:30 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_716b8f31
+UUID: 1fbfa8df_2a1482a4
+Bytes: 285
+char16_t has the same layout as uint_least16_t, which can be larger than 16 bits at the platform's discretion.  So the constructors for [u]int16_t would have to do element-by-element copies.  Better to leave this as-is and fix the clients, than to silently introduce an expensive copy.
 
 File: libutils/SystemClock.cpp
 

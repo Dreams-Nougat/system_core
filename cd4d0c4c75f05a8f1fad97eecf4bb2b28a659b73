@@ -9,3 +9,11 @@ UUID: bfcdbca8_6f8f2a68
 Bytes: 28
 shouldn't this be strdup(s)?
 
+156
+Mon Jun 02 20:05:10 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_6f8f2a68
+UUID: 1ff408d0_9b9e2e82
+Bytes: 135
+Not AFAICT; memory referenced by args[i] is never freed (see for example similar code for setting svc->name, svc->args, svc->seclabel).
+

@@ -1,0 +1,52 @@
+Revision: 1d871ceb6c6802169c534a1174380ecaa727023b
+Patch-set: 18
+File: libutils/FileMap.cpp
+
+105:37-105:40
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fcab88f_fc7418e2
+Bytes: 5
+%I32x
+
+105:60-105:63
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_3195175b
+Bytes: 5
+%I32d
+
+120:29-120:40
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_b12b6772
+Bytes: 5
+%I64d
+
+120:65-120:68
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fbfa8df_39562238
+Bytes: 5
+%I32d
+
+File: libutils/RefBase.cpp
+
+404
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fbfa8df_54075d35
+Bytes: 36
+__unused needed above, but not here?
+
+File: libutils/SystemClock.cpp
+
+71:0-72:15
+Mon Jun 02 17:28:00 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fcab88f_1c935408
+Bytes: 126
+#if DEBUG_TIMESTAMP || defined(ARCH_ARM)
+
+then you can eliminate the (IMO confusing) duplicate #define checkTimeStamps() below
+

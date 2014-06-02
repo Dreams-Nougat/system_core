@@ -1,0 +1,13 @@
+Revision: 9648e8bc70c7c70db27bb855f76db7e04d81248f
+Patch-set: 19
+File: libutils/FileMap.cpp
+
+27:17-27:18
+Mon Jun 02 22:35:44 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f33447f_3f9140f8
+Bytes: 92
+Uppercase eye, not lower-case ell
+
+see http://msdn.microsoft.com/en-us/library/tcxf1dw6.aspx
+

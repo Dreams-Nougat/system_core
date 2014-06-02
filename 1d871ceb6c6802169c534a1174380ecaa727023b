@@ -95,6 +95,20 @@ UUID: 1fbfa8df_2a1482a4
 Bytes: 285
 char16_t has the same layout as uint_least16_t, which can be larger than 16 bits at the platform's discretion.  So the constructors for [u]int16_t would have to do element-by-element copies.  Better to leave this as-is and fix the clients, than to silently introduce an expensive copy.
 
+133:0-133:49
+Mon Jun 02 20:48:18 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fbfa8df_2a1482a4
+UUID: 1fbfa8df_8518218f
+Bytes: 689
+This means that when we adopt gnu++11, *everything* has to be switched over to gnu++11. The mangling are inherently incompatible? In addition, I checked, uint_least16_t is also != char16_t when it comes to explicitly defined methods. This might be the spirit of char16_t, but it is not the implementation of char16_t :-(
+
+We have a bigger problem, as our trees are extremely sloppy with regards to using uint16_t and int16_t in conjunction with char16_t.
+
+if we relax the explicit constraint, there could be a lot of silently introduced copies as time progresses and sloppiness is allowed to continue.
+
+There is a can of worms for this constructor. Outside the scope of this CL is my take.
+
 File: libutils/SystemClock.cpp
 
 71:0-72:15

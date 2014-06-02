@@ -39,6 +39,30 @@ UUID: 1fbfa8df_54075d35
 Bytes: 36
 __unused needed above, but not here?
 
+404
+Mon Jun 02 17:57:40 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fbfa8df_54075d35
+UUID: 1fbfa8df_d4992d65
+Bytes: 110
+Yes, because the above gets optimized out when ALOG_ASSERT is, but here it *is* in fact used in the code path.
+
+File: libutils/String16.cpp
+
+129:0-129:4
+Mon Jun 02 17:57:40 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_f1f1df49
+Bytes: 75
+Do we want to see if squashing trailing space is a small impact on this CL?
+
+133:0-133:49
+Mon Jun 02 17:57:40 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_716b8f31
+Bytes: 234
+Because this is defined explicitly in the header, we have a problem for gnu++11 since char16_t != uint16_t and char16_t != int16_t. We likely need to create a trio of explicit constructors, one each for char16_t, int16_t and uint16_t.
+
 File: libutils/SystemClock.cpp
 
 71:0-72:15

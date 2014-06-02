@@ -16,6 +16,14 @@ UUID: bfcdbca8_3195175b
 Bytes: 5
 %I32d
 
+105:37-105:40
+Mon Jun 02 20:28:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9fcab88f_fc7418e2
+UUID: bfcdbca8_cffbde27
+Bytes: 76
+This breaks if __USE_MINGW_ANSI_STDIO is defined. %lx and %ld work for both.
+
 120:29-120:40
 Mon Jun 02 17:28:00 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -29,6 +37,14 @@ Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1fbfa8df_39562238
 Bytes: 5
 %I32d
+
+120:29-120:40
+Mon Jun 02 20:28:41 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_b12b6772
+UUID: bfcdbca8_8f25e614
+Bytes: 56
+%l64d is broken if __USE_MINGW_ANSI_STDIO is defined ...
 
 File: libutils/RefBase.cpp
 

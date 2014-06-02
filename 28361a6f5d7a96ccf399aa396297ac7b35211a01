@@ -9,6 +9,13 @@ UUID: 2fd9956f_7d7b8395
 Bytes: 94
 u16end is only used to compare against u16cur, why not just change it to be a const char16_t*?
 
+579:10-579:16
+Mon Jun 02 23:52:59 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fbfa8df_a93f7fd1
+Bytes: 56
+KISS, change this to char16_t and all will be forgotten.
+
 582
 Sun Feb 16 18:47:06 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>

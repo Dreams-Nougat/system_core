@@ -1,0 +1,11 @@
+Revision: 0a581d447163c4829f3c2cc66c8fb7e8f73149d1
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+52
+Tue Jun 03 16:12:34 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df4350e0_43ba3a5a
+Bytes: 37
+this is really kEOCDCommentLenOffset.
+

@@ -48,3 +48,11 @@ UUID: bf505ca5_c2fac6dc
 Bytes: 66
 That might be a C++0x feature, not sure if its true in normal C++.
 
+48
+Tue Jun 03 18:53:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf505ca5_c2fac6dc
+UUID: bf505ca5_820d9e59
+Bytes: 68
+GCC doesn't care, but even if it did, you also control the makefile.
+

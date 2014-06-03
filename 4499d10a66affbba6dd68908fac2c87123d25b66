@@ -19,3 +19,11 @@ Setting the runtime initialization to call a function carries with it an initial
 
 In the case of logd (and all daemons spawned by init), we want the call to getuid() to be as deferred as possible until some underlying library decides to send a log message. At initialization logd is AID_ROOT, but after the privileged set of operations it drops to AID_LOGD.
 
+162
+Tue Jun 03 17:15:12 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ff408d0_9b1bce8b
+UUID: bfcdbca8_e6d12034
+Bytes: 230
+getuid() wouldn't be called until someone called __write_to_log_kernel, so you're basically just doing roughly the compiler would do anyway, which seems less clear because it makes readers wonder what you're actually trying to do.
+

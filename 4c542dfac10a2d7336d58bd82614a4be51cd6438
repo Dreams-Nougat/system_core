@@ -9,10 +9,26 @@ UUID: 1fbfa8df_cf9e3383
 Bytes: 5
 bool?
 
+47
+Tue Jun 03 18:15:46 2014 +0000
+Author: Mathieu Chartier <1015378@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fbfa8df_cf9e3383
+UUID: bf505ca5_5f01af6a
+Bytes: 33
+Done, need to include <stdbool.h>
+
 48:1-48:15
 Tue Jun 03 18:09:19 2014 +0000
 Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1fbfa8df_0f278ba7
 Bytes: 113
 isn't there still a race here unless it seeding is done in the static intialization itself (with a C++ ctor say?)
+
+48
+Tue Jun 03 18:15:46 2014 +0000
+Author: Mathieu Chartier <1015378@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fbfa8df_0f278ba7
+UUID: bf505ca5_ff18bbdb
+Bytes: 105
+Yes, but using static variables also isn't thread safe. I don't see any easy way to get around this race.
 

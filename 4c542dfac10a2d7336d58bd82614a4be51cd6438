@@ -40,3 +40,11 @@ UUID: dffef0bb_d3a13652
 Bytes: 67
 static variables are thread safe if you rename this file to .cpp...
 
+48
+Tue Jun 03 18:50:52 2014 +0000
+Author: Mathieu Chartier <1015378@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dffef0bb_d3a13652
+UUID: bf505ca5_c2fac6dc
+Bytes: 66
+That might be a C++0x feature, not sure if its true in normal C++.
+

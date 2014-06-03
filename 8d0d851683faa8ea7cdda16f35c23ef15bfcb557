@@ -1,5 +1,14 @@
 Revision: 8d0d851683faa8ea7cdda16f35c23ef15bfcb557
 Patch-set: 1
+File: /COMMIT_MSG
+
+10
+Tue Jun 03 16:22:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df4350e0_63841684
+Bytes: 72
+(yes, i think this is the correct bug, so you can remove this sentence.)
+
 File: debuggerd/tombstone.cpp
 
 61:21-61:27
@@ -33,4 +42,12 @@ Parent: 7f33447f_1dcc8447
 UUID: bfcdbca8_0019a3dd
 Bytes: 95
 or just inline them here. we even have a 'char value[PROPERTY_VALUE_MAX]' lying around waiting.
+
+660:0-662:26
+Tue Jun 03 16:22:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_0019a3dd
+UUID: 1fbfa8df_4c16b11f
+Bytes: 163
+does anything parse the 'Revision: ' line, or could we add the ABI to that? wasting a whole extra line bugs me (and the 'Revision: ' line has always bugged me) :-)
 

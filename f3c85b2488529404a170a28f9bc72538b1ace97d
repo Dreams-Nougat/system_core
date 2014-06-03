@@ -9,3 +9,11 @@ UUID: dffef0bb_335c0ba7
 Bytes: 45
 what about when not compiled into the kernel?
 
+874:4-879:5
+Tue Jun 03 15:41:11 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dffef0bb_335c0ba7
+UUID: dffef0bb_1328ef0f
+Bytes: 96
+That condition should never occur.  SELinux compiled into the kernel is a CTS / CDD requirement.
+

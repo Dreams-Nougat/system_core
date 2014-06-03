@@ -9,3 +9,11 @@ UUID: df4350e0_43ba3a5a
 Bytes: 37
 this is really kEOCDCommentLenOffset.
 
+52
+Tue Jun 03 16:14:30 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: df4350e0_43ba3a5a
+UUID: 5fea00f0_604cfcab
+Bytes: 66
+Well, no - but the field below is really kEOCDComment. Will fix :)
+

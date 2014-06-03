@@ -1,0 +1,27 @@
+Revision: e64ae28586b937fe639d68d334d0e8e7a6d18140
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+307
+Tue Jun 03 16:16:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_c0fbab27
+Bytes: 313
+does this still compile? it looks like the commented-out code was the only caller to this. if this still compiles that suggests that we're missing a -Wall -Werror in the makefile...
+
+did you talk to cferris about how to get the sp values for each stack frame? (i.e. what we'll replace this with in a later patch.)
+
+362
+Tue Jun 03 16:16:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df4350e0_63dad6a9
+Bytes: 56
+yes, that's the most useful part of the whole tombstone.
+
+364
+Tue Jun 03 16:16:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fbfa8df_cc588111
+Bytes: 118
+you should remove lines rather than comment them out. if we ever want this stuff back, git can show us what's missing.
+

@@ -9,10 +9,28 @@ UUID: bfcdbca8_650aa941
 Bytes: 182
 We do have the abi names defined in the BoardConfig.mk files. The value of TARGET_CPU_ABI might be better to be displayed. You might have to modify the makefile to make it available.
 
+61:21-61:27
+Tue Jun 03 16:20:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfcdbca8_650aa941
+UUID: df4350e0_839a82e5
+Bytes: 179
+we definitely want to be using the same strings as elsewhere, so "arm" rather than "ARM 32" and so on.
+
+i assume TARGET_CPU_ABI gets changed back and forth for a multi-arch build?
+
 660:0-662:26
 Tue Jun 03 00:09:57 2014 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7f33447f_1dcc8447
 Bytes: 140
 These three functions are pretty small. It would probably be better to combine these into a single function rather than add a new one liner.
+
+660:0-662:26
+Tue Jun 03 16:20:42 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f33447f_1dcc8447
+UUID: bfcdbca8_0019a3dd
+Bytes: 95
+or just inline them here. we even have a 'char value[PROPERTY_VALUE_MAX]' lying around waiting.
 

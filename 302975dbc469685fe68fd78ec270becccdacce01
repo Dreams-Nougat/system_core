@@ -1,0 +1,18 @@
+Revision: 302975dbc469685fe68fd78ec270becccdacce01
+Patch-set: 4
+File: libcutils/ashmem-host.c
+
+42
+Tue Jun 03 18:41:08 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dffef0bb_5333067c
+Bytes: 108
+i think you really want a pthread_once_t here instead, unless i'm misunderstanding what you're trying to do.
+
+109
+Tue Jun 03 18:41:08 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dffef0bb_1398ee20
+Bytes: 67
+can't we go the other way and fix all the indentation to be spaces?
+

@@ -17,3 +17,11 @@ UUID: 5fea00f0_604cfcab
 Bytes: 66
 Well, no - but the field below is really kEOCDComment. Will fix :)
 
+52
+Tue Jun 03 16:28:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5fea00f0_604cfcab
+UUID: 1fbfa8df_accaed4e
+Bytes: 103
+i hate these names. are they _all_ offsets? i honestly can't tell from the existing names and comments.
+

@@ -33,3 +33,11 @@ UUID: 5fea00f0_0042d074
 Bytes: 150
 Yes, they are all offsets. I've been meaning to get rid of these constants for a while and replace them with a struct { } with the appropriate layout.
 
+52
+Tue Jun 03 16:37:35 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5fea00f0_0042d074
+UUID: df4350e0_26f37c0e
+Bytes: 76
+yeah, since Android is little-endian only anyway that would be much clearer.
+

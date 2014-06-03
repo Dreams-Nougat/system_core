@@ -1,0 +1,18 @@
+Revision: 8d0d851683faa8ea7cdda16f35c23ef15bfcb557
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+61:21-61:27
+Tue Jun 03 00:09:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfcdbca8_650aa941
+Bytes: 182
+We do have the abi names defined in the BoardConfig.mk files. The value of TARGET_CPU_ABI might be better to be displayed. You might have to modify the makefile to make it available.
+
+660:0-662:26
+Tue Jun 03 00:09:57 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f33447f_1dcc8447
+Bytes: 140
+These three functions are pretty small. It would probably be better to combine these into a single function rather than add a new one liner.
+

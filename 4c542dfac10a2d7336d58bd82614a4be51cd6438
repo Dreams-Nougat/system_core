@@ -32,3 +32,11 @@ UUID: bf505ca5_ff18bbdb
 Bytes: 105
 Yes, but using static variables also isn't thread safe. I don't see any easy way to get around this race.
 
+48
+Tue Jun 03 18:41:48 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf505ca5_ff18bbdb
+UUID: dffef0bb_d3a13652
+Bytes: 67
+static variables are thread safe if you rename this file to .cpp...
+

@@ -25,3 +25,11 @@ UUID: 1fbfa8df_accaed4e
 Bytes: 103
 i hate these names. are they _all_ offsets? i honestly can't tell from the existing names and comments.
 
+52
+Tue Jun 03 16:36:04 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fbfa8df_accaed4e
+UUID: 5fea00f0_0042d074
+Bytes: 150
+Yes, they are all offsets. I've been meaning to get rid of these constants for a while and replace them with a struct { } with the appropriate layout.
+

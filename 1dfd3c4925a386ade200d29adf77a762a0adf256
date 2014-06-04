@@ -1,0 +1,19 @@
+Revision: 1dfd3c4925a386ade200d29adf77a762a0adf256
+Patch-set: 4
+File: debuggerd/tombstone.cpp
+
+256
+Wed Jun 04 23:19:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3f162cdd_0d46a1df
+Bytes: 544
+we need to decide what output we really want here. obvious alternatives:
+
+1. add the sp values to the existing backtrace.
+2. add a line after each existing backtrace line giving just the sp.
+3. have a separate section.
+
+this currently implements choice 3, and if we go that route we need to decide what to have on each line. (there doesn't seem much value to just replicating the information that we showed in the backtrace. it would be more useful to show things like what map the sp falls in, or how large the jump between frames.)
+
+opinions?
+

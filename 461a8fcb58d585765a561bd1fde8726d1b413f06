@@ -1,0 +1,11 @@
+Revision: 461a8fcb58d585765a561bd1fde8726d1b413f06
+Patch-set: 6
+File: debuggerd/tombstone.cpp
+
+185
+Wed Jun 04 17:25:57 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_d6992465
+Bytes: 128
+"target" doesn't really make any sense here. debuggerd will always be running on the same machine as the process it's examining.
+

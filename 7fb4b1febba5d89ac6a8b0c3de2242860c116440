@@ -9,6 +9,14 @@ UUID: 3fef0c01_57dadbf6
 Bytes: 73
 lose all the random whitespace. just one space here and after ABI_STRING.
 
+60
+Wed Jun 04 17:03:10 2014 +0000
+Author: Brigid Smith <1047249@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3fef0c01_57dadbf6
+UUID: bf505ca5_16f46ca7
+Bytes: 4
+Done
+
 76
 Wed Jun 04 16:45:22 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 7f1c24fb_03499447
 Bytes: 64
 either be consistent with the blank lines or leave them all out.
 
+76
+Wed Jun 04 17:03:10 2014 +0000
+Author: Brigid Smith <1047249@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f1c24fb_03499447
+UUID: 3f162cdd_8cddd7ef
+Bytes: 4
+Done
+
 355
 Wed Jun 04 16:45:22 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3fef0c01_77dddfec
 Bytes: 33
 this shouldn't be in this change.
+
+355
+Wed Jun 04 17:03:10 2014 +0000
+Author: Brigid Smith <1047249@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3fef0c01_77dddfec
+UUID: 7f33447f_65364a6e
+Bytes: 80
+I think this is the last residual git branch confusion change...  knock on wood.
 

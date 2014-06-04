@@ -1,0 +1,27 @@
+Revision: 64337a217191319ff4f15210fe80caf4dca901c3
+Patch-set: 7
+File: debuggerd/tombstone.cpp
+
+59
+Wed Jun 04 18:15:20 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_36688832
+Bytes: 36
+trailing whitespace (and missing .).
+
+61
+Wed Jun 04 18:15:20 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_f6ec6076
+Bytes: 43
+you still have double space on these lines.
+
+68
+Wed Jun 04 18:15:20 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3f162cdd_ec41f370
+Bytes: 146
+m < x
+
+(unless there's a more meaningful order, you should always sort alphabetically. it makes it easier to spot duplicates and missing entries.)
+

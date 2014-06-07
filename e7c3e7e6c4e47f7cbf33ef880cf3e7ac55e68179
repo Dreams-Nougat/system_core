@@ -1,0 +1,105 @@
+Revision: e7c3e7e6c4e47f7cbf33ef880cf3e7ac55e68179
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+259
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff749443_2e8e07db
+Bytes: 181
+we shouldn't have mixed this stack output change in with the enum change. now we have to get both things right before we can submit.
+
+can you revert this part of the change for now?
+
+542
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_6ebdd14f
+Bytes: 6
+HEADER
+
+564
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_8eba9d57
+Bytes: 6
+HEADER
+
+File: debuggerd/utility.cpp
+
+47
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff749443_2e65a758
+Bytes: 66
+this is a blacklist
+
+Comments start with a capital and end with a.
+
+59
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_2ee6e97c
+Bytes: 86
+this is a whitelist. and should probably be removed. everything goes to the tombstone.
+
+73
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff749443_eef1df49
+Bytes: 20
+this is a whitelist.
+
+101
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_4eeb3545
+Bytes: 118
+it's called a tombstone everywhere else. switching to tomb is just repeating the 'tfd' error the previous author made.
+
+108
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_0ee52d6c
+Bytes: 68
+again. you could lose the comment if you used a few more characters.
+
+File: debuggerd/utility.h
+
+35
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_aedaf9a5
+Bytes: 8
+no tabs.
+
+47
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff749443_aefbd727
+Bytes: 22
+no need to say "enum".
+
+51
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f33447f_e8eb0088
+Bytes: 189
+looks like you should be using this for errors rather than adding more "GENERAL" callers? might be worth having an ERROR logtype. might also be worth renaming LOG to LOG_ERROR or something.
+
+55
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_6ea71133
+Bytes: 155
+this has bit-rotted and won't compile if anyone turns this on.
+
+the callers seem to be either mistakes (that should be switched to LOG_ERROR) or debugging.
+
+62
+Sat Jun 07 00:07:02 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_ced7457c
+Bytes: 90
+nothing uses this. probably copy & pasted from the dynamic linker, judging by the comment.
+

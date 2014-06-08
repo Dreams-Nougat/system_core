@@ -1,0 +1,11 @@
+Revision: 6e3fffeca6ac00379b0a22888d04a58ee0f51057
+Base-for-patch-set: 1
+File: toolbox/Android.mk
+
+106
+Sun Jun 08 05:05:05 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f33447f_be33f27a
+Bytes: 37
+i've no idea why libusbhost was here.
+

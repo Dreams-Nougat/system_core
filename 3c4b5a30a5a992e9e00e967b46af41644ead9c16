@@ -1,0 +1,11 @@
+Revision: 3c4b5a30a5a992e9e00e967b46af41644ead9c16
+Patch-set: 1
+File: toolbox/Android.mk
+
+104
+Sun Jun 08 05:05:05 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_f47a0e95
+Bytes: 125
+is it just me that thinks we should at least have a "toolbox" and a "selinux-toolbox" (and just make md5 a stand-alone tool)?
+

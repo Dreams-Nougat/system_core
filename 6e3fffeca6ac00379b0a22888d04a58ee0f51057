@@ -26,3 +26,11 @@ UUID: bf505ca5_34587632
 Bytes: 123
 lsusb isn't built any more. should i add lsusb.c back into the makefile and restore libusbhost, or should i git rm lsusb.c?
 
+106
+Sun Jun 08 05:56:31 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf505ca5_34587632
+UUID: ff749443_578766c0
+Bytes: 113
+don't delete it, there are a bunch of tools in here that people turn on when they need it for a specific problem.
+

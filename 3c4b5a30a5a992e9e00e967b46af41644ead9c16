@@ -27,3 +27,11 @@ ah, so there is still a static toolbox somewhere?
 
 (my only interest here is that every time i strace date and see the dynamic linker opening a bunch of shared libraries it doesn't need, i think i should look into what's going on.)
 
+104
+Sun Jun 08 05:56:31 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf505ca5_545d0220
+UUID: 7f33447f_1ef77e3d
+Bytes: 140
+there isn't a static version, but when we need one we compile it manually.  it's useful to push to a ramdisk when storage isn't working yet.
+

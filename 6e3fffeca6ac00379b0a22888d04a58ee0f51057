@@ -18,3 +18,11 @@ Bytes: 131
 libusbhost used to be static library, with the comment:
 # Needed for lsusb.  Should optimize out in linker if lsusb is not included
 
+106
+Sun Jun 08 05:38:30 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f33447f_5e7ae600
+UUID: bf505ca5_34587632
+Bytes: 123
+lsusb isn't built any more. should i add lsusb.c back into the makefile and restore libusbhost, or should i git rm lsusb.c?
+

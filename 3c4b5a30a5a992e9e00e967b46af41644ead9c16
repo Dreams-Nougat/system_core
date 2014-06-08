@@ -9,3 +9,11 @@ UUID: bf505ca5_f47a0e95
 Bytes: 125
 is it just me that thinks we should at least have a "toolbox" and a "selinux-toolbox" (and just make md5 a stand-alone tool)?
 
+104
+Sun Jun 08 05:21:43 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf505ca5_f47a0e95
+UUID: bf505ca5_d482723f
+Bytes: 209
+what would that gain you?  it would just duplicate the tool launching code into two executables, and it would make it harder to use a statically compiled toolbox (which we do every so often for early bringup).
+

@@ -9,3 +9,12 @@ UUID: 7f33447f_be33f27a
 Bytes: 37
 i've no idea why libusbhost was here.
 
+106
+Sun Jun 08 05:21:43 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f33447f_be33f27a
+UUID: 7f33447f_5e7ae600
+Bytes: 131
+libusbhost used to be static library, with the comment:
+# Needed for lsusb.  Should optimize out in linker if lsusb is not included
+

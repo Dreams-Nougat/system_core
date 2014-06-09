@@ -9,3 +9,12 @@ UUID: 7f81844b_4601f2cf
 Bytes: 30
 should be "memory" , will fix.
 
+File: libziparchive/zip_archive.cc
+
+38
+Mon Jun 09 16:07:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf505ca5_620400e2
+Bytes: 47
+if you're fixing typos, this should be "weird".
+

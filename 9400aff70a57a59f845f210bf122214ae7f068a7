@@ -1,0 +1,71 @@
+Revision: 9400aff70a57a59f845f210bf122214ae7f068a7
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+492
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_bb7f9f83
+Bytes: 14
+not LOG_ERROR?
+
+544
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_bbd1df34
+Bytes: 259
+i think you might need to raise a bug for this function. looks like if "ro.debuggable" is "1", we include parts of the logcat output in the tombstone. i'm not sure this is working how it's supposed to after salyzyn@'s recent logging changes, so cc: him on it.
+
+611
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff5d74d3_7584d2ba
+Bytes: 6
+HEADER
+
+633
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff5d74d3_358e5adb
+Bytes: 6
+HEADER
+
+File: debuggerd/utility.cpp
+
+47
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_9ba3bbd2
+Bytes: 44
+that *are* considered ... are *not* okay ...
+
+48
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bffcdced_250d1458
+Bytes: 14
+...or the log.
+
+59
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_5b9ea384
+Bytes: 7
+s/not//
+
+71
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bffcdced_a52be4a3
+Bytes: 33
+what's useful about this comment?
+
+File: debuggerd/utility.h
+
+52
+Mon Jun 09 22:38:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_5b31c3dc
+Bytes: 33
+there's still no one using XLOG2.
+

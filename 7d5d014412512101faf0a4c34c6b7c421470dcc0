@@ -1,0 +1,11 @@
+Revision: 7d5d014412512101faf0a4c34c6b7c421470dcc0
+Patch-set: 3
+File: fastboot/tcp.c
+
+123:30-123:39
+Mon Jun 09 22:19:57 2014 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f696874_f05f7650
+Bytes: 61
+incorrect use of memset() here, 0 should be the 2nd parameter
+

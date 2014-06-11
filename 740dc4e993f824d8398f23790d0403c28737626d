@@ -1,0 +1,50 @@
+Revision: 740dc4e993f824d8398f23790d0403c28737626d
+Patch-set: 4
+File: init/builtins.c
+
+550
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fc0f8c0_06e63c4f
+Bytes: 20
+return property_set?
+
+File: init/init.c
+
+327
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fc0f8c0_a6fbe8e2
+Bytes: 6
+ERROR?
+
+338
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f6424c8_3a07e1e8
+Bytes: 85
+do we really want to silently exec a different command if we have too many arguments?
+
+560
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fc0f8c0_c6fa64dc
+Bytes: 37
+what if nargs >= INIT_PARSER_MAXARGS?
+
+File: init/init_parser.c
+
+193
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f6424c8_babdb1c7
+Bytes: 15
+brace or token?
+
+197
+Wed Jun 11 17:14:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfc3fcc9_2731b4de
+Bytes: 7
+strchr?
+

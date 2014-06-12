@@ -1,0 +1,13 @@
+Revision: eed3f9732131c172e9957833f1464ea19b6f076c
+Patch-set: 9
+File: debuggerd/utility.cpp
+
+60
+Thu Jun 12 18:47:08 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f6328c5_c3e51971
+Bytes: 89
+trailing whitespace.
+
+(you should probably tell your editor to automatically strip this.)
+

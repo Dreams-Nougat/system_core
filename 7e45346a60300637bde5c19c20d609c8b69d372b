@@ -9,6 +9,13 @@ UUID: bfc3fcc9_4dab3177
 Bytes: 41
 (this might actually be worth a warning.)
 
+796
+Thu Jun 12 00:22:55 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f6424c8_43b4ac0c
+Bytes: 66
+i don't actually see this line when i run crasher with your patch.
+
 File: debuggerd/utility.cpp
 
 49

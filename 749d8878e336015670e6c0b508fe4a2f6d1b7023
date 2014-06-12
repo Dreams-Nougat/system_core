@@ -1,0 +1,23 @@
+Revision: 749d8878e336015670e6c0b508fe4a2f6d1b7023
+Patch-set: 1
+File: include/android/log.h
+
+101:1-101:35
+Thu Jun 12 15:47:30 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf713c8e_5491ccf6
+Bytes: 242
+This may need to split into two:
+
+#ifdef __USE_MINGW_ANSI_STDIO
+# if __USE_MINGW_ANSI_STDIO
+. . .
+# else
+. . .
+# endif
+#else
+. . .
+#endif
+
+So it must be defined, and if defined, it must be a true value. You can not one-line this one I expect.
+

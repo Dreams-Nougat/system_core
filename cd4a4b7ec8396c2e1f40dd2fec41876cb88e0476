@@ -1,0 +1,20 @@
+Revision: cd4a4b7ec8396c2e1f40dd2fec41876cb88e0476
+Patch-set: 1
+File: adb/usb_vendors.c
+
+190
+Thu Jun 12 08:28:16 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fd6e483_90bd3cc8
+Bytes: 83
+Put this after GIGASET and before GOOGLE.
+
+This list must be alphabetically sorted.
+
+271
+Thu Jun 12 08:28:16 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fd5e878_2d423951
+Bytes: 10
+same here.
+

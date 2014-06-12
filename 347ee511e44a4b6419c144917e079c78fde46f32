@@ -1,0 +1,11 @@
+Revision: 347ee511e44a4b6419c144917e079c78fde46f32
+Patch-set: 1
+File: rootdir/init.rc
+
+260:23-260:28
+Thu Jun 12 02:03:34 2014 +0000
+Author: Dave Allison <1036486@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f6328c5_864fb445
+Bytes: 76
+How about also creating /data/dalvik-cache/profile-cache while we are at it?
+

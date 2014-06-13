@@ -1,0 +1,25 @@
+Revision: 80220d5d7e3f52fc647ebc0e91198fef6500708a
+Patch-set: 1
+File: libcutils/iosched_policy.c
+
+25
+Fri Jun 13 01:02:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f49844c_1884ed82
+Bytes: 6
+weird.
+
+35
+Fri Jun 13 01:02:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf713c8e_0ec81f59
+Bytes: 70
+#include <linux/ioprio.h> and prefix all these constants with IOPRIO_?
+
+42
+Fri Jun 13 01:02:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf713c8e_8ed42ff0
+Bytes: 52
+IOPRIO_CLASS_NORM, though nothing seems to use this.
+

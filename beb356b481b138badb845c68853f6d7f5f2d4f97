@@ -1,0 +1,13 @@
+Revision: beb356b481b138badb845c68853f6d7f5f2d4f97
+Patch-set: 1
+File: logd/tests/logd_test.cpp
+
+674:8-675:45
+Fri Jun 13 18:54:42 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f49844c_ec0da79b
+Bytes: 121
+FAIL() << message
+
+for bonus points save errno before calling close(), then do FAIL() << message << strerror(saved_errno)
+

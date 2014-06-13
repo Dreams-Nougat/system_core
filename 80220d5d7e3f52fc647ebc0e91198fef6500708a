@@ -9,6 +9,14 @@ UUID: 7f49844c_1884ed82
 Bytes: 6
 weird.
 
+25
+Fri Jun 13 01:51:46 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7f49844c_1884ed82
+UUID: bf713c8e_ee64c32b
+Bytes: 65
+Weird remove it or weird take a closer look in a different patch?
+
 35
 Fri Jun 13 01:02:29 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +30,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bf713c8e_8ed42ff0
 Bytes: 52
 IOPRIO_CLASS_NORM, though nothing seems to use this.
+
+42
+Fri Jun 13 01:51:46 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf713c8e_8ed42ff0
+UUID: 7f49844c_5bf58f5e
+Bytes: 92
+I must be missing something... after including <linux/ioprio.h>, why keep any of these defs?
 

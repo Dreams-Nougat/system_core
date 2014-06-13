@@ -11,3 +11,11 @@ that looks like more like where i expected to see this code :-)
 
 testing now...
 
+797
+Fri Jun 13 23:49:15 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bf713c8e_8a66d4f4
+UUID: df74307d_2cf7953d
+Bytes: 214
+just to repeat what i said in the 1-on-1, i think we need to (a) reset the current_tid in the loop over all the sibling threads, and (b) we probably want to replace this with code that only writes to logcat anyway.
+

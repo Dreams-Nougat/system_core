@@ -1,0 +1,13 @@
+Revision: a293754ee0f537e9bb5bec0125af8b65730b634a
+Patch-set: 12
+File: debuggerd/tombstone.cpp
+
+797
+Fri Jun 13 22:59:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf713c8e_8a66d4f4
+Bytes: 79
+that looks like more like where i expected to see this code :-)
+
+testing now...
+

@@ -1,0 +1,11 @@
+Revision: 95efd7cdbb5407391348967302b3aaa90746a479
+Patch-set: 2
+File: libcutils/iosched_policy.c
+
+25
+Fri Jun 13 02:35:38 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df74307d_34428951
+Bytes: 58
+did you find out whether this was just copy & paste cruft?
+

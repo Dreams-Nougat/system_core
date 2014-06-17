@@ -1,0 +1,11 @@
+Revision: 5e4b1f04c5c5f3211ffe120415f427a57e242e4d
+Patch-set: 2
+File: debuggerd/utility.cpp
+
+61
+Tue Jun 17 21:23:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2492a112_9f87b3ff
+Bytes: 186
+i think we can remove 'quiet' in a future patch too. that looks like it was an old hack to keep sibling threads off logcat. but you already implemented a better solution to that problem.
+

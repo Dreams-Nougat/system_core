@@ -1,0 +1,43 @@
+Revision: fbebe043e8780a888043e92d27f3917f05defccd
+Patch-set: 1
+File: debuggerd/crasher.c
+
+178
+Tue Jun 17 22:10:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 448dd5f1_0334b014
+Bytes: 204
+s/null pointer exception/SIGSEGV/?
+
+maybe call this SIGSEGV-non-null so we can sort it next to SIGSEGV in the help text? (and expand the SIGSEGV help text to include the fact that its fault address is 0?)
+
+File: debuggerd/tombstone.cpp
+
+347
+Tue Jun 17 22:10:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2492a112_82fbdc58
+Bytes: 25
+when can map be NULL now?
+
+371
+Tue Jun 17 22:10:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04975d03_417ab4fc
+Bytes: 92
+hmm. i'd just assumed we'd always include the maps, not just in SIGSEGV cases. bdc? cferris?
+
+374
+Tue Jun 17 22:10:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 448dd5f1_86020e2b
+Bytes: 48
+this is no longer around any particular address.
+
+377
+Tue Jun 17 22:10:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04975d03_81ec3c5c
+Bytes: 90
+is this actually what we want, or do we just want raw /proc/pid/maps output? bdc? cferris?
+

@@ -1,0 +1,13 @@
+Revision: e6badc6fe95b87cb382918cf08977d9f8f3380de
+Patch-set: 1
+File: debuggerd/utility.cpp
+
+62
+Tue Jun 17 21:07:19 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04975d03_3e2b0973
+Bytes: 98
+if (
+
+we need to remove this log == NULL special case. it's just making everything more confusing.
+

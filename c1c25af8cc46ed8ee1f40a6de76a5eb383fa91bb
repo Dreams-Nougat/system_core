@@ -1,0 +1,18 @@
+Revision: c1c25af8cc46ed8ee1f40a6de76a5eb383fa91bb
+Patch-set: 2
+File: debuggerd/crasher.c
+
+113
+Tue Jun 17 22:27:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2492a112_02990cf0
+Bytes: 48
+you're still using the misleading 'null_pointer'
+
+177
+Tue Jun 17 22:27:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04975d03_047b5a46
+Bytes: 9
+here too.
+

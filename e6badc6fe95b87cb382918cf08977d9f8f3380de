@@ -11,3 +11,11 @@ if (
 
 we need to remove this log == NULL special case. it's just making everything more confusing.
 
+62
+Tue Jun 17 21:09:47 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04975d03_3e2b0973
+UUID: 448dd5f1_e08502ba
+Bytes: 111
+(but not in this patch. just fix the formatting right now, and come back later to get rid of the special case.)
+

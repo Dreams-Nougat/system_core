@@ -1,0 +1,13 @@
+Revision: d5343e17a8ebd08b03b8d561f08333b5a065bc63
+Patch-set: 5
+File: debuggerd/tombstone.cpp
+
+419:25-419:26
+Wed Jun 18 22:02:52 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_68cd4b43
+Bytes: 101
+Do you want to fix these spaces too?
+
+Is there a reason to choose using this call versus using ALOGE?
+

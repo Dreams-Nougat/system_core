@@ -21,3 +21,11 @@ This will go into the tombstone file, while ALOGE will not.  I use _LOG when the
 
 Sorry, responded to this question on a previous patch but I guess I forgot to submit the draft.
 
+419:25-419:26
+Wed Jun 18 23:20:59 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4cbf13b_f4636e96
+UUID: 64bf398d_c9849187
+Bytes: 259
+i realize that the other difference between _LOG and ALOG* is that the latter all go to the 'main' log where the former goes to the 'crash' log. we might want to think about that, but i think this is a step in the right direction anyway. will test and submit.
+

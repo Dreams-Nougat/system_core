@@ -1,0 +1,22 @@
+Revision: 8133e7c4dd36083c1ff1aac608a4d59e83048013
+Patch-set: 4
+File: debuggerd/backtrace.cpp
+
+98:23-98:24
+Wed Jun 18 21:38:08 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4466b513_520594a8
+Bytes: 140
+There is an extra space that I don't think you want here.
+
+Also most of the other LOG_ERROR messages became ALOGE, should this be ALOGE too?
+
+File: debuggerd/debuggerd.cpp
+
+82:10-82:12
+Wed Jun 18 21:38:08 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_8d5f9151
+Bytes: 94
+Nit, might as well align this all now. No need for the extra space between the ( and " either.
+

@@ -1,0 +1,84 @@
+Revision: d7fa6fa6b3decdcc5f2c9ff15952d7dcb34dad64
+Patch-set: 3
+File: debuggerd/crasher.c
+
+113
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_bfee3f24
+Bytes: 59
+isn't this already committed? did you accidentally --amend?
+
+File: debuggerd/debuggerd.cpp
+
+82
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4466b513_3e0551aa
+Bytes: 127
+actually, this is probably ALOGI. i guess they were abusing their error logging before to mean "only send this to the console".
+
+107
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 846c2df2_204a0ee3
+Bytes: 44
+same here. (I == informational, E == error.)
+
+308
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 846c2df2_802e7a1a
+Bytes: 54
+we can probably just remove this line, given the next!
+
+402
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_3f4eaf7e
+Bytes: 1
+I
+
+File: debuggerd/tombstone.cpp
+
+398
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_5f7043b6
+Bytes: 38
+seems like this should have been an E.
+
+460
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 846c2df2_006caa45
+Bytes: 34
+shouldn't this have been an error?
+
+File: debuggerd/tombstone.h
+
+28
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_5f592334
+Bytes: 19
+trailing whitespace
+
+File: debuggerd/utility.cpp
+
+60
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 846c2df2_20920ed2
+Bytes: 173
+(log->tfd != -1) here and L63?
+
+(L63 is already clearer than L60, but comparing against -1 is clearest. with L63 you just have to translate >= 0 into "not -1" in your head.)
+
+62
+Wed Jun 18 18:37:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4466b513_be65e15b
+Bytes: 2
+&&
+

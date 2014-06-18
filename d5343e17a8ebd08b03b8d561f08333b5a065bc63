@@ -11,3 +11,13 @@ Do you want to fix these spaces too?
 
 Is there a reason to choose using this call versus using ALOGE?
 
+419:25-419:26
+Wed Jun 18 22:04:38 2014 +0000
+Author: Brigid Smith <1047249@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6471f9c6_68cd4b43
+UUID: a4cbf13b_f4636e96
+Bytes: 227
+This will go into the tombstone file, while ALOGE will not.  I use _LOG when there is a log_t in scope and ALOGE when there isn't.
+
+Sorry, responded to this question on a previous patch but I guess I forgot to submit the draft.
+

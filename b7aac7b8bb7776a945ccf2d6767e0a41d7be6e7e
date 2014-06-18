@@ -1,0 +1,11 @@
+Revision: b7aac7b8bb7776a945ccf2d6767e0a41d7be6e7e
+Patch-set: 3
+File: toolbox/ifconfig.c
+
+88:12-88:18
+Wed Jun 18 23:26:53 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4ce254b_8cd4677a
+Bytes: 87
+what's with the (void)?  strlcpy isn't defined with __attribute__((warn_unused_result))
+

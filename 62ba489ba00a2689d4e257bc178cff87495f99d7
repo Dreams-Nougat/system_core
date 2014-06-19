@@ -1,0 +1,11 @@
+Revision: 62ba489ba00a2689d4e257bc178cff87495f99d7
+Patch-set: 16
+File: debuggerd/arm64/machine.cpp
+
+47:8-47:17
+Thu Jun 19 20:12:40 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6471f9c6_9876ece9
+Bytes: 52
+LOG_ERROR is not declared in this scope, build error
+

@@ -1,0 +1,27 @@
+Revision: d942cf542b5eb0964b3d3e9a98073c739877eec1
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:0-9:71
+Thu Jun 19 03:22:01 2014 +0000
+Author: Wenjie Gong <1023094@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47691c3_d94d53a9
+Bytes: 58
+the length of a line should be no more than 70 characters.
+
+File: include/system/audio.h
+
+74:0-74:1
+Thu Jun 19 03:22:01 2014 +0000
+Author: Wenjie Gong <1023094@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47691c3_f94a8f8e
+Bytes: 17
+remove the space.
+
+374:0-374:1
+Thu Jun 19 03:22:01 2014 +0000
+Author: Wenjie Gong <1023094@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84d18de4_f5637296
+Bytes: 16
+remove the space
+

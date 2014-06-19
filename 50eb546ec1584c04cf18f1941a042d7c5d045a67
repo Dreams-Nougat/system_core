@@ -1,0 +1,11 @@
+Revision: 50eb546ec1584c04cf18f1941a042d7c5d045a67
+Patch-set: 9
+File: debuggerd/debuggerd.cpp
+
+167:54-167:90
+Thu Jun 19 20:10:10 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4a70589_38fb3129
+Bytes: 117
+This causes a build error, %p must be used int an void *, this is an intptr_t type, PRIPTR is the recommended format.
+

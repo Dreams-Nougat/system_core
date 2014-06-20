@@ -1,0 +1,11 @@
+Revision: 5685b95a35cf16554e27cb7dcc30f988d4d39d5a
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+353
+Fri Jun 20 00:08:05 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c465452b_b42f207c
+Bytes: 135
+the usual idiom for this kind of thing is to just add in a %s where the variable bit should go. then your ?: becomes an extra argument.
+

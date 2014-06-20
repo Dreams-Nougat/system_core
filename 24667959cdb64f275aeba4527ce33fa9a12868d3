@@ -1,0 +1,11 @@
+Revision: 24667959cdb64f275aeba4527ce33fa9a12868d3
+Patch-set: 2
+File: charger/charger.c
+
+842
+Fri Jun 20 00:30:49 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44079552_709bf064
+Bytes: 20
+trailing whitespace.
+

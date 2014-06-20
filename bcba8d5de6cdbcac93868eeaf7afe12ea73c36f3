@@ -1,0 +1,11 @@
+Revision: bcba8d5de6cdbcac93868eeaf7afe12ea73c36f3
+Patch-set: 1
+File: charger/charger.c
+
+834
+Fri Jun 20 00:18:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c465452b_9482e4ae
+Bytes: 5
+oops.
+

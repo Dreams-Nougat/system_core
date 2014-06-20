@@ -1,0 +1,20 @@
+Revision: 4e631613f28ccba9cdc626c062547f7a76991b61
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+370
+Fri Jun 20 00:20:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84fd0d75_121c2c3c
+Bytes: 34
+s/pointer location/fault address/?
+
+381
+Fri Jun 20 00:20:54 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c465452b_94fca41e
+Bytes: 137
+"was not in any map"
+
+"in unmapped" implies to me that there used to be a map but it's since been unmapped, which isn't necessarily true.
+

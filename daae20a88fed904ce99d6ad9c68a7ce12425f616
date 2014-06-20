@@ -1,0 +1,11 @@
+Revision: daae20a88fed904ce99d6ad9c68a7ce12425f616
+Patch-set: 3
+File: charger/charger.c
+
+837:0-837:15
+Fri Jun 20 01:04:50 2014 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84fd0d75_d5072e35
+Bytes: 41
+Ugh. Why is this function not in AOSP? :/
+

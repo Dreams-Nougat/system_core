@@ -9,3 +9,11 @@ UUID: 447cf5f0_a8987bed
 Bytes: 102
 Are you sure that size is expressed in bytes and not number of instructions (i.e number of uint32_t ?)
 
+205
+Tue Jun 24 14:43:47 2014 +0000
+Author: Ashok Bhat <1037066@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 447cf5f0_a8987bed
+UUID: 649e596e_9dfda68d
+Bytes: 83
+Yep, It is bytes. It is the size of the buffer in which instructions can be stored.
+

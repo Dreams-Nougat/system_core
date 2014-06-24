@@ -1,0 +1,11 @@
+Revision: 30cf1365097b5626cb7f9263a71559fe79cdf075
+Patch-set: 2
+File: /COMMIT_MSG
+
+14:0-14:30
+Tue Jun 24 21:51:00 2014 +0000
+Author: Mark Wachsler <1025478@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a46cd148_c9f13506
+Bytes: 171
+It won't typically wait 3 seconds. That's the timeout, but as soon as it notices that the device has disconnected it will exit. See usb_wait_for_disconnect in usb_linux.c.
+

@@ -9,12 +9,28 @@ UUID: e489693b_2d2bada4
 Bytes: 28
 le? not lt? (or cmp r2, #0.)
 
+40
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_2d2bada4
+UUID: 048d9d44_f106e281
+Bytes: 247
+As discussed, this is because of the strange definition of android_memset16. It takes a uint16_t pointer, but assumes that the length be a multiple of 2. If 1, then do nothing. And the last byte is always skipped, at least for this implementation.
+
 50
 Tue Jun 24 00:48:35 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 240c6177_44f6ec74
 Bytes: 66
 why does this work? what if i try to android_memset16 3 uint16_ts?
+
+50
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 240c6177_44f6ec74
+UUID: 048d9d44_11152ea3
+Bytes: 10
+See above.
 
 File: libcutils/arch-arm64/android_memset.S
 
@@ -25,6 +41,14 @@ UUID: 240c6177_24fbe85a
 Bytes: 75
 do you want to duplicate the special case, or just defer to regular memset?
 
+76
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 240c6177_24fbe85a
+UUID: 048d9d44_5164162b
+Bytes: 182
+Since memset and this aren't in the same library, I can't do a direct branch. I can probably do a call, and have another return, but I think it's easier just to leave this code here.
+
 File: libcutils/tests/MemsetTest.cpp
 
 30
@@ -34,12 +58,28 @@ UUID: e489693b_4df719f6
 Bytes: 41
 any explanation of how these were picked?
 
+30
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_4df719f6
+UUID: 048d9d44_71cd92f8
+Bytes: 150
+I added a comment. Essentially, I want a value that doesn't have any repeating values for each byte. I accidentally had a repeat, so that's fixed now.
+
 32
 Tue Jun 24 00:48:35 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e489693b_2d02cd2c
 Bytes: 26
 no need for typedef in C++
+
+32
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_2d02cd2c
+UUID: 44a315b3_64c2323d
+Bytes: 4
+Done
 
 78
 Tue Jun 24 00:48:35 2014 +0000
@@ -48,6 +88,14 @@ UUID: e489693b_ad0ddd58
 Bytes: 33
 "Set" seems like an odd verb here
 
+78
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_ad0ddd58
+UUID: 44a315b3_a4cb3a53
+Bytes: 100
+I'm not sure why I used that name. I changed to GetIncrement, since that's actually what it's doing.
+
 129
 Tue Jun 24 00:48:35 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -55,10 +103,26 @@ UUID: e489693b_8d102170
 Bytes: 20
 just assign on L124?
 
+129
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_8d102170
+UUID: 048d9d44_91283eed
+Bytes: 4
+Done
+
 152
 Tue Jun 24 00:48:35 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e489693b_cd0a293e
 Bytes: 37
 can't this just be 0xff all the time?
+
+152
+Tue Jun 24 02:29:12 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e489693b_cd0a293e
+UUID: 649e596e_2b1555a3
+Bytes: 17
+Good point, done.
 

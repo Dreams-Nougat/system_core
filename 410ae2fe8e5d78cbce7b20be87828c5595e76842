@@ -1,0 +1,11 @@
+Revision: 410ae2fe8e5d78cbce7b20be87828c5595e76842
+Patch-set: 1
+File: libpixelflinger/codeflinger/CodeCache.cpp
+
+205
+Tue Jun 24 14:17:52 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 447cf5f0_a8987bed
+Bytes: 102
+Are you sure that size is expressed in bytes and not number of instructions (i.e number of uint32_t ?)
+

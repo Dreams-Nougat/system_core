@@ -17,3 +17,11 @@ UUID: 24bf01e0_6b516991
 Bytes: 15
 i mean uint64_t
 
+193
+Wed Jun 25 23:52:32 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 24bf01e0_6b516991
+UUID: c4cd45a8_e3a8fc68
+Bytes: 191
+well, it's actually int64_t. but i'm not sure i see your point. C doesn't care that they're the same type, only that they're the same size, and loff_t and off64_t will both always be int64_t.
+

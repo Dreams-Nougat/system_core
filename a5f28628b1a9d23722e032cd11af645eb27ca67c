@@ -1,0 +1,11 @@
+Revision: a5f28628b1a9d23722e032cd11af645eb27ca67c
+Patch-set: 1
+File: toolbox/nandread.c
+
+193
+Wed Jun 25 23:40:55 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24bf01e0_eb4459d9
+Bytes: 136
+would it be better to cast these to u64 if you're using inttypes printing?  There is no guarantee that loff_t and u64 are the same type.
+

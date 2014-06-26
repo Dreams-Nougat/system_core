@@ -1,0 +1,86 @@
+Revision: 8b29e017006f305282f67d4919286097dac3d777
+Patch-set: 2
+File: liblog/logprint.c
+
+22:0-28:25
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 240d41bc_6ae8571c
+Bytes: 537
+I would prefer(tm) that the defines, if required to be defined for include files, be at the top, and if not, at the bottom. In this case, I see no reason why they be defined here, so please define them co-located with the definition of colored_output flag.
+
+These defines conflict with the system file curses.h. Please alter the namespace, all kernel, libs and system header names, used or not, must be avoided if used locally (ask me how I felt when someone defined connect() function locally ;-> in a proprietary binary-object module).
+
+207:0-210:1
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 240d41bc_6a7e1738
+Bytes: 94
+See proposal in logcat review to merge this functionality into android_log_formatFromString().
+
+762:0-763:51
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 840eedb3_2d3a79b9
+Bytes: 295
+prefer use of min(prefixColorLen, prefixBufTempRemainLen - 1)
+
+You are on your own regarding the definition in min() as it is not POSIX, and can collide with the namespace of some headers (windows); there are examples in the Android Tree dealing with this portability issue, absorb their mantra.
+
+761:0-765:44
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4e2a51a_4c349f15
+Bytes: 43
+indent block (4-space is Android Standard).
+
+839:67-839:86
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 240d41bc_6a6df7d2
+Bytes: 362
+NB: Pretend for a moment that you have ncurses available (it is not in Android ecosystem). Convince yourself that if some future self decided to add ncurses that you are not doing anything that makes this more difficult (the most prominent being the namespace choice of COLOR_<colours>, but there may be others). Be satisfied you have future-proofed your design.
+
+840:3-842:5
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 240d41bc_2a249fcd
+Bytes: 66
+again, use one-line min(suffixColorLen, suffixBufTmpRemainLen - 1)
+
+File: logcat/logcat.cpp
+
+234:23-234:25
+Thu Jun 26 17:24:31 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 840eedb3_6d6751a6
+Bytes: 1392
+I am concerned that a minor slip up, the shift key missed, will result in all the logs being cleared. Sadly the defacto-standards leave little choice:
+
+ls(1) gnu uses --color=[always|never|auto] or ${LS_COLOR}
+grep(1) gnu uses --color=[always|never|auto] or ${GREP_COLOR}
+git(1) uses --color=[|always|never|auto]
+
+None of these are an option without changing the argument parsing :-(
+
+With my limited imagination, I propose overloading -v <format> to allow additively setting with the string "color". This does bloat the definition of -v, but nothing says any of the settings are mutually exclusive, additive or not, so you could merely just add color as an option and we quietly remain vague.
+
+Thus 'logcat -v color -v time' for instance, where color is parsed separately to set the color flag, and not affect other format selections.
+
+I can offer their implementation details, in order from worst to best IMHO:
+
+    case 'v':
++       if (!strcasecmp(optarg, "color")) {
++           setColorOutput();
++           break;
++       }
+        err = setLogFormat(optarg);
+
+*or*
+
+make it part of the setLogFormat(const char * formatString) function in logcat.
+
+*or*
+
+You could move *all* of this into liblog (minus the logcat format definition in help) and allow android_log_formatFromString() to look after this all internally within logprint.c and drop adding the 'android_log_setColoredOutput()'
+

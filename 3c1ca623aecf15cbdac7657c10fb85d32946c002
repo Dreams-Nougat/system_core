@@ -1,0 +1,11 @@
+Revision: 3c1ca623aecf15cbdac7657c10fb85d32946c002
+Patch-set: 1
+File: libutils/tests/Android.mk
+
+24:0-25:35
+Thu Jun 26 17:09:56 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4e2a51a_8f9f194f
+Bytes: 200
+I know you didn't do this originally, but why in the world is this not compiled into a single unit test binary? All of these appear to be gtests, so there is no reason to create this many executables.
+

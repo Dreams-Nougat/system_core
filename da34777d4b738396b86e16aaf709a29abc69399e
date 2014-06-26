@@ -1,0 +1,22 @@
+Revision: da34777d4b738396b86e16aaf709a29abc69399e
+Patch-set: 1
+File: init/init.c
+
+550
+Thu Jun 26 20:12:19 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4d5e933_333ad0b9
+Bytes: 109
+you could check the current log level to avoid doing all this string processing if debugging is not turned on
+
+551
+Thu Jun 26 20:12:19 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44ba35ef_67b2bcec
+Bytes: 169
+this might be a little safer (although less efficent) as:
+
+    strlcat(cmd_str, cur_command->args[i]);
+    if (i < cur_command->nargs - 1)
+        strlcat(smd_str, " ");
+

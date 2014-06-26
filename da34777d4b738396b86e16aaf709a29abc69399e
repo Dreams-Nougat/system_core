@@ -9,6 +9,14 @@ UUID: e4d5e933_333ad0b9
 Bytes: 109
 you could check the current log level to avoid doing all this string processing if debugging is not turned on
 
+550
+Thu Jun 26 20:31:02 2014 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4d5e933_333ad0b9
+UUID: a4f851d3_26a61838
+Bytes: 47
+Ah, I couldn't find this when I looked earlier.
+
 551
 Thu Jun 26 20:12:19 2014 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,4 +27,12 @@ this might be a little safer (although less efficent) as:
     strlcat(cmd_str, cur_command->args[i]);
     if (i < cur_command->nargs - 1)
         strlcat(smd_str, " ");
+
+551
+Thu Jun 26 20:31:02 2014 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44ba35ef_67b2bcec
+UUID: c4fb85cc_07bf9898
+Bytes: 43
+If you think that's better I'll wire it up.
 

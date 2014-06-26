@@ -1,0 +1,27 @@
+Revision: 9199a4f03d247552dea16a26cb478d3664eed92e
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+56
+Thu Jun 26 23:47:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4f851d3_92d06231
+Bytes: 86
+i think you probably want to pass both pid and tid in...
+
+(or the debugger_request_t.)
+
+59
+Thu Jun 26 23:47:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4f851d3_f2aaf6a7
+Bytes: 28
+pid/tid doesn't matter here.
+
+72
+Thu Jun 26 23:47:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4f851d3_d2493a48
+Bytes: 164
+it's better to about about suspending and resuming the process because that's what happens --- all the threads get suspended/resumed, not just the one that crashed.
+

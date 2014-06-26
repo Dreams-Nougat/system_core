@@ -84,3 +84,11 @@ make it part of the setLogFormat(const char * formatString) function in logcat.
 
 You could move *all* of this into liblog (minus the logcat format definition in help) and allow android_log_formatFromString() to look after this all internally within logprint.c and drop adding the 'android_log_setColoredOutput()'
 
+234:23-234:25
+Thu Jun 26 17:32:38 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 840eedb3_6d6751a6
+UUID: e472491f_39bdb7c5
+Bytes: 77
+I agree, too close to "-c". This is going to cause a *large* deal of grief :)
+

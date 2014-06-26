@@ -25,3 +25,11 @@ UUID: c4cd45a8_e3a8fc68
 Bytes: 191
 well, it's actually int64_t. but i'm not sure i see your point. C doesn't care that they're the same type, only that they're the same size, and loff_t and off64_t will both always be int64_t.
 
+193
+Thu Jun 26 00:02:07 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4cd45a8_e3a8fc68
+UUID: 84e50d1e_e1011029
+Bytes: 85
+you'll get a warning if loff_t is defined as long and int64_t is defined as long long
+

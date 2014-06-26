@@ -33,3 +33,18 @@ UUID: 84e50d1e_e1011029
 Bytes: 85
 you'll get a warning if loff_t is defined as long and int64_t is defined as long long
 
+193
+Thu Jun 26 00:07:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84e50d1e_e1011029
+UUID: a4ca118f_0d88c5a2
+Bytes: 137
+but we don't do that. they're now both 'long' on LP64 and were always both 'long long' on LP32. (this is the warning this patch removes.)
+
+250
+Thu Jun 26 00:07:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4ca118f_8d9cd5e2
+Bytes: 130
+(i thought this was the questionable part, even though i made an incorrectness-preserving change. 64 bits means 16 digits, not 8.)
+

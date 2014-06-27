@@ -1,0 +1,18 @@
+Revision: 76ffff2ae48523d06ac8d47f09747307105c056f
+Patch-set: 2
+File: debuggerd/debuggerd.cpp
+
+56
+Fri Jun 27 00:24:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4fec9bb_94fbb2df
+Bytes: 7
+const&?
+
+96
+Fri Jun 27 00:24:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4fec9bb_b4f6aef7
+Bytes: 7
+thread?
+

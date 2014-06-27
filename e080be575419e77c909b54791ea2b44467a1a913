@@ -1,0 +1,11 @@
+Revision: e080be575419e77c909b54791ea2b44467a1a913
+Base-for-patch-set: 1
+File: debuggerd/tombstone.cpp
+
+486:1-489:5
+Fri Jun 27 22:59:19 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 448b1570_3f64f3ec
+Bytes: 137
+I know this does not appear to be a cosmetic change, but it is, android_logger_list_open filters out and only presents the selected pids.
+

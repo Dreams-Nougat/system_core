@@ -1,0 +1,18 @@
+Revision: 67af8addeebaa1e96687e369a021b632980f1607
+Patch-set: 1
+File: include/system/window.h
+
+10
+Sat Jun 28 00:15:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84334d7e_ab48b972
+Bytes: 4
+oops
+
+30
+Sat Jun 28 00:15:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 443dd54b_a649d2ef
+Bytes: 54
+i don't think you meant to change the second of these.
+

@@ -9,3 +9,13 @@ UUID: e4fec9bb_b4522e10
 Bytes: 78
 if "both" is the default, why do i keep seeing people explicitly write "both"?
 
+18
+Mon Jun 30 11:26:18 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4fec9bb_b4522e10
+UUID: 841c2dfc_60596611
+Bytes: 159
+It's the default for BUILD_NATIVE_TEST but not other rules. If you've seen people do this for tests, tell them it's unnecessary.
+
+See build/core/native_test.mk
+

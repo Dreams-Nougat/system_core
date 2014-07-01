@@ -1,0 +1,18 @@
+Revision: 2a4d05a4e38b84cf287bb2d2266c07b6f10c9dee
+Patch-set: 2
+File: liblog/logd_write.c
+
+487:4-487:27
+Tue Jul 01 20:04:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4efa930_e627b43c
+Bytes: 77
+Needs to be stored big-endian, to handle all architectures better to convert.
+
+491:4-491:27
+Tue Jul 01 20:04:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24ee2135_48b67318
+Bytes: 66
+same here, expectation is that the wire-value is stored big-endian
+

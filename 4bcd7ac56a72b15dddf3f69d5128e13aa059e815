@@ -1,0 +1,20 @@
+Revision: 4bcd7ac56a72b15dddf3f69d5128e13aa059e815
+Patch-set: 1
+File: netcfg/Android.mk
+
+16:34-16:42
+Tue Jul 01 20:38:32 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4efa930_71bd20ee
+Bytes: 83
+this is used outside of recovery, it should follow TARGET_PREFER_32_BIT_EXECUTABLES
+
+File: toolbox/Android.mk
+
+118:34-118:42
+Tue Jul 01 20:38:32 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24ee2135_a8961ff4
+Bytes: 83
+this is used outside of recovery, it should follow TARGET_PREFER_32_BIT_EXECUTABLES
+

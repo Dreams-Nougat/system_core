@@ -1,0 +1,11 @@
+Revision: 259b9cb263117b8911ccd83ab135ef5cca65071b
+Patch-set: 1
+File: liblog/logd_write.c
+
+494:24-494:28
+Tue Jul 01 18:30:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24ee2135_858ea668
+Bytes: 141
+length must match specified event data length. No need to add +1 here (the value is memcpy'd into buffer, we do *not* want the trailing nul).
+

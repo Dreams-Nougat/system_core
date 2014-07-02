@@ -27,6 +27,14 @@ UUID: 64b2d95d_5750e4e3
 Bytes: 138
 I dealt with it by creating the bytestream directly ... yes it can be deferred since all our currently platforms are native big-endian (?)
 
+487:4-487:27
+Wed Jul 02 16:56:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64b2d95d_5750e4e3
+UUID: a412110c_9920db91
+Bytes: 37
+ain't nobody got time for big endian.
+
 491:4-491:27
 Tue Jul 01 20:04:20 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

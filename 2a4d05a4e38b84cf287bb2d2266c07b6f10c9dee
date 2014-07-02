@@ -9,6 +9,16 @@ UUID: e4efa930_e627b43c
 Bytes: 77
 Needs to be stored big-endian, to handle all architectures better to convert.
 
+487:4-487:27
+Wed Jul 02 16:40:51 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4efa930_e627b43c
+UUID: 640d79e9_bf7adffc
+Bytes: 312
+Currently, tag and len are handled as little endian values. This code is identical to code from lines 467 and 449 above.
+
+Converting these fields to big-endian values involves touching quite a bit of other code, and is a significantly more intrusive change. I'd recommend deferring this change to a later change.
+
 491:4-491:27
 Tue Jul 01 20:04:20 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

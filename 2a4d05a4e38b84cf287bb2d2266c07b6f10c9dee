@@ -19,6 +19,14 @@ Currently, tag and len are handled as little endian values. This code is identic
 
 Converting these fields to big-endian values involves touching quite a bit of other code, and is a significantly more intrusive change. I'd recommend deferring this change to a later change.
 
+487:4-487:27
+Wed Jul 02 16:54:37 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 640d79e9_bf7adffc
+UUID: 64b2d95d_5750e4e3
+Bytes: 138
+I dealt with it by creating the bytestream directly ... yes it can be deferred since all our currently platforms are native big-endian (?)
+
 491:4-491:27
 Tue Jul 01 20:04:20 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

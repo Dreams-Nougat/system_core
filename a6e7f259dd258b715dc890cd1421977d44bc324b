@@ -1,0 +1,11 @@
+Revision: a6e7f259dd258b715dc890cd1421977d44bc324b
+Patch-set: 1
+File: /COMMIT_MSG
+
+9
+Mon Jul 07 17:54:17 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e43969b5_73d35809
+Bytes: 121
+it's more useful if you paste the link for non-buganizer bugs... https://code.google.com/p/android/issues/detail?id=72867
+

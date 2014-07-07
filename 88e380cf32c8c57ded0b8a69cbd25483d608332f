@@ -1,0 +1,29 @@
+Revision: 88e380cf32c8c57ded0b8a69cbd25483d608332f
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+332
+Mon Jul 07 23:07:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 442cf57a_284b2b95
+Bytes: 194
+qac?
+
+the sizes column might be more readable if it was right-aligned.
+
+did you check the output from a running app to see that it looks reasonable? (that will have more, and more varied, maps.)
+
+358
+Mon Jul 07 23:07:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e474097d_eaad8b76
+Bytes: 4
+if (
+
+364
+Mon Jul 07 23:07:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e474097d_0ab3a7d9
+Bytes: 6
+addr <
+

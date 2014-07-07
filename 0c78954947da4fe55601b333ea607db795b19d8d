@@ -1,0 +1,11 @@
+Revision: 0c78954947da4fe55601b333ea607db795b19d8d
+Patch-set: 1
+File: init/devices.c
+
+169
+Mon Jul 07 14:41:29 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c471c58d_08c7374b
+Bytes: 56
+Do we truly need this to be recursive?  If so, when/why?
+

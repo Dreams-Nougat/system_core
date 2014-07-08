@@ -9,3 +9,15 @@ UUID: 643739c4_d5d13fdf
 Bytes: 261
 Even if there's nothing sensitive, I'd prefer if this directory could be 0700, if it can be done. It's hard to tell what may or may not be sensitive now and in the future, and it's always safer to lock things down early and only relax the permissions if needed.
 
+254
+Tue Jul 08 05:39:03 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 643739c4_d5d13fdf
+UUID: 643739c4_353d3b4a
+Bytes: 326
+I don't mind, but can it be relaxed in the future, though? I was under the impression that once the data dir has been created, future upgrades to the OS will have to preserve the data dirs (and only create new ones).
+
+Well, I suppose we can call the new relaxed-permissions dir "net2" or "netd" or "net-public" or such.
+
+Done.
+

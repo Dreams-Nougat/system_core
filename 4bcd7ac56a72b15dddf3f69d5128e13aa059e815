@@ -18,3 +18,13 @@ UUID: 24ee2135_a8961ff4
 Bytes: 83
 this is used outside of recovery, it should follow TARGET_PREFER_32_BIT_EXECUTABLES
 
+118:34-118:42
+Tue Jul 08 20:02:46 2014 +0000
+Author: Bruce J Beare <1003360@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 24ee2135_a8961ff4
+UUID: 84326dd1_2a1314ed
+Bytes: 424
+It is... but the /system use of it has both the 32bit and 64bit libraries in /system/lib*. The recovery/userfastboot image on the other hand "prefers" 64bit executables for both 64p and 32p.
+
+We can change that... If you want recovery to have all 32bit on a 32p (I don't see the argument for that). If you want to go this route, could you give some guidance on how to change the build to have the 32bit libs in 32p recovery?
+

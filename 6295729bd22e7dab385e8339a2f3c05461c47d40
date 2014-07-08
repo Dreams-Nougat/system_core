@@ -1,0 +1,11 @@
+Revision: 6295729bd22e7dab385e8339a2f3c05461c47d40
+Patch-set: 1
+File: rootdir/init.rc
+
+254
+Tue Jul 08 05:25:02 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 643739c4_d5d13fdf
+Bytes: 261
+Even if there's nothing sensitive, I'd prefer if this directory could be 0700, if it can be done. It's hard to tell what may or may not be sensitive now and in the future, and it's always safer to lock things down early and only relax the permissions if needed.
+

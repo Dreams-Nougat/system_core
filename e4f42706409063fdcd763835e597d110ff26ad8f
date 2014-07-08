@@ -1,0 +1,11 @@
+Revision: e4f42706409063fdcd763835e597d110ff26ad8f
+Patch-set: 5
+File: debuggerd/crasher.c
+
+184
+Tue Jul 08 17:31:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2431c1d1_6aefd721
+Bytes: 17
+SIGSEGV-unmapped?
+

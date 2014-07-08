@@ -29,3 +29,11 @@ UUID: c4462542_2c4ec8a4
 Bytes: 117
 Yes, this can be relaxed in the future. The permissions on this directory are applied at every boot, not just 1 time.
 
+254
+Tue Jul 08 15:50:17 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4462542_2c4ec8a4
+UUID: e43969b5_fc9f154d
+Bytes: 127
+bugreport drops root very early, so I've made this readable by its group ('shell'). Still not world-readable. Hope that's okay.
+

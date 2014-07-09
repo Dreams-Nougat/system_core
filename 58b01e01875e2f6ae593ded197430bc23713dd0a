@@ -1,0 +1,11 @@
+Revision: 58b01e01875e2f6ae593ded197430bc23713dd0a
+Patch-set: 3
+File: adb/usb_linux.c
+
+243
+Wed Jul 09 16:45:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9f75445_bdb61f71
+Bytes: 152
+does this build for the host? https://android-review.googlesource.com/#/c/100661/ claimed that the constants weren't in our prebuilt host gcc's headers.
+

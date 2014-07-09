@@ -1,0 +1,11 @@
+Revision: 430bc5bfe0d4bca281fdea4baf8df7b162695b5d
+Patch-set: 4
+File: charger/charger.c
+
+885:0-887:15
+Wed Jul 09 06:48:16 2014 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c41f0544_13b69617
+Bytes: 90
+will remove this comment, the change from previous is described in the commit description.
+

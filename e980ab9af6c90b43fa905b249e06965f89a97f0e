@@ -9,10 +9,26 @@ UUID: 396bacde_3aab1da6
 Bytes: 9
 mkdtemp()
 
+487:4-491:35
+Thu Jul 10 22:01:23 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 396bacde_3aab1da6
+UUID: 396bacde_facfe560
+Bytes: 126
+OK, pedantically better, I just wanted to make sure this quick test would not collide with other instances of itself. Will do.
+
 523:4-524:34
 Thu Jul 10 21:51:07 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1980a8c3_b9edfb25
 Bytes: 35
 unlink(tempfile) and rmdir(tempdir)
+
+523:4-524:34
+Thu Jul 10 22:01:23 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1980a8c3_b9edfb25
+UUID: 396bacde_3acebd69
+Bytes: 90
+There are 8 temp files (for -n 7) created by logcat, rm -rf is more to the point and KISS.
 

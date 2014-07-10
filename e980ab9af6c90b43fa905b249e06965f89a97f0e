@@ -1,0 +1,18 @@
+Revision: e980ab9af6c90b43fa905b249e06965f89a97f0e
+Patch-set: 2
+File: logcat/tests/logcat_test.cpp
+
+487:4-491:35
+Thu Jul 10 21:51:07 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 396bacde_3aab1da6
+Bytes: 9
+mkdtemp()
+
+523:4-524:34
+Thu Jul 10 21:51:07 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1980a8c3_b9edfb25
+Bytes: 35
+unlink(tempfile) and rmdir(tempdir)
+

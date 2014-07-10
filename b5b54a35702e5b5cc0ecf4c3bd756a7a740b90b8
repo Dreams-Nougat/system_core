@@ -11,10 +11,26 @@ it's the const you need to cast away here, not the type, so (char*) might be mor
 
 this is called between fork and exec, where i'd expect allocation to be forbidden, but i guess (a) you don't have threads in init and (b) that was always the behavior here thanks to the malloc below.
 
+109
+Thu Jul 10 10:38:17 2014 +0000
+Author: James Morrissey <1048291@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9015cf5_1be2bb37
+UUID: d9045004_a6184711
+Bytes: 4
+Done
+
 126
 Wed Jul 09 15:03:10 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f9f75445_9d048334
 Bytes: 84
 i think this should be -1 and you should change do_export to return add_environment.
+
+126
+Thu Jul 10 10:38:17 2014 +0000
+Author: James Morrissey <1048291@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9f75445_9d048334
+UUID: d9045004_861d4b02
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 56cbd19b1b8a42a0011be78aa1051304bc57127d
+Base-for-patch-set: 1
+File: init/init.c
+
+834
+Fri Jul 11 22:38:36 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d979b0b6_1dc3b7d1
+Bytes: 99
+these checks/errors should probably be moved to property_service_init_action and signal_init_action
+

@@ -23,10 +23,46 @@ UUID: 59ba20ef_e1a7dc8f
 Bytes: 156
 If __cplusplus is not defined, this fragment will not work on older C compilers. You need a #ifdef __cplusplus wrapped around it to be pedantically correct.
 
+27
+Wed Jul 16 21:22:21 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19c8a874_368f6db1
+UUID: 19c8a874_4c7618ea
+Bytes: 92
+Oops.  I'm testing the wrong macro.  I should just be checking __STDC_VERSION__ .  Will fix.
+
+27:38-27:49
+Wed Jul 16 21:22:21 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59ba20ef_e1a7dc8f
+UUID: 59ba20ef_c7faa853
+Bytes: 659
+__cplusplus is 201103L for C++11, 199711L for any standard before that.  It's year + month.  2010 seemed like a reasonable cutoff.  I don't know of any implementations for which it actually matters.  It doesn't seem to be customary to use in-between values for partial implementations.  I can change it to <201103L, if you prefer.
+
+According to the standard, it's fine for it to be undefined.  Non-macro-defined identifiers are replace by zero before evaluating conditions like this.  I believe this does correctly test that we're using neither C11 nor C++11.  Based on http://port70.net/~nsz/c/c89/c89-draft.html#3.8.1, this has been true since at least C89.
+
 28:10-28:28
 Wed Jul 16 19:53:59 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 79c52478_028d3026
 Bytes: 439
 For here, no problem, since you are compiling to a 'C' interface, you have no mangling concerns for binary compatibility for these following prototypes. If there is any C++ code that uses the char16_t type as inherited here (as uint16_t) like this, where one module is compiled with --std=gnu11++ and another without, differences in the mangling will not see identity when the linker phase comes in. Only a problem really for libraries ...
+
+28:10-28:28
+Wed Jul 16 21:22:21 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79c52478_028d3026
+UUID: 59ba20ef_07f1c077
+Bytes: 451
+That's clearly a valid concern.  But since char16_t is a keyword in both C11 and C++11, I don't see a clean way out. If I understand correctly, there is already no way to make such code compile and link, right?
+
+An unconditional
+
+typedef foo <C11/C++11 reserved word>
+
+still seems like an even more serious problem.
+
+Can you think of a better way to proceed?
+
+We already seem to have this problem in Unicode.h.  I think I'm merely aggravating it :-( .
 

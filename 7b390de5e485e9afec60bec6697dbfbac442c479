@@ -9,3 +9,24 @@ UUID: 19c8a874_368f6db1
 Bytes: 109
 does __STDC_ISO_10646__ actually get defined for the target? i only see it defined in host prebuilt sysroots.
 
+27:53-27:60
+Wed Jul 16 19:53:59 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19c8a874_16aa71f4
+Bytes: 227
+__cplusplus < 20110?L (? is some number which escapes me) I think looks after all of this; with no need to check __STDC_ISO_10646? I am sorry if I do not remember the threshold for __cplusplus version compliance for gnu++11 ...
+
+27:38-27:49
+Wed Jul 16 19:53:59 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59ba20ef_e1a7dc8f
+Bytes: 156
+If __cplusplus is not defined, this fragment will not work on older C compilers. You need a #ifdef __cplusplus wrapped around it to be pedantically correct.
+
+28:10-28:28
+Wed Jul 16 19:53:59 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79c52478_028d3026
+Bytes: 439
+For here, no problem, since you are compiling to a 'C' interface, you have no mangling concerns for binary compatibility for these following prototypes. If there is any C++ code that uses the char16_t type as inherited here (as uint16_t) like this, where one module is compiled with --std=gnu11++ and another without, differences in the mangling will not see identity when the linker phase comes in. Only a problem really for libraries ...
+

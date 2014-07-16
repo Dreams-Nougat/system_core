@@ -1,0 +1,11 @@
+Revision: 8ba98507bda6e881a145242c7490b3873f2158f8
+Patch-set: 2
+File: include/cutils/jstring.h
+
+27
+Wed Jul 16 23:01:26 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39f48cd0_cfaabd72
+Bytes: 20
+stray space before )
+

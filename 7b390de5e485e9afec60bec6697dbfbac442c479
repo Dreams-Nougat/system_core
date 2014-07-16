@@ -1,0 +1,11 @@
+Revision: 7b390de5e485e9afec60bec6697dbfbac442c479
+Patch-set: 1
+File: include/cutils/jstring.h
+
+27
+Wed Jul 16 19:39:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19c8a874_368f6db1
+Bytes: 109
+does __STDC_ISO_10646__ actually get defined for the target? i only see it defined in host prebuilt sysroots.
+

@@ -1,0 +1,20 @@
+Revision: 4b8b750c22db7d36d870668d3ae6eb3fd2f1a7e6
+Patch-set: 1
+File: debuggerd/utility.h
+
+53
+Thu Jul 17 22:12:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1975083e_02267ad5
+Bytes: 7
+why -2?
+
+55
+Thu Jul 17 22:12:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e1025_203932c3
+Bytes: 221
+http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?showone=Constructor_Initializer_Lists#Constructor_Initializer_Lists
+
+(i think this will fit on one line, but if not, the { and } should be aligned correctly.)
+

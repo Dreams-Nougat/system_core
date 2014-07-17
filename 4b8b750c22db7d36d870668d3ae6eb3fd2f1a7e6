@@ -9,6 +9,16 @@ UUID: 1975083e_02267ad5
 Bytes: 7
 why -2?
 
+53
+Thu Jul 17 22:17:58 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1975083e_02267ad5
+UUID: f9ef5430_7dfe977c
+Bytes: 279
+Because the code only checks that crashed_tid != current_tid. I think it would be better to have them both be initialized to -1, and have the code that does the equality check verify that one isn't -1.
+
+This is not very intuitive so someone could very easily think this is a bug.
+
 55
 Thu Jul 17 22:12:18 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

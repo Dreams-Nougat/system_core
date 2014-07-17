@@ -19,6 +19,14 @@ Because the code only checks that crashed_tid != current_tid. I think it would b
 
 This is not very intuitive so someone could very easily think this is a bug.
 
+53
+Thu Jul 17 22:21:49 2014 +0000
+Author: Brigid Smith <1047249@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1975083e_02267ad5
+UUID: d97e1025_a09f6256
+Bytes: 57
+Oh, meant to make this 0.  I wrote this before we talked.
+
 55
 Thu Jul 17 22:12:18 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

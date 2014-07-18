@@ -1,0 +1,11 @@
+Revision: c75a02fe3f9abec006a1e88794f2fa12fbeafd8f
+Patch-set: 3
+File: debuggerd/utility.cpp
+
+62:22-63:47
+Fri Jul 18 17:51:06 2014 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9ef5430_d7434479
+Bytes: 103
+This isn't worth fixing since it's a small thing, but technically you don't need both checks, only one.
+

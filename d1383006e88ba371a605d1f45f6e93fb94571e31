@@ -9,3 +9,15 @@ UUID: 5964e099_1109ee94
 Bytes: 168
 This seems like the wrong place to fix this, and there are other services that are likely to be affected too.  Have you looked into why init is failing to restart netd?
 
+14
+Sat Jul 19 18:44:25 2014 +0000
+Author: Sreeram Ramachandran <1031429@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5964e099_1109ee94
+UUID: 1975083e_451d5efe
+Bytes: 735
+My original commit message was mistaken. "stop && start" is explicitly not the same as "restart", so netd (and any other affected services) aren't expected to be restarted in the former case. This is as far as I understood, looking at handle_control_message() and the methods it calls (msg_start, msg_stop nd msg_restart).
+
+So, even if we did add a toolbox command that set "ctl.restart", I doubt it will help, since my understanding is that most developers are used to doing "start && stop".
+
+I haven't heard of any other services failing to be restarted on "start && stop", which is why this patch addresses only netd. If indeed other services are affected, I think the right solution is to add them too, perhaps in separate patches.
+

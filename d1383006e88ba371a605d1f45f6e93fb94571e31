@@ -1,0 +1,11 @@
+Revision: d1383006e88ba371a605d1f45f6e93fb94571e31
+Patch-set: 1
+File: toolbox/start.c
+
+14
+Sat Jul 19 16:50:23 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5964e099_1109ee94
+Bytes: 168
+This seems like the wrong place to fix this, and there are other services that are likely to be affected too.  Have you looked into why init is failing to restart netd?
+

@@ -1,0 +1,18 @@
+Revision: df62cf365c8a0bda75ae8fd583366c72e027751d
+Patch-set: 2
+File: libcutils/Android.mk
+
+84
+Mon Jul 21 18:40:57 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d91530f5_dd0ebf07
+Bytes: 43
+We already build it both 32-bit and 64-bit.
+
+100
+Mon Jul 21 18:40:57 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9123c0c_390c27ce
+Bytes: 51
+We don't need such 64-bit module variants any more.
+

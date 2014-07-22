@@ -1,0 +1,27 @@
+Revision: 729cb79818833ffe3a9bc9adad7b79b0f89b4694
+Patch-set: 1
+File: toolbox/cp/cp.c
+
+223
+Tue Jul 22 19:04:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79b2845d_3a56e5e8
+Bytes: 84
+we could build this file without changes if we did something like -DSIGINFO=SIGUSR1.
+
+File: toolbox/cp/utils.c
+
+85
+Tue Jul 22 19:04:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59b7804c_79087b49
+Bytes: 67
+i don't know how we could do this without changing the file though.
+
+201
+Tue Jul 22 19:04:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39bc8c31_98fef9ce
+Bytes: 49
+and i assume upstream would think this is insane.
+

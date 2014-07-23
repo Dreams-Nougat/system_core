@@ -1,0 +1,20 @@
+Revision: c284aaa4dba84e9b7cbf552cddb282aea3d5e6aa
+Patch-set: 1
+File: toolbox/Android.mk
+
+166
+Wed Jul 23 03:01:25 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79b2845d_538bcf5f
+Bytes: 289
+there are others we could do but some, like mkdir, have grown GNUish options like the --parents synonym for -p. i'm not sure how strong a command-line backwards compatibility stance we have...
+
+here i've mostly just done the stuff that was already NetBSD source plus a few easy other ones.
+
+210
+Wed Jul 23 03:01:25 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59b7804c_8d935606
+Bytes: 155
+oddly, we have an x86 swab.S but it's not built and not declared in any header (and none of the other architectures have anything). glibc does have a swab.
+

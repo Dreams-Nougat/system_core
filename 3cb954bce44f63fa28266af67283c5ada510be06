@@ -1,0 +1,11 @@
+Revision: 3cb954bce44f63fa28266af67283c5ada510be06
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+151
+Thu Jul 24 19:55:31 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9461042_b8abcea6
+Bytes: 196
+I'm pretty sure you also need to check for action < 0. My understanding is that the type of an enum isn't guaranteed by the compiler, and action is derived from remotely supplied input (line 210).
+

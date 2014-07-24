@@ -1,0 +1,11 @@
+Revision: c7bc3afdca064c02a8421502925a60094e1995e0
+Patch-set: 1
+File: fastboot/fastboot.c
+
+1167:22-1167:23
+Thu Jul 24 19:03:46 2014 +0000
+Author: Andrew P Boie <1011333@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193d089f_84394fc5
+Bytes: 15
+indentation nit
+

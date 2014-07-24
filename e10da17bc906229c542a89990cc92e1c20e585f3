@@ -1,0 +1,18 @@
+Revision: e10da17bc906229c542a89990cc92e1c20e585f3
+Patch-set: 1
+File: adb/file_sync_client.c
+
+820:7-820:11
+Thu Jul 24 17:57:25 2014 +0000
+Author: Brent Austin <1051463@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9461042_47adad1d
+Bytes: 31
+Change to "adb_fstat(fd, &st)"?
+
+1028:11-1028:27
+Thu Jul 24 17:57:25 2014 +0000
+Author: Brent Austin <1051463@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9461042_47a3ed22
+Bytes: 31
+Change to "adb_fstat(fd, &st)"?
+

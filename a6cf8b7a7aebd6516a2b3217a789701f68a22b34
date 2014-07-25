@@ -1,0 +1,27 @@
+Revision: a6cf8b7a7aebd6516a2b3217a789701f68a22b34
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+290
+Fri Jul 25 14:42:26 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9431c33_516ad426
+Bytes: 26
+this could be const int fd
+
+308
+Fri Jul 25 14:42:26 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9431c33_316d483e
+Bytes: 65
+... and this could be "explicit ZipArchive(int fd) : fd(fd)....."
+
+710
+Fri Jul 25 14:42:26 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9932d8d1_33b63a14
+Bytes: 93
+"delete archive;"
+
+Also, the close() release etc. could go into the destructor for ZipArchive
+

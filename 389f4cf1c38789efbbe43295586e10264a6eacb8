@@ -9,12 +9,34 @@ UUID: f922f488_d424ea9d
 Bytes: 12
 why strncmp?
 
+215
+Fri Jul 25 23:00:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f922f488_d424ea9d
+UUID: 36f65b4a_252f9aa9
+Bytes: 13
+see below ...
+
 216
 Fri Jul 25 21:48:53 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f922f488_f429e674
 Bytes: 56
 can you give examples of the name(s) you're looking for?
+
+216
+Fri Jul 25 23:00:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f922f488_f429e674
+UUID: 36f65b4a_e5e2d235
+Bytes: 88
+Got it, need to add a comment ...
+
+logd
+logd.reader
+logd.writer
+logd.auditd
+logd.control
 
 File: debuggerd/utility.h
 
@@ -24,4 +46,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9949f84f_99629c62
 Bytes: 23
 should_retrieve_logcat?
+
+50
+Fri Jul 25 23:00:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9949f84f_99629c62
+UUID: 96e70794_18e3d23b
+Bytes: 36
+I'd prefer enable_logcat I guess ...
 

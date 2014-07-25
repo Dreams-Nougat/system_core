@@ -1,0 +1,11 @@
+Revision: 1aa00e56b3724bec3c6aec7b35b39771ade2aca2
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+317
+Fri Jul 25 15:01:58 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9932d8d1_f3f742a7
+Bytes: 42
+these lines should be indented by 2 chars.
+

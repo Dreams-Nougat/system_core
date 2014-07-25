@@ -9,12 +9,28 @@ UUID: b9431c33_516ad426
 Bytes: 26
 this could be const int fd
 
+290
+Fri Jul 25 14:58:13 2014 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9431c33_516ad426
+UUID: b9431c33_b1ef7861
+Bytes: 4
+Done
+
 308
 Fri Jul 25 14:42:26 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b9431c33_316d483e
 Bytes: 65
 ... and this could be "explicit ZipArchive(int fd) : fd(fd)....."
+
+308
+Fri Jul 25 14:58:13 2014 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9431c33_316d483e
+UUID: 9932d8d1_33539af9
+Bytes: 4
+Done
 
 710
 Fri Jul 25 14:42:26 2014 +0000
@@ -24,4 +40,12 @@ Bytes: 93
 "delete archive;"
 
 Also, the close() release etc. could go into the destructor for ZipArchive
+
+710
+Fri Jul 25 14:58:13 2014 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9932d8d1_33b63a14
+UUID: 7937e4c3_cfc291cc
+Bytes: 4
+Done
 

@@ -55,3 +55,11 @@ UUID: 96e70794_18e3d23b
 Bytes: 36
 I'd prefer enable_logcat I guess ...
 
+50
+Fri Jul 25 23:21:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96e70794_18e3d23b
+UUID: 36f65b4a_a5b16ae3
+Bytes: 236
+given that debuggerd writes a subset of its output to logcat, that's too confusing. that's why i didn't like "bool logcat". we really need to make it clear that this is some weird special case that most people don't even know exists :-)
+

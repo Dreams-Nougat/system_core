@@ -17,3 +17,19 @@ UUID: f974b47c_aa8e33b1
 Bytes: 83
 ccross: do we want to support multiple strings, or is that a documentation fix too?
 
+260
+Fri Jul 25 19:10:04 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f974b47c_aa8e33b1
+UUID: 794e0458_4ba05915
+Bytes: 109
+Remove all references to writing multiple strings, I don't see any reason why we would want that implemented.
+
+261
+Fri Jul 25 19:10:04 2014 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76ec537a_84eae850
+Bytes: 120
+I suggest changing this to:
+Open the file at <path> and write one or more strings to it with write(2) without appending.
+

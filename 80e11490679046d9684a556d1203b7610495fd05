@@ -1,0 +1,11 @@
+Revision: 80e11490679046d9684a556d1203b7610495fd05
+Patch-set: 3
+File: init/watchdogd.c
+
+45
+Fri Jul 25 16:33:53 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f974b47c_2fa31524
+Bytes: 140
+have you tested this on tip-of-tree AOSP? This likely doesn't work, as external/sepolicy/watchdogd.te has not granted the setuid capability.
+

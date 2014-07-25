@@ -1,0 +1,27 @@
+Revision: 389f4cf1c38789efbbe43295586e10264a6eacb8
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+215
+Fri Jul 25 21:48:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f922f488_d424ea9d
+Bytes: 12
+why strncmp?
+
+216
+Fri Jul 25 21:48:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f922f488_f429e674
+Bytes: 56
+can you give examples of the name(s) you're looking for?
+
+File: debuggerd/utility.h
+
+50
+Fri Jul 25 21:48:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9949f84f_99629c62
+Bytes: 23
+should_retrieve_logcat?
+

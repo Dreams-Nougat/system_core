@@ -9,3 +9,11 @@ UUID: 76ec537a_04dff8ed
 Bytes: 139
 Should remove the [ <string> ], function do_write does not itterate over all arguments, only takes into consideration path and first string
 
+260
+Fri Jul 25 18:28:25 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76ec537a_04dff8ed
+UUID: f974b47c_aa8e33b1
+Bytes: 83
+ccross: do we want to support multiple strings, or is that a documentation fix too?
+

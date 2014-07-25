@@ -1,0 +1,11 @@
+Revision: 8d865cb31222791dcf48dc085ec33cc9846eef3e
+Patch-set: 1
+File: init/readme.txt
+
+260
+Fri Jul 25 18:23:46 2014 +0000
+Author: Frédéric Nadeau <1051703@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76ec537a_04dff8ed
+Bytes: 139
+Should remove the [ <string> ], function do_write does not itterate over all arguments, only takes into consideration path and first string
+

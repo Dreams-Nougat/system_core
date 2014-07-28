@@ -11,10 +11,26 @@ not sure that comment's adding anything now we've fixed the name. it'd be more u
 
 (i wish there was some way more reliable than thread name to recognize logd :-( )
 
+49
+Mon Jul 28 17:43:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d91ff043_bcbe6798
+UUID: f974b47c_a8c0f65f
+Bytes: 108
+agreed, I had alarm bells, but then let go when Captain Obvious wrote the above set ;->. Will explain _why_.
+
 54
 Mon Jul 28 17:26:34 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 16fb1735_8d20cdbb
 Bytes: 170
 tabs? also, that's not where the ,s go: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?showone=Constructor_Initializer_Lists#Constructor_Initializer_Lists
+
+54
+Mon Jul 28 17:43:21 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16fb1735_8d20cdbb
+UUID: f922f488_d1f5d763
+Bytes: 138
+<sigh> I coded through example, there are *many* examples of the following style throughout, I expect because of its ease of manipulation.
 

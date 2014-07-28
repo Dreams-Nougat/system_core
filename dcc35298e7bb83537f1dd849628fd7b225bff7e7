@@ -1,0 +1,11 @@
+Revision: dcc35298e7bb83537f1dd849628fd7b225bff7e7
+Patch-set: 1
+File: adb/adb.c
+
+1680:0-1680:18
+Mon Jul 28 16:27:15 2014 +0000
+Author: Sharvil Nanavati <1023338@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f974b47c_6d0990bd
+Bytes: 59
+get-state is now inside the #if block. Is that intentional?
+

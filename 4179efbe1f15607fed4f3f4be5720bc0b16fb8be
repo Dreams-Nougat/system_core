@@ -1,0 +1,18 @@
+Revision: 4179efbe1f15607fed4f3f4be5720bc0b16fb8be
+Patch-set: 2
+File: init/bootchart.c
+
+122
+Tue Jul 29 21:05:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6f76345_fd4267c2
+Bytes: 9
+uint64_t?
+
+129
+Tue Jul 29 21:05:53 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6016bf5_7be1bf5d
+Bytes: 23
+call proc_read instead?
+

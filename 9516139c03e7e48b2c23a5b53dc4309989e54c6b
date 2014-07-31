@@ -1,0 +1,20 @@
+Revision: 9516139c03e7e48b2c23a5b53dc4309989e54c6b
+Patch-set: 1
+File: libutils/Android.mk
+
+96
+Thu Jul 31 17:27:15 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16295785_9dbc6fa2
+Bytes: 26
+why do they need this one?
+
+File: libutils/Threads.cpp
+
+32
+Thu Jul 31 17:27:15 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16295785_3dc57b1d
+Bytes: 52
+oh. oh well, at least this is more honestly naughty.
+

@@ -1,0 +1,11 @@
+Revision: 173d5d62d63a4fe6abe346260baf26d318e78088
+Patch-set: 1
+File: adb/commandline.c
+
+1631:0-1631:3
+Wed Aug 06 11:46:10 2014 +0000
+Author: Pavel Chupin <1010578@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76345307_fbbcefa2
+Bytes: 3
+tab
+

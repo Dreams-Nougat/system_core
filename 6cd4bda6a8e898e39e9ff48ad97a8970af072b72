@@ -1,0 +1,11 @@
+Revision: 6cd4bda6a8e898e39e9ff48ad97a8970af072b72
+Patch-set: 2
+File: fastboot/fastboot.c
+
+1201
+Wed Aug 06 00:54:04 2014 +0000
+Author: mjchen <1006652@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6684304_cadb0f37
+Bytes: 50
+why don't you add second support to flash:raw too?
+

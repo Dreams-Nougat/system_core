@@ -9,6 +9,29 @@ UUID: f6dbe336_3c11082d
 Bytes: 34
 why wouldn't you just return NULL?
 
+123
+Fri Aug 08 16:30:38 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6dbe336_3c11082d
+UUID: 16c87774_962dac80
+Bytes: 1115
+I choose so to be pedantic about directly calling pthread_exit to be explicit about the paths.
+
+pthread_cleanup_push() (and, if memory serves, other historically similar entities) is not what you think it is (I know you know what it is ;->). It is a (sometimes) dysfunctional block context to pthread_cleanup_pop and is required. However, historically there is a difference in thread locking when processing the cleanup operations within the context of pthread_exit and when pthread_cleanup_pop is called out in the thread just before exit. The alternative is:
+
+    pthread_cleanup_pop();
+    return NULL;
+
+Which has a difference in atomicity because the thread is still 'alive' until return NULL, but the thread is 'dead' while the cleanup is being called in pthread_exit. Since then I have preferred:
+
+    pthread_exit(NULL);
+    pthread_cleanup_pop();
+    return NULL;
+
+I was bitten by this (circa 2002, port to *all* UNIXii) difference and I am still smarting over it.
+
+I know, this is a decade later, and Linux _or_ Bionic is our target. If you are confident I am holding on to too much history, I'll relax ...
+
 157
 Fri Aug 08 16:07:03 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

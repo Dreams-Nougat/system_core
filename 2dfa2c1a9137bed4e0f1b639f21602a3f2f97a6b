@@ -32,6 +32,28 @@ I was bitten by this (circa 2002, port to *all* UNIXii) difference and I am stil
 
 I know, this is a decade later, and Linux _or_ Bionic is our target. If you are confident I am holding on to too much history, I'll relax ...
 
+123
+Fri Aug 08 16:39:45 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16c87774_962dac80
+UUID: f6dbe336_bc5998c1
+Bytes: 512
+no, you couldn't write
+
+    pthread_cleanup_pop(true);
+    return NULL;
+
+because, as you say, the pop is really a "} while".
+
+you'd just return NULL here (which is equivalent to calling pthread_exit(NULL) but less weird), and then you'd
+
+    pthread_cleanup_pop(true);
+    return NULL;
+
+at the end (i.e. just remove the pthread_exit and the NOTREACH).
+
+that's exactly the same because the return NULL is equivalent to pthread_exit(NULL), and the first thing that pthread_exit does is call your cleanup functions.
+
 157
 Fri Aug 08 16:07:03 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

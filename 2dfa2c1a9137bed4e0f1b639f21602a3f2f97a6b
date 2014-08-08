@@ -1,0 +1,18 @@
+Revision: 2dfa2c1a9137bed4e0f1b639f21602a3f2f97a6b
+Patch-set: 1
+File: logd/LogTimes.cpp
+
+123
+Fri Aug 08 16:07:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6dbe336_3c11082d
+Bytes: 34
+why wouldn't you just return NULL?
+
+157
+Fri Aug 08 16:07:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 360c9b77_c13f64f1
+Bytes: 9
+likewise.
+

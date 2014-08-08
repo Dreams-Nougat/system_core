@@ -82,6 +82,14 @@ at the bottom is *not* the same thing as the cleanup is done in the context of t
 
 eg: one of the problems (and I must admit this has more to do with the previous code which ran transitory threads, rather than this code which runs a persistent thread) is that the former can lead to more VSS taken under heavy load because the stack cleanup is no longer atomic in the general case.
 
+123
+Fri Aug 08 17:02:31 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 360c9b77_44d9c204
+UUID: f6dbe336_3c7748e7
+Bytes: 378
+i don't know what you mean by "context of the thread" versus "context of the exit". pthread_exit runs on the same thread. the cleanup routines are the first thing pthread_exit runs. there's no difference. the thread stack (obviously) doesn't get unmapped until all code that needs to run on the thread has been run. (except the exit syscall which has to run without a valid sp!)
+
 157
 Fri Aug 08 16:07:03 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

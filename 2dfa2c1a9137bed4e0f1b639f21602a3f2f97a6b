@@ -54,6 +54,34 @@ at the end (i.e. just remove the pthread_exit and the NOTREACH).
 
 that's exactly the same because the return NULL is equivalent to pthread_exit(NULL), and the first thing that pthread_exit does is call your cleanup functions.
 
+123
+Fri Aug 08 16:53:46 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6dbe336_bc5998c1
+UUID: 360c9b77_44d9c204
+Bytes: 1093
+You misunderstand me. Let me try to rephrase. I am still siding on complying, just want to make it clear so that you understand the reasoning and can confirm we are both in sync.
+
+'here' return NULL ok ... yes, only done here to *match* the bottom in pedantic operations. It always incurs a twinge of pain when the mid-routine exit differs from the exit at the bottom.
+
+But the point is:
+
+    pthread_cleanup_pop(true);
+    return NULL;
+
+at the bottom is *not* the same thing as the cleanup is done in the context of the thread, and not in the context of the 'exit'. If we want it to be performed in the 'exit' rather than in the contest of the thread:
+
+    return NULL;
+    pthread_cleanup_pop(true);
+
+-or less strange-
+
+    pthread_exit(NULL);
+    pthread_cleanup_pop(true);
+    return NULL;
+
+eg: one of the problems (and I must admit this has more to do with the previous code which ran transitory threads, rather than this code which runs a persistent thread) is that the former can lead to more VSS taken under heavy load because the stack cleanup is no longer atomic in the general case.
+
 157
 Fri Aug 08 16:07:03 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

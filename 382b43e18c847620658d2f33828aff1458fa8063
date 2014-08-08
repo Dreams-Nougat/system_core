@@ -1,0 +1,20 @@
+Revision: 382b43e18c847620658d2f33828aff1458fa8063
+Patch-set: 1
+File: include/ziparchive/zip_archive.h
+
+136
+Fri Aug 08 15:03:38 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96b467df_03eb1480
+Bytes: 152
+how about making this wording slightly stronger ?. "All calls to StartIteration must be matched by a call to EndIteration to free any allocated memory."
+
+File: libziparchive/zip_archive.cc
+
+912
+Fri Aug 08 15:03:38 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96b467df_2319f813
+Bytes: 35
+might as well make this return void
+

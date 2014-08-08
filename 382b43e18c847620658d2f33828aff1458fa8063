@@ -9,6 +9,14 @@ UUID: 96b467df_03eb1480
 Bytes: 152
 how about making this wording slightly stronger ?. "All calls to StartIteration must be matched by a call to EndIteration to free any allocated memory."
 
+136
+Fri Aug 08 15:07:52 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96b467df_03eb1480
+UUID: b6e5ebf4_44d0c4df
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 912
@@ -17,4 +25,12 @@ Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 96b467df_2319f813
 Bytes: 35
 might as well make this return void
+
+912
+Fri Aug 08 15:07:52 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96b467df_2319f813
+UUID: 96b467df_234658e4
+Bytes: 4
+Done
 

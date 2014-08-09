@@ -1,0 +1,18 @@
+Revision: 8aa24261e55e28384b102cd51853cab6e10d2fde
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+354
+Sat Aug 09 18:12:10 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7687f329_4c29cf0a
+Bytes: 310
+looks like we already have a signal_has_si_addr (to implement the ------- in the header for signals that don't)? interestingly, that's missing SIGTRAP; debuggerd doesn't [currently] do anything with SIGTRAP but it might be worth fixing signal_has_si_addr anyway just so this doesn't catch us out if we ever do.
+
+359
+Sat Aug 09 18:12:10 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7687f329_6c2e9315
+Bytes: 46
+"if (" since you're touching this line anyway?
+

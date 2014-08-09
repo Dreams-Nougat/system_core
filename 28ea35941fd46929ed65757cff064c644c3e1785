@@ -1,0 +1,11 @@
+Revision: 28ea35941fd46929ed65757cff064c644c3e1785
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+918
+Sat Aug 09 07:11:09 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56a3cfb2_d3dba624
+Bytes: 32
+Is this cast to (void*) needed ?
+

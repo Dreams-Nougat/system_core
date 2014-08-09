@@ -9,3 +9,11 @@ UUID: 56a3cfb2_d3dba624
 Bytes: 32
 Is this cast to (void*) needed ?
 
+918
+Sat Aug 09 09:18:08 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_d3dba624
+UUID: 9699c785_954f46a2
+Bytes: 110
+It seems unnecessary but I was getting compilation error without it. Maybe it's just me doing something wrong.
+

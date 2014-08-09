@@ -17,3 +17,11 @@ UUID: 9699c785_954f46a2
 Bytes: 110
 It seems unnecessary but I was getting compilation error without it. Maybe it's just me doing something wrong.
 
+918
+Sat Aug 09 18:06:17 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9699c785_954f46a2
+UUID: 567caff0_cb892915
+Bytes: 366
+this is really a const_cast<char*>. (one reason we don't use C-style casts is because the reader doesn't necessarily immediately see what the writer was doing.) the better fix though isn't to use a const_cast --- prefix should just have type char* instead of const char*. (or, unless there's some reason not to, make it a std::string and remove the strdup and free.)
+

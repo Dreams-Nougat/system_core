@@ -1,0 +1,11 @@
+Revision: bc3b5b8f4d8ecb883ec58e6413dc8ab2a5e3a97f
+Patch-set: 2
+File: include/ziparchive/zip_archive.h
+
+133
+Sat Aug 09 07:13:54 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6e5ebf4_7513a8f3
+Bytes: 227
+Sorry for another doc related comment, but I'd probably rephrase this. I don't think you need to mention that "New allocated memory will be assigned" since that might change. The last line "All call... must.." should be enough.
+

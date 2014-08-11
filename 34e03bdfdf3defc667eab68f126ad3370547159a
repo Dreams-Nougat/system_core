@@ -33,6 +33,18 @@ UUID: 9699c785_9b4217c2
 Bytes: 246
 I'm aware of it Elliott and I'm fixing this in the next cl. As  Narayan said, we never use anything different than C string but I need to fix FindEntry to use ZipEntryName instead of char* so I will change this method too to make them consistent.
 
+904
+Mon Aug 11 15:16:44 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f672031f_c89a0f92
+UUID: 56a3cfb2_39d053df
+Bytes: 472
+I think I confused that comment with another discussion. Entry names can contain NUL if they're encoded using UTF-8 but we're free to impose constraints on |prefix|.
+
+None of our callers need to match against prefixes that contain NUL so we shouldn't have to support 'em if we don't want to. 
+
+That said, I think Piotr's plan is to support them for completeness and because we want to make this API stop assuming null termination or any other encoding related constraints.
+
 905
 Mon Aug 11 15:05:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

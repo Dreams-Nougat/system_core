@@ -17,6 +17,14 @@ UUID: b6e5ebf4_84c5671f
 Bytes: 169
 Prefix can't contain NUL and is intended to be a C string. The only prefixes we use in our codebase are "META-INF/" and "lib/". We should probably document that clearly.
 
+904
+Mon Aug 11 15:10:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6e5ebf4_84c5671f
+UUID: f672031f_c89a0f92
+Bytes: 157
+what did haaawk mean by "string might not be suitable here because prefix is a byte buffer which can contain \0 in the middle. I will change to const_cast."?
+
 905
 Mon Aug 11 15:05:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

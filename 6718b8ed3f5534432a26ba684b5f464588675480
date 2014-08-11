@@ -49,6 +49,14 @@ UUID: 76c53378_9c9ac95c
 Bytes: 104
 Ups, my mistake, seems the jni stuff still happily needs stlport. So needs to be changed to const char*.
 
+26:43-26:44
+Mon Aug 11 23:25:27 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c53378_9c9ac95c
+UUID: 56ef4fff_d0493c9a
+Bytes: 61
+thanks Dan. I think it's better to just use const char* here.
+
 File: nativebridge/native_bridge.cc
 
 52
@@ -68,12 +76,28 @@ UUID: 16d4f72c_990f7f03
 Bytes: 100
 No. This was Art callbacks that the native bridge can use. I guess the name is now RuntimeCallbacks.
 
+52
+Mon Aug 11 23:25:27 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d4f72c_990f7f03
+UUID: 56ef4fff_f0444084
+Bytes: 33
+yep, need to be the runtime ones.
+
 54:46-55:54
 Mon Aug 11 18:21:20 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 56a3cfb2_a4725aaf
 Bytes: 3
 cbs
+
+54:46-55:54
+Mon Aug 11 23:25:27 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_a4725aaf
+UUID: 16d9576f_ce988329
+Bytes: 4
+Done
 
 114:51-114:84
 Mon Aug 11 15:44:53 2014 +0000

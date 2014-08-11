@@ -9,6 +9,14 @@ UUID: 7687f329_3dd76762
 Bytes: 235
 if prefix can contain a NUL byte, this code is broken -- because strdup(3) will stop at the first NUL byte -- and you MUST switch to std::string (with a start and end), std::vector<char> (if you want to ensure that no one calls c_str).
 
+904
+Mon Aug 11 15:09:05 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7687f329_3dd76762
+UUID: b6e5ebf4_84c5671f
+Bytes: 169
+Prefix can't contain NUL and is intended to be a C string. The only prefixes we use in our codebase are "META-INF/" and "lib/". We should probably document that clearly.
+
 905
 Mon Aug 11 15:05:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,14 @@ Bytes: 278
 likewise, this length will be wrong.
 
 are you _sure_ prefix can contain NUL? if so, this API is broken. you need to pass a size_t alongside the const char*. (and you might want to switch to const uint8_t* to make it clearer that this is just a pointer to bytes, not a C string.)
+
+905
+Mon Aug 11 15:09:05 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7687f329_7de1df32
+UUID: b6e5ebf4_e4db8bfd
+Bytes: 9
+likewise.
 
 917
 Mon Aug 11 15:05:42 2014 +0000

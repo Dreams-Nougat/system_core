@@ -33,3 +33,13 @@ UUID: 56a3cfb2_d69ab491
 Bytes: 130
 string might not be suitable here because prefix is a byte buffer which can contain \0 in the middle. I will change to const_cast.
 
+918
+Mon Aug 11 08:40:02 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_d69ab491
+UUID: 56a3cfb2_f64df84f
+Bytes: 470
+enh: good point, it didn't strike me that this was because we were calling free with "const void *", I assumed it was something daft like using an integral type.
+
+haaawk: I don't think std::string cares about internal '\0' unless you use one of its c compatibility APIs (c_str et al.). You could use std::vector<char> if you prefer, or you could leave it as is. I think using std::string or std::vector might make things slightly more roundabout in this particular case.
+

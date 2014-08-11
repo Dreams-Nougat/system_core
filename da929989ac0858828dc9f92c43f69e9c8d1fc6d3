@@ -1,0 +1,25 @@
+Revision: da929989ac0858828dc9f92c43f69e9c8d1fc6d3
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+900
+Mon Aug 11 15:50:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f616838e_b48a6e90
+Bytes: 3
+new
+
+908
+Mon Aug 11 15:50:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f616838e_9487728a
+Bytes: 74
+cookie->prefix.insert(cookie->prefix.begin(), prefix, prefix + prefixLen);
+
+916
+Mon Aug 11 15:50:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f616838e_d481ea74
+Bytes: 6
+delete
+

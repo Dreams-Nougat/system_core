@@ -19,3 +19,13 @@ UUID: d6133f9f_19ac578c
 Bytes: 18
 Makes sense to me.
 
+114:51-114:84
+Mon Aug 11 17:39:35 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6133f9f_19ac578c
+UUID: 56a3cfb2_c4b75ed7
+Bytes: 255
+My only issue with this will related to pointer ownership, i.e. it seems easy to lose track of it when passing it through so many layers. I guess it can't be helped. 
+
+Is there any reason why initialize doesn't take a const pointer? or it's just a glitch?
+

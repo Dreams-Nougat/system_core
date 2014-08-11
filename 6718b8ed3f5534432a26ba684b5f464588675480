@@ -17,6 +17,14 @@ UUID: 76ea93f0_d1ff04ca
 Bytes: 261
 Is this an API that will be used from other projects? Until stlport is out of the picture entirely, we need to be careful about using STL containers at API boundaries because the two STLs are not ABI compatible (we ran in to this problem while moving ART over).
 
+26:43-26:44
+Mon Aug 11 18:31:38 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76ea93f0_d1ff04ca
+UUID: f6d0433d_55b88cc6
+Bytes: 69
+Yeah, that's a good point. We will be using this from other projects.
+
 File: nativebridge/native_bridge.cc
 
 52

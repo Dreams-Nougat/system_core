@@ -33,6 +33,14 @@ UUID: 16d4f72c_590207dc
 Bytes: 107
 I thought frameworks and Art are moved over. On the Art side it's fine to switch to const char* if must be.
 
+26:43-26:44
+Mon Aug 11 21:35:20 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d4f72c_590207dc
+UUID: 76ea93f0_7a05cde1
+Bytes: 106
+Are the frameworks off stlport now? I know I haven't done anything to move them away, but they might have.
+
 File: nativebridge/native_bridge.cc
 
 52

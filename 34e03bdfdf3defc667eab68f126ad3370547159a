@@ -25,6 +25,14 @@ UUID: f672031f_c89a0f92
 Bytes: 157
 what did haaawk mean by "string might not be suitable here because prefix is a byte buffer which can contain \0 in the middle. I will change to const_cast."?
 
+904
+Mon Aug 11 15:13:37 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6e5ebf4_84c5671f
+UUID: 9699c785_9b4217c2
+Bytes: 246
+I'm aware of it Elliott and I'm fixing this in the next cl. As  Narayan said, we never use anything different than C string but I need to fix FindEntry to use ZipEntryName instead of char* so I will change this method too to make them consistent.
+
 905
 Mon Aug 11 15:05:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,4 +56,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f672031f_68d3db42
 Bytes: 53
 this is useless. you can always pass NULL to free(3).
+
+917
+Mon Aug 11 15:13:37 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f672031f_68d3db42
+UUID: 56a3cfb2_79cadb2c
+Bytes: 27
+Thanks will fix in next cl.
 

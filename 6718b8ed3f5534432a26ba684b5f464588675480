@@ -25,6 +25,14 @@ UUID: f6d0433d_55b88cc6
 Bytes: 69
 Yeah, that's a good point. We will be using this from other projects.
 
+26:43-26:44
+Mon Aug 11 21:31:44 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d0433d_55b88cc6
+UUID: 16d4f72c_590207dc
+Bytes: 107
+I thought frameworks and Art are moved over. On the Art side it's fine to switch to const char* if must be.
+
 File: nativebridge/native_bridge.cc
 
 52
@@ -35,6 +43,14 @@ Bytes: 115
 "cbs [IN] the pointer to NativeBridgeCallbacks"
 
 art_cbs -> cbs, NativeBridgeArtCallbacks -> NativeBridgeCallbacks.
+
+52
+Mon Aug 11 21:31:44 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6e5ebf4_24a9f3fe
+UUID: 16d4f72c_990f7f03
+Bytes: 100
+No. This was Art callbacks that the native bridge can use. I guess the name is now RuntimeCallbacks.
 
 54:46-55:54
 Mon Aug 11 18:21:20 2014 +0000
@@ -69,4 +85,12 @@ Bytes: 255
 My only issue with this will related to pointer ownership, i.e. it seems easy to lose track of it when passing it through so many layers. I guess it can't be helped. 
 
 Is there any reason why initialize doesn't take a const pointer? or it's just a glitch?
+
+114:51-114:84
+Mon Aug 11 21:31:44 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_c4b75ed7
+UUID: 76c53378_9ccc0970
+Bytes: 209
+I think a const * is fine, and it makes sense to have the caller retain ownership. Libnativebridge should not have to manage this, just pass it on. Then the caller can have this as a global (as it was in Art).
 

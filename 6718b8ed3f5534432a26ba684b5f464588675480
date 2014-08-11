@@ -11,3 +11,11 @@ I'm not sure what's the best strategy to pass this one. Thoughts?
 
 Passing it together with the nb_library_string seems like a good option to me.
 
+114:51-114:84
+Mon Aug 11 16:33:45 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_f9040b7e
+UUID: d6133f9f_19ac578c
+Bytes: 18
+Makes sense to me.
+

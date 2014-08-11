@@ -54,6 +54,14 @@ Bytes: 409
 I meant that names in zip archive are really a byte buffers with length. We happen not to call StartIteration with any buffer which contains '\0' in the middle but it should be possible since the names in the archives can contain '\0' in the middle. In general all str* methods in this file are wrong and I will be fixing it. Here's the bug with some more context: 
 https://b.corp.google.com/issue?id=16162465
 
+904
+Mon Aug 11 15:18:15 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a3cfb2_39d053df
+UUID: 56a3cfb2_1919cf13
+Bytes: 24
+Exactly as Narayan said.
+
 905
 Mon Aug 11 15:05:42 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

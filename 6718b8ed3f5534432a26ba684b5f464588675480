@@ -1,6 +1,31 @@
 Revision: 6718b8ed3f5534432a26ba684b5f464588675480
 Patch-set: 2
+File: include/nativebridge/native_bridge.h
+
+26:43-26:44
+Mon Aug 11 18:21:20 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6e5ebf4_67913d43
+Bytes: 154
+why do some APIs need a const std::string& while others take a const char * ? It's fine if this is the most convenient for callers, but it just seems odd.
+
 File: nativebridge/native_bridge.cc
+
+52
+Mon Aug 11 18:21:20 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6e5ebf4_24a9f3fe
+Bytes: 115
+"cbs [IN] the pointer to NativeBridgeCallbacks"
+
+art_cbs -> cbs, NativeBridgeArtCallbacks -> NativeBridgeCallbacks.
+
+54:46-55:54
+Mon Aug 11 18:21:20 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56a3cfb2_a4725aaf
+Bytes: 3
+cbs
 
 114:51-114:84
 Mon Aug 11 15:44:53 2014 +0000

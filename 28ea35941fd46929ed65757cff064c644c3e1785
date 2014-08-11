@@ -25,3 +25,11 @@ UUID: 567caff0_cb892915
 Bytes: 366
 this is really a const_cast<char*>. (one reason we don't use C-style casts is because the reader doesn't necessarily immediately see what the writer was doing.) the better fix though isn't to use a const_cast --- prefix should just have type char* instead of const char*. (or, unless there's some reason not to, make it a std::string and remove the strdup and free.)
 
+918
+Mon Aug 11 07:16:05 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 567caff0_cb892915
+UUID: 56a3cfb2_d69ab491
+Bytes: 130
+string might not be suitable here because prefix is a byte buffer which can contain \0 in the middle. I will change to const_cast.
+

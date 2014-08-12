@@ -1,0 +1,39 @@
+Revision: 177d0548ffb3db94429987a68f9f781e36e026a8
+Patch-set: 1
+File: include/ziparchive/zip_archive.h
+
+164
+Tue Aug 12 10:29:36 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d5a333_d0602214
+Bytes: 66
+could return uint8_t , or include <stdbool.h> and make this bool ?
+
+File: libziparchive/zip_archive.cc
+
+197
+Tue Aug 12 10:29:36 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16d9576f_7143b2c8
+Bytes: 101
+Mind moving this comment to the line above the declaration ? 
+(same with the comment two lines above)
+
+623
+Tue Aug 12 10:29:36 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d5a333_f05b1e6b
+Bytes: 219
+entry_name_encoding is a more precise name.
+
+Also, you could make this an enum for clarity.
+
+I wonder if it might be clearer to get rid of the unresolved state and have a special cased assignment on the first iteration.
+
+665
+Tue Aug 12 10:29:36 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d5a333_10822a79
+Bytes: 27
+set result here and below ?
+

@@ -25,6 +25,14 @@ UUID: 56baefee_619f4cdc
 Bytes: 115
 oh, i didn't realize this was public API. i don't see any C code #include this, so why does this have to support C?
 
+128
+Tue Aug 12 20:24:48 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56baefee_619f4cdc
+UUID: f62cc32f_15f0f4fd
+Bytes: 174
+Hmm. My memory must be failing me. I remember there being a couple of C callers. Code search never lies, though. We must have deleted them (a la dalvik) or moved them to C++.
+
 File: libziparchive/zip_archive.cc
 
 395

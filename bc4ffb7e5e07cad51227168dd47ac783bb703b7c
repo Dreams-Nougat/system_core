@@ -17,6 +17,14 @@ UUID: 56baefee_01e1b05e
 Bytes: 147
 Narayan told me that ziparchive public API has to be c compatible. Are references c compatible? I thought not but I'm not an expert in c/c++ world.
 
+128
+Tue Aug 12 20:20:57 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56baefee_01e1b05e
+UUID: 56baefee_619f4cdc
+Bytes: 115
+oh, i didn't realize this was public API. i don't see any C code #include this, so why does this have to support C?
+
 File: libziparchive/zip_archive.cc
 
 395
@@ -48,4 +56,12 @@ Parent: 56baefee_019410f3
 UUID: 56baefee_a19c44e9
 Bytes: 172
 Thanks Elliott. I don't know why I was thinking that delete of a null pointer does something bad. I think I've read such thing somewhere but it must have been a bad source.
+
+930
+Tue Aug 12 20:20:57 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56baefee_a19c44e9
+UUID: 76c53378_488a270a
+Bytes: 102
+back in K&R days it wasn't portable. it's been fine since ANSI C, and it's always been allowed in C++.
 

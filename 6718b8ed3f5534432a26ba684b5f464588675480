@@ -84,6 +84,14 @@ UUID: 56ef4fff_f0444084
 Bytes: 33
 yep, need to be the runtime ones.
 
+52
+Tue Aug 12 08:26:34 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56ef4fff_f0444084
+UUID: 56ef4fff_53b316d5
+Bytes: 243
+Hang on. My objection was to the fact that the struct is called NativeBridgeRuntimeCallbacks but the comment calls it NativeBridgeArtCallbacks. Given that, the formal parameter name "art_" is somewhat random. Call it either cbs or runtime_cbs.
+
 54:46-55:54
 Mon Aug 11 18:21:20 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>

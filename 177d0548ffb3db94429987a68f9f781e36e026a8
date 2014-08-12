@@ -9,6 +9,14 @@ UUID: f6d5a333_d0602214
 Bytes: 66
 could return uint8_t , or include <stdbool.h> and make this bool ?
 
+164
+Tue Aug 12 11:00:19 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d5a333_d0602214
+UUID: 16d9576f_7171721c
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 197
@@ -18,6 +26,14 @@ UUID: 16d9576f_7143b2c8
 Bytes: 101
 Mind moving this comment to the line above the declaration ? 
 (same with the comment two lines above)
+
+197
+Tue Aug 12 11:00:19 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d9576f_7143b2c8
+UUID: 56ef4fff_13822e79
+Bytes: 4
+Done
 
 623
 Tue Aug 12 10:29:36 2014 +0000
@@ -30,10 +46,26 @@ Also, you could make this an enum for clarity.
 
 I wonder if it might be clearer to get rid of the unresolved state and have a special cased assignment on the first iteration.
 
+623
+Tue Aug 12 11:00:19 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d5a333_f05b1e6b
+UUID: f6d5a333_1030ea1c
+Bytes: 4
+Done
+
 665
 Tue Aug 12 10:29:36 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f6d5a333_10822a79
 Bytes: 27
 set result here and below ?
+
+665
+Tue Aug 12 11:00:19 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d5a333_10822a79
+UUID: 56ef4fff_33853281
+Bytes: 155
+The invariant here is that result == -1 until it reaches line 683 or error appears but then it jumps straight to bail. This means result is always -1 here.
 

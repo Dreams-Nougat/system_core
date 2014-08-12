@@ -41,6 +41,14 @@ UUID: 361bbb08_97aba45c
 Bytes: 162
 It seems that we can use c++ after all. I'm happy to change all the code but it might be good idea to do it separately from a security bug fix. What do you think?
 
+128
+Tue Aug 12 21:13:15 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 361bbb08_97aba45c
+UUID: b64deb11_9ef97960
+Bytes: 108
+fine by me for wider changes, but since you're already changing this line anyway you may as well use const&.
+
 File: libziparchive/zip_archive.cc
 
 395

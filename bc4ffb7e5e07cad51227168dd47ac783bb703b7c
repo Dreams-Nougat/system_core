@@ -33,6 +33,14 @@ UUID: f62cc32f_15f0f4fd
 Bytes: 174
 Hmm. My memory must be failing me. I remember there being a couple of C callers. Code search never lies, though. We must have deleted them (a la dalvik) or moved them to C++.
 
+128
+Tue Aug 12 21:05:56 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f62cc32f_15f0f4fd
+UUID: 361bbb08_97aba45c
+Bytes: 162
+It seems that we can use c++ after all. I'm happy to change all the code but it might be good idea to do it separately from a security bug fix. What do you think?
+
 File: libziparchive/zip_archive.cc
 
 395

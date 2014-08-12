@@ -9,3 +9,11 @@ UUID: f6d5a333_70504e45
 Bytes: 215
 wonder if we should make this "const uint8_t*" for clarity ? (and change vector<char> to vector<uint8_t>) ? that way you don't have to worry about signed vs unsigned char and then people don't assume C strings here.
 
+36
+Tue Aug 12 14:10:10 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d5a333_70504e45
+UUID: 16d9576f_d447f434
+Bytes: 4
+Done
+

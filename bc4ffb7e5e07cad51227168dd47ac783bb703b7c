@@ -9,6 +9,14 @@ UUID: 16d4f72c_aa11b7bb
 Bytes: 55
 why pointers? it never makes sense to pass NULL, right?
 
+128
+Tue Aug 12 20:07:21 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d4f72c_aa11b7bb
+UUID: 56baefee_01e1b05e
+Bytes: 147
+Narayan told me that ziparchive public API has to be c compatible. Are references c compatible? I thought not but I'm not an expert in c/c++ world.
+
 File: libziparchive/zip_archive.cc
 
 395
@@ -18,10 +26,26 @@ UUID: 76c53378_e84d7b85
 Bytes: 93
 can these functions be switched over to const ZipEntryName& instead of the pair of arguments?
 
+395
+Tue Aug 12 20:07:21 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c53378_e84d7b85
+UUID: 76c53378_c80ab7f4
+Bytes: 40
+I think they can since they are private.
+
 930
 Tue Aug 12 19:10:56 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 56baefee_019410f3
 Bytes: 23
 no need for this check.
+
+930
+Tue Aug 12 20:07:21 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56baefee_019410f3
+UUID: 56baefee_a19c44e9
+Bytes: 172
+Thanks Elliott. I don't know why I was thinking that delete of a null pointer does something bad. I think I've read such thing somewhere but it must have been a bad source.
 

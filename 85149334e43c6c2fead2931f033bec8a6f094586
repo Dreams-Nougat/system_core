@@ -1,0 +1,11 @@
+Revision: 85149334e43c6c2fead2931f033bec8a6f094586
+Patch-set: 2
+File: include/ziparchive/zip_archive.h
+
+36
+Tue Aug 12 10:31:21 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d5a333_70504e45
+Bytes: 215
+wonder if we should make this "const uint8_t*" for clarity ? (and change vector<char> to vector<uint8_t>) ? that way you don't have to worry about signed vs unsigned char and then people don't assume C strings here.
+

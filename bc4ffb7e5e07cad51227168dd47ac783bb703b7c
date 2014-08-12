@@ -1,0 +1,27 @@
+Revision: bc4ffb7e5e07cad51227168dd47ac783bb703b7c
+Patch-set: 4
+File: include/ziparchive/zip_archive.h
+
+128
+Tue Aug 12 19:10:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16d4f72c_aa11b7bb
+Bytes: 55
+why pointers? it never makes sense to pass NULL, right?
+
+File: libziparchive/zip_archive.cc
+
+395
+Tue Aug 12 19:10:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c53378_e84d7b85
+Bytes: 93
+can these functions be switched over to const ZipEntryName& instead of the pair of arguments?
+
+930
+Tue Aug 12 19:10:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56baefee_019410f3
+Bytes: 23
+no need for this check.
+

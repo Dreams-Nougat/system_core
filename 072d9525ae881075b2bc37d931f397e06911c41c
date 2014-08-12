@@ -1,0 +1,18 @@
+Revision: 072d9525ae881075b2bc37d931f397e06911c41c
+Patch-set: 1
+File: include/ziparchive/zip_archive.h
+
+126
+Tue Aug 12 10:21:52 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56ef4fff_33cf72ea
+Bytes: 19
+const ZipEntryName*
+
+144
+Tue Aug 12 10:21:52 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d5a333_b070f6eb
+Bytes: 19
+const ZipEntryName*
+

@@ -1,0 +1,18 @@
+Revision: e38af19ef4121ababba63960de16266675a9d163
+Patch-set: 5
+File: libziparchive/zip_archive.cc
+
+659
+Thu Aug 14 12:29:44 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1630777d_e5bd80c4
+Bytes: 68
+why is the reinterpret_cast required ? ptr is already const uint8_t*
+
+783
+Thu Aug 14 12:29:44 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1630777d_05c3dc43
+Bytes: 35
+one of ptr and name is unnecessary.
+

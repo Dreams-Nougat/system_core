@@ -57,6 +57,14 @@ UUID: f62cc32f_f879ad47
 Bytes: 2
 +1
 
+128
+Thu Aug 14 11:17:08 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b64deb11_9ef97960
+UUID: 1630777d_f990d341
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 395
@@ -96,4 +104,12 @@ Parent: 56baefee_a19c44e9
 UUID: 76c53378_488a270a
 Bytes: 102
 back in K&R days it wasn't portable. it's been fine since ANSI C, and it's always been allowed in C++.
+
+930
+Thu Aug 14 11:17:08 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c53378_488a270a
+UUID: 1630777d_99951f31
+Bytes: 4
+Done
 

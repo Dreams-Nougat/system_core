@@ -1,0 +1,18 @@
+Revision: ac7d99c9998fef2115368a3b0e31346c757c50ed
+Patch-set: 4
+File: include/ziparchive/zip_archive.h
+
+163
+Thu Aug 14 17:50:59 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6540bb2_e67a6093
+Bytes: 66
+is this really what we want? this doesn't seem to make much sense.
+
+165
+Thu Aug 14 17:50:59 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b64deb11_1c46bfe3
+Bytes: 6
+const&
+

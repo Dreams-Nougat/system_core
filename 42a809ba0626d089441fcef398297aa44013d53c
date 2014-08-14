@@ -9,6 +9,14 @@ UUID: b6540bb2_9d12d3ee
 Bytes: 42
 do you need the cast? isn't UInt32 enough?
 
+201
+Thu Aug 14 23:00:54 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6540bb2_9d12d3ee
+UUID: b64deb11_0c13ecf4
+Bytes: 130
+Yes, otherwise the compiler complains that UInt32 can't be used as type for formatting string and it asks explicitly for the cast.
+
 File: fastboot/usb_osx.c
 
 332

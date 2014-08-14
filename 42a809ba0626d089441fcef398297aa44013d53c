@@ -17,6 +17,19 @@ UUID: b64deb11_0c13ecf4
 Bytes: 130
 Yes, otherwise the compiler complains that UInt32 can't be used as type for formatting string and it asks explicitly for the cast.
 
+201
+Thu Aug 14 23:09:12 2014 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b64deb11_0c13ecf4
+UUID: 76e45351_4739420b
+Bytes: 492
+Here is the exact error:
+
+system/core/fastboot/usb_osx.c:331:85: error: values of type 'UInt32' should not be used as format arguments; add an explicit cast to 'unsigned int' instead [-Werror,-Wformat]
+    snprintf(handle->info.device_path, sizeof(handle->info.device_path), "usb:%lX", locationId);
+                                                                              ~~~   ^~~~~~~~~~
+                                                                              %X    (unsigned int)
+
 File: fastboot/usb_osx.c
 
 332

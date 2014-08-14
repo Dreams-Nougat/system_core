@@ -1,0 +1,11 @@
+Revision: 82b3ca34c6feae6bce94f5b4ad9f3ae60416ad23
+Patch-set: 6
+File: include/ziparchive/zip_archive.h
+
+144
+Thu Aug 14 17:43:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6540bb2_23306a1d
+Bytes: 26
+s/prefix/optional_prefix/?
+

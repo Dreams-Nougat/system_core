@@ -1,0 +1,20 @@
+Revision: 42a809ba0626d089441fcef398297aa44013d53c
+Patch-set: 1
+File: adb/usb_osx.c
+
+201
+Thu Aug 14 22:57:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6540bb2_9d12d3ee
+Bytes: 42
+do you need the cast? isn't UInt32 enough?
+
+File: fastboot/usb_osx.c
+
+332
+Thu Aug 14 22:57:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76e45351_070d7a9b
+Bytes: 9
+likewise.
+

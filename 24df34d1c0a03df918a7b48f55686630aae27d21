@@ -9,12 +9,28 @@ UUID: 5664af99_4be6d94c
 Bytes: 106
 nit: Could you keep the line length to 60 or 70?. It reads much better gerrit as you don't have to scroll.
 
+9
+Thu Aug 14 10:58:17 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5664af99_4be6d94c
+UUID: 5664af99_cb75e9a5
+Bytes: 4
+Done
+
 14:54-15:8
 Thu Aug 14 10:26:31 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f62cc32f_c41728dd
 Bytes: 137
 Could you be explicit about what problem it causes? Also, does this CL fixes that problem? or what's the expected behaviour in this case?
+
+15
+Thu Aug 14 10:58:17 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f62cc32f_c41728dd
+UUID: 5664af99_eb7a2d93
+Bytes: 4
+Done
 
 File: include/ziparchive/zip_archive.h
 
@@ -25,6 +41,14 @@ UUID: 1630777d_650f3053
 Bytes: 123
 first I though that this a directive, i.e. to use UTF8 for encoding. Could you adjust the naming a bit? Maybe "UsesUTF8..."
 
+163
+Thu Aug 14 10:58:17 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1630777d_650f3053
+UUID: 5664af99_2b1b658f
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 195:50-195:52
@@ -34,10 +58,36 @@ UUID: f62cc32f_840a90b0
 Bytes: 34
 unrelated: what does DD stand for?
 
+195
+Thu Aug 14 10:58:17 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f62cc32f_840a90b0
+UUID: f62cc32f_844050bb
+Bytes: 539
+I don't know but here's the explenation of this flag:
+
+Bit 3: If this bit is set, the fields crc-32, compressed 
+               size and uncompressed size are set to zero in the 
+               local header.  The correct values are put in the 
+               data descriptor immediately following the compressed
+               data.  (Note: PKZIP version 2.04g for DOS only 
+               recognizes this bit for method 8 compression, newer 
+               versions of PKZIP recognize this bit for any 
+               compression method.)
+
 199:22-199:37
 Thu Aug 14 10:26:31 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f62cc32f_440478a3
 Bytes: 60
 is this name a reference to something from the zip standard?
+
+199
+Thu Aug 14 10:58:17 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f62cc32f_440478a3
+UUID: 1630777d_451b148e
+Bytes: 69
+Yes EFS Flag:
+http://www.pkware.com/documents/casestudies/APPNOTE.TXT
 

@@ -1,0 +1,43 @@
+Revision: 24df34d1c0a03df918a7b48f55686630aae27d21
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:0-9:79
+Thu Aug 14 10:26:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5664af99_4be6d94c
+Bytes: 106
+nit: Could you keep the line length to 60 or 70?. It reads much better gerrit as you don't have to scroll.
+
+14:54-15:8
+Thu Aug 14 10:26:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f62cc32f_c41728dd
+Bytes: 137
+Could you be explicit about what problem it causes? Also, does this CL fixes that problem? or what's the expected behaviour in this case?
+
+File: include/ziparchive/zip_archive.h
+
+163:5-163:28
+Thu Aug 14 10:26:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1630777d_650f3053
+Bytes: 123
+first I though that this a directive, i.e. to use UTF8 for encoding. Could you adjust the naming a bit? Maybe "UsesUTF8..."
+
+File: libziparchive/zip_archive.cc
+
+195:50-195:52
+Thu Aug 14 10:26:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f62cc32f_840a90b0
+Bytes: 34
+unrelated: what does DD stand for?
+
+199:22-199:37
+Thu Aug 14 10:26:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f62cc32f_440478a3
+Bytes: 60
+is this name a reference to something from the zip standard?
+

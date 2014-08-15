@@ -13,3 +13,11 @@ Why not just assume UTF-8 unless the entire archive is CP-437 ? That's really th
 
 (Assuming CP-437 in this scenario is dangerous, because then we are essentially ignoring the entry_name length of each entry).
 
+163
+Fri Aug 15 09:18:55 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56d02f88_a8a61bad
+UUID: 16a1570c_8eab5b75
+Bytes: 251
+The problem is that very often our jars/apks have everything encoded with CP-437 except manifest which is in UTF-8. In such case we would misinterpret most of the names. If we have to pick one encoding then CP-437 is probably safer. What do you think?
+

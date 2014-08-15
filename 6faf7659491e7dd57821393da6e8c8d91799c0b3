@@ -11,3 +11,11 @@ Just a suggestion : You could move this logic to AddToHash / ComputeHash if this
 
 Design wise, I agree that it's best to keep it separate - however.
 
+644
+Fri Aug 15 13:19:43 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76b2935d_f1f3e84d
+UUID: 56d02f88_88607713
+Bytes: 171
+I think it shouldn't cause any performance problems here and it's a little bit more clear when it happens here. Let's keep it here until we have problems with performance.
+

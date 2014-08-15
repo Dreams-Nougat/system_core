@@ -1,0 +1,13 @@
+Revision: 74eadb9676055ed3dbb714d01cd3fe91ffab69ff
+Patch-set: 1
+File: /COMMIT_MSG
+
+9
+Fri Aug 15 16:24:30 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f69da3d4_8dec01de
+Bytes: 213
+really? that seems retarded. can't you fix that?
+
+the uapi mips stat.h has "unsigned long st_mtime". are you sure the real problem here isn't that bionic's stat.h has the wrong definition for mips64's struct stat?
+

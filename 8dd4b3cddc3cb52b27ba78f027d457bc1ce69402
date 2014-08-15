@@ -1,0 +1,15 @@
+Revision: 8dd4b3cddc3cb52b27ba78f027d457bc1ce69402
+Patch-set: 5
+File: include/ziparchive/zip_archive.h
+
+163
+Fri Aug 15 09:06:22 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56d02f88_a8a61bad
+Bytes: 368
+Yeah, this sort of heuristic is going to cause a lot of pain.
+
+Why not just assume UTF-8 unless the entire archive is CP-437 ? That's really the safest thing to do since any API that guesses things like this likely to be flaky / surprising.
+
+(Assuming CP-437 in this scenario is dangerous, because then we are essentially ignoring the entry_name length of each entry).
+

@@ -49,3 +49,11 @@ if the worst comes to the worst and you can't/won't fix the kernel, we should go
 
 but you really ought to look at making a sane modern kernel for your new architecture. this seems like your one chance to fix the errno mess and the signal mess and so on...
 
+9
+Fri Aug 15 17:52:43 2014 +0000
+Author: Raghu Gandham <1003296@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76db73ad_a9e9fd5f
+UUID: f6c683d8_0b7001a7
+Bytes: 161
+The instruction set changed but we are still using N64 ABI. Agree with you that changing the entire source might be difficult. I will look into what can be done.
+

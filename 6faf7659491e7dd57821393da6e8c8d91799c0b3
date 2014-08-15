@@ -27,3 +27,13 @@ UUID: 56d02f88_8b7a3192
 Bytes: 76
 I think I'm missing something. So we don't allow for null terminating names?
 
+644
+Fri Aug 15 14:46:21 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56d02f88_8b7a3192
+UUID: 76b2935d_7133782c
+Bytes: 191
+names here are just a byte buffers with a length. there should be no '\0' in the buffer. From zip spec:
+
+ 4.4.1.2  String fields are not null terminated, since the length is given explicitly.
+

@@ -19,3 +19,11 @@ UUID: 56d02f88_88607713
 Bytes: 171
 I think it shouldn't cause any performance problems here and it's a little bit more clear when it happens here. Let's keep it here until we have problems with performance.
 
+644
+Fri Aug 15 14:35:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56d02f88_88607713
+UUID: 56d02f88_8b7a3192
+Bytes: 76
+I think I'm missing something. So we don't allow for null terminating names?
+

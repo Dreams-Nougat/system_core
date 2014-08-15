@@ -29,3 +29,11 @@ can't you fix that? surely you don't want to go backwards with your new architec
 
 (and surely the last thing mips needs is _new_ source-level incompatibilities with everyone else?)
 
+9
+Fri Aug 15 17:11:14 2014 +0000
+Author: Raghu Gandham <1003296@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6aa5feb_6cdc3b1e
+UUID: 5602efbb_fef459f0
+Bytes: 230
+We are looking into possible solutions to have a better fix. Modifying the stat structure is not a possibility as it would break existing MIPS64 binaries but may be another definition of the structure could be created for Android.
+

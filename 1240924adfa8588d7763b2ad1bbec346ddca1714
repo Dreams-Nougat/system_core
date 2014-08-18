@@ -1,0 +1,18 @@
+Revision: 1240924adfa8588d7763b2ad1bbec346ddca1714
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+900
+Mon Aug 18 12:12:47 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 13fb2935_beb8595d
+Bytes: 414
+The const_cast can be avoided, since this is a const T* and not a T * const. (I tend to avoid using const_cast as much as possible)
+
+You could just do
+  uint8_t* prefix = new uint8_t[prefix_name->name_length];
+  memcpy(prefix, prefix_name->name, prefix_name->name_length);
+  this->prefix = prefix;
+
+If you want to make prefix "const T* const" (which it should be, semantically) you'll need a static factory method.
+

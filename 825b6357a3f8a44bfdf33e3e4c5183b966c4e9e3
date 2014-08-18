@@ -1,0 +1,13 @@
+Revision: 825b6357a3f8a44bfdf33e3e4c5183b966c4e9e3
+Patch-set: 3
+File: libziparchive/zip_archive.cc
+
+648
+Mon Aug 18 16:24:31 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7637f3c3_1243f2c8
+Bytes: 118
+on a position?
+
+not sure we should be trying to output the string at all when we're rejecting it for security reasons.
+

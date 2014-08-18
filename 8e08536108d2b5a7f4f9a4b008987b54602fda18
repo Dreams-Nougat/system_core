@@ -1,0 +1,32 @@
+Revision: 8e08536108d2b5a7f4f9a4b008987b54602fda18
+Patch-set: 5
+File: libziparchive/zip_archive.cc
+
+891
+Mon Aug 18 16:28:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7637f3c3_b28146ac
+Bytes: 260
+when you're doing something unidiomatic like not using a vector, it's worth adding a comment explaining "This code is used in the Windows SDK where the STL is not available." so the next person to see this code doesn't think "that's stupid; let me fix that"...
+
+900
+Mon Aug 18 16:28:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1626b79c_7ad6c1d7
+Bytes: 17
+unnecessary cast.
+
+901
+Mon Aug 18 16:28:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7637f3c3_f2a2de4f
+Bytes: 203
+sizeof(char) is the one size that's actually defined, so it's unidiomatic to actually write this. (unless you're copying something of a different size nearby and just want to make the contrast explicit.)
+
+906
+Mon Aug 18 16:28:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7637f3c3_b2986628
+Bytes: 8
+delete[]
+

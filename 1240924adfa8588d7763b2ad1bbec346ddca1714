@@ -16,3 +16,11 @@ You could just do
 
 If you want to make prefix "const T* const" (which it should be, semantically) you'll need a static factory method.
 
+900
+Mon Aug 18 12:19:00 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 13fb2935_beb8595d
+UUID: 13fb2935_3edc49a8
+Bytes: 4
+Done
+

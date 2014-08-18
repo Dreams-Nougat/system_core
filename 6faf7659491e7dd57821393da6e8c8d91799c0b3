@@ -45,3 +45,11 @@ UUID: 76b2935d_b4d14e6f
 Bytes: 4
 thx.
 
+644
+Mon Aug 18 08:27:20 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76b2935d_b4d14e6f
+UUID: 9310f93f_9acc8df7
+Bytes: 41
+memchr(file_name, 0, file_name_length); ?
+

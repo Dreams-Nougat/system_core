@@ -1,0 +1,15 @@
+Revision: c7c7f6a5b243c13a897dfec036fa02286c857b27
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+648
+Mon Aug 18 14:18:03 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d3043104_ff0b7b47
+Bytes: 172
+don't use C casts.
+
+This should be static_cast<uint16_t>(reinterpret_cast<uintptr_t>(pos - file_name))
+
+you can lose the static_cast if you change the print type specifier.
+

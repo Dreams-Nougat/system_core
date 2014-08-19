@@ -11,3 +11,17 @@ on a position?
 
 not sure we should be trying to output the string at all when we're rejecting it for security reasons.
 
+648
+Tue Aug 19 07:24:03 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7637f3c3_1243f2c8
+UUID: d3043104_9f59176e
+Bytes: 336
+What's wrong with 'on a position'?
+
+About the message:
+
+1. If I were a developer of an APK I would like to know what is happening and why my APK is not working. Otherwise it will just not work and I will have no way of figuring out what's the problem.
+
+2. This string says nothing about the security. Is is dangerous to print a message?
+

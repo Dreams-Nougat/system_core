@@ -1,0 +1,11 @@
+Revision: 85aeb4fefd262320bfa6439249322fb040faefef
+Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Tue Aug 19 09:56:45 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 13fb2935_44f2a201
+Bytes: 87
+Would be useful if you add "Addressed review comments from <commit>" to the description
+

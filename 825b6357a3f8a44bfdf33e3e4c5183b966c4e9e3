@@ -25,3 +25,15 @@ About the message:
 
 2. This string says nothing about the security. Is is dangerous to print a message?
 
+648
+Tue Aug 19 09:55:23 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d3043104_9f59176e
+UUID: d3043104_e2b7620c
+Bytes: 513
+(1) Grammar purists will complain about it. "at position" is clearer.
+
+(2) I think Elliott's point is that it's dangerous to print a string that we rejected because we suspect users are fudging around with it. In this case you have an upper bound on the length so it's ok.
+
+To look at it another way : The developers of the APK don't need to know *which* entry is wrong, do they ? It will take a few seconds to use zipinfo or unzip to get the answer. Also, the chances of this happening accidentally are remote...
+

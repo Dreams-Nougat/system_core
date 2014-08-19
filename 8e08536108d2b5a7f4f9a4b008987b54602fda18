@@ -9,12 +9,28 @@ UUID: 7637f3c3_b28146ac
 Bytes: 260
 when you're doing something unidiomatic like not using a vector, it's worth adding a comment explaining "This code is used in the Windows SDK where the STL is not available." so the next person to see this code doesn't think "that's stupid; let me fix that"...
 
+891
+Tue Aug 19 08:02:07 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7637f3c3_b28146ac
+UUID: d3043104_1f45077d
+Bytes: 4
+Done
+
 900
 Mon Aug 18 16:28:56 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1626b79c_7ad6c1d7
 Bytes: 17
 unnecessary cast.
+
+900
+Tue Aug 19 08:02:07 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1626b79c_7ad6c1d7
+UUID: 9310f93f_00400aba
+Bytes: 4
+Done
 
 901
 Mon Aug 18 16:28:56 2014 +0000
@@ -23,10 +39,28 @@ UUID: 7637f3c3_f2a2de4f
 Bytes: 203
 sizeof(char) is the one size that's actually defined, so it's unidiomatic to actually write this. (unless you're copying something of a different size nearby and just want to make the contrast explicit.)
 
+901
+Tue Aug 19 08:02:07 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7637f3c3_f2a2de4f
+UUID: d3043104_ff393b0b
+Bytes: 244
+I removed it. Could you give me a little bit more explanation please? What do you mean that "sizeof(char) is the one size that's actually defined"?
+
+Was the problem that uint8_t is by definition 1 byte so there's no point in checking it's size?
+
 906
 Mon Aug 18 16:28:56 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7637f3c3_b2986628
 Bytes: 8
 delete[]
+
+906
+Tue Aug 19 08:02:07 2014 +0000
+Author: Piotr Jastrzebski <1052243@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7637f3c3_b2986628
+UUID: d3043104_3f40c36c
+Bytes: 4
+Done
 

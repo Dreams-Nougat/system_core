@@ -9,3 +9,12 @@ UUID: f9f75445_bdb61f71
 Bytes: 152
 does this build for the host? https://android-review.googlesource.com/#/c/100661/ claimed that the constants weren't in our prebuilt host gcc's headers.
 
+243
+Wed Aug 20 00:30:03 2014 +0000
+Author: Ingo Rohloff <1047064@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9f75445_bdb61f71
+UUID: 13fb2935_e702d0da
+Bytes: 422
+I read https://android-review.googlesource.com/#/c/100661/, but at least what I saw in ch9.h looks OK and works as far as I can tell.
+Maybe I am mistaken but "usb_linux.c" looks like it actually uses the linux kernel headers of your system directly ("linux/usb/ch9.h"). So if you have a recent kernel (with USB 3.0 support), you also get the right definitions from your kernel headers of your system, as far as I can tell.
+

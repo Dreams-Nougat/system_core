@@ -1,0 +1,11 @@
+Revision: a376622ec804491130cbfef3dc72703c622975ed
+Patch-set: 2
+File: init/devices.c
+
+943
+Thu Aug 21 17:22:23 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d3a7d188_0726183f
+Bytes: 32
+...event: %s", strerror(errno));
+

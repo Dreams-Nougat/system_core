@@ -9,3 +9,11 @@ UUID: 13f169a2_3f648599
 Bytes: 140
 linker decides the path, I understand app path lib is before system path (/system/lib, vendor/lib). Maybe we should contruct full path here.
 
+139:65-139:67
+Tue Aug 26 15:13:10 2014 +0000
+Author: Yong Wu <1050938@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 13f169a2_3f648599
+UUID: b36c1d49_09c8ad37
+Bytes: 188
+Agree with Eric. If an app has an user library happens to have the the same library name with system's native-bridge, then the user's library will be installed to be used as native-bridge.
+

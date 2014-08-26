@@ -25,3 +25,13 @@ UUID: 73c54578_dcfcc1d7
 Bytes: 135
 Disagree. 1) According to enh, the user dir path is behind the system path. 2) You want pre-loading, so all this is irrelevant anyways.
 
+139:65-139:67
+Tue Aug 26 15:33:26 2014 +0000
+Author: Yong Wu <1050938@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 73c54578_dcfcc1d7
+UUID: b36c1d49_69c76126
+Bytes: 268
+2) preloading is another thing. On emulated ISA, no preloading.
+1) According to the code/comment below, the user dir will be searched first.
+https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/DexPathList.java#splitLibraryPath
+

@@ -17,3 +17,11 @@ UUID: b36c1d49_09c8ad37
 Bytes: 188
 Agree with Eric. If an app has an user library happens to have the the same library name with system's native-bridge, then the user's library will be installed to be used as native-bridge.
 
+139:65-139:67
+Tue Aug 26 15:26:43 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b36c1d49_09c8ad37
+UUID: 73c54578_dcfcc1d7
+Bytes: 135
+Disagree. 1) According to enh, the user dir path is behind the system path. 2) You want pre-loading, so all this is irrelevant anyways.
+

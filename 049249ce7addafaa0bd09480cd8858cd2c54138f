@@ -35,3 +35,11 @@ Bytes: 268
 1) According to the code/comment below, the user dir will be searched first.
 https://android.googlesource.com/platform/libcore/+/master/dalvik/src/main/java/dalvik/system/DexPathList.java#splitLibraryPath
 
+139:65-139:67
+Tue Aug 26 16:15:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b36c1d49_69c76126
+UUID: 73c54578_3cb29de5
+Bytes: 69
+Nativebridge does not use JNI.loadLibrary, so that one is irrelavant.
+

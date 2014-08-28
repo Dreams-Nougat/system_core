@@ -1,0 +1,11 @@
+Revision: 3878ebd72493427ea5537b36dfb9cd7cb38677bb
+Patch-set: 2
+File: rootdir/init.rc
+
+289:43-289:56
+Thu Aug 28 07:14:44 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1330897d_5f0687f1
+Bytes: 51
+root root? I guess we can leave this alone for now.
+

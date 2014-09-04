@@ -17,6 +17,18 @@ UUID: 50583741_79e8a842
 Bytes: 126
 It depends. I was thinking it's orthogonal as I didn't want to "fail everything" when trying to re-initialize a native bridge.
 
+38:0-39:30
+Thu Sep 04 18:01:58 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50583741_79e8a842
+UUID: b09df327_4112b62d
+Bytes: 305
+Right. That's a good point.
+
+I'm wondering now if it wouldn't be better to return a bool for the relevant operations instead of having NativeBridgeError(). (even if had_error was added primary for testing).
+
+From an api perspective is also good to know if operations like load/initialize/unload succeeded.
+
 90:5-90:21
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

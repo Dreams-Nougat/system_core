@@ -1,0 +1,53 @@
+Revision: c01d6b204b29dc62753a1a1bdc610eb42dce0231
+Patch-set: 1
+File: libnativebridge/native_bridge.cc
+
+38:0-39:30
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0a0a75c_3c2c711c
+Bytes: 145
+I think it's cleaner/clearer if we merge this into the states (i.e. kError instead of a separate flag). It will also get rid of some extra lines.
+
+90:5-90:21
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0a0a75c_dc40edbe
+Bytes: 47
+worth explaining why we don't need a lock here.
+
+94:4-94:74
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90d1cfe4_92d9dc2d
+Bytes: 47
+might prove useful to add the state to the log.
+
+100:2-100:34
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b09df327_3ba5575a
+Bytes: 76
+you can get rid of this. we need to set it only if the open succeeds (L126).
+
+126:8-127:43
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b09df327_7b9bdf21
+Bytes: 136
+if you add this at L116 you can get rid of the entire if-block. It will also spare the reader to go back and see where callbacks is set.
+
+164:0-164:6
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90d1cfe4_92b23ce4
+Bytes: 13
+extra spaces.
+
+177:5-177:26
+Thu Sep 04 10:26:22 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90d1cfe4_329d9053
+Bytes: 364
+hmm, this becomes a bit misleading. If the state is open but not initialized then the rest of the calls will return null. I don't think we ever need the 'or' semantic here, i.e. the state should be on initialized (eventually renaming the function to NativeBridgeReady). If we have a use case for Open, then we can add another function (but I can't think of any...)
+

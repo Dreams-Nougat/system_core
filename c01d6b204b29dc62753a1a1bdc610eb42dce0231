@@ -9,6 +9,14 @@ UUID: d0a0a75c_3c2c711c
 Bytes: 145
 I think it's cleaner/clearer if we merge this into the states (i.e. kError instead of a separate flag). It will also get rid of some extra lines.
 
+38:0-39:30
+Thu Sep 04 17:41:14 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0a0a75c_3c2c711c
+UUID: 50583741_79e8a842
+Bytes: 126
+It depends. I was thinking it's orthogonal as I didn't want to "fail everything" when trying to re-initialize a native bridge.
+
 90:5-90:21
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -37,6 +45,16 @@ UUID: b09df327_7b9bdf21
 Bytes: 136
 if you add this at L116 you can get rid of the entire if-block. It will also spare the reader to go back and see where callbacks is set.
 
+126:8-127:43
+Thu Sep 04 17:41:14 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b09df327_7b9bdf21
+UUID: 50583741_193bec03
+Bytes: 244
+This was the minimum-redundancy code for errors. There are two errors possible: 1. dlopen fails, 2. dlsym fails. And they are nested. So it's a bit more than just moving this block up, the whole structure needs to move.
+
+I'll take a stab at it.
+
 164:0-164:6
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,4 +68,12 @@ Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 90d1cfe4_329d9053
 Bytes: 364
 hmm, this becomes a bit misleading. If the state is open but not initialized then the rest of the calls will return null. I don't think we ever need the 'or' semantic here, i.e. the state should be on initialized (eventually renaming the function to NativeBridgeReady). If we have a use case for Open, then we can add another function (but I can't think of any...)
+
+177:5-177:26
+Thu Sep 04 17:41:14 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90d1cfe4_329d9053
+UUID: 10807fc3_8b845dbd
+Bytes: 74
+This was mainly done for testing before. I agree with you and will update.
 

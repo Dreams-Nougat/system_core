@@ -29,12 +29,28 @@ I'm wondering now if it wouldn't be better to return a bool for the relevant ope
 
 From an api perspective is also good to know if operations like load/initialize/unload succeeded.
 
+38:0-39:30
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b09df327_4112b62d
+UUID: 30e023af_98e7b9f7
+Bytes: 78
+I added a bool return to LoadNativeBridge. Unloading doesn't seem interesting.
+
 90:5-90:21
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d0a0a75c_dc40edbe
 Bytes: 47
 worth explaining why we don't need a lock here.
+
+90:5-90:21
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0a0a75c_dc40edbe
+UUID: 10807fc3_b3bd0f9e
+Bytes: 4
+Done
 
 94:4-94:74
 Thu Sep 04 10:26:22 2014 +0000
@@ -43,12 +59,28 @@ UUID: 90d1cfe4_92d9dc2d
 Bytes: 47
 might prove useful to add the state to the log.
 
+94:4-94:74
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90d1cfe4_92d9dc2d
+UUID: 10807fc3_33981f63
+Bytes: 4
+Done
+
 100:2-100:34
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b09df327_3ba5575a
 Bytes: 76
 you can get rid of this. we need to set it only if the open succeeds (L126).
+
+100:2-100:34
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b09df327_3ba5575a
+UUID: 10807fc3_9393334a
+Bytes: 4
+Done
 
 126:8-127:43
 Thu Sep 04 10:26:22 2014 +0000
@@ -67,12 +99,28 @@ This was the minimum-redundancy code for errors. There are two errors possible: 
 
 I'll take a stab at it.
 
+126:8-127:43
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50583741_193bec03
+UUID: 10807fc3_738e9726
+Bytes: 48
+Ended up just adding a comment to make it clear.
+
 164:0-164:6
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 90d1cfe4_92b23ce4
 Bytes: 13
 extra spaces.
+
+164:0-164:6
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90d1cfe4_92b23ce4
+UUID: 10807fc3_339fbf56
+Bytes: 4
+Done
 
 177:5-177:26
 Thu Sep 04 10:26:22 2014 +0000
@@ -88,4 +136,12 @@ Parent: 90d1cfe4_329d9053
 UUID: 10807fc3_8b845dbd
 Bytes: 74
 This was mainly done for testing before. I agree with you and will update.
+
+177:5-177:26
+Thu Sep 04 19:58:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10807fc3_8b845dbd
+UUID: 30e023af_5874f1a6
+Bytes: 205
+I ended up adding NativeBridgeInitialized for this matter. While this still means "Available" doesn't have to mean available (as the callbacks->initialize call can fail), I felt better to have that option.
 

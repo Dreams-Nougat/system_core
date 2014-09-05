@@ -37,6 +37,14 @@ UUID: 30e023af_98e7b9f7
 Bytes: 78
 I added a bool return to LoadNativeBridge. Unloading doesn't seem interesting.
 
+38:0-39:30
+Fri Sep 05 11:12:16 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30e023af_98e7b9f7
+UUID: d0a0a75c_0585984b
+Bytes: 121
+I would have remove the variable all together and update the tests to check the return values. But I don't really care :)
+
 90:5-90:21
 Thu Sep 04 10:26:22 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

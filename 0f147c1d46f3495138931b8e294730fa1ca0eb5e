@@ -1,0 +1,20 @@
+Revision: 0f147c1d46f3495138931b8e294730fa1ca0eb5e
+Patch-set: 1
+File: /COMMIT_MSG
+
+9
+Fri Sep 05 22:50:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70345b07_a4e24ca6
+Bytes: 49
+include the bug and/or explain why this hurt you?
+
+File: adb/adb.c
+
+1562
+Fri Sep 05 22:50:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70345b07_c4e5d0b2
+Bytes: 54
+can't you just move this down inside the existing #if?
+

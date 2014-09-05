@@ -13,6 +13,14 @@ Bug: is part of the tail headers, no vertical whitespace between Bug: and Change
 Bug:
 Change-Id:
 
+11:0-13:17
+Fri Sep 05 23:58:13 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b076d3c3_f2a2a1c8
+UUID: 50391700_349148d2
+Bytes: 4
+Done
+
 File: fs_mgr/fs_mgr_verity.c
 
 123:23-123:24
@@ -22,10 +30,26 @@ UUID: b076d3c3_12b71d10
 Bytes: 49
 vertical white space between automatics and code.
 
+123:23-123:24
+Fri Sep 05 23:58:13 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b076d3c3_12b71d10
+UUID: 10807fc3_e4796d9d
+Bytes: 4
+Done
+
 124:19-124:75
 Fri Sep 05 23:53:46 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b076d3c3_d2c0c563
 Bytes: 32
 This is a C file, use C comments
+
+124:19-124:75
+Fri Sep 05 23:58:13 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b076d3c3_d2c0c563
+UUID: 50391700_34bf884b
+Bytes: 4
+Done
 

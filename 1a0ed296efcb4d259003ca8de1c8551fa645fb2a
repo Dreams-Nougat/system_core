@@ -1,0 +1,18 @@
+Revision: 1a0ed296efcb4d259003ca8de1c8551fa645fb2a
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+123:23-123:24
+Fri Sep 05 23:53:46 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b076d3c3_12b71d10
+Bytes: 49
+vertical white space between automatics and code.
+
+124:19-124:75
+Fri Sep 05 23:53:46 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b076d3c3_d2c0c563
+Bytes: 32
+This is a C file, use C comments
+

@@ -9,6 +9,14 @@ UUID: 70345b07_a4e24ca6
 Bytes: 49
 include the bug and/or explain why this hurt you?
 
+9
+Fri Sep 05 23:32:54 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70345b07_a4e24ca6
+UUID: 10807fc3_e19b9f1f
+Bytes: 8
+Will do.
+
 File: adb/adb.c
 
 1562
@@ -17,4 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 70345b07_c4e5d0b2
 Bytes: 54
 can't you just move this down inside the existing #if?
+
+1562
+Fri Sep 05 23:32:54 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70345b07_c4e5d0b2
+UUID: 10807fc3_61a0efbf
+Bytes: 165
+I thought that C compiler won't like variables declared after statements.
+Tested both gcc and clang and they didn't complain.
+I will move them into the existing #if.
 

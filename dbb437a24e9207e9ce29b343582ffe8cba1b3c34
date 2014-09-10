@@ -1,0 +1,20 @@
+Revision: dbb437a24e9207e9ce29b343582ffe8cba1b3c34
+Patch-set: 2
+File: include/nativebridge/native_bridge.h
+
+77:64-77:79
+Wed Sep 10 16:31:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90262ff7_ad88699c
+Bytes: 120
+Which one is this? the emulated or the original one?
+
+And I feel this should be specified during InitializeNativeBridge.
+
+78:64-78:75
+Wed Sep 10 16:31:31 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0aa0b52_da40d1be
+Bytes: 141
+why do you need the private dir here? If it's for the the lib path you can return a relative path and assemble it when updating the property.
+

@@ -19,3 +19,11 @@ Bytes: 343
 
 and avoid the loop and the flag altogether..
 
+533:13-533:54
+Thu Sep 11 18:37:22 2014 +0000
+Author: Esteban de la Canal <1047453@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90cb8f65_ab54f9df
+UUID: f0c4cb62_b5e2a0a6
+Bytes: 107
+yeah you are right,  I did it to avoid the duplication of the read line, but added more complexity instead.
+

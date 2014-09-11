@@ -11,10 +11,26 @@ Which one is this? the emulated or the original one?
 
 And I feel this should be specified during InitializeNativeBridge.
 
+77:64-77:79
+Thu Sep 11 06:44:22 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90262ff7_ad88699c
+UUID: 101a3fb4_28c45176
+Bytes: 138
+It's the original one, e.g. "arm" if current app is arm.  InitializeNativeBridge() is done in Zygote, which doesn't have any "current app"
+
 78:64-78:75
 Wed Sep 10 16:31:31 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0aa0b52_da40d1be
 Bytes: 141
 why do you need the private dir here? If it's for the the lib path you can return a relative path and assemble it when updating the property.
+
+78:64-78:75
+Thu Sep 11 06:44:22 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0aa0b52_da40d1be
+UUID: 101a3fb4_28da9120
+Bytes: 170
+The private dir is for native bridge to store some private data, for example, emulated code. Therefore, the private dir should be writable for current user + current app.
 

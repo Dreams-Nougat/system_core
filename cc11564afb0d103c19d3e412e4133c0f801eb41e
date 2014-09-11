@@ -1,0 +1,21 @@
+Revision: cc11564afb0d103c19d3e412e4133c0f801eb41e
+Patch-set: 1
+File: adb/usb_osx.c
+
+533:13-533:54
+Thu Sep 11 18:22:11 2014 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90cb8f65_ab54f9df
+Bytes: 343
+2 comments:
+ - Rather than !unstalled, I'd name the variable stalled.
+ - It seems like what you want to do is to call clearPipeStall just once. Personally I think it would read better if you just structure it as:
+
+ result = read()
+ if (result == pipestal) {
+   clearPipeStall
+   result = read()
+ }
+
+and avoid the loop and the flag altogether..
+

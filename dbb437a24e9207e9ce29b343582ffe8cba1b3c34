@@ -19,6 +19,14 @@ UUID: 101a3fb4_28c45176
 Bytes: 138
 It's the original one, e.g. "arm" if current app is arm.  InitializeNativeBridge() is done in Zygote, which doesn't have any "current app"
 
+77:64-77:79
+Thu Sep 11 06:49:07 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 101a3fb4_28c45176
+UUID: 702b7bc3_12b38dea
+Bytes: 57
+InitializeNativeBridge is done after the fork and by ART.
+
 78:64-78:75
 Wed Sep 10 16:31:31 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

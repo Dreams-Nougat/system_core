@@ -1,0 +1,41 @@
+Revision: 56d20ebba440d198db6663d400ced2f00d66fe76
+Patch-set: 1
+File: liblog/logprint.c
+
+33
+Thu Sep 11 22:37:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50d597fe_3af2f17b
+Bytes: 20
+<sys/param.h>'s MIN?
+
+45
+Thu Sep 11 22:37:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 702b7bc3_abe04830
+Bytes: 4
+bool
+
+48
+Thu Sep 11 22:37:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 30b3c3fb_1d4b7375
+Bytes: 29
+explain what the numbers are?
+
+757
+Thu Sep 11 22:37:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 702b7bc3_2bfe18ce
+Bytes: 6
+38;5;?
+
+File: logcat/logcat.cpp
+
+223
+Thu Sep 11 22:37:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50d597fe_dae2e5a7
+Bytes: 70
+even if the source isn't sorted, it would be helpful to sort the help.
+

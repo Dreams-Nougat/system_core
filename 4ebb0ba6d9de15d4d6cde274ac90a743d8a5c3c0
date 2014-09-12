@@ -1,0 +1,20 @@
+Revision: 4ebb0ba6d9de15d4d6cde274ac90a743d8a5c3c0
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:0-7:1
+Fri Sep 12 23:29:11 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90b46fdf_74f3a805
+Bytes: 89
+component prefix is generally a good thing to have:
+
+logd: fix format-extra-args warning.
+
+9:0-9:3
+Fri Sep 12 23:29:11 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9099cf85_7bd57323
+Bytes: 97
+Discuss this with your lead. My leads had instructed me to use Bug: (mixed case) for this header.
+

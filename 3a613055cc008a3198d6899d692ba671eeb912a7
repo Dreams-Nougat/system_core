@@ -1,0 +1,11 @@
+Revision: 3a613055cc008a3198d6899d692ba671eeb912a7
+Patch-set: 2
+File: liblog/logprint.c
+
+47:2-49:3
+Fri Sep 12 00:23:25 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90b46fdf_c054b288
+Bytes: 4
+tabs
+

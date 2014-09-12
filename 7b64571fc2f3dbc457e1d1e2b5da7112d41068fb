@@ -9,10 +9,30 @@ UUID: 702b7bc3_6bc930f0
 Bytes: 20
 #include <stdbool.h>
 
+43
+Fri Sep 12 02:05:35 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 702b7bc3_6bc930f0
+UUID: 9099cf85_52225494
+Bytes: 114
+This defines an int :-( in several public implementations, this makes me unhappy :-(. But we will buy this for $10
+
 760
 Fri Sep 12 01:46:44 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 30b3c3fb_dd057b7c
 Bytes: 236
 i'm a bit uncomfortable with the 38;5; and use of the 256-color palette (especially because you haven't documented that). can't you restrict yourself to the traditional colors? do the Mac and Windows support the 256-color xterm palette?
+
+760
+Fri Sep 12 02:05:35 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30b3c3fb_dd057b7c
+UUID: 9099cf85_1218cc64
+Bytes: 609
+I documented it at the top where the color references are. There is a url that points to an instructive page regarding xterm palette and the used of ESC [ 3 8 ; 5 ; <color> m sequence.
+
+I will fortify the comment a bit more to hopefully make you happier.
+
+As indicated in the original CL, I was not comfortable with it not using one of the terminal character libraries; when I realized we have no interest in holding on to such bulk. This is a KISS 'most terminals supported' adjustment ... if colors do not work on your terminal, supply a CL to fix it ;-> based on a new ANDROID_TERM environment variable ...
 

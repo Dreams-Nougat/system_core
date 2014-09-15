@@ -27,3 +27,15 @@ UUID: d06fc739_f8cdd9f1
 Bytes: 142
 this shouldn't be in this file. i'm not sure it should be anywhere. why don't we just 'static inline' all this crap? none of it is public API.
 
+27
+Mon Sep 15 22:41:49 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06fc739_f8cdd9f1
+UUID: 709e1b6e_93710e5f
+Bytes: 419
+AFAICT, atomic.h doesn't include the actual definitions, and that's the only thing included here? 
+
+I kind of figured out what this does, but it's extremely subtle and confusing.  The atomic.h include doesn't matter much, but trace.h includes atomic-inline.h, which makes the definitions available.  Not good.
+
+An atomic-inline.h comment currently states that these should not usually be inlined.  I also don't see why.
+

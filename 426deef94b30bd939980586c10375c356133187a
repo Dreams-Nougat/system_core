@@ -1,0 +1,48 @@
+Revision: 426deef94b30bd939980586c10375c356133187a
+Patch-set: 1
+File: sdcard/sdcard.c
+
+1429
+Mon Sep 15 17:16:09 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0c4cb62_bfbc1bc7
+Bytes: 1696
+don't you think the better fix is to ask for the FUSE version we actually need?
+
+i think it's a long-standing error that we've been _requesting_ the highest version our header files have heard of, rather than the version we actually expect.
+
+ * Version negotiation:
+ *
+ * Both the kernel and userspace send the version they support in the
+ * INIT request and reply respectively.
+ *
+ * If the major versions match then both shall use the smallest
+ * of the two minor versions for communication.
+ *
+ * If the kernel supports a larger major version, then userspace shall
+ * reply with the major version it supports, ignore the rest of the
+ * INIT message and expect a new INIT message from the kernel with a
+ * matching major version.
+ *
+ * If the library supports a larger major version, then it shall fall
+ * back to the major protocol version sent by the kernel for
+ * communication and reply with that major version (and an arbitrary
+ * supported minor version).
+
+so it looks like we really ought to just copy across the kernel's major and minor from the in struct and just check that they're at least some minimum version we understand.
+
+it looks like only the minor version has been bumped.
+
+how about
+
+  if (req->major > FUSE_KERNEL_VERSION || (req->major == FUSE_KERNEL_VERSION && req->minor > FUSE_KERNEL_MINOR_VERSION) {
+    ALOGW("kernel reported FUSE version %d.%d, we were compiled with headers for %d.%d", ...);
+    out.major = FUSE_KERNEL_VERSION; // or some hard-coded version that's what we actually need?
+    out.minor = FUSE_KERNEL_MINOR_VERSION; // or some hard-coded version that's what we actually need?
+  } else {
+    out.major = req->major;
+    out.minor = req->minor;
+  }
+
+?
+

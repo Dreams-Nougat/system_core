@@ -27,6 +27,14 @@ UUID: d06fc739_cd6a21b6
 Bytes: 9
 spelling.
 
+27:22-27:29
+Mon Sep 15 21:58:49 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06fc739_cd6a21b6
+UUID: b0933369_035cf95a
+Bytes: 4
+Done
+
 33:67-33:71
 Mon Sep 15 21:50:48 2014 +0000
 Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -35,4 +43,12 @@ Bytes: 61
 I don't understand what this is trying to do.
 
 Add a comment?
+
+33:67-33:71
+Mon Sep 15 21:58:49 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06fc739_382771d6
+UUID: d06fc739_d8649d9d
+Bytes: 57
+Now moved down the comments from line 27, for Clang only.
 

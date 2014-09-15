@@ -1,0 +1,29 @@
+Revision: 9139d97fcd61b6da58207af728a98fb7530c5765
+Patch-set: 3
+File: include/cutils/atomic-arm.h
+
+24
+Mon Sep 15 22:10:06 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06fc739_18e3956a
+Bytes: 77
+we should just move this up into "atomic.h" rather than repeat it everywhere.
+
+File: include/cutils/atomic.h
+
+23
+Mon Sep 15 22:10:06 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0933369_fec3006d
+Bytes: 29
+this name doesn't make sense.
+
+File: libcutils/trace.c
+
+27
+Mon Sep 15 22:10:06 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06fc739_f8cdd9f1
+Bytes: 142
+this shouldn't be in this file. i'm not sure it should be anywhere. why don't we just 'static inline' all this crap? none of it is public API.
+

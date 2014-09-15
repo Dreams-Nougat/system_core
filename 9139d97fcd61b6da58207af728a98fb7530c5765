@@ -9,6 +9,15 @@ UUID: d06fc739_18e3956a
 Bytes: 77
 we should just move this up into "atomic.h" rather than repeat it everywhere.
 
+24
+Mon Sep 15 22:47:01 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06fc739_18e3956a
+UUID: 709e1b6e_b3aff268
+Bytes: 322
+I am not sure why is was repeated.
+Currently these atomic-<target>.h files are included by atomic-inline.h, not  atomic.h. I suppose we can move all these into atomic-inline.h, but there is another file vendor/unbundled_google/packages/OneUp/package/cast_mirroring/jni/utils/Atomic.c that includes these atomic-<target>.h.
+
 File: include/cutils/atomic.h
 
 23
@@ -17,6 +26,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0933369_fec3006d
 Bytes: 29
 this name doesn't make sense.
+
+23
+Mon Sep 15 22:47:01 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0933369_fec3006d
+UUID: d06fc739_93ada622
+Bytes: 40
+How about ANDROID_ATOMIC_INLINE_LINKAGE?
 
 File: libcutils/trace.c
 
@@ -38,4 +55,19 @@ AFAICT, atomic.h doesn't include the actual definitions, and that's the only thi
 I kind of figured out what this does, but it's extremely subtle and confusing.  The atomic.h include doesn't matter much, but trace.h includes atomic-inline.h, which makes the definitions available.  Not good.
 
 An atomic-inline.h comment currently states that these should not usually be inlined.  I also don't see why.
+
+27
+Mon Sep 15 22:47:01 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06fc739_f8cdd9f1
+UUID: d06fc739_3316b2b3
+Bytes: 520
+Atomic functions in cutils/atomic.h are defined in atomic-inline.h.
+The latter is not included by most users of atomic.h, so those functions are not actually inlined. So, a global definition is needed.
+
+But the definition is included into both trace.c and atomic.c.
+"external inline" was the existing code to link those two files with gcc.
+For Clang, I would change trace.c to use weak symbols.
+Alternatively, we can make those functions weak everywhere for Clang,
+or also for GCC, but that seems to be a riskier change.
 

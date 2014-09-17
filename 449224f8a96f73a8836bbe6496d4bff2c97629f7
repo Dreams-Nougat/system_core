@@ -2,6 +2,15 @@ Revision: 449224f8a96f73a8836bbe6496d4bff2c97629f7
 Patch-set: 4
 File: include/nativebridge/native_bridge.h
 
+35:5-35:32
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70c53b78_1f06abae
+Bytes: 96
+I don't have a better suggestion but "Early" is a bit fuzzy for me. 
+
+Maybe "PreInitialize...."?
+
 121:44-121:53
 Wed Sep 17 13:34:12 2014 +0000
 Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +34,74 @@ UUID: 90c0ef69_4b2d771a
 Bytes: 56
 We also need to dlsym the symbol of runtime values here.
 
+183:5-183:30
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_1e5fcda0
+Bytes: 183
+I'd feel slightly better to introduce a new state. Would make things a bit easier to debug probably.
+Either way, I favor early returns than surrounding all the function code in an if.
+
+184:17-184:23
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_5e0c25ce
+Bytes: 47
+can assume this will always be null terminated?
+
+184:24-184:35
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_be1461d9
+Bytes: 8
+priv_dir
+
+186:4-186:12
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_de1f15f4
+Bytes: 11
+private_dir
+
+200:31-200:41
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_be4d81ff
+Bytes: 64
+this is a bit of magic :). Would benefit of a rationale comment.
+
 201:23-201:30
 Wed Sep 17 13:34:12 2014 +0000
 Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0fe8bbb_2b393de8
 Bytes: 182
 We'd better retrieve the cpuinfo file path in LoadNativeBridge by dlsym the fixed symbol in native bridge library directly. Otherwise, we have to generate a cpuinfo file per process.
+
+209:15-209:19
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50baf7ee_de315577
+Bytes: 183
+I'm a bit confused by the expectation here. This implies that the cpuinfo file is already there. Given that the private dir is per_app/per_user how does it gets there? who creates it?
+
+216:14-216:45
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70c53b78_bffb3f54
+Bytes: 124
+I think it worth adding the full path, i.e. the 'buffer'. Which now I thing it should be rename to cpuinfoPath or something.
+
+236:37-236:39
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10d4ff2c_fcc54179
+Bytes: 49
+don't really care, but 4 should be enough, right?
+
+247:6-255:7
+Wed Sep 17 13:34:30 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10d4ff2c_bccfc995
+Bytes: 76
+even if it's small I'd extract this in a local function to avoid duplication
 

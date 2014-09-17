@@ -18,6 +18,14 @@ UUID: 300d83bc_9ba4fb5e
 Bytes: 91
 If the env values are exposed as a symbol in native bridge, this interface will be removed.
 
+121:44-121:53
+Wed Sep 17 14:38:01 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300d83bc_9ba4fb5e
+UUID: 10d4ff2c_fca421aa
+Bytes: 173
+Hmm, doesn't this depends on the isa? I might be wrong but as it is now the design allows for more than one system to be emulated, and that could depend on the original isa.
+
 File: libnativebridge/native_bridge.cc
 
 32:7-32:32
@@ -26,6 +34,13 @@ Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 90c0ef69_6b5f1ba0
 Bytes: 314
 The cpuinfo_path should be involved here, as well. All of these values can be fetched from native bridge library by dlsym in LoadNativeBridge. And the EarlyInitializeNativeBridge can bind-mount the /proc/cpuinfo based-on this cpuinfo_path without invoking any interface of native bridge with privileged permission.
+
+33:4-34:25
+Wed Sep 17 14:38:01 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70c53b78_ff46578c
+Bytes: 129
+I think we should use supported_abis. cpu_abi and cpu_abi are already deprecated: frameworks/base/core/java/android/os/Build.java
 
 158:61-158:66
 Wed Sep 17 13:34:12 2014 +0000

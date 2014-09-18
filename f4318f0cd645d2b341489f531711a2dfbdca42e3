@@ -57,6 +57,16 @@ UUID: 3042e3dc_d9ae336d
 Bytes: 105
 Got it. Missed this flag... Then, /system/lib(64)/<instrction_set>/cpuinfo pattern is still on the table?
 
+226:0-234:67
+Thu Sep 18 14:25:23 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3042e3dc_d9ae336d
+UUID: 508bd76f_93cf1e96
+Bytes: 133
+The pro of the pattern: avoids duplication.
+
+The cons: it creates extra assumptions and loose links between native bridge components.
+
 279:29-279:65
 Thu Sep 18 10:52:20 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

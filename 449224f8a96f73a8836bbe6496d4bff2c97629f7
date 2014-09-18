@@ -26,6 +26,14 @@ UUID: 10d4ff2c_fca421aa
 Bytes: 173
 Hmm, doesn't this depends on the isa? I might be wrong but as it is now the design allows for more than one system to be emulated, and that could depend on the original isa.
 
+121:44-121:53
+Thu Sep 18 01:33:34 2014 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10d4ff2c_fca421aa
+UUID: 3042e3dc_08ef6bd4
+Bytes: 213
+The abilist defined which abis this build is going to support. We only need to know whether this process is 32-bit or 64-bit. And different native bridge lib copies are present for 32-bit and 64-bit, respectively.
+
 File: libnativebridge/native_bridge.cc
 
 32:7-32:32

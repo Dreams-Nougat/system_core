@@ -9,3 +9,15 @@ UUID: 10479fed_73a382ce
 Bytes: 339
 It's not reasonable to get cpuinfo file here under private dir. NativeBridge has no chance to get the path of private dir and put cpufino file, because it hasn't involved at all before PreInitialized. Can we make a agreement on the cpuinfo path per instruction set? For example, the path should be /system/lib(64)/<instrction_set>/cpuinfo.
 
+226:0-234:67
+Thu Sep 18 06:04:20 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10479fed_73a382ce
+UUID: 7021bb30_d95dd35e
+Bytes: 552
+The intention here was that the code cache sub-directory name is known (it's public API for L). The bridge will be provided with the data directory on Initialize (see the new signature), which basically happens immediately after the dropping of the privileges. So the bridge can construct the same path and write to the file just fine before any app code is executed.
+
+You will need the directory anyways to store compiled things in there / load them out of there. So that seemed like a decent approach.
+
+I'll discuss your proposal internally tomorrow.
+

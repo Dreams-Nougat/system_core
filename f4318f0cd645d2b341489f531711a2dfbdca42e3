@@ -1,0 +1,11 @@
+Revision: f4318f0cd645d2b341489f531711a2dfbdca42e3
+Patch-set: 5
+File: libnativebridge/native_bridge.cc
+
+226:0-234:67
+Thu Sep 18 05:17:04 2014 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10479fed_73a382ce
+Bytes: 339
+It's not reasonable to get cpuinfo file here under private dir. NativeBridge has no chance to get the path of private dir and put cpufino file, because it hasn't involved at all before PreInitialized. Can we make a agreement on the cpuinfo path per instruction set? For example, the path should be /system/lib(64)/<instrction_set>/cpuinfo.
+

@@ -49,6 +49,14 @@ If you look at L238 you'll notice O_CREAT flag. The file will be there (and prop
 
 Regarding my early comment, symlinks can't actually be used with this design so we'll end up with some duplication.
 
+226:0-234:67
+Thu Sep 18 14:07:30 2014 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9081cf4e_12e80cc5
+UUID: 3042e3dc_d9ae336d
+Bytes: 105
+Got it. Missed this flag... Then, /system/lib(64)/<instrction_set>/cpuinfo pattern is still on the table?
+
 279:29-279:65
 Thu Sep 18 10:52:20 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

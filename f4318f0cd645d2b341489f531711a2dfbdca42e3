@@ -21,3 +21,20 @@ You will need the directory anyways to store compiled things in there / load the
 
 I'll discuss your proposal internally tomorrow.
 
+226:0-234:67
+Thu Sep 18 10:52:20 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7021bb30_d95dd35e
+UUID: 9081cf4e_12e80cc5
+Bytes: 256
+The only drawback for this is that we'll have quite a lot of duplication for cpuinfo files (unless the nativebridge is somehow smart enough to use symlink).
+
+However it's still the most flexible approach and I favor it as well (the cpuinfo is pretty small)
+
+279:29-279:65
+Thu Sep 18 10:52:20 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f02ccb2f_55d0ac02
+Bytes: 72
+a bit more wasteful but i think it will be cleaner to just use an array.
+

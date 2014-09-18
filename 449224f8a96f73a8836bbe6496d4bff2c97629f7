@@ -82,6 +82,14 @@ UUID: 10479fed_382079b6
 Bytes: 344
 As this is mostly meant to support older apps, we *must* set old fields (and these fields are not yet deprecated, as L is not yet released). I wonder what the right thing is for SUPPORTED_ABIS, probably for now just copying cpu_abi. The bit-width ones are complicated, as we cannot just use the bitness of the running process. Opinions welcome.
 
+33:4-34:25
+Thu Sep 18 10:52:13 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10479fed_382079b6
+UUID: 508bd76f_30b0a8db
+Bytes: 27
+let's discuss this offline.
+
 158:61-158:66
 Wed Sep 17 13:34:12 2014 +0000
 Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -170,6 +178,14 @@ Parent: 50baf7ee_de315577
 UUID: 50ef57ff_568784c4
 Bytes: 10
 O_CREAT...
+
+209:15-209:19
+Thu Sep 18 10:52:13 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50ef57ff_568784c4
+UUID: f02ccb2f_35fe5078
+Bytes: 22
+I missed that. Thanks.
 
 216:14-216:45
 Wed Sep 17 13:34:30 2014 +0000

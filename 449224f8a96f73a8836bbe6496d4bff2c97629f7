@@ -11,6 +11,14 @@ I don't have a better suggestion but "Early" is a bit fuzzy for me.
 
 Maybe "PreInitialize...."?
 
+35:5-35:32
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70c53b78_1f06abae
+UUID: 501677dd_98c3d5d3
+Bytes: 4
+Done
+
 121:44-121:53
 Wed Sep 17 13:34:12 2014 +0000
 Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -34,6 +42,14 @@ UUID: 3042e3dc_08ef6bd4
 Bytes: 213
 The abilist defined which abis this build is going to support. We only need to know whether this process is 32-bit or 64-bit. And different native bridge lib copies are present for 32-bit and 64-bit, respectively.
 
+121:44-121:53
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3042e3dc_08ef6bd4
+UUID: 501677dd_f8be914c
+Bytes: 235
+I highly prefer a design that lets a native bridge support multiple emulated ABIs. For example, on a 64b system I'd prefer the 64b bridge to emulate both 32b and 64b bridged arch, as that should be better from a performance standpoint.
+
 File: libnativebridge/native_bridge.cc
 
 32:7-32:32
@@ -43,12 +59,28 @@ UUID: 90c0ef69_6b5f1ba0
 Bytes: 314
 The cpuinfo_path should be involved here, as well. All of these values can be fetched from native bridge library by dlsym in LoadNativeBridge. And the EarlyInitializeNativeBridge can bind-mount the /proc/cpuinfo based-on this cpuinfo_path without invoking any interface of native bridge with privileged permission.
 
+32:7-32:32
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90c0ef69_6b5f1ba0
+UUID: 10479fed_18feddcd
+Bytes: 110
+This approach restricts the versatility of the native bridge, as then one library = one emulated architecture.
+
 33:4-34:25
 Wed Sep 17 14:38:01 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 70c53b78_ff46578c
 Bytes: 129
 I think we should use supported_abis. cpu_abi and cpu_abi are already deprecated: frameworks/base/core/java/android/os/Build.java
+
+33:4-34:25
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70c53b78_ff46578c
+UUID: 10479fed_382079b6
+Bytes: 344
+As this is mostly meant to support older apps, we *must* set old fields (and these fields are not yet deprecated, as L is not yet released). I wonder what the right thing is for SUPPORTED_ABIS, probably for now just copying cpu_abi. The bit-width ones are complicated, as we cannot just use the bitness of the running process. Opinions welcome.
 
 158:61-158:66
 Wed Sep 17 13:34:12 2014 +0000
@@ -64,6 +96,14 @@ UUID: 50baf7ee_1e5fcda0
 Bytes: 183
 I'd feel slightly better to introduce a new state. Would make things a bit easier to debug probably.
 Either way, I favor early returns than surrounding all the function code in an if.
+
+183:5-183:30
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50baf7ee_1e5fcda0
+UUID: 503d974b_34be4899
+Bytes: 61
+Early return. I don't think the additional state is worth it.
 
 184:17-184:23
 Wed Sep 17 13:34:30 2014 +0000
@@ -93,12 +133,28 @@ UUID: 50baf7ee_be4d81ff
 Bytes: 64
 this is a bit of magic :). Would benefit of a rationale comment.
 
+200:31-200:41
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50baf7ee_be4d81ff
+UUID: 50ef57ff_369400ec
+Bytes: 4
+Done
+
 201:23-201:30
 Wed Sep 17 13:34:12 2014 +0000
 Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0fe8bbb_2b393de8
 Bytes: 182
 We'd better retrieve the cpuinfo file path in LoadNativeBridge by dlsym the fixed symbol in native bridge library directly. Otherwise, we have to generate a cpuinfo file per process.
+
+201:23-201:30
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0fe8bbb_2b393de8
+UUID: 70ea9bf0_85ded224
+Bytes: 92
+I prefer the setup as is, as it allows a native bridge to handle more than one architecture.
 
 209:15-209:19
 Wed Sep 17 13:34:30 2014 +0000
@@ -107,12 +163,28 @@ UUID: 50baf7ee_de315577
 Bytes: 183
 I'm a bit confused by the expectation here. This implies that the cpuinfo file is already there. Given that the private dir is per_app/per_user how does it gets there? who creates it?
 
+209:15-209:19
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50baf7ee_de315577
+UUID: 50ef57ff_568784c4
+Bytes: 10
+O_CREAT...
+
 216:14-216:45
 Wed Sep 17 13:34:30 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 70c53b78_bffb3f54
 Bytes: 124
 I think it worth adding the full path, i.e. the 'buffer'. Which now I thing it should be rename to cpuinfoPath or something.
+
+216:14-216:45
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70c53b78_bffb3f54
+UUID: 503d974b_b4a9f867
+Bytes: 4
+Done
 
 236:37-236:39
 Wed Sep 17 13:34:30 2014 +0000
@@ -121,10 +193,26 @@ UUID: 10d4ff2c_fcc54179
 Bytes: 49
 don't really care, but 4 should be enough, right?
 
+236:37-236:39
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10d4ff2c_fcc54179
+UUID: 10479fed_2d835981
+Bytes: 73
+16 is the default according to some Android docs, so I left it at that...
+
 247:6-255:7
 Wed Sep 17 13:34:30 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10d4ff2c_bccfc995
 Bytes: 76
 even if it's small I'd extract this in a local function to avoid duplication
+
+247:6-255:7
+Thu Sep 18 03:55:25 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10d4ff2c_bccfc995
+UUID: 3042e3dc_930acc42
+Bytes: 4
+Done
 

@@ -89,3 +89,11 @@ UUID: 5064b799_7d227b0a
 Bytes: 178
 app_data_dir, is it sth like /data/user/<user id>/<package_name>/? I assume PMS will remove the whole directory when apps are upgrade, right? And "clear data" will not remove it?
 
+389:49-389:61
+Fri Sep 19 04:17:49 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5064b799_7d227b0a
+UUID: 5064b799_bdc8f3ed
+Bytes: 261
+Please see the usage in SetupEnvironment. app_data_dir is the actual app directory, which I think is of the shape you describe. What the native bridge would want to use is the "code_cache" directory directly beneath this. That will be wiped on each upgrade etc.
+

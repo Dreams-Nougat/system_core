@@ -82,3 +82,10 @@ UUID: f02ccb2f_55d0ac02
 Bytes: 72
 a bit more wasteful but i think it will be cleaner to just use an array.
 
+389:49-389:61
+Fri Sep 19 04:15:55 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5064b799_7d227b0a
+Bytes: 178
+app_data_dir, is it sth like /data/user/<user id>/<package_name>/? I assume PMS will remove the whole directory when apps are upgrade, right? And "clear data" will not remove it?
+

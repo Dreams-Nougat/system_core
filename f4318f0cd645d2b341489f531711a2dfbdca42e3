@@ -1,5 +1,28 @@
 Revision: f4318f0cd645d2b341489f531711a2dfbdca42e3
 Patch-set: 5
+File: include/nativebridge/native_bridge.h
+
+86:2-87:68
+Fri Sep 19 05:55:03 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f05a0bdc_05b3f2ea
+Bytes: 58
+comments for new parameters: private_dir & instruction_set
+
+97:21-97:29
+Fri Sep 19 05:55:03 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5064b799_ef7472e0
+Bytes: 8
+standard
+
+99:50-99:59
+Fri Sep 19 05:55:03 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0712b54_19f7ce6b
+Bytes: 42
+successful - my editor has spell checker:)
+
 File: libnativebridge/native_bridge.cc
 
 226:0-234:67
@@ -96,4 +119,12 @@ Parent: 5064b799_7d227b0a
 UUID: 5064b799_bdc8f3ed
 Bytes: 261
 Please see the usage in SetupEnvironment. app_data_dir is the actual app directory, which I think is of the shape you describe. What the native bridge would want to use is the "code_cache" directory directly beneath this. That will be wiped on each upgrade etc.
+
+389:49-389:61
+Fri Sep 19 05:55:03 2014 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5064b799_bdc8f3ed
+UUID: 5064b799_8f385606
+Bytes: 103
+I see. PS, I assume you mean "usage in PreInitializeNativeBridge()", SetupEnvironment() doesn't use it.
 

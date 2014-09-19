@@ -67,6 +67,14 @@ The pro of the pattern: avoids duplication.
 
 The cons: it creates extra assumptions and loose links between native bridge components.
 
+226:0-234:67
+Fri Sep 19 04:04:31 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 508bd76f_93cf1e96
+UUID: f0712b54_f6b9b166
+Bytes: 62
+We should move this to the mail thread to involve more people.
+
 279:29-279:65
 Thu Sep 18 10:52:20 2014 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

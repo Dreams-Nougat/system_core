@@ -1,0 +1,11 @@
+Revision: 23e84f69923d31ed6bcd6b17c419914b72b36d9d
+Patch-set: 1
+File: adb/usb_linux.c
+
+155
+Mon Sep 22 19:43:11 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 101cff1d_bcc82939
+Bytes: 85
+Fix all the formatting stuff since the history is getting wiped by the indent anyway?
+

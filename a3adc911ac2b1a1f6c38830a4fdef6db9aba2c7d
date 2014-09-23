@@ -1,0 +1,18 @@
+Revision: a3adc911ac2b1a1f6c38830a4fdef6db9aba2c7d
+Patch-set: 6
+File: libnativebridge/native_bridge.cc
+
+228:6-228:18
+Tue Sep 23 14:41:40 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9081cf4e_cc73c3f3
+Bytes: 99
+actually, the limit is 7 :). see libcore/libart/src/main/java/dalvik/system/VMRuntime.java comment.
+
+237:0-237:2
+Tue Sep 23 14:41:40 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 508bd76f_3707373d
+Bytes: 16
+trailing spaces.
+

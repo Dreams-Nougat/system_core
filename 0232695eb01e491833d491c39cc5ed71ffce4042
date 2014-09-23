@@ -1,0 +1,13 @@
+Revision: 0232695eb01e491833d491c39cc5ed71ffce4042
+Patch-set: 1
+File: adb/fdevent.c
+
+129:27-129:40
+Tue Sep 23 02:05:24 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70b29b5d_7136d8d2
+Bytes: 200
+Maybe replace the if0 with a comment indicating that epoll_ctl_add will happen elsewhere.
+
+I'm seeing at least one path: fdevent_set(,...) called after fdevent_install() which calls fdevent_connect().
+

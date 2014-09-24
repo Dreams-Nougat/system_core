@@ -1,0 +1,18 @@
+Revision: d69eda114cea34820229e672f963d7508e2ff197
+Patch-set: 7
+File: libnativebridge/native_bridge.cc
+
+37:4-37:24
+Wed Sep 24 02:57:12 2014 +0000
+Author: Jinghui Gu <1045256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7080db79_f0210e90
+Bytes: 84
+If put the os_arch at the first position of this struct, it should be more readable?
+
+90:0-91:45
+Wed Sep 24 02:57:12 2014 +0000
+Author: Jinghui Gu <1045256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f08beba0_c031a077
+Bytes: 72
+These lines are not necessary if we decide to take the pattern solution.
+

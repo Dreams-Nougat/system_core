@@ -1,0 +1,11 @@
+Revision: 35d73123f0c1c93dfffbc29493baa3d241f6a8f0
+Patch-set: 1
+File: libnativebridge/native_bridge.cc
+
+211:7-211:15
+Thu Sep 25 03:12:15 2014 +0000
+Author: Ian Rogers <1010118@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d071878d_091019b3
+Bytes: 9
+__APPLE__
+

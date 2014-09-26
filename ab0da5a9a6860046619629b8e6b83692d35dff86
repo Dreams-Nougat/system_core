@@ -1,0 +1,11 @@
+Revision: ab0da5a9a6860046619629b8e6b83692d35dff86
+Patch-set: 8
+File: libnativebridge/native_bridge.cc
+
+244
+Fri Sep 26 03:45:44 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5053d7fc_24d0aa02
+Bytes: 103
+isn't this backwards? You want to mount cpuinfo_path on top of /proc/cpuinfo, not the other way around.
+

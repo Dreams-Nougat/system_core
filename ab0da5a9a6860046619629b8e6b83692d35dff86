@@ -17,6 +17,14 @@ UUID: 108f9fae_de625a1c
 Bytes: 102
 No, this should have been strlen+1. I always mess up that strlen doesn't include the zero-termination.
 
+208
+Fri Sep 26 04:36:34 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 108f9fae_de625a1c
+UUID: 308ae39d_79eec723
+Bytes: 196
+But please note that this was benign. If we're on arm and see an arm64 program, I don't think the intention was that we have a bridge. In that case it's likely that the package manager screwed up.
+
 229
 Fri Sep 26 04:18:22 2014 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

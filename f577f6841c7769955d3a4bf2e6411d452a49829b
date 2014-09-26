@@ -1,0 +1,22 @@
+Revision: f577f6841c7769955d3a4bf2e6411d452a49829b
+Patch-set: 2
+File: libnativebridge/tests/NeedsNativeBridge_test.cpp
+
+23:0-35:6
+Fri Sep 26 05:47:12 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 103ddf9e_aed4775a
+Bytes: 57
+can't this just be 
+
+GetInstructionSetString(kRuntimeISA)
+
+File: libnativebridge/tests/PreInitializeNativeBridge_test.cpp
+
+57:0-57:28
+Fri Sep 26 05:47:12 2014 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 704e1b58_663634d3
+Bytes: 13
+check result?
+

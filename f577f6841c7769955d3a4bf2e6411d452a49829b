@@ -11,6 +11,14 @@ can't this just be
 
 GetInstructionSetString(kRuntimeISA)
 
+23:0-35:6
+Fri Sep 26 05:49:16 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 103ddf9e_aed4775a
+UUID: 5053d7fc_a4465a8b
+Bytes: 34
+This is independent of ART, so no.
+
 File: libnativebridge/tests/PreInitializeNativeBridge_test.cpp
 
 57:0-57:28
@@ -19,4 +27,12 @@ Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 704e1b58_663634d3
 Bytes: 13
 check result?
+
+57:0-57:28
+Fri Sep 26 05:49:16 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 704e1b58_663634d3
+UUID: 5053d7fc_e4406271
+Bytes: 93
+What would be your suggested reaction? Just a printf, or an EXPECT failure, failing the test?
 

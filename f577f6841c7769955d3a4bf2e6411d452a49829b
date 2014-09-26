@@ -9,6 +9,14 @@ UUID: 50859788_8a9dec89
 Bytes: 35
 sizeof(cpuinfo_path) here and below
 
+244
+Fri Sep 26 06:01:53 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50859788_8a9dec89
+UUID: 103ddf9e_0e166b67
+Bytes: 4
+Done
+
 File: libnativebridge/tests/NeedsNativeBridge_test.cpp
 
 21
@@ -75,6 +83,14 @@ UUID: 50859788_aa9ab08d
 Bytes: 29
 isn't art all 2-space indent?
 
+38
+Fri Sep 26 06:01:53 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50859788_aa9ab08d
+UUID: 704e1b58_864cf855
+Bytes: 169
+I followed it in the lib code. All tests outside of ART that I could find used 4-space, no matter what their library code does. So all the tests are 4-space indent here.
+
 File: libnativebridge/tests/PreInitializeNativeBridge_test.cpp
 
 57:0-57:28
@@ -100,10 +116,26 @@ UUID: 50859788_ea1cb85a
 Bytes: 48
 in the bionic tests we'd have ASSERT_EQ(0, ...);
 
+57:0-57:28
+Fri Sep 26 06:01:53 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50859788_ea1cb85a
+UUID: 103ddf9e_8e4a5b6f
+Bytes: 201
+One of the problems I have overall with the ASSERT: there's no cleanup here. If we fail to open /proc/cpuinfo, the file will remain. But using EXPECT and running over failures will create other errors.
+
 60
 Fri Sep 26 05:57:50 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 50859788_ca17f435
 Bytes: 17
 GTEST_LOG_(INFO)?
+
+60
+Fri Sep 26 06:01:53 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50859788_ca17f435
+UUID: 5053d7fc_1fe4cf43
+Bytes: 61
+Thanks for that. I never found the right thing for the gtest.
 

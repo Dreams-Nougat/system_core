@@ -124,6 +124,14 @@ UUID: 103ddf9e_8e4a5b6f
 Bytes: 201
 One of the problems I have overall with the ASSERT: there's no cleanup here. If we fail to open /proc/cpuinfo, the file will remain. But using EXPECT and running over failures will create other errors.
 
+57:0-57:28
+Fri Sep 26 06:07:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 103ddf9e_8e4a5b6f
+UUID: 308ae39d_5913c376
+Bytes: 419
+you're using C++11, so if this is an actual problem auto up a lambda to do the cleanup. dimitry's been doing a lot of that in the linker and i've found it useful in tests that touch global state so that one genuine local failure doesn't cause a cascade of false failures. (we don't do it in general though. it's still relatively verbose and we just arrange to make our messes in places where it gets cleaned up anyway.)
+
 60
 Fri Sep 26 05:57:50 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

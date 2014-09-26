@@ -1,5 +1,14 @@
 Revision: f577f6841c7769955d3a4bf2e6411d452a49829b
 Patch-set: 2
+File: libnativebridge/native_bridge.cc
+
+244
+Fri Sep 26 05:57:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50859788_8a9dec89
+Bytes: 35
+sizeof(cpuinfo_path) here and below
+
 File: libnativebridge/tests/NeedsNativeBridge_test.cpp
 
 21
@@ -51,6 +60,13 @@ UUID: 5053d7fc_a4465a8b
 Bytes: 34
 This is independent of ART, so no.
 
+38
+Fri Sep 26 05:57:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50859788_aa9ab08d
+Bytes: 29
+isn't art all 2-space indent?
+
 File: libnativebridge/tests/PreInitializeNativeBridge_test.cpp
 
 57:0-57:28
@@ -67,4 +83,19 @@ Parent: 704e1b58_663634d3
 UUID: 5053d7fc_e4406271
 Bytes: 93
 What would be your suggested reaction? Just a printf, or an EXPECT failure, failing the test?
+
+57:0-57:28
+Fri Sep 26 05:57:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5053d7fc_e4406271
+UUID: 50859788_ea1cb85a
+Bytes: 48
+in the bionic tests we'd have ASSERT_EQ(0, ...);
+
+60
+Fri Sep 26 05:57:50 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50859788_ca17f435
+Bytes: 17
+GTEST_LOG_(INFO)?
 

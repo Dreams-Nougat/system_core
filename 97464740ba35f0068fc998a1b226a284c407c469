@@ -1,0 +1,22 @@
+Revision: 97464740ba35f0068fc998a1b226a284c407c469
+Patch-set: 2
+File: /COMMIT_MSG
+
+9:0-12:9
+Fri Sep 26 23:42:27 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d046e741_323e2842
+Bytes: 168
+If possible, please split this into single-purpose patches.  The changes seem to be covering a few unrelated things, which makes it hard to follow what's going on here.
+
+File: logd/LogStatistics.cpp
+
+99:8-99:30
+Fri Sep 26 23:42:27 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d046e741_12412cc1
+Bytes: 36
+retval = ...
+
+(Speaking of leaks...)
+

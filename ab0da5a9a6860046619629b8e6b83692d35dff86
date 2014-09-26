@@ -9,6 +9,14 @@ UUID: 704e1b58_6b351d0c
 Bytes: 128
 if kRuntimeISA is "x86", this also returns true for instruction_set="x86_64". Same thing for arm and arm64. Is this intentional?
 
+208
+Fri Sep 26 04:30:49 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 704e1b58_6b351d0c
+UUID: 108f9fae_de625a1c
+Bytes: 102
+No, this should have been strlen+1. I always mess up that strlen doesn't include the zero-termination.
+
 229
 Fri Sep 26 04:18:22 2014 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +30,12 @@ Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5053d7fc_24d0aa02
 Bytes: 103
 isn't this backwards? You want to mount cpuinfo_path on top of /proc/cpuinfo, not the other way around.
+
+244
+Fri Sep 26 04:30:49 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5053d7fc_24d0aa02
+UUID: 50859788_0a571c06
+Bytes: 287
+Yes, that's true. I only glanced at the first search result for posix mount when checking the original submission, and they used mount point for the name of the first parameter. My stupidity. The problem is that this isn't unit-testable because of the restrictions of the cpuinfo source.
 

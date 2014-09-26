@@ -1,0 +1,11 @@
+Revision: 2f71cb24fa16c0388591918f1354d1f8608cc6e5
+Patch-set: 1
+File: libnativebridge/native_bridge.cc
+
+255
+Fri Sep 26 04:48:51 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50859788_eacaf886
+Bytes: 23
+%d? %s strerror(errno)!
+

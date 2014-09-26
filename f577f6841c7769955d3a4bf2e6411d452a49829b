@@ -26,6 +26,14 @@ also, a test for strings longer than 10 characters?
 
 "arm_64_emulator_for_x86_64"
 
+21
+Fri Sep 26 05:57:21 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5053d7fc_0446468a
+UUID: 704e1b58_e63a24b0
+Bytes: 133
+nullptr is not checked ATM, as we're expecting a real string (and the frameworks code is honoring that). I'll make it more defensive.
+
 23:0-35:6
 Fri Sep 26 05:47:12 2014 +0000
 Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>

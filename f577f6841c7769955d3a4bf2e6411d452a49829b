@@ -43,6 +43,14 @@ UUID: 704e1b58_e63a24b0
 Bytes: 133
 nullptr is not checked ATM, as we're expecting a real string (and the frameworks code is honoring that). I'll make it more defensive.
 
+21
+Fri Sep 26 05:58:42 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 103ddf9e_8ef89be3
+UUID: 103ddf9e_ce2b839d
+Bytes: 226
+I am not sure whether I want this to be consistent with PreInitialize. This was meant as a fast function comparing instruction sets (as the documentation of the interface says), not whether the instruction set itself is valid.
+
 23:0-35:6
 Fri Sep 26 05:47:12 2014 +0000
 Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>

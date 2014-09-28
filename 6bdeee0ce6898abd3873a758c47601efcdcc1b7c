@@ -1,0 +1,15 @@
+Revision: 6bdeee0ce6898abd3873a758c47601efcdcc1b7c
+Patch-set: 1
+File: logd/LogAudit.cpp
+
+34:42-34:45
+Sun Sep 28 21:01:30 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 502cb77a_f1757a48
+Bytes: 544
+This gets translated to LOG_MAKEPRI(LOG_USER, LOG_INFO) or <14> by /dev/kmsg. The translation occurs because LOG_KERN is blocked, and the driver punts to LOG_USER.
+
+We probably should have selected LOG_AUTH which would be <38> (and <36> for LOG_AUTH,LOG_WARNING below) as this log level is associated with system security and authorization daemons.
+
+We will cogitate since this is mostly meaningless for the upper bits since we do not have syslogd; but would be important if we happened to add a syslogd relay as is proposed for lab testframes.
+

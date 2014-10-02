@@ -19,3 +19,11 @@ UUID: f0584c71_f4bd18ab
 Bytes: 225
 The Google3 guidelines don't seem to preclude this (perhaps because they didn't consider it), and it seems clearly optimal in terms of compilation time, as well as reasonably clear to a reader.  Thus I'm inclined to leave it.
 
+18:17-18:23
+Thu Oct 02 20:47:15 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0584c71_f4bd18ab
+UUID: d05d0861_b35298a5
+Bytes: 85
+the right next step is to fix the callers and remove this file, so it doesn't matter.
+

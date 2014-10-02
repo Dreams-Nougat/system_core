@@ -1,0 +1,13 @@
+Revision: cb344d464009337c283431dec4441b70481d1a49
+Patch-set: 1
+File: include/cutils/atomic-inline.h
+
+18:17-18:23
+Thu Oct 02 17:02:11 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0584c71_9a620df8
+Bytes: 193
+Not sure if Android style guide's dictation on checking XYZ's include guard before including XYZ.
+How about just include and let <cutils/atomic.h> check?
+Or use atomic-inline.h's include guard?
+

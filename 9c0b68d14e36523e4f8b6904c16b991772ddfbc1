@@ -21,3 +21,13 @@ You're right, I missed that ioctl was also taking "int", even if some ioctls are
 
 Maybe there's no bug here.
 
+109
+Mon Oct 06 18:00:12 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30fbc487_a0a9829f
+UUID: 30fbc487_c01ace60
+Bytes: 394
+well, if it's awkward to use in practice that's still a bug. if people are used to dealing with 0x87654321 it's a pain in the ass if they need to translate that to a negative number.
+
+maybe ll (so people have the choice) and then range check ourselves? (since right now you can type "ioctl /dev/whatever crap" and it'll do _something_, ignoring the fact that you didn't supply a number at all.)
+

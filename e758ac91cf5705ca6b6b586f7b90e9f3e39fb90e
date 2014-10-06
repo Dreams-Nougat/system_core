@@ -9,3 +9,15 @@ UUID: 3014a487_87f6286e
 Bytes: 54
 looks like you could refactor a lot of the common code
 
+321:0-337:26
+Mon Oct 06 15:34:06 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3014a487_87f6286e
+UUID: 706c5c15_4bf70539
+Bytes: 546
+Statement of Intent:
+
+This CL was formerly part of the svelte patch but was deemed as too much in one CL. I was being risk averse with zero real code refactors so that I could get these two into maintenance release. Was fixing an annoying overlapping problem with a new warning message (compiler only noticed it as disjoint part of the svelte CL) and dgram_qlen_statistics not matching the naming convention before we could apply the following svelte-inspired CL.
+
+I will run this through a full retest the refactor and update once it has passed.
+

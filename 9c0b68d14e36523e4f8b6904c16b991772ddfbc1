@@ -9,3 +9,15 @@ UUID: 10116099_4679d4f0
 Bytes: 105
 but the second argument to ioctl(2) is an int; wouldn't it make more sense to resolve this the other way?
 
+109
+Mon Oct 06 17:54:20 2014 +0000
+Author: Chris Fries <1004359@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10116099_4679d4f0
+UUID: 30fbc487_a0a9829f
+Bytes: 206
+Thanks Elliott.
+
+You're right, I missed that ioctl was also taking "int", even if some ioctls are larger than INT_MAX.  We can pass a negative number to toolbox to get around it.
+
+Maybe there's no bug here.
+

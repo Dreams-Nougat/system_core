@@ -1,0 +1,11 @@
+Revision: e758ac91cf5705ca6b6b586f7b90e9f3e39fb90e
+Patch-set: 3
+File: logd/LogBuffer.cpp
+
+321:0-337:26
+Mon Oct 06 14:41:30 2014 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3014a487_87f6286e
+Bytes: 54
+looks like you could refactor a lot of the common code
+

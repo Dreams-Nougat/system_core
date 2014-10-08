@@ -10,10 +10,30 @@ Bytes: 323
 This is not correct.
 The memory ordering constrains are not only for hardware, but also for the compiler. If you want to play this game, you need to at least surround the atomic operations with proper atomic_signal_fence's. That will be practically good enough I think (while still formally incorrect, e.g. tsan will bark).
 
+75:32-75:52
+Wed Oct 08 16:03:57 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0bfc88a_a8782e33
+UUID: b0a334b2_f038a0c3
+Bytes: 255
+Thanks!  Good catch.
+
+Elliott - Do you think we still need to support the uniprocessor case?  I would guess we need it for Wear, but just checking.
+
+It seems to me that ideally this should be supported by a C compiler flag, but I guess we don't have that.
+
 101:43-101:65
 Wed Oct 08 08:27:10 2014 +0000
 Author: Dmitry Vyukov <1056155@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d0bfc88a_68a9d621
 Bytes: 212
 This is a weird ordering for an atomic_dec. It's usually used for reference counting, so it should be acq_rel. Or is this codebase consistently use a trailing android_memory_barrier() if the counter goes to zero?
+
+101:43-101:65
+Wed Oct 08 16:03:57 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0bfc88a_68a9d621
+UUID: d0b988d9_c79cbdff
+Bytes: 361
+Agreed.  Most of the clients are fairly opaque to me.  binder/IMemory.cpp for example appears to have precisely the bug you describe.  The goal of this patch is bug compatibility with the original.  My view is that the clients of this interface are suspect by default, and we should go through them, check memory ordering, and convert to direct stdatomic.h use.
 

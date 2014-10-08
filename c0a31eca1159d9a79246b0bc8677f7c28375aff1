@@ -1,0 +1,13 @@
+Revision: c0a31eca1159d9a79246b0bc8677f7c28375aff1
+Patch-set: 2
+File: include/log/log.h
+
+85:0-90:6
+Wed Oct 08 19:20:25 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10bfa0c3_1c52992c
+Bytes: 215
+There were no conflicts in AOSP.
+
+There is however a conflict upstream due to https://googleplex-android-review.git.corp.google.com/#/c/399595 which has the unfortunate distinction of inheriting and using CONDITION.
+

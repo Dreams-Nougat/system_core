@@ -2,6 +2,13 @@ Revision: c0a31eca1159d9a79246b0bc8677f7c28375aff1
 Patch-set: 2
 File: include/log/log.h
 
+89:7-89:8
+Wed Oct 08 19:28:54 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0bfc88a_6606e78d
+Bytes: 50
+Bad Tab, copied from original bionic library as-is
+
 85:0-90:6
 Wed Oct 08 19:20:25 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

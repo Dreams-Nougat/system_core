@@ -1,0 +1,20 @@
+Revision: 51476bfdb3378b06408157a574cda76a99576039
+Patch-set: 1
+File: include/log/log.h
+
+84:0-85:60
+Wed Oct 08 15:31:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b007b451_0ba4ee41
+Bytes: 126
+we need to check the defacto Android/bionic standard, or change the names of these to make sure we have no namespace problems.
+
+538:0-544:6
+Wed Oct 08 15:31:12 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b007b451_4b9556ca
+Bytes: 265
+future change once we grab bravery is to replace this all with one set with ANDROID_LOG_DEBUG with the obvious impact on release cycles.
+
+We should consider adding a Development setting to create a list of persistent values to adjust the logging level in the field.
+

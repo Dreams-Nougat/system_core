@@ -22,6 +22,14 @@ Elliott - Do you think we still need to support the uniprocessor case?  I would 
 
 It seems to me that ideally this should be supported by a C compiler flag, but I guess we don't have that.
 
+75:32-75:52
+Wed Oct 08 16:31:47 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0a334b2_f038a0c3
+UUID: 10e6c0ff_0f76d545
+Bytes: 32
+no, you can forget uniprocessor.
+
 101:43-101:65
 Wed Oct 08 08:27:10 2014 +0000
 Author: Dmitry Vyukov <1056155@85c56323-6fa9-3386-8a01-6480fb634889>

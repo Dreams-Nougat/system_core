@@ -2,6 +2,13 @@ Revision: 3c4dc330f8d29026d222544ca8d616b782aaa4f7
 Patch-set: 1
 File: liblog/log_is_loggable.c
 
+58:0-58:55
+Wed Oct 08 16:42:29 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b007b451_ab8a02a7
+Bytes: 35
+Also check persist.log.tag. values?
+
 86:0-92:5
 Wed Oct 08 15:24:43 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

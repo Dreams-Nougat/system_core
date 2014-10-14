@@ -1,0 +1,11 @@
+Revision: ee27857326fbbeeb85d854ce12ed4665f7383109
+Patch-set: 1
+File: include/cutils/trace.h
+
+179
+Tue Oct 14 02:38:31 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10f960d6_6c818a88
+Bytes: 39
+why didn't you move these into trace.c?
+

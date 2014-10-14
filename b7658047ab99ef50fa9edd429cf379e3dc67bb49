@@ -1,0 +1,11 @@
+Revision: b7658047ab99ef50fa9edd429cf379e3dc67bb49
+Patch-set: 2
+File: libcutils/trace.c
+
+196:3-196:50
+Tue Oct 14 20:18:05 2014 +0000
+Author: Ian Rogers <1010118@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 901b9006_ebc479cf
+Bytes: 46
+I think we still want this part in the header.
+

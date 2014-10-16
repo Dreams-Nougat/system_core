@@ -16,6 +16,14 @@ UUID: 70f37c1b_ed7831f0
 Bytes: 139
 Actually erasing the entry doesn't seem useful.  The list will clear itself anyway when its destructor is called, which is about to happen.
 
+61:8-61:23
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f37c1b_ed7831f0
+UUID: 50f0380f_c060a030
+Bytes: 108
+I have never trusted an iterator to unwind/free the list of elements in a destructor. Will test and confirm.
+
 84:0-95:1
 Thu Oct 16 22:45:18 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,6 +32,20 @@ Bytes: 279
 There are a bunch of other places you're iterating through this list looking for a specific entry.  See e.g. in add(PidStatistics *) below.  Make a helper that returns the entry for a given pid or NULL if none exists.
 
 Then pidMatch() is a trivial "return findPid(ppid) != NULL".
+
+205:0-209:5
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50f0380f_e06f9c1a
+Bytes: 28
+So is this necessary either?
+
+419:0-423:5
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10fa40f3_3be09751
+Bytes: 22
+Is this one necessary?
 
 File: logd/LogStatistics.h
 
@@ -41,6 +63,18 @@ UUID: d0e42853_20cfbfea
 Bytes: 84
 Not needed AFAICT?  mMultiple is set on push_back(), so mMultiple == !pids.isEmpty()
 
+44:3-44:19
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0e42853_20cfbfea
+UUID: 10fa40f3_7bf4df65
+Bytes: 305
+There is a difference, if we _ever_ had multiple entries, we want to retain it even if the list is emptied due to pruning.
+
+mMultiple is set on push_back, but is not cleared on remove.
+
+For the statistics it is useful to know if a specific comm (name of pid) is crashy, and that is what this flag reports.
+
 46:32-46:36
 Thu Oct 16 22:45:18 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,12 +82,32 @@ UUID: 70f37c1b_7886a138
 Bytes: 35
 Lower-case p since this is a member
 
+46:32-46:36
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f37c1b_7886a138
+UUID: 10fa40f3_5ba48342
+Bytes: 128
+getting nervous when I have pid and pids, I used the upper case to differentiate.
+
+gonePids is sounding better to keep it clear.
+
 48:4-49:70
 Thu Oct 16 22:45:18 2014 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 50f0380f_e0fafc85
 Bytes: 120
 No need for accessors if the accessors are trivial and have the same visibility.  Just call pids.{begin,end}() directly.
+
+48:4-49:70
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50f0380f_e0fafc85
+UUID: d0e42853_a3dd99f0
+Bytes: 286
+The goals is to abstract. All the members here behave similarly with their private sublists. uid statistics begin()/end() for pid, as is pid statistics begin()/end() for gone pids.
+
+If I switch to gonePids, even more so with regards to making the code look simpler and not have to wrap.
 
 53:0-54:50
 Thu Oct 16 22:45:18 2014 +0000
@@ -75,4 +129,26 @@ Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 70f37c1b_ad1109f9
 Bytes: 47
 Bike-shedding time: pidMatches or doesPidMatch?
+
+66:9-66:17
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f37c1b_ad1109f9
+UUID: 10fa40f3_9bc9ebe8
+Bytes: 63
+I will add a private:findMatch() and rename this to pidMatches.
+
+127:0-130:33
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10fa40f3_bbf6673a
+Bytes: 64
+here we have a pattern of accessors to simplify associated code.
+
+165:0-166:66
+Thu Oct 16 23:13:32 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10fa40f3_9bfbab24
+Bytes: 17
+and some more ...
 

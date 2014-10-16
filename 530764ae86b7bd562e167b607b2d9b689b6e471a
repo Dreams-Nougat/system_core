@@ -1,0 +1,11 @@
+Revision: 530764ae86b7bd562e167b607b2d9b689b6e471a
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+152:32-152:33
+Thu Oct 16 22:36:05 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50f0380f_80ea18b0
+Bytes: 14
+trailing space
+

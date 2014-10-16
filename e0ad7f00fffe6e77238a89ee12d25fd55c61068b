@@ -1,0 +1,13 @@
+Revision: e0ad7f00fffe6e77238a89ee12d25fd55c61068b
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+131:8-131:11
+Thu Oct 16 22:41:26 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10fa40f3_bbb827f2
+Bytes: 264
+pri is not checked for facility (eg: LOG_USER, LOG_KERNEL etc). If a tag is not discovered, then a default tag should be constructed from the facility?
+
+Android has no facility other than LOG_KERNEL being reported today, except when from logd.klogd or logd.auditd.
+

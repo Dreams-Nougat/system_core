@@ -1,0 +1,78 @@
+Revision: 3c4fb84a7fe50bcfa25ae21f46a98e126d5b4a55
+Patch-set: 11
+File: logd/LogStatistics.cpp
+
+51
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f37c1b_2df7b96c
+Bytes: 17
+Missing mMultiple
+
+61:8-61:23
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f37c1b_ed7831f0
+Bytes: 139
+Actually erasing the entry doesn't seem useful.  The list will clear itself anyway when its destructor is called, which is about to happen.
+
+84:0-95:1
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50f0380f_2049842a
+Bytes: 279
+There are a bunch of other places you're iterating through this list looking for a specific entry.  See e.g. in add(PidStatistics *) below.  Make a helper that returns the entry for a given pid or NULL if none exists.
+
+Then pidMatch() is a trivial "return findPid(ppid) != NULL".
+
+File: logd/LogStatistics.h
+
+30:22-30:41
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0e42853_a0daaf9d
+Bytes: 180
+Why is this a list of pointers?  Unless you need to do something funky with object lifetime I'm not seeing here, make it List<PidStatisticsGone> and let List manage all the memory.
+
+44:3-44:19
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0e42853_20cfbfea
+Bytes: 84
+Not needed AFAICT?  mMultiple is set on push_back(), so mMultiple == !pids.isEmpty()
+
+46:32-46:36
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f37c1b_7886a138
+Bytes: 35
+Lower-case p since this is a member
+
+48:4-49:70
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50f0380f_e0fafc85
+Bytes: 120
+No need for accessors if the accessors are trivial and have the same visibility.  Just call pids.{begin,end}() directly.
+
+53:0-54:50
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50f0380f_1d9af300
+Bytes: 25
+Delete, don't comment out
+
+55:4-56:48
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10fa40f3_bb2dc788
+Bytes: 41
+Again the accessor doesn't seem necessary
+
+66:9-66:17
+Thu Oct 16 22:45:18 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f37c1b_ad1109f9
+Bytes: 47
+Bike-shedding time: pidMatches or doesPidMatch?
+

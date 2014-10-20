@@ -1,0 +1,16 @@
+Revision: 7a35877ca4d386384aa1272d5826c457ef8aec33
+Patch-set: 2
+File: libnativebridge/native_bridge.cc
+
+88:0-89:58
+Mon Oct 20 02:51:37 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 708ffcad_aa7b8415
+Bytes: 389
+It would be a bit more code, but maybe we want to query this through JNI and not use a constant? Else we need tests, and nobody ever runs tests... :-(
+
+There are two problems that I see, though:
+
+1) We might have to wait till all of the framework is available in AOSP, not sure...
+2) The ART test doesn't have access to the framework, I think, so we'd have to create a minimal class there.
+

@@ -14,3 +14,13 @@ There are two problems that I see, though:
 1) We might have to wait till all of the framework is available in AOSP, not sure...
 2) The ART test doesn't have access to the framework, I think, so we'd have to create a minimal class there.
 
+88:0-89:58
+Mon Oct 20 09:47:25 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 708ffcad_aa7b8415
+UUID: 309904fa_3f3fc3ad
+Bytes: 240
+I though about it but it's not doable (i.e. to call into framework) because we need the context which is not available here.
+
+Even with reflection we would still need tests. I was planning to add them after we have agreed that we want this.
+

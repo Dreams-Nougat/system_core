@@ -24,3 +24,18 @@ I though about it but it's not doable (i.e. to call into framework) because we n
 
 Even with reflection we would still need tests. I was planning to add them after we have agreed that we want this.
 
+89
+Tue Oct 21 16:38:34 2014 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309904fa_3f3fc3ad
+UUID: 30202482_6b899248
+Bytes: 31
+I think it's fine to hard-code.
+
+229
+Tue Oct 21 16:38:34 2014 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5f16652_8359c001
+Bytes: 59
+hmm, doesn't len already have the +1 for \0 built in above?
+

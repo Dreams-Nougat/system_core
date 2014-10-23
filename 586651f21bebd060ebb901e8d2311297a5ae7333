@@ -9,6 +9,16 @@ UUID: 75244ea4_25f678f3
 Bytes: 63
 I think this generality is overkill, as we have only one array.
 
+141:24-141:34
+Thu Oct 23 17:42:46 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75244ea4_25f678f3
+UUID: 7597ee02_617b30ed
+Bytes: 286
+I'm using it in CloseNativeBridge and after Initialize. I could have called it ReleaseAppCodeCacheDir and drop the param but that looked bad to me. Or I could have duplicated the line there but wasn't happy with it either.
+
+Anyway, I'm not found of it so if you have want I can drop it.
+
 142
 Thu Oct 23 16:42:25 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,12 +41,28 @@ UUID: 7597ee02_e156609d
 Bytes: 46
 nit: doesn't the style guide says "delete[]" ?
 
+143
+Thu Oct 23 17:42:46 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7597ee02_e156609d
+UUID: f5359ed2_86a1bab4
+Bytes: 24
+yes, will do so, thanks.
+
 148:30-148:34
 Thu Oct 23 17:03:35 2014 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 55210a94_018c8d8f
 Bytes: 104
 *Maybe* consider for readability at call-sites to use an enum: kWithError vs kWithoutError, for example.
+
+148:30-148:34
+Thu Oct 23 17:42:46 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 55210a94_018c8d8f
+UUID: 351e565a_2879b3b8
+Bytes: 35
+A bit overkill imo but I can do it.
 
 419:4-419:19
 Thu Oct 23 17:03:35 2014 +0000
@@ -58,4 +84,12 @@ Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 75244ea4_e50c005b
 Bytes: 164
 If we do do the TODO, then we should either use this as a flag for an error or extend the state enum and have kPreInitialized in there, replacing the kOpened above.
+
+420:9-420:38
+Thu Oct 23 17:42:46 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75244ea4_e50c005b
+UUID: 351e565a_c887df34
+Bytes: 130
+I wanted to do that in separate CLs (i.e. asserting that we always get a path) but I guess it makes more sense to do it in one go.
 

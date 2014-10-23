@@ -2,12 +2,27 @@ Revision: 586651f21bebd060ebb901e8d2311297a5ae7333
 Patch-set: 5
 File: libnativebridge/native_bridge.cc
 
+141:24-141:34
+Thu Oct 23 17:03:35 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 75244ea4_25f678f3
+Bytes: 63
+I think this generality is overkill, as we have only one array.
+
 142
 Thu Oct 23 16:42:25 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f5359ed2_46d87281
 Bytes: 40
 This check is unnecessary, but whatever.
+
+142
+Thu Oct 23 17:03:35 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f5359ed2_46d87281
+UUID: 75244ea4_05101c6f
+Bytes: 186
+Only if everything goes alright. We do allow app_data_dir_in to be nullptr in PreInitializeBridge and still proceed with a later Initialize. Calin would have to implement the TODO there.
 
 143
 Thu Oct 23 16:42:25 2014 +0000
@@ -16,10 +31,31 @@ UUID: 7597ee02_e156609d
 Bytes: 46
 nit: doesn't the style guide says "delete[]" ?
 
+148:30-148:34
+Thu Oct 23 17:03:35 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 55210a94_018c8d8f
+Bytes: 104
+*Maybe* consider for readability at call-sites to use an enum: kWithError vs kWithoutError, for example.
+
+419:4-419:19
+Thu Oct 23 17:03:35 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 75244ea4_452614e3
+Bytes: 101
+If you split up the conditional, you can make this local to the case that we have app_code_cache_dir.
+
 420
 Thu Oct 23 16:42:25 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 351e565a_7d7bebec
 Bytes: 67
 I think we should try this only if ENOENT, not for all stat errors.
+
+420:9-420:38
+Thu Oct 23 17:03:35 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 75244ea4_e50c005b
+Bytes: 164
+If we do do the TODO, then we should either use this as a flag for an error or extend the state enum and have kPreInitialized in there, replacing the kOpened above.
 

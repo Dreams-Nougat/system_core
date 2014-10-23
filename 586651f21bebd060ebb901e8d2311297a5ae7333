@@ -19,6 +19,14 @@ I'm using it in CloseNativeBridge and after Initialize. I could have called it R
 
 Anyway, I'm not found of it so if you have want I can drop it.
 
+141:24-141:34
+Thu Oct 23 18:22:52 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7597ee02_617b30ed
+UUID: 55210a94_94357d83
+Bytes: 22
+Don't care either way.
+
 142
 Thu Oct 23 16:42:25 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -64,6 +72,14 @@ UUID: 351e565a_2879b3b8
 Bytes: 35
 A bit overkill imo but I can do it.
 
+148:30-148:34
+Thu Oct 23 18:22:52 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 351e565a_2879b3b8
+UUID: 55210a94_d409b5c8
+Bytes: 158
+It's a very short enum, and there are some cases below where it would improve readability quite a lot, so I'd prefer it. If it looks too ugly, then skip it...
+
 419:4-419:19
 Thu Oct 23 17:03:35 2014 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -92,4 +108,12 @@ Parent: 75244ea4_e50c005b
 UUID: 351e565a_c887df34
 Bytes: 130
 I wanted to do that in separate CLs (i.e. asserting that we always get a path) but I guess it makes more sense to do it in one go.
+
+420:9-420:38
+Thu Oct 23 18:22:52 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 351e565a_c887df34
+UUID: 55210a94_14296d25
+Bytes: 118
+I think it's OK if you want to split it. Splitting just means you need approval for two CLs when cherry-picking... :-)
 

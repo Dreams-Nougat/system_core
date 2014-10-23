@@ -1,0 +1,25 @@
+Revision: 586651f21bebd060ebb901e8d2311297a5ae7333
+Patch-set: 5
+File: libnativebridge/native_bridge.cc
+
+142
+Thu Oct 23 16:42:25 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f5359ed2_46d87281
+Bytes: 40
+This check is unnecessary, but whatever.
+
+143
+Thu Oct 23 16:42:25 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7597ee02_e156609d
+Bytes: 46
+nit: doesn't the style guide says "delete[]" ?
+
+420
+Thu Oct 23 16:42:25 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 351e565a_7d7bebec
+Bytes: 67
+I think we should try this only if ENOENT, not for all stat errors.
+

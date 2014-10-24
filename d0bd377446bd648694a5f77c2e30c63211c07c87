@@ -1,0 +1,11 @@
+Revision: d0bd377446bd648694a5f77c2e30c63211c07c87
+Patch-set: 1
+File: adb/services.c
+
+535
+Fri Oct 24 15:39:56 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7580cec4_96bfaca2
+Bytes: 16
+why this change?
+

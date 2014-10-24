@@ -1,0 +1,11 @@
+Revision: 272b4a3a36ca70a83337d99d4bc675f026775114
+Patch-set: 6
+File: libnativebridge/native_bridge.cc
+
+273:13-273:14
+Fri Oct 24 15:21:17 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3533b6f6_36e6b5c1
+Bytes: 66
+Should be a v, mea culpa, but you're already changing the comment.
+

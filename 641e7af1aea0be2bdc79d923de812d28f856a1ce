@@ -1,0 +1,18 @@
+Revision: 641e7af1aea0be2bdc79d923de812d28f856a1ce
+Patch-set: 7
+File: libnativebridge/tests/Android.nativebridge-dummy.mk
+
+14:30-14:51
+Fri Oct 24 18:46:58 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7529ae84_da60b2f2
+Bytes: 159
+Please remove and fix the code (I usually use the /* param name */ style). It would be good if we can just remove the CFLAGS once -Werror -Wall becomes global.
+
+29:13-29:15
+Fri Oct 24 18:46:58 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3533b6f6_c923569c
+Bytes: 158
+Please change to += here, above, and in the top-level Android.mk. That was me copying incorrectly from another lib in system/core. It should be +=, I believe.
+

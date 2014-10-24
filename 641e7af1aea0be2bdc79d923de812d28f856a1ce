@@ -9,10 +9,26 @@ UUID: 7529ae84_da60b2f2
 Bytes: 159
 Please remove and fix the code (I usually use the /* param name */ style). It would be good if we can just remove the CFLAGS once -Werror -Wall becomes global.
 
+14:30-14:51
+Fri Oct 24 21:02:55 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7529ae84_da60b2f2
+UUID: 351e565a_a385e465
+Bytes: 4
+Done
+
 29:13-29:15
 Fri Oct 24 18:46:58 2014 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3533b6f6_c923569c
 Bytes: 158
 Please change to += here, above, and in the top-level Android.mk. That was me copying incorrectly from another lib in system/core. It should be +=, I believe.
+
+29:13-29:15
+Fri Oct 24 21:02:55 2014 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3533b6f6_c923569c
+UUID: f5359ed2_cc46c319
+Bytes: 15
+indeed, thanks!
 

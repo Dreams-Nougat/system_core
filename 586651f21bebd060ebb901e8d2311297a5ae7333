@@ -42,6 +42,14 @@ UUID: 75244ea4_05101c6f
 Bytes: 186
 Only if everything goes alright. We do allow app_data_dir_in to be nullptr in PreInitializeBridge and still proceed with a later Initialize. Calin would have to implement the TODO there.
 
+142
+Fri Oct 24 12:47:05 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75244ea4_05101c6f
+UUID: 351e565a_0310186f
+Bytes: 89
+No, that's what I meant. "delete[] null" is not undefined, it is guaranteed to be a noop.
+
 143
 Thu Oct 23 16:42:25 2014 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: e5cb5d80d999fcaf7fe9f04a2f71f652cbeb7b82
+Patch-set: 3
+File: liblog/log_is_loggable.c
+
+23:0-23:34
+Mon Oct 27 22:58:36 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15a5d282_a9335935
+Bytes: 146
+Not supported in MFC/MingW. STOP USING WEAK, create a new library dependency ala libnotlog or some such and pull it out of libcutils/properties.c.
+

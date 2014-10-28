@@ -1,0 +1,11 @@
+Revision: 1d387bebd9b659fb9399e2bf1307edf2d8eeb979
+Patch-set: 3
+File: libnativebridge/tests/CodeCacheCreate_test.cpp
+
+26:25-26:37
+Tue Oct 28 16:00:38 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5594aafe_9aa25c8e
+Bytes: 132
+Please change to make this unique for each test. These are the names that will be printed to the log, and should thus be expressive.
+

@@ -1,0 +1,27 @@
+Revision: 8b30d455cd462c48ff789c37a76c555cb14cb2a9
+Patch-set: 2
+File: libnativebridge/tests/CodeCacheCreate_test.cpp
+
+29
+Tue Oct 28 13:13:58 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 55abca56_48e73fc0
+Bytes: 92
+two separate ASSERT_EQ statements ? That way when a test fails, you'll know what went wront.
+
+39
+Tue Oct 28 13:13:58 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 55abca56_68ec7ba1
+Bytes: 18
+same as the above.
+
+43
+Tue Oct 28 13:13:58 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 75ae0e67_2c2bf7a8
+Bytes: 109
+ASSERT_EQ for better error messages.
+
+Please also apply these comments to the other test file in this change.
+

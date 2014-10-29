@@ -1,0 +1,17 @@
+Revision: eba7344fc1aca4ae232b881fdf6c5b16e6f59bc9
+Patch-set: 4
+File: logcat/logcat.cpp
+
+86:4-87:83
+Wed Oct 29 15:22:33 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5594aafe_cb5d746f
+Bytes: 432
+I accept the math and am not blocking on it.
+
+Although one would find a 'divide by ten until zero' loop is faster and does not suffer from edge conditions or 1.0 != 1.0 problems.
+
+We are not requiring speed, this is low frequency, so maintenance before optimization.
+
+snprintf 'simplification' works because android is C99 compliant in the libraries, but given my advanced age ;-}, I will always bow to portability rationalizations.
+

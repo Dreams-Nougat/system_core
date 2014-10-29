@@ -11,6 +11,20 @@ KISS? drops need for math and floating point.
 
     int maxRotationCountDigits = snprintf(NULL, 0, "%d", g_maxRotatedLogs);
 
+85:0-87:84
+Wed Oct 29 00:51:10 2014 +0000
+Author: aristidis <1057228@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 154a3299_9bb20bdb
+UUID: b552464f_db33e734
+Bytes: 411
+To be honest, I thought the math was simpler than snprintf :P
+
+I was also wondering whether we should worry about portability (from man 3 snprintf:  Concerning  the  return  value of snprintf(), SUSv2 and C99 contradict each other [...])
+
+Obviously I'm no expert: are all Android implementations (or Linux implementations for that matter) C99 compliant?  Do we care?
+
+Happy to change if you prefer snprintf() ;)
+
 File: logcat/tests/logcat_test.cpp
 
 559:0-561:41
@@ -20,10 +34,30 @@ UUID: d5bfba8a_d866990f
 Bytes: 306
 These exit without cleaning up the fp. This is particularly serious in that the pclose is necessary to immediately clean up zombies and pipes. Consider stuttering the comparison tests, used EXPECT macros to propagate the error report(s), and another final check to perform a clean exit to hit pclose below.
 
+559:0-561:41
+Wed Oct 29 00:51:10 2014 +0000
+Author: aristidis <1057228@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d5bfba8a_d866990f
+UUID: 95570241_d701fc28
+Bytes: 68
+Yes, of course, good catch!
+
+Sorry, first time using gtest :/
+
+Done.
+
 572:11-572:19
 Tue Oct 28 19:27:50 2014 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d5bfba8a_f8635dfc
 Bytes: 32
 ditto, fp is not cleanly closed.
+
+572:11-572:19
+Wed Oct 29 00:51:10 2014 +0000
+Author: aristidis <1057228@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d5bfba8a_f8635dfc
+UUID: 95570241_371cb88f
+Bytes: 4
+Done
 

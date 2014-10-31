@@ -1,0 +1,11 @@
+Revision: 7be85bbd623d1126083a8bef293286926f231f5d
+Patch-set: 14
+File: logd/LogStatistics.h
+
+116:0-116:63
+Fri Oct 31 20:47:48 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 95a622d2_ce188be4
+Bytes: 199
+I have a future CL dedicated to changing this and UidStatistics from pointer to by reference. It is not stable and because of the large impact, I have abandoned trying to include it into maintenance.
+

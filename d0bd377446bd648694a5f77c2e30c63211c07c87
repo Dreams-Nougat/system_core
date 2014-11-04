@@ -17,3 +17,13 @@ UUID: 55266ab6_c15d726f
 Bytes: 83
 It prints port number twice like "192.168.0.1:5555:5555". is it needed separate CL?
 
+535
+Tue Nov 04 17:35:11 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 55266ab6_c15d726f
+UUID: 75d9ae6e_0e5b2b7b
+Bytes: 210
+no, but if you did split it out i'd happily +2 that one, whereas i'm too big a coward to +2 the rest of this :-)
+
+alternatively, you might want to add steps to reproduce to the checkin comment if you have them.
+

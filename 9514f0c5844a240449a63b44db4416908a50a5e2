@@ -1,0 +1,11 @@
+Revision: 9514f0c5844a240449a63b44db4416908a50a5e2
+Patch-set: 2
+File: include/private/android_filesystem_config.h
+
+89:31-89:35
+Sat Nov 08 00:34:30 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: da152730_fca4a519
+Bytes: 167
+one other concern: All of Android only uses 42 unique UIDs itself (lines 40-84). Do we really want to reserve 200 UIDs for oem customization? Feels mildly excessive...
+

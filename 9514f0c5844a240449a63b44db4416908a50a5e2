@@ -9,3 +9,11 @@ UUID: da152730_fca4a519
 Bytes: 167
 one other concern: All of Android only uses 42 unique UIDs itself (lines 40-84). Do we really want to reserve 200 UIDs for oem customization? Feels mildly excessive...
 
+89:31-89:35
+Sun Nov 09 16:03:20 2014 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: da152730_fca4a519
+UUID: fa358bd2_72bb38ec
+Bytes: 394
+The 200 is admittedly a bit arbitrary. We currently use in different carrier customization in the order of 10 UIDs. Who knows how long this thing will live and to avoid the need of reusing UIDs 200 seemed like more than plenty. There are still thousands available to regular Android even if reserving 200, so I did not expect it to be a factor. Would dropping the number to 100 make more sense?
+

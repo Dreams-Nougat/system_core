@@ -1,0 +1,20 @@
+Revision: 3b87cf111dacc91cde3925e4b09b97f6553b776a
+Patch-set: 2
+File: logd/LogAudit.cpp
+
+122:22-122:26
+Tue Nov 11 00:36:18 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a4c838a_be01692b
+Bytes: 86
+Only monotonic until realtime is calibrated, so below we need to 'swap' real and mono.
+
+File: logd/LogBuffer.cpp
+
+136:0-178:5
+Tue Nov 11 00:36:18 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 35473640_cc3c6f5c
+Bytes: 91
+This does not belong here, it comes from https://android-review.googlesource.com/#/c/110204
+

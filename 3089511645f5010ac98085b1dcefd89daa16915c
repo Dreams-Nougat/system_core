@@ -1,0 +1,64 @@
+Revision: 3089511645f5010ac98085b1dcefd89daa16915c
+Patch-set: 1
+File: adb/adb.c
+
+950
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6cabf2_431b8cdc
+Bytes: 17
+_WIN32 (probably)
+
+965
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6cabf2_631c90d7
+Bytes: 6
+_WIN32
+
+1073
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5a4f777e_e2be1fa5
+Bytes: 6
+_WIN32
+
+1308
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5a4f777e_828d2b16
+Bytes: 6
+_WIN32
+
+1426
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ac51b23_a80ca7db
+Bytes: 6
+_WIN32
+
+File: adb/commandline.c
+
+732
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ac51b23_883beb71
+Bytes: 6
+_WIN32
+
+File: adb/services.c
+
+205
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ac51b23_2830b78a
+Bytes: 6
+_WIN32
+
+260
+Tue Nov 11 18:19:43 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabfe78a_a9fefdc2
+Bytes: 6
+_WIN32
+

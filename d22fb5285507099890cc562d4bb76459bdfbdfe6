@@ -1,0 +1,11 @@
+Revision: d22fb5285507099890cc562d4bb76459bdfbdfe6
+Patch-set: 1
+File: sdcard/sdcard.c
+
+1103
+Thu Nov 13 17:30:04 2014 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ac2c357_54822ce3
+Bytes: 117
+Do we also need to recursively walk through any/all in-memory child nodes of this directory and mark them as deleted?
+

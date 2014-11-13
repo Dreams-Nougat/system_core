@@ -1,0 +1,11 @@
+Revision: e9fa6be333e35d9e7ae435aeb32532875b95fe22
+Patch-set: 3
+File: include/cutils/atomic.h
+
+226
+Thu Nov 13 22:56:32 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: baa313b2_d00c7cdd
+Bytes: 31
+didn't you want to remove this?
+

@@ -1,0 +1,33 @@
+Revision: 640b3b0bb06be73d3c0248f83b070098c82c1f5d
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:1-7:62
+Thu Nov 13 00:24:21 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3afba387_2f40e5d2
+Bytes: 195
+"""Add override to turn "shutdown" into "reboot charger"."""
+
+Or something similar.
+
+
+The orig phrase reads as: "permanently disable shutdown when charger is connected for all devices and cases".
+
+File: init/builtins.c
+
+667:36-667:39
+Thu Nov 13 00:24:21 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7af19ba1_342cb88c
+Bytes: 38
+Just use a default for porperty_get()?
+
+680:42-680:53
+Thu Nov 13 00:24:21 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7af19ba1_b43f08ab
+Bytes: 56
+no_shutdown or no-shutdown.
+Don't create an extra level.
+

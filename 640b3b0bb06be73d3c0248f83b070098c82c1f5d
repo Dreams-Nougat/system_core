@@ -23,6 +23,16 @@ UUID: 7af19ba1_342cb88c
 Bytes: 38
 Just use a default for porperty_get()?
 
+667:36-667:39
+Fri Nov 14 23:51:44 2014 +0000
+Author: Yong Yao <1043738@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7af19ba1_342cb88c
+UUID: da9c4786_c1c62226
+Bytes: 214
+Hi, JP
+
+Do you mean to use a default value for property_get()? The version of property_get() called by init has no the third "default" parameter as another version which is called widely by other pieces in Android.
+
 680:42-680:53
 Thu Nov 13 00:24:21 2014 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -33,6 +33,14 @@ Hi, JP
 
 Do you mean to use a default value for property_get()? The version of property_get() called by init has no the third "default" parameter as another version which is called widely by other pieces in Android.
 
+667:36-667:39
+Sat Nov 15 00:35:36 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: da9c4786_c1c62226
+UUID: 1ab25f12_fe3f7d4d
+Bytes: 3
+ok.
+
 680:42-680:53
 Thu Nov 13 00:24:21 2014 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>

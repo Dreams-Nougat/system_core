@@ -9,3 +9,13 @@ UUID: 9aa64fd2_e5093221
 Bytes: 141
 In my codebase atomic-inline.h does nothing than including atomic.h. Should we just include atomic.h instead and even remove atomic-inline.h?
 
+29
+Mon Nov 17 19:59:57 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9aa64fd2_e5093221
+UUID: da1367da_4c836f94
+Bytes: 303
+from conversations with hboehm i was under the impression that there were lots of users of atomic-inline.h, but i only see three! i'll kill them...
+
+(there are still hundreds of users of atomic.h, sadly. we need to think of a plan to at least make sure new code gets written with <stdatomic.h> instead.)
+

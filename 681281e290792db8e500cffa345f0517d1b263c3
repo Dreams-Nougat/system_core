@@ -1,0 +1,11 @@
+Revision: 681281e290792db8e500cffa345f0517d1b263c3
+Patch-set: 1
+File: adb/commandline.c
+
+238
+Mon Nov 17 23:10:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1af97fd6_66f2d0ac
+Bytes: 122
+maybe it would be cleaner to have no-op implementations here for Win32 and then lose all the #if stuff later in this file?
+

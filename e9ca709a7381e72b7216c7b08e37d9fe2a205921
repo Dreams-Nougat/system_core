@@ -19,3 +19,11 @@ from conversations with hboehm i was under the impression that there were lots o
 
 (there are still hundreds of users of atomic.h, sadly. we need to think of a plan to at least make sure new code gets written with <stdatomic.h> instead.)
 
+29
+Mon Nov 17 20:44:58 2014 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: da1367da_4c836f94
+UUID: baba33ec_6d05fd35
+Bytes: 245
+Sorry about giving that misimpression.  I'm not quite sure what the original rationale was, but most users indeed used the out-of-line implementations.  It seems to me that most of these code sequences are not much longer than calling sequences.
+

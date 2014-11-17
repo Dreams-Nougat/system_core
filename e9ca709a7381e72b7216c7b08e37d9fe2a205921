@@ -1,0 +1,11 @@
+Revision: e9ca709a7381e72b7216c7b08e37d9fe2a205921
+Patch-set: 1
+File: include/cutils/trace.h
+
+29
+Mon Nov 17 19:52:41 2014 +0000
+Author: Serban Constantinescu <1030338@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9aa64fd2_e5093221
+Bytes: 141
+In my codebase atomic-inline.h does nothing than including atomic.h. Should we just include atomic.h instead and even remove atomic-inline.h?
+

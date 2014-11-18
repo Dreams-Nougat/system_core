@@ -1,0 +1,25 @@
+Revision: ca941290c5ede9e18c8b3d4b0e204e5b3187a90a
+Patch-set: 1
+File: toolbox/mkswap.c
+
+50
+Tue Nov 18 18:16:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5a2db728_fee8b591
+Bytes: 49
+all of these should be ": %s\n", strerror(errno).
+
+61
+Tue Nov 18 18:16:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7a30bb7e_6a3e1f01
+Bytes: 126
+you already did a stat, and you now know this is a regular file. why not just "swap_size = sb.st_size" and lose the two seeks?
+
+63
+Tue Nov 18 18:16:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7a30bb7e_0a4f6bb5
+Bytes: 135
+i think you still want this test, regardless of whether this was a block or regular device. sharing is easier without the two seeks :-)
+

@@ -1,0 +1,20 @@
+Revision: f456d47c506d87265ce0ff6080cba5374dced011
+Patch-set: 1
+File: adb/get_my_path_darwin.c
+
+27
+Wed Nov 19 20:09:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fad66b81_d3033e7c
+Bytes: 17
+ASCII? not UTF-8?
+
+File: fastboot/util_osx.c
+
+42
+Wed Nov 19 20:09:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fad66b81_5310eeba
+Bytes: 4
+tab.
+

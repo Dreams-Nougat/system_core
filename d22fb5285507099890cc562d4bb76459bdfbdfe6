@@ -9,3 +9,11 @@ UUID: 3ac2c357_54822ce3
 Bytes: 117
 Do we also need to recursively walk through any/all in-memory child nodes of this directory and mark them as deleted?
 
+1103
+Wed Nov 19 18:47:10 2014 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ac2c357_54822ce3
+UUID: 9abc8f33_cffc3d82
+Bytes: 51
+Only the deleted node need to be marked as deleted.
+

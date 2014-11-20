@@ -1,0 +1,11 @@
+Revision: 26b53bb75e6bdf9aa7820a3343845dae145625cc
+Patch-set: 1
+File: adb/get_my_path_darwin.c
+
+27
+Thu Nov 20 18:35:10 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ff64148_e2b088d3
+Bytes: 108
+i'm still surprised by ASCII. what happens if you move your adb binary to a directory with a non-ASCII name?
+

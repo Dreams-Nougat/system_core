@@ -1,0 +1,11 @@
+Revision: 606bb5f2e5f2913d5cb30ed87dd18da23dda1705
+Base-for-patch-set: 1
+File: include/utils/Unicode.h
+
+29
+Thu Nov 20 20:43:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5ff84938_7d47777e
+Bytes: 19
+#include <uchar.h>?
+

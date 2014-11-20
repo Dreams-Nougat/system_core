@@ -9,3 +9,11 @@ UUID: 5ff84938_7d47777e
 Bytes: 19
 #include <uchar.h>?
 
+29
+Thu Nov 20 21:08:38 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ff84938_7d47777e
+UUID: 7ffb4d34_04aedaa8
+Bytes: 147
+Not needed. These types are part of C++ proper, not any header, and this is a C++ header, so I don't care if people including it from C are broken.
+

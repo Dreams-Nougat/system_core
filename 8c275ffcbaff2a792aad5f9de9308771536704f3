@@ -1,0 +1,11 @@
+Revision: 8c275ffcbaff2a792aad5f9de9308771536704f3
+Patch-set: 1
+File: include/utils/Endian.h
+
+23
+Sat Nov 22 15:34:45 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f9ed122_6ff559e6
+Bytes: 130
+the internet says they don't have <endian.h> or <sys/endian.h>, and seems confused about what, if anything, they actually do have.
+

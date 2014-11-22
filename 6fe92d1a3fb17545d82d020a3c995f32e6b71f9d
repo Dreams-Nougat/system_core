@@ -1,0 +1,11 @@
+Revision: 6fe92d1a3fb17545d82d020a3c995f32e6b71f9d
+Base-for-patch-set: 2
+File: libutils/Unicode.cpp
+
+33
+Sat Nov 22 07:50:03 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df151930_3f28cfac
+Bytes: 49
+You never know when you'll need big endian WIN32.
+

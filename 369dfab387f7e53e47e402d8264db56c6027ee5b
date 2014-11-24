@@ -1,0 +1,11 @@
+Revision: 369dfab387f7e53e47e402d8264db56c6027ee5b
+Patch-set: 1
+File: fastboot/fastboot.c
+
+324
+Mon Nov 24 16:07:57 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fc50d23_ae8d973e
+Bytes: 169
+-f seems odd (and likely to be wanted for something more useful), but -u is already taken. how about --unbuffered, since this not likely to be used interactively anyway?
+

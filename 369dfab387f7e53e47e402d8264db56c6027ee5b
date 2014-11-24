@@ -9,3 +9,11 @@ UUID: 7fc50d23_ae8d973e
 Bytes: 169
 -f seems odd (and likely to be wanted for something more useful), but -u is already taken. how about --unbuffered, since this not likely to be used interactively anyway?
 
+324
+Mon Nov 24 16:30:34 2014 +0000
+Author: Florian Bäuerle <1059770@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7fc50d23_ae8d973e
+UUID: 9f448158_5813b1fe
+Bytes: 109
+You're absolutely right. Is this required to show up in the usage-text? (other longopts do not appear there).
+

@@ -9,3 +9,11 @@ UUID: ffbadd9a_339fdac1
 Bytes: 152
 code that returns from the function that called fork always makes me nervous. with an _exit i don't have to worry about what other code is on the stack.
 
+167
+Tue Nov 25 15:01:55 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ffbadd9a_339fdac1
+UUID: ffd1fde2_ac3a7fb6
+Bytes: 119
++1 only because I have seen borken implementations over the years (I made one of 'em in the '80s ;-P). Side on clarity.
+

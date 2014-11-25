@@ -9,10 +9,26 @@ UUID: 1fcc1153_34db367d
 Bytes: 17
 explicitly _exit?
 
+166
+Tue Nov 25 04:24:10 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fcc1153_34db367d
+UUID: 5fc2091f_6c37ae88
+Bytes: 21
+Is there a reason to?
+
 198
 Tue Nov 25 04:17:16 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5fc2091f_ec015ea5
 Bytes: 36
 shouldn't there be a matching close?
+
+198
+Tue Nov 25 04:24:10 2014 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5fc2091f_ec015ea5
+UUID: 1fcc1153_94e9ca17
+Bytes: 125
+The other tests do close this, but neither this branch nor the one above. I thought it might have been intentional. Will fix.
 

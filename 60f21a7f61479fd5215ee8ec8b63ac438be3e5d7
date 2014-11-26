@@ -1,0 +1,11 @@
+Revision: 60f21a7f61479fd5215ee8ec8b63ac438be3e5d7
+Patch-set: 2
+File: fastboot/fastboot.c
+
+247
+Wed Nov 26 22:38:37 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ffb9587_d2274421
+Bytes: 47
+i meant strcmp == 0 you crazy c programmers :-)
+

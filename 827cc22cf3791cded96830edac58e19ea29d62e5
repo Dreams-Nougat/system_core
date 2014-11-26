@@ -1,0 +1,11 @@
+Revision: 827cc22cf3791cded96830edac58e19ea29d62e5
+Patch-set: 1
+File: fastboot/fastboot.c
+
+247
+Wed Nov 26 17:27:33 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f0c8179_6fd67157
+Bytes: 131
+== '\0' (or use strcmp) instead of ! would seem more intention-revealing (and is a style that would have avoided the original bug).
+

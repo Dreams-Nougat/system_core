@@ -1,0 +1,11 @@
+Revision: 480c80a3f4906e3b88b949e210be60f631d81b27
+Patch-set: 1
+File: adb/Android.mk
+
+31:0-33:31
+Wed Dec 03 02:21:55 2014 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fcb3196_92098d56
+Bytes: 73
+Did not understand this. DADB_HOST=1 and we are building STATIC_LIBRARY ?
+

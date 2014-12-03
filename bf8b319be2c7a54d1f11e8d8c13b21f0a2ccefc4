@@ -1,0 +1,11 @@
+Revision: bf8b319be2c7a54d1f11e8d8c13b21f0a2ccefc4
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+595
+Wed Dec 03 18:28:42 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ffc75c4_2449722a
+Bytes: 21
+unit test on the way.
+

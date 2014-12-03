@@ -9,3 +9,11 @@ UUID: 1fcb3196_92098d56
 Bytes: 73
 Did not understand this. DADB_HOST=1 and we are building STATIC_LIBRARY ?
 
+31:0-33:31
+Wed Dec 03 18:10:29 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fcb3196_92098d56
+UUID: bf0865ac_ee033b00
+Bytes: 52
+I suppose it could be (should be?) a shared library.
+

@@ -25,3 +25,11 @@ UUID: 1ff971d6_e32c728d
 Bytes: 234
 Oh, thought I was talking about the host library. This is for the case of the adb host tool built for the device (see line 172). I don't know if anyone actually uses this. I'd be plenty happy to just kill it off if no one is using it.
 
+33
+Thu Dec 04 21:38:22 2014 +0000
+Author: Mike Lockwood <1004957@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ff971d6_e32c728d
+UUID: 7f5eedd0_c992d5e3
+Bytes: 263
+It is safe to kill off the adb host tool built for device. It was added a few years ago because Motorola was using adb to communicate with the modem(!) from within android itself. I would rather kill this off so I no longer accidentally start adb from within adb.
+

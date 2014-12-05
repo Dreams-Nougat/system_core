@@ -1,5 +1,56 @@
 Revision: 68be6bdce24ab22acaccd110e54e886a8ca64b54
 Patch-set: 3
+File: init/bootchart.c
+
+73
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f8cc9b9_bd22ffce
+Bytes: 9
+O_CLOEXEC
+
+94
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f8fcdad_7e323112
+Bytes: 40
+Per Stephen, likely need O_CLOEXEC here.
+
+151
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f8cc9b9_fd2c87c2
+Bytes: 35
+please use "we" here instead of "w"
+
+190
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f8fcdad_9e67fd18
+Bytes: 9
+O_CLOEXEC
+
+227
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f8cc9b9_9d1d438c
+Bytes: 9
+O_CLOEXEC
+
+271
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f8cc9b9_3d0fcf50
+Bytes: 9
+O_CLOEXEC
+
+361
+Fri Dec 05 17:05:00 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3f99d5f9_dcd50d4a
+Bytes: 9
+O_CLOEXEC
+
 File: rootdir/init.rc
 
 197

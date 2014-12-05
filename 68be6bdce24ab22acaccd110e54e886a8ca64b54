@@ -1,0 +1,20 @@
+Revision: 68be6bdce24ab22acaccd110e54e886a8ca64b54
+Patch-set: 3
+File: rootdir/init.rc
+
+197
+Fri Dec 05 16:29:15 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f9e89d1_b0503624
+Bytes: 214
+/data is not guaranteed to be mounted here. Instead, this needs to go in the "post-fs-data" section.
+
+This is also going to be problematic with encrypted /data partitions, which is what all of our new devices have.
+
+198
+Fri Dec 05 16:29:15 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fa18d0b_f10da22a
+Bytes: 72
+Not needed. A restorecon automatically occurs when needed. See line 240.
+

@@ -1,0 +1,11 @@
+Revision: 3103b2e3bc9e2eb8bfd3cd3383850d4c23fcd296
+Patch-set: 7
+File: liblog/log_is_loggable.c
+
+33:0-50:1
+Fri Dec 05 21:50:36 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a40a1a12_f84f1132
+Bytes: 153
+Just call __system_property_get() directly rather than copy-and-pasting property_get().  Plus that way you don't have to worry about weak symbols at all.
+

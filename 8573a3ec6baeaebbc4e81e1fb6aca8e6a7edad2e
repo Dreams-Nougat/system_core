@@ -1,0 +1,13 @@
+Revision: 8573a3ec6baeaebbc4e81e1fb6aca8e6a7edad2e
+Patch-set: 4
+File: logcat/logcat.cpp
+
+471:0-473:25
+Fri Dec 05 00:40:25 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df0d19eb_dcca4129
+Bytes: 172
+d will always be non-NULL.
+
+(In principle operator new is supposed to throw std::bad_alloc, but Bionic terminates the runtime instead.  Either way it's not returning NULL.)
+

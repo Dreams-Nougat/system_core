@@ -1,0 +1,50 @@
+Revision: 8d620b35d2c031ac19f20b69db7ea067cfd92b2f
+Patch-set: 5
+File: /COMMIT_MSG
+
+20:45-20:57
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f78ad6f_b9ae9b29
+Bytes: 15
+on post-fs-data
+
+File: init/bootchart.c
+
+177
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f96d1c9_3eb7c55b
+Bytes: 47
+not needed if all open calls include O_CLOEXEC.
+
+194
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f78ad6f_79f08370
+Bytes: 18
+can be deleted now
+
+228
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f78ad6f_19022faa
+Bytes: 14
+can be deleted
+
+378:20-378:40
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf5ea5fb_dbdfc716
+Bytes: 21
+filename needs fixing
+
+File: rootdir/init.rc
+
+232
+Fri Dec 05 19:29:37 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f96d1c9_9e78d9ef
+Bytes: 221
+I realize you're trying to create the directory early, but can we at least move it after line 241? Otherwise, the restorecon_recursive call hasn't executed, and a pre-existing /data/bootchart may not be labeled correctly.
+

@@ -1,0 +1,11 @@
+Revision: 72ecfad1fa06df550fcb66cdce5d8cc7e0aeeab2
+Patch-set: 4
+File: /COMMIT_MSG
+
+7:13-7:35
+Fri Dec 05 00:44:57 2014 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bf0225b9_3ee37163
+Bytes: 207
+This CL needs a short summary, since you're shuffling things around and generally doing more than deleting one method.  It's not clear if it's supposed to change functionality or if it's just a code cleanup.
+

@@ -39,6 +39,36 @@ UUID: bf5ea5fb_dbdfc716
 Bytes: 21
 filename needs fixing
 
+File: init/init_parser.c
+
+79:4-79:13
+Fri Dec 05 21:05:42 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f26ed9d_4687726f
+Bytes: 26
+leave it always available.
+
+File: init/keywords.h
+
+45:4-45:21
+Fri Dec 05 21:05:42 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 241e2a5a_74cb08b4
+Bytes: 172
+#else
+  int do_bootchart_init(int, char **) { return -1; }
+#endif
+
+
+Always have a bootchart command available: this avoids having commands in init.rc that are unrecognized.
+
+110:4-110:13
+Fri Dec 05 21:05:42 2014 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 241e2a5a_34d5904e
+Bytes: 15
+keep it always.
+
 File: rootdir/init.rc
 
 232

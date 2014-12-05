@@ -18,3 +18,13 @@ Bytes: 422
 I read https://android-review.googlesource.com/#/c/100661/, but at least what I saw in ch9.h looks OK and works as far as I can tell.
 Maybe I am mistaken but "usb_linux.c" looks like it actually uses the linux kernel headers of your system directly ("linux/usb/ch9.h"). So if you have a recent kernel (with USB 3.0 support), you also get the right definitions from your kernel headers of your system, as far as I can tell.
 
+243
+Fri Dec 05 19:55:00 2014 +0000
+Author: Jack Pham <1030767@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 13fb2935_e702d0da
+UUID: 3f72b591_745c0837
+Bytes: 308
+I have abandoned https://android-review.googlesource.com/#/c/100661/. Picked this change and it works for me as well. I like this change better anyway. Can we please get this merged?
+
+Also, I would like to propose a similar fix to fastboot/usb_linux.c as well. I can submit another change to Gerrit for that.
+

@@ -1,0 +1,11 @@
+Revision: 049ee390df10124f42cb45023b28179b075bf642
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Fri Dec 05 07:30:53 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f9e89d1_0d4c9139
+Bytes: 87
+You're passing up probably your only opportunity to use the commit message "Kill kill".
+

@@ -1,0 +1,13 @@
+Revision: 1326ae7ddaa7a504301293f0cd1fba3b28c8b834
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+646
+Sat Dec 06 01:43:47 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6424a2a4_566134a3
+Bytes: 80
+s/file/file name/ and valid UTF-8 can't contain \0 anyway.
+
+just delete comment?
+

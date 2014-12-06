@@ -16,3 +16,13 @@ UUID: 040206f8_db20d336
 Bytes: 69
 There's no such thing as a cygwin build, so this can go away as well.
 
+50
+Sat Dec 06 20:46:29 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 040206f8_db20d336
+UUID: 444f9e7e_e8728b4f
+Bytes: 316
+only 9 files in the tree reference it so that should be easily killable.
+
+and if trevordrake is looking for random makefile cleanup :-) ... TARGET_SIMULATOR has been obsolete for about 4 years at this point. although i suspect most remaining references to that are in proprietary vendor device drivers at this point.
+

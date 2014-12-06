@@ -26,3 +26,11 @@ only 9 files in the tree reference it so that should be easily killable.
 
 and if trevordrake is looking for random makefile cleanup :-) ... TARGET_SIMULATOR has been obsolete for about 4 years at this point. although i suspect most remaining references to that are in proprietary vendor device drivers at this point.
 
+50
+Sat Dec 06 23:08:39 2014 +0000
+Author: Trevor Drake <1037213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 444f9e7e_e8728b4f
+UUID: 84927610_9fe8130e
+Bytes: 311
+Ahh well I'll see your TARGET_SIMULATOR and raise you a BOARD_USES_GENERIC_AUDIO :) which does nothing as where it was used is commented out it seems. Seeing as random makefile cleanup seems to be my current calling I shall no doubt take a look. We're also only a couple of commits away from killing libunz too.
+

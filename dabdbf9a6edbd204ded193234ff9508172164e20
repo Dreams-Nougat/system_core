@@ -1,0 +1,18 @@
+Revision: dabdbf9a6edbd204ded193234ff9508172164e20
+Patch-set: 1
+File: libutils/Android.mk
+
+47
+Sat Dec 06 20:31:02 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 840fd623_dd2afbe5
+Bytes: 85
+We might want to come through and add -Wall -Wextra to these projects some time soon.
+
+50
+Sat Dec 06 20:31:02 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 040206f8_db20d336
+Bytes: 69
+There's no such thing as a cygwin build, so this can go away as well.
+

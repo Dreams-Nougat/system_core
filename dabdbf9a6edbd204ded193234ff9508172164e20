@@ -34,3 +34,15 @@ UUID: 84927610_9fe8130e
 Bytes: 311
 Ahh well I'll see your TARGET_SIMULATOR and raise you a BOARD_USES_GENERIC_AUDIO :) which does nothing as where it was used is commented out it seems. Seeing as random makefile cleanup seems to be my current calling I shall no doubt take a look. We're also only a couple of commits away from killing libunz too.
 
+50
+Sun Dec 07 00:00:47 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84927610_9fe8130e
+UUID: 845d1634_0d45f5e2
+Bytes: 639
+BOARD_USES_GENERIC_AUDIO (and the other BOARD_USES_*_AUDIOs) seem to be used in vendor/*/proprietary* directories. i suspect that it's just AOSP where there's no non-generic audio.
+
+HAVE_HTC_AUDIO_DRIVER on the other hand appears to be genuinely dead.
+
+if you think you've found something like this, feel free to ask me to check before trying to eradicate it. i cleaned up the dead ARCH_ARM_HAVE_*s recently, but sometimes these variables are specifically there so that OEMs can override some AOSP thing and will look dead in AOSP despite actually being needed. i'm not sure there's any way to tell without access to the non-AOSP OEM code.
+

@@ -46,3 +46,13 @@ HAVE_HTC_AUDIO_DRIVER on the other hand appears to be genuinely dead.
 
 if you think you've found something like this, feel free to ask me to check before trying to eradicate it. i cleaned up the dead ARCH_ARM_HAVE_*s recently, but sometimes these variables are specifically there so that OEMs can override some AOSP thing and will look dead in AOSP despite actually being needed. i'm not sure there's any way to tell without access to the non-AOSP OEM code.
 
+50
+Sun Dec 07 02:11:04 2014 +0000
+Author: Trevor Drake <1037213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 845d1634_0d45f5e2
+UUID: a48dbaf4_801e768b
+Bytes: 437
+Ay no problems. I forgot about the vendor binaries. I'll unpack them so they get grepped aswell. My "random makefile cleanup" plan for now is to kill libunz ( about 4 more small commits )  and cleanup the rest of system/core as I have been doing..( about 6 more small commits ) . 
+
+But like you say if I get the urge to kill so variable I run that by you first. It'll save any unnecessary work if it's still required in the secret-sauce.
+

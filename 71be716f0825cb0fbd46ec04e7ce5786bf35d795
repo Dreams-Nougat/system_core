@@ -9,3 +9,11 @@ UUID: c488eee4_6a8eab15
 Bytes: 128
 can you remove this portion? I find it more confusing then helpful, especially since there's really no other documentation here.
 
+12
+Mon Dec 08 19:08:26 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c488eee4_6a8eab15
+UUID: 040206f8_7e752d6b
+Bytes: 171
+I can, but it was inline with touch.c as an example. I can make it more like top. Id rather have it spew something, and we can make it more useful rather then removing it.
+

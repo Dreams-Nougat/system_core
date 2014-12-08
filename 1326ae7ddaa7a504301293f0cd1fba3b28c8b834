@@ -11,3 +11,11 @@ s/file/file name/ and valid UTF-8 can't contain \0 anyway.
 
 just delete comment?
 
+646
+Mon Dec 08 11:57:57 2014 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6424a2a4_566134a3
+UUID: 84927610_5f092bd1
+Bytes: 153
+U+0000 has a single byte encoding of 0x00000000 and is valid UTF-8. I'll rephrase, since we don't want the NUL in the middle of the string or at the end.
+

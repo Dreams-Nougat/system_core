@@ -1,0 +1,11 @@
+Revision: 71be716f0825cb0fbd46ec04e7ce5786bf35d795
+Patch-set: 3
+File: toolbox/chcon.c
+
+12:37-12:57
+Mon Dec 08 18:42:44 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c488eee4_6a8eab15
+Bytes: 128
+can you remove this portion? I find it more confusing then helpful, especially since there's really no other documentation here.
+

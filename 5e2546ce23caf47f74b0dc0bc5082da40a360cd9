@@ -1,0 +1,15 @@
+Revision: 5e2546ce23caf47f74b0dc0bc5082da40a360cd9
+Patch-set: 4
+File: toolbox/chcon.c
+
+16
+Mon Dec 08 19:19:44 2014 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 040206f8_1e5bc9fb
+Bytes: 548
+I stole from top.c since it had the best, most complete example of verbose output I could find in toolbox. I'd rather keep things as helpful as possible. At least if you run it without options you can at least see what options and paramters it takes rather than a chcon [OPTIONS] context path.... which will leave you wondering "what options?" At that point you can try the options in the man page, brute force, or crack open the code, which is less than ideal as well.
+
+But.. if you just want:
+chcon [OPTIONS] context file...
+I can do that too :-P
+

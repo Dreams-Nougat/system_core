@@ -1,0 +1,11 @@
+Revision: c04482e8eb7936a71bfd09e4290c7d7d3cf940e0
+Patch-set: 1
+File: adb/commandline.c
+
+1723
+Mon Dec 08 22:01:46 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c488eee4_169f0a3e
+Bytes: 59
+a table of function pointers sounds good right about now...
+

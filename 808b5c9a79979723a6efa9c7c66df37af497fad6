@@ -1,0 +1,25 @@
+Revision: 808b5c9a79979723a6efa9c7c66df37af497fad6
+Patch-set: 2
+File: toolbox/chcon.c
+
+26:0-26:8
+Mon Dec 08 17:40:41 2014 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 845d1634_7b75476b
+Bytes: 5
+ident
+
+28
+Mon Dec 08 17:40:41 2014 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c488eee4_a7ef0e8d
+Bytes: 6
+{ .. }
+
+30
+Mon Dec 08 17:40:41 2014 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 845d1634_fbced73e
+Bytes: 4
+same
+

@@ -1,0 +1,11 @@
+Revision: 57e417fc393f26cf8cca5126cb4551f337ff1961
+Patch-set: 1
+File: include/utils/Singleton.h
+
+69
+Wed Dec 10 22:14:59 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4997284_5524fe9b
+Bytes: 74
+do we need ::android in case the macro's used within some other namespace?
+

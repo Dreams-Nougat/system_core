@@ -29,3 +29,11 @@ UUID: 64abc29e_01a40cbc
 Bytes: 98
 Putting parens around ::android::Singleton... should fix it (and confuse the hell out of cpplint).
 
+69
+Thu Dec 11 19:21:04 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64abc29e_01a40cbc
+UUID: c4eaaeee_5afa094a
+Bytes: 42
+Done. Please take a look of new patch set.
+

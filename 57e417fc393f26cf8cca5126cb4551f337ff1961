@@ -9,3 +9,15 @@ UUID: e4997284_5524fe9b
 Bytes: 74
 do we need ::android in case the macro's used within some other namespace?
 
+69
+Thu Dec 11 00:12:00 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4997284_5524fe9b
+UUID: a4a13abc_40bb2ee4
+Bytes: 423
+It is possible to have ambiguity when used in a namespace with its own nested "android" namespace. I have not found such case, but I got some parsing ambiguity if I add "::" in front of android here.
+
+The token sequence ::android::Mutex  ::android::Singleton
+is parsed as one qualified name and it becomes a syntax error.
+Is there a way to fix that parsing problem, or we can just do without global "::" qualification here?
+

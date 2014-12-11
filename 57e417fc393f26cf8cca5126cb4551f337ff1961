@@ -21,3 +21,11 @@ The token sequence ::android::Mutex  ::android::Singleton
 is parsed as one qualified name and it becomes a syntax error.
 Is there a way to fix that parsing problem, or we can just do without global "::" qualification here?
 
+69
+Thu Dec 11 00:39:42 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4a13abc_40bb2ee4
+UUID: 64abc29e_01a40cbc
+Bytes: 98
+Putting parens around ::android::Singleton... should fix it (and confuse the hell out of cpplint).
+

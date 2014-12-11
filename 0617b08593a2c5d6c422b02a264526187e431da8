@@ -1,0 +1,30 @@
+Revision: 0617b08593a2c5d6c422b02a264526187e431da8
+Patch-set: 2
+File: adb/tests/adb_test.py
+
+33
+Thu Dec 11 00:04:14 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4997284_580d152c
+Bytes: 215
+If you split this into two lines like so:
+
+    serial, _ = line.split()
+    devList.append(serial)
+
+It will throw an exception if we encounter unexpected output with more than two words, which is probably desirable.
+
+42:11-42:39
+Thu Dec 11 00:04:14 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4997284_b5844a9e
+Bytes: 13
+h.hexdigest()
+
+98:37-98:46
+Thu Dec 11 00:04:14 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a13abc_8006d644
+Bytes: 41
+Should probably go under /data/local/tmp/
+

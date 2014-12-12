@@ -2,6 +2,13 @@ Revision: f0938bff00a971ddc69110b532a7b85676d8336e
 Patch-set: 1
 File: adb/set_verity_enable_state_service.c
 
+47:7-47:32
+Fri Dec 12 23:54:23 2014 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84bc3633_b8649d3e
+Bytes: 35
+typo here, is fixed in patch set 2.
+
 166
 Fri Dec 12 22:00:14 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

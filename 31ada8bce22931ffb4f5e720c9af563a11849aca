@@ -9,3 +9,11 @@ UUID: 04f926d6_e3f23244
 Bytes: 84
 there doesn't seem to be a fastbootd/include, so i suspect you can remove this line.
 
+20
+Fri Dec 12 10:17:06 2014 +0000
+Author: Trevor Drake <1037213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04f926d6_e3f23244
+UUID: e497b25c_25471819
+Bytes: 4
+Done
+

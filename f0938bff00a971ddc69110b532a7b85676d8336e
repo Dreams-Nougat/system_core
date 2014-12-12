@@ -1,0 +1,11 @@
+Revision: f0938bff00a971ddc69110b532a7b85676d8336e
+Patch-set: 1
+File: adb/set_verity_enable_state_service.c
+
+166
+Fri Dec 12 22:00:14 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0413e612_b31978ef
+Bytes: 86
+why don't we just unconditionally compile all this and have the #if around the caller?
+

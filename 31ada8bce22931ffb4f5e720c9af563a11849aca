@@ -1,0 +1,11 @@
+Revision: 31ada8bce22931ffb4f5e720c9af563a11849aca
+Patch-set: 1
+File: fastbootd/Android.mk
+
+20
+Fri Dec 12 04:49:23 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04f926d6_e3f23244
+Bytes: 84
+there doesn't seem to be a fastbootd/include, so i suspect you can remove this line.
+

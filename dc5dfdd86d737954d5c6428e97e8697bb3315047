@@ -1,0 +1,11 @@
+Revision: dc5dfdd86d737954d5c6428e97e8697bb3315047
+Patch-set: 3
+File: /COMMIT_MSG
+
+9
+Fri Dec 12 21:56:21 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0413e612_d3019478
+Bytes: 151
+even for open source bugs i like to put a "Bug: " line. i generally give the link to the bug since the numbers don't make it obvious it's a public bug.
+

@@ -9,3 +9,13 @@ UUID: 0413e612_b31978ef
 Bytes: 86
 why don't we just unconditionally compile all this and have the #if around the caller?
 
+166
+Fri Dec 12 23:52:20 2014 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0413e612_b31978ef
+UUID: c4b2ae5b_45ab0ae4
+Bytes: 326
+I mildly prefer this, even though you did have to add the extra guards to fix the clangs. The two advantages is that we do have an implementation for the #else case, however simple, and the guards are visible in the dangerous code - in fact, the new guards totally remove the dangerous code.
+
+So I vote for keeping this as is.
+

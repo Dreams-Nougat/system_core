@@ -1,0 +1,57 @@
+Revision: 453ce32c196e5f52965487f03a3e3eb96cfec5e9
+Patch-set: 3
+File: adb/tests/adb_test.py
+
+5
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c469cea3_19c5cb49
+Bytes: 11
+Sort these.
+
+13
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2499caf9_bcd5a100
+Bytes: 96
+No spaces at beginning or end of docstrings (pretty sure this will format funny in doc viewers).
+
+19
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c469cea3_d9b0b3d4
+Bytes: 135
+https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Blank_Lines#Blank_Lines
+
+Two blank lines between each function.
+
+37
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c469cea3_19a22b7f
+Bytes: 86
+Nested functions are generally preferred to lambdas if you're going to name it anyway.
+
+44
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c469cea3_f983b7dd
+Bytes: 33
+Can do `if 'device' not in line:`
+
+63
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2499caf9_1ccf753c
+Bytes: 47
+But should have a single space between methods.
+
+112
+Sat Dec 13 02:02:48 2014 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2499caf9_bce681bb
+Bytes: 167
+/data/local/tmp is actually the scratch directory. Temp file would be /data/local/tmp/tmp.
+
+These should probably be defined in the AdbFile class rather than globally.
+

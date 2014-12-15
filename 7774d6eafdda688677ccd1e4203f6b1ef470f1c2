@@ -2,6 +2,13 @@ Revision: 7774d6eafdda688677ccd1e4203f6b1ef470f1c2
 Patch-set: 1
 File: init/init.c
 
+1028
+Mon Dec 15 02:08:33 2014 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a453fafb_304d483a
+Bytes: 28
+ro.boot.selinux is set here.
+
 1037
 Mon Dec 15 01:34:55 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

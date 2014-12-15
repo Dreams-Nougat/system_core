@@ -1,0 +1,11 @@
+Revision: 7774d6eafdda688677ccd1e4203f6b1ef470f1c2
+Patch-set: 1
+File: init/init.c
+
+1037
+Mon Dec 15 01:34:55 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64782270_b9bf7b83
+Bytes: 84
+i wonder if we should remove the bootmode global and make is_charger global instead?
+

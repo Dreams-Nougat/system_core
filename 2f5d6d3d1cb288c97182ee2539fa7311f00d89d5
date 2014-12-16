@@ -1,0 +1,13 @@
+Revision: 2f5d6d3d1cb288c97182ee2539fa7311f00d89d5
+Patch-set: 1
+File: toolbox/Android.mk
+
+117
+Tue Dec 16 17:24:41 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 815d0834_8788a647
+Bytes: 164
+i've sent getenforce and setenforce implementations upstream, but they're waiting to be reviewed.
+
+i haven't started on getsebool, restorecon, runcon, or setsebool.
+

@@ -43,3 +43,21 @@ Additionally should be taken into account:
 
 Please let me know your opinion on this. So I can push a new patch-set.
 
+71:4-72:29
+Tue Dec 16 20:37:15 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e1d164e3_52413469
+UUID: 41c2301f_3011064a
+Bytes: 969
+KISS and maintainability are the primary goals.
+
+We start pruning/skipping at 10% over on a per-id basis, and we punt the reader if we are 100% over.
+
+Skip is meant to be a coarse tool to provide a soft means of dealing with a reticent reader client that is behind by >100% of the buffer. The intent was to leave it to caller heuristics to decide by how much, or if to kill the reader's socket.
+
+Leave the ULONG_MAX alone as it is KISS and means EVERYTHING, refining it to number of messages only means you will be creating edge or race conditions. Dealing with the edge conditions ala #2 was a fine move.
+
+No value with accurate accounting given that prune request value will be 'very large' or 'roughly 10%'. By all means refine the guess, but if it takes more than a few ns to figure out, or is complicated to maintain, walk away.
+
+NB: I am thinking of deprecating white and blacklists; not KISS and so far no one has used it. Also statistics needs to be KISS'd too.
+

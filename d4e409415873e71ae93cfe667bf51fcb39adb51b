@@ -28,3 +28,18 @@ Architectural question: Could the problem be that the writer thread is not wakin
 
 NB: Android coding standard, use { }
 
+71:4-72:29
+Tue Dec 16 19:50:02 2014 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815d0834_87fd46c7
+UUID: e1d164e3_52413469
+Bytes: 563
+Yes sure, but in a normal execution scenario we will also have an oldest (this includes the scenario in which we have
+only one client), so a value from which we start to skip should be set (bufferSize could be an idea).
+
+Additionally should be taken into account:
+- TimeEntry works on multiple buffers and pruning is done per buffer (skipAhead should be skipAhead[LOG_ID_MAX] set,updated and checked accordingly).
+- clean should call prune with the current number of messages in the buffer;
+
+Please let me know your opinion on this. So I can push a new patch-set.
+

@@ -1,0 +1,22 @@
+Revision: 9cef1ba05686b3db56a13e906d24fed20e61ad7b
+Patch-set: 3
+File: logd/LogBuffer.cpp
+
+356:27-356:43
+Wed Dec 17 23:50:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 01e678ff_7b839fe0
+Bytes: 372
+Corner Case: This flag will result in a slow reader holding a region lock to continue marching on with data that is supposed to have been cleared out. When an asynchronous clear is requested, the outstanding reader(s) should all skip to the end.
+
+I would prefer a solution that works in the face of a large skip value and not result in the apparent freezing of the logger.
+
+File: logd/LogTimes.cpp
+
+143:14-143:15
+Wed Dec 17 23:50:20 2014 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 01e678ff_dbf03371
+Bytes: 92
+What about clearing the skip count here instead, does that solve the problem you are seeing?
+

@@ -1,0 +1,25 @@
+Revision: 76c0e958065c05e0410568f11c2f7b0975c98b33
+Patch-set: 1
+File: fs_mgr/fs_mgr.c
+
+323
+Wed Dec 17 21:35:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1d5ac01_b440d883
+Bytes: 45
+what if rec->blk_device is shorter than this?
+
+373
+Wed Dec 17 21:35:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1d5ac01_4f1d398e
+Bytes: 122
+or you could write free(rec->blk_device) if the asprintf succeeds, and fix the bug that you've taken 5 lines to explain...
+
+386
+Wed Dec 17 21:35:18 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 81da6831_33578023
+Bytes: 37
+it's okay to call closedir with NULL.
+

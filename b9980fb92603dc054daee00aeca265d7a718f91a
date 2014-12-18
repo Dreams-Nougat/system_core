@@ -1,0 +1,27 @@
+Revision: b9980fb92603dc054daee00aeca265d7a718f91a
+Patch-set: 2
+File: fs_mgr/fs_mgr.c
+
+349
+Thu Dec 18 17:41:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1a3ecb1_73f83a89
+Bytes: 39
+do you need to be able to go past 2GiB?
+
+350
+Thu Dec 18 17:41:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1a3ecb1_b3e9c2ba
+Bytes: 51
+these should both at least have TEMP_FAILURE_RETRY.
+
+379
+Thu Dec 18 17:41:16 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1a3ecb1_33ab1267
+Bytes: 159
+all structs are like this though, and the code that cleans them up already calls free.
+
+one day we'll switch everything to C++ and ownership questions go away.
+

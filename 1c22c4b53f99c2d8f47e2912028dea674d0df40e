@@ -13,3 +13,18 @@ This is wrong on two counts:
 
 2. u:object_r:property_socket:s0 is a context for the socket file (/dev/socket/property_service), which is distinct and separate from the socket itself.  Unix/local domain sockets have two associated kernel objects:  a socket and a file that names it.  The socket is typically labeled the same as its creating/owning process.  The file is labeled based on file_contexts using selabel_lookup.  create_socket() takes a context argument in order to allow init to label sockets created for other services with the service domains rather than its own domain.  But the property socket is supposed to be labeled with init's domain because init is the receiver.
 
+550
+Thu Dec 18 14:35:58 2014 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 61c81476_96dccca1
+UUID: 61c81476_d6d6447f
+Bytes: 725
+Note that in policy, we permit domains to connect to the property service via macro calls like unix_socket_connect(shell, property, init).  The unix_socket_connect macro (defined in te_macros) expands to:
+
+allow shell property_socket:sock_file write;
+allow shell init:unix_stream_socket connectto;
+
+The first rule allows the shell domain to write to the /dev/socket/property_service socket file.  The second rule allows the shell domain to connect to init's Unix/local stream socket endpoint, which has init's domain.  This is correct.  Similar calls to unix_socket_connect() are used for all authorized users of the property service.
+
+I don't know what problem you were trying to address here, but this is not a correct fix.
+

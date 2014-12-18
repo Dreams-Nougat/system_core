@@ -17,6 +17,14 @@ UUID: 21ce1ca4_d445bc76
 Bytes: 97
 not sure I understand this question? the superblock is always located at an offset of 1024 bytes.
 
+349
+Thu Dec 18 22:51:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 21ce1ca4_d445bc76
+UUID: 41d1503e_55588cca
+Bytes: 84
+i didn't notice it was a different fd each time round. i thought you were searching.
+
 350
 Thu Dec 18 17:41:16 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,4 +56,12 @@ Parent: a1a3ecb1_33ab1267
 UUID: a1ba0cec_18fec5c1
 Bytes: 188
 none of that is specific to the caller of this static function, as far as I can tell, hence the comment.  What is your current suggestion here, would you like me to get rid of the comment?
+
+379
+Thu Dec 18 22:51:03 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1ba0cec_18fec5c1
+UUID: e10ec4b4_8a3f0bd9
+Bytes: 107
+yes. i think the code is doing the obviously right thing and the comment just makes it sound like it's not.
 

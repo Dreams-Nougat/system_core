@@ -11,6 +11,14 @@ Corner Case: This flag will result in a slow reader holding a region lock to con
 
 I would prefer a solution that works in the face of a large skip value and not result in the apparent freezing of the logger.
 
+356:27-356:43
+Thu Dec 18 10:50:21 2014 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 01e678ff_7b839fe0
+UUID: 41731024_e53536c7
+Bytes: 4
+Done
+
 File: logd/LogTimes.cpp
 
 143:14-143:15
@@ -19,4 +27,12 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 01e678ff_dbf03371
 Bytes: 92
 What about clearing the skip count here instead, does that solve the problem you are seeing?
+
+143:14-143:15
+Thu Dec 18 10:50:21 2014 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 01e678ff_dbf03371
+UUID: 41731024_a53b3eba
+Bytes: 4
+Done
 

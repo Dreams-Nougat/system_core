@@ -9,6 +9,14 @@ UUID: a1d5ac01_b440d883
 Bytes: 45
 what if rec->blk_device is shorter than this?
 
+323
+Thu Dec 18 09:17:20 2014 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1d5ac01_b440d883
+UUID: 618d7444_2e464783
+Bytes: 33
+then the function is never called
+
 373
 Wed Dec 17 21:35:18 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: a1d5ac01_4f1d398e
 Bytes: 122
 or you could write free(rec->blk_device) if the asprintf succeeds, and fix the bug that you've taken 5 lines to explain...
 
+373
+Thu Dec 18 09:17:20 2014 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1d5ac01_4f1d398e
+UUID: 618d7444_6e404f64
+Bytes: 428
+you're right.  I checked every invocation of fs_mgr_mount_all() that I could find in AOSP and they all call this with an fstab populated by a call to fs_mgr_read_fstab(), which allocates the existing rec->blk_device with strdup(), so we can do what you suggest.  Note, however, that if anyone ever calls this where all the memory for struct fstab is just statically allocated, it will blow up, so let's hope that doesn't happen.
+
 386
 Wed Dec 17 21:35:18 2014 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 81da6831_33578023
 Bytes: 37
 it's okay to call closedir with NULL.
+
+386
+Thu Dec 18 09:17:20 2014 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81da6831_33578023
+UUID: 41731024_e52b7695
+Bytes: 2
+ok
 

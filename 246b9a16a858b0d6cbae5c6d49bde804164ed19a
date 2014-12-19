@@ -17,3 +17,11 @@ UUID: a13dac4e_4313187f
 Bytes: 277
 I think that would be defensive programming and a waste of CPU cycles.  But I can remove the check immediately before calling this function, always invoke this function for extX partitions, and just return success without translating anything if the string prefix is not LABEL=
 
+323
+Fri Dec 19 18:01:39 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a13dac4e_4313187f
+UUID: 01f918d6_69a3c184
+Bytes: 83
+sgtm. agree we should only check in one place, but i think this is the right place.
+

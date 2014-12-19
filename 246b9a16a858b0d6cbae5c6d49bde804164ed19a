@@ -1,0 +1,11 @@
+Revision: 246b9a16a858b0d6cbae5c6d49bde804164ed19a
+Patch-set: 3
+File: fs_mgr/fs_mgr.c
+
+323
+Fri Dec 19 17:08:27 2014 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2151bca8_3cee3190
+Bytes: 95
+i'd still prefer we actually checked rec->blk_device is long enough and returned an error here.
+

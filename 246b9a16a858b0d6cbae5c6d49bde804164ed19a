@@ -9,3 +9,11 @@ UUID: 2151bca8_3cee3190
 Bytes: 95
 i'd still prefer we actually checked rec->blk_device is long enough and returned an error here.
 
+323
+Fri Dec 19 17:57:11 2014 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2151bca8_3cee3190
+UUID: a13dac4e_4313187f
+Bytes: 277
+I think that would be defensive programming and a waste of CPU cycles.  But I can remove the check immediately before calling this function, always invoke this function for extX partitions, and just return success without translating anything if the string prefix is not LABEL=
+

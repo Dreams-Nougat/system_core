@@ -18,3 +18,17 @@ UUID: 35473640_cc3c6f5c
 Bytes: 91
 This does not belong here, it comes from https://android-review.googlesource.com/#/c/110204
 
+542:24-542:26
+Thu Jan 01 15:34:14 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0144b839_11820c2c
+Bytes: 61
+why 10s? would it make sense for this to be a named constant?
+
+569:19-572:21
+Thu Jan 01 15:34:14 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c180e07b_6aaa6b0e
+Bytes: 208
+not quite sure about this part: why wait depend on the subsequent entry being later than 'start' to add the diff?  Wouldn't it be better to check if 'start' is somewhere near 'element' and then use that diff?
+

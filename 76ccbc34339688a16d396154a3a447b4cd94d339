@@ -1,0 +1,11 @@
+Revision: 76ccbc34339688a16d396154a3a447b4cd94d339
+Patch-set: 1
+File: adb/remount_service.c
+
+115
+Fri Jan 02 18:52:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8ef61548_2241d068
+Bytes: 179
+this seems like a bad idea. there are only two callers and they pass the addresses of globals. i can't imagine any circumstance under which you'd want this function to be a no-op.
+

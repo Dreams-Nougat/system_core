@@ -1,0 +1,11 @@
+Revision: 38da5755c45c2d3073f147809ce8d1ea9bc39c55
+Patch-set: 1
+File: adb/remount_service.c
+
+47
+Mon Jan 05 23:31:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e1b056c_fc9ffd39
+Bytes: 69
+either "char* device = NULL;" here, or "char* device = NULL;" on L42.
+

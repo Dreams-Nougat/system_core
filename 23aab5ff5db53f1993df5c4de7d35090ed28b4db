@@ -9,3 +9,11 @@ UUID: 2e1e095a_94e34431
 Bytes: 49
 it doesn't look like you actually removed this...
 
+114
+Mon Jan 05 19:10:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e1e095a_94e34431
+UUID: 2e1e095a_14ef3414
+Bytes: 90
+i meant that we should just crash if the caller passes NULL for dir_ro. doing so is a bug.
+

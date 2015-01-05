@@ -19,3 +19,11 @@ Mostly just to avoid any possible divide-by-zero issues.  I had already provided
 
 I can either remove this restriction or submit the sideload cancel stuff to recovery before this goes in.  Which do you prefer?
 
+577
+Mon Jan 05 21:06:37 2015 +0000
+Author: Doug Zongker <1002268@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ef89d38_83bf82d3
+UUID: 6e29e184_4e63f3af
+Bytes: 183
+I'd rather not break any existing usages (scripts, etc.) of "adb sideload /dev/null".  Someday those might all be converted to the new cancel command, but it won't happen immediately.
+

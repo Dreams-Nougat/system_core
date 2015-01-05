@@ -1,0 +1,11 @@
+Revision: 23aab5ff5db53f1993df5c4de7d35090ed28b4db
+Patch-set: 2
+File: adb/remount_service.c
+
+114
+Mon Jan 05 19:09:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e1e095a_94e34431
+Bytes: 49
+it doesn't look like you actually removed this...
+

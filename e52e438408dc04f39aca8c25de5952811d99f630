@@ -9,12 +9,30 @@ UUID: ce156d30_13a06476
 Bytes: 64
 don't you mean __linux__? glibc has pthread_mutex_timedlock too.
 
+62
+Mon Jan 05 21:23:58 2015 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce156d30_13a06476
+UUID: ce3acdc4_912c5cb3
+Bytes: 180
+We expect host tools to build on all supported host platforms, right? Making it available on Linux but not OSX would be setting a build-break trap for anyone who develops on Linux.
+
 131
 Mon Jan 05 19:53:19 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6e2481a4_fcf38178
 Bytes: 37
 type nsecs_t but this is actually ms?
+
+131
+Mon Jan 05 21:23:58 2015 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6e2481a4_fcf38178
+UUID: ce3acdc4_d17d449f
+Bytes: 296
+That seems to be what Timers.h does. Though the real reason is I had it in nanoseconds until I realized Windows could only do milliseconds.
+
+Since I'm making this Android-only, I'll switch back to nanoseconds. If someone tries to implement for Windows they'll have to decide how to handle that...
 
 File: libutils/Threads.cpp
 
@@ -24,4 +42,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0e1b056c_b38ad841
 Bytes: 22
 seems like a bad idea.
+
+418
+Mon Jan 05 21:23:58 2015 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0e1b056c_b38ad841
+UUID: 0e1b056c_d6eae2af
+Bytes: 18
+okay, will remove.
 

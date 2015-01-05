@@ -1,0 +1,27 @@
+Revision: e52e438408dc04f39aca8c25de5952811d99f630
+Patch-set: 1
+File: include/utils/Mutex.h
+
+62
+Mon Jan 05 19:53:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce156d30_13a06476
+Bytes: 64
+don't you mean __linux__? glibc has pthread_mutex_timedlock too.
+
+131
+Mon Jan 05 19:53:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6e2481a4_fcf38178
+Bytes: 37
+type nsecs_t but this is actually ms?
+
+File: libutils/Threads.cpp
+
+418
+Mon Jan 05 19:53:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e1b056c_b38ad841
+Bytes: 22
+seems like a bad idea.
+

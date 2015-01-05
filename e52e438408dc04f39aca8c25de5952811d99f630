@@ -17,6 +17,14 @@ UUID: ce3acdc4_912c5cb3
 Bytes: 180
 We expect host tools to build on all supported host platforms, right? Making it available on Linux but not OSX would be setting a build-break trap for anyone who develops on Linux.
 
+62
+Mon Jan 05 23:24:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce3acdc4_912c5cb3
+UUID: 6e29e184_747c40df
+Bytes: 203
+true, but i find it confusing to use HAVE_ANDROID_OS unless you really mean "i'm using an Android-specific extension here". you could at least move the pthread_mutex_timedlock comment up here to explain.
+
 131
 Mon Jan 05 19:53:19 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

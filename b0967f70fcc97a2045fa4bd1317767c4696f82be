@@ -1,0 +1,11 @@
+Revision: b0967f70fcc97a2045fa4bd1317767c4696f82be
+Patch-set: 1
+File: adb/commandline.c
+
+577
+Mon Jan 05 20:19:53 2015 +0000
+Author: Doug Zongker <1002268@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce3acdc4_915e9c33
+Bytes: 109
+Why disallow zero-length files?  sideloading /dev/null is a common way to cancel sideload mode, why break it?
+

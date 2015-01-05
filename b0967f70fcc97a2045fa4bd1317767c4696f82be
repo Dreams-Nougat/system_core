@@ -9,3 +9,13 @@ UUID: ce3acdc4_915e9c33
 Bytes: 109
 Why disallow zero-length files?  sideloading /dev/null is a common way to cancel sideload mode, why break it?
 
+577
+Mon Jan 05 20:22:39 2015 +0000
+Author: Tom Marshall <1063696@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce3acdc4_915e9c33
+UUID: 4ef89d38_83bf82d3
+Bytes: 268
+Mostly just to avoid any possible divide-by-zero issues.  I had already provided a sideload cancel in our recovery so this wasn't an issue.
+
+I can either remove this restriction or submit the sideload cancel stuff to recovery before this goes in.  Which do you prefer?
+

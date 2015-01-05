@@ -9,3 +9,11 @@ UUID: 8ef61548_2241d068
 Bytes: 179
 this seems like a bad idea. there are only two callers and they pass the addresses of globals. i can't imagine any circumstance under which you'd want this function to be a no-op.
 
+115
+Mon Jan 05 11:26:09 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8ef61548_2241d068
+UUID: c180e07b_f51100fc
+Bytes: 111
+I tried not to change the function's behavior, but you're correct, there's no point in returning 0 here. Fixed.
+

@@ -9,3 +9,11 @@ UUID: 0e1b056c_fc9ffd39
 Bytes: 69
 either "char* device = NULL;" here, or "char* device = NULL;" on L42.
 
+47
+Tue Jan 06 04:30:00 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0e1b056c_fc9ffd39
+UUID: 0e3065e8_d4d9b286
+Bytes: 5
+Done.
+

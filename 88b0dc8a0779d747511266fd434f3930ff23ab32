@@ -192,6 +192,14 @@ UUID: 6ecac1df_fa1451e9
 Bytes: 43
 No, this function doesn't work with.. with.
 
+332
+Tue Jan 13 22:04:45 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6ecac1df_fa1451e9
+UUID: 6e3d619e_712d12ad
+Bytes: 161
+There's https://docs.python.org/2/library/contextlib.html for things like this. I've not actually used it myself. Not a big deal, but might be worth doing later.
+
 370
 Tue Jan 13 02:10:22 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

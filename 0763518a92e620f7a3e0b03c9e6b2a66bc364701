@@ -1,0 +1,11 @@
+Revision: 0763518a92e620f7a3e0b03c9e6b2a66bc364701
+Patch-set: 1
+File: include/utils/Mutex.h
+
+134
+Tue Jan 13 00:33:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ef09d0f_7787d071
+Bytes: 11
+static_cast
+

@@ -1,0 +1,153 @@
+Revision: 88b0dc8a0779d747511266fd434f3930ff23ab32
+Patch-set: 9
+File: adb/tests/adb_test.py
+
+3
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ef09d0f_b7bdd88b
+Bytes: 175
+Format for docstrings is:
+
+"""Brief description.
+
+Longer description.
+"""
+
+Tools that read Python docs expect a brief description to be on the same line as the opening quotes.
+
+18
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce69eda3_793327e0
+Bytes: 120
+This is repeated a lot. Factor out as trace()? Could also just use the logging library and make this be logging.debug().
+
+20:31-20:46
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce69eda3_f96bb75c
+Bytes: 113
+Should probably use shlex.split. I'm betting we'll need to add tests that do things like `adb shell 'foo --bar'`.
+
+27
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_fdbd6758
+Bytes: 20
+s/combine/combined/?
+
+46
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_bca92172
+Bytes: 27
+This is being traced twice.
+
+61:20-61:30
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_fc8ac9fd
+Bytes: 6
+unused
+
+122:8-122:9
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_c0f440e7
+Bytes: 19
+Unused, name it `_`
+
+139
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_3cf19171
+Bytes: 19
+Kill the blank line
+
+200
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_bc612181
+Bytes: 20
+Kill the blank line.
+
+206:17-206:27
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_9c9545d0
+Bytes: 11
+assertEqual
+
+207:17-207:27
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_bc9a01fd
+Bytes: 13
+assertGreater
+
+211:11-211:12
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_5c52dda9
+Bytes: 53
+Shouldn't be spaces at the beginning or end of these.
+
+212
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_805f982f
+Bytes: 64
+Since qualifiers is unused above, this test isn't any different.
+
+236
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_c0052008
+Bytes: 16
+Kill blank line.
+
+260
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e99a9f9_7c0cf9ad
+Bytes: 154
+Also, these tests are failing for me. The tool is named md5sum on my device. I'm guessing it was named md5 in toolbox, but the toybox one is named md5sum.
+
+265
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_206b248f
+Bytes: 85
+Replace this (and the next funciton) with a TODO so the test output isn't misleading.
+
+322:46-322:53
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_80eb1882
+Bytes: 33
+iirc `.keys()` is redundant here.
+
+329
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce69eda3_1c04d93e
+Bytes: 95
+os.path.join (and several other places)
+
+I assume we'll want to run these tests on Windows too.
+
+332
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e8c1dba_404f5034
+Bytes: 46
+Does the `with` syntax not work for `mkdtemp`?
+
+370
+Tue Jan 13 02:10:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce69eda3_9c2709a4
+Bytes: 136
+If you move the decl for this in the above block to the top of the try, you can guarantee that it will be live here. No need to re-init.
+

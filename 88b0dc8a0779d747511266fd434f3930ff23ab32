@@ -44,6 +44,14 @@ UUID: 2e99a9f9_bca92172
 Bytes: 27
 This is being traced twice.
 
+46
+Tue Jan 13 21:44:29 2015 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e99a9f9_bca92172
+UUID: ae53d9fb_193cefb1
+Bytes: 4
+Done
+
 61:20-61:30
 Tue Jan 13 02:10:22 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -122,6 +130,14 @@ UUID: 2e99a9f9_9f5c57cc
 Bytes: 8
 correct.
 
+260
+Tue Jan 13 21:44:29 2015 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e99a9f9_7c0cf9ad
+UUID: 0e6f85ad_d63de251
+Bytes: 79
+I'll change this to md5sum, but I haven't got a means to test this immediately.
+
 265
 Tue Jan 13 02:10:22 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -145,12 +161,28 @@ os.path.join (and several other places)
 
 I assume we'll want to run these tests on Windows too.
 
+329
+Tue Jan 13 21:44:29 2015 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce69eda3_1c04d93e
+UUID: 0e6f85ad_16ff5a38
+Bytes: 77
+At some point when it becomes obvious to me how to get a windows system, yes.
+
 332
 Tue Jan 13 02:10:22 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4e8c1dba_404f5034
 Bytes: 46
 Does the `with` syntax not work for `mkdtemp`?
+
+332
+Tue Jan 13 21:44:29 2015 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4e8c1dba_404f5034
+UUID: 6ecac1df_fa1451e9
+Bytes: 43
+No, this function doesn't work with.. with.
 
 370
 Tue Jan 13 02:10:22 2015 +0000

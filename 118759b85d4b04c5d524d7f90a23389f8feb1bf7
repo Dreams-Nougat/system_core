@@ -9,3 +9,11 @@ UUID: 2eab69f1_66ba92de
 Bytes: 223
 Symbolic links do exist on Windows, so should this be encapsulated in a #if defined(_WIN32)? Otherwise, this will cause aborts if you try and send a link using the comma syntax. Whereas before it would have worked, I think.
 
+339:8-339:41
+Tue Jan 13 00:15:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2eab69f1_66ba92de
+UUID: 8ed5357b_6730d204
+Bytes: 101
+sysdeps.h #defines S_ISLNK as 0 on Windows, which is why i thought i could get rid of all these #ifs.
+

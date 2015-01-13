@@ -114,6 +114,14 @@ UUID: 2e99a9f9_7c0cf9ad
 Bytes: 154
 Also, these tests are failing for me. The tool is named md5sum on my device. I'm guessing it was named md5 in toolbox, but the toybox one is named md5sum.
 
+260
+Tue Jan 13 03:14:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e99a9f9_7c0cf9ad
+UUID: 2e99a9f9_9f5c57cc
+Bytes: 8
+correct.
+
 265
 Tue Jan 13 02:10:22 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

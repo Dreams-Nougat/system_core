@@ -1,0 +1,65 @@
+Revision: 0a0440e59f7a5892ce425b27f53b2fabe7e73d81
+Patch-set: 4
+File: fs_mgr/fs_mgr.c
+
+319:11-319:27
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ecac1df_60aa6e10
+Bytes: 79
+translate_ext_labels()
+
+as assumptions are being made that are based on ext FS.
+
+347:8-347:11
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e47e93f_2626ea54
+Bytes: 133
+This is used to hold the result of an lseek()... and a read(), pick something appropriate. Or just get rid of it (see later comment).
+
+348:13-348:18
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ecac1df_0090dada
+Bytes: 35
+not used. and unsigned long anyway.
+
+349:8-349:14
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce372dc2_7288ae4a
+Bytes: 11
+why static?
+
+361:7-365:24
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e47e93f_c6b3668c
+Bytes: 282
+The adding of different types and then comparing to some hardcoded value feels wrong for what seems to be for the sake of saving a some insignificant amount of lines.
+
+if (TEMP_FAILURE_RETRY(lseek()) < 0 || TEMP_FAILURE_RETRY(read()) != 1024) {
+  close(fd);
+  continue;
+}
+close(fd);
+
+372:22-372:24
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ecac1df_c09522cf
+Bytes: 93
+meh.
+
+#include <ext4.h>  /* For struct super_block{}. Comes from system/extras/ext4_utils. */
+
+377:30-377:33
+Wed Jan 14 03:05:23 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce372dc2_326556ff
+Bytes: 27
+meh.
+
+#include <ext4.h> ...
+

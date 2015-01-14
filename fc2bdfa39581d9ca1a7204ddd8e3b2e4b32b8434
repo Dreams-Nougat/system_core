@@ -1,0 +1,11 @@
+Revision: fc2bdfa39581d9ca1a7204ddd8e3b2e4b32b8434
+Base-for-patch-set: 1
+File: init/property_service.c
+
+3
+Wed Jan 14 02:12:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e47e93f_0653ae30
+Bytes: 5
+oops.
+

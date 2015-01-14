@@ -1,0 +1,13 @@
+Revision: f080ebce4a2e39e39a0db35fb9a68af9c4b73844
+Patch-set: 3
+File: liblog/logd_write.c
+
+184:0-192:38
+Wed Jan 14 22:02:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e1dc54d_69eb6183
+Bytes: 181
+Need to document:
+
+This is the portion of the header that is validated, which gives us more strength than the magic number alone (but admittedly less than a four byte magic number).
+

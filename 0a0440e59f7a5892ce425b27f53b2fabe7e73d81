@@ -32,6 +32,14 @@ UUID: ce372dc2_7288ae4a
 Bytes: 11
 why static?
 
+349:8-349:14
+Thu Jan 15 21:38:35 2015 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce372dc2_7288ae4a
+UUID: 2b1efb59_f4f4b864
+Bytes: 131
+figured allocating 1K on the stack was a source of potential issues, but I guess not in a userspace program, so just got rid of it.
+
 361:7-365:24
 Wed Jan 14 03:05:23 2015 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -45,6 +53,14 @@ if (TEMP_FAILURE_RETRY(lseek()) < 0 || TEMP_FAILURE_RETRY(read()) != 1024) {
 }
 close(fd);
 
+361:7-365:24
+Thu Jan 15 21:38:35 2015 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e47e93f_c6b3668c
+UUID: cb3abfc4_51bdd487
+Bytes: 22
+sure, I can change it.
+
 372:22-372:24
 Wed Jan 14 03:05:23 2015 +0000
 Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -53,6 +69,14 @@ Bytes: 93
 meh.
 
 #include <ext4.h>  /* For struct super_block{}. Comes from system/extras/ext4_utils. */
+
+372:22-372:24
+Thu Jan 15 21:38:35 2015 +0000
+Author: Christoffer Dall <1057368@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6ecac1df_c09522cf
+UUID: cb3abfc4_71e1f8a7
+Bytes: 23
+thanks for the pointer.
 
 377:30-377:33
 Wed Jan 14 03:05:23 2015 +0000

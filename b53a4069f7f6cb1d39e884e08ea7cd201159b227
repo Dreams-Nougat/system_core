@@ -9,6 +9,14 @@ UUID: 0b49377c_a6d848a8
 Bytes: 20
 s/reference/pointer/
 
+39
+Thu Jan 15 20:51:10 2015 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b49377c_a6d848a8
+UUID: 2b4c3b8a_78e1c9a7
+Bytes: 4
+Done
+
 File: libsysutils/Android.mk
 
 24
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0b49377c_669490ab
 Bytes: 44
 a trailing \ makes the next diff smaller :-)
+
+24
+Thu Jan 15 20:51:10 2015 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b49377c_669490ab
+UUID: 2b4c3b8a_980485b7
+Bytes: 298
+That risks a malformed patch accidentally removing the newline, and the following statement being rolled into this definition.  In this specific case it would probably break build, but I'd prefer to standardize on omitting the trailing \ to ensure patches like that don't accidentally go unnoticed.
 

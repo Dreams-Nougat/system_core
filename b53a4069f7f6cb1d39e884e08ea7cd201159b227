@@ -34,3 +34,11 @@ UUID: 2b4c3b8a_980485b7
 Bytes: 298
 That risks a malformed patch accidentally removing the newline, and the following statement being rolled into this definition.  In this specific case it would probably break build, but I'd prefer to standardize on omitting the trailing \ to ensure patches like that don't accidentally go unnoticed.
 
+24
+Thu Jan 15 21:21:56 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b4c3b8a_980485b7
+UUID: 2b4c3b8a_53c38e6c
+Bytes: 113
+(we've standardized on the opposite because it's more convenient, and we've never seen the failure you describe.)
+

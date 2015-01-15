@@ -1,0 +1,14 @@
+Revision: 66587d73d6f109b09c73fb61a470ffebf250c415
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+337
+Thu Jan 15 23:21:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abdbcb04_f02940f3
+Bytes: 185
+*can* come
+
+
+or do you want to change bionic to make this actually true? i quite like that idea because it'll ensure this actually gets tested. right now, this will almost never happen.
+

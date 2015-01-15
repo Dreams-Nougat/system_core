@@ -1,0 +1,20 @@
+Revision: b53a4069f7f6cb1d39e884e08ea7cd201159b227
+Patch-set: 1
+File: libcutils/uevent.c
+
+39
+Thu Jan 15 19:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b49377c_a6d848a8
+Bytes: 20
+s/reference/pointer/
+
+File: libsysutils/Android.mk
+
+24
+Thu Jan 15 19:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b49377c_669490ab
+Bytes: 44
+a trailing \ makes the next diff smaller :-)
+

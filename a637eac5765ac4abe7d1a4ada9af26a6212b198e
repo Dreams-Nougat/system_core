@@ -1,0 +1,41 @@
+Revision: a637eac5765ac4abe7d1a4ada9af26a6212b198e
+Patch-set: 4
+File: debuggerd/debuggerd.cpp
+
+52
+Fri Jan 16 03:48:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bc55323_77bd4288
+Bytes: 33
+call it ON_64_BIT_SYSTEM instead?
+
+55
+Fri Jan 16 03:48:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bc55323_b7496a2e
+Bytes: 137
+(there is actually a DEBUGGER64_SOCKET_NAME you can use. DEBUGGER_SOCKET_NAME is meant to be "the one appropriate for my binary's arch".)
+
+327
+Fri Jan 16 03:48:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bc55323_f7f13272
+Bytes: 37
+this socket isn't non-blocking is it?
+
+File: include/cutils/debugger.h
+
+41
+Fri Jan 16 03:48:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abdbcb04_e49ae279
+Bytes: 83
+if we switched this over to C++ we could use enum class and specify the size there.
+
+44
+Fri Jan 16 03:48:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bc55323_97d54ecb
+Bytes: 153
+i understand why the address needs to be uint64_t, but what about the others? would it be clear to specify __packed__ instead and keep the natural types?
+

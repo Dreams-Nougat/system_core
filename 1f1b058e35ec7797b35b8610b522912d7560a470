@@ -9,6 +9,14 @@ UUID: 8b6b67dc_d77f5c95
 Bytes: 24
 Why did you remove this?
 
+54
+Fri Jan 16 16:16:58 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8b6b67dc_d77f5c95
+UUID: 2bcfdb48_209e92c9
+Bytes: 58
+sorry, left over from testing a change that didn't pan out
+
 File: libion/tests/ion_test_fixture.cpp
 
 59
@@ -17,4 +25,12 @@ Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4b7def9e_55002cf8
 Bytes: 1
 ?
+
+59
+Fri Jan 16 16:16:58 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b7def9e_55002cf8
+UUID: 2bcfdb48_8f1d395a
+Bytes: 226
+removed this because certain values of i don't return -ENODEV. Some return EBUSY, and it makes all tests fail automatically for no good reason. All this does is try to find what heaps masks are valid. Replacing with a warning.
 

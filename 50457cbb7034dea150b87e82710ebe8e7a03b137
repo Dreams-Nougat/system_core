@@ -2,6 +2,13 @@ Revision: 50457cbb7034dea150b87e82710ebe8e7a03b137
 Patch-set: 1
 File: init/Android.mk
 
+37
+Tue Jan 20 22:32:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b2527f1_8733c611
+Bytes: 188
+As opposed to doing it for all static binaries in the build system? I get the feeling we're more likely to trip over this problem if we fix it this way than if we just fix the build flags.
+
 59
 Tue Jan 20 22:32:17 2015 +0000
 Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>

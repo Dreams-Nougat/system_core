@@ -1,0 +1,11 @@
+Revision: 50457cbb7034dea150b87e82710ebe8e7a03b137
+Patch-set: 1
+File: init/Android.mk
+
+59
+Tue Jan 20 22:32:17 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab202bdf_0b9c01f8
+Bytes: 147
+It also seems like we should support something like "BUILD_STATIC_EXECUTABLE" for this kind of thing, rather than relying on setting -static above.
+

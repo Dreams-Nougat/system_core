@@ -24,3 +24,12 @@ UUID: cb2b9fc1_4f18c1e2
 Bytes: 178
 We have `LOCAL_FORCE_STATIC_EXECUTABLE := true` that is used for `BUILD_EXECUTABLE`. Wasn't the problem that `LOCAL_FORCE_STATIC_EXECUTABLE` uses `-Bstatic` instead of `-static`?
 
+59
+Tue Jan 20 22:39:09 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab202bdf_0b9c01f8
+UUID: ab202bdf_4ba3990e
+Bytes: 207
+We have "LOCAL_FORCE_STATIC_EXECUTABLE := true" for that.
+As the comment (and a previous email) mentioned, "To minimize risk, we now add -static only to link 'init'.", not change the core build system flags.
+

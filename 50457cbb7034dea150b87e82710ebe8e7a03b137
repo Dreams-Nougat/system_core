@@ -33,3 +33,11 @@ Bytes: 207
 We have "LOCAL_FORCE_STATIC_EXECUTABLE := true" for that.
 As the comment (and a previous email) mentioned, "To minimize risk, we now add -static only to link 'init'.", not change the core build system flags.
 
+59
+Tue Jan 20 22:40:40 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab202bdf_4ba3990e
+UUID: cb2b9fc1_afde9d94
+Bytes: 93
+But if we don't change the core flags, this problem will only move to the next static binary.
+

@@ -16,3 +16,11 @@ UUID: ab202bdf_0b9c01f8
 Bytes: 147
 It also seems like we should support something like "BUILD_STATIC_EXECUTABLE" for this kind of thing, rather than relying on setting -static above.
 
+59
+Tue Jan 20 22:39:00 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab202bdf_0b9c01f8
+UUID: cb2b9fc1_4f18c1e2
+Bytes: 178
+We have `LOCAL_FORCE_STATIC_EXECUTABLE := true` that is used for `BUILD_EXECUTABLE`. Wasn't the problem that `LOCAL_FORCE_STATIC_EXECUTABLE` uses `-Bstatic` instead of `-static`?
+

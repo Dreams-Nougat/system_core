@@ -1,0 +1,11 @@
+Revision: ac07c64dd9b3cacf190ae138face5ddb4ad3ab1f
+Patch-set: 5
+File: debuggerd/debuggerd.cpp
+
+324
+Wed Jan 21 00:58:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bdf1324_c1104444
+Bytes: 117
+ah, i missed that this is a write to fd, not sock_fd (which is opened in this function and clearly not non-blocking).
+

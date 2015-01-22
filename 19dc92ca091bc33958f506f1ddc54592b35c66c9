@@ -27,3 +27,11 @@ UUID: 0bb21712_8405cc3e
 Bytes: 247
 Failure to write to pstore_fd is not an error we want to propagate, we will accept success if we can write to the primary goal of logd, but fail to write to pstore. However, I can see a good reason to add TEMP_FAILURE_RETRY for all writev cases...
 
+234:8-234:43
+Thu Jan 22 18:22:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0bb21712_8405cc3e
+UUID: 6bd4732e_96318c8e
+Bytes: 96
+(if you're deliberately ignoring it, worth adding a comment. and probably not assigning to ret.)
+

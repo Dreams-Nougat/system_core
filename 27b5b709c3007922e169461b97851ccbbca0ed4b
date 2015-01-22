@@ -1,0 +1,11 @@
+Revision: 27b5b709c3007922e169461b97851ccbbca0ed4b
+Patch-set: 5
+File: liblog/logd_write.c
+
+234
+Thu Jan 22 18:22:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bd4732e_f65b20d1
+Bytes: 15
+oh, you did :-)
+

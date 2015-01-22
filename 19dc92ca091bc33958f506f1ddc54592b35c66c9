@@ -9,3 +9,13 @@ UUID: 0bb21712_81a81ee9
 Bytes: 189
 It is considered a kernel/driver bug if the driver does not write this atomically (reasoned limit: PAGE_SIZE). ToDo: Suggest adding a gTest to check if the driver fails to write atomically.
 
+234:8-234:43
+Thu Jan 22 16:39:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0bb21712_81a81ee9
+UUID: 6b763314_8fa1fd36
+Bytes: 146
+failing with EINTR isn't a kernel bug though.
+
+you also don't check 'ret' before you overwrite it on L258 or potentially return non-error on L243.
+

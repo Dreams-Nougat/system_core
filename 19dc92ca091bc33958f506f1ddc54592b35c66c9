@@ -1,0 +1,11 @@
+Revision: 19dc92ca091bc33958f506f1ddc54592b35c66c9
+Patch-set: 4
+File: liblog/logd_write.c
+
+234:8-234:43
+Thu Jan 22 16:30:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0bb21712_81a81ee9
+Bytes: 189
+It is considered a kernel/driver bug if the driver does not write this atomically (reasoned limit: PAGE_SIZE). ToDo: Suggest adding a gTest to check if the driver fails to write atomically.
+

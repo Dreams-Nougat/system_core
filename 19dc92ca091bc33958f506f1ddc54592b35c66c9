@@ -19,3 +19,11 @@ failing with EINTR isn't a kernel bug though.
 
 you also don't check 'ret' before you overwrite it on L258 or potentially return non-error on L243.
 
+234:8-234:43
+Thu Jan 22 17:02:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b763314_8fa1fd36
+UUID: 0bb21712_8405cc3e
+Bytes: 247
+Failure to write to pstore_fd is not an error we want to propagate, we will accept success if we can write to the primary goal of logd, but fail to write to pstore. However, I can see a good reason to add TEMP_FAILURE_RETRY for all writev cases...
+

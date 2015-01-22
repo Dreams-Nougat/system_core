@@ -1,0 +1,11 @@
+Revision: 6b01103bb0ec2ed956aece8d099702d8fcd78de1
+Patch-set: 1
+File: logd/LogListener.cpp
+
+90:4-90:40
+Thu Jan 22 01:35:21 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b763314_29e649c1
+Bytes: 59
+I think an unrelated change accidentally got mixed in here?
+

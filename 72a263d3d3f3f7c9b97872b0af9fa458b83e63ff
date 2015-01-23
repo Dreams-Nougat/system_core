@@ -1,0 +1,36 @@
+Revision: 72a263d3d3f3f7c9b97872b0af9fa458b83e63ff
+Patch-set: 5
+File: include/log/logger.h
+
+158
+Fri Jan 23 22:39:40 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ebadc3fd_b2420070
+Bytes: 208
+Ugh, this is ugly.
+
+Unless I'm misreading this, struct logger_list is internal to the logger only and you can change its definition with impunity.  So just add another flag rather than abusing the mode field.
+
+File: liblog/log_read.c
+
+358:0-358:62
+Fri Jan 23 22:39:40 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ebadc3fd_92c25c67
+Bytes: 3
+???
+
+635
+Fri Jan 23 22:39:40 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b16fb00_f4c11814
+Bytes: 76
+Put this branch in a helper, it's too long and complex to leave nested here.
+
+729:8-730:19
+Fri Jan 23 22:39:40 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b16fb00_14c93437
+Bytes: 23
+__builtin_unreachable()
+

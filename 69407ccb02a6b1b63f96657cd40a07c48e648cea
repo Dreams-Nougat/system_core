@@ -17,3 +17,11 @@ UUID: 4b8a4f30_b0db76a4
 Bytes: 143
 yes indeed, nicely spotted! Since this is merged, should I send a follow-up patch or can you guys fix it up more easily? Please advice. Thanks.
 
+352
+Fri Jan 23 10:07:30 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b8a4f30_b0db76a4
+UUID: 4b8a4f30_b08d3695
+Bytes: 130
+Just upload a patch to fix it and add the same reviewers. There are no hidden ways to patch AOSP, all goes through Gerrit. Thanks.
+

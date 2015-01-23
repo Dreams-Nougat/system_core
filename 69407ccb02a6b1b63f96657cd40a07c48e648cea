@@ -1,0 +1,11 @@
+Revision: 69407ccb02a6b1b63f96657cd40a07c48e648cea
+Patch-set: 5
+File: fs_mgr/fs_mgr.c
+
+352
+Fri Jan 23 00:37:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0bf937d6_ac4e6788
+Bytes: 43
+should have been "(ent->d_type != DT_BLK)"?
+

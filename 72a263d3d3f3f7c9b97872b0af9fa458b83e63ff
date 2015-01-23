@@ -11,6 +11,20 @@ Ugh, this is ugly.
 
 Unless I'm misreading this, struct logger_list is internal to the logger only and you can change its definition with impunity.  So just add another flag rather than abusing the mode field.
 
+158
+Fri Jan 23 23:40:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ebadc3fd_b2420070
+UUID: 4bc7afd5_a5759e6c
+Bytes: 352
+Not internal to logger, used by all that wish to read the logs (including outsiders, of which I expect set to be zero since I did not release with any fanfare) and why I resisted changing the API. One of the places is a separate project.
+
+- logcat
+- debuggerd
+- jni
+
+I'd be more willing to create a new function with a descriptive name than add a flag.
+
 File: liblog/log_read.c
 
 358:0-358:62
@@ -19,6 +33,14 @@ Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ebadc3fd_92c25c67
 Bytes: 3
 ???
+
+358:0-358:62
+Fri Jan 23 23:40:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ebadc3fd_92c25c67
+UUID: 6bcab3df_06563a9e
+Bytes: 48
+This was for nnk to see, I can remove it now ...
 
 635
 Fri Jan 23 22:39:40 2015 +0000
@@ -33,4 +55,12 @@ Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2b16fb00_14c93437
 Bytes: 23
 __builtin_unreachable()
+
+729:8-730:19
+Fri Jan 23 23:40:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b16fb00_14c93437
+UUID: 6bcab3df_a6ada62d
+Bytes: 79
+TKS, I will see if there is something in bionic that defines a helper for this.
 

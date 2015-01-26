@@ -23,6 +23,14 @@ If I'm understanding you correctly, you're suggesting a separate write to the lo
 
 I'll do some studying of the new commit for pstore and think about that a bit in this context.  It's totally new to me.
 
+193:1-193:35
+Mon Jan 26 23:28:24 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b26339e_49ff85bc
+UUID: b7ec137b_e469b48e
+Bytes: 127
+If the skipped count is blocked, then do not proceed to report the message, increment skip count for next time. Keep it simple.
+
 188:8-203:25
 Sat Jan 24 00:00:59 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -13,10 +13,28 @@ But may be a better approach especially given that this value has a different co
 
 (I had a prototype doing so some time ago, resorted to increasing /proc/sys/net/unix/max_dgram_qlen instead to stop the noise).
 
+193:1-193:35
+Mon Jan 26 21:36:43 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4bc7afd5_45a94a18
+UUID: 6b26339e_49ff85bc
+Bytes: 424
+If I'm understanding you correctly, you're suggesting a separate write to the logd socket when the count > 0, followed by the original write?  That could work, but introduces some extra permutations.  Would we still try to write the original message if the attempt to write the drop message gets EAGAIN?
+
+I'll do some studying of the new commit for pstore and think about that a bit in this context.  It's totally new to me.
+
 188:8-203:25
 Sat Jan 24 00:00:59 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2bc43bd1_87c22867
 Bytes: 132
 Sorry to disappoint, a non-trivial rebase will be required, we changed the way we handle wire format _today_ to make it scalable ;-{
+
+188:8-203:25
+Mon Jan 26 21:36:43 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2bc43bd1_87c22867
+UUID: ab2cab7b_2bafa5a0
+Bytes: 71
+No problem.  I'll get familiar with the upstream changes and try again.
 

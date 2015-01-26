@@ -9,3 +9,13 @@ UUID: eb3223d2_2a7ddf9c
 Bytes: 176
 I trying to find the definition of the above structure in master branch @ external/kernel-headers/original/uapi/linux/usb/functionfs.h.. Where is the above structure defined ??
 
+76:11-76:39
+Mon Jan 26 19:39:52 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eb3223d2_2a7ddf9c
+UUID: 8bd5277b_5015825e
+Bytes: 111
+This depends on the new kernel header import from this CL:
+
+https://android-review.googlesource.com/#/c/124884/
+

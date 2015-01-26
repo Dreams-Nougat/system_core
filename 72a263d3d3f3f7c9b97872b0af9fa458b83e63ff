@@ -25,6 +25,15 @@ Not internal to logger, used by all that wish to read the logs (including outsid
 
 I'd be more willing to create a new function with a descriptive name than add a flag.
 
+159:46-159:54
+Mon Jan 26 17:55:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b58c71b_ef8be1ff
+Bytes: 406
+Currently mode takes the O_NONBLOCK, O_RDONLY and now the O_PSTORE flags. The mode is a 'flags' variable, adding another flag variable when we have so many bits still available does present a problem for me.
+
+Would you feel more comfortable me using O_DIRECT without the above rename; and documenting each flags effect? Or inventing a new set of mode flags that does not inherit from the system open flags?
+
 File: liblog/log_read.c
 
 358:0-358:62

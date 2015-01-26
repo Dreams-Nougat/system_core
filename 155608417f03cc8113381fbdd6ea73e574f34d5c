@@ -1,0 +1,20 @@
+Revision: 155608417f03cc8113381fbdd6ea73e574f34d5c
+Patch-set: 2
+File: adb/Android.mk
+
+21
+Mon Jan 26 16:45:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b8a879b_25697adc
+Bytes: 122
+is it worth naming these libadb-target and libadb-host to reduce confusion (and/or) accidental linkage with the wrong one?
+
+File: adb/adb.h
+
+23
+Mon Jan 26 16:45:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b8a879b_45667e0d
+Bytes: 24
+is this right for win32?
+

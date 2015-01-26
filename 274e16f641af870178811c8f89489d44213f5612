@@ -1,0 +1,11 @@
+Revision: 274e16f641af870178811c8f89489d44213f5612
+Patch-set: 1
+File: adb/usb_linux_client.c
+
+76:11-76:39
+Mon Jan 26 19:21:52 2015 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eb3223d2_2a7ddf9c
+Bytes: 176
+I trying to find the definition of the above structure in master branch @ external/kernel-headers/original/uapi/linux/usb/functionfs.h.. Where is the above structure defined ??
+

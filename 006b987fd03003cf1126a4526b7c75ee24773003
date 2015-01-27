@@ -9,6 +9,14 @@ UUID: 57fbd733_242436de
 Bytes: 47
 seems weird for this to be included in log.h...
 
+33
+Tue Jan 27 06:48:39 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57fbd733_242436de
+UUID: d7e7c792_5c4a759a
+Bytes: 45
+After removing this, checkbuild still pass...
+
 File: liblog/logd_write_kern.c
 
 19
@@ -32,6 +40,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d7e7c792_5c36f513
 Bytes: 9
 or glibc?
+
+31
+Tue Jan 27 06:48:39 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7e7c792_5c36f513
+UUID: 57fbd733_e469ae8e
+Bytes: 96
+I am not sure what do you mean? Find similar function like android_set_abort_message() in glibc?
 
 File: libutils/Timers.cpp
 

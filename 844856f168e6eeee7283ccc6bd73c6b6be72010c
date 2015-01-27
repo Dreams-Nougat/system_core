@@ -1,0 +1,13 @@
+Revision: 844856f168e6eeee7283ccc6bd73c6b6be72010c
+Patch-set: 8
+File: liblog/log_read.c
+
+663:24-663:34
+Tue Jan 27 00:32:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_9e0fdd54
+Bytes: 295
+Security Bug: We can not allow LOG_ID_KERNEL through this (or the logd socket) interface as klogd is an internal daemon that is part of logd. Revisit as this should be fixed and institutionalized in the liblog writer, reader and within logd itself.
+
+We will not fix it in the context of this CL.
+

@@ -1,0 +1,36 @@
+Revision: 006b987fd03003cf1126a4526b7c75ee24773003
+Patch-set: 1
+File: include/log/log.h
+
+33
+Tue Jan 27 04:30:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_242436de
+Bytes: 47
+seems weird for this to be included in log.h...
+
+File: liblog/logd_write_kern.c
+
+19
+Tue Jan 27 04:30:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_7c41b95b
+Bytes: 40
+surely this doesn't get built for Win32?
+
+31
+Tue Jan 27 04:30:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_5c36f513
+Bytes: 9
+or glibc?
+
+File: libutils/Timers.cpp
+
+32
+Tue Jan 27 04:30:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7ec137b_bb6d076a
+Bytes: 19
+is this used below?
+

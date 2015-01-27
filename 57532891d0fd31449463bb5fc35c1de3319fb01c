@@ -146,3 +146,11 @@ UUID: d7e7c792_974a166a
 Bytes: 165
 On its own, replacing HAVE_PTHREADS with !_WIN32 may be considered narrow-minded; however any OS without pthreads (or pthreads wrapper) is probably narrow minded ;-}
 
+30:0-30:20
+Tue Jan 27 16:06:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7e7c792_974a166a
+UUID: 57fbd733_0496daac
+Bytes: 166
+the only thing we're here for is to kill HAVE_PTHREADS. another step on the road to removing the evil namespace pollution that is^Wwas AndroidConfig.h. (nearly gone.)
+

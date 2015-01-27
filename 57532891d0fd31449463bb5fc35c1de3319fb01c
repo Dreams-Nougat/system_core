@@ -1,5 +1,37 @@
 Revision: 57532891d0fd31449463bb5fc35c1de3319fb01c
 Patch-set: 2
+File: include/cutils/threads.h
+
+65:62-65:63
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_c4ca32cd
+Bytes: 199
+There are some references to localized fragment spaces needing squashing here and there. Only if respun, not a priority. Only do localized ones, a complete squash may result in merge conflict issues.
+
+102:16-102:17
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7ec137b_56eed242
+Bytes: 29
+If respun, squash this space.
+
+135:42-135:43
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_e4bd2e45
+Bytes: 5
+ditto
+
+File: include/log/log.h
+
+31:0-33:18
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7ec137b_76f9d60a
+Bytes: 61
+not in sorted order, one line could be moved to correct this.
+
 File: include/log/logd.h
 
 32
@@ -10,4 +42,107 @@ Bytes: 163
 this seems like a bug too. but then so does the fact that <log.h> includes <logd.h>!
 
 (and if the comment on L25 is true, why is all this in a public header file?)
+
+32
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7e7c792_77cc32be
+UUID: 57fbd733_84cd4aed
+Bytes: 1048
+There are no flies on me (truly, I make this up while I go along)
+
+logd.h is for the prototypes used in liblog and for public consumption and log.h is for everyone else to get the access macros.
+
+Thus private only in the sense that it is shared between internal use and external, and the users are to only utilize the macros as their abstract interface. Direct calls to the liblog functions is undesirable.
+
+I read the comment above as the headers being used by the liblog C files (system), and have no usefulness to any (external) consumers that are reading this for the API references.
+
+A (separate?) cleanup could be to strip this file down to bare minimum API prototypes perhaps even with a comment to not call the liblog functions directly as they are free to change, and let the liblog (and etc) read their own system include files.
+
+The liblog reader functions notwithstanding in the API below, they have no macros to wrap them up. We want them to use exec logcat, but sometimes one wants a native function (tombstone, jni, logcat currently)
+
+File: libcutils/threads.c
+
+10:70-10:71
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_440982a3
+Bytes: 12
+squash space
+
+11:68-11:69
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_04137ad5
+Bytes: 5
+ditto
+
+13:70-13:71
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_d7577e0d
+Bytes: 5
+ditto
+
+27:0-27:4
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7ec137b_163a8a45
+Bytes: 23
+if respin, squash space
+
+28:63-28:64
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7ec137b_f636065f
+Bytes: 5
+ditto
+
+50:0-50:4
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_84ff8a09
+Bytes: 5
+ditto
+
+77:0-77:4
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_f75a8237
+Bytes: 5
+ditto
+
+File: libutils/Threads.cpp
+
+308:0-308:4
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_c475921b
+Bytes: 59
+If you respin, squash space as per Android Coding standard.
+
+328:0-328:4
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_a472862f
+Bytes: 5
+ditto
+
+File: libutils/Timers.cpp
+
+20:0-24:17
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_d7809e25
+Bytes: 78
+Sorted order, good. System headers before Android header before local headers.
+
+File: libutils/misc.cpp
+
+30:0-30:20
+Tue Jan 27 15:53:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_974a166a
+Bytes: 165
+On its own, replacing HAVE_PTHREADS with !_WIN32 may be considered narrow-minded; however any OS without pthreads (or pthreads wrapper) is probably narrow minded ;-}
 

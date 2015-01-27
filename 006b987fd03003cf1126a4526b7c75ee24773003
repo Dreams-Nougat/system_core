@@ -17,6 +17,14 @@ UUID: d7e7c792_5c4a759a
 Bytes: 45
 After removing this, checkbuild still pass...
 
+33
+Tue Jan 27 15:46:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7e7c792_5c4a759a
+UUID: d7e7c792_970fb62b
+Bytes: 165
+A _lot_ of these includes could be suspect. In this context, or future, we should consider a cleanup to find out just how many of these includes are really required.
+
 File: liblog/logd_write_kern.c
 
 19

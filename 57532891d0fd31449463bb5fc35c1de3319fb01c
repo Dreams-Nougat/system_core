@@ -1,0 +1,13 @@
+Revision: 57532891d0fd31449463bb5fc35c1de3319fb01c
+Patch-set: 2
+File: include/log/logd.h
+
+32
+Tue Jan 27 06:53:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7e7c792_77cc32be
+Bytes: 163
+this seems like a bug too. but then so does the fact that <log.h> includes <logd.h>!
+
+(and if the comment on L25 is true, why is all this in a public header file?)
+

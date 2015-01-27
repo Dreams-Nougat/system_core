@@ -52,6 +52,14 @@ Yup, not build for WIN32.
 
 A long legacy of hopes dashed?
 
+19
+Tue Jan 27 22:33:13 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b7ec137b_969b3ae1
+UUID: 770ffb24_5d6eeb1b
+Bytes: 260
+As far as I can see, whether logd_write_kern.c is used is determinted by TARGET_USES_LOGD. I guess because we can make sure win_sdk target will not never make TARGET_USES_LOGD=false, we can get the conclusion that logd_write_kern.c will not get built for host.
+
 31
 Tue Jan 27 04:30:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

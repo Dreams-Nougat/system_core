@@ -49,6 +49,14 @@ UUID: 57fbd733_e469ae8e
 Bytes: 96
 I am not sure what do you mean? Find similar function like android_set_abort_message() in glibc?
 
+31
+Tue Jan 27 06:50:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57fbd733_e469ae8e
+UUID: 57fbd733_245f96dc
+Bytes: 150
+i was too lazy to retype my previous comment ("surely this doesn't get built for Win32") as "surely this doesn't get built for glibc [i.e. the host]".
+
 File: libutils/Timers.cpp
 
 32

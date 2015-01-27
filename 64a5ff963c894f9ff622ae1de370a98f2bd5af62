@@ -1,0 +1,11 @@
+Revision: 64a5ff963c894f9ff622ae1de370a98f2bd5af62
+Base-for-patch-set: 2
+File: adb/Android.mk
+
+179
+Tue Jan 27 02:06:54 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57fbd733_016dac9a
+Bytes: 48
+Oops. Had intended this to be a separate commit.
+

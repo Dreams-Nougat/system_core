@@ -34,6 +34,16 @@ UUID: b7ec137b_1b4e33fc
 Bytes: 8
 salyzyn?
 
+19
+Tue Jan 27 15:44:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b7ec137b_1b4e33fc
+UUID: b7ec137b_969b3ae1
+Bytes: 57
+Yup, not build for WIN32.
+
+A long legacy of hopes dashed?
+
 31
 Tue Jan 27 04:30:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

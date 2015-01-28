@@ -17,3 +17,13 @@ UUID: f7cbeb3a_2bdc399d
 Bytes: 63
 LOCAL_WHOLE_STATIC_LIBRARIES to override the default weak stub.
 
+52:0-52:28
+Wed Jan 28 21:38:48 2015 +0000
+Author: Ajay Dudani <1021113@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f7cbeb3a_2bdc399d
+UUID: f7cbeb3a_8bca0dcc
+Bytes: 196
+I think he just meant the tab/indentation - rather than asking to remove the line.
+
+As for tab -- Its not done that way eg: in line 24, 25 -- but if you want I have uploaded another patch with tab
+

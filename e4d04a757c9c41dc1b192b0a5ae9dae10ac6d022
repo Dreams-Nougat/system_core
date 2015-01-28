@@ -1,0 +1,58 @@
+Revision: e4d04a757c9c41dc1b192b0a5ae9dae10ac6d022
+Patch-set: 2
+File: include/log/logger.h
+
+185:0-189:31
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d72fc7b3_22a0ee0b
+Bytes: 92
+Not proud of this API, but it does permit testing.
+
+__android_set_log_backend(enum type);
+
+?
+
+File: liblog/logd_write.c
+
+638:9-638:9
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7341308_c15dc232
+Bytes: 287
+At this point it would be 'nice' to be able to reclaim the 4KB buffer associated with the payload and move it back into the zero-page queue. We can do so by making the payload individually pre-allocated, and in this thread free it, then calloc it again.
+
+This would help svelte concerns.
+
+679:4-679:39
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57ae7766_8c2c6b96
+Bytes: 228
+This is only zero syscall on 64 bit platforms. It incurs a syscall on 32 bit platforms. Lets consider ifdef'ing this to the Consumer-side of the buffer to remove the syscall overhead; the compromise being our timestamp will lag.
+
+710:8-720:9
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57ae7766_2c3537d5
+Bytes: 161
+We also would like the background thread to be at BATCH priority. This means it could be delayed as much as 2/HZ (20ms) from executing on moderate to heavy load.
+
+735:0-758:5
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57ae7766_6ce24fdf
+Bytes: 75
+ugly bag of mostly water, move cleanup to thread; drop the stopped boolean.
+
+File: liblog/tests/liblog_benchmark.cpp
+
+134:7-134:46
+Wed Jan 28 22:43:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7341308_219d8e7c
+Bytes: 342
+Bad move ex-lax (I can say this to myself, I wrote the code), with screen off this causes the CPU to clock down. We need to select a sleep that does not cause CPU to down-clock, but allow logd to catch up so that we do not get the automatic EAGAIN when the socket it full.
+
+Redefine light load not as mostly idle, but instead as loping along.
+

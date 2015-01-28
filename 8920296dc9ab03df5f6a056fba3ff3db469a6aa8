@@ -1,0 +1,11 @@
+Revision: 8920296dc9ab03df5f6a056fba3ff3db469a6aa8
+Patch-set: 1
+File: init/Android.mk
+
+52:0-52:28
+Wed Jan 28 21:30:55 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 97b46fb1_ee887b37
+Bytes: 25
+-> LOCAL_STATIC_LIBRARIES
+

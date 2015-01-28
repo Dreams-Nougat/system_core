@@ -27,3 +27,11 @@ I think he just meant the tab/indentation - rather than asking to remove the lin
 
 As for tab -- Its not done that way eg: in line 24, 25 -- but if you want I have uploaded another patch with tab
 
+52:0-52:28
+Wed Jan 28 21:50:33 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f7cbeb3a_2bdc399d
+UUID: 57ae7766_a9d7d9f4
+Bytes: 78
+ah, ok.. I thought it works for LOCAL_STATIC_LIBRARIES as well. did you check?
+

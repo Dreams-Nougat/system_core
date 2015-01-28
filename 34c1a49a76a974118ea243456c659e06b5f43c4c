@@ -1,0 +1,11 @@
+Revision: 34c1a49a76a974118ea243456c659e06b5f43c4c
+Patch-set: 2
+File: init/property_service.c
+
+537
+Wed Jan 28 23:40:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57ae7766_0f838de5
+Bytes: 58
+can you explain how /vendor/build.prop doesn't cover this?
+

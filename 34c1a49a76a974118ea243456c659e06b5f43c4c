@@ -9,3 +9,14 @@ UUID: 57ae7766_0f838de5
 Bytes: 58
 can you explain how /vendor/build.prop doesn't cover this?
 
+537
+Wed Jan 28 23:52:18 2015 +0000
+Author: Ajay Dudani <1021113@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57ae7766_0f838de5
+UUID: f7cbeb3a_8e2c5b96
+Bytes: 293
+We need to set a few properties that can only be determined at runtime.  A  
+lot of standard Android services (zygote, surfaceflinger, etc.) just start  
+in init.rc.  We can't guarantee our runtime detected properties to be set  
+prior to those services using them without something like this.
+

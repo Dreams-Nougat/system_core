@@ -31,6 +31,14 @@ UUID: 57ae7766_8c2c6b96
 Bytes: 228
 This is only zero syscall on 64 bit platforms. It incurs a syscall on 32 bit platforms. Lets consider ifdef'ing this to the Consumer-side of the buffer to remove the syscall overhead; the compromise being our timestamp will lag.
 
+679:4-679:39
+Wed Jan 28 23:49:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57ae7766_8c2c6b96
+UUID: 57ae7766_8f19bd1c
+Bytes: 189
+something useful the systems team could do is get the LP32 kernels to add this to their vdsos. adding LP32 support to the C library vdso code is trivial if you can get this into the kernel.
+
 710:8-720:9
 Wed Jan 28 22:43:54 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

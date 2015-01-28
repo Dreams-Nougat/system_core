@@ -9,3 +9,11 @@ UUID: 97b46fb1_ee887b37
 Bytes: 25
 -> LOCAL_STATIC_LIBRARIES
 
+52:0-52:28
+Wed Jan 28 21:35:55 2015 +0000
+Author: David Ng <1013003@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97b46fb1_ee887b37
+UUID: f7cbeb3a_2bdc399d
+Bytes: 63
+LOCAL_WHOLE_STATIC_LIBRARIES to override the default weak stub.
+

@@ -9,6 +9,13 @@ UUID: 571af7b4_e6eb9e7b
 Bytes: 48
 Yuck, there has to be a private header for this!
 
+538:26-538:84
+Thu Jan 29 22:45:04 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57df5723_5e8c151d
+Bytes: 258
+How does this compare to LOGGER_ENTRY_MAX_PAYLOAD ?  It looks like it's a difference of sizeof(uint16_t) and sizeof(android_pmsg_log_header_t) ?  Should LOGGER_ENTRY_MAX_PAYLOAD be used instead of starting with 4*1024 in case of future changes to that value?
+
 662:4-662:39
 Thu Jan 29 21:17:03 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,6 +31,15 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 77da9b34_ff54ff0a
 Bytes: 129
 As noted, we now take a small hit on page-fault here. The major savings are that 64K of memory (per user space process) is freed.
+
+715
+Thu Jan 29 22:45:04 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7998784_f2ab489a
+Bytes: 265
+Is the expected success value of this function 0 or the # of bytes written?  __write_log_to_daemon() looks to return the # of bytes written.
+
+Do the semantics change since this function doesn't actually write the bytes but rather queues them up for backend writing?
 
 757:0-757:47
 Thu Jan 29 21:17:03 2015 +0000

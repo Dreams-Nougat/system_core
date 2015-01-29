@@ -11,6 +11,14 @@ bool assume_ownership = true;
 
 and a comment in the document about what it means ?
 
+112
+Thu Jan 29 21:59:27 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 578037c4_9c9fcd3f
+UUID: d7b427e0_7ac0f94e
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 292

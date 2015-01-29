@@ -1,5 +1,16 @@
 Revision: 6c584a068feb1abae23798e03335528ed934d06e
 Patch-set: 7
+File: include/ziparchive/zip_archive.h
+
+112
+Thu Jan 29 19:55:09 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 578037c4_9c9fcd3f
+Bytes: 82
+bool assume_ownership = true;
+
+and a comment in the document about what it means ?
+
 File: libziparchive/zip_archive.cc
 
 292

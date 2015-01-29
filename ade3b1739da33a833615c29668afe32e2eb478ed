@@ -1,0 +1,36 @@
+Revision: ade3b1739da33a833615c29668afe32e2eb478ed
+Patch-set: 3
+File: liblog/logd_write.c
+
+23:0-24:38
+Thu Jan 29 21:17:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 571af7b4_e6eb9e7b
+Bytes: 48
+Yuck, there has to be a private header for this!
+
+662:4-662:39
+Thu Jan 29 21:17:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77da9b34_9f5db333
+Bytes: 80
+Accept the syscall on 32-bit ARM.
+
+ToDo: get vdso working on 32-bit ARM kernels.
+
+669:4-669:29
+Thu Jan 29 21:17:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77da9b34_ff54ff0a
+Bytes: 129
+As noted, we now take a small hit on page-fault here. The major savings are that 64K of memory (per user space process) is freed.
+
+757:0-757:47
+Thu Jan 29 21:17:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 571af7b4_e6d43ec4
+Bytes: 57
+Interface is not available to FAKE or WIN32.
+
+No Big Deal
+

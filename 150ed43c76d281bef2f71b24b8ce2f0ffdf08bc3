@@ -37,6 +37,13 @@ UUID: 37a823a2_60062c43
 Bytes: 204
 sem_post carries a syscall to futex if there is a waiter. This is the most likely scenario ... we need to change this to wake up when half full, or on timed wait (in the context of the background thread).
 
+700
+Fri Jan 30 19:07:36 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9708efac_c813cf56
+Bytes: 207
+Could this be moved into __write_to_log_fifo_init() as well?  It won't help perf much beyond the first call to this function, but it'll be cleaner to have all of the init operations in the one init function.
+
 720:3-720:24
 Fri Jan 30 16:43:34 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 72616909151f020627ab64433308a9a4e1244813
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+244
+Fri Jan 30 18:12:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17cebfa3_57bc0eb7
+Bytes: 53
+seems odd that this would only affect x86 and x86-64.
+

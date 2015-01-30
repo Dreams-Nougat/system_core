@@ -17,10 +17,47 @@ UUID: b79c1385_0498988b
 Bytes: 99
 Are you going to try and push this upstream? If so, it might make sense to match the current style.
 
+149
+Fri Jan 30 03:01:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b79c1385_0498988b
+UUID: 17979f55_4f5d51ba
+Bytes: 139
+note that this is toolbox :-)
+
+i was just matching the local style. we'll delete this turd eventually, but it's not on the "imminent" list.
+
 275:12-275:40
 Fri Jan 30 02:37:36 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 97a1cfbc_c0edfe45
 Bytes: 119
 You need to check that there is an argv[2] to atoi. You should probably display an error if the argument doesn't exist.
+
+275:12-275:40
+Fri Jan 30 03:01:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97a1cfbc_c0edfe45
+UUID: 378ae32f_4d20f913
+Bytes: 99
+the rest of this code doesn't check for errors so i didn't bother.
+
+i'll do it properly for toybox.
+
+275:12-275:40
+Fri Jan 30 03:01:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97a1cfbc_c0edfe45
+UUID: 578d9743_0e26eb32
+Bytes: 99
+the rest of this code doesn't check for errors so i didn't bother.
+
+i'll do it properly for toybox.
+
+281
+Fri Jan 30 03:01:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 378ae32f_6d25b522
+Bytes: 56
+(yuck. i dread to think how many people are using this.)
 

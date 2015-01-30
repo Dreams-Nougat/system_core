@@ -1,0 +1,46 @@
+Revision: 150ed43c76d281bef2f71b24b8ce2f0ffdf08bc3
+Patch-set: 4
+File: liblog/logd_write.c
+
+587:0-588:47
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f7b12b0e_3e13a584
+Bytes: 82
+Wake up on timeout to deliver pending or roughly when half full to properly batch?
+
+662:4-662:33
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f7b12b0e_bb4907a7
+Bytes: 37
+Does not defer to kernel, no syscall.
+
+669:0-669:24
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a823a2_1d3b5318
+Bytes: 73
+syscall to futex if busy. If one writer in process, never hits a syscall.
+
+681:0-695:5
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f7b12b0e_9b4e4bab
+Bytes: 134
+cost of copy. We could optimize by unravelling the loop given we already know the maximum is not that high, but would it save us much?
+
+699:4-699:23
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a823a2_60062c43
+Bytes: 204
+sem_post carries a syscall to futex if there is a waiter. This is the most likely scenario ... we need to change this to wake up when half full, or on timed wait (in the context of the background thread).
+
+720:3-720:24
+Fri Jan 30 16:43:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7c0a76a_ba4911a7
+Bytes: 44
+as noted above, in single thread no waiters.
+

@@ -16,6 +16,24 @@ UUID: 57df5723_5e8c151d
 Bytes: 258
 How does this compare to LOGGER_ENTRY_MAX_PAYLOAD ?  It looks like it's a difference of sizeof(uint16_t) and sizeof(android_pmsg_log_header_t) ?  Should LOGGER_ENTRY_MAX_PAYLOAD be used instead of starting with 4*1024 in case of future changes to that value?
 
+538:26-538:84
+Fri Jan 30 00:44:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57df5723_5e8c151d
+UUID: d7998784_92c03caf
+Bytes: 571
+Thanks.
+
+First requirement: entry_t is page aligned and multiple of a page size.
+
+4*1024 is a poor-man's version of that :-( yes, has to be fixed.
+
+LOGGER_ENTRY_MAX_PAYLOAD has been 4076 since epoch of Android. I do not expect it to change.
+
+The header is 11 + 2 bytes, all fits into page size with space to spare. However, the point is made, we should not be using sizeof(payload) when taking content from the caller, we should be using LOGGER_ENTRY_MAX_PAYLOAD.
+
+We need to calculate and set entry_t size rounded up to page size based on LOGGER_ENTRY_MAX_PAYLOAD value.
+
 662:4-662:39
 Thu Jan 29 21:17:03 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,6 +50,13 @@ UUID: 77da9b34_ff54ff0a
 Bytes: 129
 As noted, we now take a small hit on page-fault here. The major savings are that 64K of memory (per user space process) is freed.
 
+675:11-675:29
+Fri Jan 30 00:44:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7d09310_61ee9643
+Bytes: 70
+This needs to be LOGGER_ENTRY_MAX_PAYLOAD as Tom has referenced above.
+
 715
 Thu Jan 29 22:45:04 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -40,6 +65,18 @@ Bytes: 265
 Is the expected success value of this function 0 or the # of bytes written?  __write_log_to_daemon() looks to return the # of bytes written.
 
 Do the semantics change since this function doesn't actually write the bytes but rather queues them up for backend writing?
+
+715
+Fri Jan 30 00:44:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7998784_f2ab489a
+UUID: d7998784_15ffd60a
+Bytes: 194
+Good catch.
+
+The caller(s) have never checked the positive return values. The unit tests only really check for a negative value, which represents -errno.
+
+Will look into unit tests to make sure.
 
 757:0-757:47
 Thu Jan 29 21:17:03 2015 +0000

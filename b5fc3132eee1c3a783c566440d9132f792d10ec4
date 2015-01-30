@@ -9,3 +9,18 @@ UUID: 77a61bd5_bf433754
 Bytes: 109
 Missing a space after the if. A few others are too, but not all, so might as well make the new ones non-ugly.
 
+149
+Fri Jan 30 02:37:36 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 77a61bd5_bf433754
+UUID: b79c1385_0498988b
+Bytes: 99
+Are you going to try and push this upstream? If so, it might make sense to match the current style.
+
+275:12-275:40
+Fri Jan 30 02:37:36 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 97a1cfbc_c0edfe45
+Bytes: 119
+You need to check that there is an argv[2] to atoi. You should probably display an error if the argument doesn't exist.
+

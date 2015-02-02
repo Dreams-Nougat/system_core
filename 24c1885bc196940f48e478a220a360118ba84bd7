@@ -1,0 +1,11 @@
+Revision: 24c1885bc196940f48e478a220a360118ba84bd7
+Patch-set: 1
+File: include/netutils/ifc.h
+
+53
+Mon Feb 02 22:46:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 97d0ef89_cbbf09dd
+Bytes: 110
+this is still used by do_dhcp, which is still being called. (despite the "deprecated" comment in the .c file.)
+

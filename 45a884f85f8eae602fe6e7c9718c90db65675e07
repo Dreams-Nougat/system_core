@@ -1,0 +1,11 @@
+Revision: 45a884f85f8eae602fe6e7c9718c90db65675e07
+Patch-set: 1
+File: init/builtins.c
+
+58
+Mon Feb 02 22:41:25 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7db33ac_cc027fe7
+Bytes: 32
+Another instance of bug 19217569
+

@@ -1,5 +1,14 @@
 Revision: 45a884f85f8eae602fe6e7c9718c90db65675e07
 Patch-set: 1
+File: init/bootchart.c
+
+292
+Mon Feb 02 22:43:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b7db33ac_8c7d2752
+Bytes: 65
+i thought SELinux had killed bootchart. should we just remove it?
+
 File: init/builtins.c
 
 58
@@ -8,4 +17,12 @@ Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b7db33ac_cc027fe7
 Bytes: 32
 Another instance of bug 19217569
+
+58
+Mon Feb 02 22:43:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b7db33ac_cc027fe7
+UUID: 77d53b78_8a9ceb80
+Bytes: 36
+argh. i'll do that this afternoon...
 

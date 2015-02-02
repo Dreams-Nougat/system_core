@@ -1,0 +1,11 @@
+Revision: 35a9fdfadb0e84e4fb95f35f9ea1fbdcff56f7bf
+Patch-set: 4
+File: init/builtins.c
+
+79
+Mon Feb 02 20:13:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77bc5b32_72ec1695
+Bytes: 60
+or just inline this and #define chmod to something unusable?
+

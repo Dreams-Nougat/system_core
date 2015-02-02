@@ -9,6 +9,22 @@ UUID: b7db33ac_8c7d2752
 Bytes: 65
 i thought SELinux had killed bootchart. should we just remove it?
 
+292
+Mon Feb 02 22:47:18 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b7db33ac_8c7d2752
+UUID: 77d53b78_ea82c7df
+Bytes: 330
+There's still some pending patches to fix bootchart and SELinux.
+
+See
+* https://android-review.googlesource.com/117071
+* https://android-review.googlesource.com/117810
+
+(haven't had time to review it...)
+
+I wouldn't mind deleting it, but I suspect others still want it. If anything, we can make these changes in a followup commit.
+
 File: init/builtins.c
 
 58

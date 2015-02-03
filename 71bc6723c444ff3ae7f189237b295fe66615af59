@@ -9,3 +9,11 @@ UUID: 7731bbd0_271d1a08
 Bytes: 142
 Do you want to add the TEMP_FAILURE_RETRY to these closes? I know the chance of hitting one is probably low, but it doesn't appear to be zero.
 
+36:6-36:11
+Tue Feb 03 20:18:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7731bbd0_271d1a08
+UUID: 9cf1f452_43e97806
+Bytes: 129
+i'm still under the belief that it's actually impossible (on Linux), but since this question always comes up, i'll add it anyway.
+

@@ -1,0 +1,11 @@
+Revision: 71bc6723c444ff3ae7f189237b295fe66615af59
+Patch-set: 2
+File: libutils/file.cpp
+
+36:6-36:11
+Tue Feb 03 18:40:09 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7731bbd0_271d1a08
+Bytes: 142
+Do you want to add the TEMP_FAILURE_RETRY to these closes? I know the chance of hitting one is probably low, but it doesn't appear to be zero.
+

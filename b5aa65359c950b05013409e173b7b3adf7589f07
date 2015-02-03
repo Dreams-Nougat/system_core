@@ -9,6 +9,13 @@ UUID: 7c0fe024_7adc1520
 Bytes: 100
 http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg
 
+2:17-2:21
+Tue Feb 03 22:40:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c0fe024_7aaad56f
+Bytes: 20
+Should this be 2015?
+
 File: libutils/stringprintf.cpp
 
 2:17-2:21
@@ -17,4 +24,26 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7c0fe024_bad98d2b
 Bytes: 100
 http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg
+
+2:17-2:21
+Tue Feb 03 22:40:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c24dca3_590967d3
+Bytes: 51
+Same as the other, 2015, or is this code from 2011.
+
+40:4-43:5
+Tue Feb 03 22:40:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c24dca3_d91d7708
+Bytes: 148
+Wouldn't this be better to check before the cast? Then you could do:
+
+if ()
+  return;
+
+if (result < static_cast...) [
+  dst->append(...)
+  return;
+}
 

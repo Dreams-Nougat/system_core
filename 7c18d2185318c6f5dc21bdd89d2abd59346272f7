@@ -1,0 +1,11 @@
+Revision: 7c18d2185318c6f5dc21bdd89d2abd59346272f7
+Patch-set: 1
+File: init/init.c
+
+352
+Tue Feb 03 19:27:11 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17207f81_8425e627
+Bytes: 23
+Don't you just want ""?
+

@@ -17,3 +17,11 @@ UUID: 17207f81_64c8ead4
 Bytes: 66
 Probably. That was me being almost as stupid as the original code.
 
+352
+Tue Feb 03 19:29:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17207f81_8425e627
+UUID: 17479f3f_b264d8b1
+Bytes: 165
+don't you actually want NULL? isn't this supposed to be null-terminating the argv argument to exec(2)? i think the original code was right but ugly. NULL is clearer.
+

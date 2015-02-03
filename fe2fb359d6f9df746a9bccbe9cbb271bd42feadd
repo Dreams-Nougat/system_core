@@ -45,3 +45,11 @@ It's somewhat of a refactor, so I'm not sure I should do it:
 
 Right now there would be name clashes. E.g., the property_set above does more than libcutils' property_set (it keeps track of some special properties) and can't be removed (and init.c is using both set and get) ...
 
+48
+Tue Feb 03 22:28:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_d9cc576b
+UUID: dc10cc40_6056a64a
+Bytes: 59
+i can do it if you like. i have stuff to do in init anyway.
+

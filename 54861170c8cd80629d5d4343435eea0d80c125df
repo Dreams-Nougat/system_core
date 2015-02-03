@@ -2,6 +2,24 @@ Revision: 54861170c8cd80629d5d4343435eea0d80c125df
 Patch-set: 5
 File: liblog/logd_write.c
 
+612:25-612:43
+Tue Feb 03 22:15:53 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c0fe024_7ac655a1
+Bytes: 151
+Consider polling for a short period of time before considering going to sleep? The cost in the Producer is too high once we go to sleep on a semaphore.
+
+735:7-735:47
+Tue Feb 03 22:15:53 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc10cc40_e0ccf66a
+Bytes: 437
+"and triggers a wakeup to the Consumer worker"
+
+Confirmed that the Consumer worker is not started until the caller hits a resource limit. Have confirmed that futex on a N9 (our worst case product for context overhead) introduces a total of 19us (at full clock rate) period of time inside the kernel making arrangements for a sleeping Consumer worker to wake up.
+
+futex has also been confirmed as the cheapest means for waking up a thread
+
 738:4-738:23
 Tue Feb 03 01:53:50 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

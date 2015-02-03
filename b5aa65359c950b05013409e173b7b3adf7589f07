@@ -1,0 +1,20 @@
+Revision: b5aa65359c950b05013409e173b7b3adf7589f07
+Patch-set: 1
+File: include/utils/stringprintf.h
+
+2:17-2:21
+Tue Feb 03 22:36:52 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c0fe024_7adc1520
+Bytes: 100
+http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg
+
+File: libutils/stringprintf.cpp
+
+2:17-2:21
+Tue Feb 03 22:36:52 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c0fe024_bad98d2b
+Bytes: 100
+http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg
+

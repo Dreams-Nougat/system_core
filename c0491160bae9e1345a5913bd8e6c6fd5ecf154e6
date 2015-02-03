@@ -9,6 +9,13 @@ UUID: 97e9cf2d_b4e2f8a3
 Bytes: 11
 O_NOFOLLOW?
 
+27
+Tue Feb 03 01:53:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17515fa8_25cb74d3
+Bytes: 206
+nnk: these flags (and the ones in Write) correspond to the google3 behavior. i don't know whether we want extra O_NOFOLLOWs and/or different permissions for new files, or do we rely on SELinux for one/both?
+
 49
 Tue Feb 03 01:52:13 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

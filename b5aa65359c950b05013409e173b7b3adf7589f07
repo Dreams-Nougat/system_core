@@ -32,6 +32,14 @@ UUID: 5c24dca3_590967d3
 Bytes: 51
 Same as the other, 2015, or is this code from 2011.
 
+2:17-2:21
+Tue Feb 03 23:21:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_590967d3
+UUID: dc10cc40_4e187371
+Bytes: 62
+this code is from 2011, when i ported the google3 API for art.
+
 40:4-43:5
 Tue Feb 03 22:40:40 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -46,4 +54,12 @@ if (result < static_cast...) [
   dst->append(...)
   return;
 }
+
+40:4-43:5
+Tue Feb 03 23:21:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_d91d7708
+UUID: 7c0fe024_5a9f11cc
+Bytes: 79
+i think the "normal case" comment was the motivation for the current structure.
 

@@ -35,3 +35,13 @@ UUID: 5c24dca3_79ef830f
 Bytes: 66
 Sorry, wasn't aware that we're actually doing a fortified build...
 
+48
+Tue Feb 03 22:24:04 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_79ef830f
+UUID: 5c24dca3_d9cc576b
+Bytes: 276
+It's somewhat of a refactor, so I'm not sure I should do it:
+
+Right now there would be name clashes. E.g., the property_set above does more than libcutils' property_set (it keeps track of some special properties) and can't be removed (and init.c is using both set and get) ...
+

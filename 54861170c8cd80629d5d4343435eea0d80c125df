@@ -38,6 +38,14 @@ This needs a comment to state that fact.
 
 This is not a frontend selection API as below where we are crippled regarding assumptions, this is an internal initialization handler that if any things fails, it must orderly transition to LOGGER_NORMAL configuration as its backup plan.
 
+811
+Tue Feb 03 01:56:31 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97854f8c_83640034
+UUID: 97854f8c_633e1c09
+Bytes: 19
+Makes sense, thanks
+
 File: liblog/tests/liblog_benchmark.cpp
 
 74:1-74:2

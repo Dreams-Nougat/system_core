@@ -18,3 +18,13 @@ UUID: f74dab10_cf38ad70
 Bytes: 94
 Why change these? We don't want to confuse these log messages with the ones emitted by dhcpcd.
 
+356:28-356:32
+Tue Feb 03 18:59:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f74dab10_cf38ad70
+UUID: 17207f81_c4919e67
+Bytes: 187
+the netcfg part is a lie. the LOG_TAG for all this code is actually already DHCP so i'll just remove this instead.
+
+(whether "DHCP" should be "libnetutils" is someone else's problem :-) )
+

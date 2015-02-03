@@ -1,0 +1,11 @@
+Revision: fe2fb359d6f9df746a9bccbe9cbb271bd42feadd
+Patch-set: 1
+File: init/property_service.h
+
+48
+Tue Feb 03 19:53:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b737b3c2_6c645333
+Bytes: 134
+this code is already pulling in libcutils. we should just delete this and use that instead (which already has the appropriate guards).
+

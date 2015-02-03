@@ -1,5 +1,21 @@
 Revision: c0491160bae9e1345a5913bd8e6c6fd5ecf154e6
 Patch-set: 1
+File: libutils/file.cpp
+
+27
+Tue Feb 03 01:52:13 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 97e9cf2d_b4e2f8a3
+Bytes: 11
+O_NOFOLLOW?
+
+49
+Tue Feb 03 01:52:13 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 778a9b9e_ffdc7fe7
+Bytes: 15
+add O_NOFOLLOW?
+
 File: libutils/tests/file_test.cpp
 
 30:28-30:35

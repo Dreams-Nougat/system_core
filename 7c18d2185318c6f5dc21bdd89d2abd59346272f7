@@ -25,3 +25,11 @@ UUID: 17479f3f_b264d8b1
 Bytes: 165
 don't you actually want NULL? isn't this supposed to be null-terminating the argv argument to exec(2)? i think the original code was right but ugly. NULL is clearer.
 
+352
+Tue Feb 03 19:29:56 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17479f3f_b264d8b1
+UUID: 17479f3f_b2bbf8a3
+Bytes: 83
+I wasn't sure, I have to admit. Why would you put a char when you could use an int?
+

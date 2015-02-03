@@ -27,3 +27,11 @@ yes.
 
 yes it is, and correctly using __BIONIC_FORTIFY_INLINE.
 
+48
+Tue Feb 03 22:11:01 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_d658a478
+UUID: 5c24dca3_79ef830f
+Bytes: 66
+Sorry, wasn't aware that we're actually doing a fortified build...
+

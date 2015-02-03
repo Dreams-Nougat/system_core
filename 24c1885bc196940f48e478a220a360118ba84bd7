@@ -9,3 +9,12 @@ UUID: 97d0ef89_cbbf09dd
 Bytes: 110
 this is still used by do_dhcp, which is still being called. (despite the "deprecated" comment in the .c file.)
 
+File: libnetutils/dhcpclient.c
+
+356:28-356:32
+Tue Feb 03 06:29:37 2015 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f74dab10_cf38ad70
+Bytes: 94
+Why change these? We don't want to confuse these log messages with the ones emitted by dhcpcd.
+

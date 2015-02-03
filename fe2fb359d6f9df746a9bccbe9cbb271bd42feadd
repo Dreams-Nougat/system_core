@@ -17,3 +17,13 @@ UUID: 5c24dca3_f69600ad
 Bytes: 171
 I'm not sure I understand. You want to remove all of property_get? From the looks of it this is here because of the value_len check, which I don't believe is in libcutils.
 
+48
+Tue Feb 03 22:06:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c24dca3_f69600ad
+UUID: 5c24dca3_d658a478
+Bytes: 61
+yes.
+
+yes it is, and correctly using __BIONIC_FORTIFY_INLINE.
+

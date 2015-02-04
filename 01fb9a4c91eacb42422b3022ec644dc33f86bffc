@@ -9,3 +9,12 @@ UUID: 5c521c24_c60ea2a9
 Bytes: 42
 oops, forgot to add comment about this ...
 
+File: liblog/tests/liblog_benchmark.cpp
+
+74:1-74:2
+Wed Feb 04 01:50:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c521c24_a61ba6e9
+Bytes: 43
+oops, forgot to remove this trailing space.
+

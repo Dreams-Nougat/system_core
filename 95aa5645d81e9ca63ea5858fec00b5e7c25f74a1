@@ -9,6 +9,14 @@ UUID: 9c3f34b5_f09600ad
 Bytes: 40
 CPPFLAGS now (and elsewhere in the file)
 
+27
+Wed Feb 04 16:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c3f34b5_f09600ad
+UUID: 7c6b60dd_f772a0cb
+Bytes: 4
+Done
+
 File: init/builtins.cpp
 
 780:26-780:27
@@ -20,6 +28,16 @@ You have an extra space.
 
 I assume you're going to be moving to C++ style casts in a follow up patch?
 
+780:26-780:27
+Wed Feb 04 16:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c3f34b5_b09078af
+UUID: 9c8d74f5_0042667e
+Bytes: 164
+where i grew up this was the canonical style for C-style casts.
+
+but, yes, improving the style is a job for another day. you may have noticed a goto or two also :-(
+
 File: init/devices.cpp
 
 104:41-104:42
@@ -28,6 +46,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9c581443_ce37d75b
 Bytes: 125
 Looks like you have a lot of these. I guess the style guide actually doesn't have a rule for C style casts aside from "don't"
+
+104:41-104:42
+Wed Feb 04 16:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c581443_ce37d75b
+UUID: 9c8d74f5_a3e3842c
+Bytes: 116
+BSD disagrees with me, but they also believe in type *id rather than type* id, so they're not worth listening to :-)
 
 File: init/util.cpp
 
@@ -38,10 +64,26 @@ UUID: 9c581443_eee85b33
 Bytes: 7
 nullptr
 
+152:17-152:21
+Wed Feb 04 16:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c581443_eee85b33
+UUID: 7c6b60dd_9758043f
+Bytes: 73
+this function is to be deleted. that's actually the main reason i'm here.
+
 429:19-429:21
 Wed Feb 04 05:36:19 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3c2648b6_d004223c
 Bytes: 57
 What's so special about 31? Max size of the input buffer?
+
+429:19-429:21
+Wed Feb 04 16:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c2648b6_d004223c
+UUID: 9c8d74f5_c3e00822
+Bytes: 84
+no idea. job for another day. (like i said, this should probably just be an sscanf.)
 

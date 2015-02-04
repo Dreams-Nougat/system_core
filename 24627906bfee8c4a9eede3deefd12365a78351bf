@@ -1,0 +1,11 @@
+Revision: 24627906bfee8c4a9eede3deefd12365a78351bf
+Patch-set: 1
+File: init/Android.mk
+
+21
+Wed Feb 04 18:35:34 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc9d9026_3ec54510
+Bytes: 155
+Are you trying to actually disable this, or just make it not the default? If you want "never clang", you need `LOCAL_CLANG := false`, not just an omission.
+

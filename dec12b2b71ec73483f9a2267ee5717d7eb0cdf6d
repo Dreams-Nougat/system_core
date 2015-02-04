@@ -1,0 +1,11 @@
+Revision: dec12b2b71ec73483f9a2267ee5717d7eb0cdf6d
+Patch-set: 3
+File: libutils/file.cpp
+
+41:0-41:18
+Wed Feb 04 00:40:26 2015 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c5d2031_c7ffbeba
+Bytes: 60
+what if the close failed with EIO because of flash problems?
+

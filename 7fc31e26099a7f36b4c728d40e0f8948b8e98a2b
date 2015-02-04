@@ -1,0 +1,13 @@
+Revision: 7fc31e26099a7f36b4c728d40e0f8948b8e98a2b
+Patch-set: 1
+File: init/util.cpp
+
+408
+Wed Feb 04 01:32:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c521c24_e6c99e2a
+Bytes: 304
+okay, this wasn't the minimal change. rather than fix all the things the compiler didn't like in here, i just deleted most of it.
+
+we should probably still switch to fscanf and lose more code, but that was about where i finally stopped myself and became stricter about only changing the absolute minimum.
+

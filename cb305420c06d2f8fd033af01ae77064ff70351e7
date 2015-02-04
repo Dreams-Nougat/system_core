@@ -1,0 +1,11 @@
+Revision: cb305420c06d2f8fd033af01ae77064ff70351e7
+Patch-set: 1
+File: init/devices.cpp
+
+1043
+Wed Feb 04 22:57:59 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c3e00ec_1f19c3a6
+Bytes: 26
+if (LOG_UEVENTS) { ... } ?
+

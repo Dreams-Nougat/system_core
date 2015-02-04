@@ -9,3 +9,11 @@ UUID: 7ce0c0af_d56bcc84
 Bytes: 26
 Why only in this overload?
 
+78
+Wed Feb 04 22:30:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7ce0c0af_d56bcc84
+UUID: dc2fecb3_c2302217
+Bytes: 174
+because i'd confused WriteStringToFile and WriteStringToFd (and because i was mostly worried about the one that people who care about security will be calling). fixed in ps2.
+

@@ -1,0 +1,47 @@
+Revision: 95aa5645d81e9ca63ea5858fec00b5e7c25f74a1
+Patch-set: 2
+File: init/Android.mk
+
+27
+Wed Feb 04 05:36:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c3f34b5_f09600ad
+Bytes: 40
+CPPFLAGS now (and elsewhere in the file)
+
+File: init/builtins.cpp
+
+780:26-780:27
+Wed Feb 04 05:36:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c3f34b5_b09078af
+Bytes: 101
+You have an extra space.
+
+I assume you're going to be moving to C++ style casts in a follow up patch?
+
+File: init/devices.cpp
+
+104:41-104:42
+Wed Feb 04 05:36:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c581443_ce37d75b
+Bytes: 125
+Looks like you have a lot of these. I guess the style guide actually doesn't have a rule for C style casts aside from "don't"
+
+File: init/util.cpp
+
+152:17-152:21
+Wed Feb 04 05:36:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c581443_eee85b33
+Bytes: 7
+nullptr
+
+429:19-429:21
+Wed Feb 04 05:36:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c2648b6_d004223c
+Bytes: 57
+What's so special about 31? Max size of the input buffer?
+

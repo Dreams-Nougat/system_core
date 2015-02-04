@@ -9,3 +9,11 @@ UUID: fc9d9026_3ec54510
 Bytes: 155
 Are you trying to actually disable this, or just make it not the default? If you want "never clang", you need `LOCAL_CLANG := false`, not just an omission.
 
+21
+Wed Feb 04 18:37:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc9d9026_3ec54510
+UUID: 3c7d68a0_7557689d
+Bytes: 173
+neither. i'm just leaving it there for convenient testing next time i break the clang build. i worry about actually switching us over until we have better fortify for clang.
+

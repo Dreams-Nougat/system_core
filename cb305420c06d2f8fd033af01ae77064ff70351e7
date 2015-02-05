@@ -9,6 +9,16 @@ UUID: 7c57e041_370e782f
 Bytes: 13
 Extra spaces.
 
+251:16-251:17
+Thu Feb 05 01:16:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c57e041_370e782f
+UUID: 5c6cdc14_56985488
+Bytes: 164
+have you even looked at this file? :-)
+
+we might want to do a clang-format at some point, but i think this file in particular is in serious danger of being deleted.
+
 File: init/devices.cpp
 
 1043
@@ -34,4 +44,12 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bc5dd861_9c1e895a
 Bytes: 71
 Could you rename this to something that isn't pretending to be a macro?
+
+76
+Thu Feb 05 01:16:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc5dd861_9c1e895a
+UUID: 7c57e041_775c70be
+Bytes: 4
+Done
 

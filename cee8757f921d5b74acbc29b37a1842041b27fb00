@@ -9,3 +9,11 @@ UUID: 1c97c455_8c7587b7
 Bytes: 64
 does it matter that we're going to do this on all architectures?
 
+164
+Thu Feb 05 23:08:50 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c97c455_8c7587b7
+UUID: 1c97c455_0c835770
+Bytes: 204
+No, this file only exists on ARMv8 devices with armv8_deprecated compiled into the kernel.  If it doesn't exist then the write will silently fail (or loudly fail if you set the init loglevel high enough).
+

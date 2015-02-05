@@ -1,5 +1,14 @@
 Revision: cb305420c06d2f8fd033af01ae77064ff70351e7
 Patch-set: 1
+File: init/bootchart.cpp
+
+251:16-251:17
+Thu Feb 05 00:58:44 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c57e041_370e782f
+Bytes: 13
+Extra spaces.
+
 File: init/devices.cpp
 
 1043
@@ -16,4 +25,13 @@ Parent: 7c3e00ec_1f19c3a6
 UUID: bc5dd861_dc0e4157
 Bytes: 4
 Done
+
+File: init/init_parser.cpp
+
+76
+Thu Feb 05 00:58:44 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc5dd861_9c1e895a
+Bytes: 71
+Could you rename this to something that isn't pretending to be a macro?
 

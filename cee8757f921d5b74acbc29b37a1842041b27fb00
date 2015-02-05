@@ -1,0 +1,11 @@
+Revision: cee8757f921d5b74acbc29b37a1842041b27fb00
+Patch-set: 2
+File: rootdir/init.rc
+
+164
+Thu Feb 05 22:47:48 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c97c455_8c7587b7
+Bytes: 64
+does it matter that we're going to do this on all architectures?
+

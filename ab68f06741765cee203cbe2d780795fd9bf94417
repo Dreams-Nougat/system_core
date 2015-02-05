@@ -1,0 +1,18 @@
+Revision: ab68f06741765cee203cbe2d780795fd9bf94417
+Patch-set: 8
+File: liblog/logd_write.c
+
+615:10-615:11
+Thu Feb 05 20:11:57 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cae5492_580edddd
+Bytes: 16
+Extra space here
+
+626:8-626:16
+Thu Feb 05 20:11:57 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fcbe70c5_d3fc94c8
+Bytes: 202
+Any reason we're reusing consumer here?  Maybe a variable named max_tries instead to be clear.  In theory, the compiler should be smart enough to use the same register and not incur additional overhead.
+

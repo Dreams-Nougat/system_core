@@ -1,0 +1,27 @@
+Revision: eb202517ca1fb8855cf9de7f8bde3732b9cc1a3d
+Patch-set: 1
+File: libmincrypt/p256.c
+
+31
+Fri Feb 06 20:24:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c9e48d1_f05bdec4
+Bytes: 49
+does the recovery image care about this property?
+
+File: libmincrypt/test/p256_unittest.c
+
+101
+Fri Feb 06 20:24:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c9e48d1_f0347e7c
+Bytes: 49
+modinv? (there's no reference to mulinv in here.)
+
+132
+Fri Feb 06 20:24:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c9e48d1_304f26f8
+Bytes: 18
+why not use gtest?
+

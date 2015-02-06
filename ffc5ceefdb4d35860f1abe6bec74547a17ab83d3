@@ -1,0 +1,11 @@
+Revision: ffc5ceefdb4d35860f1abe6bec74547a17ab83d3
+Patch-set: 1
+File: libbacktrace/BacktraceMap.cpp
+
+44
+Fri Feb 06 22:15:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c8f7cad_7ef0719a
+Bytes: 45
+do you want to clear map in the failure case?
+

@@ -1,0 +1,39 @@
+Revision: 26522f05038476e6d8e15946be6d43efbec60ca6
+Patch-set: 6
+File: init/README.BOOTCHART
+
+30:10-30:30
+Fri Feb 06 23:51:02 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c47c43f_0c94b7db
+Bytes: 20
+/data/bootchart/stop
+
+31:38-31:59
+Fri Feb 06 23:51:02 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c47c43f_2c9173ec
+Bytes: 21
+/data/bootchart/start
+
+36:46-36:47
+Fri Feb 06 23:51:02 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc328cd2_2abb1fc1
+Bytes: 17
+Capitalize 'you'.
+
+52:36-52:40
+Fri Feb 06 23:51:02 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc43d031_cbd8d5f4
+Bytes: 8
+does not
+
+52:0-52:4
+Fri Feb 06 23:51:02 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc43d031_6bd1a1d1
+Bytes: 18
+Capitalize 'this'.
+

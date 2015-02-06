@@ -18,3 +18,14 @@ UUID: bc879828_6c3693e4
 Bytes: 158
 the problem is our LP32 libc is fucked. both size_t and off_t (and time_t) are just 32 bits. if you need to handle > 2GiB on LP32, you'll need to use off64_t.
 
+73
+Fri Feb 06 21:37:30 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc879828_6c3693e4
+UUID: fcc030c1_6380c225
+Bytes: 106
+argh. So the 
+   #define _LARGEFILE64_SOURCE
+doesn't work as expected for off_t?
+We use it in some places.
+

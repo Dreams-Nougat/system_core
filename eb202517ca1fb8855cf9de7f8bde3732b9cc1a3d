@@ -18,10 +18,26 @@ UUID: 3c9e48d1_f0347e7c
 Bytes: 49
 modinv? (there's no reference to mulinv in here.)
 
+101
+Fri Feb 06 20:44:17 2015 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c9e48d1_f0347e7c
+UUID: 3c9e48d1_d3ed0c14
+Bytes: 25
+oh yeah, should be modinv
+
 132
 Fri Feb 06 20:24:30 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3c9e48d1_304f26f8
 Bytes: 18
 why not use gtest?
+
+132
+Fri Feb 06 20:44:17 2015 +0000
+Author: Kenny Root <1002975@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c9e48d1_304f26f8
+UUID: 3c9e48d1_f3e80806
+Bytes: 40
+this is copied from the original project
 

@@ -1,0 +1,12 @@
+Revision: 18a06a207e2aedad71d761e5c462589396ec890f
+Patch-set: 1
+File: libsparse/include/sparse/sparse.h
+
+73
+Fri Feb 06 01:43:29 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c769c13_ac7247ca
+Bytes: 118
+After looking at some of the other changes needed in other projects ... 
+A size_t seems more appropriate, or an off_t.
+

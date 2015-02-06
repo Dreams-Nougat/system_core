@@ -1,0 +1,22 @@
+Revision: cd278c983397d6f536a7a65be3bac28267a8a754
+Patch-set: 2
+File: init/builtins.cpp
+
+66
+Fri Feb 06 21:13:56 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1cc424d1_a413e288
+Bytes: 240
+Just a note. Nothing actionable.
+
+If we were running a 3.8 or later kernel, we could use finit_module() here. It's better than using init_module, since we can do things like validate the source of the file before loading it into the kernel.
+
+File: init/util.cpp
+
+154
+Fri Feb 06 21:13:56 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1cc424d1_84418660
+Bytes: 49
+maybe add O_NOFOLLOW here? (or in a later change)
+

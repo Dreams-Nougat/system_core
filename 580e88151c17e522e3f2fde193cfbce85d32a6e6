@@ -1,0 +1,14 @@
+Revision: 580e88151c17e522e3f2fde193cfbce85d32a6e6
+Patch-set: 1
+File: /COMMIT_MSG
+
+14:48-15:39
+Fri Feb 06 02:04:47 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc6cb049_03dfaedd
+Bytes: 306
+The mount() will not return until the kernel successfully checked/fixed what it needs.
+So that is not the reason why unmounting will fail.
+
+In the past, the only unmount issues were caused by services started before partitions were declared mounted by init, and those services would start using the device.
+

@@ -1,0 +1,20 @@
+Revision: b2053ffc4796234cfb17feec4b6132bb53753ded
+Patch-set: 9
+File: /COMMIT_MSG
+
+9:0-9:11
+Fri Feb 06 21:51:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7cd52078_07f0f66a
+Bytes: 58
+Stop using the term low-latency, switch to using overhead!
+
+16:0-16:77
+Fri Feb 06 21:51:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7cd52078_87e346aa
+Bytes: 405
+I am still not 100% comfortable with this decision as it involves polling every 800ns for a period of 100ms before deciding to go to sleep on a sem_wait.
+
+Polling will result in issues with CPUs going to idle and thus suspend. The price to battery is too high, the callers (at SCHED_FIFO) need to be able to live with the 6us(hot) to 30us(low CPU freq) of possible overhead introduced by the futex wakeup.
+

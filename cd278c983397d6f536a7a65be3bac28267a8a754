@@ -11,6 +11,14 @@ Just a note. Nothing actionable.
 
 If we were running a 3.8 or later kernel, we could use finit_module() here. It's better than using init_module, since we can do things like validate the source of the file before loading it into the kernel.
 
+66
+Fri Feb 06 22:21:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1cc424d1_a413e288
+UUID: 9c85748c_60129281
+Bytes: 92
+since we neither have 3.8 kernels nor use modules ourselves, for now i've just added a TODO.
+
 File: init/util.cpp
 
 154
@@ -19,4 +27,12 @@ Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1cc424d1_84418660
 Bytes: 49
 maybe add O_NOFOLLOW here? (or in a later change)
+
+154
+Fri Feb 06 22:21:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1cc424d1_84418660
+UUID: 9c85748c_800f9652
+Bytes: 4
+Done
 

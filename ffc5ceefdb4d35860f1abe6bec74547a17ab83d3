@@ -9,3 +9,11 @@ UUID: 5c8f7cad_7ef0719a
 Bytes: 45
 do you want to clear map in the failure case?
 
+44
+Fri Feb 06 23:00:44 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c8f7cad_7ef0719a
+UUID: 5c785c6f_b6b4e804
+Bytes: 48
+Sounds good. I added a test case, because I can.
+

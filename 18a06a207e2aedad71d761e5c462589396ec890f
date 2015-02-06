@@ -10,3 +10,11 @@ Bytes: 118
 After looking at some of the other changes needed in other projects ... 
 A size_t seems more appropriate, or an off_t.
 
+73
+Fri Feb 06 05:47:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c769c13_ac7247ca
+UUID: bc879828_6c3693e4
+Bytes: 158
+the problem is our LP32 libc is fucked. both size_t and off_t (and time_t) are just 32 bits. if you need to handle > 2GiB on LP32, you'll need to use off64_t.
+

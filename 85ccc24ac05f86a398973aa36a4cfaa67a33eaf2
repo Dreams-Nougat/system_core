@@ -1,0 +1,13 @@
+Revision: 85ccc24ac05f86a398973aa36a4cfaa67a33eaf2
+Patch-set: 7
+File: logd/LogBuffer.cpp
+
+146:0-146:4
+Fri Feb 06 18:28:25 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc0dd8eb_b9983f8d
+Bytes: 438
+log should return a bool now, so that caller knows that the entry was not placed into memory. Actions will include whether to send a signal or not to any of the readers to report activity.
+
+Future proof question: If we add a syslogd relay do we also filter log messages? syslogd relay is designed for a lab setup where the size of the storage is considered infinite, but the bandwidth might not be. If there is doubt, make it optional ...
+

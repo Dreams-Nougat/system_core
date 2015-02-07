@@ -9,3 +9,13 @@ UUID: f11a1b66_d3a314c6
 Bytes: 236
 If I'm reading this the right way, exec is a short-hand way of specifying an anonymous one-shot service. The child is asynchronous, so we'd still have to use execonce for tasks like building the fstab and getting the display resolution.
 
+670
+Sat Feb 07 14:48:07 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f11a1b66_d3a314c6
+UUID: f1013bf4_3b5c57e4
+Bytes: 377
+Currently, the init language supports a "start" directive, for starting a defined service. So this would be a replacement for declaring a service and then someone starting it, right?
+
+If so, when would we recommend that someone use this "exec" vs just creating a one-shot service which does the same thing? I want to make sure we're not introducing unnecessary complexity here.
+

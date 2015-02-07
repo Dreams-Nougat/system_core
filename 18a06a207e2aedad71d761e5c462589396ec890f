@@ -39,3 +39,11 @@ _LARGEFILE64_SOURCE is a no-op with bionic --- all it does is make the types and
 
 _FILE_OFFSET_BITS=64 is the one that should make off_t actually be off64_t and lseek be lseek64, but bionic doesn't have that. my concern is stdio, because that then effectively gives us two incompatible LP32 stdio ABIs (LP32 struct FILE contains 32-bit offsets), but i'll knock up a quick experiment that (a) makes _FILE_OFFSET_BITS=64 work for all the functions it can work for and (b) makes the troublesome functions fail to compile.
 
+73
+Sat Feb 07 07:12:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71f62b4b_c2e90488
+UUID: 910abf12_385b49c7
+Bytes: 91
+https://android-review.googlesource.com/#/c/129970/ implements (most of) _FILE_OFFSET_BITS.
+

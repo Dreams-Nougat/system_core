@@ -39,3 +39,11 @@ we should definitely talk to the sony guys next week, since they seem to have so
 
 (and, yes, we should move the property startup earlier in init so that an exec'ed binary can set properties earlier than they can with this change. i was going to do that as a separate patch though.)
 
+670
+Sat Feb 07 20:04:52 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 111ecf59_3400f0e0
+UUID: 9158ff42_e8d85378
+Bytes: 416
+right, exec needs (at least optionally) be a blocking call. still it will need to share most of its features with service, so it migt as well share implementation. also the exec syntax becomes a bit awkward if one goes down the road with "exec root system seclabel cmd etc", it might be better to reuse and unify the service stansa. one need to be clarefull with the blocking though so system properties still works.
+

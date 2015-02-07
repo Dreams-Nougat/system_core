@@ -1,0 +1,11 @@
+Revision: f65f8b35880fe4406c5edee38b0d8ab3995a3929
+Patch-set: 1
+File: init/init_parser.cpp
+
+670
+Sat Feb 07 07:22:23 2015 +0000
+Author: Greg Hartman <1062926@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f11a1b66_d3a314c6
+Bytes: 236
+If I'm reading this the right way, exec is a short-hand way of specifying an anonymous one-shot service. The child is asynchronous, so we'd still have to use execonce for tasks like building the fstab and getting the display resolution.
+

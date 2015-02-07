@@ -19,3 +19,11 @@ Currently, the init language supports a "start" directive, for starting a define
 
 If so, when would we recommend that someone use this "exec" vs just creating a one-shot service which does the same thing? I want to make sure we're not introducing unnecessary complexity here.
 
+670
+Sat Feb 07 15:10:59 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1013bf4_3b5c57e4
+UUID: 51292784_2e42e752
+Bytes: 220
+maybe exec should be start but with with arguments? sometimes it is convenient to be able to do e.g. "exec rm -rf /path/to/whatever" for a few different paths, but declaring a specific service for each is a bit annoying.
+

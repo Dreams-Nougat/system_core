@@ -1,0 +1,11 @@
+Revision: a859219fec34ea0207c97a225c9f3fe451fc1209
+Patch-set: 2
+File: adb/file_sync_client.c
+
+243
+Mon Feb 09 16:12:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f1493ba5_1be1dba2
+Bytes: 184
+nnk: do we care about fstat vs stat here? i _think_ the change from stat was made "just because" in passing. (if we actually have to implement fstat for Win32, that's a lot more work.)
+

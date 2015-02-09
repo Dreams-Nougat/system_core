@@ -9,3 +9,13 @@ UUID: f1493ba5_1be1dba2
 Bytes: 184
 nnk: do we care about fstat vs stat here? i _think_ the change from stat was made "just because" in passing. (if we actually have to implement fstat for Win32, that's a lot more work.)
 
+243
+Mon Feb 09 19:34:44 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1493ba5_1be1dba2
+UUID: f1be9bc5_93d85c78
+Bytes: 350
+fstat() is useful when you're concerned about race conditions or otherwise want to ensure that the file isn't changing out from underneath you. In this particular use case, we're just using the size to display an indicator in an environment not susceptible to race conditions.
+
+TL;DR: I don't care if we use fstat or stat. Either way is fine with me.
+

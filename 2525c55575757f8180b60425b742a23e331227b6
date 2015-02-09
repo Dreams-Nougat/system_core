@@ -1,0 +1,11 @@
+Revision: 2525c55575757f8180b60425b742a23e331227b6
+Patch-set: 1
+File: libcutils/ashmem-host.c
+
+45:20-45:30
+Mon Feb 09 20:11:51 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 11c24f57_9493e4b9
+Bytes: 36
+Should this be TEMP_FAILURE_RETRY'd?
+

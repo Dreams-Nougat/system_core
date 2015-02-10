@@ -17,3 +17,11 @@ UUID: f1ca1b90_5653f2d1
 Bytes: 63
 yes, and return immediately unless we're actually bootcharting.
 
+1110
+Tue Feb 10 02:25:41 2015 +0000
+Author: YongQin Liu <1041813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1ca1b90_5653f2d1
+UUID: 51d9276e_8ed39b5b
+Bytes: 245
+OK. Seems you don't think it a problem. I always thought call to a function will cause worse performance than no calling or just condition check in the place. Maybe I should drop such thought, there should be no obvious data to show the worse:(.
+

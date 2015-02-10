@@ -1,0 +1,11 @@
+Revision: 3bae86205133bd8650021c7c9ede4c3a04e8a184
+Patch-set: 9
+File: init/init.cpp
+
+1110
+Tue Feb 10 01:53:12 2015 +0000
+Author: YongQin Liu <1041813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 91babfec_581e7d5b
+Bytes: 98
+will this cause the bootchart_sample function to be called always? even in the user variant build?
+

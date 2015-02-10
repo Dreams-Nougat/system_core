@@ -9,3 +9,11 @@ UUID: 91babfec_581e7d5b
 Bytes: 98
 will this cause the bootchart_sample function to be called always? even in the user variant build?
 
+1110
+Tue Feb 10 02:07:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 91babfec_581e7d5b
+UUID: f1ca1b90_5653f2d1
+Bytes: 63
+yes, and return immediately unless we're actually bootcharting.
+

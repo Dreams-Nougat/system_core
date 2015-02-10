@@ -1,0 +1,11 @@
+Revision: 1df92e523e7eb4bec70a2fc1d0bbac20d1fe7008
+Patch-set: 8
+File: include/log/log.h
+
+551:29-551:31
+Tue Feb 10 00:12:45 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b1b983da_1999cbe6
+Bytes: 22
+This breaks the build!
+

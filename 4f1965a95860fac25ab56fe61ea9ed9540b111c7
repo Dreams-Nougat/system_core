@@ -1,0 +1,13 @@
+Revision: 4f1965a95860fac25ab56fe61ea9ed9540b111c7
+Patch-set: 2
+File: liblog/logd_write.c
+
+274:1-274:40
+Wed Feb 11 15:42:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16cfa548_8c9ea73f
+Bytes: 276
+By definition, the Android Logger is non-blocking and must be low overhead. One can not put a sleep inline to this call.
+
+The API specifies that if the log message returns EBUSY, and the caller _must_ have the message delivered, they can loop. This is not advised in any case.
+

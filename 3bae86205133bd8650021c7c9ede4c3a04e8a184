@@ -9,12 +9,28 @@ UUID: 11208f81_c4899e10
 Bytes: 83
 From what I'm reading, this might be better named as `bootchart_remaining_samples`.
 
+54:11-54:26
+Thu Feb 12 20:08:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 11208f81_c4899e10
+UUID: b637b9c2_c915313a
+Bytes: 4
+Done
+
 270:38-270:44
 Tue Feb 10 22:42:54 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f11cdb53_c3899610
 Bytes: 54
 Makes it sound like it repeats. I don't think it does.
+
+270:38-270:44
+Thu Feb 12 20:08:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f11cdb53_c3899610
+UUID: b637b9c2_492a217c
+Bytes: 4
+Done
 
 File: init/init.cpp
 

@@ -1,0 +1,39 @@
+Revision: 2346927d1555c3deeb046a1bce04c87eeb8c1495
+Patch-set: 9
+File: liblog/log_read.c
+
+630:4-630:10
+Thu Feb 12 01:31:35 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c97c455_4f455158
+Bytes: 79
+Did you mean this to be static?  You reset it at line 644 before its first use.
+
+636:12-639:22
+Thu Feb 12 01:31:35 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc99ac84_3256b049
+Bytes: 69
+return -errno;
+
+On failure open() will always return -1 and set errno
+
+650:12-660:13
+Thu Feb 12 01:31:35 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16fc05c4_c41a9e99
+Bytes: 343
+This logic is complex and I'm not sure if it's doing what you mean.
+
+Unless I'm doing this wrong, this whole thing seems equivalent to:
+
+if (ret < 0) {
+  return -errno;
+} else if (ret == 0) { // EOF
+  if (preread_count)
+    return 0; // ???
+  return -EAGAIN;
+}
+
+and it doesn't seem right to return 0 when hitting an EOF with preread_count > 0.
+

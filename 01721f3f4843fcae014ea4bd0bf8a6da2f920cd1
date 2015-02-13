@@ -17,3 +17,29 @@ UUID: 2b9440fe_fdf04798
 Bytes: 164
 _that_ was the comment I was looking for. I had a voice in my head that said 'do not use android atomic', but when I polled the group I was met with shrugs. Thanks!
 
+38
+Fri Feb 13 16:47:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b9440fe_fdf04798
+UUID: 0b4cdc89_47de301e
+Bytes: 906
+for next time, we did add a comment to the cutils include file:
+
+/*
+ * A handful of basic atomic operations.
+ * THESE ARE HERE FOR LEGACY REASONS ONLY.  AVOID.
+ *
+ * PREFERRED ALTERNATIVES:
+ * - Use C++/C/pthread locks/mutexes whenever there is not a
+ *   convincing reason to do otherwise.  Note that very clever and
+ *   complicated, but correct, lock-free code is often slower than
+ *   using locks, especially where nontrivial data structures
+ *   are involved.
+ * - C11 stdatomic.h.
+ * - Where supported, C++11 std::atomic<T> .
+ *
+ * PLEASE STOP READING HERE UNLESS YOU ARE TRYING TO UNDERSTAND
+ * OR UPDATE OLD CODE.
+
+sadly we didn't have the balls to add #warning. even ignoring vendor code, there's a *lot* of code using this and its [also] evil libutils twin: https://cs.corp.google.com/#search/&q=include.*utils/atomic.h%20-file:vendor/%20-file:device/&sq=package:%5Eandroid$&type=cs&m=100&sort=1
+

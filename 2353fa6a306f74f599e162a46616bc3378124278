@@ -1,0 +1,20 @@
+Revision: 2353fa6a306f74f599e162a46616bc3378124278
+Patch-set: 2
+File: liblog/logd_write.c
+
+219:0-240:5
+Fri Feb 13 00:39:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b447857_af749932
+Bytes: 428
+'dropped' can get damaged by multiple threads feeding log messages at the same time. We can not afford to use locking as it adds considerable overhead. Explore means to locklessly(sic) improve the reliability of the 'dropped' value.
+
+What does not get lost in the shuffle is that this event tells us messages were dropped, regardless if the number is correct or not. This piece of information is more valuable than the quantity.
+
+310:8-310:18
+Fri Feb 13 00:39:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b2600b6_d07782b6
+Bytes: 29
+We should limit to INT32_MAX/
+

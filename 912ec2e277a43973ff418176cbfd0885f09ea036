@@ -1,0 +1,11 @@
+Revision: 912ec2e277a43973ff418176cbfd0885f09ea036
+Patch-set: 5
+File: liblog/logd_write.c
+
+22:0-22:22
+Fri Feb 13 16:46:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cbd1e4e3_329b508c
+Bytes: 145
+Are we going to have build problems for simulator, host, or MAC builds? This may have to be #ifdef !FAKE_LOG_DEVICE if not universally available.
+

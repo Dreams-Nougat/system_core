@@ -16,3 +16,11 @@ UUID: 2bc2801e_0db951c6
 Bytes: 31
 unique_ptr with custom deleter?
 
+179
+Fri Feb 13 23:15:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2bc2801e_0db951c6
+UUID: 2bab6058_48c3bf92
+Bytes: 138
+fclose doesn't allow NULL which makes this more awkward than it ought to be. something like that might be worth adding to libutils though.
+

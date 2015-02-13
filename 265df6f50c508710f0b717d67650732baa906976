@@ -9,3 +9,11 @@ UUID: 8bdb6c05_1005e48b
 Bytes: 29
 is removing this intentional?
 
+314
+Fri Feb 13 23:15:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bdb6c05_1005e48b
+UUID: cb2f24b4_a27cfe04
+Bytes: 280
+yes. that's already done in the init.rc file. if it's here, the temptation is to add some error-checking, but you're actually expecting this to fail with EEXISTS. we'd also want to add the chowning that the init.rc line implies, so it just seems more convenient to leave it there.
+

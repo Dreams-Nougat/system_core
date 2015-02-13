@@ -9,3 +9,11 @@ UUID: eb2f888a_6e00efe5
 Bytes: 79
 please don't use this in new code. use <stdatomic.h> for C or <atomic> for C++.
 
+38
+Fri Feb 13 15:11:55 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eb2f888a_6e00efe5
+UUID: 2b9440fe_fdf04798
+Bytes: 164
+_that_ was the comment I was looking for. I had a voice in my head that said 'do not use android atomic', but when I polled the group I was met with shrugs. Thanks!
+

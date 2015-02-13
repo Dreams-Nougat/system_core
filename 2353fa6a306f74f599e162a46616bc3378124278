@@ -19,6 +19,14 @@ UUID: ab3af0c2_d45e5230
 Bytes: 55
 Can we use an atomic set here and and atomic inc below?
 
+219:0-240:5
+Fri Feb 13 02:52:56 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab3af0c2_d45e5230
+UUID: cb5e442b_d0c9b45e
+Bytes: 66
+I was testing it already ... but decided to use atomic_add and inc
+
 310:8-310:18
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

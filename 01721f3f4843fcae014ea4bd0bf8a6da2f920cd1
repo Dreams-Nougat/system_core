@@ -1,0 +1,11 @@
+Revision: 01721f3f4843fcae014ea4bd0bf8a6da2f920cd1
+Patch-set: 4
+File: liblog/logd_write.c
+
+38
+Fri Feb 13 04:10:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eb2f888a_6e00efe5
+Bytes: 79
+please don't use this in new code. use <stdatomic.h> for C or <atomic> for C++.
+

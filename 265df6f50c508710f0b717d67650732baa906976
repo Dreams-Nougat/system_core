@@ -1,0 +1,11 @@
+Revision: 265df6f50c508710f0b717d67650732baa906976
+Base-for-patch-set: 1
+File: init/bootchart.cpp
+
+314
+Fri Feb 13 18:27:54 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bdb6c05_1005e48b
+Bytes: 29
+is removing this intentional?
+

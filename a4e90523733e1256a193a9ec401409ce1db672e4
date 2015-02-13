@@ -1,0 +1,18 @@
+Revision: a4e90523733e1256a193a9ec401409ce1db672e4
+Patch-set: 1
+File: init/bootchart.cpp
+
+37
+Fri Feb 13 18:27:54 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abd670d9_91b23c0d
+Bytes: 17
+static const int?
+
+179
+Fri Feb 13 18:27:54 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2bc2801e_0db951c6
+Bytes: 31
+unique_ptr with custom deleter?
+

@@ -43,3 +43,15 @@ for next time, we did add a comment to the cutils include file:
 
 sadly we didn't have the balls to add #warning. even ignoring vendor code, there's a *lot* of code using this and its [also] evil libutils twin: https://cs.corp.google.com/#search/&q=include.*utils/atomic.h%20-file:vendor/%20-file:device/&sq=package:%5Eandroid$&type=cs&m=100&sort=1
 
+38
+Fri Feb 13 17:16:13 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b4cdc89_47de301e
+UUID: 6b5d5831_6a9fb7d2
+Bytes: 1201
+Agreed, sem_wait and sem_post are only a handful of ns when there is no contention; roughly the same as the atomic (C11) operations (as they are, themselves, atomic operations, when there is no contention). Atomics by themselves only make sense for a single counter like we have here.
+
+TL;DR
+
+The 20us sem_post overhead in the producing thread, or when contention occurs, when it has to tell Linux to wakeup the associated thread(s) is _killing_ me. Regardless, futex as used underneath is still the fastest way to deal with inter-thread locking; I just wish there was a way to tell it to wake up the associated thread(s) lazy by instead inside the kernel posting the wakes into a workqueue quickly and hence return to the producing caller quicker. That 20us of overhead is a result of searching immediately for the key, and twiddling the scheduler for the associated thread(s) which takes time in the context of the caller. I just wish there was some magic bullet, especially in situations where wakeup is normal (as compared to occasionally contended). POSIX offers no means to specify a semaphore attribute as lazy or not, and futex offers no means to specify lazy or not; so not today for sure ...
+

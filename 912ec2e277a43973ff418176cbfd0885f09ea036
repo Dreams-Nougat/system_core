@@ -9,3 +9,13 @@ UUID: cbd1e4e3_329b508c
 Bytes: 145
 Are we going to have build problems for simulator, host, or MAC builds? This may have to be #ifdef !FAKE_LOG_DEVICE if not universally available.
 
+22:0-22:22
+Fri Feb 13 16:57:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cbd1e4e3_329b508c
+UUID: 0b4cdc89_e7c2bc29
+Bytes: 218
+dude, we removed the simulator years before you joined. i think it's okay to let it go :-)
+
+[+danalbert] did a lot of work to make this work everywhere and in every combination of C and C++, and iirc there are no gaps.
+

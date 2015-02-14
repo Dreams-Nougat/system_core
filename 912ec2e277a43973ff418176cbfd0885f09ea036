@@ -26,3 +26,11 @@ UUID: 2b40c074_3d648fad
 Bytes: 75
 All other errors (i.e. negative values of ret) will have written something?
 
+313
+Sat Feb 14 03:55:17 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b40c074_3d648fad
+UUID: 4b6c1415_56c4d466
+Bytes: 131
+This is the _only_ error worth tracking, all others mean dysfunctional logd. If anything else happens, you are not getting through.
+

@@ -34,3 +34,11 @@ UUID: 4b6c1415_56c4d466
 Bytes: 131
 This is the _only_ error worth tracking, all others mean dysfunctional logd. If anything else happens, you are not getting through.
 
+313
+Sat Feb 14 15:21:01 2015 +0000
+Author: Wink Saville <1001401@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b6c1415_56c4d466
+UUID: 6b0c7878_2fc3c993
+Bytes: 111
+Hmmm, so doesn't that mean we dropped log output, and in which case we should handle those errors the same way?
+

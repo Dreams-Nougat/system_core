@@ -19,3 +19,10 @@ dude, we removed the simulator years before you joined. i think it's okay to let
 
 [+danalbert] did a lot of work to make this work everywhere and in every combination of C and C++, and iirc there are no gaps.
 
+313
+Sat Feb 14 02:23:54 2015 +0000
+Author: Wink Saville <1001401@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b40c074_3d648fad
+Bytes: 75
+All other errors (i.e. negative values of ret) will have written something?
+

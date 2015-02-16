@@ -2,6 +2,13 @@ Revision: 2353fa6a306f74f599e162a46616bc3378124278
 Patch-set: 2
 File: liblog/logd_write.c
 
+222:20-222:33
+Mon Feb 16 14:44:06 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b17e08c_c53e5a02
+Bytes: 420
+Only logging this into the events stream eliminates something we found valuable.  Our perspective is that of somebody analyzing the content of the logs.  If I see log message A in thread X, then later see log message C in thread X, and I expected to see log message B in thread X in between, but didn't, I want to see the "Dropped X" messages for thread X, so that I can distinguish between a log drop and an actual bug.
+
 219:0-240:5
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -27,10 +34,26 @@ UUID: cb5e442b_d0c9b45e
 Bytes: 66
 I was testing it already ... but decided to use atomic_add and inc
 
+219:0-240:5
+Mon Feb 16 14:44:06 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cb5e442b_d0c9b45e
+UUID: 6b2558ee_67905236
+Bytes: 259
+My original proposal used __thread to avoid this, which is a GNU extension.  It looks like C++11 has a standard mechanism (thread_local), but I didn't try it.  I guess if you're using atomic on a normal static then you don't care about thread-specific counts.
+
 310:8-310:18
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2b2600b6_d07782b6
 Bytes: 29
 We should limit to INT32_MAX/
+
+310:8-310:18
+Mon Feb 16 14:44:06 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b2600b6_d07782b6
+UUID: 2b17e08c_e541d67c
+Bytes: 225
+We went with only 8 bits, since we figured past 255 drops the precision just wasn't interesting anymore.  Our perspective is that of somebody analyzing the log content, though, not profiling the system for logging throughput.
 

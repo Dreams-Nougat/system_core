@@ -50,6 +50,14 @@ UUID: 6b2558ee_67905236
 Bytes: 259
 My original proposal used __thread to avoid this, which is a GNU extension.  It looks like C++11 has a standard mechanism (thread_local), but I didn't try it.  I guess if you're using atomic on a normal static then you don't care about thread-specific counts.
 
+219:0-240:5
+Mon Feb 16 14:52:38 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b2558ee_67905236
+UUID: 6b2558ee_a7a9aa6c
+Bytes: 256
+This says nothing about performance impacts, though.  If I recall correctly from our rough profiling, we were looking at a penalty of about 80 ns on one of our low-tier devices (Moto E).  At the time, we figured it was worth it for at least our dev builds.
+
 310:8-310:18
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

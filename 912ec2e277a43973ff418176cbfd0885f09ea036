@@ -62,3 +62,11 @@ This is all in the name of graceful failure modes. I have experienced dogpiles m
 
 I will now consider how I can say this in a manner that is clear and concise ...
 
+313
+Mon Feb 16 15:10:09 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b69a006_98d3395f
+UUID: 8b20ccdf_08dfe7e1
+Bytes: 801
+Ok, perhaps my earlier comments can be ignored, then.  Please consider, though, that an OEM like ourselves that is downstream not only from AOSP, but also a chipset vendor, may receive a drop of software that is less than ideal, and still have to press forward with improving it functionally in many other subsystems in _parallel_ with investigating and fixing the performance issues causing the log drops.  At least from my end, having the drops reported in-band for each stream would likely increase the visibility and pressure for action to eliminate them.  We have monitoring in place for these drop messages now, wherever they reside, but once they appear there is still a time lag before they can be root-caused and fixed.  During that time, all other (triage) users potentially remain confused.
+

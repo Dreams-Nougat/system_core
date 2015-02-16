@@ -9,6 +9,14 @@ UUID: 2b17e08c_c53e5a02
 Bytes: 420
 Only logging this into the events stream eliminates something we found valuable.  Our perspective is that of somebody analyzing the content of the logs.  If I see log message A in thread X, then later see log message C in thread X, and I expected to see log message B in thread X in between, but didn't, I want to see the "Dropped X" messages for thread X, so that I can distinguish between a log drop and an actual bug.
 
+222:20-222:33
+Mon Feb 16 14:46:03 2015 +0000
+Author: John Michelau <1005146@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b17e08c_c53e5a02
+UUID: 2b17e08c_08c887ac
+Bytes: 239
+Hmm, I see your comments about using 'logcat -d -b main -b events' to do the interleaving.  The problem for us is that we typically use logs from our persistent reader collected passively by other users, and the streams aren't interleaved.
+
 219:0-240:5
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

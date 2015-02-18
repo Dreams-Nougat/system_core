@@ -18,3 +18,16 @@ I am still not 100% comfortable with this decision as it involves polling every 
 
 Polling will result in issues with CPUs going to idle and thus suspend. The price to battery is too high, the callers (at SCHED_FIFO) need to be able to live with the 6us(hot) to 30us(low CPU freq) of possible overhead introduced by the futex wakeup.
 
+File: liblog/logd_write.c
+
+572:34-572:47
+Wed Feb 18 22:18:48 2015 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b993cf9_62853237
+Bytes: 629
+I don't understand in what sense this is a "write barrier".  You mean "barrier" in the memory ordering or pthread_barrier/OpenMP sense?
+
+It looks to me like the moral equivalent of an empty critical section, which probably does not ensure much in terms of memory ordering.  (There are some heated debates on that subject, but I think it should not.  It is reasonably likely that on ARMv8 it eventually will not, but there are lots of uncertainties before we get there.)
+
+It does wait for existing writers to complete.  But it's unclear to me why a new one couldn't enter the critical section right after the "fifo_write_barrier".
+

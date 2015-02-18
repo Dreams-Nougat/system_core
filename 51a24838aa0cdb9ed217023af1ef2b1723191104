@@ -52,3 +52,11 @@ UUID: 4b5ed4d0_26d4f6f3
 Bytes: 244
 That's a *really* ugly dependency that is bound to break at some point in the future. We probably need an external/libenc first instead to de-couple the library from the runtime code before it is used here. Elliot, what do you think about this?
 
+13
+Wed Feb 18 16:02:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b5ed4d0_26d4f6f3
+UUID: 8b644c9b_4e610721
+Bytes: 57
+the whole of dalvik/vm was removed at least a year ago...
+

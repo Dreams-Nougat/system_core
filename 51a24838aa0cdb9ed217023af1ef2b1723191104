@@ -1,0 +1,54 @@
+Revision: 51a24838aa0cdb9ed217023af1ef2b1723191104
+Patch-set: 1
+File: libpixelflinger/Android.mk
+
+19
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab0d90eb_191ccb66
+Bytes: 333
+the .arm suffix is very important to generate more speedy code on ARM, removing it here is likely to affect performance in a negative way. Please ensure it is kept when targetting ARM.
+
+Does keeping the suffix affect x86 compilation? I thought it did not. If not, just leave it there. Otherwise, use ifdef .. else .. endif somewhere.
+
+41
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b5ed4d0_c6ff226c
+Bytes: 109
+I would prefer that this was added only when building for x86. At a minimum, make it explicit with a comment.
+
+74
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b5ed4d0_66f18e9a
+Bytes: 66
+same here, this includes should only be added when targetting x86.
+
+File: libpixelflinger/pixelflinger.cpp
+
+38
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b5ed4d0_86b84ac4
+Bytes: 159
+I'd recommend renaming GGLAssembler.h to GGLArmAssembler.h, and putting in GGLAssembler.h all the #if defined(...) .. #elif defined(...) #else .. #endif logic.
+
+File: libpixelflinger/scanline.cpp
+
+71
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b69d873_07a4568e
+Bytes: 74
+Please let's keep things consistent and rename this to ANDROID_X86_CODEGEN
+
+File: libpixelflinger/tests/codegen/Android.mk
+
+13
+Wed Feb 18 10:49:22 2015 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b5ed4d0_26d4f6f3
+Bytes: 244
+That's a *really* ugly dependency that is bound to break at some point in the future. We probably need an external/libenc first instead to de-couple the library from the runtime code before it is used here. Elliot, what do you think about this?
+

@@ -1,0 +1,27 @@
+Revision: aea0349fa143bf9807d0f8e73a3ca69e6bd13a68
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+336
+Wed Feb 18 17:34:37 2015 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bd55878_a7ff6a6c
+Bytes: 100
+Extend comment to mention that the same older drivers will never cause a transition to logging mode.
+
+454
+Wed Feb 18 17:34:37 2015 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bd55878_27f41a8b
+Bytes: 55
+Technically we ought to check errno after calling this.
+
+523
+Wed Feb 18 17:34:37 2015 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cbd64482_2ac7bf1b
+Bytes: 116
+See https://android-review.googlesource.com/#/c/120322/2/cryptfs.c
+
+I think we have to use _Alignas(struct dm_ioctl)
+

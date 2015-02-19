@@ -9,12 +9,28 @@ UUID: 6bd55878_a7ff6a6c
 Bytes: 100
 Extend comment to mention that the same older drivers will never cause a transition to logging mode.
 
+336
+Thu Feb 19 15:21:50 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bd55878_a7ff6a6c
+UUID: 48fb3a34_21d1c859
+Bytes: 4
+Done
+
 454
 Wed Feb 18 17:34:37 2015 +0000
 Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6bd55878_27f41a8b
 Bytes: 55
 Technically we ought to check errno after calling this.
+
+454
+Thu Feb 19 15:21:50 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bd55878_27f41a8b
+UUID: 083302f6_6c87db80
+Bytes: 4
+Done
 
 523
 Wed Feb 18 17:34:37 2015 +0000
@@ -24,4 +40,12 @@ Bytes: 116
 See https://android-review.googlesource.com/#/c/120322/2/cryptfs.c
 
 I think we have to use _Alignas(struct dm_ioctl)
+
+523
+Thu Feb 19 15:21:50 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cbd64482_2ac7bf1b
+UUID: 48fb3a34_01d6cc51
+Bytes: 4
+Done
 

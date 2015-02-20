@@ -1,0 +1,13 @@
+Revision: 4f893b58bffec12bdd547430b085ed3db9e35461
+Patch-set: 2
+File: libcutils/properties.c
+
+162
+Fri Feb 20 16:43:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e8b14e0e_5bd32361
+Bytes: 147
+so you can put #error here without breaking anything?
+
+(the Android.mk seems to support your claim. is this code actually dead post-sim_eng build?)
+

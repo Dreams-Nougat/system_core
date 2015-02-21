@@ -1,0 +1,11 @@
+Revision: 88e4d6033564db41c0d50ae9e1b48a6e4d733dbe
+Patch-set: 1
+File: liblog/Android.mk
+
+76
+Sat Feb 21 17:17:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 48f33a1b_7edfb18a
+Bytes: 168
+i think we should probably call this liblog-stderr and clean up the "fake" crap --- it seems like that's mostly support for the long-dead simulator that can be deleted?
+

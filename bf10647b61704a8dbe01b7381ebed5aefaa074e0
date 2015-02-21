@@ -1,0 +1,11 @@
+Revision: bf10647b61704a8dbe01b7381ebed5aefaa074e0
+Patch-set: 1
+File: adb/adb_listeners.c
+
+19
+Sat Feb 21 01:31:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 087f8222_6c465b98
+Bytes: 73
+Another implicit definition issue. Why did any compiler ever allow these?
+

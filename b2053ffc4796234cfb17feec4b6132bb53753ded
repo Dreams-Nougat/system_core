@@ -31,3 +31,21 @@ It looks to me like the moral equivalent of an empty critical section, which pro
 
 It does wait for existing writers to complete.  But it's unclear to me why a new one couldn't enter the critical section right after the "fifo_write_barrier".
 
+572:34-572:47
+Mon Feb 23 17:11:45 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b993cf9_62853237
+UUID: a86916a4_392a8f9e
+Bytes: 1220
+If the write semaphore was global, rather than allocated/mapped in the structure, we could simplify this immensely and drop this requirement. I have to consider this if we decide to resurrect this CL.
+
+TL;DR
+
+The word barrier is probably ill advised because of the connotation? It is a barrier because of the grabbing of the semaphore, and if contended and thus held back until the writer operation has completed, would also result in a futex call that is in fact a barrier for the processor cache.
+
+This ensures that we do not munmap while a write is currently in-process, this is to prevent an access violation killing the caller during the delicate operations associated with tearing down the FIFO consumer thread. A condition of this call is that __android_fifo_barrier value is cleared before, and the associated memory munmap'd afterwards. A new write following this would see the null and bypass.
+
+This routine is also re-used to aid the synchronization of checking if there are any outstanding entries in the consumer thread, to _guess_ if the consumer thread needs a kick (superfluous sem_post) in order to exit cleanly.
+
+This is only delicate _because_ the write semaphore is part of the mmap'd FIFO structure.
+

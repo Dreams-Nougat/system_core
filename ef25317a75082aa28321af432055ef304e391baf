@@ -1,0 +1,11 @@
+Revision: ef25317a75082aa28321af432055ef304e391baf
+Patch-set: 2
+File: liblog/logd_write.c
+
+99
+Mon Feb 23 12:03:55 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6869de73_479b2ed9
+Bytes: 210
+NOTE: i didn't push these defines into a constant because there's going to be lots of ugly yak shaving on the other side of this #if() to get it compiling on windows, mac os and even linux (thanks to gettid()).
+

@@ -1,0 +1,20 @@
+Revision: aa77b8674b80d24b04c57901057568349400d2da
+Patch-set: 3
+File: liblog/Android.mk
+
+76
+Mon Feb 23 17:25:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 48a17a0b_f12c828d
+Bytes: 107
+"...and is meant for use in the recovery image."? it would be a mistake for anyone else to use this, right?
+
+File: liblog/stderr_log.c
+
+17
+Mon Feb 23 17:25:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 48a17a0b_31472a45
+Bytes: 39
+this whole comment can just be removed.
+

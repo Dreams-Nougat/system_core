@@ -51,6 +51,16 @@ despite what gerritt is telling you, this isn't new code (it's git rename detect
 
 I don't mind rewriting this code to use the function you mention, since this code smells like a copy :). I'll try and figure out how hard that is (and might move that work to a follow up if it's too hard).
 
+232:3-232:60
+Mon Feb 23 21:01:46 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 885e12fc_98d71501
+UUID: c832cad2_4def8db4
+Bytes: 95
+Cool, the mere fact you are considering it is fine with me.
+
+(Did I just 'volunteer' you? :-) )
+
 346:0-346:4
 Mon Feb 23 18:39:16 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

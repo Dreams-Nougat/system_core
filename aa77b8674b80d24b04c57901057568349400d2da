@@ -41,10 +41,28 @@ I know not perfect or completely adaptable as-is, but it can form a standard for
 
 There are repeating themes in this call that match andorid_log_printLogLine for instance ...
 
+232:3-232:60
+Mon Feb 23 20:09:45 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 08722291_7425e8a2
+UUID: 885e12fc_98d71501
+Bytes: 302
+despite what gerritt is telling you, this isn't new code (it's git rename detection gone bad). 
+
+I don't mind rewriting this code to use the function you mention, since this code smells like a copy :). I'll try and figure out how hard that is (and might move that work to a follow up if it's too hard).
+
 346:0-346:4
 Mon Feb 23 18:39:16 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a880367a_0422b818
 Bytes: 11
 whtie space
+
+346:0-346:4
+Mon Feb 23 20:09:45 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a880367a_0422b818
+UUID: 885e12fc_b8dcd923
+Bytes: 21
+(see above, will fix)
 

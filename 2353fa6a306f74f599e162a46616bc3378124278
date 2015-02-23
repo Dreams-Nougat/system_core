@@ -17,6 +17,30 @@ UUID: 2b17e08c_08c887ac
 Bytes: 239
 Hmm, I see your comments about using 'logcat -d -b main -b events' to do the interleaving.  The problem for us is that we typically use logs from our persistent reader collected passively by other users, and the streams aren't interleaved.
 
+222:20-222:33
+Mon Feb 23 16:03:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b17e08c_08c887ac
+UUID: 8885328c_406d8e93
+Bytes: 494
+Interleaving is somewhat specific to your re-logging infrastructure. I will look into an adjustment to logd/logcat (as hinted above) that will help address your concerns over interleaving.
+
+Your logging infrastructure breaks our security concerns over PII by storing the data in persistent files. What really needs to be done is that the bugreport mechanism needs to be adjusted to address your needs. Please advise on the shortcomings you have with bugreports so we may fix it to work for you.
+
+222:20-222:33
+Mon Feb 23 16:03:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b17e08c_c53e5a02
+UUID: a880367a_01654a7f
+Bytes: 1283
+I understand. Please be advised that your reaction is a result of FUD associated with a _bug_ that you had thankfully resolved in logd; hopefully never to bite us again.
+
+I am not comfortable with creating a statistical infrastructure to record TID and LogID for each associated log drop, then play them back. The goal is to re-establish trust, I am sorry I broke that trust. But I still need/want an inexpensive mechanism to report logging failures if they occur in order to take corrective action on the platform. This message is to be considered 'fatal' from the logging perspective and I need to make that more prominent to the observer is my take (I will think about that). My gut tell me that the event needs to be special-cased in logd or logcat ...
+
+As for being able to continue to triage a problem in the face of data-loss, almost all scenarios one can comes up with will not benefit triage with a more specific loss statistic. The reaction should be to fix the platform problem (hopefully one line in init.rc, and not fix a bug in the logger) and stop limping along.
+
+NB: putting 10000 into /proc/sys/net/unix/dgram_max_qlen and restarting logd can be done without adjusting the platform init.rc file. That should have _bypassed_ the bug in logd that was fixed by your CL.
+
 219:0-240:5
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

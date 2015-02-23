@@ -16,6 +16,14 @@ UUID: 4826da9d_663e2eb3
 Bytes: 63
 Not this one - it lives in rootfs, so no specific file context.
 
+502
+Mon Feb 23 21:48:40 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4826da9d_663e2eb3
+UUID: 48025a8e_ccc643a2
+Bytes: 44
+Obviously this is untested, yes its in sbin.
+
 510
 Mon Feb 23 21:38:10 2015 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,10 +31,26 @@ UUID: c8d64a82_0dc3f50f
 Bytes: 132
 We don't have an automatic transition on sh since init was also executing sh commands elsewhere that required different permissions.
 
+510
+Mon Feb 23 21:48:40 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8d64a82_0dc3f50f
+UUID: e8430e32_abef0908
+Bytes: 4
+Done
+
 611
 Mon Feb 23 21:38:10 2015 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c8d64a82_6dd0b1d3
 Bytes: 187
 This one is fine with me; init cannot execute anything without changing domains now and thus even if the install-recovery.sh script lacks its proper context, it will just fail to execute.
+
+611
+Mon Feb 23 21:48:40 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8d64a82_6dd0b1d3
+UUID: e8df8e54_2efee732
+Bytes: 4
+Done
 

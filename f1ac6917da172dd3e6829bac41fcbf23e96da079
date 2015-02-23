@@ -1,0 +1,11 @@
+Revision: f1ac6917da172dd3e6829bac41fcbf23e96da079
+Base-for-patch-set: 3
+File: liblog/logd_write.c
+
+288:0-306:6
+Mon Feb 23 18:39:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a86916a4_7c81552b
+Bytes: 143
+I _think_ removing this breaks the build of logcat? Not sure of the value since the goal of the STDERR logging is to bypass logd and logcat ...
+

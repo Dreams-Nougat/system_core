@@ -17,3 +17,11 @@ UUID: 4597a502_beecf9c2
 Bytes: 122
 IIRC, the emulator is essentially an eng build device, so the code below should be sufficient. Yes, this seems like a bug.
 
+1269
+Tue Feb 24 22:11:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4597a502_beecf9c2
+UUID: c50e35b5_ca6983e1
+Bytes: 46
+https://android-review.googlesource.com/135120
+

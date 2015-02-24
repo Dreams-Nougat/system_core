@@ -55,6 +55,14 @@ UUID: a55dc161_1cb279e1
 Bytes: 315
 Certain device services are launched via /system/bin/sh /path/to/script, e.g. see service hciattach in device/asus/flo/init.flo.rc.  And historically there were instances of oneshot services that did /system/bin/sh -c "some command".  So we need to distinguish the console service shell from such shell invocations.
 
+510
+Tue Feb 24 14:14:44 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a55dc161_1cb279e1
+UUID: 65574942_772ab074
+Bytes: 188
+where possible, I've been modifying such one-shot services so that they're proper shell scripts, instead of relying on seclabel. For example: https://android-review.googlesource.com/129920
+
 611
 Mon Feb 23 21:38:10 2015 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>

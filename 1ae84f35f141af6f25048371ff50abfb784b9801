@@ -1,0 +1,18 @@
+Revision: 1ae84f35f141af6f25048371ff50abfb784b9801
+Patch-set: 3
+File: init/grab-bootchart.sh
+
+24
+Tue Feb 24 20:51:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05b5adf7_1cfeb530
+Bytes: 53
+oh, giving the full path to the tarball doesn't work?
+
+25
+Tue Feb 24 20:51:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 45d4052e_b60c88eb
+Bytes: 103
+interesting. seems like a good idea to me though. we can always do something else if someone complains.
+

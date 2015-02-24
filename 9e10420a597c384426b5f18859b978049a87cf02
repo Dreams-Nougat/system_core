@@ -18,6 +18,16 @@ good idea, but how about putting the "next step:" on a separate line for easier 
 
 i did think about just automatically running bootchart. should we just do that? we wouldn't even need to copy the .tgz then. realistically, anyone not debugging the init bootchart implementation itself doesn't care about the the .tgz.
 
+44
+Tue Feb 24 18:56:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c582b518_6a2f5783
+UUID: c582b518_eae2679c
+Bytes: 216
+funny thing, I had it as two lines, and then joined them at the last second muttering about too noisy.
+
+I also thought about running bootchart, since we both think this way, I am going to gratuitously make it happen!
+
 File: init/readme.txt
 
 316
@@ -26,4 +36,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c582b518_6aeaf7b3
 Bytes: 139
 no need to encourage people to do the wrong thing... they should be using $ANDROID_SERIAL rather than passing -s to every command they run.
+
+316
+Tue Feb 24 18:56:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c582b518_6aeaf7b3
+UUID: 65810917_c77cbe4b
+Bytes: 188
+I do not believe -s is wrong because I may be pushing/running tests on serveral N10s or N9s at the same time. But point taken, bootchart is usually done on one system for focus'd research.
 

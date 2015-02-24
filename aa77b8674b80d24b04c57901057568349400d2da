@@ -21,6 +21,16 @@ stderr is considered a /dev/null on the Recovery image. The current logging libr
 
 The static library is less useful, an accompanying shared library should be built for the recovery image to use perhaps?
 
+76
+Tue Feb 24 13:45:57 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a880367a_849fa8f8
+UUID: a5022140_519d147b
+Bytes: 313
+The recovery code (installer, updater) reopen /cache/recovery/last_log as both stdout / stderr so i guess it's their rudimentary mechanism of storing information that can be retrieved on reboot.
+
+I'm not sure why they chose that over /sys/fs/pstore but it's a system that is simplistic and has worked well so far.
+
 File: liblog/stderr_log.c
 
 17

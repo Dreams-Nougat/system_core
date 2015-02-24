@@ -39,6 +39,14 @@ UUID: e8430e32_abef0908
 Bytes: 4
 Done
 
+510
+Tue Feb 24 04:41:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8d64a82_0dc3f50f
+UUID: a534e107_e12446d3
+Bytes: 117
+(where is that done? i don't see any calls to system or popen, and the exec calls seem to be to implement 'service'.)
+
 611
 Mon Feb 23 21:38:10 2015 +0000
 Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>

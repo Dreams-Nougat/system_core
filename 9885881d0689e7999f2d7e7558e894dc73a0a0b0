@@ -9,3 +9,11 @@ UUID: 6b6398c4_17ee748b
 Bytes: 100
 nnk (when you're back from vacation): this seems weird. shouldn't the emulator behave like a device?
 
+1269
+Tue Feb 24 00:32:22 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b6398c4_17ee748b
+UUID: 4597a502_beecf9c2
+Bytes: 122
+IIRC, the emulator is essentially an eng build device, so the code below should be sufficient. Yes, this seems like a bug.
+

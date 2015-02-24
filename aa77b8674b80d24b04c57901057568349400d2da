@@ -31,6 +31,18 @@ The recovery code (installer, updater) reopen /cache/recovery/last_log as both s
 
 I'm not sure why they chose that over /sys/fs/pstore but it's a system that is simplistic and has worked well so far.
 
+76
+Tue Feb 24 15:43:11 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5022140_519d147b
+UUID: 650ca978_af5979f8
+Bytes: 381
+Well, pstore is only available on 3.10+ kernels (N6 and N9); but if available, it beats putting PII into the filesystem for security concerns (we get pushback when we even mention saving android logs into a file).
+
+<editorial>
+KISS is _always_ king; what-ifs are only necessary to ensure a design is future-proofed; nothing here precludes small CL followups to refine.
+</editorial>
+
 File: liblog/stderr_log.c
 
 17

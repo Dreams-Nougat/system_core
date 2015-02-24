@@ -1,0 +1,11 @@
+Revision: 6cd10d74c1b8f04f546f4879cc9dda722b1e64e4
+Patch-set: 4
+File: init/grab-bootchart.sh
+
+23
+Tue Feb 24 21:33:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 857c3df2_0b0341bd
+Bytes: 104
+why copy the file to the current directory if we're only going to ask them to manually remove it on L26?
+

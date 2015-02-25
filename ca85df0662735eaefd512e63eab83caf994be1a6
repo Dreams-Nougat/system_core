@@ -33,3 +33,11 @@ UUID: 620f3f25_b72888a6
 Bytes: 116
 It's easier to keep the old syntax. I have seen "fastboot reboot-bootloader" used in flash-all.sh and flash-base.sh.
 
+304
+Wed Feb 25 20:41:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 620f3f25_b72888a6
+UUID: 0233e3f5_0c73b7cd
+Bytes: 271
+no, i wasn't talking about removing the *command*, i was talking about removing the *documentation*. so that in a few generations time, everyone's using the modern general-purpose syntax. (and maybe one day we can even reboot into the recovery image from the bootloader!)
+

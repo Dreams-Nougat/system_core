@@ -1,0 +1,11 @@
+Revision: 5f1a3472b0221795b9604d0ca91ff9e72c968092
+Patch-set: 3
+File: adb/transport_test.cpp
+
+23
+Wed Feb 25 18:56:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2e70b93_620d9636
+Bytes: 4
+dead
+

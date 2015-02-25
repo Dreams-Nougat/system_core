@@ -1,0 +1,11 @@
+Revision: f0d0367ccae81cb39dc1ae3942255c78b7b35740
+Patch-set: 3
+File: adb/transport.h
+
+33
+Wed Feb 25 02:05:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e526d94e_39cc073d
+Bytes: 44
+they're both more than just that though, no?
+

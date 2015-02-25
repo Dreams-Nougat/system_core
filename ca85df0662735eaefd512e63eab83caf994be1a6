@@ -9,3 +9,11 @@ UUID: e5433932_0bcf3d66
 Bytes: 83
 wasn't sure whether to remove the legacy syntaxes from the fastboot and adb help...
 
+304
+Wed Feb 25 18:21:16 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e5433932_0bcf3d66
+UUID: 653109d1_877ec645
+Bytes: 29
+looks okay to keep them there
+

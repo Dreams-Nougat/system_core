@@ -17,6 +17,14 @@ UUID: a5b2215a_d1e6a434
 Bytes: 47
 The next sentence explains he other difference.
 
+10
+Wed Feb 25 06:33:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5b2215a_d1e6a434
+UUID: a5b2215a_31073046
+Bytes: 75
+i know. i'm suggesting you rewrite this so the important thing comes first.
+
 File: adb/transport.c
 
 1173
@@ -63,6 +71,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 85b7dd4b_f0cac0a6
 Bytes: 115
 Should these just move to libcutils? I expect we'll not need them in adb eventually, but they are otherwise useful.
+
+45
+Wed Feb 25 06:33:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85b7dd4b_f0cac0a6
+UUID: c5ad55fe_d2e6a434
+Bytes: 138
+i don't know; if it was just the C-stringness, then definitely. but the insistence on filling the buffer is unusual for the read function.
 
 File: adb/transport_test.cpp
 

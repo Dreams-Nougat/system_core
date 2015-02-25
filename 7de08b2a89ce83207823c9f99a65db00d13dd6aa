@@ -1,0 +1,50 @@
+Revision: 7de08b2a89ce83207823c9f99a65db00d13dd6aa
+Patch-set: 6
+File: init/builtins.cpp
+
+177:15-177:19
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 653109d1_c71c3e9b
+Bytes: 7
+nullptr
+
+180:23-180:27
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c532b5d2_2a415f2f
+Bytes: 7
+nullptr
+
+File: init/init.cpp
+
+361
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c532b5d2_2af31fa3
+Bytes: 14
+Just 'else if'
+
+File: init/init_parser.cpp
+
+675:15-675:19
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 653109d1_a7b10adf
+Bytes: 12
+more nullptr
+
+679:18-679:36
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c532b5d2_ea64a7ae
+Bytes: 4
+Why?
+
+685:19-685:29
+Wed Feb 25 18:40:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4526c59d_a650261e
+Bytes: 16
+reinterpret_cast
+

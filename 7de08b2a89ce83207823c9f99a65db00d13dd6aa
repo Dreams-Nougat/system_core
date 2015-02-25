@@ -16,6 +16,13 @@ UUID: c532b5d2_2a415f2f
 Bytes: 7
 nullptr
 
+184:0-184:48
+Wed Feb 25 20:30:53 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4224fba3_169e1c78
+Bytes: 114
+I assume that you need to support this indefinitely now because we can't remove support for this. Is that correct?
+
 File: init/init.cpp
 
 361
@@ -47,4 +54,36 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4526c59d_a650261e
 Bytes: 16
 reinterpret_cast
+
+707:4-707:59
+Wed Feb 25 20:30:53 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a23a17c3_d102e433
+Bytes: 81
+You should check this for error, since it can fail to allocation memory for name.
+
+741:16-741:32
+Wed Feb 25 20:30:53 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 42295b84_ae25b7a8
+Bytes: 128
+Is this freed in all cases? It looks like it only is freed if something is related to the new exec command, but it wasn't clear.
+
+File: init/init_parser.h
+
+22:9-22:22
+Wed Feb 25 20:30:53 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2221c795_75954826
+Bytes: 120
+Is there a reason not to put this in the source files? It seems odd to have it here when nothing below seems to need it.
+
+File: init/readme.txt
+
+281:11-281:12
+Wed Feb 25 20:30:53 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 823fd3b4_50df0c16
+Bytes: 55
+As long as you are here, can you nuke this extra space?
 

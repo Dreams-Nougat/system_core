@@ -1,0 +1,13 @@
+Revision: 12b16802521115191ba5e4d36a102540c7de0efc
+Patch-set: 7
+File: /COMMIT_MSG
+
+11
+Wed Feb 25 20:48:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e22faf8a_ebc3b10f
+Bytes: 440
+i still think what you learned was more subtle than this. honestly, i think it's probably confusing to even mention the other two. these functions read/write a full fixed-sized buffer. they really have nothing to do with strings except that C makes it hard to distinguish.
+
+(i'm not even sure my rewording above is really clear. maybe talk about Java's readFully(byte[]) and write(byte[]) instead, since they have the equivalent behaviors?)
+

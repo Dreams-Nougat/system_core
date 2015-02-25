@@ -9,6 +9,14 @@ UUID: 68dabe34_1fd8c32e
 Bytes: 260
 if there is an exec in an on property handler the same exec may be invoked any number of times (and that is the actual case for us). the resources allocated here seems unbounded. the service object need to be reused or released to avoid leaking memory i think.
 
+664
+Wed Feb 25 02:31:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 68dabe34_1fd8c32e
+UUID: 8516fdda_b8b57978
+Bytes: 215
+yeah, i noticed that in the reaping code. one-shot stuff doesn't get deleted. i was going to fix that separately, since it feels like a separate bug. (though, yes, this patch makes it far easier to tickle that bug.)
+
 File: init/readme.txt
 
 140:8-140:18
@@ -17,4 +25,12 @@ Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 88d53202_2001eaea
 Bytes: 163
 the terminology wrt the selinux security context is a bit inconsistent. this file calls it security context, securitycontext and seclabel. how about seclabel here?
+
+140:8-140:18
+Wed Feb 25 02:31:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 88d53202_2001eaea
+UUID: 4547a5ec_248cd64d
+Bytes: 4
+Done
 

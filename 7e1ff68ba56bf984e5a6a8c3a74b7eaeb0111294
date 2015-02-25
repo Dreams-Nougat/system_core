@@ -9,6 +9,14 @@ UUID: 85b7dd4b_b0e79833
 Bytes: 120
 the C strings part isn't the real difference though. if it was, we'd just refactor libutils so we could reuse that code.
 
+10
+Wed Feb 25 06:30:14 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85b7dd4b_b0e79833
+UUID: a5b2215a_d1e6a434
+Bytes: 47
+The next sentence explains he other difference.
+
 File: adb/transport.c
 
 1173
@@ -40,6 +48,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 451c051f_16413c2f
 Bytes: 95
 do you really mean if the fd was closed, or do you mean if the _other end_ of the fd is closed?
+
+43
+Wed Feb 25 06:30:14 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 451c051f_16413c2f
+UUID: c5ad55fe_72dff861
+Bytes: 36
+The latter. I'll reword the comment.
 
 45
 Wed Feb 25 06:23:23 2015 +0000

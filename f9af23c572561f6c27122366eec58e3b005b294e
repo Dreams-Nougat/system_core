@@ -22,10 +22,30 @@ UUID: a5b2215a_91ec1c19
 Bytes: 10
 preserved?
 
+103
+Wed Feb 25 06:59:17 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5b2215a_91ec1c19
+UUID: a5b2215a_91bb7cee
+Bytes: 505
+Each callback is left in the list after it is called, so calling run_transport_disconnects twice will call each callback twice. This behavior is fine, I just wanted to note that the callbacks either need to be written such that they can be called multiple times without error, or that this function should only be called once.
+
+Right now the latter case is true. It would probably make sense to guard this function against one of the state members in the atransport.
+
+I'll clarify all this in the comment.
+
 769
 Wed Feb 25 06:30:35 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 85b7dd4b_10f944d2
 Bytes: 59
 is there a reason we don't just rewrite callers to isalnum?
+
+769
+Wed Feb 25 06:59:17 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85b7dd4b_10f944d2
+UUID: a5b2215a_5157540f
+Bytes: 288
+No. I had written the test before I had finished deduping minadbd, so I had still been avoiding making any source changes. This isn't needed any more though. Gerrit has decided I'm not allowed to upload any more changes tonight though (work/life balance bot?), so I'll get to it tomorrow.
 

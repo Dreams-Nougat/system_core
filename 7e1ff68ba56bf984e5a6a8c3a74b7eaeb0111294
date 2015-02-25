@@ -1,6 +1,45 @@
 Revision: 7e1ff68ba56bf984e5a6a8c3a74b7eaeb0111294
 Patch-set: 2
+File: /COMMIT_MSG
+
+10
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 85b7dd4b_b0e79833
+Bytes: 120
+the C strings part isn't the real difference though. if it was, we'd just refactor libutils so we could reuse that code.
+
+File: adb/transport.c
+
+1173
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5ad55fe_92c53c99
+Bytes: 11
+ah, i see..
+
+1216
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 451c051f_563bb4c0
+Bytes: 49
+so just rewrite this as if (r == -1) {} else {} ?
+
 File: adb/transport.h
+
+33
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e55419b3_a328da2a
+Bytes: 8
+will it?
+
+43
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 451c051f_16413c2f
+Bytes: 95
+do you really mean if the fd was closed, or do you mean if the _other end_ of the fd is closed?
 
 45
 Wed Feb 25 06:23:23 2015 +0000
@@ -17,4 +56,12 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 650749cc_17f4944f
 Bytes: 203
 This is taken right out of libutils/tests/file_test.cpp. I think there's a roughly identical copy in bionic, and there are probably more elsewhere. Might be worth promoting this into a real libutils API.
+
+30
+Wed Feb 25 06:26:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 650749cc_17f4944f
+UUID: a5b2215a_11d2ec59
+Bytes: 102
+the bionic one is more complicated, but, yeah, it's probably time to start sharing our test utilities.
 

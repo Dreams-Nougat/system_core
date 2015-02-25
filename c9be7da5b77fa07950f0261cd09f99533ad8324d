@@ -1,0 +1,11 @@
+Revision: c9be7da5b77fa07950f0261cd09f99533ad8324d
+Patch-set: 5
+File: init/init.cpp
+
+1057
+Wed Feb 25 02:36:23 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05584de4_84e12620
+Bytes: 266
+get_property_set_fd() will return -1 until the builtin action property_service_init_action runs, which will happen inside one of the calls to execute_one_command.  Once it is set we add it to ufds for the next poll.  The same is true for the signal and keychord fds.
+

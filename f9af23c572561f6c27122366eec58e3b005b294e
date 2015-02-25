@@ -13,3 +13,19 @@ Both clang and GCC are pretty stupid about this warning.
 
 Eventually this will all be C++ and we'll just have real constructors, but this will do for now.
 
+File: adb/transport.c
+
+103
+Wed Feb 25 06:30:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5b2215a_91ec1c19
+Bytes: 10
+preserved?
+
+769
+Wed Feb 25 06:30:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 85b7dd4b_10f944d2
+Bytes: 59
+is there a reason we don't just rewrite callers to isalnum?
+

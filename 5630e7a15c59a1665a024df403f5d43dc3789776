@@ -17,6 +17,14 @@ UUID: 8516fdda_b8b57978
 Bytes: 215
 yeah, i noticed that in the reaping code. one-shot stuff doesn't get deleted. i was going to fix that separately, since it feels like a separate bug. (though, yes, this patch makes it far easier to tickle that bug.)
 
+664
+Wed Feb 25 03:03:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8516fdda_b8b57978
+UUID: 057f6d22_6cae5bfe
+Bytes: 268
+actually, having looked at the code again i think you're right --- the old oneshot wasn't really what it claimed to be, so the new SVC_EXEC really is the first time a service can be safely freed. i'll make sure we're freeing reaped instances up as part of this change.
+
 File: init/readme.txt
 
 140:8-140:18

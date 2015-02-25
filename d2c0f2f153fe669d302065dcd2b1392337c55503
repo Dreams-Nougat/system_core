@@ -1,0 +1,18 @@
+Revision: d2c0f2f153fe669d302065dcd2b1392337c55503
+Patch-set: 1
+File: adb/transport.c
+
+77
+Wed Feb 25 05:59:26 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 650749cc_5751ecc9
+Bytes: 115
+I suppose this is a little obvious... This comment was previously in the test. I'll make this a little more useful.
+
+109
+Wed Feb 25 05:59:26 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05168d00_54572c0f
+Bytes: 132
+I meant to update this as well. This function can't be run on a zeroed atransport. Not sure how it's supposed to be initialized yet.
+

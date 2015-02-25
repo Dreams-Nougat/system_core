@@ -1,0 +1,15 @@
+Revision: f9af23c572561f6c27122366eec58e3b005b294e
+Patch-set: 2
+File: adb/Android.mk
+
+31
+Wed Feb 25 06:11:39 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05168d00_7427c8ae
+Bytes: 193
+Both clang and GCC are pretty stupid about this warning.
+
+    struct foo = {}; // emits warning
+
+Eventually this will all be C++ and we'll just have real constructors, but this will do for now.
+

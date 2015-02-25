@@ -1,0 +1,11 @@
+Revision: ca85df0662735eaefd512e63eab83caf994be1a6
+Patch-set: 1
+File: fastboot/fastboot.c
+
+304
+Wed Feb 25 18:04:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e5433932_0bcf3d66
+Bytes: 83
+wasn't sure whether to remove the legacy syntaxes from the fastboot and adb help...
+

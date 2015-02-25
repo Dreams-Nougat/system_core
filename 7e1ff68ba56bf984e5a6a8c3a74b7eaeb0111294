@@ -1,0 +1,11 @@
+Revision: 7e1ff68ba56bf984e5a6a8c3a74b7eaeb0111294
+Patch-set: 2
+File: adb/transport_test.cpp
+
+30
+Wed Feb 25 06:15:07 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 650749cc_17f4944f
+Bytes: 203
+This is taken right out of libutils/tests/file_test.cpp. I think there's a roughly identical copy in bionic, and there are probably more elsewhere. Might be worth promoting this into a real libutils API.
+

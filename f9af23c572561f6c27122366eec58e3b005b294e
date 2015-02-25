@@ -1,0 +1,11 @@
+Revision: f9af23c572561f6c27122366eec58e3b005b294e
+Base-for-patch-set: 2
+File: adb/transport.c
+
+1215
+Wed Feb 25 06:15:07 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e512590d_532584cb
+Bytes: 34
+This was actually broken before...
+

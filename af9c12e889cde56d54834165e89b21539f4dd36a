@@ -1,0 +1,11 @@
+Revision: af9c12e889cde56d54834165e89b21539f4dd36a
+Patch-set: 8
+File: init/init.cpp
+
+86:8-86:14
+Thu Feb 26 01:50:54 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2624f23_b32e18b3
+Bytes: 93
+Is it possible to log the two error returns? Or is it too early in the boot for log messages?
+

@@ -9,6 +9,14 @@ UUID: 653109d1_c71c3e9b
 Bytes: 7
 nullptr
 
+177:15-177:19
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 653109d1_c71c3e9b
+UUID: e51c1954_a33e5ae4
+Bytes: 129
+i'm happy to switch to nullptr in all our projects, but i think we should do them all as separate "clang-modernize"-only changes.
+
 180:23-180:27
 Wed Feb 25 18:40:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,6 +31,14 @@ UUID: 4224fba3_169e1c78
 Bytes: 114
 I assume that you need to support this indefinitely now because we can't remove support for this. Is that correct?
 
+184:0-184:48
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4224fba3_169e1c78
+UUID: 22ab8758_25730ece
+Bytes: 201
+no, ghartmann is going to switch over to 'exec' when he gets chance, and then we'll remove 'execonce'. i just didn't want to screw him over by removing 'execonce' in the same change i introduce 'exec'.
+
 File: init/init.cpp
 
 361
@@ -31,6 +47,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c532b5d2_2af31fa3
 Bytes: 14
 Just 'else if'
+
+361
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c532b5d2_2af31fa3
+UUID: c258eb71_9ae96d85
+Bytes: 192
+i wanted to make it clear that the stuff below was separate rather than a dichotomy, but i've just made notify_service_state a no-op for a SVC_EXEC service and call it unconditionally instead.
 
 File: init/init_parser.cpp
 
@@ -55,6 +79,14 @@ UUID: 4526c59d_a650261e
 Bytes: 16
 reinterpret_cast
 
+685:19-685:29
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4526c59d_a650261e
+UUID: e2496fa5_1b171b78
+Bytes: 99
+there are none in the rest of the code, and the real fix is to move to new/delete. punting for now.
+
 707:4-707:59
 Wed Feb 25 20:30:53 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -62,12 +94,32 @@ UUID: a23a17c3_d102e433
 Bytes: 81
 You should check this for error, since it can fail to allocation memory for name.
 
+707:4-707:59
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a23a17c3_d102e433
+UUID: e2496fa5_bbfc27c3
+Bytes: 78
+i suspect we're about to die anyway when we're that low on memory, but 'done'.
+
 741:16-741:32
 Wed Feb 25 20:30:53 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 42295b84_ae25b7a8
 Bytes: 128
 Is this freed in all cases? It looks like it only is freed if something is related to the new exec command, but it wasn't clear.
+
+741:16-741:32
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 42295b84_ae25b7a8
+UUID: e2496fa5_7b99ff8e
+Bytes: 639
+right now nothing is ever freed, and the service structs mostly point to memory from the original input files as they were read in. but sometimes there's an allocation. i wanted to make the service::name field at least be something that's consistently allocated and -- in the one case where its parent is actually deallocated -- deallocated.
+
+otherwise i need a const cast somewhere and i continue the problem of "who owns this pointer anyway?".
+
+what i _really_ want to do is move us to std::string, but -- as i said last night -- this patch got way out of hand when i tried to turn service into a class with a constructor and destructor.
 
 File: init/init_parser.h
 
@@ -78,6 +130,14 @@ UUID: 2221c795_75954826
 Bytes: 120
 Is there a reason not to put this in the source files? It seems odd to have it here when nothing below seems to need it.
 
+22:9-22:22
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2221c795_75954826
+UUID: 42aebb66_06e4dae5
+Bytes: 71
+this was needed when my new function took a uid_t and a gid_t. removed.
+
 File: init/readme.txt
 
 281:11-281:12
@@ -86,4 +146,12 @@ Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 823fd3b4_50df0c16
 Bytes: 55
 As long as you are here, can you nuke this extra space?
+
+281:11-281:12
+Thu Feb 26 01:28:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 823fd3b4_50df0c16
+UUID: 22ab8758_e55df631
+Bytes: 4
+Done
 

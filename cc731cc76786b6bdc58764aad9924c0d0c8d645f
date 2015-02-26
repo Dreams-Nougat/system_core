@@ -1,0 +1,18 @@
+Revision: cc731cc76786b6bdc58764aad9924c0d0c8d645f
+Patch-set: 9
+File: adb/adb_io.cpp
+
+31
+Thu Feb 26 21:40:42 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 823d134f_20104a78
+Bytes: 32
+this code looks dead, because...
+
+51
+Thu Feb 26 21:40:42 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 42479bec_de3aa5f2
+Bytes: 82
+... if you get here, "len0 - len" is necessarily 0 and you could dump_hex(.., len)
+

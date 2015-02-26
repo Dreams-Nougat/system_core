@@ -9,3 +9,11 @@ UUID: e2624f23_b32e18b3
 Bytes: 93
 Is it possible to log the two error returns? Or is it too early in the boot for log messages?
 
+86:8-86:14
+Thu Feb 26 01:52:33 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2624f23_b32e18b3
+UUID: c2fd4b74_523a34f0
+Bytes: 96
+i'm not sure this is an error. the "property name too long" case sounds like a good idea though.
+

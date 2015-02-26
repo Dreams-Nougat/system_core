@@ -1,0 +1,15 @@
+Revision: d8b979242f0c1cd2b694200de6d8c0f035281bc5
+Patch-set: 9
+File: logd/LogBuffer.cpp
+
+171:46-171:65
+Thu Feb 26 17:32:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 91647f9b_cbce49e9
+Bytes: 494
+This use of ANDROID_LOG_VERBOSE is the 'inert' level of 'enforcement'
+
+ToDo: consider implications of a runtime check of ro.built.type where "user" sets a default of ANDROID_LOG_DEBUG (or even ANDROID_LOG_INFO?) as per the discussion(s) incited during the Bootcamp talks on the new logger.
+
+ghackmann and others point out that some subsystems make _all_ messages ANDROID_LOG_ERROR. The world has never been capable of dealing with Megalomaniacs or a Jerk driving a BMW 7 series in the HOV lane.
+

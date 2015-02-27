@@ -1,5 +1,14 @@
 Revision: d8696d7a5986caf6f14761df7a99fc9e6be8bc44
 Patch-set: 1
+File: /COMMIT_MSG
+
+7:7-7:40
+Fri Feb 27 15:35:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62d57f78_e7c962b3
+Bytes: 37
+describe reason why, this is too cagy
+
 File: logcat/logcat.cpp
 
 855:17-855:18

@@ -1,0 +1,11 @@
+Revision: be9712156bdcf8cff774a78a3afdb0c562998c73
+Base-for-patch-set: 2
+File: rootdir/init.rc
+
+253
+Fri Feb 27 01:40:09 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 820273b9_b8e83905
+Bytes: 41
+I think lines 250-253 can be deleted too.
+

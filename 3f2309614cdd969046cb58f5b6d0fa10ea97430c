@@ -33,3 +33,11 @@ In response to the event, we want to update the dm-verity state to start it in l
 
 An alternative to setting the property is to perform this directly from ueventd, but I think being able to configure the behavior in the device specific init.rc is far more appropriate than hardcoding the functionality to ueventd, especially since not all devices will support verified boot.
 
+941:8-941:29
+Fri Feb 27 20:29:03 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a24e9754_718a7833
+UUID: 6231ffd0_ea0107eb
+Bytes: 392
+__system_property_set cannot be called directly from any process other than pid 1.  It assumes a single writer, and writing to the property store from the ueventd process may corrupt all properties.  The property store should be read only, so if it succeeds that is a bug.  Even if you were to use the libcutils implementation it would still deadlock with init waiting on the property socket.
+

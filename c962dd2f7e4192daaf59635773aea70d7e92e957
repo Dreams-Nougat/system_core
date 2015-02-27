@@ -1,0 +1,18 @@
+Revision: c962dd2f7e4192daaf59635773aea70d7e92e957
+Patch-set: 1
+File: libsparse/sparse.c
+
+107:11-107:12
+Fri Feb 27 19:02:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e26ecfaf_13068c49
+Bytes: 69
+Initialize to -EINVAL so it doesn't silently skip unknown block types
+
+261
+Fri Feb 27 19:02:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e26ecfaf_132f6cb1
+Bytes: 82
+Use ret = here too to avoid calling a function with side effects from an if clause
+

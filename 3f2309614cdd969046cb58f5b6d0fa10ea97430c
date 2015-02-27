@@ -11,3 +11,25 @@ This is wrong, you should never call __system_property_set directly.  Use proper
 
 I'm not sure if setting properties from ueventd is even supported - ueventd is forked as a separate process to avoid deadlocks with the init process, but property_set requires a blocking RPC to init to modify the shared property area.  This might cause deadlocks if a verity event arrives while init is waiting for ueventd to process a module load firmware event.
 
+941:8-941:29
+Fri Feb 27 20:24:02 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 223aa7a9_4dd87928
+UUID: a24e9754_718a7833
+Bytes: 1393
+I think this is the correct thing to do in ueventd, because:
+
+1) Calling init's property_set from ueventd causes almost immediate deadlocks, so it's not an option as you stated. I tested this at first.
+
+2) Linking libcutils with conflicting function names to init does not feel like a feasible solution, especially since property_set in libcutils simply wraps __system_property_set.
+
+3) Using __system_property_set in ueventd works, and ueventd sharing binary with init is already a special case.
+
+Here's some background on why I want to set a property here:
+
+This uevent is sent when dm-verity discovers a corrupted block, most probably from the system partition. At this point, we cannot rely on programs in the system partition to function properly, which also means we cannot rely on them to handle the event.
+
+In response to the event, we want to update the dm-verity state to start it in logging mode next time, and reboot the device. Specifically, ueventd will set the verity.state property when it sees the uevent and the device specific init.rc will be used to trigger state save and reboot.
+
+An alternative to setting the property is to perform this directly from ueventd, but I think being able to configure the behavior in the device specific init.rc is far more appropriate than hardcoding the functionality to ueventd, especially since not all devices will support verified boot.
+

@@ -1,0 +1,11 @@
+Revision: 6f398fe92a061cc1508898b30fbb1b76bed77ebc
+Patch-set: 8
+File: liblog/logd_write.c
+
+226:12-234:48
+Tue Mar 03 21:58:54 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b230aa7f_36d09874
+Bytes: 94
+Use a struct for this (on both ends), manually packing things into char arrays is error-prone.
+

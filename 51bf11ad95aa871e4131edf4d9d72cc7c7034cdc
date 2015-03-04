@@ -1,0 +1,11 @@
+Revision: 51bf11ad95aa871e4131edf4d9d72cc7c7034cdc
+Patch-set: 7
+File: fs_mgr/fs_mgr_verity.c
+
+434:31-434:34
+Wed Mar 04 21:30:45 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f25ea2fc_783321c6
+Bytes: 45
+The parameter is not a size_t. It's an off_t.
+

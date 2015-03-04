@@ -2,6 +2,27 @@ Revision: d8b979242f0c1cd2b694200de6d8c0f035281bc5
 Patch-set: 9
 File: logd/LogBuffer.cpp
 
+136:0-142:1
+Wed Mar 04 20:56:56 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1268969d_190a2bd8
+Bytes: 14
+use <endian.h>
+
+144:0-144:30
+Wed Mar 04 20:56:56 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1268969d_5904a3c7
+Bytes: 102
+Move this into the block starting at line 155, no need for this to be globally accessible in this file
+
+164:0-165:59
+Wed Mar 04 20:56:56 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 321d9af7_9a6c2207
+Bytes: 131
+Blocked by https://android-review.googlesource.com/#/c/138006, once upstream, we will modify this to use <private/android_logger.h>
+
 171:46-171:65
 Thu Feb 26 17:32:49 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

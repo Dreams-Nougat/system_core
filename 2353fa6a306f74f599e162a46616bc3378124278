@@ -65,6 +65,16 @@ Bugreports work well for certain situations, but are too large of a hammer for m
 
 As for PII, we don't log to persistent files on consumer devices.  We use it for testing.
 
+222:20-222:33
+Wed Mar 04 22:04:21 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f25ea2fc_3863698f
+UUID: f25ea2fc_1bd3ff55
+Bytes: 413
+If you dogfood test with ro.logd.size=4M (or for example ro.logd.main.size=4M for _one_ log buffer) set in init.rc for eng or userdebug builds you may have that large, at least one day long, log buffer you are looking for, with regards to tracking network-related issues. 32M on all buffers would give you a week of coverage; but at the cost of OOM killer ...
+
+bugreports would be very unhappy if you did this ;-}
+
 219:0-240:5
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

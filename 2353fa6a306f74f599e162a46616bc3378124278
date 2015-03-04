@@ -83,6 +83,16 @@ UUID: 526daeb2_f3c750dd
 Bytes: 347
 Yeah, that's the problem, although I can't really say what I think on this topic without publicly bashing RIL vendors.  Cranking up the RAM buffer size doesn't work for Dogfooding, because it invalidates a bunch of others things we're monitoring.  A true Tragedy of the (Dogfood) Commons... and an inherent flaw in on-target diagnostics.  Oh well.
 
+222:20-222:33
+Wed Mar 04 22:22:25 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 526daeb2_f3c750dd
+UUID: f25ea2fc_3ba44384
+Bytes: 31
+ro.logd.radio.size=64K
+
+Bazinga
+
 219:0-240:5
 Fri Feb 13 00:39:47 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

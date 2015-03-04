@@ -1,0 +1,20 @@
+Revision: e3c65c04685777d21671993710bc61fe6b68170a
+Patch-set: 1
+File: logd/LogAudit.cpp
+
+148:40-148:56
+Wed Mar 04 21:13:36 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 321d9af7_bae566d5
+Bytes: 180
+static_cast
+
+malloc() returns void * which can be reasonably cast to another type.  You only need to fall back on reinterpret_cast<> when casting between nominally unrelated types.
+
+190:19-190:35
+Wed Mar 04 21:13:36 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 321d9af7_daea9aa4
+Bytes: 11
+static_cast
+

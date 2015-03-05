@@ -9,3 +9,11 @@ UUID: 7220f282_d827bd32
 Bytes: 33
 it's USE_MINGW, not WITH_MINGW :)
 
+51:7-51:17
+Thu Mar 05 01:46:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7220f282_d827bd32
+UUID: 7220f282_38c611c2
+Bytes: 114
+I am worried about balance, WITH_MINGW is used on line 41 and is set with (likely evil) heuristics in line 33 etc.
+

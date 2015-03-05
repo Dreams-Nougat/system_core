@@ -1,0 +1,27 @@
+Revision: 326e70c196ae61b97e4f6d85ebc347d6f80ffd7c
+Patch-set: 1
+File: libbacktrace/Blueprints
+
+41
+Thu Mar 05 07:22:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37110c43_9d6a4716
+Bytes: 21
+Looks like it's done?
+
+File: libcutils/Blueprints
+
+54
+Thu Mar 05 07:22:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37110c43_1d7f57df
+Bytes: 4
+Why?
+
+140:20-140:28
+Thu Mar 05 07:22:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d70d102d_9a4da995
+Bytes: 4
+kill
+

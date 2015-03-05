@@ -9,6 +9,15 @@ UUID: 37110c43_fab709cc
 Bytes: 21
 Do we drop this c@rp?
 
+31:0-39:5
+Thu Mar 05 02:02:40 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37110c43_fab709cc
+UUID: 37110c43_9a5a4d04
+Bytes: 80
+Oh, I didn't see this.
+Yes, we can drop this. We don't support cygwin build now.
+
 51:7-51:17
 Thu Mar 05 01:43:43 2015 +0000
 Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +32,13 @@ Parent: 7220f282_d827bd32
 UUID: 7220f282_38c611c2
 Bytes: 114
 I am worried about balance, WITH_MINGW is used on line 41 and is set with (likely evil) heuristics in line 33 etc.
+
+51:7-51:17
+Thu Mar 05 02:02:40 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7220f282_38c611c2
+UUID: 37110c43_1a487d35
+Bytes: 83
+sorry, I didn't see the above definition of WITH_MINGW.
+Let's remove it, if we can.
 

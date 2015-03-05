@@ -2,6 +2,14 @@ Revision: 31dd00fcf5fe507b723fc179e61508dde1eb41cd
 Patch-set: 2
 File: liblog/Android.mk
 
+19:1-19:117
+Thu Mar 05 02:18:04 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 770544fd_bf23b32c
+Bytes: 154
+this is not good. It will be executed every time you run make, even if the files are all up to date.
+Can we define the constant in the Android.mk instead?
+
 31:0-39:5
 Thu Mar 05 01:47:44 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -2,6 +2,13 @@ Revision: 31dd00fcf5fe507b723fc179e61508dde1eb41cd
 Patch-set: 2
 File: liblog/Android.mk
 
+31:0-39:5
+Thu Mar 05 01:47:44 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37110c43_fab709cc
+Bytes: 21
+Do we drop this c@rp?
+
 51:7-51:17
 Thu Mar 05 01:43:43 2015 +0000
 Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>

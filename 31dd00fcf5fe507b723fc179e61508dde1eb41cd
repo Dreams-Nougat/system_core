@@ -1,0 +1,11 @@
+Revision: 31dd00fcf5fe507b723fc179e61508dde1eb41cd
+Patch-set: 2
+File: liblog/Android.mk
+
+51:7-51:17
+Thu Mar 05 01:43:43 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7220f282_d827bd32
+Bytes: 33
+it's USE_MINGW, not WITH_MINGW :)
+

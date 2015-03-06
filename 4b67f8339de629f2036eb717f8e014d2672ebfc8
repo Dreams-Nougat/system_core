@@ -1,0 +1,18 @@
+Revision: 4b67f8339de629f2036eb717f8e014d2672ebfc8
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+296:2-296:33
+Fri Mar 06 19:18:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 97155885_4590aa49
+Bytes: 203
+Is there any possibility this was done because this structure is really large and having a ZipArchive struct on the stack could smash it? Do you know how big the structure is before and after the change?
+
+583:32-583:48
+Fri Mar 06 19:18:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57f6809e_abc7a9be
+Bytes: 23
+Change to a const_cast?
+

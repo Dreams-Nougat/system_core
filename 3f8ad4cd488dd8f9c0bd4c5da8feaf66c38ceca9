@@ -1,0 +1,11 @@
+Revision: 3f8ad4cd488dd8f9c0bd4c5da8feaf66c38ceca9
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+973
+Fri Mar 06 21:44:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b78dfc46_0ee7cb30
+Bytes: 115
+few enough that you might want to pull them into inline functions that have the pragma, to reduce the pragma scope?
+

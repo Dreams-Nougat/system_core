@@ -23,3 +23,11 @@ If this file descriptor doesn't have SOCK_CLOEXEC, then it will leak to exec'd p
 
 I don't understand your concern.
 
+126
+Fri Mar 06 18:54:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 172a48bf_a9569d2b
+UUID: 17cfa873_e1f466d9
+Bytes: 200
+duh, sorry. brain not swapped back in yet. i think i'm just uncomfortable because all this code smells bad. (globals but no lock, for example.) but, yes, i agree your change doesn't make it any worse.
+

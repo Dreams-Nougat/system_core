@@ -9,3 +9,11 @@ UUID: b78dfc46_0ee7cb30
 Bytes: 115
 few enough that you might want to pull them into inline functions that have the pragma, to reduce the pragma scope?
 
+973
+Fri Mar 06 21:58:37 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b78dfc46_0ee7cb30
+UUID: d7a6f0c2_6fa13177
+Bytes: 20
+only one apparently.
+

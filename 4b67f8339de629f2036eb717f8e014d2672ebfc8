@@ -19,6 +19,14 @@ I do not think so... this field always gets initialized if open zip is successfu
 
 This reduces total memory usage by this structure by 1 pointer.
 
+296:2-296:33
+Fri Mar 06 19:57:52 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37ccac7c_65e780de
+UUID: b7f17ca4_8e491bbb
+Bytes: 27
+Then this seems fine by me.
+
 583:32-583:48
 Fri Mar 06 19:18:40 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,4 +41,12 @@ Parent: 57f6809e_abc7a9be
 UUID: 97dab833_1da8d38c
 Bytes: 32
 doesn't const_cast remove const?
+
+583:32-583:48
+Fri Mar 06 19:57:52 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97dab833_1da8d38c
+UUID: 97155885_858102fc
+Bytes: 56
+Oops, you're correct. Then how about a reinterpret_cast?
 

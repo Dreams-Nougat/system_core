@@ -1,0 +1,11 @@
+Revision: 6d3cddb2e245738f0b78a758a83ebf2608865394
+Patch-set: 1
+File: libnetutils/ifc_utils.c
+
+126
+Fri Mar 06 18:17:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f72054e0_88c477bb
+Bytes: 115
+this doesn't look right --- a child has no way to recognize or recover from the fact that its cached fd is invalid.
+

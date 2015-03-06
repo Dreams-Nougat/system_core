@@ -1,0 +1,11 @@
+Revision: d455770d92040fb5f3c12edb191153eed15aeeeb
+Patch-set: 1
+File: libziparchive/zip_archive.cc
+
+831
+Fri Mar 06 23:16:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3783cc1e_2a963f49
+Bytes: 56
+is this safe? do we know nameLen <= some small constant?
+

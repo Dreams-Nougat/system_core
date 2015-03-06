@@ -50,3 +50,11 @@ UUID: 97155885_858102fc
 Bytes: 56
 Oops, you're correct. Then how about a reinterpret_cast?
 
+583:32-583:48
+Fri Mar 06 20:41:29 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 97155885_858102fc
+UUID: 17b888d3_b93fff3a
+Bytes: 49
+this is addressed in next change (old-style-cast)
+

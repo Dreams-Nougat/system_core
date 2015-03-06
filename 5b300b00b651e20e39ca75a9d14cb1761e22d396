@@ -18,6 +18,14 @@ UUID: b78dfc46_9132fef3
 Bytes: 155
 no, i think this was actually a bug. load_file returns a char* because it's just allocated that memory. there's a missing free here. or a ReadFileToString.
 
+441
+Fri Mar 06 23:10:16 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b78dfc46_9132fef3
+UUID: d7a6f0c2_552f9cbc
+Bytes: 17
+Yeah, good catch.
+
 File: adb/commandline.cpp
 
 72
@@ -26,6 +34,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 57bda0c8_39c92755
 Bytes: 116
 asprintf? or are you assuming you'll come back and use StringPrintf and return a std::string in a later pass anyway?
+
+72
+Fri Mar 06 23:10:16 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 57bda0c8_39c92755
+UUID: d7a6f0c2_f54df093
+Bytes: 169
+Just trying to get to the minimal compiling C++ version of adb for now. I'll be cleaning up various C-isms as I find them afterward. I'll fix up this one in a follow up.
 
 File: adb/file_sync_client.cpp
 
@@ -44,4 +60,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d7a6f0c2_d2eac21f
 Bytes: 52
 should we push the TEMP_FAILURE_RETRY into adb_read?
+
+353
+Fri Mar 06 23:10:16 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7a6f0c2_d2eac21f
+UUID: 57920067_ab8149fb
+Bytes: 128
+Apparently it already was... I guess no one ever updated all the users afterward. I'll upload a new ps that cleans all these up.
 

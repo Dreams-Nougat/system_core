@@ -1,0 +1,47 @@
+Revision: 5b300b00b651e20e39ca75a9d14cb1761e22d396
+Patch-set: 2
+File: /COMMIT_MSG
+
+14
+Fri Mar 06 22:59:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57bda0c8_19354b11
+Bytes: 111
+that makes me worry that there's something not-quite-right about them, but we can worry about that another day.
+
+File: adb/adb_auth_host.cpp
+
+441
+Fri Mar 06 22:59:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b78dfc46_9132fef3
+Bytes: 155
+no, i think this was actually a bug. load_file returns a char* because it's just allocated that memory. there's a missing free here. or a ReadFileToString.
+
+File: adb/commandline.cpp
+
+72
+Fri Mar 06 22:59:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57bda0c8_39c92755
+Bytes: 116
+asprintf? or are you assuming you'll come back and use StringPrintf and return a std::string in a later pass anyway?
+
+File: adb/file_sync_client.cpp
+
+1007
+Fri Mar 06 22:59:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7a6f0c2_72e3d658
+Bytes: 88
+seems like another leak. not easy to fix, though, so probably best left to another pass.
+
+File: adb/sockets.cpp
+
+353
+Fri Mar 06 22:59:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7a6f0c2_d2eac21f
+Bytes: 52
+should we push the TEMP_FAILURE_RETRY into adb_read?
+

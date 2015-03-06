@@ -9,3 +9,17 @@ UUID: f72054e0_88c477bb
 Bytes: 115
 this doesn't look right --- a child has no way to recognize or recover from the fact that its cached fd is invalid.
 
+126
+Fri Mar 06 18:41:25 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f72054e0_88c477bb
+UUID: 172a48bf_a9569d2b
+Bytes: 480
+Can you elaborate more on this?
+
+ifc_ctl_sock is a static variable declared on line 58. There are no functions in this file which return the file descriptor to the callers, so it's impossible for this file descriptor to leak outside of this code. None of this code in this file does an exec. 
+
+If this file descriptor doesn't have SOCK_CLOEXEC, then it will leak to exec'd processes yet not be usable, since there's no way to query the FD number.
+
+I don't understand your concern.
+

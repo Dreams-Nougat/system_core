@@ -9,3 +9,18 @@ UUID: 3783cc1e_2a963f49
 Bytes: 56
 is this safe? do we know nameLen <= some small constant?
 
+831
+Fri Mar 06 23:21:55 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3783cc1e_2a963f49
+UUID: 3783cc1e_8a8e4bf9
+Bytes: 151
+it is uint16_t so 64k max.. not sure if this is small enough. on the other we have another place that uses 2 x 32k buffers on stack in this code - L985
+
+985
+Fri Mar 06 23:21:55 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f77cd4f2_08bee7fc
+Bytes: 5
+this.
+

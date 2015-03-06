@@ -1,0 +1,18 @@
+Revision: 3ea93da3c21c9f35d658f4760064a404fce3b43b
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+592
+Fri Mar 06 22:44:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57bda0c8_d64642a9
+Bytes: 21
+overflow possibility?
+
+593
+Fri Mar 06 22:44:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7a6f0c2_f20186b8
+Bytes: 32
+shouldn't we check this != NULL?
+

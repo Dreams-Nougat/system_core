@@ -1,0 +1,11 @@
+Revision: 1416e4d3af72f27ea7b8ea5f47a07cac519801a5
+Patch-set: 1
+File: init/boot_trace_header.html
+
+584
+Sat Mar 07 03:12:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7770e418_479b70ee
+Bytes: 176
+you probably need to include some information about what generated this and how to regenerate it. could we just have that in the script rather than check in the generated file?
+

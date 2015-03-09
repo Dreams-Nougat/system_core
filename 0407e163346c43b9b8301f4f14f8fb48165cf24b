@@ -1,0 +1,25 @@
+Revision: 0407e163346c43b9b8301f4f14f8fb48165cf24b
+Patch-set: 2
+File: adb/tests/test_adb.py
+
+255
+Mon Mar 09 15:30:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 577a0034_0bdbfd13
+Bytes: 30
+s/current_user/original_user/?
+
+264
+Mon Mar 09 15:30:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1785e858_11880cb3
+Bytes: 91
+shouldn't this be
+
+  if original_user == "root":
+    adb.root()
+  else:
+    adb.unroot()
+
+?
+

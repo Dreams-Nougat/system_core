@@ -19,3 +19,11 @@ I generated this file by running ./external/chromium-trace/systrace.py and manua
 
 My vision for where boot systracing should go is to add a -boot argument to systrace.py that reboots the device and gathers the trace for you, in which case boot_trace_header.html and grab-boottrace.sh would not be needed.
 
+584
+Mon Mar 09 15:22:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b775fc3f_ae8f5726
+UUID: 1785e858_311750f8
+Bytes: 23
+yeah, that sounds good.
+

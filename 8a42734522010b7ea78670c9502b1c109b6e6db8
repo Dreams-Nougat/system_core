@@ -1,0 +1,18 @@
+Revision: 8a42734522010b7ea78670c9502b1c109b6e6db8
+Patch-set: 1
+File: logd/LogTimes.cpp
+
+255:15-255:29
+Mon Mar 09 18:21:10 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17b16857_b10b2056
+Bytes: 139
+someone(tm) sends an illegal message, we need to limit this to the maximum possible message length - our expectations for snprintf payload.
+
+288:12-288:51
+Mon Mar 09 18:21:10 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 57112008_b3fcd8f4
+Bytes: 63
+length should be limited to hdrlen - 1, nul should be enforced.
+

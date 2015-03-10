@@ -1,0 +1,31 @@
+Revision: 7516facaaae1a68fae290ec0cb3606ac8e88185c
+Patch-set: 2
+File: debuggerd/Elf.cpp
+
+36
+Tue Mar 10 00:38:57 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc69b5e5_976004bb
+Bytes: 393
+This method reads from the mmapped segment but code that's calling this works with file offsets;
+
+In practice for the first segment offsets from the base address will work.
+
+But there might be a situation with offset != vaddr + C; in this case this code might read invalid values.
+
+I think in general the code should explicitly use vaddr fields when working with mmapped segments of a library.
+
+93:6-93:15
+Tue Mar 10 00:38:57 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c75c5b7_b37c389d
+Bytes: 7
+size_t?
+
+94:16-94:20
+Tue Mar 10 00:38:57 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc667911_d856ade2
+Bytes: 44
+the name is a little bit misleading, offset?
+

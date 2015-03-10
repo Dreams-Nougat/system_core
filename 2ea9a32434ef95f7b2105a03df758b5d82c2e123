@@ -1,0 +1,13 @@
+Revision: 2ea9a32434ef95f7b2105a03df758b5d82c2e123
+Patch-set: 2
+File: debuggerd/mips64/machine.cpp
+
+30
+Tue Mar 10 04:26:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3cbbb1a1_aaa58fb2
+Bytes: 253
+if you changed this to uintptr_t, the only difference between this and the mips file is the 8/16 below. and the .S files are already identical.
+
+(it's not clear to me whether you're trying to use the same code for mips and mips64 where possible or not.)
+

@@ -9,6 +9,14 @@ UUID: 37110c43_9d6a4716
 Bytes: 21
 Looks like it's done?
 
+41
+Tue Mar 10 21:06:25 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37110c43_9d6a4716
+UUID: 7220f282_ee6af09c
+Bytes: 146
+Not really, cc_library_shared only supports device libraries, this needs to be cc_library with host_supported: true but I'm still working on that.
+
 File: libcutils/Blueprints
 
 54
@@ -18,10 +26,26 @@ UUID: 37110c43_1d7f57df
 Bytes: 4
 Why?
 
+54
+Tue Mar 10 21:06:25 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37110c43_1d7f57df
+UUID: 7c7fe921_2c10534a
+Bytes: 19
+Doesn't compile yet
+
 140:20-140:28
 Thu Mar 05 07:22:15 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d70d102d_9a4da995
 Bytes: 4
 kill
+
+140:20-140:28
+Tue Mar 10 21:06:25 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d70d102d_9a4da995
+UUID: dc19b50f_f796a044
+Bytes: 4
+Done
 

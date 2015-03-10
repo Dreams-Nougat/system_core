@@ -1,0 +1,11 @@
+Revision: 031533585e809066e1d836425eec9b5a922b9585
+Patch-set: 1
+File: debuggerd/mips64/machine.cpp
+
+33
+Tue Mar 10 02:00:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ca9fd60_e582d6fe
+Bytes: 29
+i thought this was fixed now?
+

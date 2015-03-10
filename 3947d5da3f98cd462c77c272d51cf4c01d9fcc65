@@ -9,3 +9,11 @@ UUID: 1c9d0d70_b1cd40b2
 Bytes: 27
 what about x86 and x86_64 ?
 
+88
+Tue Mar 10 16:56:45 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c9d0d70_b1cd40b2
+UUID: 7cc28958_7491e849
+Bytes: 74
+they are not affected by the bug... The libraries in question are for arm.
+

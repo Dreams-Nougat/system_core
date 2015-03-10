@@ -1,0 +1,25 @@
+Revision: 08b3466bc27d00af535711674f3273b04c7e15a5
+Patch-set: 3
+File: toolbox/ps.c
+
+33
+Tue Mar 10 03:33:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc391902_006166bd
+Bytes: 55
+(i gave those two columns to the wchan column instead.)
+
+186
+Tue Mar 10 03:33:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc391902_404a4e36
+Bytes: 117
+this is as good as the rest of this code. if we're going to put more effort in, we should put it into toybox instead.
+
+306
+Tue Mar 10 03:33:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c87cdd2_c1bb2223
+Bytes: 324
+the whitespace change here is actually between USER and PID. it makes those columns line up where they didn't before. NAME still doesn't quite line up because of that STAT column, but if i fixed that i'd want to fix the content of the STAT column to be right too, and then i'd ask myself why i'm not fixing toybox instead...
+

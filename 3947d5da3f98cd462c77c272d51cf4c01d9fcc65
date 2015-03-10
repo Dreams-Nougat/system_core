@@ -1,0 +1,11 @@
+Revision: 3947d5da3f98cd462c77c272d51cf4c01d9fcc65
+Patch-set: 2
+File: liblog/Android.mk
+
+88
+Tue Mar 10 16:54:02 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c9d0d70_b1cd40b2
+Bytes: 27
+what about x86 and x86_64 ?
+

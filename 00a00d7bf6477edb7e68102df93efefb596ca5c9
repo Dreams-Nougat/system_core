@@ -1,0 +1,18 @@
+Revision: 00a00d7bf6477edb7e68102df93efefb596ca5c9
+Patch-set: 1
+File: liblog/Android.mk
+
+87
+Tue Mar 10 01:07:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bcc5e125_ee82bffe
+Bytes: 68
+"is to work around" or "is a workaround for" or "This works around".
+
+90
+Tue Mar 10 01:07:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcde15f6_2fba09d5
+Bytes: 20
+not needed any more.
+

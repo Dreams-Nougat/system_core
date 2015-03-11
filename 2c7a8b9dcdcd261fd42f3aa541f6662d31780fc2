@@ -9,3 +9,11 @@ UUID: 61b0220a_db12938a
 Bytes: 166
 I think this needs to move out of the target block. The libbacktrace .mk file is a bit unorthodox, and looks like androidmk is only including srcs for the host build.
 
+59
+Wed Mar 11 23:55:36 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 61b0220a_db12938a
+UUID: c1d46e30_b6cfe859
+Bytes: 156
+Oh, I screwed this up when I took out not_darwin.  This is a case where we want one set of files for darwin, but a different set for both android and linux.
+

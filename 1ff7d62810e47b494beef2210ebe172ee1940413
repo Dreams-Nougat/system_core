@@ -1,0 +1,40 @@
+Revision: 1ff7d62810e47b494beef2210ebe172ee1940413
+Patch-set: 3
+File: debuggerd/Elf.cpp
+
+167
+Wed Mar 11 02:16:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcd37594_c7441e07
+Bytes: 361
+why? i'd have expected either no #if (because there's no reason a 32-bit executable can't look at a 64-bit ELF file, or vice versa) or that you'd check the EI_CLASS against this debuggerd's size (because we have one debuggerd for 32-bit processes and another for 64-bit processes, so any given debuggerd should only ever be looking at one EI_CLASS of ELF file).
+
+File: debuggerd/Elf.h
+
+25
+Wed Mar 11 02:16:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dc88d5a6_dfe7bbdc
+Bytes: 40
+does this have to be in the header file?
+
+44
+Wed Mar 11 02:16:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c4d0d5a_11f84cca
+Bytes: 283
+does this?
+
+what does the T stand for here? the usual "type" doesn't make sense.
+
+should this really just be something like ElfBuildIdReader, and not inherit from anything? and the current 'Elf' class is just the data source, right? so that should be something like PtraceDataSource?
+
+File: debuggerd/tombstone.cpp
+
+345
+Wed Mar 11 02:16:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c4d0d5a_51dbb469
+Bytes: 95
+do we have to collect them all? there can be a *lot* of maps, especially in a crashing process.
+

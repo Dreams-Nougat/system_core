@@ -1,0 +1,11 @@
+Revision: 2c7a8b9dcdcd261fd42f3aa541f6662d31780fc2
+Patch-set: 2
+File: libbacktrace/Blueprints
+
+59
+Wed Mar 11 23:26:14 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 61b0220a_db12938a
+Bytes: 166
+I think this needs to move out of the target block. The libbacktrace .mk file is a bit unorthodox, and looks like androidmk is only including srcs for the host build.
+

@@ -15,6 +15,16 @@ But there might be a situation with offset != vaddr + C; in this case this code 
 
 I think in general the code should explicitly use vaddr fields when working with mmapped segments of a library.
 
+36
+Wed Mar 11 01:11:36 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dc69b5e5_976004bb
+UUID: 5c6dc5b2_53dc8408
+Bytes: 269
+I modified this a bit so that a start and end address are passed in to the object creation. Then this Read checks that we don't go beyond the current map.
+
+I don't think I'm going to do anything tricky like check if two maps cover the same thing with different offsets.
+
 93:6-93:15
 Tue Mar 10 00:38:57 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,10 +32,26 @@ UUID: 5c75c5b7_b37c389d
 Bytes: 7
 size_t?
 
+93:6-93:15
+Wed Mar 11 01:11:36 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c75c5b7_b37c389d
+UUID: 5c6dc5b2_d3ddf459
+Bytes: 18
+Sounds good to me.
+
 94:16-94:20
 Tue Mar 10 00:38:57 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fc667911_d856ade2
 Bytes: 44
 the name is a little bit misleading, offset?
+
+94:16-94:20
+Wed Mar 11 01:11:36 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc667911_d856ade2
+UUID: 9c73bd93_757de896
+Bytes: 115
+Agreed, changed to offset. I changed the skip_bytes down below to size_t too since I think it matches the hdr_size.
 

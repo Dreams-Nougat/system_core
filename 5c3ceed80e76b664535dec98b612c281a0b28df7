@@ -43,6 +43,14 @@ UUID: e1ec123e_4212d408
 Bytes: 316
 oh... i didn't know that. that might even tip the scales towards std::unique_ptr for me, personally. i don't think std::vector is as intention revealing since we'll need to inspect code to see if it's being resized etc. i'll continue to use std::vector<> however, since that's consistent with the rest of our usages.
 
+988
+Thu Mar 12 20:23:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e1ec123e_4212d408
+UUID: 414a3e43_b255c0a3
+Bytes: 355
+i'd argue that you shouldn't care whether it's being resized. hiding the consequences of that is vector's job. vector is the default contiguous container. unique_ptr is for when someone else you don't control has allocated something and you need to keep track of it. it adds RAII to raw pointers. but you have no reason to be dealing in raw pointers here.
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,10 +9,26 @@ UUID: a19cdad8_cdfd69ec
 Bytes: 16
 aka std::vector?
 
+988
+Thu Mar 12 17:12:48 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a19cdad8_cdfd69ec
+UUID: 01d1268c_a840db65
+Bytes: 102
+I do not know... they are fixed size buffers we pass to zlib... vector does not seem appropriate here.
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e1d33294_e7de8253
 Bytes: 6
 &x[0]?
+
+1001
+Thu Mar 12 17:12:48 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e1d33294_e7de8253
+UUID: 01d1268c_e83ad3eb
+Bytes: 11
+see above..
 

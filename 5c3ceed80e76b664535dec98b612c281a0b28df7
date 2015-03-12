@@ -59,6 +59,16 @@ UUID: e1ec123e_e245e802
 Bytes: 265
 in some cases, you would care if you're passing it to a C api (where you usually pass a raw pointer and a length). for example in this function i'd have to update avail_out = write_buf.size(); initially and inside the loop unless i can prove it isn't being resized.
 
+988
+Thu Mar 12 20:30:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e1ec123e_e245e802
+UUID: 2168ea9d_3c8a7de8
+Bytes: 450
+yes, but i'd say that was a good thing :-) that's how you should be using containers. (even if you did actually want an array for some bizarre reason, you should still be using std::array and &x[0] and size().)
+
+you're both trying to make a special case out of something that can happily fall out of the default case. and that's what's weird. it makes the reader stop and ask "huh; why isn't this just the default contiguous container --- a vector?".
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

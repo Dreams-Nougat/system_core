@@ -9,6 +9,14 @@ UUID: 81c436d3_27a41488
 Bytes: 35
 if you are using arithmetic - use +
 
+47:22-47:23
+Thu Mar 12 19:46:17 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81c436d3_27a41488
+UUID: 6194a2c1_9ba9cb96
+Bytes: 187
+syslog.h requires that the log Facility and Priority Level be treated as a mask. As such, I should be using LOG_PRI() and LOG_MAKEPRI(fac, pri); but bionic does not define LOG_MAKEPRI ...
+
 141:0-141:3
 Thu Mar 12 18:22:14 2015 +0000
 Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>

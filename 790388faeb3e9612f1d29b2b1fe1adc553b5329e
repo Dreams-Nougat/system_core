@@ -1,0 +1,27 @@
+Revision: 790388faeb3e9612f1d29b2b1fe1adc553b5329e
+Patch-set: 2
+File: logd/CommandListener.h
+
+26:31-26:33
+Thu Mar 12 18:19:42 2015 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 217f0a4e_219ece62
+Bytes: 13
+Why comments?
+
+File: logd/main.cpp
+
+155:31-155:33
+Thu Mar 12 18:19:42 2015 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 01868696_80d7963b
+Bytes: 63
+Why comments? If you don't need parameter - don't declare it...
+
+159:0-159:3
+Thu Mar 12 18:19:42 2015 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 81c436d3_2787f412
+Bytes: 8
+static ?
+

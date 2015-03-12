@@ -9,6 +9,14 @@ UUID: 217f0a4e_219ece62
 Bytes: 13
 Why comments?
 
+26:31-26:33
+Thu Mar 12 18:28:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 217f0a4e_219ece62
+UUID: e18892a6_1f8da3ff
+Bytes: 17
+ditto in main.cpp
+
 File: logd/main.cpp
 
 155:31-155:33
@@ -18,10 +26,26 @@ UUID: 01868696_80d7963b
 Bytes: 63
 Why comments? If you don't need parameter - don't declare it...
 
+155:31-155:33
+Thu Mar 12 18:28:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 01868696_80d7963b
+UUID: 81c436d3_e744bc28
+Bytes: 51
+unused parameter, required for signal() call below.
+
 159:0-159:3
 Thu Mar 12 18:19:42 2015 +0000
 Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 81c436d3_2787f412
 Bytes: 8
 static ?
+
+159:0-159:3
+Thu Mar 12 18:28:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81c436d3_2787f412
+UUID: 01868696_8084f6da
+Bytes: 38
+Needs a comment why this is global ...
 

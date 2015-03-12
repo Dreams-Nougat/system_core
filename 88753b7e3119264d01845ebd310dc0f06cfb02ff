@@ -2,6 +2,13 @@ Revision: 88753b7e3119264d01845ebd310dc0f06cfb02ff
 Patch-set: 1
 File: logd/main.cpp
 
+142:0-143:23
+Thu Mar 12 00:47:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 010926af_68f983cd
+Bytes: 153
+We chose AID_SYSTEM instead of AID_LOGD for this thread because of the subsequent changes will require that logd be able to read /data/system/ directory.
+
 145:0-148:9
 Thu Mar 12 00:38:51 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

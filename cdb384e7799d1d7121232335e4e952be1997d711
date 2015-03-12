@@ -9,3 +9,13 @@ UUID: 414a3e43_b2f94053
 Bytes: 48
 It makes sense to keep same define in one H file
 
+33:2-33:8
+Thu Mar 12 20:21:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 414a3e43_b2f94053
+UUID: 2168ea9d_fc1c859c
+Bytes: 160
+Problem with that, the define is maintained in syslog.h; but not in bionic's version :-(
+
+I will have to segue to fix this in bionic _before_ I can squash this.
+

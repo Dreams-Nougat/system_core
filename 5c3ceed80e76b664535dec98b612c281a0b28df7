@@ -69,6 +69,16 @@ yes, but i'd say that was a good thing :-) that's how you should be using contai
 
 you're both trying to make a special case out of something that can happily fall out of the default case. and that's what's weird. it makes the reader stop and ask "huh; why isn't this just the default contiguous container --- a vector?".
 
+988
+Thu Mar 12 20:40:28 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2168ea9d_3c8a7de8
+UUID: 01ea0620_63ea7c23
+Bytes: 223
+fair enough. i still think there's some value in making it clear we don't want things to be resizable (and even there you'd use std::array) but point taken.
+
+i'm just too used to the old style scoped_array and scoped_ptr :)
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

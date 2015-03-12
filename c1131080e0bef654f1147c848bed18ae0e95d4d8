@@ -1,0 +1,54 @@
+Revision: c1131080e0bef654f1147c848bed18ae0e95d4d8
+Patch-set: 1
+File: logd/main.cpp
+
+130:0-142:1
+Thu Mar 12 17:55:25 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 417cfe56_02b9cade
+Bytes: 1224
+Merge conflict with https://android-review.googlesource.com/#/c/140880. Resolution for this area will look like:
+
+int fdDmesg = -1;
+int fdPackages = -1;
+
+static sem_t reinit;
+static bool reinit_running = false;
+static LogBuffer *logBuf = NULL;
+
+static void *reinit_thread_start(void * /*obj*/) {
+    prctl(PR_SET_NAME, "logd.daemon");
+    set_sched_policy(0, SP_BACKGROUND);
+
+    setgid(AID_SYSTEM);
+    setuid(AID_SYSTEM);
+
+    for (;;) {
+        // Privileged items to re-initialize
+        if (fdPackages < 0) {
+            fdPackages = open("/data/system/packages.xml", O_RDONLY);
+        }
+
+        if (!reinit_running || sem_wait(&reinit) || !reinit_running) {
+            break;
+        }
+        if (fdDmesg >= 0) {
+            static const char reinit_message[] = { KMSG_PRIORITY(LOG_INFO),
+                'l', 'o', 'g', 'd', '.', 'd', 'a', 'e', 'm', 'o', 'n', ':',
+                ' ', 'r', 'e', 'i', 'n', 'i', 't', '\n' };
+            write(fdDmesg, reinit_message, sizeof(reinit_message));
+        }
+
+        // Anything that reads persist.<property>
+        if (logBuf) {
+            logBuf->init();
+        }
+    }
+    
+    return NULL;
+}
+
+void reinit_signal_handler(int /*signal*/) {
+    sem_post(&reinit);
+}
+

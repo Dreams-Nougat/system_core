@@ -1,0 +1,34 @@
+Revision: 62da172560a1e8456c92ce2ec4fc583982666e37
+Patch-set: 4
+File: debuggerd/elf_utils.cpp
+
+33
+Thu Mar 12 22:04:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c178ee71_3c84390b
+Bytes: 15
+move to bionic?
+
+50
+Thu Mar 12 22:04:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2168ea9d_ed4a0d02
+Bytes: 77
+should this be in libbacktrace? or wait until you actually have another user?
+
+181
+Thu Mar 12 22:04:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2168ea9d_ed9ccde5
+Bytes: 16
+same line as } ?
+
+File: debuggerd/tombstone.cpp
+
+369
+Thu Mar 12 22:04:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 414a3e43_9be4572e
+Bytes: 38
+is this more or less readable with %c?
+

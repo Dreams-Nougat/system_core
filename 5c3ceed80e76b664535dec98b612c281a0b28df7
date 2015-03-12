@@ -35,6 +35,14 @@ UUID: 81c436d3_279d34ae
 Bytes: 147
 (actually, the "added bonus" isn't true. the unique_ptr for T[] has an operator[], so you can still use the container syntax even with unique_ptr.)
 
+988
+Thu Mar 12 20:10:04 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81c436d3_279d34ae
+UUID: e1ec123e_4212d408
+Bytes: 316
+oh... i didn't know that. that might even tip the scales towards std::unique_ptr for me, personally. i don't think std::vector is as intention revealing since we'll need to inspect code to see if it's being resized etc. i'll continue to use std::vector<> however, since that's consistent with the rest of our usages.
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

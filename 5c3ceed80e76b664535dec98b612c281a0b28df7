@@ -27,6 +27,14 @@ i think you're thinking about vector wrong. a vector is a dynamically-allocated 
 
 the way i see it, preferring vector in cases like this is just part of "avoid new/delete". (plus there's the added bonus -- see below -- that vector is more container-like than unique_ptr.)
 
+988
+Thu Mar 12 18:44:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e18892a6_5fb80b58
+UUID: 81c436d3_279d34ae
+Bytes: 147
+(actually, the "added bonus" isn't true. the unique_ptr for T[] has an operator[], so you can still use the container syntax even with unique_ptr.)
+
 1001
 Thu Mar 12 17:10:55 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

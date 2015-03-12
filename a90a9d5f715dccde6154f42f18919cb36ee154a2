@@ -1,0 +1,11 @@
+Revision: a90a9d5f715dccde6154f42f18919cb36ee154a2
+Patch-set: 1
+File: logcat/tests/logcat_test.cpp
+
+515:37-515:44
+Thu Mar 12 18:23:07 2015 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e18892a6_3f84270b
+Bytes: 9
+match_4 ?
+

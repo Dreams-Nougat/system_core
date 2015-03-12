@@ -1,0 +1,33 @@
+Revision: 88753b7e3119264d01845ebd310dc0f06cfb02ff
+Patch-set: 1
+File: logd/main.cpp
+
+145:0-148:9
+Thu Mar 12 00:38:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 81e3561e_8c35e70d
+Bytes: 415
+Reviewer: decide if I could be allowed to leave this alone?
+
+This apparent inefficiency is reserved for initializations that need to be done first time, as well as on re-init.
+
+I know this could be:
+
+ while (reinit_running && !sem_wait(&reinit) && reinit_running) {
+
+but it will be rewritten to this form with intervening code when we get the statistics fixed for b/19608965 which is blocked behind this adjustment.
+
+230:0-232:22
+Thu Mar 12 00:38:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 01f046db_d076dc09
+Bytes: 65
+Does make things shut down cleaner, but unnecessary complication.
+
+320:0-325:19
+Thu Mar 12 00:38:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 61de625c_4b2805b3
+Bytes: 51
+Logging cleanup operations, This should be removed.
+

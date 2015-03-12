@@ -1,0 +1,20 @@
+Revision: 21bf4bc8d6a8f23f8d77603b8ee180b3b3d41a75
+Patch-set: 11
+File: logd/LogBuffer.cpp
+
+163:28-163:71
+Thu Mar 12 21:52:37 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2168ea9d_8d0fd12c
+Bytes: 75
+Does this cause unaligned access problems? So far only tested on N6 and N9.
+
+169:9-169:65
+Thu Mar 12 21:52:37 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c178ee71_3c527937
+Bytes: 377
+expect a minor performance hit here doing the search. We need a way of managing a small cache of the _address_ of the searched tag for a quick read of the current value.
+
+__android_log_is_loggable can get a performance gain if it has a cache size of one when used in applications. Maybe that cache needs to have an API to allow adjusting its size for use by the logging daemon?
+

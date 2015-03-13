@@ -1,0 +1,25 @@
+Revision: 93f3d4128c0165f41e9912ea75a433b766dd68ac
+Patch-set: 1
+File: include/utils/strings.h
+
+24
+Fri Mar 13 22:47:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c178ee71_a71ca218
+Bytes: 101
+we should decide what namespace we want libutils in and make sure everything's in the same namespace.
+
+38
+Fri Mar 13 22:47:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c178ee71_87388682
+Bytes: 6
+prefix
+
+45
+Fri Mar 13 22:47:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66191872_19f1ab64
+Bytes: 9
+namespace
+

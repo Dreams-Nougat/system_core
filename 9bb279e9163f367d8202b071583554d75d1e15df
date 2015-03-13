@@ -9,3 +9,11 @@ UUID: 66191872_d95573dc
 Bytes: 50
 i'm not sure we want the art cruft from here down?
 
+123
+Fri Mar 13 22:45:34 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66191872_d95573dc
+UUID: 66191872_99893bbe
+Bytes: 177
+I had added it because it was in part of the logging code I was about to upload, but it was apparently a part of the logging code I trimmed, so it isn't needed now. Will remove.
+

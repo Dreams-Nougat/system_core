@@ -1,0 +1,15 @@
+Revision: df59e8ff67c5e93b827814fec0b89632d93190fe
+Patch-set: 2
+File: logd/LogStatistics.cpp
+
+250:24-250:25
+Fri Mar 13 19:46:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 012da676_578636ac
+Bytes: 85
+Missing check:
+
+        if (!(logMask & (1 << id))) {
+            continue;
+        }
+

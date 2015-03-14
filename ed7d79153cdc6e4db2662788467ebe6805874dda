@@ -1,0 +1,11 @@
+Revision: ed7d79153cdc6e4db2662788467ebe6805874dda
+Patch-set: 1
+File: .clang-format
+
+7
+Sat Mar 14 02:02:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66191872_c806bb4c
+Bytes: 47
+yeah, probably too late to reformat everything.
+

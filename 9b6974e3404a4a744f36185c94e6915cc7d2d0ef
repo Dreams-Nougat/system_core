@@ -9,3 +9,11 @@ UUID: a624f0ad_70bb2e0a
 Bytes: 27
 You wanted that apostrophe.
 
+156:64-156:68
+Sat Mar 14 04:28:55 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a624f0ad_70bb2e0a
+UUID: 66191872_7cc0887c
+Bytes: 223
+Oops, I was using emacs' python-mode to edit the file, and it was messing with the highlighting because python doesn't like the // and considers the ' an unterminated string.  I meant to put it back when I was done editing.
+

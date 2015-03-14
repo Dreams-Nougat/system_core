@@ -17,3 +17,11 @@ UUID: 66191872_99893bbe
 Bytes: 177
 I had added it because it was in part of the logging code I was about to upload, but it was apparently a part of the logging code I trimmed, so it isn't needed now. Will remove.
 
+123
+Sat Mar 14 01:04:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66191872_99893bbe
+UUID: a624f0ad_adeffdfc
+Bytes: 102
+I lied. It's used in logging.h. I killed the thread safety stuff though since clang has that built in.
+

@@ -1,0 +1,34 @@
+Revision: 9a7a4cd510b22907927d4ab82ab738ebf9ebe403
+Patch-set: 1
+File: include/utils/logging.h
+
+40
+Sat Mar 14 02:09:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a624f0ad_ed69856b
+Bytes: 63
+we should probably make this private until we actually need it.
+
+60
+Sat Mar 14 02:09:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a624f0ad_cd66c999
+Bytes: 11
+what's ART?
+
+228
+Sat Mar 14 02:09:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a624f0ad_6dbd954c
+Bytes: 17
+obsolete comment.
+
+File: libutils/logging.cpp
+
+75
+Sat Mar 14 02:09:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66191872_0824b3d8
+Bytes: 13
+what's "art"?
+

@@ -17,3 +17,11 @@ UUID: 66191872_7cc0887c
 Bytes: 223
 Oops, I was using emacs' python-mode to edit the file, and it was messing with the highlighting because python doesn't like the // and considers the ' an unterminated string.  I meant to put it back when I was done editing.
 
+156:64-156:68
+Sat Mar 14 04:30:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66191872_7cc0887c
+UUID: a624f0ad_90033a3b
+Bytes: 128
+The syntax as it stands now is a lot more like Javascript than it is like Python, so you'll probably have better luck with that.
+

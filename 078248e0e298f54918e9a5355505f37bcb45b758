@@ -1,0 +1,11 @@
+Revision: 078248e0e298f54918e9a5355505f37bcb45b758
+Patch-set: 3
+File: base/include/base/logging.h
+
+52
+Sat Mar 14 16:04:42 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66191872_5c56ec63
+Bytes: 159
+you could use getprogname on Android/Mac OS, and program_invocation_name on glibc. there's probably some better fallback on Windows too, but i've no idea what.
+

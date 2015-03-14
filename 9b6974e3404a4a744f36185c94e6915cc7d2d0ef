@@ -1,0 +1,11 @@
+Revision: 9b6974e3404a4a744f36185c94e6915cc7d2d0ef
+Patch-set: 5
+File: libcutils/Blueprints
+
+156:64-156:68
+Sat Mar 14 03:52:46 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a624f0ad_70bb2e0a
+Bytes: 27
+You wanted that apostrophe.
+

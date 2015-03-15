@@ -31,3 +31,11 @@ UUID: 66191872_7264311d
 Bytes: 117
 gah. i hadn't noticed that extra wart. (luckily fs_mgr seems to support that too, so i don't think it ruins my plan.)
 
+210
+Sun Mar 15 16:45:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66191872_7264311d
+UUID: a624f0ad_d6941ac1
+Bytes: 109
+although it looks like i'm wrong: our fstab does have the same distinction between the two kinds of flags :-(
+

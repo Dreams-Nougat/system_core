@@ -1,0 +1,15 @@
+Revision: b25f46d22ceafba7d15375ea651c61e75050b633
+Patch-set: 1
+File: init/readme.txt
+
+210
+Sun Mar 15 15:57:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a624f0ad_f6b03671
+Bytes: 784
+i think this should probably be [ <flag> ]* [ <options> ] (i.e. missing the last * so we don't imply that options has to end with a trailing ',').
+
+this is pretty confusing, though, because both the man page and /etc/fstab refer to both of these as options, and include them all in the same string. even init's mount_all command requires fstabs where they're all mixed together.
+
+i'll raise a bug to rewrite 'mount' using 'mount_all'. then we can fix the documentation to just "mount <type> <device> <dir> [<options>]", and we can have a compatibility mode that concatenates anything after <dir>. (i'd rather just fix the init scripts, but i can only fix Nexus ones and i assume this would be a pain in the ass for OEMs because there's no way for me to communicate a breaking change.)
+

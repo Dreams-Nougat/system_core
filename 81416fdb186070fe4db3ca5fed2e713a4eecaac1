@@ -2,6 +2,13 @@ Revision: 81416fdb186070fe4db3ca5fed2e713a4eecaac1
 Patch-set: 4
 File: adb/remount_service.cpp
 
+63
+Mon Mar 16 21:44:26 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 660f5879_127a72ec
+Bytes: 294
+This wasn't mirrored in adb.h. set_verity_enable_state_service.cpp #includes adb.h, so it was expecting a C mangled version of this function. This was only breaking on userdebug builds because dead code elimination prevented this function from ever needing to be linked. Will upload a fix soon.
+
 96
 Mon Mar 16 18:21:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 81416fdb186070fe4db3ca5fed2e713a4eecaac1
+Patch-set: 4
+File: adb/remount_service.cpp
+
+96
+Mon Mar 16 18:21:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 41331ed7_797333e5
+Bytes: 99
+(we should have a separate pass through the code switching all this kind of thing to StringPrintf.)
+

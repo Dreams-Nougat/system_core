@@ -1,0 +1,20 @@
+Revision: 56350fe387e77824a1e360d39a22f983b0a8ab20
+Patch-set: 1
+File: libpixelflinger/tests/arch-arm64/assembler/Android.mk
+
+16
+Mon Mar 16 17:31:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46fed470_f281a8fc
+Bytes: 48
+doesn't the EXPORT in the other file cover this?
+
+File: libpixelflinger/tests/gglmul/Android.mk
+
+10
+Mon Mar 16 17:31:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46fed470_72fdb882
+Bytes: 21
+or this one at least?
+

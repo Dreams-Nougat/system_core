@@ -9,6 +9,14 @@ UUID: 46fed470_f281a8fc
 Bytes: 48
 doesn't the EXPORT in the other file cover this?
 
+16
+Mon Mar 16 17:35:10 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46fed470_f281a8fc
+UUID: 46fed470_129c2c43
+Bytes: 110
+No, it's pulling in private headers (this is not testing pixelflinger per se, it's testing an internal helper)
+
 File: libpixelflinger/tests/gglmul/Android.mk
 
 10
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 46fed470_72fdb882
 Bytes: 21
 or this one at least?
+
+10
+Mon Mar 16 17:35:10 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46fed470_72fdb882
+UUID: 46fed470_12838cda
+Bytes: 144
+This test doesn't link to pixelflinger at all (again, it's testing an internal helper, this time one that's entirely self-contained in a header)
 

@@ -1,0 +1,11 @@
+Revision: a0ab232e031eb8a20ad77d2a1c6f32fc9dbe140d
+Patch-set: 1
+File: libutils/Blueprints
+
+93
+Mon Mar 16 23:53:16 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86144c89_597ecf2f
+Bytes: 113
+This is ugly and probably needs to be fixed somewhere else, but adding it here for now enables libutils to build.
+

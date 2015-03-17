@@ -9,6 +9,14 @@ UUID: c178ee71_3c84390b
 Bytes: 15
 move to bionic?
 
+33
+Tue Mar 17 22:32:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c178ee71_3c84390b
+UUID: c61ac4b3_031ea18f
+Bytes: 4
+Done
+
 50
 Thu Mar 12 22:04:04 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 2168ea9d_ed4a0d02
 Bytes: 77
 should this be in libbacktrace? or wait until you actually have another user?
 
+50
+Tue Mar 17 22:32:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2168ea9d_ed4a0d02
+UUID: 86144c89_ae2058c5
+Bytes: 41
+Rewritten to move this into libbacktrace.
+
 181
 Thu Mar 12 22:04:04 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2168ea9d_ed9ccde5
 Bytes: 16
 same line as } ?
+
+181
+Tue Mar 17 22:32:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2168ea9d_ed9ccde5
+UUID: 86144c89_ae6fb8f5
+Bytes: 6
+Fixed.
 
 File: debuggerd/tombstone.cpp
 
@@ -31,4 +55,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 414a3e43_9be4572e
 Bytes: 38
 is this more or less readable with %c?
+
+369
+Tue Mar 17 22:32:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 414a3e43_9be4572e
+UUID: 660f5879_7bda9aef
+Bytes: 106
+It seems about the same. I kind of prefer this, but I'm willing to be persuaded that there is another way.
 

@@ -42,3 +42,11 @@ UUID: 66bd98c9_0737a6ae
 Bytes: 43
 doesn't this need to come _before_ the #if?
 
+278
+Tue Mar 17 18:18:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66bd98c9_0737a6ae
+UUID: 469a5479_8b5c5e86
+Bytes: 45
+There's no socket to close in adb, only adbd.
+

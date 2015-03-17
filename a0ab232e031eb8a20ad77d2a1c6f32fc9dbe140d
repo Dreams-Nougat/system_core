@@ -2,10 +2,50 @@ Revision: a0ab232e031eb8a20ad77d2a1c6f32fc9dbe140d
 Patch-set: 1
 File: libutils/Blueprints
 
+46
+Tue Mar 17 00:31:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 660f5879_402fef0a
+Bytes: 63
+These might as well go directly in target: { host: { cflags } }
+
+48
+Tue Mar 17 00:31:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86144c89_8b23ce5b
+Bytes: 34
+This is never set, just delete it.
+
+56
+Tue Mar 17 00:31:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 660f5879_602aebfc
+Bytes: 52
+Put these flags in target: { windows: {cflags: ...}}
+
 93
 Mon Mar 16 23:53:16 2015 +0000
 Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 86144c89_597ecf2f
 Bytes: 113
 This is ugly and probably needs to be fixed somewhere else, but adding it here for now enables libutils to build.
+
+93
+Tue Mar 17 00:31:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86144c89_597ecf2f
+UUID: c61ac4b3_30fde5ec
+Bytes: 228
+This is because I left out the translation of
+
+ my_c_includes += $(JNI_H_INCLUDE)
+
+from build/core/binary.mk because it offended me, but I guess we should put it in for compatibility with the old system and then fix it up later.
+
+116
+Tue Mar 17 00:31:39 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86144c89_0b007eb6
+Bytes: 209
+All of these should get folded together into a single cc_library called "libutils".  Put commonSources in the top level srcs: property, and then the device specific stuff in target: { android: { srcs: ... } }.
 

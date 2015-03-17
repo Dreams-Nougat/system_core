@@ -18,6 +18,14 @@ UUID: 06a4dcb8_3345d205
 Bytes: 228
 maybe it would be better to modify android_get_control_socket to set FD_CLOEXEC automatically, instead of relying on every caller. If a caller wants to make a file descriptor available, they can always clear the FD_CLOEXEC flag.
 
+253:13-253:39
+Tue Mar 17 18:14:56 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06a4dcb8_3345d205
+UUID: 06a4dcb8_b37f0228
+Bytes: 181
+you'd still be relying on them making the call. (note that this is the inherited socket. this function call doesn't create the fd. it just guesses it from the environment variable.)
+
 262
 Tue Mar 17 18:12:53 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

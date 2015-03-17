@@ -36,6 +36,14 @@ I like this idea. I would even go further and suggest it removes the environment
 
 Not that I know enough about the code to know if that is realistic.... :)
 
+253:13-253:39
+Tue Mar 17 18:24:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e6b188f2_5d788b7a
+UUID: 06a4dcb8_93a11eec
+Bytes: 137
+There are over a dozen callers throughout the tree that use the API, so it would be tricky to verify that no one relies on this behavior.
+
 262
 Tue Mar 17 18:12:53 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

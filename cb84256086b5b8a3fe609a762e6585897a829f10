@@ -1,0 +1,29 @@
+Revision: cb84256086b5b8a3fe609a762e6585897a829f10
+Patch-set: 4
+File: adb/adb_auth.h
+
+26
+Tue Mar 17 18:12:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 469a5479_8b40def6
+Bytes: 42
+there's already a big #if down the bottom.
+
+File: adb/adb_auth_client.cpp
+
+262
+Tue Mar 17 18:12:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 469a5479_6b1e5ae8
+Bytes: 115
+i don't think there's any way for someone to change the environment variable, so calculating this twice seems fine.
+
+File: adb/adb_main.cpp
+
+278
+Tue Mar 17 18:12:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66bd98c9_0737a6ae
+Bytes: 43
+doesn't this need to come _before_ the #if?
+

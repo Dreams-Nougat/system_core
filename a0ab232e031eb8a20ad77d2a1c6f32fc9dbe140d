@@ -9,6 +9,14 @@ UUID: 660f5879_402fef0a
 Bytes: 63
 These might as well go directly in target: { host: { cflags } }
 
+46
+Tue Mar 17 22:12:48 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 660f5879_402fef0a
+UUID: e6a6e8c2_e310da53
+Bytes: 4
+Done
+
 48
 Tue Mar 17 00:31:39 2015 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 86144c89_8b23ce5b
 Bytes: 34
 This is never set, just delete it.
 
+48
+Tue Mar 17 22:12:48 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86144c89_8b23ce5b
+UUID: e6a6e8c2_030ebe34
+Bytes: 4
+Done
+
 56
 Tue Mar 17 00:31:39 2015 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 660f5879_602aebfc
 Bytes: 52
 Put these flags in target: { windows: {cflags: ...}}
+
+56
+Tue Mar 17 22:12:48 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 660f5879_602aebfc
+UUID: 66bd98c9_1c99b4c5
+Bytes: 4
+Done
 
 93
 Mon Mar 16 23:53:16 2015 +0000
@@ -48,4 +72,12 @@ Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 86144c89_0b007eb6
 Bytes: 209
 All of these should get folded together into a single cc_library called "libutils".  Put commonSources in the top level srcs: property, and then the device specific stuff in target: { android: { srcs: ... } }.
+
+116
+Tue Mar 17 22:12:48 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86144c89_0b007eb6
+UUID: e6a6e8c2_e327faaa
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 175c9a9f1cc2fb63cda0fbae8da3fb96ff196282
+Patch-set: 2
+File: adb/remount_service.h
+
+25
+Tue Mar 17 02:37:39 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c61ac4b3_033a2197
+Bytes: 29
+#endif // _REMOUNT_SERVICE_H_
+

@@ -11,6 +11,13 @@ there's already a big #if down the bottom.
 
 File: adb/adb_auth_client.cpp
 
+253:13-253:39
+Tue Mar 17 18:13:35 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a4dcb8_3345d205
+Bytes: 228
+maybe it would be better to modify android_get_control_socket to set FD_CLOEXEC automatically, instead of relying on every caller. If a caller wants to make a file descriptor available, they can always clear the FD_CLOEXEC flag.
+
 262
 Tue Mar 17 18:12:53 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

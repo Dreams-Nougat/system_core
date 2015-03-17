@@ -26,6 +26,16 @@ UUID: 06a4dcb8_b37f0228
 Bytes: 181
 you'd still be relying on them making the call. (note that this is the inherited socket. this function call doesn't create the fd. it just guesses it from the environment variable.)
 
+253:13-253:39
+Tue Mar 17 18:18:56 2015 +0000
+Author: Pavel Labath <1058713@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06a4dcb8_3345d205
+UUID: e6b188f2_5d788b7a
+Bytes: 258
+I like this idea. I would even go further and suggest it removes the environment variable completely (possibly caching the file descriptor in a static variable for  subsequent calls).
+
+Not that I know enough about the code to know if that is realistic.... :)
+
 262
 Tue Mar 17 18:12:53 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

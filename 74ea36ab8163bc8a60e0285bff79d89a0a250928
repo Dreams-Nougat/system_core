@@ -1,0 +1,11 @@
+Revision: 74ea36ab8163bc8a60e0285bff79d89a0a250928
+Patch-set: 3
+File: logd/LogBufferElement.h
+
+21:0-21:18
+Wed Mar 18 21:19:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46e6d429_559e5e69
+Bytes: 38
+Belongs in annotate dropped entries CL
+

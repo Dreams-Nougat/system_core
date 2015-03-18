@@ -1,0 +1,11 @@
+Revision: 789c99a48e185a1e74af5fe9f837944bf4bf6b57
+Base-for-patch-set: 1
+File: include/private/android_filesystem_config.h
+
+243
+Wed Mar 18 17:21:48 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6d48430_5631b499
+Bytes: 120
+this one can be deleted too. The default permissions for files in system/bin is 0755, so this is redundant. See line 262
+

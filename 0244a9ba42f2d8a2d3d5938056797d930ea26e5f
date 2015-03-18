@@ -1,0 +1,13 @@
+Revision: 0244a9ba42f2d8a2d3d5938056797d930ea26e5f
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:6-7:43
+Wed Mar 18 18:20:51 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6bd08e7_aba54180
+Bytes: 255
+replace internal CLOCK_MONOTONIC use with sequence numbers
+
+Otherwise it sounds like you're somehow deprecating CLOCK_MONOTONIC system-wide as a parameter to clock_gettime().  Which is a good way to get reviewers' attention but not what you actually mean!
+

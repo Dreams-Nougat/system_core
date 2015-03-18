@@ -1,0 +1,11 @@
+Revision: ace2fb34e8342c5be161b02d822ea2e9eb2269f9
+Patch-set: 2
+File: libutils/Blueprints
+
+89
+Wed Mar 18 21:40:10 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6bd08e7_e66930a7
+Bytes: 11
+delete this
+

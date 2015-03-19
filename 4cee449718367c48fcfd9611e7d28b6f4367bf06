@@ -1,0 +1,11 @@
+Revision: 4cee449718367c48fcfd9611e7d28b6f4367bf06
+Patch-set: 2
+File: libnativebridge/Blueprints
+
+0
+Thu Mar 19 21:45:24 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_b317d87c
+Bytes: 56
+Looks like aosp/master version needs a copyright header.
+

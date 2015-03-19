@@ -1,0 +1,11 @@
+Revision: ee2e362f8be4cbf68bb38fa1916a1f395677c593
+Base-for-patch-set: 2
+File: fastboot/fastboot.cpp
+
+755
+Thu Mar 19 06:26:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 460fb4b1_518c2304
+Bytes: 85
+ccross: any idea what was going on here? is this debugging code accidentally left in?
+

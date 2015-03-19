@@ -11,3 +11,11 @@ colon/semi-colon
 
 (use libbase's Split?)
 
+168
+Thu Mar 19 06:10:35 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 460fb4b1_7fbb7326
+UUID: 66de785c_7adca510
+Bytes: 247
+I'll do some cleanup in a follow up. This is a tricky function to modify because logging isn't set up yet and it can't be debugged because adbd isn't live enough to use gdbserver. This one _should_ be fairly testable too, so I'll add that as well.
+

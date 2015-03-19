@@ -17,3 +17,11 @@ UUID: 06177cd9_bb27b366
 Bytes: 53
 The fix is checked in, can you try without this line?
 
+33
+Thu Mar 19 23:09:09 2015 +0000
+Author: Tim Kilbourn <1052708@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06177cd9_bb27b366
+UUID: c675643f_0e11cb55
+Bytes: 58
+Looks good. Removed this from libutils and libutils/tests.
+

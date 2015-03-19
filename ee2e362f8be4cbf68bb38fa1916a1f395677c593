@@ -9,3 +9,11 @@ UUID: 460fb4b1_518c2304
 Bytes: 85
 ccross: any idea what was going on here? is this debugging code accidentally left in?
 
+755
+Thu Mar 19 07:14:36 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 460fb4b1_518c2304
+UUID: 66de785c_da739966
+Bytes: 308
+From the perforce history it looks like this is a hack for really old update.zip files that had an android-product.txt instead of android-info.txt.  If android-product.txt exists, it uses the contents as the board name and then adds the hardcoded version-baseband value.  I think it should be safe to remove.
+

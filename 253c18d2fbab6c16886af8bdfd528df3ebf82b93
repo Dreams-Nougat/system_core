@@ -18,6 +18,14 @@ UUID: 460fb4b1_d1a01372
 Bytes: 12
 second what?
 
+41:30-41:36
+Thu Mar 19 06:19:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 460fb4b1_d1a01372
+UUID: 86fc4cc6_0761d87e
+Bytes: 48
+no idea. i just moved this out of the .cpp file.
+
 File: fastboot/fastboot.cpp
 
 490:16-490:19
@@ -26,4 +34,12 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 86fc4cc6_a74fa414
 Bytes: 4
 var?
+
+490:16-490:19
+Thu Mar 19 06:19:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86fc4cc6_a74fa414
+UUID: 66de785c_fa7d356d
+Bytes: 209
+i needed to invent a const char* local because we had const/non-const problems here. i called it var because it's only used as the second argument to fb_queue_require, which is called "var" in the header file.
 

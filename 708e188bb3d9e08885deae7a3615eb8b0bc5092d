@@ -18,6 +18,14 @@ UUID: 2620002d_3ca87d83
 Bytes: 42
 how would you detect this at compile time?
 
+34
+Thu Mar 19 20:53:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2620002d_3ca87d83
+UUID: 06177cd9_fbc1abd1
+Bytes: 10
+enable_if.
+
 37
 Thu Mar 19 20:33:45 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,4 +39,23 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 06177cd9_5b921726
 Bytes: 78
 does google3 have both? or should we just make people say "," rather than ','?
+
+48
+Thu Mar 19 20:53:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06177cd9_5b921726
+UUID: 461df4f5_5da1afa0
+Bytes: 225
+Their solution is somewhat more complex. Rather than operating on a char or string directly, they take a delimiter object, and chars or strings are implicitly converted.
+
+I think we can probably ditch the char variant though.
+
+File: base/strings.cpp
+
+36
+Thu Mar 19 20:53:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2620002d_dc6e217f
+Bytes: 172
+This actually breaks the ability to use the null character as a delimiter (wasn't clear that it was even allowed, but it looks like it is). I'll add a test and rework this.
 

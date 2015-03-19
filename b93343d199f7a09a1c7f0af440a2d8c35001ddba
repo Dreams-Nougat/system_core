@@ -1,0 +1,41 @@
+Revision: b93343d199f7a09a1c7f0af440a2d8c35001ddba
+Patch-set: 2
+File: include/system/graphics.h
+
+407
+Thu Mar 19 21:09:37 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2620002d_ffbf57f2
+Bytes: 76
+.
+   typedef struct android_depth_points { ...
+
+   } android_depth_points_t;
+
+413
+Thu Mar 19 21:09:37 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 461df4f5_bd7d6b33
+Bytes: 255
+Not sure if we care at all, this is a C99 only feature and compiling with -pedantic-errors will yield:
+
+    error: flexible array members are a C99 feature [-Werror,-Wc99-extensions]
+
+although it works ok as a GNU extension in C++ (in both clang and gcc).
+
+452
+Thu Mar 19 21:09:37 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 461df4f5_7d67d395
+Bytes: 127
+Naming it is dangerous. enums can be as small as a char/short/etc (-fcompressed-enums) so using them like that is not ABI safe.
+
+File: include/system/window.h
+
+823:8-823:27
+Thu Mar 19 21:09:37 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06177cd9_9eb09d43
+Bytes: 90
+int dataspace to be consistent with the other functions and the documentation on line 810?
+

@@ -1,0 +1,29 @@
+Revision: 253c18d2fbab6c16886af8bdfd528df3ebf82b93
+Patch-set: 2
+File: fastboot/Android.mk
+
+26
+Thu Mar 19 06:16:54 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86fc4cc6_6783ec9f
+Bytes: 8
+-Wextra?
+
+File: fastboot/bootimg_utils.h
+
+41:30-41:36
+Thu Mar 19 06:16:54 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 460fb4b1_d1a01372
+Bytes: 12
+second what?
+
+File: fastboot/fastboot.cpp
+
+490:16-490:19
+Thu Mar 19 06:16:54 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86fc4cc6_a74fa414
+Bytes: 4
+var?
+

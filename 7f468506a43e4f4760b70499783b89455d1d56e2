@@ -1,0 +1,11 @@
+Revision: 7f468506a43e4f4760b70499783b89455d1d56e2
+Patch-set: 1
+File: libnativebridge/tests/Blueprints
+
+22:26-22:31
+Thu Mar 19 21:34:28 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2620002d_dff7f30a
+Bytes: 13
+Whitespace...
+

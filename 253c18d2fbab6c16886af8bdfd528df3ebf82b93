@@ -9,6 +9,14 @@ UUID: 86fc4cc6_6783ec9f
 Bytes: 8
 -Wextra?
 
+26
+Thu Mar 19 15:41:48 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86fc4cc6_6783ec9f
+UUID: 460fb4b1_94dcc911
+Bytes: 89
+fixed in the dependent change. (i use them so rarely that i have no idea what i'm doing.)
+
 File: fastboot/bootimg_utils.h
 
 41:30-41:36

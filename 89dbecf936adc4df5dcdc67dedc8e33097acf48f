@@ -1,5 +1,30 @@
 Revision: 89dbecf936adc4df5dcdc67dedc8e33097acf48f
 Patch-set: 7
+File: base/include/base/logging.h
+
+69
+Thu Mar 19 06:29:00 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 460fb4b1_f169d7a6
+Bytes: 23
+Could still use a test.
+
+74
+Thu Mar 19 06:29:00 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66de785c_fa6415cf
+Bytes: 10
+Same here.
+
+80
+Thu Mar 19 06:29:00 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86fc4cc6_e7d0fc81
+Bytes: 148
+I think this is actually an ARTism that should be deleted.
+
+Useful idea though, so might be worth trying to figure out how to implement generically.
+
 File: base/test_utils.h
 
 0

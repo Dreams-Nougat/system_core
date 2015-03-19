@@ -1,0 +1,13 @@
+Revision: 9496bbc47fc1f42c6954fd14e3598e861ddb36b3
+Patch-set: 3
+File: adb/adb.cpp
+
+168
+Thu Mar 19 05:10:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 460fb4b1_7fbb7326
+Bytes: 40
+colon/semi-colon
+
+(use libbase's Split?)
+

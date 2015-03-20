@@ -19,3 +19,15 @@ Need is a strong word.
 
 sem_post/sem_wait is a set of atomics and futex system calls and has the necessary flush actions and compiler hints. I understand that the atomics will give a developer or future-selves maintaining this code a feeling of comfort.
 
+219:0-227:16
+Fri Mar 20 22:36:06 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66259842_b529f3b6
+UUID: 068cdc85_b756b8e5
+Bytes: 464
+I stand corrected about sem_{post,wait}.  I checked POSIX and they guarantee memory synchronization.
+
+But I still think uid needs to be atomic or protected by a lock.  Otherwise you could have a situation where two threads enter the function while uid == 0, both read uid and decide it's safe to continue, and then race to write to uid.
+
+(Unless you know only one thread will enter this function at a time, in which case the if (uid) branch is unnecessary anyway.)
+

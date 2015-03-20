@@ -15,6 +15,15 @@ you can just do
 
 the other error handling is already done inside property_set.
 
+File: init/init_parser.cpp
+
+116
+Fri Mar 20 16:58:45 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_8f9e0a67
+Bytes: 42
+This is crying out for std::unordered_map.
+
 File: init/keywords.h
 
 93

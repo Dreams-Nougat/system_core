@@ -34,3 +34,13 @@ exit
 
 -- So that's what I mean by everything typed is displayed twice ("echo hi" and "exit" are shown twice in the console window, once when I typed it, and then it was echoed back after hitting Enter).
 
+14
+Fri Mar 20 21:55:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66259842_75b11b73
+UUID: 46825452_80e33447
+Bytes: 243
+Oh, I misunderstood. I thought you meant you were seeing it duplicated for each character (like on some poorly configured serial console).
+
+Yes, the line gets is echoed, confirmed. Going to apply your patch now and verify that these are fixed.
+

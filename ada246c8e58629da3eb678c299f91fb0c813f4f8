@@ -1,0 +1,11 @@
+Revision: ada246c8e58629da3eb678c299f91fb0c813f4f8
+Patch-set: 3
+File: logd/LogStatistics.cpp
+
+380:52-380:65
+Fri Mar 20 14:15:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_79a298f0
+Bytes: 341
+With the advent of being able to report unique argv[0] as the UID name, two columns makes less sense as we see about half of the entries exceed 20 characters (shortest is "nfc", longest in practice is "com.google.android.googlequicksearchbox[5434]"), best to go to the previous CL and KISS the code to be a single column to set the standard.
+

@@ -9,6 +9,14 @@ UUID: 46825452_79a138a1
 Bytes: 49
 You could always use getpid() here fairly easily.
 
+88
+Fri Mar 20 07:14:46 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46825452_79a138a1
+UUID: 66259842_e27d786d
+Bytes: 34
+Good thinking, that's much easier.
+
 File: adb/adb_main.cpp
 
 356

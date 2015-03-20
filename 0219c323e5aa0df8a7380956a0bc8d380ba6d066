@@ -1,0 +1,11 @@
+Revision: 0219c323e5aa0df8a7380956a0bc8d380ba6d066
+Patch-set: 1
+File: init/readme.txt
+
+255
+Fri Mar 20 20:42:44 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 667af834_713dd08e
+Bytes: 95
+will only delete an empty directory. You might want to use "exec -- rm -rf /some/path" instead.
+

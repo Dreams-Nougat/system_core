@@ -1,0 +1,11 @@
+Revision: 89faddfd93218a4508f7ee615aacd64fedc2d928
+Patch-set: 1
+File: logd/main.cpp
+
+174
+Fri Mar 20 00:28:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_26bb8e55
+Bytes: 37
+you probably want getline(3) instead.
+

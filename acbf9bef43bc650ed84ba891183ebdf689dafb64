@@ -1,0 +1,26 @@
+Revision: acbf9bef43bc650ed84ba891183ebdf689dafb64
+Patch-set: 1
+File: init/builtins.cpp
+
+702
+Fri Mar 20 15:37:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_8b07de19
+Bytes: 202
+you can just do
+
+  if (property_set(android::base::StringPrintf("partition.%s.verified", mount_point).c_str(), "1") < 0) {
+    ERROR...
+  }
+
+the other error handling is already done inside property_set.
+
+File: init/keywords.h
+
+93
+Fri Mar 20 15:37:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_fc5e7654
+Bytes: 67
+you can change this 0 to a 1 and get the nargs == 1 check for free.
+

@@ -1,0 +1,15 @@
+Revision: 069a45a76e4be2e66179414d97009a277bedf200
+Patch-set: 1
+File: adb/adb.cpp
+
+103
+Fri Mar 20 06:01:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_e7a6e00d
+Bytes: 257
++1
+
+that said... is the return on L95 right? don't we want to connect stdin to /dev/null even if we can't open a log file? (not that it probably matters in practice.)
+
+(also, what happens if adbd starts, but then dies and gets restarted in the same second?)
+

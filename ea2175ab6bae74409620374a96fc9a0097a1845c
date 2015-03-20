@@ -1,0 +1,25 @@
+Revision: ea2175ab6bae74409620374a96fc9a0097a1845c
+Patch-set: 6
+File: adb/adb.cpp
+
+82
+Fri Mar 20 05:32:26 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_a79d38e8
+Bytes: 205
+This is not necessary anymore. Init creates the directory structure used by the system, and ensures the appropriate SELinux labels are set. For /data/adb, see https://android-review.googlesource.com/111453
+
+93
+Fri Mar 20 05:32:26 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_625ac857
+Bytes: 17
+O_CLOEXEC please.
+
+104
+Fri Mar 20 05:32:26 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_8257e42a
+Bytes: 9
+O_CLOEXEC
+

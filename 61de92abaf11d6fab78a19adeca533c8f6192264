@@ -17,6 +17,14 @@ UUID: 068cdc85_cb8de635
 Bytes: 188
 (what scares me, in case it isn't obvious, is non-constant format strings. not because i think we have a bug in strftime but because they make me think a lot harder than i should need to.)
 
+93
+Fri Mar 20 16:08:16 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 068cdc85_cb8de635
+UUID: 66259842_824da4cb
+Bytes: 92
+Yeah, this was a dumb way to write this. I should have gone to bed a ps sooner than I did :)
+
 File: adb/adb_main.cpp
 
 356

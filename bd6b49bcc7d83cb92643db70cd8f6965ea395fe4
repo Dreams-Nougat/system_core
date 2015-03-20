@@ -1,0 +1,11 @@
+Revision: bd6b49bcc7d83cb92643db70cd8f6965ea395fe4
+Patch-set: 9
+File: logd/LogStatistics.h
+
+48:0-48:17
+Fri Mar 20 00:52:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_011f5461
+Bytes: 166
+We should probably also maintain a drop count per PID, so we can see in the tables which specifically chattiest PID's got hurt when the per-UID spam filter kicked in.
+

@@ -1,0 +1,11 @@
+Revision: 812bf06cc727164b5172dfef51199df52add5468
+Patch-set: 3
+File: include/cutils/threads.h
+
+42
+Fri Mar 20 22:09:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_c304e616
+Bytes: 31
+not gettid like the bionic one?
+

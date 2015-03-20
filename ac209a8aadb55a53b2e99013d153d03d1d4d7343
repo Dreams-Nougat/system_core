@@ -9,3 +9,12 @@ UUID: 66259842_59ec633a
 Bytes: 228
 We tried an algorithm to optimize the memmove to limit the copy if the members being copied were NULL. The code became harder for the uninitiated to maintain for only a small gain in performance during the first n elements read.
 
+278:0-278:42
+Fri Mar 20 00:50:48 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_7f14bbc6
+Bytes: 142
+We may wish to _always_ report the UID along with the name. <name>[<UID>].
+
+NB: in the Chattiest PID table, we report <argv[0]>[<PID>] always.
+

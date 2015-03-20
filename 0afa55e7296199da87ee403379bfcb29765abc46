@@ -1,0 +1,11 @@
+Revision: 0afa55e7296199da87ee403379bfcb29765abc46
+Patch-set: 3
+File: logd/main.cpp
+
+219:0-227:16
+Fri Mar 20 21:11:51 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_563af298
+Bytes: 287
+You need to use atomics here.  First to ensure the assignment to uid doesn't race, and second to make sure the reads and writes actually happen (since uid and name aren't volatile, the compiler could decide to cache the reads, or that the writes have no side effects and can be skipped).
+

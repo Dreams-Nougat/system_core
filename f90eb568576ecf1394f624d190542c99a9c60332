@@ -9,3 +9,28 @@ UUID: 46825452_205608b5
 Bytes: 114
 Wasn't able to reproduce this one, but all the others are definitely broken on Windows (using a 5.1 system image).
 
+14
+Fri Mar 20 21:52:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46825452_205608b5
+UUID: 66259842_75b11b73
+Bytes: 593
+Here's what I see with the adb.exe from the SDK platform-tools 22 (in other words, without my changes):
+
+C:\> where adb.exe
+C:\Program Files\Android\android-sdk\platform-tools\adb.exe
+
+C:\> adb version
+Android Debug Bridge version 1.0.32
+
+C:\> adb shell
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+shell@flo:/ $ echo hi
+echo hi
+hi
+shell@flo:/ $ exit
+exit
+
+-- So that's what I mean by everything typed is displayed twice ("echo hi" and "exit" are shown twice in the console window, once when I typed it, and then it was echoed back after hitting Enter).
+

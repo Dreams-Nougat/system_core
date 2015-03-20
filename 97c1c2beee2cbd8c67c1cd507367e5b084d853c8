@@ -11,6 +11,14 @@ new code using android::String8?!
 
 you know you have libc++ now?
 
+153
+Fri Mar 20 20:54:42 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46825452_bec45e90
+UUID: 46825452_5e3772ad
+Bytes: 206
+logd already has a bunch of C/libutils usage cruft in there because of its age.  Let's hold off on adding a third set of container types until this patchset is done, then do a sweep to libc++ify everything.
+
 156:0-158:23
 Fri Mar 20 20:47:55 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>

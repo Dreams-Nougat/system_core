@@ -1,0 +1,11 @@
+Revision: ac209a8aadb55a53b2e99013d153d03d1d4d7343
+Patch-set: 5
+File: logd/LogStatistics.cpp
+
+117:0-123:13
+Fri Mar 20 00:19:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_59ec633a
+Bytes: 228
+We tried an algorithm to optimize the memmove to limit the copy if the members being copied were NULL. The code became harder for the uninitiated to maintain for only a small gain in performance during the first n elements read.
+

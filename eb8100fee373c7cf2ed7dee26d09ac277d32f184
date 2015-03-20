@@ -1,0 +1,29 @@
+Revision: eb8100fee373c7cf2ed7dee26d09ac277d32f184
+Patch-set: 1
+File: init/devices.cpp
+
+823
+Fri Mar 20 22:25:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_e3d48ac3
+Bytes: 18
+indexes are size_t
+
+829
+Fri Mar 20 22:25:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_fcb50731
+Bytes: 208
+you might want to lose all this insanity by switching to std::string and StringPrintf. so:
+
+  #include <base/stringprintf.h>
+
+  std::string root = android::base::StringPrintf(SYSFS_PREFIX"%s/", uevent->path);
+
+850
+Fri Mar 20 22:25:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_23193235
+Bytes: 140
+either use the existing ARRAY_SIZE macro or just add a NULL at the end of the array and use "firmware_dirs[i] != NULL" at your test instead.
+

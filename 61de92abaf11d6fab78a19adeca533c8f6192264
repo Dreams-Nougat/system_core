@@ -1,0 +1,20 @@
+Revision: 61de92abaf11d6fab78a19adeca533c8f6192264
+Patch-set: 4
+File: adb/adb.cpp
+
+93
+Fri Mar 20 15:27:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_6b7abab8
+Bytes: 147
+i think this would be more readable and less scary the other way around. so this has "/data/adb/adb-%s-%d.txt" and the strftime just does the date.
+
+File: adb/adb_main.cpp
+
+356
+Fri Mar 20 15:27:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_eb446a78
+Bytes: 213
+why do you think this is sufficient? wasn't part of the point of the old scheme that if someone accidentally tries to read from stdin, you're not reading from whatever random fd becomes fd 0 after you close stdin?
+

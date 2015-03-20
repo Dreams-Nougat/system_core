@@ -1,0 +1,22 @@
+Revision: 97c1c2beee2cbd8c67c1cd507367e5b084d853c8
+Patch-set: 6
+File: logd/LogStatistics.cpp
+
+153
+Fri Mar 20 20:30:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_bec45e90
+Bytes: 64
+new code using android::String8?!
+
+you know you have libc++ now?
+
+File: logd/LogStatistics.h
+
+23
+Fri Mar 20 20:30:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_1ec00a7c
+Bytes: 29
+you know you have libc++ now?
+

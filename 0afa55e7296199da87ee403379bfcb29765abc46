@@ -9,3 +9,13 @@ UUID: 068cdc85_563af298
 Bytes: 287
 You need to use atomics here.  First to ensure the assignment to uid doesn't race, and second to make sure the reads and writes actually happen (since uid and name aren't volatile, the compiler could decide to cache the reads, or that the writes have no side effects and can be skipped).
 
+219:0-227:16
+Fri Mar 20 21:22:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 068cdc85_563af298
+UUID: 66259842_b529f3b6
+Bytes: 253
+Need is a strong word.
+
+sem_post/sem_wait is a set of atomics and futex system calls and has the necessary flush actions and compiler hints. I understand that the atomics will give a developer or future-selves maintaining this code a feeling of comfort.
+

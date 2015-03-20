@@ -9,6 +9,14 @@ UUID: 068cdc85_6b7abab8
 Bytes: 147
 i think this would be more readable and less scary the other way around. so this has "/data/adb/adb-%s-%d.txt" and the strftime just does the date.
 
+93
+Fri Mar 20 15:31:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 068cdc85_6b7abab8
+UUID: 068cdc85_cb8de635
+Bytes: 188
+(what scares me, in case it isn't obvious, is non-constant format strings. not because i think we have a bug in strftime but because they make me think a lot harder than i should need to.)
+
 File: adb/adb_main.cpp
 
 356

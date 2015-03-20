@@ -19,6 +19,16 @@ Agreed, I was chatting with you about an idea to wrap an internal hash type arou
 
 I would like to have some time to get an education on the libc++ alternative for hash tables as BasicHashtable was freshly introduced into logd in the previous CL. Before I started using it, there was effectively only _one_ other user of BasicHashtable. That low of a population bothered me then, and bothers me even more now ...
 
+183:4-197:18
+Fri Mar 20 23:09:57 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66259842_521e75e7
+UUID: 460974dc_7aab3982
+Bytes: 320
+C++11 has std::unordered_map.
+
+Like I said, I think you should get this patch stack in and then do a project-wide sweep to get rid of C-style and libutils-style data structures.  If all you do is modify these new patches to use libc++, you'll just wind up with logd doing things *three* ways instead of the existing two.
+
 388:8-388:72
 Fri Mar 20 20:30:34 2015 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>

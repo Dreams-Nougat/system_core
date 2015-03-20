@@ -2,10 +2,25 @@ Revision: 89faddfd93218a4508f7ee615aacd64fedc2d928
 Patch-set: 1
 File: logd/main.cpp
 
+161:9-161:10
+Fri Mar 20 00:44:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_9c13c95a
+Bytes: 13
+missing space
+
 174
 Fri Mar 20 00:28:47 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 46825452_26bb8e55
 Bytes: 37
 you probably want getline(3) instead.
+
+174
+Fri Mar 20 00:44:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46825452_26bb8e55
+UUID: 068cdc85_5f0697d7
+Bytes: 22
+Yup, probably ;-> KISS
 

@@ -13,3 +13,13 @@ that said... is the return on L95 right? don't we want to connect stdin to /dev/
 
 (also, what happens if adbd starts, but then dies and gets restarted in the same second?)
 
+103
+Fri Mar 20 06:09:42 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 46825452_e7a6e00d
+UUID: 66259842_e2f258b4
+Bytes: 317
+This block should probably come out and go into main (or something closer to main, anyway).
+
+As for the race, it isn't O_EXCL, so we'll lose the log from the crash. I'm guessing it's just something that no one worried about. I could add a sequence number to the end (out of scope for this CL though). I'll add a TODO.
+

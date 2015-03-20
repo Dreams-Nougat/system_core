@@ -11,6 +11,13 @@ new code using android::String8?!
 
 you know you have libc++ now?
 
+156:0-158:23
+Fri Mar 20 20:47:55 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_2bd10b84
+Bytes: 46
+this doesn't build in aosp... missing a comma?
+
 File: logd/LogStatistics.h
 
 23

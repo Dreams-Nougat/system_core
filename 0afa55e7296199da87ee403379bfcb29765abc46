@@ -31,3 +31,13 @@ But I still think uid needs to be atomic or protected by a lock.  Otherwise you 
 
 (Unless you know only one thread will enter this function at a time, in which case the if (uid) branch is unnecessary anyway.)
 
+219:0-227:16
+Fri Mar 20 22:54:48 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 068cdc85_b756b8e5
+UUID: 46825452_c68f14f9
+Bytes: 287
+Only one thread is calling this. I put the comment 'Poorman trylock' so that a future self will realize this is not multi-thread safe and fix it if this function becomes useful.
+
+I should have put the comment "not multi-thread safe, assume only _one_ thread is calling this function" ...
+

@@ -1,0 +1,27 @@
+Revision: 45d2466e92702de5ab47470855d6a620ddbe472c
+Patch-set: 1
+File: init/builtins.cpp
+
+44
+Fri Mar 20 16:56:07 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_6fcf26ac
+Bytes: 43
+Shouldn't these go above the init includes?
+
+684
+Fri Mar 20 16:56:07 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_6dab9954
+Bytes: 29
+No failure check on this one.
+
+File: init/init.cpp
+
+810
+Fri Mar 20 16:56:07 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_ad777189
+Bytes: 7
+Or here
+

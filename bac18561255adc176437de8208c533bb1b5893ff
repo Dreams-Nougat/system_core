@@ -1,0 +1,29 @@
+Revision: bac18561255adc176437de8208c533bb1b5893ff
+Patch-set: 5
+File: logd/LogStatistics.cpp
+
+183:4-197:18
+Fri Mar 20 20:30:34 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_b22909b7
+Bytes: 235
+This is just complex/fragile enough that copy-and-pasting it feels like a bad idea.  If you can easily break this out into a single helper (using C++ templates to handle the different return value types) then I'd feel better with that.
+
+388:8-388:72
+Fri Mar 20 20:30:34 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_63473da8
+Bytes: 155
+Likewise it looks like you could break this out into a templatized helper.  Though this is more straightforward so I'm not sure how critical that would be.
+
+File: logd/LogStatistics.h
+
+73:9-73:15
+Fri Mar 20 20:30:34 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_c37e29df
+Bytes: 184
+enablePidStats?
+
+If I'm reading this right, this selectively enables the PID statistics, but UID statistics are unconditionally enabled.  Which would make this variable name deceptive.
+

@@ -1,0 +1,11 @@
+Revision: 07b720d9c2507a8fc4d07c21bf3417c16e252c1b
+Patch-set: 2
+File: adb/adb_main.cpp
+
+356
+Fri Mar 20 06:48:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_02c67449
+Bytes: 84
+There wasn't any reason to redirect it, AFAIK. Just closing it should be sufficient.
+

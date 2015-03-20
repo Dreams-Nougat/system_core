@@ -1,0 +1,11 @@
+Revision: 7c9a4614bfb180b8337b7502dc196801b912af4d
+Patch-set: 1
+File: init/init.cpp
+
+72
+Fri Mar 20 15:54:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66259842_c28cfc89
+Bytes: 51
+i want to do qemu separately, but it should go too.
+

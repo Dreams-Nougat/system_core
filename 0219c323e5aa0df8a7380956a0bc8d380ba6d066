@@ -9,3 +9,13 @@ UUID: 667af834_713dd08e
 Bytes: 95
 will only delete an empty directory. You might want to use "exec -- rm -rf /some/path" instead.
 
+255
+Sat Mar 21 00:00:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 667af834_713dd08e
+UUID: a69cf0d8_70540e26
+Bytes: 337
+well, since no-one defended it when you suggested removing it earlier, i was going to remove it. but i will add your comment to the "rm" entry because i assume everyone wants to keep that, but at the same time, it's not always sufficient.
+
+(long term i'm interested in looking at using the toybox rm in init for the best of both worlds.)
+

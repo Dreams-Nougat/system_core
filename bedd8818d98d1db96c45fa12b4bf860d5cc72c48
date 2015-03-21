@@ -1,0 +1,20 @@
+Revision: bedd8818d98d1db96c45fa12b4bf860d5cc72c48
+Patch-set: 1
+File: libcutils/Android.mk
+
+89
+Sat Mar 21 00:37:26 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_130314c7
+Bytes: 19
+Strictly necessary?
+
+File: libcutils/trace-host.c
+
+26
+Sat Mar 21 00:37:26 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_53fd9c34
+Bytes: 76
+Can't you just make all of the below static inline? Maybe remove above vars?
+

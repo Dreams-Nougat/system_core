@@ -1,0 +1,18 @@
+Revision: 4b83b0965fa8d29b15e350c82040bef1edb5a172
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+484
+Sun Mar 22 16:13:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_637a6cb8
+Bytes: 48
+why do-while when it's just while (true) anyway?
+
+485
+Sun Mar 22 16:13:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_48dfa3dd
+Bytes: 8
+pread64?
+

@@ -9,10 +9,26 @@ UUID: 86160cff_637a6cb8
 Bytes: 48
 why do-while when it's just while (true) anyway?
 
+484
+Sun Mar 22 18:14:31 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86160cff_637a6cb8
+UUID: 66111809_b3f218b3
+Bytes: 16
+Good point. Done
+
 485
 Sun Mar 22 16:13:39 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c6a1e40d_48dfa3dd
 Bytes: 8
 pread64?
+
+485
+Sun Mar 22 18:14:31 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c6a1e40d_48dfa3dd
+UUID: a61790fa_75d6a8ef
+Bytes: 4
+Done
 

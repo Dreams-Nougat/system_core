@@ -1,0 +1,11 @@
+Revision: 8c63c2308638076cd49e0d5d368ae86e1d72802b
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:8-7:38
+Mon Mar 23 22:01:51 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_901b649e
+Bytes: 26
+remove __write_to_log_null
+

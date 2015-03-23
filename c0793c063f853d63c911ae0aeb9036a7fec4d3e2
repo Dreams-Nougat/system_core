@@ -1,0 +1,11 @@
+Revision: c0793c063f853d63c911ae0aeb9036a7fec4d3e2
+Patch-set: 4
+File: libcutils/threads.c
+
+64
+Mon Mar 23 18:22:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_2e4dfcc9
+Bytes: 48
+we can probably remove this now. that's ancient.
+

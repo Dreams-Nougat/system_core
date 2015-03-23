@@ -1,0 +1,11 @@
+Revision: 47328c96d91ca71b57b8976df2df1fe51579a955
+Patch-set: 5
+File: base/strings.cpp
+
+28
+Mon Mar 23 17:24:14 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_ebd926fb
+Bytes: 95
+Some day I hope to make logging available to things like init, but for now I'll avoid using it.
+

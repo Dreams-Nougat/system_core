@@ -40,3 +40,11 @@ Are you suggesting I move the entire implementation of the atrace functions into
 
 Otherwise, the above vars and below definitions are needed to match the corresponding vars and definitions used on the target side.
 
+26
+Mon Mar 23 15:33:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86160cff_0e9e3fe3
+UUID: c6a1e40d_d5f7ab0a
+Bytes: 89
+(i think iam doesn't realize that these variables are all referenced in the header file.)
+

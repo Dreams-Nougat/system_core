@@ -1,0 +1,11 @@
+Revision: db3f267c99411b10144998c6c1f1a6288d0191bc
+Patch-set: 2
+File: init/property_service.cpp
+
+251:8-251:67
+Mon Mar 23 14:52:46 2015 +0000
+Author: Nikola Veljkovic <1062659@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a61790fa_58b2c1c6
+Bytes: 49
+Missing closing (or additional open) parenthesis?
+

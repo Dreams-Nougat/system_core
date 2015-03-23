@@ -1,0 +1,11 @@
+Revision: 686c50b663fb02afec9ce4d95b14af54ac9c5c3d
+Patch-set: 11
+File: logd/LogStatistics.h
+
+60:8-60:20
+Mon Mar 23 15:58:59 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_6e99b3c5
+Bytes: 121
+copy constructor does not initialize dropped :-( hence the problem(s) with dropped counts at times in the PID statistics.
+

@@ -44,3 +44,158 @@ Oh, I misunderstood. I thought you meant you were seeing it duplicated for each 
 
 Yes, the line gets is echoed, confirmed. Going to apply your patch now and verify that these are fixed.
 
+File: adb/commandline.cpp
+
+250
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_1746a482
+Bytes: 37
+Don't indent in extern "C" {} blocks.
+
+File: adb/sysdeps_win32.c
+
+2291
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_178ea483
+Bytes: 129
+Could you trim the lines down to 80 characters?
+
+Also, the return type is a boolean in disguise. Might as well just make it bool.
+
+2301:36-2301:56
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_c6b2b4d7
+Bytes: 186
+I'd make it abort() then, with a log message above it.
+
+Once I get around to making system/core/base/file.cpp play nice on Windows, this should just become 
+
+    CHECK_NE(read_count, 0);
+
+2305:33-2305:56
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_66d668f0
+Bytes: 4
+same
+
+2310:0-2316:9
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 068cdc85_491a5473
+Bytes: 197
+This might be more clear as
+
+    if (input_record->EventType == KEY_EVENT &&
+        input_record->Event.KeyEvent.bKeyDown) {
+        return true;
+    }
+
+The return on line 2323 would then go away.
+
+2318:62-2318:85
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 46825452_26970022
+Bytes: 4
+same
+
+2372
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_b7e7a2d9
+Bytes: 30
+Do they not exist in a header?
+
+2391:37-2391:40
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_10c2eab1
+Bytes: 23
+kill the padding spaces
+
+2409:4-2410:37
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_975a66d7
+Bytes: 517
+Maybe reorganize the function like so:
+
+    static char _get_char... {
+        if (key_even->uChar.AsciiChar != 0) {
+            return key_even->uChar.AsciiChar;
+        }
+        
+        // Now the masking off of the modifier keys.
+        // ...
+        
+        if (ToAscii(...) == 1) {
+            return (char)translated;
+        }
+        
+        return '\0';
+    }
+
+There doesn't seem to be any reason to use the length return and a char* for the out when all you're doing is returning 0 if *ch == 0 else 1.
+
+2436:14-2436:30
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_33a290ef
+Bytes: 71
+get_control_character? (at least that seems to be what's going on here)
+
+2442
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_979266a6
+Bytes: 154
+You don't actually want ctrl-2 to map to the control character, right? Just ctrl-@.
+
+Also, case statements should have the same indentation as the switch.
+
+2447
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_d444d478
+Bytes: 27
+Same for the rest of these.
+
+2489
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_77218a1f
+Bytes: 15
+Same as before.
+
+2544
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86160cff_5ad63546
+Bytes: 67
+Is this really necessary? Windows doesn't translate numlock for us?
+
+2559
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a69cf0d8_d6bb3ad5
+Bytes: 86
+Move this check to be the first thing in the function and return early if it isn't on.
+
+2596:13-2596:15
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_0b9e32e3
+Bytes: 40
+|= is a little more intention revealing.
+
+2720
+Mon Mar 23 17:57:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_ce455877
+Bytes: 34
+#undef all these when you're done.
+

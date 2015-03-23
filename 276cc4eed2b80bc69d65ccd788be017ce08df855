@@ -1,0 +1,13 @@
+Revision: 276cc4eed2b80bc69d65ccd788be017ce08df855
+Patch-set: 4
+File: base/strings.cpp
+
+29
+Mon Mar 23 01:26:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c6a1e40d_83ab2c81
+Bytes: 211
+what happens if this check fails but you're not actually using the logging?
+
+also, does this mean that if you use Split your binary has to carry along the logging? (since libbase is statically linked into init.)
+

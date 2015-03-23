@@ -9,6 +9,16 @@ UUID: a69cf0d8_130314c7
 Bytes: 19
 Strictly necessary?
 
+89
+Mon Mar 23 15:31:53 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a69cf0d8_130314c7
+UUID: a69cf0d8_cf5b948c
+Bytes: 234
+Host dex2oat needs to link with libcutils now, because it has tracing in it. This is needed to build the shared library it links with.
+
+Are you suggesting I should link to libcutils statically on the host, and then we don't need this?
+
 File: libcutils/trace-host.c
 
 26
@@ -17,4 +27,16 @@ Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a69cf0d8_53fd9c34
 Bytes: 76
 Can't you just make all of the below static inline? Maybe remove above vars?
+
+26
+Mon Mar 23 15:31:53 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a69cf0d8_53fd9c34
+UUID: 86160cff_0e9e3fe3
+Bytes: 259
+I don't understand.
+
+Are you suggesting I move the entire implementation of the atrace functions into the trace.h header file?
+
+Otherwise, the above vars and below definitions are needed to match the corresponding vars and definitions used on the target side.
 

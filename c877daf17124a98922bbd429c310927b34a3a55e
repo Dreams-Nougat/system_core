@@ -1,0 +1,22 @@
+Revision: c877daf17124a98922bbd429c310927b34a3a55e
+Patch-set: 7
+File: logd/LogStatistics.h
+
+48:77-48:78
+Mon Mar 23 23:00:06 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86728c8f_14591419
+Bytes: 89
+Style nitpick: put the semicolon on its own line so it's clear the loop has an empty body
+
+60:0-75:5
+Mon Mar 23 23:00:06 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 86728c8f_944b643b
+Bytes: 467
+This API is a bit weird, especially for something that's supposed to look like an iterator.
+
+At a minimum don't delete [] or populate sorted here.  That's easy enough for the caller to do, and it's confusing that next() is mutating the list.
+
+I'm also not sure this should be part of the hashtable class (as opposed to just a helper function in the .cpp file where it's used).  It's really operating on an external list and doesn't need to poke at non-public members.
+

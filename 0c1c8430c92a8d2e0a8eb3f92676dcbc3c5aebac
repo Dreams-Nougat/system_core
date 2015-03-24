@@ -1,0 +1,18 @@
+Revision: 0c1c8430c92a8d2e0a8eb3f92676dcbc3c5aebac
+Patch-set: 1
+File: include/system/window.h
+
+929
+Tue Mar 24 20:35:40 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3f6a249_ec64f34b
+Bytes: 36
+What about out-of-bound coordinates?
+
+931
+Tue Mar 24 20:35:40 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3fb9632_c771140c
+Bytes: 90
+seems like a struct typedef might be worth it (e.g. struct ANativeWindowRect or some such)
+

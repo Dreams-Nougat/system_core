@@ -29,6 +29,13 @@ There will be a day we regret thinking this small ...
 
 File: init/init_parser.cpp
 
+230:0-230:60
+Tue Mar 24 17:20:20 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23eb9264_81f3fa70
+Bytes: 22
+Missing CAP_AUDIT_READ
+
 242:0-242:60
 Tue Mar 24 17:02:27 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

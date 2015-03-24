@@ -11,6 +11,13 @@ Do we want to consider libcap-ng?
 
 Ans: not until romlem is finished removing the ramdisk
 
+382
+Tue Mar 24 17:03:47 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23eb9264_a17f1e8d
+Bytes: 214
+for non-root UIDs, capabilities are cleared on exec unless the file has it's capabilities flag set. So this code likely doesn't work at all. Have you actually tested whether gpsd is getting the relevant capability?
+
 File: init/init.h
 
 101:4-101:12

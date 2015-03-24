@@ -36,3 +36,11 @@ https://www.khronos.org/registry/egl/extensions/KHR/EGL_KHR_swap_buffers_with_da
 
 My goal with this change was to pass things as directly as possible here, do some packaging in native Surface, and the rest in BufferQueueProducer. We could do this packaging further up the stack (basically in the EGL wrapper), but I don't anticipate anyone but the EGL wrapper using this API, so it's a "six of one" situation.
 
+931
+Tue Mar 24 20:52:19 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a68a309d_7100a0b8
+UUID: 23eb9264_0a681f1c
+Bytes: 157
+I wouldn't be too surprised if someone wanted to use it outside of EGL in the future (decoders, CPU producers, etc?), it seems like a good optimization idea.
+

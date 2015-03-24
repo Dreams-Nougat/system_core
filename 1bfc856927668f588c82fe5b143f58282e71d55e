@@ -57,3 +57,10 @@ UUID: c3fb9632_1ec98da6
 Bytes: 3
 No?
 
+872:44-872:70
+Tue Mar 24 18:08:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23eb9264_a4b04cbe
+Bytes: 44
+We should error out on unknown capabilities.
+

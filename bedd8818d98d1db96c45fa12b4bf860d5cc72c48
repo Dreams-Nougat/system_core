@@ -58,3 +58,13 @@ Yes, they are, but couldn't we just change the header file not to reference them
 
 I see no upside, it doesn't seem do anything (all of these functions will just return a constant value)? Downside is that it forces libraries to link against cutils when they may not really need to.
 
+26
+Tue Mar 24 21:59:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3f6a249_c6ed9304
+UUID: a3f6a249_e6a9af88
+Bytes: 266
+another down side is more complexity in the header files to support the uncommon case. i prefer it this way.
+
+(we'd like to move away from system/core/include anyway, at which point you'll be declaring your dependency on libcutils to get access to the header files.)
+

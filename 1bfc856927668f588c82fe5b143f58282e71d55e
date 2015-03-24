@@ -1,0 +1,45 @@
+Revision: 1bfc856927668f588c82fe5b143f58282e71d55e
+Patch-set: 1
+File: init/init.cpp
+
+308:0-334:9
+Tue Mar 24 17:02:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8620cc83_87e16818
+Bytes: 89
+Do we want to consider libcap-ng?
+
+Ans: not until romlem is finished removing the ramdisk
+
+File: init/init.h
+
+101:4-101:12
+Tue Mar 24 17:02:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23eb9264_01724ae1
+Bytes: 53
+There will be a day we regret thinking this small ...
+
+File: init/init_parser.cpp
+
+242:0-242:60
+Tue Mar 24 17:02:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23eb9264_614c76a1
+Bytes: 3
+No?
+
+264:0-264:49
+Tue Mar 24 17:02:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3fb9632_def325eb
+Bytes: 140
+Worried about this one since it can be used to form an attack. But if we allow a daemon to load a module, then we may need this one as well?
+
+265:0-270:54
+Tue Mar 24 17:02:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3fb9632_1ec98da6
+Bytes: 3
+No?
+

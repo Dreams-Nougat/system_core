@@ -48,3 +48,13 @@ UUID: c6a1e40d_d5f7ab0a
 Bytes: 89
 (i think iam doesn't realize that these variables are all referenced in the header file.)
 
+26
+Tue Mar 24 21:53:54 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c6a1e40d_d5f7ab0a
+UUID: a3f6a249_c6ed9304
+Bytes: 294
+Yes, they are, but couldn't we just change the header file not to reference them in host mode?
+
+I see no upside, it doesn't seem do anything (all of these functions will just return a constant value)? Downside is that it forces libraries to link against cutils when they may not really need to.
+

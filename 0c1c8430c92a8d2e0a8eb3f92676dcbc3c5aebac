@@ -9,10 +9,30 @@ UUID: a3f6a249_ec64f34b
 Bytes: 36
 What about out-of-bound coordinates?
 
+929
+Tue Mar 24 20:46:58 2015 +0000
+Author: Dan Stoza <1043625@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3f6a249_ec64f34b
+UUID: 4665f4c2_0e8d7b83
+Bytes: 290
+It's a fair question. I'm not sure what semantics we would expect here. While I haven't implemented it, I think the most reasonable thing would be to clamp the coordinates against the buffer size in BufferQueueProducer (which is the first time we have easy access to the buffer dimensions).
+
 931
 Tue Mar 24 20:35:40 2015 +0000
 Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c3fb9632_c771140c
 Bytes: 90
 seems like a struct typedef might be worth it (e.g. struct ANativeWindowRect or some such)
+
+931
+Tue Mar 24 20:46:58 2015 +0000
+Author: Dan Stoza <1043625@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3fb9632_c771140c
+UUID: a68a309d_7100a0b8
+Bytes: 485
+This is basically a direct mapping of the following EGL extension:
+
+https://www.khronos.org/registry/egl/extensions/KHR/EGL_KHR_swap_buffers_with_damage.txt
+
+My goal with this change was to pass things as directly as possible here, do some packaging in native Surface, and the rest in BufferQueueProducer. We could do this packaging further up the stack (basically in the EGL wrapper), but I don't anticipate anyone but the EGL wrapper using this API, so it's a "six of one" situation.
 

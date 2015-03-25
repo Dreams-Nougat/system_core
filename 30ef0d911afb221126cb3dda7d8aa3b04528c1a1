@@ -1,0 +1,18 @@
+Revision: 30ef0d911afb221126cb3dda7d8aa3b04528c1a1
+Patch-set: 1
+File: adb/services.cpp
+
+140:23-140:34
+Wed Mar 25 21:24:09 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_00993af7
+Bytes: 17
+reinterpret_cast?
+
+140:4-140:8
+Wed Mar 25 21:24:09 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_409f32df
+Bytes: 51
+make it const char* instead of const_casting later?
+

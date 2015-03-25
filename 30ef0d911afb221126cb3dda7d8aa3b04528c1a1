@@ -16,3 +16,11 @@ UUID: c352b622_409f32df
 Bytes: 51
 make it const char* instead of const_casting later?
 
+140:4-140:8
+Wed Mar 25 21:35:52 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_409f32df
+UUID: 2362b2ee_b7250ba6
+Bytes: 103
+Seems const char* is a better choice. But it should be static_cast since it's a cast from void*, right?
+

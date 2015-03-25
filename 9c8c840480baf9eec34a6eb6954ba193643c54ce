@@ -9,6 +9,14 @@ UUID: c352b622_bb4a9bae
 Bytes: 123
 I think we should stick to a warning.. since this might be a valid string for some future device with some new reboot mode.
 
+1489
+Wed Mar 25 22:22:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_bb4a9bae
+UUID: c352b622_0d7292e1
+Bytes: 71
+ccross: do the systems team need to pass arbitrary strings here anyway?
+
 1491
 Wed Mar 25 22:12:05 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

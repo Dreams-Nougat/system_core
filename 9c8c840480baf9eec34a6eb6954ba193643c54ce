@@ -2,6 +2,13 @@ Revision: 9c8c840480baf9eec34a6eb6954ba193643c54ce
 Patch-set: 2
 File: adb/commandline.cpp
 
+1489
+Wed Mar 25 22:15:52 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_bb4a9bae
+Bytes: 123
+I think we should stick to a warning.. since this might be a valid string for some future device with some new reboot mode.
+
 1491
 Wed Mar 25 22:12:05 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

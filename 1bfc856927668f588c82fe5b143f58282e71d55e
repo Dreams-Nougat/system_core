@@ -2,6 +2,13 @@ Revision: 1bfc856927668f588c82fe5b143f58282e71d55e
 Patch-set: 1
 File: init/init.cpp
 
+325:63-325:64
+Wed Mar 25 16:41:31 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_e6fbdeba
+Bytes: 39
+wtf: capdata[CAP_TO_INDEX(n)].permitted
+
 308:0-334:9
 Tue Mar 24 17:02:27 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

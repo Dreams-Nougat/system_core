@@ -2,6 +2,13 @@ Revision: 30ef0d911afb221126cb3dda7d8aa3b04528c1a1
 Patch-set: 1
 File: adb/services.cpp
 
+135:28-135:37
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_ca9fc7aa
+Bytes: 42
+Can just make the argument a char*, right?
+
 140:23-140:34
 Wed Mar 25 21:24:09 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +30,83 @@ Parent: c352b622_409f32df
 UUID: 2362b2ee_b7250ba6
 Bytes: 103
 Seems const char* is a better choice. But it should be static_cast since it's a cast from void*, right?
+
+142
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_8ac0af98
+Bytes: 72
+Just make these const values rather than nasty preprocessor definitions.
+
+146:8-146:9
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_7ba66311
+Bytes: 8
+Use == 0
+
+148:40-148:43
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_db8f97f8
+Bytes: 5
+== -1
+
+154:21-154:22
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_4df8914a
+Bytes: 5
+== -1
+
+158:6-158:15
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_97ab26d5
+Bytes: 16
+WriteStringFully
+
+167:15-167:20
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_d7cabec6
+Bytes: 69
+ret should be a size_t.
+
+Also, move the declaration to its first use.
+
+168:8-168:16
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_ad1b7e9c
+Bytes: 9
+asprintf?
+
+169:8-169:22
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_ad2ee536
+Bytes: 39
+This could be WriteStringFully as well.
+
+174:12-174:13
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_8d08c25e
+Bytes: 5
+== -1
+
+176:8-176:22
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_4d73f168
+Bytes: 9
+And here.
+
+183
+Wed Mar 25 22:23:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_37a0fa9d
+Bytes: 91
+Could you factor the whole function out into reboot_service_impl so we don't need to gotos?
 

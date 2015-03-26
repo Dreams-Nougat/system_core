@@ -57,6 +57,14 @@ UUID: 834c3e8c_de0305c5
 Bytes: 177
 Is this really needed? We don't want to hold on to capabilities which we inadvertently received. I don't see the value to querying our existing capabilities before setting them.
 
+158:0-161:5
+Thu Mar 26 00:27:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_de0305c5
+UUID: c352b622_234c3d4e
+Bytes: 121
+_agreed_, this is really left over from my debug code where I instrumented all phases. I count this as a 'good catch' :-)
+
 182:0-186:5
 Thu Mar 26 00:20:50 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

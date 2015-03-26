@@ -25,6 +25,14 @@ UUID: 834c3e8c_d8f31deb
 Bytes: 234
 I've seen some vendors add additional reboot modes to the kernel reboot handler, and they may use adb reboot to trigger them.  Unfortunate, I can't tell you how many times I've run adb reboot bootlaoder and ended up back in userspace.
 
+1489
+Thu Mar 26 18:19:02 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_d8f31deb
+UUID: c352b622_506ee1ad
+Bytes: 48
+Okay. I'm replacing it with a warning instead...
+
 1491
 Wed Mar 25 22:12:05 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,12 +40,28 @@ UUID: 2362b2ee_975c46d4
 Bytes: 100
 there are already two copies of L1491-L1498. this is a third. time to factor it out into a function.
 
+1491
+Thu Mar 26 18:19:02 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_975c46d4
+UUID: 2362b2ee_009daab1
+Bytes: 75
+the one for "jdwp" returns -1 instead of 1. but i don't think that matters.
+
 1492
 Wed Mar 25 22:12:05 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c352b622_bb1f3be2
 Bytes: 6
 != -1?
+
+1492
+Thu Mar 26 18:19:02 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_bb1f3be2
+UUID: 834c3e8c_b3b3e2ca
+Bytes: 4
+Done
 
 File: adb/services.cpp
 
@@ -48,10 +72,26 @@ UUID: c352b622_3bb0eb41
 Bytes: 20
 no need for #define.
 
+142
+Thu Mar 26 18:19:02 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_3bb0eb41
+UUID: 2362b2ee_0b226bce
+Bytes: 4
+Done
+
 158
 Wed Mar 25 22:12:05 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c352b622_1bb52f32
 Bytes: 51
 don't we already have a function to write a string?
+
+158
+Thu Mar 26 18:19:02 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_1bb52f32
+UUID: c352b622_3056c5b3
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 11ac89fc46c9a96e1062932241e31fbc22b5abef
+Patch-set: 3
+File: fs_mgr/fs_mgr_verity.c
+
+505
+Thu Mar 26 09:53:28 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23147232_42416867
+Bytes: 37
+why did this change to "2" from "1" ?
+

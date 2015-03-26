@@ -1,0 +1,18 @@
+Revision: 2c234fd541b98184c359a4f47740031338d2fa2a
+Patch-set: 4
+File: adb/sysdeps_win32.c
+
+2298:14-2298:16
+Thu Mar 26 16:57:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 639caa2a_fba60f8a
+Bytes: 20
+Align wrapped lines.
+
+2579:16-2579:21
+Thu Mar 26 16:57:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83a19e60_1cd415c2
+Bytes: 12
+Unnecessary.
+

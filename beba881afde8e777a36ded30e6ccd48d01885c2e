@@ -64,6 +64,14 @@ UUID: 834c3e8c_5e46f513
 Bytes: 188
 This isn't necessary. Calling setresuid() always drops all capabilities unless prctl(PR_SET_KEEPCAPS) is called, which it isn't here. Please see the PR_SET_KEEPCAPS section of "man prctl".
 
+182:0-186:5
+Thu Mar 26 00:23:58 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_5e46f513
+UUID: 834c3e8c_fe6a415d
+Bytes: 159
+Actually, please double check this. There's reference in the man page to PR_SET_KEEPCAPS only applying when the previous UID=0, which may not be the case here.
+
 202
 Thu Mar 26 00:07:57 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

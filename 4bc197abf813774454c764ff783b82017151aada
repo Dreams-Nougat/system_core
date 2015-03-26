@@ -1,0 +1,39 @@
+Revision: 4bc197abf813774454c764ff783b82017151aada
+Patch-set: 1
+File: toolbox/generate-input.h-labels.py
+
+23:18-23:24
+Thu Mar 26 00:07:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_23c9dda6
+Bytes: 2
+[]
+
+40
+Thu Mar 26 00:07:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_a6e3961e
+Bytes: 20
+with open(...) as f:
+
+41
+Thu Mar 26 00:07:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_06f4a2d2
+Bytes: 14
+for line in f:
+
+98
+Thu Mar 26 00:07:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_26b446c4
+Bytes: 14
+Not necessary.
+
+99
+Thu Mar 26 00:07:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2362b2ee_06b142d3
+Bytes: 18
+No newline at EOF.
+

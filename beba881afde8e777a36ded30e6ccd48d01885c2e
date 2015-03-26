@@ -50,6 +50,20 @@ UUID: 834c3e8c_7ecad11f
 Bytes: 48
 Yup & __attribute__((__noreturn__)) on panic ...
 
+158:0-161:5
+Thu Mar 26 00:20:50 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_de0305c5
+Bytes: 177
+Is this really needed? We don't want to hold on to capabilities which we inadvertently received. I don't see the value to querying our existing capabilities before setting them.
+
+182:0-186:5
+Thu Mar 26 00:20:50 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_5e46f513
+Bytes: 188
+This isn't necessary. Calling setresuid() always drops all capabilities unless prctl(PR_SET_KEEPCAPS) is called, which it isn't here. Please see the PR_SET_KEEPCAPS section of "man prctl".
+
 202
 Thu Mar 26 00:07:57 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

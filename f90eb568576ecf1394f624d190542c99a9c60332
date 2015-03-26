@@ -90,6 +90,14 @@ UUID: 639caa2a_bba647b7
 Bytes: 123
 Definitely change it to a bool (stdbool's bool, not BOOL). Using the UNIX 0/-1 return style everywhere in adb is a bug IMO.
 
+2291
+Thu Mar 26 19:28:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 639caa2a_bba647b7
+UUID: c3971601_41a4f42b
+Bytes: 43
+I changed it to bool with true for success.
+
 2301:36-2301:56
 Mon Mar 23 17:57:13 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -231,6 +239,14 @@ UUID: a3922212_fdd9271f
 Bytes: 84
 It would help this function, but if it dirties up the callsites we'll keep it as-is.
 
+2409:4-2410:37
+Thu Mar 26 19:28:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3922212_fdd9271f
+UUID: c3971601_e198a0f5
+Bytes: 138
+Ok, I'll keep it for now. If you reconsider and want me to attempt the change (in this commit or in a follow-up commit), just let me know.
+
 2436:14-2436:30
 Mon Mar 23 17:57:13 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -272,6 +288,14 @@ Parent: 06869c96_80515637
 UUID: 639caa2a_3be8f7a5
 Bytes: 90
 Never mind, you're correct. Don't know what I screwed up when I tried this the first time.
+
+2442
+Thu Mar 26 19:28:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 639caa2a_3be8f7a5
+UUID: 831efe57_b7640292
+Bytes: 2
+ok
 
 2447
 Mon Mar 23 17:57:13 2015 +0000

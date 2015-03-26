@@ -1,0 +1,32 @@
+Revision: beba881afde8e777a36ded30e6ccd48d01885c2e
+Patch-set: 1
+File: run-as/run-as.c
+
+92
+Thu Mar 26 00:07:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_1e019d07
+Bytes: 8
+fprintf?
+
+133
+Thu Mar 26 00:07:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_fe05a113
+Bytes: 27
+all these returns are dead.
+
+202
+Thu Mar 26 00:07:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_3e15793f
+Bytes: 10
+s/ Error//
+
+210
+Thu Mar 26 00:07:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_9e0c6d3c
+Bytes: 9
+strerror?
+

@@ -1,5 +1,15 @@
 Revision: 0756a056e5d2dac0393525be057d2b246ec1ff38
 Patch-set: 2
+File: toolbox/Android.mk
+
+105:0-105:59
+Thu Mar 26 00:28:15 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c352b622_e33d0590
+Bytes: 203
+Oh, this dependency won't work in a clean build, in which the header dependency files are not generated yet and no file depends on $(LOCAL_PATH)/getevent.h.
+You need to add it as dependency of a .c file.
+
 File: toolbox/generate-input.h-labels.py
 
 73:9-73:18

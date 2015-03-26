@@ -1,0 +1,18 @@
+Revision: 0756a056e5d2dac0393525be057d2b246ec1ff38
+Patch-set: 2
+File: toolbox/generate-input.h-labels.py
+
+73:9-73:18
+Thu Mar 26 00:15:14 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_5e5275f1
+Bytes: 14
+struct_prefix?
+
+73:20-73:24
+Thu Mar 26 00:15:14 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 834c3e8c_9e5eadfc
+Bytes: 29
+Shouldn't shadow the builtin.
+

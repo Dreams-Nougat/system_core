@@ -146,6 +146,16 @@ UUID: 2362b2ee_e69ceeb7
 Bytes: 120
 Not sure. I don't see a clear benefit of using asprintf, and it requires additional (implicit) malloc and explicit free.
 
+168:8-168:16
+Thu Mar 26 18:45:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_e69ceeb7
+UUID: 83a19e60_c57fb08c
+Bytes: 258
+yeah, what we really want is StringPrintf but there are some Windows issues before we can do that. i agree it's probably not worth doing a half cleanup when there's a full cleanup to come.
+
+(that said, a WriteFmt might be a good idea. cut out the middleman.)
+
 169:8-169:22
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -175,6 +185,14 @@ Parent: c352b622_8d08c25e
 UUID: 2362b2ee_46e85aa6
 Bytes: 247
 Not sure if it is safe to change here. From system/core/include/cutils/properties.h, it doesn't explicitly say about the return value (only "<0"). Although by tracing down the code to bionic, -1 is the only negative value. Is it a safe assumption?
+
+174:12-174:13
+Thu Mar 26 18:45:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_46e85aa6
+UUID: a3922212_a354de27
+Bytes: 37
+yes. we should fix the documentation.
 
 176:8-176:22
 Wed Mar 25 22:23:02 2015 +0000

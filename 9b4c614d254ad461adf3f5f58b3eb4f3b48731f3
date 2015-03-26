@@ -1,0 +1,11 @@
+Revision: 9b4c614d254ad461adf3f5f58b3eb4f3b48731f3
+Patch-set: 3
+File: adb/services.cpp
+
+190
+Thu Mar 26 18:50:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83a19e60_657fbc65
+Bytes: 172
+we should have something like this for "adb root"/"adb unroot". the same race exists there. isn't there a "don't close this socket" flag? should we be setting that instead?
+

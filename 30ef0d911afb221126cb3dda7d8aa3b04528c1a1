@@ -9,6 +9,14 @@ UUID: 834c3e8c_ca9fc7aa
 Bytes: 42
 Can just make the argument a char*, right?
 
+135:28-135:37
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_ca9fc7aa
+UUID: 834c3e8c_19c9b7a6
+Bytes: 81
+reboot_service() is called as a function ptr. We may need to keep the void* here.
+
 140:23-140:34
 Wed Mar 25 21:24:09 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,12 +46,28 @@ UUID: 834c3e8c_8ac0af98
 Bytes: 72
 Just make these const values rather than nasty preprocessor definitions.
 
+142
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_8ac0af98
+UUID: 2362b2ee_2bb40fc4
+Bytes: 4
+Done
+
 146:8-146:9
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c352b622_7ba66311
 Bytes: 8
 Use == 0
+
+146:8-146:9
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_7ba66311
+UUID: c352b622_5025c127
+Bytes: 4
+Done
 
 148:40-148:43
 Wed Mar 25 22:23:02 2015 +0000
@@ -52,6 +76,14 @@ UUID: c352b622_db8f97f8
 Bytes: 5
 == -1
 
+148:40-148:43
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_db8f97f8
+UUID: 834c3e8c_335132bb
+Bytes: 4
+Done
+
 154:21-154:22
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -59,12 +91,28 @@ UUID: 834c3e8c_4df8914a
 Bytes: 5
 == -1
 
+154:21-154:22
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_4df8914a
+UUID: c352b622_509f01df
+Bytes: 4
+Done
+
 158:6-158:15
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2362b2ee_97ab26d5
 Bytes: 16
 WriteStringFully
+
+158:6-158:15
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_97ab26d5
+UUID: c352b622_30a4852b
+Bytes: 4
+Done
 
 167:15-167:20
 Wed Mar 25 22:23:02 2015 +0000
@@ -75,12 +123,28 @@ ret should be a size_t.
 
 Also, move the declaration to its first use.
 
+167:15-167:20
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_d7cabec6
+UUID: 834c3e8c_132ab6f7
+Bytes: 105
+snprintf() should expect int (and property_set below at L173). I'm adding a cast to sizeof(property_val).
+
 168:8-168:16
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c352b622_ad1b7e9c
 Bytes: 9
 asprintf?
+
+168:8-168:16
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_ad1b7e9c
+UUID: 2362b2ee_e69ceeb7
+Bytes: 120
+Not sure. I don't see a clear benefit of using asprintf, and it requires additional (implicit) malloc and explicit free.
 
 169:8-169:22
 Wed Mar 25 22:23:02 2015 +0000
@@ -89,12 +153,28 @@ UUID: 834c3e8c_ad2ee536
 Bytes: 39
 This could be WriteStringFully as well.
 
+169:8-169:22
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_ad2ee536
+UUID: 2362b2ee_466dfafd
+Bytes: 4
+Done
+
 174:12-174:13
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c352b622_8d08c25e
 Bytes: 5
 == -1
+
+174:12-174:13
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c352b622_8d08c25e
+UUID: 2362b2ee_46e85aa6
+Bytes: 247
+Not sure if it is safe to change here. From system/core/include/cutils/properties.h, it doesn't explicitly say about the return value (only "<0"). Although by tracing down the code to bionic, -1 is the only negative value. Is it a safe assumption?
 
 176:8-176:22
 Wed Mar 25 22:23:02 2015 +0000
@@ -103,10 +183,26 @@ UUID: 834c3e8c_4d73f168
 Bytes: 9
 And here.
 
+176:8-176:22
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 834c3e8c_4d73f168
+UUID: 831efe57_54cfec2d
+Bytes: 4
+Done
+
 183
 Wed Mar 25 22:23:02 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2362b2ee_37a0fa9d
 Bytes: 91
 Could you factor the whole function out into reboot_service_impl so we don't need to gotos?
+
+183
+Thu Mar 26 18:19:19 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2362b2ee_37a0fa9d
+UUID: 2362b2ee_46f85af8
+Bytes: 4
+Done
 

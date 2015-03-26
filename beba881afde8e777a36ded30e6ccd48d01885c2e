@@ -43,6 +43,13 @@ UUID: c352b622_03b4a1c3
 Bytes: 13
 } __noreturn;
 
+131:7-131:40
+Thu Mar 26 16:45:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83a19e60_5c1b7d74
+Bytes: 54
+This does a setegid in order to read the package file.
+
 133
 Thu Mar 26 00:07:57 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

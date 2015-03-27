@@ -1,0 +1,11 @@
+Revision: 30c71f7c4af115a4cf059868992acd56b26663f0
+Patch-set: 1
+File: base/Blueprints
+
+45
+Fri Mar 27 04:08:40 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43d246e8_90ffc92d
+Bytes: 31
+Just remove this. It's obvious.
+

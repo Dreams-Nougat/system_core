@@ -1,0 +1,73 @@
+Revision: b31bea0f9b12c5320e848cf20240bbcbcfbec3f4
+Patch-set: 2
+File: include/backtrace/Backtrace.h
+
+48
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63758ab8_e892add2
+Bytes: 25
+this is no longer needed.
+
+99
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43d246e8_a803760c
+Bytes: 43
+rename them to GetTid/GetPid? also const...
+
+102
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63758ab8_b9c165d3
+Bytes: 22
+is this function used?
+
+File: libbacktrace/Backtrace.cpp
+
+2:19-2:21
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43d246e8_458193fa
+Bytes: 3
+15?
+
+35
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63758ab8_4b687b64
+Bytes: 82
+looks like this is used only in FormatFrameData, move it into the functions scope?
+
+78:36-78:43
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63758ab8_0b6fe324
+Bytes: 16
+reinterpret_cast
+
+79:17-79:25
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63a3ca80_eca95a5a
+Bytes: 9
+same here
+
+File: libbacktrace/BacktraceCurrent.cpp
+
+92
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63758ab8_6ed465c3
+Bytes: 2
+2?
+
+File: libbacktrace/ThreadEntry.cpp
+
+124
+Fri Mar 27 23:45:12 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63a3ca80_2f8f642e
+Bytes: 36
+shouldn't signal be guarded as well?
+

@@ -9,6 +9,14 @@ UUID: a3a94260_3f40f7f2
 Bytes: 99
 Wasn't this already the case?  klog_write in include/cutils/klog.h has the printf format attribute.
 
+12:0-13:35
+Sat Mar 28 07:03:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3a94260_3f40f7f2
+UUID: 63a3ca80_22577b61
+Bytes: 175
+no. weirdly, the two layers of macros defeated it. i fixed it initially by just having one layer of macros, but then added my own logging function to get distinct tags anyway.
+
 File: init/init.cpp
 
 601:8-601:14
@@ -18,6 +26,14 @@ UUID: a3a94260_7f466f14
 Bytes: 190
 You made this NOTICE, which would print by default and be way too spammy, but its inside a comparison against KLOG_INFO_LEVEL so it doesn't log by default.  Did you mean to leave it at INFO?
 
+601:8-601:14
+Sat Mar 28 07:03:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3a94260_7f466f14
+UUID: 63a3ca80_425cf780
+Bytes: 4
+Done
+
 File: init/log.cpp
 
 26:41-26:64
@@ -26,4 +42,14 @@ Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3a94260_1f3bbb7f
 Bytes: 149
 This seems fairly expensive to do on every log message, and there are relatively few places where init forks, maybe just store the name for printing?
+
+26:41-26:64
+Sat Mar 28 07:03:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3a94260_1f3bbb7f
+UUID: 43d246e8_545b830c
+Bytes: 290
+it's cheaper than you think (getprogname just returns a global, and basename is a strrchr on one of "/init", "/sbin/ueventd", or "/sbin/watchdogd"), but done anyway.
+
+testing this, i actually saw the problem the TODO alludes to, so i'll fix that right away rather than leave it as a TODO...
 

@@ -11,3 +11,11 @@ You could get rid of the stat() on line 1001 by doing an open() with O_CREAT|O_E
 
 One less system call. Not sure it's worth it.
 
+1006
+Sat Mar 28 18:06:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3ae3665_09b06d41
+UUID: 43d246e8_54c703c0
+Bytes: 133
+that would be wrong; we're only supposed to create the file _after_ we've done the work. this is the IPC between ueventd and init :-/
+

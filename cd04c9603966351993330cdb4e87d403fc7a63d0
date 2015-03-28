@@ -1,0 +1,29 @@
+Revision: cd04c9603966351993330cdb4e87d403fc7a63d0
+Patch-set: 4
+File: /COMMIT_MSG
+
+12:0-13:35
+Sat Mar 28 06:51:32 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3a94260_3f40f7f2
+Bytes: 99
+Wasn't this already the case?  klog_write in include/cutils/klog.h has the printf format attribute.
+
+File: init/init.cpp
+
+601:8-601:14
+Sat Mar 28 06:51:32 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3a94260_7f466f14
+Bytes: 190
+You made this NOTICE, which would print by default and be way too spammy, but its inside a comparison against KLOG_INFO_LEVEL so it doesn't log by default.  Did you mean to leave it at INFO?
+
+File: init/log.cpp
+
+26:41-26:64
+Sat Mar 28 06:51:32 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3a94260_1f3bbb7f
+Bytes: 149
+This seems fairly expensive to do on every log message, and there are relatively few places where init forks, maybe just store the name for printing?
+

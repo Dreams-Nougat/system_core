@@ -19,3 +19,15 @@ UUID: 43d246e8_54c703c0
 Bytes: 133
 that would be wrong; we're only supposed to create the file _after_ we've done the work. this is the IPC between ueventd and init :-/
 
+1006
+Sat Mar 28 18:15:48 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43d246e8_54c703c0
+UUID: a3a94260_ff125fdb
+Bytes: 231
+ah.  :-)
+
+Then perhaps consider using "access(COLDBOOT_DONE, F_OK)" instead of stat? It requires fewer permissions, doesn't require the temp variable, and is probably (trivially) faster.
+
+Again, not sure it's worth the time, but...
+

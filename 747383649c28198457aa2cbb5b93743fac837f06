@@ -1,0 +1,13 @@
+Revision: 747383649c28198457aa2cbb5b93743fac837f06
+Patch-set: 1
+File: init/devices.cpp
+
+1006
+Sat Mar 28 18:01:51 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3ae3665_09b06d41
+Bytes: 198
+You could get rid of the stat() on line 1001 by doing an open() with O_CREAT|O_EXCL. If the open succeeds, then execute the if loop. Otherwise skip it.
+
+One less system call. Not sure it's worth it.
+

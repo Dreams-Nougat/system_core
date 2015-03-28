@@ -9,3 +9,15 @@ UUID: c3ae3665_c9a255ef
 Bytes: 42
 why doesn't adb root work on the emulator?
 
+9
+Sat Mar 28 19:00:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3ae3665_c9a255ef
+UUID: 63758ab8_6e9d406a
+Bytes: 336
+Not sure yet. Running adb root causes adbd to restart, but it never comes back up. There isn't anything suspicious in the kernel log, and I haven't gotten then emulator to actually give me the console yet so I can check the adbd log.
+
+adb unroot doesn't work either, fwiw.
+
+For now I'd like to revert so that this isn't blocking people.
+

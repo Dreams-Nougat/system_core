@@ -1,0 +1,11 @@
+Revision: 3f40e38c9d8712414535c0674b3b3ddc07dfc515
+Patch-set: 1
+File: /COMMIT_MSG
+
+9
+Sat Mar 28 18:57:44 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3ae3665_c9a255ef
+Bytes: 42
+why doesn't adb root work on the emulator?
+

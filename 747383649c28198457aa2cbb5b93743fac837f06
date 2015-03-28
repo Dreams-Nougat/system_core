@@ -31,3 +31,11 @@ Then perhaps consider using "access(COLDBOOT_DONE, F_OK)" instead of stat? It re
 
 Again, not sure it's worth the time, but...
 
+1006
+Sat Mar 28 18:22:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3a94260_ff125fdb
+UUID: 63a3ca80_05584959
+Bytes: 60
+yeah, i actually like that. done in my next cleanup patch...
+

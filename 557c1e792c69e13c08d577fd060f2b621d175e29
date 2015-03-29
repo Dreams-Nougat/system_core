@@ -1,0 +1,18 @@
+Revision: 557c1e792c69e13c08d577fd060f2b621d175e29
+Patch-set: 1
+File: toolbox/newfs_msdos.c
+
+672
+Sun Mar 29 18:39:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63a3ca80_45f2c16b
+Bytes: 138
+this makes me think we should probably do the ioctl into a temporary and then copy it into the struct, leaving the rest of the code alone.
+
+803
+Sun Mar 29 18:39:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8366fe34_d451fc36
+Bytes: 78
+and we can error out here if the ioctl returns a value too large for a uint32.
+

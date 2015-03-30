@@ -1,0 +1,45 @@
+Revision: 15ea8eced40acf0c52f94603891d108ed255931b
+Patch-set: 4
+File: adb/commandline.cpp
+
+1483
+Mon Mar 30 17:06:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03dccefb_d7a66bb8
+Bytes: 181
+i think this changes the behavior of "reboot-bootloader". didn't "reboot-bootloader any old crap can follow" work?
+
+i feel like we're making this already unreadable mess even worse.
+
+1498
+Mon Mar 30 17:06:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837a7ea8_6e747301
+Bytes: 324
+do we really need to cope with "reboot sideload -a" and "reboot -a sideload"?
+
+doesn't the whole thing become easier if we use "sideload" and "sideload-auto-reboot" instead? (and lets us sidestep the awkward issue of whether, if we treat "sideload -a" this way, we should be able to do something like "recovery --some-arg".)
+
+1501
+Mon Mar 30 17:06:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43308612_7c8e1981
+Bytes: 111
+if that's all we can do, i'm really not sure it's worth it. no one will see this amongst the other spew anyway.
+
+File: adb/services.cpp
+
+167
+Mon Mar 30 17:06:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43308612_3c62d13a
+Bytes: 66
+you can't use WriteStringToFile for this? would seem more natural.
+
+169
+Mon Mar 30 17:06:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837a7ea8_092299ce
+Bytes: 31
+ugh. stupid google3 _ nonsense.
+

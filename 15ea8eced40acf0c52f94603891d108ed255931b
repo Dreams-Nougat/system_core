@@ -91,6 +91,14 @@ actually... how about this:
 
 (but this still feels like it should be a separate change. we want to keep all the sideload goodness even if we have to revert the incidental reboot behavioral changes for some reason.)
 
+1501
+Mon Mar 30 21:23:53 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_f747e2a6
+UUID: 43308612_6e181430
+Bytes: 191
+getting them in a separate CL sgtm. I'll leave the reboot part as it is, which will support 'reboot sideload*' by default. And propose a separate CL to change the behavior of reboot commands.
+
 File: adb/services.cpp
 
 135:7-135:10
@@ -113,6 +121,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03dccefb_3722575a
 Bytes: 87
 Should this just be in init.rc? I see some lines there that chown/chmod this directory.
+
+155
+Mon Mar 30 21:23:53 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03dccefb_3722575a
+UUID: 03dccefb_6d5d727f
+Bytes: 125
+/cache/recovery is created conditionally (triggered by late-init and post-fs). It's possible that the directory is not there.
 
 167
 Mon Mar 30 17:06:17 2015 +0000
@@ -138,6 +154,14 @@ Parent: 03dccefb_f757efe3
 UUID: 03dccefb_5a6dc2fd
 Bytes: 51
 https://android-review.googlesource.com/#/c/144233/
+
+167
+Mon Mar 30 21:23:53 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03dccefb_f757efe3
+UUID: 03dccefb_904c69a2
+Bytes: 4
+Done
 
 169
 Mon Mar 30 17:06:17 2015 +0000

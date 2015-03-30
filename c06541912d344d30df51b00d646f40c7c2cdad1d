@@ -1,0 +1,11 @@
+Revision: c06541912d344d30df51b00d646f40c7c2cdad1d
+Patch-set: 3
+File: toolbox/newfs_msdos.c
+
+816
+Mon Mar 30 17:18:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837a7ea8_296e75ad
+Bytes: 48
+ps3 just includes the size in the error message.
+

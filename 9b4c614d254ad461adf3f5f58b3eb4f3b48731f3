@@ -17,3 +17,11 @@ UUID: 43308612_5c57d5b1
 Bytes: 79
 for some reason i missed this comment until just now. i'll take a look at this.
 
+190
+Mon Mar 30 17:01:11 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_5c57d5b1
+UUID: 03dccefb_57bb5bd5
+Bytes: 51
+looks like it's only a comment for adb root/unroot.
+

@@ -1,0 +1,20 @@
+Revision: 5c7a3c127537a7c65bd794caf646ccd18486d320
+Patch-set: 5
+File: adb/Android.mk
+
+211
+Mon Mar 30 21:28:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837a7ea8_85ba0503
+Bytes: 260
+you shouldn't need to manually specify the INCLUDES for libbase. just listing it as a library should be enough. (this isn't true for most libraries on Android, but that's a bug, and can be fixed by adding LOCAL_EXPORT_C_INCLUDE_DIRS to the library's .mk file.)
+
+File: adb/services.cpp
+
+166
+Mon Mar 30 21:28:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 43308612_eeaf040d
+Bytes: 66
+(WriteStringToFile will already have logged the specific failure.)
+

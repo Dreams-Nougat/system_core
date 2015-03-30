@@ -17,6 +17,13 @@ UUID: 4665f4c2_0e8d7b83
 Bytes: 290
 It's a fair question. I'm not sure what semantics we would expect here. While I haven't implemented it, I think the most reasonable thing would be to clamp the coordinates against the buffer size in BufferQueueProducer (which is the first time we have easy access to the buffer dimensions).
 
+928:56-929:70
+Mon Mar 30 21:57:00 2015 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837a7ea8_e59979c5
+Bytes: 335
+I vaguely remember talking about this, but if so I don't remember why we chose bottom-left origin. Radiance is going with upper-left origin for window surfaces, so one or the other is going to have to y-flip the region. Given that everywhere else in the platform/framework we use upper-left origin, I'd be inclined to do that here too.
+
 931
 Tue Mar 24 20:35:40 2015 +0000
 Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>

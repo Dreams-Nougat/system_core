@@ -77,6 +77,20 @@ UUID: 43308612_57184e2f
 Bytes: 70
 (see the "separate CL" comment above. we shouldn't have got involved.)
 
+1501
+Mon Mar 30 17:34:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_57184e2f
+UUID: 43308612_f747e2a6
+Bytes: 476
+actually... how about this:
+
+* we change the reboot command to only accept one of the known kinds of reboot.
+
+* we add "reboot oem ..." which just passes whatever comes next. so the OEMs can have whatever custom crap they like. this fits with how we've done a lot of the other oem support.
+
+(but this still feels like it should be a separate change. we want to keep all the sideload goodness even if we have to revert the incidental reboot behavioral changes for some reason.)
+
 File: adb/services.cpp
 
 135:7-135:10
@@ -133,6 +147,14 @@ Bytes: 128
 Yeah, --auto-reboot please.
 
 (As an argument for consistency rather than preference, it's reboot-recovery, not reboot_recovery.)
+
+169
+Mon Mar 30 17:34:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_978f762c
+UUID: 43308612_5774ce00
+Bytes: 183
+(the problem is, on the other side, in the recovery image, they're fully google3. all the recovery options are like this. so he's doing the right thing here, even if it makes us cry.)
 
 179:4-180:7
 Mon Mar 30 17:25:29 2015 +0000

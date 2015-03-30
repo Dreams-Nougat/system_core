@@ -9,3 +9,11 @@ UUID: 83a19e60_657fbc65
 Bytes: 172
 we should have something like this for "adb root"/"adb unroot". the same race exists there. isn't there a "don't close this socket" flag? should we be setting that instead?
 
+190
+Mon Mar 30 16:53:29 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83a19e60_657fbc65
+UUID: 43308612_5c57d5b1
+Bytes: 79
+for some reason i missed this comment until just now. i'll take a look at this.
+

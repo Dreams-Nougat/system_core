@@ -9,6 +9,14 @@ UUID: 837a7ea8_85ba0503
 Bytes: 260
 you shouldn't need to manually specify the INCLUDES for libbase. just listing it as a library should be enough. (this isn't true for most libraries on Android, but that's a bug, and can be fixed by adding LOCAL_EXPORT_C_INCLUDE_DIRS to the library's .mk file.)
 
+211
+Mon Mar 30 23:29:22 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 837a7ea8_85ba0503
+UUID: 83143e89_0746b812
+Bytes: 57
+Done. I'm also killing "system/core/fs_mgr/include" here.
+
 File: adb/services.cpp
 
 166
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 43308612_eeaf040d
 Bytes: 66
 (WriteStringToFile will already have logged the specific failure.)
+
+166
+Mon Mar 30 23:29:22 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_eeaf040d
+UUID: a315c284_a8505365
+Bytes: 4
+Done
 

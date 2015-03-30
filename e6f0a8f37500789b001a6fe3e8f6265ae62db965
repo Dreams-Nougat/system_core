@@ -1,0 +1,11 @@
+Revision: e6f0a8f37500789b001a6fe3e8f6265ae62db965
+Patch-set: 1
+File: base/include/base/strings.h
+
+38
+Mon Mar 30 21:01:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03dccefb_46896b76
+Bytes: 90
+do you have a use for this? google3 doesn't have this and i've never needed it personally.
+

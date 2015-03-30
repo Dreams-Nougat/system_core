@@ -19,6 +19,14 @@ UUID: 03dccefb_b76167ba
 Bytes: 154
 yeah, "reboot-bootloader any old crap can follow" worked before, but all the old craps were just ignored silently. shall we keep that backward compatible?
 
+1483
+Mon Mar 30 17:22:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03dccefb_b76167ba
+UUID: 43308612_f7fd2236
+Bytes: 118
+i don't have a strong opinion, but i do think that unrelated behavioral changes like that should be in separate CLs...
+
 1498
 Mon Mar 30 17:06:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,6 +46,14 @@ in this file, it looks inconsistent for supporting the order of the options. som
 
 i'll change it to two separate commands. ("sideload-auto-reboot-is-so-long"...)
 
+1498
+Mon Mar 30 17:22:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03dccefb_57f27b6b
+UUID: 43308612_b708bad9
+Bytes: 68
+it-may-be-long-but-it-will-only-be-used-from-test-scripts-anyway :-)
+
 1501
 Mon Mar 30 17:06:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,6 +68,14 @@ Parent: 43308612_7c8e1981
 UUID: 43308612_d740de14
 Bytes: 164
 i personally prefer to reject the unknown argument. but since ccross mentioned some vendor may be using this implicitly, dumping a warning seems the best we can do.
+
+1501
+Mon Mar 30 17:22:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43308612_d740de14
+UUID: 43308612_57184e2f
+Bytes: 70
+(see the "separate CL" comment above. we shouldn't have got involved.)
 
 File: adb/services.cpp
 

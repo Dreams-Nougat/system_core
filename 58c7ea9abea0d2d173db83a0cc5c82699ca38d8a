@@ -9,12 +9,28 @@ UUID: 83143e89_18fe15e8
 Bytes: 83
 I actually meant pid_t Pid() const { return pid_; } since it does not modify this..
 
+95:19-95:20
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_18fe15e8
+UUID: 630f4a79_0c72560f
+Bytes: 46
+Oops, I don't know what I was thinking. Fixed.
+
 97
 Tue Mar 31 01:31:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 630f4a79_ac67c74e
 Bytes: 41
 i suspect dimitry meant ...() const { ...
+
+97
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 630f4a79_ac67c74e
+UUID: a315c284_84c61be8
+Bytes: 4
+Done
 
 File: libbacktrace/Android.build.mk
 
@@ -24,6 +40,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83143e89_785109ba
 Bytes: 1
 ?
+
+78
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_785109ba
+UUID: 630f4a79_afca1497
+Bytes: 56
+I'm not even sure where this came from. Deleting it now.
 
 File: libbacktrace/BacktraceCurrent.cpp
 
@@ -36,6 +60,14 @@ Bytes: 73
 
 (the errors are all actually > 0. 0 is success. < 0 never happens.)
 
+102
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_58cb6def
+UUID: 83143e89_84c45b92
+Bytes: 18
+Deleted the check.
+
 103
 Tue Mar 31 01:31:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -43,12 +75,28 @@ UUID: 83143e89_b8af010e
 Bytes: 12
 what failed?
 
+103
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_b8af010e
+UUID: a315c284_04e7cb56
+Bytes: 123
+Oops, I'm not even sure why I'm checking the return value. I don't for any other pthread_mutex_lock call, so check be gone.
+
 119
 Tue Mar 31 01:31:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a315c284_d4ed6a04
 Bytes: 99
 given that you don't check the unlock, maybe you should just remove the error checking on the lock?
+
+119
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a315c284_d4ed6a04
+UUID: 83143e89_842bbbab
+Bytes: 4
+Done
 
 File: libbacktrace/BacktraceCurrent.h
 
@@ -59,6 +107,14 @@ UUID: 630f4a79_0c07fb9f
 Bytes: 20
 what does that mean?
 
+28
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 630f4a79_0c07fb9f
+UUID: 630f4a79_6fe2dc19
+Bytes: 78
+I added a new comment that I think describes this better. If not, let me know.
+
 File: libbacktrace/GetPss.cpp
 
 49
@@ -67,6 +123,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a315c284_b4fb8ebb
 Bytes: 38
 assert? isn't that a no-op on Android?
+
+49
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a315c284_b4fb8ebb
+UUID: 630f4a79_4f956040
+Bytes: 237
+It does if you set the right defines (I think). However, I don't want that so I've removed the asserts and added real checks. I only use this for testing, but I'll add ASSERT_TRUEs in that code to make sure this function never returns 0.
 
 File: libbacktrace/ThreadEntry.cpp
 
@@ -79,6 +143,16 @@ you can ignore this. clock_gettime doesn't fail if the clock id is valid and the
 
 but... you seem to try to build this for the Mac, which doesn't have POSIX clocks.
 
+103
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_f89219d2
+UUID: 630f4a79_0f108851
+Bytes: 164
+It's almost as if we've talked about this before :)
+
+Yeah, I'll just nuke this. I only build a small subset for mac, it's not worth doing anything special for that.
+
 File: libbacktrace/backtrace_test.cpp
 
 89
@@ -87,6 +161,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 630f4a79_cce32347
 Bytes: 63
 you don't need the std::string here. the compiler will do that.
+
+89
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 630f4a79_cce32347
+UUID: 83143e89_24ee47b6
+Bytes: 12
+Oops, fixed.
 
 499
 Tue Mar 31 01:31:41 2015 +0000
@@ -103,4 +185,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83143e89_78daa99f
 Bytes: 1
 ?
+
+894
+Tue Mar 31 17:47:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_78daa99f
+UUID: 83143e89_c4dc9312
+Bytes: 49
+Oops, this was before I fixed the mprotect issue.
 

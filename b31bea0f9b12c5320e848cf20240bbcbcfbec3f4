@@ -126,6 +126,17 @@ UUID: 83143e89_8d31299e
 Bytes: 60
 I added some comments to, hopefully, clarify what I'm doing.
 
+92
+Tue Mar 31 01:37:47 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_8d31299e
+UUID: 83143e89_78890977
+Bytes: 119
+ThreadEntry class is confusing... is it a semaphore?
+Maybe rename Wait()/Wake() methods?
+
+Not necessarily in this CL...
+
 File: libbacktrace/ThreadEntry.cpp
 
 124

@@ -137,6 +137,14 @@ Maybe rename Wait()/Wake() methods?
 
 Not necessarily in this CL...
 
+92
+Tue Mar 31 17:47:46 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83143e89_78890977
+UUID: 83143e89_a43d1791
+Bytes: 94
+Yeah, I haven't thought of a really clear way to do this. If you've got an idea, I'm all ears.
+
 File: libbacktrace/ThreadEntry.cpp
 
 124

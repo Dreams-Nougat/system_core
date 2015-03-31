@@ -2,6 +2,13 @@ Revision: 58c7ea9abea0d2d173db83a0cc5c82699ca38d8a
 Patch-set: 3
 File: include/backtrace/Backtrace.h
 
+95:19-95:20
+Tue Mar 31 01:37:41 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_18fe15e8
+Bytes: 83
+I actually meant pid_t Pid() const { return pid_; } since it does not modify this..
+
 97
 Tue Mar 31 01:31:41 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

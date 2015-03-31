@@ -9,6 +9,14 @@ UUID: 63758ab8_e892add2
 Bytes: 25
 this is no longer needed.
 
+48
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63758ab8_e892add2
+UUID: a315c284_ee641393
+Bytes: 4
+Done
+
 99
 Fri Mar 27 23:45:12 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 43d246e8_a803760c
 Bytes: 43
 rename them to GetTid/GetPid? also const...
 
+99
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43d246e8_a803760c
+UUID: 83143e89_8d3be94a
+Bytes: 233
+My original motivation was to avoid the name getpid and gettid since they have might be confusing. I'd like to leave them like this so there is no confustion, but if there are strong objections to these names, I'd be happy to rename.
+
 102
 Fri Mar 27 23:45:12 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 63758ab8_b9c165d3
 Bytes: 22
 is this function used?
+
+102
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63758ab8_b9c165d3
+UUID: a315c284_8eac7f1a
+Bytes: 38
+I use them in backtrace test at least.
 
 File: libbacktrace/Backtrace.cpp
 
@@ -32,12 +56,28 @@ UUID: 43d246e8_458193fa
 Bytes: 3
 15?
 
+2:19-2:21
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 43d246e8_458193fa
+UUID: a315c284_ae15fbc6
+Bytes: 142
+Unfortunately, gerrit isn't showing the history of this file correctly. I did a git mv BacktraceImpl.cpp to Backtrace.cpp, so 2013 is correct.
+
 35
 Fri Mar 27 23:45:12 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 63758ab8_4b687b64
 Bytes: 82
 looks like this is used only in FormatFrameData, move it into the functions scope?
+
+35
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63758ab8_4b687b64
+UUID: a315c284_ce35d757
+Bytes: 118
+We don't have any hard and fast rules here, but I think it make sense to leave it here in case it was added elsewhere.
 
 78:36-78:43
 Fri Mar 27 23:45:12 2015 +0000
@@ -46,12 +86,28 @@ UUID: 63758ab8_0b6fe324
 Bytes: 16
 reinterpret_cast
 
+78:36-78:43
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63758ab8_0b6fe324
+UUID: 83143e89_2dc0f52d
+Bytes: 4
+Done
+
 79:17-79:25
 Fri Mar 27 23:45:12 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 63a3ca80_eca95a5a
 Bytes: 9
 same here
+
+79:17-79:25
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63a3ca80_eca95a5a
+UUID: a315c284_6e25c328
+Bytes: 4
+Done
 
 File: libbacktrace/BacktraceCurrent.cpp
 
@@ -62,6 +118,14 @@ UUID: 63758ab8_6ed465c3
 Bytes: 2
 2?
 
+92
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63758ab8_6ed465c3
+UUID: 83143e89_8d31299e
+Bytes: 60
+I added some comments to, hopefully, clarify what I'm doing.
+
 File: libbacktrace/ThreadEntry.cpp
 
 124
@@ -70,4 +134,12 @@ Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 63a3ca80_2f8f642e
 Bytes: 36
 shouldn't signal be guarded as well?
+
+124
+Tue Mar 31 01:15:35 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63a3ca80_2f8f642e
+UUID: 83143e89_cde4c1aa
+Bytes: 118
+There is no requirement that when doing a signal that you continue to hold the lock. You are just kicking any waiters.
 

@@ -1,0 +1,99 @@
+Revision: 58c7ea9abea0d2d173db83a0cc5c82699ca38d8a
+Patch-set: 3
+File: include/backtrace/Backtrace.h
+
+97
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 630f4a79_ac67c74e
+Bytes: 41
+i suspect dimitry meant ...() const { ...
+
+File: libbacktrace/Android.build.mk
+
+78
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_785109ba
+Bytes: 1
+?
+
+File: libbacktrace/BacktraceCurrent.cpp
+
+102
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_58cb6def
+Bytes: 73
+!= 0
+
+(the errors are all actually > 0. 0 is success. < 0 never happens.)
+
+103
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_b8af010e
+Bytes: 12
+what failed?
+
+119
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a315c284_d4ed6a04
+Bytes: 99
+given that you don't check the unlock, maybe you should just remove the error checking on the lock?
+
+File: libbacktrace/BacktraceCurrent.h
+
+28
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 630f4a79_0c07fb9f
+Bytes: 20
+what does that mean?
+
+File: libbacktrace/GetPss.cpp
+
+49
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a315c284_b4fb8ebb
+Bytes: 38
+assert? isn't that a no-op on Android?
+
+File: libbacktrace/ThreadEntry.cpp
+
+103
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_f89219d2
+Bytes: 184
+you can ignore this. clock_gettime doesn't fail if the clock id is valid and the timespec* is valid.
+
+but... you seem to try to build this for the Mac, which doesn't have POSIX clocks.
+
+File: libbacktrace/backtrace_test.cpp
+
+89
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 630f4a79_cce32347
+Bytes: 63
+you don't need the std::string here. the compiler will do that.
+
+499
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 630f4a79_8c9f6bab
+Bytes: 188
+yeah, it's meant to be dealt with behind your back by the c library.
+
+since you won't be building for a mips host, this should be fine. see the similar comment in bionic's signal_test.cpp.
+
+894
+Tue Mar 31 01:31:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83143e89_78daa99f
+Bytes: 1
+?
+

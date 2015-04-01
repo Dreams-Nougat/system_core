@@ -17,3 +17,11 @@ UUID: 8370be19_99ece73b
 Bytes: 185
 Given that basename can modify the passed in path, I'm reticient to change. I know that our version doesn't right now, but I'm not sure I feel confident that it will always be that way.
 
+82
+Wed Apr 01 21:46:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8370be19_99ece73b
+UUID: 8370be19_6b575260
+Bytes: 66
+make sure you're using the GNU one then. that's guaranteed not to.
+

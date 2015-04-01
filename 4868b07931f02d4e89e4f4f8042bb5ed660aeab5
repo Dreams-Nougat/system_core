@@ -1,0 +1,11 @@
+Revision: 4868b07931f02d4e89e4f4f8042bb5ed660aeab5
+Patch-set: 4
+File: toolbox/ioctl.c
+
+167
+Wed Apr 01 22:58:46 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8370be19_c14d85ca
+Bytes: 79
+as long as you are improving error messages, strerror would be helpful here too
+

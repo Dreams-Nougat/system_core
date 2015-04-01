@@ -12,3 +12,11 @@ Maybe indicate it via INFO(...). And if you do. Fixup all logging to end in a "\
 because:
   [    3.829982] fs_mgr: Attempt to cleanly disable verity - only works in USERDEBUGfs_mgr: Verity disabled
 
+760
+Wed Apr 01 09:51:39 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3c8f677_0a6fab24
+UUID: 43b5e6d8_3aee81b6
+Bytes: 39
+I'll submit a separate CL to fix those.
+

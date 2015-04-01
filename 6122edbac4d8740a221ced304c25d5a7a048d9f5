@@ -1,0 +1,14 @@
+Revision: 6122edbac4d8740a221ced304c25d5a7a048d9f5
+Patch-set: 2
+File: fs_mgr/fs_mgr_verity.c
+
+760
+Wed Apr 01 01:16:56 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3c8f677_0a6fab24
+Bytes: 201
+Maybe indicate it via INFO(...). And if you do. Fixup all logging to end in a "\n" 
+
+because:
+  [    3.829982] fs_mgr: Attempt to cleanly disable verity - only works in USERDEBUGfs_mgr: Verity disabled
+

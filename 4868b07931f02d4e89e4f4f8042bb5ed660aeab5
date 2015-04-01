@@ -9,3 +9,15 @@ UUID: 8370be19_c14d85ca
 Bytes: 79
 as long as you are improving error messages, strerror would be helpful here too
 
+167
+Wed Apr 01 23:13:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8370be19_c14d85ca
+UUID: 8370be19_a4a9775b
+Bytes: 232
+passing errno as the second argument means that if errno != 0, you get ": %s", strerror(errno) appended to the message you provided.
+
+(normally i'm not a big user of GNU extensions, but i quite like this one.)
+
+so "already done" :-)
+

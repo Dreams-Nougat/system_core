@@ -1,0 +1,11 @@
+Revision: 4b89c6d1da5727d97cd105f49a0223502a63bd74
+Patch-set: 1
+File: libbacktrace/BacktraceCurrent.cpp
+
+82
+Wed Apr 01 19:14:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8370be19_f3d41a40
+Bytes: 47
+or std::string name = basename(frame.map.name)?
+

@@ -9,3 +9,11 @@ UUID: 8370be19_f3d41a40
 Bytes: 47
 or std::string name = basename(frame.map.name)?
 
+82
+Wed Apr 01 21:03:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8370be19_f3d41a40
+UUID: 8370be19_99ece73b
+Bytes: 185
+Given that basename can modify the passed in path, I'm reticient to change. I know that our version doesn't right now, but I'm not sure I feel confident that it will always be that way.
+

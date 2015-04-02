@@ -1,0 +1,18 @@
+Revision: ba9fd3df08e3baabbb82be3a9f250fdba5a0f21b
+Patch-set: 1
+File: libcutils/fs_config.c
+
+119:3-119:13
+Thu Apr 02 22:41:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_705f08fa
+Bytes: 55
+Really should state 'if not bionic version of unistd.h'
+
+139:13-139:49
+Thu Apr 02 22:41:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_306990a5
+Bytes: 79
+Demonstrate precedence here by ensuring that the comparison is within brackets.
+

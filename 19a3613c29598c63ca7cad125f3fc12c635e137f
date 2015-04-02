@@ -1,0 +1,11 @@
+Revision: 19a3613c29598c63ca7cad125f3fc12c635e137f
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+200:48-200:57
+Thu Apr 02 23:07:56 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_5b38a59c
+Bytes: 51
+Be more specific: system/core/libcutils/fs_config.c
+

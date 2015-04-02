@@ -11,3 +11,11 @@ enh... note this was for strlcpy on the TARGET, but bionic has that... but we di
 
 this mess probably needs attention... also look elsewhere here where memory.c is ... tests etc not using the library but rebuilding the memory.c file from src...
 
+116:0-116:18
+Thu Apr 02 20:39:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_512f7434
+UUID: 63de6a5c_d4e24dc9
+Bytes: 157
+yeah, i'll fix the android_memset16/android_memset32 mess, fix the test mess, and then i'll rename this to strlcpy.c and only build it for Windows and glibc.
+

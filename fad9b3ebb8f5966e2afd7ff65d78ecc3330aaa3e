@@ -1,0 +1,13 @@
+Revision: fad9b3ebb8f5966e2afd7ff65d78ecc3330aaa3e
+Base-for-patch-set: 1
+File: libcutils/Android.mk
+
+116:0-116:18
+Thu Apr 02 07:49:20 2015 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_512f7434
+Bytes: 332
+enh... note this was for strlcpy on the TARGET, but bionic has that... but we didn't have this on the host, so no one could use the shared host version of this it seems?
+
+this mess probably needs attention... also look elsewhere here where memory.c is ... tests etc not using the library but rebuilding the memory.c file from src...
+

@@ -215,6 +215,14 @@ UUID: c3d47630_3983cb07
 Bytes: 14
 just return 0.
 
+109
+Thu Apr 02 16:34:03 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_3983cb07
+UUID: 2312b2d8_6c899325
+Bytes: 4
+Done
+
 135
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -289,6 +297,25 @@ UUID: c3d47630_99009f05
 Bytes: 139
 why is this recursive? what's the structure of this directory supposed to be? i thought it was a single directory with files and a symlink?
 
+171
+Thu Apr 02 16:34:03 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_99009f05
+UUID: 83e35e1e_2faa657d
+Bytes: 468
+This will be asked to delete two dirs:
+
+zoneinfo/current
+ -> tzdata
+ -> icu/<icu files>
+
+ICU files may become multiple .res files. icu/ may be renamed to icu44 to indicate the format. This leaves it open for me.
+
+zoneinfo/update
+ -> dependent on the updater code, but typically will be the binary blob (i.e. our zip file) and a metadata directory.
+
+Easier just to delete everything than encode the expected structure, and seemed more resilient to changes in Java code.
+
 207
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -340,4 +367,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c3d47630_d9f617a8
 Bytes: 4
 tool
+
+238
+Thu Apr 02 16:34:03 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_d9f617a8
+UUID: a3d4e237_b0b596e4
+Bytes: 4
+Done
 

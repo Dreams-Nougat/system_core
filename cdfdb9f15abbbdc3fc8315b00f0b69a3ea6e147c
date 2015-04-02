@@ -1,0 +1,20 @@
+Revision: cdfdb9f15abbbdc3fc8315b00f0b69a3ea6e147c
+Patch-set: 2
+File: base/include/base/logging.h
+
+74
+Thu Apr 02 23:20:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_3b8f3180
+Bytes: 11
+s/dest/id/?
+
+File: base/logging.cpp
+
+284
+Thu Apr 02 23:20:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63de6a5c_99419619
+Bytes: 45
+remove this and use _write instead of _print?
+

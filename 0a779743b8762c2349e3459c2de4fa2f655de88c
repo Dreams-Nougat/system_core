@@ -1,0 +1,113 @@
+Revision: 0a779743b8762c2349e3459c2de4fa2f655de88c
+Patch-set: 6
+File: tzdatacheck/tzdatacheck.cpp
+
+27
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3d4e237_2d9dcdb1
+Bytes: 39
+"utils/Log.h" is the canonical include.
+
+28
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2312b2d8_a97d3de3
+Bytes: 74
+what do you need klog.h for ? what did you want logged to the kernel log ?
+
+42
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2312b2d8_ecb90311
+Bytes: 26
+can be removed (see below)
+
+44
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3d4e237_0d9a11ba
+Bytes: 72
+you don't need this, you can use LOG_ALWAYS_FATAL or LOG_ALWAYS_FATAL_IF
+
+67
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e35e1e_8c8de784
+Bytes: 36
+std::vector<char> is more idiomatic.
+
+80
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3d4e237_8d82814b
+Bytes: 184
+doesn't bionic define dirname as dirname(const char*) ? that would mean you don't need the additional copy.
+
+Also, you can just return std::string instead of needing an input argument.
+
+87
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e35e1e_ac7d43e3
+Bytes: 118
+for C++, don't bother with "UNUSED" - just omit the name.
+
+(const char* fpath, const struct stat*, int typeflag, FTW*)
+
+135
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3d4e237_6d68751e
+Bytes: 16
+ALOGW(TAG,....);
+
+140
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e35e1e_6c687b1e
+Bytes: 15
+ALOGI(TAG,....)
+
+150
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e35e1e_4c65bf44
+Bytes: 40
+(see comment above about input argument)
+
+154
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2312b2d8_69518568
+Bytes: 268
+should be std::unique_ptr<char[]>. another idiomatic style is to do :
+
+  std::vector<char> tempDirName(tempDirNameTemplate.length() + 1);
+
+  strcp(&tempDirName[0], ...Template.c_str());
+  if (mkdtemp(&tempDirName[0]) == NULL) {
+
+This is applicable to getParentDir too.
+
+207
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83e35e1e_0c6fb724
+Bytes: 5
+ALOGI
+
+211
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2312b2d8_294b8db6
+Bytes: 10
+bad indent
+
+212
+Thu Apr 02 14:41:22 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3d4e237_cd61a937
+Bytes: 16
+LOG_ALWAYS_FATAL
+

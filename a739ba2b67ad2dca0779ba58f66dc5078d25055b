@@ -1,0 +1,11 @@
+Revision: a739ba2b67ad2dca0779ba58f66dc5078d25055b
+Patch-set: 1
+File: liblog/logd_write.c
+
+387
+Thu Apr 02 22:18:01 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_6d2ccf3e
+Bytes: 82
+This is the only behavioral change. Seems like a bug that this wasn't here before.
+

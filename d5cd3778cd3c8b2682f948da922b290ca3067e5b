@@ -9,3 +9,11 @@ UUID: e3bdfae6_59d8b671
 Bytes: 17
 STATIC or SHARED?
 
+13
+Thu Apr 02 17:21:53 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_59d8b671
+UUID: e3bdfae6_f90c2a72
+Bytes: 57
+STATIC for host executables (or am I being wrong minded?)
+

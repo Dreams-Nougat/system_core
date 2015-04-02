@@ -15,6 +15,16 @@ becomes confusing.
 
 Maybe the name should be partition.system.isverified.
 
+116:8-116:28
+Thu Apr 02 08:27:14 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a371421d_cbe68959
+UUID: a3d4e237_0d52113b
+Bytes: 230
+Wouldn't isverified be even more confusing since the value does not indicate whether the partition is verified anymore? 
+
+The change in the parameter value is needed, so SafetyNet can determine in which mode dm-verity was started.
+
 File: fs_mgr/fs_mgr_verity.c
 
 767:12-767:20
@@ -24,4 +34,12 @@ UUID: a371421d_2b463d13
 Bytes: 90
 why is it acceptable to ignore this failure?
 E.g. fails the /system but passes on /vendor.
+
+767:12-767:20
+Thu Apr 02 08:27:14 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a371421d_2b463d13
+UUID: 83e35e1e_2c1f138c
+Bytes: 196
+If the ioctl fails, there's not much that can be done whether we report the error to caller or not. We can, however, continue the loop for the next verified device instead of giving up completely.
 

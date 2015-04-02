@@ -9,12 +9,34 @@ UUID: a3d4e237_2d9dcdb1
 Bytes: 39
 "utils/Log.h" is the canonical include.
 
+27
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_2d9dcdb1
+UUID: 03092eaf_281f0b8c
+Bytes: 71
+(note that for C++ we now have google3-style logging in base/logging.h)
+
 28
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2312b2d8_a97d3de3
 Bytes: 74
 what do you need klog.h for ? what did you want logged to the kernel log ?
+
+31
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_9993ff5a
+Bytes: 95
+bionic doesn't actually support FTW_ACTIONRETVAL, and you didn't pass it to glibc below either.
+
+36
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_faf2e16c
+Bytes: 108
+these are the internal macros. you probably just want _GNU_SOURCE. (why are you building this for the host?)
 
 42
 Thu Apr 02 14:41:22 2015 +0000
@@ -30,12 +52,35 @@ UUID: a3d4e237_0d9a11ba
 Bytes: 72
 you don't need this, you can use LOG_ALWAYS_FATAL or LOG_ALWAYS_FATAL_IF
 
+44
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_0d9a11ba
+UUID: 03092eaf_081c4793
+Bytes: 92
+(or the functions in <error.h> if you really want your output on stderr instead of the log.)
+
+66
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_79894325
+Bytes: 18
+const std::string&
+
 67
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83e35e1e_8c8de784
 Bytes: 36
 std::vector<char> is more idiomatic.
+
+67
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_8c8de784
+UUID: 03092eaf_e85d7358
+Bytes: 20
+or even std::string.
 
 80
 Thu Apr 02 14:41:22 2015 +0000
@@ -54,6 +99,13 @@ Bytes: 118
 for C++, don't bother with "UNUSED" - just omit the name.
 
 (const char* fpath, const struct stat*, int typeflag, FTW*)
+
+109
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_3983cb07
+Bytes: 14
+just return 0.
 
 135
 Thu Apr 02 14:41:22 2015 +0000
@@ -90,6 +142,13 @@ should be std::unique_ptr<char[]>. another idiomatic style is to do :
 
 This is applicable to getParentDir too.
 
+171
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_99009f05
+Bytes: 139
+why is this recursive? what's the structure of this directory supposed to be? i thought it was a single directory with files and a symlink?
+
 207
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -110,4 +169,11 @@ Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3d4e237_cd61a937
 Bytes: 16
 LOG_ALWAYS_FATAL
+
+238
+Thu Apr 02 15:05:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_d9f617a8
+Bytes: 4
+tool
 

@@ -1,0 +1,11 @@
+Revision: d5cd3778cd3c8b2682f948da922b290ca3067e5b
+Patch-set: 1
+File: cpio/Android.mk
+
+13
+Thu Apr 02 17:20:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_59d8b671
+Bytes: 17
+STATIC or SHARED?
+

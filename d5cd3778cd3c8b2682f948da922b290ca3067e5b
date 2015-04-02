@@ -33,3 +33,12 @@ UUID: 23c4727c_25f279b6
 Bytes: 25
 Let's use shared library.
 
+13
+Thu Apr 02 17:41:47 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_25f279b6
+UUID: e3bdfae6_79137ae1
+Bytes: 222
+Oh, it's part of the ota tools package. If you add shared library dependency, you'll pack the so file to the package too. See the rule for otatools.zip in build/core/Makefile.
+In that case, static library looks reasonable.
+

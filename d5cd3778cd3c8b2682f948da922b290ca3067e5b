@@ -17,3 +17,11 @@ UUID: e3bdfae6_f90c2a72
 Bytes: 57
 STATIC for host executables (or am I being wrong minded?)
 
+13
+Thu Apr 02 17:26:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_f90c2a72
+UUID: 23c4727c_05bf75f4
+Bytes: 123
+for ones that go in SDK that might make some sense, but seems like an odd default for ones that are only used during build.
+

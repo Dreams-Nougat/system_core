@@ -78,6 +78,14 @@ UUID: 2312b2d8_cc351f0d
 Bytes: 37
 So I can test it easily on a desktop.
 
+36
+Thu Apr 02 16:42:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_cc351f0d
+UUID: e3bdfae6_03941192
+Bytes: 71
+you know you can write native unit tests? search for BUILD_NATIVE_TEST.
+
 42
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -126,6 +134,14 @@ What's the correct thing for things exec'd from init?
 
 I assume we can use logwrapper if we need to.
 
+44
+Thu Apr 02 16:42:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_6ff74dda
+UUID: 23c4727c_02e88bf7
+Bytes: 31
+how early? is logd running yet?
+
 66
 Thu Apr 02 15:05:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -171,6 +187,14 @@ Parent: 03092eaf_e85d7358
 UUID: 2312b2d8_8c6cc703
 Bytes: 122
 I was resisting std::string because I don't guarantee it is null terminated. It has more in common with an array / vector.
+
+67
+Thu Apr 02 16:42:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_8c6cc703
+UUID: e3bdfae6_43c1e99a
+Bytes: 49
+(std::string doesn't need to be null-terminated.)
 
 80
 Thu Apr 02 14:41:22 2015 +0000
@@ -315,6 +339,14 @@ zoneinfo/update
  -> dependent on the updater code, but typically will be the binary blob (i.e. our zip file) and a metadata directory.
 
 Easier just to delete everything than encode the expected structure, and seemed more resilient to changes in Java code.
+
+171
+Thu Apr 02 16:42:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_2faa657d
+UUID: 23c4727c_4e4b4fb5
+Bytes: 107
+i'm worried about "what if i can get a symlink in there?". i'd prefer to explicitly state our expectations.
 
 207
 Thu Apr 02 14:41:22 2015 +0000

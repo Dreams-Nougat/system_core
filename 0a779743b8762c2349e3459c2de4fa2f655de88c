@@ -17,12 +17,36 @@ UUID: 03092eaf_281f0b8c
 Bytes: 71
 (note that for C++ we now have google3-style logging in base/logging.h)
 
+27
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_2d9dcdb1
+UUID: 83e35e1e_2c4b93b6
+Bytes: 4
+Done
+
+27
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_281f0b8c
+UUID: a3d4e237_b040f665
+Bytes: 121
+Switched over. A bonus of this is that it no longer pins log messages in memory and valgrind is much happier. zero leaks.
+
 28
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2312b2d8_a97d3de3
 Bytes: 74
 what do you need klog.h for ? what did you want logged to the kernel log ?
+
+28
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_a97d3de3
+UUID: 2312b2d8_6cce33b0
+Bytes: 24
+Copied and pasted. Done.
 
 31
 Thu Apr 02 15:05:40 2015 +0000
@@ -31,6 +55,14 @@ UUID: c3d47630_9993ff5a
 Bytes: 95
 bionic doesn't actually support FTW_ACTIONRETVAL, and you didn't pass it to glibc below either.
 
+31
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_9993ff5a
+UUID: 83e35e1e_cf4be188
+Bytes: 4
+Done
+
 36
 Thu Apr 02 15:05:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,12 +70,28 @@ UUID: 83cefea1_faf2e16c
 Bytes: 108
 these are the internal macros. you probably just want _GNU_SOURCE. (why are you building this for the host?)
 
+36
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_faf2e16c
+UUID: 2312b2d8_cc351f0d
+Bytes: 37
+So I can test it easily on a desktop.
+
 42
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2312b2d8_ecb90311
 Bytes: 26
 can be removed (see below)
+
+42
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_ecb90311
+UUID: a3d4e237_50f432d3
+Bytes: 4
+Done
 
 44
 Thu Apr 02 14:41:22 2015 +0000
@@ -60,12 +108,38 @@ UUID: 03092eaf_081c4793
 Bytes: 92
 (or the functions in <error.h> if you really want your output on stderr instead of the log.)
 
+44
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_0d9a11ba
+UUID: 83e35e1e_cfbe41f7
+Bytes: 4
+Done
+
+44
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_081c4793
+UUID: 83e35e1e_6ff74dda
+Bytes: 100
+What's the correct thing for things exec'd from init?
+
+I assume we can use logwrapper if we need to.
+
 66
 Thu Apr 02 15:05:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c3d47630_79894325
 Bytes: 18
 const std::string&
+
+66
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_79894325
+UUID: a3d4e237_30f1a6e3
+Bytes: 4
+Done
 
 67
 Thu Apr 02 14:41:22 2015 +0000
@@ -82,6 +156,22 @@ UUID: 03092eaf_e85d7358
 Bytes: 20
 or even std::string.
 
+67
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_8c8de784
+UUID: 83e35e1e_afdc1562
+Bytes: 4
+Done
+
+67
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_e85d7358
+UUID: 2312b2d8_8c6cc703
+Bytes: 122
+I was resisting std::string because I don't guarantee it is null terminated. It has more in common with an array / vector.
+
 80
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -91,6 +181,16 @@ doesn't bionic define dirname as dirname(const char*) ? that would mean you don'
 
 Also, you can just return std::string instead of needing an input argument.
 
+80
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_8d82814b
+UUID: a3d4e237_b0dc7662
+Bytes: 171
+I was working off the docs for Linux (and testing there). Linux usage suggests a copy is required (and you're right - on bionic it is const).
+
+Now returning a std::string.
+
 87
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -99,6 +199,14 @@ Bytes: 118
 for C++, don't bother with "UNUSED" - just omit the name.
 
 (const char* fpath, const struct stat*, int typeflag, FTW*)
+
+87
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_ac7d43e3
+UUID: a3d4e237_2d4b8db6
+Bytes: 4
+Done
 
 109
 Thu Apr 02 15:05:40 2015 +0000
@@ -114,6 +222,14 @@ UUID: a3d4e237_6d68751e
 Bytes: 16
 ALOGW(TAG,....);
 
+135
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_6d68751e
+UUID: 2312b2d8_ece2231b
+Bytes: 4
+Done
+
 140
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -121,12 +237,28 @@ UUID: 83e35e1e_6c687b1e
 Bytes: 15
 ALOGI(TAG,....)
 
+140
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_6c687b1e
+UUID: 2312b2d8_acdc2b62
+Bytes: 4
+Done
+
 150
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83e35e1e_4c65bf44
 Bytes: 40
 (see comment above about input argument)
+
+150
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_4c65bf44
+UUID: 83e35e1e_2fd82571
+Bytes: 4
+Done
 
 154
 Thu Apr 02 14:41:22 2015 +0000
@@ -142,6 +274,14 @@ should be std::unique_ptr<char[]>. another idiomatic style is to do :
 
 This is applicable to getParentDir too.
 
+154
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_69518568
+UUID: a3d4e237_70ce0eb0
+Bytes: 4
+Done
+
 171
 Thu Apr 02 15:05:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -156,6 +296,14 @@ UUID: 83e35e1e_0c6fb724
 Bytes: 5
 ALOGI
 
+207
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83e35e1e_0c6fb724
+UUID: 83e35e1e_8fc839a4
+Bytes: 4
+Done
+
 211
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -163,12 +311,28 @@ UUID: 2312b2d8_294b8db6
 Bytes: 10
 bad indent
 
+211
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2312b2d8_294b8db6
+UUID: a3d4e237_f0b9de10
+Bytes: 4
+Done
+
 212
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3d4e237_cd61a937
 Bytes: 16
 LOG_ALWAYS_FATAL
+
+212
+Thu Apr 02 16:29:42 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_cd61a937
+UUID: 83e35e1e_6fce2db0
+Bytes: 4
+Done
 
 238
 Thu Apr 02 15:05:40 2015 +0000

@@ -1,0 +1,11 @@
+Revision: cd611e33790442ac9e242f55aae456d9e92be84b
+Patch-set: 1
+File: base/include/base/logging.h
+
+74:8-74:12
+Thu Apr 02 22:22:51 2015 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63de6a5c_7ef930c2
+Bytes: 108
+It would be great to also get a SPLOG() or PSLOG(), since I've become quite fond of the strerror handing  :)
+

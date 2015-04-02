@@ -1,0 +1,11 @@
+Revision: 69bb804f9bbb3ce8b3e5470b95ede187e946670e
+Patch-set: 1
+File: libcutils/tests/Android.mk
+
+59
+Thu Apr 02 21:21:38 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_87ba644d
+Bytes: 14
+Not necessary.
+

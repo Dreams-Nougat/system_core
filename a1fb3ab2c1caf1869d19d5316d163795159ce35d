@@ -1,0 +1,80 @@
+Revision: a1fb3ab2c1caf1869d19d5316d163795159ce35d
+Patch-set: 1
+File: logcat/logcat.cpp
+
+96
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_bad349db
+Bytes: 7
+braces.
+
+97
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_9ad88df6
+Bytes: 7
+rename(
+
+99
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_b940fb65
+Bytes: 96
+that's a lie, and the asprintf failure will already have set errno to ENOMEM, which isn't a lie.
+
+210
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_7aded1e1
+Bytes: 35
+int ret here. this is C++, not C89.
+
+212
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_5adb15f0
+Bytes: 73
+in fact, if (fstat() == -1) {... is better still. no need for ret at all.
+
+522
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_19524f3b
+Bytes: 62
+: %s\n", optarg[0]
+
+(so the user can see what we didn't like.)
+
+526
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_d9b057f6
+Bytes: 94
+hmm. the test above is wrong. we should use strtol here and do the usual errno and endp check.
+
+531
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_b9b59be4
+Bytes: 50
+looks like we should factor out a strtol_or_die().
+
+756
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_599d6769
+Bytes: 99
+rc?
+
+just asprintf this?
+
+(or there's an android::base::StringPrintf in <base/stringprintf.h> now.)
+
+778
+Thu Apr 02 14:51:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_1ae59da3
+Bytes: 66
+wtf? why aren't we just using std::string instead of char*,size_t?
+

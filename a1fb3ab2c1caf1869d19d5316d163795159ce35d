@@ -61,6 +61,16 @@ You are free to use strtol_or_die here as well, setting to a value of '1' was co
 
 Should introduce a minimum/maximum-value check as well in the parms to strtol_or_die(argv[0], ret, optarg, <MINIMUM>, <MAXIMUM>)
 
+399:0-405:21
+Thu Apr 02 16:24:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_a8c9bb59
+UUID: c3d47630_99ce5f5e
+Bytes: 206
+(drifting off-topic...)
+
+if you use the functions in <error.h> to report errors you don't need argv[0]. if you do write your own function, you can still use getprogname(3) instead of passing argv[0] around.
+
 522
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

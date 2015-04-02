@@ -25,6 +25,14 @@ Wouldn't isverified be even more confusing since the value does not indicate whe
 
 The change in the parameter value is needed, so SafetyNet can determine in which mode dm-verity was started.
 
+116:8-116:28
+Thu Apr 02 15:31:10 2015 +0000
+Author: JP Abgrall <1005480@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_0d52113b
+UUID: e3bdfae6_4062ff85
+Bytes: 25
+Ahh. "verifiedmode" then.
+
 File: fs_mgr/fs_mgr_verity.c
 
 767:12-767:20

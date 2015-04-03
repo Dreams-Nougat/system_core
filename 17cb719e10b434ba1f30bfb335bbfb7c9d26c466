@@ -9,3 +9,13 @@ UUID: 03092eaf_abc535de
 Bytes: 18
 doesn't look right
 
+7:15-7:21
+Fri Apr 03 04:33:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_abc535de
+UUID: e3bdfae6_e10c63ef
+Bytes: 207
+there's a matching change to external/toybox that makes the 'umount' symbolic link point to toybox. this change just removes the old symbolic link to toolbox.
+
+we're losing umount *to* toybox (from toolbox).
+

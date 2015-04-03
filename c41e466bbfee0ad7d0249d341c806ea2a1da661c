@@ -1,0 +1,11 @@
+Revision: c41e466bbfee0ad7d0249d341c806ea2a1da661c
+Patch-set: 4
+File: base/include/base/logging.h
+
+74
+Fri Apr 03 03:02:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_0e8f9f7f
+Bytes: 7
+LOG_TO?
+

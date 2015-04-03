@@ -17,6 +17,14 @@ if ((const char *)p + p->len > end)
 
 We can again do the first check, then clamp remainder to end - (const char *)p - sizeof(*p);
 
+184
+Fri Apr 03 23:22:24 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_cbe84c7e
+UUID: 63f74ae2_a0aae34c
+Bytes: 207
+Good catch, I split 'end; and 'e' to reduce the confusion about 'e' in your previous comments, then I made the blind mistake of replacing e with end trying to get some savings on the casts I had here before.
+
 188
 Fri Apr 03 23:13:24 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -27,4 +35,14 @@ I don't think we need the > check
 strnlen is going to cap len to remainder which already is at most (end - (const char *)p), so this condition cannot be >.
 
 The == part of the check is still important in case we don't hit a \0 before the end of the string
+
+188
+Fri Apr 03 23:22:24 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_0b0884e0
+UUID: 63f74ae2_40bb2fb2
+Bytes: 349
+Should be e - p. '>=' costs us nothing, and guarantees reliability when other hands get into here. It is a code robustness issue. Pedantics will lead us to == and if someone makes a mistake adjusting the code above this in the future, we will live another day.
+
+NB: the mess above is cousin to the type of programming mistake I hope to catch with >=
 

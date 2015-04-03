@@ -1,0 +1,20 @@
+Revision: 10d837ec703fa6f8b9af40952793bff49c2e8b90
+Patch-set: 2
+File: base/include/base/logging.h
+
+47
+Fri Apr 03 03:08:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c3d47630_9cce4d5e
+Bytes: 31
+does L47-L73 need to be public?
+
+File: base/logging.cpp
+
+75
+Fri Apr 03 03:08:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_ee78e3f4
+Bytes: 112
+so google3 style for this library, and assume you're using <error.h> if you're just writing a command-line tool?
+

@@ -16,10 +16,32 @@ UUID: 23c4727c_306990a5
 Bytes: 79
 Demonstrate precedence here by ensuring that the comparison is within brackets.
 
+139:13-139:49
+Fri Apr 03 00:06:33 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_306990a5
+UUID: e3bdfae6_52e883f8
+Bytes: 161
+Since we know if we're using conf_file or conf_dir based on what the dir parameter is set to, can we simply do 
++ (dir ? sizeof(conf_dir) : sizeof(conf_file))
+
+?
+
 147:37-147:63
 Thu Apr 02 23:00:15 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 23c4727c_1057ac60
 Bytes: 98
 Could probably reuse name here, so that TEMP_FAILURE_RETRY is not continuously re-evaluating this?
+
+164
+Fri Apr 03 00:06:33 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_1620c498
+Bytes: 274
+Nit-picky, but could we make this a do while loop instead of using break?  It's the same as TEMP_FAILURE_RETRY, which is what I believe this is emulating.
+
+do {
+address = mmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+while (address == MAP_FAILED && errno == EINTR);
 

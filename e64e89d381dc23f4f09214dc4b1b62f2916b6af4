@@ -33,6 +33,16 @@ UUID: e3bdfae6_c6ba834e
 Bytes: 183
 Any thought on using just if ((const char *)p + p->len > end) ?  It's more intuitive to me and since remainder is calculated from those values it will also be checked for correctness.
 
+184
+Fri Apr 03 23:46:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_c6ba834e
+UUID: e3bdfae6_26b5bf31
+Bytes: 114
+My goal is to make it intuitive to _all_.
+
+I have another idea that mike make it clearer, I'll spin it in shortly.
+
 188
 Fri Apr 03 23:13:24 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>

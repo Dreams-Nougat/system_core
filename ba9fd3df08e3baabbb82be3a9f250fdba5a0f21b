@@ -175,3 +175,11 @@ UUID: 23c4727c_24e389cf
 Bytes: 37
 is EINTR from mmap actually possible?
 
+164
+Fri Apr 03 18:01:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_24e389cf
+UUID: 23c4727c_55ace99c
+Bytes: 213
+Ummmm IDK ;-) you may be right, it sets up the address pointing to a null page with copy on access. There are no expected resource contentions to result in a sleep. Until I am 100% sure, and I will investigate ...
+

@@ -2,6 +2,13 @@ Revision: ba9fd3df08e3baabbb82be3a9f250fdba5a0f21b
 Patch-set: 1
 File: libcutils/fs_config.c
 
+34
+Fri Apr 03 20:23:05 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63f74ae2_38062d4e
+Bytes: 156
+Should there be alignment pragma's with this to ensure that it's formatted the same across architectures, especially since we're writing this out to a file?
+
 119:3-119:13
 Thu Apr 02 22:41:33 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -182,4 +189,33 @@ Parent: 23c4727c_24e389cf
 UUID: 23c4727c_55ace99c
 Bytes: 213
 Ummmm IDK ;-) you may be right, it sets up the address pointing to a null page with copy on access. There are no expected resource contentions to result in a sleep. Until I am 100% sure, and I will investigate ...
+
+188
+Fri Apr 03 20:23:05 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63f74ae2_9d7cf335
+Bytes: 460
+Why is there a -sizeof(*p) here?  This won't get us the last entry of the file, since the size of the last entry is (sizeof(*p) + strlen(pc->prefix) + sizeof(uint64_t)) & -sizeof(uint64_t); Even if pc->prefix is null, there is the alignment space too.
+
+Doesn't continually incrementing p by p->len get us to exactly address + st.st_size?  Why not set e = (const struct fs_path_config_from_file *)((const char *)address + st.st_size and keep the check as p < e?
+
+190:26-190:32
+Fri Apr 03 20:23:05 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_9b950f43
+Bytes: 271
+Should we use strnlen since we know the buffer size and there's no guarantee the input file will have a null character to stop strlen from overrunning?
+
+Maybe even combine this and be below lines into,
+
+len = strnlen(p->prefix, min(MAX_BUFFER_SIZE, p->len - sizeof(*p)));
+
+195:30-195:71
+Fri Apr 03 20:23:05 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_68edcb86
+Bytes: 191
+(const char *)p + sizeof(*p) + len > (const char *)address + st.st_size
+
+It's a more straight forward check to me, especially if address + st.st_size ends up being used in the loop condition.
 

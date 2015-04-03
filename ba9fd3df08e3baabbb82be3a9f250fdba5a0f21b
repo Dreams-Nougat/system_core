@@ -17,6 +17,14 @@ UUID: 23c4727c_dce14b15
 Bytes: 81
 *please* just pull in one of the existing ones. there are so many to choose from!
 
+119:3-119:13
+Fri Apr 03 00:48:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_dce14b15
+UUID: 23c4727c_907977c3
+Bytes: 61
+Do we have unistd.h defined with this on all platforms (MAC?)
+
 139:13-139:49
 Thu Apr 02 22:41:33 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -43,6 +51,22 @@ UUID: e3bdfae6_d5ad9d15
 Bytes: 9
 asprintf?
 
+139:13-139:49
+Fri Apr 03 00:48:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_d5ad9d15
+UUID: 23c4727c_10c9e7a6
+Bytes: 82
+I was concerned asprintf was not available on all platforms when I did this (MAC?)
+
+139:13-139:49
+Fri Apr 03 00:48:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_52e883f8
+UUID: 23c4727c_1c62233b
+Bytes: 101
+I used to have that, it results in 'code', this one reduces to a constant and thus a simple addition.
+
 147:37-147:63
 Thu Apr 02 23:00:15 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -58,6 +82,14 @@ UUID: e3bdfae6_75a5b129
 Bytes: 43
 why bother? it would only be less readable.
 
+147:37-147:63
+Fri Apr 03 00:48:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_75a5b129
+UUID: 23c4727c_3012ab90
+Bytes: 117
+I viewed it as more readable since it would change this line to match exactly the open above. No problem, as-is then.
+
 164
 Fri Apr 03 00:06:33 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -68,4 +100,12 @@ Nit-picky, but could we make this a do while loop instead of using break?  It's 
 do {
 address = mmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
 while (address == MAP_FAILED && errno == EINTR);
+
+164
+Fri Apr 03 00:48:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_1620c498
+UUID: 23c4727c_901cd795
+Bytes: 52
+You get a warning for _rc == -1, -Werror tears this.
 

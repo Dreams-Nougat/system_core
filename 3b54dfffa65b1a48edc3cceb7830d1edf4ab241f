@@ -1,0 +1,13 @@
+Revision: 3b54dfffa65b1a48edc3cceb7830d1edf4ab241f
+Patch-set: 3
+File: base/include/base/logging.h
+
+51
+Fri Apr 03 17:44:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23c4727c_fa552aa6
+Bytes: 208
+why is this one public? if you can use it, it's the default. if you can't... well, why ask for it?
+
+(StderrLogger i kind of get, because at least in theory you might want to log to stderr even on the device.)
+

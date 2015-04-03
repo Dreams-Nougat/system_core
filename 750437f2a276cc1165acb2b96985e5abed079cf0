@@ -1,0 +1,17 @@
+Revision: 750437f2a276cc1165acb2b96985e5abed079cf0
+Patch-set: 3
+File: libcutils/fs_config.c
+
+176:8-176:48
+Fri Apr 03 23:58:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_61c5e13c
+Bytes: 446
+Only other way I can make this clearer is to put a comment here to report why 'e' exists.
+
+It is a shorthand to resolve having to put
+
+(const struct fs_path_config_from_file *)(end - sizeof(*p))
+
+sprinkled throughout the following code, in one form or another. It is hard to describe 'e' simply, except to state that it is an end pointer minus the structure header, the last point 'p' can get to and still have a meaningful piece of data to read.
+

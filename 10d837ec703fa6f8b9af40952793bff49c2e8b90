@@ -9,6 +9,14 @@ UUID: c3d47630_9cce4d5e
 Bytes: 31
 does L47-L73 need to be public?
 
+47
+Fri Apr 03 16:31:04 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_9cce4d5e
+UUID: 23c4727c_645d017f
+Bytes: 158
+I had actually meant to delete this (it's unused and isn't the correct interface) in this ps, but apparently it was accidentally revived in one of my rebases.
+
 File: base/logging.cpp
 
 75
@@ -17,4 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83cefea1_ee78e3f4
 Bytes: 112
 so google3 style for this library, and assume you're using <error.h> if you're just writing a command-line tool?
+
+75
+Fri Apr 03 16:31:04 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_ee78e3f4
+UUID: e3bdfae6_937f3864
+Bytes: 141
+What's wrong with using this for a command line tool?
+
+This doesn't actually change any behavior, it's just moved out of LogMessage::LogLine.
 

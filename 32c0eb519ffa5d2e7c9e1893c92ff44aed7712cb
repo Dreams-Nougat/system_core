@@ -20,6 +20,14 @@ UUID: 63f74ae2_430906dc
 Bytes: 77
 (those -1s at the top of the file should really have been 1 or EXIT_FAILURE.)
 
+748
+Fri Apr 03 17:21:35 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63f74ae2_430906dc
+UUID: 2312b2d8_ef945546
+Bytes: 132
+Could be done, I've just realize that the alignment of the string @770 is wrong, so I need to push a new patch-set on Monday anyway.
+
 771
 Fri Apr 03 15:13:52 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -29,4 +37,13 @@ the usual idiom is just:
 
   char* buf = NULL;
   asprintf(...);
+
+771
+Fri Apr 03 17:21:35 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_d7359d89
+UUID: a3d4e237_905bba89
+Bytes: 115
+man-page based, the buffer is undefined if -1 is returned.
+so from that point of view, it might change in asprintf.
 

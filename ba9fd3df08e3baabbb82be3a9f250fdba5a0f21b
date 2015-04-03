@@ -25,6 +25,14 @@ UUID: 23c4727c_907977c3
 Bytes: 61
 Do we have unistd.h defined with this on all platforms (MAC?)
 
+119:3-119:13
+Fri Apr 03 03:21:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_907977c3
+UUID: c3d47630_7cddb10a
+Bytes: 126
+no. that's why there are so many choices in the tree. <utils/Compat.h> is popular. i see <cutils/fs.h> has one too. et cetera.
+
 139:13-139:49
 Thu Apr 02 22:41:33 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -67,6 +75,14 @@ UUID: 23c4727c_1c62233b
 Bytes: 101
 I used to have that, it results in 'code', this one reduces to a constant and thus a simple addition.
 
+139:13-139:49
+Fri Apr 03 03:21:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_10c9e7a6
+UUID: 03092eaf_0b38c19b
+Bytes: 110
+https://developer.apple.com/library/ios/documentation/System/Conceptual/ManPages_iPhoneOS/man3/asprintf.3.html
+
 147:37-147:63
 Thu Apr 02 23:00:15 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -89,6 +105,14 @@ Parent: e3bdfae6_75a5b129
 UUID: 23c4727c_3012ab90
 Bytes: 117
 I viewed it as more readable since it would change this line to match exactly the open above. No problem, as-is then.
+
+147:37-147:63
+Fri Apr 03 03:21:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_3012ab90
+UUID: c3d47630_9ce76dd8
+Bytes: 98
+L142 hurts my brain enough already. i think you should be moving _away_ from that, not towards it!
 
 164
 Fri Apr 03 00:06:33 2015 +0000

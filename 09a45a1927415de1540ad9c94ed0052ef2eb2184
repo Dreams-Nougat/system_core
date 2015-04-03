@@ -9,3 +9,11 @@ UUID: 63f74ae2_40268fb1
 Bytes: 37
 Is the bot smart enough to find this?
 
+13
+Fri Apr 03 23:28:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63f74ae2_40268fb1
+UUID: e3bdfae6_a679cfc2
+Bytes: 56
+the "vendor blobs" bug from this morning suggests "yes".
+

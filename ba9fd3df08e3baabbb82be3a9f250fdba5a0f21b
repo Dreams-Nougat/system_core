@@ -41,6 +41,16 @@ UUID: 23c4727c_64f2a1b7
 Bytes: 81
 Ahh, got it, I was looking left instead of down at my feet, cutils/fs.h <perfect>
 
+119:3-119:13
+Fri Apr 03 15:21:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_64f2a1b7
+UUID: 23c4727c_a4be79a0
+Bytes: 231
+yeah --- that's the real problem (and why i complained about this): most of the copies are in weird places. we should try to maneuver them into commonly-included .h files so everyone just has them by accident :-)
+
+http://b/20059045
+
 139:13-139:49
 Thu Apr 02 22:41:33 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -156,4 +166,12 @@ Parent: 23c4727c_901cd795
 UUID: e3bdfae6_d70c7def
 Bytes: 83
 Post CL cleanup. @enh should we fix all the variants do to _rc == (typeof (exp))-1?
+
+164
+Fri Apr 03 15:21:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_d70c7def
+UUID: 23c4727c_24e389cf
+Bytes: 37
+is EINTR from mmap actually possible?
 

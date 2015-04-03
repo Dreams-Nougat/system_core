@@ -36,3 +36,11 @@ What's wrong with using this for a command line tool?
 
 This doesn't actually change any behavior, it's just moved out of LogMessage::LogLine.
 
+75
+Fri Apr 03 16:57:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3bdfae6_937f3864
+UUID: c3d47630_5c655544
+Bytes: 248
+i mean if you were writing something like grep(1), the google3 logging style is far too verbose. i don't think it's a problem for us, because probably most tools will be in toybox in future, and others would presumably want to use <error.h> anyway.
+

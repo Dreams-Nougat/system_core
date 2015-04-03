@@ -1,0 +1,11 @@
+Revision: bef66df55bcdf897fb04d2078e6c8ff5d34cbd30
+Patch-set: 1
+File: base/logging.cpp
+
+59
+Fri Apr 03 19:40:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_2d94850f
+Bytes: 14
+getprogname()?
+

@@ -47,3 +47,11 @@ Bytes: 115
 man-page based, the buffer is undefined if -1 is returned.
 so from that point of view, it might change in asprintf.
 
+771
+Fri Apr 03 17:31:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3d4e237_905bba89
+UUID: 23c4727c_ba03320e
+Bytes: 99
+if we break that in bionic, we're going to break all the existing callers so you should be safe :-)
+

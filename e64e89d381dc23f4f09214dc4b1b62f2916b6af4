@@ -25,6 +25,14 @@ UUID: 63f74ae2_a0aae34c
 Bytes: 207
 Good catch, I split 'end; and 'e' to reduce the confusion about 'e' in your previous comments, then I made the blind mistake of replacing e with end trying to get some savings on the casts I had here before.
 
+184
+Fri Apr 03 23:44:42 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63f74ae2_a0aae34c
+UUID: e3bdfae6_c6ba834e
+Bytes: 183
+Any thought on using just if ((const char *)p + p->len > end) ?  It's more intuitive to me and since remainder is calculated from those values it will also be checked for correctness.
+
 188
 Fri Apr 03 23:13:24 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -45,4 +53,12 @@ Bytes: 349
 Should be e - p. '>=' costs us nothing, and guarantees reliability when other hands get into here. It is a code robustness issue. Pedantics will lead us to == and if someone makes a mistake adjusting the code above this in the future, we will live another day.
 
 NB: the mess above is cousin to the type of programming mistake I hope to catch with >=
+
+188
+Fri Apr 03 23:44:42 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63f74ae2_40bb2fb2
+UUID: 63f74ae2_1be36621
+Bytes: 18
+Sounds reasonable.
 

@@ -19,3 +19,11 @@ UUID: 63de6a5c_d4e24dc9
 Bytes: 157
 yeah, i'll fix the android_memset16/android_memset32 mess, fix the test mess, and then i'll rename this to strlcpy.c and only build it for Windows and glibc.
 
+116:0-116:18
+Fri Apr 03 00:47:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63de6a5c_d4e24dc9
+UUID: e3bdfae6_48ab34d6
+Bytes: 9
+all done.
+

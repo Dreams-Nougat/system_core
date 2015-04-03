@@ -1,0 +1,30 @@
+Revision: e64e89d381dc23f4f09214dc4b1b62f2916b6af4
+Patch-set: 2
+File: libcutils/fs_config.c
+
+184
+Fri Apr 03 23:13:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_cbe84c7e
+Bytes: 316
+I think this is off by a factor of sizeof(*p)
+
+In my mind, I think of this as
+
+if ((const char *)p + p->len > end)
+= if ((const char *)p + sizeof(*p) + remainder > end)
+= if (sizeof(*p) + remainder > end - (const char *)p)
+
+We can again do the first check, then clamp remainder to end - (const char *)p - sizeof(*p);
+
+188
+Fri Apr 03 23:13:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_0b0884e0
+Bytes: 256
+I don't think we need the > check
+
+strnlen is going to cap len to remainder which already is at most (end - (const char *)p), so this condition cannot be >.
+
+The == part of the check is still important in case we don't hit a \0 before the end of the string
+

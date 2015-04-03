@@ -11,3 +11,11 @@ why is this one public? if you can use it, it's the default. if you can't... wel
 
 (StderrLogger i kind of get, because at least in theory you might want to log to stderr even on the device.)
 
+51
+Fri Apr 03 18:18:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_fa552aa6
+UUID: 23c4727c_f5f77d08
+Bytes: 111
+Has to be exposed because if someone wants to log to the system buffer by default, they have to construct this.
+

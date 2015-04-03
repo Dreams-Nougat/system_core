@@ -9,6 +9,14 @@ UUID: 63de6a5c_7a894525
 Bytes: 40
 remove definition, no longer being used.
 
+27:0-27:41
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63de6a5c_7a894525
+UUID: 2312b2d8_ec2a23fa
+Bytes: 4
+Done
+
 96
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 83cefea1_bad349db
 Bytes: 7
 braces.
 
+96
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_bad349db
+UUID: 2312b2d8_0c369762
+Bytes: 4
+Done
+
 97
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83cefea1_9ad88df6
 Bytes: 7
 rename(
+
+97
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_9ad88df6
+UUID: 2312b2d8_eccfc3dc
+Bytes: 4
+Done
 
 99
 Thu Apr 02 14:51:00 2015 +0000
@@ -38,6 +62,22 @@ UUID: 23c4727c_8e35e78a
 Bytes: 134
 Yes, maybe add if(!file0 || !file1) { perror(...); } to after asprintf and leave this rename error checking section alone for clarity.
 
+99
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_b940fb65
+UUID: a3d4e237_5009d2db
+Bytes: 4
+Done
+
+99
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_8e35e78a
+UUID: 2312b2d8_ccd4ff75
+Bytes: 4
+Done
+
 210
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -45,12 +85,28 @@ UUID: 83cefea1_7aded1e1
 Bytes: 35
 int ret here. this is C++, not C89.
 
+210
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_7aded1e1
+UUID: 83e35e1e_8f3f1969
+Bytes: 4
+Done
+
 212
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83cefea1_5adb15f0
 Bytes: 73
 in fact, if (fstat() == -1) {... is better still. no need for ret at all.
+
+212
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_5adb15f0
+UUID: 83e35e1e_6f350d88
+Bytes: 4
+Done
 
 399:0-405:21
 Thu Apr 02 16:21:19 2015 +0000
@@ -71,6 +127,22 @@ Bytes: 206
 
 if you use the functions in <error.h> to report errors you don't need argv[0]. if you do write your own function, you can still use getprogname(3) instead of passing argv[0] around.
 
+399:0-405:21
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03092eaf_a8c9bb59
+UUID: 2312b2d8_ccfd1fec
+Bytes: 4
+Done
+
+399:0-405:21
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_99ce5f5e
+UUID: 2312b2d8_acf2eb19
+Bytes: 4
+Done
+
 522
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -80,6 +152,14 @@ Bytes: 62
 
 (so the user can see what we didn't like.)
 
+522
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_19524f3b
+UUID: 2312b2d8_6ca3d3f4
+Bytes: 4
+Done
+
 526
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -87,12 +167,28 @@ UUID: c3d47630_d9b057f6
 Bytes: 94
 hmm. the test above is wrong. we should use strtol here and do the usual errno and endp check.
 
+526
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_d9b057f6
+UUID: 2312b2d8_8c8de784
+Bytes: 4
+Done
+
 531
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c3d47630_b9b59be4
 Bytes: 50
 looks like we should factor out a strtol_or_die().
+
+531
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_b9b59be4
+UUID: 2312b2d8_8cf7270a
+Bytes: 48
+Done, kind of, not dying in the parse function..
 
 756
 Thu Apr 02 14:51:00 2015 +0000
@@ -105,10 +201,28 @@ just asprintf this?
 
 (or there's an android::base::StringPrintf in <base/stringprintf.h> now.)
 
+756
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3d47630_599d6769
+UUID: 2312b2d8_0cc1f79b
+Bytes: 102
+the +32 has its roots in (liblog/log_read.c) android_logger_set_prune_list(), and needed. 
+
+Anyway....
+
 778
 Thu Apr 02 14:51:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83cefea1_1ae59da3
 Bytes: 66
 wtf? why aren't we just using std::string instead of char*,size_t?
+
+778
+Fri Apr 03 13:36:06 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_1ae59da3
+UUID: 2312b2d8_ac88ab74
+Bytes: 12
+liblog is C.
 

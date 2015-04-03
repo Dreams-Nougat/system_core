@@ -1,0 +1,32 @@
+Revision: 32c0eb519ffa5d2e7c9e1893c92ff44aed7712cb
+Patch-set: 2
+File: logcat/logcat.cpp
+
+359
+Fri Apr 03 15:13:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63f74ae2_630c02ee
+Bytes: 190
+typically you'd have a logcat_main in the namespace and then a one-liner outside at the end of the file:
+
+  int main(int argc, char** argv) {
+    return android::logcat_main(argc, argv);
+  }
+
+748
+Fri Apr 03 15:13:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63f74ae2_430906dc
+Bytes: 77
+(those -1s at the top of the file should really have been 1 or EXIT_FAILURE.)
+
+771
+Fri Apr 03 15:13:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_d7359d89
+Bytes: 62
+the usual idiom is just:
+
+  char* buf = NULL;
+  asprintf(...);
+

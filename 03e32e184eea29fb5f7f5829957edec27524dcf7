@@ -1,0 +1,18 @@
+Revision: 03e32e184eea29fb5f7f5829957edec27524dcf7
+Patch-set: 3
+File: logcat/logcat.cpp
+
+322
+Sat Apr 04 15:46:48 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3bdfae6_3959595f
+Bytes: 10
+errno = 0;
+
+324
+Sat Apr 04 15:46:48 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63f74ae2_02e636b0
+Bytes: 13
+errno != 0 ||
+

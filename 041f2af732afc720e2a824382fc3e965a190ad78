@@ -9,3 +9,11 @@ UUID: 63f74ae2_2fd4a4e4
 Bytes: 315
 write_all_blocks will insert skip chunks at the beginning and end if necessary, so they need to be included in the overhead.  The length passed to backed_block_split isn't accounting for the chunk header, so it either has to be included here or in the split calculation below.  I suggest leaving the overhead as-is.
 
+248
+Sat Apr 04 08:34:15 2015 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 63f74ae2_2fd4a4e4
+UUID: 2312b2d8_6fdd050b
+Bytes: 304
+This new algorithm takes the beginning skip chunk into account.  Yes, backed_block_split does not account the chunk header but I thought it would be already accounted because we already wrote the current backed block.  I forgot that "count" is not used in if (file_len + count > len) { ... } calculation.
+

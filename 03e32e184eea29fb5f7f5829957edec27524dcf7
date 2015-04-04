@@ -2,6 +2,13 @@ Revision: 03e32e184eea29fb5f7f5829957edec27524dcf7
 Patch-set: 3
 File: logcat/logcat.cpp
 
+318
+Sat Apr 04 16:06:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c34716eb_1e656d8c
+Bytes: 45
+this should probably return bool for clarity.
+
 322
 Sat Apr 04 15:46:48 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +30,12 @@ Parent: 63f74ae2_02e636b0
 UUID: 2337126d_010d0a6c
 Bytes: 88
 the only (new) thing errno could indicate is ERANGE, which we check later on (min, max);
+
+324
+Sat Apr 04 16:06:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2337126d_010d0a6c
+UUID: c34716eb_7e683165
+Bytes: 179
+oh, i hadn't noticed that 'max' is a uint32. so, yes, what you have works, but if you have the usual errno check as well readers don't need to work out why this is a special case.
 

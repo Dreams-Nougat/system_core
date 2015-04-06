@@ -1,0 +1,20 @@
+Revision: d3df3970c6cb5096f8a0433b9a5b2a4faecfe8d0
+Patch-set: 1
+File: libcutils/Android.mk
+
+116
+Mon Apr 06 18:27:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83519eaa_562c343e
+Bytes: 147
+we shouldn't reintroduce this turd. if you need the .c file, you need the #defines (and vice versa), so just remove them from here and the .c file.
+
+File: libcutils/arch-mips/android_memset.c
+
+28
+Mon Apr 06 18:27:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83519eaa_56b75466
+Bytes: 34
+that's gone and isn't coming back!
+

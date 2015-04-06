@@ -1,0 +1,25 @@
+Revision: 46f1f862ceec0f1ea75f44263c84683dc1f16487
+Patch-set: 5
+File: libcutils/fs_config.c
+
+182:16-182:30
+Mon Apr 06 22:44:02 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c34716eb_ece249c9
+Bytes: 164
+Complain very loudly if this happens.  This file is machine generated and lives on a read-only partition, so if it's malformed then something terrible has happened.
+
+191:16-191:32
+Mon Apr 06 22:44:02 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a34222dc_d0dcc563
+Bytes: 9
+Same here
+
+195:0-204:13
+Mon Apr 06 22:44:02 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2320f22c_bc932d5a
+Bytes: 133
+Break this out into a helper (replacing break -> return true, adding return false to end).  Then you can use it at lines 222-232 too.
+

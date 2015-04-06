@@ -1,0 +1,11 @@
+Revision: 807f47004f03653997edbe3c83d46350cb056cd4
+Patch-set: 2
+File: fs_mgr/Android.mk
+
+11
+Mon Apr 06 23:30:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83cefea1_d42a51a8
+Bytes: 105
+Would it make sense to include squashfs_utils or libext4_utils only if the device is configured for them?
+

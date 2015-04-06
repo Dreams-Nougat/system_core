@@ -1,0 +1,25 @@
+Revision: a21c29ee818515d5cde79a01bee86c1e27057096
+Patch-set: 3
+File: include/private/android_filesystem_config.h
+
+25
+Mon Apr 06 17:28:26 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c34716eb_984e6dc4
+Bytes: 22
+#include <sys/cdefs.h>
+
+202:0-204:6
+Mon Apr 06 17:28:26 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2312b2d8_52cb0a9e
+Bytes: 13
+__BEGIN_DECLS
+
+219:0-221:6
+Mon Apr 06 17:28:26 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2337126d_41d472e5
+Bytes: 11
+__END_DECLS
+

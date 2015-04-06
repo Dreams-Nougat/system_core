@@ -1,0 +1,11 @@
+Revision: df744bfcec0261cae18f4dbc540c1476d0ba3d1d
+Patch-set: 4
+File: libcutils/fs_config.c
+
+94:46-94:54
+Mon Apr 06 17:49:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83519eaa_904e44c4
+Bytes: 33
+DROP LEADING / (eg: conf_dir + 1)
+

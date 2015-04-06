@@ -9,6 +9,17 @@ UUID: c34716eb_ece249c9
 Bytes: 164
 Complain very loudly if this happens.  This file is machine generated and lives on a read-only partition, so if it's malformed then something terrible has happened.
 
+182:16-182:30
+Mon Apr 06 23:03:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c34716eb_ece249c9
+UUID: a34222dc_b02c9991
+Bytes: 598
+My problem to resolve. Request that this turn into followup adjustments. Used on host (stderr preferred) and target (logger). Could get real spammy (esp during an adb sync to logger) though as every file will hit it as the tools that use this (eg: make filesystems) recurse through all files.
+
+- Make sure host liblog is stderr noisy on host tools, this functionality has been ignored and may need fixes.
+- Will have to do a pass prior to this change to audit and add shared library liblog to all the target and host tools' Android.mk that use libcutils (part of the record for the associated bug).
+
 191:16-191:32
 Mon Apr 06 22:44:02 2015 +0000
 Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>

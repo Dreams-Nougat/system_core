@@ -9,3 +9,15 @@ UUID: 83cefea1_d42a51a8
 Bytes: 105
 Would it make sense to include squashfs_utils or libext4_utils only if the device is configured for them?
 
+11
+Tue Apr 07 00:47:08 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83cefea1_d42a51a8
+UUID: a34222dc_0e30c918
+Bytes: 671
+For ext4 it would be a big cleanup (and for the time being) it would always be included since at least /cache is ext4.
+
+For squashfs, The util lib is pretty small and not worth optimizing in the short term.
+
+This is probably not in the scope of this change so I'll open an internal cleanup bug as we will need to do changes in build/core/Makefile to loop through BOARD_***_IMAGE_FILESYSTEM_TYPE and create corresponding build variables for ext4, squashfs and f2fs and then add a CFLAG based on those build flags in code referencing fs specific code OR make a common lib so the code remains clean....it seems to me the benefits don't outweigh the effort in the short term.
+

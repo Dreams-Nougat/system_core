@@ -1,0 +1,32 @@
+Revision: 675b2a09bbddd543522a19b4400b130c8f2c6a53
+Patch-set: 9
+File: tzdatacheck/tzdatacheck.cpp
+
+30
+Tue Apr 07 13:25:25 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 637aea34_2bd59939
+Bytes: 41
+static const std::string ... = "/tzdata";
+
+45
+Tue Apr 07 13:25:25 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837fde20_6ccbbb9e
+Bytes: 20
+zoneInfoHeader(11) ?
+
+174
+Tue Apr 07 13:25:25 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 637aea34_4bcee5af
+Bytes: 45
+can this & dataZoneInfoDir be "const char*" ?
+
+188
+Tue Apr 07 13:25:25 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 837fde20_0cd8f770
+Bytes: 11
+bad indent.
+

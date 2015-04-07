@@ -1,0 +1,11 @@
+Revision: 6fabc4be9fb1ea6361517c1c0476ee367107020d
+Patch-set: 3
+File: libsparse/sparse.c
+
+246:50-246:53
+Tue Apr 07 19:26:40 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2320f22c_1c20191c
+Bytes: 46
+can you clarify that this is an end skip chunk
+

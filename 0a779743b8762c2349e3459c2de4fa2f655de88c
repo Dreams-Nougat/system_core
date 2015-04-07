@@ -372,6 +372,18 @@ UUID: 23c4727c_7ebc644f
 Bytes: 98
 yes, it should. i'm just paranoid and don't like searching when i know where things _ought_ to be.
 
+171
+Tue Apr 07 13:02:57 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23c4727c_7ebc644f
+UUID: 2312b2d8_92a4e284
+Bytes: 611
+I'm happiest with this approach given it avoids problems if somebody makes a change to the zip file in the future. If we named individual files or dirs and we change the structure after release (perhaps to include new dirs for newer devices) it would end up leaving those files lying around on old devices.
+
+That said, the use of rename before delete means it's less of a problem if files are left around.
+
+The use of SELinux (see change under the same change-id) means I can lock down the permissions of the executable just the root dir we expect so even if something unexpected happens we are not too exposed.
+
 207
 Thu Apr 02 14:41:22 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>

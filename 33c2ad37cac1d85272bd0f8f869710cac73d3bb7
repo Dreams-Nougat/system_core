@@ -1,0 +1,17 @@
+Revision: 33c2ad37cac1d85272bd0f8f869710cac73d3bb7
+Base-for-patch-set: 2
+File: include/private/android_logger.h
+
+73:0-78:25
+Tue Apr 07 15:07:22 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 63258a42_1301ecbc
+Bytes: 605
+Leave this around, add a comment above indicating that it can not be used in C++ embedded in another structure; so it is here demonstratively. This is a private header, but it can serve as documentation as some are confused by the nature of event logs.
+
+Demonstratively, it will serve to make sure that its existence, but _now_ non-use in android_log_event_string_t, will serve as a strong message to future selves to stay away.
+
+(I will view C++ as having a bug ;-> )
+
+There is a separate effort to create a C++ event class that may serve purpose and replace this header. For now I view it as vapourware.
+

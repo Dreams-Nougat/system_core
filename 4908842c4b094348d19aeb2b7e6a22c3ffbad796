@@ -1,0 +1,46 @@
+Revision: 4908842c4b094348d19aeb2b7e6a22c3ffbad796
+Patch-set: 2
+File: include/private/android_logger.h
+
+70:25-70:33
+Tue Apr 07 15:07:22 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 832a7e12_144b14b6
+Bytes: 759
+Here I envisioned that if we had multiple pieces, that I would 'play' with array_start, array_end, payload, payload1 etc if we had more complex event delivery requirements.
+
+(variable-length notwithstanding)
+
+So far, no one is using a multiple-element event in C or C++, but I worry that log_write.c in liblog _may_ need one as emitting a dropped count event with just a number and no explanation is so unprofessional.
+
+eg: (modified to reflect this CLs adjustment)
+
+typedef struct __attribute__((__packed__)) {
+    android_event_header_t header;
+    android_event_long_t payload;
+    int8_t payload1_type;
+    int32_t payload1_length;
+    char payload1_data[];
+} android_log_event_long_string_t;
+
+where payload1 would be a string "dropped count" for example.
+
+76:0-78:16
+Tue Apr 07 15:07:22 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a32b0216_98dc3963
+Bytes: 716
+As noted above, regarding my vision, _I_ (and there is no i in team ;->) would have preferred to see payload_type, payload_length and payload_data so that if another header is produced with multiple elements, that each element of the event is clearly and uniquely named.
+
+(variable-length in the middle notwithstanding; the 'fix' for that is to add a ANDROID_EVENT_PAYLOAD_DATA_LEN, ANDROID_EVENT_PAYLOAD1_DATA_LEN etc).
+
+. . .
+    int8_t payload1_type;
+    int32_t payload1_length; // ANDROID_EVENT_PAYLOAD1_DATA_LEN
+    char payload1_data[ANDROID_EVENT_PAYLOAD1_DATA_LEN];
+. . .
+
+if not defined, no harm.
+
+Today ... too much complexity ... but not much to ask to prefix payload_ for these three structure elements.
+

@@ -1,0 +1,20 @@
+Revision: d4ce16915277cd3699ad1b27b1a2f990c1433e16
+Patch-set: 1
+File: fastboot/bootimg_utils.cpp
+
+53:4-53:17
+Wed Apr 08 04:41:13 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c31c7621_96626c11
+Bytes: 181
+these *_actual's look a bit weird. although we are accepting int64_t sizes, they are truncated back to unsigned. how about casting the values to unsigned before calling mkbootimg()?
+
+File: fastboot/fastboot.cpp
+
+679:41-679:43
+Wed Apr 08 04:41:13 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0303eebf_f8b591e3
+Bytes: 117
+i don't know what fb_queue_download() does. do we need to care about the size there (which is still 32-bit unsigned)?
+

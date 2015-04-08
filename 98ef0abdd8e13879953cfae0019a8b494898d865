@@ -1,0 +1,11 @@
+Revision: 98ef0abdd8e13879953cfae0019a8b494898d865
+Patch-set: 8
+File: logd/LogBufferElement.h
+
+29
+Wed Apr 08 20:52:30 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_435598da
+Bytes: 72
+.  This function is designed for a single caller and is NOT thread-safe.
+

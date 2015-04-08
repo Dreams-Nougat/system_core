@@ -1,0 +1,11 @@
+Revision: ce7c838168178e90cda853d5b600cef15b933380
+Patch-set: 1
+File: rootdir/init.rc
+
+489
+Wed Apr 08 15:44:56 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3eea234_06daa09e
+Bytes: 66
+should the start logd be here? rather than duplicating everywhere?
+

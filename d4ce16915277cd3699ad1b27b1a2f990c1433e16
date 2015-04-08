@@ -9,6 +9,14 @@ UUID: c31c7621_96626c11
 Bytes: 181
 these *_actual's look a bit weird. although we are accepting int64_t sizes, they are truncated back to unsigned. how about casting the values to unsigned before calling mkbootimg()?
 
+53:4-53:17
+Wed Apr 08 05:58:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c31c7621_96626c11
+UUID: 63f82afb_be63f5c6
+Bytes: 139
+i've changed these to int64_t too. turns out our boot_img_hdr struct is all 32-bit. should be a while until we need a > 4GiB kernel though.
+
 File: fastboot/fastboot.cpp
 
 679:41-679:43

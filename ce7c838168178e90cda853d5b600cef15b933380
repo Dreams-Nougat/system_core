@@ -34,3 +34,11 @@ UUID: e3ec1a3e_888d1b02
 Bytes: 61
 oh, there's just the "onrestart" stuff? no real dependencies?
 
+489
+Wed Apr 08 16:15:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3ec1a3e_888d1b02
+UUID: e3ec1a3e_28db2ff1
+Bytes: 103
+I do not want to restart logd, shutting her down means I lose all that precious in-memory logging data.
+

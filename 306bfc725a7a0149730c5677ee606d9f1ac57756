@@ -1,0 +1,27 @@
+Revision: 306bfc725a7a0149730c5677ee606d9f1ac57756
+Patch-set: 9
+File: logd/LogStatistics.cpp
+
+311:13-311:18
+Wed Apr 08 20:44:05 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_272fbe87
+Bytes: 13
+headerPrinted
+
+325:57-325:61
+Wed Apr 08 20:44:05 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_87f7c85b
+Bytes: 4
+this
+
+File: logd/LogStatistics.h
+
+35:41-35:80
+Wed Apr 08 20:44:05 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_604b72b5
+Bytes: 180
+Return a std::unique_ptr unless you have a compelling reason not to.  This eliminates the ownership question entirely (and std::unique_ptr was designed with this use case in mind).
+

@@ -17,3 +17,11 @@ UUID: a32b0216_28ab46d7
 Bytes: 64
 Neither shared library is part of the development tools package.
 
+13
+Wed Apr 08 01:10:42 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a32b0216_28ab46d7
+UUID: a32b0216_088f6a7f
+Bytes: 34
+what is development tools package?
+

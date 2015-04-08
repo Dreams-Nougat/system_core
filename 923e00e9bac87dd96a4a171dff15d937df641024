@@ -65,3 +65,11 @@ Bytes: 137
 No, they are not shipped in the SDK.
 They are distributed to build signed images (and / or generate the OTA package) by the release team.
 
+13
+Wed Apr 08 16:36:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3ec1a3e_c85603b5
+UUID: 63f82afb_0f259528
+Bytes: 117
+Ok, my misinterpretation, but that still requires (w/o also delivering shared host libraries) static linking for now?
+

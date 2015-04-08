@@ -17,3 +17,13 @@ UUID: c3f39619_616f1024
 Bytes: 128
 Entirely happy to take guidance on this. I was following examples of other executables in system/core which appear to be static.
 
+11:1-11:50
+Wed Apr 08 16:16:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c3f39619_616f1024
+UUID: 63f82afb_0fd475c1
+Bytes: 777
+that [should be] because they have to run before the system partition is available (and thus no /system/lib and thus no shared libraries [also no /system/bin, so no dynamic linker either!]). but your executable can't do its job until both /system and /data are available anyway. plus you didn't use LOCAL_FORCE_STATIC_EXECUTABLE so you were still reliant on /system/bin. in which case...
+
+(this is a problem. there are definitely things that are bloated with static libraries just because the makefile they copy & pasted happened to be doing that. and then they grow a shared library dependency that brings in another copy of a library they statically linked, and things start going subtly wrong at runtime. if you can't explain why something _must_ be static, make it shared.)
+

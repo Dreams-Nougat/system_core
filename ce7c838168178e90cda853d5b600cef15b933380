@@ -2,10 +2,27 @@ Revision: ce7c838168178e90cda853d5b600cef15b933380
 Patch-set: 1
 File: rootdir/init.rc
 
+191:0-192:14
+Wed Apr 08 16:00:57 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3ec1a3e_e819477a
+Bytes: 94
+This is even a bit coarse, post-fs-system? Would require a rework of _all_ device rc files :-(
+
 489
 Wed Apr 08 15:44:56 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a3eea234_06daa09e
 Bytes: 66
 should the start logd be here? rather than duplicating everywhere?
+
+489
+Wed Apr 08 16:00:57 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3eea234_06daa09e
+UUID: e3ec1a3e_c8aba385
+Bytes: 297
+I did not test this, but I did look at the code and 'felt' (no flies on me) that putting a start logd here would not work; as service definitions did not appear to have a way to propagate this command to the service object?
+
+I will test this (testing smoke is better than assuming there is a fire)
 

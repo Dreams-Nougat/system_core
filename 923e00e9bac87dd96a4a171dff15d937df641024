@@ -56,3 +56,12 @@ These tools are shipped without supporting host shared libraries (because we are
 
 NB: squashfs-tools should be added.
 
+13
+Wed Apr 08 16:28:36 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3eea234_86107054
+UUID: e3ec1a3e_c85603b5
+Bytes: 137
+No, they are not shipped in the SDK.
+They are distributed to build signed images (and / or generate the OTA package) by the release team.
+

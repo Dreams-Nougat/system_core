@@ -1,0 +1,11 @@
+Revision: 57a12f826ddf3c8ce97a02a04a0dcc43a6528f31
+Patch-set: 12
+File: tzdatacheck/Android.mk
+
+11:1-11:50
+Wed Apr 08 15:43:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3ec1a3e_8806bb4b
+Bytes: 93
+Is it really necessary to be STATIC? This executable has access to /system/lib on the target.
+

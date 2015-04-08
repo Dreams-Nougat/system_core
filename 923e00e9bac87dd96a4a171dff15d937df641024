@@ -25,3 +25,34 @@ UUID: a32b0216_088f6a7f
 Bytes: 34
 what is development tools package?
 
+13
+Wed Apr 08 14:32:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a32b0216_088f6a7f
+UUID: a3eea234_86107054
+Bytes: 1071
+Distributed with the SDK. A lesson I learned from wangying@. In build/Makefile:
+
+DISTTOOLS :=  $(HOST_OUT_EXECUTABLES)/minigzip \
+          $(HOST_OUT_EXECUTABLES)/mkbootfs \
+          $(HOST_OUT_EXECUTABLES)/mkbootimg \
+          $(HOST_OUT_EXECUTABLES)/fs_config \
+          $(HOST_OUT_EXECUTABLES)/zipalign \
+          $(HOST_OUT_EXECUTABLES)/bsdiff \
+          $(HOST_OUT_EXECUTABLES)/imgdiff \
+          $(HOST_OUT_JAVA_LIBRARIES)/dumpkey.jar \
+          $(HOST_OUT_JAVA_LIBRARIES)/signapk.jar \
+          $(HOST_OUT_JAVA_LIBRARIES)/BootSignature.jar \
+          $(HOST_OUT_EXECUTABLES)/mkuserimg.sh \
+          $(HOST_OUT_EXECUTABLES)/make_ext4fs \
+          $(HOST_OUT_EXECUTABLES)/simg2img \
+          $(HOST_OUT_EXECUTABLES)/e2fsck \
+          $(HOST_OUT_EXECUTABLES)/build_verity_tree \
+          $(HOST_OUT_EXECUTABLES)/verity_signer \
+          $(HOST_OUT_EXECUTABLES)/append2simg \
+          $(HOST_OUT_EXECUTABLES)/boot_signer
+
+These tools are shipped without supporting host shared libraries (because we are too lazy?) 
+
+NB: squashfs-tools should be added.
+

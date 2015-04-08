@@ -9,3 +9,11 @@ UUID: e3ec1a3e_8806bb4b
 Bytes: 93
 Is it really necessary to be STATIC? This executable has access to /system/lib on the target.
 
+11:1-11:50
+Wed Apr 08 15:59:37 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3ec1a3e_8806bb4b
+UUID: c3f39619_616f1024
+Bytes: 128
+Entirely happy to take guidance on this. I was following examples of other executables in system/core which appear to be static.
+

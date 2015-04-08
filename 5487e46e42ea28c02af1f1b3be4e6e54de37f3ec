@@ -1,0 +1,11 @@
+Revision: 5487e46e42ea28c02af1f1b3be4e6e54de37f3ec
+Patch-set: 10
+File: /COMMIT_MSG
+
+8
+Wed Apr 08 20:59:12 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_67c466ad
+Bytes: 108
+Why?  (You explain this above, but that explanation needs to go in the commit message for future reference.)
+

@@ -9,3 +9,11 @@ UUID: 23e3924b_6a3fe638
 Bytes: 75
 s/STATIC/SHARED/ - in which case there is no need to add liblog explicitly.
 
+13
+Wed Apr 08 01:08:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23e3924b_6a3fe638
+UUID: a32b0216_28ab46d7
+Bytes: 64
+Neither shared library is part of the development tools package.
+

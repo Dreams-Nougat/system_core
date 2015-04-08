@@ -1,0 +1,11 @@
+Revision: 923e00e9bac87dd96a4a171dff15d937df641024
+Patch-set: 1
+File: cpio/Android.mk
+
+13
+Wed Apr 08 00:51:59 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23e3924b_6a3fe638
+Bytes: 75
+s/STATIC/SHARED/ - in which case there is no need to add liblog explicitly.
+

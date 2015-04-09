@@ -13,3 +13,17 @@ If this was defined as a onetime service (eg: logd-reinit for example) and trigg
 
 _must_ this check be done as an exec here, or can it tolerate a race-condition<<<<<<<<<<<<<<delay?
 
+323:4-323:115
+Thu Apr 09 17:03:18 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_fa19e679
+UUID: 03d12e8c_ae5d8359
+Bytes: 790
+It can probably survive some slop. Providing it has done its work before anything that uses the data tries to use it then it's probably ok.
+
+Things that might try to use it are anything built using bionic and use functions like localtime / mktime.
+
+Later on, ART-based executables that use ICU4J or libcore (e.g. the zygote and or app_process things like package manager) are also users of the timezone data. It would probably be bad if the data being deleted disappeared during launch, but it's ok after because all the users should copy with an unlink (and just keep using the old data).
+
+I thought exec was defined as a wrapper around a onetime service? Or is the idea that we'd give it the same class as several other things and so all the things in that class would be started at once?
+

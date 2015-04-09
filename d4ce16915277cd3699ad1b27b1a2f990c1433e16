@@ -19,6 +19,13 @@ i've changed these to int64_t too. turns out our boot_img_hdr struct is all 32-b
 
 File: fastboot/fastboot.cpp
 
+676
+Thu Apr 09 21:27:39 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e356daec_55e71c55
+Bytes: 41
+is there a reason for using signed int64?
+
 679:41-679:43
 Wed Apr 08 04:41:13 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>

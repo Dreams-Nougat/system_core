@@ -35,6 +35,20 @@ UUID: 03868e96_3627e569
 Bytes: 437
 he wants to make sure that the right tzdata is in place before anything starts running. his dependency on logd means he's guaranteeing that it'll take two reboots before logd sees the new tzdata. but i don't think logd uses tzdata so it shouldn't matter. (but this is another example of why i don't think this is the best solution in the long term. it just happens to be a major leap forward from where we are, and much more achievable.)
 
+323:4-323:115
+Thu Apr 09 17:16:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03d12e8c_ae5d8359
+UUID: 83c43ed3_d5b95b11
+Bytes: 284
+"I thought exec was defined as a wrapper around a onetime service?"
+
+it is. but...
+
+"exec is run blocking"
+
+is also true. otherwise you'd just use a oneshot service :-) the point of exec is that it says "i want you to do this now, and i need to know it's been done before i continue".
+
 File: tzdatacheck/tzdatacheck.cpp
 
 16

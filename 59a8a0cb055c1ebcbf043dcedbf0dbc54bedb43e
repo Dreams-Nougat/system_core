@@ -40,6 +40,18 @@ UUID: 237f124e_75b08271
 Bytes: 239
 note that off_t is "int" on LP32. if this actually matters, you should use off64_t or start building with -D_FILE_OFFSET_BITS=64 in your Android.mk, but note that if you have ABI that's an ABI change (which is why i didn't do it globally).
 
+217:8-217:40
+Thu Apr 09 16:57:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_75b08271
+UUID: 03868e96_f65bbdd9
+Bytes: 298
+I stand corrected, but am not _comfortable_ with using unsigned int to hold an off_t from a pedantic type-safe sense.
+
+(because, yes, this is not the first time I panicked, without basis, about off_t and its speckled past ;-} )
+
+Being pedantic in reason, I _can_ slide and accept this as-is though.
+
 383:8-383:27
 Thu Apr 09 16:37:41 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

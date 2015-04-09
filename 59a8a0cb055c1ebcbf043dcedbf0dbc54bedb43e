@@ -32,6 +32,14 @@ UUID: 83c43ed3_ff5b9887
 Bytes: 121
 With the change from off_t for g_outByteCount to unsigned for this, you are now truncating the value on 32-bit platforms.
 
+217:8-217:40
+Thu Apr 09 16:47:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_ff5b9887
+UUID: 237f124e_75b08271
+Bytes: 239
+note that off_t is "int" on LP32. if this actually matters, you should use off64_t or start building with -D_FILE_OFFSET_BITS=64 in your Android.mk, but note that if you have ABI that's an ABI change (which is why i didn't do it globally).
+
 383:8-383:27
 Thu Apr 09 16:37:41 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,3 +9,12 @@ UUID: e356daec_a36d7283
 Bytes: 108
 Do we want to just make the build system always add export_include_dirs to local_include_dirs at some point?
 
+6
+Thu Apr 09 22:51:49 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e356daec_a36d7283
+UUID: e356daec_e3af7ade
+Bytes: 149
+We don't do that in the current build system.
+Is it ever possible that there is case we don't want to add  export_include_dirs to local_include_dirs?
+

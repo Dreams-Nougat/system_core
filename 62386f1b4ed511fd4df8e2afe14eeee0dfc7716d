@@ -27,3 +27,201 @@ Later on, ART-based executables that use ICU4J or libcore (e.g. the zygote and o
 
 I thought exec was defined as a wrapper around a onetime service? Or is the idea that we'd give it the same class as several other things and so all the things in that class would be started at once?
 
+323:4-323:115
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_fa19e679
+UUID: 03868e96_3627e569
+Bytes: 437
+he wants to make sure that the right tzdata is in place before anything starts running. his dependency on logd means he's guaranteeing that it'll take two reboots before logd sees the new tzdata. but i don't think logd uses tzdata so it shouldn't matter. (but this is another example of why i don't think this is the best solution in the long term. it just happens to be a major leap forward from where we are, and much more achievable.)
+
+File: tzdatacheck/tzdatacheck.cpp
+
+16
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_dac98a2b
+Bytes: 179
+blank line before #includes, and C++ headers are supposed to come after C headers ( https://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Names_and_Order_of_Includes ).
+
+30
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_1ad4c2c1
+Bytes: 66
+static const char*. (avoid globals with constructors/destructors.)
+
+35
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_75516268
+Bytes: 7
+headers
+
+37
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_365605b3
+Bytes: 78
+did you mean to have \n on each line, so this is wrapped when it's output too?
+
+46
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_d5486eb9
+Bytes: 19
+check return value.
+
+58
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_169f41df
+Bytes: 168
+there's a std::vector constructor that takes two pointers that will do the sizing & copy for you. (number 4:  http://en.cppreference.com/w/cpp/container/vector/vector )
+
+61
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_969351d7
+Bytes: 74
+or just replace these three lines with
+
+  return dirname(&dirNameCopy[0]);
+
+72
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_d601598c
+Bytes: 54
+PLOG
+
+(and the usual idiom is PLOG() << "... failed".)
+
+104
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_986ffbf4
+Bytes: 244
+this would make sense if you actually _used_ the different values. but you just LOG "something went wrong" at the call sites, and this method already logs the exact failure (which i think is the better approach anyway).
+
+so just switch to bool?
+
+127
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_faca86ea
+Bytes: 3
++=?
+
+136
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_58bbb3d5
+Bytes: 28
+i don't think you need this.
+
+139
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_7ab7b666
+Bytes: 28
+just &tempDirName[0] here...
+
+140
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_d6f879fe
+Bytes: 5
+== -1
+
+141
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_b8aaff7a
+Bytes: 4
+PLOG
+
+142
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_faa3a622
+Bytes: 11
+and here...
+
+147
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_56c469be
+Bytes: 12
+...and here.
+
+149
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_f8948746
+Bytes: 5
+== -1
+
+152
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_f6aaddd0
+Bytes: 51
+just "return false" in the if and return true here.
+
+182
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_d6731918
+Bytes: 90
+the cool kids have switched to nullptr (http://en.cppreference.com/w/cpp/types/nullptr_t).
+
+185
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_31c9afa7
+Bytes: 76
+is unreadable? is that expected? (anyway, you wouldn't get ENOENT for that.)
+
+189
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_3aea5e1e
+Bytes: 106
+don't log errno. strerror is better, and you're already doing that. (though, as elsewhere, just use PLOG.)
+
+197
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83c43ed3_9ae71255
+Bytes: 4
+PLOG
+
+208
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_f1e74728
+Bytes: 80
+missing function here that does fopen/error reporting/readZoneInfoHeader/fclose?
+
+210
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03868e96_11dd8b5d
+Bytes: 36
+constant for this 11 we keep seeing?
+
+215
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_5873b396
+Bytes: 7
+same as
+
+216
+Thu Apr 09 17:14:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 237f124e_9890db1d
+Bytes: 17
+<< "; fixing..."?
+

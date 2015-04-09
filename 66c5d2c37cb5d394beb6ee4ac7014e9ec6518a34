@@ -1,0 +1,11 @@
+Revision: 66c5d2c37cb5d394beb6ee4ac7014e9ec6518a34
+Patch-set: 1
+File: libsync/Blueprints
+
+6
+Thu Apr 09 22:43:05 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e356daec_a36d7283
+Bytes: 108
+Do we want to just make the build system always add export_include_dirs to local_include_dirs at some point?
+

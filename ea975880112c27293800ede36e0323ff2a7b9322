@@ -9,3 +9,13 @@ UUID: 636d8ab3_99639bc7
 Bytes: 115
 We are missing !strncmp(tag, "WMSTS", 5) || /* Any log tag withg "WMSTS" (Wireless Messaging Service) as the prefix
 
+374:8-374:31
+Thu Apr 09 21:15:45 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_99639bc7
+UUID: 234d525a_da77b951
+Bytes: 268
+No we're not.  We need to put a moratorium on adding new tags here.  All that accomplishes is making performance slightly worse and discouraging vendors from fixing their code.
+
+The vendor in question needs to use RLOG.  File an internal bug against them if necessary.
+

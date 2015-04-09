@@ -52,6 +52,14 @@ I stand corrected, but am not _comfortable_ with using unsigned int to hold an o
 
 Being pedantic in reason, I _can_ slide and accept this as-is though.
 
+217:8-217:40
+Thu Apr 09 17:20:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_f65bbdd9
+UUID: 23dab2a9_8fb079f5
+Bytes: 263
+yeah, i don't like seeing vague and unmotivated types like "unsigned int" either. but i think size_t is what you're looking for here. (it's still 32-bit on LP32, but as long as your log rotation value is < 4GiB that's fine. and at least it's intention-revealing.)
+
 383:8-383:27
 Thu Apr 09 16:37:41 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

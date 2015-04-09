@@ -9,6 +9,14 @@ UUID: c34716eb_1e656d8c
 Bytes: 45
 this should probably return bool for clarity.
 
+318
+Thu Apr 09 06:54:39 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c34716eb_1e656d8c
+UUID: 63a66a29_cb939559
+Bytes: 4
+Done
+
 322
 Sat Apr 04 15:46:48 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,4 +46,12 @@ Parent: 2337126d_010d0a6c
 UUID: c34716eb_7e683165
 Bytes: 179
 oh, i hadn't noticed that 'max' is a uint32. so, yes, what you have works, but if you have the usual errno check as well readers don't need to work out why this is a special case.
+
+324
+Thu Apr 09 06:54:39 2015 +0000
+Author: TraianX Schiau <1061958@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c34716eb_7e683165
+UUID: 63a66a29_2b897926
+Bytes: 4
+Done
 

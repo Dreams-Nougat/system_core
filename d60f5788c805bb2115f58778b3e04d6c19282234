@@ -9,6 +9,16 @@ UUID: 234d525a_e8a4a530
 Bytes: 168
 but doesn't this look terrible on the screen because you're missing the line breaks? i don't understand why you want it to be readable in the source but not at runtime?
 
+42
+Fri Apr 10 17:55:52 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 234d525a_e8a4a530
+UUID: a38a229d_a3abbe85
+Bytes: 365
+I don't expect anybody to really look at it. It looks fine to me because it wraps at the edge of the terminal. If I picked a fixed width and the terminal was smaller, wouldn't that look worse. If I the terminal is much bigger I end up with weird breaks in the middle of a sentence.
+
+Not something I particularly want to worry about: pick a width and I'll handle it.
+
 51
 Fri Apr 10 17:19:09 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,6 +28,14 @@ const std::string&
 
 size_t byteCount
 
+51
+Fri Apr 10 17:55:52 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_a68aebe5
+UUID: e3617abc_5d064b4e
+Bytes: 4
+Done
+
 60
 Fri Apr 10 17:19:09 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,12 +43,28 @@ UUID: 636d8ab3_e65143ed
 Bytes: 6
 size_t
 
+60
+Fri Apr 10 17:55:52 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_e65143ed
+UUID: a38a229d_c3b0caf6
+Bytes: 4
+Done
+
 69
 Fri Apr 10 17:19:09 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 234d525a_08d5696f
 Bytes: 18
 const std::string&
+
+69
+Fri Apr 10 17:55:52 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 234d525a_08d5696f
+UUID: 6394aac1_4158365b
+Bytes: 4
+Done
 
 81
 Fri Apr 10 17:19:09 2015 +0000
@@ -43,4 +77,12 @@ alternatively:
 
  std::unique_ptr<char> mutable_dirname = strdup(dirName.c_str());
  return dirname(&mutable_dirname[0]);
+
+81
+Fri Apr 10 17:55:52 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e356daec_47ba0922
+UUID: 6394aac1_e1b5c2e3
+Bytes: 100
+Done, near enough. Thanks. Most of this is because I have no idea about C++, BTW. I must get a book.
 

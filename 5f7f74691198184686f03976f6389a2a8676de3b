@@ -1,0 +1,11 @@
+Revision: 5f7f74691198184686f03976f6389a2a8676de3b
+Patch-set: 15
+File: tzdatacheck/tzdatacheck.cpp
+
+42
+Fri Apr 10 18:02:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e356daec_1dbbeed6
+Bytes: 87
+80 is pretty traditional for help text, and seems to be what you've wrapped to already.
+

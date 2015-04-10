@@ -1,0 +1,11 @@
+Revision: 53e21178ac52af7003b89a18aafe293448d16f58
+Patch-set: 12
+File: logd/LogBuffer.cpp
+
+282:12-282:57
+Fri Apr 10 18:20:01 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 636d8ab3_a51f4089
+Bytes: 265
+I'm concerned about the two copies getting out of sync if you ever add another buffer that needs this treatment.  Create a static inline helper function in a private header file somewhere (named e.g. logPruningSupportedForId()) so you have a single thing to update.
+

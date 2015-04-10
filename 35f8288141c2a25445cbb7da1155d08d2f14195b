@@ -25,6 +25,14 @@ UUID: e3617abc_bd35a70d
 Bytes: 204
 Ok, but my point was that the function returns -1 when it detects errors, so clients need to be prepared to handle it. Isn't this inconsistent with the original implementation of the utf16_to_utf8_length?
 
+54
+Fri Apr 10 20:26:09 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3617abc_bd35a70d
+UUID: e32fba6e_2796fac8
+Bytes: 268
+AFAIK you are right. I am just commenting on your request to change the API doc for utf32_to_utf8_length() here (not utf16_to_...). I am staying out of the discussion of whether these functions should return an error value or use some "length" for invalid input units.
+
 107:3-107:45
 Fri Apr 10 16:08:21 2015 +0000
 Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -131,6 +139,16 @@ Parent: 636d8ab3_86e7af54
 UUID: 6394aac1_a11ada6e
 Bytes: 129
 Ok, makes sense, if I understand this correctly similar issue is found elsewhere among the unicode functions in this file, right?
+
+422
+Fri Apr 10 20:26:09 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6394aac1_a11ada6e
+UUID: e32fba6e_073f3639
+Bytes: 221
+I did not inspect other parts of this file.
+Would y'all like me to look it over, or do you want to check for yourselves now that you are aware of another issue?
+Note: I am an i18n guy, not part of the Android team proper.
 
 File: libutils/tests/Unicode_test.cpp
 

@@ -1,0 +1,32 @@
+Revision: 460f11c21947fc32d6b7a5f783029ea501c3ba11
+Patch-set: 18
+File: logd/LogBufferElement.cpp
+
+69
+Fri Apr 10 18:16:17 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 234d525a_93934ed7
+Bytes: 230
+Consider creating a helper function e.g. populateEventForDroppedMessages() to construct and populate the buffer.  This is a lengthy branch and it's not immediately obvious why you need to do all this extra work for the !mMsg case.
+
+70:0-70:38
+Fri Apr 10 18:16:17 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83999efb_c251a6ed
+Bytes: 361
+If you're going to stick with a #define (which I still don't like, IMO preprocessor macros should be used only when simpler language features don't cut it) then at least don't indent like this.  Even if the C language allows whitespace between "#" and "define", it looks confusingly like a Python-style comment and is inconsistent with the rest of our codebase.
+
+File: logd/LogBufferElement.h
+
+42:4-42:60
+Fri Apr 10 18:16:17 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 636d8ab3_e193edaa
+Bytes: 229
+union {
+    const unsigned short mMsgLen;
+    unsigned short mDropped;
+};
+
+would be clearer and would preserve mMsgLen's constness.  (And if you ever decide to change the size of one, you can do this without affecting the other.)
+

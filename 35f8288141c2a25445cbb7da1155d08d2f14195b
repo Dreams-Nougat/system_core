@@ -1,6 +1,23 @@
 Revision: 35f8288141c2a25445cbb7da1155d08d2f14195b
 Patch-set: 1
+File: include/utils/Unicode.h
+
+107:3-107:45
+Fri Apr 10 16:08:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83999efb_a263bac6
+Bytes: 43
+, that is, it contains unpaired surrogates,
+
 File: libutils/Unicode.cpp
+
+416:12-416:37
+Fri Apr 10 16:08:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2368f29d_ed7dade2
+Bytes: 86
+FYI You could use ICU U16_IS_LEAD(*src) and U16_IS_TRAIL(*++src).
+from unicode/utf16.h
 
 420:16-420:19
 Thu Jan 23 11:44:14 2014 +0000
@@ -41,4 +58,13 @@ Bytes: 221
 This is a bad change.  It could break code that is unknowingly transporting invalid surrogate pairs.
 
 We should tolerate the problem as before.  And it absolutely must remain consistent with the behavior of utf16_to_utf8.
+
+File: libutils/tests/Unicode_test.cpp
+
+141
+Fri Apr 10 16:08:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4365e6c2_7d8a33e9
+Bytes: 43
+I don't understand where the +1 comes from.
 

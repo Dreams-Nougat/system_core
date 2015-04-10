@@ -1,0 +1,11 @@
+Revision: dfd5e49f5d923787b758193ebb53b29f1eb54672
+Patch-set: 20
+File: logd/LogBufferElement.cpp
+
+23
+Fri Apr 10 22:35:49 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a3214287_b9e76729
+Bytes: 35
+#include <private/android_logger.h>
+

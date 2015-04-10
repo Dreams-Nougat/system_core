@@ -141,6 +141,14 @@ UUID: a38a229d_831c0296
 Bytes: 61
 Doesn't that mean I have to worry about adding the \0 myself?
 
+58
+Fri Apr 10 17:15:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a38a229d_831c0296
+UUID: 636d8ab3_c6c9a72b
+Bytes: 67
+no, because c_str returns you a pointer to a NUL-terminated string.
+
 61
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -157,6 +165,14 @@ Parent: 03868e96_969351d7
 UUID: a38a229d_43f4bad3
 Bytes: 87
 That didn't look portable. (Based on linux's manual). I know you're right for bionic...
+
+61
+Fri Apr 10 17:15:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a38a229d_43f4bad3
+UUID: 636d8ab3_06d47fc1
+Bytes: 4
+huh?
 
 72
 Thu Apr 09 17:14:49 2015 +0000

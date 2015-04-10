@@ -2,6 +2,13 @@ Revision: 35f8288141c2a25445cbb7da1155d08d2f14195b
 Patch-set: 1
 File: include/utils/Unicode.h
 
+54
+Fri Apr 10 16:40:30 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6394aac1_c1e7e628
+Bytes: 51
+return -1 on invliad surrogate character used here.
+
 107:3-107:45
 Fri Apr 10 16:08:21 2015 +0000
 Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,6 +25,14 @@ UUID: 2368f29d_ed7dade2
 Bytes: 86
 FYI You could use ICU U16_IS_LEAD(*src) and U16_IS_TRAIL(*++src).
 from unicode/utf16.h
+
+416:12-416:37
+Fri Apr 10 16:40:30 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2368f29d_ed7dade2
+UUID: e3617abc_3a651d46
+Bytes: 127
+Nothing else in this file is using unicode/utf16.h, doesnt it make more sense to switch to that as part of some larger rewrite?
 
 420:16-420:19
 Thu Jan 23 11:44:14 2014 +0000

@@ -17,6 +17,14 @@ UUID: 636d8ab3_661373e1
 Bytes: 180
 No, coming from UTF-32, "such as" is better. In UTF-32, any surrogate is invalid, and any value >10FFFF. In UTF-16, only *unpaired* surrogates are invalid, everything else is fine.
 
+54
+Fri Apr 10 19:37:00 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_661373e1
+UUID: e3617abc_bd35a70d
+Bytes: 204
+Ok, but my point was that the function returns -1 when it detects errors, so clients need to be prepared to handle it. Isn't this inconsistent with the original implementation of the utf16_to_utf8_length?
+
 107:3-107:45
 Fri Apr 10 16:08:21 2015 +0000
 Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -115,6 +123,14 @@ if (U16_IS_SURROGATE(*src)) {
     return -1;
   }
 }
+
+422
+Fri Apr 10 19:37:00 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_86e7af54
+UUID: 6394aac1_a11ada6e
+Bytes: 129
+Ok, makes sense, if I understand this correctly similar issue is found elsewhere among the unicode functions in this file, right?
 
 File: libutils/tests/Unicode_test.cpp
 

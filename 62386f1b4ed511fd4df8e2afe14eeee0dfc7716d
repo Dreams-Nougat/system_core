@@ -157,6 +157,14 @@ UUID: e3617abc_fde1df14
 Bytes: 176
 Can you give an example of what you meant? I clearly didn't understand what you were suggesting and it'll just be quicker than me firing things I thought you meant back at you.
 
+58
+Fri Apr 10 17:32:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3617abc_fde1df14
+UUID: 234d525a_b38a12e6
+Bytes: 61
+(see comments on new patch for an even simpler way to do it.)
+
 61
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -193,6 +201,16 @@ Bytes: 538
 Since it needs a non-const argument, I create a copy of dirName to do so.
 Will C++ magically synthesize a std::string here, or are you suggesting I return the char*?
 If I did the latter, I don't own the memory, do I?
+
+61
+Fri Apr 10 17:32:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a38a229d_a3465e81
+UUID: 636d8ab3_46ed9734
+Bytes: 197
+you're copying, so you don't care what happens next.
+
+and, yes, the compiler recognizes that you're returning a T2 from a function declared to return T1, so it looks for an appropriate constructor.
 
 72
 Thu Apr 09 17:14:49 2015 +0000

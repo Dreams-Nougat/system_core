@@ -149,6 +149,14 @@ UUID: 636d8ab3_c6c9a72b
 Bytes: 67
 no, because c_str returns you a pointer to a NUL-terminated string.
 
+58
+Fri Apr 10 17:26:43 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_c6c9a72b
+UUID: e3617abc_fde1df14
+Bytes: 176
+Can you give an example of what you meant? I clearly didn't understand what you were suggesting and it'll just be quicker than me firing things I thought you meant back at you.
+
 61
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -173,6 +181,18 @@ Parent: a38a229d_43f4bad3
 UUID: 636d8ab3_06d47fc1
 Bytes: 4
 huh?
+
+61
+Fri Apr 10 17:26:43 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 636d8ab3_06d47fc1
+UUID: a38a229d_a3465e81
+Bytes: 538
+"These  functions  may  return  pointers  to statically allocated memory which may be overwritten by subsequent calls.  Alternatively, they may return a pointer to some part of path, so that the string referred to by path should not be modified or freed until the pointer returned by the function is no longer required."
+
+Since it needs a non-const argument, I create a copy of dirName to do so.
+Will C++ magically synthesize a std::string here, or are you suggesting I return the char*?
+If I did the latter, I don't own the memory, do I?
 
 72
 Thu Apr 09 17:14:49 2015 +0000

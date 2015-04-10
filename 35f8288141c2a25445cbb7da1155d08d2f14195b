@@ -9,6 +9,14 @@ UUID: 6394aac1_c1e7e628
 Bytes: 51
 return -1 on invliad surrogate character used here.
 
+54
+Fri Apr 10 17:41:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6394aac1_c1e7e628
+UUID: 636d8ab3_661373e1
+Bytes: 180
+No, coming from UTF-32, "such as" is better. In UTF-32, any surrogate is invalid, and any value >10FFFF. In UTF-16, only *unpaired* surrogates are invalid, everything else is fine.
+
 107:3-107:45
 Fri Apr 10 16:08:21 2015 +0000
 Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,6 +41,14 @@ Parent: 2368f29d_ed7dade2
 UUID: e3617abc_3a651d46
 Bytes: 127
 Nothing else in this file is using unicode/utf16.h, doesnt it make more sense to switch to that as part of some larger rewrite?
+
+416:12-416:37
+Fri Apr 10 17:41:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3617abc_3a651d46
+UUID: 636d8ab3_86cecfda
+Bytes: 131
+That's fine with me, I did mark it as FYI. I thought it would be nice to use a macro which is more readable than these expressions.
 
 420:16-420:19
 Thu Jan 23 11:44:14 2014 +0000
@@ -74,6 +90,32 @@ This is a bad change.  It could break code that is unknowingly transporting inva
 
 We should tolerate the problem as before.  And it absolutely must remain consistent with the behavior of utf16_to_utf8.
 
+422
+Fri Apr 10 17:41:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 123a3aa9_70c6ee34
+UUID: 636d8ab3_86e7af54
+Bytes: 904
+I am agnostic about whether it's ok to change this function to report an error rather than guess a value for it.
+
+The comment would be better as
+// illegal: unpaired surrogate
+
+Actually, there is a bug: As is, the new version only detects that a lead surrogate is not followed by a trail surrogate. It does not detect that a trail surrogate was encountered where a single or lead unit should be.
+
+With ICU macros, I would change this to the following which optimizes for the non-surrogate path. Feel free to rewrite into vanilla expressions. Note that the first macro detects either kind of surrogate, and the second quickly disambiguates (single-bit test).
+
+if (U16_IS_SURROGATE(*src)) {
+  if (U16_IS_SURROGATE_LEAD(*src) && U16_IS_TRAIL(*++src) {
+    // A UTF-16 surrogate pair always maps to 4 bytes in UTF-8.
+    ret += 4;
+    src++;
+  } else {
+    // illegal: unpaired surrogate
+    return -1;
+  }
+}
+
 File: libutils/tests/Unicode_test.cpp
 
 141
@@ -82,4 +124,11 @@ Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4365e6c2_7d8a33e9
 Bytes: 43
 I don't understand where the +1 comes from.
+
+146:20-146:47
+Fri Apr 10 17:41:21 2015 +0000
+Author: Markus Scherer <1022037@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e356daec_62329ba2
+Bytes: 117
+This only tests for an unpaired lead surrogate. Please add a test that uses an unpaired trail surrogate (DC00..DFFF).
 

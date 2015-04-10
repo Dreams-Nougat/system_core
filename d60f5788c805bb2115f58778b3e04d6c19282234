@@ -1,0 +1,46 @@
+Revision: d60f5788c805bb2115f58778b3e04d6c19282234
+Patch-set: 14
+File: tzdatacheck/tzdatacheck.cpp
+
+42
+Fri Apr 10 17:19:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 234d525a_e8a4a530
+Bytes: 168
+but doesn't this look terrible on the screen because you're missing the line breaks? i don't understand why you want it to be readable in the source but not at runtime?
+
+51
+Fri Apr 10 17:19:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 636d8ab3_a68aebe5
+Bytes: 36
+const std::string&
+
+size_t byteCount
+
+60
+Fri Apr 10 17:19:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 636d8ab3_e65143ed
+Bytes: 6
+size_t
+
+69
+Fri Apr 10 17:19:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 234d525a_08d5696f
+Bytes: 18
+const std::string&
+
+81
+Fri Apr 10 17:19:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e356daec_47ba0922
+Bytes: 240
+same comments as before. the vector i don't feel particularly strongly about. the last three lines seem very confusing.
+
+alternatively:
+
+ std::unique_ptr<char> mutable_dirname = strdup(dirName.c_str());
+ return dirname(&mutable_dirname[0]);
+

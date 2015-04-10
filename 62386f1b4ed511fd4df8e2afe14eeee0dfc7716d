@@ -58,12 +58,28 @@ UUID: 83c43ed3_dac98a2b
 Bytes: 179
 blank line before #includes, and C++ headers are supposed to come after C headers ( https://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Names_and_Order_of_Includes ).
 
+16
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_dac98a2b
+UUID: 6394aac1_9ebb7958
+Bytes: 4
+Done
+
 30
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83c43ed3_1ad4c2c1
 Bytes: 66
 static const char*. (avoid globals with constructors/destructors.)
+
+30
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_1ad4c2c1
+UUID: e3617abc_5a3bb19a
+Bytes: 4
+Done
 
 35
 Thu Apr 09 17:14:49 2015 +0000
@@ -72,12 +88,28 @@ UUID: 237f124e_75516268
 Bytes: 7
 headers
 
+35
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_75516268
+UUID: a38a229d_a05654b3
+Bytes: 4
+Done
+
 37
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_365605b3
 Bytes: 78
 did you mean to have \n on each line, so this is wrapped when it's output too?
+
+37
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_365605b3
+UUID: 6394aac1_bec035cf
+Bytes: 61
+No. The other newlines are for formatting / paragraph breaks.
 
 46
 Thu Apr 09 17:14:49 2015 +0000
@@ -86,12 +118,28 @@ UUID: 237f124e_d5486eb9
 Bytes: 19
 check return value.
 
+46
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_d5486eb9
+UUID: e3617abc_9ac9c92c
+Bytes: 4
+Done
+
 58
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_169f41df
 Bytes: 168
 there's a std::vector constructor that takes two pointers that will do the sizing & copy for you. (number 4:  http://en.cppreference.com/w/cpp/container/vector/vector )
+
+58
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_169f41df
+UUID: a38a229d_831c0296
+Bytes: 61
+Doesn't that mean I have to worry about adding the \0 myself?
 
 61
 Thu Apr 09 17:14:49 2015 +0000
@@ -102,6 +150,14 @@ or just replace these three lines with
 
   return dirname(&dirNameCopy[0]);
 
+61
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_969351d7
+UUID: a38a229d_43f4bad3
+Bytes: 87
+That didn't look portable. (Based on linux's manual). I know you're right for bionic...
+
 72
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -110,6 +166,14 @@ Bytes: 54
 PLOG
 
 (and the usual idiom is PLOG() << "... failed".)
+
+72
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_d601598c
+UUID: e3617abc_3a135de2
+Bytes: 4
+Done
 
 104
 Thu Apr 09 17:14:49 2015 +0000
@@ -120,12 +184,32 @@ this would make sense if you actually _used_ the different values. but you just 
 
 so just switch to bool?
 
+104
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_986ffbf4
+UUID: e3617abc_9a6d4984
+Bytes: 441
+Originally I wasn't sure that I would always treat > 0 the same as 0 but it is close enough so I'll change it.
+
+It felt wrong to return "true" from a deleteDir method when it didn't actually do it, so I had split it into (effectively) the tri-state of "failed badly" (-ve), "ok" (0) and "failed, but it's probably ok" (+ve).
+
+This change does mean one less logging line where we are not 100% successful (e.g. != 0), but I can live with that.
+
 127
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83c43ed3_faca86ea
 Bytes: 3
 +=?
+
+127
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_faca86ea
+UUID: 6394aac1_9e01b98d
+Bytes: 4
+Done
 
 136
 Thu Apr 09 17:14:49 2015 +0000
@@ -134,12 +218,28 @@ UUID: 237f124e_58bbb3d5
 Bytes: 28
 i don't think you need this.
 
+136
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_58bbb3d5
+UUID: 6394aac1_bed4b574
+Bytes: 4
+Done
+
 139
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83c43ed3_7ab7b666
 Bytes: 28
 just &tempDirName[0] here...
+
+139
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_7ab7b666
+UUID: 6394aac1_ded981ab
+Bytes: 4
+Done
 
 140
 Thu Apr 09 17:14:49 2015 +0000
@@ -148,12 +248,30 @@ UUID: 03868e96_d6f879fe
 Bytes: 5
 == -1
 
+140
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_d6f879fe
+UUID: e3617abc_7a623586
+Bytes: 198
+Done.
+
+My natural pessimism: "!= 0" is "anything that isn't explicitly success is failure", but "== -1" is "anything that isn't explicitly failure is success". I will always tend towards the former.
+
 141
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 237f124e_b8aaff7a
 Bytes: 4
 PLOG
+
+141
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_b8aaff7a
+UUID: e3617abc_9a2aa9f9
+Bytes: 4
+Done
 
 142
 Thu Apr 09 17:14:49 2015 +0000
@@ -162,12 +280,28 @@ UUID: 83c43ed3_faa3a622
 Bytes: 11
 and here...
 
+142
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_faa3a622
+UUID: a38a229d_20c404be
+Bytes: 4
+Done
+
 147
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_56c469be
 Bytes: 12
 ...and here.
+
+147
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_56c469be
+UUID: a38a229d_40c110ad
+Bytes: 4
+Done
 
 149
 Thu Apr 09 17:14:49 2015 +0000
@@ -176,12 +310,28 @@ UUID: 237f124e_f8948746
 Bytes: 5
 == -1
 
+149
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_f8948746
+UUID: a38a229d_e0d93cab
+Bytes: 4
+Done
+
 152
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_f6aaddd0
 Bytes: 51
 just "return false" in the if and return true here.
+
+152
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_f6aaddd0
+UUID: e3617abc_9aa46930
+Bytes: 123
+This is always "true" by the new rules. >= 0 means "good enough" because we've at least moved the directory somewhere safe.
 
 182
 Thu Apr 09 17:14:49 2015 +0000
@@ -190,12 +340,28 @@ UUID: 03868e96_d6731918
 Bytes: 90
 the cool kids have switched to nullptr (http://en.cppreference.com/w/cpp/types/nullptr_t).
 
+182
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_d6731918
+UUID: 6394aac1_be0675a0
+Bytes: 4
+Done
+
 185
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_31c9afa7
 Bytes: 76
 is unreadable? is that expected? (anyway, you wouldn't get ENOENT for that.)
+
+185
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_31c9afa7
+UUID: e3617abc_5a39f150
+Bytes: 4
+Done
 
 189
 Thu Apr 09 17:14:49 2015 +0000
@@ -204,12 +370,28 @@ UUID: 83c43ed3_3aea5e1e
 Bytes: 106
 don't log errno. strerror is better, and you're already doing that. (though, as elsewhere, just use PLOG.)
 
+189
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_3aea5e1e
+UUID: 6394aac1_feb47d37
+Bytes: 4
+Done
+
 197
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 83c43ed3_9ae71255
 Bytes: 4
 PLOG
+
+197
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83c43ed3_9ae71255
+UUID: 6394aac1_1eba0921
+Bytes: 4
+Done
 
 208
 Thu Apr 09 17:14:49 2015 +0000
@@ -218,12 +400,28 @@ UUID: 03868e96_f1e74728
 Bytes: 80
 missing function here that does fopen/error reporting/readZoneInfoHeader/fclose?
 
+208
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_f1e74728
+UUID: a38a229d_e32a26a8
+Bytes: 29
+Rearranged. Hopefully better.
+
 210
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03868e96_11dd8b5d
 Bytes: 36
 constant for this 11 we keep seeing?
+
+210
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03868e96_11dd8b5d
+UUID: e3617abc_9a40e9f8
+Bytes: 4
+Done
 
 215
 Thu Apr 09 17:14:49 2015 +0000
@@ -232,10 +430,26 @@ UUID: 237f124e_5873b396
 Bytes: 7
 same as
 
+215
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_5873b396
+UUID: e3617abc_da9ee1e1
+Bytes: 4
+Done
+
 216
 Thu Apr 09 17:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 237f124e_9890db1d
 Bytes: 17
 << "; fixing..."?
+
+216
+Fri Apr 10 17:00:48 2015 +0000
+Author: Neil Fuller <1038039@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 237f124e_9890db1d
+UUID: 6394aac1_5e20111d
+Bytes: 4
+Done
 

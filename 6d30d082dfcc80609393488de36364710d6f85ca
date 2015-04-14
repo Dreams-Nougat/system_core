@@ -1,0 +1,18 @@
+Revision: 6d30d082dfcc80609393488de36364710d6f85ca
+Patch-set: 4
+File: logd/main.cpp
+
+316:1-322:13
+Tue Apr 14 23:58:41 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0242aae_f0e01515
+Bytes: 226
+Since you're not updating rc anymore, you can clean up that really messy for loop:
+
+if (rc >= 0) {
+    buf[len - 1] = '\0';
+    for(char *ptr, *tok = buf; tok; tok = strtok_r(tok, "\r\n", &ptr)) {
+        al->log(tok);
+    }
+}
+

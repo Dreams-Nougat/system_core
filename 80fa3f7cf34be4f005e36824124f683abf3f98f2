@@ -1,0 +1,57 @@
+Revision: 80fa3f7cf34be4f005e36824124f683abf3f98f2
+Patch-set: 1
+File: /COMMIT_MSG
+
+10
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0299e86_f786d9e4
+Bytes: 7
+located
+
+File: logd/LogBufferElement.h
+
+28:0-41:1
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0242aae_45b04eba
+Bytes: 168
+Getting to a time to consider moving these to a set of utilities rather than overloading LogBufferElement.h as the utility header, and main.cpp for the implementations?
+
+File: logd/LogStatistics.h
+
+124:0-124:17
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9033a6f4_683c4e43
+Bytes: 144
+below we have some common data elements, methods and prototypes for the trio of struct XXXEntry definitions. Maybe consider a class inheritance?
+
+126:0-127:16
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0242aae_e5fbba8b
+Bytes: 6
+common
+
+136:0-137:45
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9033a6f4_085f0ac2
+Bytes: 6
+common
+
+139:0-140:44
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9033a6f4_48b0726c
+Bytes: 6
+common
+
+141:0-141:34
+Tue Apr 14 21:44:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0242aae_e5129a53
+Bytes: 43
+common prototype (different implementation)
+

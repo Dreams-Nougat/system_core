@@ -11,3 +11,13 @@ The implicit assumption is that addr is already 4 byte aligned. I assume that p_
 
 Also, is the 4 byte alignment true for 64 bit elf files too, or do they require extra alignment?
 
+65:10-65:14
+Tue Apr 14 18:51:36 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0299e86_ebd03b79
+UUID: b0242aae_ae72385f
+Bytes: 709
+Elf said that: If necessary, data structures contain explicit padding to ensure 4-byte alignment for 4-byte objects, to force structure sizes to a multiple of 4, and so on. Data also have suitable alignment from the beginning of the file. Thus, for example, a structure containing an Elf32_Addr member will be aligned on a 4-byte boundary within the file.
+
+According to "System V ABI Update" in 2009, note section should be an array of 8-byte words, and use 8-byte alignment in elf64. But in implementation, it is still an array of 4-byte words in elf64. I also saw in linux/tools/perf/util/symbol-elf.c that note segments are parsed as 4-byte alignment. So I think 4-byte alignment is actually used in elf64.
+

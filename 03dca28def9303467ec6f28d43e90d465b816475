@@ -1,0 +1,13 @@
+Revision: 03dca28def9303467ec6f28d43e90d465b816475
+Patch-set: 1
+File: debuggerd/elf_utils.cpp
+
+65:10-65:14
+Tue Apr 14 17:51:25 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0299e86_ebd03b79
+Bytes: 222
+The implicit assumption is that addr is already 4 byte aligned. I assume that p_offset has to be 4 byte aligned too correct?
+
+Also, is the 4 byte alignment true for 64 bit elf files too, or do they require extra alignment?
+

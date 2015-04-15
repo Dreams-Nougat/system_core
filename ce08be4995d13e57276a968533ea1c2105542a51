@@ -24,3 +24,13 @@ UUID: d080bec6_6577b003
 Bytes: 148
 Is there any risk of 32/64-bit weirdness if this is sized differently? Can we have 32-bit processes calling into a 64-bit BufferQueue or vice-versa?
 
+937:44-937:47
+Wed Apr 15 19:50:26 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d080bec6_6577b003
+UUID: d080bec6_70af7096
+Bytes: 154
+> Can we have 32-bit processes calling into a 64-bit BufferQueue or vice-versa?
+
+The 32-bit process would be calling in to a different BufferQueue, right?
+

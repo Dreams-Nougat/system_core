@@ -24,3 +24,23 @@ UUID: 9033a6f4_3468db1e
 Bytes: 30
 consider android::base::Split?
 
+316:1-322:13
+Wed Apr 15 15:06:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0242aae_f0e01515
+UUID: d080bec6_79720363
+Bytes: 10
+Good catch
+
+316:1-322:13
+Wed Apr 15 15:06:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9033a6f4_3468db1e
+UUID: 907ac6a8_f7385a4f
+Bytes: 578
+len is in the range of 256K (depending on kernel configuration, some 64K, many 128K), using android::base::Split would result in more than doubling that allocation (at least temporarily if buf is forced out of scope right afterwards). Not a problem if logd starts where it should (PID=148, very early), but can introduce problems if it should (heaven forbid, knock on wood) crash and restart.
+
+For klogd (abandoned for the moment), this problem would get worse.
+
+I like the idea, adds some KISS, but must reject it on svelte grounds. In-place split up in buf[len] scales better.
+

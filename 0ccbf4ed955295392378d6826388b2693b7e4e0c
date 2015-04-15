@@ -1,0 +1,22 @@
+Revision: 0ccbf4ed955295392378d6826388b2693b7e4e0c
+Patch-set: 1
+File: libcutils/fs_config.c
+
+51:12-51:13
+Wed Apr 15 23:41:15 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_36c32d8c
+Bytes: 44
+m
+
+(If you're need a new revision anyway...)
+
+63:13-63:22
+Wed Apr 15 23:41:15 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 907ac6a8_6ad21805
+Bytes: 61
+uint64_t
+
+The cast to a signed type makes me kind of nervous.
+

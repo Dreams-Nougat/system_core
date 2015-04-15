@@ -11,3 +11,13 @@ This usage is _not_ documented, works on GNU and bionic implementations of strto
 
 If you are uncomfortable with this optimization's portability, do tell!
 
+374:23-374:58
+Wed Apr 15 16:36:45 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d080bec6_1c765d8d
+UUID: 907ac6a8_3a41d9f8
+Bytes: 182
+Should have included the POSIX statement that makes this work:
+
+"(A string that is empty or that contains only delimiters will thus cause strtok() to return NULL on the first call.)"
+

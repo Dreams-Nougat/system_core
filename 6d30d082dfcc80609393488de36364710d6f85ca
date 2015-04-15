@@ -52,3 +52,11 @@ UUID: 10597645_434175f7
 Bytes: 272
 OK, my "simplification" is wrong (you need to pass NULL to the second+ call to strtok_r, which my for loop isn't doing -- that's what I get for suggesting changes without testing them).  But I'm pretty sure you can still simplify this, just not with the code I've written.
 
+316:1-322:13
+Wed Apr 15 16:23:11 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10597645_434175f7
+UUID: d080bec6_1c12dd54
+Bytes: 133
+NP, the message intent was correct :-) I have yet another optimization/simplification that has just finished unit testing on the way.
+

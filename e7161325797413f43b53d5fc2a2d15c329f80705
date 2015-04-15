@@ -1,0 +1,13 @@
+Revision: e7161325797413f43b53d5fc2a2d15c329f80705
+Patch-set: 7
+File: libcutils/fs_config.c
+
+252:52-252:89
+Wed Apr 15 21:09:06 2015 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_cb32556b
+Bytes: 45
+???
+
+Is this trying to 64-bit align the size?
+

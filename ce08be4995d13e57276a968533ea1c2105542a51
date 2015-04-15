@@ -16,3 +16,11 @@ UUID: 907ac6a8_2e22fb22
 Bytes: 7
 size_t?
 
+937:44-937:47
+Wed Apr 15 19:30:56 2015 +0000
+Author: Dan Stoza <1043625@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 907ac6a8_2e22fb22
+UUID: d080bec6_6577b003
+Bytes: 148
+Is there any risk of 32/64-bit weirdness if this is sized differently? Can we have 32-bit processes calling into a 64-bit BufferQueue or vice-versa?
+

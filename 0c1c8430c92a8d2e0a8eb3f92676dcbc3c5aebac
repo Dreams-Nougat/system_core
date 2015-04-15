@@ -24,6 +24,14 @@ UUID: 837a7ea8_e59979c5
 Bytes: 335
 I vaguely remember talking about this, but if so I don't remember why we chose bottom-left origin. Radiance is going with upper-left origin for window surfaces, so one or the other is going to have to y-flip the region. Given that everywhere else in the platform/framework we use upper-left origin, I'd be inclined to do that here too.
 
+928:56-929:70
+Wed Apr 15 15:59:37 2015 +0000
+Author: Dan Stoza <1043625@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 837a7ea8_e59979c5
+UUID: 03868e96_7893172a
+Bytes: 180
+After offline discussions, it sounds like we're going to have to go with bottom-left for this interface, since there's just no way to flip it before native Surface at the earliest.
+
 931
 Tue Mar 24 20:35:40 2015 +0000
 Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,4 +58,12 @@ Parent: a68a309d_7100a0b8
 UUID: 23eb9264_0a681f1c
 Bytes: 157
 I wouldn't be too surprised if someone wanted to use it outside of EGL in the future (decoders, CPU producers, etc?), it seems like a good optimization idea.
+
+931
+Wed Apr 15 15:59:37 2015 +0000
+Author: Dan Stoza <1043625@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23eb9264_0a681f1c
+UUID: 904c868c_8dd32953
+Bytes: 77
+Okay. I swapped it to use the rect class already defined in this header file.
 

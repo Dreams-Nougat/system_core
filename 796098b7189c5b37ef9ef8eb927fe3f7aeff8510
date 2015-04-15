@@ -1,0 +1,13 @@
+Revision: 796098b7189c5b37ef9ef8eb927fe3f7aeff8510
+Patch-set: 6
+File: logd/main.cpp
+
+374:23-374:58
+Wed Apr 15 16:34:08 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_1c765d8d
+Bytes: 292
+This usage is _not_ documented, works on GNU and bionic implementations of strtok_r based purely on the POSIX description that can be taken to mean strtok_r can be redeployed to parse piecemeal, rather than iteratively.
+
+If you are uncomfortable with this optimization's portability, do tell!
+

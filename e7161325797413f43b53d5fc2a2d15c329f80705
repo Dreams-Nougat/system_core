@@ -11,3 +11,11 @@ Bytes: 45
 
 Is this trying to 64-bit align the size?
 
+252:52-252:89
+Wed Apr 15 21:13:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d080bec6_cb32556b
+UUID: 907ac6a8_be25d6a7
+Bytes: 57
+Yes, but also to allow for the terminating nul character.
+

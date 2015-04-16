@@ -11,3 +11,11 @@ so shouldn't this be in there, or something included from there?
 
 (i had this problem in base/file.h and went the other way, #if'ing out the function that makes no sense on Windows: https://cs.corp.google.com/#android/system/core/base/include/base/file.h&q=file:core/base/include/&sq=package:%5Eandroid$&type=cs )
 
+37
+Thu Apr 16 15:04:31 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 506daeeb_292c39c6
+UUID: 907ac6a8_89869f60
+Bytes: 31
+I like that solution better ...
+

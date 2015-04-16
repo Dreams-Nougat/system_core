@@ -1,0 +1,11 @@
+Revision: c3bac8b6719332f31140b2a034b70cf7f9eb3e51
+Patch-set: 1
+File: include/cutils/endian.h
+
+22
+Thu Apr 16 19:59:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_0d1cd7ea
+Bytes: 106
+Some googling shows that Darwin's might live at sys/endian.h. Will still need the rest for Windows though.
+

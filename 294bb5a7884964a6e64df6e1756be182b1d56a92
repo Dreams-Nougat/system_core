@@ -1,0 +1,11 @@
+Revision: 294bb5a7884964a6e64df6e1756be182b1d56a92
+Patch-set: 1
+File: adb/usb_linux_client.cpp
+
+251:55-251:56
+Thu Apr 16 21:17:25 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10dc16fc_8ae51f25
+Bytes: 4
+kill
+

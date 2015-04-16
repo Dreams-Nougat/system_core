@@ -1,0 +1,15 @@
+Revision: 7ddbc59b46dd6ea0aa3f32fe121332625a1a3bb8
+Patch-set: 2
+File: include/cutils/fs.h
+
+45
+Thu Apr 16 15:23:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 506daeeb_293e79de
+Bytes: 355
+do you know that the Mac defines these? or do you not need this on the Mac either? (in which case you should lose or fix the comment.)
+
+long term i wonder whether this should be in a separate header file from the stuff below if that's useful for host tools.
+
+hey... you're not just including this for the side-effect of getting TEMP_FAILURE_RETRY are you?
+

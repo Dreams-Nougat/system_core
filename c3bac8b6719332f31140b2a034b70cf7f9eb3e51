@@ -9,3 +9,10 @@ UUID: d080bec6_0d1cd7ea
 Bytes: 106
 Some googling shows that Darwin's might live at sys/endian.h. Will still need the rest for Windows though.
 
+27
+Thu Apr 16 20:02:51 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10dc16fc_39a57329
+Bytes: 45
+do we need to support big-endian windows? :-)
+

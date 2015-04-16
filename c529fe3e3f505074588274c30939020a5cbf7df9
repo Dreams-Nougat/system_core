@@ -1,0 +1,46 @@
+Revision: c529fe3e3f505074588274c30939020a5cbf7df9
+Patch-set: 2
+File: logd/LogStatistics.cpp
+
+73:0-87:5
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 907ac6a8_cd181c79
+Bytes: 42
+uidTable[log_id].add(LogBufferElement *e);
+
+106:0-114:9
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_ada5a305
+Bytes: 148
+If not for this, need a way to subject this object to a callback from the base-class subtract(LogBufferElement *e) function to correct the field(s).
+
+129:0-131:13
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_3802330c
+Bytes: 56
+If not for this, could this be templatable in the class?
+
+143:0-153:5
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d080bec6_b81de367
+Bytes: 47
+uidTable[log_id].subtract(LogBufferElement *e);
+
+159:0-167:5
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 907ac6a8_8d90e44c
+Bytes: 39
+pidTable.subtract(LogBufferElement *e);
+
+169:0-179:5
+Thu Apr 16 20:25:16 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10dc16fc_44d2ce04
+Bytes: 39
+tagTable.subtract(LogBufferElement *e);
+

@@ -1,0 +1,13 @@
+Revision: e3a62c1cd49aefb290bf61e6a568e0c528f7e9cb
+Patch-set: 1
+File: libcutils/fs_config.c
+
+37
+Thu Apr 16 15:00:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 506daeeb_292c39c6
+Bytes: 313
+so shouldn't this be in there, or something included from there?
+
+(i had this problem in base/file.h and went the other way, #if'ing out the function that makes no sense on Windows: https://cs.corp.google.com/#android/system/core/base/include/base/file.h&q=file:core/base/include/&sq=package:%5Eandroid$&type=cs )
+

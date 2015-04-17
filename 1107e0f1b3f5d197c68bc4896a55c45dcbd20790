@@ -9,3 +9,13 @@ UUID: d080bec6_ff61fa81
 Bytes: 127
 comment explaining why we're doing this, or are you planning on removing all this code soon with your in-progress patch anyway?
 
+1136
+Fri Apr 17 15:32:23 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d080bec6_ff61fa81
+UUID: 709c722a_d0d44ae5
+Bytes: 192
+yes, this go away with the patch i'm currently verifying. no reason not to add a comment here, though.
+
+what do you mean by "this" ? the __linux__, the declared_length check or the fallocate ?
+

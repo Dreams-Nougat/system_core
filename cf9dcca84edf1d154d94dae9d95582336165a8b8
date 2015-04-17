@@ -17,3 +17,11 @@ UUID: 904c868c_9332266a
 Bytes: 104
 Oops... If we use size_t, it's defined as uint64_t, right? We might need more data conversion with this.
 
+12
+Fri Apr 17 05:28:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 904c868c_9332266a
+UUID: d0c51e25_6ebecff8
+Bytes: 88
+no, size_t and ssize_t are "unsigned long" and "long", so for LP32, they're both 32-bit.
+

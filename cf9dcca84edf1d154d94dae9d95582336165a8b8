@@ -25,3 +25,11 @@ UUID: d0c51e25_6ebecff8
 Bytes: 88
 no, size_t and ssize_t are "unsigned long" and "long", so for LP32, they're both 32-bit.
 
+12
+Fri Apr 17 05:35:27 2015 +0000
+Author: Xiaofeng Lei <1006064@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0c51e25_6ebecff8
+UUID: 506daeeb_f45a980a
+Bytes: 90
+This means we can't use any of them to express size, and still need to use int64_t, right?
+

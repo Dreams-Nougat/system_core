@@ -33,3 +33,11 @@ UUID: 506daeeb_f45a980a
 Bytes: 90
 This means we can't use any of them to express size, and still need to use int64_t, right?
 
+12
+Fri Apr 17 05:38:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 506daeeb_f45a980a
+UUID: d080bec6_04d1097b
+Bytes: 40
+if you need more than 4GiB on LP32, yes.
+

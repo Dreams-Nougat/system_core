@@ -1,0 +1,11 @@
+Revision: 627d4c8e7731ae53d1715105d7e0e6941c840fd3
+Patch-set: 2
+File: adb/commandline.cpp
+
+997
+Fri Apr 17 22:03:33 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70a39280_83643ecb
+Bytes: 17
+directory_exists?
+

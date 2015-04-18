@@ -1,0 +1,13 @@
+Revision: 3ba901995982c29d1958ce41640c0fe569acb68e
+Patch-set: 1
+File: adb/commandline.cpp
+
+823:8-824:33
+Sat Apr 18 03:23:44 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06c3e17_fcace19c
+Bytes: 236
+Is there a reason you don't do cmd += " " + escape_arg(...);
+
+You use this pattern where you do a cmd = "..." + escape_arg(), and this looks a little odd. I do see you use two += pattern other places though, so feel free to ignore this.
+

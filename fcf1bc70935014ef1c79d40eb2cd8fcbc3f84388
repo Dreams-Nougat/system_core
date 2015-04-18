@@ -1,0 +1,11 @@
+Revision: fcf1bc70935014ef1c79d40eb2cd8fcbc3f84388
+Patch-set: 1
+File: adb/commandline.cpp
+
+877
+Sat Apr 18 00:41:06 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 305cba63_59008304
+Bytes: 66
+If you want to be consistent with mm, check build/core/envsetup.mk
+

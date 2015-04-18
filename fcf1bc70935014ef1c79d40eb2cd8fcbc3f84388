@@ -9,3 +9,11 @@ UUID: 305cba63_59008304
 Bytes: 66
 If you want to be consistent with mm, check build/core/envsetup.mk
 
+877
+Sat Apr 18 00:53:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 305cba63_59008304
+UUID: d06c3e17_567b3474
+Bytes: 164
+given that the old code was wrong -- there is no "config/envsetup.make" -- let's just kill this. it's all clearly dead code. git says "initial import from cupcake".
+

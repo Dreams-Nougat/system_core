@@ -11,3 +11,13 @@ Is there a reason you don't do cmd += " " + escape_arg(...);
 
 You use this pattern where you do a cmd = "..." + escape_arg(), and this looks a little odd. I do see you use two += pattern other places though, so feel free to ignore this.
 
+823:8-824:33
+Sat Apr 18 03:31:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06c3e17_fcace19c
+UUID: b0a98a60_25b46e32
+Bytes: 198
+i think back when escape_arg still returned char* i got it into my head that i had to do things one at a time, and didn't revisit when i change it to std::string.
+
+the next ps changes all the loops.
+

@@ -1,0 +1,17 @@
+Revision: 124ff15bcaeded8b794e18bd1523e3affa97c386
+Patch-set: 2
+File: rootdir/init.rc
+
+489:10-489:14
+Sun Apr 19 18:54:14 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90a8065d_e4017a07
+Bytes: 135
+This line gives a parse error:
+
+  ...
+  [    1.832367] init: /init.rc: 490: invalid option 'start'
+  ...
+
+There is no start on service.
+

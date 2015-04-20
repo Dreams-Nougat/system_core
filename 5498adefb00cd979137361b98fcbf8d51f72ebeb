@@ -1,0 +1,18 @@
+Revision: 5498adefb00cd979137361b98fcbf8d51f72ebeb
+Patch-set: 2
+File: adb/adb_utils_test.cpp
+
+49
+Mon Apr 20 17:51:38 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 305cba63_7343e071
+Bytes: 98
+Is this correct? should it be R"('abc\\')"? in other words should the function escape '\' as well?
+
+51
+Mon Apr 20 17:51:38 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 305cba63_731ac0a5
+Bytes: 21
+escape_arg(R"abc\'")?
+

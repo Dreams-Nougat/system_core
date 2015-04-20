@@ -1,0 +1,11 @@
+Revision: 20b1056e5b6d08e5da8a876b188b2fc62d5aa9c8
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+262:17-262:31
+Mon Apr 20 15:57:21 2015 +0000
+Author: John Reck <1010103@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f055c239_06fea431
+Bytes: 78
+Why not std::set or std::unordered_set? We have a pretty good STL library now.
+

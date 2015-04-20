@@ -17,3 +17,17 @@ UUID: 305cba63_adc355b6
 Bytes: 286
 Been asked before, other code here uses BasicHashtable, so we continue to keep logd light-weight by not incorporating multiple hash-table mechanisms. We promise to port all usage over to unordered_set on cleanup. logd has no dependence on libc++ at the moment either by original design.
 
+365:0-383:13
+Mon Apr 20 17:55:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 305cba63_130f0435
+Bytes: 95
+There has to be an efficient way to template/inline/subroutine this, and the merge check below?
+
+388:16-388:29
+Mon Apr 20 17:55:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 305cba63_d3574c29
+Bytes: 271
+Plan B: Instead of clearing at the various junctures in the loop, we could instead 'age' the entries in the check above and below, if the last 'dropped' message is less than 200ms away, for example, we could merge to it even if we do not have a contiguous set of entries.
+

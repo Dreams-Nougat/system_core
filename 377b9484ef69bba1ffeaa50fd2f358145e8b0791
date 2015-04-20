@@ -1,0 +1,22 @@
+Revision: 377b9484ef69bba1ffeaa50fd2f358145e8b0791
+Patch-set: 1
+File: logd/LogBufferElement.cpp
+
+137:61-137:65
+Mon Apr 20 14:58:50 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f055c239_269be873
+Bytes: 30
+name is not freed, memory leak
+
+File: logd/main.cpp
+
+213:0-213:22
+Mon Apr 20 14:58:50 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f055c239_a686d815
+Bytes: 137
+share this semaphore in https://android-review.googlesource.com/#/c/146900/4/logd/main.cpp
+
+(rename sem_map in the reference to sem_name)
+

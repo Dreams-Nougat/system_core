@@ -1,0 +1,11 @@
+Revision: 2c9d909a00a6b0dd7f17402f3f0d94d5fd76c8c3
+Patch-set: 2
+File: logd/LogBuffer.cpp
+
+398:16-398:29
+Mon Apr 20 20:08:34 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d01a7eb3_e699dec5
+Bytes: 319
+We could override clear, adding 'e' to allow checking, to only delete entries that are older than 200ms. Doing so, we can extend merge-range not to just the localized burst of dropped messages reported, but across noise from other sources. This is a plan 'B' if in practice we still get too many logd messages reported.
+

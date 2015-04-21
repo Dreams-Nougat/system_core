@@ -27,6 +27,14 @@ UUID: d01a7eb3_d401de07
 Bytes: 130
 not { ', a, b, c, \, ' }? I am not sure how parsing works.. but won't it confuse last ' with escaped '? and continue until next '?
 
+49
+Tue Apr 21 17:58:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d01a7eb3_d401de07
+UUID: 50276ef4_b3f3aae9
+Bytes: 97
+doh, yes, { ', a, b, c, \, ' }. there's no escaping. that \ is just a \, not an escape character.
+
 51
 Mon Apr 20 17:51:38 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,13 @@
+Revision: 65f475dd52e36e983ce9461f11be88b2e3d522af
+Patch-set: 1
+File: adb/usb_linux_client.cpp
+
+368
+Tue Apr 21 18:15:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f02302ea_f54e9b95
+Bytes: 150
+stray tab.
+
+also, are we likely to use FFS_READY elsewhere in this file? if not, it's probably clearer to just inline it rather than add the constant.
+

@@ -1,0 +1,11 @@
+Revision: d236d071b960a387f536712f0314b99696167178
+Patch-set: 1
+File: adb/commandline.cpp
+
+1490:0-1490:58
+Tue Apr 21 17:43:10 2015 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f02302ea_5af194ac
+Bytes: 89
+almost seems like you should warn if system and data don't exist since they are expected?
+

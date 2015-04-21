@@ -53,6 +53,16 @@ is there a reason you didn't write this with the more usual "bytes_left"? anyway
 
   buf_size -= bytes_written;
 
+1049
+Tue Apr 21 16:42:25 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 700f1279_d790ccc8
+UUID: 102176e2_6b481d3f
+Bytes: 234
+doh. sounds like we're missing a unit test where we extract an entry larger than kBufSize.
+
+I think the reason i didn't use the standard loop was to update bytes_written_ at the end. I can do that even with the "standard" loop though.
+
 1052
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

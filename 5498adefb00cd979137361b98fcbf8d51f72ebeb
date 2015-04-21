@@ -19,6 +19,14 @@ this is a raw string. so that really is { a, b, c, \, ' }.
 
 i was disappointed with how readable this turned out, but it's even worse with regular strings.
 
+49
+Tue Apr 21 17:43:07 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f02302ea_648cc38d
+UUID: d01a7eb3_d401de07
+Bytes: 130
+not { ', a, b, c, \, ' }? I am not sure how parsing works.. but won't it confuse last ' with escaped '? and continue until next '?
+
 51
 Mon Apr 20 17:51:38 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>

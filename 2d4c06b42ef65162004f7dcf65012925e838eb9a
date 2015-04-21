@@ -1,0 +1,76 @@
+Revision: 2d4c06b42ef65162004f7dcf65012925e838eb9a
+Patch-set: 6
+File: libziparchive/zip_archive.cc
+
+946
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700f1279_d7b9ec58
+Bytes: 25
+#include <base/macros.h>?
+
+952
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90148689_679fac36
+Bytes: 136
+this doesn't write zip files or zipped data, so i'd lose the 'zip'. given that it's a private abstract class, "Writer" is probably fine.
+
+971
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90148689_47a43085
+Bytes: 8
+override
+
+1000
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0150a85_2842a300
+Bytes: 28
+std::unique_ptr<FileWriter>?
+
+1013
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90148689_a7a88459
+Bytes: 62
+"..and this call to fallocate will not change the file size."?
+
+1033
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0150a85_482a7f33
+Bytes: 8
+override
+
+1049
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700f1279_d790ccc8
+Bytes: 143
+is there a reason you didn't write this with the more usual "bytes_left"? anyway, here you're going to also need:
+
+  buf_size -= bytes_written;
+
+1052
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0150a85_880bd7d7
+Bytes: 37
+the naming seems the wrong way round.
+
+1153
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90148689_e7b27cc3
+Bytes: 19
+move inside the if?
+
+1190
+Tue Apr 21 16:24:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0150a85_e8188b2a
+Bytes: 54
+block_size? chunk_size? read_size? 'get' is too verby.
+

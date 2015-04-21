@@ -62,6 +62,18 @@ UUID: 70f6329f_0e1d2b66
 Bytes: 84
 what's the advantage of returning an std::unique_ptr<FileWriter> in this situation ?
 
+1000
+Tue Apr 21 17:12:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f6329f_0e1d2b66
+UUID: d01a7eb3_b2a55581
+Bytes: 670
+(a) it's what all the cool kids are doing, but (b) it forces callers to take ownership. yes, the fact that a function is returning a raw pointer is a strong clue, but returning a std::unique_ptr means the compiler won't let you ignore that. it goes from being a human-readable hint to a compiler-enforceable requirement.
+
+are you likely to screw up here, where everything's in a single file? probably not. but my feeling is we probably want to get into the habit of this quickly so it becomes the default idiom.
+
+google3 is already moving in that direction: https://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Ownership_and_Smart_Pointers (under "Decision")
+
 1013
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

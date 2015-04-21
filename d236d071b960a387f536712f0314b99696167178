@@ -9,3 +9,11 @@ UUID: f02302ea_5af194ac
 Bytes: 89
 almost seems like you should warn if system and data don't exist since they are expected?
 
+1490:0-1490:58
+Tue Apr 21 17:53:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f02302ea_5af194ac
+UUID: f02302ea_3a478011
+Bytes: 222
+you'll get an error from the sync code. that's why we need the directory_exists checks here --- so we don't try to sync something that doesn't exist, because that will cause a failure, and we'll stop trying to do the rest.
+

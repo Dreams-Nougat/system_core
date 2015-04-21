@@ -9,6 +9,16 @@ UUID: 305cba63_7343e071
 Bytes: 98
 Is this correct? should it be R"('abc\\')"? in other words should the function escape '\' as well?
 
+49
+Tue Apr 21 16:47:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 305cba63_7343e071
+UUID: f02302ea_648cc38d
+Bytes: 155
+this is a raw string. so that really is { a, b, c, \, ' }.
+
+i was disappointed with how readable this turned out, but it's even worse with regular strings.
+
 51
 Mon Apr 20 17:51:38 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>

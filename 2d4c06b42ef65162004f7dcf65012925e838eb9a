@@ -74,6 +74,14 @@ are you likely to screw up here, where everything's in a single file? probably n
 
 google3 is already moving in that direction: https://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Ownership_and_Smart_Pointers (under "Decision")
 
+1000
+Tue Apr 21 17:16:38 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d01a7eb3_b2a55581
+UUID: 70f6329f_0eefebb5
+Bytes: 124
+Yeah, a "Create" function that returns a pointer is a strong signal but returning std::unique_ptr<> is clearer. I'll change.
+
 1013
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

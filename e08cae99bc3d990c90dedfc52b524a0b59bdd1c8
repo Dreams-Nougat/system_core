@@ -1,0 +1,11 @@
+Revision: e08cae99bc3d990c90dedfc52b524a0b59bdd1c8
+Patch-set: 5
+File: logd/main.cpp
+
+239:18-239:26
+Tue Apr 21 17:58:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f02302ea_1abd5c45
+Bytes: 31
+sem_name definition missing :-(
+

@@ -9,12 +9,28 @@ UUID: 700f1279_d7b9ec58
 Bytes: 25
 #include <base/macros.h>?
 
+946
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 700f1279_d7b9ec58
+UUID: 70f6329f_ee0edf36
+Bytes: 4
+Done
+
 952
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 90148689_679fac36
 Bytes: 136
 this doesn't write zip files or zipped data, so i'd lose the 'zip'. given that it's a private abstract class, "Writer" is probably fine.
+
+952
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90148689_679fac36
+UUID: 102176e2_6bd3fdd8
+Bytes: 4
+Done
 
 971
 Tue Apr 21 16:24:17 2015 +0000
@@ -23,12 +39,28 @@ UUID: 90148689_47a43085
 Bytes: 8
 override
 
+971
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90148689_47a43085
+UUID: 70f6329f_2e18e775
+Bytes: 4
+Done
+
 1000
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0150a85_2842a300
 Bytes: 28
 std::unique_ptr<FileWriter>?
+
+1000
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0150a85_2842a300
+UUID: 70f6329f_0e1d2b66
+Bytes: 84
+what's the advantage of returning an std::unique_ptr<FileWriter> in this situation ?
 
 1013
 Tue Apr 21 16:24:17 2015 +0000
@@ -37,12 +69,28 @@ UUID: 90148689_a7a88459
 Bytes: 62
 "..and this call to fallocate will not change the file size."?
 
+1013
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90148689_a7a88459
+UUID: 102176e2_abdcd5e7
+Bytes: 4
+Done
+
 1033
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0150a85_482a7f33
 Bytes: 8
 override
+
+1033
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0150a85_482a7f33
+UUID: d0f19ea3_b15a7a09
+Bytes: 4
+Done
 
 1049
 Tue Apr 21 16:24:17 2015 +0000
@@ -70,6 +118,14 @@ UUID: b0150a85_880bd7d7
 Bytes: 37
 the naming seems the wrong way round.
 
+1052
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0150a85_880bd7d7
+UUID: d0f19ea3_91577ee1
+Bytes: 4
+Done
+
 1153
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -77,10 +133,26 @@ UUID: 90148689_e7b27cc3
 Bytes: 19
 move inside the if?
 
+1153
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90148689_e7b27cc3
+UUID: d0f19ea3_d16106ba
+Bytes: 4
+Done
+
 1190
 Tue Apr 21 16:24:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0150a85_e8188b2a
 Bytes: 54
 block_size? chunk_size? read_size? 'get' is too verby.
+
+1190
+Tue Apr 21 17:05:30 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0150a85_e8188b2a
+UUID: 102176e2_ebe6cdb1
+Bytes: 4
+Done
 

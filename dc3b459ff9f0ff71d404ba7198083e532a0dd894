@@ -9,3 +9,15 @@ UUID: 309d9a70_9aa211a7
 Bytes: 60
 Is there a reason this is a fatal and not returning nullptr?
 
+497:28-497:68
+Wed Apr 22 04:50:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_9aa211a7
+UUID: 309d9a70_3a1da566
+Bytes: 481
+this one i didn't actually change. i just replaced 0 with nullptr. :-)
+
+but to answer the general question... given that the other call sites didn't check before, i don't want to surprise their callers by pushing null check responsibility up to them. especially for these fixed-size allocations: if you can't allocate a fixed-fixed struct, you're about to die anyway.
+
+for the ones that already had some error handling, i copied what they'd done. i'm not sure that was a good idea.
+

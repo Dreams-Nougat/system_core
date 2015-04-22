@@ -21,3 +21,11 @@ but to answer the general question... given that the other call sites didn't che
 
 for the ones that already had some error handling, i copied what they'd done. i'm not sure that was a good idea.
 
+497:28-497:68
+Wed Apr 22 05:11:08 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_3a1da566
+UUID: 309d9a70_bab355d8
+Bytes: 56
+I suspected this was the answer, just wanted to confirm.
+

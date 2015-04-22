@@ -9,3 +9,13 @@ UUID: 30867a2e_e94ef595
 Bytes: 48
 You will not call ifc_close() if do_dhcp() fails
 
+28:4-28:9
+Wed Apr 22 02:31:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30867a2e_e94ef595
+UUID: d08d1e46_42728262
+Bytes: 220
+yeah, that was deliberate, for your strace convenience when things aren't working. but all it does is close a socket, so i guess it doesn't matter.
+
+(personally i was tempted to not call it on the success path either...)
+

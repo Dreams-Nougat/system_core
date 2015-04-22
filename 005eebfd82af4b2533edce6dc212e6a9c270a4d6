@@ -1,0 +1,11 @@
+Revision: 005eebfd82af4b2533edce6dc212e6a9c270a4d6
+Patch-set: 2
+File: libnetutils/dhcptool.c
+
+28:4-28:9
+Wed Apr 22 02:20:27 2015 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 30867a2e_e94ef595
+Bytes: 48
+You will not call ifc_close() if do_dhcp() fails
+

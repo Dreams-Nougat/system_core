@@ -1,0 +1,11 @@
+Revision: b36ad9785fcbdd460302a549248be86e73147854
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+353
+Wed Apr 22 18:01:03 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_4b10d984
+Bytes: 60
+maybe comment what the / 8 means (12.5% from CL description)
+

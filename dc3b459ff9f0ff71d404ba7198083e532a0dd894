@@ -1,0 +1,11 @@
+Revision: dc3b459ff9f0ff71d404ba7198083e532a0dd894
+Patch-set: 2
+File: adb/transport.cpp
+
+497:28-497:68
+Wed Apr 22 04:06:39 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_9aa211a7
+Bytes: 60
+Is there a reason this is a fatal and not returning nullptr?
+

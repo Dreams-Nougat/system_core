@@ -9,3 +9,10 @@ UUID: b0718a1d_1f961b4b
 Bytes: 178
 Doesn't appear that most ERROR() messages include the function name, but if you are going to do to that, I'd use __func__.  Or if you prefer this, there is an extraneous d above.
 
+1043:12-1043:22
+Thu Apr 23 20:05:39 2015 +0000
+Author: Johan Redestig <1002951@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b088aa37_5667aa22
+Bytes: 52
+should we check if selinux is enabled at this point?
+

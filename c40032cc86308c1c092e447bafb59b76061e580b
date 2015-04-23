@@ -1,0 +1,19 @@
+Revision: c40032cc86308c1c092e447bafb59b76061e580b
+Patch-set: 5
+File: logd/LogBufferElement.cpp
+
+96:66-96:68
+Thu Apr 23 14:40:10 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_56187276
+Bytes: 409
+Yesterday evening was asked if this was lines or bytes.
+
+Need to change this to something like:
+
+uid=1000(system) comm=surfaceflinger too chatty, dropped 182 lines
+
+If we report one line, make it grammatically correct, eg: "...dropped %u line%s", ..., mDropped, (mDropped > 1) ? "s" : "");
+
+NB: single line drops need to be merged aggressively, the 1 second ratelimit adjustment should be extended to do this.
+

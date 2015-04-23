@@ -1,5 +1,14 @@
 Revision: c40032cc86308c1c092e447bafb59b76061e580b
 Patch-set: 5
+File: /COMMIT_MSG
+
+7:25-7:29
+Thu Apr 23 14:42:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_84770b50
+Bytes: 25
+PC, change spam to chatty
+
 File: logd/LogBufferElement.cpp
 
 96:66-96:68

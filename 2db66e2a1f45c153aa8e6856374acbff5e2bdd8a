@@ -16,3 +16,11 @@ UUID: b088aa37_5667aa22
 Bytes: 52
 should we check if selinux is enabled at this point?
 
+1043:12-1043:22
+Thu Apr 23 20:16:13 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b088aa37_5667aa22
+UUID: d0d43e30_05289c03
+Bytes: 299
+I'd prefer we not do that. SELinux has been a CTS/CDD requirement since Android 4.4. Adding extra bloat to support SELinux being disabled is unnecessary. In fact, I'd like to remove the selinux_is_disabled() function (line 876) entirely. We should only support permissive or enforcing, not disabled.
+

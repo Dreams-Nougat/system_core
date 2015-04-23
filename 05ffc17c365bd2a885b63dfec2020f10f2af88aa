@@ -1,0 +1,11 @@
+Revision: 05ffc17c365bd2a885b63dfec2020f10f2af88aa
+Patch-set: 10
+File: init/builtins.cpp
+
+839
+Thu Apr 23 04:17:13 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_a95dc87d
+Bytes: 67
+Do we want to validate that the fs is ext4enc enabled (from fstab)?
+

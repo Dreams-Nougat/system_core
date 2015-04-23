@@ -9,3 +9,13 @@ UUID: 10a416b9_8c8c8a8e
 Bytes: 57
 This looks like it used to be reading the wrong property?
 
+37
+Thu Apr 23 21:06:18 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10a416b9_8c8c8a8e
+UUID: 309d9a70_a8677d21
+Bytes: 407
+Good catch, I suspect because I run 20 or more CLs in the queue, and they are all stacked up in maser, _one_ of the rebase and fix taking the linear set from master and moving it to aosp may have _leaked_ this partial change through by accident putting the ' + 8' in. Then got missed for being so subtle :-(
+
+Good news, this is a feature I advertised for the next release, and no one is really using it yet.
+

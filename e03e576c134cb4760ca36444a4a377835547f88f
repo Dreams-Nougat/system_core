@@ -1,0 +1,48 @@
+Revision: e03e576c134cb4760ca36444a4a377835547f88f
+Patch-set: 3
+File: liblog/log_is_loggable.c
+
+28:26-28:58
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_4c4c62cf
+Bytes: 28
+I would initialize this to 0
+
+34
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_bf3ecedb
+Bytes: 75
+None of this is thread safe.  Maybe put the cache in a pthread_setspecific?
+
+42:0-44:57
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_684e754f
+Bytes: 296
+The property area also has a global serial number, if that hasn't changed then you know no new properties have been added or changed.  This isn't currently exposed even as a private API though.
+
+Caching only set properties isn't going to be that useful, since these properties will rarely be set.
+
+59:8-59:14
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d43e30_d085c45e
+Bytes: 60
+And change this to tag != NULL && *tag, and then set tag_len
+
+79:12-79:18
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_083fa987
+Bytes: 101
+All these magic values of 2 are confusing, can you store the cache separately for global vs. per-tag?
+
+88
+Thu Apr 23 21:24:53 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_4887f1e1
+Bytes: 163
+This is reaching into system property implementation details, probably OK in this case but at least needs a comment saying this is private and shouldn't be copied.
+

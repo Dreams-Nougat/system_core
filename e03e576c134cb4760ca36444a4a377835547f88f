@@ -16,6 +16,16 @@ UUID: 10a416b9_bf3ecedb
 Bytes: 75
 None of this is thread safe.  Maybe put the cache in a pthread_setspecific?
 
+34
+Thu Apr 23 22:23:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10a416b9_bf3ecedb
+UUID: d0d43e30_e0146b79
+Bytes: 263
+<oops> _forgot_ this was all a prototype to ask enh@ to evaluate this algorithm
+
+<sigh> adding any cache thingy always adds complexity, once it start trying to scale outward (one for each thread, etc) it makes me sick just how monstrous it will eventually become.
+
 42:0-44:57
 Thu Apr 23 21:24:53 2015 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,6 +34,14 @@ Bytes: 296
 The property area also has a global serial number, if that hasn't changed then you know no new properties have been added or changed.  This isn't currently exposed even as a private API though.
 
 Caching only set properties isn't going to be that useful, since these properties will rarely be set.
+
+42:0-44:57
+Thu Apr 23 22:23:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_684e754f
+UUID: 10a416b9_e2419df9
+Bytes: 79
+we need a better api, good point, we need to get that exposed , even privately.
 
 59:8-59:14
 Thu Apr 23 21:24:53 2015 +0000
@@ -39,10 +57,26 @@ UUID: 309d9a70_083fa987
 Bytes: 101
 All these magic values of 2 are confusing, can you store the cache separately for global vs. per-tag?
 
+79:12-79:18
+Thu Apr 23 22:23:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_083fa987
+UUID: d0d43e30_205dc356
+Bytes: 147
+repeated code, this then scales out to subroutines. Will probably need to do so anyways if I do a per-thread cache to make this easier to maintain.
+
 88
 Thu Apr 23 21:24:53 2015 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 309d9a70_4887f1e1
 Bytes: 163
 This is reaching into system property implementation details, probably OK in this case but at least needs a comment saying this is private and shouldn't be copied.
+
+88
+Thu Apr 23 22:23:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_4887f1e1
+UUID: 10a416b9_22b0056c
+Bytes: 110
+We only started investigating a cache for __system_property* because of the speed worries expressed elsewhere.
 

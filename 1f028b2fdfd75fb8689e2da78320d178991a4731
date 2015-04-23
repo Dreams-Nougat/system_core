@@ -1,0 +1,11 @@
+Revision: 1f028b2fdfd75fb8689e2da78320d178991a4731
+Patch-set: 12
+File: liblog/log_is_loggable.c
+
+37
+Thu Apr 23 20:59:23 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_8c8c8a8e
+Bytes: 57
+This looks like it used to be reading the wrong property?
+

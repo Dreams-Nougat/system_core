@@ -1,0 +1,11 @@
+Revision: 2db66e2a1f45c153aa8e6856374acbff5e2bdd8a
+Patch-set: 3
+File: init/init.cpp
+
+964
+Thu Apr 23 20:05:02 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0718a1d_1f961b4b
+Bytes: 178
+Doesn't appear that most ERROR() messages include the function name, but if you are going to do to that, I'd use __func__.  Or if you prefer this, there is an extraneous d above.
+

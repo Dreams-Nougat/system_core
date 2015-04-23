@@ -9,3 +9,17 @@ UUID: 309d9a70_a95dc87d
 Bytes: 67
 Do we want to validate that the fs is ext4enc enabled (from fstab)?
 
+839
+Thu Apr 23 15:26:43 2015 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_a95dc87d
+UUID: 309d9a70_041f9be2
+Bytes: 482
+There's a follow-on change to make sure we don't call out to vold if it's not file encrypted:
+
+https://android-review.googlesource.com/#/c/146879/4/init/builtins.cpp
+
+As for how we handle non ext4 encryption, until we see the filesystems and their compatibility with the ext4 ioctls, we can't really know what we'll do. Supposedly they'll be compatible, so all I'll need to do is rename these functions to something less specific.
+
+I suggest we leave this as is for now. Is that OK?
+

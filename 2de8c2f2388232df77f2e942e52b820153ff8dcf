@@ -1,0 +1,11 @@
+Revision: 2de8c2f2388232df77f2e942e52b820153ff8dcf
+Patch-set: 5
+File: liblog/log_is_loggable.c
+
+21:0-22:35
+Fri Apr 24 21:26:17 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_57fb0940
+Bytes: 373
+Need a comment to clearly identify we are reaching into bionic private accessors; all the __system_property_* functions below must never be used copy-and-paste into new code. Reference the implementation file here, and eventually add a comment in bionic/libc/bionic/system_properties.cpp and in the include file notifying developers to look at this file if any APIs change.
+

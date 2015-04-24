@@ -9,10 +9,33 @@ UUID: 9070061a_e451af34
 Bytes: 92
 without EocdRecord() = default; this change is no-op, the struct is still not constructable.
 
+948
+Fri Apr 24 18:14:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_de7c7636
+Bytes: 7
+stray ;
+
 950:11-950:13
 Fri Apr 24 17:49:44 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 706b9231_d8e659b2
 Bytes: 10
 = default;
+
+File: libziparchive/zip_archive_test.cc
+
+284
+Fri Apr 24 18:14:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_b2a6fc36
+Bytes: 39
+we really need to get these in libbase.
+
+298
+Fri Apr 24 18:14:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 309d9a70_9eabceff
+Bytes: 20
+(that's surprising!)
 

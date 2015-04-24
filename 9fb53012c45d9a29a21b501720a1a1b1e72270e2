@@ -1,0 +1,18 @@
+Revision: 9fb53012c45d9a29a21b501720a1a1b1e72270e2
+Patch-set: 8
+File: libziparchive/zip_archive.cc
+
+88
+Fri Apr 24 17:49:44 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9070061a_e451af34
+Bytes: 92
+without EocdRecord() = default; this change is no-op, the struct is still not constructable.
+
+950:11-950:13
+Fri Apr 24 17:49:44 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 706b9231_d8e659b2
+Bytes: 10
+= default;
+

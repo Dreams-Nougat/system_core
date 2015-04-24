@@ -9,6 +9,13 @@ UUID: 10a416b9_4c4c62cf
 Bytes: 28
 I would initialize this to 0
 
+29:37-29:43
+Fri Apr 24 16:45:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_ec818f4a
+Bytes: 64
+taglen needed here to support (on-stack) allocation of a buffer.
+
 34
 Thu Apr 23 21:24:53 2015 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -42,6 +49,13 @@ Parent: 309d9a70_684e754f
 UUID: 10a416b9_e2419df9
 Bytes: 79
 we need a better api, good point, we need to get that exposed , even privately.
+
+57:11-57:14
+Fri Apr 24 16:45:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10a416b9_0c5ed378
+Bytes: 54
+here is why taglen needs to be initialized at the top.
 
 59:8-59:14
 Thu Apr 23 21:24:53 2015 +0000

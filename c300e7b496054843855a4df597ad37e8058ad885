@@ -16,6 +16,14 @@ UUID: b0d42a38_3c629d87
 Bytes: 164
 we should probably move the logging into write_file too. other than this caller, the others are directly exposed in rc scripts and currently don't report errors :-(
 
+961
+Sat Apr 25 22:36:55 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_3c629d87
+UUID: d0d99e70_e2c7ce45
+Bytes: 4
+Done
+
 File: init/util.cpp
 
 185
@@ -24,4 +32,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0f222e5_182da93d
 Bytes: 45
 (at which point errno doesn't really matter.)
+
+185
+Sat Apr 25 22:36:55 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0f222e5_182da93d
+UUID: b0d42a38_1cba414d
+Bytes: 4
+Done
 

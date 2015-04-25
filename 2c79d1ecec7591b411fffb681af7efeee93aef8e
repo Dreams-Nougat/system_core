@@ -9,3 +9,11 @@ UUID: b0d42a38_162d823d
 Bytes: 253
 my least worst idea here is to replace the current global "int keychord_fd" with "int* keychord_fd" and have that point to the fd field in this structure. poll(2) is fine with a -1 fd and just ignores it. and then when /dev/keychord becomes available...
 
+1074
+Sat Apr 25 02:20:57 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_162d823d
+UUID: 30867a2e_386cd5b7
+Bytes: 340
+My only other idea is to replace poll with epoll_wait, and have keychords, signal, and property_set each register a handler function.  More complicated to set up, but gets rid of the "if fd ==" blocks below - just cast events[i].data.ptr to a handler function and call it, and needs less repetition if you want to start handling new events.
+

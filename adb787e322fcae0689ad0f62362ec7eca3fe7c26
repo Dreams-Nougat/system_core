@@ -1,0 +1,33 @@
+Revision: adb787e322fcae0689ad0f62362ec7eca3fe7c26
+Patch-set: 1
+File: /COMMIT_MSG
+
+16
+Sat Apr 25 23:39:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_82900a1b
+Bytes: 164
+don't you mean "This eliminates all use of mknod from the init domain; the only remaining use is from the kernel domain, and there's nothing we can do about that."?
+
+File: init/util.cpp
+
+382
+Sat Apr 25 23:39:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_027c1a6d
+Bytes: 83
+worth a comment here. (that was true of the old code too, but since you're here...)
+
+390
+Sat Apr 25 23:39:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_e280eed0
+Bytes: 135
+just add this inside the previous if:
+
+  if (fd == -1) {
+    exit(1);
+  }
+
+and lose this if, the return, and the weird exit at the end.
+

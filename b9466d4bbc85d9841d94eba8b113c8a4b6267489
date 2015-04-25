@@ -2,6 +2,13 @@ Revision: b9466d4bbc85d9841d94eba8b113c8a4b6267489
 Patch-set: 1
 File: adb/adb.cpp
 
+409
+Sat Apr 25 06:21:02 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_1739fe9f
+Bytes: 11
+const .. &?
+
 410
 Sat Apr 25 06:04:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +23,26 @@ UUID: f0f222e5_d57b6ced
 Bytes: 61
 here the fact that we keep trailing empty fields is annoying.
 
+417
+Sat Apr 25 06:21:02 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_617e3e2c
+Bytes: 14
+const string&?
+
 418
 Sat Apr 25 06:04:17 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0f222e5_b580e846
 Bytes: 42
 two fields is an interesting special case.
+
+File: adb/adb_auth_host.cpp
+
+284
+Sat Apr 25 06:21:02 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_55689c1f
+Bytes: 4
+new?
 

@@ -17,3 +17,11 @@ UUID: 30867a2e_386cd5b7
 Bytes: 340
 My only other idea is to replace poll with epoll_wait, and have keychords, signal, and property_set each register a handler function.  More complicated to set up, but gets rid of the "if fd ==" blocks below - just cast events[i].data.ptr to a handler function and call it, and needs less repetition if you want to start handling new events.
 
+1074
+Sat Apr 25 02:36:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30867a2e_386cd5b7
+UUID: b0d42a38_96f852f9
+Bytes: 49
+that seems like a much better idea. i'll do that.
+

@@ -9,3 +9,19 @@ UUID: f0f222e5_7804b5cf
 Bytes: 51
 /sys/fs/selinux is not mounted until after line 951
 
+961
+Sat Apr 25 22:19:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_3c629d87
+Bytes: 164
+we should probably move the logging into write_file too. other than this caller, the others are directly exposed in rc scripts and currently don't report errors :-(
+
+File: init/util.cpp
+
+185
+Sat Apr 25 22:19:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_182da93d
+Bytes: 45
+(at which point errno doesn't really matter.)
+

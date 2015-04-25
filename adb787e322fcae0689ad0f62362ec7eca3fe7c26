@@ -9,6 +9,14 @@ UUID: d0d99e70_82900a1b
 Bytes: 164
 don't you mean "This eliminates all use of mknod from the init domain; the only remaining use is from the kernel domain, and there's nothing we can do about that."?
 
+16
+Sat Apr 25 23:48:47 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_82900a1b
+UUID: f0f222e5_980f59b6
+Bytes: 206
+There's still one other use of mknod() in the init SELinux domain. Specifically, the main() method in second stage init calls klog_init(), which runs mknod() for /dev/__kmsg__. I haven't fixed that one yet.
+
 File: init/util.cpp
 
 382
@@ -17,6 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d0d99e70_027c1a6d
 Bytes: 83
 worth a comment here. (that was true of the old code too, but since you're here...)
+
+382
+Sat Apr 25 23:48:47 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_027c1a6d
+UUID: b0d42a38_5c9d69b0
+Bytes: 4
+Done
 
 390
 Sat Apr 25 23:39:32 2015 +0000
@@ -30,4 +46,12 @@ just add this inside the previous if:
   }
 
 and lose this if, the return, and the weird exit at the end.
+
+390
+Sat Apr 25 23:48:47 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_e280eed0
+UUID: d0d99e70_e26b4e9f
+Bytes: 4
+Done
 

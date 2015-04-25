@@ -1,0 +1,11 @@
+Revision: 2c79d1ecec7591b411fffb681af7efeee93aef8e
+Patch-set: 1
+File: init/init.cpp
+
+1074
+Sat Apr 25 02:02:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_162d823d
+Bytes: 253
+my least worst idea here is to replace the current global "int keychord_fd" with "int* keychord_fd" and have that point to the fd field in this structure. poll(2) is fine with a -1 fd and just ignores it. and then when /dev/keychord becomes available...
+

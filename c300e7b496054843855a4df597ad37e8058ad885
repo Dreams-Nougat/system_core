@@ -1,0 +1,11 @@
+Revision: c300e7b496054843855a4df597ad37e8058ad885
+Patch-set: 1
+File: init/init.cpp
+
+959
+Sat Apr 25 21:17:21 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_7804b5cf
+Bytes: 51
+/sys/fs/selinux is not mounted until after line 951
+

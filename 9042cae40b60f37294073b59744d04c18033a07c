@@ -1,0 +1,11 @@
+Revision: 9042cae40b60f37294073b59744d04c18033a07c
+Patch-set: 1
+File: init/init.cpp
+
+1086
+Sat Apr 25 00:45:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_1316b4fb
+Bytes: 184
+i know why now --- because they're all set up by actions that are executed by the loop below. but i plan on fixing them one by one. this is the first change, which fixes the signal fd.
+

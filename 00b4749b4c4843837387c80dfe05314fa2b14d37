@@ -1,0 +1,22 @@
+Revision: 00b4749b4c4843837387c80dfe05314fa2b14d37
+Patch-set: 3
+File: init/init.cpp
+
+871
+Sun Apr 26 01:14:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_82ddaae4
+Bytes: 59
+nullptr on L870 and '\0' L871. using 0 makes danalbert sad.
+
+File: init/util.h
+
+61
+Sun Apr 26 01:14:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_c2d292d4
+Bytes: 100
+change the ints to bools since you're cleaning up types?
+
+and shouldn't this char* be a const char*?
+

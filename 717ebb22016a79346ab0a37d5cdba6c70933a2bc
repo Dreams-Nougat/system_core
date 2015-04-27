@@ -1,0 +1,11 @@
+Revision: 717ebb22016a79346ab0a37d5cdba6c70933a2bc
+Patch-set: 1
+File: adb/adb_client.cpp
+
+138:24-138:28
+Mon Apr 27 21:36:59 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_0453fff2
+Bytes: 29
+Add parens while you're here?
+

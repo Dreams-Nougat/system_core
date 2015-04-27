@@ -1,0 +1,11 @@
+Revision: 5b3e3f35fce5347f1ab34fea977a220d029558c4
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+299:33-299:36
+Mon Apr 27 14:29:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_88b70bc6
+Bytes: 100
+Do we want to consider a larger value here? Anything at 4 or below could be viewed as annoying spam.
+

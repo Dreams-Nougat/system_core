@@ -9,6 +9,14 @@ UUID: 9070061a_e451af34
 Bytes: 92
 without EocdRecord() = default; this change is no-op, the struct is still not constructable.
 
+88
+Mon Apr 27 12:34:34 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9070061a_e451af34
+UUID: 30375a6d_a4b8ecd9
+Bytes: 4
+Done
+
 948
 Fri Apr 24 18:14:59 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 309d9a70_de7c7636
 Bytes: 7
 stray ;
 
+948
+Mon Apr 27 12:34:34 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_de7c7636
+UUID: 90e3a61e_2cc393a8
+Bytes: 4
+Done
+
 950:11-950:13
 Fri Apr 24 17:49:44 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 706b9231_d8e659b2
 Bytes: 10
 = default;
+
+950:11-950:13
+Mon Apr 27 12:34:34 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 706b9231_d8e659b2
+UUID: 90e3a61e_4cb6df3a
+Bytes: 4
+Done
 
 File: libziparchive/zip_archive_test.cc
 
@@ -32,10 +56,26 @@ UUID: 10a416b9_b2a6fc36
 Bytes: 39
 we really need to get these in libbase.
 
+284
+Mon Apr 27 12:34:34 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10a416b9_b2a6fc36
+UUID: 30375a6d_a48f8c2e
+Bytes: 4
+Done
+
 298
 Fri Apr 24 18:14:59 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 309d9a70_9eabceff
 Bytes: 20
 (that's surprising!)
+
+298
+Mon Apr 27 12:34:34 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 309d9a70_9eabceff
+UUID: 90e3a61e_cc908f9f
+Bytes: 4
+Done
 

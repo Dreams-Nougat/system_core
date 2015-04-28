@@ -1,0 +1,34 @@
+Revision: 6767cb2423f6e137b4e970a9ae9ce0da6c72e239
+Patch-set: 4
+File: adb/adb.cpp
+
+401:4-401:41
+Tue Apr 28 02:14:26 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_05e416d4
+Bytes: 147
+Technically, you aren't checking if the split produced three items. The old code would be okay with this, but the new code will crash in this case.
+
+409:8-409:48
+Tue Apr 28 02:14:26 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_848125ff
+Bytes: 102
+Same as above, you don't check if there are two elements, and will crash if there aren't at least two.
+
+File: adb/adb_auth_host.cpp
+
+195:4-195:11
+Tue Apr 28 02:14:26 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_e5a34a7c
+Bytes: 19
+No std::unique_ptr?
+
+283:4-283:15
+Tue Apr 28 02:14:26 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_e4dea906
+Bytes: 74
+This check is not necessary any more, unless you are using a no throw new.
+

@@ -9,3 +9,11 @@ UUID: b0d42a38_74ef02b5
 Bytes: 34
 remove this from the makefile too.
 
+888
+Tue Apr 28 20:07:23 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_74ef02b5
+UUID: 30859a59_913ddce2
+Bytes: 71
+Still used in selinux_is_enforcing; maybe rename to ALLOW_PERMISSIVE...
+

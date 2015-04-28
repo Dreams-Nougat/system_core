@@ -9,12 +9,28 @@ UUID: d0d99e70_05e416d4
 Bytes: 147
 Technically, you aren't checking if the split produced three items. The old code would be okay with this, but the new code will crash in this case.
 
+401:4-401:41
+Tue Apr 28 02:42:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_05e416d4
+UUID: f0f222e5_a29ae3e9
+Bytes: 4
+Done
+
 409:8-409:48
 Tue Apr 28 02:14:26 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0d42a38_848125ff
 Bytes: 102
 Same as above, you don't check if there are two elements, and will crash if there aren't at least two.
+
+409:8-409:48
+Tue Apr 28 02:42:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_848125ff
+UUID: d0d99e70_65887aba
+Bytes: 4
+Done
 
 File: adb/adb_auth_host.cpp
 
@@ -25,10 +41,35 @@ UUID: d0d99e70_e5a34a7c
 Bytes: 19
 No std::unique_ptr?
 
+195:4-195:11
+Tue Apr 28 02:42:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_e5a34a7c
+UUID: d0d99e70_45545ea9
+Bytes: 145
+this function is full of gotos, and our old enemy fclose crashes if given a null pointer :-(
+
+(we should do something about that, but not today.)
+
+282
+Tue Apr 28 02:42:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_e20a2ba7
+Bytes: 198
+(no gotos here, but because this is "leaked" into list_add_tail i was uncomfortable switching it over. and last time i looked at moving this over to a real collection, adb_auth_nextkey made me cry.)
+
 283:4-283:15
 Tue Apr 28 02:14:26 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0d42a38_e4dea906
 Bytes: 74
 This check is not necessary any more, unless you are using a no throw new.
+
+283:4-283:15
+Tue Apr 28 02:42:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_e4dea906
+UUID: b0d42a38_849125cd
+Bytes: 4
+Done
 

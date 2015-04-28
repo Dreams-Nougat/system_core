@@ -1,0 +1,11 @@
+Revision: 4bf1887c787a025aad2fbafe382e556e85ac73b0
+Patch-set: 11
+File: rootdir/init.rc
+
+236:1-236:14
+Tue Apr 28 15:24:55 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0d42a38_daa9465e
+Bytes: 47
+no need to start logd, it is started in post-fs
+

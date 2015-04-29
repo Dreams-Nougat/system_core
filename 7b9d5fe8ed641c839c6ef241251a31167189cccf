@@ -1,0 +1,13 @@
+Revision: 7b9d5fe8ed641c839c6ef241251a31167189cccf
+Patch-set: 1
+File: adb/adb_client.cpp
+
+110
+Wed Apr 29 16:05:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_cc06274d
+Bytes: 198
+one day, adb's haphazard locking is something we're going to have to address. here we should just remove the global but that seemed like it belonged in a different change...
+
+i'll add a TODO though.
+

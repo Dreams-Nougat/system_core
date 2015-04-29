@@ -18,12 +18,28 @@ UUID: d0d99e70_4cbeb7c5
 Bytes: 115
 The name is a little misleading since it doesn't actually print anything. set_adb_error() might be a little better.
 
+113:5-113:15
+Wed Apr 29 16:57:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_4cbeb7c5
+UUID: d0027e8c_57b3f3c8
+Bytes: 62
+except the 'p' is for the free strerror, like perror and PLOG.
+
 146
 Wed Apr 29 16:25:29 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f0f222e5_9ec3aaa6
 Bytes: 141
 Is there any reason these aren't all just LOG(FATAL) (or ERROR)? I think the first thing I'll do today is bring up base::logging for Windows.
+
+146
+Wed Apr 29 16:57:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0f222e5_9ec3aaa6
+UUID: f00b02a7_61875a14
+Bytes: 280
+the calling code chooses what do do with these. that's what the adb_error() public API is for, and what i meant about the long-term fix being to just pass a std::string* and lose the global. i might just do that now instead. i can always come back to this ps if it gets too hairy.
 
 187
 Wed Apr 29 16:25:29 2015 +0000

@@ -1,0 +1,11 @@
+Revision: e0af2dc468c15614001629ca40720dedda42f557
+Patch-set: 3
+File: adb/adb_client.cpp
+
+179:4-179:12
+Wed Apr 29 18:12:46 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1065f695_d7e906b2
+Bytes: 13
+unsigned long
+

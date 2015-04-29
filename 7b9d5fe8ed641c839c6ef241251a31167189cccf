@@ -26,6 +26,14 @@ UUID: d0027e8c_57b3f3c8
 Bytes: 62
 except the 'p' is for the free strerror, like perror and PLOG.
 
+113:5-113:15
+Wed Apr 29 17:04:37 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0027e8c_57b3f3c8
+UUID: 1065f695_91fabe88
+Bytes: 197
+I more meant that at the callsites "adb_perror" matches the naming conventions for things like "adb_write", which makes it look like a wrapper for perror. If this is only temporary than nbd though.
+
 146
 Wed Apr 29 16:25:29 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

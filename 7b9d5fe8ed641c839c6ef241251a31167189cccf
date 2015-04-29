@@ -11,3 +11,45 @@ one day, adb's haphazard locking is something we're going to have to address. he
 
 i'll add a TODO though.
 
+113:5-113:15
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_4cbeb7c5
+Bytes: 115
+The name is a little misleading since it doesn't actually print anything. set_adb_error() might be a little better.
+
+146
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_9ec3aaa6
+Bytes: 141
+Is there any reason these aren't all just LOG(FATAL) (or ERROR)? I think the first thing I'll do today is bring up base::logging for Windows.
+
+187
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_3e7cbee4
+Bytes: 46
+std::string should be good enough here, right?
+
+203:4-203:7
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_cc23c7a0
+Bytes: 7
+size_t?
+
+204:13-204:16
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0f222e5_1e869a6a
+Bytes: 4
+== 0
+
+205:64-205:72
+Wed Apr 29 16:25:29 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0d99e70_2cb80bb6
+Bytes: 18
+or no service name
+

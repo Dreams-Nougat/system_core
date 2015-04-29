@@ -2,6 +2,13 @@ Revision: 7b9d5fe8ed641c839c6ef241251a31167189cccf
 Patch-set: 1
 File: adb/adb_client.cpp
 
+107
+Wed Apr 29 17:04:56 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 30e3da4b_818a1aea
+Bytes: 144
+do you want to fix the name ? aren't double underscore variables meant only for a specific set of contexts (compiler, standard libraries et al.)
+
 110
 Wed Apr 29 16:05:07 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

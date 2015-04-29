@@ -1,0 +1,17 @@
+Revision: c4e8ccb680cbd826d91fdef5c82c7bba4f432d3e
+Patch-set: 7
+File: logd/LogBufferElement.cpp
+
+99:47-99:50
+Wed Apr 29 21:18:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f8f2fa_61eb92f3
+Bytes: 474
+This format line hides a grammatical issue:
+
+04-29 14:11:16.056   582  2238 I logd    : uid=1000(system) comm=system_server too chatty, expire 2 lines
+
+'system_server' is not too chatty, UID=1000 is
+
+Move the comm= message to after 'too chatty' so that the UID is to blame, not the comm=. The person viewing this can tell which 'thread' is too chatty in an UID group by looking at 'logcat -S' or look for the formatted logd line with the highest count in the logcat results.
+

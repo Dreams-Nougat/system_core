@@ -16,6 +16,14 @@ UUID: d0d99e70_f95be40d
 Bytes: 38
 == -1 (or change return type to bool?)
 
+146
+Wed Apr 29 18:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_f95be40d
+UUID: d0d99e70_fcf4f2d2
+Bytes: 4
+Done
+
 179:4-179:12
 Wed Apr 29 18:12:46 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,6 +46,14 @@ UUID: d0d99e70_394e0c1c
 Bytes: 8
 why 255?
 
+180
+Wed Apr 29 18:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_394e0c1c
+UUID: d0d99e70_9cebaef2
+Bytes: 132
+the old code had a fixed-length buffer, but there's no reason to preserve this wart (the protocol maximum is 64KiB anyway). removed.
+
 File: adb/commandline.cpp
 
 491
@@ -47,6 +63,14 @@ UUID: d0d99e70_19f910fc
 Bytes: 22
 != 0 or change to bool
 
+491
+Wed Apr 29 18:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0d99e70_19f910fc
+UUID: f0f222e5_14f43b02
+Bytes: 4
+Done
+
 658
 Wed Apr 29 18:20:55 2015 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -55,4 +79,12 @@ Bytes: 47
 != nullptr
 
 or replace with string/unique_ptr<>
+
+658
+Wed Apr 29 18:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f0f222e5_745f07c1
+UUID: d0d99e70_dc6ed6fb
+Bytes: 61
+no, let's just remove this nonsense command in another patch.
 

@@ -1,0 +1,18 @@
+Revision: d935df1ac246382ed8b83b32f59dd246a540ee34
+Patch-set: 1
+File: adb/commandline.cpp
+
+466:4-466:12
+Thu Apr 30 18:11:06 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 70f8f2fa_93c0a79a
+Bytes: 98
+Looks like this should actually be int (or both it and the parameter should be changed to size_t).
+
+563:17-563:20
+Thu Apr 30 18:11:06 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 300cbaed_ca4c21d1
+Bytes: 53
+This looks to be 91 bytes larger than it needs to be.
+

@@ -47,6 +47,16 @@ Ahh, I see. Makes sense. In that case I'd nail it down to uint32_t or uint64_t (
 
 (Also thanks for writing this CL in general! We need more good stuff like this.)
 
+466:4-466:12
+Thu Apr 30 21:29:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f005c2c3_e07b183b
+UUID: 90fd66eb_d2f5099a
+Bytes: 550
+weird though this might sound, i'm actually leaving a lot of these as a reminder that we need to come back and remove a lot of these implicit limits. "unsigned" is clearly crufty old code that needs attention, but uint32_t looks like someone might have actually had a real reason, and mechanically switching over can hide that.
+
+i hope to fix fastboot's 'unsigned' issues soon (see http://b/20110580 and a work in progress patch that's lurking somewhere), but adb is probably further out. (~200 different locals and parameters are 'unsigned' in adb.)
+
 563:17-563:20
 Thu Apr 30 18:11:06 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

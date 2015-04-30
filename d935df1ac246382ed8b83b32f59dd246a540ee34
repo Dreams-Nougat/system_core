@@ -37,6 +37,16 @@ it's not the lack of the size_t *type* that causes us problems --- it's that %zd
 
 we also have the unfortunate situation where all the tools are built for 64-bit Linux (and Mac OS) but 32-bit Windows. (and we don't even know what fraction of our users have 64-bit Windows.) so size_t leads to different limits on Windows vs Linux. (and Linux is the only place we test, so...)
 
+466:4-466:12
+Thu Apr 30 20:36:11 2015 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f8f2fa_f01f5c14
+UUID: f005c2c3_e07b183b
+Bytes: 268
+Ahh, I see. Makes sense. In that case I'd nail it down to uint32_t or uint64_t (probably uint32_t) — keep in mind that unsigned isn't guaranteed to be 32 bits any more than size_t is.
+
+(Also thanks for writing this CL in general! We need more good stuff like this.)
+
 563:17-563:20
 Thu Apr 30 18:11:06 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

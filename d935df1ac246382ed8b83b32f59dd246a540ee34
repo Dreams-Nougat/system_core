@@ -27,6 +27,16 @@ UUID: 300cbaed_f6c8f02a
 Bytes: 225
 Windows does have size_t. It should work. (And size_t is the right type. But unsigned is better than signed, but now you're casting signed to unsigned, which might be surprising (negative values become large positive values).
 
+466:4-466:12
+Thu Apr 30 20:33:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300cbaed_f6c8f02a
+UUID: 70f8f2fa_f01f5c14
+Bytes: 450
+it's not the lack of the size_t *type* that causes us problems --- it's that %zd doesn't work, so using size_t for parameters tends to lead to pain in adb.
+
+we also have the unfortunate situation where all the tools are built for 64-bit Linux (and Mac OS) but 32-bit Windows. (and we don't even know what fraction of our users have 64-bit Windows.) so size_t leads to different limits on Windows vs Linux. (and Linux is the only place we test, so...)
+
 563:17-563:20
 Thu Apr 30 18:11:06 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

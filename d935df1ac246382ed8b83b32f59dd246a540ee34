@@ -9,10 +9,28 @@ UUID: 70f8f2fa_93c0a79a
 Bytes: 98
 Looks like this should actually be int (or both it and the parameter should be changed to size_t).
 
+466:4-466:12
+Thu Apr 30 18:26:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f8f2fa_93c0a79a
+UUID: 70f8f2fa_4e583612
+Bytes: 105
+Windows :-(
+
+changed the parameter to 'unsigned' though, since that's what the calling code is passing...
+
 563:17-563:20
 Thu Apr 30 18:11:06 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 300cbaed_ca4c21d1
 Bytes: 53
 This looks to be 91 bytes larger than it needs to be.
+
+563:17-563:20
+Thu Apr 30 18:26:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300cbaed_ca4c21d1
+UUID: 90fd66eb_f942b06c
+Bytes: 4
+Done
 

@@ -19,6 +19,14 @@ Windows :-(
 
 changed the parameter to 'unsigned' though, since that's what the calling code is passing...
 
+466:4-466:12
+Thu Apr 30 20:06:04 2015 +0000
+Author: Chris Palmer <1004692@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70f8f2fa_4e583612
+UUID: 300cbaed_f6c8f02a
+Bytes: 225
+Windows does have size_t. It should work. (And size_t is the right type. But unsigned is better than signed, but now you're casting signed to unsigned, which might be surprising (negative values become large positive values).
+
 563:17-563:20
 Thu Apr 30 18:11:06 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

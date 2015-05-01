@@ -9,6 +9,14 @@ UUID: 105fb6fa_986635d7
 Bytes: 27
 And a million other things.
 
+7
+Fri May 01 22:55:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 105fb6fa_986635d7
+UUID: 105fb6fa_277184da
+Bytes: 4
+Done
+
 File: adb/Android.mk
 
 136
@@ -18,6 +26,14 @@ UUID: f06142bc_b7c78846
 Bytes: 132
 If this is shipped with the SDK then we'll need to use the static versions or make sure these are both shipped with the SDK as well.
 
+136
+Fri May 01 22:55:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f06142bc_b7c78846
+UUID: f06142bc_acb8170c
+Bytes: 188
+it's not. it's just a turd. there's a TODO later about replacing it with a python script or probably just a netcat one-liner. but as long as it's checked in, we should at least build it...
+
 File: adb/adb.cpp
 
 845:43-845:44
@@ -26,6 +42,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d078be71_b9f4db55
 Bytes: 52
 spaces (don't forget you can git clang-format HEAD^)
+
+845:43-845:44
+Fri May 01 22:55:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d078be71_b9f4db55
+UUID: 105fb6fa_0743a072
+Bytes: 65
+i had forgotten, but that currently fucks up all the indentation.
 
 File: adb/adb_client.cpp
 
@@ -45,6 +69,14 @@ UUID: 105fb6fa_fb29eb3e
 Bytes: 37
 Don't need the lengths here any more.
 
+35:69-35:77
+Fri May 01 22:55:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 105fb6fa_fb29eb3e
+UUID: d078be71_9dc0e49a
+Bytes: 84
+i've added a const std::string& overload in the next ps so i can just pass 's' here.
+
 File: adb/transport.h
 
 44:21-44:40
@@ -53,4 +85,12 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f06142bc_7dc06f99
 Bytes: 19
 Return one instead?
+
+44:21-44:40
+Fri May 01 22:55:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f06142bc_7dc06f99
+UUID: f06142bc_4c021b0d
+Bytes: 4
+Done
 

@@ -1,0 +1,56 @@
+Revision: 4d8f3299e0da2459c435402b261386c3a9fe9ca8
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105fb6fa_986635d7
+Bytes: 27
+And a million other things.
+
+File: adb/Android.mk
+
+136
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f06142bc_b7c78846
+Bytes: 132
+If this is shipped with the SDK then we'll need to use the static versions or make sure these are both shipped with the SDK as well.
+
+File: adb/adb.cpp
+
+845:43-845:44
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d078be71_b9f4db55
+Bytes: 52
+spaces (don't forget you can git clang-format HEAD^)
+
+File: adb/adb_client.cpp
+
+200:6-200:7
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f06142bc_7a5f95c0
+Bytes: 5
+space
+
+File: adb/adb_io.cpp
+
+35:69-35:77
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105fb6fa_fb29eb3e
+Bytes: 37
+Don't need the lengths here any more.
+
+File: adb/transport.h
+
+44:21-44:40
+Fri May 01 20:12:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f06142bc_7dc06f99
+Bytes: 19
+Return one instead?
+

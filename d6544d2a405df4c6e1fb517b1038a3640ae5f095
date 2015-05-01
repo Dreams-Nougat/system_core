@@ -27,3 +27,11 @@ UUID: d078be71_5001d4bd
 Bytes: 146
 I'm ok with either option for userdebug/eng. If the plan is to eventually include this on user builds it might make sense to add the new user now.
 
+652
+Fri May 01 21:44:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d078be71_5001d4bd
+UUID: b0734a93_558aacec
+Bytes: 220
+perfprofd needs access to GMS core's home directory, write access to /sys files, and the ability to run an ioctl operation protected by CAP_SYS_ADMIN. Running this as non-root will likely not be feasible. I'm fine as-is.
+

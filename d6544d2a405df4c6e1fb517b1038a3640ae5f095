@@ -19,3 +19,11 @@ Bytes: 116
 
 do we want to add a 'perf' user or are we happy with running as root + SELinux policy?
 
+652
+Fri May 01 21:35:36 2015 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d078be71_c52c441a
+UUID: d078be71_5001d4bd
+Bytes: 146
+I'm ok with either option for userdebug/eng. If the plan is to eventually include this on user builds it might make sense to add the new user now.
+

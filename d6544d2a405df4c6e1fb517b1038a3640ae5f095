@@ -9,3 +9,13 @@ UUID: b0d42a38_d43c7692
 Bytes: 4
 nnk?
 
+652
+Fri May 01 21:11:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0d42a38_d43c7692
+UUID: d078be71_c52c441a
+Bytes: 116
+(or jeffv in nnk's absence.)
+
+do we want to add a 'perf' user or are we happy with running as root + SELinux policy?
+

@@ -1,0 +1,20 @@
+Revision: 7adb77c365289f73f3af06952f0cd02c37c8046a
+Patch-set: 1
+File: adb/adb_io.cpp
+
+122:43-122:53
+Sat May 02 00:24:08 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f06142bc_43ff49a7
+Bytes: 13
+not necessary
+
+File: adb/adb_listeners.h
+
+40:45-40:46
+Sat May 02 00:24:08 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105fb6fa_12411cf9
+Bytes: 33
+make this match while you're here
+

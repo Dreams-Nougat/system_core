@@ -1,0 +1,11 @@
+Revision: 8e28a079902983c16015a0b1155153c13c2339a3
+Patch-set: 3
+File: include/nativebridge/native_bridge.h
+
+151:0-163:52
+Mon May 04 10:15:55 2015 +0000
+Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 706d52b3_7616cefc
+Bytes: 76
+So, for signals other than SIGSEGV, native bridge can still use sigaction()?
+

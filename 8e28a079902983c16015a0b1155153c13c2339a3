@@ -9,3 +9,13 @@ UUID: 706d52b3_7616cefc
 Bytes: 76
 So, for signals other than SIGSEGV, native bridge can still use sigaction()?
 
+151:0-163:52
+Mon May 04 15:03:33 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 706d52b3_7616cefc
+UUID: f06142bc_74688120
+Bytes: 196
+The question is are there other important ones? If so, please describe a range that you think covers acceptable use cases.
+
+I thought only SIGSEGV would be important. Everything else, not so much.
+

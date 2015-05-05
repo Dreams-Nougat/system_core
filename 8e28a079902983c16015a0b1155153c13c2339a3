@@ -51,3 +51,28 @@ UUID: 504a0e43_f90ac8a6
 Bytes: 25
 Yes, sounds good. thanks.
 
+File: libnativebridge/native_bridge.cc
+
+141:41-141:42
+Tue May 05 15:52:11 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 304d9a5a_372380d5
+Bytes: 87
+This is rather cryptic imo. How about comparing with a kMinSupported and kMaxSupported?
+
+495:30-495:31
+Tue May 05 15:52:11 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105416e3_d6d95472
+Bytes: 93
+nit: I'd prefer to use symbolic constants here and above even if it might look a bit useless.
+
+File: libnativebridge/tests/NativeBridgeVersion_test.cpp
+
+2:17-2:21
+Tue May 05 15:52:11 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105416e3_56ee4404
+Bytes: 4
+2015
+

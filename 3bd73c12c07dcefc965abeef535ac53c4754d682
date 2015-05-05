@@ -34,3 +34,11 @@ UUID: b0218a87_5fbd7343
 Bytes: 20
 gotos in the way :-(
 
+691:0-695:6
+Tue May 05 20:58:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0218a87_5fbd7343
+UUID: b0218a87_7f494fbd
+Bytes: 51
+Augh, what's up with all of the gotos in this code?
+

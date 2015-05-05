@@ -1,0 +1,11 @@
+Revision: 81b3eabc49736b89c4f99940f79785074955eaa5
+Patch-set: 2
+File: logd/LogStatistics.h
+
+201:17-201:21
+Tue May 05 15:58:56 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504a0e43_3c719eda
+Bytes: 37
+can name be null or unallocated here?
+

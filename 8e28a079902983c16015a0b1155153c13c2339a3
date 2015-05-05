@@ -29,3 +29,17 @@ I mean: Native bridge registers signal handler on behalf of apps code  native br
 
 A further discussion, how should native bridge decide which signal to use sigaction, and which one not? Can it assumes ART only call getSignalHandler(SIGSEGV), thus sigaction() all other signal handlers? (to prevent future ART changes from breaking it, native bridge can return NULL on getSignalHandler for signals other then SIGSEGV).
 
+151:0-163:52
+Tue May 05 03:30:41 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 706d52b3_b9bdb7fb
+UUID: b0218a87_28396352
+Bytes: 869
+This is not intended to forbid the use of sigaction.
+
+This API is for the cases when a native bridge would like the runtime to ensure that its handler is always first (after ART). If you are interested in other signals, and they don't have an ordering constraint like SIGSEGV, this isn't gonna force you to do it this way (libsigchain still accepts general sigaction...).
+
+My original question was whether only SIGSEGV is enough. After talking with bdc, we'll likely remove the SIGSEGV restriction, and ART will just query the whole range supported by libsigchain (where this prioritization will be implemented). If you don't want it handled, simply return null for those signals and call sigaction yourself. Same goes for any additional handlers you want installed - just call sigaction normally, and they'll be in the normal chain.
+
+Does this sound reasonable to you?
+

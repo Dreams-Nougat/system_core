@@ -1,0 +1,13 @@
+Revision: 16b5eb51d64fda840af0dcf13ea6d302a6edf835
+Patch-set: 9
+File: logd/main.cpp
+
+394:12-394:54
+Tue May 05 20:25:57 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d026fe9b_97eee801
+Bytes: 398
+This code assumes logd starts immediately, works fine because there is no suspend action between start of the kernel logs and the start of logd.
+
+It does not handle the case where logd crashes and restarts, as the correction factor needs to look for the _first_ '] PM: suspend entry ' needle in the haystack and recalculate the new 'base' correction before we start pouring through the kernel logs.
+

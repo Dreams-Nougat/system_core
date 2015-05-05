@@ -2,6 +2,14 @@ Revision: 9b0f354fa25e3d5add516000c761e07c81c3bbc1
 Patch-set: 1
 File: adb/sysdeps.h
 
+87:4-87:12
+Tue May 05 21:19:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d026fe9b_5ab9f729
+Bytes: 64
+uintptr_t
+https://msdn.microsoft.com/en-us/library/kdzttdcb.aspx
+
 434
 Tue May 05 21:18:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

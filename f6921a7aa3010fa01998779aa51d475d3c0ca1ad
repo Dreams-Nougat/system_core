@@ -1,0 +1,11 @@
+Revision: f6921a7aa3010fa01998779aa51d475d3c0ca1ad
+Patch-set: 1
+File: adb/commandline.cpp
+
+1165:16-1165:21
+Tue May 05 04:09:19 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0218a87_08a027e7
+Bytes: 101
+I don't think that you are guaranteed that argv is NULL terminated. Can you do if (argc) cmd += " ";?
+

@@ -72,6 +72,14 @@ As the bridge is working already, I feel we have all things that are needed for 
 
 Eric, could you weigh in here? Would another symbol in v2 bridges to communicate the libnativebridge version be OK?
 
+141:41-141:42
+Tue May 05 16:08:53 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102df676_a381f1fe
+UUID: 304d9a5a_5752c439
+Bytes: 87
+I'm good with not having using kMaxSupported but we should document the intention here.
+
 495:30-495:31
 Tue May 05 15:52:11 2015 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

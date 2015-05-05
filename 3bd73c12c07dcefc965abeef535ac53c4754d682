@@ -9,6 +9,14 @@ UUID: 102df676_fdaaa1fb
 Bytes: 98
 Any reason not to name this adb_thread? I know it's not used anywhere else, so this is just a nit.
 
+404:17-404:18
+Tue May 05 20:41:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102df676_fdaaa1fb
+UUID: b0218a87_bf466711
+Bytes: 169
+actually, i can do better than that --- no one uses any of these, so i can remove them all. i'll upload a separate patch, though, because that's as big a change again...
+
 File: adb/sockets.cpp
 
 691:0-695:6
@@ -17,4 +25,12 @@ Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 102df676_1d221523
 Bytes: 42
 Can you move this down into the #if below?
+
+691:0-695:6
+Tue May 05 20:41:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102df676_1d221523
+UUID: b0218a87_5fbd7343
+Bytes: 20
+gotos in the way :-(
 

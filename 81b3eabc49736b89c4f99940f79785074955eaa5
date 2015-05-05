@@ -9,3 +9,26 @@ UUID: 504a0e43_3c719eda
 Bytes: 37
 can name be null or unallocated here?
 
+201:17-201:21
+Tue May 05 16:41:50 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 504a0e43_3c719eda
+UUID: b0218a87_6b72750d
+Bytes: 691
+Yes. free() accepts NULL according to POSIX (see bottom).
+
+We are immediately reassigning the content. There is a lock between logging and reading (generating statistics or logcat reader connection to pidToName() from class) that should resolve any race conditions; otherwise I would have used:
+
+    void *tobefree = name;
+    name = NULL;
+    free(tobefree);
+    null = android::pidToName(e->getPid());
+
+man page:
+
+The free() function frees the memory space pointed to by
+ptr, which must have been returned by a previous call to
+malloc(), calloc() orrealloc(). Otherwise, or if free(ptr)
+has already been called  before, undefined behavior occurs.
+If ptr is NULL, no operation is performed.
+

@@ -1,0 +1,20 @@
+Revision: 3bd73c12c07dcefc965abeef535ac53c4754d682
+Patch-set: 1
+File: adb/services.cpp
+
+404:17-404:18
+Tue May 05 20:21:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102df676_fdaaa1fb
+Bytes: 98
+Any reason not to name this adb_thread? I know it's not used anywhere else, so this is just a nit.
+
+File: adb/sockets.cpp
+
+691:0-695:6
+Tue May 05 20:21:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102df676_1d221523
+Bytes: 42
+Can you move this down into the #if below?
+

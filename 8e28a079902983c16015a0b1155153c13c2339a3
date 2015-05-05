@@ -60,12 +60,32 @@ UUID: 304d9a5a_372380d5
 Bytes: 87
 This is rather cryptic imo. How about comparing with a kMinSupported and kMaxSupported?
 
+141:41-141:42
+Tue May 05 15:59:27 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 304d9a5a_372380d5
+UUID: 102df676_a381f1fe
+Bytes: 646
+My hope was to design something forward-compatible, so that it's easy to backport a bridge to older Android versions. So I didn't want kMaxSupported anymore. 1 is cryptic, agreed. It's just the minimal value (so 0 shows some failure).
+
+As the bridge is working already, I feel we have all things that are needed for basic operation, so it should be fine. One thing that is probably missing is to report *our* version to the bridge (so that, e.g., a v3 bridge could either fail to initialize or adapt itself to being run as a v2).
+
+Eric, could you weigh in here? Would another symbol in v2 bridges to communicate the libnativebridge version be OK?
+
 495:30-495:31
 Tue May 05 15:52:11 2015 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 105416e3_d6d95472
 Bytes: 93
 nit: I'd prefer to use symbolic constants here and above even if it might look a bit useless.
+
+495:30-495:31
+Tue May 05 15:59:27 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 105416e3_d6d95472
+UUID: b0218a87_0b04a1ce
+Bytes: 7
+Agreed.
 
 File: libnativebridge/tests/NativeBridgeVersion_test.cpp
 

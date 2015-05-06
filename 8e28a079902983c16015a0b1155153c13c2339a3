@@ -34,6 +34,16 @@ Hi Andreas,
 Yes. You're right. The native bridge is a general component.
 But for every impl of native bridge, the compatibility issue is not only about the interface. For every dev of native bridge, they have to consider the status of more other Android components. So the forward-compatibility becomes useless. Instead, a clear interface should be much helpful.
 
+149:39-149:60
+Wed May 06 05:06:47 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d39c1d0_117bcc3c
+UUID: 8d1e2d58_e98dfd03
+Bytes: 477
+I find that a very Houdini-centric answer. Yes, Houdini provides stubs/trampolines/whatever you call them for many (all) of the libraries in /system. But that is purely a performance-point implementation-detail IMHO. It is perfectly possible to translate *any* call and thus be forward-compatible, as you *can* be agnostic of any library.
+
+As the initialization failure is a workable solution for a bailout, you still don't really convince me here why we should not aim for it.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -109,6 +119,16 @@ UUID: 2d39c1d0_716c5888
 Bytes: 90
 I mean we can define it as below.
 static const NativeBridgeCallbacks* callbacks = nullptr;
+
+86:30-86:39
+Wed May 06 05:06:47 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d39c1d0_716c5888
+UUID: 6d19f971_dc0d5c3b
+Bytes: 298
+Sure. It necessitates a couple of signature changes, but is doable.
+
+Obviously it's only for code cleanliness - anyone being able to look for a private data element and screw with it already has enough knowledge and control over the system. But we had enough discussions about perceived security...
 
 141:41-141:42
 Tue May 05 15:52:11 2015 +0000

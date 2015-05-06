@@ -60,6 +60,14 @@ Yes, sounds good. thanks.
 
 File: libnativebridge/native_bridge.cc
 
+86:30-86:39
+Wed May 06 04:15:31 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d36f5df_12cd0c05
+Bytes: 73
+BTW, can we make this var as const to avoid modification?
+Thanks, Jinghui
+
 141:41-141:42
 Tue May 05 15:52:11 2015 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,21 @@ UUID: 4d36f5df_d2654491
 Bytes: 145
 Can we merge this new interface at the end of existing NativeBridgeCallbacks? Because we don't want to keep forward-compatible for native bridge.
 
+149:39-149:60
+Wed May 06 04:16:04 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d36f5df_d2654491
+UUID: 8d1e2d58_092dd98f
+Bytes: 461
+Please explain why. Please also remember that this interface is not meant to be Intel-centric.
+
+1) I much rather prefer it that way. If a vendor chooses, this supports it. Houdini is still free to fail initialization to avoid this.
+
+2) I'm getting mixed signals here, as Eric didn't complain.
+
+
+There is an argument to merge this into the primary structure, as L libnativebridge isn't designed forward-compatible. But that isn't a particularly good reason IMHO.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

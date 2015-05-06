@@ -24,6 +24,16 @@ Please explain why. Please also remember that this interface is not meant to be 
 
 There is an argument to merge this into the primary structure, as L libnativebridge isn't designed forward-compatible. But that isn't a particularly good reason IMHO.
 
+149:39-149:60
+Wed May 06 04:26:58 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_092dd98f
+UUID: 2d39c1d0_117bcc3c
+Bytes: 362
+Hi Andreas,
+Yes. You're right. The native bridge is a general component.
+But for every impl of native bridge, the compatibility issue is not only about the interface. For every dev of native bridge, they have to consider the status of more other Android components. So the forward-compatibility becomes useless. Instead, a clear interface should be much helpful.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,34 @@
+Revision: 840facd06744c0b597f865daf0e36e3776d86ba2
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+63
+Wed May 06 23:43:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_0cdff803
+Bytes: 32
+no need to define this so early.
+
+66
+Wed May 06 23:43:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_27c675ca
+Bytes: 26
+make this a real for loop?
+
+70
+Wed May 06 23:43:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_e7363d61
+Bytes: 5
+== -1
+
+File: adb/adb_utils.h
+
+25
+Wed May 06 23:43:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_a7fba5f5
+Bytes: 36
+if we're moving to C++, return bool.
+

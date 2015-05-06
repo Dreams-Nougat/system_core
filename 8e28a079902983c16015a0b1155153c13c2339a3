@@ -91,6 +91,15 @@ UUID: 8d1e2d58_69c7ad49
 Bytes: 52
 I don't understand what you're trying to accomplish.
 
+86:30-86:39
+Wed May 06 04:21:55 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_69c7ad49
+UUID: 2d39c1d0_716c5888
+Bytes: 90
+I mean we can define it as below.
+static const NativeBridgeCallbacks* callbacks = nullptr;
+
 141:41-141:42
 Tue May 05 15:52:11 2015 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

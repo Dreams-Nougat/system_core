@@ -1,0 +1,18 @@
+Revision: b36c8ee98e671b2d4a057c58ecd9b3d13bfaf1ad
+Patch-set: 1
+File: adb/adb_main.cpp
+
+361
+Wed May 06 00:51:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_e3019cc0
+Bytes: 2
++1
+
+390
+Wed May 06 00:51:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_0d04c517
+Bytes: 51
+not worth including the regular version number too?
+

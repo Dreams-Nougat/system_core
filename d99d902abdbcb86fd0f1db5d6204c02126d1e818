@@ -1,0 +1,20 @@
+Revision: d99d902abdbcb86fd0f1db5d6204c02126d1e818
+Patch-set: 1
+File: adb/transport.cpp
+
+873
+Wed May 06 23:54:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_e2ee2b02
+Bytes: 10
+Also here.
+
+File: adb/usb_linux.cpp
+
+640
+Wed May 06 23:54:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_ecb89454
+Bytes: 25
+Here's the actual change.
+

@@ -1,0 +1,48 @@
+Revision: a7deb9f26d8ebd38f51123adb37004cc24a29724
+Patch-set: 2
+File: adb/client/main.cpp
+
+93
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d407d41_b6307095
+Bytes: 26
+switch to PLOG in advance?
+
+133
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d36f5df_950a0620
+Bytes: 62
+the comment and the code don't match. just remove the comment.
+
+157
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_f555cb22
+Bytes: 206
+because of the corresponding code in launch_server. there's a lot of Win32 stuff in there, though, so it's not obvious to me whether that's easily fixed. (should be easy to test given a Windows VM, though.)
+
+File: adb/daemon/main.cpp
+
+61
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_15a287a9
+Bytes: 35
+PLOG(FATAL) for all these exit(1)s?
+
+121
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_9597b747
+Bytes: 26
+same as in the other file.
+
+244
+Wed May 06 17:28:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_3596a349
+Bytes: 39
+not needed given the 'default' on L257.
+

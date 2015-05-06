@@ -1,0 +1,62 @@
+Revision: 0560f8564c6c0876b6c4377149865206455adcdf
+Patch-set: 1
+File: adb/client/main.cpp
+
+27
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_055a5c0a
+Bytes: 446
+isn't the client always linux? hmmm... client is a terrible name. i've no idea what i'm looking at here. i was planning on moving those files that currently have "client" in the name. there it seems to mean "device". usb_linux_client is the device-side code, usb_linux is the host-side code. likewise adb_auth. adb_client.cpp doesn't fit this pattern though --- it's a mixture? and for file_sync, client is the *host* and 'service' is the device.
+
+130
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_854f8c48
+Bytes: 8
+SIGWHUT?
+
+154
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_09fef9aa
+Bytes: 111
+is this a TODO? do we care? (because this is just between host-side "adb" and the host-side adb server, right?)
+
+155
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_4914f178
+Bytes: 25
+does git history explain?
+
+File: adb/daemon/main.cpp
+
+117
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d19f971_e8c297b3
+Bytes: 20
+or 0 to its friends.
+
+118
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_a53968a0
+Bytes: 27
+shouldn't init_usb do this?
+
+120
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_65cd9036
+Bytes: 17
+same bad comment.
+
+176
+Wed May 06 03:17:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_49663129
+Bytes: 39
+looks like this has already been fixed?
+

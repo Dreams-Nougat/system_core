@@ -1,0 +1,11 @@
+Revision: 79c90e61c874ba743053e0de138192d40c4c5d78
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+64
+Wed May 06 23:38:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_c79101cd
+Bytes: 55
+is there a reason we're not just going straight to C++?
+

@@ -2,6 +2,13 @@ Revision: 8e28a079902983c16015a0b1155153c13c2339a3
 Patch-set: 3
 File: include/nativebridge/native_bridge.h
 
+149:39-149:60
+Wed May 06 03:55:56 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d36f5df_d2654491
+Bytes: 145
+Can we merge this new interface at the end of existing NativeBridgeCallbacks? Because we don't want to keep forward-compatible for native bridge.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -79,6 +86,17 @@ Parent: 102df676_a381f1fe
 UUID: 304d9a5a_5752c439
 Bytes: 87
 I'm good with not having using kMaxSupported but we should document the intention here.
+
+141:41-141:42
+Wed May 06 03:55:56 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102df676_a381f1fe
+UUID: 4d36f5df_725578a6
+Bytes: 219
+Hi Andreas,
+It's not necessary to keep forward-compatible for native bridge.
+We need a clear interface for different version of native bridge.
+If the version is not matched, then, libnativebridge should stop loading it.
 
 495:30-495:31
 Tue May 05 15:52:11 2015 +0000

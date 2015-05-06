@@ -9,6 +9,20 @@ UUID: 0d407d41_b6307095
 Bytes: 26
 switch to PLOG in advance?
 
+93
+Wed May 06 21:35:42 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d407d41_b6307095
+UUID: 4d8435cc_abe83926
+Bytes: 542
+Actually, it seems my comment isn't quite correct. Windows has strerror(3), and it behaves like you would expect... for the C library.
+
+The Windows API calls essentially have their own errno that is retrieved by GetLastError(), and these error codes are not the same as those used by errno, and thus use the gross API (FormatMessage https://msdn.microsoft.com/en-us/library/aa908810.aspx) instead.
+
+I'm not actually sure what to do with the logging API here, given that Windows actually needs two PLOGs...
+
+I'll update the comment either way.
+
 133
 Wed May 06 17:28:06 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

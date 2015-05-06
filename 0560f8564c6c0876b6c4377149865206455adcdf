@@ -9,12 +9,30 @@ UUID: cd24a5a6_055a5c0a
 Bytes: 446
 isn't the client always linux? hmmm... client is a terrible name. i've no idea what i'm looking at here. i was planning on moving those files that currently have "client" in the name. there it seems to mean "device". usb_linux_client is the device-side code, usb_linux is the host-side code. likewise adb_auth. adb_client.cpp doesn't fit this pattern though --- it's a mixture? and for file_sync, client is the *host* and 'service' is the device.
 
+27
+Wed May 06 16:10:47 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_055a5c0a
+UUID: 8d1e2d58_3b969849
+Bytes: 366
+I had originally written this as !defined(_WIN32), but realized that the affinity WAR has only ever been applied for Linux. The condition used to just be the WORKAROUND_BUG### define, but I thought it would be better to make sure the code is compiled either way so it doesn't bit rot. (We should probably make sure the WAR is still necessary.)
+
+I'll leave a comment.
+
 130
 Wed May 06 03:17:26 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd24a5a6_854f8c48
 Bytes: 8
 SIGWHUT?
+
+130
+Wed May 06 16:10:47 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_854f8c48
+UUID: 8d1e2d58_5be5d4d1
+Bytes: 1
+?
 
 154
 Wed May 06 03:17:26 2015 +0000
@@ -23,12 +41,31 @@ UUID: 8d1e2d58_09fef9aa
 Bytes: 111
 is this a TODO? do we care? (because this is just between host-side "adb" and the host-side adb server, right?)
 
+154
+Wed May 06 16:10:47 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_09fef9aa
+UUID: 8d1e2d58_7bf09091
+Bytes: 108
+I thought it was strange that we had an alternate way of sending okay for the two channels, but I guess nbd.
+
 155
 Wed May 06 03:17:26 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d1e2d58_4914f178
 Bytes: 25
 does git history explain?
+
+155
+Wed May 06 16:10:47 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_4914f178
+UUID: 8d1e2d58_dbe564a8
+Bytes: 105
+No, it trips over a bug in git :(
+
+git blame bac3474^ -- adb.cpp
+fatal: no such path adb/adb.cpp in ΃�
 
 File: adb/daemon/main.cpp
 
@@ -45,6 +82,16 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd24a5a6_a53968a0
 Bytes: 27
 shouldn't init_usb do this?
+
+118
+Wed May 06 16:10:47 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_a53968a0
+UUID: cd24a5a6_b0bc08a8
+Bytes: 278
+Hmm. Only Darwin actually does anything in usb_cleanup, and it isn't actually USB specific, it just kicks all the active transports.
+
+The function has a comment /* hack for osx */, but doesn't explain what's going on and the code hasn't been modified since the initial import...
 
 120
 Wed May 06 03:17:26 2015 +0000

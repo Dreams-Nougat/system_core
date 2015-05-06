@@ -44,6 +44,16 @@ I find that a very Houdini-centric answer. Yes, Houdini provides stubs/trampolin
 
 As the initialization failure is a workable solution for a bailout, you still don't really convince me here why we should not aim for it.
 
+149:39-149:60
+Wed May 06 07:11:41 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_e98dfd03
+UUID: 2d39c1d0_11e18c4d
+Bytes: 408
+For fail initialization solution, how does houdini check the version of libnativebridge? Do you mean there's another new interface out there? Or, houdini should provide a new callback?
+
+For the impl of v2 interface, it's OK if you think current solution is better than all-in-one. BTW, if the v3 interface is needed in future, will we extend the NativeBridgeCallbacks2, or define a new NatvieBridgeCallback3?
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

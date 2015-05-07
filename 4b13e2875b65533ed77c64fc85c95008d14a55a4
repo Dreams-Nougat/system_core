@@ -1,0 +1,22 @@
+Revision: 4b13e2875b65533ed77c64fc85c95008d14a55a4
+Patch-set: 3
+File: adb/adb_utils_test.cpp
+
+63
+Thu May 07 17:58:43 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_a3d26fd3
+Bytes: 163
+/tmp doesn't exist on Android. #ifdef __ANDROID__ use /data/local/tmp
+
+(Once I find some free time I'm going to give us a proper tempfile abstraction in libbase...
+
+File: adb/sysdeps.h
+
+289
+Thu May 07 17:58:43 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_630577cc
+Bytes: 17
+Don't need these.
+

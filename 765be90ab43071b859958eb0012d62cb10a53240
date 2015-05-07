@@ -17,3 +17,19 @@ UUID: 4d8435cc_ce734010
 Bytes: 41
 you fix gerrit and i'll stop doing it :-)
 
+File: init/util.cpp
+
+412:9-412:13
+Thu May 07 17:50:17 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_e3ebc7a6
+Bytes: 11
+const auto&
+
+416
+Thu May 07 17:50:17 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_0d8b97ef
+Bytes: 19
+Else log something?
+

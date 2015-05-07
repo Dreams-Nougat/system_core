@@ -19,6 +19,14 @@ Yeah, it does. I apparently should have ended my day an hour or two ago...
 
 (though I just tested this as is, so apparently it doesn't make a difference, but I'll change it anyway)
 
+92:42-92:68
+Thu May 07 02:22:35 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_e07620d0
+UUID: 2d39c1d0_b7d5103b
+Bytes: 260
+I checked the emulator code and its 'protocol' treats a NULL just like any other non-newline character. Newline is the terminator that it looks for. But yeah, probably a good idea to not send NULL since telnet/netcat (the other popular emulator clients) don't.
+
 94:56-95:29
 Thu May 07 01:14:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -34,6 +42,14 @@ UUID: 4d8435cc_38d9d6f4
 Bytes: 141
 Ack. I think I had been assuming that there was always going to be _something_ pending since that was the cause of this bug, but perhaps not.
 
+94:56-95:29
+Thu May 07 02:22:35 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_38d9d6f4
+UUID: 0d407d41_3f70d387
+Bytes: 324
+To clarify my previous comment: If the kill command made it to the emulator and the following quit command didn't, then the read loop is ok, but if some other command made it and the following quit command didn't, then that would probably hang forever. Probably simplest to just don't do the read loop if there was an error.
+
 105:17-105:23
 Thu May 07 01:14:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,4 +64,12 @@ Parent: cd24a5a6_e423d8a0
 UUID: 4d8435cc_185ad20a
 Bytes: 140
 It's part of the standard library. Defined as some reasonable size to use for this type of thing (and for us it is somewhere in that range).
+
+105:17-105:23
+Thu May 07 02:22:35 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_185ad20a
+UUID: 0d407d41_1f750f78
+Bytes: 30
+Ah, ok, found it. Sounds good.
 

@@ -1,0 +1,11 @@
+Revision: 765be90ab43071b859958eb0012d62cb10a53240
+Patch-set: 2
+File: /COMMIT_MSG
+
+12:5-12:14
+Thu May 07 16:09:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d407d41_0a370f91
+Bytes: 126
+No need for the URL (albeit AOSP reviews will not allow the bug number to be clickable; that is a Gerrit Configuration issue).
+

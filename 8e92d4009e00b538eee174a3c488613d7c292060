@@ -88,6 +88,14 @@ ah...
 
 C programmers. so amusingly you can pass a 128KiB format string to printk via kmsg, but printk will format into a 1KiB buffer.
 
+38
+Thu May 07 15:03:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_ae991c52
+UUID: cd24a5a6_4714cec6
+Bytes: 37
+(and the 1024 _includes_ the prefix.)
+
 File: init/util.cpp
 
 36:0-36:30

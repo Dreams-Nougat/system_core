@@ -78,6 +78,14 @@ Bytes: 436
 >> What exactly do you mean here?
 Andreas mentioned "Houdini is still free to fail initialization to avoid this" in previous comments. I think it's good idea to give houdini a chance to determine whether supports current interface version of libnativebridge before initialization. But houdini cannot get the interface version in current code.
 
+149:39-149:60
+Thu May 07 02:24:57 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d36f5df_18ff6d79
+UUID: 4d8435cc_78b3de4c
+Bytes: 83
+See the comments before: A second callback will be added to NativeBridgeCallbacks2.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

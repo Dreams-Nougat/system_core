@@ -9,12 +9,28 @@ UUID: 4d8435cc_0929ed2f
 Bytes: 25
 android::base::StartsWith
 
+696
+Thu May 07 20:27:00 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_0929ed2f
+UUID: 8d1e2d58_f787fde0
+Bytes: 4
+Done
+
 703
 Thu May 07 17:47:23 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d8435cc_3f822058
 Bytes: 284
 interesting. we've been using android::base::Split so far, but i have to admit that's left me unsatisfied. are there google3 equivalents of these functions? (i'm not a big fan of the names --- i didn't guess what they do from the names, but if that's what google3 is already using...)
+
+703
+Thu May 07 20:27:00 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_3f822058
+UUID: 8d1e2d58_57435121
+Bytes: 342
+I know I've seen functions of this style before. This follows closely with what the c-style code was doing (move to the next delimiter and split into left and/or right parts relative to the delimiter. I think implementation gets a bit more difficult using android::base::Split which leaves several fragments and would require a bigger rework.
 
 838
 Thu May 07 17:47:23 2015 +0000
@@ -23,10 +39,26 @@ UUID: 4d8435cc_b5092fb2
 Bytes: 26
 i think these should be ==
 
+838
+Thu May 07 20:27:00 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_b5092fb2
+UUID: cd24a5a6_ded2e74f
+Bytes: 4
+Done
+
 861
 Thu May 07 17:47:23 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d8435cc_048a0870
 Bytes: 53
 if the rhs doesn't end ':', it should probably be ==.
+
+861
+Thu May 07 20:27:00 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_048a0870
+UUID: 4d8435cc_11a4a8e2
+Bytes: 40
+Agreed, except for the "transport" case.
 

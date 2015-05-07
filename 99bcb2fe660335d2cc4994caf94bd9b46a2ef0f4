@@ -1,0 +1,32 @@
+Revision: 99bcb2fe660335d2cc4994caf94bd9b46a2ef0f4
+Patch-set: 1
+File: adb/adb.cpp
+
+696
+Thu May 07 17:47:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_0929ed2f
+Bytes: 25
+android::base::StartsWith
+
+703
+Thu May 07 17:47:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_3f822058
+Bytes: 284
+interesting. we've been using android::base::Split so far, but i have to admit that's left me unsatisfied. are there google3 equivalents of these functions? (i'm not a big fan of the names --- i didn't guess what they do from the names, but if that's what google3 is already using...)
+
+838
+Thu May 07 17:47:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_b5092fb2
+Bytes: 26
+i think these should be ==
+
+861
+Thu May 07 17:47:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_048a0870
+Bytes: 53
+if the rhs doesn't end ':', it should probably be ==.
+

@@ -1,5 +1,21 @@
 Revision: 8e92d4009e00b538eee174a3c488613d7c292060
 Patch-set: 1
+File: init/init.cpp
+
+799:4-799:21
+Thu May 07 14:39:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_277d522d
+Bytes: 91
+Lesson for me? I need to re-read the Android coding standard. This style looks like toybox?
+
+966:56-966:62
+Thu May 07 14:39:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_e7863aae
+Bytes: 44
+" stage" is repeated, put into format string
+
 File: init/log.cpp
 
 38
@@ -9,7 +25,22 @@ UUID: cd24a5a6_c4fb3cf5
 Bytes: 137
 annoyingly, the kernel seems to silently swallow large messages, which prevented me from dumping the /proc/cmdline i was seeing to dmesg.
 
+38
+Thu May 07 14:39:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_c4fb3cf5
+UUID: cd24a5a6_07313698
+Bytes: 172
+What about splitting the messages up, prefix a '>' or something? You also _probably_ want to ensure that a trailing newline is sent on each message line, even if truncated.
+
 File: init/util.cpp
+
+36:0-36:30
+Thu May 07 14:39:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_ce0d803b
+Bytes: 72
+Q: required? what string functionality is pulled in with stringprintf.h?
 
 414
 Thu May 07 02:23:15 2015 +0000
@@ -17,4 +48,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d8435cc_98a4a20a
 Bytes: 107
 this is the workaround. the rest of this change is mainly just cleanup from my journey to find the problem.
+
+414
+Thu May 07 14:39:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_98a4a20a
+UUID: 4d8435cc_ee8164fe
+Bytes: 152
+Can you split the two (making the hack dependent on the cleanup, as one likes the change from char* to std:string&), so that the 'hack' can be reverted?
 

@@ -233,6 +233,14 @@ UUID: b0218a87_0b04a1ce
 Bytes: 7
 Agreed.
 
+495:30-495:31
+Thu May 07 14:12:14 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0218a87_0b04a1ce
+UUID: ad24d1ad_3313705b
+Bytes: 59
+callbacks->version >= NativeBridgeCallbacks2::kVersionNum ?
+
 File: libnativebridge/tests/NativeBridgeVersion_test.cpp
 
 2:17-2:21

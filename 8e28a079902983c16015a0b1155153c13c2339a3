@@ -68,6 +68,16 @@ What exactly do you mean here?
 
 We will extend to make sure we are backwards compatible.
 
+149:39-149:60
+Thu May 07 02:11:22 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd290587_5100366f
+UUID: 4d36f5df_18ff6d79
+Bytes: 436
+>>>> For fail initialization solution, how does houdini check the version of libnativebridge?
+>> What exactly do you mean here?
+Andreas mentioned "Houdini is still free to fail initialization to avoid this" in previous comments. I think it's good idea to give houdini a chance to determine whether supports current interface version of libnativebridge before initialization. But houdini cannot get the interface version in current code.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

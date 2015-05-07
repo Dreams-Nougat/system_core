@@ -9,10 +9,26 @@ UUID: 8d1e2d58_bbe1791a
 Bytes: 49
 no need. all these header files are C++ only now.
 
+55
+Thu May 07 20:27:24 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d1e2d58_bbe1791a
+UUID: cd24a5a6_67ffca78
+Bytes: 8
+Deleted.
+
 241
 Thu May 07 04:46:31 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd24a5a6_2788b221
 Bytes: 63
 no need to overload. everything's moving to std::string anyway.
+
+241
+Thu May 07 20:27:24 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_2788b221
+UUID: 4d8435cc_d389abbe
+Bytes: 4
+Done
 

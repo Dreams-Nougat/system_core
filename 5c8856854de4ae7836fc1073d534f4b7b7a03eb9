@@ -1,0 +1,11 @@
+Revision: 5c8856854de4ae7836fc1073d534f4b7b7a03eb9
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+374
+Thu May 07 00:16:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_22dc23e5
+Bytes: 38
+8? not * and then sizeof(uintptr_t)/8?
+

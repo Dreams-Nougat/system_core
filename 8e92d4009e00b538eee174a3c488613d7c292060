@@ -9,6 +9,16 @@ UUID: cd24a5a6_277d522d
 Bytes: 91
 Lesson for me? I need to re-read the Android coding standard. This style looks like toybox?
 
+799:4-799:21
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_277d522d
+UUID: 4d36f5df_9897dd90
+Bytes: 161
+https://google-styleguide.googlecode.com/svn/trunk/cppguide.html
+
+either is acceptible. personally i don't usually use it for anything other than just "return;".
+
 966:56-966:62
 Thu May 07 14:39:30 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,7 +26,22 @@ UUID: cd24a5a6_e7863aae
 Bytes: 44
 " stage" is repeated, put into format string
 
+966:56-966:62
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_e7863aae
+UUID: 4d36f5df_78767909
+Bytes: 61
+now *that* would be toybox style. it's harder to read though.
+
 File: init/log.cpp
+
+27
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_8eebf8a7
+Bytes: 189
+oops. when i realized that the problem wasn't the "msg[512]" but actually the kernel, i undid my use of android::base::StringPrintf but left this here (and the <string> above). will remove.
 
 38
 Thu May 07 02:23:15 2015 +0000
@@ -33,6 +58,24 @@ UUID: cd24a5a6_07313698
 Bytes: 172
 What about splitting the messages up, prefix a '>' or something? You also _probably_ want to ensure that a trailing newline is sent on each message line, even if truncated.
 
+38
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_07313698
+UUID: 4d8435cc_eebc04a9
+Bytes: 697
+i was hoping someone from kernel land was going to tell me (a) what the actual limit is and (b) how i'm supposed to write this.
+
+as far as i can tell, you *must* use writev. i've tried to switch to write in the past and nothing comes out. you mean split up as in "insert line breaks and pretend this was really an n-line message"? that's a possibility. does that have to be multiple writev calls, or can i just have more iovecs?
+
+it looks to me like the limit is the limit of kmalloc:
+
+  818         line = kmalloc(len + 1, GFP_KERNEL);
+  819         if (line == NULL)
+  820                 return -ENOMEM;
+
+but the internet thinks that's 128KiB. and cmdline might be long, but it's not that long.
+
 File: init/util.cpp
 
 36:0-36:30
@@ -41,6 +84,14 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d8435cc_ce0d803b
 Bytes: 72
 Q: required? what string functionality is pulled in with stringprintf.h?
+
+36:0-36:30
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_ce0d803b
+UUID: cd24a5a6_e75f5abe
+Bytes: 92
+no. left over from an earlier version. (nothing but the std::string printf-style functions.)
 
 414
 Thu May 07 02:23:15 2015 +0000
@@ -56,4 +107,12 @@ Parent: 4d8435cc_98a4a20a
 UUID: 4d8435cc_ee8164fe
 Bytes: 152
 Can you split the two (making the hack dependent on the cleanup, as one likes the change from char* to std:string&), so that the 'hack' can be reverted?
+
+414
+Thu May 07 14:55:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_ee8164fe
+UUID: cd24a5a6_c7be9e46
+Bytes: 202
+my hope was that you'd see this and come up with the right fix, and it looks like romlem's about to give AOSP the internal kernel (and then get HTC to fix their bootloader). so i'll remove this instead.
 

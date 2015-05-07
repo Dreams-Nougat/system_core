@@ -94,6 +94,22 @@ UUID: 4d36f5df_b8b181c2
 Bytes: 50
 Got it. OK to me. Sorry for missing your comments.
 
+149:39-149:60
+Thu May 07 19:56:22 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d36f5df_b8b181c2
+UUID: 4d8435cc_e1d0d2f7
+Bytes: 168
+Would you prefer a push method:
+
+ NativeBridgeCallbacks2::setVersion
+
+or a new initialize method:
+
+ NativeBridgeCallbacks2::initialize2(..., uint32_t bridge_version)
+
+?
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

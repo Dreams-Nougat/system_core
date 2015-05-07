@@ -9,6 +9,14 @@ UUID: 4d8435cc_0cdff803
 Bytes: 32
 no need to define this so early.
 
+63
+Thu May 07 04:09:05 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_0cdff803
+UUID: cd24a5a6_0753763e
+Bytes: 4
+Done
+
 66
 Wed May 06 23:43:34 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: cd24a5a6_27c675ca
 Bytes: 26
 make this a real for loop?
 
+66
+Thu May 07 04:09:05 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_27c675ca
+UUID: 4d8435cc_d363ebc1
+Bytes: 4
+Done
+
 70
 Wed May 06 23:43:34 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd24a5a6_e7363d61
 Bytes: 5
 == -1
+
+70
+Thu May 07 04:09:05 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_e7363d61
+UUID: 8d1e2d58_00747cf7
+Bytes: 4
+Done
 
 File: adb/adb_utils.h
 
@@ -31,4 +55,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd24a5a6_a7fba5f5
 Bytes: 36
 if we're moving to C++, return bool.
+
+25
+Thu May 07 04:09:05 2015 +0000
+Author: Alex Vallée <1026927@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_a7fba5f5
+UUID: cd24a5a6_873f86d8
+Bytes: 4
+Done
 

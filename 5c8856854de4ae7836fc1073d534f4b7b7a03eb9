@@ -17,3 +17,11 @@ UUID: 4d8435cc_dfe5344f
 Bytes: 174
 Since these are maps, I didn't think it made a lot of sense to make this depend on the bitness. Most of the offsets will be 0, most of the sizes will be relatively small too.
 
+374
+Thu May 07 00:27:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_dfe5344f
+UUID: 4d8435cc_0291ff1d
+Bytes: 70
+yeah, good point. my comment would make more sense applied to L358 :-)
+

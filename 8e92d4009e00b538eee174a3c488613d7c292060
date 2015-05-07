@@ -1,0 +1,20 @@
+Revision: 8e92d4009e00b538eee174a3c488613d7c292060
+Patch-set: 1
+File: init/log.cpp
+
+38
+Thu May 07 02:23:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd24a5a6_c4fb3cf5
+Bytes: 137
+annoyingly, the kernel seems to silently swallow large messages, which prevented me from dumping the /proc/cmdline i was seeing to dmesg.
+
+File: init/util.cpp
+
+414
+Thu May 07 02:23:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_98a4a20a
+Bytes: 107
+this is the workaround. the rest of this change is mainly just cleanup from my journey to find the problem.
+

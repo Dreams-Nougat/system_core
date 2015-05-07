@@ -9,3 +9,11 @@ UUID: cd24a5a6_22dc23e5
 Bytes: 38
 8? not * and then sizeof(uintptr_t)/8?
 
+374
+Thu May 07 00:20:16 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_22dc23e5
+UUID: 4d8435cc_dfe5344f
+Bytes: 174
+Since these are maps, I didn't think it made a lot of sense to make this depend on the bitness. Most of the offsets will be 0, most of the sizes will be relatively small too.
+

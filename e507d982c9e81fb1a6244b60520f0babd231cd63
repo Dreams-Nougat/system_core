@@ -87,3 +87,11 @@ UUID: cd24a5a6_fd00c2bc
 Bytes: 152
 yeah, that's why i didn't do it. (i often find myself wishing i could define a local in the head of a while loop. so many legacy C APIs work like this.)
 
+48:4-49:50
+Fri May 08 16:07:06 2015 +0000
+Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24a5a6_fd00c2bc
+UUID: 2d62a1ee_d89e7965
+Bytes: 218
+(You can define a local in a "while" or "if" but that's really evil and confusing and the only condition is an implicit conversion of the local to bool, so forget about "while(int written = fwrite(...) >= 0) { ... }".)
+

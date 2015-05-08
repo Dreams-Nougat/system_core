@@ -2,12 +2,41 @@ Revision: e507d982c9e81fb1a6244b60520f0babd231cd63
 Patch-set: 1
 File: adb/commandline.cpp
 
+269:17-269:21
+Fri May 08 06:58:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_400f0d18
+Bytes: 7
+BUFSIZ?
+
+270:36-270:40
+Fri May 08 06:58:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_a04a994e
+Bytes: 11
+sizeof(buf)
+
 921:7-921:10
 Fri May 08 06:56:55 2015 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d36f5df_a65f1ebf
 Bytes: 95
 You guys moved to C++, at some point you should go and clean this up to be a proper bool... :-)
+
+921:7-921:10
+Fri May 08 06:58:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d36f5df_a65f1ebf
+UUID: 4d8435cc_e00661f7
+Bytes: 27
+It's been happening slowly.
+
+924
+Fri May 08 06:58:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d1e2d58_f21a3d6d
+Bytes: 47
+That's annoying... I sense more cleanup coming.
 
 File: adb/remount_service.cpp
 

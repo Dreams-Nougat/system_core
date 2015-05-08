@@ -110,6 +110,36 @@ or a new initialize method:
 
 ?
 
+149:39-149:60
+Fri May 08 01:28:18 2015 +0000
+Author: Jinghui Gu <1051763@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_e1d0d2f7
+UUID: 0d407d41_9ad22a86
+Bytes: 603
+The push method is much better.
+Or, maybe define a check method, instead?
+For example, bool NativeBridgeCallbacks2::isCompatibleVersion(uint32_t bridge_version).
+Then, invoke it before initialize?
+
+bool InitializeNativeBridge(JNIEnv* env, const char* instruction_set) {
+
+    ... ...
+
+    if ((callbacks->version >= NativeBridgeCallbacks2::kVersionNum)
+        && !callbacks->isCompatibleVersion(kVersionNum)) {
+        CloseNativeBridge(true);
+        return false;
+    }
+    ... ...
+
+    if (callbacks->initialize(runtime_callbacks, app_code_cache_dir, instruction_set))
+
+    ... ...
+}
+
+Thanks,
+Jinghui
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

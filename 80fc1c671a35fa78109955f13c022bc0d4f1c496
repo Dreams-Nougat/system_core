@@ -1,0 +1,27 @@
+Revision: 80fc1c671a35fa78109955f13c022bc0d4f1c496
+Patch-set: 1
+File: include/log/logprint.h
+
+40:4-40:15
+Fri May 08 21:40:34 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d39c1d0_25968649
+Bytes: 84
+how does the FORMAT_TIME interact with this? suggest naming them with a shared root.
+
+60:59-60:60
+Fri May 08 21:40:34 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d407d41_b0498dbe
+Bytes: 27
+nit: O_o so much whitespace
+
+File: liblog/logprint.c
+
+753:9-753:16
+Fri May 08 21:40:34 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d407d41_4be07611
+Bytes: 30
+guaranteed to be less than 32?
+

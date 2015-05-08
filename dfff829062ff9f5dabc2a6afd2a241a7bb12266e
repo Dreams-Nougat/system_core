@@ -1,0 +1,18 @@
+Revision: dfff829062ff9f5dabc2a6afd2a241a7bb12266e
+Patch-set: 1
+File: mkbootimg/mkbootimg.c
+
+145
+Fri May 08 00:00:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_20f02d4e
+Bytes: 59
+note that none of these actually check that the value fits.
+
+167
+Fri May 08 00:00:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d8435cc_7c656f09
+Bytes: 49
+and nothing checks any of this arithmetic either.
+

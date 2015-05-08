@@ -9,12 +9,28 @@ UUID: 4d8435cc_400f0d18
 Bytes: 7
 BUFSIZ?
 
+269:17-269:21
+Fri May 08 15:42:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_400f0d18
+UUID: 8d1e2d58_32d1d57c
+Bytes: 4
+Done
+
 270:36-270:40
 Fri May 08 06:58:49 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d8435cc_a04a994e
 Bytes: 11
 sizeof(buf)
+
+270:36-270:40
+Fri May 08 15:42:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_a04a994e
+UUID: 4d8435cc_621ed6f4
+Bytes: 4
+Done
 
 921:7-921:10
 Fri May 08 06:56:55 2015 +0000
@@ -30,6 +46,14 @@ Parent: 4d36f5df_a65f1ebf
 UUID: 4d8435cc_e00661f7
 Bytes: 27
 It's been happening slowly.
+
+921:7-921:10
+Fri May 08 15:42:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d8435cc_e00661f7
+UUID: cd24a5a6_fd7b2237
+Bytes: 75
+actually, this one's a lie. it's actually used directly as the exit status.
 
 924
 Fri May 08 06:58:49 2015 +0000
@@ -54,4 +78,12 @@ Parent: 2d39c1d0_babbb54f
 UUID: 4d36f5df_26cd6e05
 Bytes: 73
 (Though you'd have to replicate the "increment," so probably better not.)
+
+48:4-49:50
+Fri May 08 15:42:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d36f5df_26cd6e05
+UUID: cd24a5a6_fd00c2bc
+Bytes: 152
+yeah, that's why i didn't do it. (i often find myself wishing i could define a local in the head of a while loop. so many legacy C APIs work like this.)
 

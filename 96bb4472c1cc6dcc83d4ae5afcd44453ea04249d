@@ -1,0 +1,18 @@
+Revision: 96bb4472c1cc6dcc83d4ae5afcd44453ea04249d
+Patch-set: 1
+File: adb/client/main.cpp
+
+46
+Fri May 08 19:35:42 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d679d0f_58d29d88
+Bytes: 36
+or move the #if inside the function?
+
+74
+Fri May 08 19:35:42 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d679d0f_d83c6d44
+Bytes: 11
+implemented
+

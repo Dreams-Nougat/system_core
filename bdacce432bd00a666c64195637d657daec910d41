@@ -1,0 +1,11 @@
+Revision: bdacce432bd00a666c64195637d657daec910d41
+Patch-set: 4
+File: include/log/logprint.h
+
+39:28-39:55
+Mon May 11 23:38:57 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d338121_e460d4b7
+Bytes: 82
+should FORMAT_TIME be FORMAT_TIME_MSEC? What priority are you converting to color?
+

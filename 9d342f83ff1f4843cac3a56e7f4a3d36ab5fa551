@@ -9,3 +9,11 @@ UUID: 2d70e1c2_96f1dd68
 Bytes: 158
 Should stand the test of time, crossing fingers that the compiler realizes that LOG_ID_MAX = LOG_ID_KERNEL + 1 and optimizes this to (log_id >= LOG_ID_KERNEL)
 
+139:8-139:59
+Mon May 11 23:08:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d70e1c2_96f1dd68
+UUID: 2d338121_41a41209
+Bytes: 14
+Nope, not here
+

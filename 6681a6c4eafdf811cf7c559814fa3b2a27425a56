@@ -1,0 +1,11 @@
+Revision: 6681a6c4eafdf811cf7c559814fa3b2a27425a56
+Patch-set: 1
+File: adb/remount_service.cpp
+
+62
+Mon May 11 19:16:21 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d70e1c2_67233028
+Bytes: 54
+do we still have errno from ioctl() after adb_close()?
+

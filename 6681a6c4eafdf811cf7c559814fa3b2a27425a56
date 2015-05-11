@@ -11,10 +11,26 @@ This might be better as:
 
 bool result = ioctl(...) == 0;
 
+60:18-60:45
+Mon May 11 20:27:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d70e1c2_2adf3d04
+UUID: 4d6d15ec_dd2689b3
+Bytes: 100
+Done (well, != -1 --- == 0 is dangerous with ioctl because some return positive values for success).
+
 62
 Mon May 11 19:16:21 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2d70e1c2_67233028
 Bytes: 54
 do we still have errno from ioctl() after adb_close()?
+
+62
+Mon May 11 20:27:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d70e1c2_67233028
+UUID: 2d70e1c2_adf047ab
+Bytes: 35
+as long as adb_close succeeds, yes.
 

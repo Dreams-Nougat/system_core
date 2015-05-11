@@ -2,6 +2,15 @@ Revision: 6681a6c4eafdf811cf7c559814fa3b2a27425a56
 Patch-set: 1
 File: adb/remount_service.cpp
 
+60:18-60:45
+Mon May 11 19:51:48 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d70e1c2_2adf3d04
+Bytes: 56
+This might be better as:
+
+bool result = ioctl(...) == 0;
+
 62
 Mon May 11 19:16:21 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>

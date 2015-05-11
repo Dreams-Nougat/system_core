@@ -9,3 +9,13 @@ UUID: 2d338121_e460d4b7
 Bytes: 82
 should FORMAT_TIME be FORMAT_TIME_MSEC? What priority are you converting to color?
 
+39:28-39:55
+Mon May 11 23:50:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d338121_e460d4b7
+UUID: ad3e91ea_e0e27c9d
+Bytes: 367
+FORMAT_TIME is a specific output format. FORMAT_TIME_USEC specifically modifies the time in _any_ output format to add in the three extra digits of USEC output. In the future, for example, we can go as far as FORMAT_TIME_NSEC modifier if need be.
+
+specifically FORMAT_TIME, FORMAT_THREADTIME and FORMAT_LONG are the base formats that get modified by FORMAT_TIME_USEC.
+

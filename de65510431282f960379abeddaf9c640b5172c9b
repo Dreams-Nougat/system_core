@@ -1,0 +1,11 @@
+Revision: de65510431282f960379abeddaf9c640b5172c9b
+Patch-set: 5
+File: include/log/logprint.h
+
+61:0-62:3
+Tue May 12 19:35:11 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43c57f_3e4abe87
+Bytes: 90
+Did not want to use bool since I expected to also support -1 for bad format in the future.
+

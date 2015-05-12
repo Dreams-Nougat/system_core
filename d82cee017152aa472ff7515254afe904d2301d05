@@ -1,0 +1,25 @@
+Revision: d82cee017152aa472ff7515254afe904d2301d05
+Patch-set: 3
+File: logd/LogStatistics.cpp
+
+387:30-387:40
+Tue May 12 19:42:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d338121_0d3a3493
+Bytes: 79
+do these need to be freed? might need a special deallocator for this unique_ptr
+
+396:6-409:13
+Tue May 12 19:42:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_cee5e1d4
+Bytes: 27
+print this outside the loop
+
+421:16-421:17
+Tue May 12 19:42:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43c57f_5e198a78
+Bytes: 25
+} else some generic name?
+

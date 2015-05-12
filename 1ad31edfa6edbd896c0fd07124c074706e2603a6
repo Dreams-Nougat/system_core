@@ -1,0 +1,57 @@
+Revision: 1ad31edfa6edbd896c0fd07124c074706e2603a6
+Patch-set: 13
+File: logd/LogAudit.cpp
+
+130:26-130:54
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43c57f_de2c7a96
+Bytes: 24
+nit make this a constant
+
+File: logd/LogKlog.cpp
+
+41:8-41:9
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43c57f_7ea3a67e
+Bytes: 31
+ubernit: commas with line above
+
+64:16-64:20
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_0e0509cd
+Bytes: 13
+nit: constant
+
+180:13-180:16
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_ae54d5a8
+Bytes: 176
+this whole method could use some readability love. Try to break it up into smaller pieces where it makes sense, for example, each log type might be handled in its own function.
+
+380:4-424:5
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_0e69896b
+Bytes: 24
+this could be broken out
+
+File: logd/LogKlog.h
+
+31:0-32:16
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd43c57f_9eccb26b
+Bytes: 55
+do you need both of these? are they mutually exclusive?
+
+46:9-46:29
+Tue May 12 19:54:11 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_ee56dde5
+Bytes: 33
+why underscore_case for this one?
+

@@ -9,6 +9,14 @@ UUID: ad3e91ea_890f5cb5
 Bytes: 33
 unix_open doesn't need to change?
 
+149
+Tue May 12 07:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad3e91ea_890f5cb5
+UUID: 4d599572_5dcd0f04
+Bytes: 401
+I didn't want to touch the full adb codebase before I got sign-off from you guys (or in case you guys wanted to make the rest of the changes yourselves or do it some other way). So you guys let me know if you want me to do the rest of the changes in this change or separately, or if you want to think about this a while (not a bad idea), or if you want to do it yourselves and want me to abandon, etc.
+
 File: adb/sysdeps_win32.cpp
 
 3106
@@ -18,6 +26,14 @@ UUID: 2d338121_95d2d4d3
 Bytes: 120
 yeah, that does seem like the best choice, if only because it's the option where we're least likely to reintroduce bugs.
 
+3106
+Tue May 12 07:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d338121_95d2d4d3
+UUID: 4d599572_fdbb434e
+Bytes: 467
+This is the first time I've tried this option (I've done plenty of option 1 and 2) and I think option 3 seems pretty good, especially for a codebase that already uses char*. I also think that if you guys are going to keep having way more POSIX competency than Win32, maybe it makes more sense to generally keep the codebase more POSIX-y as possible (if you don't want to introduce tons of generic, abstracted platform wrappers which some cross-platform codebases do).
+
 3181
 Tue May 12 06:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +41,26 @@ UUID: ad3e91ea_c91044d4
 Bytes: 13
 why isn't it?
 
+3181
+Tue May 12 07:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad3e91ea_c91044d4
+UUID: 4d599572_fd94e3be
+Bytes: 411
+There seems to be some debate about whether the Standard says that the chars in a string are contiguous or not. Some people say that it didn't used to be in the Standard, but then someone checked many implementations and found that all were contiguous, so then they made it part of a newer Standard (C++11? something modern?). It definitely feels somewhat sketchy to get write access to the raw buffer this way.
+
 3238
 Tue May 12 06:14:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd43c57f_ede2719d
 Bytes: 10
 or strdup?
+
+3238
+Tue May 12 07:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd43c57f_ede2719d
+UUID: 6d4819a1_9bae8b12
+Bytes: 4
+Done
 

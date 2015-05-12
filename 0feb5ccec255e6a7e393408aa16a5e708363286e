@@ -1,0 +1,11 @@
+Revision: 0feb5ccec255e6a7e393408aa16a5e708363286e
+Patch-set: 7
+File: logd/LogBufferElement.cpp
+
+57:21-57:43
+Tue May 12 19:36:03 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_ae6b35ec
+Bytes: 16
+reinterpret_cast
+

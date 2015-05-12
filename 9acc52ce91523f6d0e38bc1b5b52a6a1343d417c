@@ -1,0 +1,12 @@
+Revision: 9acc52ce91523f6d0e38bc1b5b52a6a1343d417c
+Patch-set: 1
+File: include/system/audio.h
+
+1107:25-1107:54
+Tue May 12 15:39:49 2015 +0000
+Author: Eric Laurent <1003259@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d338121_10d9b21b
+Bytes: 202
+this is not sufficient because you can still confuse AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES and AUDIO_DEVICE_IN_REMOTE_SUBMIX.
+The second condition me be anded with !(audio_is_output_devices(device)
+

@@ -1,0 +1,32 @@
+Revision: 04b3972dbc45a8fbc7c731d50a197fe47e1035d7
+Patch-set: 14
+File: logd/LogKlog.cpp
+
+184:11-184:21
+Tue May 12 21:58:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_df3f4d84
+Bytes: 15
+parseKernelPrio
+
+246:0-264:5
+Tue May 12 21:58:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d4d4db1_2238eaff
+Bytes: 48
+Pulling this out negates the return value gains.
+
+271:0-389:43
+Tue May 12 21:58:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d338121_436b6d9f
+Bytes: 19
+parsing is hard ;-}
+
+400:0-426:9
+Tue May 12 21:58:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d4d4db1_a2235ad3
+Bytes: 58
+This can be pulled out into convertKernelPrioToAndroidPrio
+

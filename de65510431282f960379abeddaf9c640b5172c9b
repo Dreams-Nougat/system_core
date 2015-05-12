@@ -1,5 +1,14 @@
 Revision: de65510431282f960379abeddaf9c640b5172c9b
 Patch-set: 5
+File: /COMMIT_MSG
+
+11:9-11:10
+Tue May 12 19:37:24 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad3e91ea_aebdf5c8
+Bytes: 8
+trailing
+
 File: include/log/logprint.h
 
 61:0-62:3

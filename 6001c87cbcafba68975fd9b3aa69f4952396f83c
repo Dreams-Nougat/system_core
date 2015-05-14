@@ -1,0 +1,11 @@
+Revision: 6001c87cbcafba68975fd9b3aa69f4952396f83c
+Patch-set: 3
+File: base/include/base/stringprintf.h
+
+49
+Thu May 14 03:36:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_14299c07
+Bytes: 11
+good catch!
+

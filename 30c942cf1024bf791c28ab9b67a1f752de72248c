@@ -9,3 +9,13 @@ UUID: 4d9a7579_8c5e5b76
 Bytes: 8
 such as?
 
+9
+Fri May 15 18:24:05 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d9a7579_8c5e5b76
+UUID: 0da4fdb8_a5e5ead4
+Bytes: 282
+Unfortunately, I don't know exactly. When I see it happen, the process somehow wound up as a zombie, so maps is empty. I suspect that someone is killing the process/thread behind debuggerd's back. It could also be a kernel bug.
+
+I'll file a bug to investigate why this is occurring.
+

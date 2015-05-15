@@ -140,6 +140,14 @@ bool InitializeNativeBridge(JNIEnv* env, const char* instruction_set) {
 Thanks,
 Jinghui
 
+149:39-149:60
+Fri May 15 03:23:56 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d407d41_9ad22a86
+UUID: 0da4fdb8_e64fffc1
+Bytes: 150
+In the end internal discussion made me change it back to a single struct. That has the advantage that it's easier to initialize, as it's an aggregate.
+
 151:0-163:52
 Mon May 04 10:15:55 2015 +0000
 Author: Eric Lin <1051588@85c56323-6fa9-3386-8a01-6480fb634889>

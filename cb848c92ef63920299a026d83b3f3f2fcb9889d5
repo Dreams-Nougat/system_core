@@ -9,6 +9,14 @@ UUID: cd8d8546_8271bc5f
 Bytes: 44
 Line up the opening quote with the one above
 
+181
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd8d8546_8271bc5f
+UUID: 8dc2ad55_4899af4f
+Bytes: 4
+Done
+
 File: adb/sysdeps_win32.cpp
 
 3151
@@ -17,6 +25,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eda6c9c2_42fb57f6
 Bytes: 103
 Why can't we use the macros? Explain in the comment so I don't ask the same question a week from now :)
+
+3151
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eda6c9c2_42fb57f6
+UUID: 4d9a7579_0cafcb5e
+Bytes: 4
+Done
 
 3165
 Fri May 15 00:30:49 2015 +0000
@@ -29,12 +45,28 @@ http://en.cppreference.com/w/cpp/locale/codecvt
 
 It looks like you end up needing to call narrow and widen a lot, and the codecvt API is a little clunky, so maybe keep your helper functions, but there's no sense in implementing the guts of them yourself.
 
+3165
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd8d8546_a20a38a4
+UUID: 8dc2ad55_6824ab67
+Bytes: 429
+It is my understanding that codecvt is pretty low-level and that std::wstring_convert is the right class to use, but it isn't available in mingw. It does seem to be in libcxx, but that isn't yet available on Windows, is it? IMO, it seems a lot easier to call MultiByteToWideChar/WideCharToMultiByte than codecvt, but I'm open to ideas. If you think it is much better to change this to use codecvt or wstring_convert, let me know.
+
 3339:26-3339:27
 Fri May 15 00:30:49 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd8d8546_c25e6477
 Bytes: 16
 extra space here
+
+3339:26-3339:27
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd8d8546_c25e6477
+UUID: 8dc2ad55_a842431b
+Bytes: 4
+Done
 
 3352:24-3352:26
 Fri May 15 00:30:49 2015 +0000
@@ -43,10 +75,26 @@ UUID: eda6c9c2_9d191eb1
 Bytes: 10
 char* path
 
+3352:24-3352:26
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eda6c9c2_9d191eb1
+UUID: 8dc2ad55_c83f7f84
+Bytes: 4
+Done
+
 3412
 Fri May 15 00:30:49 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd8d8546_c5bd8ec8
 Bytes: 51
 Typical style is to line up with the first argument
+
+3412
+Fri May 15 01:30:21 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd8d8546_c5bd8ec8
+UUID: 6dbd79c9_7c42adff
+Bytes: 4
+Done
 

@@ -1,0 +1,25 @@
+Revision: 736e547f1bfb3f7afc56a9678adece1393a19d86
+Patch-set: 1
+File: adb/services.cpp
+
+249
+Fri May 15 22:51:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_d80f2966
+Bytes: 13
+posix_openpt?
+
+256
+Fri May 15 22:51:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda6c9c2_f97f9024
+Bytes: 8
+openpty?
+
+263
+Fri May 15 22:51:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda6c9c2_d9548caa
+Bytes: 16
+oh, forkpty? :-)
+

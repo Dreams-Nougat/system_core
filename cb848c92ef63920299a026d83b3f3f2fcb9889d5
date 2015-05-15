@@ -1,0 +1,52 @@
+Revision: cb848c92ef63920299a026d83b3f3f2fcb9889d5
+Patch-set: 4
+File: adb/client/main.cpp
+
+181
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_8271bc5f
+Bytes: 44
+Line up the opening quote with the one above
+
+File: adb/sysdeps_win32.cpp
+
+3151
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda6c9c2_42fb57f6
+Bytes: 103
+Why can't we use the macros? Explain in the comment so I don't ask the same question a week from now :)
+
+3165
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_a20a38a4
+Bytes: 332
+Looks like even mingw's C++ stdlib supports the unicode conversions already:
+
+http://en.cppreference.com/w/cpp/locale/codecvt
+
+It looks like you end up needing to call narrow and widen a lot, and the codecvt API is a little clunky, so maybe keep your helper functions, but there's no sense in implementing the guts of them yourself.
+
+3339:26-3339:27
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_c25e6477
+Bytes: 16
+extra space here
+
+3352:24-3352:26
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda6c9c2_9d191eb1
+Bytes: 10
+char* path
+
+3412
+Fri May 15 00:30:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_c5bd8ec8
+Bytes: 51
+Typical style is to line up with the first argument
+

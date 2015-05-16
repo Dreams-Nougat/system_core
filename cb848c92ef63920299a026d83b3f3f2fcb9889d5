@@ -53,6 +53,16 @@ UUID: 8dc2ad55_6824ab67
 Bytes: 429
 It is my understanding that codecvt is pretty low-level and that std::wstring_convert is the right class to use, but it isn't available in mingw. It does seem to be in libcxx, but that isn't yet available on Windows, is it? IMO, it seems a lot easier to call MultiByteToWideChar/WideCharToMultiByte than codecvt, but I'm open to ideas. If you think it is much better to change this to use codecvt or wstring_convert, let me know.
 
+3165
+Sat May 16 01:06:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dc2ad55_6824ab67
+UUID: 0da4fdb8_36d68eed
+Bytes: 174
+Yes, wstring_convert was what I had in mind. grep fail.
+
+We can clean up whenever I finish getting libc++ over to windows (possibly implemented now, but still needs testing).
+
 3339:26-3339:27
 Fri May 15 00:30:49 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

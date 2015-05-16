@@ -1,0 +1,18 @@
+Revision: bec4696445dfa301a5fc630a144feec174d3ba8b
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+1216
+Sat May 16 00:08:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda6c9c2_ef0d02ed
+Bytes: 11
+require(1)?
+
+1225
+Sat May 16 00:08:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd8d8546_fb805f48
+Bytes: 12
+(stray tab.)
+

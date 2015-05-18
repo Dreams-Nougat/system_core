@@ -1,0 +1,11 @@
+Revision: a6ac9ce98bd38099a4e89010111d14e4d5fc190e
+Patch-set: 6
+File: libnativebridge/native_bridge.cc
+
+154:5-154:75
+Mon May 18 12:19:22 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdd4a530_96e06c4b
+Bytes: 36
+I wonder if it is worth bothering :)
+

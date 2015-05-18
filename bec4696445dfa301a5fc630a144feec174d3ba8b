@@ -9,10 +9,26 @@ UUID: eda6c9c2_ef0d02ed
 Bytes: 11
 require(1)?
 
+1216
+Mon May 18 17:54:35 2015 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eda6c9c2_ef0d02ed
+UUID: cdabc59c_32719808
+Bytes: 310
+I am checking for argc instead.... require(1) does not seem to be suffice to check if we have only two arguments... I can insert a require(1) instead of argc check, but, an invalid command such as "fastboot flashing unlock lock" might end up being sent to the the bootloader, before flashing the error message.
+
 1225
 Sat May 16 00:08:32 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd8d8546_fb805f48
 Bytes: 12
 (stray tab.)
+
+1225
+Mon May 18 17:54:35 2015 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd8d8546_fb805f48
+UUID: eda409cd_ce3e4bdc
+Bytes: 4
+Done
 

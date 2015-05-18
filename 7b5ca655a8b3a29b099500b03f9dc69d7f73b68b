@@ -9,3 +9,13 @@ UUID: cdabc59c_87f5ccd0
 Bytes: 88
 Move this into libutil library? utf8_character_length(const char *buffer, size_t length)
 
+754:0-802:1
+Mon May 18 16:01:38 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdabc59c_87f5ccd0
+UUID: eda409cd_88dcbbe6
+Bytes: 185
+Recant: can not move this, liblog can not depend on libutils, introduces a circular dependency.
+
+There may be value in adding this to libcutils, but currently this is the only consumer.
+

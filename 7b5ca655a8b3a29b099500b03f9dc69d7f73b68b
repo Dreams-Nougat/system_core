@@ -1,0 +1,11 @@
+Revision: 7b5ca655a8b3a29b099500b03f9dc69d7f73b68b
+Patch-set: 1
+File: liblog/logprint.c
+
+754:0-802:1
+Mon May 18 15:40:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdabc59c_87f5ccd0
+Bytes: 88
+Move this into libutil library? utf8_character_length(const char *buffer, size_t length)
+

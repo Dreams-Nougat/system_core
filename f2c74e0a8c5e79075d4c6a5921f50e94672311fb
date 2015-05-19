@@ -1,0 +1,11 @@
+Revision: f2c74e0a8c5e79075d4c6a5921f50e94672311fb
+Patch-set: 8
+File: rootdir/init.rc
+
+268
+Tue May 19 16:38:30 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d37016d_8a2a8f76
+Bytes: 55
+still conflicts / more permissive than internal master.
+

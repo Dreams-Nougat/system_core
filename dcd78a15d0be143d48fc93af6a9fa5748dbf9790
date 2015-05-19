@@ -9,3 +9,11 @@ UUID: 0da23dbf_1dc8e426
 Bytes: 115
 Did you need to split this, it doesn't look like it goes over 100? Or are you trying to use 80 chars for this file?
 
+819:12-819:75
+Tue May 19 00:29:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0da23dbf_1dc8e426
+UUID: 8d70ed19_8d2ca995
+Bytes: 55
+The .clang-format file says 80 characters (implicitly).
+

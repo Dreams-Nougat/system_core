@@ -9,3 +9,20 @@ UUID: 2d37016d_a7222e22
 Bytes: 149
 These error messages aren't helpful. You should include args[1] in the error message, otherwise all I know is that a random mkdir failed somewhere...
 
+File: rootdir/init.rc
+
+268
+Tue May 19 16:08:51 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adfdb1c1_88f957fd
+Bytes: 358
+the permissions here conflict with the ones in internal master.
+
+  mkdir /data/misc/vold 0700 root root
+
+Why does system_server/system apps need access? SELinux policies on this explicitly prohibit anyone but vold from accessing these directories.
+
+vold runs as root, whereas you're only granting system access.
+
+Why 0770? Internal master is tighter at 0700.
+

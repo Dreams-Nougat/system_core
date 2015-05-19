@@ -1,0 +1,11 @@
+Revision: 7862edbe6a9a002c65b8126810f2956b43a173e5
+Patch-set: 1
+File: adb/jdwp_service.cpp
+
+500
+Tue May 19 22:42:25 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adfdb1c1_ceeab272
+Bytes: 310
+This is technically undefined behavior (writing to one part of a union and reading it as something else). Can you please memcpy() from a completed sockaddr_un to a sockaddr instead? The compiler can hopefully optimize away the actual call and replace it with the same loads/stores that happen in your case too.
+

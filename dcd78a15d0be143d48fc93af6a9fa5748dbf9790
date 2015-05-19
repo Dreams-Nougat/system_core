@@ -1,0 +1,11 @@
+Revision: dcd78a15d0be143d48fc93af6a9fa5748dbf9790
+Patch-set: 2
+File: adb/sockets.cpp
+
+819:12-819:75
+Tue May 19 00:15:40 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0da23dbf_1dc8e426
+Bytes: 115
+Did you need to split this, it doesn't look like it goes over 100? Or are you trying to use 80 chars for this file?
+

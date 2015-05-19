@@ -1,0 +1,11 @@
+Revision: ef0c8412e3e144e0eebdec211dd6f56b5632ff39
+Patch-set: 7
+File: init/builtins.cpp
+
+226
+Tue May 19 16:06:16 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d37016d_a7222e22
+Bytes: 149
+These error messages aren't helpful. You should include args[1] in the error message, otherwise all I know is that a random mkdir failed somewhere...
+

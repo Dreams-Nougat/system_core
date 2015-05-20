@@ -19,3 +19,11 @@ Using a union is (or at least used to be) the recommended fix for this type of a
 
 memcpy would work - another possibility would be adding __attribute__((may_alias)) to the sockaddr* definitions in Bionic, given sockaddr and friends usually come with casting pointers between different related types.
 
+500
+Wed May 20 00:38:48 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed19690f_bd95673d
+UUID: 2d37016d_a3a1b0ee
+Bytes: 205
+Our clang people say that unions should never be used this way going forward. Using a memcpy provides the proper aliasing information without resorting to attributes that people will neglect in the future.
+

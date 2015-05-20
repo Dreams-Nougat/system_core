@@ -9,3 +9,13 @@ UUID: adfdb1c1_ceeab272
 Bytes: 310
 This is technically undefined behavior (writing to one part of a union and reading it as something else). Can you please memcpy() from a completed sockaddr_un to a sockaddr instead? The compiler can hopefully optimize away the actual call and replace it with the same loads/stores that happen in your case too.
 
+500
+Wed May 20 00:26:49 2015 +0000
+Author: Bernhard Rosenkränzer <1010121@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: adfdb1c1_ceeab272
+UUID: ed19690f_bd95673d
+Bytes: 387
+Using a union is (or at least used to be) the recommended fix for this type of aliasing violation by the gcc guys (works in clang too), but it technically is undefined.
+
+memcpy would work - another possibility would be adding __attribute__((may_alias)) to the sockaddr* definitions in Bionic, given sockaddr and friends usually come with casting pointers between different related types.
+

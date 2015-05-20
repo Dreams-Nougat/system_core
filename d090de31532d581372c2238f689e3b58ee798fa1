@@ -1,0 +1,29 @@
+Revision: d090de31532d581372c2238f689e3b58ee798fa1
+Patch-set: 1
+File: adb/adb.h
+
+188:44-188:46
+Wed May 20 20:54:46 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adfdb1c1_d3d6d6c7
+Bytes: 3
+too
+
+File: adb/transport.cpp
+
+737:9-737:19
+Wed May 20 20:54:46 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d6e217b_ef70f55b
+Bytes: 153
+Would this be better as auto? I don't know if it helps with readability to name the exact type.
+
+This applies to all of the for loop changes you've made.
+
+970:8-970:28
+Wed May 20 20:54:46 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d6e217b_cfff31f9
+Bytes: 61
+Technically, you don't need this. Is it here for readability?
+

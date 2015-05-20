@@ -1,0 +1,11 @@
+Revision: c36d928291f39298532817e9491dcee1ece83e10
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+299:13-299:15
+Wed May 20 16:35:23 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d37016d_b871da09
+Bytes: 11
+nit: indent
+

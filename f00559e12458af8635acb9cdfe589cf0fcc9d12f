@@ -1,0 +1,11 @@
+Revision: f00559e12458af8635acb9cdfe589cf0fcc9d12f
+Patch-set: 1
+File: base/logging.cpp
+
+39
+Wed May 20 17:17:30 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adfdb1c1_9d14eec7
+Bytes: 235
+We do want to keep the header we're implementing at the top (to try to catch cases where we forgot to include things used in the header). In this case, as near the top as possible. Put this back where it was an move windows.h above it.
+

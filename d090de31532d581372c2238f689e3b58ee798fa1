@@ -20,10 +20,28 @@ Would this be better as auto? I don't know if it helps with readability to name 
 
 This applies to all of the for loop changes you've made.
 
+737:9-737:19
+Thu May 21 22:53:35 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d6e217b_ef70f55b
+UUID: 0d031dc0_0180d045
+Bytes: 120
+Yeah, I was having a hard time deciding which was better. I guess it's pretty clear here that it's a list of transports.
+
 970:8-970:28
 Wed May 20 20:54:46 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2d6e217b_cfff31f9
 Bytes: 61
 Technically, you don't need this. Is it here for readability?
+
+970:8-970:28
+Thu May 21 22:53:35 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d6e217b_cfff31f9
+UUID: 4d0995dc_401482c6
+Bytes: 135
+Actually is needed because it's a iterator to a pointer. -> would essentially be some_ptr.whatever.
+
+It'll become a reference some day.
 

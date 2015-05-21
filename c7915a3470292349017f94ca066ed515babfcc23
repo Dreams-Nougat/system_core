@@ -1,0 +1,29 @@
+Revision: c7915a3470292349017f94ca066ed515babfcc23
+Patch-set: 2
+File: adb/adb.h
+
+48
+Thu May 21 23:01:37 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d031dc0_8c27f7ae
+Bytes: 20
+capitalize the name?
+
+File: adb/transport.cpp
+
+556:0-565:29
+Thu May 21 23:01:37 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_6098a6bf
+Bytes: 19
+move this to d-tor?
+
+File: adb/transport_test.cpp
+
+62
+Thu May 21 23:01:37 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_63d39055
+Bytes: 58
+it never returns false... unless EXPECT_EQ does it for us?
+

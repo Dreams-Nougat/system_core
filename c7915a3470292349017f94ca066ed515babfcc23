@@ -9,6 +9,14 @@ UUID: 0d031dc0_8c27f7ae
 Bytes: 20
 capitalize the name?
 
+48
+Thu May 21 23:09:42 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d031dc0_8c27f7ae
+UUID: 0d031dc0_ec5313bf
+Bytes: 102
+I'll do a rename eventually. It's a large patch and I'm trying to avoid rebasing everything yet again.
+
 File: adb/transport.cpp
 
 556:0-565:29
@@ -18,6 +26,16 @@ UUID: 4d0995dc_6098a6bf
 Bytes: 19
 move this to d-tor?
 
+556:0-565:29
+Thu May 21 23:09:42 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d0995dc_6098a6bf
+UUID: 0d031dc0_8c63778b
+Bytes: 218
+Yeah, there's plenty more cleanup to be done. This was just enough to get us to being able to use non-POD types in the class.
+
+I'll try to get to the additional cleanup once I clear the current stack of patches I have.
+
 File: adb/transport_test.cpp
 
 62
@@ -26,4 +44,18 @@ Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d0995dc_63d39055
 Bytes: 58
 it never returns false... unless EXPECT_EQ does it for us?
+
+62
+Thu May 21 23:09:42 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d0995dc_63d39055
+UUID: 0d031dc0_2ceceb39
+Bytes: 543
+EXPECT_EQ doesn't return (ASSERT_EQ would return void, making it invalid to use in operator==).
+
+I had it previously written to return false if any of these failed, but that left us with the really unhelpful test failure of "something in that class wasn't equal".
+
+The important thing is that the EXPECT_EQ will still cause the overall test to fail if any of the assertions fail.
+
+I suppose it could be `void CompareTransports(...)` instead of the operator overload, but this makes it possible to get at the private/protected data for testing.
 

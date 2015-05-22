@@ -1,0 +1,18 @@
+Revision: ccdbbe4ea8f94606a2049d6eb01503c982e00c93
+Patch-set: 1
+File: base/include/base/fd_file.h
+
+57:59-57:64
+Fri May 22 01:17:05 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cda1050e_c2937232
+Bytes: 109
+I do not think this should be const... strictly speaking reading modifies state of fd (by seeking after read)
+
+65
+Fri May 22 01:17:05 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_09cc7568
+Bytes: 12
++ release()?
+

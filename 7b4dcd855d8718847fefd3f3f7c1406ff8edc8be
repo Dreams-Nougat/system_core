@@ -9,3 +9,11 @@ UUID: adc5b1ce_c5437a71
 Bytes: 62
 If anyone has a better name for this, I'm open to suggestions.
 
+90
+Fri May 22 20:31:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: adc5b1ce_c5437a71
+UUID: 0d031dc0_040a8c58
+Bytes: 76
+Maybe IsFeatureSupported sounds okay, but I'm not the best at naming things.
+

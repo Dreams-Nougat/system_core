@@ -1,0 +1,43 @@
+Revision: 3e18503ef233fc7f884e857b7439a91c23f51f5c
+Patch-set: 1
+File: adb/adb.cpp
+
+323:28-323:30
+Fri May 22 18:14:12 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d031dc0_d08b32ed
+Bytes: 29
+Move the * to the other side?
+
+325:11-325:13
+Fri May 22 18:14:12 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_0428d7ff
+Bytes: 14
+Same as above.
+
+337:11-337:19
+Fri May 22 18:14:12 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6da65929_14565a2e
+Bytes: 87
+Is there any checking that data will not overflow (on this side and on the other side)?
+
+337:4-338:50
+Fri May 22 18:14:12 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6da65929_51711407
+Bytes: 176
+This doesn't transmit the nul terminator, do you take care of that when receiving it? At least one place it looks like you are treating the value as a string, but I'm not sure.
+
+420:18-420:35
+Fri May 22 18:14:12 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_646a731a
+Bytes: 58
+Can you change this to:
+
+if (!HOST) {
+  send_connect(t);
+}
+

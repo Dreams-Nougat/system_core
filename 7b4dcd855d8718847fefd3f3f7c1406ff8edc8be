@@ -1,0 +1,11 @@
+Revision: 7b4dcd855d8718847fefd3f3f7c1406ff8edc8be
+Patch-set: 2
+File: adb/transport.h
+
+90
+Fri May 22 20:10:16 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adc5b1ce_c5437a71
+Bytes: 62
+If anyone has a better name for this, I'm open to suggestions.
+

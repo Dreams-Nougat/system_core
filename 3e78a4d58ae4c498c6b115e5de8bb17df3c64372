@@ -24,3 +24,10 @@ UUID: 0d5f9dfa_da9881f3
 Bytes: 61
 Depends on https://android-review.googlesource.com/#/c/150901
 
+663:16-663:37
+Tue May 26 23:23:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_2576a707
+Bytes: 303
+Problem: logcat needs to continue where it left off and contain logic to merge pstore. This is a neophyte attempt to subvert logcat. Suggest adding a -F as a smarter -f flag that does this merge of pstore and previous content (at startup, drop on the floor any logging content that is already emplaced).
+

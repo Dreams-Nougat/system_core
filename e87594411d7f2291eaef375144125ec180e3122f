@@ -33,6 +33,16 @@ UUID: adfdb1c1_7166039e
 Bytes: 164
 According to net wisdom this is KISS way of insert if it does not exist, and assign if it does. We only call this here if it does not exist as part of program flow.
 
+274:8-274:33
+Tue May 26 22:23:38 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: adfdb1c1_7166039e
+UUID: 0d5f9dfa_51a1c11d
+Bytes: 113
+A few more years and you'll have this:
+
+http://en.cppreference.com/w/cpp/container/unordered_map/insert_or_assign
+
 287:16-287:31
 Tue May 19 23:44:45 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

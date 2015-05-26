@@ -1,0 +1,20 @@
+Revision: f2d3b1edb9eed224f32b21536f2efc2d36c752ad
+Patch-set: 3
+File: logd/LogStatistics.h
+
+54
+Tue May 26 22:23:38 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_12548bd8
+Bytes: 196
+If you really want to take the C++11 plunge, `for (const auto& pair : map)` :)
+
+Though that doesn't actually save you all that much when it comes to maps. If only we had destructuring assignments.
+
+105:9-105:11
+Tue May 26 22:23:38 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d9499c1_2429733d
+Bytes: 25
+Formatting here is weird.
+

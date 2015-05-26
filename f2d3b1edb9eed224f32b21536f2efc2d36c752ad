@@ -11,6 +11,14 @@ If you really want to take the C++11 plunge, `for (const auto& pair : map)` :)
 
 Though that doesn't actually save you all that much when it comes to maps. If only we had destructuring assignments.
 
+54
+Tue May 26 22:55:20 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d0995dc_12548bd8
+UUID: 0d5f9dfa_472d83c0
+Bytes: 94
+That is ok ;-} I find this code as-s more readable/maintainable (abstraction adverse reaction)
+
 105:9-105:11
 Tue May 26 22:23:38 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

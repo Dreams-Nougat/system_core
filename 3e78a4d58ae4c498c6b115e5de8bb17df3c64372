@@ -15,3 +15,12 @@ Only turn on for userdebug and eng builds.
 ToDo: plan for retrieval?
       security plan?
 
+File: rootdir/init.rc
+
+663:105-663:117
+Tue May 26 23:10:04 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d5f9dfa_da9881f3
+Bytes: 61
+Depends on https://android-review.googlesource.com/#/c/150901
+

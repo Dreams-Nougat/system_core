@@ -1,0 +1,17 @@
+Revision: 3e78a4d58ae4c498c6b115e5de8bb17df3c64372
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:0-7:7
+Tue May 26 23:07:43 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_0571e35d
+Bytes: 174
+init.rc: Add syslogd
+
+Use logcat to manage content in /data/system/logd/ directory.
+Only turn on for userdebug and eng builds.
+
+ToDo: plan for retrieval?
+      security plan?
+

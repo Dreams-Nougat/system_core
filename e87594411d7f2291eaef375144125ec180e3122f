@@ -18,6 +18,14 @@ Why in this case did the iterator type inheritance work, but in LogStatistics.h 
 
 Another feature that did not get inherited was operator[] in LogStatistics.h; it complained (when I tried to use it) that it could not do it trivially so it was deleted from the inheritance. I suspect that is my _clue_. The difference is here we retain a pointer in the value easy to copy, but in LogStatistics the value is a class with non-trivial non-default copy constructors and all to complicate things.
 
+253:56-253:57
+Tue May 26 20:15:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d37016d_980bbb25
+UUID: 4d0995dc_7db67dcc
+Bytes: 130
+you shouldn't subclass STL containers. they're not designed to be subclassed. you should has-a rather than is-a any STL container.
+
 274:8-274:33
 Tue May 19 23:44:45 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

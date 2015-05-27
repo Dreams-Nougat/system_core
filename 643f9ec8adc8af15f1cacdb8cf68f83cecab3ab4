@@ -9,6 +9,14 @@ UUID: cdf3c519_bb630040
 Bytes: 203
 this means that any calling code that uses this needs to be built with _FILE_OFFSET_BITS=64 too. i guess the fact that it's all C++ means we're safe because the mangled names won't match if you screw up?
 
+52
+Wed May 27 06:09:40 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdf3c519_bb630040
+UUID: 6d9499c1_2e4eaa49
+Bytes: 65
+There's a static_assert in random_access_file.h that checks this.
+
 File: base/fd_file.cpp
 
 48

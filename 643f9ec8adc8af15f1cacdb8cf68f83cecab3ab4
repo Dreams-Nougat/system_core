@@ -17,6 +17,14 @@ UUID: 6d9499c1_2e4eaa49
 Bytes: 65
 There's a static_assert in random_access_file.h that checks this.
 
+52
+Wed May 27 06:17:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d9499c1_2e4eaa49
+UUID: 0d5f9dfa_3b925ca7
+Bytes: 110
+good idea. even if the linker would prevent screwups, being told earlier (and with an explanation) is helpful.
+
 File: base/fd_file.cpp
 
 48

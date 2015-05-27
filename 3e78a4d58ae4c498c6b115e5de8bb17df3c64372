@@ -17,6 +17,13 @@ ToDo: plan for retrieval?
 
 File: rootdir/init.rc
 
+657:0-661:17
+Wed May 27 16:48:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d9499c1_6ddc37e6
+Bytes: 122
+Too soon, this causes logcat to hold on to /data on encrypted devices, need to hold off starting until after post-fs-data.
+
 663:105-663:117
 Tue May 26 23:10:04 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

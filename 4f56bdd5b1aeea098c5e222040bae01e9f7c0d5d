@@ -1,0 +1,72 @@
+Revision: 4f56bdd5b1aeea098c5e222040bae01e9f7c0d5d
+Patch-set: 1
+File: debuggerd/arm64/machine.cpp
+
+43:60-43:65
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_0328feff
+Bytes: 154
+cheat :-)
+
+(i think that's the right thing to do though. it's not worth the hassle of doing it right, especially because you can't easily reuse it below.)
+
+File: debuggerd/mips/machine.cpp
+
+68
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_e3f4da06
+Bytes: 67
+why do you need this given that this code isn't shared with mips64?
+
+File: debuggerd/mips64/machine.cpp
+
+68
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_79825b04
+Bytes: 15
+(same comment.)
+
+File: debuggerd/test/BacktraceMock.h
+
+82
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_23a182ed
+Bytes: 74
+is there a reason why this isn't just std::string or std::vector<uint8_t>?
+
+File: debuggerd/test/dump_memory_test.cpp
+
+32
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_192dcf8f
+Bytes: 49
+we don't want to output in 32-bit chunks on LP64?
+
+112
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_035e3e77
+Bytes: 61
+didn't danalbert factor out the temporary file stuff already?
+
+144
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd3d85a0_d8f422a0
+Bytes: 11
+unique_ptr?
+
+File: debuggerd/utility.cpp
+
+138
+Wed May 27 22:29:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_7eecfd08
+Bytes: 15
+...or too high?
+

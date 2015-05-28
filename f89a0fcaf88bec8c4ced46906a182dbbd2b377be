@@ -1,0 +1,20 @@
+Revision: f89a0fcaf88bec8c4ced46906a182dbbd2b377be
+Patch-set: 4
+File: base/include/base/mapped_file.h
+
+76:26-76:68
+Thu May 28 01:35:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_868c0c8d
+Bytes: 45
+I'm considering making this an error instead.
+
+File: base/mapped_file.cpp
+
+101
+Thu May 28 01:35:13 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_2570a4d6
+Bytes: 84
+I'm still need to make a couple more changes here. offset > size should be an error.
+

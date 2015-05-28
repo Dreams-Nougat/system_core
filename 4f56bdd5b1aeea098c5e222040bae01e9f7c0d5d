@@ -20,6 +20,14 @@ UUID: ed56c9ec_e3f4da06
 Bytes: 67
 why do you need this given that this code isn't shared with mips64?
 
+68
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_e3f4da06
+UUID: 0d54fde2_f9cc8b0a
+Bytes: 229
+I changed the macro above to static cast to uintptr_t instead of unsigned int. I could have left these all the same since it's not going to change, but I guess I'm a little too anal for that. I can change them back if you'd like.
+
 File: debuggerd/mips64/machine.cpp
 
 68
@@ -28,6 +36,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_79825b04
 Bytes: 15
 (same comment.)
+
+68
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_79825b04
+UUID: ed56c9ec_fed62dc7
+Bytes: 116
+Same as before, it's not strictly necessary, but I'm a little too anal. If it's too confusing, I can switch it back.
 
 File: debuggerd/test/BacktraceMock.h
 
@@ -38,6 +54,14 @@ UUID: ed56c9ec_23a182ed
 Bytes: 74
 is there a reason why this isn't just std::string or std::vector<uint8_t>?
 
+82
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_23a182ed
+UUID: ed56c9ec_b8967849
+Bytes: 31
+No reason. Changed to a vector.
+
 File: debuggerd/test/dump_memory_test.cpp
 
 32
@@ -47,6 +71,14 @@ UUID: 0d54fde2_192dcf8f
 Bytes: 49
 we don't want to output in 32-bit chunks on LP64?
 
+32
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_192dcf8f
+UUID: cd3d85a0_589832f1
+Bytes: 78
+I was just matching the old behavior. I don't know if this is better or worse.
+
 112
 Wed May 27 22:29:36 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -54,12 +86,28 @@ UUID: ed56c9ec_035e3e77
 Bytes: 61
 didn't danalbert factor out the temporary file stuff already?
 
+112
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_035e3e77
+UUID: 0d54fde2_7f3a3b95
+Bytes: 107
+The TemporaryFile code is not exported out of base. If there is another version somewhere, I didn't see it.
+
 144
 Wed May 27 22:29:36 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd3d85a0_d8f422a0
 Bytes: 11
 unique_ptr?
+
+144
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd3d85a0_d8f422a0
+UUID: 0d54fde2_7f4a3bb3
+Bytes: 5
+Done.
 
 File: debuggerd/utility.cpp
 
@@ -69,4 +117,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed56c9ec_7eecfd08
 Bytes: 15
 ...or too high?
+
+138
+Thu May 28 00:22:31 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_7eecfd08
+UUID: 0d54fde2_4ac937a6
+Bytes: 23
+Fixed this one already.
 

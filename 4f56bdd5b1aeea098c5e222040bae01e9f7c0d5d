@@ -28,6 +28,16 @@ UUID: 0d54fde2_f9cc8b0a
 Bytes: 229
 I changed the macro above to static cast to uintptr_t instead of unsigned int. I could have left these all the same since it's not going to change, but I guess I'm a little too anal for that. I can change them back if you'd like.
 
+68
+Thu May 28 00:50:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_f9cc8b0a
+UUID: 6d1bb95b_43ff662c
+Bytes: 242
+it's just weird because you left the other architectures. (plus it's a lot harder to read.)
+
+it would be fine if there was a way to turn this code into a loop, but the columns make that non-obvious. (and probably harder still to read anyway.)
+
 File: debuggerd/mips64/machine.cpp
 
 68
@@ -78,6 +88,14 @@ Parent: 0d54fde2_192dcf8f
 UUID: cd3d85a0_589832f1
 Bytes: 78
 I was just matching the old behavior. I don't know if this is better or worse.
+
+32
+Thu May 28 00:50:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd3d85a0_589832f1
+UUID: ed56c9ec_3b1442c6
+Bytes: 117
+i guess nobody cares then. you probably look at these more than anyone --- what would you like them to look like? :-)
 
 112
 Wed May 27 22:29:36 2015 +0000

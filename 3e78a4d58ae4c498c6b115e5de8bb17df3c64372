@@ -17,6 +17,13 @@ ToDo: plan for retrieval?
 
 File: rootdir/init.rc
 
+315
+Thu May 28 22:38:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d0995dc_056ba3a0
+Bytes: 153
+I've been reserving /data/system for system_server's home directory. I would prefer if we found another place for this directory. Maybe /data/misc/logd ?
+
 657:0-661:17
 Wed May 27 16:48:29 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

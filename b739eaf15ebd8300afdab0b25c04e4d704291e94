@@ -1,0 +1,20 @@
+Revision: b739eaf15ebd8300afdab0b25c04e4d704291e94
+Patch-set: 2
+File: adb/adb.cpp
+
+876
+Thu May 28 06:16:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_87acf19a
+Bytes: 132
+strcmp
+
+we need to stop repeating this mistake. i'm pretty sure you don't intend to support "adb features-right-now-you-fucker!" :-)
+
+879
+Thu May 28 06:16:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_a7a9f58a
+Bytes: 24
+no need for the .c_str()
+

@@ -1,0 +1,27 @@
+Revision: c5ecc2b11e945e4f63ad0d4175c5a401a3dde931
+Patch-set: 2
+File: rootdir/init.rc
+
+655
+Thu May 28 22:38:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_887ddc2e
+Bytes: 89
+Recommend moving the mkdir to somewhere around line 243.
+
+Also, don't you want 0750 here?
+
+657
+Thu May 28 22:38:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_8a05ccce
+Bytes: 62
+what's the difference between this command line, and line 660?
+
+666
+Thu May 28 22:38:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_e842d000
+Bytes: 75
+would prefer that we not reuse the logd domain, and create a logcat domain.
+

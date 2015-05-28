@@ -1,0 +1,20 @@
+Revision: 32a8a08e61885c01fdbd5095139c693969a8f645
+Patch-set: 1
+File: liblog/log_time.cpp
+
+25
+Thu May 28 22:00:11 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_2ae06511
+Bytes: 51
+Is this used by anyone after your change to logcat?
+
+File: logcat/logcat.cpp
+
+422
+Thu May 28 22:00:11 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_e6593fe2
+Bytes: 62
+Are there any remaining consumers of log_time::default_format?
+

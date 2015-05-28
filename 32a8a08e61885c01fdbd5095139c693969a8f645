@@ -9,6 +9,14 @@ UUID: 6d1bb95b_2ae06511
 Bytes: 51
 Is this used by anyone after your change to logcat?
 
+25
+Thu May 28 22:38:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_2ae06511
+UUID: 6d1bb95b_6d535270
+Bytes: 151
+No one is using it, except for strptime itself when NULL is supplied for the format. No one provides a NULL for format, but we want to support the API.
+
 File: logcat/logcat.cpp
 
 422
@@ -17,4 +25,23 @@ Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_e6593fe2
 Bytes: 62
 Are there any remaining consumers of log_time::default_format?
+
+422
+Thu May 28 22:38:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_e6593fe2
+UUID: 0d54fde2_fc09ceb2
+Bytes: 67
+Nope (except internally in log_time::strptime() for a NULL format).
+
+558:32-558:46
+Thu May 28 22:38:35 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_a27ac0b2
+Bytes: 157
+If we iterated through all the files with the basename 'optarg', we would need this to be.
+
+if (ep && (*ep == ' ') && (t > tail_time)) {
+    tail_time = t;
+}
 

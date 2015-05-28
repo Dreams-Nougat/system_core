@@ -11,6 +11,20 @@ Recommend moving the mkdir to somewhere around line 243.
 
 Also, don't you want 0750 here?
 
+655
+Thu May 28 23:26:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_887ddc2e
+UUID: b9f6d849_1d8193d2
+Bytes: 914
+Here, we ensure that the directory does not exist until we need it. This feature is default off, I expect to not see the path created superfluously on "user" builds. I do recognize that we have a race condition here though, all members of the path need to be made in sequence.
+
+As stated in the comment above, because all exec/services are called with umask(077), the files underneath this directory will not be readable except by the owner. That being the case, it makes sense to reflect that reality by not allowing anyone into the associated directory.
+
+We may need a new umask keyword for both exec and service in init should we wish to circumvent that security.
+
+I have no problem with 077, this keeps the PII protected from all but the experts. But we will need it to be 037 or 000 (and modify logcat to set Group Read perms on it's saved files) in order to allow DAC access to the logged files to the group.
+
 657
 Thu May 28 22:38:28 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,10 +32,28 @@ UUID: ed56c9ec_8a05ccce
 Bytes: 62
 what's the difference between this command line, and line 660?
 
+657
+Thu May 28 23:26:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_8a05ccce
+UUID: 0d54fde2_0538f6ff
+Bytes: 115
+Adding -L to read the android logs saved from before the panic (comment above makes reference to access to pstore).
+
 666
 Thu May 28 22:38:28 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d1bb95b_e842d000
 Bytes: 75
 would prefer that we not reuse the logd domain, and create a logcat domain.
+
+666
+Thu May 28 23:26:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_e842d000
+UUID: ed56c9ec_e01e798a
+Bytes: 289
+I had a design choice of adding a syslogd thread in logd, or running a separate syslogd (logcatd). If we choose later to pull in syslogd into logd, nothing much changes in the selinux MAC policies for the directory.
+
+'ps -t | grep logd' picks up this logcatd process, I _like_ that too :-)
 

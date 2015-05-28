@@ -45,3 +45,11 @@ if (ep && (*ep == ' ') && (t > tail_time)) {
     tail_time = t;
 }
 
+558:32-558:46
+Thu May 28 23:03:46 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_a27ac0b2
+UUID: 6d1bb95b_67eb6e77
+Bytes: 22
+Yes, that looks right.
+

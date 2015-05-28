@@ -1,5 +1,54 @@
 Revision: 7b4dcd855d8718847fefd3f3f7c1406ff8edc8be
 Patch-set: 2
+File: adb/adb.cpp
+
+63
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_c744397f
+Bytes: 2
+T*
+
+333
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_67562d30
+Bytes: 50
+does that make sense? should this just be a CHECK?
+
+File: adb/transport.cpp
+
+843
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_d7f94c95
+Bytes: 223
+(does clang-format put a line break in here? makes it read like a function rather than a variable.)
+
+(or should there be a line in there saying
+
+  // Nothing yet.
+
+and the assumption is that this won't stay empty for long?)
+
+857
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_b7c76718
+Bytes: 107
+ah, now i see the distinction you were trying to make. so maybe
+
+  if (t->CanUseFeature("pony")) ride();
+
+?
+
+897
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_47a209ab
+Bytes: 146
+make append_transport_info take a const std::string& value? i'm assuming t->devpath et cetera become std::strings in atransport eventually anyway.
+
 File: adb/transport.h
 
 90
@@ -16,4 +65,16 @@ Parent: adc5b1ce_c5437a71
 UUID: 0d031dc0_040a8c58
 Bytes: 76
 Maybe IsFeatureSupported sounds okay, but I'm not the best at naming things.
+
+90
+Thu May 28 06:14:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d031dc0_040a8c58
+UUID: ed56c9ec_c7ad199d
+Bytes: 174
++1 to cferris' suggestion.
+
+the obvious alternative would be SupportsFeature (or just Supports?), so calling code reads like
+
+  if (t->SupportsFeature("ponies")) ride_pony();
 

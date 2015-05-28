@@ -24,6 +24,14 @@ UUID: ed56c9ec_f0472c0e
 Bytes: 40
 How do you do named constants in Python?
 
+43:31-43:38
+Thu May 28 21:09:14 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_f0472c0e
+UUID: 0d54fde2_c1c7c517
+Bytes: 49
+ANDROID_MAGIC_VALUE = "ANDROID!", also just a nit
+
 69:6-69:18
 Thu May 28 20:54:13 2015 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -45,4 +53,15 @@ Parent: ed56c9ec_10e590d2
 UUID: 6d1bb95b_caea71a4
 Bytes: 17
 what do you mean?
+
+95:0-116:27
+Thu May 28 21:09:14 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_caea71a4
+UUID: 0d54fde2_a161e1bb
+Bytes: 144
+more of a nit, but this seems like it would be more readable as its own method. That way main reads:
+1) parseArgs
+2) writeheader
+3) writePayload
 

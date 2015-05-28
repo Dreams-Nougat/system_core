@@ -24,6 +24,14 @@ UUID: 4d0995dc_056ba3a0
 Bytes: 153
 I've been reserving /data/system for system_server's home directory. I would prefer if we found another place for this directory. Maybe /data/misc/logd ?
 
+315
+Thu May 28 23:26:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d0995dc_056ba3a0
+UUID: ed56c9ec_a001d109
+Bytes: 38
+Ok, I will respin for /data/misc/logd.
+
 657:0-661:17
 Wed May 27 16:48:29 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

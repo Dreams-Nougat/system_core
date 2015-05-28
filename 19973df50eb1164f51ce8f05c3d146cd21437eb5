@@ -1,0 +1,32 @@
+Revision: 19973df50eb1164f51ce8f05c3d146cd21437eb5
+Patch-set: 2
+File: mkbootimg/mkbootimg
+
+14:2-14:13
+Thu May 28 20:54:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1bb95b_eabc8dfe
+Bytes: 14
+nit empty line
+
+43:31-43:38
+Thu May 28 20:54:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_b024c4aa
+Bytes: 18
+nit named constant
+
+69:6-69:18
+Thu May 28 20:54:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_e19be96f
+Bytes: 37
+its not terribly clear what this does
+
+95:0-116:27
+Thu May 28 20:54:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_10e590d2
+Bytes: 19
+could decompose out
+

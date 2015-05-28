@@ -1,0 +1,18 @@
+Revision: d5eb296f6ce464cb7afe0937d4f2a8b387a4a629
+Patch-set: 1
+File: adb/services.cpp
+
+251
+Thu May 28 06:24:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_0791e150
+Bytes: 214
+can we invert the sense so we can say "interactive" rather than "batch"? took me ages to work out what you meant by batch; i'm not sure in 2015 it's so obvious that that's the opposite of "interactive" any more :-)
+
+313
+Thu May 28 06:24:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_8785d10c
+Bytes: 76
+(where by "ages" i mean "i didn't get it at all until i read this comment".)
+

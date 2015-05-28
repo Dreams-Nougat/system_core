@@ -16,6 +16,14 @@ UUID: ed56c9ec_b024c4aa
 Bytes: 18
 nit named constant
 
+43:31-43:38
+Thu May 28 21:05:26 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_b024c4aa
+UUID: ed56c9ec_f0472c0e
+Bytes: 40
+How do you do named constants in Python?
+
 69:6-69:18
 Thu May 28 20:54:13 2015 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -29,4 +37,12 @@ Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed56c9ec_10e590d2
 Bytes: 19
 could decompose out
+
+95:0-116:27
+Thu May 28 21:05:26 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_10e590d2
+UUID: 6d1bb95b_caea71a4
+Bytes: 17
+what do you mean?
 

@@ -47,6 +47,16 @@ this is unsafe. fclose(NULL) will segfault. you either have do the fopen into a 
 
 (which would also let you go backwards as easily as forwards...)
 
+581
+Fri May 29 20:13:45 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_0919ec79
+UUID: ed56c9ec_609c3c69
+Bytes: 335
+TKS on the fclose problem <bows down saying "I am not worthy"> :-)
+
+Pulling in libbase was considered and coded. At the previous instant decided KISS includes pulling in less android-custom libraries when the functionality needed is onesy-twoesy lines long leading to the unique_ptr on fopen. Will reconsider given the obvious flaw ...
+
 586
 Fri May 29 17:52:03 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>

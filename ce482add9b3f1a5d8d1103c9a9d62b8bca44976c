@@ -1,0 +1,18 @@
+Revision: ce482add9b3f1a5d8d1103c9a9d62b8bca44976c
+Patch-set: 2
+File: logcat/logcat.cpp
+
+552
+Fri May 29 17:52:03 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b91fb853_d5d77cb6
+Bytes: 88
+Should the case logic be moved to a separate function so this function is more readable?
+
+586
+Fri May 29 17:52:03 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_b7cd98e2
+Bytes: 203
+Optimization oppty: Have you tried this with a set of large log files? We know we want the last entry, so it would save some time to work backwards from the end instead of going through the whole file...
+

@@ -9,10 +9,32 @@ UUID: b91fb853_d5d77cb6
 Bytes: 88
 Should the case logic be moved to a separate function so this function is more readable?
 
+552
+Fri May 29 18:07:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b91fb853_d5d77cb6
+UUID: b91fb853_f5d03871
+Bytes: 53
+This is on-par with the other selections, but agreed.
+
 586
 Fri May 29 17:52:03 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_b7cd98e2
 Bytes: 203
 Optimization oppty: Have you tried this with a set of large log files? We know we want the last entry, so it would save some time to work backwards from the end instead of going through the whole file...
+
+586
+Fri May 29 18:07:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_b7cd98e2
+UUID: ed56c9ec_1faaef7d
+Bytes: 773
+We would have to use mmap interface to work backwards with any efficiency. mmap has its readability/maintenance options.
+
+We are not assuming the log entries are in time order (!) although 99.99% of the time they are.
+
+logcat is a user program with no need for tons of optimizations; I have found this rips through 16MB of data (as configured for logcatd) in less than 200ms. The optimization does not appear to be required on the scale we use in Android.
+
+In all common cases we hit the basename file _first_ (because of how the rotate algorithm works) and break out below very quickly; so we are not pouring through all the files in any case. We only do so if there are no timestamps found in the basename file which can only happen if logcatd dies or the system reboots.
 

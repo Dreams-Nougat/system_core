@@ -68,3 +68,20 @@ logcat is a user program with no need for tons of optimizations; I have found th
 
 In all common cases we hit the basename file _first_ (because of how the rotate algorithm works) and break out below very quickly; so we are not pouring through all the files in any case. We only do so if there are no timestamps found in the basename file which can only happen if logcatd dies or the system reboots.
 
+589:0-591:29
+Fri May 29 20:07:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_0cc81a27
+Bytes: 756
+This algorithm has to handle the fact we do NOT have the year placed into the timestamp data and log_time::strptime fills in the current year sans one parsed, and a wrap around to January will result in the current time being lower than the maximum discovered in the file(s).
+
+mitigation: (plan A)
+- filter out all timestamps higher than the current time
+
+mitigation: (plan B)
+- collect all the matching filenames first
+- reverse sort the filenames before going through them (NB: the ext4 filesystem and the dynamics for normal operation of logcat -f will readdir in this order anyways, but not worth counting on)
+- reverse scan the files in turn looking for a valid timestamp
+- call it a day once a timestamp is found
+- too complex for ease of maintenance
+

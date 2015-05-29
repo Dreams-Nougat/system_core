@@ -17,6 +17,36 @@ UUID: b91fb853_f5d03871
 Bytes: 53
 This is on-par with the other selections, but agreed.
 
+566
+Fri May 29 18:20:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b91fb853_f895cd10
+Bytes: 109
+these .data() should really be .c_str() (though, yes, you'll get away with it on our current implementation).
+
+580
+Fri May 29 18:20:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_5f6b979f
+Bytes: 4
+"re"
+
+581
+Fri May 29 18:20:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_0919ec79
+Bytes: 469
+this is unsafe. fclose(NULL) will segfault. you either have do the fopen into a raw pointer and only define your unique_ptr when you can initialize it with a known non-null FILE*, or you could replace this with something like this instead:
+
+  std::string file;
+  if (android::base::ReadFileToString(file_name, &file)) {
+    for (const auto& line : android::base::Split(file, "\n")) {
+      ...
+    }
+  }
+
+(which would also let you go backwards as easily as forwards...)
+
 586
 Fri May 29 17:52:03 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>

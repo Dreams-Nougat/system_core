@@ -1,0 +1,11 @@
+Revision: 424af02f363a305a349ff99e1cc253ac5bc642c9
+Patch-set: 2
+File: adb/commandline.cpp
+
+1285
+Sat May 30 01:04:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_932421dd
+Bytes: 67
+(ps2 just made the style of this line match the other subcommands.)
+

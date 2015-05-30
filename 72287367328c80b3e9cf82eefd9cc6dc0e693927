@@ -1,0 +1,11 @@
+Revision: 72287367328c80b3e9cf82eefd9cc6dc0e693927
+Patch-set: 1
+File: adb/adb_client.cpp
+
+268
+Sat May 30 01:03:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_73feddab
+Bytes: 142
+before this, callers could either report 'error' and connect errors would be shown twice, or not, and thus accidentally swallow status errors.
+

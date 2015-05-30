@@ -1,0 +1,11 @@
+Revision: dd50edcbe71397ca3be0d2d0b782618921cf859f
+Base-for-patch-set: 2
+File: adb/adb_listeners.cpp
+
+128
+Sat May 30 01:21:05 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_d3822902
+Bytes: 45
+Ugh. I'll be glad when all of these are gone.
+

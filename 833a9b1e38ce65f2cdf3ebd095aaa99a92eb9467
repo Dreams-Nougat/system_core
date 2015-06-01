@@ -1,0 +1,11 @@
+Revision: 833a9b1e38ce65f2cdf3ebd095aaa99a92eb9467
+Patch-set: 2
+File: logd/LogBuffer.cpp
+
+451:26-451:28
+Mon Jun 01 16:40:25 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed56c9ec_46e746af
+Bytes: 27
+WT<bleep> supposed to be ==
+

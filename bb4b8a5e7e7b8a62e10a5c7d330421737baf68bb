@@ -1,0 +1,11 @@
+Revision: bb4b8a5e7e7b8a62e10a5c7d330421737baf68bb
+Patch-set: 4
+File: rootdir/init.rc
+
+654
+Mon Jun 01 23:58:38 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b97b38ac_585061db
+Bytes: 79
+/data/misc is guaranteed to exist. See line 243. This line shouldn't be needed.
+

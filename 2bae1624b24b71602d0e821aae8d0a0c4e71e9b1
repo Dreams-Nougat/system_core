@@ -1,0 +1,18 @@
+Revision: 2bae1624b24b71602d0e821aae8d0a0c4e71e9b1
+Patch-set: 2
+File: adb/adb.cpp
+
+562:71-562:77
+Mon Jun 01 18:44:34 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_5571ba5c
+Bytes: 39
+server (the names are terrible, I know)
+
+568:70-568:72
+Mon Jun 01 18:44:34 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d929cc86_ee129f5f
+Bytes: 27
+Should be on the next line.
+

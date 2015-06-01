@@ -1,0 +1,27 @@
+Revision: 81cbf0cb859a82585ccd1d918d60921c6defc372
+Patch-set: 2
+File: adb/adb_io_test.cpp
+
+56:14-56:17
+Mon Jun 01 18:38:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f942104b_af1939ac
+Bytes: 126
+When does GetTempPathA fail? I wish the MSDN specified these the same way POSIX does.
+
+EIO doesn't seem like the right choice.
+
+59
+Mon Jun 01 18:38:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f942104b_2f342909
+Bytes: 113
+MSDN explicitly calls out this behavior, so I think `CHECK_EQ(tmp_dir[result - 1] == '\\');` is more appropriate.
+
+89
+Mon Jun 01 18:38:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d54fde2_d50bead5
+Bytes: 28
+Why did you ifdef a comment?
+

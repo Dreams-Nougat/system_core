@@ -23,3 +23,25 @@ In addition, it may not be an auto-transition at all? Could this also mean inher
 
 What about _both_, this certainly would lighten the burden on the init-writer.
 
+666
+Tue Jun 02 20:33:50 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b97b38ac_be807894
+UUID: 39d588cf_e4441769
+Bytes: 410
+What about the word "default"?
+
+  exec default logd log -- /system/bin/logcat -L ...
+
+or "auto"? Or "-" like enh suggested. Any of those work for me.
+
+I can't think of anything better.
+
+I wouldn't have more than one choice though. Too many choices will make things confusing.
+
+If we wanted to, we could make this a key/value pair:
+
+exec seclabel=blah uid=blah gid=blah -- 
+
+although that might be overkill too.
+

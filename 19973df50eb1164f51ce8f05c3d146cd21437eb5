@@ -9,6 +9,14 @@ UUID: 6d1bb95b_eaf48d9f
 Bytes: 43
 Should be explicit about python2 or python3
 
+1:15-1:21
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_eaf48d9f
+UUID: 39d588cf_9a148cd0
+Bytes: 39
+should be working fine in both runtimes
+
 14:2-14:13
 Thu May 28 20:54:13 2015 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 6d1bb95b_eabc8dfe
 Bytes: 14
 nit empty line
 
+14:2-14:13
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_eabc8dfe
+UUID: b97b38ac_e47bc49f
+Bytes: 4
+Done
+
 22:0-22:1
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_86bcf348
 Bytes: 136
 spaces (2 or 4 depends on which style guide you listen to, the linter tools behave better with 4 since that's the official Python style)
+
+22:0-22:1
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_86bcf348
+UUID: b97b38ac_04104055
+Bytes: 4
+Done
 
 24:1-24:7
 Thu May 28 21:11:16 2015 +0000
@@ -60,12 +84,28 @@ UUID: 6d1bb95b_6f67cf50
 Bytes: 49
 What's this about? I don't see it in the old one.
 
+43
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_6f67cf50
+UUID: 0d54fde2_85d946f7
+Bytes: 39
+Named it BOOT_MAGIC just like the .c/.h
+
 57
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed56c9ec_5091d81d
 Bytes: 47
 This used to be the content as well as the size
+
+57
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_5091d81d
+UUID: b9f6d849_202b04ba
+Bytes: 45
+The images generated are bit for bit the same
 
 69:6-69:18
 Thu May 28 20:54:13 2015 +0000
@@ -98,12 +138,28 @@ UUID: 0d54fde2_8195bdba
 Bytes: 4
 sgtm
 
+69:6-69:18
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_8195bdba
+UUID: 59d23ce8_e7a50003
+Bytes: 4
+Done
+
 71:27-71:34
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed56c9ec_703a5c47
 Bytes: 11
 unnecessary
+
+71:27-71:34
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_703a5c47
+UUID: 39d588cf_3d26baf1
+Bytes: 4
+Done
 
 75:2-76:48
 Thu May 28 21:11:16 2015 +0000
@@ -112,12 +168,28 @@ UUID: 6d1bb95b_2a4225ff
 Bytes: 51
 Aren't you just rethrowing the same exception here?
 
+75:2-76:48
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_2a4225ff
+UUID: 39d588cf_9d31e62c
+Bytes: 4
+Done
+
 94:9-94:13
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed56c9ec_30445479
 Bytes: 6
 Unused
+
+94:9-94:13
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_30445479
+UUID: b97b38ac_a412ac0c
+Bytes: 4
+Done
 
 97:0-97:2
 Thu May 28 21:11:16 2015 +0000
@@ -126,12 +198,28 @@ UUID: ed56c9ec_f0b2ccf9
 Bytes: 37
 Align with first arg of previous line
 
+97:0-97:2
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_f0b2ccf9
+UUID: b97b38ac_c40fa8e3
+Bytes: 4
+Done
+
 98
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_616d39fe
 Bytes: 90
 I assume you're not trying to match the previous CLI? It used to be "NONE" to choose none.
+
+98
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_616d39fe
+UUID: 59d23ce8_59395400
+Bytes: 99
+The ramdisk argument was optional - not finding where the NONE case was handled in the old utility.
 
 95:0-116:27
 Thu May 28 20:54:13 2015 +0000
@@ -159,12 +247,28 @@ more of a nit, but this seems like it would be more readable as its own method. 
 2) writeheader
 3) writePayload
 
+95:0-116:27
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_a161e1bb
+UUID: 59d23ce8_59ddd450
+Bytes: 4
+Done
+
 122:4-122:5
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d1bb95b_8f640bcc
 Bytes: 21
 Don't need the parens
+
+122:4-122:5
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1bb95b_8f640bcc
+UUID: 59d23ce8_f9f128e0
+Bytes: 4
+Done
 
 123:7-123:8
 Thu May 28 21:11:16 2015 +0000
@@ -173,10 +277,26 @@ UUID: 0d54fde2_01cc6d68
 Bytes: 118
 Missing a `from __future__ import print_function`? Or just remove the parens if you intended to use the python2 print.
 
+123:7-123:8
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_01cc6d68
+UUID: 59d23ce8_b91960ac
+Bytes: 4
+Done
+
 126:15-126:16
 Thu May 28 21:11:16 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_01c2ad87
 Bytes: 75
 You changed quoting style. Keep to single quotes like the rest of the file.
+
+126:15-126:16
+Tue Jun 02 17:58:13 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_01c2ad87
+UUID: 59d23ce8_7953f840
+Bytes: 4
+Done
 

@@ -45,3 +45,11 @@ exec seclabel=blah uid=blah gid=blah --
 
 although that might be overkill too.
 
+666
+Tue Jun 02 20:34:42 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39d588cf_e4441769
+UUID: 59d23ce8_2dd8c6e6
+Bytes: 80
+Another word choice: "sedefault", which gives a hint this is related to SELinux.
+

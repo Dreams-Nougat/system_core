@@ -73,3 +73,13 @@ Do not be afraid of a little space, what about seclabel_default so it is abundan
 
 I see 1.5 votes for "-", that is the current leader ;-}
 
+666
+Tue Jun 02 20:47:46 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59d23ce8_cd29fa3d
+UUID: 59d23ce8_2df526fb
+Bytes: 136
+"se_default" could be a shorter way of writing "seclabel_default".
+
+But ya, I think '-' is best. We could bikeshed on this all day.  :-)
+

@@ -1,0 +1,18 @@
+Revision: 6a2d1d2f84e2e5f659d0a0802b16cd595e168a73
+Patch-set: 3
+File: adb/client/main.cpp
+
+163:43-164:44
+Tue Jun 02 17:42:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_dd820e83
+Bytes: 104
+But part of this change is disabling buffering for stderr. Is the comment in launch_server() just wrong?
+
+170
+Tue Jun 02 17:42:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_b96640cb
+Bytes: 96
+Yeah, fixing this just hasn't been a terribly high priority. It should probably just use a pipe.
+

@@ -1,0 +1,11 @@
+Revision: 9c6afffd6b583bf6ff179940c8d37b6829f4cb4e
+Patch-set: 3
+File: mkbootimg/mkbootimg
+
+28:11-28:16
+Tue Jun 02 23:02:10 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_6009f033
+Bytes: 17
+Just use OSError.
+

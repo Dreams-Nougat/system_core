@@ -59,3 +59,11 @@ UUID: b97b38ac_a4570c9e
 Bytes: 86
 I would prefer to keep it to balance the above (at least until we have a fix for init)
 
+666
+Tue Jun 02 18:31:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b97b38ac_a4570c9e
+UUID: 39d588cf_53812fd1
+Bytes: 115
+06-02 11:29:27.547282     0     0 E init    : Warning!  Service logcatd needs a SELinux domain defined; please fix!
+

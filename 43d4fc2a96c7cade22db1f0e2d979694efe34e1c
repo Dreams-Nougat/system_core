@@ -1,0 +1,11 @@
+Revision: 43d4fc2a96c7cade22db1f0e2d979694efe34e1c
+Patch-set: 1
+File: init/init_parser.cpp
+
+666
+Tue Jun 02 20:23:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b97b38ac_5ed604bf
+Bytes: 140
+that's pretty bizarre syntax. seems like if we actually need optional labels, it would make more sense to allow '-' to mean auto-transition?
+

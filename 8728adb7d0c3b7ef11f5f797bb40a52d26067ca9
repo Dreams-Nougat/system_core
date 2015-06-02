@@ -1,0 +1,18 @@
+Revision: 8728adb7d0c3b7ef11f5f797bb40a52d26067ca9
+Patch-set: 6
+File: rootdir/init.rc
+
+657:9-657:20
+Tue Jun 02 17:17:50 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b97b38ac_444f1839
+Bytes: 96
+This shouldn't be necessary, since you've explicitly defined a transition in the selinux policy.
+
+666
+Tue Jun 02 17:17:50 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_7d052249
+Bytes: 111
+this shouldn't be necessary anymore, since you've explicitly defined a domain transition in the selinux policy.
+

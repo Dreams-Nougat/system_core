@@ -75,3 +75,15 @@ UUID: 39d588cf_53812fd1
 Bytes: 115
 06-02 11:29:27.547282     0     0 E init    : Warning!  Service logcatd needs a SELinux domain defined; please fix!
 
+666
+Tue Jun 02 19:53:30 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39d588cf_53812fd1
+UUID: 39d588cf_a9d268f9
+Bytes: 132
+oops. 
+
+Instead of using domain_trans() in your policy, pleas use domain_auto_trans():
+
+  domain_auto_trans(init, logcat_exec, logd)
+

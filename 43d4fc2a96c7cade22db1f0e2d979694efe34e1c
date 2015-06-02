@@ -63,3 +63,13 @@ Bytes: 307
 
 SELinux policy prohibits executing a binary from init without transitioning SELinux domains, so this is impossible. Either an explicit transition must be defined by policy, or seclabel needs to be used.
 
+666
+Tue Jun 02 20:40:59 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59d23ce8_2dd8c6e6
+UUID: 59d23ce8_cd29fa3d
+Bytes: 387
+Do not be afraid of a little space, what about seclabel_default so it is abundantly clear (my bwain read yours as sed-e-fault for 250ms)? We could also print (whatever we choose) if seclabel == NULL; and in that case "-" scares me even more during logging prints and preference in that case is to let it print (null) if "-" it is.
+
+I see 1.5 votes for "-", that is the current leader ;-}
+

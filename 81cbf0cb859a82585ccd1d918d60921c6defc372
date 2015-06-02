@@ -11,6 +11,20 @@ When does GetTempPathA fail? I wish the MSDN specified these the same way POSIX 
 
 EIO doesn't seem like the right choice.
 
+56:14-56:17
+Tue Jun 02 02:19:30 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f942104b_af1939ac
+UUID: 190b6419_47c17872
+Bytes: 797
+I think the thinking is that the failure scenarios are always subject to change, so best to write caller code generically (but still perhaps take care of important currently-known failure scenarios). I think GetTempPathA() can fail due to string truncation, internal memory allocation, maybe env var errors, or maybe path canonicalization errors.
+
+The C Runtime has an API _dosmaperr() to convert from a Win32 error to an errno, but it is an undocumented API. Sysdeps_win32.cpp even has _socket_set_errno() to map a limited number of socket-related Win32 errors to errno values.
+
+My thinking in choosing EIO was that GetTempPath() is an IO-related API. So it was more about the API than the specific error (since that is unknown).
+
+I reworked the change to use CHECK_*. Let me know what you think.
+
 59
 Mon Jun 01 18:38:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,10 +32,26 @@ UUID: f942104b_2f342909
 Bytes: 113
 MSDN explicitly calls out this behavior, so I think `CHECK_EQ(tmp_dir[result - 1] == '\\');` is more appropriate.
 
+59
+Tue Jun 02 02:19:30 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f942104b_2f342909
+UUID: d980ecc6_363b388c
+Bytes: 4
+Done
+
 89
 Mon Jun 01 18:38:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d54fde2_d50bead5
 Bytes: 28
 Why did you ifdef a comment?
+
+89
+Tue Jun 02 02:19:30 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d54fde2_d50bead5
+UUID: d980ecc6_161f1c1d
+Bytes: 122
+To make it clear that the text applies to Win32. But if you have to ask, that is too confusing, so I've removed the ifdef.
 

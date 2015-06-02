@@ -9,3 +9,17 @@ UUID: b97b38ac_5ed604bf
 Bytes: 140
 that's pretty bizarre syntax. seems like if we actually need optional labels, it would make more sense to allow '-' to mean auto-transition?
 
+666
+Tue Jun 02 20:29:58 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b97b38ac_5ed604bf
+UUID: b97b38ac_be807894
+Bytes: 312
+I find '-' a bit too cryptic.
+
+In addition, it may not be an auto-transition at all? Could this also mean inherit context from init?
+
+@nnk@ if we were to create a dummy-arg for SECLABEL, what would be intuitive to the selinux crowd?
+
+What about _both_, this certainly would lighten the burden on the init-writer.
+

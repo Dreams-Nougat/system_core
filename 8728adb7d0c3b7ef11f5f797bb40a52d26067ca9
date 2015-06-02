@@ -36,6 +36,14 @@ UUID: 59d23ce8_5935d463
 Bytes: 54
 why is that a problem? "exec -- ..." should work fine.
 
+657:9-657:20
+Tue Jun 02 17:52:59 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59d23ce8_5935d463
+UUID: 59d23ce8_59ecf43f
+Bytes: 38
+because I want use logd, group log ...
+
 666
 Tue Jun 02 17:17:50 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

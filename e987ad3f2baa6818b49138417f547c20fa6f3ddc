@@ -1,0 +1,13 @@
+Revision: e987ad3f2baa6818b49138417f547c20fa6f3ddc
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+1012
+Wed Jun 03 04:53:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_2b8d0204
+Bytes: 302
+although this fallocate(2) was originally introduced to avoid an mmap-related SIGBUS, i think this is fine because we don't use this code with mmap any more.
+
+might want to change the comment to point out that not all filesystems support fallocate. (no one who reviewed this code knew it was optional!)
+

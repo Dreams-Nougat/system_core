@@ -64,3 +64,11 @@ I never assume NULL is zero (there was this one port to an obsolete architecture
 
 This whole game feels silly, I think convertPrintable should return a size_t length rather than the end pointer, much easier to maintain our wits.
 
+1022
+Wed Jun 03 22:54:08 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b967b830_bed7f8b6
+UUID: f955b039_f1440869
+Bytes: 67
+I agree it would be better to have converPrintable return a size_t.
+

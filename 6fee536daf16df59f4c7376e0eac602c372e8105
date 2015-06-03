@@ -1,0 +1,11 @@
+Revision: 6fee536daf16df59f4c7376e0eac602c372e8105
+Patch-set: 5
+File: logd/LogStatistics.h
+
+54:26-54:29
+Wed Jun 03 19:31:22 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f955b039_dd163b79
+Bytes: 64
+why define begin() and end() locally and then reference the map?
+

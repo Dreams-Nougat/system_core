@@ -1,0 +1,63 @@
+Revision: 222b483fe882138c2b597085bdefaf538e7ef7fc
+Patch-set: 3
+File: debuggerd/test/dump_maps_test.cpp
+
+34
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_2902f3c6
+Bytes: 57
+TODO: rewrite the tombstone.cpp code to be more testable?
+
+244
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_490657d3
+Bytes: 98
+is it intentional that /system/lib/fake.so is indented one column further than (load base 0x2000)?
+
+File: debuggerd/test/elf_fake.h
+
+22
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b97b38ac_4dd174c4
+Bytes: 7
+const&?
+
+File: debuggerd/test/log_fake.cpp
+
+22
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_d43dfc9b
+Bytes: 62
+i wonder if we should move all this into liblog at some point?
+
+File: debuggerd/test/property_fake.cpp
+
+27
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_14db84e6
+Bytes: 18
+no locking needed?
+
+File: debuggerd/test/ptrace_fake.h
+
+22
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d588cf_d4e41ca6
+Bytes: 6
+const?
+
+File: include/backtrace/BacktraceMap.h
+
+40
+Wed Jun 03 01:06:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_89c0bfbf
+Bytes: 17
+ah, the future...
+

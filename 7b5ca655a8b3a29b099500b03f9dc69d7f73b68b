@@ -19,3 +19,26 @@ Recant: can not move this, liblog can not depend on libutils, introduces a circu
 
 There may be value in adding this to libcutils, but currently this is the only consumer.
 
+807:3-807:15
+Wed Jun 03 22:05:49 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b967b830_0ae227c0
+Bytes: 11
+nonetheless
+
+903
+Wed Jun 03 22:05:49 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f955b039_cbf79503
+Bytes: 28
+should this just be deleted?
+
+1022
+Wed Jun 03 22:05:49 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d96c6c17_10589ccd
+Bytes: 196
+convertPrintable returns the end pointer (char *). The value is correct (since NULL is passed-in), but this should probably be cast to make it clear:
+
+  bufferSize += (size_t)convertPrintable(...)
+

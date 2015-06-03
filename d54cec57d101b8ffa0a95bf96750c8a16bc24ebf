@@ -1,0 +1,11 @@
+Revision: d54cec57d101b8ffa0a95bf96750c8a16bc24ebf
+Patch-set: 3
+File: libziparchive/zip_archive.cc
+
+1012:64-1013:38
+Wed Jun 03 11:33:28 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99a8345d_cb3a46a2
+Bytes: 42
+replace this with "fail with EOPNOTSUPP" ?
+

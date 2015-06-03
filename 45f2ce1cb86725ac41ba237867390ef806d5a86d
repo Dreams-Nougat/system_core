@@ -1,0 +1,20 @@
+Revision: 45f2ce1cb86725ac41ba237867390ef806d5a86d
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Wed Jun 03 08:02:39 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_daebe7eb
+Bytes: 71
+Also octal. If any of our tools pad with zeroes that will be a problem.
+
+File: mkbootimg/mkbootimg
+
+97:16-97:17
+Wed Jun 03 08:02:39 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59d23ce8_fae82bf1
+Bytes: 15
+missing a space
+

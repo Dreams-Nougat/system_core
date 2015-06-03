@@ -33,3 +33,11 @@ it was clear what was happening.
 
 Once I crossed that bridge, I _had_ to use map.begin() and map.end() in the sort() implementation too for consistency.
 
+54:26-54:29
+Wed Jun 03 19:53:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f955b039_bdc0a71e
+UUID: f955b039_5d3b4b8a
+Bytes: 318
+I was thinking how to comment this in a rebase, and nothing made sense that would not in-turn result in more confusion. It is better IMHO to leave them as-is silently and accept that by referencing map. The 'fix' could be to move begin/end definitions to the bottom so they do not trigger this feeling of optimization.
+

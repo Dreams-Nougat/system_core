@@ -33,6 +33,16 @@ UUID: f955b039_cbf79503
 Bytes: 28
 should this just be deleted?
 
+903
+Wed Jun 03 22:24:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f955b039_cbf79503
+UUID: b967b830_beab785d
+Bytes: 293
+Yes, but I have left it in because it shows a history where year used to be part of the logcat timestamp. I would replace the comment with 'not worth having %Y since it is most likely to be constant in any timespan that logcat support'.
+
+Either works for me, it is a reminder that %Y is silly.
+
 1022
 Wed Jun 03 22:05:49 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,4 +51,16 @@ Bytes: 196
 convertPrintable returns the end pointer (char *). The value is correct (since NULL is passed-in), but this should probably be cast to make it clear:
 
   bufferSize += (size_t)convertPrintable(...)
+
+1022
+Wed Jun 03 22:24:42 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d96c6c17_10589ccd
+UUID: b967b830_bed7f8b6
+Bytes: 303
+(size_t)(convertPrintable(...) - NULL)
+
+I never assume NULL is zero (there was this one port to an obsolete architecture ~1977 by a mainframe maker... ;-/)
+
+This whole game feels silly, I think convertPrintable should return a size_t length rather than the end pointer, much easier to maintain our wits.
 

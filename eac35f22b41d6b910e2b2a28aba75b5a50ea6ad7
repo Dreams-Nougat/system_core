@@ -1,0 +1,11 @@
+Revision: eac35f22b41d6b910e2b2a28aba75b5a50ea6ad7
+Patch-set: 3
+File: liblog/logprint.c
+
+35
+Thu Jun 04 15:00:08 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d96c6c17_0c7400f4
+Bytes: 104
+This comment would be more meaningful if placed next to the function since it really isn't about "WEAK".
+

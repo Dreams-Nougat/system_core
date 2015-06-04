@@ -1,0 +1,11 @@
+Revision: 268aaf811f4907796d27df84658133d04eb5093f
+Patch-set: 2
+File: liblog/logprint.c
+
+38
+Thu Jun 04 00:56:33 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f923f0e9_b0ca7e8d
+Bytes: 178
+do we know for sure that "in the future" the new utf8_character_length will have the same signature? I'd rather just make this static or add it to the library and remove it here.
+

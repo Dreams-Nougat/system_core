@@ -9,3 +9,15 @@ UUID: f923f0e9_b0ca7e8d
 Bytes: 178
 do we know for sure that "in the future" the new utf8_character_length will have the same signature? I'd rather just make this static or add it to the library and remove it here.
 
+38
+Thu Jun 04 14:21:20 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f923f0e9_b0ca7e8d
+UUID: f955b039_7672a95e
+Bytes: 179
+Ok, back to static.
+
+May re-introduce with the private branch that has this function in both libraries.
+
+We can not depend on libcutils from liblog, creates a circular dependency.
+

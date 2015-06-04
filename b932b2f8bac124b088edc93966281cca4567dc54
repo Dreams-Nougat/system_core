@@ -1,0 +1,11 @@
+Revision: b932b2f8bac124b088edc93966281cca4567dc54
+Patch-set: 4
+File: liblog/logprint.c
+
+36:0-36:19
+Thu Jun 04 15:34:21 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f955b039_b6cd61d8
+Bytes: 298
+Main difference between this WEAK _today_ and the others is that currently there is no public access to the open-coded fragment in the dependent (circular) library. Leaving it static makes sense today, but allows us to find, with code-search, the open-coded fragments that have been noticed so far.
+

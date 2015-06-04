@@ -9,3 +9,13 @@ UUID: d96c6c17_0c7400f4
 Bytes: 104
 This comment would be more meaningful if placed next to the function since it really isn't about "WEAK".
 
+35
+Thu Jun 04 15:24:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d96c6c17_0c7400f4
+UUID: d96c6c17_27d5952e
+Bytes: 444
+The define has to be at the top. The comment is also at the open-coded fragment below, I will fortify it, but this comment here remains because you questioned its existence. WEAK is the defacto means of dealing with circular dependencies in libraries which are solved by open coding; and is at a minimum used as a tag to find said open-coded fragment(s).
+
+The real solution is to add a new intermediate library, but that is not going to happen.
+

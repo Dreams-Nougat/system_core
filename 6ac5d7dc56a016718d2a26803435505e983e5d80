@@ -1,0 +1,11 @@
+Revision: 6ac5d7dc56a016718d2a26803435505e983e5d80
+Patch-set: 1
+File: adb/sysdeps.h
+
+351
+Thu Jun 04 22:16:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d96c6c17_b9eee5af
+Bytes: 228
+looks like we should kill adb_open_mode. one of the callers is wrong (because they don't supply O_CREAT, so the mode is ignored and they need to handle any permissions changes themselves), and the others could just use adb_open.
+

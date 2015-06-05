@@ -2,6 +2,13 @@ Revision: 4de3b931d3bd28f6a78b515693ac21acb14802c8
 Patch-set: 1
 File: liblog/logd_write.c
 
+312
+Fri Jun 05 05:27:59 2015 +0000
+Author: Yevgeny Y Rouban <1037563@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39b828d4_f9eed72b
+Bytes: 16
+should be static
+
 332:9-332:12
 Tue Apr 28 17:44:55 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

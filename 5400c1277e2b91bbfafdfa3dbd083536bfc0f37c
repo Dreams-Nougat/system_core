@@ -1,0 +1,13 @@
+Revision: 5400c1277e2b91bbfafdfa3dbd083536bfc0f37c
+Patch-set: 2
+File: toolbox/start.c
+
+1:0-1:25
+Fri Jun 05 23:57:41 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 399bc88e_419fb267
+Bytes: 143
+I presume you can't delete this file because it's required to figure out that you want to call start_main?
+
+Could you add a comment about that?
+

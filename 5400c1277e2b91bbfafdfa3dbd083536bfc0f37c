@@ -11,3 +11,11 @@ I presume you can't delete this file because it's required to figure out that yo
 
 Could you add a comment about that?
 
+1:0-1:25
+Sat Jun 06 00:01:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 399bc88e_419fb267
+UUID: 399bc88e_e12a4686
+Bytes: 55
+Android.mk assumes there's a .c file for every command.
+

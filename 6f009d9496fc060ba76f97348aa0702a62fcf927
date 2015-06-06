@@ -1,0 +1,11 @@
+Revision: 6f009d9496fc060ba76f97348aa0702a62fcf927
+Patch-set: 1
+File: adb/adb.cpp
+
+197:8-197:15
+Sat Jun 06 00:08:13 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9970341a_24e3d21a
+Bytes: 253
+Does this mean if ADB_TRACE is not set, then android::base::InitLogging() is not called below and the android::base logging stuff won't work? That doesn't sound right to me, but I'm not the expert here and could be wrong. I think Dan is the expert here.
+

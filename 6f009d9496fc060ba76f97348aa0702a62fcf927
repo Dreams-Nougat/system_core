@@ -9,3 +9,11 @@ UUID: 9970341a_24e3d21a
 Bytes: 253
 Does this mean if ADB_TRACE is not set, then android::base::InitLogging() is not called below and the android::base logging stuff won't work? That doesn't sound right to me, but I'm not the expert here and could be wrong. I think Dan is the expert here.
 
+197:8-197:15
+Sat Jun 06 00:15:09 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9970341a_24e3d21a
+UUID: 399bc88e_81301aa5
+Bytes: 244
+yeah, i think this might need some further work next week (when danalbert is back), but this stops people complaining about an extra 30s of boot time and at least adds a comment explaining why the old tracing setup code had an early exit in it.
+

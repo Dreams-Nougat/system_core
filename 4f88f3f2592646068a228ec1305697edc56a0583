@@ -1,0 +1,18 @@
+Revision: 4f88f3f2592646068a228ec1305697edc56a0583
+Patch-set: 1
+File: adb/commandline.cpp
+
+324:35-324:40
+Mon Jun 08 16:46:59 2015 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9d9cc70_aeaad78b
+Bytes: 52
+For consistency with above, make this STDOUT_FILENO.
+
+369:21-369:26
+Mon Jun 08 16:46:59 2015 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796b8031_b2461ed0
+Bytes: 52
+For consistency with above, make this STDOUT_FILENO.
+

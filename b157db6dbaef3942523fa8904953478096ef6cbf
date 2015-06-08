@@ -1,0 +1,11 @@
+Revision: b157db6dbaef3942523fa8904953478096ef6cbf
+Patch-set: 1
+File: adb/usb_linux_client.cpp
+
+327
+Mon Jun 08 17:52:53 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9d9cc70_54ef84fa
+Bytes: 5
+tabs.
+

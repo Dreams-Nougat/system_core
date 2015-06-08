@@ -1,0 +1,36 @@
+Revision: 2e8919009543df8a96e9eb895a8cafd20115a551
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+90:43-90:52
+Mon Jun 08 18:23:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796b8031_bdfeef2e
+Bytes: 140
+0xEA is space and 0xE0-0xE9 is digit? 0xE<ten> is confusing notation.
+
+Is there a reason not to use "const int" or #define here for clarity?
+
+91:8-97:9
+Mon Jun 08 18:23:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796b8031_18b7112a
+Bytes: 171
+I think this is more readable as:
+
+  if ((*s & 0x F0) == 0xE0) {
+    if (*s == 0xEA) {
+      *s = ' ';
+    } else {
+      *s = (*s & 0x0F) + '0';
+    }
+    *--s = '[';
+  }
+
+149:22-149:26
+Mon Jun 08 18:23:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796b8031_fddea7f9
+Bytes: 66
+How about OPEN_BRACKET_SIG to make the code more self-documenting?
+

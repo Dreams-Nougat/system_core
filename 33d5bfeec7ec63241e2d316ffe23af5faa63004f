@@ -1,0 +1,11 @@
+Revision: 33d5bfeec7ec63241e2d316ffe23af5faa63004f
+Patch-set: 16
+File: logd/LogAudit.cpp
+
+159:0-161:80
+Tue Jun 09 18:09:44 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796b8031_1ed52f2e
+Bytes: 66
+None of the checking here is necessary, logbuf->log() will filter.
+

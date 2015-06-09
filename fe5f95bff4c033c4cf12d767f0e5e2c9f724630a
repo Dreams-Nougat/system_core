@@ -9,3 +9,13 @@ UUID: b9a6d8d3_f29c4ef1
 Bytes: 72
 Doesn't the subtract just undo the effects of the add? What is this for?
 
+157:8-158:29
+Tue Jun 09 22:40:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9a6d8d3_f29c4ef1
+UUID: 3937486d_01142acd
+Bytes: 167
+add() adds to current and total, and builds up the data associated with pidToName and others. subtract() only subtracts from current.
+
+// Log traffic received to total
+

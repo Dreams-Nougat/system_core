@@ -9,3 +9,11 @@ UUID: f9a690c2_4341a6eb
 Bytes: 86
 hmm. that does sound like a reason to use stdout rather than stderr on the Unixes too.
 
+170
+Tue Jun 09 00:29:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f9a690c2_4341a6eb
+UUID: 9970341a_38b6917c
+Bytes: 539
+An alternative idea is to have the server use the same stdout/stderr as the client (well, until it dup2'd to adb.log), so that Android Studio (or whoever is spawning the client) can pickup error output from the server when it is having problems starting up. I thought about this after coming across some bug report where it seemed like the reporter pasted adb output from Android Studio. If that output had been more verbose, perhaps it would have helped solve the issue quicker instead of having the end-user dig up adb.log, etc. I dunno.
+

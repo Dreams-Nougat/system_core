@@ -1,0 +1,11 @@
+Revision: adf90053641e2537ef77b2b1142a999646cb58c3
+Patch-set: 2
+File: fs_mgr/fs_mgr.c
+
+123
+Tue Jun 09 15:59:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59c15c6b_afdb0916
+Bytes: 40
+(always use strlcat instead of strncat.)
+

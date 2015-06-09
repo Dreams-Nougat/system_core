@@ -1,0 +1,11 @@
+Revision: 389efec377dcdb914f3d7a62d66f77b1a70b59bf
+Patch-set: 1
+File: init/compare-bootcharts.py
+
+70:0-95:13
+Tue Jun 09 15:34:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9d41838_8a5a51ff
+Bytes: 64
+mix of tabs and spaces. Android coding standard requires spaces.
+

@@ -1,0 +1,11 @@
+Revision: fe5f95bff4c033c4cf12d767f0e5e2c9f724630a
+Patch-set: 17
+File: logd/LogBuffer.cpp
+
+157:8-158:29
+Tue Jun 09 21:46:16 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9a6d8d3_f29c4ef1
+Bytes: 72
+Doesn't the subtract just undo the effects of the add? What is this for?
+

@@ -1,5 +1,21 @@
 Revision: 389efec377dcdb914f3d7a62d66f77b1a70b59bf
 Patch-set: 1
+File: /COMMIT_MSG
+
+16
+Tue Jun 09 15:40:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9a6d8d3_d725c4e4
+Bytes: 43
+why not have the script convert to seconds?
+
+26
+Tue Jun 09 15:40:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9a6d8d3_f730c028
+Bytes: 26
+this line isn't automated?
+
 File: init/compare-bootcharts.py
 
 70:0-95:13

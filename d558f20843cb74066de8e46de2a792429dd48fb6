@@ -52,6 +52,14 @@ Bytes: 74
 Hmm still get "AttributeError: __exit__" for 
 "with tf.extractfile as f:".
 
+69
+Wed Jun 10 15:52:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b971781d_34f93e7c
+UUID: 3937486d_70c13e21
+Bytes: 86
+Hmm. I guess the mock file object they create isn't complete. Use try/finally instead.
+
 90:0-90:12
 Wed Jun 10 07:47:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

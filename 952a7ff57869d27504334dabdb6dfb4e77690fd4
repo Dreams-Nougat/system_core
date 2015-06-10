@@ -52,6 +52,13 @@ from __future__ import print_function
 
 Or just lose the parentheses.
 
+59
+Wed Jun 10 06:22:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5934fc65_6b3ab1d7
+Bytes: 74
+Alignment here isn't right. Indent by four spaces because of the operator.
+
 61:4-61:17
 Wed Jun 10 06:15:57 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -67,6 +74,13 @@ Bytes: 55
 spaces around operators
 
 (you might want to run pylint)
+
+81
+Wed Jun 10 06:22:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3937486d_7567f01a
+Bytes: 98
+Docstrings are usually only for function/class/module level docs, and # is used for block comments
 
 89:39-89:46
 Wed Jun 10 06:15:57 2015 +0000

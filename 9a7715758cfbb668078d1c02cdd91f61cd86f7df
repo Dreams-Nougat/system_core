@@ -9,3 +9,11 @@ UUID: 3937486d_90d882e9
 Bytes: 145
 do you want to print an error, or take some other action, if ro.boot.veritymode is set but it's not "enforcing" or "logging"? Maybe call abort()?
 
+783
+Wed Jun 10 16:35:54 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3937486d_90d882e9
+UUID: d902ac8c_439fb967
+Bytes: 110
+We can fall back to handling the state on our own in this case, but logging the event is probably a good idea.
+

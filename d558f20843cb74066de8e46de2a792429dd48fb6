@@ -1,0 +1,43 @@
+Revision: d558f20843cb74066de8e46de2a792429dd48fb6
+Patch-set: 3
+File: init/compare-bootcharts.py
+
+54:0-54:1
+Wed Jun 10 07:47:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5934fc65_0bf9a57b
+Bytes: 3
+tab
+
+66
+Wed Jun 10 07:47:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5934fc65_abed19b6
+Bytes: 147
+Docs say this should have a `with` block as well: https://docs.python.org/2/library/tarfile.html#tarfile-objects
+
+    with tarfile.open(...) as tf:
+
+69
+Wed Jun 10 07:47:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_aded45b6
+Bytes: 45
+And here:
+
+    with tf.extractfile(...) as f:
+
+90:0-90:12
+Wed Jun 10 07:47:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_301ac577
+Bytes: 25
+kill the extra whitespace
+
+92:38-92:45
+Wed Jun 10 07:47:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3937486d_357648b7
+Bytes: 24
+don't need the `.keys()`
+

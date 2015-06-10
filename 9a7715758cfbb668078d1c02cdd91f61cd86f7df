@@ -1,0 +1,11 @@
+Revision: 9a7715758cfbb668078d1c02cdd91f61cd86f7df
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+783
+Wed Jun 10 16:18:36 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3937486d_90d882e9
+Bytes: 145
+do you want to print an error, or take some other action, if ro.boot.veritymode is set but it's not "enforcing" or "logging"? Maybe call abort()?
+

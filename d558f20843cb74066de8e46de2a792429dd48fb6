@@ -9,6 +9,14 @@ UUID: 5934fc65_0bf9a57b
 Bytes: 3
 tab
 
+54:0-54:1
+Wed Jun 10 08:15:31 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5934fc65_0bf9a57b
+UUID: 9970341a_812b8db7
+Bytes: 4
+Done
+
 66
 Wed Jun 10 07:47:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,14 @@ Bytes: 147
 Docs say this should have a `with` block as well: https://docs.python.org/2/library/tarfile.html#tarfile-objects
 
     with tarfile.open(...) as tf:
+
+66
+Wed Jun 10 08:15:31 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5934fc65_abed19b6
+UUID: 9970341a_a11fa990
+Bytes: 4
+Done
 
 69
 Wed Jun 10 07:47:48 2015 +0000
@@ -27,6 +43,15 @@ And here:
 
     with tf.extractfile(...) as f:
 
+69
+Wed Jun 10 08:15:31 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99fcb4c6_aded45b6
+UUID: b971781d_34f93e7c
+Bytes: 74
+Hmm still get "AttributeError: __exit__" for 
+"with tf.extractfile as f:".
+
 90:0-90:12
 Wed Jun 10 07:47:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -34,10 +59,26 @@ UUID: d902ac8c_301ac577
 Bytes: 25
 kill the extra whitespace
 
+90:0-90:12
+Wed Jun 10 08:15:31 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d902ac8c_301ac577
+UUID: b971781d_54eebab2
+Bytes: 4
+Done
+
 92:38-92:45
 Wed Jun 10 07:47:48 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3937486d_357648b7
 Bytes: 24
 don't need the `.keys()`
+
+92:38-92:45
+Wed Jun 10 08:15:31 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3937486d_357648b7
+UUID: d9762c12_5a9265db
+Bytes: 4
+Done
 

@@ -9,12 +9,28 @@ UUID: b9a6d8d3_d725c4e4
 Bytes: 43
 why not have the script convert to seconds?
 
+16
+Wed Jun 10 05:58:18 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9a6d8d3_d725c4e4
+UUID: b971781d_595a737c
+Bytes: 4
+Done
+
 26
 Tue Jun 09 15:40:02 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b9a6d8d3_f730c028
 Bytes: 26
 this line isn't automated?
+
+26
+Wed Jun 10 05:58:18 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9a6d8d3_f730c028
+UUID: b971781d_795f2f6b
+Bytes: 42
+No... It is listed as -256 as shown above.
 
 File: init/compare-bootcharts.py
 
@@ -24,4 +40,12 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b9d41838_8a5a51ff
 Bytes: 64
 mix of tabs and spaces. Android coding standard requires spaces.
+
+70:0-95:13
+Wed Jun 10 05:58:18 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9d41838_8a5a51ff
+UUID: 9970341a_0edfccf7
+Bytes: 4
+Done
 

@@ -1,0 +1,27 @@
+Revision: bb0a6564714b2918e98e1df8cc8df3afa635737c
+Patch-set: 6
+File: init/compare-bootcharts.py
+
+23:26-23:31
+Wed Jun 10 14:53:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_70bcbd27
+Bytes: 210
+You need to be immune to the value of CONFIG_HZ or Jiffies as partners have the option to adjust this to their liking and performance profile.
+
+Can you compensate (with the known 200ms bootchart sampling rate)?
+
+78:40-78:42
+Wed Jun 10 14:53:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_b8d7c131
+Bytes: 47
+And here we are with a hard-coded CONFIG_HZ ...
+
+94:60-94:62
+Wed Jun 10 14:53:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_98dc0557
+Bytes: 67
+And again, hard-coded CONFIG_HZ, at least put this into a variable.
+

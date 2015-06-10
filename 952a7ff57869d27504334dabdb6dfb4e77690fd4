@@ -1,0 +1,121 @@
+Revision: 952a7ff57869d27504334dabdb6dfb4e77690fd4
+Patch-set: 2
+File: init/compare-bootcharts.py
+
+1
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_6d950d47
+Bytes: 19
+/usr/bin/env python
+
+17
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_1088e929
+Bytes: 156
+The documentation part of the header should be a docstring rather than a comment.
+
+    """One line summary.
+    <blank line>
+    Longer description.
+    """
+
+36:4-36:23
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5934fc65_0b2be58b
+Bytes: 116
+https://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Naming#Naming
+
+analyze_process_lists (maps?)
+
+38
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_ed87bd18
+Bytes: 102
+Style for multiline lists is usually:
+
+    my_list = [
+        elem1,
+        elem2,
+        ...
+    ]
+
+46:4-46:9
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3937486d_1558e45a
+Bytes: 68
+from __future__ import print_function
+
+Or just lose the parentheses.
+
+61:4-61:17
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_b0afd59b
+Bytes: 16
+parse, not prase
+
+63:30-63:31
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5934fc65_8b105558
+Bytes: 55
+spaces around operators
+
+(you might want to run pylint)
+
+89:39-89:46
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193e044a_f42540b6
+Bytes: 11
+unnecessary
+
+92
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_9095f949
+Bytes: 29
+spaces around operators again
+
+95
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3937486d_b55c984f
+Bytes: 94
+Use `with f:` around the block to make sure the file will be closed if an exception is raised.
+
+98:7-98:8
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_70927d61
+Bytes: 20
+Drop the parentheses
+
+99
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_2d9f1569
+Bytes: 78
+sys.exit("usage message")
+
+https://docs.python.org/2/library/sys.html#sys.exit
+
+102:12-102:16
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193e044a_142b048c
+Bytes: 12
+process_map?
+
+109
+Wed Jun 10 06:15:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99fcb4c6_0d9c5970
+Bytes: 12
+Just main().
+

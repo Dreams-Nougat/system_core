@@ -1,0 +1,11 @@
+Revision: 95accc165cb7f38fe0d3203f3ad6baf3824fc679
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+301:23-301:27
+Wed Jun 10 19:04:58 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d902ac8c_1cb7e229
+Bytes: 44
+shall we put some explanation for "-l" here?
+

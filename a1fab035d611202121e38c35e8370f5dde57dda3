@@ -9,6 +9,14 @@ UUID: 79254042_9fbc1629
 Bytes: 81
 Do we want this file here or in the same place as other the other kernel headers?
 
+0
+Thu Jun 11 22:32:53 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79254042_9fbc1629
+UUID: f9ecd03d_b9678f9c
+Bytes: 84
+I would keep it here for now and reevaluate after merging driver into kernel-common.
+
 File: libtrusty/trusty.c
 
 37

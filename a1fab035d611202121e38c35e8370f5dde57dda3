@@ -1,5 +1,14 @@
 Revision: a1fab035d611202121e38c35e8370f5dde57dda3
 Patch-set: 1
+File: libtrusty/tipc_ioctl.h
+
+0
+Thu Jun 11 21:32:03 2015 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79254042_9fbc1629
+Bytes: 81
+Do we want this file here or in the same place as other the other kernel headers?
+
 File: libtrusty/trusty.c
 
 37

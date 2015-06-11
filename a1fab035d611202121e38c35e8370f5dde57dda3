@@ -18,6 +18,14 @@ UUID: 59e07c3c_f1af729a
 Bytes: 9
 strerror?
 
+37
+Thu Jun 11 22:29:26 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 59e07c3c_f1af729a
+UUID: b92b3816_c3fdd5e7
+Bytes: 4
+Done
+
 38
 Thu Jun 11 21:29:15 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +33,26 @@ UUID: 79254042_9fce56d1
 Bytes: 3
 -1?
 
+38
+Thu Jun 11 22:29:26 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79254042_9fce56d1
+UUID: 59e07c3c_719d22b5
+Bytes: 4
+Done
+
 44
 Thu Jun 11 21:29:15 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 79254042_dfeb6e27
 Bytes: 54
 ioctl returns -1 on errors. The error code is in errno
+
+44
+Thu Jun 11 22:29:26 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79254042_dfeb6e27
+UUID: 79254042_f278e1f2
+Bytes: 4
+Done
 

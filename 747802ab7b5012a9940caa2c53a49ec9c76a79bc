@@ -9,12 +9,30 @@ UUID: 19652496_57f2f6e5
 Bytes: 143
 key gets a concatenation of log_namespace and tag... the strcpy will put a '\0' at the end, so this looks like the buffer is 1 character short.
 
+60
+Fri Jun 12 14:24:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19652496_57f2f6e5
+UUID: 79254042_86cb6f93
+Bytes: 125
+sizeof(log_namespace) = strlen(log_namespace) + 1
+
+I will put a comment here to solidify the meaning of sizeof() for a string
+
 108
 Fri Jun 12 03:37:13 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 19652496_b7c57280
 Bytes: 108
 if "tag" is "foo", doesn't key now equal "persist.log.tagfoo"? "key+sizeof(log_namespace)" points to the \0.
+
+108
+Fri Jun 12 14:24:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19652496_b7c57280
+UUID: 79254042_46d5572c
+Bytes: 186
+Again, sizeof a string is the entire array size, which includes the trailing nul. eg: log_namespace[sizeof(log_namespace)] points the the (out-of-bounds) location after the trailing nul.
 
 127
 Fri Jun 12 03:37:13 2015 +0000

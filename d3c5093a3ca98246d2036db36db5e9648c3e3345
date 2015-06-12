@@ -1,0 +1,11 @@
+Revision: d3c5093a3ca98246d2036db36db5e9648c3e3345
+Patch-set: 3
+File: logd/LogKlog.cpp
+
+70:12-70:37
+Fri Jun 12 22:36:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 992af412_866e0cf3
+Bytes: 12
+This is c@rp
+

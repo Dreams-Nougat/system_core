@@ -1,0 +1,11 @@
+Revision: c158456f50817ac506f4eed780978e63dd222fe4
+Patch-set: 9
+File: liblog/tests/liblog_test.cpp
+
+711:1-711:73
+Fri Jun 12 17:42:25 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 390ca8ed_5c3bd1a6
+Bytes: 63
+Added this test while tidying up the unit test, found a bug :-)
+

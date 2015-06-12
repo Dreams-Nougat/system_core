@@ -9,3 +9,12 @@ UUID: 79254042_306e51ab
 Bytes: 19
 use syslog instead?
 
+80
+Fri Jun 12 00:16:55 2015 +0000
+Author: Evgenii Stepanov <1005967@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 79254042_306e51ab
+UUID: 59e07c3c_77451262
+Bytes: 139
+That's exactly what Dan suggested in the other review.
+I'll do that, but it should go through upstream compiler-rt, so it may take a while.
+

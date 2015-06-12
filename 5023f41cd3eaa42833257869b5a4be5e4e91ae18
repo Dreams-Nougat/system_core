@@ -1,0 +1,11 @@
+Revision: 5023f41cd3eaa42833257869b5a4be5e4e91ae18
+Patch-set: 2
+File: liblog/Android.mk
+
+80
+Fri Jun 12 00:13:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79254042_306e51ab
+Bytes: 19
+use syslog instead?
+

@@ -11,6 +11,14 @@ You need to be immune to the value of CONFIG_HZ or Jiffies as partners have the 
 
 Can you compensate (with the known 200ms bootchart sampling rate)?
 
+23:26-23:31
+Mon Jun 15 08:01:33 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d902ac8c_70bcbd27
+UUID: f9ba1036_f28be673
+Bytes: 4
+Done
+
 78:40-78:42
 Wed Jun 10 14:53:07 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,10 +26,26 @@ UUID: 99fcb4c6_b8d7c131
 Bytes: 47
 And here we are with a hard-coded CONFIG_HZ ...
 
+78:40-78:42
+Mon Jun 15 08:01:33 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99fcb4c6_b8d7c131
+UUID: 19b8c43c_733eda98
+Bytes: 4
+Done
+
 94:60-94:62
 Wed Jun 10 14:53:07 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 99fcb4c6_98dc0557
 Bytes: 67
 And again, hard-coded CONFIG_HZ, at least put this into a variable.
+
+94:60-94:62
+Mon Jun 15 08:01:33 2015 +0000
+Author: Ben Cheng <1000234@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99fcb4c6_98dc0557
+UUID: b99c18d9_b352003b
+Bytes: 4
+Done
 

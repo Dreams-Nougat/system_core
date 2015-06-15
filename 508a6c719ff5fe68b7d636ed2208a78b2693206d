@@ -1,0 +1,25 @@
+Revision: 508a6c719ff5fe68b7d636ed2208a78b2693206d
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+48:0-54:14
+Mon Jun 15 18:48:44 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b98a589d_f1359096
+Bytes: 96
+if (!isdigit(c)) {
+      if (c == '>') 
+          return s;
+      else 
+          return NULL;
+}
+
+File: logd/main.cpp
+
+419:0-419:54
+Mon Jun 15 18:48:44 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 796d40b3_59eca304
+Bytes: 49
+Explicit handling of rc < 0? It is getting messy.
+

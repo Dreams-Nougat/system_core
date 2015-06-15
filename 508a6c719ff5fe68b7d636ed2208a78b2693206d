@@ -16,6 +16,13 @@ if (!isdigit(c)) {
 
 File: logd/main.cpp
 
+417
+Mon Jun 15 18:48:47 2015 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5965dcc2_637610b8
+Bytes: 63
+Is this safe to stack overflow? what's the size of klog buffer?
+
 419:0-419:54
 Mon Jun 15 18:48:44 2015 +0000
 Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>

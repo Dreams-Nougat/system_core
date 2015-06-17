@@ -9,3 +9,11 @@ UUID: 594a3c43_2d88866f
 Bytes: 113
 Change these to cgroup.procs, which will move all tasks in the process, avoiding the thread start race condition.
 
+10:67-10:72
+Wed Jun 17 17:30:41 2015 +0000
+Author: Tim Murray <1017430@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 594a3c43_2d88866f
+UUID: f95690ec_89c6cda5
+Bytes: 91
+it doesn't matter so long as we're moving the post-fork pre-exec process to tasks, does it?
+

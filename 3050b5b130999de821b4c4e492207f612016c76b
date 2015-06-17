@@ -1,0 +1,11 @@
+Revision: 3050b5b130999de821b4c4e492207f612016c76b
+Patch-set: 2
+File: /COMMIT_MSG
+
+10:67-10:72
+Wed Jun 17 17:24:44 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 594a3c43_2d88866f
+Bytes: 113
+Change these to cgroup.procs, which will move all tasks in the process, avoiding the thread start race condition.
+

@@ -1,0 +1,21 @@
+Revision: 4097a5373625387dfbd3233a42f1de93196a0f51
+Patch-set: 1
+File: adb/daemon/main.cpp
+
+128
+Thu Jun 18 08:49:29 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: be7b1eac_b5fe60a4
+Bytes: 198
+won't this cause a compile failure on user builds ?
+
+Anyway, I find
+
+  #if defined(ALLOW_ADB_NO_AUTH)
+    ...
+  #else
+    auth_required = true;
+  #endif
+
+clearer, but you know i'm pretty old-school.
+

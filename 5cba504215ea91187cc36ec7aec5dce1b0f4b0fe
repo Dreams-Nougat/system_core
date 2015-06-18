@@ -1,0 +1,21 @@
+Revision: 5cba504215ea91187cc36ec7aec5dce1b0f4b0fe
+Patch-set: 2
+File: adb/daemon/main.cpp
+
+128:8-128:26
+Thu Jun 18 17:30:37 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e700ec3_fc04c5cb
+Bytes: 243
+if you wanted to support the old mechanism, you could write this as:
+
+  if ((ALLOW_ADBD_NO_AUTH +0 != 0) && ...
+
+On user builds, this would expand to:
+
+  if (( +0 != 0) ...
+
+and on userdebug builds, this would expand to:
+
+  if ((1 +0 != 0) ...
+

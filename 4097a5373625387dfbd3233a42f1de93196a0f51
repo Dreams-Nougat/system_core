@@ -19,3 +19,15 @@ Anyway, I find
 
 clearer, but you know i'm pretty old-school.
 
+128
+Thu Jun 18 17:19:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: be7b1eac_b5fe60a4
+UUID: 7e9c462a_9e2b390c
+Bytes: 612
+yes, changed to use $if in the makefile.
+
+i always try to avoid #if unless it's actually syntactically impossible to build the code in question; with regular if you're guaranteed no bitrot. with #if you rely on actually building both variants. (which, for optional features, means they're always bitrotted when you want them, and for cases like this that are dependent on build variant, means you've introduced a new way for someone to break the build variant they didn't test with.)
+
+(i also hate global variables like auth_required, but the adb code isn't factored well enough for me to reasonably fix that...)
+

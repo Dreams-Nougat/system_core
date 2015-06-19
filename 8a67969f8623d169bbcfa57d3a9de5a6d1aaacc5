@@ -9,6 +9,14 @@ UUID: 3e700ec3_e5fe61a5
 Bytes: 14
 Line too long.
 
+10:72-10:106
+Fri Jun 19 18:13:53 2015 +0000
+Author: Evgenii Stepanov <1005967@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e700ec3_e5fe61a5
+UUID: 5e6dc2eb_441e2f20
+Bytes: 4
+Done
+
 File: rootdir/Android.mk
 
 35:32-35:52
@@ -26,4 +34,21 @@ Bytes: 279
 Could you open a bug for tracking enabling these? ODR violations have caused more than a small amount of pain for us.
 
 Does alloc/dealloc mismatch cover free(new int)? Or is it just delete new int[n]? If the latter than this isn't really serious, but it is also easy to clean up.
+
+35:32-35:52
+Fri Jun 19 18:13:53 2015 +0000
+Author: Evgenii Stepanov <1005967@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ebe4e91_126c127f
+UUID: 3e700ec3_fb7cc299
+Bytes: 44
+Do you mean build/core/config_sanitizers.mk?
+
+35:78-35:125
+Fri Jun 19 18:13:53 2015 +0000
+Author: Evgenii Stepanov <1005967@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: deae1265_29d529b2
+UUID: 7e9c462a_6e61d206
+Bytes: 91
+b/21951850
+It covers both, i.e. any mismatch between malloc/free/new/new[]/delete/delete[].
 

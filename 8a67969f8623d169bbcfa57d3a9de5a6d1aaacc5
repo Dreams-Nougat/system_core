@@ -1,5 +1,14 @@
 Revision: 8a67969f8623d169bbcfa57d3a9de5a6d1aaacc5
 Patch-set: 1
+File: /COMMIT_MSG
+
+10:72-10:106
+Fri Jun 19 02:46:11 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e700ec3_e5fe61a5
+Bytes: 14
+Line too long.
+
 File: rootdir/Android.mk
 
 35:32-35:52

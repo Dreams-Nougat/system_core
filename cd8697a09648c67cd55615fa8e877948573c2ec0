@@ -1,0 +1,13 @@
+Revision: cd8697a09648c67cd55615fa8e877948573c2ec0
+Patch-set: 2
+File: init/util.cpp
+
+76
+Fri Jun 19 02:42:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3e700ec3_450e2d6e
+Bytes: 172
+gotos in C++ make me sad.
+
+All of these are `if (err) { LOG(); } return v`, so you could refactor this to be an inner function and handle the logging in the outer function.
+

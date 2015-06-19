@@ -1,0 +1,20 @@
+Revision: 8a67969f8623d169bbcfa57d3a9de5a6d1aaacc5
+Patch-set: 1
+File: rootdir/Android.mk
+
+35:32-35:52
+Fri Jun 19 02:32:10 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ebe4e91_126c127f
+Bytes: 53
+Move this to the other file so it matches the others?
+
+35:78-35:125
+Fri Jun 19 02:32:10 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: deae1265_29d529b2
+Bytes: 279
+Could you open a bug for tracking enabling these? ODR violations have caused more than a small amount of pain for us.
+
+Does alloc/dealloc mismatch cover free(new int)? Or is it just delete new int[n]? If the latter than this isn't really serious, but it is also easy to clean up.
+

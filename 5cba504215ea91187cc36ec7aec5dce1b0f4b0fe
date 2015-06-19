@@ -19,3 +19,11 @@ and on userdebug builds, this would expand to:
 
   if ((1 +0 != 0) ...
 
+128:8-128:26
+Fri Jun 19 14:55:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e700ec3_fc04c5cb
+UUID: 7eca863a_0e314b7a
+Bytes: 106
+i considered it, but making the source worse to make the .mk file slightly simpler didn't seem worthwhile.
+

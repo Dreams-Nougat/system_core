@@ -1,0 +1,13 @@
+Revision: 9b781202d5fad5bcb810be56a6e9824768fdda26
+Patch-set: 1
+File: init/init.cpp
+
+1003
+Fri Jun 19 19:37:17 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9e7adaa8_949f993b
+Bytes: 82
+Please be consistent with line 1008:
+
+  if (restorecon_recursive("/sbin") == -1) {
+

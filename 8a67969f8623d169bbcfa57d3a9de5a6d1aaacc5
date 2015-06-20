@@ -52,3 +52,22 @@ Bytes: 91
 b/21951850
 It covers both, i.e. any mismatch between malloc/free/new/new[]/delete/delete[].
 
+35:32-35:52
+Sat Jun 20 03:49:35 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e700ec3_fb7cc299
+UUID: 7e9c462a_2cd18841
+Bytes: 29
+No, init.environ.rc.whatever.
+
+File: rootdir/init.environ.rc.in
+
+12
+Sat Jun 20 03:49:35 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7e9c462a_ccdfc44b
+Bytes: 114
+I just mean export the value rather than the whole export line so this line reads
+
+    export WHATEVER %THE_VALUE%
+

@@ -1,0 +1,11 @@
+Revision: ec3e2d5a15933b45a6e8ede31cd5c7158e355fb8
+Patch-set: 2
+File: init/init.cpp
+
+1003
+Mon Jun 22 15:55:13 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fede76f5_957544f5
+Bytes: 76
+Technically we don't have to do it this early, but I guess there is no harm.
+

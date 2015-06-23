@@ -1,0 +1,20 @@
+Revision: 4a856eda110dd95f50d5444b6105ece0e3ae1e10
+Patch-set: 1
+File: adb/set_verity_enable_state_service.cpp
+
+157:17-157:24
+Tue Jun 23 20:44:30 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9e149a89_0dbb7914
+Bytes: 10
+not needed
+
+160
+Tue Jun 23 20:44:30 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5ecce27c_0b9b257a
+Bytes: 96
+Instead of doing asprintf, I would do:
+
+static const char cmd[] = "rm -rf " OVERLAYFS_BASE_PATH;
+

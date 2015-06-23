@@ -1,5 +1,14 @@
 Revision: 4a856eda110dd95f50d5444b6105ece0e3ae1e10
 Patch-set: 1
+File: /COMMIT_MSG
+
+17
+Tue Jun 23 20:45:18 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9e149a89_edec1d06
+Bytes: 15
+Needs Change-ID
+
 File: adb/set_verity_enable_state_service.cpp
 
 157:17-157:24

@@ -1,0 +1,11 @@
+Revision: e8ab42a1ee7276b755e02bc05a8380f55c053adb
+Patch-set: 2
+File: adb/set_verity_enable_state_service.cpp
+
+158:8-160:24
+Tue Jun 23 23:15:07 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: de1a92b3_63883527
+Bytes: 128
+Still wondering why this is not working - this is a standard ANSI C feature which should be working on every compiler out there.
+

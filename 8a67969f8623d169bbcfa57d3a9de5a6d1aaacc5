@@ -71,3 +71,11 @@ I just mean export the value rather than the whole export line so this line read
 
     export WHATEVER %THE_VALUE%
 
+12
+Tue Jun 23 01:04:43 2015 +0000
+Author: Evgenii Stepanov <1005967@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7e9c462a_ccdfc44b
+UUID: 5efea270_cf215230
+Bytes: 209
+But then we would not be able to unset the variable, i.e. there will be ASAN_OPTIONS=<empty string> in the environment, even for non-ASan builds, even on user devices. It should not affect anything, but still.
+

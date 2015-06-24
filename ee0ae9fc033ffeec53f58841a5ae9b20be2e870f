@@ -9,12 +9,28 @@ UUID: 1ebb4af3_b87c796a
 Bytes: 19
 What if these fail?
 
+841
+Wed Jun 24 17:36:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ebb4af3_b87c796a
+UUID: 5e0f82b1_6ad05771
+Bytes: 118
+then we're as hosed as we always were. nowhere do we try to handle such errors, and it's not obvious what we could do.
+
 876:12-876:13
 Wed Jun 24 04:04:09 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9ece5aa2_540f6c35
 Bytes: 10
 != nullptr
+
+876:12-876:13
+Wed Jun 24 17:36:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9ece5aa2_540f6c35
+UUID: fe0bd6a6_a78c4a8c
+Bytes: 4
+Done
 
 928:23-928:24
 Wed Jun 24 04:04:09 2015 +0000
@@ -29,6 +45,22 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1ebb4af3_d8872de9
 Bytes: 4
 == 0
+
+928:8-928:9
+Wed Jun 24 17:36:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ebb4af3_d8872de9
+UUID: 5e0f82b1_8a038b7c
+Bytes: 90
+!strcmp is by far the "googlefight" winner in adb. one day this will all be std::string...
+
+928:23-928:24
+Wed Jun 24 17:36:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ded45230_d6d024f6
+UUID: fe0bd6a6_e7600231
+Bytes: 4
+Done
 
 File: adb/transport.cpp
 
@@ -45,4 +77,12 @@ Or perhaps:
     }
 
 Cleans up this function but still preserves the semantics.
+
+734
+Wed Jun 24 17:36:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1ebb4af3_7897011a
+UUID: 5e0f82b1_6aa7370c
+Bytes: 166
+changing the semantics was deliberate: i didn't want to encourage callers to ignore errors. i _did_ mean to leave a comment at the "ignore" call sites though... done.
 

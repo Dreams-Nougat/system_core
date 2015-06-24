@@ -9,3 +9,11 @@ UUID: de761212_864acad4
 Bytes: 50
 Share that in a header? Or In the Backtrace class?
 
+40:0-50:1
+Wed Jun 24 14:18:05 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: de761212_864acad4
+UUID: de761212_66b94e38
+Bytes: 4
+done
+

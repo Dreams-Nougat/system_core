@@ -16,3 +16,11 @@ UUID: 5e98628f_0868ab9c
 Bytes: 74
 gettid is in libcutils already. i don't think we need another copy at all.
 
+56
+Wed Jun 24 16:14:09 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5e98628f_0868ab9c
+UUID: 9eb57afa_dfe39f19
+Bytes: 62
+thanks Elliot. Somehow I overlooked the gettid from libcutils.
+

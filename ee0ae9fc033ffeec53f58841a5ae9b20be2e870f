@@ -17,6 +17,14 @@ UUID: 5e0f82b1_6ad05771
 Bytes: 118
 then we're as hosed as we always were. nowhere do we try to handle such errors, and it's not obvious what we could do.
 
+841
+Wed Jun 24 17:44:44 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5e0f82b1_6ad05771
+UUID: 5e0f82b1_4a523362
+Bytes: 4
+Log?
+
 876:12-876:13
 Wed Jun 24 04:04:09 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,39 @@
+Revision: 9e2825cc0f7164c8894dccddcd23e59c2f341b1a
+Patch-set: 2
+File: fastboot/engine.cpp
+
+76:16-76:25
+Wed Jun 24 03:40:57 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ded45230_1619fc80
+Bytes: 9
+Action* a
+
+76:39-76:55
+Wed Jun 24 03:40:57 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ded45230_361cf870
+Bytes: 16
+const char* resp
+
+141:13-141:14
+Wed Jun 24 03:40:57 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ded45230_f62680c2
+Bytes: 15
+NULL or nullptr
+
+199:17-199:52
+Wed Jun 24 03:40:57 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ded45230_d62b8488
+Bytes: 35
+const char* str, const char** value
+
+275:0-275:1
+Wed Jun 24 03:40:57 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ebb4af3_78aee16f
+Bytes: 5
+tabs?
+

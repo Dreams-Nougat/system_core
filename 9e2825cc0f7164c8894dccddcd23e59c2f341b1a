@@ -23,6 +23,14 @@ UUID: ded45230_f62680c2
 Bytes: 15
 NULL or nullptr
 
+141:13-141:14
+Wed Jun 24 03:58:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ded45230_f62680c2
+UUID: fea4b6cc_c244e4ee
+Bytes: 116
+done. i switched the other 0s and NULLs in this file to nullptr too. (so not quite the minimal change any more :-) )
+
 199:17-199:52
 Wed Jun 24 03:40:57 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>

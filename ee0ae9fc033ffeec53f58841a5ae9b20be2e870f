@@ -1,0 +1,48 @@
+Revision: ee0ae9fc033ffeec53f58841a5ae9b20be2e870f
+Patch-set: 1
+File: adb/adb.cpp
+
+841
+Wed Jun 24 04:04:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ebb4af3_b87c796a
+Bytes: 19
+What if these fail?
+
+876:12-876:13
+Wed Jun 24 04:04:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ece5aa2_540f6c35
+Bytes: 10
+!= nullptr
+
+928:23-928:24
+Wed Jun 24 04:04:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ded45230_d6d024f6
+Bytes: 6
+spaces
+
+928:8-928:9
+Wed Jun 24 04:04:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ebb4af3_d8872de9
+Bytes: 4
+== 0
+
+File: adb/transport.cpp
+
+734
+Wed Jun 24 04:04:09 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1ebb4af3_7897011a
+Bytes: 159
+Or perhaps:
+
+    std::string dummy;
+    if (error_out == nullptr) {
+      error_out = &dummy;
+    }
+
+Cleans up this function but still preserves the semantics.
+

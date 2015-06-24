@@ -1,0 +1,18 @@
+Revision: 37ebef64b6096e0a2419214d9115d7cf492c2fde
+Patch-set: 3
+File: include/backtrace/Backtrace.h
+
+22
+Wed Jun 24 15:23:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fea4b6cc_e5f3726b
+Bytes: 49
+please don't pollute the namespace unnecessarily.
+
+56
+Wed Jun 24 15:23:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e98628f_0868ab9c
+Bytes: 74
+gettid is in libcutils already. i don't think we need another copy at all.
+

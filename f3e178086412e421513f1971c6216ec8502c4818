@@ -1,0 +1,11 @@
+Revision: f3e178086412e421513f1971c6216ec8502c4818
+Patch-set: 2
+File: logd/LogAudit.cpp
+
+193:8-193:12
+Thu Jun 25 14:32:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: feecb63d_c8c56304
+Bytes: 69
+comm must be freed, path below does not do so, this is a memory leak.
+

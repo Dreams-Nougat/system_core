@@ -1,0 +1,11 @@
+Revision: 71d44b2719cc3f7d15e05489f5abe7646615c501
+Patch-set: 1
+File: /COMMIT_MSG
+
+12
+Fri Jun 26 08:27:56 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1e86ea96_e0d5c2e3
+Bytes: 150
+Please change this and mention a commit sha instead. (you'll have to cherry pick the internal change to aosp first, but you should do that regardless)
+

@@ -9,10 +9,26 @@ UUID: 138ee5ef_8ff1c162
 Bytes: 111
 Does the '--boot' flag automatically cause the device to be rebooted, or does the user have to reboot manually?
 
+385:0-385:28
+Mon Jun 29 15:57:48 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 138ee5ef_8ff1c162
+UUID: f3deb1f5_d56e6c29
+Bytes: 94
+--boot flags automatically causes the device to be rebooted. I think that's the typical usage.
+
 396:0-396:58
 Mon Jun 29 15:48:27 2015 +0000
 Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5384ddcb_9129e695
 Bytes: 70
 Does the trace start soon enough to capture the zygote initialization?
+
+396:0-396:58
+Mon Jun 29 15:57:48 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5384ddcb_9129e695
+UUID: b33ef9ea_fdc6a7a9
+Bytes: 60
+Yes, it starts soon enough to capture zygote initialization.
 

@@ -1,0 +1,18 @@
+Revision: 05827ab09ee98005c92814f552d6edcd50de89bc
+Patch-set: 1
+File: init/readme.txt
+
+385:0-385:28
+Mon Jun 29 15:48:27 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 138ee5ef_8ff1c162
+Bytes: 111
+Does the '--boot' flag automatically cause the device to be rebooted, or does the user have to reboot manually?
+
+396:0-396:58
+Mon Jun 29 15:48:27 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5384ddcb_9129e695
+Bytes: 70
+Does the trace start soon enough to capture the zygote initialization?
+

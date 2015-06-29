@@ -2,6 +2,13 @@ Revision: 05827ab09ee98005c92814f552d6edcd50de89bc
 Patch-set: 1
 File: init/readme.txt
 
+381:62-381:63
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 934c958c_dfcc1c5d
+Bytes: 1
+:
+
 385:0-385:28
 Mon Jun 29 15:48:27 2015 +0000
 Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +24,37 @@ UUID: f3deb1f5_d56e6c29
 Bytes: 94
 --boot flags automatically causes the device to be rebooted. I think that's the typical usage.
 
+385:33-385:37
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5384ddcb_97679647
+Bytes: 8
+the boot
+
+385:0-385:28
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f3deb1f5_d56e6c29
+UUID: 5384ddcb_b7789ae9
+Bytes: 231
+I agree that automatically rebooting the device makes sense. Could you add a sentence before this to clarify that is what will happen? Something like:
+
+"This command will cause the device to reboot. After the device is rebooted..."
+
+385:61-385:66
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f390710b_3ead40a7
+Bytes: 9
+the trace
+
+387:17-387:18
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5384ddcb_f755c246
+Bytes: 1
+:
+
 396:0-396:58
 Mon Jun 29 15:48:27 2015 +0000
 Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,4 +69,14 @@ Parent: 5384ddcb_9129e695
 UUID: b33ef9ea_fdc6a7a9
 Bytes: 60
 Yes, it starts soon enough to capture zygote initialization.
+
+396:0-396:58
+Mon Jun 29 19:50:30 2015 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b33ef9ea_fdc6a7a9
+UUID: f390710b_5e89242c
+Bytes: 130
+Perhaps clarify in the documentation:
+
+"Zygote initialization and the processes that are forked from the zygote are not affected."
 

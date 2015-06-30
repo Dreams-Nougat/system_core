@@ -1,0 +1,31 @@
+Revision: 1694cb0875f220dbbf7093ff4acb164456ce784f
+Patch-set: 1
+File: libutils/Looper.cpp
+
+22:0-22:19
+Tue Jun 30 17:33:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 93fbb585_6cdb105d
+Bytes: 114
+Shouldn't you add #include <errno.h> and #include <string.h>?
+
+Getting them on accident has bitten us in the past.
+
+File: libutils/ProcessCallStack.cpp
+
+22:0-22:19
+Tue Jun 30 17:33:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 132185e2_efd9b298
+Bytes: 22
+No #include <errno.h>?
+
+File: libutils/Threads.cpp
+
+25:0-25:19
+Tue Jun 30 17:33:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 132185e2_8f00f672
+Bytes: 12
+No string.h?
+

@@ -1,0 +1,11 @@
+Revision: 43219bb6aa020ceebf482fd2e142f3168e5486c9
+Patch-set: 4
+File: libbacktrace/Android.mk
+
+74:1-74:10
+Wed Jul 01 17:57:13 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d3028d8c_a61686d2
+Bytes: 146
+One really small nit. Can you add a \ to the end and a blank line after this? We do this so it's easier to reorder and merge if these ever change.
+

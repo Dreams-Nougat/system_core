@@ -1,0 +1,11 @@
+Revision: d74359896a2a3f9cc0a81ea39f063f54ae7853d2
+Patch-set: 1
+File: libnativebridge/native_bridge.cc
+
+113:0-113:1
+Fri Jul 03 09:26:26 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 931655ff_b73de280
+Bytes: 33
+style: move this on the same line
+

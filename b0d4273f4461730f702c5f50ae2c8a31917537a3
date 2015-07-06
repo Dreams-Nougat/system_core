@@ -9,10 +9,33 @@ UUID: 33b12958_c58ffa83
 Bytes: 91
 we never want to continue on failure; just make this function void and failures here FATAL.
 
+121
+Mon Jul 06 18:11:47 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 33b12958_c58ffa83
+UUID: 53093ddc_801cda99
+Bytes: 4
+Done
+
+125
+Mon Jul 06 18:11:47 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 73f801fb_9eb71975
+Bytes: 229
+This part here might seem a bit odd, but I never wanted an exec on adb file on eng/userdebug to result in an adb running in su domain, so I compute it based off of the run time label. I could go either way, just food for thought.
+
 137
 Mon Jul 06 15:59:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 33b12958_45a4aa07
 Bytes: 41
 no need to check mycon before freeing it.
+
+137
+Mon Jul 06 18:11:47 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 33b12958_45a4aa07
+UUID: 130345c0_bb167304
+Bytes: 4
+Done
 

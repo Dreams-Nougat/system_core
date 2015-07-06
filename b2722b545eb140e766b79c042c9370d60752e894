@@ -1,0 +1,46 @@
+Revision: b2722b545eb140e766b79c042c9370d60752e894
+Patch-set: 2
+File: /COMMIT_MSG
+
+12:19-12:27
+Mon Jul 06 15:07:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d31c4d21_aab9f71b
+Bytes: 97
+What about the slowdown as a result of the dropbox filling up? You did disable the dropbox I see.
+
+File: init/perfboot.py
+
+201:0-202:25
+Mon Jul 06 15:07:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f36151bc_1aa77945
+Bytes: 393
+Disabling dropbox, does it prevent the directory scan(@)? If it does not, then maybe it would be better to clear 'old' entries? Need to ensure that from device to device with varying histories that there is a level of consistency.
+
+@ - Filesystems slow down when one accumulates a large number of files into a single directory like dropbox. Opening the directory can incur a significant delay.
+
+353:30-353:61
+Mon Jul 06 15:07:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d31c4d21_9f66ff49
+Bytes: 720
+You need to be _very_ specific about the format you plan on parsing as logcat default format changed in L to '-v threadtime' from '-v brief' and could change again in the future.
+
+logcat -b events -v threadtime
+
+is likely what you wanted here.
+
+As a suggestion, do you need or want microsecond time accuracy reported? If you add the flag '-v usec' for M you can acquire it. L will report an error to the request as it is an unknown format modifier though.
+
+logcat -b events -v threadtime -v usec
+
+Check ro.build.????? to to see if -v usec is supported? Difficult if the build comes from master or sandbox build of M. ro.build.version.sdk 23? ro.build.version.release M? ro.build.fingerprint google/<product>:M/MASTER...?
+
+386:0-387:56
+Mon Jul 06 15:07:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f3ba3136_f8bc655a
+Bytes: 7
+Thanks!
+

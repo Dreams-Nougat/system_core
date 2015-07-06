@@ -1,0 +1,18 @@
+Revision: b0d4273f4461730f702c5f50ae2c8a31917537a3
+Patch-set: 2
+File: adb/daemon/main.cpp
+
+121
+Mon Jul 06 15:59:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 33b12958_c58ffa83
+Bytes: 91
+we never want to continue on failure; just make this function void and failures here FATAL.
+
+137
+Mon Jul 06 15:59:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 33b12958_45a4aa07
+Bytes: 41
+no need to check mycon before freeing it.
+

@@ -1,0 +1,27 @@
+Revision: c105bbc1885457d8abb873617e22dc2d42b6c4ae
+Patch-set: 3
+File: /COMMIT_MSG
+
+14:52-14:61
+Tue Jul 07 18:28:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f80dae2c_7df76f88
+Bytes: 8
+limiting
+
+File: init/perfboot.py
+
+195:13-195:20
+Tue Jul 07 18:28:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f80dae2c_fdea5f9b
+Bytes: 79
+was there a namespace collision? dropgox name chosen because dropbox was taken?
+
+386:29-386:36
+Tue Jul 07 18:28:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 534a1d43_bbad9bf9
+Bytes: 9
+recorded?
+

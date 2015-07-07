@@ -24,6 +24,14 @@ UUID: 73f801fb_9eb71975
 Bytes: 229
 This part here might seem a bit odd, but I never wanted an exec on adb file on eng/userdebug to result in an adb running in su domain, so I compute it based off of the run time label. I could go either way, just food for thought.
 
+125
+Tue Jul 07 13:17:20 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 73f801fb_9eb71975
+UUID: d8246aa6_f94833e1
+Bytes: 193
+I wouldn't recommend this.  It deviates from normal usage of process transitions, and it also means that adbd exec /proc/self/<anyfile> would trigger an attempt to transition domains as well...
+
 137
 Mon Jul 06 15:59:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

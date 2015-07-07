@@ -32,6 +32,14 @@ UUID: d8246aa6_f94833e1
 Bytes: 193
 I wouldn't recommend this.  It deviates from normal usage of process transitions, and it also means that adbd exec /proc/self/<anyfile> would trigger an attempt to transition domains as well...
 
+125
+Tue Jul 07 17:44:56 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d8246aa6_f94833e1
+UUID: 93201584_8aa24fb7
+Bytes: 122
+It is a bit odd and deviates, I initially had it as passing argv[0] and using that for the fcontext, lets go back to that.
+
 137
 Mon Jul 06 15:59:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

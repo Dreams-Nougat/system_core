@@ -1,0 +1,20 @@
+Revision: e67e529e637c96e39dd04feed156864390eb54d5
+Patch-set: 3
+File: /COMMIT_MSG
+
+7:0-7:30
+Tue Jul 07 11:08:54 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 18f28255_8063f63c
+Bytes: 99
+The header is not matching what the CL does (i.e. allow native bridge to work without a code cache)
+
+File: libnativebridge/tests/Android.mk
+
+12:0-12:1
+Tue Jul 07 11:08:54 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f8f4ce42_3fa20788
+Bytes: 10
+use spaces
+

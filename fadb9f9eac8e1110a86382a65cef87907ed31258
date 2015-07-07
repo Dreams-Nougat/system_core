@@ -1,0 +1,11 @@
+Revision: fadb9f9eac8e1110a86382a65cef87907ed31258
+Patch-set: 4
+File: libnativebridge/native_bridge.cc
+
+113:4-116:5
+Tue Jul 07 18:09:15 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 534a1d43_fb1ba3fa
+Bytes: 12
+Indentation.
+

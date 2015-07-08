@@ -1,0 +1,11 @@
+Revision: 0e5817fee9d86bf0a6168fc05c4538cd21d1b479
+Patch-set: 1
+File: /COMMIT_MSG
+
+13
+Wed Jul 08 20:57:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f356b1ec_6762ad0d
+Bytes: 199
+This makes no sense to me. I mentioned it to nlewycky and rtrieu yesterday and it sounds like there isn't really a policy on what gets in to -Wextra aside from "upload a patch and see who complains".
+

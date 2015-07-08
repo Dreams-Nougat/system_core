@@ -1,0 +1,11 @@
+Revision: fb745a4882473bbcdfcbf2f360f43c551a4a03de
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+240
+Wed Jul 08 22:54:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1859a245_3d16a3d6
+Bytes: 18
+property_get_bool?
+

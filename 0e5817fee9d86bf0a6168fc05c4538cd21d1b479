@@ -9,3 +9,28 @@ UUID: f356b1ec_6762ad0d
 Bytes: 199
 This makes no sense to me. I mentioned it to nlewycky and rtrieu yesterday and it sounds like there isn't really a policy on what gets in to -Wextra aside from "upload a patch and see who complains".
 
+File: adb/Android.mk
+
+18
+Wed Jul 08 21:06:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f80dae2c_796f7aa8
+Bytes: 63
+do you plan on pushing this into build/ like -Wformat-security?
+
+File: adb/adb_auth_host.cpp
+
+321
+Wed Jul 08 21:06:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f80dae2c_99536ee7
+Bytes: 53
+we actually have a directory_exists() in adb_utils.h.
+
+345
+Wed Jul 08 21:06:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 534a1d43_8de3329e
+Bytes: 36
+maybe we should add a file_exists()?
+

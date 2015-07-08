@@ -1,0 +1,11 @@
+Revision: 9852fed6d9225ec7eeb161c0784bde4c9025a908
+Patch-set: 1
+File: adb/remount_service.cpp
+
+69
+Wed Jul 08 18:42:05 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 534a1d43_cf5612d5
+Bytes: 105
+Please put a proper explanation here. This doesn't help anyone that doesn't already know what's going on.
+

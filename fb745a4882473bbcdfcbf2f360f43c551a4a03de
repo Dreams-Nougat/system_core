@@ -9,3 +9,11 @@ UUID: 1859a245_3d16a3d6
 Bytes: 18
 property_get_bool?
 
+240
+Wed Jul 08 23:03:15 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1859a245_3d16a3d6
+UUID: f85bee3c_47018e0e
+Bytes: 33
+Using that is much cleaner, done.
+

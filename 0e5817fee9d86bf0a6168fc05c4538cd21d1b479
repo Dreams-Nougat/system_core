@@ -18,6 +18,14 @@ UUID: f80dae2c_796f7aa8
 Bytes: 63
 do you plan on pushing this into build/ like -Wformat-security?
 
+18
+Thu Jul 09 17:51:52 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f80dae2c_796f7aa8
+UUID: f356b1ec_87cdd158
+Bytes: 108
+Probably should, but I expect that will be a *lot* of cleanup, and we might as well turn it on here for now.
+
 File: adb/adb_auth_host.cpp
 
 321

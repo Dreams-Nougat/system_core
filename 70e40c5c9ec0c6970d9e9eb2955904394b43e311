@@ -1,0 +1,27 @@
+Revision: 70e40c5c9ec0c6970d9e9eb2955904394b43e311
+Patch-set: 2
+File: adb/adb.h
+
+280:55-280:61
+Thu Jul 09 03:09:24 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 731ba15b_177e848f
+Bytes: 235
+Using 'format(printf)' instead of 'format(gnu_printf)' on Win32 causes the compiler to complain incorrectly about %z. One idea would be to use FORMAT_ARCHETYPE from base/include/base/stringprintf.h (it is currently #undef'd after use).
+
+281:61-281:67
+Thu Jul 09 03:09:24 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 93201584_de1de569
+Bytes: 12
+same comment
+
+File: adb/fdevent.cpp
+
+48:26-48:32
+Thu Jul 09 03:09:24 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58e87a65_0b0a65d8
+Bytes: 100
+same comment, though fdevent.cpp isn't compiled for Windows so perhaps it doesn't really matter here
+

@@ -1,0 +1,11 @@
+Revision: 837eff22c86bcdddd50c68315ef17792a0d1949a
+Patch-set: 1
+File: libbacktrace/backtrace_test.cpp
+
+978
+Thu Jul 09 18:03:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 98a11261_82443e01
+Bytes: 47
+/me grumbles about code not using unique_ptr...
+

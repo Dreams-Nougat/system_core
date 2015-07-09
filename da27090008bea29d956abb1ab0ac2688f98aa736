@@ -1,0 +1,18 @@
+Revision: da27090008bea29d956abb1ab0ac2688f98aa736
+Patch-set: 5
+File: /COMMIT_MSG
+
+9:3-9:13
+Thu Jul 09 11:37:05 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1867e20f_d8222ddd
+Bytes: 32
+do you want to spell out which ?
+
+10
+Thu Jul 09 11:37:05 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1867e20f_382ec9ca
+Bytes: 6
+native
+

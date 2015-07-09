@@ -1,0 +1,13 @@
+Revision: a5fed8235c312adf90650c174c67f8123d93b51a
+Patch-set: 7
+File: libnativebridge/native_bridge.cc
+
+264:0-269:3
+Thu Jul 09 16:26:20 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1840c241_b9f4e3fd
+Bytes: 240
+I just realized during testing since we have a test for this which is failing now.
+
+Why did you change this? We should always have an application data directory. You should only test if we can create the code_cache and leave this as it was.
+

@@ -9,3 +9,11 @@ UUID: 58279af4_0d86d5f0
 Bytes: 108
 No, logically this would be getfilecon("/system/xbin/su", &fcon).  It is emulating invoking su for adb root.
 
+125
+Mon Jul 13 16:54:20 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 58279af4_0d86d5f0
+UUID: d8f1caa3_d17586a9
+Bytes: 113
+Yeah but then you hardcode the path to the su binary which isn't any better than hardcoding the security context.
+

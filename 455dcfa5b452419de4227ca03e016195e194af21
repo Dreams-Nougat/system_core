@@ -43,3 +43,11 @@ UUID: f87f6ee4_678a3223
 Bytes: 443
 But to do it this way, you have to add this logic for computing a context to adbd, compute it in an unconventional manner (as if adbd were executing itself, which it is not), and add policy rules as if adbd were re-executing itself.  Is it worth the additional code and the convoluted logic just to avoid specifying a context in the init.rc file?  Which will make more sense to someone in 10 years trying to read the code and make sense of it?
 
+125
+Mon Jul 13 20:09:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f87f6ee4_678a3223
+UUID: 9870321a_e4e7fa20
+Bytes: 150
+to me, that's a big reason to just keep this in the init.rc. expecting folks working on adb to understand this and its implications seems unrealistic.
+

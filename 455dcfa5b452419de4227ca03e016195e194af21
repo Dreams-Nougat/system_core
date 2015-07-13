@@ -25,3 +25,13 @@ UUID: 58b5dad8_e0f456ff
 Bytes: 76
 Not sure I agree, but if so, then I don't think this is a worthwhile change.
 
+125
+Mon Jul 13 19:14:01 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 58b5dad8_e0f456ff
+UUID: d8f1caa3_91d49eb3
+Bytes: 615
+Using the system executable path is a show stoper. Adb should still run as root and su even if system fails to mount. So if system fails to mount adb would die here and you have no way of getting the logs via adb.
+
+The domain tranistion only affects root builds, and the nice part is that this keeps the transition in policy and is compiled out (much like su is compiled out now). However, currently when su is compiled out, remnants remain, like in the seclabel option for adbd in the init.rc. Having the path to su binary, yeilds the same polution, su disapears, but we keep a hardcoded path to it no matter what.
+

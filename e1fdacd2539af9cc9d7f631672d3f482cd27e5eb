@@ -1,0 +1,31 @@
+Revision: e1fdacd2539af9cc9d7f631672d3f482cd27e5eb
+Patch-set: 2
+File: init/builtins.cpp
+
+117:0-119:15
+Mon Jul 13 18:18:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 987af2a8_265d38be
+Bytes: 156
+Why? both ext4 and f2fs can suffer from eMMC data corruption creapage(sic)
+
+An ext4 -f -y here is grand compensation for ext4 -p/-a -y performed on startup.
+
+File: libcutils/android_reboot.c
+
+72:87-72:92
+Mon Jul 13 18:18:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 38d586cf_bac2b594
+Bytes: 233
+does not deal with "<blah blah>,rw", or 'something' that ends (or begins if both strstr checked) with rw as unlikely as it could be.
+
+Ideally (regex) \[^\|,\]rw\[$\|,\] maybe strpbrk for "," accept tokens in a sub-loop or subroutine.
+
+181:37-181:44
+Mon Jul 13 18:18:28 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 78753eb8_22d77033
+Bytes: 32
+used in the context of this call
+

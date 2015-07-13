@@ -1,0 +1,11 @@
+Revision: 455dcfa5b452419de4227ca03e016195e194af21
+Patch-set: 3
+File: adb/daemon/main.cpp
+
+125
+Mon Jul 13 14:58:29 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58279af4_0d86d5f0
+Bytes: 108
+No, logically this would be getfilecon("/system/xbin/su", &fcon).  It is emulating invoking su for adb root.
+

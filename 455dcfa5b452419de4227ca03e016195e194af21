@@ -17,3 +17,11 @@ UUID: d8f1caa3_d17586a9
 Bytes: 113
 Yeah but then you hardcode the path to the su binary which isn't any better than hardcoding the security context.
 
+125
+Mon Jul 13 19:00:59 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d8f1caa3_d17586a9
+UUID: 58b5dad8_e0f456ff
+Bytes: 76
+Not sure I agree, but if so, then I don't think this is a worthwhile change.
+

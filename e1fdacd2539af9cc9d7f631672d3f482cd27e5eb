@@ -11,6 +11,14 @@ Why? both ext4 and f2fs can suffer from eMMC data corruption creapage(sic)
 
 An ext4 -f -y here is grand compensation for ext4 -p/-a -y performed on startup.
 
+117:0-119:15
+Mon Jul 13 20:04:58 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 987af2a8_265d38be
+UUID: 187d22ed_c81ccf9a
+Bytes: 4
+Done
+
 File: libcutils/android_reboot.c
 
 72:87-72:92
@@ -22,10 +30,26 @@ does not deal with "<blah blah>,rw", or 'something' that ends (or begins if both
 
 Ideally (regex) \[^\|,\]rw\[$\|,\] maybe strpbrk for "," accept tokens in a sub-loop or subroutine.
 
+72:87-72:92
+Mon Jul 13 20:04:58 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 38d586cf_bac2b594
+UUID: d8762a12_c6ea02ea
+Bytes: 4
+Done
+
 181:37-181:44
 Mon Jul 13 18:18:28 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 78753eb8_22d77033
 Bytes: 32
 used in the context of this call
+
+181:37-181:44
+Mon Jul 13 20:04:58 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 78753eb8_22d77033
+UUID: 187d22ed_a81f9b8c
+Bytes: 4
+Done
 

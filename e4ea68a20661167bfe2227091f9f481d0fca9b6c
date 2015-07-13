@@ -1,0 +1,75 @@
+Revision: e4ea68a20661167bfe2227091f9f481d0fca9b6c
+Patch-set: 3
+File: init/builtins.cpp
+
+123:4-123:11
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58987a8f_4241f209
+Bytes: 191
+EINTR is not listed as a possible return (?) in the documentation, but it does defer to reading the kernel source code ...
+
+I am unsure if TEMP_FAILURE_RETRY makes sense, but it can not hurt?
+
+138:4-138:8
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58987a8f_223eee93
+Bytes: 43
+ditto here, like umount2, EINTR not listed.
+
+141:21-141:23
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_c8404f09
+Bytes: 7
+#define
+
+142:17-142:60
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_e83d1398
+Bytes: 18
+TEMP_FAILURE_RETRY
+
+151:0-154:37
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 98975254_cfcb0141
+Bytes: 18
+TEMP_FAILURE_RETRY
+
+File: libcutils/android_reboot.c
+
+127:7-127:10
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9870321a_643eaa79
+Bytes: 133
+#include <stdbool.h>
+
+static bool remount_ro(void)
+
+Advantage is also something like 'return false' and 'return cnt < 50;' is enough.
+
+134:0-139:14
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_c8676fca
+Bytes: 27
+TEMP_FAILURE_RETRY on each.
+
+143:40-143:42
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_48745f79
+Bytes: 52
+#define, especially since it is now used twice here.
+
+164:29-164:31
+Mon Jul 13 21:36:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d8762a12_e67a9e2e
+Bytes: 142
+Do not make assumptions about length. What about #include <cutils/list.h> linked list? Useing a list will drop the need to pass length around.
+

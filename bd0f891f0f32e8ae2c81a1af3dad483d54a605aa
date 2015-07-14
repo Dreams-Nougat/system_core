@@ -1,0 +1,83 @@
+Revision: bd0f891f0f32e8ae2c81a1af3dad483d54a605aa
+Patch-set: 4
+File: init/builtins.cpp
+
+55:28-55:30
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58987a8f_b6eb6071
+Bytes: 158
+I'd like to see a comment that this is in 500ms increments.
+
+Another option is to specify this in ms, and let math below deal with utilizing it appropriately.
+
+File: libcutils/android_reboot.c
+
+34:8-34:14
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_1198ce50
+Bytes: 484
+NB: No action required, only if you feel compelled ... not your problem.
+
+I know this pre-exists. I also recognize that _I_ did this ;-/
+
+BIONIC defines __unused in sys/cdefs.h
+
+An issue to include sys/cdefs.h if this is compiled for windows, linux host or mac. In _this_ file's case it is _not_ built for any of these other combinations. target only, static only.
+
+One of my cleanup requests was to drop this definition, include sys/cdefs.h so that we utilized __unused consistently.
+
+35:29-35:31
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 78b0de09_845dccbf
+Bytes: 222
+I'd like to see a comment stating this is in 100ms increments.
+
+Another option is to specify this in ms, and let math below deal with utilizing it appropriately allowing the local sleep time to be used in that calculation.
+
+49:0-54:3
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9870321a_333eb2ea
+Bytes: 167
+tricky (a neuron popped in my head ;->)
+
+while (!ret && ((opt ...))) {
+    ret = !strcmp(opt, opt_to_find);
+}
+
+hmmm, maybe too tricky for ease-of-maintenance #IgnoreMe
+
+148:4-148:42
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 98975254_363f7578
+Bytes: 321
+If we have write failure, we waste 5 seconds checking.
+
+Not sure if I have an issue with that ... I do not know how remount_ro_done() can pass if this command did not make it into the kernel.
+
+Do we want to consider a runtime force remount on the list, marking the _ones_ that fail so we do not attempt the fsck on those?
+
+153:0-156:5
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 98975254_56e32154
+Bytes: 142
+On the _last_ pass, do we want to consider deleting&reporting the rw_entries that remain in "rw" mode, and let fsck progress on the remainder?
+
+176:0-189:5
+Tue Jul 14 20:30:41 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 187d22ed_f1dedace
+Bytes: 496
+All this logic can be merged into remount_ro() which can in turn be restored to having a void return.
+
+The gain is that we could be a little smarter about the list.
+
+- record all the "rw" filesystems
+- tell the system to mark them "ro" (and if write to /proc/sysrq-trigger failed, you could _manually remount the list; that is probably going to far though).
+- All the "rw" that become "ro" can be fsck'd, the remainder are left alone; log them as failed (logcat -L or last_kmsg can pick this up).
+

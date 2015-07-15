@@ -11,6 +11,14 @@ I'd like to see a comment that this is in 500ms increments.
 
 Another option is to specify this in ms, and let math below deal with utilizing it appropriately.
 
+55:28-55:30
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 58987a8f_b6eb6071
+UUID: 78b0de09_2475d8ef
+Bytes: 4
+Done
+
 File: libcutils/android_reboot.c
 
 34:8-34:14
@@ -28,6 +36,14 @@ An issue to include sys/cdefs.h if this is compiled for windows, linux host or m
 
 One of my cleanup requests was to drop this definition, include sys/cdefs.h so that we utilized __unused consistently.
 
+34:8-34:14
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 187d22ed_1198ce50
+UUID: 98975254_09117e07
+Bytes: 4
+Done
+
 35:29-35:31
 Tue Jul 14 20:30:41 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -36,6 +52,14 @@ Bytes: 222
 I'd like to see a comment stating this is in 100ms increments.
 
 Another option is to specify this in ms, and let math below deal with utilizing it appropriately allowing the local sleep time to be used in that calculation.
+
+35:29-35:31
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 78b0de09_845dccbf
+UUID: 9870321a_b3fd4233
+Bytes: 4
+Done
 
 49:0-54:3
 Tue Jul 14 20:30:41 2015 +0000
@@ -61,12 +85,28 @@ Not sure if I have an issue with that ... I do not know how remount_ro_done() ca
 
 Do we want to consider a runtime force remount on the list, marking the _ones_ that fail so we do not attempt the fsck on those?
 
+148:4-148:42
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 98975254_363f7578
+UUID: 78b0de09_eae21750
+Bytes: 178
+Added some code to check/log the return value from write. Regarding the manual remount, let me make it a TODO for now since the write failure issue does not seem to happen often.
+
 153:0-156:5
 Tue Jul 14 20:30:41 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 98975254_56e32154
 Bytes: 142
 On the _last_ pass, do we want to consider deleting&reporting the rw_entries that remain in "rw" mode, and let fsck progress on the remainder?
+
+153:0-156:5
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 98975254_56e32154
+UUID: 187d22ed_fcf1510c
+Bytes: 4
+Done
 
 176:0-189:5
 Tue Jul 14 20:30:41 2015 +0000
@@ -80,4 +120,14 @@ The gain is that we could be a little smarter about the list.
 - record all the "rw" filesystems
 - tell the system to mark them "ro" (and if write to /proc/sysrq-trigger failed, you could _manually remount the list; that is probably going to far though).
 - All the "rw" that become "ro" can be fsck'd, the remainder are left alone; log them as failed (logcat -L or last_kmsg can pick this up).
+
+176:0-189:5
+Wed Jul 15 02:18:28 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 187d22ed_f1dedace
+UUID: 187d22ed_37b94219
+Bytes: 104
+SGTM, done.
+
+BTW, my N9 device (-userdebug) does not have /proc/last_kmsg. Do you know how to enable it?
 

@@ -11,3 +11,15 @@ I'd simplify to:
 
   if (use_state && get_verity_state_offset(...)
 
+908
+Wed Jul 15 18:35:39 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5834fa65_027f4ad6
+UUID: 985112ab_bff5537d
+Bytes: 217
+I would normally too, but I thought
+
+  if (use_state && (get_verity_state_offset(&fstab->recs[i], &offset) < 0 || read_verity_state(fstab->recs[i].verity_loc, offset, &mode) < 0))
+
+is a bit less readable in this case.
+

@@ -9,6 +9,15 @@ UUID: 7e0fe678_32fe8e7d
 Bytes: 15
 Needs change-ID
 
+File: fs_mgr/fs_mgr.c
+
+668:12-668:27
+Wed Jul 15 19:28:39 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 183e024a_6323bce2
+Bytes: 17
+Add error handler
+
 File: fs_mgr/fs_mgr_priv.h
 
 80
@@ -17,4 +26,21 @@ Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7e0fe678_92bca2b8
 Bytes: 15
 Why not 0x4000?
+
+80
+Wed Jul 15 19:28:39 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7e0fe678_92bca2b8
+UUID: f8404ed5_e25268e3
+Bytes: 2
++1
+
+File: fs_mgr/include/fs_mgr.h
+
+23:30-23:35
+Wed Jul 15 19:28:39 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f8404ed5_42df94cb
+Bytes: 15
+Should be /data
 

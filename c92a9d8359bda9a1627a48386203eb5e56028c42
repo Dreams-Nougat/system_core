@@ -9,6 +9,14 @@ UUID: f8404ed5_bf37970b
 Bytes: 80
 This block is not following Android Coding standard of includes in sorted order.
 
+17:0-22:21
+Wed Jul 15 17:22:35 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f8404ed5_bf37970b
+UUID: b8d41638_4de819a3
+Bytes: 4
+Done
+
 144:0-146:5
 Wed Jul 15 14:56:37 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,4 +32,12 @@ Disadvantage:
 
 Advantages:
 - One less thing blocking shutdown (faster)
+
+144:0-146:5
+Wed Jul 15 17:22:35 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3837466d_416552c0
+UUID: 98fcb2c6_048c3607
+Bytes: 53
+Good point. Let me just remove the empty check. Done.
 

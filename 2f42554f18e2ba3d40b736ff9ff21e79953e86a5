@@ -1,0 +1,13 @@
+Revision: 2f42554f18e2ba3d40b736ff9ff21e79953e86a5
+Patch-set: 3
+File: fs_mgr/fs_mgr_verity.c
+
+908
+Wed Jul 15 18:32:02 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5834fa65_027f4ad6
+Bytes: 65
+I'd simplify to:
+
+  if (use_state && get_verity_state_offset(...)
+

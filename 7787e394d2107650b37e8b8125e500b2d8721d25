@@ -35,6 +35,14 @@ UUID: f8404ed5_e25268e3
 Bytes: 2
 +1
 
+80
+Thu Jul 16 20:15:14 2015 +0000
+Author: Daniel Campello <1072925@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f8404ed5_e25268e3
+UUID: f8404ed5_d96e3379
+Bytes: 78
+I believe 0x4000 is taken for something else in another patch yet to be merged
+
 File: fs_mgr/include/fs_mgr.h
 
 23:30-23:35
@@ -43,4 +51,12 @@ Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f8404ed5_42df94cb
 Bytes: 15
 Should be /data
+
+23:30-23:35
+Thu Jul 16 20:15:14 2015 +0000
+Author: Daniel Campello <1072925@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f8404ed5_42df94cb
+UUID: 982af212_b7882272
+Bytes: 113
+I agree but as for now this is not possible since a persistent, writable /data is available only late after boot.
 

@@ -1,0 +1,11 @@
+Revision: 93b5fdfebd634bb7b83ccbc8f55096c007352f1f
+Patch-set: 1
+File: rootdir/init.trace.rc
+
+24
+Thu Jul 16 19:20:53 2015 +0000
+Author: Riley Andrews <1048235@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3837466d_dbb62b48
+Bytes: 28
+remove additional whitespace
+

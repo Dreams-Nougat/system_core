@@ -1,0 +1,25 @@
+Revision: fdff98d5f2273d93bfd89d99dbf537ba8e543de2
+Patch-set: 1
+File: libcutils/socket_network_client.c
+
+42
+Fri Jul 17 23:06:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 586b1a6a_24470e71
+Bytes: 26
+Clean up the grammar here?
+
+47
+Fri Jul 17 23:06:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 787a9e34_da8059d7
+Bytes: 14
+`hints = {0}`?
+
+83:75-83:78
+Fri Jul 17 23:06:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f88e8e7f_44ad6c1f
+Bytes: 5
+== -1
+

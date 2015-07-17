@@ -1,0 +1,11 @@
+Revision: 683790ae54cd0202385027d259f78894639911e7
+Base-for-patch-set: 1
+File: libcutils/socket_network_client.c
+
+119
+Fri Jul 17 23:06:27 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 58823a52_e1fb3089
+Bytes: 157
+This is a behavior change. The socket used to become blocking again (unless O_NONBLOCK was in the flags we were passed), but now it will remain non-blocking.
+

@@ -1,0 +1,11 @@
+Revision: 0df08271fb41e13550a4f2aa1fbdeb76b9a548c6
+Patch-set: 6
+File: init/builtins.cpp
+
+639:0-639:50
+Tue Jul 21 16:11:40 2015 +0000
+Author: Jeff Sharkey <1013508@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f8568eec_d87a616c
+Bytes: 203
+This seems particularly dangerous if the "shutdown" path was triggered due to a low power state.  I think we should distinguish between normal user-requested shutdown and critical power-related shutdown.
+

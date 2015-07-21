@@ -11,6 +11,16 @@ it might be wise to rename this MAX_PAYLOAD_V2 to prevent the possibility of mer
 
 did you experiment with other sizes? why 256KiB and not, say, 1MiB?
 
+28
+Tue Jul 21 11:36:57 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 383666c8_b2294695
+UUID: 0d432251_8ffb15b2
+Bytes: 779
+I created a new MAX_PAYLOAD_V2 macro and defined MAX_PAYLOAD to it. I don't want to pollute with the code with references to MAX_PAYLOAD_V2 because I think it makes the code less readable, but if you want I can change it.
+
+I experimented with various packet sizes and further increase of the packet size have almost no impact on the push/pull speed on the other hand it increases the latency linearly (because of the USB transfer speed). With 256KiB packets the packet latency is ~8ms what means that any service have at least this latency if a push/pull using the connection with full load. For "real time services" (e.g. logcat or shell) I think this latency is acceptable but a further increase will hurt the user experience, because the practical latency is higher then this.
+
 File: adb/protocol.txt
 
 64
@@ -22,6 +32,14 @@ this isn't really true, though, is it?
 
 "Currently, version=0x01000000 and maxdata=256*1024. Older versions of adb hard-coded 4096, so CONNECT and AUTH packets sent to a device must not be larger than that because they're sent before the CONNECT from the device that tells the adb server what the device can support".
 
+64
+Tue Jul 21 11:36:57 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d143a33_7cd9b5a3
+UUID: 2d0b8619_987135d3
+Bytes: 44
+Updated the wording based on you suggestion.
+
 File: adb/usb_linux.cpp
 
 455
@@ -32,6 +50,14 @@ Bytes: 83
 not any more; we send a zero-length packet.
 
 (you could combine the two 'if's too.)
+
+455
+Tue Jul 21 11:36:57 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b83896b1_33b9d035
+UUID: 2d0b8619_d867ad14
+Bytes: 4
+Done
 
 474:19-474:22
 Tue Jul 21 00:59:34 2015 +0000
@@ -48,6 +74,16 @@ UUID: 383666c8_f28f3e7f
 Bytes: 355
 (i've been assuming that their plan is to make sure that the current change doesn't _break_ Mac or Windows and then worry about improving those platforms in separate changes. but, yes, obviously improving Windows is the most impactful change. actually, the Mac API seems to already just make one call, so there's nothing for us to do there. just Windows.)
 
+474:19-474:22
+Tue Jul 21 11:36:57 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 383666c8_f28f3e7f
+UUID: cd24aaaf_ad749dc2
+Bytes: 418
+At the moment I don't have a Windows environment to test it on Windows but I plan to make that change after this CL.
+
+On Windows currently we do 1 write (with full data) and several reads (with 4096 chunks). Changing it to make only 1 read makes sense (and I plan to do it), but I don't expect it to have measurable impact on the speed because the communication on the wire done independently of how much we read here.
+
 File: adb/usb_linux_client.cpp
 
 218
@@ -56,4 +92,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f8568eec_15faf4b2
 Bytes: 174
 that's just read(2). so it seems more likely that this is actually a limitation in the usb device driver. i'm surprised that this would only affect reading and not writing...
+
+218
+Tue Jul 21 11:36:57 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f8568eec_15faf4b2
+UUID: cd24aaaf_8d71e1d2
+Bytes: 683
+I changed the comment to blame the device driver but I don't know how can I check who exposes this limitation.
+
+I don't know why it effects only the read and not the write (possibly the driver have a read buffer, but not a write buffer), but if the write works with bigger sizes then we have to use it because doing chunked write slows down the communication because each write will result in a separate, synchronous URB request what have 50-200us latency. If we run into a device where we want to ship the new adbd and it don't support larger writes then we should implement a fallback (e.g. when we got a EINVAL back) but I expect it to work in all case where we want to deploy it.
 

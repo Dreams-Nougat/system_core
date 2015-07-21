@@ -18,6 +18,14 @@ UUID: ed97ae00_87a44c8e
 Bytes: 139
 LOG(DEBUG)? I don't know what we think about moving to the new thing. Iirc I had been using LOG for new code, but perhaps I shouldn't have.
 
+156:4-156:5
+Tue Jul 21 22:06:59 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed97ae00_87a44c8e
+UUID: 185442e3_4bc2162b
+Bytes: 440
+Obviously I have no say in what you guys decide, but here's the problems I've seen with D(): it doesn't give a timestamp which is often useful (I do this in my private builds) and D() only has 1 level, which means that when Siva on the Android Studio team asks people to attach adb.log, it probably does not contain anything useful since normal people do not set ADB_TRACE ahead of time. Maybe LOG() isn't the solution, but that's my $0.02.
+
 File: adb/adb_utils.h
 
 34

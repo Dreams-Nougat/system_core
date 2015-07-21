@@ -40,6 +40,14 @@ UUID: 185442e3_245d0abe
 Bytes: 103
 Have you considered making this same change to usb_windows.cpp, or is that out-of-scope of your change?
 
+474:19-474:22
+Tue Jul 21 01:08:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 185442e3_245d0abe
+UUID: 383666c8_f28f3e7f
+Bytes: 355
+(i've been assuming that their plan is to make sure that the current change doesn't _break_ Mac or Windows and then worry about improving those platforms in separate changes. but, yes, obviously improving Windows is the most impactful change. actually, the Mac API seems to already just make one call, so there's nothing for us to do there. just Windows.)
+
 File: adb/usb_linux_client.cpp
 
 218

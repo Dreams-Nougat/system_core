@@ -1,0 +1,11 @@
+Revision: dd0694b14f746da7b3f8a99262560133fe3a1399
+Patch-set: 3
+File: adb/adb.cpp
+
+921:24-921:32
+Tue Jul 21 01:20:46 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d83d4aa0_f41ad0f6
+Bytes: 302
+This used to be SendOkay(reply_fd, zero-length string) which would send 4 zero bytes for the string length, but now no longer does that. I don't know the protocol stuff well enough to know if this matters or not (basically, does the client block on ReadProtocolString() waiting for the string length?).
+

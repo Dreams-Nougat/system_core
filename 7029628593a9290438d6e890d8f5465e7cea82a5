@@ -1,0 +1,11 @@
+Revision: 7029628593a9290438d6e890d8f5465e7cea82a5
+Patch-set: 1
+File: adb/tests/test_adb.py
+
+331:8-331:9
+Tue Jul 21 23:26:26 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4dd51ace_cbc9e9bc
+Bytes: 57
+The parens here aren't needed, and typically are omitted.
+

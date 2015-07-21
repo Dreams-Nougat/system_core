@@ -1,0 +1,44 @@
+Revision: 76b54e4196160030b40c9ecc3078e90edfa57f45
+Patch-set: 1
+File: adb/adb.h
+
+28
+Tue Jul 21 00:28:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 383666c8_b2294695
+Bytes: 204
+it might be wise to rename this MAX_PAYLOAD_V2 to prevent the possibility of merge problems silently changing code from 4KiB to 256KiB.
+
+did you experiment with other sizes? why 256KiB and not, say, 1MiB?
+
+File: adb/protocol.txt
+
+64
+Tue Jul 21 00:28:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d143a33_7cd9b5a3
+Bytes: 317
+this isn't really true, though, is it?
+
+"Currently, version=0x01000000 and maxdata=256*1024. Older versions of adb hard-coded 4096, so CONNECT and AUTH packets sent to a device must not be larger than that because they're sent before the CONNECT from the device that tells the adb server what the device can support".
+
+File: adb/usb_linux.cpp
+
+455
+Tue Jul 21 00:28:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b83896b1_33b9d035
+Bytes: 83
+not any more; we send a zero-length packet.
+
+(you could combine the two 'if's too.)
+
+File: adb/usb_linux_client.cpp
+
+218
+Tue Jul 21 00:28:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f8568eec_15faf4b2
+Bytes: 174
+that's just read(2). so it seems more likely that this is actually a limitation in the usb device driver. i'm surprised that this would only affect reading and not writing...
+

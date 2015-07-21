@@ -84,6 +84,14 @@ At the moment I don't have a Windows environment to test it on Windows but I pla
 
 On Windows currently we do 1 write (with full data) and several reads (with 4096 chunks). Changing it to make only 1 read makes sense (and I plan to do it), but I don't expect it to have measurable impact on the speed because the communication on the wire done independently of how much we read here.
 
+474:19-474:22
+Tue Jul 21 21:27:11 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd24aaaf_ad749dc2
+UUID: 4d70bac3_3cc23d7c
+Bytes: 214
+Makes sense, thanks. BTW, I think the hard thing to test on Windows is to find a device that uses the 'legacy kernel driver' (which has been deleted from AOSP, but might be in use by 3rd parties) instead of WinUsb.
+
 File: adb/usb_linux_client.cpp
 
 218

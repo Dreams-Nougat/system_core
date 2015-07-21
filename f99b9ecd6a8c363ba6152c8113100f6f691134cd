@@ -9,3 +9,37 @@ UUID: 78429e31_5447226f
 Bytes: 75
 this (a) makes adb_query happy and (b) matches the output of "adb connect".
 
+File: adb/adb_utils.cpp
+
+156:4-156:5
+Tue Jul 21 21:51:31 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed97ae00_87a44c8e
+Bytes: 139
+LOG(DEBUG)? I don't know what we think about moving to the new thing. Iirc I had been using LOG for new code, but perhaps I shouldn't have.
+
+File: adb/adb_utils.h
+
+34
+Tue Jul 21 21:51:31 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b83896b1_87407ab7
+Bytes: 249
+Should probably document that we aren't really going to be error checking the address for the caller. We'll catch clearly wrong things like an invalid number of separators, but 'foo:bar:baz' and '...' are valid addresses as far as this is concerned.
+
+File: adb/adb_utils_test.cpp
+
+112
+Tue Jul 21 21:51:31 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d9c722b_3ee9c573
+Bytes: 6
+1.2.3?
+
+127
+Tue Jul 21 21:51:31 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 78429e31_6078d8e8
+Bytes: 2
+0?
+

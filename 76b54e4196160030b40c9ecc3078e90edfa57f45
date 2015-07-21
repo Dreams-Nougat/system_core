@@ -33,6 +33,13 @@ not any more; we send a zero-length packet.
 
 (you could combine the two 'if's too.)
 
+474:19-474:22
+Tue Jul 21 00:59:34 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 185442e3_245d0abe
+Bytes: 103
+Have you considered making this same change to usb_windows.cpp, or is that out-of-scope of your change?
+
 File: adb/usb_linux_client.cpp
 
 218

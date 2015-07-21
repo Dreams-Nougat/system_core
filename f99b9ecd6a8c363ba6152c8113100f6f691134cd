@@ -26,6 +26,14 @@ UUID: 185442e3_4bc2162b
 Bytes: 440
 Obviously I have no say in what you guys decide, but here's the problems I've seen with D(): it doesn't give a timestamp which is often useful (I do this in my private builds) and D() only has 1 level, which means that when Siva on the Android Studio team asks people to attach adb.log, it probably does not contain anything useful since normal people do not set ADB_TRACE ahead of time. Maybe LOG() isn't the solution, but that's my $0.02.
 
+156:4-156:5
+Tue Jul 21 22:15:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 185442e3_4bc2162b
+UUID: 0d6a42d9_b77188d2
+Bytes: 49
+reading that as two votes for LOG(DEBUG)... done.
+
 File: adb/adb_utils.h
 
 34
@@ -34,6 +42,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b83896b1_87407ab7
 Bytes: 249
 Should probably document that we aren't really going to be error checking the address for the caller. We'll catch clearly wrong things like an invalid number of separators, but 'foo:bar:baz' and '...' are valid addresses as far as this is concerned.
+
+34
+Tue Jul 21 22:15:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b83896b1_87407ab7
+UUID: ed808ec6_160b9c62
+Bytes: 4
+Done
 
 File: adb/adb_utils_test.cpp
 
@@ -44,10 +60,26 @@ UUID: 8d9c722b_3ee9c573
 Bytes: 6
 1.2.3?
 
+112
+Tue Jul 21 22:15:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d9c722b_3ee9c573
+UUID: 78429e31_d48f8d31
+Bytes: 69
+that's close enough to www.google.com to be best left to getaddrinfo.
+
 127
 Tue Jul 21 21:51:31 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 78429e31_6078d8e8
 Bytes: 2
 0?
+
+127
+Tue Jul 21 22:15:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 78429e31_6078d8e8
+UUID: 8d7552bb_3310288c
+Bytes: 4
+Done
 

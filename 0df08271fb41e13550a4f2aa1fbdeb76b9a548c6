@@ -17,3 +17,16 @@ UUID: 185442e3_b79047a4
 Bytes: 35
 Thanks. I'll create a follow-up CL.
 
+File: libcutils/android_reboot.c
+
+81:8-82:55
+Tue Jul 21 17:17:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d83d4aa0_e2420ee3
+Bytes: 400
+In the startup path we check 'fstab->recs[i].fs_mgr_flags & MF_CHECK' for the related filesystem. Here we do not.
+
+I accept and respect what we are doing here; but wonder if we want to gate the shutdown filesystem check on the fstab configuration? My gut says no worries, because anything we eventually mount r/w should be a candidate for a check on the way down.
+
+@mkayyash@ please weigh in on this.
+

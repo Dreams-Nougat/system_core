@@ -1,0 +1,20 @@
+Revision: f84a69873a03264a2a8e4cb05f1df76d1b4c42a8
+Patch-set: 3
+File: adb/sockets.cpp
+
+573
+Wed Jul 22 18:15:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ddc66fc_191bcf34
+Bytes: 6
+size_t
+
+File: adb/usb_linux_client.cpp
+
+218
+Wed Jul 22 18:15:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d7552bb_87aa1689
+Bytes: 7
+doesn't
+

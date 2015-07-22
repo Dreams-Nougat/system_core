@@ -17,6 +17,15 @@ UUID: 185442e3_b79047a4
 Bytes: 35
 Thanks. I'll create a follow-up CL.
 
+639:0-639:50
+Wed Jul 22 01:02:14 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 185442e3_b79047a4
+UUID: 8d7552bb_36d256ce
+Bytes: 98
+Uploaded two changes:
+https://android-review.googlesource.com/#/q/topic:yusukes-b21853106-shutdown
+
 File: libcutils/android_reboot.c
 
 81:8-82:55

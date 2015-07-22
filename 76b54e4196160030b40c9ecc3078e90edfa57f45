@@ -127,3 +127,18 @@ UUID: 4dd51ace_e6a984db
 Bytes: 7
 ccross?
 
+218
+Wed Jul 22 01:06:38 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4dd51ace_e6a984db
+UUID: 4dd51ace_bac6303b
+Bytes: 323
+There are two kernel implementations, f_adb.c and f_fs.c.  This code is for the f_adb.c interface.  In f_adb.c, adb_read has:
+
+        #define ADB_BULK_BUFFER_SIZE           4096
+
+        if (count > ADB_BULK_BUFFER_SIZE)
+                return -EINVAL;
+
+I don't see any equivalent limitation on the newer f_fs.c interface.
+

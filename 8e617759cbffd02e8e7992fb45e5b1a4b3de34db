@@ -16,3 +16,13 @@ UUID: ed808ec6_39d80b1d
 Bytes: 103
 so these are not tags, but "y0y" and "vv0" are ok? When folks create tags are the validity rules clear?
 
+539
+Wed Jul 22 14:47:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed808ec6_39d80b1d
+UUID: edc5ee24_f74292c0
+Bytes: 396
+There are no rules, only heuristics. kernel prints have no standards of behavior.
+
+These are used to ensure that a stack dump (which includes a register dump) do not turn the register names into tags. Driver names like en0: is a tag we want to allow through, but x19 not. I have checked on three devices, this heuristic is enough to clarify the stack dump and not exclude any driver-created tags.
+

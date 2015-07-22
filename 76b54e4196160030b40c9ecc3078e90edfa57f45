@@ -29,6 +29,16 @@ UUID: ad7a16a8_faea81e5
 Bytes: 149
 i don't understand your point about increasing latency --- this is the max payload size; we'll only send as many bytes as are actually in the packet.
 
+28
+Wed Jul 22 17:28:12 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad7a16a8_faea81e5
+UUID: 2d3aa6f6_e0e44219
+Bytes: 920
+If we have an "adb pull" and an "adb shell" running at the same time with the same device then the "adb pull" will put high load of 256KiB packets onto the connection. If the shell service want to send a message also (e.g. stdout of a shell command) then it will try to use the same stream to write the data to the host because we have only 1 USB write endpoint. It means that when the shell service want to send a packet then it will have to wait until the packet currently transferred is finished what will be most likely a large packet from the file sync service. Because of it the latency of the shell service is affected by the packet size used by the file sync service.
+
+I agree that this isn't a major issue but it gives us an upper limit for the packet size. Increasing the packet size over 256KiB have almost no effect on the push/pull speed while increasing this effect to a level where it can be user visible.
+
 File: adb/protocol.txt
 
 64
@@ -149,4 +159,12 @@ Parent: 4dd51ace_bac6303b
 UUID: ad7a16a8_9ae02d8d
 Bytes: 166
 ah, now i get the significance of the "_adb_" in these names. makes sense. that lets us clarify the comment (and not worry about this too much going forward). thanks!
+
+218
+Wed Jul 22 17:28:12 2015 +0000
+Author: Tamas Berghammer <1059813@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad7a16a8_9ae02d8d
+UUID: cd3e6aec_5dd87b1d
+Bytes: 39
+Clarified comment based on suggestions.
 

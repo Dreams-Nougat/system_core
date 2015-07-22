@@ -1,0 +1,18 @@
+Revision: 8e617759cbffd02e8e7992fb45e5b1a4b3de34db
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+47
+Wed Jul 22 01:07:48 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdc02a18_d08f62b2
+Bytes: 220
+could we have a 'const int' instead of '5' or a comment to clarify why we go past the string termination (presumably because the field got split between two lines so we will find the end of the field in the next string).
+
+539
+Wed Jul 22 01:07:48 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed808ec6_39d80b1d
+Bytes: 103
+so these are not tags, but "y0y" and "vv0" are ok? When folks create tags are the validity rules clear?
+

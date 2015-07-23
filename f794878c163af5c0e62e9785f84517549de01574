@@ -9,12 +9,28 @@ UUID: 7ef6069f_054506c5
 Bytes: 23
 remove extra whitespace
 
+140
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7ef6069f_054506c5
+UUID: ad7a16a8_89c8e91e
+Bytes: 4
+Done
+
 176:14-176:15
 Tue Jun 23 02:42:49 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9e7adaa8_dbe215c1
 Bytes: 5
 >= 0?
+
+176:14-176:15
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9e7adaa8_dbe215c1
+UUID: 6dd2dee8_26e46e9b
+Bytes: 4
+Done
 
 305
 Tue Jun 23 02:42:49 2015 +0000
@@ -23,12 +39,28 @@ UUID: 9e7adaa8_bb9f193b
 Bytes: 23
 remove extra whitespace
 
+305
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9e7adaa8_bb9f193b
+UUID: 6dd2dee8_46e97272
+Bytes: 4
+Done
+
 311
 Tue Jun 23 02:42:49 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9e7adaa8_5ba4c590
 Bytes: 41
 don't write to fd that you failed to open
+
+311
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9e7adaa8_5ba4c590
+UUID: edc5ee24_758c5743
+Bytes: 4
+Done
 
 323
 Tue Jun 23 02:42:49 2015 +0000
@@ -37,12 +69,28 @@ UUID: 5efea270_f2e07d91
 Bytes: 38
 don't close fd that you failed to open
 
+323
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5efea270_f2e07d91
+UUID: 6dfe5e71_32017042
+Bytes: 4
+Done
+
 649
 Tue Jun 23 02:42:49 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3e2acebf_9ef4a9c9
 Bytes: 24
 remove extra indentation
+
+649
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e2acebf_9ef4a9c9
+UUID: 8d7552bb_c80b3bdb
+Bytes: 4
+Done
 
 672
 Tue Jun 23 02:42:49 2015 +0000
@@ -58,6 +106,14 @@ UUID: 7ef6069f_c5f81ef6
 Bytes: 23
 remove extra whitespace
 
+739
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7ef6069f_c5f81ef6
+UUID: 8d7552bb_a8259f5d
+Bytes: 4
+Done
+
 741
 Tue Jun 23 02:42:49 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -65,12 +121,28 @@ UUID: 3e2acebf_5e619106
 Bytes: 47
 I don't think main expect negative error codes.
 
+741
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e2acebf_5e619106
+UUID: edc5ee24_b5415f0d
+Bytes: 4
+Done
+
 759
 Tue Jun 23 02:42:49 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3e2acebf_de174175
 Bytes: 79
 I don't think main expect negative error codes. (EXIT_FAILURE and EXIT_SUCCESS)
+
+759
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3e2acebf_de174175
+UUID: 8d61d221_73864022
+Bytes: 4
+Done
 
 File: libtrusty/trusty.c
 
@@ -80,4 +152,12 @@ Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9e7adaa8_3b59c90a
 Bytes: 104
 does the caller need the error code? I don't know if errno is preserved after you make another syscalls.
+
+47
+Thu Jul 23 01:22:50 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9e7adaa8_3b59c90a
+UUID: ad7a16a8_29e3d54d
+Bytes: 4
+Done
 

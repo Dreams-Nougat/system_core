@@ -9,6 +9,14 @@ UUID: 8d7552bb_fc511830
 Bytes: 92
 use state struct instead? It is not obvious where all variables come from in the code below.
 
+90
+Thu Jul 23 02:38:07 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d7552bb_fc511830
+UUID: 8d7552bb_1c965458
+Bytes: 4
+Done
+
 200:20-200:28
 Thu Jul 23 02:14:58 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 2ddc66fc_65010c41
 Bytes: 1
 ?
 
+200:20-200:28
+Thu Jul 23 02:38:07 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2ddc66fc_65010c41
+UUID: 4dd51ace_13b39ed5
+Bytes: 4
+Done
+
 745:0-747:0
 Thu Jul 23 02:23:09 2015 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6dfe5e71_f25b68cd
 Bytes: 23
 remove extra whitespace
+
+745:0-747:0
+Thu Jul 23 02:38:07 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dfe5e71_f25b68cd
+UUID: 8d7552bb_dc9f7c69
+Bytes: 4
+Done
 
 File: libtrusty/trusty.c
 
@@ -31,4 +55,12 @@ Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: edc5ee24_7564573e
 Bytes: 24
 Why is this conditional?
+
+46
+Thu Jul 23 02:38:07 2015 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: edc5ee24_7564573e
+UUID: edc5ee24_355ecf74
+Bytes: 4
+Done
 

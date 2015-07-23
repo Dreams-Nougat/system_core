@@ -1,0 +1,11 @@
+Revision: 792f7c1c51a4a79fb01a55afd89fb21b9e6d8f61
+Patch-set: 3
+File: libtrusty/trusty.c
+
+46
+Thu Jul 23 02:12:51 2015 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: edc5ee24_7564573e
+Bytes: 24
+Why is this conditional?
+

@@ -16,6 +16,13 @@ UUID: 2ddc66fc_65010c41
 Bytes: 1
 ?
 
+745:0-747:0
+Thu Jul 23 02:23:09 2015 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dfe5e71_f25b68cd
+Bytes: 23
+remove extra whitespace
+
 File: libtrusty/trusty.c
 
 46

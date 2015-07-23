@@ -2,6 +2,13 @@ Revision: 7a926fc8d2441e3754ed5258fa3c1252c63807eb
 Patch-set: 1
 File: adb/usb_linux.cpp
 
+147
+Thu Jul 23 23:26:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8df6329c_6b15c1cd
+Bytes: 108
+`s + s` here, but StringPrintf above for bus_name. Don't really care which, but might as well be consistent.
+
 318:4-318:18
 Thu Jul 23 23:05:22 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -15,6 +22,20 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad14d688_e4a39af6
 Bytes: 114
 The old code broke out of the loop if h->urb_out_busy==0 && urb->status != 0. Was that just a bug in the old code?
+
+530
+Thu Jul 23 23:26:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdecaad0_6d879565
+Bytes: 19
+Make a constructor?
+
+547:23-547:24
+Thu Jul 23 23:26:57 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: adfbf684_6fd30d03
+Bytes: 15
+Missed a space.
 
 552:12-552:31
 Thu Jul 23 23:05:22 2015 +0000

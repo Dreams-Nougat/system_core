@@ -1,0 +1,11 @@
+Revision: 381cfa9a8bc262dcd823a8bb6adc189595a2fe7d
+Patch-set: 2
+File: libcutils/socket_network_client.c
+
+58:8-58:25
+Fri Jul 24 23:40:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d9d1a6f_85d2b2cb
+Bytes: 102
+Argh, should be *getaddrinfo_error. Yikes! C/C++ type coercion... Time for -Wall -Wextra -pendantic...
+

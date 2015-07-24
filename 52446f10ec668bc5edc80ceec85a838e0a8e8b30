@@ -1,0 +1,11 @@
+Revision: 52446f10ec668bc5edc80ceec85a838e0a8e8b30
+Patch-set: 2
+File: init/builtins.cpp
+
+460
+Fri Jul 24 23:16:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd882a39_d67abade
+Bytes: 53
+(void)? i thought you were all gung ho for C++11? :-)
+

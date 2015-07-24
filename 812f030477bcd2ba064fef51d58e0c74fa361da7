@@ -1,0 +1,15 @@
+Revision: 812f030477bcd2ba064fef51d58e0c74fa361da7
+Patch-set: 5
+File: adb/Android.mk
+
+50:4-50:14
+Fri Jul 24 21:28:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad977653_a06a42dd
+Bytes: 198
+Argh, this broke the Win32 build:
+
+ x86_64-w64-mingw32-g++: error: unrecognized command line option ‘-std=c++14’
+
+Seems like the Windows compiler will accept -std=c++11 or -std=c++1y but not 14.
+

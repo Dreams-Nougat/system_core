@@ -9,12 +9,28 @@ UUID: cd882a39_ed2c459a
 Bytes: 322
 I'm out of my area of expertise here (Linux usb code??), but my intuition says that if this times out, there is still a pending IO that is going to write to urb_out. What if we call usb_write()/usb_bulk_write() after doing a write that times out? Seems like they could conflict, but again, I'm out of my area of expertise.
 
+320:48-320:71
+Fri Jul 24 03:54:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd882a39_ed2c459a
+UUID: 2da466b9_f00b40da
+Bytes: 66
+ccross? was the old code accidentally right, just looping forever?
+
 321:19-321:21
 Fri Jul 24 02:37:51 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad977653_6cc4dbd7
 Bytes: 74
 Maybe set errno for the benefit of usb_write() which dumps errno/strerror?
+
+321:19-321:21
+Fri Jul 24 03:54:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad977653_6cc4dbd7
+UUID: 0da7a2c0_0f6d05ab
+Bytes: 4
+Done
 
 324:19-324:62
 Fri Jul 24 02:37:51 2015 +0000
@@ -23,10 +39,26 @@ UUID: 6d83be1d_6a8597e2
 Bytes: 393
 It is my (weak) understanding that status is an error-code (is that right?). So if it is non-zero, there is an error and then we return 0? That sounds wrong. I think we should set errno = urb->status and then return -1? (BTW, to top this all off: check out transport.cpp:input_thread(): it ignores the return value from write_to_remote so it assumes that write errors bubble up some other way)
 
+324:19-324:62
+Fri Jul 24 03:54:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d83be1d_6a8597e2
+UUID: 6d83be1d_6a76774f
+Bytes: 238
+yeah, that's not what the old code was doing, but that definitely sounds right. https://www.kernel.org/doc/Documentation/usb/URB.txt says that status is 0 for success or a negative errno value, so that gives us something to use for errno.
+
 387:22-387:24
 Fri Jul 24 02:37:51 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd882a39_adb95dc5
 Bytes: 72
 Maybe errno = urb->status for the benefit of usb_read which dumps errno?
+
+387:22-387:24
+Fri Jul 24 03:54:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd882a39_adb95dc5
+UUID: ed8dee45_d1bc86a5
+Bytes: 4
+Done
 

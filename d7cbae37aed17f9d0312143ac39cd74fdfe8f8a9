@@ -9,6 +9,14 @@ UUID: 8dbd52cc_136d2cab
 Bytes: 25
 Does this need return -2?
 
+162
+Fri Jul 24 04:14:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dbd52cc_136d2cab
+UUID: 4d86fa2e_e986f59a
+Bytes: 11
+oops. done.
+
 File: adb/adb_utils.cpp
 
 171
@@ -35,6 +43,14 @@ UUID: 4d9d1a6f_b15d40fe
 Bytes: 136
 Perhaps document the error guidance? On -1, check getaddrinfo_error first (which is guaranteed to be set if -1 is returned), then errno?
 
+43:38-43:44
+Fri Jul 24 04:14:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d9d1a6f_b15d40fe
+UUID: 8dbd52cc_53488404
+Bytes: 4
+Done
+
 122
 Fri Jul 24 03:14:58 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,4 +68,12 @@ For old callers, maybe tweak this to something like this?
      } // else errno was set by socket_network...()
    } // else errno is already set properly
  }
+
+122
+Fri Jul 24 04:14:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2da466b9_d0f71c4d
+UUID: 0da7a2c0_ef3e0192
+Bytes: 92
+i'm deleting all but one caller in this change. i'll see if i can delete the last one later.
 

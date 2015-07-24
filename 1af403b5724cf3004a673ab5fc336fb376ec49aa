@@ -17,6 +17,14 @@ UUID: 2da466b9_f00b40da
 Bytes: 66
 ccross? was the old code accidentally right, just looping forever?
 
+320:48-320:71
+Fri Jul 24 04:20:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2da466b9_f00b40da
+UUID: 0da7a2c0_2fef297c
+Bytes: 299
+Obviously, I will defer to you guys, but it really seems like after the timeout, the IO is still pending and the kernel is going to write to `urb' here, and that will race with the next subsequent call to usb_bulk_write(). Perhaps this never occurs in practice due to some buffering or device speed.
+
 321:19-321:21
 Fri Jul 24 02:37:51 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

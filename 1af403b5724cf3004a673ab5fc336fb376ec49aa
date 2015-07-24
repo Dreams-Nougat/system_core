@@ -33,6 +33,16 @@ UUID: ad977653_d5746ec4
 Bytes: 257
 I'm not too familiar with usbfs, but a quick look at the kernel code suggests that the USBDEVFS_REAPURB ioctl is going to write to urb->buffer, so it better be valid.  USBDEVFS_DISCARDURB might be a good idea to remove the buffer from the kernel on timeout.
 
+320:48-320:71
+Fri Jul 24 19:35:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad977653_d5746ec4
+UUID: 4d86fa2e_92a922dd
+Bytes: 197
+i've just added a TODO for now, but raised http://b/22721206 to come back to this.
+
+(in the h->dead case, the other thread will have done the discard for us, but in the timeout case, nothing does.)
+
 321:19-321:21
 Fri Jul 24 02:37:51 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

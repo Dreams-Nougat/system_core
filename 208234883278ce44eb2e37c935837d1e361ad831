@@ -1,0 +1,11 @@
+Revision: 208234883278ce44eb2e37c935837d1e361ad831
+Patch-set: 1
+File: fastboot/usb_linux.cpp
+
+69:18-70:72
+Fri Jul 24 21:39:49 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed8dee45_499622a6
+Bytes: 333
+I was thinking device when I wrote this, not host.  Devices tend to have more constrained memory and lots of non-movable dma pages that make physically contiguous allocations extra hard.  On my laptop /proc/buddyinfo reports thousands of 256KB chunks (order 6) available, so 256KiB transfers on 3.3 kernels should be pretty reliable.
+

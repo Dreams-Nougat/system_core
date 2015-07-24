@@ -1,0 +1,20 @@
+Revision: f744e18ae72bd8a202e775ceca7d6ce7d7ee1b29
+Patch-set: 1
+File: init/property_service.cpp
+
+145
+Fri Jul 24 17:56:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd882a39_d3fe4ca3
+Bytes: 83
+do we need to zero this out? does __system_property_get write '\0' even on failure?
+
+520
+Fri Jul 24 17:56:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd882a39_1328d4b9
+Bytes: 80
+or std::string fstab_filename = FSTAB_PREFIX + propbuf;
+
+s/propbuf/ro_hardware/?
+

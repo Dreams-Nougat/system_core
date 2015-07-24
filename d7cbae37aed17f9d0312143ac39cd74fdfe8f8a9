@@ -1,5 +1,14 @@
 Revision: d7cbae37aed17f9d0312143ac39cd74fdfe8f8a9
 Patch-set: 1
+File: adb/adb_client.cpp
+
+162
+Fri Jul 24 03:14:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8dbd52cc_136d2cab
+Bytes: 25
+Does this need return -2?
+
 File: adb/adb_utils.cpp
 
 171
@@ -8,4 +17,39 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ed8dee45_2eb80713
 Bytes: 128
 i'm assuming spencer will come along later and add the appropriate #if defined(_WIN32) block here. but this looks good on linux.
+
+171
+Fri Jul 24 03:14:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed8dee45_2eb80713
+UUID: 6d9ade79_951bc6a8
+Bytes: 168
+Yeah, what I'm planning to do is get the FormatMessage() wrapper from Chromium, put it in sysdeps_win32.cpp, then call it (under #ifdef) here. I think that should work.
+
+File: libcutils/socket_network_client.c
+
+43:38-43:44
+Fri Jul 24 03:14:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d9d1a6f_b15d40fe
+Bytes: 136
+Perhaps document the error guidance? On -1, check getaddrinfo_error first (which is guaranteed to be set if -1 is returned), then errno?
+
+122
+Fri Jul 24 03:14:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_d0f71c4d
+Bytes: 411
+For old callers, maybe tweak this to something like this?
+ errno = 0;
+ fd = socket_network...();
+ if (fd == -1) {
+   if (getaddrinfo_error != 0) {
+     // For old callers that only check errno,
+     // we don't want them to see errno==0 on DNS failure.
+     if (errno == 0) {
+       errno = E<something generic?>;
+     } // else errno was set by socket_network...()
+   } // else errno is already set properly
+ }
 

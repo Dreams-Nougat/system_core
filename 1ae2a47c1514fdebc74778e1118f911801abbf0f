@@ -1,0 +1,18 @@
+Revision: 1ae2a47c1514fdebc74778e1118f911801abbf0f
+Patch-set: 3
+File: adb/usb_linux.cpp
+
+322:75-322:82
+Fri Jul 24 04:20:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d9d1a6f_b1faa036
+Bytes: 139
+nit: for the h->dead case, errno == ETIMEDOUT? Probably not that critical since the h->dead case is when the device is being kicked anyway.
+
+372:12-372:21
+Fri Jul 24 04:20:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_30ba285d
+Bytes: 11
+nit: errno?
+

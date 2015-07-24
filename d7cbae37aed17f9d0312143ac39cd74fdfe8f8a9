@@ -1,0 +1,11 @@
+Revision: d7cbae37aed17f9d0312143ac39cd74fdfe8f8a9
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+171
+Fri Jul 24 00:58:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed8dee45_2eb80713
+Bytes: 128
+i'm assuming spencer will come along later and add the appropriate #if defined(_WIN32) block here. but this looks good on linux.
+

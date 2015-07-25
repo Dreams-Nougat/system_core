@@ -1,0 +1,27 @@
+Revision: 0ec116c7c99b5c76c4e3d11a7714051b06b807cc
+Patch-set: 2
+File: /COMMIT_MSG
+
+22:4-22:31
+Sat Jul 25 01:06:12 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_7f955b94
+Bytes: 105
+Thanks, as a newbie, I was trying to figure out the easy command line to be able to run individual tests.
+
+File: adb/test_device.py
+
+174:4-174:16
+Sat Jul 25 01:06:12 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad977653_3b16830c
+Bytes: 34
+Ahhh, thank you, I've needed this.
+
+206:15-206:57
+Sat Jul 25 01:06:12 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_1f7d2fdd
+Bytes: 91
+I had also been thinking about random sizes because of all the usb related changes, thanks.
+

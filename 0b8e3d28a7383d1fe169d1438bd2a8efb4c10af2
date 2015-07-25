@@ -1,0 +1,34 @@
+Revision: 0b8e3d28a7383d1fe169d1438bd2a8efb4c10af2
+Patch-set: 1
+File: /COMMIT_MSG
+
+22
+Sat Jul 25 00:48:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad977653_3b8be3fb
+Bytes: 50
+we can still just run test_adb.py directly though?
+
+File: adb/device.py
+
+26
+Sat Jul 25 00:48:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d83be1d_f1e0978d
+Bytes: 123
+no convenience to say "give me the AndroidDevice corresponding to ANDROID_SERIAL, or the unique device/emulator, or throw"?
+
+30
+Sat Jul 25 00:48:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_3fde738d
+Bytes: 70
+(btw, this is broken if you don't already have an adb server running.)
+
+54
+Sat Jul 25 00:48:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed8dee45_9fff5cda
+Bytes: 4
+exit
+

@@ -9,3 +9,13 @@ UUID: 4d9d1a6f_85d2b2cb
 Bytes: 102
 Argh, should be *getaddrinfo_error. Yikes! C/C++ type coercion... Time for -Wall -Wextra -pendantic...
 
+58:8-58:25
+Sat Jul 25 01:55:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d9d1a6f_85d2b2cb
+UUID: 4d86fa2e_2354a6d3
+Bytes: 166
+that doesn't catch it either, but i've uploaded https://android-review.googlesource.com/161449 anyway.
+
+https://android-review.googlesource.com/161636 fixes this bug.
+

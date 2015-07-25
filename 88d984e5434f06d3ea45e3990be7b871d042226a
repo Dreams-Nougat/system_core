@@ -1,0 +1,11 @@
+Revision: 88d984e5434f06d3ea45e3990be7b871d042226a
+Patch-set: 1
+File: init/init_parser.cpp
+
+454:12-454:33
+Sat Jul 25 00:07:22 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d83be1d_b17fff88
+Bytes: 54
+Should we add timing information to this function too?
+

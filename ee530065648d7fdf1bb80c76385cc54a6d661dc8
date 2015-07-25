@@ -1,0 +1,11 @@
+Revision: ee530065648d7fdf1bb80c76385cc54a6d661dc8
+Patch-set: 1
+File: init/signal_handler.cpp
+
+140
+Sat Jul 25 01:38:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8dbd52cc_a747d221
+Bytes: 26
+if (!...) report an error?
+

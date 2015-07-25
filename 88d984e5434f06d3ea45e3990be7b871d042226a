@@ -9,3 +9,48 @@ UUID: 6d83be1d_b17fff88
 Bytes: 54
 Should we add timing information to this function too?
 
+454:12-454:33
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d83be1d_b17fff88
+UUID: 0da7a2c0_987a1930
+Bytes: 63
+since we time the individual files, it's probably not worth it?
+
+456
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad977653_9bb217cf
+Bytes: 15
+std::unique_ptr
+
+457
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8dbd52cc_a77fd288
+Bytes: 18
+always use braces.
+
+459
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d9d1a6f_2564a63d
+Bytes: 32
+no need for struct. this is C++.
+
+461
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_df28070f
+Bytes: 87
+never use readdir_r. http://elliotth.blogspot.com/2012/10/how-not-to-use-readdirr3.html
+
+File: init/util.cpp
+
+474
+Sat Jul 25 00:32:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d86fa2e_e3744ec4
+Bytes: 24
+== -1 is more idiomatic.
+

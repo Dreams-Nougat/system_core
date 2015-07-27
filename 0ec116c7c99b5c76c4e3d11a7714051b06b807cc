@@ -9,6 +9,14 @@ UUID: 2da466b9_7f955b94
 Bytes: 105
 Thanks, as a newbie, I was trying to figure out the easy command line to be able to run individual tests.
 
+22:4-22:31
+Mon Jul 27 18:21:42 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2da466b9_7f955b94
+UUID: 4d86fa2e_1577d7ae
+Bytes: 153
+yeah, what i want is something more like the bionic unit tests where there's just one thing to run, and it takes some kind of filter on the command line.
+
 File: adb/test_device.py
 
 174:4-174:16

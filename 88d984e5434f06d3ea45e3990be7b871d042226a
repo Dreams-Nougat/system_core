@@ -76,12 +76,31 @@ UUID: 0da7a2c0_987a1930
 Bytes: 63
 since we time the individual files, it's probably not worth it?
 
+454:12-454:33
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0da7a2c0_987a1930
+UUID: 6d9ade79_32d945a5
+Bytes: 100
+Yeah I think the individual files gives you enough info. Will change if anyone feels strongly though
+
 456
 Sat Jul 25 00:32:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad977653_9bb217cf
 Bytes: 15
 std::unique_ptr
+
+456
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad977653_9bb217cf
+UUID: cd882a39_67386efb
+Bytes: 144
+Done - I've changed it, to:
+std::unique_ptr<DIR, int(*)(DIR*)> config_dir(opendir(path), closedir);
+
+c++ ftw, not convinced it clearer though :)
 
 457
 Sat Jul 25 00:32:16 2015 +0000
@@ -90,12 +109,29 @@ UUID: 8dbd52cc_a77fd288
 Bytes: 18
 always use braces.
 
+457
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8dbd52cc_a77fd288
+UUID: ed8dee45_8237fc6a
+Bytes: 4
+Done
+
 459
 Sat Jul 25 00:32:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d9d1a6f_2564a63d
 Bytes: 32
 no need for struct. this is C++.
+
+459
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d9d1a6f_2564a63d
+UUID: cd882a39_c71842ae
+Bytes: 58
+cool, was trying to fit in with existing code style.
+Done.
 
 461
 Sat Jul 25 00:32:16 2015 +0000
@@ -104,12 +140,29 @@ UUID: 2da466b9_df28070f
 Bytes: 87
 never use readdir_r. http://elliotth.blogspot.com/2012/10/how-not-to-use-readdirr3.html
 
+461
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2da466b9_df28070f
+UUID: 4d9d1a6f_4bde198e
+Bytes: 142
+arh thanks! I only used it as this is recursive. Though as its per stream (the storage is allocated per DIR) I think we are cool with readdir?
+
 465:12-465:18
 Mon Jul 27 18:30:35 2015 +0000
 Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d86fa2e_b5bc4bb6
 Bytes: 168
 We can use the d_type entry of dirent to do this same check with less overhead.  We use it in vold and other areas of init, so we already are assuming it's implemented.
+
+465:12-465:18
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d86fa2e_b5bc4bb6
+UUID: 2d3e264a_630f3c3c
+Bytes: 80
+k, I'm always wary of using d_type but if we already use it I'll change it.
+Done
 
 File: init/util.cpp
 
@@ -119,4 +172,16 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d86fa2e_e3744ec4
 Bytes: 24
 == -1 is more idiomatic.
+
+474
+Mon Jul 27 21:37:11 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d86fa2e_e3744ec4
+UUID: cd882a39_07fc0aa9
+Bytes: 259
+In general isn't it better to check for success rather than a specific error? (agree here stat only does 0 or -1)
+
+In Chrome we normally so if (ret != SUCCESS) rather than if (ret == ERROR) as people add error codes and its prone to a failure?
+
+How about < 0?
 

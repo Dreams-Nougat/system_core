@@ -19,6 +19,18 @@ Being able to import directories enables the dev workflow that we're aiming for 
 
 We're gonna need to have the Android build system emit init.rc files for a bunch of new native services, so we'd rather have one include rather  than make each dev modify init.rc files.
 
+431
+Mon Jul 27 18:49:34 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d37da6b_616bb6e4
+UUID: 8d4c7215_9b218bd6
+Bytes: 745
+Right, but when do you plan on doing those imports?  'import' right now happens as the file is being parsed, which means if you try to import a file/directory on /system from the init.rc on the ramdisk, that it will fail.
+
+I've proposed creating a command that would dynamically import files based on a trigger, but that did not gain support.  The idea that we settled on is importing a set of files (directories) after file systems are mounted in do_mount_all, see https://android-review.googlesource.com/#/c/161602/3
+
+Assuming that we do the above, then we shouldn't need to extend import to be able to import entire directories.  Unless we do think there's a good reason to do so.  We should modify the readme.txt for import if we do as well.
+
 454:12-454:33
 Sat Jul 25 00:07:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

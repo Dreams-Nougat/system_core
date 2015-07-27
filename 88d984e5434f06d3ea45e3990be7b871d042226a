@@ -201,3 +201,11 @@ In Chrome we normally so if (ret != SUCCESS) rather than if (ret == ERROR) as pe
 
 How about < 0?
 
+474
+Mon Jul 27 21:41:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd882a39_07fc0aa9
+UUID: adfcd6c5_c72ce0cf
+Bytes: 160
+no, in unix -1 is the error. (in POSIXy cases where it's not, like the pthread APIs, the errors tend to be *positive* anyway, so != 0 is still better than < 0.)
+

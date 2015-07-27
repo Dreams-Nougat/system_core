@@ -41,6 +41,16 @@ But that change only supports three hardcoded directories right? Are you suggest
 
 The way we're planning things right now, step one would be to dump a bunch of init.rc files in a directory in the ramdisk, and then include that directory from our init.brillo.rc file. Later, we will likely try to find a way to split the main init.rc as discussed in the threads last week.
 
+431
+Mon Jul 27 19:05:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdfd8ac1_45d46ab6
+UUID: ed47aeea_beeeb9aa
+Bytes: 391
+My suggestion would be to stick to those directories.  /system/init/* should work for most purposes, right?  One motivation here is to put these init files onto the system partition instead of ramdisk, such that adding a service doesn't require rebuilding both the ramdisk and system partition, right?
+
+Either way, I'm not against this; I just want to know how this is planned on being used.
+
 454:12-454:33
 Sat Jul 25 00:07:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -51,6 +51,16 @@ My suggestion would be to stick to those directories.  /system/init/* should wor
 
 Either way, I'm not against this; I just want to know how this is planned on being used.
 
+431
+Mon Jul 27 21:29:41 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed47aeea_beeeb9aa
+UUID: 2d3e264a_23a374b2
+Bytes: 298
+For v0 we might be able to get away with using /system/init/*.
+
+In general, different Brillo systems will have different (though overlapping) sets of native system services, but *crucially*, we want people to be able to add services without having to touch anything outside their service directory.
+
 454:12-454:33
 Sat Jul 25 00:07:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 5f3b05ad14db2a4ebc9eb25567bc951d465b3151
+Base-for-patch-set: 1
+File: logd/LogKlog.cpp
+
+495:16-495:35
+Mon Jul 27 18:06:58 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed8dee45_e5352ae1
+Bytes: 99
+Not sure about this. Seemingly comparable cases below (judging by the comment) use b instead of bt.
+

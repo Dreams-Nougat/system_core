@@ -1,0 +1,11 @@
+Revision: 742c7591431090a6c5b4470ac840aa6343838df9
+Patch-set: 1
+File: logd/CommandListener.h
+
+30:4-30:44
+Mon Jul 27 18:06:58 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2da466b9_57f5db79
+Bytes: 112
+Both these could be removed, but I assumed this was for consistency with the commands actually using the buffer.
+

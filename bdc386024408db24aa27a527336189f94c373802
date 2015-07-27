@@ -1,0 +1,29 @@
+Revision: bdc386024408db24aa27a527336189f94c373802
+Patch-set: 3
+File: rootdir/init.trace.rc
+
+41
+Mon Jul 27 19:49:45 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1d7ef6_da562534
+Bytes: 199
+Please just call trace directly:
+
+  service boottrace /system/bin/atrace ...
+
+This will allow us to define an SELinux domain dedicated to this, rather than reusing the shell domain. (see comment #47)
+
+42
+Mon Jul 27 19:49:45 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d1d7ef6_1a6b3d93
+Bytes: 106
+Instead of using /data/local/tmp, let's create a separate directory for this, perhaps /data/misc/bootrace.
+
+47
+Mon Jul 27 19:49:45 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d37da6b_8197da1a
+Bytes: 171
+This should have it's own SELinux domain defined, and not reuse the shell SELinux domain. In particular, the SELinux domain should only be enabled on userdebug/eng builds.
+

@@ -19,6 +19,14 @@ Thanks!
 
 drop it, this code has matured and it no longer makes any sense. And related line 38 in CommandListener.cpp
 
+30:4-30:44
+Mon Jul 27 21:19:13 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d86fa2e_f52fa38b
+UUID: 2d3e264a_631c1ca1
+Bytes: 4
+Done
+
 40:0-40:48
 Mon Jul 27 18:31:14 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -26,10 +34,26 @@ UUID: 6d83be1d_a5d8951e
 Bytes: 61
 Drop it and adjust (commented) line 39 in CommandListener.cpp
 
+40:0-40:48
+Mon Jul 27 21:19:13 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d83be1d_a5d8951e
+UUID: 4d37da6b_84a60840
+Bytes: 4
+Done
+
 45:20-45:36
 Mon Jul 27 18:31:14 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d4162d7_bfc1d778
 Bytes: 149
 There may have been a time this made sense, but no more. Drop argument reference here, and accompanying adjustments in 50 + 53 in CommandListener.cpp
+
+45:20-45:36
+Mon Jul 27 21:19:13 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d4162d7_bfc1d778
+UUID: 0d4162d7_7fa6ef42
+Bytes: 4
+Done
 

@@ -31,6 +31,16 @@ I've proposed creating a command that would dynamically import files based on a 
 
 Assuming that we do the above, then we shouldn't need to extend import to be able to import entire directories.  Unless we do think there's a good reason to do so.  We should modify the readme.txt for import if we do as well.
 
+431
+Mon Jul 27 18:56:30 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d4c7215_9b218bd6
+UUID: cdfd8ac1_45d46ab6
+Bytes: 435
+But that change only supports three hardcoded directories right? Are you suggesting we should add a directory to the ones imported in that list?
+
+The way we're planning things right now, step one would be to dump a bunch of init.rc files in a directory in the ramdisk, and then include that directory from our init.brillo.rc file. Later, we will likely try to find a way to split the main init.rc as discussed in the threads last week.
+
 454:12-454:33
 Sat Jul 25 00:07:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,16 @@ UUID: 4d37da6b_a1bc5e07
 Bytes: 126
 Is this a change that we want to make?  Allowing config files to import whole directories instead of specifically named files?
 
+431
+Mon Jul 27 18:36:12 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d37da6b_a1bc5e07
+UUID: 4d37da6b_616bb6e4
+Bytes: 277
+Being able to import directories enables the dev workflow that we're aiming for in Brillo.
+
+We're gonna need to have the Android build system emit init.rc files for a bunch of new native services, so we'd rather have one include rather  than make each dev modify init.rc files.
+
 454:12-454:33
 Sat Jul 25 00:07:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,14 @@ UUID: ad977653_3b8be3fb
 Bytes: 50
 we can still just run test_adb.py directly though?
 
+22
+Mon Jul 27 17:46:08 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad977653_3b8be3fb
+UUID: 8dbd52cc_cdea2de6
+Bytes: 76
+Yes, and test_device.py. That's why each has the main() block at the bottom.
+
 File: adb/device.py
 
 26

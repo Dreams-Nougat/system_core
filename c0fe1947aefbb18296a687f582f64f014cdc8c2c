@@ -9,3 +9,15 @@ UUID: eda16e0d_5d7767ad
 Bytes: 53
 there's no known property we can use to test getprop?
 
+247
+Tue Jul 28 23:22:48 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eda16e0d_5d7767ad
+UUID: 8d11d20b_ff31dd78
+Bytes: 387
+We could probably use ro.debuggable, but it wasn't clear to me if this is going to always be set. It is set explicitly to 0 on my user build shamu, but idk if that's reliable for all devices.
+
+There's also dev.bootcomplete, but that has the same issues.
+
+I suppose we can say for sure that init.svc.adbd will be set to running, as none of these tests will be valid without adbd being up.
+

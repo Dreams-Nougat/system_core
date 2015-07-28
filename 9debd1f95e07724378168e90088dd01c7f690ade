@@ -1,0 +1,146 @@
+Revision: 9debd1f95e07724378168e90088dd01c7f690ade
+Patch-set: 4
+File: init/perfboot.py
+
+2
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dae5efb_92a9bc98
+Bytes: 19
+Kill the blank line
+
+16
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_b30a18ae
+Bytes: 9
+Here too.
+
+72
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_57160c56
+Bytes: 116
+All of these (with the exception of _ANDROID_SERIAL) are only used in one function. Don't really need to be globals.
+
+110
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dae5efb_12966c57
+Bytes: 37
+Same here as with _wait_cpu_cooldown.
+
+116:15-116:16
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd174afa_75198886
+Bytes: 27
+Drop the extraneous parens.
+
+120
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0dbb223c_ef76617d
+Bytes: 137
+Make this a normal method. You're invoking a "private" method of this class, this is the only caller, and the only arguments are members.
+
+123
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_177db48f
+Bytes: 21
+threshold is not None
+
+159
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_714c1895
+Bytes: 153
+FYI, I committed a Python adb wrapper to system/core/adb today that should handle all of this for you (and will actually error check adb shell commands).
+
+172
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_9336fc6d
+Bytes: 160
+This block might be more clear as:
+
+    except subprocess.CalledProcessError:
+        if i >= _RUN_ADB_RETRIES - 1:
+            raise
+        time.sleep(1 << i)
+
+331:11-331:26
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_b7fa0884
+Bytes: 16
+float(sum(data))
+
+341:42-341:45
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_91a9bc98
+Bytes: 22
+Missed a . at the end.
+
+343
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd174afa_753068ee
+Bytes: 8
+Here too
+
+344
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_d4d7bceb
+Bytes: 43
+Can merge this into the previous list comp.
+
+351
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dae5efb_b2fa0084
+Bytes: 344
+Could you also explain the peculiarity about `timedout` in the docstring? Specifically, if I'm reading this correctly, that it is a list that will contain a single True value when it times out, and the reason it is held in a list is because you need a mutable type to fake an out param?
+
+Alternatively, this would probably be better as a class.
+
+397:63-397:67
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_d319940b
+Bytes: 252
+perf
+
+Also, I typically set the description to `inspect.getdoc(sys.modules[__name__]))`, which will put the module docstring into the help text for the program. It's usually relevant. Might be a little verbose in this case, but I'll leave it up to you.
+
+399:30-399:31
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_94f42480
+Bytes: 11
+Capitalize.
+
+401:31-401:32
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2db8e63c_10bae4b8
+Bytes: 13
+And elsewhere
+
+404:48-404:72
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_b3ae98ed
+Bytes: 57
+Capitalize, and missing a period (apply same nits to all)
+
+423:8-423:23
+Tue Jul 28 06:40:20 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd174afa_f5d2b8fd
+Bytes: 46
+If it isn't constant it shouldn't be all caps.
+

@@ -13,6 +13,14 @@ Please just call trace directly:
 
 This will allow us to define an SELinux domain dedicated to this, rather than reusing the shell domain. (see comment #47)
 
+41
+Tue Jul 28 16:07:25 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1d7ef6_da562534
+UUID: ad72168f_146bd4e4
+Bytes: 4
+Done
+
 42
 Mon Jul 27 19:49:45 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -20,10 +28,27 @@ UUID: 6d1d7ef6_1a6b3d93
 Bytes: 106
 Instead of using /data/local/tmp, let's create a separate directory for this, perhaps /data/misc/bootrace.
 
+42
+Tue Jul 28 16:07:25 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d1d7ef6_1a6b3d93
+UUID: ed788e71_b605c84e
+Bytes: 4
+Done
+
 47
 Mon Jul 27 19:49:45 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d37da6b_8197da1a
 Bytes: 171
 This should have it's own SELinux domain defined, and not reuse the shell SELinux domain. In particular, the SELinux domain should only be enabled on userdebug/eng builds.
+
+47
+Tue Jul 28 16:07:25 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d37da6b_8197da1a
+UUID: 0d6242c0_d70a3c5d
+Bytes: 129
+I added 'atrace' domain in the following CL and replaced shell with 'atrace'.
+https://android-review.googlesource.com/#/c/157190/
 

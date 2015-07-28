@@ -1,0 +1,18 @@
+Revision: 3e7048c027ffa081d2fea84b661a6da895a9f1fb
+Patch-set: 2
+File: adb/adb_utils.cpp
+
+77
+Tue Jul 28 16:54:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0dbb223c_12baeab8
+Bytes: 28
+Why is the strdup necessary?
+
+79:27-79:31
+Tue Jul 28 16:54:51 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dae5efb_b24de018
+Bytes: 22
+What's with the `+ 1`?
+

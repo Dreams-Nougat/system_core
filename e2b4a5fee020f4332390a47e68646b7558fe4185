@@ -2,6 +2,13 @@ Revision: e2b4a5fee020f4332390a47e68646b7558fe4185
 Patch-set: 4
 File: adb/test_device.py
 
+35
+Tue Jul 28 23:45:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_a558f608
+Bytes: 6
+fancy!
+
 209
 Tue Jul 28 23:44:23 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

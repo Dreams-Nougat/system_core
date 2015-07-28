@@ -9,10 +9,26 @@ UUID: 0dbb223c_12baeab8
 Bytes: 28
 Why is the strdup necessary?
 
+77
+Tue Jul 28 17:21:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dbb223c_12baeab8
+UUID: 6dae5efb_b231607a
+Bytes: 136
+because the code below modifies the path. it basically replaces each '/' (or '\') in turn with '\0', calls mkdir, and puts the '/' back.
+
 79:27-79:31
 Tue Jul 28 16:54:51 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6dae5efb_b24de018
 Bytes: 22
 What's with the `+ 1`?
+
+79:27-79:31
+Tue Jul 28 17:21:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_b24de018
+UUID: eda16e0d_b4d9486f
+Bytes: 78
+presumably to optimize by skipping "/" which it's reasonable to assume exists.
 

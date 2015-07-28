@@ -48,3 +48,13 @@ UUID: 0dbb223c_52875297
 Bytes: 129
 Okay, so path must always be absolute. I thought that might be it, but there isn't anything that says that (maybe add a comment).
 
+79:27-79:31
+Tue Jul 28 18:07:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dbb223c_52875297
+UUID: 0d06c2cf_5a72b1d6
+Bytes: 129
+no, because it's x that's path+1. the mkdir(2) is always of path, not x.
+
+i don't think this gets much clearer without a rewrite.
+

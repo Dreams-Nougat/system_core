@@ -1,0 +1,36 @@
+Revision: 4aa038b962e04e4adee915ab3f141073234f7736
+Patch-set: 6
+File: adb/device.py
+
+230
+Tue Jul 28 21:48:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed1c0e21_0a48eb03
+Bytes: 96
+Oops. I knew I forgot a test. Thanks for catching this. I'll upload a test for this in a moment.
+
+File: init/perfboot.py
+
+54
+Tue Jul 28 21:48:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_3a36e5ec
+Bytes: 61
+`import adb` is sufficient. The __init__.py imports device.*.
+
+134
+Tue Jul 28 21:48:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2db8e63c_56910424
+Bytes: 35
+Yeah, this is much clearer. Thanks.
+
+389
+Tue Jul 28 21:48:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd174afa_fbbe274e
+Bytes: 301
+adb.get_device(args.serial) will do some extra checking for cases like not having a specified serial but having multiple devices, or having set ANDROID_SERIAL but not having that device attached.
+
+It does mean that the device has to be on and connected when this script starts, but afaict that's okay.
+

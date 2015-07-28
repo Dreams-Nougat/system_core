@@ -21,3 +21,11 @@ There's also dev.bootcomplete, but that has the same issues.
 
 I suppose we can say for sure that init.svc.adbd will be set to running, as none of these tests will be valid without adbd being up.
 
+247
+Tue Jul 28 23:23:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d11d20b_ff31dd78
+UUID: 6dae5efb_18296d3a
+Bytes: 123
+yeah, since they're not API CTS doesn't guarantee you anything... except implicitly the ones that are needed to run CTS :-)
+

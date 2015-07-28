@@ -17,6 +17,14 @@ UUID: 6dae5efb_b231607a
 Bytes: 136
 because the code below modifies the path. it basically replaces each '/' (or '\') in turn with '\0', calls mkdir, and puts the '/' back.
 
+77
+Tue Jul 28 17:49:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_b231607a
+UUID: 8d11d20b_86b06f76
+Bytes: 29
+Oh, yes it does. Missed that.
+
 79:27-79:31
 Tue Jul 28 16:54:51 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,4 +39,12 @@ Parent: 6dae5efb_b24de018
 UUID: eda16e0d_b4d9486f
 Bytes: 78
 presumably to optimize by skipping "/" which it's reasonable to assume exists.
+
+79:27-79:31
+Tue Jul 28 17:49:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eda16e0d_b4d9486f
+UUID: 0dbb223c_52875297
+Bytes: 129
+Okay, so path must always be absolute. I thought that might be it, but there isn't anything that says that (maybe add a comment).
 

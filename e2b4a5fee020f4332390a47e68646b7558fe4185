@@ -1,0 +1,11 @@
+Revision: e2b4a5fee020f4332390a47e68646b7558fe4185
+Patch-set: 4
+File: adb/test_device.py
+
+209
+Tue Jul 28 23:44:23 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_9d9a83c7
+Bytes: 115
+I haven't modified this test to use @requires_root because that already depends on AndroidDevice.(un)?root working.
+

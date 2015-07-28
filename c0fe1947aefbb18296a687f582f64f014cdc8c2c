@@ -1,0 +1,11 @@
+Revision: c0fe1947aefbb18296a687f582f64f014cdc8c2c
+Patch-set: 3
+File: adb/test_device.py
+
+247
+Tue Jul 28 23:05:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda16e0d_5d7767ad
+Bytes: 53
+there's no known property we can use to test getprop?
+

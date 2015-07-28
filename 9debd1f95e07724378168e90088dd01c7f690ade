@@ -9,12 +9,28 @@ UUID: 6dae5efb_92a9bc98
 Bytes: 19
 Kill the blank line
 
+2
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_92a9bc98
+UUID: 0d6242c0_171cb49f
+Bytes: 4
+Done
+
 16
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8d11d20b_b30a18ae
 Bytes: 9
 Here too.
+
+16
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d11d20b_b30a18ae
+UUID: 8d6d52b6_d32174d5
+Bytes: 4
+Done
 
 72
 Tue Jul 28 06:40:20 2015 +0000
@@ -23,12 +39,28 @@ UUID: 0d06c2cf_57160c56
 Bytes: 116
 All of these (with the exception of _ANDROID_SERIAL) are only used in one function. Don't really need to be globals.
 
+72
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d06c2cf_57160c56
+UUID: ed788e71_d6608402
+Bytes: 24
+Removed these variables.
+
 110
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6dae5efb_12966c57
 Bytes: 37
 Same here as with _wait_cpu_cooldown.
+
+110
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_12966c57
+UUID: 8d6d52b6_7313408e
+Bytes: 4
+Done
 
 116:15-116:16
 Tue Jul 28 06:40:20 2015 +0000
@@ -37,12 +69,28 @@ UUID: cd174afa_75198886
 Bytes: 27
 Drop the extraneous parens.
 
+116:15-116:16
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd174afa_75198886
+UUID: ed788e71_f665800f
+Bytes: 4
+Done
+
 120
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0dbb223c_ef76617d
 Bytes: 137
 Make this a normal method. You're invoking a "private" method of this class, this is the only caller, and the only arguments are members.
+
+120
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0dbb223c_ef76617d
+UUID: 0d57a2ea_2f6889e5
+Bytes: 4
+Done
 
 123
 Tue Jul 28 06:40:20 2015 +0000
@@ -51,12 +99,28 @@ UUID: 0d06c2cf_177db48f
 Bytes: 21
 threshold is not None
 
+123
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d06c2cf_177db48f
+UUID: 4d4d1a59_11f5acbf
+Bytes: 4
+Done
+
 159
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4db19a56_714c1895
 Bytes: 153
 FYI, I committed a Python adb wrapper to system/core/adb today that should handle all of this for you (and will actually error check adb shell commands).
+
+159
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4db19a56_714c1895
+UUID: ad72168f_54bd4c9d
+Bytes: 82
+Thank you for making the useful wrapper. I rewrote this script using your wrapper.
 
 172
 Tue Jul 28 06:40:20 2015 +0000
@@ -70,12 +134,28 @@ This block might be more clear as:
             raise
         time.sleep(1 << i)
 
+172
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d11d20b_9336fc6d
+UUID: 0d57a2ea_4f75cdbc
+Bytes: 42
+I replaced this function with the wrapper.
+
 331:11-331:26
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0d06c2cf_b7fa0884
 Bytes: 16
 float(sum(data))
+
+331:11-331:26
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d06c2cf_b7fa0884
+UUID: ad72168f_948524e8
+Bytes: 4
+Done
 
 341:42-341:45
 Tue Jul 28 06:40:20 2015 +0000
@@ -84,6 +164,14 @@ UUID: 4db19a56_91a9bc98
 Bytes: 22
 Missed a . at the end.
 
+341:42-341:45
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4db19a56_91a9bc98
+UUID: 0d57a2ea_6f7291d7
+Bytes: 4
+Done
+
 343
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -91,12 +179,28 @@ UUID: cd174afa_753068ee
 Bytes: 8
 Here too
 
+343
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd174afa_753068ee
+UUID: 4d4d1a59_31f2b0d8
+Bytes: 4
+Done
+
 344
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad1696fe_d4d7bceb
 Bytes: 43
 Can merge this into the previous list comp.
+
+344
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad1696fe_d4d7bceb
+UUID: ad72168f_b48a20f5
+Bytes: 4
+Done
 
 351
 Tue Jul 28 06:40:20 2015 +0000
@@ -107,6 +211,14 @@ Could you also explain the peculiarity about `timedout` in the docstring? Specif
 
 Alternatively, this would probably be better as a class.
 
+351
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_b2fa0084
+UUID: 6d4ade43_f284a8e8
+Bytes: 36
+I replaced this with a simple class.
+
 397:63-397:67
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -116,12 +228,28 @@ perf
 
 Also, I typically set the description to `inspect.getdoc(sys.modules[__name__]))`, which will put the module docstring into the help text for the program. It's usually relevant. Might be a little verbose in this case, but I'll leave it up to you.
 
+397:63-397:67
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d11d20b_d319940b
+UUID: 6d4ade43_3297101d
+Bytes: 158
+I set the desciption to inspect.getdoc(sys.modules[__name__])) and set formatter_class tp argparse.RawDescriptionHelpFormatter to preserve the format. Thanks.
+
 399:30-399:31
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ad1696fe_94f42480
 Bytes: 11
 Capitalize.
+
+399:30-399:31
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad1696fe_94f42480
+UUID: 4d4d1a59_51ff349f
+Bytes: 4
+Done
 
 401:31-401:32
 Tue Jul 28 06:40:20 2015 +0000
@@ -130,6 +258,14 @@ UUID: 2db8e63c_10bae4b8
 Bytes: 13
 And elsewhere
 
+401:31-401:32
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2db8e63c_10bae4b8
+UUID: ed788e71_166bdce4
+Bytes: 4
+Done
+
 404:48-404:72
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -137,10 +273,26 @@ UUID: 8d11d20b_b3ae98ed
 Bytes: 57
 Capitalize, and missing a period (apply same nits to all)
 
+404:48-404:72
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8d11d20b_b3ae98ed
+UUID: 6d4ade43_129a0c46
+Bytes: 4
+Done
+
 423:8-423:23
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cd174afa_f5d2b8fd
 Bytes: 46
 If it isn't constant it shouldn't be all caps.
+
+423:8-423:23
+Tue Jul 28 13:43:07 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd174afa_f5d2b8fd
+UUID: 4d4d1a59_71fc38aa
+Bytes: 46
+I removed this variable by using your wrapper.
 

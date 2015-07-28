@@ -1,0 +1,11 @@
+Revision: 152dd09509d22d31c86bd3394ffd0d20c4d7995a
+Patch-set: 1
+File: adb/test_device.py
+
+221
+Tue Jul 28 21:57:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_ba85b5e7
+Bytes: 42
+won't these tests fail unless you're root?
+

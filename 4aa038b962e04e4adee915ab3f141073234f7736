@@ -9,6 +9,14 @@ UUID: ed1c0e21_0a48eb03
 Bytes: 96
 Oops. I knew I forgot a test. Thanks for catching this. I'll upload a test for this in a moment.
 
+230
+Wed Jul 29 01:54:29 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed1c0e21_0a48eb03
+UUID: ad72168f_54b38c82
+Bytes: 70
+Thank you for fixing it promptly. I rebased the CL to include the fix.
+
 File: init/perfboot.py
 
 54
@@ -17,6 +25,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4db19a56_3a36e5ec
 Bytes: 61
 `import adb` is sufficient. The __init__.py imports device.*.
+
+54
+Wed Jul 29 01:54:29 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4db19a56_3a36e5ec
+UUID: 8d6d52b6_73498083
+Bytes: 4
+Done
 
 134
 Tue Jul 28 21:48:28 2015 +0000
@@ -33,4 +49,13 @@ Bytes: 301
 adb.get_device(args.serial) will do some extra checking for cases like not having a specified serial but having multiple devices, or having set ANDROID_SERIAL but not having that device attached.
 
 It does mean that the device has to be on and connected when this script starts, but afaict that's okay.
+
+389
+Wed Jul 29 01:54:29 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd174afa_fbbe274e
+UUID: ed788e71_96fa8c84
+Bytes: 168
+Thanks, I changed the code to use adb.get_device.
+Yes, this script assumes that the device is on and connected. I think that's OK considering the purpose of the script.
 

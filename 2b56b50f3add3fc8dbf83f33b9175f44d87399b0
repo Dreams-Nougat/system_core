@@ -1,0 +1,11 @@
+Revision: 2b56b50f3add3fc8dbf83f33b9175f44d87399b0
+Patch-set: 4
+File: rootdir/init.trace.rc
+
+44
+Wed Jul 29 03:01:37 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_e3267cea
+Bytes: 101
+not needed. The seclabel will automatically be computed from the label you added in the other change.
+

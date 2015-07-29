@@ -9,3 +9,11 @@ UUID: 2db8e63c_2419aab0
 Bytes: 131
 if this really can be private, usually better to just have "class Command;" in the header and move the definition to the .cpp file.
 
+35
+Wed Jul 29 17:20:40 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2db8e63c_2419aab0
+UUID: 6a11e441_babbd1a9
+Bytes: 7
+Will do
+

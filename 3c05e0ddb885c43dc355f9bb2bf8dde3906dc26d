@@ -9,12 +9,28 @@ UUID: caf6504b_43ae1a9e
 Bytes: 98
 would be better if we can use std::vector<std::string> here. but we can leave for the next change.
 
+54:4-55:16
+Wed Jul 29 22:02:39 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: caf6504b_43ae1a9e
+UUID: 0a0ea828_3d1a172f
+Bytes: 33
+Done; I had been working on this.
+
 117:0-117:3
 Wed Jul 29 21:17:20 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4aeb4063_0737faea
 Bytes: 23
 size_t would be better.
+
+117:0-117:3
+Wed Jul 29 22:02:39 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4aeb4063_0737faea
+UUID: caf6504b_83eb026e
+Bytes: 4
+Done
 
 122:33-122:36
 Wed Jul 29 21:17:20 2015 +0000
@@ -23,10 +39,26 @@ UUID: caf6504b_83566234
 Bytes: 52
 size_t would be better if it is always non-negative.
 
+122:33-122:36
+Wed Jul 29 22:02:39 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: caf6504b_83566234
+UUID: 2a0b6c19_1e962da3
+Bytes: 4
+Done
+
 133:29-133:37
 Wed Jul 29 21:17:20 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4aeb4063_87c8aa4e
 Bytes: 14
 const Command&
+
+133:29-133:37
+Wed Jul 29 22:02:39 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4aeb4063_87c8aa4e
+UUID: 4a142033_dfe1d3ba
+Bytes: 4
+Done
 

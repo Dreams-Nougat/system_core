@@ -32,6 +32,14 @@ UUID: 0d06c2cf_60cee8a5
 Bytes: 19
 std::vector<char*>?
 
+40
+Wed Jul 29 00:24:38 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0d06c2cf_60cee8a5
+UUID: 4db19a56_255fe6bd
+Bytes: 219
+Since all of the builtin funcs still take (nargs, args) as arguments, I was planning to keep this c-style for now and look into making a sweeping change to convert them all to take std::vector<std::string> as arguments.
+
 48
 Wed Jul 29 00:07:52 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -46,6 +54,14 @@ UUID: ad1696fe_a8ff4373
 Bytes: 28
 does this need to be public?
 
+52
+Wed Jul 29 00:24:38 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad1696fe_a8ff4373
+UUID: cd174afa_9e36016e
+Bytes: 154
+It's used in dump_parser_state(), but I do want to refactor that more as well, such that it's entirely contained in here, in which case it can be private.
+
 65
 Wed Jul 29 00:07:52 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -59,6 +75,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6dae5efb_f88f4983
 Bytes: 40
 what would it take to make this private?
+
+76
+Wed Jul 29 00:24:38 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dae5efb_f88f4983
+UUID: eda16e0d_5da127ee
+Bytes: 108
+Not a lot, mostly moving execute_one_command() into this class.  I'm working on that now as I'm typing this.
 
 141
 Wed Jul 29 00:07:52 2015 +0000

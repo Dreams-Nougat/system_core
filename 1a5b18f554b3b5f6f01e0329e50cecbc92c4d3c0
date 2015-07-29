@@ -1,0 +1,59 @@
+Revision: 1a5b18f554b3b5f6f01e0329e50cecbc92c4d3c0
+Patch-set: 9
+File: init/action.cpp
+
+139:12-139:37
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_3a91995b
+Bytes: 25
+property_triggers.empty()
+
+File: init/action.h
+
+26:4-26:29
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_807b3ce3
+Bytes: 128
+How about providing more interface in Action and remove this? like adding command_count() and execute_one_command(size_t index)?
+
+77:4-77:23
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8d11d20b_9a226dd7
+Bytes: 76
+use vector here and in other places, as vector is more simple to understand?
+
+83:24-83:35
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2db8e63c_a43c7a80
+Bytes: 121
+which style do you insist on? this likes java method? and others like unix functions? and google prefers AddTableEntry().
+
+88:9-88:28
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_e08b186f
+Bytes: 110
+queue_action_triggered_by_event?
+queue_action_triggered_by_property?
+queue_action_triggered_by_all_properties?
+
+99:4-99:35
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4db19a56_20d4f4b5
+Bytes: 157
+I think ActionQueue takes too much responsibilities, feels like ActionManager. How about moving action_list/parse_action/dump_parse_state out of ActionQueue.
+
+File: init/builtins.cpp
+
+517:4-517:26
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda16e0d_c8b43372
+Bytes: 22
+indent here and below?
+

@@ -1,0 +1,78 @@
+Revision: ab15922c4c04872c4fa9340e5d211c1986e2e09e
+Patch-set: 6
+File: init/init.cpp
+
+75
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed1c0e21_b05208b6
+Bytes: 2
+g_
+
+File: init/init.h
+
+33
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2db8e63c_f9cc6b32
+Bytes: 26
+chrome style for new code.
+
+38
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda16e0d_1dcaffc2
+Bytes: 36
+(filename, line) seems more natural.
+
+40
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d06c2cf_60cee8a5
+Bytes: 19
+std::vector<char*>?
+
+48
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_0805971b
+Bytes: 12
+run? invoke?
+
+52
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_a8ff4373
+Bytes: 28
+does this need to be public?
+
+65
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed1c0e21_f036409c
+Bytes: 49
+if you're leaving 'commands' exposed, why bother?
+
+76
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6dae5efb_f88f4983
+Bytes: 40
+what would it take to make this private?
+
+141
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eda16e0d_5d3da744
+Bytes: 20
+s/Actions/Commands/?
+
+File: init/init_parser.cpp
+
+227
+Wed Jul 29 00:07:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad1696fe_a82623bb
+Bytes: 32
++ might make this more readable.
+

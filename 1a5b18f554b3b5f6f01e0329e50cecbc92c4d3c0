@@ -66,6 +66,14 @@ I've been keeping with the existing unix style since that's how the rest of init
 
 Do we prefer AddTableEntry() for init even though the legacy code is add_table_entry()?  Should we mix now with the intention of cleaning up the rest later?
 
+83:24-83:35
+Wed Jul 29 17:32:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2af28c55_40a84e5f
+UUID: 2af28c55_c0269e69
+Bytes: 177
+yeah, we're assuming that -- though it may take 10 years -- eventually this [that is: most of system/core] will be chrome style, and we're trying to fix stuff up as we touch it.
+
 88:9-88:28
 Wed Jul 29 03:50:25 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

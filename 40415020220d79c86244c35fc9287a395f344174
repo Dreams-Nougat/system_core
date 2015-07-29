@@ -11,3 +11,11 @@ Question: Do we know if there are tests/tools that depend on this format?  I wan
 
 Looking at the history, it looks like we've recently changed the format of the prints of execute_one_command, so it looks like I may be safe to remove the function pointer here?
 
+351
+Wed Jul 29 18:15:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2af28c55_60b91266
+UUID: eafb1432_1e198d08
+Bytes: 59
+no. this stuff was #ifdef'ed out when we found it anyway...
+

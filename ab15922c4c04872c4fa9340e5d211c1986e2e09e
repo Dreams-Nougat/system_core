@@ -62,6 +62,14 @@ UUID: cd174afa_9e36016e
 Bytes: 154
 It's used in dump_parser_state(), but I do want to refactor that more as well, such that it's entirely contained in here, in which case it can be private.
 
+52
+Wed Jul 29 03:50:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd174afa_9e36016e
+UUID: 0d06c2cf_40580485
+Bytes: 53
+you can export a member function like Action::dump().
+
 65
 Wed Jul 29 00:07:52 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

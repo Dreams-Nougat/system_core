@@ -1,0 +1,11 @@
+Revision: cbf9a1e33d2cdf0aee680910c42a536b64fa7d12
+Patch-set: 3
+File: adb/set_verity_enable_state_service.cpp
+
+78:8-78:25
+Thu Jul 30 03:05:40 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a3980cf_11862cf1
+Bytes: 68
+Add error handler like WriteFdFmt(fd, "Error reading superblock\n");
+

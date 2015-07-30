@@ -11,3 +11,13 @@ retval = "rm -rf "OVERLAYFS_BASE_PATH;
 
 Then you wouldn't need cmd.
 
+158:32-158:66
+Thu Jul 30 17:29:02 2015 +0000
+Author: Daniel Campello <1072925@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a3980cf_31eb709e
+UUID: 0a430851_52f6f289
+Bytes: 310
+go/ag/#/c/699952/2..5/adb/set_verity_enable_state_service.cpp
+
+On the left (patch 2) my first attempt which the build server failed to compile for some reason, on the right (patch 5) a similar attempt to what you are suggesting which I have not been able to confirm if the build server will or will not compile
+

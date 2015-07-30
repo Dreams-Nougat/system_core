@@ -16,3 +16,11 @@ Any quick pointers on how to obtain the necessary dependencies? I did 'pip insta
 
 So either I've got the wrong adb module or I'm doing something completely wrong...
 
+22:4-22:36
+Thu Jul 30 04:04:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d862697_63de1c01
+UUID: ed8faeab_618530a7
+Bytes: 89
+The answer is that you must cd to system/core, and 'pip install -U adb' is not necessary.
+

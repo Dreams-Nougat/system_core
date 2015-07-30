@@ -24,3 +24,11 @@ UUID: ed8faeab_618530a7
 Bytes: 89
 The answer is that you must cd to system/core, and 'pip install -U adb' is not necessary.
 
+22:4-22:36
+Thu Jul 30 05:44:24 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed8faeab_618530a7
+UUID: 4a3980cf_51b39458
+Bytes: 178
+Yeah, sorry about that. I have a change I need to upload to build/ that will export PYTHONPATH=$ANDROID_BUILD_TOP/system/core:$PYTHONPATH in envsetup so this is always available.
+

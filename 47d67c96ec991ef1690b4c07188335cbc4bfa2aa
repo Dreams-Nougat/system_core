@@ -1,0 +1,18 @@
+Revision: 47d67c96ec991ef1690b4c07188335cbc4bfa2aa
+Patch-set: 7
+File: adb/sysdeps.h
+
+241
+Thu Jul 30 22:17:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a5f2428_ed6981ea
+Bytes: 43
+spencer: should this just be find_first_of?
+
+245
+Thu Jul 30 22:17:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea295486_119ceeef
+Bytes: 73
+...in particular, this > seems wrong to me, unless i'm missing something?
+

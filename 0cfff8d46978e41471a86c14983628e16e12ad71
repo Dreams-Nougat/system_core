@@ -1,0 +1,13 @@
+Revision: 0cfff8d46978e41471a86c14983628e16e12ad71
+Patch-set: 4
+File: adb/set_verity_enable_state_service.cpp
+
+158:32-158:66
+Thu Jul 30 02:46:00 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a3980cf_31eb709e
+Bytes: 67
+retval = "rm -rf "OVERLAYFS_BASE_PATH;
+
+Then you wouldn't need cmd.
+

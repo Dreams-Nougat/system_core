@@ -1,6 +1,68 @@
 Revision: f99f8a79635d8f2904edd45a8fd532d2315d76ce
 Patch-set: 1
+File: init/parser/input_stream.cpp
+
+28:30-28:61
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d5466e3_53a3b6b0
+Bytes: 85
+Would it make sense for this to return a smarter struct that would prevent OOB reads?
+
+File: init/parser/input_stream.h
+
+30:0-30:2
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed3dee9f_31eb8aec
+Bytes: 46
+What are we doing with indentation in the end?
+
+35:13-35:19
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d6242c0_fa2645ea
+Bytes: 10
+Nit: past?
+
+55:38-55:46
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d4d1a59_547562bc
+Bytes: 12
+Nit: outlive
+
+File: init/parser/scoped_fd.cpp
+
+20:22-20:26
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d57a2ea_d21a422f
+Bytes: 12
+Extra space.
+
+39:15-39:19
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d6242c0_7a13158e
+Bytes: 151
+In https://code.google.com/p/chromium/codesearch#chromium/src/base/scoped_generic.h this operation would be called "Reset", since it also does Close().
+
 File: init/parser/tokenizer.cpp
+
+64:26-64:35
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed3dee9f_31f2aad8
+Bytes: 14
+Nit: backslash
+
+63:6-67:28
+Thu Jul 30 17:05:52 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0d6242c0_da60a102
+Bytes: 107
+Doesn't this mean you should just skip the backslash and continue tokenizing without producing TOK_NEWLINE?
 
 95
 Thu Jul 30 17:01:23 2015 +0000

@@ -26,12 +26,28 @@ UUID: d31c4d21_2afde731
 Bytes: 3
 nit
 
+76:70-76:71
+Thu Jul 30 05:19:52 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d31c4d21_2afde731
+UUID: ed3dee9f_6e59afd5
+Bytes: 4
+Done
+
 110
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 33b12958_a08464e7
 Bytes: 39
 No reason for this to be a classmethod.
+
+110
+Thu Jul 30 05:19:52 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 33b12958_a08464e7
+UUID: 0d57a2ea_0faae5cf
+Bytes: 4
+Done
 
 116:15-116:16
 Tue Jul 28 06:40:20 2015 +0000
@@ -40,6 +56,14 @@ UUID: f3ba3136_c3989655
 Bytes: 15
 No parens here.
 
+116:15-116:16
+Thu Jul 30 05:19:52 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f3ba3136_c3989655
+UUID: 6d4ade43_18f4edfa
+Bytes: 4
+Done
+
 120
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -47,12 +71,28 @@ UUID: 334da95a_51d3b448
 Bytes: 9
 Same here
 
+120
+Thu Jul 30 05:19:52 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 334da95a_51d3b448
+UUID: 2d5f06fb_58857da6
+Bytes: 4
+Done
+
 122:49-122:62
 Tue Jul 28 06:40:20 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 334da95a_91db5c5f
 Bytes: 9
 [product]
+
+122:49-122:62
+Thu Jul 30 05:19:52 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 334da95a_91db5c5f
+UUID: 0d57a2ea_4fa4edff
+Bytes: 107
+product can be one that is not listed in _CPU_COOL_DOWN_THRESHOLDS so I keep it as it is to avoid KeyError.
 
 201:0-202:25
 Mon Jul 06 15:07:28 2015 +0000

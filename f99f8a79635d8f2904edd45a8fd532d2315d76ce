@@ -9,6 +9,14 @@ UUID: 2d5466e3_53a3b6b0
 Bytes: 85
 Would it make sense for this to return a smarter struct that would prevent OOB reads?
 
+28:30-28:61
+Thu Jul 30 17:07:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d5466e3_53a3b6b0
+UUID: 8d9472c2_e1bce208
+Bytes: 83
+(that's another reason i'd like to move to just reading files in as a std::string.)
+
 File: init/parser/input_stream.h
 
 30:0-30:2

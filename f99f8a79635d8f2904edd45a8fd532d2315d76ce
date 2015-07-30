@@ -95,3 +95,13 @@ In some allocators they do not unmap the pages in the free and keep them hot in 
 
 So I think don't do arbitrarily big allocations if you don't have to - maybe I'm stuck in the 90s :)
 
+95
+Thu Jul 30 17:35:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a3980cf_e55f5eba
+UUID: 0a430851_d297821b
+Bytes: 199
+yeah, time to move on. i'm not aware of such problems with either of our allocators, and if there were, we'd want to fix them there.
+
+(also, if you have a 10MiB init.rc, you have other problems :-) )
+

@@ -33,6 +33,14 @@ It was open sourced here, albeit translated to plain C:
 
 https://github.com/grpc/grpc/blob/master/src/core/support/host_port.c
 
+126:41-126:45
+Thu Jul 30 17:05:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2d5466e3_904d1419
+UUID: 0d6242c0_3a68bde5
+Bytes: 56
+thanks. i've raised http://b/22847373 to switch us over.
+
 129:15-129:54
 Thu Jul 30 00:09:32 2015 +0000
 Author: Paul Marks <1005930@85c56323-6fa9-3386-8a01-6480fb634889>

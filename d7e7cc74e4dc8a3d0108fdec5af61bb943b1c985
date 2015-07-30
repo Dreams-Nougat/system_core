@@ -17,3 +17,11 @@ UUID: ad9936fb_2205eac9
 Bytes: 135
 because of the line above it and my unwillingness to touch unrelated code. (and the art folks seem to use ifdef/ifndef anyway. agampe?)
 
+36:0-36:22
+Thu Jul 30 16:28:49 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ad9936fb_2205eac9
+UUID: 4a3980cf_17329c7a
+Bytes: 94
+We don't have a common style. We have both "ifdef" and "if defined." Feel free to change this.
+

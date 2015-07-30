@@ -1,0 +1,11 @@
+Revision: a6b340af123b82e3aaa33cb2a0d45f637eeb4759
+Patch-set: 1
+File: adb/adb.cpp
+
+767
+Thu Jul 30 00:38:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2af28c55_d4fd3ca7
+Bytes: 36
+at least i got the comment right :-)
+

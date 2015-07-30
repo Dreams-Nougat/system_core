@@ -1,0 +1,24 @@
+Revision: 3d5f60dbba3bc0feabc05457d181547b295bb3b2
+Patch-set: 6
+File: adb/adb_utils.cpp
+
+126:41-126:45
+Thu Jul 30 00:09:32 2015 +0000
+Author: Paul Marks <1005930@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: caf6504b_261f9c1f
+Bytes: 277
+Do you really want to mix find() with rfind()? This lets you connect to weird stuff like "[::1]:ignored]:8080"
+
+Also note these unusual cases:
+- "[www.google.com]:80" is permitted.
+- "[::1]" is not permitted.
+
+See Google's ParseHostOptionalPort() for an example implementation.
+
+129:15-129:54
+Thu Jul 30 00:09:32 2015 +0000
+Author: Paul Marks <1005930@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: caf6504b_e6d2d4cb
+Bytes: 62
+This fails to match "2001:db8::1.2.3.4" and "1:2:3:4:5:6:7::".
+

@@ -1,0 +1,11 @@
+Revision: f99f8a79635d8f2904edd45a8fd532d2315d76ce
+Patch-set: 1
+File: init/parser/tokenizer.cpp
+
+95
+Thu Jul 30 17:01:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a40cc41_36d5a02f
+Bytes: 288
+since you're copying here anyway, wouldn't it be easier to just read the whole file into a std::string with the existing android::base::ReadFileToString and then have your tokenizer work on a std::string (which is fine for both real life and tests, and lets you remove most of this code)?
+

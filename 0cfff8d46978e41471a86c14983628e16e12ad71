@@ -21,3 +21,11 @@ go/ag/#/c/699952/2..5/adb/set_verity_enable_state_service.cpp
 
 On the left (patch 2) my first attempt which the build server failed to compile for some reason, on the right (patch 5) a similar attempt to what you are suggesting which I have not been able to confirm if the build server will or will not compile
 
+158:32-158:66
+Thu Jul 30 20:13:29 2015 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a430851_52f6f289
+UUID: ca2490af_90d21a79
+Bytes: 21
+Just test it locally.
+

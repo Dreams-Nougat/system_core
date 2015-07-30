@@ -23,6 +23,16 @@ UUID: caf6504b_c6d59864
 Bytes: 125
 is that in any of the open source projects so i can just copy it? (because, yes, i'd love to not be in this business at all!)
 
+126:41-126:45
+Thu Jul 30 03:08:49 2015 +0000
+Author: Paul Marks <1005930@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: caf6504b_c6d59864
+UUID: 2d5466e3_904d1419
+Bytes: 126
+It was open sourced here, albeit translated to plain C:
+
+https://github.com/grpc/grpc/blob/master/src/core/support/host_port.c
+
 129:15-129:54
 Thu Jul 30 00:09:32 2015 +0000
 Author: Paul Marks <1005930@85c56323-6fa9-3386-8a01-6480fb634889>

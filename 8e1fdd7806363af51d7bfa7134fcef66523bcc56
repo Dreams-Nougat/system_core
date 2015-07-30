@@ -1,0 +1,18 @@
+Revision: 8e1fdd7806363af51d7bfa7134fcef66523bcc56
+Patch-set: 5
+File: /COMMIT_MSG
+
+22:4-22:36
+Thu Jul 30 02:48:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d862697_63de1c01
+Bytes: 448
+Any quick pointers on how to obtain the necessary dependencies? I did 'pip install -U mock' and 'pip install -U adb', but when I run the tests, I get:
+
+ Traceback (most recent call last):
+   File "/home/username/a/system/core/adb/test_device.py", line 105, in setUp
+     self.device = adb.get_device()
+ AttributeError: 'module' object has no attribute 'get_device'
+
+So either I've got the wrong adb module or I'm doing something completely wrong...
+

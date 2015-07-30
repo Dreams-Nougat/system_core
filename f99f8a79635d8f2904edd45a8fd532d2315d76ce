@@ -105,3 +105,13 @@ yeah, time to move on. i'm not aware of such problems with either of our allocat
 
 (also, if you have a 10MiB init.rc, you have other problems :-) )
 
+95
+Thu Jul 30 18:13:52 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a430851_d297821b
+UUID: 2a40cc41_7601e879
+Bytes: 555
++1, I doubt this is a problem.  Init scripts are in the order of a few kbs.  The init scripts in system/core/rootdir is ~25kb, and searching in /device/, I find a strong majority in the <10kb region.  Beyond that, the plan to divide init scripts by services will make them even smaller.  I'd suggest using ReadFileToString directly and not create any new classes beyond this parser.
+
+As a side note, wouldn't mmap be better if this were a problem?  It'd let the kernel handle the pages that back the file, while we could copy the tokens out appropriately.
+

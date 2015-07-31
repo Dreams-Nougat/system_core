@@ -9,6 +9,17 @@ UUID: ca2490af_7971d286
 Bytes: 149
 should not be necessary, if libpackagelistparser is properly set up, this will be automatic with the inclusion of the dependency libpackagelistparser
 
+7:0-7:58
+Fri Jul 31 21:03:16 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca2490af_7971d286
+UUID: 2a59ac45_823f6ee4
+Bytes: 230
+Does libpackageparser need to then export its headers to some common spot, because dropping this yeilds:
+
+system/core/logd/main.cpp:45:31: fatal error: packagelistparser.h: No such file or directory
+ #include <packagelistparser.h>
+
 File: logd/main.cpp
 
 168:0-168:1

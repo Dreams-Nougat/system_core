@@ -16,6 +16,14 @@ UUID: 2a59ac45_71b44a71
 Bytes: 407
 One alternative would be to have sysdeps_win32.cpp do: errno = 1000 + WSAGetLastError() and override strerror() with our own that would call the C Runtime strerror() for values < 1000 and would otherwise call SystemErrorCodeToString() and put the string in thread-local-storage. But this seems way too hacky and would be very confusing if a 1000 + WSAGetLastError() error code was ever seen by the end-user.
 
+17:0-17:12
+Fri Jul 31 17:52:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a59ac45_71b44a71
+UUID: 8a2e188f_7f565737
+Bytes: 226
+yeah, what you've done seems reasonable. we can always revisit if it doesn't seem to be working out. (part of me would love to have a library to just make the regular POSIX/C stuff work, but i don't want to reinvent Cygwin...)
+
 27:38-27:48
 Fri Jul 31 06:37:31 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -40,6 +48,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ea523422_cffb553a
 Bytes: 83
 Is it good to output error here? Most use of LOG(...) only uses hard-coded strings.
+
+156:66-156:76
+Fri Jul 31 17:52:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea523422_cffb553a
+UUID: 4a6260ef_5e54b1a3
+Bytes: 66
+yeah, that's fine. see art for example where LOG() is widely used.
 
 File: adb/daemon/main.cpp
 

@@ -33,6 +33,14 @@ UUID: 0a5ce834_4d064d94
 Bytes: 406
 Even with checking for / and \, I'm not sure if this properly handles paths like C:\foo\bar\baz or UNC paths like \\server\share\dir1\dir2\file. The C Runtime has an API called _splitpath() that I think may be able to properly parse popular paths. BTW, yes, I've seen this code before, but never cleaned it up because my guess is that the bad cases don't come up that often... and the real fix may be hard.
 
+241
+Fri Jul 31 20:08:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a5ce834_4d064d94
+UUID: 2a59ac45_97232e58
+Bytes: 250
+hmm. that encourages me even more towards combining the unlink && mkdirs && adb_creat into one function. seems like then the Windows implementation of the function could use _splitpath to do the perfect job even for the weird Windows special cases...
+
 245
 Thu Jul 30 22:17:01 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

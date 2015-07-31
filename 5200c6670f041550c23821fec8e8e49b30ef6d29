@@ -1,0 +1,52 @@
+Revision: 5200c6670f041550c23821fec8e8e49b30ef6d29
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:23-9:55
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_c78342a4
+Bytes: 126
+I tested 'adb connect' connecting to a numeric IPv6 address (a IPv6 to IPv4 proxy since I don't have a device that does IPv6).
+
+17:0-17:12
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a59ac45_71b44a71
+Bytes: 407
+One alternative would be to have sysdeps_win32.cpp do: errno = 1000 + WSAGetLastError() and override strerror() with our own that would call the C Runtime strerror() for values < 1000 and would otherwise call SystemErrorCodeToString() and put the string in thread-local-storage. But this seems way too hacky and would be very confusing if a 1000 + WSAGetLastError() error code was ever seen by the end-user.
+
+27:38-27:48
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_b5c50233
+Bytes: 273
+Why not use LOG(DEBUG)? There are some issues with the base logging that I have to investigate. For instance: setting ADB_TRACE=1 does not enable LOG(DEBUG) (by design?), there are some issues with __FILE__ parsing, InitLogging() isn't called if ADB_TRACE isn't set, etc...
+
+File: adb/adb_listeners.cpp
+
+136:4-136:10
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a5f2428_7010c810
+Bytes: 56
+Seems more useful to set *error than to write to stdout.
+
+File: adb/client/main.cpp
+
+156:66-156:76
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea523422_cffb553a
+Bytes: 83
+Is it good to output error here? Most use of LOG(...) only uses hard-coded strings.
+
+File: adb/daemon/main.cpp
+
+186:16-186:24
+Fri Jul 31 06:37:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2e188f_34d23600
+Bytes: 96
+Is it safe to output error here in adbd? Again, most use of LOG(...) is with hard-coded strings.
+

@@ -1,0 +1,11 @@
+Revision: 7e080e90a7e50eecc608135abcc7a4c0fc7b27a2
+Patch-set: 1
+File: adb/transport_local.cpp
+
+133:11-133:12
+Fri Jul 31 21:21:25 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea523422_c07322da
+Bytes: 16
+nit: Capitalize.
+

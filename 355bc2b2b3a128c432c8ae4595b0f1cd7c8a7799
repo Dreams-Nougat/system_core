@@ -1,0 +1,55 @@
+Revision: 355bc2b2b3a128c432c8ae4595b0f1cd7c8a7799
+Patch-set: 1
+File: logd/Android.mk
+
+7:0-7:58
+Fri Jul 31 20:33:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_7971d286
+Bytes: 149
+should not be necessary, if libpackagelistparser is properly set up, this will be automatic with the inclusion of the dependency libpackagelistparser
+
+File: logd/main.cpp
+
+168:0-168:1
+Fri Jul 31 20:33:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_1b22c7a8
+Bytes: 52
+android coding style, groups of four spaces, no tabs
+
+168:2-168:16
+Fri Jul 31 20:33:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea295486_021edaf0
+Bytes: 228
+android coding style for unused arguments:
+
+C++ (this one)
+
+package_list_parser_cb(pkg_info *info, void * /* userdata */) {
+
+C (FYI)
+
+#include <sys/cdefs.h>
+. . .
+package_list_parser_cb(pkg_info *info, void *userdata __unused)
+{
+
+169:0-177:24
+Fri Jul 31 20:33:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a6260ef_d5cf5f9f
+Bytes: 80
+if (info->uid == uid) {
+    name = strdup(info->name);
+}
+packagelist_free(info);
+
+181:33-181:47
+Fri Jul 31 20:33:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_5bcdef5b
+Bytes: 40
+FYI: example of unused argument handling
+

@@ -9,3 +9,13 @@ UUID: 0a5ce834_16650210
 Bytes: 98
 do we want to explain how the two OEM blocks differ? (or explicitly state that they don't differ.)
 
+102
+Fri Jul 31 21:29:27 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a5ce834_16650210
+UUID: 0a5ce834_b673d6da
+Bytes: 289
+If I add library support for this range, that will likely *not* cover 2900-2999, since it's likely already being used. If that's difference enough, I'll update the comment.
+
+If library support should also cover the 2900-2999 range, I'll update the comment to reflect there's no difference.
+

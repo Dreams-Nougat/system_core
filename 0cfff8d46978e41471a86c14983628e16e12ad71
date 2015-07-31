@@ -37,3 +37,13 @@ UUID: 8a2e188f_4b9c05c3
 Bytes: 95
 I did and it compiles for all my patches. Should I just ignore what the build server is saying?
 
+158:32-158:66
+Fri Jul 31 21:18:23 2015 +0000
+Author: Alexander Levitskiy <1014961@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2e188f_4b9c05c3
+UUID: ea523422_a07026ce
+Bytes: 115
+What Mohamad meant, I think is:
+retval = system("rm -rf "OVERLAYFS_BASE_PATH);
+and delete all cmd related handling.
+

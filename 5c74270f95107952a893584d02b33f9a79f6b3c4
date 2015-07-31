@@ -1,0 +1,27 @@
+Revision: 5c74270f95107952a893584d02b33f9a79f6b3c4
+Patch-set: 1
+File: adb/commandline.cpp
+
+1002:12-1002:24
+Fri Jul 31 05:41:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_47e51298
+Bytes: 44
+should always be true, given the code above?
+
+1511:8-1511:41
+Fri Jul 31 05:41:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_27ea0668
+Bytes: 183
+A little scary that we're making an argv element point to memory that will be destroyed after we return. But in practice I don't think we ever reference argv afterwards in the caller.
+
+File: adb/file_sync_service.cpp
+
+115:25-115:37
+Fri Jul 31 05:41:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a59ac45_11750e42
+Bytes: 53
+One trick I picked up is to use `decltype(closedir)*'
+

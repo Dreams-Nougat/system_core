@@ -9,3 +9,11 @@ UUID: 8a2e188f_da8d59ba
 Bytes: 119
 huh. how does that work? can we make adbd on the emulator cause one of those messages to be sent and avoid the polling?
 
+128
+Fri Jul 31 23:14:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2e188f_da8d59ba
+UUID: ca4d7087_5a816150
+Bytes: 103
+the emulator sends the message when it starts up. I don't think it is easy for the adbd to do it again.
+

@@ -9,3 +9,11 @@ UUID: aa33dcf3_bba4d301
 Bytes: 216
 how much load does this cause? i guess it doesn't affect the emulators much because once we find one, we stay connected and L97 short-circuits that. so it's just the cost of 32 failed network connections each second?
 
+134
+Fri Jul 31 23:14:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa33dcf3_bba4d301
+UUID: 2a59ac45_7ddbfb64
+Bytes: 110
+the cpu load of this thread is 0.002 (8ms / 5s). I think it is acceptable. not deserve to do something tricky?
+

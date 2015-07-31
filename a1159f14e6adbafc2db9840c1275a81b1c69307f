@@ -1,0 +1,11 @@
+Revision: a1159f14e6adbafc2db9840c1275a81b1c69307f
+Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Fri Jul 31 21:09:28 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea523422_60058e4d
+Bytes: 48
+Not Brillo specific anymore. Fix commit message.
+

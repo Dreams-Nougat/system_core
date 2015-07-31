@@ -1,0 +1,38 @@
+Revision: 70b58720c435bdf6ee43a5b012ed80c02354c496
+Patch-set: 1
+File: init/Android.mk
+
+21
+Fri Jul 31 21:35:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a6260ef_753e7379
+Bytes: 10
+whitespace
+
+File: init/log.h
+
+22
+Fri Jul 31 21:35:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a5ce834_163e22e6
+Bytes: 191
+libbase has google3-style LOG(whatever) with an extension that would let us supply a function that sends stuff to the kernel log. we just need to wire that up and kill all this legacy crap...
+
+File: init/parser/parser.h
+
+31
+Fri Jul 31 21:35:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2e188f_faa7f53d
+Bytes: 12
+void** priv?
+
+File: init/util.cpp
+
+107
+Fri Jul 31 21:35:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca4d7087_fab12dcd
+Bytes: 129
+this seems like a bad idea. can we just #if defined(__ANDROID__) any function that won't work on the host? or split this file up.
+

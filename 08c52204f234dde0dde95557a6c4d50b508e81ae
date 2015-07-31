@@ -1,0 +1,34 @@
+Revision: 08c52204f234dde0dde95557a6c4d50b508e81ae
+Patch-set: 1
+File: sdcard/sdcard.c
+
+1710:0-1710:1
+Fri Jul 31 20:25:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_999ebe43
+Bytes: 67
+android coding style: four spaces for every indent level.
+
+not tabs
+
+1725:0-1725:1
+Fri Jul 31 20:25:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a59ac45_779d5aef
+Bytes: 5
+ditto
+
+1738:0-1738:2
+Fri Jul 31 20:25:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_79a31287
+Bytes: 14
+ditto here too
+
+1744:11-1744:21
+Fri Jul 31 20:25:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2490af_39ad8a6f
+Bytes: 26
+rc == tree replace with rc
+

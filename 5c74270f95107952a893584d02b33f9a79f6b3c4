@@ -1,5 +1,14 @@
 Revision: 5c74270f95107952a893584d02b33f9a79f6b3c4
 Patch-set: 1
+File: adb/adb_utils.cpp
+
+80:12-80:23
+Fri Jul 31 21:51:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a5f2428_bede11fd
+Bytes: 324
+FYI, while trying to rebase https://android-review.googlesource.com/151895, I ran the mkdirs test in adb_test and it passes a path like C:\users\foo and that causes real_mkdirs() to call adb_mkdir with \C: . So yeah, this is somewhat broken. Personally, I probably would not run adb pull on Windows until this is fixed up...
+
 File: adb/commandline.cpp
 
 1002:12-1002:24

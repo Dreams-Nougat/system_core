@@ -1,0 +1,11 @@
+Revision: 0e2c19465964d27f6da0e5d23c329b7892d41204
+Patch-set: 3
+File: adb/transport_local.cpp
+
+134
+Fri Jul 31 21:40:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_bba4d301
+Bytes: 216
+how much load does this cause? i guess it doesn't affect the emulators much because once we find one, we stay connected and L97 short-circuits that. so it's just the cost of 32 failed network connections each second?
+

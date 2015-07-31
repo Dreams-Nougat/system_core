@@ -1,0 +1,11 @@
+Revision: cf4dba5ab315493531fff5a4867698a3659b0526
+Base-for-patch-set: 3
+File: adb/transport_local.cpp
+
+128
+Fri Jul 31 21:40:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2e188f_da8d59ba
+Bytes: 119
+huh. how does that work? can we make adbd on the emulator cause one of those messages to be sent and avoid the polling?
+

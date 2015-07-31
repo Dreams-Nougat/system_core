@@ -1,6 +1,22 @@
 Revision: 47d67c96ec991ef1690b4c07188335cbc4bfa2aa
 Patch-set: 7
+File: adb/commandline.cpp
+
+1470:0-1470:60
+Fri Jul 31 04:05:34 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea295486_37aeba9d
+Bytes: 219
+I think Elliott already fixed this with adb_basename, but I think this (old) API is dangerous because it could return a ptr to a temporarily constructed std::string. i.e. char* base = get_basename(std::string("foo"))...
+
 File: adb/sysdeps.h
+
+127:15-127:19
+Fri Jul 31 04:05:34 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_353912fe
+Bytes: 52
+.c_str()? must already be fixed in Elliott's change.
 
 241
 Thu Jul 30 22:17:01 2015 +0000
@@ -9,10 +25,26 @@ UUID: 6a5f2428_ed6981ea
 Bytes: 43
 spencer: should this just be find_first_of?
 
+241
+Fri Jul 31 04:05:34 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a5f2428_ed6981ea
+UUID: 0a5ce834_4d064d94
+Bytes: 406
+Even with checking for / and \, I'm not sure if this properly handles paths like C:\foo\bar\baz or UNC paths like \\server\share\dir1\dir2\file. The C Runtime has an API called _splitpath() that I think may be able to properly parse popular paths. BTW, yes, I've seen this code before, but never cleaned it up because my guess is that the bad cases don't come up that often... and the real fix may be hard.
+
 245
 Thu Jul 30 22:17:01 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ea295486_119ceeef
 Bytes: 73
 ...in particular, this > seems wrong to me, unless i'm missing something?
+
+245
+Fri Jul 31 04:05:34 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea295486_119ceeef
+UUID: 2a59ac45_9191fe27
+Bytes: 29
+Yeah, the > is wrong I think.
 

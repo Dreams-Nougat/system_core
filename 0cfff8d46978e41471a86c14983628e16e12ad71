@@ -47,3 +47,11 @@ What Mohamad meant, I think is:
 retval = system("rm -rf "OVERLAYFS_BASE_PATH);
 and delete all cmd related handling.
 
+158:32-158:66
+Fri Jul 31 22:40:02 2015 +0000
+Author: Daniel Campello <1072925@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea523422_a07026ce
+UUID: ea295486_5d15e7fe
+Bytes: 192
+I understood. That was the first thing that I tried which failed on the build server. https://googleplex-android-review.git.corp.google.com/#/c/699952/2/adb/set_verity_enable_state_service.cpp
+

@@ -9,12 +9,28 @@ UUID: ca2490af_47e51298
 Bytes: 44
 should always be true, given the code above?
 
+1002:12-1002:24
+Fri Jul 31 20:14:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca2490af_47e51298
+UUID: ca2490af_591df66c
+Bytes: 61
+oh, yeah, i hadn't paid attention to what was going on there.
+
 1511:8-1511:41
 Fri Jul 31 05:41:07 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca2490af_27ea0668
 Bytes: 183
 A little scary that we're making an argv element point to memory that will be destroyed after we return. But in practice I don't think we ever reference argv afterwards in the caller.
+
+1511:8-1511:41
+Fri Jul 31 20:14:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca2490af_27ea0668
+UUID: 6a5f2428_13e7565a
+Bytes: 153
+yeah, adb is full of this kind of thing. we'll fix it all one day, but we're not making things any worse (it was already a pointer to data on the stack).
 
 File: adb/file_sync_service.cpp
 
@@ -24,4 +40,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a59ac45_11750e42
 Bytes: 53
 One trick I picked up is to use `decltype(closedir)*'
+
+115:25-115:37
+Fri Jul 31 20:14:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a59ac45_11750e42
+UUID: 4a6260ef_729c49c3
+Bytes: 49
+how do others feel about that? better/worse/same?
 

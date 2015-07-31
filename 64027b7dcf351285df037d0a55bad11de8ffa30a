@@ -1,0 +1,11 @@
+Revision: 64027b7dcf351285df037d0a55bad11de8ffa30a
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+102:0-104:38
+Fri Jul 31 20:59:58 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_7bc2eb00
+Bytes: 81
+Can we generalize this to AID_OEM_RESERVED_2_START? This is usable to others too.
+

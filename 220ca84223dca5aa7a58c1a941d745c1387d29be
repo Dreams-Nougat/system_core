@@ -1,0 +1,85 @@
+Revision: 220ca84223dca5aa7a58c1a941d745c1387d29be
+Patch-set: 3
+File: init/parser/tokenizer.cpp
+
+23
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a5f2428_f0a7183e
+Bytes: 40
+nit: if (!data.empty()) is a bit simpler
+
+64:16-64:25
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a6260ef_c3ee8a28
+Bytes: 26
+nit: s/generated/generate/
+
+89
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea295486_17ea9e67
+Bytes: 206
+this seems a bit weird; if you keep calling AdvChar() after you reach the end of the string, pos_ keeps getting incremented. it'd probably be a bit cleaner to bail out before incrementing when eof_ is true.
+
+99
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2e188f_344fd63e
+Bytes: 103
+put this if condition into an IsWhiteSpace(char ch) helper function so you can share it with AdvText()?
+
+File: init/parser/tokenizer.h
+
+33
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a5ce834_70568637
+Bytes: 72
+it looks like \0 is also allowed in the string -- can you document that?
+
+36
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a59ac45_31b81231
+Bytes: 19
+nit: add 'explicit'
+
+40
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea295486_57f0265b
+Bytes: 107
+nit: add a simple constructor so it isn't possible to create one of these with garbage in the 'type' member
+
+46
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa33dcf3_75c2fa00
+Bytes: 29
+nit: this method can be const
+
+53:7-53:14
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a59ac45_d1be561b
+Bytes: 58
+nit: AdvanceChar, AdvanceText, etc. would be a bit clearer
+
+57
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a5f2428_50a2642b
+Bytes: 64
+nit: StartToken() and EndToken() would be a bit clearer, i think
+
+60
+Fri Jul 31 15:27:56 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a6260ef_e3f18e0c
+Bytes: 377
+how big does this data get? seeing a member that's a reference makes me nervous, as it's easy to have a use-after-free if the caller doesn't hang onto the string that it passes to the c'tor.
+
+if it's at all feasible, it'd be better to make a copy of the input. failing that, the c'tor should have a comment stating that the passed-in data needs to outlive the Tokenizer object.
+

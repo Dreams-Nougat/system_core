@@ -1,0 +1,11 @@
+Revision: b93b9d4867c66879af434869de7e84e736178c5a
+Patch-set: 3
+File: include/private/android_filesystem_config.h
+
+102
+Fri Jul 31 21:26:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a5ce834_16650210
+Bytes: 98
+do we want to explain how the two OEM blocks differ? (or explicitly state that they don't differ.)
+

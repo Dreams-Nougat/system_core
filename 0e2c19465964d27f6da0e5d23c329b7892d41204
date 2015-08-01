@@ -17,3 +17,13 @@ UUID: 2a59ac45_7ddbfb64
 Bytes: 110
 the cpu load of this thread is 0.002 (8ms / 5s). I think it is acceptable. not deserve to do something tricky?
 
+134
+Sat Aug 01 00:39:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a59ac45_7ddbfb64
+UUID: ea523422_bb405bb9
+Bytes: 139
+i'm actually more worried about innocent processes that have these ports bound :-)
+
+but, yeah, i think this is fine until proven otherwise.
+

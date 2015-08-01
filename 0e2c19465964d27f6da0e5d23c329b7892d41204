@@ -35,3 +35,11 @@ UUID: eaf154a3_2e390790
 Bytes: 10
 oh, I see.
 
+134
+Sat Aug 01 02:54:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eaf154a3_2e390790
+UUID: 4a6260ef_86b77b24
+Bytes: 261
+Linux & Windows adb are already polling for USB devices once a second, which is already bad (something that could be fixed for Windows). Is there some way to avoid this TCP connect attempt once a second? It seems like laptop users might mind the battery impact?
+

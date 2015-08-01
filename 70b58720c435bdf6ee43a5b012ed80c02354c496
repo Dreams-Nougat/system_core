@@ -9,6 +9,14 @@ UUID: 4a6260ef_753e7379
 Bytes: 10
 whitespace
 
+21
+Sat Aug 01 01:27:29 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a6260ef_753e7379
+UUID: 6a5f2428_7ef1b98f
+Bytes: 4
+Done
+
 File: init/log.h
 
 22
@@ -17,6 +25,16 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0a5ce834_163e22e6
 Bytes: 191
 libbase has google3-style LOG(whatever) with an extension that would let us supply a function that sends stuff to the kernel log. we just need to wire that up and kill all this legacy crap...
+
+22
+Sat Aug 01 01:27:29 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a5ce834_163e22e6
+UUID: ea295486_089b9b49
+Bytes: 147
+Ok, I've done a follow up CL that changes all the logging to use LOG() (it took forever!!).
+
+I've got a few more left, so will push it up tomorrow.
 
 File: init/parser/parser.h
 
@@ -27,6 +45,16 @@ UUID: 8a2e188f_faa7f53d
 Bytes: 12
 void** priv?
 
+31
+Sat Aug 01 01:27:29 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a2e188f_faa7f53d
+UUID: 0a5ce834_76231eb0
+Bytes: 204
+I'll add a comment. It allows the handlers to return a pointer, which will be passed back with every HandleSubCommand.
+
+e.g Tom can use it in the ActionManager to remember which Action is being processed.
+
 File: init/util.cpp
 
 107
@@ -35,4 +63,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca4d7087_fab12dcd
 Bytes: 129
 this seems like a bad idea. can we just #if defined(__ANDROID__) any function that won't work on the host? or split this file up.
+
+107
+Sat Aug 01 01:27:29 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca4d7087_fab12dcd
+UUID: ea523422_db55574d
+Bytes: 22
+Changed to __ANDROID__
 

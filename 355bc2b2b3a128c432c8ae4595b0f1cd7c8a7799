@@ -47,6 +47,13 @@ C (FYI)
 package_list_parser_cb(pkg_info *info, void *userdata __unused)
 {
 
+174
+Mon Aug 03 18:34:15 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea6cf416_b097281c
+Bytes: 70
+Don't you want to return false on a match to skip processing the rest?
+
 169:0-177:24
 Fri Jul 31 20:33:40 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

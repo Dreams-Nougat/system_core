@@ -63,3 +63,23 @@ UUID: 4a01803c_b4f42efe
 Bytes: 217
 actually, we should probably investigate further how the emulator sends its startup messages to adb. there must be a way we can have that happen when adbd starts up. i'll file a bug against yabinc... http://b/22920867
 
+134
+Mon Aug 03 22:44:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a01803c_b4f42efe
+UUID: 0ad9483e_9f4693d6
+Bytes: 437
+SERVICES.TXT:
+
+HOST SERVICES:
+
+host:emulator:<port>
+    This is a special query that is sent to the ADB server when a
+    new emulator starts up. <port> is a decimal number corresponding
+    to the emulator's ADB control port, i.e. the TCP port that the
+    emulator will forward automatically to the adbd daemon running
+    in the emulator system.
+
+    This mechanism allows the ADB server to know when new emulator
+    instances start.
+

@@ -1,0 +1,18 @@
+Revision: 7488a5df56d94f7b0019ce046f4143bd895fc507
+Patch-set: 2
+File: rootdir/Android.mk
+
+32:58-32:59
+Mon Aug 03 23:44:38 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_19cd775d
+Bytes: 101
+I'd like to move this to the next assignment, so that both cases end in consistent way (without ";").
+
+40:0-40:30
+Mon Aug 03 23:44:38 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_df173f52
+Bytes: 46
+nit: move this up to next to the "endif" line.
+

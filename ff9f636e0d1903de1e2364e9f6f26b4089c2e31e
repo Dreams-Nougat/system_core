@@ -9,12 +9,28 @@ UUID: aa667c34_7423c8dd
 Bytes: 83
 check_settings sounds a bit too general.  check_dm_verity_settings might be better?
 
+208
+Mon Aug 03 18:37:51 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa667c34_7423c8dd
+UUID: aa667c34_5a65150f
+Bytes: 4
+Done
+
 211
 Mon Aug 03 05:56:08 2015 +0000
 Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a08cc62_30568836
 Bytes: 92
 Is there any way to skip the check on old devices which do not use dm-verity (e.g. Nexus 7)?
+
+211
+Mon Aug 03 18:37:51 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a08cc62_30568836
+UUID: ca673030_78861d6b
+Bytes: 77
+That would be better, but I couldn't find a good way to do so, unfortunately.
 
 214:75-215:42
 Mon Aug 03 05:56:08 2015 +0000
@@ -24,4 +40,12 @@ Bytes: 87
 nit: logging.warning takes arguments for formatting.
 
 "% (partitiion)" -> ", partition"
+
+214:75-215:42
+Mon Aug 03 18:37:51 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a01803c_f1cfe89e
+UUID: ea6cf416_50a4d4be
+Bytes: 19
+Good to know. Done.
 

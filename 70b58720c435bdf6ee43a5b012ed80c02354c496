@@ -63,6 +63,16 @@ UUID: ea6cf416_9cc20d79
 Bytes: 282
 I think Elliott is asking why is the const there when we know that HandleSection is going to mutate the variable.  Even though we can write 'const' there, it seems counter intuitive to do so.  I think it's best to drop the const here, and even the one on priv_ and HandleSubCommand.
 
+31
+Mon Aug 03 17:59:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea6cf416_9cc20d79
+UUID: ca673030_d8ae5117
+Bytes: 191
+no, i'm actually saying "aren't we trying to move away from the whole 1970s C void* thing?" :-)
+
+wouldn't a Parser caller just be passing in a functor, and maintain their own data structures?
+
 File: init/util.cpp
 
 107

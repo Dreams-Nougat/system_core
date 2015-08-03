@@ -43,3 +43,15 @@ UUID: 4a6260ef_86b77b24
 Bytes: 261
 Linux & Windows adb are already polling for USB devices once a second, which is already bad (something that could be fixed for Windows). Is there some way to avoid this TCP connect attempt once a second? It seems like laptop users might mind the battery impact?
 
+134
+Mon Aug 03 16:02:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a6260ef_86b77b24
+UUID: 4a01803c_b4526e33
+Bytes: 776
+on Linux we could use inotify. i actually tried to switch adb over to libusbhost ages ago because it already uses inotify (https://android-review.googlesource.com/#/c/108551/), but that caused trouble (that apparently i didn't record, and sadly i can't remember). but, yeah, one day we should switch to inotify (one way or another).
+
+(so if there's a way to do this for Windows, that would be good too.)
+
+it's not obvious how we can do something similar for emulators though. the only thing i could think of (for Unix at least) would be using Unix domain sockets so they're visible in the file system and then we can just use inotify for them too. *but* that means we'd need changes on the emulator side. (plus we'd need to come up with something else for Mac OS and Windows.)
+

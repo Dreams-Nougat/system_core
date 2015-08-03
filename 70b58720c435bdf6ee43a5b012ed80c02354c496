@@ -55,6 +55,14 @@ I'll add a comment. It allows the handlers to return a pointer, which will be pa
 
 e.g Tom can use it in the ActionManager to remember which Action is being processed.
 
+31
+Mon Aug 03 17:48:45 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a5ce834_76231eb0
+UUID: ea6cf416_9cc20d79
+Bytes: 282
+I think Elliott is asking why is the const there when we know that HandleSection is going to mutate the variable.  Even though we can write 'const' there, it seems counter intuitive to do so.  I think it's best to drop the const here, and even the one on priv_ and HandleSubCommand.
+
 File: init/util.cpp
 
 107

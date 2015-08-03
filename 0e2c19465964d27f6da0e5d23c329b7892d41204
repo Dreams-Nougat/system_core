@@ -93,3 +93,11 @@ and here's the code in adb: system/core/adb/adb.cpp:947
 
 couldn't find the code on the emulator side though. i guess it's not in our tree?
 
+134
+Mon Aug 03 22:59:40 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a0ff877_03150e00
+UUID: 2ad60c0d_609772d0
+Bytes: 166
+I think the emulator code has moved around a bit: https://groups.google.com/d/msg/android-emulator-dev/NE9gopcS2-o/T-hk16xwrCEJ . I presume that digit knows the rest.
+

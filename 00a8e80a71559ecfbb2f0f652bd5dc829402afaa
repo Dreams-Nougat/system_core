@@ -9,6 +9,14 @@ UUID: 0a24e8f1_078cf60f
 Bytes: 396
 yeah, i was going to try to keep this in sysdeps_win32.cpp, but when i looked more closely i realized it wasn't just used for the _win32_lock, it's for *all* the adb mutexes. when we bump the minimum supported version to vista in a week or two, we should be able to fix libc++'s std::mutex and then just delete all this crap. but i agree this is probably the least worst choice in the meantime...
 
+84
+Mon Aug 03 19:51:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a24e8f1_078cf60f
+UUID: 2a536c56_5ee7c558
+Bytes: 205
+I'm glad to hear that this will be killed off soon because I'm sorry that I suggested this change because it is so gross and it doesn't handle the case of some other test file calling sysdeps code. My bad.
+
 File: base/file_test.cpp
 
 41
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4a01803c_975c8c00
 Bytes: 195
 i don't think it's worth going to all this trouble. i only used /proc/version because it's easy on Linux. i'll just rename the WriteStringToFile test since it already tests both functions anyway.
+
+41
+Mon Aug 03 19:51:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a01803c_975c8c00
+UUID: 0a24e8f1_e7428210
+Bytes: 10
+ok, thanks
 

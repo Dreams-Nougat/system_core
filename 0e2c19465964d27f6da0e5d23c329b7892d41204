@@ -83,3 +83,13 @@ host:emulator:<port>
     This mechanism allows the ADB server to know when new emulator
     instances start.
 
+134
+Mon Aug 03 22:47:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_9f4693d6
+UUID: 8a0ff877_03150e00
+Bytes: 138
+and here's the code in adb: system/core/adb/adb.cpp:947
+
+couldn't find the code on the emulator side though. i guess it's not in our tree?
+

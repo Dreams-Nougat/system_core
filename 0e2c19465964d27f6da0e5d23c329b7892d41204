@@ -55,3 +55,11 @@ on Linux we could use inotify. i actually tried to switch adb over to libusbhost
 
 it's not obvious how we can do something similar for emulators though. the only thing i could think of (for Unix at least) would be using Unix domain sockets so they're visible in the file system and then we can just use inotify for them too. *but* that means we'd need changes on the emulator side. (plus we'd need to come up with something else for Mac OS and Windows.)
 
+134
+Mon Aug 03 18:07:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a01803c_b4526e33
+UUID: 4a01803c_b4f42efe
+Bytes: 217
+actually, we should probably investigate further how the emulator sends its startup messages to adb. there must be a way we can have that happen when adbd starts up. i'll file a bug against yabinc... http://b/22920867
+

@@ -1,0 +1,11 @@
+Revision: 8df90321769c670b546a7ff0e7a14f2d7a79cc25
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+462
+Mon Aug 03 21:03:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_052eb2c5
+Bytes: 100
+do we still need the special cases? or should we just let SystemErrorCodeToString handle everything?
+

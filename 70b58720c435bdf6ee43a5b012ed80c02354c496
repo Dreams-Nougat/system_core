@@ -73,6 +73,14 @@ no, i'm actually saying "aren't we trying to move away from the whole 1970s C vo
 
 wouldn't a Parser caller just be passing in a functor, and maintain their own data structures?
 
+31
+Mon Aug 03 18:06:20 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca673030_d8ae5117
+UUID: aa667c34_fa7341d9
+Bytes: 378
+Yeah can do. They get the callbacks and they can do what they like. I dont mind getting rid of 'priv'. I put it is so the caller doesn't have to maintain its state in step with the parser. If we remove 'priv' the caller has to keep state of what section its in, which is state the parser is also maintaining. I think that makes the Handler class simpler. Happy to change though.
+
 File: init/util.cpp
 
 107

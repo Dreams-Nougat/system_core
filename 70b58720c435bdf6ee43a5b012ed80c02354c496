@@ -81,6 +81,18 @@ UUID: aa667c34_fa7341d9
 Bytes: 378
 Yeah can do. They get the callbacks and they can do what they like. I dont mind getting rid of 'priv'. I put it is so the caller doesn't have to maintain its state in step with the parser. If we remove 'priv' the caller has to keep state of what section its in, which is state the parser is also maintaining. I think that makes the Handler class simpler. Happy to change though.
 
+31
+Mon Aug 03 18:08:02 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca673030_d8ae5117
+UUID: 8a61b821_7c0a8d5d
+Bytes: 424
+Or that.
+
+At least the way that Action and Service are developing, HandleSection() could be implemented by the (Action/Service)Manager classes and HandleSubCommand() by the Action/Service classes themselves.  We could potentially break this into two interfaces, where HandleSection() returns a ParserSubCommandHandler* interface, which both Action and Service implement.  
+
+Otherwise, how else do you think we could do this?
+
 File: init/util.cpp
 
 107

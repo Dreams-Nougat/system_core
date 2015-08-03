@@ -1,0 +1,20 @@
+Revision: 00a8e80a71559ecfbb2f0f652bd5dc829402afaa
+Patch-set: 5
+File: adb/transport_test.cpp
+
+84
+Mon Aug 03 19:44:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a24e8f1_078cf60f
+Bytes: 396
+yeah, i was going to try to keep this in sysdeps_win32.cpp, but when i looked more closely i realized it wasn't just used for the _win32_lock, it's for *all* the adb mutexes. when we bump the minimum supported version to vista in a week or two, we should be able to fix libc++'s std::mutex and then just delete all this crap. but i agree this is probably the least worst choice in the meantime...
+
+File: base/file_test.cpp
+
+41
+Mon Aug 03 19:44:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a01803c_975c8c00
+Bytes: 195
+i don't think it's worth going to all this trouble. i only used /proc/version because it's easy on Linux. i'll just rename the WriteStringToFile test since it already tests both functions anyway.
+

@@ -31,3 +31,19 @@ UUID: 0d8962a8_05d2b6cd
 Bytes: 164
 I attempted to fix this in https://android-review.googlesource.com/151895, but I'm not happy with that fix (too ugly). Feel free to fix that in a more 'proper' way.
 
+File: adb/adb_utils.cpp
+
+76
+Mon Aug 03 20:25:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a5c2064_5fe7c358
+Bytes: 32
+i'll export this as adb_dirname.
+
+115
+Mon Aug 03 20:25:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a0b0862_75ebe09c
+Bytes: 140
+as long as we export adb_dirname, i think that's actually a pro --- makes it easier to not fuck up this kind of thing for Windows in future.
+

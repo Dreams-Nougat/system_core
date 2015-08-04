@@ -1,0 +1,25 @@
+Revision: 45a64b31ca42d1f7dc1ca1469867066e5e4570ed
+Patch-set: 3
+File: init/builtins.cpp
+
+438
+Tue Aug 04 01:36:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_eb26c568
+Bytes: 5
+PLOG?
+
+473
+Tue Aug 04 01:36:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_2b661da0
+Bytes: 41
+use PLOG for all the LOG.*strerror cases.
+
+819
+Tue Aug 04 01:36:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_0724fc5e
+Bytes: 1
+?
+

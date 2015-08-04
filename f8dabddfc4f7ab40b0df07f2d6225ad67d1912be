@@ -18,3 +18,12 @@ UUID: cadad034_d119f4af
 Bytes: 44
 Nit: Make comments consistent (/* */ vs //)?
 
+File: init/init_parser.cpp
+
+92
+Tue Aug 04 16:57:55 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_e5d54c64
+Bytes: 10
+whitespace
+

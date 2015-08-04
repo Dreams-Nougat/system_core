@@ -1,0 +1,11 @@
+Revision: 67d928107ef7e4493fdae6ab02ec8b6064ba4270
+Patch-set: 1
+File: /COMMIT_MSG
+
+13:3-14:54
+Tue Aug 04 03:50:16 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_683917fd
+Bytes: 70
+Or, the test could be put under #ifndef _WIN32 instead of deleting it.
+

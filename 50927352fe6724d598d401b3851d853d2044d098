@@ -9,6 +9,14 @@ UUID: cadad034_83bd6223
 Bytes: 12
 Extra space?
 
+36
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_83bd6223
+UUID: eadf9421_0d4a5d77
+Bytes: 4
+Done
+
 File: init/devices.cpp
 
 857:71-857:72
@@ -17,6 +25,14 @@ Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca157084_0e052f4e
 Bytes: 7
 << "'";
+
+857:71-857:72
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_0e052f4e
+UUID: 8a0ff877_c9dcb5df
+Bytes: 4
+Done
 
 File: init/init.cpp
 
@@ -27,6 +43,14 @@ UUID: eadf9421_92092c39
 Bytes: 17
 Do you keep this?
 
+65:10-65:13
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_92092c39
+UUID: 4acfc072_d50abc28
+Bytes: 45
+Yeah for InitLogging and the SELinux callback
+
 File: init/init_parser.cpp
 
 534:74-534:76
@@ -35,6 +59,14 @@ Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4acfc072_8aeacf65
 Bytes: 7
 << "'";
+
+534:74-534:76
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4acfc072_8aeacf65
+UUID: ca157084_4e9607a4
+Bytes: 4
+Done
 
 File: init/signal_handler.cpp
 
@@ -45,12 +77,28 @@ UUID: eadf9421_d20ad428
 Bytes: 17
 Space in between?
 
+73:22-73:24
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_d20ad428
+UUID: eadf9421_6dae819e
+Bytes: 4
+Done
+
 125:69-125:70
 Tue Aug 04 03:48:28 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca157084_eefd33a7
 Bytes: 19
 why the trailing ;?
+
+125:69-125:70
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_eefd33a7
+UUID: 2ad60c0d_e6d55a64
+Bytes: 4
+Done
 
 File: init/ueventd.cpp
 
@@ -61,6 +109,14 @@ UUID: 8a0ff877_69bca106
 Bytes: 6
 Space?
 
+120:47-120:50
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a0ff877_69bca106
+UUID: cadad034_c65f78ba
+Bytes: 4
+Done
+
 File: init/util.cpp
 
 112:56-112:57
@@ -70,12 +126,28 @@ UUID: eadf9421_f217d051
 Bytes: 7
 << "'";
 
+112:56-112:57
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_f217d051
+UUID: cadad034_66fb04ef
+Bytes: 4
+Done
+
 126:62-126:63
 Tue Aug 04 03:48:28 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4acfc072_eaf8bb3f
 Bytes: 7
 << "'";
+
+126:62-126:63
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4acfc072_eaf8bb3f
+UUID: 0ad9483e_13143c75
+Bytes: 4
+Done
 
 139:56-139:57
 Tue Aug 04 03:48:28 2015 +0000
@@ -84,12 +156,28 @@ UUID: 2ad60c0d_868c8e40
 Bytes: 7
 << "'";
 
+139:56-139:57
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2ad60c0d_868c8e40
+UUID: ca157084_19445b71
+Bytes: 4
+Done
+
 148:61-148:62
 Tue Aug 04 03:48:28 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eadf9421_12151c4a
 Bytes: 7
 << "'";
+
+148:61-148:62
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_12151c4a
+UUID: 0ad9483e_535b245b
+Bytes: 4
+Done
 
 177:51-177:53
 Tue Aug 04 03:48:28 2015 +0000
@@ -98,6 +186,14 @@ UUID: 6acc847d_ebcfe19e
 Bytes: 7
 << "'";
 
+177:51-177:53
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6acc847d_ebcfe19e
+UUID: 6acc847d_f6e8a8ed
+Bytes: 4
+Done
+
 193:60-193:61
 Tue Aug 04 03:48:28 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -105,12 +201,28 @@ UUID: ca157084_2e290bbe
 Bytes: 7
 << "'";
 
+193:60-193:61
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_2e290bbe
+UUID: aae91cd1_65e5bc98
+Bytes: 4
+Done
+
 198:64-198:65
 Tue Aug 04 03:48:28 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eadf9421_721d806d
 Bytes: 7
 << "'";
+
+198:64-198:65
+Tue Aug 04 16:45:30 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_721d806d
+UUID: cadad034_a6f42cfe
+Bytes: 4
+Done
 
 360:8-360:18
 Tue Aug 04 03:48:28 2015 +0000

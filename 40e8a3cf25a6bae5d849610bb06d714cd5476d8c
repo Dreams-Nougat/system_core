@@ -1,0 +1,204 @@
+Revision: 40e8a3cf25a6bae5d849610bb06d714cd5476d8c
+Patch-set: 10
+File: init/builtins.cpp
+
+556
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a0ff877_26d8189f
+Bytes: 120
+I can see you're keeping with the existing functionality but should this return failure if the service can not be found?
+
+File: init/init.cpp
+
+64
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6acc847d_a8cb1fc5
+Bytes: 91
+As we are changing the headers, should we take the opportunity to sort this alphabetically?
+
+164
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_c2b846c1
+Bytes: 59
+msg_start uses std::string. Be consistent throughout these.
+
+175
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6acc847d_48061394
+Bytes: 18
+const std::string&
+
+File: init/init_parser.cpp
+
+81
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_c755b44d
+Bytes: 120
+Should we just use the log level inside DumpState() to control this logging? if (false) looks strange in production code
+
+414:15-414:16
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4acfc072_4acd275c
+Bytes: 7
+nullptr
+
+434
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_eba40503
+Bytes: 11
+static_cast
+
+463
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_8b6c712a
+Bytes: 63
+do you need to ensure args.size > 0 or is that always the case?
+
+469
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_62a85260
+Bytes: 66
+maybe have kw_nargs return size_t and avoid the signness problems?
+
+487
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_d2c2d479
+Bytes: 11
+static_cast
+
+File: init/init_parser.h
+
+28
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_476a840a
+Bytes: 24
+s/act/action more clear?
+
+File: init/service.cpp
+
+39:44-40:81
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_0325d233
+Bytes: 12
+c++ comments
+
+45
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_8332c278
+Bytes: 25
+{ shouldnt be on new line
+
+60
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_92284cb8
+Bytes: 44
+{ shouldnt be on new line...all through file
+
+71:4-71:27
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_e340e6ba
+Bytes: 22
+if (flags_ & SVC_EXEC)
+
+457
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_0ee08f08
+Bytes: 16
+do we need this?
+
+717:67-717:77
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_63fbf6ee
+Bytes: 95
+doing the increment in the sprintf is a bit sneaky :) I think its clearer/safer on its own line
+
+819
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_eb3d2246
+Bytes: 91
+This deletes the pointer from the vector but doesnt free the object. maybe use unique_ptrs?
+
+File: init/service.h
+
+1
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_3200583e
+Bytes: 51
+for new files do you use C++ comments?
+
+//
+//
+//
+//
+
+33
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_cb9026d7
+Bytes: 9
+long line
+
+78
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_ab8deaba
+Bytes: 144
+getters don't need get_
+http://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Function_Names
+
+Ignore me if thats not the android style
+
+96:27-98:72
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6acc847d_689117aa
+Bytes: 12
+c++ comments
+
+110
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_c25cc601
+Bytes: 12
+c++ comments
+
+113
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_e8fd27a7
+Bytes: 12
+c++ comments
+
+115:4-116:19
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_e327063c
+Bytes: 12
+std::vector?
+
+148
+Tue Aug 04 03:35:08 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_e269c298
+Bytes: 11
+exec_count_
+

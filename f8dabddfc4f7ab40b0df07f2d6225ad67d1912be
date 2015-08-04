@@ -1,0 +1,20 @@
+Revision: f8dabddfc4f7ab40b0df07f2d6225ad67d1912be
+Patch-set: 6
+File: base/include/base/logging.h
+
+292:25-292:30
+Tue Aug 04 16:47:36 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_53a32486
+Bytes: 64
+Nit: Looks like the rest of the comments here end with a period.
+
+File: init/builtins.cpp
+
+483:8-483:10
+Tue Aug 04 16:47:36 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_d119f4af
+Bytes: 44
+Nit: Make comments consistent (/* */ vs //)?
+

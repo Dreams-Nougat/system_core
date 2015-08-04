@@ -49,3 +49,13 @@ UUID: 6acc847d_08816b9b
 Bytes: 75
 I have no clue what you're asking here. I really never code in C++, just C.
 
+171:0-172:19
+Tue Aug 04 17:54:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6acc847d_08816b9b
+UUID: aa14bc88_416c15ae
+Bytes: 161
+I have no idea why I thought 'comments' in my head and wrote 'headers' in the above. Signs of aging? ;-}
+
+Switch the comment style to C++, as this is a C++ file.
+

@@ -1,0 +1,20 @@
+Revision: fadac6890727f7d4d78b1cb10d9f9ad99010c4f0
+Patch-set: 1
+File: init/builtins.cpp
+
+483:35-483:36
+Tue Aug 04 01:14:52 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_034a3277
+Bytes: 9
+see below
+
+819
+Tue Aug 04 01:14:52 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a0ff877_e6f8c03f
+Bytes: 175
+libbase doesn't yet have a SetLogLevel() function. It does have ScopedLogSeverity which we could hold in a global...
+
+Any thoughts on adding a SetLogLevel function to libbase?
+

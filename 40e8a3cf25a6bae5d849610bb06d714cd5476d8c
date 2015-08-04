@@ -213,6 +213,29 @@ UUID: aae91cd1_f0e8a8ed
 Bytes: 125
 system/core/init/service.cpp:71:16: error: & has lower precedence than !=; != will be evaluated first [-Werror,-Wparentheses]
 
+87:0-87:20
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_3955d7d1
+Bytes: 96
+This method seems not clear. I am not sure changing its name can make it better.
+OnKilled?
+Reap?
+
+103:8-107:15
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4acfc072_30a4d6be
+Bytes: 380
+shall we move this out of this member function? This piece of code is not likely to appear in a member function, especially the setting of an global variable. If we want remove this, at least we can kick it off to wait_for_one_process(). To do this, you can export another member function IsExec(). Although I think a better idea would be having a separate class like ExecCommand.
+
+412:12-412:71
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad60c0d_8954a1d3
+Bytes: 139
+Changing ENV here is a little tricky. will it be more clear if we create a local std::vector<char*> env here, and copy from the global ENV?
+
 457
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -227,6 +250,34 @@ Parent: ca157084_0ee08f08
 UUID: aae91cd1_9065a412
 Bytes: 67
 Probably not and it's trivial to add back; I got rid of it for now.
+
+496:8-496:35
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_b9a7073f
+Bytes: 31
+not necessary, for performance?
+
+507:12-507:64
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_11927c2a
+Bytes: 31
+not necessary, for performance?
+
+512:12-512:70
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a0ff877_ec7a5f95
+Bytes: 33
+why not combining the two execve?
+
+527:0-532:5
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_78ae419e
+Bytes: 27
+move this out to do_exec()?
 
 717:67-717:77
 Tue Aug 04 03:35:08 2015 +0000
@@ -280,6 +331,14 @@ UUID: aae91cd1_902844b8
 Bytes: 116
 I figured I'd just copy over the copywrite from the other files though I could make this // if we think it's cleaner
 
+1
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_3200583e
+UUID: 4acfc072_d56c7c2b
+Bytes: 30
+copyright is always like this.
+
 33
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -294,6 +353,13 @@ Parent: aa14bc88_cb9026d7
 UUID: 2ad60c0d_69767d81
 Bytes: 4
 Done
+
+63:4-63:26
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_4ee0db09
+Bytes: 112
+why need friend? It seems the arguments for Service::Service() are not enough, and DumpState() should be public.
 
 78
 Tue Aug 04 03:35:08 2015 +0000
@@ -328,6 +394,14 @@ UUID: ca157084_594ed310
 Bytes: 4
 Done
 
+107:4-108:50
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_010e9dec
+Bytes: 190
+use std::vector<SocketInfo> and std::vector<ServiceEnvironmentInfo>, so no need to remember deleting them?
+You can add constructor with no arguments in SocketInfo and ServiceEnvironmentInfo.
+
 110
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -342,6 +416,13 @@ Parent: aae91cd1_c25cc601
 UUID: 2ad60c0d_0967b1c5
 Bytes: 4
 Done
+
+112:4-112:46
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_6ebcbf06
+Bytes: 37
+use std::vector<std::string> instead?
 
 113
 Tue Aug 04 03:35:08 2015 +0000
@@ -373,6 +454,25 @@ UUID: ca157084_995fabbb
 Bytes: 158
 I have a TODO about this in services.cpp.  I want to do this change in a separate commit, since it changes keychords.cpp which isn't very related to Services.
 
+133:13-133:30
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_6d14c1d3
+Bytes: 123
+FindServiceByName?
+FindServiceByPid?
+FindServiceByKeychord?
+ForEachService?
+ForEachServiceInClass?
+ForEachServiceWithFlags?
+
+146:9-146:18
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ad9483e_93868cef
+Bytes: 12
+IsValidName?
+
 148
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -387,4 +487,11 @@ Parent: aae91cd1_e269c298
 UUID: 0ad9483e_53a2442b
 Bytes: 4
 Done
+
+149:26-149:39
+Tue Aug 04 18:11:18 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad60c0d_e9a1ada9
+Bytes: 9
+services_
 

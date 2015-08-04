@@ -1,0 +1,27 @@
+Revision: efdfcfd3ca5c6e43ebb1be908da7a719e0621c9d
+Patch-set: 5
+File: logd/main.cpp
+
+35:0-35:20
+Tue Aug 04 00:01:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_84864aef
+Bytes: 69
+system headers should be in sorted order in the system headers group.
+
+45:0-45:48
+Tue Aug 04 00:01:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad60c0d_a3526433
+Bytes: 70
+Android headers should be in sorted order in the android header group.
+
+171:0-172:19
+Tue Aug 04 00:01:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_28ae23ef
+Bytes: 135
+Should use C++ headers in C++ files (exceptions for copyright notice since it is common in all):
+
+    rc = false; // to stop processing
+

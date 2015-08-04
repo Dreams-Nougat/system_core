@@ -1,0 +1,128 @@
+Revision: 50927352fe6724d598d401b3851d853d2044d098
+Patch-set: 4
+File: init/bootchart.cpp
+
+36
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cadad034_83bd6223
+Bytes: 12
+Extra space?
+
+File: init/devices.cpp
+
+857:71-857:72
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_0e052f4e
+Bytes: 7
+<< "'";
+
+File: init/init.cpp
+
+65:10-65:13
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_92092c39
+Bytes: 17
+Do you keep this?
+
+File: init/init_parser.cpp
+
+534:74-534:76
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4acfc072_8aeacf65
+Bytes: 7
+<< "'";
+
+File: init/signal_handler.cpp
+
+73:22-73:24
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_d20ad428
+Bytes: 17
+Space in between?
+
+125:69-125:70
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_eefd33a7
+Bytes: 19
+why the trailing ;?
+
+File: init/ueventd.cpp
+
+120:47-120:50
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a0ff877_69bca106
+Bytes: 6
+Space?
+
+File: init/util.cpp
+
+112:56-112:57
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_f217d051
+Bytes: 7
+<< "'";
+
+126:62-126:63
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4acfc072_eaf8bb3f
+Bytes: 7
+<< "'";
+
+139:56-139:57
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2ad60c0d_868c8e40
+Bytes: 7
+<< "'";
+
+148:61-148:62
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_12151c4a
+Bytes: 7
+<< "'";
+
+177:51-177:53
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6acc847d_ebcfe19e
+Bytes: 7
+<< "'";
+
+193:60-193:61
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_2e290bbe
+Bytes: 7
+<< "'";
+
+198:64-198:65
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eadf9421_721d806d
+Bytes: 7
+<< "'";
+
+360:8-360:18
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_0e2ecfc5
+Bytes: 53
+No PLOG? You could move errno before strerror(errno).
+
+366:8-366:11
+Tue Aug 04 03:48:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6acc847d_0bcde5a6
+Bytes: 5
+Same.
+

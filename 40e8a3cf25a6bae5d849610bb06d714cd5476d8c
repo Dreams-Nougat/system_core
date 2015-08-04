@@ -26,6 +26,14 @@ UUID: 6acc847d_a8cb1fc5
 Bytes: 91
 As we are changing the headers, should we take the opportunity to sort this alphabetically?
 
+64
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6acc847d_a8cb1fc5
+UUID: eadf9421_2571edd1
+Bytes: 4
+Done
+
 164
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -191,12 +199,28 @@ UUID: cadad034_8332c278
 Bytes: 25
 { shouldnt be on new line
 
+45
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_8332c278
+UUID: eadf9421_c5520935
+Bytes: 4
+Done
+
 60
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eadf9421_92284cb8
 Bytes: 44
 { shouldnt be on new line...all through file
+
+60
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_92284cb8
+UUID: 2ad60c0d_f48a609f
+Bytes: 4
+Done
 
 71:4-71:27
 Tue Aug 04 03:35:08 2015 +0000
@@ -222,6 +246,14 @@ This method seems not clear. I am not sure changing its name can make it better.
 OnKilled?
 Reap?
 
+87:0-87:20
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_3955d7d1
+UUID: 2ad60c0d_b44618d6
+Bytes: 72
+I think Reap() helps clarify.  What do you want changed to help clarify?
+
 103:8-107:15
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -229,12 +261,34 @@ UUID: 4acfc072_30a4d6be
 Bytes: 380
 shall we move this out of this member function? This piece of code is not likely to appear in a member function, especially the setting of an global variable. If we want remove this, at least we can kick it off to wait_for_one_process(). To do this, you can export another member function IsExec(). Although I think a better idea would be having a separate class like ExecCommand.
 
+103:8-107:15
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4acfc072_30a4d6be
+UUID: cadad034_6c1a0330
+Bytes: 525
+I need to think about this.  I agree it's not clean, and Lee has an issues with RemoveService below as well.
+
+Are you suggesting a separate ExecCommand class that inherits Service and provides the additional functionality when SVC_EXEC is set?  waiting_for_exec can be a static variable within it?
+
+Alternatively, this can return a value to wait_for_one_process() that indicates it's an exec process and needs to be deleted.  Similarly, the setting of wait_for_exec can be set to true within do_exec() as you mentioned below.
+
 412:12-412:71
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2ad60c0d_8954a1d3
 Bytes: 139
 Changing ENV here is a little tricky. will it be more clear if we create a local std::vector<char*> env here, and copy from the global ENV?
+
+412:12-412:71
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2ad60c0d_8954a1d3
+UUID: 8a0ff877_eccb7fb2
+Bytes: 270
+This happens after fork() so it shouldn't be tricky.  It's copied directly from what service_start() in init.cpp did previously.
+
+I do however want to clean up the global ENV in general, but believe that's best left for a future change, would you agree to wait for that?
 
 457
 Tue Aug 04 03:35:08 2015 +0000
@@ -258,6 +312,14 @@ UUID: ca157084_b9a7073f
 Bytes: 31
 not necessary, for performance?
 
+496:8-496:35
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_b9a7073f
+UUID: aa14bc88_446c23ae
+Bytes: 107
+Yes; should it be removed?  I don't see anything being hurt by having it, even if it's seen to be premature
+
 507:12-507:64
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -272,12 +334,28 @@ UUID: 8a0ff877_ec7a5f95
 Bytes: 33
 why not combining the two execve?
 
+512:12-512:70
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a0ff877_ec7a5f95
+UUID: 8a0ff877_b7eef0f8
+Bytes: 4
+Done
+
 527:0-532:5
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eadf9421_78ae419e
 Bytes: 27
 move this out to do_exec()?
+
+527:0-532:5
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_78ae419e
+UUID: aa14bc88_c462d37e
+Bytes: 77
+Potentially; see the comment above where waiting_for_exec is also written to.
 
 717:67-717:77
 Tue Aug 04 03:35:08 2015 +0000
@@ -361,6 +439,16 @@ UUID: 0ad9483e_4ee0db09
 Bytes: 112
 why need friend? It seems the arguments for Service::Service() are not enough, and DumpState() should be public.
 
+63:4-63:26
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_4ee0db09
+UUID: aa14bc88_e466efc7
+Bytes: 348
+Why is it a problem that it's a friend?  From the C++ style guide, "A common use of friend is to have a FooBuilder class be a friend of Foo so that it can construct the inner state of Foo correctly, without exposing this state to the world."  
+
+I think it's much less complex to have this friend relationship without sacrificing much encapsulation.
+
 78
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -402,6 +490,14 @@ Bytes: 190
 use std::vector<SocketInfo> and std::vector<ServiceEnvironmentInfo>, so no need to remember deleting them?
 You can add constructor with no arguments in SocketInfo and ServiceEnvironmentInfo.
 
+107:4-108:50
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_010e9dec
+UUID: 6acc847d_7cd5592e
+Bytes: 4
+Done
+
 110
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -423,6 +519,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0ad9483e_6ebcbf06
 Bytes: 37
 use std::vector<std::string> instead?
+
+112:4-112:46
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_6ebcbf06
+UUID: ca157084_34331e83
+Bytes: 4
+Done
 
 113
 Tue Aug 04 03:35:08 2015 +0000
@@ -466,12 +570,28 @@ ForEachService?
 ForEachServiceInClass?
 ForEachServiceWithFlags?
 
+133:13-133:30
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_6d14c1d3
+UUID: ca157084_1438a259
+Bytes: 4
+Done
+
 146:9-146:18
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0ad9483e_93868cef
 Bytes: 12
 IsValidName?
+
+146:9-146:18
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_93868cef
+UUID: aa14bc88_c403f3c5
+Bytes: 4
+Done
 
 148
 Tue Aug 04 03:35:08 2015 +0000
@@ -494,4 +614,12 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2ad60c0d_e9a1ada9
 Bytes: 9
 services_
+
+149:26-149:39
+Tue Aug 04 20:24:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2ad60c0d_e9a1ada9
+UUID: 6acc847d_dcf025d2
+Bytes: 4
+Done
 

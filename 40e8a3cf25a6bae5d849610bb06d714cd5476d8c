@@ -9,6 +9,14 @@ UUID: 8a0ff877_26d8189f
 Bytes: 120
 I can see you're keeping with the existing functionality but should this return failure if the service can not be found?
 
+556
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a0ff877_26d8189f
+UUID: aae91cd1_3000503e
+Bytes: 4
+Done
+
 File: init/init.cpp
 
 64
@@ -25,12 +33,28 @@ UUID: aae91cd1_c2b846c1
 Bytes: 59
 msg_start uses std::string. Be consistent throughout these.
 
+164
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_c2b846c1
+UUID: 0ad9483e_33b4e070
+Bytes: 4
+Done
+
 175
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6acc847d_48061394
 Bytes: 18
 const std::string&
+
+175
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6acc847d_48061394
+UUID: aa14bc88_017b3d9b
+Bytes: 4
+Done
 
 File: init/init_parser.cpp
 
@@ -41,12 +65,28 @@ UUID: eadf9421_c755b44d
 Bytes: 120
 Should we just use the log level inside DumpState() to control this logging? if (false) looks strange in production code
 
+81
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_c755b44d
+UUID: aa14bc88_21ff5975
+Bytes: 4
+Done
+
 414:15-414:16
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4acfc072_4acd275c
 Bytes: 7
 nullptr
+
+414:15-414:16
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4acfc072_4acd275c
+UUID: 6acc847d_36393090
+Bytes: 4
+Done
 
 434
 Tue Aug 04 03:35:08 2015 +0000
@@ -55,12 +95,30 @@ UUID: ca157084_eba40503
 Bytes: 11
 static_cast
 
+434
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_eba40503
+UUID: 8a0ff877_0ca9bb94
+Bytes: 4
+Done
+
 463
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca157084_8b6c712a
 Bytes: 63
 do you need to ensure args.size > 0 or is that always the case?
+
+463
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_8b6c712a
+UUID: 6acc847d_d629e439
+Bytes: 181
+It's always the case.
+
+I plan to get rid of this function (well the lookup_keyword function) in a later change, so I'm not too worried about future proofing this with another check.
 
 469
 Tue Aug 04 03:35:08 2015 +0000
@@ -69,12 +127,28 @@ UUID: aae91cd1_62a85260
 Bytes: 66
 maybe have kw_nargs return size_t and avoid the signness problems?
 
+469
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_62a85260
+UUID: 6acc847d_f626e868
+Bytes: 4
+Done
+
 487
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eadf9421_d2c2d479
 Bytes: 11
 static_cast
+
+487
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_d2c2d479
+UUID: 6acc847d_16242c5f
+Bytes: 4
+Done
 
 File: init/init_parser.h
 
@@ -85,6 +159,14 @@ UUID: eadf9421_476a840a
 Bytes: 24
 s/act/action more clear?
 
+28
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_476a840a
+UUID: 4acfc072_30c8564d
+Bytes: 4
+Done
+
 File: init/service.cpp
 
 39:44-40:81
@@ -93,6 +175,14 @@ Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cadad034_0325d233
 Bytes: 12
 c++ comments
+
+39:44-40:81
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_0325d233
+UUID: aae91cd1_70601801
+Bytes: 4
+Done
 
 45
 Tue Aug 04 03:35:08 2015 +0000
@@ -115,12 +205,28 @@ UUID: cadad034_e340e6ba
 Bytes: 22
 if (flags_ & SVC_EXEC)
 
+71:4-71:27
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_e340e6ba
+UUID: aae91cd1_f0e8a8ed
+Bytes: 125
+system/core/init/service.cpp:71:16: error: & has lower precedence than !=; != will be evaluated first [-Werror,-Wparentheses]
+
 457
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ca157084_0ee08f08
 Bytes: 16
 do we need this?
+
+457
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_0ee08f08
+UUID: aae91cd1_9065a412
+Bytes: 67
+Probably not and it's trivial to add back; I got rid of it for now.
 
 717:67-717:77
 Tue Aug 04 03:35:08 2015 +0000
@@ -129,12 +235,28 @@ UUID: cadad034_63fbf6ee
 Bytes: 95
 doing the increment in the sprintf is a bit sneaky :) I think its clearer/safer on its own line
 
+717:67-717:77
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_63fbf6ee
+UUID: 4acfc072_309e9645
+Bytes: 4
+Done
+
 819
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aa14bc88_eb3d2246
 Bytes: 91
 This deletes the pointer from the vector but doesnt free the object. maybe use unique_ptrs?
+
+819
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_eb3d2246
+UUID: 6acc847d_964e7c0e
+Bytes: 141
+I'll look into doing this with unique_ptr.  I only call this from one place and delete after, so it's safe now, but I agree it can be better.
 
 File: init/service.h
 
@@ -150,12 +272,28 @@ for new files do you use C++ comments?
 //
 //
 
+1
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eadf9421_3200583e
+UUID: aae91cd1_902844b8
+Bytes: 116
+I figured I'd just copy over the copywrite from the other files though I could make this // if we think it's cleaner
+
 33
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aa14bc88_cb9026d7
 Bytes: 9
 long line
+
+33
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_cb9026d7
+UUID: 2ad60c0d_69767d81
+Bytes: 4
+Done
 
 78
 Tue Aug 04 03:35:08 2015 +0000
@@ -167,12 +305,28 @@ http://google-styleguide.googlecode.com/svn/trunk/cppguide.html#Function_Names
 
 Ignore me if thats not the android style
 
+78
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_ab8deaba
+UUID: aa14bc88_811d6d70
+Bytes: 4
+Done
+
 96:27-98:72
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6acc847d_689117aa
 Bytes: 12
 c++ comments
+
+96:27-98:72
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6acc847d_689117aa
+UUID: ca157084_594ed310
+Bytes: 4
+Done
 
 110
 Tue Aug 04 03:35:08 2015 +0000
@@ -181,12 +335,28 @@ UUID: aae91cd1_c25cc601
 Bytes: 12
 c++ comments
 
+110
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_c25cc601
+UUID: 2ad60c0d_0967b1c5
+Bytes: 4
+Done
+
 113
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0ad9483e_e8fd27a7
 Bytes: 12
 c++ comments
+
+113
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_e8fd27a7
+UUID: 2ad60c0d_295555d1
+Bytes: 4
+Done
 
 115:4-116:19
 Tue Aug 04 03:35:08 2015 +0000
@@ -195,10 +365,26 @@ UUID: cadad034_e327063c
 Bytes: 12
 std::vector?
 
+115:4-116:19
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_e327063c
+UUID: ca157084_995fabbb
+Bytes: 158
+I have a TODO about this in services.cpp.  I want to do this change in a separate commit, since it changes keychords.cpp which isn't very related to Services.
+
 148
 Tue Aug 04 03:35:08 2015 +0000
 Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aae91cd1_e269c298
 Bytes: 11
 exec_count_
+
+148
+Tue Aug 04 17:49:14 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_e269c298
+UUID: 0ad9483e_53a2442b
+Bytes: 4
+Done
 

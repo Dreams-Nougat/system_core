@@ -9,6 +9,14 @@ UUID: 0ad9483e_53a32486
 Bytes: 64
 Nit: Looks like the rest of the comments here end with a period.
 
+292:25-292:30
+Tue Aug 04 17:04:01 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ad9483e_53a32486
+UUID: 4acfc072_f0fd0ea7
+Bytes: 4
+Done
+
 File: init/builtins.cpp
 
 483:8-483:10
@@ -18,6 +26,15 @@ UUID: cadad034_d119f4af
 Bytes: 44
 Nit: Make comments consistent (/* */ vs //)?
 
+483:8-483:10
+Tue Aug 04 17:04:01 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_d119f4af
+UUID: 6acc847d_56a31486
+Bytes: 102
+Change both comments to // style.
+For new code I've been changing everything to c++ style as I see it.
+
 File: init/init_parser.cpp
 
 92
@@ -26,4 +43,12 @@ Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aae91cd1_e5d54c64
 Bytes: 10
 whitespace
+
+92
+Tue Aug 04 17:04:01 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_e5d54c64
+UUID: 4acfc072_b01c66a1
+Bytes: 4
+Done
 

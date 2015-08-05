@@ -9,3 +9,11 @@ UUID: ca157084_117a6fde
 Bytes: 33
 Just a Q: why was this necessary?
 
+36:0-36:19
+Wed Aug 05 16:07:19 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca157084_117a6fde
+UUID: ea1a34b3_095a4dff
+Bytes: 298
+Oh, this was my trying to use c++ headers instead of C style headers... however, it does define bool true and false which is required for usages of bool in the file. Ie if someone removes a header that indirectly included bool, we shouldn't have any warnings on bool for something like on line 163.
+

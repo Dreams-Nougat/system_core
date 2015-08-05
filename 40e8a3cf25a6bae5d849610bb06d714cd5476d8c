@@ -281,6 +281,14 @@ UUID: cadad034_927bea64
 Bytes: 164
 How is this?  Admittedly it's not super clear what the return value is.  I could also remove the return type and have an IsExec() function like you suggest as well.
 
+103:8-107:15
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cadad034_927bea64
+UUID: eaab149c_5ef1d5d2
+Bytes: 57
+I think this is fine as Reap() is only used in one place.
+
 412:12-412:71
 Tue Aug 04 18:11:18 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -297,6 +305,14 @@ Bytes: 270
 This happens after fork() so it shouldn't be tricky.  It's copied directly from what service_start() in init.cpp did previously.
 
 I do however want to clean up the global ENV in general, but believe that's best left for a future change, would you agree to wait for that?
+
+412:12-412:71
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a0ff877_eccb7fb2
+UUID: 2ad60c0d_b51c52a1
+Bytes: 8
+I agree.
 
 457
 Tue Aug 04 03:35:08 2015 +0000
@@ -327,6 +343,14 @@ Parent: ca157084_b9a7073f
 UUID: aa14bc88_446c23ae
 Bytes: 107
 Yes; should it be removed?  I don't see anything being hurt by having it, even if it's seen to be premature
+
+496:8-496:35
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_446c23ae
+UUID: 0ad9483e_88865668
+Bytes: 92
+Of course you can keep it. But as here is not performance critical, I prefer to not keep it.
 
 507:12-507:64
 Tue Aug 04 18:11:18 2015 +0000

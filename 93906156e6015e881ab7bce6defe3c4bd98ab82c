@@ -1,0 +1,11 @@
+Revision: 93906156e6015e881ab7bce6defe3c4bd98ab82c
+Patch-set: 1
+File: adb/usb_osx.cpp
+
+365
+Wed Aug 05 17:43:02 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aac2fc54_54394cfc
+Bytes: 321
+I can't find a strerror equivalent for this that is available outside the kernel, but maybe leave a link to the docs in a comment (finding the doc wasn't as easy as you would hope): https://developer.apple.com/library/mac/documentation/DeviceDrivers/Conceptual/AccessingHardware/AH_Handling_Errors/AH_Handling_Errors.html
+

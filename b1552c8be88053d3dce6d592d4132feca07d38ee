@@ -9,6 +9,14 @@ UUID: 0aa5c8c6_bfd1f7fc
 Bytes: 128
 why disable the test? Although change the test will increase code lines in this commit, I thinks it helps to verity correctness.
 
+109:0-121:29
+Wed Aug 05 19:55:32 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0aa5c8c6_bfd1f7fc
+UUID: 4ac4207d_799b8749
+Bytes: 117
+I plan on re-enabling it in this commit.  It's been quicker to disable it while reworking the interface into service.
+
 File: init/init.cpp
 
 189:11-189:20
@@ -17,6 +25,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aae91cd1_e35f01ba
 Bytes: 41
 would be easier to understand if using ==
+
+189:11-189:20
+Wed Aug 05 19:55:32 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aae91cd1_e35f01ba
+UUID: 4ac4207d_39bcefa0
+Bytes: 4
+Done
 
 File: init/init_parser.cpp
 
@@ -27,10 +43,26 @@ UUID: aa14bc88_961f6a1d
 Bytes: 60
 you don't need std::, because you already include <stddef.h>
 
+67:4-67:15
+Wed Aug 05 19:55:32 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa14bc88_961f6a1d
+UUID: caa650d5_7d9b7749
+Bytes: 4
+Done
+
 470:56-470:58
 Wed Aug 05 19:13:28 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2aa28cbf_e0fec276
 Bytes: 3
 %zu
+
+470:56-470:58
+Wed Aug 05 19:55:32 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2aa28cbf_e0fec276
+UUID: 4ac4207d_19b92bb1
+Bytes: 4
+Done
 

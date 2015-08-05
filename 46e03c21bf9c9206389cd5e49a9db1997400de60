@@ -1,0 +1,84 @@
+Revision: 46e03c21bf9c9206389cd5e49a9db1997400de60
+Patch-set: 7
+File: init/devices.cpp
+
+842
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca71f01c_65da265f
+Bytes: 14
+Nit: long line
+
+844
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a9ac479_f266e8c7
+Bytes: 14
+Nit: long line
+
+File: init/init.cpp
+
+211
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a7d2ced_2892cb60
+Bytes: 18
+Wrong indentation.
+
+591
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aac2fc54_343e9078
+Bytes: 97
+Wrong indentation here (you're matching the existing bad indentation, but could you fix up both?)
+
+595
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a9ac479_92fe7c2b
+Bytes: 10
+Same here.
+
+900
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a83a41d_ca94c319
+Bytes: 140
+It wasn't obvious to me why we didn't do this for the host until I got to that file. Maybe put the #ifdef in InitLogging() rather than here?
+
+File: init/log.cpp
+
+74:22-74:29
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0aa788c0_cf269d69
+Bytes: 16
+reinterpret_cast
+
+File: init/ueventd.cpp
+
+54
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea76b411_66094e36
+Bytes: 24
+Came comment as init.cpp
+
+File: init/util.cpp
+
+146:8-146:9
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca71f01c_85972255
+Bytes: 11
+Extra space
+
+File: init/watchdogd.cpp
+
+34
+Wed Aug 05 18:20:36 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea76b411_66222eaa
+Bytes: 16
+Same as init.cpp
+

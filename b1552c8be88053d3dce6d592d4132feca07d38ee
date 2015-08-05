@@ -1,0 +1,36 @@
+Revision: b1552c8be88053d3dce6d592d4132feca07d38ee
+Patch-set: 18
+File: init/Android.mk
+
+109:0-121:29
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0aa5c8c6_bfd1f7fc
+Bytes: 128
+why disable the test? Although change the test will increase code lines in this commit, I thinks it helps to verity correctness.
+
+File: init/init.cpp
+
+189:11-189:20
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aae91cd1_e35f01ba
+Bytes: 41
+would be easier to understand if using ==
+
+File: init/init_parser.cpp
+
+67:4-67:15
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa14bc88_961f6a1d
+Bytes: 60
+you don't need std::, because you already include <stddef.h>
+
+470:56-470:58
+Wed Aug 05 19:13:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2aa28cbf_e0fec276
+Bytes: 3
+%zu
+

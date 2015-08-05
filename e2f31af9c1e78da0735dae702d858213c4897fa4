@@ -1,0 +1,11 @@
+Revision: e2f31af9c1e78da0735dae702d858213c4897fa4
+Patch-set: 9
+File: logd/main.cpp
+
+36:0-36:19
+Wed Aug 05 15:42:57 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca157084_117a6fde
+Bytes: 33
+Just a Q: why was this necessary?
+

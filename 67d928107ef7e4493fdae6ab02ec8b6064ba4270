@@ -9,3 +9,12 @@ UUID: 0ad9483e_683917fd
 Bytes: 70
 Or, the test could be put under #ifndef _WIN32 instead of deleting it.
 
+File: base/file_test.cpp
+
+86
+Thu Aug 06 23:31:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 270ba719_1829a5bd
+Bytes: 157
+this test uses ReadFileToString rather than ReadFully. but you could combine the second half of the ReadFully test with this, and read back "abc" from tf.fd.
+

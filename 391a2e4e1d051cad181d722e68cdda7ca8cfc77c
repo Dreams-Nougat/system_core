@@ -19,6 +19,16 @@ Do you know if it is just the install_listener that needs to above, or if any of
 
 I just moved this line above, and things seem to work fine..
 
+186
+Thu Aug 06 18:58:10 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2abb6cf3_d28024d7
+UUID: 0a06a8cf_401da49a
+Bytes: 290
+Probably those as well. The point it to make sure we get through all the initialization that can fail before sending OK, and those look like things that could fail.
+
+Maybe a better solution would be to open a pipe before forking the daemon and using that to send the okay instead of stderr.
+
 210
 Thu Aug 06 18:46:24 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

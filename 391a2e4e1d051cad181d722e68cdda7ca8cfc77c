@@ -1,0 +1,11 @@
+Revision: 391a2e4e1d051cad181d722e68cdda7ca8cfc77c
+Patch-set: 1
+File: adb/client/main.cpp
+
+210
+Thu Aug 06 18:46:24 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0abea8e2_abd9c16a
+Bytes: 68
+This isn't a particularly useful log message anyway. Just delete it.
+

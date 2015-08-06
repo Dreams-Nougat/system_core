@@ -1,0 +1,11 @@
+Revision: e9833425a49482bc8144faf43d4826efa5fa1381
+Patch-set: 1
+File: init/init_parser.cpp
+
+321
+Thu Aug 06 20:53:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2abb6cf3_0dae81ee
+Bytes: 85
+don't we still want a TODO? this is still pretty gross, with a non-const std::string.
+

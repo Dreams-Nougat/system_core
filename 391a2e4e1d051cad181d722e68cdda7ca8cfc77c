@@ -2,6 +2,13 @@ Revision: 391a2e4e1d051cad181d722e68cdda7ca8cfc77c
 Patch-set: 1
 File: adb/client/main.cpp
 
+186
+Thu Aug 06 18:47:49 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a09e4dc_e08af66a
+Bytes: 83
+Oh, except I think this was intentionally above the OK so we'd know we passed this.
+
 210
 Thu Aug 06 18:46:24 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

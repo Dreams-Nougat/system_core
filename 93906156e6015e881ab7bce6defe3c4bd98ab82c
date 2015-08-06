@@ -9,3 +9,11 @@ UUID: aac2fc54_54394cfc
 Bytes: 321
 I can't find a strerror equivalent for this that is available outside the kernel, but maybe leave a link to the docs in a comment (finding the doc wasn't as easy as you would hope): https://developer.apple.com/library/mac/documentation/DeviceDrivers/Conceptual/AccessingHardware/AH_Handling_Errors/AH_Handling_Errors.html
 
+365
+Thu Aug 06 17:48:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aac2fc54_54394cfc
+UUID: 4a0c20ee_bc094dbc
+Bytes: 4
+Done
+

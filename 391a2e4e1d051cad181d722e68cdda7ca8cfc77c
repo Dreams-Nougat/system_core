@@ -29,6 +29,14 @@ Probably those as well. The point it to make sure we get through all the initial
 
 Maybe a better solution would be to open a pipe before forking the daemon and using that to send the okay instead of stderr.
 
+186
+Thu Aug 06 19:27:31 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a06a8cf_401da49a
+UUID: 2abb6cf3_12333c83
+Bytes: 125
+That makes sense, except there is an exec after the fork, so would the pipe fd have to be transferred via a command line arg?
+
 210
 Thu Aug 06 18:46:24 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,16 @@ UUID: 6a09e4dc_e08af66a
 Bytes: 83
 Oh, except I think this was intentionally above the OK so we'd know we passed this.
 
+186
+Thu Aug 06 18:55:28 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a09e4dc_e08af66a
+UUID: 2abb6cf3_d28024d7
+Bytes: 203
+Do you know if it is just the install_listener that needs to above, or if any of the usb_init/local_init/adb_auth_init also need to be above?
+
+I just moved this line above, and things seem to work fine..
+
 210
 Thu Aug 06 18:46:24 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

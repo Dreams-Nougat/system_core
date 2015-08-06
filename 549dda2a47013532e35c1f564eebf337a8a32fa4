@@ -13,6 +13,14 @@ I think I'd rather do this with explicit options. i.e.
 
 No need to implement anything but replace for now.
 
+176
+Thu Aug 06 02:03:34 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0aa788c0_6fe77159
+UUID: eaa1540d_8ea87b92
+Bytes: 4
+Done
+
 File: init/perfboot.py
 
 411:24-411:34
@@ -22,12 +30,28 @@ UUID: 6a9ac479_32b95067
 Bytes: 15
 Nit: --apk-dir?
 
+411:24-411:34
+Thu Aug 06 02:03:34 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a9ac479_32b95067
+UUID: 2abb6cf3_41fe88a3
+Bytes: 4
+Done
+
 416:25-416:31
 Wed Aug 05 18:38:31 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: aac2fc54_b44380c5
 Bytes: 12
 nit: apk_dir
+
+416:25-416:31
+Thu Aug 06 02:03:34 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aac2fc54_b44380c5
+UUID: 2abb6cf3_c1bbb80d
+Bytes: 4
+Done
 
 418
 Wed Aug 05 18:38:31 2015 +0000
@@ -37,4 +61,12 @@ Bytes: 165
 The following will handle the listdir on L417, the check on L420, and the os.path.join on L423 in one call:
 
     for apk in glob.glob(os.path.join(apkdir, '*.apk')):
+
+418
+Thu Aug 06 02:03:34 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aac2fc54_7432c87b
+UUID: ea1cf420_763190f2
+Bytes: 4
+Done
 

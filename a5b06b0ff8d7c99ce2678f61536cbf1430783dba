@@ -9,3 +9,15 @@ UUID: 07b863a5_072a9603
 Bytes: 34
 should this be a call to narrow()?
 
+600
+Fri Aug 07 23:51:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07b863a5_072a9603
+UUID: 27b567ac_0bb141fb
+Bytes: 644
+Good question. This is old code, so I was not inclined to mess with it, plus the reality is that in practice, the string returned is all ASCII, so there is no big runtime benefit to changing it. It would only be for code readability/maintainability.
+
+If you want to improve this for readability/maintainability, I'd vote to keep the string wide in the various data structures to reduce conversions, allocations, etc. in the common case (especially since this code is Windows-only). Probably the only time we'd need to narrow is for the uncommon case of D() logging.
+
+What do you think? Agree/disagree? Want that in this change or in a separate?
+

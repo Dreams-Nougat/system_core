@@ -1,0 +1,11 @@
+Revision: 1b7d0bdee8357bc0bad50f0e4aa37a39658bcb73
+Patch-set: 1
+File: crash_reporter/crash_collector.cc
+
+162:42-162:45
+Fri Aug 07 21:31:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07df83f3_0f4625fb
+Bytes: 5
+typo?
+

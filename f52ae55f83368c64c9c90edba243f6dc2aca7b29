@@ -1,0 +1,18 @@
+Revision: f52ae55f83368c64c9c90edba243f6dc2aca7b29
+Patch-set: 22
+File: init/init.h
+
+27
+Fri Aug 07 02:53:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea26b49b_0cc67b8f
+Bytes: 53
+(i'm assuming this is already on your TODO list :-) )
+
+30
+Fri Aug 07 02:53:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e7fb4f32_04c5ba83
+Bytes: 23
+_more_ exposed globals?
+

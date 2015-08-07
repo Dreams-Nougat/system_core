@@ -9,6 +9,14 @@ UUID: ea26b49b_5ae905ef
 Bytes: 157
 Should this still be "metrics/c_metrics_library.h" since that file was moved to a metrics subfolder of include:  metrics/include/metrics/c_metrics_library.h?
 
+13:10-13:29
+Fri Aug 07 20:45:29 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea26b49b_5ae905ef
+UUID: e780afc6_56c114fa
+Bytes: 4
+Done
+
 File: metrics/uploader/metrics_log_base.h
 
 16:10-16:30
@@ -17,6 +25,14 @@ Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 676d9fec_7a2f59c5
 Bytes: 375
 I'm not too familiar with the proto header generation... does it actually generate the headers in /system/core/metrics/system/core/metrics/uploader/proto/*?  If so, that seems... redundant and unnecessarily deep path.  Some of the other headers seem to use "uploader/proto/<file>.pb.h" as the include path, which I'm guessing would be the better and more consistent use here.
+
+16:10-16:30
+Fri Aug 07 20:45:29 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 676d9fec_7a2f59c5
+UUID: 076a23d9_576fcca5
+Bytes: 4
+done
 
 File: metrics/uploader/proto/chrome_user_metrics_extension.proto
 

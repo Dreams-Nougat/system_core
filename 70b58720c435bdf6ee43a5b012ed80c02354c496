@@ -109,6 +109,14 @@ Classes that implement ParserSectionHandler would need to keep their own state a
 
 This also makes the interface cleaner on the Action/Service side, since there will always be a single owner of the pointer, which isn't the case right now.
 
+31
+Fri Aug 07 17:54:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e7fb4f32_87566cd9
+UUID: e7fb4f32_2722f861
+Bytes: 46
+sgtm. (and more like typical XML equivalents.)
+
 File: init/util.cpp
 
 107

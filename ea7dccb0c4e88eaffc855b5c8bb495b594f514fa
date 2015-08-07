@@ -1,0 +1,11 @@
+Revision: ea7dccb0c4e88eaffc855b5c8bb495b594f514fa
+Patch-set: 1
+File: adb/transport.cpp
+
+243:8-243:21
+Fri Aug 07 23:13:36 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47333b20_b5f8b83e
+Bytes: 68
+umm, this should be above the restart label to even have any effect!
+

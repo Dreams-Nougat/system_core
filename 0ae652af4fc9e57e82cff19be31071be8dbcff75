@@ -1,0 +1,29 @@
+Revision: 0ae652af4fc9e57e82cff19be31071be8dbcff75
+Patch-set: 2
+File: metrics/metrics_library_test.cc
+
+13:10-13:29
+Fri Aug 07 19:52:05 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea26b49b_5ae905ef
+Bytes: 157
+Should this still be "metrics/c_metrics_library.h" since that file was moved to a metrics subfolder of include:  metrics/include/metrics/c_metrics_library.h?
+
+File: metrics/uploader/metrics_log_base.h
+
+16:10-16:30
+Fri Aug 07 19:52:05 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 676d9fec_7a2f59c5
+Bytes: 375
+I'm not too familiar with the proto header generation... does it actually generate the headers in /system/core/metrics/system/core/metrics/uploader/proto/*?  If so, that seems... redundant and unnecessarily deep path.  Some of the other headers seem to use "uploader/proto/<file>.pb.h" as the include path, which I'm guessing would be the better and more consistent use here.
+
+File: metrics/uploader/proto/chrome_user_metrics_extension.proto
+
+17:8-17:27
+Fri Aug 07 19:52:05 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47709bc3_99cefba6
+Bytes: 87
+Same question here, regarding "system/core/metrics" as part of the include lookup path.
+

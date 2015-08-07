@@ -18,3 +18,11 @@ UUID: 270ba719_1829a5bd
 Bytes: 157
 this test uses ReadFileToString rather than ReadFully. but you could combine the second half of the ReadFully test with this, and read back "abc" from tf.fd.
 
+86
+Fri Aug 07 01:10:35 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 270ba719_1829a5bd
+UUID: e7fb4f32_613fd073
+Bytes: 4
+Done
+

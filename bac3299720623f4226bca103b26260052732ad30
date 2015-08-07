@@ -1,0 +1,11 @@
+Revision: bac3299720623f4226bca103b26260052732ad30
+Patch-set: 23
+File: init/service.cpp
+
+546:36-546:37
+Fri Aug 07 17:34:06 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e7fb4f32_c7dfd4f8
+Bytes: 22
+Last minute bug catch.
+

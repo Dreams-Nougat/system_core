@@ -1,0 +1,11 @@
+Revision: e1101677eabaaddc2a60c6456cce1fd5e38f5b4e
+Base-for-patch-set: 5
+File: adb/client/main.cpp
+
+207:16-207:27
+Fri Aug 07 18:25:37 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea26b49b_4fcce5cb
+Bytes: 77
+now that we use a different fd, this line can probably stay in if necessary..
+

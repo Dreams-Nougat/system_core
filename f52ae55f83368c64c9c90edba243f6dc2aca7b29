@@ -9,10 +9,35 @@ UUID: ea26b49b_0cc67b8f
 Bytes: 53
 (i'm assuming this is already on your TODO list :-) )
 
+27
+Fri Aug 07 17:34:06 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea26b49b_0cc67b8f
+UUID: ea26b49b_cf80d5d7
+Bytes: 3
+Yes
+
 30
 Fri Aug 07 02:53:46 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e7fb4f32_04c5ba83
 Bytes: 23
 _more_ exposed globals?
+
+30
+Fri Aug 07 17:34:06 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e7fb4f32_04c5ba83
+UUID: 67111f42_00cfead6
+Bytes: 100
+Also on the list of things to clean up.  I don't want to make this commit touch too too many things.
+
+File: init/service.h
+
+52:4-52:9
+Fri Aug 07 17:34:06 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 070ea328_3ae57d52
+Bytes: 120
+const string = not move constructible.  Better to keep the class move constructible than try to enforce this const-ness?
 

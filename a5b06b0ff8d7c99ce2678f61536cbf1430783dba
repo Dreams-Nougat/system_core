@@ -1,0 +1,11 @@
+Revision: a5b06b0ff8d7c99ce2678f61536cbf1430783dba
+Patch-set: 3
+File: adb/usb_windows.cpp
+
+600
+Fri Aug 07 23:16:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07b863a5_072a9603
+Bytes: 34
+should this be a call to narrow()?
+

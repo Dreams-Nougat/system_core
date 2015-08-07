@@ -1,0 +1,11 @@
+Revision: 797348829ef0c1ff018b54066b56a4f2a423bebf
+Patch-set: 3
+File: init/init_parser.cpp
+
+319:4-319:43
+Fri Aug 07 23:15:30 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87a3737f_43cba64d
+Bytes: 190
+why not keeping it in a std::string, using like &s[0]? It doesn't matter even if you will change it. You can also store it in a std::vector<char>. Then you don't need to remember freeing it.
+

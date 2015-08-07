@@ -1,0 +1,20 @@
+Revision: 846318c0f4e53e94fb496fcfc864a8b60c4512fc
+Patch-set: 5
+File: adb/client/main.cpp
+
+166
+Fri Aug 07 18:27:01 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 070ea328_bdc8674b
+Bytes: 106
+Spencer: should move this to where the pipe is created after you've fixed the windows side of this change.
+
+File: adb/commandline.cpp
+
+1005:27-1005:33
+Fri Aug 07 18:27:01 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67111f42_e3940017
+Bytes: 21
+No space, static_cast
+

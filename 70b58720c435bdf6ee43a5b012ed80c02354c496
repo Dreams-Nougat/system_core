@@ -93,6 +93,22 @@ At least the way that Action and Service are developing, HandleSection() could b
 
 Otherwise, how else do you think we could do this?
 
+31
+Fri Aug 07 17:45:01 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a61b821_7c0a8d5d
+UUID: e7fb4f32_87566cd9
+Bytes: 532
+I had a thought about this - we can remove priv entirely if we have a HandleSectionEnd() or similarly named function here.  The interface would be:
+
+HandleSection()
+0-n of HandleSubCommand()
+HandleSectionEnd()
+
+Classes that implement ParserSectionHandler would need to keep their own state and would be limited to parsing each section sequentially, but that seems reasonable.
+
+This also makes the interface cleaner on the Action/Service side, since there will always be a single owner of the pointer, which isn't the case right now.
+
 File: init/util.cpp
 
 107

@@ -1,0 +1,20 @@
+Revision: 513c1a53d9a3bea3edf1a689b864eb369ade8f75
+Patch-set: 4
+File: metrics/uploader/system_profile_android.cc
+
+1:13-1:17
+Sat Aug 08 00:26:06 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67303f13_02bb2aaa
+Bytes: 9
+nit: 2015
+
+File: metrics/uploader/system_profile_android.h
+
+1:13-1:17
+Sat Aug 08 00:26:06 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67303f13_a2ad1e72
+Bytes: 10
+nit: 2015.
+

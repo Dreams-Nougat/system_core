@@ -1,0 +1,53 @@
+Revision: 5c398d2ce96150e94e596e959bfe2246b94de660
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:63-11:8
+Sat Aug 08 22:26:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7ceb7a1_94d62436
+Bytes: 432
+An alternative would be the following in sysdeps.h:
+
+#ifdef _WIN32
+typedef HANDLE NativeFd;
+const NativeFd kInvalidNativeFd = INVALID_HANDLE_VALUE;
+#else
+typedef int NativeFd;
+const NativeFd kInvalidNativeFd = -1;
+#endif
+
+But this would also require making adb.h #include sysdeps.h, plus minadbd would need to update its signature of adb_main, etc. Seems like a real pain. I actually prototyped this first, but it seemed more messy.
+
+13:31-13:50
+Sat Aug 08 22:26:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87c9b39e_f3d7b034
+Bytes: 427
+You may be wondering who uses this. I'm not sure, but my best guess is that maybe Intel does/used-to use this mode because it is the only way to pass -a to adb to get it to listen on all interfaces. See d7b33085117ccbb908a883f624cb1fe5495ee92a . Basically, -a is broken for adb start-server/server and I think only works for adb server nodaemon and adb server fork-server (which no one in their right mind should run manually).
+
+File: adb/adb.cpp
+
+658:8-658:18
+Sat Aug 08 22:26:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67e67f2a_f2d7a834
+Bytes: 106
+FYI, this whole function has some handle leaks that I hope to fixup with a ScopedHandle-style class later.
+
+File: adb/client/main.cpp
+
+167:13-167:22
+Sat Aug 08 22:26:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47e97bf9_91d61c36
+Bytes: 374
+I found it lower-impact to just call WriteFile(). The alternative seems messier: call the esoteric _open_osfhandle() to make a fd that works with android::base::WriteStringToFd() and unix_close(). Plus, then we'd have to be careful if WriteStringToFd() is modified in the future to work with fds from sysdeps. Just way simpler to just WriteFile here, IMO. I'm open to input.
+
+180:8-180:12
+Sat Aug 08 22:26:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47e97bf9_71ecd804
+Bytes: 195
+This really makes no difference for unix since unix_close and adb_close are the same there, just changing this to follow the spec (unix_close for fds from the OS, adb_close for fds from sysdeps).
+

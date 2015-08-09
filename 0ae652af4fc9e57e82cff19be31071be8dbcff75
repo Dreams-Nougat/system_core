@@ -1,5 +1,14 @@
 Revision: 0ae652af4fc9e57e82cff19be31071be8dbcff75
 Patch-set: 2
+File: metrics/metrics_daemon.h
+
+20
+Sun Aug 09 17:14:31 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7ceb7a1_347cf08f
+Bytes: 197
+Everytime I see this #include, I do a double take. Perhaps we should rename the top-level directory for metrics to be metricsd/metrics_service/etc to disambiguate the path for the exported headers.
+
 File: metrics/metrics_library_test.cc
 
 13:10-13:29

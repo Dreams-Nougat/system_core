@@ -9,7 +9,22 @@ UUID: 67303f13_02bb2aaa
 Bytes: 9
 nit: 2015
 
+1:13-1:17
+Sun Aug 09 17:27:59 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 67303f13_02bb2aaa
+UUID: a7ceb7a1_1479f49f
+Bytes: 15
++ AOSP license.
+
 File: metrics/uploader/system_profile_android.h
+
+0
+Sun Aug 09 17:27:59 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07bea3e2_37a518b6
+Bytes: 184
+We are not planning to support other system profiles, right? So why not just modify the system_profile_cache and make it Android-specific? Looks like you are duplicating that anyway...
 
 1:13-1:17
 Sat Aug 08 00:26:06 2015 +0000
@@ -17,4 +32,12 @@ Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 67303f13_a2ad1e72
 Bytes: 10
 nit: 2015.
+
+1:13-1:17
+Sun Aug 09 17:27:59 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 67303f13_a2ad1e72
+UUID: c7cf2b9d_d5ab7c8f
+Bytes: 22
+Also use AOSP license.
 

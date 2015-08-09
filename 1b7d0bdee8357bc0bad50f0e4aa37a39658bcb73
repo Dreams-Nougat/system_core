@@ -1,5 +1,21 @@
 Revision: 1b7d0bdee8357bc0bad50f0e4aa37a39658bcb73
 Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Sun Aug 09 17:38:00 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c7cf2b9d_95b504e9
+Bytes: 73
+can you summarize the big things that were removed in the commit message?
+
+9
+Sun Aug 09 17:38:00 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47c41b7d_591b23a7
+Bytes: 112
+I presume the removal of CrOS bits is because they are not needed when running on Android - should clarify that.
+
 File: crash_reporter/crash_collector.cc
 
 162:42-162:45

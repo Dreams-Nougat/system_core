@@ -1,0 +1,20 @@
+Revision: f43d09fc47a20039da2442092341d2cbb51e91b7
+Patch-set: 4
+File: metrics/metrics_daemon.cc
+
+288
+Sun Aug 09 17:22:30 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e7d42f30_f68d6041
+Bytes: 103
+let's just delort this instead of commenting it out. File bugs for things we'd eventually want back in.
+
+File: metrics/metrics_daemon_main.cc
+
+24
+Sun Aug 09 17:22:30 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07bea3e2_57988c81
+Bytes: 175
+I would prefer if you just deleted instead of commenting these out. For cases where we'd want to have that functionality be present on Android as well, let's file bugs for it.
+

@@ -51,3 +51,12 @@ UUID: 47e97bf9_71ecd804
 Bytes: 195
 This really makes no difference for unix since unix_close and adb_close are the same there, just changing this to follow the spec (unix_close for fds from the OS, adb_close for fds from sysdeps).
 
+File: adb/commandline.cpp
+
+1087:16-1087:25
+Sun Aug 09 02:33:18 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67e67f2a_b20c807b
+Bytes: 23
+Thanks for fixing this!
+

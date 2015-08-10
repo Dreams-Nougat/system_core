@@ -1,0 +1,20 @@
+Revision: 0c8151794ae7db52c96427b43857e7c25fdb6141
+Patch-set: 5
+File: /COMMIT_MSG
+
+10
+Mon Aug 10 21:37:09 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07bea3e2_60be281c
+Bytes: 25
+s/measures/measurements/?
+
+12
+Mon Aug 10 21:37:09 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47e97bf9_5ad209cb
+Bytes: 131
+rephrase this last part of this sentence
+
+"be sure that a new metric was added properly until the changes reached a product device"
+

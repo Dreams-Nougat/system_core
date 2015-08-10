@@ -1,0 +1,11 @@
+Revision: ed6ca6f8c69745a17499e38e8d6a6554802e100a
+Patch-set: 9
+File: metricsd/Android.mk
+
+86:0-86:18
+Mon Aug 10 23:00:20 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c7cf2b9d_de6a790c
+Bytes: 109
+I did not order this one alphabetically as it needs to be defined before we call local-generated-sources-dir.
+

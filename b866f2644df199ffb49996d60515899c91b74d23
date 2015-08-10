@@ -1,0 +1,12 @@
+Revision: b866f2644df199ffb49996d60515899c91b74d23
+Patch-set: 2
+File: rootdir/Android.mk
+
+49:0-49:49
+Mon Aug 10 17:53:51 2015 +0000
+Author: Ying Wang <1003981@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7ceb7a1_ba0c697b
+Bytes: 214
+This is not good.
+You should define asan.options as a separate module using $(BUILD_SYSTEM)/base_rules.mk like this init.environ.rc, and then have init.environ.rc depend on asan.options with LOCAL_REQUIRED_MODULES.
+

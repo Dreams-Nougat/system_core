@@ -9,3 +9,13 @@ UUID: 87a3737f_43cba64d
 Bytes: 190
 why not keeping it in a std::string, using like &s[0]? It doesn't matter even if you will change it. You can also store it in a std::vector<char>. Then you don't need to remember freeing it.
 
+319:4-319:43
+Mon Aug 10 17:29:51 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87a3737f_43cba64d
+UUID: 67e67f2a_b5190a83
+Bytes: 492
+Using &data[0] was my first idea, but we'd either need to drop const from the parameter list (and dirty the interface as Elliott commented), or use a const_cast<>, which is pretty ugly.  Besides, we probably shouldn't be making raw changes to a std::string in the first place.
+
+A std::vector<char> could have worked better here or wrapping the strdup() with std::unique_ptr, but hopefully we'll get rid of this copying once and for all with https://android-review.googlesource.com/#/c/162655/
+

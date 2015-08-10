@@ -9,6 +9,14 @@ UUID: 27b567ac_085f0747
 Bytes: 143
 If you add a LOCAL_EXPORT_C_INCLUDES_DIR to libpcrecpp, you should only need to include gtest (everything else would be exported automatically)
 
+26:27-31:31
+Mon Aug 10 09:53:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27b567ac_085f0747
+UUID: 67e67f2a_92cf3c26
+Bytes: 58
+Done.  https://android-review.googlesource.com/#/c/166000/
+
 41:0-41:28
 Fri Aug 07 21:38:07 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 076a23d9_9aa4a9bb
 Bytes: 58
 as you link against those target, you should not need this
 
+41:0-41:28
+Mon Aug 10 09:53:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 076a23d9_9aa4a9bb
+UUID: 07bea3e2_77603078
+Bytes: 4
+Done
+
 98:0-98:0
 Fri Aug 07 21:38:07 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 27b567ac_887217d3
 Bytes: 17
 nits: extra lines
+
+98:0-98:0
+Mon Aug 10 09:53:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27b567ac_887217d3
+UUID: 87c9b39e_53cc24df
+Bytes: 4
+Done
 

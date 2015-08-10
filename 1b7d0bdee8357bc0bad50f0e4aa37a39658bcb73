@@ -9,12 +9,28 @@ UUID: c7cf2b9d_95b504e9
 Bytes: 73
 can you summarize the big things that were removed in the commit message?
 
+7
+Mon Aug 10 09:48:59 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c7cf2b9d_95b504e9
+UUID: 67e67f2a_72d5f8b0
+Bytes: 4
+Done
+
 9
 Sun Aug 09 17:38:00 2015 +0000
 Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 47c41b7d_591b23a7
 Bytes: 112
 I presume the removal of CrOS bits is because they are not needed when running on Android - should clarify that.
+
+9
+Mon Aug 10 09:48:59 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 47c41b7d_591b23a7
+UUID: 47c41b7d_d973b38c
+Bytes: 4
+Done
 
 File: crash_reporter/crash_collector.cc
 
@@ -24,4 +40,12 @@ Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 07df83f3_0f4625fb
 Bytes: 5
 typo?
+
+162:42-162:45
+Mon Aug 10 09:48:59 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07df83f3_0f4625fb
+UUID: a7ceb7a1_742ee846
+Bytes: 4
+Done
 

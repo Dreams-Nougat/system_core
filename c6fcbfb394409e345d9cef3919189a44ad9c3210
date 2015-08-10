@@ -1,0 +1,25 @@
+Revision: c6fcbfb394409e345d9cef3919189a44ad9c3210
+Patch-set: 3
+File: /COMMIT_MSG
+
+1
+Mon Aug 10 18:01:55 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07bea3e2_9a9c09f1
+Bytes: 41
+NIT: commit message is wider than 80 cols
+
+16
+Mon Aug 10 18:01:55 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7ceb7a1_ba358901
+Bytes: 22
+s/seem to be able to//
+
+24
+Mon Aug 10 18:01:55 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 67e67f2a_1525765c
+Bytes: 136
+flex is under external? Instead of "Android's Flex Version", I would say "the version of flex in the tree" and also mention the version.
+

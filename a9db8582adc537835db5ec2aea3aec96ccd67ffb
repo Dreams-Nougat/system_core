@@ -9,6 +9,14 @@ UUID: e7d42f30_c5b064fa
 Bytes: 130
 nit: Here and below, could you split lists like this so that they're one element per line, similar to how you do the source files?
 
+40
+Mon Aug 10 23:00:20 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e7d42f30_c5b064fa
+UUID: e7d42f30_65d2b0cb
+Bytes: 4
+Done
+
 54
 Mon Aug 10 22:47:30 2015 +0000
 Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +30,12 @@ LOCAL_MODULE := libmetrics
 ... all the other variables in sorted order ...
 
 include $(BUILD_SHARED_LIBRARY)
+
+54
+Mon Aug 10 23:00:20 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07bea3e2_cb9755cb
+UUID: c7cf2b9d_5e70a9fc
+Bytes: 4
+Done
 

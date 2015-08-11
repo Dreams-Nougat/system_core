@@ -19,6 +19,14 @@ Yes, but that's still on the order of months away (I believe).
 
 We're also near bumping the minimum version up to Vista (which will be required for libc++ support), so we could just do that now and use a SRWLock here. AIUI they're more performant, and we don't need the recursive locking semantics here.
 
+14:2-14:45
+Tue Aug 11 23:20:23 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42489af_ed0bc52e
+UUID: c4f6494b_7db65779
+Bytes: 296
+Ah, so you're saying that a SRWLock is better than a critical section? Cool. That is new to me because most of my Win32 sync knowledge is from before SRWLock existed. But I can believe it, so let me know if you want me to change this to SRWLock or if you want to take care of it yourself. Thanks.
+
 23:2-23:39
 Tue Aug 11 23:06:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,16 @@ UUID: e4298d86_6e546f2b
 Bytes: 111
 This is a pointless change since I've been told that the new libcxx will have a real std::mutex implementation.
 
+14:2-14:45
+Tue Aug 11 23:15:22 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4298d86_6e546f2b
+UUID: c42489af_ed0bc52e
+Bytes: 303
+Yes, but that's still on the order of months away (I believe).
+
+We're also near bumping the minimum version up to Vista (which will be required for libc++ support), so we could just do that now and use a SRWLock here. AIUI they're more performant, and we don't need the recursive locking semantics here.
+
 23:2-23:39
 Tue Aug 11 23:06:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

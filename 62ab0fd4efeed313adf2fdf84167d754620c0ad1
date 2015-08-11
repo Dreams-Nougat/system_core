@@ -9,3 +9,13 @@ UUID: 645f5d28_8a6e6bf0
 Bytes: 19
 why is this plural?
 
+226:11-226:16
+Tue Aug 11 23:34:53 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 645f5d28_8a6e6bf0
+UUID: 44141933_d9745344
+Bytes: 547
+There is a 'size' for each buffer id, so these are part of the sizes array. The code used to have stats.sizes(id) at each point, optimization changed it to capture the value for the specific id in one var and then propagate rather than call the method for every usage. I have this habit of using the _same_ name of the optimized fetched structure element or method for the variable name that acts as its local placeholder; regardless of plurality or __purity__.
+
+This way at least I know I have made this a non-volatile placeholder for the method.
+

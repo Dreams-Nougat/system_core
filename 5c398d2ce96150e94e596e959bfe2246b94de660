@@ -43,6 +43,14 @@ UUID: c7cf2b9d_a47d6c59
 Bytes: 335
 It's your call. I think I started to prototype this and found that I had to change the strtol to strtoll, but only on 64-bit, change sprintf to %zd, cast at some point from intptr_t to int (for unix), change minadbd, etc. Basically, it was still a mess, so it didn't seem any better. But it's your codebase, so I'm open to suggestions.
 
+650
+Tue Aug 11 02:34:35 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c7cf2b9d_a47d6c59
+UUID: 47c41b7d_a892e3a9
+Bytes: 72
+yeah, that sounds no better. may as well leave it as it is for now then.
+
 658:8-658:18
 Sat Aug 08 22:26:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

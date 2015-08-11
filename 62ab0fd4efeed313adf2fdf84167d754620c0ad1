@@ -19,3 +19,11 @@ There is a 'size' for each buffer id, so these are part of the sizes array. The 
 
 This way at least I know I have made this a non-volatile placeholder for the method.
 
+226:11-226:16
+Tue Aug 11 23:37:03 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44141933_d9745344
+UUID: c42489af_2d51cde0
+Bytes: 202
+That's an interesting take. I'd usually do int (size/thisSize) = sizes(i); as you're taking only one of the elements. But I can see your point. No need to change if you already use this style elsewhere.
+

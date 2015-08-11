@@ -28,12 +28,26 @@ You may be wondering who uses this. I'm not sure, but my best guess is that mayb
 
 File: adb/adb.cpp
 
+650
+Tue Aug 11 01:38:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87c9b39e_e8f69784
+Bytes: 36
+should we just use intptr_t instead?
+
 658:8-658:18
 Sat Aug 08 22:26:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 67e67f2a_f2d7a834
 Bytes: 106
 FYI, this whole function has some handle leaks that I hope to fixup with a ScopedHandle-style class later.
+
+663
+Tue Aug 11 01:38:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87c9b39e_88e603d3
+Bytes: 155
+i'm regretting the name "--reply-fd" at this point, but i can't really think of a better name (other than having two different names for Unix and Windows).
 
 File: adb/client/main.cpp
 
@@ -43,6 +57,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 47e97bf9_91d61c36
 Bytes: 374
 I found it lower-impact to just call WriteFile(). The alternative seems messier: call the esoteric _open_osfhandle() to make a fd that works with android::base::WriteStringToFd() and unix_close(). Plus, then we'd have to be careful if WriteStringToFd() is modified in the future to work with fds from sysdeps. Just way simpler to just WriteFile here, IMO. I'm open to input.
+
+167:13-167:22
+Tue Aug 11 01:38:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 47e97bf9_91d61c36
+UUID: c7cf2b9d_8482700b
+Bytes: 5
+sgtm.
 
 180:8-180:12
 Sat Aug 08 22:26:04 2015 +0000

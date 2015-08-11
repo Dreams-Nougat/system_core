@@ -38,3 +38,11 @@ UUID: 645f5d28_8a79cba0
 Bytes: 387
 Yes that's what the change is saying. If we make that last case fatal, why not make the first case fatal too? That's my overall design question for you guys. I'm somewhat ambivlent. I think I modeled this after start_device_log() that just continues on if there is an error. But really I'm open to ideas. My gut just says to make everything during startup fatal, but I'm open to ideas...
 
+129:20-129:26
+Tue Aug 11 23:42:21 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 645f5d28_8a79cba0
+UUID: 64111d42_bac991bf
+Bytes: 66
+Personally, I'd prefer fatal, but enh/danalbert would know better.
+

@@ -1,0 +1,18 @@
+Revision: 57514ca1eaad22f038840e22930038c0817fd2b6
+Patch-set: 1
+File: /COMMIT_MSG
+
+14:2-14:45
+Tue Aug 11 23:06:56 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4298d86_6e546f2b
+Bytes: 111
+This is a pointless change since I've been told that the new libcxx will have a real std::mutex implementation.
+
+23:2-23:39
+Tue Aug 11 23:06:56 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a41eb557_14d9741e
+Bytes: 105
+I tested this and in the common success case, errno is not overwritten. So this is really 'just in case'.
+

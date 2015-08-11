@@ -1,0 +1,24 @@
+Revision: 2eae272c17c7473bd8058be28d287ae3d4d24ac0
+Patch-set: 1
+File: adb/client/main.cpp
+
+120:12-120:19
+Tue Aug 11 23:27:52 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04f5c13c_e2c08875
+Bytes: 30
+nit: remove, likewise line 128
+
+129:20-129:26
+Tue Aug 11 23:27:52 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_1a307d6e
+Bytes: 307
+What happens in this case? It seems like we are saying:
+
+ - if possible use /tmp/adb.log
+ - if that isn't possible, redirect to /dev/null
+ - if that isn't possible, then ?
+
+Seems like it should be fatal, but it looks like this will never happen since the previous version doesn't even check for that error..
+

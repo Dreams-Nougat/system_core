@@ -1,0 +1,25 @@
+Revision: bf7c605d87f87c03066c384cecb0f0c91aa31403
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+719:16-719:62
+Tue Aug 11 23:59:22 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a41eb557_f41b98fc
+Bytes: 95
+Output the addr & port from the structure in case we have some bug in resolution or conversion.
+
+847:37-847:53
+Tue Aug 11 23:59:22 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 645f5d28_8add4b01
+Bytes: 157
+I didn't use %s:%s because then the end-user might think that we have a bug where we try to DNS resolve example.org:123 with the port included. Too paranoid?
+
+872:21-872:52
+Tue Aug 11 23:59:22 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a41eb557_5436cc6f
+Bytes: 165
+Vista and later. But let's not get ahead of ourselves, if we're really Vista and later, we'll probably rewrite much of this function to begin with (see other TODOs).
+

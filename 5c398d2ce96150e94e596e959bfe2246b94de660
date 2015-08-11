@@ -35,6 +35,14 @@ UUID: 87c9b39e_e8f69784
 Bytes: 36
 should we just use intptr_t instead?
 
+650
+Tue Aug 11 02:32:56 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87c9b39e_e8f69784
+UUID: c7cf2b9d_a47d6c59
+Bytes: 335
+It's your call. I think I started to prototype this and found that I had to change the strtol to strtoll, but only on 64-bit, change sprintf to %zd, cast at some point from intptr_t to int (for unix), change minadbd, etc. Basically, it was still a mess, so it didn't seem any better. But it's your codebase, so I'm open to suggestions.
+
 658:8-658:18
 Sat Aug 08 22:26:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,6 +56,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 87c9b39e_88e603d3
 Bytes: 155
 i'm regretting the name "--reply-fd" at this point, but i can't really think of a better name (other than having two different names for Unix and Windows).
+
+663
+Tue Aug 11 02:32:56 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87c9b39e_88e603d3
+UUID: 67e67f2a_616080af
+Bytes: 491
+I wouldn't worry about the name too much since this is all internal anyway. BTW, I actually did investigate passing a C Runtime 'fd' on Windows between processes. It is possible, but would require switching from CreateProcess() to spawn() (a C Runtime wrapper on top of CreateProcess) and that would cause some problems with capturing stdout/stderr because of the way the C Runtime behaves with detached processes. Basically, it was just easier to pass raw Windows handles between processes.
 
 File: adb/client/main.cpp
 

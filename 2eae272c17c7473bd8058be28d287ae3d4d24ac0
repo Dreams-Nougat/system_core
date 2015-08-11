@@ -9,6 +9,14 @@ UUID: 04f5c13c_e2c08875
 Bytes: 30
 nit: remove, likewise line 128
 
+120:12-120:19
+Tue Aug 11 23:38:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04f5c13c_e2c08875
+UUID: c4f6494b_7d31b775
+Bytes: 4
+Done
+
 129:20-129:26
 Tue Aug 11 23:27:52 2015 +0000
 Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -21,4 +29,12 @@ What happens in this case? It seems like we are saying:
  - if that isn't possible, then ?
 
 Seems like it should be fatal, but it looks like this will never happen since the previous version doesn't even check for that error..
+
+129:20-129:26
+Tue Aug 11 23:38:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_1a307d6e
+UUID: 645f5d28_8a79cba0
+Bytes: 387
+Yes that's what the change is saying. If we make that last case fatal, why not make the first case fatal too? That's my overall design question for you guys. I'm somewhat ambivlent. I think I modeled this after start_device_log() that just continues on if there is an error. But really I'm open to ideas. My gut just says to make everything during startup fatal, but I'm open to ideas...
 

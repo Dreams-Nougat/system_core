@@ -9,3 +9,11 @@ UUID: 64111d42_3a1221e6
 Bytes: 72
 was this a fall through earlier? (seems wrong, but just want to confirm)
 
+97:8-97:21
+Tue Aug 11 23:38:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_3a1221e6
+UUID: 44141933_79642799
+Bytes: 292
+Yeah, I think it was falling through. The released adb doesn't even check the error from GetTempPath(), so this is a little bit better, but yeah the fall-through is a little scary. I think in practice that GetTempPath() never really fails. I think it is the least of our practical worries. :)
+

@@ -1,0 +1,11 @@
+Revision: 99c9ae83da26f0022f07bb96b1e02aea2629aae6
+Patch-set: 3
+File: adb/test_device.py
+
+171
+Wed Aug 12 17:55:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141933_425e084a
+Bytes: 189
+(i completely missed that this was what you were doing in the old version. i think this is much better. and hopefully we'll be able to kill the return status parsing cruft soon anyway :-) )
+

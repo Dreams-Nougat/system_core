@@ -23,3 +23,11 @@ UUID: 44141933_82f8a08a
 Bytes: 103
 It isn't clear to me what these are actually verifying. Won't these pass even if we're not using a pty?
 
+175
+Wed Aug 12 19:13:15 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44141933_82f8a08a
+UUID: 64367de0_789f99e7
+Bytes: 75
+Oh, never mind. I thought `[ -t 0 ]` did something else. This test is fine.
+

@@ -9,12 +9,28 @@ UUID: 64111d42_8012da15
 Bytes: 65
 We shouldn't be appending the return code for interactive shells.
 
+106
+Wed Aug 12 17:51:52 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_8012da15
+UUID: 046a21d9_97f6c450
+Bytes: 4
+Done
+
 115:39-115:41
 Wed Aug 12 16:56:32 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 64111d42_00fdaa2d
 Bytes: 58
 Use {} and .format(). It's what the rest of the file uses.
+
+115:39-115:41
+Wed Aug 12 17:51:52 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_00fdaa2d
+UUID: 44141933_ff4497d2
+Bytes: 4
+Done
 
 167
 Wed Aug 12 16:56:32 2015 +0000
@@ -23,10 +39,28 @@ UUID: 44141933_7f640799
 Bytes: 124
 Can't this just be `out.rpartition(self._RETURN_CODE_DELIMITER)`? I'm not sure why I didn't write that in the first place...
 
+167
+Wed Aug 12 17:51:52 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44141933_7f640799
+UUID: e4298d86_b76bca91
+Bytes: 37
+Yeah that does seem better, will fix.
+
 199:46-201:18
 Wed Aug 12 16:56:32 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 64111d42_e0a63644
 Bytes: 211
 Then it probably shouldn't be in this class. If we only need it for tests and shouldn't be used elsewhere, add it to the test. This file is actually part of an adb.py that I hope to package up and ship some day.
+
+199:46-201:18
+Wed Aug 12 17:51:52 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_e0a63644
+UUID: 64367de0_556c9e26
+Bytes: 289
+Makes sense, I'll revert most of these changes then and move logic into test_device.py directly.
+
+I'll keep the rpartition() change above since that seems cleaner than the regex logic but lmk if you would rather I just leave that alone as well since it doesn't change functionality at all.
 

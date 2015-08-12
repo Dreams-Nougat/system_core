@@ -9,3 +9,17 @@ UUID: 44141933_425e084a
 Bytes: 189
 (i completely missed that this was what you were doing in the old version. i think this is much better. and hopefully we'll be able to kill the return status parsing cruft soon anyway :-) )
 
+171
+Wed Aug 12 18:09:45 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4f6494b_23942e97
+Bytes: 210
+I think the right way to do this is to close(proc.stdin) (which would send an EOF) when you're done. I've never had to do this, but the docs/SO suggest that's correct: http://stackoverflow.com/a/17712430/632035
+
+175
+Wed Aug 12 18:09:45 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141933_82f8a08a
+Bytes: 103
+It isn't clear to me what these are actually verifying. Won't these pass even if we're not using a pty?
+

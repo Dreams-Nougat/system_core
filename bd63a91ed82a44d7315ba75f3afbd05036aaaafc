@@ -1,0 +1,11 @@
+Revision: bd63a91ed82a44d7315ba75f3afbd05036aaaafc
+Patch-set: 1
+File: adb/device.py
+
+161:0-163:67
+Wed Aug 12 15:35:29 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 645f5d28_1921b75d
+Bytes: 151
+Regexes seemed to be overkill here so I changed to rfind for simplicity/readability, but I'm happy to change it back if you think it was better before.
+

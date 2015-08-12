@@ -9,3 +9,11 @@ UUID: 64111d42_bd4aab78
 Bytes: 123
 not following this removal: you mention the callers print the errors, but i don't see local_name_to_fd() print any errors..
 
+235:8-235:14
+Wed Aug 12 00:32:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_bd4aab78
+UUID: a41eb557_d4577c51
+Bytes: 117
+I meant that the callers to install_listener() print the error that local_name_to_fd() returns to install_listener().
+

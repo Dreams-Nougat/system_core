@@ -1,0 +1,27 @@
+Revision: 4e97e331a6920a827c339c103ada55447168c096
+Patch-set: 1
+File: adb/adb_client.cpp
+
+254:30-254:64
+Wed Aug 12 00:17:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141933_5cdef152
+Bytes: 59
+Could instead make this fatal and return -1 here? Thoughts?
+
+File: adb/commandline.cpp
+
+1246:12-1246:55
+Wed Aug 12 00:17:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141933_7c02d54a
+Bytes: 158
+-2 was an error trying to make a connection to port 5037 (or specified port #). Should that output blank or this msg? Any concerns over the process exit code?
+
+1248:25-1248:27
+Wed Aug 12 00:17:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_bd718bd2
+Bytes: 158
+-1 is some other error, so that should definitely be output. But what process exit code should be returned? I have no opinion so I just used 2, but who knows?
+

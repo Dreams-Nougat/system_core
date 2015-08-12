@@ -9,3 +9,19 @@ UUID: 645f5d28_1921b75d
 Bytes: 151
 Regexes seemed to be overkill here so I changed to rfind for simplicity/readability, but I'm happy to change it back if you think it was better before.
 
+File: adb/services.cpp
+
+70
+Wed Aug 12 15:40:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64367de0_b5818aa0
+Bytes: 128
+would it make more sense to just move the decision into the code for "shell:" and always explicitly have to choose kPty or kRaw?
+
+412
+Wed Aug 12 15:40:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4f6494b_83c0a2f9
+Bytes: 38
+name can't actually be nullptr can it?
+

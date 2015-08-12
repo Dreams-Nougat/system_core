@@ -1,0 +1,32 @@
+Revision: b83e9641eb3a2cce38f42660a6e0d497c8b9b1e5
+Patch-set: 2
+File: adb/device.py
+
+106
+Wed Aug 12 16:56:32 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_8012da15
+Bytes: 65
+We shouldn't be appending the return code for interactive shells.
+
+115:39-115:41
+Wed Aug 12 16:56:32 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_00fdaa2d
+Bytes: 58
+Use {} and .format(). It's what the rest of the file uses.
+
+167
+Wed Aug 12 16:56:32 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141933_7f640799
+Bytes: 124
+Can't this just be `out.rpartition(self._RETURN_CODE_DELIMITER)`? I'm not sure why I didn't write that in the first place...
+
+199:46-201:18
+Wed Aug 12 16:56:32 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_e0a63644
+Bytes: 211
+Then it probably shouldn't be in this class. If we only need it for tests and shouldn't be used elsewhere, add it to the test. This file is actually part of an adb.py that I hope to package up and ship some day.
+

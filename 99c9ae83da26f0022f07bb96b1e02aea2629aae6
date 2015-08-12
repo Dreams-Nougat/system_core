@@ -16,6 +16,18 @@ UUID: c4f6494b_23942e97
 Bytes: 210
 I think the right way to do this is to close(proc.stdin) (which would send an EOF) when you're done. I've never had to do this, but the docs/SO suggest that's correct: http://stackoverflow.com/a/17712430/632035
 
+171
+Wed Aug 12 20:31:29 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4f6494b_23942e97
+UUID: 44141933_c2921829
+Bytes: 540
+I have a lot of notes typed up if you want details but this comment was turning into a novel :)
+
+The bottom line is that closing proc.stdin is not sufficient to end the session (proc.communicate() actually does close it already) because the close is never relayed to adbd, and properly sending EOF to adbd is *much* harder than explicitly sending an exit command.
+
+I'd be happy to discuss this further (either here or offline) if you'd like to pursue this, but if you aren't too particular I think the correct solution is to leave it as-is.
+
 175
 Wed Aug 12 18:09:45 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,4 +50,14 @@ Parent: 64367de0_789f99e7
 UUID: a41eb557_28cf7327
 Bytes: 118
 (might be worth adding a comment explaining why you didn't just use /system/bin/tty though. i'm assuming portability?)
+
+175
+Wed Aug 12 20:31:29 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a41eb557_28cf7327
+UUID: c4f6494b_26731c5e
+Bytes: 212
+Yes exactly, I'm not sure if there's a list of tools guaranteed to be on all Android devices but I didn't know if `tty` or `toybox tty` would be available everywhere.
+
+I will definitely add a comment here thanks.
 

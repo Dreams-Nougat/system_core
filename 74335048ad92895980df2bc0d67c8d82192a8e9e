@@ -1,0 +1,11 @@
+Revision: 74335048ad92895980df2bc0d67c8d82192a8e9e
+Patch-set: 4
+File: adb/device.py
+
+154:31-154:42
+Wed Aug 12 21:02:01 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42489af_7cb0a52a
+Bytes: 57
+Just "search", since we're not using regex here any more.
+

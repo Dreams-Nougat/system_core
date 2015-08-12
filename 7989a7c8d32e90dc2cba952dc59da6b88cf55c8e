@@ -1,0 +1,11 @@
+Revision: 7989a7c8d32e90dc2cba952dc59da6b88cf55c8e
+Base-for-patch-set: 1
+File: adb/adb_listeners.cpp
+
+235:8-235:14
+Wed Aug 12 00:25:56 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_bd4aab78
+Bytes: 123
+not following this removal: you mention the callers print the errors, but i don't see local_name_to_fd() print any errors..
+

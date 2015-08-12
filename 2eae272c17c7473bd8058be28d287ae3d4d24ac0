@@ -46,3 +46,11 @@ UUID: 64111d42_bac991bf
 Bytes: 66
 Personally, I'd prefer fatal, but enh/danalbert would know better.
 
+129:20-129:26
+Wed Aug 12 02:52:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_bac991bf
+UUID: 645f5d28_cdf23dd6
+Bytes: 47
+yeah, problems during startup being fatal sgtm.
+

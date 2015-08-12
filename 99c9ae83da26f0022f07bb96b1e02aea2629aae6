@@ -31,3 +31,11 @@ UUID: 64367de0_789f99e7
 Bytes: 75
 Oh, never mind. I thought `[ -t 0 ]` did something else. This test is fine.
 
+175
+Wed Aug 12 19:21:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64367de0_789f99e7
+UUID: a41eb557_28cf7327
+Bytes: 118
+(might be worth adding a comment explaining why you didn't just use /system/bin/tty though. i'm assuming portability?)
+

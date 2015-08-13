@@ -30,3 +30,13 @@ UUID: 04f5c13c_eb5a9cc7
 Bytes: 65
 should we just ignore this, or should we goto err_get_pipe_props?
 
+369
+Thu Aug 13 16:19:39 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04f5c13c_eb5a9cc7
+UUID: c4f6494b_17fdec2d
+Bytes: 324
+Not sure, in fastboot code, it prints it out to stderr but keeps continuing. In what I've seen, every time we run into this condition, we've eventually dropped the transport.
+
+In this scenario, not quitting here means we get to try out a different endpoint in the next iteration. I have no idea if that is worthwhile though.
+

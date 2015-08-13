@@ -1,0 +1,11 @@
+Revision: 2d4f852da4881b543c11f82de4af44db88bdf306
+Patch-set: 4
+File: adb/usb_osx.cpp
+
+358:32-358:34
+Thu Aug 13 23:05:58 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 043dc1ed_c50b0e2f
+Bytes: 125
+its actually pretty straightforward..GetNumEndpoints returns the # of endpoints excluding 0. So this CL seems perfectly safe.
+

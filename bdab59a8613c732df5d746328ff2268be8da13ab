@@ -1,0 +1,29 @@
+Revision: bdab59a8613c732df5d746328ff2268be8da13ab
+Patch-set: 2
+File: base/logging.cpp
+
+204
+Thu Aug 13 21:10:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 243ac5f6_20690a6f
+Bytes: 55
+(since this doesn't need to be nested, i moved it out.)
+
+278
+Thu Aug 13 21:10:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64591d73_da51255d
+Bytes: 78
+i explained why we have this, because i wanted to replace it with basename(3).
+
+File: base/logging_test.cpp
+
+82
+Thu Aug 13 21:10:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_6707cc59
+Bytes: 103
+and i fixed the tests on the Unixes :-)
+
+(they'll run on Windows too when we get libc++ for Windows...)
+

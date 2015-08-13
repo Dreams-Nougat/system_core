@@ -23,3 +23,11 @@ Even Chrome on Windows does not call WSACleanup:
 
 https://code.google.com/p/chromium/codesearch#chromium/src/net/base/winsock_init.cc&l=35
 
+661:4-661:14
+Thu Aug 13 02:38:32 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4298d86_68833f5d
+UUID: 04f5c13c_28c08a93
+Bytes: 56
+Makes sense. That is what I'd expect from a decent OS :)
+

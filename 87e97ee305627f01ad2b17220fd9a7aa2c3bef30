@@ -27,3 +27,11 @@ Basically, crazyness happens to those threads if you call WSACleanup in the midd
 
 Let me know if this comment needs some changes.
 
+672:68-672:76
+Thu Aug 13 02:38:32 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 046a21d9_409e24e9
+UUID: 046a21d9_e092d8da
+Bytes: 16
+Nope, this LGTM.
+

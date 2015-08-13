@@ -57,6 +57,20 @@ UUID: 64591d73_1dc55708
 Bytes: 40
 Missed this one; will fix and re-upload.
 
+897
+Thu Aug 13 22:46:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_1dc55708
+UUID: 243ac5f6_63631c0f
+Bytes: 261
+This turns out to be a little awkward since t->devpath etc. can be null which std::string doesn't like.
+
+I can wrap the value arguments in a helper to safely construct a string, or do something like
+
+  (t ? t->devpath : "")
+
+for each but IMO it's cleaner as-is.
+
 File: adb/transport.h
 
 90

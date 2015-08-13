@@ -9,3 +9,11 @@ UUID: a41eb557_71178f07
 Bytes: 71
 let me know if you'd prefer a goto err_get_pipe_props right after this.
 
+373:20-373:23
+Thu Aug 13 16:31:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a41eb557_71178f07
+UUID: 64111d42_8fda0595
+Bytes: 36
+what does barryt think we should do?
+

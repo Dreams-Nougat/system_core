@@ -11,3 +11,15 @@ The doc says "must call WSACleanup to deregister itself from a Windows Sockets i
 
 About the only concern I have is whether we are trading off a deadlock for a slow resource leak..
 
+661:4-661:14
+Thu Aug 13 02:33:59 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04f5c13c_681212e7
+UUID: e4298d86_68833f5d
+Bytes: 357
+I think the docs are wrong. This was probably written in the days of Win 3.1 where it really did matter, but I don't think it matters in the modern era where kernel resources automatically cleanup when a process dies.
+
+Even Chrome on Windows does not call WSACleanup:
+
+https://code.google.com/p/chromium/codesearch#chromium/src/net/base/winsock_init.cc&l=35
+

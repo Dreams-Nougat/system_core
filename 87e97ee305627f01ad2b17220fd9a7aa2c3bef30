@@ -13,3 +13,17 @@ According to https://msdn.microsoft.com/en-us/library/windows/desktop/ms741549(v
 
 Not sure if the above comment jives with it..
 
+672:68-672:76
+Thu Aug 13 02:33:59 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64111d42_14a96cdb
+UUID: 046a21d9_409e24e9
+Bytes: 913
+The docs go on to say:
+
+"When WSACleanup is called, any pending blocking or asynchronous Windows Sockets calls issued by any thread in this process are canceled without posting any notification messages or without signaling any event objects. Any pending overlapped send or receive operations (WSASend, WSASendTo, WSARecv, or WSARecvFrom with an overlapped socket, for example) issued by any thread in this process are also canceled without setting the event object or invoking the completion routine, if one was specified. In this case, the pending overlapped operations fail with the error status WSA_OPERATION_ABORTED."
+
+Basically, crazyness happens to those threads if you call WSACleanup in the middle of them running. It sounds as bad as EINTR on unix. This is what I meant by "cause problems". :) Basically, strange stuff can happen, just like the deadlock.
+
+Let me know if this comment needs some changes.
+

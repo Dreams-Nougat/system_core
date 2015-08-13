@@ -1,0 +1,32 @@
+Revision: 267bbc2f8c1e766b8a0cc783ceda81ec0d2b5d87
+Patch-set: 2
+File: adb/usb_osx.cpp
+
+46
+Thu Aug 13 16:08:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64367de0_610da0c6
+Bytes: 91
+(may as well just remove all the extra whitespace so we never have to reformat this again.)
+
+48
+Thu Aug 13 16:08:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4f6494b_57ca5417
+Bytes: 21
+type* as we clean up.
+
+364
+Thu Aug 13 16:08:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64367de0_41129ce6
+Bytes: 43
+factor this out rather than add two copies?
+
+369
+Thu Aug 13 16:08:01 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04f5c13c_eb5a9cc7
+Bytes: 65
+should we just ignore this, or should we goto err_get_pipe_props?
+

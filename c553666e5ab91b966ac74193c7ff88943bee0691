@@ -1,0 +1,11 @@
+Revision: c553666e5ab91b966ac74193c7ff88943bee0691
+Patch-set: 3
+File: adb/usb_osx.cpp
+
+373:20-373:23
+Thu Aug 13 16:26:18 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a41eb557_71178f07
+Bytes: 71
+let me know if you'd prefer a goto err_get_pipe_props right after this.
+

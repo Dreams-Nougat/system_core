@@ -1,0 +1,31 @@
+Revision: 45288223d0ce864b84aa2d3e0321c0276c136ae1
+Base-for-patch-set: 2
+File: adb/usb_osx.cpp
+
+310:4-310:9
+Thu Aug 13 22:52:21 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c43e49ec_80a61896
+Bytes: 1088
+looks like you can't move these two down below other gotos. I get the following compile error:
+
+system/core/adb/usb_osx.cpp:348:9: error: cannot jump from this goto statement to its label
+        goto err_bad_adb_interface;
+        ^
+system/core/adb/usb_osx.cpp:351:17: note: jump bypasses variable initialization
+    usb_handle* handle = reinterpret_cast<usb_handle*>(calloc(1, sizeof(usb_handle)));
+                ^
+system/core/adb/usb_osx.cpp:342:13: error: cannot jump from this goto statement to its label
+            goto err_get_interface_class;
+            ^
+system/core/adb/usb_osx.cpp:351:17: note: jump bypasses variable initialization
+    usb_handle* handle = reinterpret_cast<usb_handle*>(calloc(1, sizeof(usb_handle)));
+                ^
+system/core/adb/usb_osx.cpp:334:9: error: cannot jump from this goto statement to its label
+        goto err_get_num_ep;
+        ^
+system/core/adb/usb_osx.cpp:351:17: note: jump bypasses variable initialization
+    usb_handle* handle = reinterpret_cast<usb_handle*>(calloc(1, sizeof(usb_handle)));
+                ^
+3 errors generated.
+

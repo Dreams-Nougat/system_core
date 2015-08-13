@@ -49,6 +49,14 @@ UUID: ed56c9ec_47a209ab
 Bytes: 146
 make append_transport_info take a const std::string& value? i'm assuming t->devpath et cetera become std::strings in atransport eventually anyway.
 
+897
+Thu Aug 13 22:17:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ed56c9ec_47a209ab
+UUID: 64591d73_1dc55708
+Bytes: 40
+Missed this one; will fix and re-upload.
+
 File: adb/transport.h
 
 90

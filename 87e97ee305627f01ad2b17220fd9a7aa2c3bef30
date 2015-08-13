@@ -1,0 +1,15 @@
+Revision: 87e97ee305627f01ad2b17220fd9a7aa2c3bef30
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+672:68-672:76
+Thu Aug 13 01:57:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64111d42_14a96cdb
+Bytes: 241
+According to https://msdn.microsoft.com/en-us/library/windows/desktop/ms741549(v=vs.85).aspx:
+
+"In a multithreaded environment, WSACleanup terminates Windows Sockets operations for all threads".
+
+Not sure if the above comment jives with it..
+

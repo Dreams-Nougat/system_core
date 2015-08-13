@@ -1,0 +1,13 @@
+Revision: b81c410abe92e7ebf227a633002da51bcdc6ea65
+Base-for-patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+661:4-661:14
+Thu Aug 13 01:57:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04f5c13c_681212e7
+Bytes: 290
+The doc says "must call WSACleanup to deregister itself from a Windows Sockets implementation and allow the implementation to free any resources allocated on behalf of the application or DLL"
+
+About the only concern I have is whether we are trading off a deadlock for a slow resource leak..
+

@@ -9,3 +9,11 @@ UUID: 64591d73_80129ae3
 Bytes: 118
 do we think this is useful, or has "adb devices" taught us that it's annoying to always have to skip a line of output?
 
+1464
+Fri Aug 14 15:16:15 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_80129ae3
+UUID: 04b861a5_10e40a56
+Bytes: 91
+True, anyone calling `adb features` won't really get any value from this. I'll take it out.
+

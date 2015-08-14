@@ -21,3 +21,17 @@ I'm open to tips for how to shorten this section.  I do like the LOCAL_INIT_RC i
 
 On the plus side, this seems to work well on my N9.
 
+308
+Fri Aug 14 20:39:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4a9e95f_144722f9
+UUID: 64591d73_091995ab
+Bytes: 181
+we can at least factor out a BUILD_INIT_RC so this would be:
+
+  include $(CLEAR_VARS)
+  LOCAL_MODULE := adbd.rc
+  include $(BUILD_INIT_RC)
+
+but isn't wangying back on monday anyway?
+

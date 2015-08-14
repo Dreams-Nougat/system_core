@@ -11,3 +11,11 @@ i think FATAL would be a better idea here. we need to catch any bug like this st
 
 plus, doesn't this need to be MAX_PAYLOAD_V1? you don't know at this point what version adbd you're talking to.
 
+347
+Fri Aug 14 15:15:19 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4a9e95f_8e2e9f91
+UUID: c43e49ec_a6e9acf4
+Bytes: 46
+Both those points make sense, will fix thanks.
+

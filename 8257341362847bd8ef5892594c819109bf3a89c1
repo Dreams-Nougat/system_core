@@ -1,0 +1,11 @@
+Revision: 8257341362847bd8ef5892594c819109bf3a89c1
+Patch-set: 3
+File: adb/commandline.cpp
+
+1464
+Fri Aug 14 03:31:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64591d73_80129ae3
+Bytes: 118
+do we think this is useful, or has "adb devices" taught us that it's annoying to always have to skip a line of output?
+

@@ -1,0 +1,11 @@
+Revision: f9db2624fe749ac551fc5ebad7ec058399ed39c4
+Patch-set: 1
+File: adb/Android.mk
+
+308
+Fri Aug 14 20:21:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_f3a61a44
+Bytes: 40
+that's very verbose. can't we do better?
+

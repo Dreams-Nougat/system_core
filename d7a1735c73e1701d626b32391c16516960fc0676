@@ -1,0 +1,13 @@
+Revision: d7a1735c73e1701d626b32391c16516960fc0676
+Patch-set: 3
+File: adb/adb.cpp
+
+347
+Fri Aug 14 03:30:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4a9e95f_8e2e9f91
+Bytes: 254
+i think FATAL would be a better idea here. we need to catch any bug like this straight away and fix it. (plus this is never going to happen.)
+
+plus, doesn't this need to be MAX_PAYLOAD_V1? you don't know at this point what version adbd you're talking to.
+

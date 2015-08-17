@@ -1,0 +1,20 @@
+Revision: f1833f5e803e517bba83cb6172466172b9556f7b
+Patch-set: 2
+File: crash_reporter/crash_collector.cc
+
+219
+Mon Aug 17 18:29:13 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04806112_8d0bc52f
+Bytes: 29
+do you need the c_str() here?
+
+File: crash_reporter/crash_collector.h
+
+76
+Mon Aug 17 18:29:13 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_a46b7791
+Bytes: 13
+indent is off
+

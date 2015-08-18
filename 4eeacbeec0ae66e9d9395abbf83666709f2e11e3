@@ -1,0 +1,13 @@
+Revision: 4eeacbeec0ae66e9d9395abbf83666709f2e11e3
+Patch-set: 1
+File: libutils/String8.cpp
+
+103
+Tue Aug 18 16:26:33 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 243ac5f6_fd150071
+Bytes: 247
+i notice that these *_length functions don't pay attention to overflow either, and the *_to_utf8 functions don't take a destination length, only a source length.
+
+i really wish we could move people off String8 (and all the other crap in libutils).
+

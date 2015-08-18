@@ -9,3 +9,11 @@ UUID: c4a9e95f_3d0c7a79
 Bytes: 123
 time to switch to a struct with a version number or flags word? this is the third version of this function we're adding :-(
 
+79
+Tue Aug 18 19:43:54 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4a9e95f_3d0c7a79
+UUID: c471e91c_944af22a
+Bytes: 262
+Agreed. What about slightly changing the signature of the second version, rather than adding a generic third version? Fortunately, the second version hasn't been widely used yet (only in system/core/ and system/extras/). Please take a look at the next patch set.
+

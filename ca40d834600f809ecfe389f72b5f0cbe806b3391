@@ -2,6 +2,20 @@ Revision: ca40d834600f809ecfe389f72b5f0cbe806b3391
 Patch-set: 1
 File: init/perfboot.py
 
+410:33-411:56
+Tue Aug 18 01:01:55 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44b899d4_b9e37fc3
+Bytes: 61
+Could you add something like "unless --end-tag is specified"?
+
+413:25-413:29
+Tue Aug 18 01:01:55 2015 +0000
+Author: Yasuhiro Matsuda <1070509@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44b899d4_d9e033b9
+Bytes: 10
+nit: stops
+
 447
 Tue Aug 18 00:53:55 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

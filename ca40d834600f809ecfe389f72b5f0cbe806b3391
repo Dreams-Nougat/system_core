@@ -15,3 +15,11 @@ Any reason this wouldn't be an error?
 
     end_tag = event_tags[-1]
 
+447
+Tue Aug 18 01:00:30 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4a8755c_f082850c
+UUID: e4434d7f_6a647c99
+Bytes: 48
+Changed to sys.exit(). Please take another look.
+

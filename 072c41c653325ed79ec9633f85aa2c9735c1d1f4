@@ -1,0 +1,11 @@
+Revision: 072c41c653325ed79ec9633f85aa2c9735c1d1f4
+Patch-set: 1
+File: logwrapper/include/logwrap/logwrap.h
+
+79
+Tue Aug 18 02:31:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4a9e95f_3d0c7a79
+Bytes: 123
+time to switch to a struct with a version number or flags word? this is the third version of this function we're adding :-(
+

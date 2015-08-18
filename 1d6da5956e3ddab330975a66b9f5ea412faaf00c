@@ -1,0 +1,13 @@
+Revision: 1d6da5956e3ddab330975a66b9f5ea412faaf00c
+Patch-set: 1
+File: libutils/tests/BitSet_test.cpp
+
+141
+Tue Aug 18 02:00:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4434d7f_0ced1500
+Bytes: 103
+or just 0U et cetera...
+
+(plus these are the wrong way round. the expected value should be on the lhs.)
+

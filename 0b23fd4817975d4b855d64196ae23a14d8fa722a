@@ -9,6 +9,14 @@ UUID: 64591d73_8be9122f
 Bytes: 106
 even if you don't want to clean up existing whitespace issues, you probably don't want to add new ones :-)
 
+34
+Tue Aug 18 17:22:39 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_8be9122f
+UUID: 84bd31cc_f322702d
+Bytes: 91
+Hehe, interleaving issue. I was just uploading the new patch. No whitespace issues there :)
+
 File: libutils/SharedBufferTest.cpp
 
 29
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4fb1585_c74dbd94
 Bytes: 172
 shouldn't this always return null? there should never be enough memory available to satisfy this request, should there? you've basically asked for the entire address space?
+
+29
+Tue Aug 18 17:22:39 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4fb1585_c74dbd94
+UUID: 64b59dd9_da258538
+Bytes: 213
+As per the C99 spec, SIZE_MAX could be as low as 65535 :) I don't think it makes sense to specifically check that it's null either (and if we are going to release it, then it's worth checking it's not null, so...)
 

@@ -1,0 +1,20 @@
+Revision: 6e27c26e3df07e7c4845ad8c4e172e6a32eae47f
+Patch-set: 2
+File: include/backtrace/Backtrace.h
+
+93:20-93:26
+Tue Aug 18 01:08:14 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4aeed64_e3716503
+Bytes: 100
+Since this is such a different kind of object, it might be best to change the name to CreateOffline.
+
+File: libbacktrace/BacktraceMap.cpp
+
+149:34-149:56
+Tue Aug 18 01:08:14 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_90cf9157
+Bytes: 139
+BacktraceMap has an invariant that the maps are in ascending sorted order. It's probably worth doing a sort to make sure that remains true.
+

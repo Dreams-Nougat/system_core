@@ -1,0 +1,20 @@
+Revision: 0b23fd4817975d4b855d64196ae23a14d8fa722a
+Patch-set: 1
+File: libutils/SharedBuffer.cpp
+
+34
+Tue Aug 18 17:15:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64591d73_8be9122f
+Bytes: 106
+even if you don't want to clean up existing whitespace issues, you probably don't want to add new ones :-)
+
+File: libutils/SharedBufferTest.cpp
+
+29
+Tue Aug 18 17:15:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4fb1585_c74dbd94
+Bytes: 172
+shouldn't this always return null? there should never be enough memory available to satisfy this request, should there? you've basically asked for the entire address space?
+

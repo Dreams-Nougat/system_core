@@ -1,0 +1,17 @@
+Revision: ca40d834600f809ecfe389f72b5f0cbe806b3391
+Patch-set: 1
+File: init/perfboot.py
+
+447
+Tue Aug 18 00:53:55 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_f082850c
+Bytes: 203
+Any reason this wouldn't be an error?
+
+    end_tag = args.end_tag
+    if end_tag and end_tag not in event_tags:
+        sys.exit('%s is not a valid tag. Ignored.' % end_tag)
+
+    end_tag = event_tags[-1]
+

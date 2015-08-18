@@ -9,6 +9,14 @@ UUID: e4aeed64_e3716503
 Bytes: 100
 Since this is such a different kind of object, it might be best to change the name to CreateOffline.
 
+93:20-93:26
+Tue Aug 18 22:08:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4aeed64_e3716503
+UUID: a4fb1585_49956696
+Bytes: 4
+Done
+
 File: libbacktrace/BacktraceMap.cpp
 
 149:34-149:56
@@ -17,4 +25,12 @@ Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4a8755c_90cf9157
 Bytes: 139
 BacktraceMap has an invariant that the maps are in ascending sorted order. It's probably worth doing a sort to make sure that remains true.
+
+149:34-149:56
+Tue Aug 18 22:08:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4a8755c_90cf9157
+UUID: c471e91c_5fedf3b0
+Bytes: 4
+Done
 

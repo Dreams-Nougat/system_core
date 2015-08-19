@@ -53,3 +53,11 @@ As for fork vs vfork, this is the manpage:
 
 Also, I don't think you can avoid wait()ing on vfork. Even when your child process goes through execve(), you still need to reap it; if not, it will get reparented to init when you exit.
 
+82:1-103:1
+Wed Aug 19 22:52:49 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 243ac5f6_92b01a2c
+UUID: a4fb1585_d85d93c2
+Bytes: 385
+You're right, looking at the logs closer, dbus-send was getting reparented to init, and then cleaned up.  I'm going to take a step back on this one and re-look at it... if I have to propagate the PID back to wait() on it at the very end of execution, I'll likely just abandon this CL and go back to my initial chromeos::ProcessImpl one and propagate the process through the collectors.
+

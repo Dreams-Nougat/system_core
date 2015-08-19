@@ -1,0 +1,11 @@
+Revision: d17be07612cb568e614f78f5c7d395fedb7a5da6
+Patch-set: 1
+File: adb/usb_osx.cpp
+
+137:71-137:79
+Wed Aug 19 01:10:26 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4a9e95f_993d7dec
+Bytes: 74
+not sure if there is a better way, or to get something similar to "0x%08x"
+

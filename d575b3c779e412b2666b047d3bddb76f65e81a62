@@ -27,3 +27,13 @@ But you're not wait()ing on the child here, are you?
 
 Also, why vfork and not regular fork?
 
+82:1-103:1
+Wed Aug 19 22:25:41 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4aeed64_9a032f85
+UUID: 243ac5f6_4c839c5c
+Bytes: 939
+No, I'm not explicitly wait()ing here.  But in my testing (I replaced the dbus-send call with `wait 10`), after the vfork+execve, the rest of crash_reporter finished running immediately, then waited until the child finished before exiting.
+
+I used vfork instead of regular fork to guarantee not having to copy all the excess process data that would just be wiped out during the execve.  I believe (but am not entirely sure) that it also ties into the previous quesion about wait()ing.  A vfork suspends the parent until either an _exit or successful execve call is made.  Once the execve call is successful it wakes back up the parent as it won't have resource contention anymore.  A fork call does not suspend the parent, and I believe then would require a wait() call to reap the child process.  If you feel strongly about using fork instead of vfork, and are sure that we'll always have a copy-on-write version of fork, I can switch it.
+

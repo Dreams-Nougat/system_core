@@ -1,0 +1,11 @@
+Revision: 7d3038ea55328def16becd5841c87d95703cde7a
+Patch-set: 2
+File: adb/usb_osx.cpp
+
+193:81-193:84
+Wed Aug 19 02:05:19 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 243ac5f6_d631f9f2
+Bytes: 33
+will remove, and the ones below..
+

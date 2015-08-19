@@ -1,0 +1,11 @@
+Revision: 63ee294167bb6a81b2c279dd0a57f4b11b2d98b6
+Patch-set: 2
+File: logwrapper/include/logwrap/logwrap.h
+
+89
+Wed Aug 19 04:09:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4434d7f_a6e87871
+Bytes: 71
+add a size_t so this is an array, so we can add more options in future?
+

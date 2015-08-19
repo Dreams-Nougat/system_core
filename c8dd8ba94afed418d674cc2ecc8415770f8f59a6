@@ -9,10 +9,26 @@ UUID: 04806112_492618c2
 Bytes: 65
 xbin? isn't this core system functionality that should be in bin?
 
+26
+Wed Aug 19 21:24:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04806112_492618c2
+UUID: c471e91c_c4959313
+Bytes: 310
+Thats the path that the (already existing) dbus-send target installs to: http://cs/android/external/dbus/tools/Android.mk.  Should I remove the LOCAL_MODULE_PATH from that file, to move it back to bin?  I'm unfamiliar what the convention is and what consequences that may have elsewhere in the codebase though.
+
 95
 Wed Aug 19 16:00:04 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 04806112_a934f4e3
 Bytes: 32
 i think 127 is traditional here.
+
+95
+Wed Aug 19 21:24:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04806112_a934f4e3
+UUID: 64591d73_92bbfb5c
+Bytes: 4
+Done
 

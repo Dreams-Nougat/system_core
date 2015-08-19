@@ -9,3 +9,11 @@ UUID: c471e91c_cea5b201
 Bytes: 205
 Can you ifdef this to BRILLO or INITRC_TEMPLATE being defined, and then use $(PRODUCT_OUT)/$(TARGET_COPY_OUT_INITRCD)? We'd like to be able to change the target dir without changing each specific Makefile.
 
+119:0-124:25
+Wed Aug 19 18:35:05 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c471e91c_cea5b201
+UUID: c471e91c_71782368
+Bytes: 4
+Done
+

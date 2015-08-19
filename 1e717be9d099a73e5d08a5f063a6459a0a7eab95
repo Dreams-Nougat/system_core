@@ -9,3 +9,11 @@ UUID: 04b861a5_13b082c5
 Bytes: 58
 Not sure if this is an error or a normal return condition.
 
+300:13-300:16
+Wed Aug 19 22:07:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04b861a5_13b082c5
+UUID: a4fb1585_2da3bbfc
+Bytes: 171
+yeah, it does seem like this should be an error, but i think this is so the calling code keeps going and tries other USB devices. (but then why are the ones below errors?)
+

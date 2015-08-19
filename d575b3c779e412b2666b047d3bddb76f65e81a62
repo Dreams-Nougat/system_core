@@ -61,3 +61,11 @@ UUID: a4fb1585_d85d93c2
 Bytes: 385
 You're right, looking at the logs closer, dbus-send was getting reparented to init, and then cleaned up.  I'm going to take a step back on this one and re-look at it... if I have to propagate the PID back to wait() on it at the very end of execution, I'll likely just abandon this CL and go back to my initial chromeos::ProcessImpl one and propagate the process through the collectors.
 
+82:1-103:1
+Wed Aug 19 23:00:38 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4fb1585_d85d93c2
+UUID: 64591d73_6593ff2d
+Bytes: 118
+Since we're getting close to EAP, if the chromeos::Process CL gets too complicated, feel free to skip until after EAP.
+

@@ -34,3 +34,13 @@ UUID: 64b59dd9_da258538
 Bytes: 213
 As per the C99 spec, SIZE_MAX could be as low as 65535 :) I don't think it makes sense to specifically check that it's null either (and if we are going to release it, then it's worth checking it's not null, so...)
 
+29
+Wed Aug 19 00:59:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64b59dd9_da258538
+UUID: a4fb1585_3e164756
+Bytes: 177
+back in the real world, it's the maximum value in a size_t.
+
+you'd check it's null so you know the implementation didn't fuck up, overflow, and return you some small allocation.
+

@@ -44,3 +44,11 @@ back in the real world, it's the maximum value in a size_t.
 
 you'd check it's null so you know the implementation didn't fuck up, overflow, and return you some small allocation.
 
+29
+Wed Aug 19 18:23:04 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4fb1585_3e164756
+UUID: 04a781c0_b2f29ed4
+Bytes: 2
+OK
+

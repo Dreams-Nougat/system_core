@@ -17,6 +17,14 @@ UUID: c471e91c_c4959313
 Bytes: 310
 Thats the path that the (already existing) dbus-send target installs to: http://cs/android/external/dbus/tools/Android.mk.  Should I remove the LOCAL_MODULE_PATH from that file, to move it back to bin?  I'm unfamiliar what the convention is and what consequences that may have elsewhere in the codebase though.
 
+26
+Wed Aug 19 21:50:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c471e91c_c4959313
+UUID: 04b861a5_d3f66a51
+Bytes: 148
+is this a necessary part of your system? if so, put it in /system/bin. if it's just some optional debugging/diagnostic tool, but it in /system/xbin.
+
 95
 Wed Aug 19 16:00:04 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

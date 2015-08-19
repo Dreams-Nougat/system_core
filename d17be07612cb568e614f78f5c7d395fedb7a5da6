@@ -9,6 +9,14 @@ UUID: 243ac5f6_5694c949
 Bytes: 65
 didn't i already check in an equivalent change in adb_trace_init?
 
+137
+Wed Aug 19 01:48:59 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 243ac5f6_5694c949
+UUID: c4a9e95f_d96bf590
+Bytes: 202
+You have it, but it uses the old scheme, which doesn't show up until you set the trace flags. So I added it here, and this will show up in the server log always. Let me know if you want me to remove it.
+
 File: adb/usb_osx.cpp
 
 137:71-137:79

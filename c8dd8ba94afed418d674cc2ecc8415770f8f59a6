@@ -25,6 +25,14 @@ UUID: 04b861a5_d3f66a51
 Bytes: 148
 is this a necessary part of your system? if so, put it in /system/bin. if it's just some optional debugging/diagnostic tool, but it in /system/xbin.
 
+26
+Wed Aug 19 21:55:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04b861a5_d3f66a51
+UUID: c471e91c_0426cb6a
+Bytes: 69
+Yes, its necessary for our system.  I'll move it over to /system/bin.
+
 95
 Wed Aug 19 16:00:04 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

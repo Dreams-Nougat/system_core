@@ -1,0 +1,11 @@
+Revision: d575b3c779e412b2666b047d3bddb76f65e81a62
+Patch-set: 2
+File: crash_reporter/crash_reporter.cc
+
+82:1-103:1
+Wed Aug 19 21:25:56 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4fb1585_6d9ca34a
+Bytes: 75
+Given that you're already using libchromeos, can you use chromeos::Process?
+

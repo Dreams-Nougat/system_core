@@ -9,6 +9,14 @@ UUID: 04806112_8d0bc52f
 Bytes: 29
 do you need the c_str() here?
 
+219
+Wed Aug 19 06:42:02 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04806112_8d0bc52f
+UUID: 04b861a5_c28a1af7
+Bytes: 4
+Done
+
 File: crash_reporter/crash_collector.h
 
 76
@@ -17,4 +25,12 @@ Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4a8755c_a46b7791
 Bytes: 13
 indent is off
+
+76
+Wed Aug 19 06:42:02 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4a8755c_a46b7791
+UUID: 04806112_46b1a74c
+Bytes: 4
+Done
 

@@ -25,6 +25,14 @@ UUID: 64591d73_b1d8c463
 Bytes: 71
 no, that's a good reason, but you should probably remove the other one?
 
+137
+Wed Aug 19 02:01:57 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_b1d8c463
+UUID: 04806112_06b7afbd
+Bytes: 144
+adb_trace_init() is called from both client and daemon, that is why I let it be. Was your intention to only record it in the case of the server?
+
 File: adb/usb_osx.cpp
 
 137:71-137:79
@@ -51,12 +59,28 @@ UUID: a4a8755c_65b572e7
 Bytes: 15
 lose the casts.
 
+148
+Wed Aug 19 02:01:57 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4a8755c_65b572e7
+UUID: e4434d7f_662670c2
+Bytes: 4
+Done
+
 158
 Wed Aug 19 01:43:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4fb1585_be47d7f6
 Bytes: 4
 tabs
+
+158
+Wed Aug 19 02:01:57 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4fb1585_be47d7f6
+UUID: c4a9e95f_9957bdd7
+Bytes: 4
+Done
 
 260
 Wed Aug 19 01:43:38 2015 +0000
@@ -65,10 +89,26 @@ UUID: e4434d7f_267aa893
 Bytes: 130
 serial is a string. plus std::hex remains in effect until you undo it. this might be a place where you actually want StringPrintf.
 
+260
+Wed Aug 19 02:01:57 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4434d7f_267aa893
+UUID: e4434d7f_262c6898
+Bytes: 4
+Done
+
 265
 Wed Aug 19 01:43:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 64591d73_71b58c19
 Bytes: 35
 kr is probably stale at this point?
+
+265
+Wed Aug 19 02:01:57 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_71b58c19
+UUID: e4aeed64_d492de28
+Bytes: 4
+Done
 

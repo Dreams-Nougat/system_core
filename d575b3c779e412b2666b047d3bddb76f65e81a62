@@ -9,3 +9,11 @@ UUID: a4fb1585_6d9ca34a
 Bytes: 75
 Given that you're already using libchromeos, can you use chromeos::Process?
 
+82:1-103:1
+Wed Aug 19 21:55:29 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4fb1585_6d9ca34a
+UUID: 64591d73_72a3c7fb
+Bytes: 952
+My first implementation, I used chromeos::ProcessImpl to run the command.  However the code wound up being messier than I liked.  The issue wound up being, calling process.Run() blocks here until the process finishes.  Calling process.Start() instead allows it to not block, however if nothing calls process.Wait(), once crash_reporter finishes running it quits the process without it finishing, which in practice happens before dbus-send can actually send the signal.  The way around that, then would be to store the process in the class and call process.Wait() at the very end of execution... however the way the different collectors calls are structured, this CountUserCrash function is stored as a function pointer and called in several different locations based on the collector.  Modifying each collector to handle that independently from each other was much messier and harder to follow/read, than using vfork+execve which is all self-contained.
+

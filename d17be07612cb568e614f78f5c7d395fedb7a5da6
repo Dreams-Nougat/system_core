@@ -1,5 +1,14 @@
 Revision: d17be07612cb568e614f78f5c7d395fedb7a5da6
 Patch-set: 1
+File: adb/client/main.cpp
+
+137
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 243ac5f6_5694c949
+Bytes: 65
+didn't i already check in an equivalent change in adb_trace_init?
+
 File: adb/usb_osx.cpp
 
 137:71-137:79
@@ -8,4 +17,42 @@ Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4a9e95f_993d7dec
 Bytes: 74
 not sure if there is a better way, or to get something similar to "0x%08x"
+
+137:71-137:79
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4a9e95f_993d7dec
+UUID: 64591d73_ce615530
+Bytes: 443
+you can android::base::StringPrintf() if you want a format string. if kern_return_t was a real type you could overload operator<< to output it nicely, but i'm assuming it's just a typedef. your other option would be to reinterpret_cast<void*> to get the 0x%08x pointer formatting. i think this is fine though.
+
+yet another option would be a function that takes a kern_return_t and returns a std::string. then you could write << f(kr); instead.
+
+148
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_65b572e7
+Bytes: 15
+lose the casts.
+
+158
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4fb1585_be47d7f6
+Bytes: 4
+tabs
+
+260
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4434d7f_267aa893
+Bytes: 130
+serial is a string. plus std::hex remains in effect until you undo it. this might be a place where you actually want StringPrintf.
+
+265
+Wed Aug 19 01:43:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64591d73_71b58c19
+Bytes: 35
+kr is probably stale at this point?
 

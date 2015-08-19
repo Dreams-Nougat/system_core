@@ -17,6 +17,14 @@ UUID: c4a9e95f_d96bf590
 Bytes: 202
 You have it, but it uses the old scheme, which doesn't show up until you set the trace flags. So I added it here, and this will show up in the server log always. Let me know if you want me to remove it.
 
+137
+Wed Aug 19 01:50:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4a9e95f_d96bf590
+UUID: 64591d73_b1d8c463
+Bytes: 71
+no, that's a good reason, but you should probably remove the other one?
+
 File: adb/usb_osx.cpp
 
 137:71-137:79

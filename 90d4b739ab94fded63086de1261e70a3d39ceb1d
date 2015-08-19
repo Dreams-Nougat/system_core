@@ -1,0 +1,11 @@
+Revision: 90d4b739ab94fded63086de1261e70a3d39ceb1d
+Patch-set: 4
+File: /COMMIT_MSG
+
+9
+Wed Aug 19 00:52:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4a8755c_4afde5de
+Bytes: 395
+argh. i'd missed this subtlety. this really does mean "adb server", not "adbd". i'm not convinced that's actually useful because most of the time it should match your adb client. i can't see a [reasonable] way to plumb the atransport* through to file_sync_client.cpp, so i'll have a look at changing this so we can see the adbd features. (please upload your change if you've already fixed this!)
+

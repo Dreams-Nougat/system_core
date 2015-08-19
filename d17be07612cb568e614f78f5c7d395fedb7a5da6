@@ -33,6 +33,14 @@ UUID: 04806112_06b7afbd
 Bytes: 144
 adb_trace_init() is called from both client and daemon, that is why I let it be. Was your intention to only record it in the case of the server?
 
+137
+Wed Aug 19 02:15:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04806112_06b7afbd
+UUID: 243ac5f6_76caad49
+Bytes: 39
+ah. okay, may as well leave it for now.
+
 File: adb/usb_osx.cpp
 
 137:71-137:79

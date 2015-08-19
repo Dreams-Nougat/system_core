@@ -1,0 +1,11 @@
+Revision: 7a9ffde3862587be02439e04021087b10d264432
+Patch-set: 3
+File: libutils/SharedBufferTest.cpp
+
+50
+Wed Aug 19 20:37:42 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4aeed64_9aca4f47
+Bytes: 23
+is a resize to 0 valid?
+

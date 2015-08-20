@@ -36,3 +36,11 @@ For another CL (not yet explored, but continuing in the series) to replace aspri
 
 I would prefer to make them std::string *::format() instead.
 
+212
+Thu Aug 20 16:25:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_edba4559
+UUID: 4485f957_d15604db
+Bytes: 93
+makes sense. lots of small changes are usually easier to reason about than fewer larger ones.
+

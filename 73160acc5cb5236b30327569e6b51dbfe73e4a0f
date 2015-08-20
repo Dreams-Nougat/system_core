@@ -1,0 +1,20 @@
+Revision: 73160acc5cb5236b30327569e6b51dbfe73e4a0f
+Patch-set: 1
+File: logd/CommandListener.cpp
+
+256
+Thu Aug 20 22:51:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_fe5bd5ff
+Bytes: 69
+(if argv was a std::vector<char*> you could use android::base::Join.)
+
+File: logd/LogBuffer.cpp
+
+694
+Thu Aug 20 22:51:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_dcab81df
+Bytes: 68
+(one day, you might want to look at std::mutex and std::lock_guard.)
+

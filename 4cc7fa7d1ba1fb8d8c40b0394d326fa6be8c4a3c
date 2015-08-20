@@ -9,10 +9,30 @@ UUID: e430ad80_36c738ac
 Bytes: 23
 you can just use = too.
 
+184
+Thu Aug 20 16:24:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e430ad80_36c738ac
+UUID: 84253145_f6aa1e8b
+Bytes: 103
+Yes, why not, I got stuck on method setTo == assign ;-}
+
+I will respin this and the next CL to do this.
+
 212
 Thu Aug 20 16:18:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_8f9855fd
 Bytes: 37
 too hard to make strp a std::string*?
+
+212
+Thu Aug 20 16:24:47 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_8f9855fd
+UUID: c4700952_edba4559
+Bytes: 285
+For another CL (not yet explored, but continuing in the series) to replace asprintf with std::string. We have a technical debt where ::format(char **strp) methods abound and changing them all touched more than 1 or 2 files.
+
+I would prefer to make them std::string *::format() instead.
 

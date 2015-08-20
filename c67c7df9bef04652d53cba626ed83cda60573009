@@ -9,10 +9,26 @@ UUID: a42a3512_d49efce9
 Bytes: 42
 shouldn't name, size, and pruned be const?
 
+189
+Thu Aug 20 16:35:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a42a3512_d49efce9
+UUID: e430ad80_565bd47e
+Bytes: 4
+Yes.
+
 515
 Thu Aug 20 16:20:49 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_2c693399
 Bytes: 54
 or make buf a std::string*? (or return a std::string.)
+
+515
+Thu Aug 20 16:35:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_2c693399
+UUID: 248c8586_531f7692
+Bytes: 143
+More than 1 or 2 files touched to handle this, planned on making that a separate CL. Will look into what I can do in the context of these pair.
 

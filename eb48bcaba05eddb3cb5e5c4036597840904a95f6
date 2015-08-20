@@ -1,0 +1,11 @@
+Revision: eb48bcaba05eddb3cb5e5c4036597840904a95f6
+Patch-set: 3
+File: debuggerd/Android.mk
+
+34
+Thu Aug 20 17:22:58 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_b98d7b3e
+Bytes: 92
+This won't work currently.  LOCAL_INIT_RC needs to accept multiple files for 64 big daemons.
+

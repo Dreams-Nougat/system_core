@@ -1,0 +1,11 @@
+Revision: 98dca2d0b15f9a579efae8592dbb45059aad082e
+Patch-set: 1
+File: logd/FlushCommand.cpp
+
+75:14-75:24
+Thu Aug 20 15:44:07 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_b0ba5826
+Bytes: 142
+Toying with changing to std::list_forward, decided not to, but just in case I change my mind later, leaving the only _cheap_ change I made in.
+

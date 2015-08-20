@@ -1,0 +1,11 @@
+Revision: c11148abc9a71fef0873e976fa5ce543c14cde41
+Patch-set: 1
+File: metricsd/uploader/upload_service.cc
+
+228
+Thu Aug 20 18:49:04 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_f83f6d6f
+Bytes: 9
+<< "log."
+

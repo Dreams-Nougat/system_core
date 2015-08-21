@@ -1,0 +1,34 @@
+Revision: f5dff0f3a33521c416ad49ba8b960f0d83b95812
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+346:12-379:13
+Fri Aug 21 17:22:08 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_daaa9259
+Bytes: 69
+probably should be wrapped with if (!worstUidEnabledForLogid(id)) { }
+
+277:0-382:9
+Fri Aug 21 17:22:08 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_5b930fe0
+Bytes: 38
+Could be an uidTable_t::format method.
+
+397:0-443:54
+Fri Aug 21 17:22:08 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_5ebe99ab
+Bytes: 32
+output += entry.format() method?
+
+460:0-504:54
+Fri Aug 21 17:22:08 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_3b8ac3a2
+Bytes: 64
+output += entry.format()
+
+std::string TidEntry::format() { ... }
+

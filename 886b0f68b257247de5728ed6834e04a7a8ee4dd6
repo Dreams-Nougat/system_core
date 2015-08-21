@@ -1,0 +1,11 @@
+Revision: 886b0f68b257247de5728ed6834e04a7a8ee4dd6
+Patch-set: 1
+File: logwrapper/logwrap.c
+
+311
+Fri Aug 21 22:40:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_e7bfbe78
+Bytes: 40
+it's 2015. i think we can afford C99 :-)
+

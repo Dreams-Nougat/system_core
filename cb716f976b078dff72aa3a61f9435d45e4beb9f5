@@ -36,6 +36,14 @@ I could/should define CheckTriggers as const though.
 
 Same comments for below
 
+275:0-275:25
+Fri Aug 21 18:59:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_41a002ee
+UUID: c42ba915_6f2f0d41
+Bytes: 377
+As far as I think, adding const helps make the aim more clear. Currently it seems not necessary as the class is small. But we don't know what will it become in the future. And it is hard to figure out which members can't be changed in a class having a dozen of members. So I think it is better to keep it as clean as possible at first. Of course, it depends on personal tastes.
+
 283:23-283:36
 Fri Aug 21 17:51:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -74,6 +82,14 @@ I agree it should be cleaned up as mentioned in action.h.  These objects persist
 
 I've separately wondered if we'd want to extend init to allow for "oneshot" triggers or something along those lines.  To that end, we would be able to free a 'oneshot' Action once it's been used, but that's for a later discussion.
 
+330:4-330:31
+Fri Aug 21 18:59:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_28ceefa6
+UUID: 84253145_88806305
+Bytes: 50
+I agree with your idea of freeing oneshot Actions.
+
 343:20-343:41
 Fri Aug 21 17:51:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -109,4 +125,12 @@ I've checked and I don't believe it is.  Once something is added to actions_ it 
 It was leaking built in actions when I first committed it, though those are now added to this vector as well in this commit.
 
 But I do agree that it should be cleaned up.  It could/should be simply std::vector<Action> as well and avoid the dynamic allocation entirely.  I also need to get rid of passing an Action pointer to init_parser.cpp for parsing commands.  Service.cpp has the same problem.  We discussed on https://android-review.googlesource.com/#/c/162655/ how to fix this.
+
+83:4-83:34
+Fri Aug 21 18:59:28 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_a01a0473
+UUID: a47f9520_2645ca1a
+Bytes: 40
+yes, it is only a potential memory leak.
 

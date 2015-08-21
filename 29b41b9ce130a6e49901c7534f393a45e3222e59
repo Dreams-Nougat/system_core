@@ -1,0 +1,11 @@
+Revision: 29b41b9ce130a6e49901c7534f393a45e3222e59
+Patch-set: 1
+File: libpixelflinger/t32cb16blend.S
+
+149
+Fri Aug 21 22:11:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_40a45fba
+Bytes: 26
+shouldn't this be ldmfdlo?
+

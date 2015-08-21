@@ -9,12 +9,32 @@ UUID: e4750d3f_c8e8932b
 Bytes: 299
 move "found" to L196? It is a little confusing to use "found" and "return false" at the same time. The rule here is the Action should use property trigger specified by "name" and fulfill other property triggers. What's more, "name" can be empty. Can you refactor it or at least add a comment for it?
 
+192:4-192:30
+Fri Aug 21 18:24:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_c8e8932b
+UUID: e430ad80_4b232533
+Bytes: 54
+I will move this and add a comment in a future commit.
+
 275:0-275:25
 Fri Aug 21 17:51:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84253145_cd2f4d10
 Bytes: 5
 const
+
+275:0-275:25
+Fri Aug 21 18:24:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_cd2f4d10
+UUID: c4700952_41a002ee
+Bytes: 236
+Do we get a strong benefit from adding const here?  There's no interface to mutate this value currently, but we lose move semantics if we define it as const.
+
+I could/should define CheckTriggers as const though.
+
+Same comments for below
 
 283:23-283:36
 Fri Aug 21 17:51:43 2015 +0000
@@ -44,12 +64,30 @@ UUID: 248c8586_1a69fa6e
 Bytes: 41
 see, no one cares when act will be freed?
 
+330:4-330:31
+Fri Aug 21 18:24:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_1a69fa6e
+UUID: 84253145_28ceefa6
+Bytes: 394
+I agree it should be cleaned up as mentioned in action.h.  These objects persist for the lifetime of init as in theory triggers can be called any number of times.
+
+I've separately wondered if we'd want to extend init to allow for "oneshot" triggers or something along those lines.  To that end, we would be able to free a 'oneshot' Action once it's been used, but that's for a later discussion.
+
 343:20-343:41
 Fri Aug 21 17:51:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c42ba915_afaf6599
 Bytes: 30
 a little complex, add comment?
+
+343:20-343:41
+Fri Aug 21 18:24:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_afaf6599
+UUID: c4700952_bcbeadf9
+Bytes: 40
+I will add a comment in a future commit.
 
 File: init/action.h
 
@@ -59,4 +97,16 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 248c8586_ba50eedd
 Bytes: 80
 I think Action is memory leaking. use std::vector<std::unique_ptr<Action>> here?
+
+83:4-83:34
+Fri Aug 21 18:24:24 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_ba50eedd
+UUID: 4485f957_a01a0473
+Bytes: 603
+I've checked and I don't believe it is.  Once something is added to actions_ it persists through the duration of init.
+
+It was leaking built in actions when I first committed it, though those are now added to this vector as well in this commit.
+
+But I do agree that it should be cleaned up.  It could/should be simply std::vector<Action> as well and avoid the dynamic allocation entirely.  I also need to get rid of passing an Action pointer to init_parser.cpp for parsing commands.  Service.cpp has the same problem.  We discussed on https://android-review.googlesource.com/#/c/162655/ how to fix this.
 

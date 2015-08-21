@@ -9,3 +9,18 @@ UUID: 248c8586_d7c4abdb
 Bytes: 32
 shouldn't this be a fatal error?
 
+73
+Fri Aug 21 15:50:36 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_d7c4abdb
+UUID: 4485f957_e5bfbe78
+Bytes: 79
+Nick is right, if you cannot set the groups crash reporter wouldn't work right?
+
+73:35-73:41
+Fri Aug 21 15:50:36 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_7d584381
+Bytes: 37
+Maybe list the groups you're setting?
+

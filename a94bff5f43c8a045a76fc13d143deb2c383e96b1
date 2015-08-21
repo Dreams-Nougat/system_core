@@ -2,6 +2,13 @@ Revision: a94bff5f43c8a045a76fc13d143deb2c383e96b1
 Patch-set: 1
 File: crash_reporter/user_collector.cc
 
+38
+Fri Aug 21 15:53:23 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_c39396af
+Bytes: 111
+please never, ever use /data/local/tmp on something intended for production devices. /data/local/tmp is unsafe.
+
 73
 Fri Aug 21 15:47:22 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

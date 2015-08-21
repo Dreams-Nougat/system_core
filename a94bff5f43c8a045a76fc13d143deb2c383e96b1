@@ -17,6 +17,16 @@ UUID: e4750d3f_c8be53fb
 Bytes: 28
 What's a better alternative?
 
+38
+Fri Aug 21 15:58:55 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_c8be53fb
+UUID: 048f817d_0383de5d
+Bytes: 314
+Create a brand new directory and use it instead. /data/misc/crash_reporter for example.
+
+Android deliberately has no /tmp style directories, and nor do we ever want one. /tmp directories have been the source of innumerable security holes. Every process should have it's own home directory if it needs to own files.
+
 73
 Fri Aug 21 15:47:22 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

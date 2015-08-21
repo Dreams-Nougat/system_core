@@ -1,0 +1,62 @@
+Revision: cb716f976b078dff72aa3a61f9435d45e4beb9f5
+Patch-set: 5
+File: init/action.cpp
+
+192:4-192:30
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_c8e8932b
+Bytes: 299
+move "found" to L196? It is a little confusing to use "found" and "return false" at the same time. The rule here is the Action should use property trigger specified by "name" and fulfill other property triggers. What's more, "name" can be empty. Can you refactor it or at least add a comment for it?
+
+275:0-275:25
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_cd2f4d10
+Bytes: 5
+const
+
+283:23-283:36
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_7ba60b0e
+Bytes: 57
+const Action& ? so you don't need to check if it is null.
+
+287:0-288:23
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a42a3512_a988c52e
+Bytes: 5
+const
+
+299:4-299:11
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_3a295e3a
+Bytes: 13
+const Action*
+
+330:4-330:31
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_1a69fa6e
+Bytes: 41
+see, no one cares when act will be freed?
+
+343:20-343:41
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_afaf6599
+Bytes: 30
+a little complex, add comment?
+
+File: init/action.h
+
+83:4-83:34
+Fri Aug 21 17:51:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_ba50eedd
+Bytes: 80
+I think Action is memory leaking. use std::vector<std::unique_ptr<Action>> here?
+

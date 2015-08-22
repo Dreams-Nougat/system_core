@@ -17,3 +17,11 @@ UUID: e430ad80_13eec37f
 Bytes: 237
 yeah, that's the idea. so for a pull/push where you only move one file, at the end you print the details for that one file; for an "adb sync" where you move a bunch of files, at the end you print the cumulative details for the whole lot.
 
+218
+Sat Aug 22 01:37:48 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e430ad80_13eec37f
+UUID: c42ba915_c1887530
+Bytes: 70
+Ah, show_progress is false with multiple files, even with the -p flag.
+

@@ -9,3 +9,11 @@ UUID: e4750d3f_8b6fe21e
 Bytes: 169
 It doesn't seem like sc.total_bytes gets zeroed except on construction of the class, and sync_send looks like it gets called multiple times with the same SyncConnection.
 
+218
+Sat Aug 22 01:28:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_8b6fe21e
+UUID: e430ad80_13eec37f
+Bytes: 237
+yeah, that's the idea. so for a pull/push where you only move one file, at the end you print the details for that one file; for an "adb sync" where you move a bunch of files, at the end you print the cumulative details for the whole lot.
+

@@ -1,0 +1,20 @@
+Revision: 682d55ee1009de848c262911e2864c92d2979cc1
+Patch-set: 4
+File: adb/file_sync_client.cpp
+
+98
+Sat Aug 22 00:00:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_26006c3a
+Bytes: 96
+this was my failed idea. i'll remove this because right now i've no idea what the right idea is.
+
+File: adb/transport.cpp
+
+852
+Sat Aug 22 00:00:07 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_248dc8b9
+Bytes: 5
+oops.
+

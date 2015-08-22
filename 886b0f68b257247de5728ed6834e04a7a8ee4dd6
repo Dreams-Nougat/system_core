@@ -9,3 +9,13 @@ UUID: c4700952_e7bfbe78
 Bytes: 40
 it's 2015. i think we can afford C99 :-)
 
+311
+Sat Aug 22 00:26:32 2015 +0000
+Author: Yusuke Sato <1032760@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_e7bfbe78
+UUID: 048f817d_a44698f9
+Bytes: 185
+Thanks for the review.
+
+Let me add -std=gnu99 to Android.mk like fastboot/ and libbacktrace/ do. Just to be cautious, I built the OS image for the emulator and confirmed that it worked.
+

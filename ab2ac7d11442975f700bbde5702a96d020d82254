@@ -9,3 +9,11 @@ UUID: 4485f957_06bbe85e
 Bytes: 119
 whoa! Don't use /data/local/tmp here. /data/local/tmp is reserved for the shell user and is an unsafe directory to use.
 
+15
+Sat Aug 22 22:17:20 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_06bbe85e
+UUID: 248c8586_26bb875f
+Bytes: 168
+Yea, I saw your comment on the group permissions CL after this went in.  I filed http://b/23430484 for it, will be uploading the CL for that either tonight or tomorrow.
+

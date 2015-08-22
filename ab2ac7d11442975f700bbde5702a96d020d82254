@@ -1,0 +1,11 @@
+Revision: ab2ac7d11442975f700bbde5702a96d020d82254
+Patch-set: 4
+File: crash_reporter/init.crash_reporter.rc
+
+15
+Sat Aug 22 21:26:07 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_06bbe85e
+Bytes: 119
+whoa! Don't use /data/local/tmp here. /data/local/tmp is reserved for the shell user and is an unsafe directory to use.
+

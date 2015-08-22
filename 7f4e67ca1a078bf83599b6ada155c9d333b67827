@@ -1,0 +1,11 @@
+Revision: 7f4e67ca1a078bf83599b6ada155c9d333b67827
+Patch-set: 7
+File: /COMMIT_MSG
+
+19
+Sat Aug 22 18:42:04 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_5b130665
+Bytes: 152
+actually, it's a lot better than that if you remember to "adb kill-server" so you're testing the new code in all three places... i'm getting ~100ms now.
+

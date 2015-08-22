@@ -1,0 +1,11 @@
+Revision: 50568f3a098113ea9e18497170dc6878a769edf8
+Patch-set: 5
+File: adb/file_sync_client.cpp
+
+218
+Sat Aug 22 01:10:41 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_8b6fe21e
+Bytes: 169
+It doesn't seem like sc.total_bytes gets zeroed except on construction of the class, and sync_send looks like it gets called multiple times with the same SyncConnection.
+

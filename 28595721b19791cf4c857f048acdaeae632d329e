@@ -9,3 +9,13 @@ UUID: 048f817d_f8abe0de
 Bytes: 174
 Does it matter that the new code keeps a dir 'open' when it goes recursive? Maybe call dir.reset() to close before going recursive? Or add {} scoping so it destructs earlier?
 
+628:4-628:16
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_f8abe0de
+UUID: c42ba915_21736990
+Bytes: 105
+probably not, given the low PATH_MAX hard-coded limit, but hopefully we'll remove that one day :-)
+
+done.
+

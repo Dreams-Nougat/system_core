@@ -9,6 +9,14 @@ UUID: c4700952_22105408
 Bytes: 67
 if (IsValid()) {SendQuit(); ShowTransferRate(); adb_close(fd);}  ??
 
+82:4-82:21
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_22105408
+UUID: a47f9520_8997ee51
+Bytes: 139
+the old code got away without closing these fds because we exit immediately after anyway, but, yeah, closing sounds like a good idea. done.
+
 218
 Sat Aug 22 01:10:41 2015 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -39,12 +47,28 @@ UUID: a47f9520_8965ae11
 Bytes: 6
 false?
 
+404:29-404:31
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_8965ae11
+UUID: 048f817d_58c78caa
+Bytes: 4
+Done
+
 558:83-558:88
 Sat Aug 22 05:39:14 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_78c05095
 Bytes: 73
 Is this what Josh is referring to? show_progress=false for multiple files
+
+558:83-558:88
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_78c05095
+UUID: a47f9520_29a4bab9
+Bytes: 4
+yes.
 
 703:48-703:53
 Sat Aug 22 05:39:14 2015 +0000
@@ -60,6 +84,14 @@ UUID: 248c8586_e6cedf28
 Bytes: 6
 false?
 
+766:30-766:31
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_e6cedf28
+UUID: c42ba915_c1771578
+Bytes: 4
+Done
+
 File: adb/file_sync_service.cpp
 
 166:12-166:20
@@ -69,6 +101,16 @@ UUID: 048f817d_9842d4c3
 Bytes: 126
 If fail_errno() failed to write the error message, then we set fd=-1 and continue? Seems odd? Maybe leave that to another day.
 
+166:12-166:20
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_9842d4c3
+UUID: c4700952_2229343a
+Bytes: 328
+yeah, that does seem insane. i didn't notice that. especially because 'fd' is the locally-opened file, not the socket. and especially because if you get to the end of this function with fd == -1, it returns true! i'll raise a bug to look at this.
+
+handle_send_link uses fail_errno the way you'd expect, but do_recv is weird too.
+
 395:36-395:43
 Sat Aug 22 05:39:14 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -76,10 +118,28 @@ UUID: c42ba915_218a89f8
 Bytes: 195
 This should really be more like %c%c%c%c and msg.req.id[0-3] (or maybe something like %4s?), otherwise the current code assumes that there is magically a NULL byte at the start of the next field.
 
+395:36-395:43
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_218a89f8
+UUID: e4750d3f_ce83b8e1
+Bytes: 103
+ugh. it's not magic --- you've hit on the explanation for L394. fucking C programmers.
+
+done. L414 too.
+
 411:8-411:27
 Sat Aug 22 05:39:14 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e430ad80_73c05795
 Bytes: 53
 I think the D() above already outputs sync: 'QUIT'...
+
+411:8-411:27
+Sat Aug 22 06:26:06 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e430ad80_73c05795
+UUID: e430ad80_73729709
+Bytes: 4
+Done
 

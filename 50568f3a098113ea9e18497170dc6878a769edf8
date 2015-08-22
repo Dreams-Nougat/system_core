@@ -55,6 +55,13 @@ UUID: 048f817d_58c78caa
 Bytes: 4
 Done
 
+474
+Sat Aug 22 07:00:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_b88eb888
+Bytes: 126
+by making me look at this again, you made me realize we do twice as many lstat calls as necessary. the next ps fixes that too.
+
 558:83-558:88
 Sat Aug 22 05:39:14 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

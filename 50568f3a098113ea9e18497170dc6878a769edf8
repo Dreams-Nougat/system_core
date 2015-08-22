@@ -2,6 +2,13 @@ Revision: 50568f3a098113ea9e18497170dc6878a769edf8
 Patch-set: 5
 File: adb/file_sync_client.cpp
 
+82:4-82:21
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_22105408
+Bytes: 67
+if (IsValid()) {SendQuit(); ShowTransferRate(); adb_close(fd);}  ??
+
 218
 Sat Aug 22 01:10:41 2015 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,4 +31,55 @@ Parent: e430ad80_13eec37f
 UUID: c42ba915_c1887530
 Bytes: 70
 Ah, show_progress is false with multiple files, even with the -p flag.
+
+404:29-404:31
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_8965ae11
+Bytes: 6
+false?
+
+558:83-558:88
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_78c05095
+Bytes: 73
+Is this what Josh is referring to? show_progress=false for multiple files
+
+703:48-703:53
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_d8ba9c27
+Bytes: 73
+Is this what Josh is referring to? show_progress=false for multiple files
+
+766:30-766:31
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_e6cedf28
+Bytes: 6
+false?
+
+File: adb/file_sync_service.cpp
+
+166:12-166:20
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_9842d4c3
+Bytes: 126
+If fail_errno() failed to write the error message, then we set fd=-1 and continue? Seems odd? Maybe leave that to another day.
+
+395:36-395:43
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_218a89f8
+Bytes: 195
+This should really be more like %c%c%c%c and msg.req.id[0-3] (or maybe something like %4s?), otherwise the current code assumes that there is magically a NULL byte at the start of the next field.
+
+411:8-411:27
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_73c05795
+Bytes: 53
+I think the D() above already outputs sync: 'QUIT'...
 

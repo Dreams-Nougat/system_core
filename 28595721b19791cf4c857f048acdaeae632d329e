@@ -1,0 +1,11 @@
+Revision: 28595721b19791cf4c857f048acdaeae632d329e
+Base-for-patch-set: 5
+File: adb/file_sync_client.cpp
+
+628:4-628:16
+Sat Aug 22 05:39:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_f8abe0de
+Bytes: 174
+Does it matter that the new code keeps a dir 'open' when it goes recursive? Maybe call dir.reset() to close before going recursive? Or add {} scoping so it destructs earlier?
+

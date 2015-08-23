@@ -1,0 +1,34 @@
+Revision: 0c5ce1def81290d9a1d70415c66abff7f0a436a9
+Patch-set: 8
+File: /COMMIT_MSG
+
+19:53-19:58
+Sun Aug 23 22:37:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_490d86ef
+Bytes: 103
+You could always try disabling nagle on the socket to see if that helps too. Maybe not worth it though.
+
+File: adb/file_sync_client.cpp
+
+79:4-79:12
+Sun Aug 23 22:37:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_86727306
+Bytes: 350
+Useless comments that probably don't matter: buf alignment == SyncRequest alignment (my guess is probably)? Use placement new on SyncRequest in case it is turned into a class (maybe just leave that to the person who makes such a change)? req+1 assumes that there is no padding between consecutive SyncRequest objects (which I think is pretty likely).
+
+454:29-454:37
+Sun Aug 23 22:37:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a42a3512_94807905
+Bytes: 240
+I don't think this updates the skipped local var in the caller, so the caller won't print proper '5 files skipped, 2 skipped' output. It seems like the 'proper' way to skip is to add a copyinfo with flag==1, but that seems like a real pain.
+
+469:37-469:45
+Sun Aug 23 22:37:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_dbce1629
+Bytes: 20
+same skipped comment
+

@@ -150,3 +150,12 @@ UUID: e430ad80_73729709
 Bytes: 4
 Done
 
+File: adb/file_sync_service.h
+
+39:4-39:16
+Sun Aug 23 22:37:48 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_56b749bc
+Bytes: 58
+ahhh, thanks for deleting this confusing never-used field.
+

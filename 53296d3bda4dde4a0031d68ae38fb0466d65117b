@@ -9,3 +9,10 @@ UUID: 4485f957_d05595cc
 Bytes: 29
 Is this intentionally unused?
 
+92:4-92:17
+Mon Aug 24 23:27:06 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_bc654311
+Bytes: 125
+Technically, you could make this a const char*, and do a type = down below since it's never used as the target of a snprintf.
+

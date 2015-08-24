@@ -1,0 +1,13 @@
+Revision: 3d9872b8d9a3895f94d81e55e2adb06d149e1475
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Mon Aug 24 22:56:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_a8aae106
+Bytes: 129
+please elaborate: describe the race that you're fixing here.
+
+(a checkin comment should be useful even if you can't see the bug.)
+

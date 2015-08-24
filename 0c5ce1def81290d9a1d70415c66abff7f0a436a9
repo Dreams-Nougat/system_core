@@ -65,3 +65,11 @@ UUID: 048f817d_2e8da2b9
 Bytes: 103
 This will write a null past the end of the buffer in the case that strlen(path) == 1024, and len == 256
 
+120
+Mon Aug 24 18:15:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_2e8da2b9
+UUID: a47f9520_6c72d009
+Bytes: 131
+rewritten in next patchset to use std::string. (this is only used to implement "adb ls", which most people don't even know exists.)
+

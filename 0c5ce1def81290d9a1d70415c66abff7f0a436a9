@@ -56,3 +56,12 @@ UUID: 048f817d_dbce1629
 Bytes: 20
 same skipped comment
 
+File: adb/file_sync_service.cpp
+
+120
+Mon Aug 24 18:04:39 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_2e8da2b9
+Bytes: 103
+This will write a null past the end of the buffer in the case that strlen(path) == 1024, and len == 256
+

@@ -9,6 +9,14 @@ UUID: a47f9520_490d86ef
 Bytes: 103
 You could always try disabling nagle on the socket to see if that helps too. Maybe not worth it though.
 
+19:53-19:58
+Mon Aug 24 18:01:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_490d86ef
+UUID: 84253145_5072edd6
+Bytes: 84
+a quick test adding that to SyncConnection actually made an empty "adb sync" slower.
+
 File: adb/file_sync_client.cpp
 
 79:4-79:12
@@ -18,12 +26,28 @@ UUID: 248c8586_86727306
 Bytes: 350
 Useless comments that probably don't matter: buf alignment == SyncRequest alignment (my guess is probably)? Use placement new on SyncRequest in case it is turned into a class (maybe just leave that to the person who makes such a change)? req+1 assumes that there is no padding between consecutive SyncRequest objects (which I think is pretty likely).
 
+79:4-79:12
+Mon Aug 24 18:01:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_86727306
+UUID: 048f817d_ae98b2fc
+Bytes: 79
+i've added attribute aligned here and packed in all the structs in the .h file.
+
 454:29-454:37
 Sun Aug 23 22:37:48 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a42a3512_94807905
 Bytes: 240
 I don't think this updates the skipped local var in the caller, so the caller won't print proper '5 files skipped, 2 skipped' output. It seems like the 'proper' way to skip is to add a copyinfo with flag==1, but that seems like a real pain.
+
+454:29-454:37
+Mon Aug 24 18:01:28 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a42a3512_94807905
+UUID: e430ad80_f1721f58
+Bytes: 160
+yeah, and it's true of the other "skipping"s too, so i'll just ignore it for now. a lot of things stand in the way of using "long" paths on Android right now...
 
 469:37-469:45
 Sun Aug 23 22:37:48 2015 +0000

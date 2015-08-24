@@ -1,0 +1,11 @@
+Revision: a3f3599bbd3417baa6e8180da5cacb16d5c7b84f
+Patch-set: 3
+File: adb/usb_osx.cpp
+
+204
+Mon Aug 24 15:16:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_15c54707
+Bytes: 17
+unnecessary cast?
+

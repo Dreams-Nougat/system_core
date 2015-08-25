@@ -1,0 +1,20 @@
+Revision: 0ec10e76c3d37adc80e1897f164ea64d81438d96
+Patch-set: 1
+File: include/system/audio.h
+
+260:20-260:37
+Tue Aug 25 16:41:50 2015 +0000
+Author: Eric Laurent <1003259@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_5879cae5
+Bytes: 95
+DTS and DTS HD will be defined in next AOSP release.
+We prefer to defer this change until then.
+
+266:39-266:51
+Tue Aug 25 16:41:50 2015 +0000
+Author: Eric Laurent <1003259@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a42a3512_09568fd8
+Bytes: 47
+please use 0x11000000.
+This is not a bit field.
+

@@ -135,6 +135,16 @@ UUID: e430ad80_4708ee9e
 Bytes: 100
 this code isn't called for symlinks; only regular files. (we do nothing for symlinks. is that okay?)
 
+206:8-206:44
+Tue Aug 25 19:32:22 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e430ad80_4708ee9e
+UUID: 248c8586_77b7f0bc
+Bytes: 363
+Generally speaking, we need to make sure the SELinux labels on symlinks are correct when adb push / adb sync is called. Labels on symlinks are just as important as labels on files. If you get the labels wrong on symlinks, you end up with situations like b/18078518.
+
+If this code is never triggered on a symlink, then there's likely nothing to be concerned about.
+
 213:65-213:78
 Tue Aug 25 02:46:45 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

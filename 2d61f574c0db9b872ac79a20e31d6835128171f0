@@ -16,6 +16,14 @@ UUID: c42ba915_682cde98
 Bytes: 118
 Any chance in a follow-up cl you could change all of the instances of the variable s to actually be a meaningful name?
 
+144:33-144:34
+Tue Aug 25 03:25:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_682cde98
+UUID: 4485f957_537f6f1b
+Bytes: 237
+yeah, SyncConnection helps fix this problem. it's just not plumbed through everywhere yet. i think the problem is that these functions have too many fds. (in the short term, think "s == socket" --- it's the fd for talking to the client.)
+
 153:12-153:22
 Tue Aug 25 03:06:29 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -58,6 +66,14 @@ UUID: 4485f957_d3727f58
 Bytes: 108
 I don't think you need this check any more. You can't get here if fd < 0, you would skip to fail from above.
 
+203:2-203:18
+Tue Aug 25 03:25:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_d3727f58
+UUID: 248c8586_96785a37
+Bytes: 4
+Done
+
 206:8-206:44
 Tue Aug 25 02:46:45 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -65,12 +81,28 @@ UUID: 84253145_61695d98
 Bytes: 48
 Do you need to do this in any of the fail cases?
 
+206:8-206:44
+Tue Aug 25 03:25:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_61695d98
+UUID: 84253145_e1e7ada0
+Bytes: 103
+good question. [+nnk]: is there a reason why we can't just call this as soon as we've created the file?
+
 213:65-213:78
 Tue Aug 25 02:46:45 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e4750d3f_7f482d81
 Bytes: 173
 Shouldn't this goto fail (assuming you add a fd = -1 after the close)? If do_unlink is true, the adb_unlink call from below is not called even though this is a failure case.
+
+213:65-213:78
+Tue Aug 25 03:25:32 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_7f482d81
+UUID: 4485f957_135247b7
+Bytes: 169
+but you're only supposed to unlink bad files, i think. if we get this far, what's on the fs is fine in every way --- we just weren't able to tell the client we finished.
 
 324:8-325:21
 Tue Aug 25 03:06:29 2015 +0000

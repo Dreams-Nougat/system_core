@@ -31,6 +31,16 @@ UUID: e4750d3f_bf977551
 Bytes: 225
 I think the old code used to only bail if there was an error sending the errmsg to the client. If the errmsg was sent ok, it would set fd=-1, then continue (and ignore the secure_mkdirs failure). What do we really want to do?
 
+153:12-153:22
+Tue Aug 25 03:31:56 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_bf977551
+UUID: a42a3512_26037887
+Bytes: 258
+agreed, but i don't see how that made any sense. if something's gone wrong, i think we should stop digging. does anyone have a counterexample?
+
+(note also that the other end -- the client -- will stop as soon as it sees one of these ID_FAIL messages anyway.)
+
 161:8-162:18
 Tue Aug 25 03:06:29 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

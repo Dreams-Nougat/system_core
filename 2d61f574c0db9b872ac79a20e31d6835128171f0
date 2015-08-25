@@ -127,6 +127,14 @@ The only concern I have is regarding symlinks. I'm not sure of the behavior of t
 
 Either way is fine with me.
 
+206:8-206:44
+Tue Aug 25 18:33:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_c532aef6
+UUID: e430ad80_4708ee9e
+Bytes: 100
+this code isn't called for symlinks; only regular files. (we do nothing for symlinks. is that okay?)
+
 213:65-213:78
 Tue Aug 25 02:46:45 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

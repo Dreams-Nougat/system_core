@@ -115,6 +115,18 @@ UUID: 84253145_e1e7ada0
 Bytes: 103
 good question. [+nnk]: is there a reason why we can't just call this as soon as we've created the file?
 
+206:8-206:44
+Tue Aug 25 18:05:33 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_e1e7ada0
+UUID: e4750d3f_c532aef6
+Bytes: 276
+Yes, you could call it when you create the file. The current solution was easier to implement. The net result should be the same.
+
+The only concern I have is regarding symlinks. I'm not sure of the behavior of that function when path is a symlink.
+
+Either way is fine with me.
+
 213:65-213:78
 Tue Aug 25 02:46:45 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

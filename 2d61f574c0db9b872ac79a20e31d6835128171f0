@@ -1,0 +1,32 @@
+Revision: 2d61f574c0db9b872ac79a20e31d6835128171f0
+Patch-set: 1
+File: adb/file_sync_service.cpp
+
+144:33-144:34
+Tue Aug 25 02:46:45 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_682cde98
+Bytes: 118
+Any chance in a follow-up cl you could change all of the instances of the variable s to actually be a meaningful name?
+
+203:2-203:18
+Tue Aug 25 02:46:45 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_d3727f58
+Bytes: 108
+I don't think you need this check any more. You can't get here if fd < 0, you would skip to fail from above.
+
+206:8-206:44
+Tue Aug 25 02:46:45 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_61695d98
+Bytes: 48
+Do you need to do this in any of the fail cases?
+
+213:65-213:78
+Tue Aug 25 02:46:45 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_7f482d81
+Bytes: 173
+Shouldn't this goto fail (assuming you add a fd = -1 after the close)? If do_unlink is true, the adb_unlink call from below is not called even though this is a failure case.
+

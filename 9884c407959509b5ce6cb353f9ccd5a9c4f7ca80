@@ -1,0 +1,11 @@
+Revision: 9884c407959509b5ce6cb353f9ccd5a9c4f7ca80
+Patch-set: 2
+File: adb/file_sync_service.cpp
+
+195:8-195:29
+Tue Aug 25 06:34:39 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_c2af0799
+Bytes: 12
+remove this?
+

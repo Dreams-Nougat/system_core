@@ -1,0 +1,11 @@
+Revision: 56bf3098431f18e87bfcd4ccddae3f89fa59120f
+Patch-set: 1
+File: adb/file_sync_service.cpp
+
+308
+Tue Aug 25 18:07:40 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_2a6ca625
+Bytes: 31
+needs to be initialized to mode
+

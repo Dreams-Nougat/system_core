@@ -1,0 +1,20 @@
+Revision: cc338801e46776541fb661956ce76a3c97f5bb45
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+197:0-198:89
+Tue Aug 25 23:00:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a42a3512_7a233f33
+Bytes: 61
+Was this missing before? Definition was available and unused?
+
+File: healthd/healthd.h
+
+68:4-68:20
+Tue Aug 25 23:00:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_e71a5274
+Bytes: 91
+Technical Debt, no action required: eliminate android::String8 and replace with std::string
+

@@ -41,6 +41,14 @@ agreed, but i don't see how that made any sense. if something's gone wrong, i th
 
 (note also that the other end -- the client -- will stop as soon as it sees one of these ID_FAIL messages anyway.)
 
+153:12-153:22
+Tue Aug 25 03:37:22 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a42a3512_26037887
+UUID: a4fcf5c5_aaaf6b99
+Bytes: 444
+Maybe the old code was just written with hopes of some advanced client or a 'streaming' client that sends a lot of commands in batch and reads the responses in batch (and hence doesn't want to fail on an early command). That almost makes sense given the 'start stat / finish stat' code in file_sync_client.cpp that you were going over the other day. Anyway, the real answer is probably before my time. I'm fine with the improved error checking.
+
 161:8-162:18
 Tue Aug 25 03:06:29 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

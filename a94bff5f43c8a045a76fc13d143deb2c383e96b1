@@ -27,12 +27,28 @@ Create a brand new directory and use it instead. /data/misc/crash_reporter for e
 
 Android deliberately has no /tmp style directories, and nor do we ever want one. /tmp directories have been the source of innumerable security holes. Every process should have it's own home directory if it needs to own files.
 
+38
+Tue Aug 25 06:59:43 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_0383de5d
+UUID: 248c8586_cb7e465c
+Bytes: 116
+I've filed http://b/23430484 for moving the folder to /data/misc/crash_reporter, will upload a separate CL for that.
+
 72:16-72:48
 Fri Aug 21 18:06:29 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e4750d3f_23161856
 Bytes: 13
 arraysize() ?
+
+72:16-72:48
+Tue Aug 25 06:59:43 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_23161856
+UUID: 048f817d_a2976351
+Bytes: 4
+Done
 
 73
 Fri Aug 21 15:47:22 2015 +0000
@@ -62,4 +78,12 @@ Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_46fd76a1
 Bytes: 37
 use the PLOG variant too to get errno
+
+73:4-73:7
+Tue Aug 25 06:59:43 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_46fd76a1
+UUID: c42ba915_a848b633
+Bytes: 4
+Done
 

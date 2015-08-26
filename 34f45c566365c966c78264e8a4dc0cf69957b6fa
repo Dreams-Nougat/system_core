@@ -1,0 +1,19 @@
+Revision: 34f45c566365c966c78264e8a4dc0cf69957b6fa
+Patch-set: 1
+File: /COMMIT_MSG
+
+14:0-19:59
+Wed Aug 26 19:32:13 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_5f7d118a
+Bytes: 509
+So is the following the way things work?
+
+1. If I disconnect my USB device, output_thread gets an error from t->read_from_remote(), so it breaks out of its loop, sends A_SYNC to the main thread, and unrefs the transport.
+
+2. The main thread sees the A_SYNC, so it calls handle_offline() and it sends A_SYNC to the input_thread.
+
+3. The input_thread sees the A_SYNC, so it breaks out of its loop and unrefs the transport.
+
+I'm not very familiar with close_all_sockets(), but the change sounds ok to me. Thanks.
+

@@ -1,0 +1,20 @@
+Revision: 6e2706b572b4d35a4fd66910744770125e9ecf44
+Patch-set: 4
+File: fastboot/bootimg_utils.h
+
+36:0-38:6
+Wed Aug 26 01:32:48 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_4683125d
+Bytes: 15
+not needed now?
+
+File: fastboot/fastboot.h
+
+37:0-39:6
+Wed Aug 26 01:32:48 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_b819e306
+Bytes: 9
+same here
+

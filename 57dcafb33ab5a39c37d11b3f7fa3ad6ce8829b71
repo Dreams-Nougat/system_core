@@ -9,10 +9,30 @@ UUID: 248c8586_4e17b206
 Bytes: 126
 What is different about "AndroidOne"? If there no PID if not AndroidOne? If not, can we bail out at the beginning of the loop?
 
+302
+Wed Aug 26 21:06:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_4e17b206
+UUID: e430ad80_19b6d977
+Bytes: 379
+I should drop all references to AndroidOne.
+
+I need to research the CL or config parameter that induced the behavior to report the thread that is filling the [pid:comm] addition to the dmesg and reference that instead.
+
+We can not tell we are 'AndroidOne', nor can we tell if some other kernel could be configured similarly to add administrative content to the dmesg ring buffer.
+
 589
 Wed Aug 26 20:38:19 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_f365303a
 Bytes: 184
 Since lower case 'l' looks so much like '1', can you rename the variable to something like 'len'. The first time I looked at this I thought your were calculating a pointer as np-len-s.
+
+589
+Wed Aug 26 21:06:01 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_f365303a
+UUID: e4750d3f_59f8e670
+Bytes: 3
+:-)
 

@@ -17,3 +17,11 @@ So is the following the way things work?
 
 I'm not very familiar with close_all_sockets(), but the change sounds ok to me. Thanks.
 
+14:0-19:59
+Wed Aug 26 19:34:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_5f7d118a
+UUID: e430ad80_de60472d
+Bytes: 101
+yeah, point 1 was non-obvious to me. i don't have a good suggestion of where to add a comment though.
+

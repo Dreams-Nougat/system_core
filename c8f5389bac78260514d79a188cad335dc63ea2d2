@@ -9,10 +9,26 @@ UUID: 4485f957_42f8f270
 Bytes: 4
 race
 
+7
+Wed Aug 26 22:11:11 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_42f8f270
+UUID: 84253145_da1a8f74
+Bytes: 4
+Done
+
 10
 Wed Aug 26 20:20:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 849451c2_1e35a9de
 Bytes: 226
 where is it freed? can we fix how ownership works to make this more obvious? (and in the meantime, it's probably worth adding this as a code comment so someone doesn't "clean up" this code and remove the "unnecessary" locals.)
+
+10
+Wed Aug 26 22:11:11 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 849451c2_1e35a9de
+UUID: c4700952_c1806406
+Bytes: 192
+s->peer may be a smartsocket, and smart_socket_enqueue() -> smart_socket_close() -> local_socket_close() -> local_socket_destroy() -> free(s). It is a progressive work to make asocket clearer.
 

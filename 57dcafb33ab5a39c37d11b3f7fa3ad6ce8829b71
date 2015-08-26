@@ -1,0 +1,18 @@
+Revision: 57dcafb33ab5a39c37d11b3f7fa3ad6ce8829b71
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+302
+Wed Aug 26 20:38:19 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_4e17b206
+Bytes: 126
+What is different about "AndroidOne"? If there no PID if not AndroidOne? If not, can we bail out at the beginning of the loop?
+
+589
+Wed Aug 26 20:38:19 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_f365303a
+Bytes: 184
+Since lower case 'l' looks so much like '1', can you rename the variable to something like 'len'. The first time I looked at this I thought your were calculating a pointer as np-len-s.
+

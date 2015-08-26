@@ -1,0 +1,11 @@
+Revision: 46d159d4626ca5d5667b739792840c3178a1457b
+Patch-set: 2
+File: logd/LogKlog.cpp
+
+299
+Wed Aug 26 23:38:20 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_92788437
+Bytes: 75
+Did mediatek change printk, or is this really 3.18 kernels vs earlier ones?
+

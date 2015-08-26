@@ -1,0 +1,18 @@
+Revision: c8f5389bac78260514d79a188cad335dc63ea2d2
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Wed Aug 26 20:20:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_42f8f270
+Bytes: 4
+race
+
+10
+Wed Aug 26 20:20:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_1e35a9de
+Bytes: 226
+where is it freed? can we fix how ownership works to make this more obvious? (and in the meantime, it's probably worth adding this as a code comment so someone doesn't "clean up" this code and remove the "unnecessary" locals.)
+

@@ -1,0 +1,11 @@
+Revision: 1a4cf8a91470e678e075eaaa47f43c33f4e86af4
+Patch-set: 3
+File: adb/transport.cpp
+
+481:4-482:28
+Wed Aug 26 21:52:51 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_f9af5298
+Bytes: 79
+"remove - register" seems unmatched. "remove - add" or "register - unregister"?
+

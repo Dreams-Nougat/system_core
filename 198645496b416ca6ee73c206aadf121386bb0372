@@ -1,0 +1,11 @@
+Revision: 198645496b416ca6ee73c206aadf121386bb0372
+Patch-set: 1
+File: metricsd/metrics_daemon.cc
+
+503
+Wed Aug 26 01:39:41 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e430ad80_d8fcdfe5
+Bytes: 55
+can you add a test for this? (or is there one already?)
+

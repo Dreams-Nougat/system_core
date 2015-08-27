@@ -2,12 +2,26 @@ Revision: 71ec0df896a963d025db527b8d13a8b1974dabea
 Patch-set: 6
 File: init/action.cpp
 
+31:0-31:34
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_ea39b58b
+Bytes: 193
+I noticed that android::base::Join is also used. As there are only 3 StringPrintf, I suggest using android::base::StringPrintf directly? or at least do the same thing for Join and StringPrintf?
+
 77
 Thu Aug 27 22:30:42 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_5983025d
 Bytes: 188
 does it make sense to have newlines at the end? shouldn't the caller be supplying those if it wants them? makes it harder to have multiple layers treating this more like a strerror result.
+
+76:4-81:56
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_433b0f87
+Bytes: 36
+will it better if using map::find()?
 
 87
 Thu Aug 27 22:30:42 2015 +0000
@@ -27,6 +41,29 @@ s/i.e./that is/
 
 rome fell in the pre-gingerbread era :-)
 
+310:4-310:42
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_dd0364c7
+Bytes: 195
+It seems the whole reason having shared_ptr is here. I prefer to keep Action* as the original code, and CheckTriggers using action_ == &action. Then you can change all shared_ptr into unique_ptr.
+
+466:11-466:53
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_1dc55cd5
+Bytes: 130
+I don't think passing private member of ActionManager to ActionParser is a good idea, unless you have some special considerations.
+
+File: init/action.h
+
+109:16-109:40
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_6f305a22
+Bytes: 77
+Action* ? Then we only need to worry about the life of an Action in actions_.
+
 File: init/bootchart.h
 
 23
@@ -44,6 +81,15 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_1e11da8f
 Bytes: 44
 we should add a maximum one of these days...
+
+File: init/builtins.h
+
+27:25-27:45
+Thu Aug 27 23:43:43 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_5ea44237
+Bytes: 91
+you don't need to export a global variable. something like FindBuiltinFunction() is enough.
 
 File: init/init_parser.cpp
 

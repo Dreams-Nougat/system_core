@@ -17,6 +17,14 @@ UUID: 4485f957_93f70eff
 Bytes: 317
 only the main thread can remove a transport from the transport_list and destroy it, in transport_registration_func (you may notice an exception in unregister_usb_transport, but it doesn't matter and I plan to remove it in the next change). So the transport will not be freed between find_transport and kick_transport.
 
+987:24-987:38
+Thu Aug 27 20:55:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_93f70eff
+UUID: 84253145_e25fa1ef
+Bytes: 152
+Ok, I see what you mean. Perhaps that means that some of those BUGBUGs that I wrote are not true (like the supposed problem with acquire_one_transport).
+
 File: adb/transport.cpp
 
 331:5-331:19
@@ -66,4 +74,12 @@ Parent: 248c8586_33f2cb91
 UUID: 046221c0_bdb4c71e
 Bytes: 158
 I think adb code seems dangerous as locks are almost everywhere. But actually 90% work are done in the main thread. So we don't need to take it too seriously.
+
+954:12-954:26
+Thu Aug 27 20:55:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 046221c0_bdb4c71e
+UUID: 048f817d_80556d4a
+Bytes: 24
+Ok, I see what you mean.
 

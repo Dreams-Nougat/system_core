@@ -19,3 +19,17 @@ UUID: a47f9520_3e57fcd8
 Bytes: 261
 But I can assume there is a load operation with memory_order_acquire in adb_mutex_lock. No memory accesses in the current thread can be reordered before this load. So I think the second t->kicked should never reuse the content of the first t->kicked. Not right?
 
+46:7-46:20
+Thu Aug 27 17:58:54 2015 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_3e57fcd8
+UUID: 84253145_a748db81
+Bytes: 895
+I'm assuming more devious reasoning by the compiler than you are.  The compiler may assume that the first load of t->kicked is not involved in a data race, since the language spec says so.  Under that assumption, the value of t->kicked cannot change between the two loads.  Thus it "knows" the second load has to return the same value as the first.
+
+If the first load were not there, you would be right that the compiler could not move the load out of the critical section.  But the load outside the critical section gives the compiler information (in this case false) about what might be concurrently modified.  Taking advantage of that introduces the possible bug here.
+
+All of this assumes that the compiler understands some things about adb_mutex_lock, which it probably doesn't.
+
+The bottom line is really that we need to fix such tsan-reported bugs before compilers really get this clever.
+

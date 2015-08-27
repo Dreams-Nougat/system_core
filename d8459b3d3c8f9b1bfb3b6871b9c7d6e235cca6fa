@@ -33,3 +33,11 @@ All of this assumes that the compiler understands some things about adb_mutex_lo
 
 The bottom line is really that we need to fix such tsan-reported bugs before compilers really get this clever.
 
+46:7-46:20
+Thu Aug 27 18:25:00 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_a748db81
+UUID: e4750d3f_ad0c2048
+Bytes: 154
+I see. So it is at least possible for the compiler to do wrong optimization based on the assumption that t->kicked is not involved in a data race. Thanks!
+

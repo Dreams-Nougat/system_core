@@ -11,3 +11,11 @@ Technically tsan is clearly correct.  This is a data race, which has undefined b
 
 I suspect no current compiler does that.  I wouldn't be surprised if people are working on it.
 
+46:7-46:20
+Thu Aug 27 17:42:21 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_5bf7794d
+UUID: a47f9520_3e57fcd8
+Bytes: 261
+But I can assume there is a load operation with memory_order_acquire in adb_mutex_lock. No memory accesses in the current thread can be reordered before this load. So I think the second t->kicked should never reuse the content of the first t->kicked. Not right?
+

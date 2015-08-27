@@ -90,6 +90,14 @@ UUID: c42ba915_2c07d027
 Bytes: 24
 Kicking breaks the ... ?
 
+974
+Thu Aug 27 21:41:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_2c07d027
+UUID: 248c8586_96de05d3
+Bytes: 4
+Done
+
 975
 Thu Aug 27 21:20:34 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -99,6 +107,14 @@ s/notice/notify/?
 
 s/make/take/ (no good reason why you can't say "make"; just a stupid English rule)
 
+975
+Thu Aug 27 21:41:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_4ee7b91f
+UUID: c42ba915_2c84b0e8
+Bytes: 4
+Done
+
 976
 Thu Aug 27 21:20:34 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -106,10 +122,26 @@ UUID: c42ba915_8c162454
 Bytes: 16
 s/notice/notify/
 
+976
+Thu Aug 27 21:41:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_8c162454
+UUID: 849451c2_d0a08a7e
+Bytes: 4
+Done
+
 977
 Thu Aug 27 21:20:34 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 248c8586_f6eaf1e6
 Bytes: 35
 s/At last/Finally/ (or just "Then")
+
+977
+Thu Aug 27 21:41:25 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_f6eaf1e6
+UUID: 84253145_62363170
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 804180b2ccf2ef4dedad7d136c060ecbdda7aac5
+Base-for-patch-set: 1
+File: adb/client/main.cpp
+
+134:4-134:37
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_912f1d8e
+Bytes: 159
+No longer needed because we do the unbuffering at the top of adb_main (when fork-server is passed on the cmd line, which is also when this function is called).
+

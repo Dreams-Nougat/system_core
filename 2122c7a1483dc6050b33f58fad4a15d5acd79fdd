@@ -1,0 +1,93 @@
+Revision: 2122c7a1483dc6050b33f58fad4a15d5acd79fdd
+Patch-set: 1
+File: /COMMIT_MSG
+
+17:0-20:60
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_04843ae8
+Bytes: 132
+The number of lines here is pretty excessive. I tried to eliminate some lines, but it was hard to do. Let me know if you have ideas.
+
+File: adb/adb.cpp
+
+744:9-744:67
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_71fda177
+Bytes: 248
+Previously, we weren't adjusting the inheritance of STD_INPUT_HANDLE, but probably should just for cleanliness (it shouldn't have the problem described in the massive comment above because the caller is probably not going to read from this handle).
+
+778:23-778:24
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_5b945a49
+Bytes: 45
+Make this more defensive by changing == to >=
+
+832:12-832:26
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_375721d9
+Bytes: 388
+Why I didn't use other APIs:
+
+- adb_thread_create (aka _beginthread) does not return a handle which we use later.
+
+- Win32 CreateThread() does not do CRT init that _beginthreadex() does. But that isn't quite true. In reality because we use the DLL version of the CRT, if we had used CreateThread(), the CRT init would happen via the DllMain callback. But _beginthreadex() is just clearer.
+
+851:4-851:78
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_d13595df
+Bytes: 154
+I restructured the old code a little bit to accomodate the waiting that is done afterwards. I'm marginally happy with my restructure and am open to ideas.
+
+868:27-869:34
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_6f2fd98e
+Bytes: 117
+So basically, if the error is ERROR_BROKEN_PIPE don't print out that info. Only print info if it is some other error.
+
+878:7-880:30
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_b5f7864c
+Bytes: 135
+In other words, I don't know of any case where we'd actually wait a long time, but this code is defensive in case of unknown hang bugs.
+
+File: adb/client/main.cpp
+
+79:7-80:60
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_8f2c259a
+Bytes: 364
+The reason I didn't implement this now is because I don't think the adb server actually hangs in practice when running adb start-server. Just an idea for the future in case it comes up. The reason this would need to be handled specially is because the process is detached from the console so if you Ctrl-C the parent process, nothing happens to the detached child.
+
+144:8-144:17
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_bb83fe10
+Bytes: 446
+I could change this to always unbuffer, even if fork-server (aka is_daemon) is not passed. Thoughts? That would cover the case of the user running 'adb server nodaemon' (which is probably esoteric to begin with). The reason I check is_daemon because then it matches the full scenario: being started with fork-server, which is when the parent process uses pipes, which is also when we redirect to adb.log, which is also when we do the special ACK.
+
+File: adb/sysdeps.h
+
+370:20-370:35
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_db804a06
+Bytes: 131
+It seems like a lot of work to fix operator bool: would have to inherit from std::unique, then pull in the right constructors, etc.
+
+File: adb/sysdeps_win32.cpp
+
+125:12-125:13
+Thu Aug 27 02:21:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_7745a919
+Bytes: 218
+The reason I didn't use LOG(...)<< is because this code may be called from the adb client (not adb server), in which case you don't want its spew that looks more destined for a log file (which the client doesn't have).
+

@@ -1,0 +1,15 @@
+Revision: c348a88376c1bfbb86ca47eeca9b253558e6c926
+Patch-set: 2
+File: libcutils/arch-mips/android_memset.c
+
+52
+Thu Aug 27 21:37:49 2015 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_638ad3f9
+Bytes: 256
+In the original sanitize object code for mips, I saw a conditional call to trap() when MSB of value was 1.
+Meaning that uint16 was effectively just uint15.
+That is likely a bug in mips clang or in sanitize definition.
+
+I hope the above avoids that problem.
+

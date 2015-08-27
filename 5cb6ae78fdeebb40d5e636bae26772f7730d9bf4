@@ -9,6 +9,14 @@ UUID: 84253145_a7521b5f
 Bytes: 932
 I think that find_transport can find a transport while holding the lock, then it releases the lock, then another thread destroys the transport and then t points to a deallocated transport. Basically, find_transport does not increment the refcount, thus once it leaves the lock, the transport can be destroyed. In my original change, I considered modifying find_transport to increment the refcount, but that would mean that when releasing the refcount, the refcount could drop to zero on the adb disconnect thread, which would be a change from the current code, where it drops to zero on the input_thread or output_thread (in other words, it might be potentially more destabilizing). So it seems like you have to either do everything under the lock, or else increment the refcount before leaving the lock and then deal with any potential destabilization (which might be ok, but not my call to make since I'm not the component owner).
 
+987:24-987:38
+Thu Aug 27 20:40:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_a7521b5f
+UUID: 4485f957_93f70eff
+Bytes: 317
+only the main thread can remove a transport from the transport_list and destroy it, in transport_registration_func (you may notice an exception in unregister_usb_transport, but it doesn't matter and I plan to remove it in the next change). So the transport will not be freed between find_transport and kick_transport.
+
 File: adb/transport.cpp
 
 331:5-331:19
@@ -20,6 +28,15 @@ This can no longer take a nullptr. That sounds ok as long as you reviewed all th
 
 This now does the kick under the lock. In theory I think that should be ok because other code already does the kick under a lock, but I haven't really looked into it deeply. Thoughts?
 
+331:5-331:19
+Thu Aug 27 20:40:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_73cff357
+UUID: 84253145_a248c981
+Bytes: 194
+yes, if t == nullptr, something unexpected must have happened.
+I checked all xxx_kick, no one calls back to transport layer. so it shouldn't cause deadlock. And here is not performance critical.
+
 643:10-643:22
 Thu Aug 27 20:13:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -27,10 +44,26 @@ UUID: 046221c0_5af1f107
 Bytes: 94
 This sounds good as long as you reviewed all the callers to verify that nullptr is impossible.
 
+643:10-643:22
+Thu Aug 27 20:40:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 046221c0_5af1f107
+UUID: e4750d3f_28a6dec9
+Bytes: 65
+It is called by output_thread/input_thread now, can't be nullptr.
+
 954:12-954:26
 Thu Aug 27 20:13:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 248c8586_33f2cb91
 Bytes: 118
 As I mentioned before, this function is broken because the found transport can be destroyed once the lock is released.
+
+954:12-954:26
+Thu Aug 27 20:40:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_33f2cb91
+UUID: 046221c0_bdb4c71e
+Bytes: 158
+I think adb code seems dangerous as locks are almost everywhere. But actually 90% work are done in the main thread. So we don't need to take it too seriously.
 

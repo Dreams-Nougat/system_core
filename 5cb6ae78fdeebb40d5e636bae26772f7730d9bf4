@@ -83,3 +83,33 @@ UUID: 048f817d_80556d4a
 Bytes: 24
 Ok, I see what you mean.
 
+974
+Thu Aug 27 21:20:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_2c07d027
+Bytes: 24
+Kicking breaks the ... ?
+
+975
+Thu Aug 27 21:20:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_4ee7b91f
+Bytes: 101
+s/notice/notify/?
+
+s/make/take/ (no good reason why you can't say "make"; just a stupid English rule)
+
+976
+Thu Aug 27 21:20:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_8c162454
+Bytes: 16
+s/notice/notify/
+
+977
+Thu Aug 27 21:20:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_f6eaf1e6
+Bytes: 35
+s/At last/Finally/ (or just "Then")
+

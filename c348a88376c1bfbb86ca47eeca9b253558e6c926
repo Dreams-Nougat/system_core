@@ -32,3 +32,17 @@ and
    ((unsigned int)uval16) << 16
 is handled okay with no checks.
 
+52
+Thu Aug 27 23:01:08 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_493b2287
+UUID: e4750d3f_9273808e
+Bytes: 659
+"value" is 16 bits, and this was an attempt to shift a 16 bit value by 16 bits. This is undefined behavior. (C standard 6.5.7 item 1185 http://c0x.coding-guidelines.com/6.5.7.html).
+
+The fact that this was working at all is somewhat amazing. This behavior has changed over time, and certain GCC optimizations rely on this undefined behavior ("shift-by-bitwidth" in http://blog.regehr.org/archives/1234).
+
+Are you sure this code was ever working as expected? I bet you'll find that the old version of this code was broken... I bet nobody ever tested a non-zero memset value.  :-(
+
+Your new code is the proper way it should have been written in the first place.
+

@@ -9,3 +9,11 @@ UUID: e4750d3f_f9af5298
 Bytes: 79
 "remove - register" seems unmatched. "remove - add" or "register - unregister"?
 
+481:4-482:28
+Thu Aug 27 02:53:53 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_f9af5298
+UUID: c4700952_2457f6d8
+Bytes: 217
+The reason I used register/remove is because the existing functions are named register_transport/remove_transport. I'm open to suggestions (remove enum entirely, rename functions, rename constants, leave as is, etc.).
+

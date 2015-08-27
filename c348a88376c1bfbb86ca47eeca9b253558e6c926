@@ -13,3 +13,22 @@ That is likely a bug in mips clang or in sanitize definition.
 
 I hope the above avoids that problem.
 
+52
+Thu Aug 27 22:49:30 2015 +0000
+Author: Duane Sand <1010669@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_638ad3f9
+UUID: 248c8586_493b2287
+Bytes: 495
+Apparently 'uval16' in 'uval16<<16' promotes to signed integer before the shift is done, leading to questions about signed overflows!  Making an explicit promotion to unsigned integer before shifting, avoids the issue and retains the full 16-bit range when checking is on.
+
+When sanity=integer is on,
+   uval16 << 15
+is handled okay with no checks,
+
+   uval16 << 16
+generates runtime code which traps if uval16 & 0x8000 is on,
+and
+
+   ((unsigned int)uval16) << 16
+is handled okay with no checks.
+

@@ -9,12 +9,30 @@ UUID: 048f817d_1159c884
 Bytes: 264
 ??? how about fatal("could not retrieve user profile directory path: %s", Sys...). This should really never fail and we shouldn't continue if we can't get this because then the user will get authorization popups on their device because the keys are different, etc.
 
+310:19-310:21
+Fri Aug 28 23:21:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_1159c884
+UUID: c42ba915_4008cdb7
+Bytes: 5
+d'oh!
+
 327:12-327:21
 Fri Aug 28 23:15:09 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4485f957_88d83499
 Bytes: 126
 What do you think of fatal() here? Is the user going to be able to figure this out if this fails and empty string is returned?
+
+327:12-327:21
+Fri Aug 28 23:21:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_88d83499
+UUID: a47f9520_848fba37
+Bytes: 157
+yeah, i agree, and i even thought it while i was making the change. i was just trying to hurry back to doing what i was supposed to be doing :-)
+
+will fix...
 
 File: adb/commandline.cpp
 
@@ -24,4 +42,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4700952_44955d95
 Bytes: 147
 Doesn't it seem like a problem that load_file() does not do \r\n translation, but ReadFileToString() does (I think)? Won't that break adb sideload?
+
+535:9-535:40
+Fri Aug 28 23:21:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_44955d95
+UUID: c4700952_e4a6c90b
+Bytes: 37
+argh! windows! yeah, that would suck.
 

@@ -1,0 +1,13 @@
+Revision: a5f0238b529bd81b8716caf836ea367edbce61d3
+Patch-set: 1
+File: /COMMIT_MSG
+
+13
+Fri Aug 28 00:28:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_247df356
+Bytes: 162
+no, you're not seeing it because you only use nexus devices and the goobuntu udev rules cover all nexus devices.
+
+this is a really common problem for real people.
+

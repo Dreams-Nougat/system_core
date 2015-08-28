@@ -155,6 +155,14 @@ This function is one of the builtin functions so it has a set signature and all 
 
 I'm not sure there's enough motivation to change this.
 
+23
+Fri Aug 28 00:22:56 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_1297901b
+UUID: e4750d3f_727e14d8
+Bytes: 176
+not in this change, but at some point. the trouble with 'int' is that it could mean one of several different conventions. i'm pretty sure we actually already have a mix in use.
+
 File: init/builtins.cpp
 
 888

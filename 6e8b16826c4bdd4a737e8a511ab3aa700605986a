@@ -9,10 +9,26 @@ UUID: a47f9520_d9792be8
 Bytes: 52
 do we need to worry about this? the old code didn't.
 
+799
+Fri Aug 28 23:37:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_d9792be8
+UUID: a47f9520_c493822c
+Bytes: 45
+no, we don't. I added it to fulfill the test.
+
 810
 Fri Aug 28 22:59:13 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_11a78809
 Bytes: 109
 should we just outlaw that? or do some alisteners need to call RemoveDisconnect from an adisconnect function?
+
+810
+Fri Aug 28 23:37:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_11a78809
+UUID: 046221c0_ac01f746
+Bytes: 86
+outlawing that makes free_listener a little complex, but not as complex as I expected.
 

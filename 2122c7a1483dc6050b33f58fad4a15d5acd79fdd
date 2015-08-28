@@ -11,6 +11,13 @@ The number of lines here is pretty excessive. I tried to eliminate some lines, b
 
 File: adb/adb.cpp
 
+590
+Fri Aug 28 20:13:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_06b18eca
+Bytes: 33
+doesn't %p include 0x on Windows?
+
 744:9-744:67
 Thu Aug 27 02:21:00 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -72,6 +79,13 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_bb83fe10
 Bytes: 446
 I could change this to always unbuffer, even if fork-server (aka is_daemon) is not passed. Thoughts? That would cover the case of the user running 'adb server nodaemon' (which is probably esoteric to begin with). The reason I check is_daemon because then it matches the full scenario: being started with fork-server, which is when the parent process uses pipes, which is also when we redirect to adb.log, which is also when we do the special ACK.
+
+184
+Fri Aug 28 20:13:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_8e591763
+Bytes: 60
+maybe we should actually change these strings to "ACK\n" :-)
 
 File: adb/sysdeps.h
 

@@ -1,0 +1,11 @@
+Revision: bd4b1fa4a914552e450eb5a2bf398ba525c8adec
+Patch-set: 1
+File: /COMMIT_MSG
+
+10:10-10:74
+Fri Aug 28 22:01:05 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_b993ff2c
+Bytes: 274
+are you sure about that? I still see https://android.googlesource.com/platform/external/qemu/+/master/android/adb-qemud.c, and the comment "enable adb tracing via adb-debug qemud service in the emulator" seems to indicate that maybe you invoke this from within the emulator?
+

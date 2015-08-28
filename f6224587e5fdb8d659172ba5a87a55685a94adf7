@@ -1,0 +1,20 @@
+Revision: f6224587e5fdb8d659172ba5a87a55685a94adf7
+Base-for-patch-set: 1
+File: adb/adb_auth_host.cpp
+
+430:7-432:51
+Fri Aug 28 23:15:09 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_54117e8e
+Bytes: 71
+Let me look into this and get back to you on this aspect of the change.
+
+File: adb/sysdeps_win32.cpp
+
+139:6-139:15
+Fri Aug 28 23:15:09 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_009975ff
+Bytes: 40
+I'm definitely happy to see this deleted
+

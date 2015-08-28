@@ -10,6 +10,14 @@ Bytes: 203
 so you want to combine actions having the same trigger. how about this:
 create a new Action here and add commands into it. In EndSection, call ActionManager::AddNewAction(std::unique_ptr<Action> action).
 
+453:4-457:24
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_5582eea4
+UUID: 4485f957_483d6ce8
+Bytes: 4
+Done
+
 File: init/builtins.cpp
 
 432:0-432:18
@@ -19,6 +27,14 @@ UUID: 046221c0_a0d900a4
 Bytes: 7
 static?
 
+432:0-432:18
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 046221c0_a0d900a4
+UUID: a47f9520_966cd027
+Bytes: 4
+Done
+
 888:0-888:14
 Fri Aug 28 04:17:47 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -26,12 +42,28 @@ UUID: 248c8586_a710b509
 Bytes: 20
 static or constexpr?
 
+888:0-888:14
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_a710b509
+UUID: e4750d3f_26cccadd
+Bytes: 4
+Done
+
 891:0-891:37
 Fri Aug 28 04:17:47 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84253145_d82cd24c
 Bytes: 6
 static
+
+891:0-891:37
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_d82cd24c
+UUID: 248c8586_9eb5b7e9
+Bytes: 4
+Done
 
 File: init/init.cpp
 
@@ -41,6 +73,16 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e4750d3f_75127e19
 Bytes: 94
 why adding service parser and action parser here, but adding import parser in the constructor?
+
+608:4-608:38
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4750d3f_75127e19
+UUID: 84253145_9acf2d57
+Bytes: 96
+Done
+
+I didn't have a good reason.  I had too tight of coupling between ImportParser and Parser.
 
 File: init/init_parser_test.cpp
 
@@ -62,6 +104,14 @@ UUID: 046221c0_0030ec6e
 Bytes: 20
 I like this dispatch
 
+284:0-284:55
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 046221c0_0030ec6e
+UUID: e4750d3f_86033e85
+Bytes: 9
+Thank you
+
 307:0-312:55
 Fri Aug 28 04:17:47 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -69,12 +119,28 @@ UUID: 248c8586_67e96d77
 Bytes: 5
 find?
 
+307:0-312:55
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_67e96d77
+UUID: a47f9520_b6554c4a
+Bytes: 4
+Done
+
 833:4-833:45
 Fri Aug 28 04:17:47 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 248c8586_27e36599
 Bytes: 120
 This is the only place using services_. why not adding ServiceManager::AddNewService(std::unique_ptr<Service> service) ?
+
+833:4-833:45
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_27e36599
+UUID: 048f817d_8e0837a0
+Bytes: 4
+Done
 
 File: init/service.h
 
@@ -84,4 +150,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 849451c2_87cec9a4
 Bytes: 163
 CreateSectionParser()? As you are creating a new parser for each call. And it can be a static member function if you don't need to have services_ in ServiceParser.
+
+178:35-178:54
+Fri Aug 28 21:11:03 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 849451c2_87cec9a4
+UUID: e4750d3f_c6d8669a
+Bytes: 124
+Done.
+
+I'll need to expose the *Parser classes to test, so might as well make them totally exposed and bypass this function.
 

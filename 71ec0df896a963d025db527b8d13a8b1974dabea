@@ -9,6 +9,16 @@ UUID: c4700952_ea39b58b
 Bytes: 193
 I noticed that android::base::Join is also used. As there are only 3 StringPrintf, I suggest using android::base::StringPrintf directly? or at least do the same thing for Join and StringPrintf?
 
+31:0-31:34
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_ea39b58b
+UUID: 84253145_bdf788fe
+Bytes: 159
+Done.
+
+Line wrapping with is very hard with strings and having the entire "android::base::" prefix on StringPrintf, so I'd like to keep this using if possible.
+
 77
 Thu Aug 27 22:30:42 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +26,28 @@ UUID: a47f9520_5983025d
 Bytes: 188
 does it make sense to have newlines at the end? shouldn't the caller be supplying those if it wants them? makes it harder to have multiple layers treating this more like a strerror result.
 
+77
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_5983025d
+UUID: 4485f957_ee554dcc
+Bytes: 55
+No it doesn't.  I've fixed this and a few other places.
+
 76:4-81:56
 Thu Aug 27 23:43:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_433b0f87
 Bytes: 36
 will it better if using map::find()?
+
+76:4-81:56
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_433b0f87
+UUID: 84253145_ddf4c4fb
+Bytes: 4
+Done
 
 87
 Thu Aug 27 22:30:42 2015 +0000
@@ -32,6 +58,14 @@ what about 0? == 1 is the real special case.
 
 (L85 might also be slightly more readable if the format string was argument%s and these were "s" and "".)
 
+87
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_99a08aef
+UUID: c4700952_2ab1fd4d
+Bytes: 122
+Through some web of conditionals, args.size() will never be 0 in practice, but this function is public so I added a check.
+
 194
 Thu Aug 27 22:30:42 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,6 +75,14 @@ s/i.e./that is/
 
 rome fell in the pre-gingerbread era :-)
 
+194
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_d96ff21d
+UUID: a47f9520_8af4aa48
+Bytes: 4
+Done
+
 310:4-310:42
 Thu Aug 27 23:43:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,12 +90,34 @@ UUID: 84253145_dd0364c7
 Bytes: 195
 It seems the whole reason having shared_ptr is here. I prefer to keep Action* as the original code, and CheckTriggers using action_ == &action. Then you can change all shared_ptr into unique_ptr.
 
+310:4-310:42
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_dd0364c7
+UUID: c42ba915_6f261ac2
+Bytes: 653
+The two reasons I'm using shared_ptr are since Actions are also present in current_executing_actions_ and ActionParser (while potentially simultaneously existing in actions_).
+
+I could take some care to ensure that usage doesn't overlap and that an Action is never removed from actions_ if it's still being parsed or in current_executing_actions_, but shared_ptr seemed the better options.  I'm open to suggestions though.
+
+Totally agree that this specific case should be simply Action* as it was originally.  I never call this pointer and just compare it for equality, so there's no reason to have shared_ptr here.  I'll remove in an upcoming patchset.
+
 466:11-466:53
 Thu Aug 27 23:43:43 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84253145_1dc55cd5
 Bytes: 130
 I don't think passing private member of ActionManager to ActionParser is a good idea, unless you have some special considerations.
+
+466:11-466:53
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_1dc55cd5
+UUID: c42ba915_2f2022a1
+Bytes: 228
+I'm open to suggestions on how to make this better.  It's the ugliest part of the code in my opinion (and I do it in ImportParser and ServiceParser too).
+
+I could have ActionManager implement SectionParser; would that be better?
 
 File: init/action.h
 
@@ -64,6 +128,14 @@ UUID: c42ba915_6f305a22
 Bytes: 77
 Action* ? Then we only need to worry about the life of an Action in actions_.
 
+109:16-109:40
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_6f305a22
+UUID: 849451c2_04a63797
+Bytes: 37
+This may work, let me think about it.
+
 File: init/bootchart.h
 
 23
@@ -72,6 +144,16 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_3e029e4a
 Bytes: 5
 bool?
+
+23
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_3e029e4a
+UUID: e4750d3f_1297901b
+Bytes: 205
+This function is one of the builtin functions so it has a set signature and all of the builtins return (>= ?) 0 for success and negative for failure.
+
+I'm not sure there's enough motivation to change this.
 
 File: init/builtins.cpp
 
@@ -82,6 +164,16 @@ UUID: 048f817d_1e11da8f
 Bytes: 44
 we should add a maximum one of these days...
 
+888
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_1e11da8f
+UUID: 046221c0_1dce93d8
+Bytes: 135
+Agreed and done 
+
+I'd been thinking about it since there are many args.size() == ... checks above that can be removed if we added that.
+
 File: init/builtins.h
 
 27:25-27:45
@@ -90,6 +182,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 048f817d_5ea44237
 Bytes: 91
 you don't need to export a global variable. something like FindBuiltinFunction() is enough.
+
+27:25-27:45
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 048f817d_5ea44237
+UUID: 84253145_fdb50039
+Bytes: 113
+Done, although I don't like returning a pointer instead of a reference but I need the option to return not found.
 
 File: init/init_parser.cpp
 
@@ -100,6 +200,18 @@ UUID: c4700952_2aa49d36
 Bytes: 184
 (missed a \n --- this is why i think it's a bad idea. it's unnatural. we should move over to <base/logging.h> so we don't have to remember the \n at the end of each log statement too.)
 
+57
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_2aa49d36
+UUID: 046221c0_5df1eb07
+Bytes: 505
+This is a return value though, the \n gets added later (like those \n's that I removed in action.cpp and service.cpp
+
+The big advantage of passing around these *err's is that the file name and line number are printed for each of them, which is super useful for debugging.
+
+If we move to libbase logging, then I think our best bet is to have the parser inform the logger of which line its on, such that the errors are printed with line number seamlessly?  I would like to get away from passing this around.
+
 File: init/util.cpp
 
 481
@@ -109,10 +221,26 @@ UUID: 248c8586_e996961d
 Bytes: 15
 switch to bool?
 
+481
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_e996961d
+UUID: 849451c2_e4b4eb1f
+Bytes: 4
+Done
+
 527
 Thu Aug 27 22:30:42 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 248c8586_29849ee8
 Bytes: 36
 we should remove this at some point.
+
+527
+Fri Aug 28 00:20:17 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 248c8586_29849ee8
+UUID: 046221c0_fdbabf26
+Bytes: 123
+Agreed; I think this can wait for a later commit.  I'm already debating doing this move in a separate commit from this one.
 

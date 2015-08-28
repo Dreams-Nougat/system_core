@@ -9,3 +9,11 @@ UUID: a47f9520_b993ff2c
 Bytes: 274
 are you sure about that? I still see https://android.googlesource.com/platform/external/qemu/+/master/android/adb-qemud.c, and the comment "enable adb tracing via adb-debug qemud service in the emulator" seems to indicate that maybe you invoke this from within the emulator?
 
+10:10-10:74
+Fri Aug 28 22:09:17 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_b993ff2c
+UUID: 849451c2_f8dd6855
+Bytes: 138
+i think we _could_ use this tracing mechanism, but from the fact that adb still compiles with the DQ macro removed, we _weren't_ using it.
+

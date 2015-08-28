@@ -1,0 +1,18 @@
+Revision: 25bf612eb8100d36b0bfe3700b6ba32b3af32558
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+191:12-191:22
+Fri Aug 28 08:27:05 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_622b9bb9
+Bytes: 61
+By moving the adb_open afterwards, this no longer leaks a fd.
+
+263:12-263:27
+Fri Aug 28 08:27:05 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4750d3f_f851852f
+Bytes: 87
+It seems pretty mind-blowing that this retval was never checked. Is this fix really ok?
+

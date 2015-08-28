@@ -1,0 +1,18 @@
+Revision: 6e8b16826c4bdd4a737e8a511ab3aa700605986a
+Patch-set: 2
+File: adb/transport.cpp
+
+799
+Fri Aug 28 22:59:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_d9792be8
+Bytes: 52
+do we need to worry about this? the old code didn't.
+
+810
+Fri Aug 28 22:59:13 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_11a78809
+Bytes: 109
+should we just outlaw that? or do some alisteners need to call RemoveDisconnect from an adisconnect function?
+

@@ -1,0 +1,34 @@
+Revision: 3ab5959512a91cd91ddf3cb2a8135a9b4c497e59
+Patch-set: 1
+File: adb/device.py
+
+107:4-107:28
+Fri Aug 28 04:11:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_343ddfe9
+Bytes: 113
+I've heard of python 'monkey-patching', but I didn't dare wade into that, but I'm open to ideas if you guys care.
+
+116:17-116:40
+Fri Aug 28 04:11:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 046221c0_e0fcd8e5
+Bytes: 69
+This API was immensely useful to handle Win32's crazy escaping rules.
+
+196:8-196:20
+Fri Aug 28 04:11:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 048f817d_143c5be9
+Bytes: 104
+I only modified _simple_call() and shell() because that's all that I needed to get the one test to pass.
+
+File: adb/test_device.py
+
+471:8-471:37
+Fri Aug 28 04:11:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 046221c0_0002ac7e
+Bytes: 52
+This rm seemed to be missing from the original test.
+

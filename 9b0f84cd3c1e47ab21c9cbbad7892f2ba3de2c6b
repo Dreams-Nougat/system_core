@@ -1,0 +1,20 @@
+Revision: 9b0f84cd3c1e47ab21c9cbbad7892f2ba3de2c6b
+Patch-set: 1
+File: adb/transport.cpp
+
+798:17-798:30
+Fri Aug 28 22:30:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_802fc58d
+Bytes: 132
+So no locking on these disconnect APIs because transport destruction and adisconnect destruction can only happen on the main thread?
+
+File: adb/transport_test.cpp
+
+123:16-123:30
+Fri Aug 28 22:30:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 046221c0_1184bce8
+Bytes: 85
+I like these tests. How about one to test a disconnect func calling RemoveDisconnect?
+

@@ -1,0 +1,18 @@
+Revision: ea515aa0dc3cb709d01df3d533b0f9a3e589f8a3
+Patch-set: 2
+File: adb/adb_auth_host.cpp
+
+309:19-309:20
+Fri Aug 28 23:27:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_582f3c40
+Bytes: 137
+nit: lowercase to fit with the other adb "error: blah" output ;-) Doesn't really matter; what matters most is real info the user can use.
+
+311:12-311:22
+Fri Aug 28 23:27:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 046221c0_315b8080
+Bytes: 144
+kill the line? (I suppose fatal() should be marked with a compiler attribute to specify that it doesn't return, but can't do it all in a day...)
+

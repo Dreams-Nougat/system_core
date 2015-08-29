@@ -1,0 +1,20 @@
+Revision: bfe0d78f70604051077344d7a6fa3115500e516b
+Patch-set: 3
+File: /COMMIT_MSG
+
+7:22-7:35
+Sat Aug 29 00:08:23 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_6b42aa6a
+Bytes: 75
+haven't tested if this is fine on a device, or will that behave like linux?
+
+File: adb/commandline.cpp
+
+377:24-377:36
+Sat Aug 29 00:08:23 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 849451c2_58c01c95
+Bytes: 113
+there is no consistent formatting or logic to the names i've picked, so i'm happy to replace with something else.
+

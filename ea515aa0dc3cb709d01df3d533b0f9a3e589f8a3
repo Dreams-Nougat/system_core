@@ -16,3 +16,29 @@ UUID: 046221c0_315b8080
 Bytes: 144
 kill the line? (I suppose fatal() should be marked with a compiler attribute to specify that it doesn't return, but can't do it all in a day...)
 
+417:24-417:40
+Sat Aug 29 00:20:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 248c8586_84a6c895
+Bytes: 786
+It turns out that adbkey.pub does not contain any \r or \n, so *in practice* it doesn't matter whether this reads it in text or binary mode. Adbkey.pub is written by write_public_keyfile which uses fopen which defaults to text mode, but the data that is written out is <base64><space><username>@<hostname> which does not have any \r or \n to translate in the first place.
+
+So in practice RFTS() is fine here.
+
+But taking a step back, how should this really be done? My opinion is that since this file format is really text, it should use text mode on both read and write on Windows. But that's just my opinion and I could be convinced out of it.
+
+Personally on my machines I use editors that handle unix style line-endings, but silly Notepad that comes with the OS doesn't recognize it.
+
+File: adb/commandline.cpp
+
+535:9-535:40
+Sat Aug 29 00:20:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_67fdfb77
+Bytes: 1199
+I'm convinced that this reads in text mode and breaks adb sideload. So I think you could either modify RFTS() to pass _O_BINARY to open() always, or maybe create ReadFileToString(arg0, arg1, extra_open_flags) where you pass _O_BINARY (or make it a boolean, whatever), or make another API, etc. you get the idea.
+
+So basically, Windows is annoying because it forces cross-platform code to have this notion of textmode vs. binmode if it wants the files to be readable by Notepad. It's up to you guys how you want to deal with this. You could just say 'screw Notepad' and just use binary mode everywhere. Personally I can live with that, but I don't know about everyone else (here is an example: idea.log only has \n so newbie Windows Android Studio users can't even easily read the log comfortably!)
+
+BTW, loading binary data into std::string sounds ok at the outset (because std::string is documented to handle embedded nulls), but I read that if you accidentally call c_str(), that truncates to the first NULL. That sounds a bit scary. Maybe it means that you really want ReadFileToString (text mode) and ReadFileToVector (binary). I dunno, these are really design questions for component owners. :)
+

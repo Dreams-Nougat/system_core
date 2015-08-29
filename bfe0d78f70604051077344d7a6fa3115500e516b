@@ -9,6 +9,14 @@ UUID: 4485f957_6b42aa6a
 Bytes: 75
 haven't tested if this is fine on a device, or will that behave like linux?
 
+7:22-7:35
+Sat Aug 29 02:33:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_6b42aa6a
+UUID: a47f9520_e479dee7
+Bytes: 71
+I tested on nexus 7, and it is fine. I will continue to test it on mac.
+
 File: adb/commandline.cpp
 
 377:24-377:36
@@ -44,4 +52,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4485f957_ebe45acd
 Bytes: 87
 I think this is also used for TCP connections, right? (adb connect as well as emulator)
+
+226:24-226:27
+Sat Aug 29 02:33:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4485f957_ebe45acd
+UUID: 849451c2_9319a7ae
+Bytes: 80
+yes. I think "from_transport" and "to_transport" would be more meaningful to me.
 

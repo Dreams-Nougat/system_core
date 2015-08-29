@@ -18,3 +18,30 @@ UUID: 849451c2_58c01c95
 Bytes: 113
 there is no consistent formatting or logic to the names i've picked, so i'm happy to replace with something else.
 
+File: adb/sysdeps.h
+
+115:4-115:13
+Sat Aug 29 00:38:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_67cf3b58
+Bytes: 413
+Can you leave a link to this in a comment: https://msdn.microsoft.com/en-us/library/xcb2z8hs.aspx
+
+That explains how to do it for Windows, but it is somewhat a moot point because it only works when debugging (i.e. Windows ps equivalent does not show this info) and no one debugs adb on Windows because the build process does not generate PDB debugging files (because gcc doesn't produce it, unlike Visual Studio).
+
+624:22-624:40
+Sat Aug 29 00:38:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_6bf86a71
+Bytes: 300
+If you want to see other implementations of setting a thread name, see ART SetThreadName: http://androidxref.com/5.1.1_r6/xref/art/runtime/utils.cc#987 , and libutils/Threads.cpp: androidSetThreadName. I think the former handles all the Linux vs. MacOS, plus the 16 char max which is a real headache.
+
+File: adb/transport.cpp
+
+226:24-226:27
+Sat Aug 29 00:38:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4485f957_ebe45acd
+Bytes: 87
+I think this is also used for TCP connections, right? (adb connect as well as emulator)
+

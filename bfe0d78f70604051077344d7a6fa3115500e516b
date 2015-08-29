@@ -61,3 +61,12 @@ UUID: 849451c2_9319a7ae
 Bytes: 80
 yes. I think "from_transport" and "to_transport" would be more meaningful to me.
 
+File: adb/transport_local.cpp
+
+149:38-149:39
+Sat Aug 29 03:59:38 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_076e7776
+Bytes: 1
+;
+

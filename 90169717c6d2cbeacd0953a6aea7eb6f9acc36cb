@@ -1,0 +1,52 @@
+Revision: 90169717c6d2cbeacd0953a6aea7eb6f9acc36cb
+Patch-set: 10
+File: init/action.cpp
+
+39:0-39:1
+Sat Aug 29 04:22:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c42ba915_db193006
+Bytes: 88
+keep the same style, either
+func() {
+
+}
+
+or
+func()
+{
+}
+
+I think the former is preferred.
+
+222:35-222:40
+Sat Aug 29 04:22:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84253145_c06cd8ab
+Bytes: 6
+value.
+
+226:27-226:31
+Sat Aug 29 04:22:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_3f784f67
+Bytes: 41
+pair.
+add "." at the end of each comment?
+
+File: init/action.h
+
+28:0-29:1
+Sat Aug 29 04:22:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4700952_a7268368
+Bytes: 15
+class Command {
+
+56:9-56:43
+Sat Aug 29 04:22:27 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a47f9520_5f7d1b55
+Bytes: 102
+AddCommand with Action as parameter seems a little strange. How about CombineActionWithTheSameTrigger?
+

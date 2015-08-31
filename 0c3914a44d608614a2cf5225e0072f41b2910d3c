@@ -9,3 +9,11 @@ UUID: 045f8228_4ab4f30a
 Bytes: 95
 <-? Because it reads from remote, and write to the main thread. I think we were wrong at first.
 
+196:52-196:56
+Mon Aug 31 18:00:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 045f8228_4ab4f30a
+UUID: 641f5e55_b5340077
+Bytes: 123
+output_thread does write_packet(t->fd) and input_thread does read_packet(t->fd), so i think the current naming makes sense.
+

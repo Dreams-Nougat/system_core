@@ -16,3 +16,19 @@ UUID: 8429b287_ceefe379
 Bytes: 210
 This sounds kind of confusing because it makes it sound like this sends data to adbd, but you really mean that the same transport code is in both adb and adbd. My opinion is to kill 'adb/adbd' from the comment.
 
+190:17-190:30
+Mon Aug 31 19:22:14 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_650ec641
+UUID: 8429b287_ee473f15
+Bytes: 51
+maybe too long? I choose another way to explain it.
+
+190:34-190:42
+Mon Aug 31 19:22:14 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8429b287_ceefe379
+UUID: e4618eea_2900adc6
+Bytes: 4
+Done
+

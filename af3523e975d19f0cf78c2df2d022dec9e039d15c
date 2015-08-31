@@ -1,0 +1,20 @@
+Revision: af3523e975d19f0cf78c2df2d022dec9e039d15c
+Patch-set: 1
+File: crash_reporter/crash_reporter.cc
+
+97:38-97:49
+Mon Aug 31 23:09:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8429b287_d4e6541d
+Bytes: 16
+Nit: dbus-daemon
+
+File: crash_reporter/user_collector.cc
+
+582:6-582:63
+Mon Aug 31 23:09:28 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4618eea_4f8521f8
+Bytes: 169
+Should this be a warning? If you ever launch dbus-send, you'll have to wait() on it right? So it doesn't really indicate a possibly erroneous situation. Maybe just INFO?
+

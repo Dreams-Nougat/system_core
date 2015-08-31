@@ -1,0 +1,11 @@
+Revision: 1498261fc5bc8896abbbc586f46992d6bf53ee46
+Base-for-patch-set: 1
+File: adb/Android.mk
+
+9
+Mon Aug 31 20:09:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_6932212a
+Bytes: 90
+does this break the Windows build, or am i missing where you're avoiding clang on Windows?
+

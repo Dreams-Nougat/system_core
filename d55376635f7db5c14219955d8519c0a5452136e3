@@ -1,0 +1,11 @@
+Revision: d55376635f7db5c14219955d8519c0a5452136e3
+Patch-set: 2
+File: liblog/logprint.c
+
+277:0-280:62
+Mon Aug 31 19:17:04 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 644d9e85_c5a57a82
+Bytes: 55
+Need a better way of determining if TZ is valid or not.
+

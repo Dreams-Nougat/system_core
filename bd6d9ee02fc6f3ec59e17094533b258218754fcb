@@ -1,5 +1,14 @@
 Revision: bd6d9ee02fc6f3ec59e17094533b258218754fcb
 Patch-set: 1
+File: logd/LogBuffer.cpp
+
+521:0-532:17
+Mon Aug 31 16:22:20 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 441eda5a_d4a53c82
+Bytes: 143
+This minor optimization to prevent excessive time comparisons has become ineffectual, move this check after merge, but before blacklist checks.
+
 File: logd/LogWhiteBlackList.cpp
 
 78:4-78:45

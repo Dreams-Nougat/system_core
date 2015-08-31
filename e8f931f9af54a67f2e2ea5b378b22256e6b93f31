@@ -1,0 +1,11 @@
+Revision: e8f931f9af54a67f2e2ea5b378b22256e6b93f31
+Patch-set: 1
+File: liblog/logprint.c
+
+964
+Mon Aug 31 17:28:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 441eda5a_14af34fe
+Bytes: 22
+%z --- %Z isn't stable
+

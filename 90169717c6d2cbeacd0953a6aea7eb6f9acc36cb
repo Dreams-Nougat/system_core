@@ -19,12 +19,28 @@ func()
 
 I think the former is preferred.
 
+39:0-39:1
+Mon Aug 31 23:12:30 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c42ba915_db193006
+UUID: 644d9e85_6851fbfe
+Bytes: 4
+Done
+
 222:35-222:40
 Sat Aug 29 04:22:27 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84253145_c06cd8ab
 Bytes: 6
 value.
+
+222:35-222:40
+Mon Aug 31 23:12:30 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84253145_c06cd8ab
+UUID: 8429b287_d1c30690
+Bytes: 4
+Done
 
 226:27-226:31
 Sat Aug 29 04:22:27 2015 +0000
@@ -33,6 +49,14 @@ UUID: a47f9520_3f784f67
 Bytes: 41
 pair.
 add "." at the end of each comment?
+
+226:27-226:31
+Mon Aug 31 23:12:30 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_3f784f67
+UUID: 8497f201_e1750055
+Bytes: 4
+Done
 
 File: init/action.h
 
@@ -43,10 +67,28 @@ UUID: c4700952_a7268368
 Bytes: 15
 class Command {
 
+28:0-29:1
+Mon Aug 31 23:12:30 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_a7268368
+UUID: 84529221_2c21d737
+Bytes: 4
+Done
+
 56:9-56:43
 Sat Aug 29 04:22:27 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a47f9520_5f7d1b55
 Bytes: 102
 AddCommand with Action as parameter seems a little strange. How about CombineActionWithTheSameTrigger?
+
+56:9-56:43
+Mon Aug 31 23:12:30 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_5f7d1b55
+UUID: 644d9e85_a877f399
+Bytes: 142
+Done.
+
+WithTheSameTrigger sounds too specific to me since this function can combine any two commands if desired.  I kept it to 'CombineAction'
 

@@ -17,6 +17,14 @@ UUID: a47f9520_e479dee7
 Bytes: 71
 I tested on nexus 7, and it is fine. I will continue to test it on mac.
 
+7:22-7:35
+Mon Aug 31 14:28:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a47f9520_e479dee7
+UUID: c42ba915_dbf4d0fb
+Bytes: 7
+Thanks!
+
 File: adb/commandline.cpp
 
 377:24-377:36
@@ -36,6 +44,14 @@ Bytes: 413
 Can you leave a link to this in a comment: https://msdn.microsoft.com/en-us/library/xcb2z8hs.aspx
 
 That explains how to do it for Windows, but it is somewhat a moot point because it only works when debugging (i.e. Windows ps equivalent does not show this info) and no one debugs adb on Windows because the build process does not generate PDB debugging files (because gcc doesn't produce it, unlike Visual Studio).
+
+115:4-115:13
+Mon Aug 31 14:28:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_67cf3b58
+UUID: a47f9520_bff75f4c
+Bytes: 4
+Done
 
 624:22-624:40
 Sat Aug 29 00:38:19 2015 +0000
@@ -61,6 +77,14 @@ UUID: 849451c2_9319a7ae
 Bytes: 80
 yes. I think "from_transport" and "to_transport" would be more meaningful to me.
 
+226:24-226:27
+Mon Aug 31 14:28:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 849451c2_9319a7ae
+UUID: a47f9520_3f1ccf26
+Bytes: 4
+Done
+
 File: adb/transport_local.cpp
 
 149:38-149:39
@@ -69,4 +93,12 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4700952_076e7776
 Bytes: 1
 ;
+
+149:38-149:39
+Mon Aug 31 14:28:09 2015 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4700952_076e7776
+UUID: 641f5e55_75af88b8
+Bytes: 4
+Done
 

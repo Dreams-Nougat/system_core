@@ -1,0 +1,11 @@
+Revision: 49ee7cf9a10f66ffa9a3490c69db5fa46e0a966b
+Patch-set: 5
+File: adb/commandline.cpp
+
+377
+Mon Aug 31 17:34:34 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4134e4a_b913df21
+Bytes: 192
+this isn't super useful because there can be an arbitrary number of these threads, but we can worry about stuff like that (and exactly what the best name for any given thread is) another time.
+

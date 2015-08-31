@@ -1,0 +1,11 @@
+Revision: bd32a43f8bdf57af86db584cb57c9062d65e282f
+Patch-set: 2
+File: metricsd/uploader/mock/mock_system_profile_setter.h
+
+29
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8497f201_dec2256e
+Bytes: 65
+this interface changed in SystemProfileSetter but was not updated
+

@@ -1,0 +1,49 @@
+Revision: c3f866f60cedc7eade674a7a8eec740dd938264f
+Base-for-patch-set: 2
+File: metricsd/metrics_daemon_test.cc
+
+90:4-90:26
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_5daffbb7
+Bytes: 97
+no need to mock as persistentinteger now use the temporary directory to write the values to disk.
+
+211
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 045f8228_aa25af89
+Bytes: 40
+We currently don't monitor system crash.
+
+263
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8429b287_0e928b19
+Bytes: 94
+ReportDiskStats was removed.
+Will add this test back with the CL adding disk stats collection.
+
+File: metricsd/metrics_library_test.cc
+
+22
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_66380eb9
+Bytes: 22
+libpolicy is not used.
+
+75
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_a64e0658
+Bytes: 21
+We don't have guestfs
+
+181
+Mon Aug 31 18:49:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_263216d7
+Bytes: 29
+We don't use cmetricslibrary.
+

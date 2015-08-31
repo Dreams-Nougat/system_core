@@ -24,3 +24,13 @@ UUID: 6492fe15_fda5a781
 Bytes: 87
 This is moved into the build system with https://android-review.googlesource.com/167421
 
+Base-for-patch-set: 3
+File: adb/Android.mk
+
+66:0-66:44
+Mon Aug 31 20:31:52 2015 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 045f8228_cd423d75
+Bytes: 160
+This does mean that the libadbd target static library won't use -std=c++14 anymore (but only when building on linux -- it never used it when building on darwin)
+

@@ -34,3 +34,11 @@ UUID: 045f8228_cd423d75
 Bytes: 160
 This does mean that the libadbd target static library won't use -std=c++14 anymore (but only when building on linux -- it never used it when building on darwin)
 
+66:0-66:44
+Mon Aug 31 20:37:28 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 045f8228_cd423d75
+UUID: 0484e2ca_228bee56
+Bytes: 117
+C++14 is actually the default for the platform now (for non-mingw), so that flag isn't actually needed here any more.
+

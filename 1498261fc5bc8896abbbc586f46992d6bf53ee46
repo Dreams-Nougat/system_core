@@ -9,3 +9,18 @@ UUID: 84529221_6932212a
 Bytes: 90
 does this break the Windows build, or am i missing where you're avoiding clang on Windows?
 
+9
+Mon Aug 31 20:18:40 2015 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84529221_6932212a
+UUID: e486eed4_01734a70
+Bytes: 91
+I'm letting the build system defaults work here -- clang for linux/darwin, gcc for windows.
+
+233
+Mon Aug 31 20:18:40 2015 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_fda5a781
+Bytes: 87
+This is moved into the build system with https://android-review.googlesource.com/167421
+

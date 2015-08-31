@@ -1,0 +1,11 @@
+Revision: 0c3914a44d608614a2cf5225e0072f41b2910d3c
+Patch-set: 1
+File: adb/transport.cpp
+
+196:52-196:56
+Mon Aug 31 17:56:29 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 045f8228_4ab4f30a
+Bytes: 95
+<-? Because it reads from remote, and write to the main thread. I think we were wrong at first.
+

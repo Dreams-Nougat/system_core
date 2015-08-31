@@ -9,6 +9,14 @@ UUID: 8429b287_d4e6541d
 Bytes: 16
 Nit: dbus-daemon
 
+97:38-97:49
+Mon Aug 31 23:16:08 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8429b287_d4e6541d
+UUID: 0484e2ca_28e98f78
+Bytes: 4
+Done
+
 File: crash_reporter/user_collector.cc
 
 582:6-582:63
@@ -17,4 +25,12 @@ Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e4618eea_4f8521f8
 Bytes: 169
 Should this be a warning? If you ever launch dbus-send, you'll have to wait() on it right? So it doesn't really indicate a possibly erroneous situation. Maybe just INFO?
+
+582:6-582:63
+Mon Aug 31 23:16:08 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4618eea_4f8521f8
+UUID: 84529221_ef73b1de
+Bytes: 4
+Done
 

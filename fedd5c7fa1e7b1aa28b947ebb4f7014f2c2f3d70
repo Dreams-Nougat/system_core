@@ -1,0 +1,13 @@
+Revision: fedd5c7fa1e7b1aa28b947ebb4f7014f2c2f3d70
+Patch-set: 2
+File: crash_reporter/crash_reporter.cc
+
+97
+Tue Sep 01 05:04:38 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8497f201_a7686801
+Bytes: 283
+this comment is no longer true after this change.  you return a handle to the process and then wait for it to complete.
+
+seems like you should implement the fork+exec approach ?  i'm not sure what ::Process gains you when we specifically don't care about managing/watching the child.
+

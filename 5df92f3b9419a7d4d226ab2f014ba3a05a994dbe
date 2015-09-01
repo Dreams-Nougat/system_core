@@ -9,10 +9,28 @@ UUID: 6492fe15_5137e4c5
 Bytes: 64
 ignored as an error is scary. which is it? ignored, or an error?
 
+22
+Tue Sep 01 22:26:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_5137e4c5
+UUID: 0484e2ca_b7b2dac8
+Bytes: 223
+Both at the moment.  I tried to clear up that text.
+
+It looks like I glanced over how it originally read subsequent actions were ignored as well.  That hasn't been true since forever and I updated the text for that as well.
+
 358
 Tue Sep 01 22:09:20 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6492fe15_31e9f878
 Bytes: 36
 well, it's one property per service.
+
+358
+Tue Sep 01 22:26:22 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_31e9f878
+UUID: 0484e2ca_d7af5e5f
+Bytes: 4
+Done
 

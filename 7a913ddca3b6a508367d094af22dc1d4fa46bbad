@@ -1,0 +1,11 @@
+Revision: 7a913ddca3b6a508367d094af22dc1d4fa46bbad
+Patch-set: 18
+File: init/util.cpp
+
+550
+Tue Sep 01 18:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_86e1b0ba
+Bytes: 49
+not the most useful goto label i've ever seen :-)
+

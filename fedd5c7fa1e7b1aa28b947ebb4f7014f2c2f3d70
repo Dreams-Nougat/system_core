@@ -11,3 +11,11 @@ this comment is no longer true after this change.  you return a handle to the pr
 
 seems like you should implement the fork+exec approach ?  i'm not sure what ::Process gains you when we specifically don't care about managing/watching the child.
 
+97
+Tue Sep 01 05:42:19 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8497f201_a7686801
+UUID: 84529221_357a3ab8
+Bytes: 231
+so you'd be in favor of me switching back to https://android-review.googlesource.com/#/c/167414/2 ...?  The switch to ::Process was done so that the dbus process wasn't orphaned and reparented to init (see the comments in that CL).
+

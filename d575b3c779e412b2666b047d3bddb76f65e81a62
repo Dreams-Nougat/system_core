@@ -69,3 +69,13 @@ UUID: 64591d73_6593ff2d
 Bytes: 118
 Since we're getting close to EAP, if the chromeos::Process CL gets too complicated, feel free to skip until after EAP.
 
+82:1-103:1
+Tue Sep 01 07:09:34 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64591d73_6593ff2d
+UUID: 0484e2ca_56db5406
+Bytes: 499
+i'm pretty sure the reparent issue already exists in our current system/background implementation, so i wouldn't really use that particular point as a blocker.  although it still feels wrong to let it zombie/reparent.
+
+it could be squelched by calling signal(SIGCHLD, SIG_IGN) in the parent (crash_reporter), but that'd interfere with other uses of chromeos::Process (which this code base does).  the kernel will then reap the child immediately and not let it go to zombie state/reparent it to init.
+

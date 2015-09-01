@@ -92,3 +92,11 @@ Done.
 
 WithTheSameTrigger sounds too specific to me since this function can combine any two commands if desired.  I kept it to 'CombineAction'
 
+56:9-56:43
+Tue Sep 01 02:54:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_a877f399
+UUID: 045f8228_93f90648
+Bytes: 73
+I think your choice is better, as there are no other action combinations.
+

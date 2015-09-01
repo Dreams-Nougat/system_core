@@ -1,0 +1,12 @@
+Revision: 78db5b91154294e6f238676928635f417178528b
+Patch-set: 14
+File: init/action.h
+
+66:0-69:45
+Tue Sep 01 02:54:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_83ba02a7
+Bytes: 111
+swap the two functions, so non-static member functions go together?
+same suggestion for member variables below.
+

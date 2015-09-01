@@ -1,0 +1,18 @@
+Revision: 5df92f3b9419a7d4d226ab2f014ba3a05a994dbe
+Patch-set: 1
+File: init/readme.txt
+
+22
+Tue Sep 01 22:09:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_5137e4c5
+Bytes: 64
+ignored as an error is scary. which is it? ignored, or an error?
+
+358
+Tue Sep 01 22:09:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_31e9f878
+Bytes: 36
+well, it's one property per service.
+

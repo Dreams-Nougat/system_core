@@ -2,6 +2,20 @@ Revision: d55376635f7db5c14219955d8519c0a5452136e3
 Patch-set: 2
 File: liblog/logprint.c
 
+270:0-271:30
+Tue Sep 01 18:27:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e486eed4_f0a86e5c
+Bytes: 45
+KISS, no need for old _and_ cp for this duty.
+
+276:8-276:16
+Tue Sep 01 18:27:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e486eed4_50603aca
+Bytes: 45
+Need a comment here about the error checking.
+
 277:0-280:62
 Mon Aug 31 19:17:04 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +36,25 @@ If the TZ variable does appear in the environment, but its value is
        specified below, then Coordinated Universal Time (UTC) is used.
 
 But you made this super-flexible; perhaps just allowing to print UTC time is enough? So in that case don't allow the user to specify a zone, but just have a modifier that always prints in UTC. Then no need to do timezone validation. I can't think of many usecases for printing a timezone that is both different than localtime and UTC - you can always calculate that from UTC (once you know what it is:)).
+
+277:0-280:62
+Tue Sep 01 18:27:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4d42ed5_f1bf08e3
+UUID: 84529221_5b13a767
+Bytes: 641
+I would prefer to keep the flexible zone name in, as the only complication is the minor bit of somewhat flawed error checking as it precludes other designations that gmt or utc to specify this zone.
+
+I could instead just document "utc" in logcat to not over-promise the feature. Setting it always (-v zone to turn it back off notwithstanding) has the feedback of showing the timezone in the output.
+
+Being able to set and display the zone did allow me to override devices that have not got the time set right (I have a Manta and a AndroidOne that both are not sticky for selected timezone). So this part of the feature is more for myself ...
+
+946:0-964:5
+Tue Sep 01 18:27:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_bbb29bc8
+Bytes: 165
+If the caller calls tzset() then this will break.
+
+Lets leave this open to _allow_ the caller to do so, just in case this is a legacy. Add a comment about that here.
 

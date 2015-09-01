@@ -1,0 +1,23 @@
+Revision: ea852faa007b4f6b0d1675d40b6628bdc20ad1f4
+Patch-set: 3
+File: crash_reporter/crash_reporter.cc
+
+98
+Tue Sep 01 23:58:10 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0484e2ca_69eeb682
+Bytes: 230
+considering how much debate these CLs have garnered, should add a new paragraph here like:
+
+ // Note: This will mean that the dbus-send process will become a zombie and
+ // reparent to init for reaping, but that's OK -- see above.
+
+110
+Tue Sep 01 23:58:10 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4618eea_be772d9a
+Bytes: 108
+not a new issue, but should this be plog ?  and maybe say:
+
+ ... << "Sending user crash dbus signal failed";
+

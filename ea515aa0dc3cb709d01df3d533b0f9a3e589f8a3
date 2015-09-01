@@ -54,3 +54,11 @@ the only places adb currently uses these functions are in Linux-only code anyway
 
 (on the whole i also think this behavior is less surprising. the obvious exception being cases where the next thing you plan on doing is android::base::Split(content, "\n"), but maybe that's just a sign we should have something like simpleperf's LineReader class in libbase...)
 
+535:9-535:40
+Tue Sep 01 19:48:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8497f201_b268a801
+UUID: e486eed4_dbf78bc0
+Bytes: 139
+Ok, O_BINARY or equiv sounds fine to me. If this needs to be revisited in the future you can add ReadTextFileToString() or LineReader, etc.
+

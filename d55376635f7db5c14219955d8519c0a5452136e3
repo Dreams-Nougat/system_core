@@ -9,3 +9,17 @@ UUID: 644d9e85_c5a57a82
 Bytes: 55
 Need a better way of determining if TZ is valid or not.
 
+277:0-280:62
+Tue Sep 01 08:21:09 2015 +0000
+Author: Martijn Coenen <1013030@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_c5a57a82
+UUID: e4d42ed5_f1bf08e3
+Bytes: 644
+Mmm yeah, tzset(3) says:
+
+If the TZ variable does appear in the environment, but its value is
+       empty, or its value cannot be interpreted using any of the formats
+       specified below, then Coordinated Universal Time (UTC) is used.
+
+But you made this super-flexible; perhaps just allowing to print UTC time is enough? So in that case don't allow the user to specify a zone, but just have a modifier that always prints in UTC. Then no need to do timezone validation. I can't think of many usecases for printing a timezone that is both different than localtime and UTC - you can always calculate that from UTC (once you know what it is:)).
+

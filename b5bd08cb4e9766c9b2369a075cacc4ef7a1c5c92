@@ -17,3 +17,13 @@ which is
 
 CAP_TO_MASK by itself only works with 32 bit capabilities. You need to use CAP_TO_MASK in conjunction with CAP_TO_INDEX
 
+139:55-139:72
+Wed Sep 02 23:40:06 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84529221_da4b0747
+UUID: 0484e2ca_93b00361
+Bytes: 167
+In addition, the macro itself uses undefined behavior when dealing with 32 bit values.
+
+1 << 36 is undefined, since it's attempting to shift a 32 bit value by 36 bits.
+

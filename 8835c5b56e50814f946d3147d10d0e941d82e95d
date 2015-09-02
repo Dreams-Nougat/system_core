@@ -1,0 +1,11 @@
+Revision: 8835c5b56e50814f946d3147d10d0e941d82e95d
+Patch-set: 1
+File: metricsd/uploader/metrics_log_base.cc
+
+76:2-76:6
+Wed Sep 02 22:14:00 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8497f201_1b173411
+Bytes: 80
+we don't build with NDEBUG during development so using DVLOG is not very useful.
+

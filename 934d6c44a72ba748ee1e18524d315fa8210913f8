@@ -9,3 +9,14 @@ UUID: c4dbaa04_337fd2a8
 Bytes: 130
 Why move the function? It's more difficult to see what has actually changed. I think removing "static" would suffice in this case?
 
+181
+Wed Sep 02 14:19:02 2015 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4dbaa04_337fd2a8
+UUID: a46956e6_57e58c4c
+Bytes: 201
+Usually the static function are grouped together.  So are the non-static function.  This is why I moved it to non-static function group.
+
+If it really annoys you I will revert that.
+Please let me know.
+

@@ -1,0 +1,11 @@
+Revision: f643bbc75a5bcfade73c5f5ff1eea870c55417fe
+Patch-set: 1
+File: metricsd/Android.mk
+
+137:13-137:14
+Wed Sep 02 20:04:59 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a40a365b_af5179a5
+Bytes: 26
+nit: Unnecessary backslash
+

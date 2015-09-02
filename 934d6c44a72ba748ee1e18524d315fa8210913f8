@@ -1,0 +1,11 @@
+Revision: 934d6c44a72ba748ee1e18524d315fa8210913f8
+Patch-set: 1
+File: fs_mgr/fs_mgr.c
+
+181
+Wed Sep 02 14:01:34 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4dbaa04_337fd2a8
+Bytes: 130
+Why move the function? It's more difficult to see what has actually changed. I think removing "static" would suffice in this case?
+

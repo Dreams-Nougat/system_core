@@ -1,0 +1,11 @@
+Revision: 746479ec3827bee4ac378e303849a3e08c9def06
+Patch-set: 2
+File: metricsd/metrics_daemon.cc
+
+520
+Wed Sep 02 21:28:48 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a40a365b_1288aae8
+Bytes: 48
+CHECK/DCHECK |read_sectors| and |write_sectors|?
+

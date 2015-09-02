@@ -1,0 +1,19 @@
+Revision: b5bd08cb4e9766c9b2369a075cacc4ef7a1c5c92
+Patch-set: 1
+File: libcutils/fs_config.c
+
+139:55-139:72
+Wed Sep 02 23:38:48 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_da4b0747
+Bytes: 234
+CAP_BLOCK_SUSPEND is 36, so this would result in:
+
+  (1 << ((36) & 31))
+which is
+  (1 << 4)
+which is
+  CAP_FSETID
+
+CAP_TO_MASK by itself only works with 32 bit capabilities. You need to use CAP_TO_MASK in conjunction with CAP_TO_INDEX
+

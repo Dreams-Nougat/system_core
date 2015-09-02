@@ -1,0 +1,11 @@
+Revision: 64044eafd0e166f8bb7bf28c8e27c3fa300064c3
+Patch-set: 3
+File: metricsd/persistent_integer.h
+
+53:37-53:46
+Wed Sep 02 19:46:13 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0484e2ca_dd3f7cea
+Bytes: 29
+nit: missing a 't' at the end
+

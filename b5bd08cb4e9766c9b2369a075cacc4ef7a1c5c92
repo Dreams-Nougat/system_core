@@ -27,3 +27,11 @@ In addition, the macro itself uses undefined behavior when dealing with 32 bit v
 
 1 << 36 is undefined, since it's attempting to shift a 32 bit value by 36 bits.
 
+139:55-139:72
+Wed Sep 02 23:42:53 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0484e2ca_93b00361
+UUID: 644d9e85_71ce83f0
+Bytes: 197
+Sorry, the macro itself is correct since it masks the lower 32 bits. But changing the macro so it did shift without mask would be undefined behavior, which is the point I was really trying to make.
+

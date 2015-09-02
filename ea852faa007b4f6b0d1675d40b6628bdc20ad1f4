@@ -37,3 +37,11 @@ UUID: 8497f201_1873bd70
 Bytes: 226
 I can change it to plog.  It just seemed a bit redundant, as all cases where chromeos::ProcessImpl::Start() returns false, it already PLOGs the errno, and this warning message is mostly just to clarify what called the Start().
 
+110
+Wed Sep 02 01:56:18 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8497f201_1873bd70
+UUID: e486eed4_8ac9aae8
+Bytes: 2
+OK
+

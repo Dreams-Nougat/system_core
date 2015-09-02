@@ -21,3 +21,11 @@ not a new issue, but should this be plog ?  and maybe say:
 
  ... << "Sending user crash dbus signal failed";
 
+110
+Wed Sep 02 00:10:54 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4618eea_be772d9a
+UUID: 8497f201_1873bd70
+Bytes: 226
+I can change it to plog.  It just seemed a bit redundant, as all cases where chromeos::ProcessImpl::Start() returns false, it already PLOGs the errno, and this warning message is mostly just to clarify what called the Start().
+

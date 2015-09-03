@@ -1,0 +1,15 @@
+Revision: 7a3f8d6691b3fbd8014a98de8455dbcfcc9629e4
+Patch-set: 2
+File: adb/adb_auth_client.cpp
+
+221
+Thu Sep 03 03:25:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8497f201_8ceea57f
+Bytes: 132
+errno ones should use PLOG instead. so here
+
+  PLOG(DEBUG) << "Failed to write PK";
+
+but feel free to leave that for a later change.
+

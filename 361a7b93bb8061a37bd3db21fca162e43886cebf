@@ -9,6 +9,14 @@ UUID: 644d9e85_0476eb60
 Bytes: 162
 I think the reason D() used a lock was because there used to be two calls to fprintf(), but enh changed that recently. Base logging uses a lock around the logger.
 
+10:0-10:85
+Thu Sep 03 03:25:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_0476eb60
+UUID: 64159e82_4599cab4
+Bytes: 17
+That makes sense.
+
 File: adb/adb_trace.h
 
 52:16-52:40
@@ -17,4 +25,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 44141a88_44670e5c
 Bytes: 181
 I was going to suggest removing the errno saving/restoring because I do that in LOG(), but I just tested it and I didn't do it correctly (damn, I should have written a test for it).
+
+52:16-52:40
+Thu Sep 03 03:25:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44141a88_44670e5c
+UUID: 644d9e85_64b59f4e
+Bytes: 265
+yes, the errno has been saved in LOG(). But StringPrintf and __VA_ARGS__ may change errno (__VA_ARGS__ is possible to contain function calls). I don't know if there is any guarantee in c++ that LOG(INFO) can go strictly before its parameters following operator<<().
 

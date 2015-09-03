@@ -69,6 +69,14 @@ on the kernel cmdline and have this choose the empty suffix. This is as opposed 
 
 I'm sure we can do it and I don't mind adding the code, but I'm too scratching my head to think of when this would be useful. Debugging, perhaps?
 
+84:4-84:29
+Thu Sep 03 21:36:11 2015 +0000
+Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a490760a_88dbfb57
+UUID: 04cce27b_360cd0b6
+Bytes: 87
+I'm also fine with not allowing the empty suffix, as long as we explicitly disallow it.
+
 109:13-109:26
 Thu Sep 03 20:46:11 2015 +0000
 Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,27 @@
+Revision: 03bbd64aa99bb03bf80a9340750afa96bdb34280
+Base-for-patch-set: 1
+File: adb/adb_trace.h
+
+60:51-60:63
+Thu Sep 03 02:09:46 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0484e2ca_ce2a6041
+Bytes: 119
+No more __FUNCTION__? Is your thinking that since we have the file/line, that should be good enough? Sounds good to me.
+
+61:16-61:30
+Thu Sep 03 02:09:46 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8497f201_8c0d4542
+Bytes: 152
+Removing fflush(stderr) should be ok because I made sure that stderr is unbuffered on Windows and it seems to already be unbuffered by default on Linux.
+
+File: adb/mutex_list.h
+
+17:3-17:57
+Thu Sep 03 02:09:46 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64159e82_45af0afd
+Bytes: 47
+must have been referring to older bionic stdio?
+

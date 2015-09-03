@@ -1,0 +1,11 @@
+Revision: 7ea65b5e76b4fc6678694ae28b67498352ec566b
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+259
+Thu Sep 03 18:24:04 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64159e82_aba84d5b
+Bytes: 89
+SendRequest bails out without setting errno if path_and_mode is 1024 characters or longer
+

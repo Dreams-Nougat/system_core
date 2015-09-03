@@ -1,0 +1,11 @@
+Revision: 87a419c8b1343c9025fe2593206a6e95b0aa9700
+Patch-set: 5
+File: adb/Android.mk
+
+121:0-121:26
+Thu Sep 03 00:12:31 2015 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141a88_8470e6d3
+Bytes: 80
+This will stay for now, I'll remove it in a later change with more dependencies.
+

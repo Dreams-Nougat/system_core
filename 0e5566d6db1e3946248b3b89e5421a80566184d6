@@ -9,12 +9,28 @@ UUID: 44141a88_cd104117
 Bytes: 53
 Is it possible to use get_bootloader_message instead?
 
+35:0-70:1
+Thu Sep 03 21:33:49 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44141a88_cd104117
+UUID: 647bdead_fb8b67a0
+Bytes: 237
+According to bootable/recovery/Android.mk, get_bootloader_message() seems to be in librecovery which statically links libfs_mgr. It would also necessitate passing a Volume object so we'd need to figure out the block device name anyway...
+
 74:4-75:31
 Thu Sep 03 20:46:11 2015 +0000
 Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6492fe15_3fbf7a99
 Bytes: 95
 No need to keep these around forever. I'd either pass in a buffer to use, or allocate one here.
+
+74:4-75:31
+Thu Sep 03 21:33:49 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_3fbf7a99
+UUID: 24472669_6c9a2faf
+Bytes: 22
+Fair enough. Will fix.
 
 84:4-84:29
 Thu Sep 03 20:46:11 2015 +0000
@@ -31,6 +47,20 @@ UUID: 6492fe15_3fd3fa97
 Bytes: 102
 i think we should just disallow the empty suffix. that's bound to cause confusion in other places too.
 
+84:4-84:29
+Thu Sep 03 21:33:49 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_3fd3fa97
+UUID: a490760a_88dbfb57
+Bytes: 473
+I'm assuming what Daniel is asking for is the ability to pass
+
+ someoption=foo androidboot.slot_suffix= someotheroption=bar
+
+on the kernel cmdline and have this choose the empty suffix. This is as opposed to the case where the androidboot.slot_suffix is not on the cmdline at all and we then look in misc or fall back to '_a'.
+
+I'm sure we can do it and I don't mind adding the code, but I'm too scratching my head to think of when this would be useful. Debugging, perhaps?
+
 109:13-109:26
 Thu Sep 03 20:46:11 2015 +0000
 Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,10 +68,26 @@ UUID: 0484e2ca_b3e50450
 Bytes: 41
 This mallocs a string that we never free.
 
+109:13-109:26
+Thu Sep 03 21:33:49 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0484e2ca_b3e50450
+UUID: 44333af5_062cae75
+Bytes: 9
+Will fix.
+
 127:20-127:64
 Thu Sep 03 20:46:11 2015 +0000
 Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 644d9e85_823d2baa
 Bytes: 59
 This error should be reported back. This should not be void
+
+127:20-127:64
+Thu Sep 03 21:33:49 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_823d2baa
+UUID: 647bdead_9b9833f8
+Bytes: 42
+Wilco. I'll make the caller log the error.
 

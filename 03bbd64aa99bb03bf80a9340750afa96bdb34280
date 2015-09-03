@@ -17,6 +17,14 @@ UUID: 04cce27b_45327cc0
 Bytes: 268
 function name may be useful when you know the program very well and only need to verify the execution order. I prefer file/line because it saved me the time searching code based on function names. And it is easier to verify I am looking at the correct version of code.
 
+60:51-60:63
+Thu Sep 03 23:22:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04cce27b_45327cc0
+UUID: 0484e2ca_d6b8b621
+Bytes: 31
+yeah, makes sense, fine with me
+
 61:16-61:30
 Thu Sep 03 02:09:46 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -40,4 +48,12 @@ Parent: 64159e82_45af0afd
 UUID: 0484e2ca_ce410001
 Bytes: 1
 ?
+
+17:3-17:57
+Thu Sep 03 23:22:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0484e2ca_ce410001
+UUID: 84529221_3ed68864
+Bytes: 216
+I was just trying to figure out the original comment. My best guess is that old bionic fprintf() somehow was not thread safe, but it must be now if you tried it and it worked fine. enh probably knows the whole story.
 

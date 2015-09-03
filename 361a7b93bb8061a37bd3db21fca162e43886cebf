@@ -34,3 +34,11 @@ UUID: 644d9e85_64b59f4e
 Bytes: 265
 yes, the errno has been saved in LOG(). But StringPrintf and __VA_ARGS__ may change errno (__VA_ARGS__ is possible to contain function calls). I don't know if there is any guarantee in c++ that LOG(INFO) can go strictly before its parameters following operator<<().
 
+52:16-52:40
+Thu Sep 03 23:22:57 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_64b59f4e
+UUID: 64159e82_f91b3f79
+Bytes: 95
+Yeah, I'll put this on my list to investigate (or someone else can feel free to beat me to it).
+

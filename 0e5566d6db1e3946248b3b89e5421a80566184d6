@@ -23,6 +23,14 @@ UUID: 0484e2ca_d343e8db
 Bytes: 336
 I don't think we actually disallow an empty suffix, so long as it's different than the other suffix. I'd suggest having NULL as the default, but that doesn't actually work with the current implementation of property_get. I think __system_property_find will get you that information, but I'll look into if that's what we want to do here.
 
+84:4-84:29
+Thu Sep 03 20:51:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0484e2ca_d343e8db
+UUID: 6492fe15_3fd3fa97
+Bytes: 102
+i think we should just disallow the empty suffix. that's bound to cause confusion in other places too.
+
 109:13-109:26
 Thu Sep 03 20:46:11 2015 +0000
 Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>

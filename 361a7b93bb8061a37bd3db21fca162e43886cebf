@@ -42,3 +42,11 @@ UUID: 64159e82_f91b3f79
 Bytes: 95
 Yeah, I'll put this on my list to investigate (or someone else can feel free to beat me to it).
 
+52:16-52:40
+Fri Sep 04 19:21:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64159e82_f91b3f79
+UUID: e486eed4_1ef153cf
+Bytes: 115
+i don't understand the problem with the errno save/restore in <base/logging.h>. that's how google3's logging works.
+

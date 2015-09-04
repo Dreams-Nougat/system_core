@@ -11,3 +11,13 @@ I think I should take all error messages out of the child subprocess to avoid ra
 
 Also, is there any benefit to manually closing the FDs before exit() like the code previously did?
 
+193:8-193:77
+Fri Sep 04 01:11:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e486eed4_75b9a201
+UUID: e486eed4_756442e8
+Bytes: 143
+the usual trick is to write the failure on another pipe and have the parent log it.
+
+i can't think of any reason to manually close the fds, no.
+

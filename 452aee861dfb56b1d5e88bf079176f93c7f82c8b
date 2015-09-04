@@ -1,0 +1,11 @@
+Revision: 452aee861dfb56b1d5e88bf079176f93c7f82c8b
+Patch-set: 1
+File: adb/shell_service.cpp
+
+33
+Fri Sep 04 00:23:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44141a88_f33fdae9
+Bytes: 26
+_PATH_BSHELL in <paths.h>?
+

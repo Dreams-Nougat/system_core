@@ -1,0 +1,34 @@
+Revision: fc2d2063fdfb328e700b20e675e5389f87cc0461
+Patch-set: 2
+File: /COMMIT_MSG
+
+18
+Fri Sep 04 22:22:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_6067b55c
+Bytes: 172
+yeah, you might want to use two different topics so you can submit the earlier changes and let them have some soak time while you work on the more disruptive final changes.
+
+File: adb/shell_service.cpp
+
+227
+Fri Sep 04 22:22:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_eb9dd026
+Bytes: 16
+std::unique_ptr?
+
+524
+Fri Sep 04 22:22:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64159e82_6e901e81
+Bytes: 13
+log on error?
+
+543
+Fri Sep 04 22:22:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_6a71d3d5
+Bytes: 73
+we could add WCOREFLAG to bionic, but it seems like it's not widely used.
+

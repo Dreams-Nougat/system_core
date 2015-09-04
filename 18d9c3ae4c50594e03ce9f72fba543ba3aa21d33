@@ -1,0 +1,20 @@
+Revision: 18d9c3ae4c50594e03ce9f72fba543ba3aa21d33
+Patch-set: 1
+File: adb/shell_service.h
+
+98
+Fri Sep 04 01:15:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 644d9e85_f8a5b081
+Bytes: 223
+would it make more sense if this was always a length, and we just interpret the data differently if it's an exit packet? i'm just thinking ahead to the kIdWindowSizeChange packet and the struct that'll need to pass through.
+
+File: adb/shell_service_protocol.cpp
+
+21
+Fri Sep 04 01:15:20 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6492fe15_55d02731
+Bytes: 11
+<algorithm>
+

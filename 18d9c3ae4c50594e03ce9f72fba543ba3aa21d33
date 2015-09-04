@@ -9,6 +9,14 @@ UUID: 644d9e85_f8a5b081
 Bytes: 223
 would it make more sense if this was always a length, and we just interpret the data differently if it's an exit packet? i'm just thinking ahead to the kIdWindowSizeChange packet and the struct that'll need to pass through.
 
+98
+Fri Sep 04 20:23:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 644d9e85_f8a5b081
+UUID: 0484e2ca_64e9f077
+Bytes: 27
+That makes sense, will fix.
+
 File: adb/shell_service_protocol.cpp
 
 21
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6492fe15_55d02731
 Bytes: 11
 <algorithm>
+
+21
+Fri Sep 04 20:23:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_55d02731
+UUID: 84529221_0afa62e3
+Bytes: 4
+Done
 

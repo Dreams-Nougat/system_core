@@ -21,3 +21,11 @@ the usual trick is to write the failure on another pipe and have the parent log 
 
 i can't think of any reason to manually close the fds, no.
 
+193:8-193:77
+Fri Sep 04 20:23:46 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e486eed4_756442e8
+UUID: 6492fe15_707f71a7
+Bytes: 29
+Perfect thanks, I'll do that.
+

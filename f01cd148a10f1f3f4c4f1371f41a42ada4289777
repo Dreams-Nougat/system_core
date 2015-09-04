@@ -1,0 +1,11 @@
+Revision: f01cd148a10f1f3f4c4f1371f41a42ada4289777
+Patch-set: 1
+File: liblog/logprint.c
+
+1040:0-1040:14
+Fri Sep 04 00:20:13 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84529221_f14b8146
+Bytes: 25
+Merde, embedded space ...
+

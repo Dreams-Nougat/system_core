@@ -1,0 +1,11 @@
+Revision: 89f3fc4897a8843002b469a579a53764e71cd661
+Patch-set: 2
+File: logd/LogKlog.cpp
+
+323:0-345:30
+Fri Sep 04 17:14:12 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64159e82_ffa03f61
+Bytes: 22
+This is broken too :-(
+

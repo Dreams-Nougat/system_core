@@ -50,3 +50,17 @@ UUID: e486eed4_1ef153cf
 Bytes: 115
 i don't understand the problem with the errno save/restore in <base/logging.h>. that's how google3's logging works.
 
+52:16-52:40
+Fri Sep 04 19:24:51 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e486eed4_1ef153cf
+UUID: 64159e82_5a3c0192
+Bytes: 159
+I tried a simple test case and it failed:
+
+  int myfunc() { errno = 6666; return 0; }
+
+  errno = 1337;
+  LOG(INFO) << myfunc();
+  printf("errno: %d\n", errno);
+

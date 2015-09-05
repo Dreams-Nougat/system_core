@@ -1,0 +1,11 @@
+Revision: afe151fb025bada5314cffd1bf7077d2860bf362
+Patch-set: 1
+File: base/include/base/parseint.h
+
+57:2-57:15
+Sat Sep 05 00:55:26 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0484e2ca_2597620a
+Bytes: 118
+for ParseUint(), it looks necessary to use strtoull() to check the range. but strtol() would be enough for ParseInt()?
+

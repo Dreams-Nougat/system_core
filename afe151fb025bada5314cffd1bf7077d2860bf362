@@ -9,3 +9,11 @@ UUID: 0484e2ca_2597620a
 Bytes: 118
 for ParseUint(), it looks necessary to use strtoull() to check the range. but strtol() would be enough for ParseInt()?
 
+57:2-57:15
+Sat Sep 05 01:02:19 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0484e2ca_2597620a
+UUID: e486eed4_c4b8fa21
+Bytes: 150
+it's a template, so i don't know what type T is, so i have to assume it's the largest type. if we used strtol this wouldn't work with int64_t on LP32.
+

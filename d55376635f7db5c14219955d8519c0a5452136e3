@@ -49,6 +49,14 @@ I could instead just document "utc" in logcat to not over-promise the feature. S
 
 Being able to set and display the zone did allow me to override devices that have not got the time set right (I have a Manta and a AndroidOne that both are not sticky for selected timezone). So this part of the feature is more for myself ...
 
+277:0-280:62
+Mon Sep 07 08:03:45 2015 +0000
+Author: Martijn Coenen <1013030@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84529221_5b13a767
+UUID: 64c3de5a_15d6f430
+Bytes: 26
+Ok that works for me, too!
+
 946:0-964:5
 Tue Sep 01 18:27:36 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

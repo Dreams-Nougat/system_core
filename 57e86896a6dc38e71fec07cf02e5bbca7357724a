@@ -1,0 +1,11 @@
+Revision: 57e86896a6dc38e71fec07cf02e5bbca7357724a
+Patch-set: 1
+File: include/binderwrapper/binder_wrapper.h
+
+54:39-54:42
+Tue Sep 08 20:50:59 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4e8aef8_b107e01f
+Bytes: 58
+How many? Or do you want to leave it undefined on purpose?
+

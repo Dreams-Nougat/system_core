@@ -9,3 +9,22 @@ UUID: e4e8aef8_b107e01f
 Bytes: 58
 How many? Or do you want to leave it undefined on purpose?
 
+File: libbinderwrapper/Android.mk
+
+63:10-63:30
+Tue Sep 08 21:22:41 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4d56a01_c341282a
+Bytes: 85
+As unit tests generally run on the host, should you build host versions of these too?
+
+File: libbinderwrapper/real_binder_wrapper.cc
+
+54:0-78:1
+Tue Sep 08 21:22:41 2015 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4d8763b_625cd8df
+Bytes: 194
+These two function are the same apart from the {get|check|Service call. Could you have a common function?
+sp<IBinder> RealBinderWrapper::GetServiceImp(const std::string& service_name, bool wait)
+

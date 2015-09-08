@@ -1,0 +1,18 @@
+Revision: 298df1f8cbadbf7d7ee634fa78050b0a66e773e9
+Patch-set: 3
+File: fs_mgr/fs_mgr_slotselect.c
+
+50
+Tue Sep 08 19:30:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24c9e69c_f32330e9
+Bytes: 16
+break otherwise?
+
+65
+Tue Sep 08 19:30:54 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44cedaa4_d436dc1a
+Bytes: 18
+TEMP_FAILURE_RETRY
+

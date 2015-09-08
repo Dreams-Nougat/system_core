@@ -1,0 +1,18 @@
+Revision: fd94bebba02c6ff9b35ef28cbaaeb8c7a38df17b
+Patch-set: 2
+File: fs_mgr/fs_mgr_slotselect.c
+
+83
+Tue Sep 08 19:10:26 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64cf5e9f_f54af89a
+Bytes: 6
+static
+
+124:16-124:18
+Tue Sep 08 19:10:26 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64cf5e9f_d54ffca8
+Bytes: 34
+should that be PROPERTY_VALUE_MAX?
+

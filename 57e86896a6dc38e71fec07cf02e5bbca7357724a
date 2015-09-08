@@ -9,6 +9,33 @@ UUID: e4e8aef8_b107e01f
 Bytes: 58
 How many? Or do you want to leave it undefined on purpose?
 
+54:39-54:42
+Tue Sep 08 22:18:17 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4e8aef8_b107e01f
+UUID: a40b16a8_47e7ce19
+Bytes: 717
+heh. i left it undefined because IServiceManager in libbinder leaves it undefined:
+
+    /**
+     * Retrieve an existing service, blocking for a few seconds
+     * if it doesn't yet exist.
+     */
+    ...
+    virtual sp<IBinder> getService(const String16& name) const
+    {
+        unsigned n;
+        for (n = 0; n < 5; n++){
+            sp<IBinder> svc = checkService(name);
+            if (svc != NULL) return svc;
+            ALOGI("Waiting for service %s...\n", String8(name).string());
+            sleep(1);
+        }
+        return NULL;
+    }
+
+after looking at the implementation of that, i'm just going to delete this silly thing. callers can write their own sleep loop if they want (although they shouldn't).
+
 File: libbinderwrapper/Android.mk
 
 63:10-63:30
@@ -17,6 +44,16 @@ Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4d56a01_c341282a
 Bytes: 85
 As unit tests generally run on the host, should you build host versions of these too?
+
+63:10-63:30
+Tue Sep 08 22:18:17 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4d56a01_c341282a
+UUID: 84d9b271_2e40276b
+Bytes: 403
+the host probably isn't going to have binder in its kernel, right? any tests that use this are still going to be instantiating IBinder objects, which i think will fail... no?
+
+in general, i hate this trend of us duplicating everything to build host versions even though we don't really care about running the underlying code on the host, and then needing to do the same for all of its dependencies, etc.
 
 File: libbinderwrapper/real_binder_wrapper.cc
 
@@ -27,4 +64,12 @@ UUID: a4d8763b_625cd8df
 Bytes: 194
 These two function are the same apart from the {get|check|Service call. Could you have a common function?
 sp<IBinder> RealBinderWrapper::GetServiceImp(const std::string& service_name, bool wait)
+
+54:0-78:1
+Tue Sep 08 22:18:17 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4d8763b_625cd8df
+UUID: 64d4be37_8d2281e2
+Bytes: 58
+i'm just going to kill WaitForService() because it is dumb
 

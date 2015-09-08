@@ -9,10 +9,26 @@ UUID: 64cf5e9f_f54af89a
 Bytes: 6
 static
 
+83
+Tue Sep 08 19:15:39 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_f54af89a
+UUID: e49c2e76_318870e9
+Bytes: 4
+Done
+
 124:16-124:18
 Tue Sep 08 19:10:26 2015 +0000
 Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 64cf5e9f_d54ffca8
 Bytes: 34
 should that be PROPERTY_VALUE_MAX?
+
+124
+Tue Sep 08 19:15:39 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_d54ffca8
+UUID: c452ca50_8c2c97ca
+Bytes: 60
+Yea, I suppose the suffix really could be that long. Fixing.
 

@@ -9,3 +9,11 @@ UUID: e4c34e74_68ba8b46
 Bytes: 78
 Is this correct? I think ReadAllMetricsFromFd never truncates the file, right?
 
+186:45-187:75
+Wed Sep 09 20:58:58 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4c34e74_68ba8b46
+UUID: 04c1426c_8975e50d
+Bytes: 25
+Copy/paste error.  Fixed.
+

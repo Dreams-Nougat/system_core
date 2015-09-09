@@ -1,0 +1,11 @@
+Revision: 0d83551ca52bc05757034cc23e4c28a2a399e2bd
+Patch-set: 1
+File: adb/sysdeps_win32_test.cpp
+
+29:55-32:34
+Wed Sep 09 00:23:15 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64cf5e9f_5b29db64
+Bytes: 120
+The point of the \uNNNN and \xNN is to prevent this breaking in case we use different text editors, encoding modes, etc.
+

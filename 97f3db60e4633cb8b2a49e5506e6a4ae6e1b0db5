@@ -1,0 +1,18 @@
+Revision: 97f3db60e4633cb8b2a49e5506e6a4ae6e1b0db5
+Patch-set: 4
+File: metricsd/uploader/upload_service.cc
+
+127:2-127:30
+Wed Sep 09 21:42:01 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64cf5e9f_aa609393
+Bytes: 358
+Do you need to decrement it then in the else case below for a successful send?  Or is Reset() being called somewhere after a successful send to reset the count?  IIUC, RemoveFailedLog will only delete the file and reset the count to 0 in the case of failing too many times, not a successful send, so the count would be incorrect after a successful send here.
+
+243:8-243:12
+Wed Sep 09 21:42:01 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4ecf63c_82d17c5c
+Bytes: 139
+Is this a common occurrance or a very minor issue?  If not, perhaps warning or error would be better to catch attention when browsing logs?
+

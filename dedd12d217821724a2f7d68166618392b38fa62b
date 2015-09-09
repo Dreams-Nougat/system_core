@@ -50,6 +50,14 @@ this new locking logic doesn't protect against stale locks -- if the system rebo
 
 i think we should implement flock inside of toybox.  it's not that hard actually ... it's just a thin wrapper around flock().  the util-linux flock is BSD-1 too, so should be OK to lift code from that.
 
+699
+Wed Sep 09 18:48:10 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 442a5a15_b43b409a
+UUID: 64cf5e9f_cfb88101
+Bytes: 268
+I'd like to get this CL in sooner than later, so that the devrel team can start testing end-to-end with their crash server.  Would it be acceptable for now to just remove the lock in the init's onboot setup, and file a bug for adding flock that I can get to next week?
+
 File: crash_reporter/periodic_scheduler
 
 0
@@ -58,4 +66,12 @@ Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 447fba21_4c5fdf59
 Bytes: 85
 is there a way to run periodic events using android's init ?  that would be ideal ...
+
+0
+Wed Sep 09 18:48:10 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 447fba21_4c5fdf59
+UUID: c4ef2afe_fc1bee06
+Bytes: 411
+According to the readme and what I know of the init code, there is not a straightforward way similar to using periodic_scheduler or cron to run periodic events.  The only workaround that might work, is to define the service with an 'onrestart' option that calls 'wait' on a file that we gaurantee won't exist so that it forces it to wait for the timeout.  Its a dirty hack that might work (I haven't tested it).
 

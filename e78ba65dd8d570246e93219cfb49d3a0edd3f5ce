@@ -9,6 +9,14 @@ UUID: c4ef2afe_e85fa908
 Bytes: 27
 nit: 'crashed' or 'crashes'
 
+126:50-126:55
+Wed Sep 09 21:21:11 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4ef2afe_e85fa908
+UUID: 84d4522f_05065ce6
+Bytes: 4
+Done
+
 224
 Wed Sep 09 21:08:00 2015 +0000
 Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,30 @@ UUID: 04c1426c_f4b31822
 Bytes: 108
 nit: Blank line intentional?  The rest of the file doesn't use a blank line to start method implementations.
 
+224
+Wed Sep 09 21:21:11 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04c1426c_f4b31822
+UUID: 64cf5e9f_8a1a7738
+Bytes: 22
+should not be there :)
+
 225:2-225:22
 Wed Sep 09 21:08:00 2015 +0000
 Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4ef2afe_4838f5b8
 Bytes: 36
 When is this case expected to occur?
+
+225:2-225:22
+Wed Sep 09 21:21:11 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4ef2afe_4838f5b8
+UUID: 64cf5e9f_ca362fb2
+Bytes: 154
+When we haven't logged anything since the last upload. This avoids sending empty logs when uploading frequently.
+
+I added a comment to explain a bit more.
 
 File: metricsd/uploader/upload_service.h
 

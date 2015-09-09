@@ -9,3 +9,25 @@ UUID: c4ef2afe_323d0c56
 Bytes: 93
 Ignoring slotselect is almost guaranteed to be incorrect. An error would be more appropriate.
 
+104:4-107:25
+Wed Sep 09 22:51:56 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4ef2afe_323d0c56
+UUID: 04822251_52769461
+Bytes: 1090
+Well, this only happens when on a system where
+
+ 0. it's using A/B (e.g. slotselect present in fstab file)
+ 1. the bootloader isn't passing slot_suffix on the cmdline; and
+ 2. the misc partition isn't set up correctly.
+
+so chances are it's only happening on developer systems, not production devices.
+
+The reason I want this behavior is to avoid a flag day for all the Brillo developers. IOW, I want to add slotselect to our fstab file but I do not want to break already deployed devices that are not yet repartitioned for A/B (these devices only have 'boot' and 'system' partitions).
+
+If I error out instead of this behavior, I'll instantly break all these devices (because we can't mount /system) and force developers to run my repartitioning script. This is not a good use of their time, I think.
+
+On the other hand, with this change, their systems continue to work and they can repartition when they need A/B.
+
+I agree that an error is more appropriate and I don't mind changing it to that in a couple of months... it's just a lot more practical for us this way. Thanks for considering.
+

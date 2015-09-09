@@ -9,10 +9,29 @@ UUID: 64cf5e9f_aa609393
 Bytes: 358
 Do you need to decrement it then in the else case below for a successful send?  Or is Reset() being called somewhere after a successful send to reset the count?  IIUC, RemoveFailedLog will only delete the file and reset the count to 0 in the case of failing too many times, not a successful send, so the count would be incorrect after a successful send here.
 
+127:2-127:30
+Wed Sep 09 22:09:32 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_aa609393
+UUID: 84d4522f_65c4f098
+Bytes: 259
+I actually reset it to 0 when staging a new log (see StageCurrentLog) to make sure that, any upload will be blocked until the stage log is deleted and replaced.
+
+I had to double check the logic so I improved the retry test to check that this logic is working.
+
 243:8-243:12
 Wed Sep 09 21:42:01 2015 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4ecf63c_82d17c5c
 Bytes: 139
 Is this a common occurrance or a very minor issue?  If not, perhaps warning or error would be better to catch attention when browsing logs?
+
+243:8-243:12
+Wed Sep 09 22:09:32 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4ecf63c_82d17c5c
+UUID: 84d4522f_85aeeccd
+Bytes: 153
+It is an error, you are right.
+I did not CHECK the result as, if we fill the disk with metrics, we want to keep the daemon running to remove the metrics.
 

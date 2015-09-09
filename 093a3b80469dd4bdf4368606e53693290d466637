@@ -1,0 +1,11 @@
+Revision: 093a3b80469dd4bdf4368606e53693290d466637
+Patch-set: 2
+File: logd/LogBuffer.cpp
+
+330:0-332:62
+Wed Sep 09 23:45:43 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4bdd6e7_ecb34f22
+Bytes: 172
+This method does a lot more than this description. It would help to have some comments either here on inline regarding garbage collection, worst offenders, region lock, ...
+

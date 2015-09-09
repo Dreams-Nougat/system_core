@@ -1,0 +1,18 @@
+Revision: 8b79ecf93cc34490b81e70fb5823f6904f9a7f46
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:51-7:52
+Wed Sep 09 21:28:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64cf5e9f_6a45db0b
+Bytes: 69
+Offer up a better explanation of this function in the commit message.
+
+9:0-9:1
+Wed Sep 09 21:28:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24c9e69c_42d1ec58
+Bytes: 13
+Bug: 23668800
+

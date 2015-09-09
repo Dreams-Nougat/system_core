@@ -9,10 +9,26 @@ UUID: 44cedaa4_ba06a95a
 Bytes: 111
 What about this? To remove this, it might be necessary to fix base/Android.mk to use LOCAL_..._LIBRARIES=liblog
 
+223:4-223:10
+Wed Sep 09 02:52:14 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44cedaa4_ba06a95a
+UUID: 24c9e69c_dcb3a122
+Bytes: 141
+For static libraries, we need to include all needed static libraries, not only the directly needed ones. fixing base/Android.mk doesn't help.
+
 278:4-278:10
 Wed Sep 09 01:43:19 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e4e8aef8_97da8c01
 Bytes: 12
 same comment
+
+278:4-278:10
+Wed Sep 09 02:52:14 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4e8aef8_97da8c01
+UUID: e4c34e74_426e88f6
+Bytes: 122
+same as above. I think we can't change this into shared libraries, because adbd is on /, liblog and linker are on /system.
 

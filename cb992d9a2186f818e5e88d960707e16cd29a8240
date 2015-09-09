@@ -1,0 +1,18 @@
+Revision: cb992d9a2186f818e5e88d960707e16cd29a8240
+Patch-set: 1
+File: adb/Android.mk
+
+223:4-223:10
+Wed Sep 09 01:43:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44cedaa4_ba06a95a
+Bytes: 111
+What about this? To remove this, it might be necessary to fix base/Android.mk to use LOCAL_..._LIBRARIES=liblog
+
+278:4-278:10
+Wed Sep 09 01:43:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4e8aef8_97da8c01
+Bytes: 12
+same comment
+

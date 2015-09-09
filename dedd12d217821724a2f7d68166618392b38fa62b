@@ -1,0 +1,61 @@
+Revision: dedd12d217821724a2f7d68166618392b38fa62b
+Patch-set: 2
+File: crash_reporter/crash_sender
+
+24:12-24:31
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4842e5f_91a2bc9b
+Bytes: 82
+seems like we should create a variable to hold the base dir like CRASH_STATE_DIR ?
+
+34
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 447fba21_ec4faba8
+Bytes: 179
+i've never really liked the hardcoding of paths, and i can't think of a reason why it's necessary.  if you just change this to "find", does it work ?  same for the other programs.
+
+174
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84753240_eeeb1fb1
+Bytes: 17
+LHS needs quoting
+
+200
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a48eb67e_4f8d8d25
+Bytes: 131
+ideally we'd change the exec/rm to -delete.  does the android find support that ?
+
+if not, would be good to use:
+
+ -exec rm -- {} +
+
+263
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4e9ea2c_80fb36af
+Bytes: 23
+"${file}" needs quoting
+
+699
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 442a5a15_b43b409a
+Bytes: 352
+this new locking logic doesn't protect against stale locks -- if the system reboots/whatever and doesn't clean the lock, then it never gets unlocked.
+
+i think we should implement flock inside of toybox.  it's not that hard actually ... it's just a thin wrapper around flock().  the util-linux flock is BSD-1 too, so should be OK to lift code from that.
+
+File: crash_reporter/periodic_scheduler
+
+0
+Wed Sep 09 16:38:45 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 447fba21_4c5fdf59
+Bytes: 85
+is there a way to run periodic events using android's init ?  that would be ideal ...
+

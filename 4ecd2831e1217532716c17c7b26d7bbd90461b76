@@ -1,0 +1,11 @@
+Revision: 4ecd2831e1217532716c17c7b26d7bbd90461b76
+Patch-set: 1
+File: metricsd/serialization/serialization_utils.cc
+
+186:45-187:75
+Wed Sep 09 20:56:13 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4c34e74_68ba8b46
+Bytes: 78
+Is this correct? I think ReadAllMetricsFromFd never truncates the file, right?
+

@@ -1,0 +1,34 @@
+Revision: e78ba65dd8d570246e93219cfb49d3a0edd3f5ce
+Patch-set: 3
+File: metricsd/uploader/upload_service.cc
+
+126:50-126:55
+Wed Sep 09 21:08:00 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4ef2afe_e85fa908
+Bytes: 27
+nit: 'crashed' or 'crashes'
+
+224
+Wed Sep 09 21:08:00 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04c1426c_f4b31822
+Bytes: 108
+nit: Blank line intentional?  The rest of the file doesn't use a blank line to start method implementations.
+
+225:2-225:22
+Wed Sep 09 21:08:00 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4ef2afe_4838f5b8
+Bytes: 36
+When is this case expected to occur?
+
+File: metricsd/uploader/upload_service.h
+
+153:5-153:11
+Wed Sep 09 21:08:00 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a4bdd6e7_269ba8dc
+Bytes: 14
+Nit: 'Removes'
+

@@ -1,0 +1,11 @@
+Revision: 74dc289dcf524dfc4b6860a510d21cd9ab6480c5
+Patch-set: 1
+File: fs_mgr/fs_mgr_slotselect.c
+
+104:4-107:25
+Wed Sep 09 22:39:08 2015 +0000
+Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4ef2afe_323d0c56
+Bytes: 93
+Ignoring slotselect is almost guaranteed to be incorrect. An error would be more appropriate.
+

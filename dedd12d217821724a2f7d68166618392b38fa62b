@@ -9,6 +9,14 @@ UUID: e4842e5f_91a2bc9b
 Bytes: 82
 seems like we should create a variable to hold the base dir like CRASH_STATE_DIR ?
 
+24:12-24:31
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4842e5f_91a2bc9b
+UUID: e4c34e74_a889c3ad
+Bytes: 101
+Done.  Although I didn't replace this specific line, as it's the only one using metrics' state files.
+
 34
 Wed Sep 09 16:38:45 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 447fba21_ec4faba8
 Bytes: 179
 i've never really liked the hardcoding of paths, and i can't think of a reason why it's necessary.  if you just change this to "find", does it work ?  same for the other programs.
 
+34
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 447fba21_ec4faba8
+UUID: a4bdd6e7_5199b4f9
+Bytes: 4
+Done
+
 174
 Wed Sep 09 16:38:45 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84753240_eeeb1fb1
 Bytes: 17
 LHS needs quoting
+
+174
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84753240_eeeb1fb1
+UUID: 04c1426c_e9e9012b
+Bytes: 4
+Done
 
 200
 Wed Sep 09 16:38:45 2015 +0000
@@ -34,12 +58,41 @@ if not, would be good to use:
 
  -exec rm -- {} +
 
+200
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a48eb67e_4f8d8d25
+UUID: e4c34e74_f35570eb
+Bytes: 645
+Android/toybox's find does not support the -delete action.
+
+Using commands with + seems to be broken.  To test:
+
+# touch file1
+# touch file2
+# touch file3
+# find . -newer file1 -mindepth 1 -exec ls '{}' ';'
+./file2
+./file3
+# find . -newer file1 -mindepth 1 -exec ls '{}' '+'                            
+# 
+
+Quoting of arguments doesn't make a difference.  Playing around with it, toybox's find implementation seems to have a lot of bugs... changing the order of options seems to cause different behaviors, including sometimes causing segfaults :(  The original command action here (" -exec rm -- '{}' ';'") does seem to work as intended however.
+
 263
 Wed Sep 09 16:38:45 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4e9ea2c_80fb36af
 Bytes: 23
 "${file}" needs quoting
+
+263
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4e9ea2c_80fb36af
+UUID: 44cedaa4_dd427fd9
+Bytes: 4
+Done
 
 699
 Wed Sep 09 16:38:45 2015 +0000
@@ -66,6 +119,14 @@ UUID: e4842e5f_512214b4
 Bytes: 83
 OK.  drop a comment in here pointing to that, and make sure you quote the path too.
 
+699
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4842e5f_512214b4
+UUID: 04c1426c_099af5ad
+Bytes: 4
+Done
+
 File: crash_reporter/periodic_scheduler
 
 0
@@ -90,4 +151,18 @@ Parent: c4ef2afe_fc1bee06
 UUID: c4e9ea2c_00a3a6a1
 Bytes: 90
 assuming it doesn't cause init to busy wait, that actually doesn't sound terrible to me :)
+
+0
+Wed Sep 09 23:27:33 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4e9ea2c_00a3a6a1
+UUID: c4ef2afe_d214800b
+Bytes: 603
+I tested with setting up a service that just calls log, and has a `onrestart wait /data/misc/crash_reporter/file_does_not_exist 10` option set:
+
+service scheduler_test /system/bin/log -p i -t "scheduler_test" "Test message"
+    class late_start
+    onrestart wait /data/misc/crash_reporter/file_does_not_exist 10
+
+Unfortunately, when I then try to start a service and watch logcat, I don't see the new service started immediately, instead it waits until the next time the test service log statement appears, then runs immediately afterwards.  So it appears that it does cause all of init to busy wait :(
 

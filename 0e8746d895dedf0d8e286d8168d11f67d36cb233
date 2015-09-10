@@ -1,0 +1,11 @@
+Revision: 0e8746d895dedf0d8e286d8168d11f67d36cb233
+Patch-set: 4
+File: crash_reporter/crash_sender
+
+132
+Thu Sep 10 06:27:54 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 442a5a15_dad5c524
+Bytes: 281
+Do we have a plan yet for official vs non-official (i.e. developer or community) images?  This is somewhat of a relic from having ChromeOS and ChromiumOS running the same code, but I'd imagine that its also relevant in regards to official vs developer images sending crash reports.
+

@@ -31,3 +31,13 @@ On the other hand, with this change, their systems continue to work and they can
 
 I agree that an error is more appropriate and I don't mind changing it to that in a couple of months... it's just a lot more practical for us this way. Thanks for considering.
 
+104:4-107:25
+Thu Sep 10 23:49:56 2015 +0000
+Author: Rom Lemarchand <1018087@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04822251_52769461
+UUID: e4c34e74_58267495
+Bytes: 327
+How many devices are we talking about potentially breaking? If they're only developers it might be acceptable to let them know to update their bootloaders.
+
+Can you submit a new CL that changes to an error? We can then either cherry-pick it where we care and keep it there with a -2 while you don't feel comfortable submitting.
+

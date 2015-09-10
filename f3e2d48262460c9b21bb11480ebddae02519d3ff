@@ -1,0 +1,11 @@
+Revision: f3e2d48262460c9b21bb11480ebddae02519d3ff
+Patch-set: 3
+File: logd/LogKlog.cpp
+
+302:8-302:18
+Thu Sep 10 23:50:51 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84d4522f_d6bc9914
+Bytes: 55
+This is to be removed with the one created on line 265.
+

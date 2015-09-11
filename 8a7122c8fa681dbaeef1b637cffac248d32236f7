@@ -1,0 +1,107 @@
+Revision: 8a7122c8fa681dbaeef1b637cffac248d32236f7
+Patch-set: 5
+File: include/backtrace/Backtrace.h
+
+55:7-55:16
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04aea2f9_550f3e64
+Bytes: 93
+Might be better to follow the above naming, and name it something like backtrace_stackinfo_t.
+
+75:1-76:38
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 648afea0_5dfbbbaf
+Bytes: 310
+It would be useful to indicate that if cache_file is true, that the cache will continue to grow until the program ends.
+
+I don't know if we need it now, but a static ClearOfflineCache() might be necessary in the future. It might be nice to have it to indicate to people that the cache is survives across calls.
+
+File: libbacktrace/BacktraceOffline.cpp
+
+125:19-125:26
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84a1b20e_b1d5da25
+Bytes: 80
+I think it's a bit confusing with this word. I think it flows better without it.
+
+168:0-168:0
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4b72a4b_533f567a
+Bytes: 11
+Extra line.
+
+185:0-185:29
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4b0ae55_d47e92a9
+Bytes: 119
+This could use some comments describing why you are making these three calls, and why you are doing them in this order.
+
+203:6-203:34
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04aea2f9_1545b60c
+Bytes: 109
+Might want to file a bug for this and it to the todo. If we get the rewritten fast enough, this won't matter.
+
+262:7-262:12
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 24a64628_11430c7b
+Bytes: 113
+I'm not sure what this comment means. The first part appears to be a statement but it kind of ends in a question.
+
+File: libbacktrace/backtrace_offline_test.cpp
+
+16:0-16:4
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44ab3af0_0f72c923
+Bytes: 11
+static bool
+
+16:5-16:14
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04aea2f9_95e36699
+Bytes: 112
+Better to name it g_exit_flag to make it clear that it's a global. You probably also need to make this volatile.
+
+31:0-31:26
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04aea2f9_7526c295
+Bytes: 123
+This should be defined in unistd.h, I believe. There might be some issue with the host version, but I think that was fixed.
+
+96:0-96:0
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 84a1b20e_31460a8b
+Bytes: 105
+It would be good to add a test to make sure that if the stack trace exceeds the max, nothing bad happens.
+
+106:0-115:30
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e4b0ae55_54662234
+Bytes: 378
+It might be better to hard-code this data. You would have to generate for each architecture though, so maybe it's too difficult. If you do hard-code, you should probably write a  program to do the generation.
+
+You would have to check in the shared libraries too.
+
+This does seem a bit complicated so maybe this isn't a good idea, but I'll leave it up to you what you want to do.
+
+132:1-146:3
+Fri Sep 11 19:49:50 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c4b72a4b_73fd3a32
+Bytes: 444
+This doesn't seem to be testing any of the code. If you hard code this, you could also hardcode the expected pc and avoid the symbol code.
+
+If you don't hard code this, I think it would be better to replace this all with asserts about the pc rather than symbol checking. Usually, you don't want your test code logic to be too complicated if you can avoid it. It can result in a bit more cut-n-paste code so you have to determine which is worse.
+

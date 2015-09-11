@@ -9,12 +9,28 @@ UUID: 64cf5e9f_aa0413db
 Bytes: 159
 Make this static? I'm guessing you didn't kill the prev/next fields of fdevent because fdevent.h is also used by sysdeps_win32.cpp which still uses the fields?
 
+51:20-51:32
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_aa0413db
+UUID: 04c1426c_fae9be2a
+Bytes: 55
+done. yes, I think we can leave that for later changes.
+
 65:19-65:31
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 244c8613_612bb218
 Bytes: 21
 overload operator<< ?
+
+65:19-65:31
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 244c8613_612bb218
+UUID: e4c34e74_b898f0b2
+Bytes: 4
+Done
 
 67:8-67:17
 Wed Sep 09 23:48:56 2015 +0000
@@ -23,12 +39,28 @@ UUID: e4c34e74_0868af2d
 Bytes: 146
 What is fde.events for if fde.state already contains FDE_READ/WRITE/ERROR? Maybe there is some potential cleanup between fde.state and fde.events?
 
+67:8-67:17
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4c34e74_0868af2d
+UUID: 84d4522f_31df57cf
+Bytes: 166
+fde.state shows what the user wants in FDE_READ/WRITE/ERROR, fde.events shows the real events happened. They have different function. Am I misunderstanding your idea?
+
 105:23-105:30
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4ef2afe_1298c837
 Bytes: 16
 nit: destroying?
+
+105:23-105:30
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4ef2afe_1298c837
+UUID: 44cedaa4_be2216e2
+Bytes: 4
+Done
 
 119:4-119:9
 Wed Sep 09 23:48:56 2015 +0000
@@ -37,12 +69,28 @@ UUID: c4ef2afe_32698cc0
 Bytes: 65
 error check? that will conveniently check the validity of the fd.
 
+119:4-119:9
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4ef2afe_32698cc0
+UUID: 24c9e69c_3553c37b
+Bytes: 204
+done. unit test added. Although it is easy to check the error, we'd better leave it for poll() to handle it properly. For here, we may just report the error. Ignoring the error or abort() seem not proper.
+
 120:18-120:48
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 04c1426c_cfa2bd9c
 Bytes: 165
 I thought the point of using emplace() was to avoid unnecessary object construction/copying? Then don't you want to use emplace(fde->fd, fde)? Or do I misunderstand?
+
+120:18-120:48
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04c1426c_cfa2bd9c
+UUID: 64cf5e9f_26595600
+Bytes: 198
+Here is not performance critical, I just wrote for convenience. emplace(fde->fd, fde) seems a little confusing as PollNode doesn't appear in it. By the way, I find it is suitable for error checking.
 
 121:4-121:14
 Wed Sep 09 23:48:56 2015 +0000
@@ -51,12 +99,29 @@ UUID: 84d4522f_4570d461
 Bytes: 215
 I think that LOG() from logging.h does not contain an 'if', so it will always run dump_fdevent() even if logging is not enabled. logging.h should probably be fixed (adding the if might fix the errno issue as well?).
 
+121:4-121:14
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84d4522f_4570d461
+UUID: 44fdfae7_e50a0c98
+Bytes: 554
+Yes, this is a problem. logging.h has a default log level INFO, and the level can be adjusted by env ANDROID_LOG_TAGS. But there is no way to set environment for adbd. I think one solution is to set the log level according to trace setting. I prefer to do this in a separate CL. 
+for the errno problem, I don't have any good idea to save errno in any situation while keeping current convenient logging style (I mean LOG() << xxx). But I am optimistic that we rarely meet the situation that errno should be saved while xxx in "LOG() << xxx" changes errno.
+
 132:22-132:29
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 24c9e69c_cdcf6d90
 Bytes: 28
 set fde->fd=-1 just in case?
+
+132:22-132:29
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 24c9e69c_cdcf6d90
+UUID: a4bdd6e7_b47eb977
+Bytes: 4
+Done
 
 195:8-195:17
 Wed Sep 09 23:48:56 2015 +0000
@@ -65,12 +130,28 @@ UUID: a4ecf63c_45765e61
 Bytes: 29
 android::base::StringAppendF?
 
+195:8-195:17
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4ecf63c_45765e61
+UUID: c4ef2afe_ae017b7b
+Bytes: 4
+Done
+
 206:4-206:8
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4ecf63c_a5cdaaf3
 Bytes: 90
 why PLOG instead of LOG? I don't see any syscall that might set errno. Copy & paste error?
+
+206:4-206:8
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4ecf63c_a5cdaaf3
+UUID: c4ef2afe_8efc77e0
+Bytes: 124
+yeah, a copy & paste error. Firstly there was only one log below poll(), then I wanted to add another one to dump_pollfds().
 
 207:8-207:11
 Wed Sep 09 23:48:56 2015 +0000
@@ -79,12 +160,28 @@ UUID: 04c1426c_8fc3a572
 Bytes: 30
 check for error? handle EINTR?
 
+207:8-207:11
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04c1426c_8fc3a572
+UUID: a4bdd6e7_947bb588
+Bytes: 4
+Done
+
 218:12-218:31
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84d4522f_901aac38
 Bytes: 104
 so if I didn't request FDE_ERROR, I can still be called back for it? I guess things are better that way.
+
+218:12-218:31
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84d4522f_901aac38
+UUID: a4bdd6e7_7478218b
+Bytes: 168
+I behave like this just because it is poll()'s behavior (unlike select()). But I think it doesn't matter, because now adb doesn't have any idea how to handle FDE_ERROR.
 
 221:31-222:41
 Wed Sep 09 23:48:56 2015 +0000
@@ -93,12 +190,28 @@ UUID: 04c1426c_6ff85184
 Bytes: 100
 So this assumes that the caller will do a read? What if it only does a write? Or is that impossible?
 
+221:31-222:41
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04c1426c_6ff85184
+UUID: 64cf5e9f_266716af
+Bytes: 82
+only two places use FDE_WRITE, and their callbacks all have handling for FDE_READ.
+
 232:12-232:34
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 44cedaa4_48990ffa
 Bytes: 103
 can one be inserted twice onto the list? Is that ok? Is the pending bit preserved ok in that situation?
+
+232:12-232:34
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44cedaa4_48990ffa
+UUID: 44fdfae7_85d1885c
+Bytes: 122
+strictly it is possible. But only when fdevent_install() the same fdevent for different fds. check is added here for that.
 
 254:10-254:12
 Wed Sep 09 23:48:56 2015 +0000
@@ -107,10 +220,26 @@ UUID: e4c34e74_135464c6
 Bytes: 34
 GE? I guess really doesn't matter?
 
+254:10-254:12
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4c34e74_135464c6
+UUID: 84d4522f_11b57b4e
+Bytes: 4
+Done
+
 302:8-302:19
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a4bdd6e7_d1eee430
 Bytes: 287
 My understanding is that LOG(FATAL) calls abort() and that can make a coredump. I'm not sure if that makes sense for 'expected' runtime error conditions. In practice, I don't think it comes up because this stuff probably never fails (it isn't like adb is perfect with all memory allocs).
+
+302:8-302:19
+Fri Sep 11 04:38:23 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4bdd6e7_d1eee430
+UUID: 64cf5e9f_26cef6ee
+Bytes: 175
+Yes, LOG(FATAL) causes abort(). I think failure is not acceptable here. I guess if here fails, the connection will never stop when you try to run commands like "adb shell ls".
 

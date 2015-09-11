@@ -9,3 +9,11 @@ UUID: 04c1426c_d5d48b26
 Bytes: 167
 I saw that this was set by Evgeniy, but it doesn't work on Windows/mingw, since they then lose access to the entire libc set of functions. Any ideas about why this is?
 
+52
+Fri Sep 11 05:55:39 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04c1426c_d5d48b26
+UUID: 44cedaa4_1e0eaa3f
+Bytes: 57
+Probably a build system bug on my part. I'll take a look.
+

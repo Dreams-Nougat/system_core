@@ -1,0 +1,11 @@
+Revision: 45ab4c5dd683efbf48008c9939d4b3f4a4cb887a
+Patch-set: 8
+File: logd/LogStatistics.cpp
+
+217:0-218:48
+Fri Sep 11 22:33:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e467cecb_1c5f795a
+Bytes: 96
+On 32 bit platforms this is 'so wrong'. Use more floating point for these critical calculations.
+

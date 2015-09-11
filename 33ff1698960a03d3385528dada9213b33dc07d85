@@ -47,6 +47,14 @@ UUID: 84d4522f_31df57cf
 Bytes: 166
 fde.state shows what the user wants in FDE_READ/WRITE/ERROR, fde.events shows the real events happened. They have different function. Am I misunderstanding your idea?
 
+67:8-67:17
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84d4522f_31df57cf
+UUID: 244c8613_647c1bf6
+Bytes: 145
+Ah, ok, makes sense. I guess my follow-up question then is: why doesn't this print out fde.events? But that might not be important, I don't know.
+
 105:23-105:30
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -107,6 +115,16 @@ UUID: 44fdfae7_e50a0c98
 Bytes: 554
 Yes, this is a problem. logging.h has a default log level INFO, and the level can be adjusted by env ANDROID_LOG_TAGS. But there is no way to set environment for adbd. I think one solution is to set the log level according to trace setting. I prefer to do this in a separate CL. 
 for the errno problem, I don't have any good idea to save errno in any situation while keeping current convenient logging style (I mean LOG() << xxx). But I am optimistic that we rarely meet the situation that errno should be saved while xxx in "LOG() << xxx" changes errno.
+
+121:4-121:14
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44fdfae7_e50a0c98
+UUID: e4c34e74_5b69ce03
+Bytes: 542
+adb.cpp shows that there is a property persist.adb.trace_mask but that is for ADB_TRACE-style flags, not ANDROID_LOG_TAGS-style. Yeah, separate CL is fine.
+
+Before I attempted the LOG() errno-saving, I looked for instances of code that depended on errno being preserved and there seemed to be at least a couple. (Of course, the good news is that most of the time errno is not overwritten.) I'll try to investigate this LOG()/errno issue next week (since I made the original errno restoring change), or you guys can feel free to beat me to it.
 
 132:22-132:29
 Wed Sep 09 23:48:56 2015 +0000
@@ -183,6 +201,14 @@ UUID: a4bdd6e7_7478218b
 Bytes: 168
 I behave like this just because it is poll()'s behavior (unlike select()). But I think it doesn't matter, because now adb doesn't have any idea how to handle FDE_ERROR.
 
+218:12-218:31
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a4bdd6e7_7478218b
+UUID: 64cf5e9f_06bd3a0e
+Bytes: 17
+What do you mean?
+
 221:31-222:41
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -198,6 +224,14 @@ UUID: 64cf5e9f_266716af
 Bytes: 82
 only two places use FDE_WRITE, and their callbacks all have handling for FDE_READ.
 
+221:31-222:41
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_266716af
+UUID: 244c8613_246db33d
+Bytes: 2
+ok
+
 232:12-232:34
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -212,6 +246,14 @@ Parent: 44cedaa4_48990ffa
 UUID: 44fdfae7_85d1885c
 Bytes: 122
 strictly it is possible. But only when fdevent_install() the same fdevent for different fds. check is added here for that.
+
+232:12-232:34
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44fdfae7_85d1885c
+UUID: 44cedaa4_5e05421a
+Bytes: 116
+I don't think I understand how the CHECK_EQ(fde->fd, pollfd.fd) check checks whether the fde is already in the list?
 
 254:10-254:12
 Wed Sep 09 23:48:56 2015 +0000
@@ -242,4 +284,12 @@ Parent: a4bdd6e7_d1eee430
 UUID: 64cf5e9f_26cef6ee
 Bytes: 175
 Yes, LOG(FATAL) causes abort(). I think failure is not acceptable here. I guess if here fails, the connection will never stop when you try to run commands like "adb shell ls".
+
+302:8-302:19
+Fri Sep 11 05:57:25 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_26cef6ee
+UUID: 44fdfae7_10b93403
+Bytes: 195
+Yes, failure is not acceptable, but do you really want a coredump (due to abort())? I don't know, I don't have a quick solution here, so maybe this is just something to think about in the future.
 

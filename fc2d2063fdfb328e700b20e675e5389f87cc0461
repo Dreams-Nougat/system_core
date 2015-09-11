@@ -26,6 +26,14 @@ UUID: 6492fe15_eb9dd026
 Bytes: 16
 std::unique_ptr?
 
+227
+Fri Sep 11 20:12:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6492fe15_eb9dd026
+UUID: 644d9e85_d6108416
+Bytes: 4
+Done
+
 524
 Fri Sep 04 22:22:19 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,10 +41,28 @@ UUID: 64159e82_6e901e81
 Bytes: 13
 log on error?
 
+524
+Fri Sep 11 20:12:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64159e82_6e901e81
+UUID: 04cce27b_8232afd4
+Bytes: 4
+Done
+
 543
 Fri Sep 04 22:22:19 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84529221_6a71d3d5
 Bytes: 73
 we could add WCOREFLAG to bionic, but it seems like it's not widely used.
+
+543
+Fri Sep 11 20:12:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84529221_6a71d3d5
+UUID: a4bdd6e7_808ffcae
+Bytes: 326
+0x80 seems better to me if you don't hate it.
+
+Even though the values seem to usually be the same I don't think the semantics of WCOREFLAG/WCOREDUMP quite line up here - their purpose seems to be to indicate that a core dump has been generated, but we want the 0x80 bit for any terminating signal not just when the core dumps.
 

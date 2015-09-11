@@ -1,0 +1,11 @@
+Revision: 784a69f8650068980bcc692584b515ab2372ab5b
+Base-for-patch-set: 2
+File: liblog/Android.mk
+
+52
+Fri Sep 11 05:54:42 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 04c1426c_d5d48b26
+Bytes: 167
+I saw that this was set by Evgeniy, but it doesn't work on Windows/mingw, since they then lose access to the entire libc set of functions. Any ideas about why this is?
+

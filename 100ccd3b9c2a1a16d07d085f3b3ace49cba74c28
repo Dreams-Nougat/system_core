@@ -17,3 +17,11 @@ UUID: a48876a5_5f700b62
 Bytes: 247
 i agree in general, but i worry about systems that suddenly go silent because a property got reset.  where is the storage for these things ?  the prop files in / ?  so it's not actually mutable ?  if that's the case, then OK, this can be an error.
 
+293
+Sat Sep 12 17:47:07 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a48876a5_5f700b62
+UUID: 6473de94_5b6e5bf6
+Bytes: 172
+Yeah, in this case, server property value is going to be immutable and generated at build time. The property system will read it from /system/build.prop as part of startup.
+

@@ -9,3 +9,11 @@ UUID: 848ff2ac_c43c52ae
 Bytes: 52
 i think you need to put at least this part back, no?
 
+160
+Sat Sep 12 01:28:02 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 848ff2ac_c43c52ae
+UUID: 44725a92_3a943902
+Bytes: 77
+Oh hmm yeah wonder why it compiled for me without that...I'll put it back in.
+

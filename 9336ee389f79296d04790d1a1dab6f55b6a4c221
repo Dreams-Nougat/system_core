@@ -17,3 +17,11 @@ UUID: 44725a92_3a943902
 Bytes: 77
 Oh hmm yeah wonder why it compiled for me without that...I'll put it back in.
 
+160
+Sat Sep 12 01:43:32 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44725a92_3a943902
+UUID: 44725a92_3a42792e
+Bytes: 108
+To answer my own question, because it was just a test file, not the actual source, so nothing depends on it.
+

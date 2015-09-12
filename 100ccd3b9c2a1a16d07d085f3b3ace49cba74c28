@@ -9,3 +9,11 @@ UUID: a46156bd_7dc78f23
 Bytes: 111
 I think we should remove this logic. If the property is not set, it should be considered a configuration error.
 
+293
+Sat Sep 12 17:29:05 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a46156bd_7dc78f23
+UUID: a48876a5_5f700b62
+Bytes: 247
+i agree in general, but i worry about systems that suddenly go silent because a property got reset.  where is the storage for these things ?  the prop files in / ?  so it's not actually mutable ?  if that's the case, then OK, this can be an error.
+

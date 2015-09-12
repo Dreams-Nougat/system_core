@@ -1,0 +1,13 @@
+Revision: 13993210253ae2e748472b59db8ee0e11e07b4c3
+Patch-set: 1
+File: crash_reporter/crash_sender
+
+186
+Sat Sep 12 17:27:37 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44997af8_dcd50dd3
+Bytes: 125
+this effectively clears the high bit so we get 31 bits of randomness
+
+please update the comment above highlighting this issue
+

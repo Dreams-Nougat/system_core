@@ -1,0 +1,11 @@
+Revision: 100ccd3b9c2a1a16d07d085f3b3ace49cba74c28
+Patch-set: 1
+File: crash_reporter/crash_sender
+
+293
+Sat Sep 12 16:19:30 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a46156bd_7dc78f23
+Bytes: 111
+I think we should remove this logic. If the property is not set, it should be considered a configuration error.
+

@@ -11,3 +11,40 @@ this effectively clears the high bit so we get 31 bits of randomness
 
 please update the comment above highlighting this issue
 
+186
+Sun Sep 13 07:42:10 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44997af8_dcd50dd3
+UUID: 848ff2ac_c728d4c8
+Bytes: 1295
+I'm a little hazy on my understanding of shell expressions and variable represenation in the shell, but I made this change based on this part of the mksh man page (http://linux.die.net/man/1/mksh):
+
+---
+
+Expressions are calculated using signed arithmetic and the mksh_ari_t type (a 32-bit signed integer), unless they begin with a sole '#' character, in which case they use mksh_uari_t (
+a 32-bit unsigned integer).
+
+---
+
+It was my understanding that when ${random} gets set, it would be set as a string as the output of the `od` call (and thus signed vs unsigned doesn't matter to this variable), and the `od` call would return a 32 bit unsigned int as a string.  Then for the arithmetic expression, the leading # character would tell the shell to use an unsigned int, and thus convert the input string value using all 32 unsigned bits.
+
+Here's my local test I ran in the emulator, which unless my initial number for a max unsigned int is incorrect (which var1 suggests it isn't), should include setting the high bit:
+
+# local random=4294967295                                                            
+
+# echo $random                                                                 
+
+4294967295
+
+# local var1=$((random))
+
+# echo $var1
+
+-1
+
+# local var2=$((#random))
+
+# echo $var2
+
+4294967295
+

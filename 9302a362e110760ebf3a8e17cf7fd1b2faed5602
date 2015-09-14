@@ -9,3 +9,29 @@ UUID: 44997af8_dc5b4de6
 Bytes: 219
 i'd still like to see a comment above this func explaining things and linking to the POSIX docs.  this limitation/behavior was something that hadn't occurred to me before and seems esoteric enough to warrant some notes.
 
+186
+Mon Sep 14 21:54:21 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44997af8_dc5b4de6
+UUID: 8478d270_b0c868e4
+Bytes: 671
+Hows this sound:
+
+# Generate a uniform random number in 0..max-1.
+
+# POSIX arithmetic expansion uses signed long integers.  Some shell implementations
+
+# instead use 32-bit signed integers, in which case the 32-bit random number read from
+
+# /dev/urandom may be interpreted as negative when used inside an arithmetic expansion.
+
+# For this case, simply take the absolute value, which will still give a roughly uniform
+
+# random distribution for the modulo.
+
+# See corresponding Arithmetic Expansion and Arithmetic Expression sections:
+
+# POSIX: http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_06_04
+
+# mksh: http://linux.die.net/man/1/mksh
+

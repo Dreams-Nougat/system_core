@@ -1,0 +1,11 @@
+Revision: 71c83126a86de8986b24e5c7cd1a239d2fcc7fa1
+Patch-set: 1
+File: adb/commandline.cpp
+
+527:0-539:1
+Mon Sep 14 22:45:06 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 648afea0_924c4a61
+Bytes: 37
+No change, just moved up in the file.
+

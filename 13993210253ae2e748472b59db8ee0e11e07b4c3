@@ -48,3 +48,17 @@ Here's my local test I ran in the emulator, which unless my initial number for a
 
 4294967295
 
+186
+Mon Sep 14 20:19:46 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 848ff2ac_c728d4c8
+UUID: 64c59ecc_88da3753
+Bytes: 400
+the # prefix is a mksh-specific feature.  we've been coding to POSIX rather than replace on shell-specific feature with a different one.
+
+we can do this in a few ways:
+
+(1) change -N4 to -N3 and stick to 24 bits and assume we'll never have a system where sizeof(signed long) < 4
+(2) mask out the sign bit: $(( random & 0x7fffffff ))
+(3) invert the sign ourselves: $(( random < 0 ? -random : random ))
+

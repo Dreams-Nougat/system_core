@@ -62,3 +62,11 @@ we can do this in a few ways:
 (2) mask out the sign bit: $(( random & 0x7fffffff ))
 (3) invert the sign ourselves: $(( random < 0 ? -random : random ))
 
+186
+Mon Sep 14 21:24:25 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64c59ecc_88da3753
+UUID: e467cecb_8d027112
+Bytes: 125
+Done using (3).  It should still give *nearly* the same random distribution within the modulo.  Good enough for our purposes.
+

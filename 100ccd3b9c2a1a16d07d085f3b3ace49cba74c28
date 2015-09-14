@@ -25,3 +25,11 @@ UUID: 6473de94_5b6e5bf6
 Bytes: 172
 Yeah, in this case, server property value is going to be immutable and generated at build time. The property system will read it from /system/build.prop as part of startup.
 
+293
+Mon Sep 14 09:48:36 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6473de94_5b6e5bf6
+UUID: e467cecb_3fba6f45
+Bytes: 4
+Done
+

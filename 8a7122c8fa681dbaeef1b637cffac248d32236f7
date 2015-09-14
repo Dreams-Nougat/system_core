@@ -9,6 +9,14 @@ UUID: 04aea2f9_550f3e64
 Bytes: 93
 Might be better to follow the above naming, and name it something like backtrace_stackinfo_t.
 
+55:7-55:16
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04aea2f9_550f3e64
+UUID: e467cecb_fc89e5ac
+Bytes: 4
+Done
+
 75:1-76:38
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,14 @@ Bytes: 310
 It would be useful to indicate that if cache_file is true, that the cache will continue to grow until the program ends.
 
 I don't know if we need it now, but a static ClearOfflineCache() might be necessary in the future. It might be nice to have it to indicate to people that the cache is survives across calls.
+
+75:1-76:38
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 648afea0_5dfbbbaf
+UUID: 8478d270_f99813b4
+Bytes: 162
+comment added. yeah, we can worry about the memory pressure when it is really needed. since you may worry about it now, we can change the default option to false.
 
 File: libbacktrace/BacktraceOffline.cpp
 
@@ -27,12 +43,28 @@ UUID: 84a1b20e_b1d5da25
 Bytes: 80
 I think it's a bit confusing with this word. I think it flows better without it.
 
+125:19-125:26
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84a1b20e_b1d5da25
+UUID: 648afea0_03db9207
+Bytes: 4
+Done
+
 168:0-168:0
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c4b72a4b_533f567a
 Bytes: 11
 Extra line.
+
+168:0-168:0
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4b72a4b_533f567a
+UUID: 0465c2c3_6005261b
+Bytes: 4
+Done
 
 185:0-185:29
 Fri Sep 11 19:49:50 2015 +0000
@@ -41,6 +73,14 @@ UUID: e4b0ae55_d47e92a9
 Bytes: 119
 This could use some comments describing why you are making these three calls, and why you are doing them in this order.
 
+185:0-185:29
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4b0ae55_d47e92a9
+UUID: 6473de94_b8b4d553
+Bytes: 14
+comment added.
+
 203:6-203:34
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,12 +88,28 @@ UUID: 04aea2f9_1545b60c
 Bytes: 109
 Might want to file a bug for this and it to the todo. If we get the rewritten fast enough, this won't matter.
 
+203:6-203:34
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04aea2f9_1545b60c
+UUID: 44725a92_faf5618d
+Bytes: 68
+done. I prefer to worry about it after the main thing here is  done.
+
 262:7-262:12
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 24a64628_11430c7b
 Bytes: 113
 I'm not sure what this comment means. The first part appears to be a statement but it kind of ends in a question.
+
+262:7-262:12
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 24a64628_11430c7b
+UUID: 648afea0_e33146d3
+Bytes: 115
+removed. I checked the code in libunwind and perf for this. The rule seems to have no reason but we have to follow.
 
 File: libbacktrace/backtrace_offline_test.cpp
 
@@ -71,6 +127,14 @@ UUID: 04aea2f9_95e36699
 Bytes: 112
 Better to name it g_exit_flag to make it clear that it's a global. You probably also need to make this volatile.
 
+16:0-16:4
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44ab3af0_0f72c923
+UUID: 848ff2ac_c1852442
+Bytes: 4
+Done
+
 31:0-31:26
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -78,12 +142,28 @@ UUID: 04aea2f9_7526c295
 Bytes: 123
 This should be defined in unistd.h, I believe. There might be some issue with the host version, but I think that was fixed.
 
+31:0-31:26
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04aea2f9_7526c295
+UUID: 8478d270_39d60b64
+Bytes: 118
+not defined in unistd.h, I think it is because people don't want it be used. But it is declared in <cutils/threads.h>.
+
 96:0-96:0
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 84a1b20e_31460a8b
 Bytes: 105
 It would be good to add a test to make sure that if the stack trace exceeds the max, nothing bad happens.
+
+96:0-96:0
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 84a1b20e_31460a8b
+UUID: a9420f4a_72fc56ac
+Bytes: 4
+Done
 
 106:0-115:30
 Fri Sep 11 19:49:50 2015 +0000
@@ -96,6 +176,14 @@ You would have to check in the shared libraries too.
 
 This does seem a bit complicated so maybe this isn't a good idea, but I'll leave it up to you what you want to do.
 
+106:0-115:30
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e4b0ae55_54662234
+UUID: 0465c2c3_e03136d3
+Bytes: 158
+Yeah, if you mean hard-coding the stack data, it is too complex to me. I refactored the code and added comments. I hope that can help explain the way to test.
+
 132:1-146:3
 Fri Sep 11 19:49:50 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -104,4 +192,12 @@ Bytes: 444
 This doesn't seem to be testing any of the code. If you hard code this, you could also hardcode the expected pc and avoid the symbol code.
 
 If you don't hard code this, I think it would be better to replace this all with asserts about the pc rather than symbol checking. Usually, you don't want your test code logic to be too complicated if you can avoid it. It can result in a bit more cut-n-paste code so you have to determine which is worse.
+
+132:1-146:3
+Mon Sep 14 18:48:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4b72a4b_73fd3a32
+UUID: 848ff2ac_c45532ec
+Bytes: 469
+I wrote this piece of code because I can't get the end of each function. After the sorting, I can get something like the end of each function. I compare symbols instead of pc addresses, because I think symbols are more meaningful to show what I am doing, easier to maintain. I can first try adding comments. We can seek other solutions if that doesn't work well. Maybe I don't understand your idea of how to make the test better by comparing pc/cut-n-past, more detail?
 

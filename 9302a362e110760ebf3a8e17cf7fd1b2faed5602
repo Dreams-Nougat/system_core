@@ -35,3 +35,24 @@ Hows this sound:
 
 # mksh: http://linux.die.net/man/1/mksh
 
+186
+Mon Sep 14 22:10:10 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8478d270_b0c868e4
+UUID: 047ce255_8566c431
+Bytes: 844
+that's a little misleading.  how about:
+
+ # Generate a uniform random number in 0..max-1.
+ # POSIX arithmetic expansion requires support of at least signed long integers.
+ # On 32-bit systems, that may mean 32-bit signed integers, in which case the
+ # 32-bit random number read from /dev/urandom may be interpreted as negative
+ # when used inside an arithmetic expansion (since the high bit might be set).
+ # mksh at least is known to behave this way.
+ # For this case, simply take the absolute value, which will still give a roughly
+ # uniform random distribution for the modulo (as we are merely ignoring the
+ # high/sign bit).
+ # See corresponding Arithmetic Expansion and Arithmetic Expression sections:
+ # POSIX: http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_06_04
+ # mksh: http://linux.die.net/man/1/mksh
+

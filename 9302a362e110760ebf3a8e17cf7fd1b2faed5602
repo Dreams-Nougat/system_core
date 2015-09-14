@@ -1,0 +1,11 @@
+Revision: 9302a362e110760ebf3a8e17cf7fd1b2faed5602
+Patch-set: 2
+File: crash_reporter/crash_sender
+
+186
+Mon Sep 14 21:38:49 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 44997af8_dc5b4de6
+Bytes: 219
+i'd still like to see a comment above this func explaining things and linking to the POSIX docs.  this limitation/behavior was something that hadn't occurred to me before and seems esoteric enough to warrant some notes.
+

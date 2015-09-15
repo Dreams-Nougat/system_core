@@ -55,6 +55,14 @@ UUID: 244c8613_647c1bf6
 Bytes: 145
 Ah, ok, makes sense. I guess my follow-up question then is: why doesn't this print out fde.events? But that might not be important, I don't know.
 
+67:8-67:17
+Tue Sep 15 01:01:15 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 244c8613_647c1bf6
+UUID: 44725a92_b4ae95b9
+Bytes: 278
+AFAIK, fde.events is not as useful as fde.state. fde.events is only valid when fde is on the pending_list. And fde is dumped mostly when there is some change to the fde, fde.state is more relevant. Of course we can print fde.events as well, but I also think it is not important.
+
 105:23-105:30
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -209,6 +217,14 @@ UUID: 64cf5e9f_06bd3a0e
 Bytes: 17
 What do you mean?
 
+218:12-218:31
+Tue Sep 15 01:01:15 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64cf5e9f_06bd3a0e
+UUID: e467cecb_4dc4d998
+Bytes: 165
+for FDE_ERROR, adb only print a debug message. The real error is handled when processing FDE_READ. So I think it doesn't matter to have FDE_ERROR or not in practice.
+
 221:31-222:41
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -255,6 +271,21 @@ UUID: 44cedaa4_5e05421a
 Bytes: 116
 I don't think I understand how the CHECK_EQ(fde->fd, pollfd.fd) check checks whether the fde is already in the list?
 
+232:12-232:34
+Tue Sep 15 01:01:15 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44cedaa4_5e05421a
+UUID: 0465c2c3_4f94cd02
+Bytes: 389
+suppose we have two fdevent_install() with the same fde but different fd.
+fdevent_install(&fde, 1);
+fdevent_install(&fde, 2);
+
+fde.fd = 2
+when some events happens on fd 1, it can be checked that fde.fd (2) != pollfd.fd (1).
+
+I know this check is less clear than having a HashSet for used fdevents. But I think this error is unlikely to happen, and we don't need to spend much effort on it.
+
 254:10-254:12
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -292,4 +323,12 @@ Parent: 64cf5e9f_26cef6ee
 UUID: 44fdfae7_10b93403
 Bytes: 195
 Yes, failure is not acceptable, but do you really want a coredump (due to abort())? I don't know, I don't have a quick solution here, so maybe this is just something to think about in the future.
+
+302:8-302:19
+Tue Sep 15 01:01:15 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 44fdfae7_10b93403
+UUID: 848ff2ac_8da50de9
+Bytes: 53
+I think it doesn't matter. I don't worry about space.
 

@@ -9,3 +9,11 @@ UUID: e467cecb_8d535179
 Bytes: 60
 should we be moving weave configs to use properties as well?
 
+83
+Tue Sep 15 04:31:42 2015 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e467cecb_8d535179
+UUID: 0465c2c3_c13d115a
+Bytes: 86
+We might, as soon as we figure out what properties actually are and how to use them :)
+

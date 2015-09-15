@@ -1,0 +1,25 @@
+Revision: 5271eb67d20b9a483162cedbc00888277fe441c0
+Patch-set: 1
+File: adb/device.py
+
+143:34-143:39
+Tue Sep 15 01:47:53 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 648afea0_0621db37
+Bytes: 18
+Ok usage of *args?
+
+155:43-155:77
+Tue Sep 15 01:47:53 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c45e4afd_535f1359
+Bytes: 29
+Ok usage of * in both places?
+
+169:12-169:57
+Tue Sep 15 01:47:53 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c45e4afd_735c1764
+Bytes: 27
+Ok usage of args and *args?
+

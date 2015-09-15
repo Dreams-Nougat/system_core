@@ -1,0 +1,11 @@
+Revision: ed789309236ab8c08783216c1b85248d40b0b812
+Patch-set: 1
+File: crash_reporter/crash_sender
+
+83
+Tue Sep 15 01:20:10 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e467cecb_8d535179
+Bytes: 60
+should we be moving weave configs to use properties as well?
+

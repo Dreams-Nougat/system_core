@@ -9,6 +9,16 @@ UUID: 648afea0_0621db37
 Bytes: 18
 Ok usage of *args?
 
+143:34-143:39
+Tue Sep 15 15:42:54 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 648afea0_0621db37
+UUID: 8478d270_806eb7f3
+Bytes: 371
+This work, alternately it may be simpler to take this * out and just pass a regular list since I think we're never actually calling this function with an unpacked list (the call sites would then take * out as well).
+
+I think using * here and in the call sites just causes Python to unpack the list at the call site, then pack it back up again right away for the function.
+
 155:43-155:77
 Tue Sep 15 01:47:53 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

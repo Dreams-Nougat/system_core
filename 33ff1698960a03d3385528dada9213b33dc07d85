@@ -294,6 +294,14 @@ UUID: e467cecb_68c7cbcc
 Bytes: 181
 I was thinking of a different scenario: one fd, one fde. POLLOUT occurs, so fde gets added to pending_list. POLLIN occurs, so fde gets added to pending_list again. Or am I mistaken?
 
+232:12-232:34
+Tue Sep 15 02:44:41 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e467cecb_68c7cbcc
+UUID: a9420f4a_3e5a151b
+Bytes: 100
+if POLLIN occurs in the first poll() call, it must be processed before doing the second poll() call.
+
 254:10-254:12
 Wed Sep 09 23:48:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

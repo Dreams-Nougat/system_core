@@ -1,5 +1,14 @@
 Revision: 07baefb639b876eeac3bfdd58b4b6850db9b83df
 Patch-set: 1
+File: logd/LogKlog.cpp
+
+663:22-663:27
+Tue Sep 15 15:17:29 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a9420f4a_3ebc5511
+Bytes: 15
+taglen -= size;
+
 File: logd/main.cpp
 
 303:10-303:46

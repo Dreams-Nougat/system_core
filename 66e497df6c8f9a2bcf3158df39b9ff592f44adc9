@@ -1,0 +1,11 @@
+Revision: 66e497df6c8f9a2bcf3158df39b9ff592f44adc9
+Patch-set: 1
+File: adb/device.py
+
+267
+Wed Sep 16 00:15:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8478d270_0cd660de
+Bytes: 168
+do we want to do this, or do we want to be able to say "i'm expecting this to fail, but it's cool if you're talking to an old device you can't get an exit status from"?
+

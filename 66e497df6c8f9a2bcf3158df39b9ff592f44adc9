@@ -9,3 +9,15 @@ UUID: 8478d270_0cd660de
 Bytes: 168
 do we want to do this, or do we want to be able to say "i'm expecting this to fail, but it's cool if you're talking to an old device you can't get an exit status from"?
 
+267
+Wed Sep 16 00:28:57 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8478d270_0cd660de
+UUID: c45e4afd_0d0bb7ef
+Bytes: 312
+Hmm yeah that seems like a slightly stronger assertion, I'm happy to switch it over.
+
+Or maybe this doesn't make sense as a parameter here at all and handling failure should just be done in the main test code? If we don't expect anyone else to need this condition.
+
+I'll go with whichever way Dan thinks is best.
+

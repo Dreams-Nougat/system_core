@@ -1,0 +1,27 @@
+Revision: bd9c0ce8e8c1d6b8a1d6c5fa79815b6cf6799d05
+Patch-set: 6
+File: include/backtrace/Backtrace.h
+
+75:5-75:60
+Wed Sep 16 23:14:14 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a456b6eb_d5314cd3
+Bytes: 486
+I think this wording is not quite right. Maybe:
+
+Create an offline Backtrace object that can be used to do an unwind without a process that is still running.
+If cache_file is set to true, then elf information will be cached for this call. The cached information survives until the calling process ends. This means that subsequent calls to create offline backtrace objects will continue to use the same cache. It also assumes that the elf files used for each offline unwind are the same.
+
+File: libbacktrace/backtrace_offline_test.cpp
+
+122:41-122:48
+Wed Sep 16 23:14:14 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 64383eb1_d6eeba30
+Bytes: 59
+I think you mean:
+
+which matches the addr
+
+Is that correct?
+

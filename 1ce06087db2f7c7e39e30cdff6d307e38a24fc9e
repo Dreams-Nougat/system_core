@@ -1,0 +1,13 @@
+Revision: 1ce06087db2f7c7e39e30cdff6d307e38a24fc9e
+Patch-set: 2
+File: adb/test_adb.py
+
+82
+Thu Sep 17 21:56:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 69c3b75a_384f65ab
+Bytes: 581
+i did look at removing the 3s sleep, but fdevent made it tricky --- it's easy to know that we've enumerated the USB devices and block returning the "OK" until then, and you get instantaneous adb startup ... but if your command was "adb devices -l" you'll see we haven't actually talked to all the devices yet, so they all come back as "unknown".
+
+i'm not sure whether this is a regression or not. (because QA folks tell me that if you have enough devices connected, 3s isn't necessarily enough anyway. i have a bug about that somewhere, so i'm not excited about making that worse.)
+

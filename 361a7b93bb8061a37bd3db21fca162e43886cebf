@@ -72,3 +72,11 @@ UUID: 04cce27b_7d8550f8
 Bytes: 150
 Although I thought compilers are possible to call myfunc() first, I didn't expect that they really do that. But the test also fails on my workstation.
 
+52:16-52:40
+Thu Sep 17 08:00:49 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 04cce27b_7d8550f8
+UUID: a9692fe6_3768182a
+Bytes: 147
+I've prototyped a fix to the errno restoring (and conditional logging). Hopefully should have a code review by Thurs or Fri for your consideration.
+

@@ -12,6 +12,14 @@ I think this wording is not quite right. Maybe:
 Create an offline Backtrace object that can be used to do an unwind without a process that is still running.
 If cache_file is set to true, then elf information will be cached for this call. The cached information survives until the calling process ends. This means that subsequent calls to create offline backtrace objects will continue to use the same cache. It also assumes that the elf files used for each offline unwind are the same.
 
+75:5-75:60
+Thu Sep 17 00:38:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a456b6eb_d5314cd3
+UUID: e96fa7e4_b9f65fc5
+Bytes: 4
+Done
+
 File: libbacktrace/backtrace_offline_test.cpp
 
 122:41-122:48
@@ -24,4 +32,12 @@ I think you mean:
 which matches the addr
 
 Is that correct?
+
+122:41-122:48
+Thu Sep 17 00:38:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 64383eb1_d6eeba30
+UUID: c9666312_3859e974
+Bytes: 4
+yes.
 

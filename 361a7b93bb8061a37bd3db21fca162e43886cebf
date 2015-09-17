@@ -80,3 +80,12 @@ UUID: a9692fe6_3768182a
 Bytes: 147
 I've prototyped a fix to the errno restoring (and conditional logging). Hopefully should have a code review by Thurs or Fri for your consideration.
 
+52:16-52:40
+Thu Sep 17 17:34:42 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a9692fe6_3768182a
+UUID: 29753fb9_16095a33
+Bytes: 235
+Great! It is exciting to see how you can do that.
+For conditional logging, I want to do something like https://android.googlesource.com/platform/art/+/master/runtime/base/logging.h. You can try it or leave the time wasting work for me.
+

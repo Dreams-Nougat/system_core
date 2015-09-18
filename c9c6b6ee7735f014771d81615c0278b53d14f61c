@@ -1,5 +1,14 @@
 Revision: c9c6b6ee7735f014771d81615c0278b53d14f61c
 Patch-set: 7
+File: libbacktrace/Android.build.mk
+
+74:0-94:5
+Fri Sep 18 07:35:07 2015 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 89df0b23_a47ee676
+Bytes: 47
+so the support is somewhat conditional already?
+
 File: libbacktrace/Android.mk
 
 58:0-58:10
@@ -8,4 +17,13 @@ Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a97f6fe5_67d6b230
 Bytes: 110
 Could we make this conditional? dalvikvm uses libbacktrace, but adding llvm as a dependency for dalvikm sucks.
+
+File: libbacktrace/backtrace_offline_test.cpp
+
+1:0-1:22
+Fri Sep 18 07:35:07 2015 +0000
+Author: Brian Carlstrom <1003723@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 099a3b78_38e93129
+Bytes: 24
+copyright header missing
 

@@ -9,6 +9,16 @@ UUID: 89df0b23_a47ee676
 Bytes: 47
 so the support is somewhat conditional already?
 
+74:0-94:5
+Fri Sep 18 16:37:03 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 89df0b23_a47ee676
+UUID: e9b7a7e1_e267fc2f
+Bytes: 367
+llvm is always used for libbacktrace on linux host. To pass this patch, I think there are two ways:
+1) move LOCAL_MULTILIB := both to LOCAL_MULTILIB := first for almost all modules under art. And remove the static build. This is strongly preferred by enh@.
+2) I can split libbacktrace code and create library libbacktrace_offline.so. But it is more like a workaround.
+
 File: libbacktrace/Android.mk
 
 58:0-58:10

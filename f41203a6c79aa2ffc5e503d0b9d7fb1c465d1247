@@ -23,6 +23,20 @@ UUID: e99c0776_fa923d45
 Bytes: 164
 This looks gross, but when I checked the gcc win32 assembly, it generated no code. The ? operator doesn't even generate any code since everything is known staticly.
 
+124:39-124:62
+Fri Sep 18 04:11:29 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e99c0776_fa923d45
+UUID: e9b7a7e1_7f5467c6
+Bytes: 633
+I think it is a wonderful solution. ternary operator guarantees that the side effects should happen before following expressions. and in c++11, the destructor of temporary objects happen at the end of full expression in reverse order. So the constructor of ErrnoRestorer() happens first, the the destructor of ErrnoRestorer() happens last. It makes me think that && and || operators can be used as alternatives to ternary operator here, right?
+
+Now I want to know whether it supports
+((xxx) ? LOG(DEBUG) : LOG(ERROR)) << yyy;
+But I think it doesn't matter too much.
+
+I will take care of testing on other platforms other than windows.
+
 File: base/logging_test.cpp
 
 97:15-97:16

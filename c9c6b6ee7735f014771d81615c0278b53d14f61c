@@ -18,6 +18,14 @@ UUID: a97f6fe5_67d6b230
 Bytes: 110
 Could we make this conditional? dalvikvm uses libbacktrace, but adding llvm as a dependency for dalvikm sucks.
 
+58:0-58:10
+Fri Sep 18 15:13:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a97f6fe5_67d6b230
+UUID: c9a3c3b1_76910815
+Bytes: 81
+it's already a dependency of the zygote, so on a device this makes no difference.
+
 File: libbacktrace/backtrace_offline_test.cpp
 
 1:0-1:22

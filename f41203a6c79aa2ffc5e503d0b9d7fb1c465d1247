@@ -37,6 +37,20 @@ But I think it doesn't matter too much.
 
 I will take care of testing on other platforms other than windows.
 
+124:39-124:62
+Fri Sep 18 04:20:33 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e9b7a7e1_7f5467c6
+UUID: 89df0b23_e4038e17
+Bytes: 817
+Yes, I prototyped "ErrnoRestorer() || LogMessage().stream()" and it worked. I didn't prefer that because it called std::ostream::operator bool() (I think) and the type of the expression was bool instead of std::ostream (not that it really matters). I'll leave it to you to choose which is better.
+
+BTW, the public Google Glog code uses a trick with "void operator&()" to cause the expression to be void instead of bool or ostream. That is interesting and probably generates the same code, but it seemed messier.
+
+I don't think the ((xxx) ? LOG...) works because of the if that I used By Design. The reason I used if was to prevent the macro from evaluating to a type (like bool or ostream). But if you really want it to evaluate to a type maybe ternary operator could be used instead of the if.
+
+Thanks for your help.
+
 File: base/logging_test.cpp
 
 97:15-97:16

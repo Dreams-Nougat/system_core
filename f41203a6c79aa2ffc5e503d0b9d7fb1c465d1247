@@ -1,0 +1,34 @@
+Revision: f41203a6c79aa2ffc5e503d0b9d7fb1c465d1247
+Patch-set: 1
+File: base/include/base/logging.h
+
+121:2-123:6
+Fri Sep 18 02:54:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c9ae6393_3e3e71a4
+Bytes: 177
+If this macro was just if (!(expr)) ...stream(), then "if (something) LOG(INFO) << "hello"; else ..." would cause the else to bind to the if in the macro, which is not intended.
+
+124:4-124:38
+Fri Sep 18 02:54:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 69c3b75a_9ed78161
+Bytes: 360
+Use the ternary operator to make a sequence point between ErrnoRestorer and the rest of the logging code to guarantee it happens before. I originally tried using the comma operator, but that conflicted with a gtest macro which assumed no commas. Now that I made other changes to logging_test.cpp, it might be possible to change this back to the comma operator.
+
+124:39-124:62
+Fri Sep 18 02:54:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e99c0776_fa923d45
+Bytes: 164
+This looks gross, but when I checked the gcc win32 assembly, it generated no code. The ? operator doesn't even generate any code since everything is known staticly.
+
+File: base/logging_test.cpp
+
+97:15-97:16
+Fri Sep 18 02:54:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e9b7a7e1_df29f34c
+Bytes: 101
+This {} looks weird, but the gtest docs suggested this to pass multiple statements to ASSERT_DEATH().
+

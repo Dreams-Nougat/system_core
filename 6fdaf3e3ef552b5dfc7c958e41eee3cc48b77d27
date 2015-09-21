@@ -27,3 +27,11 @@ that sounds like a good idea.
 
 really i was just pointing out that it seems like llvm's internal dependencies are such that even using what seems like a tiny piece of llvm ends up dragging in a lot of code if you statically link, and that we'll have to bear that in mind if we're considering statically linking llvm more (as bdc implied).
 
+12
+Mon Sep 21 19:56:03 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 69dad736_9f8f6e5f
+UUID: c9ae6393_958033e9
+Bytes: 4
+Done
+

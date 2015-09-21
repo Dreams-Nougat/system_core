@@ -17,3 +17,13 @@ UUID: c9ae6393_b5eff7e9
 Bytes: 102
 If you feel uncomfortable, I can change to using shared library on device, and static library on host.
 
+12
+Mon Sep 21 19:45:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c9ae6393_b5eff7e9
+UUID: 69dad736_9f8f6e5f
+Bytes: 338
+that sounds like a good idea.
+
+really i was just pointing out that it seems like llvm's internal dependencies are such that even using what seems like a tiny piece of llvm ends up dragging in a lot of code if you statically link, and that we'll have to bear that in mind if we're considering statically linking llvm more (as bdc implied).
+

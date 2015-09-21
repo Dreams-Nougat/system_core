@@ -9,6 +9,14 @@ UUID: c9ae6393_3e3e71a4
 Bytes: 177
 If this macro was just if (!(expr)) ...stream(), then "if (something) LOG(INFO) << "hello"; else ..." would cause the else to bind to the if in the macro, which is not intended.
 
+121:2-123:6
+Mon Sep 21 18:05:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c9ae6393_3e3e71a4
+UUID: c9ae6393_82be3b99
+Bytes: 34
+seems worth a comment in the code.
+
 124:4-124:38
 Fri Sep 18 02:54:50 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

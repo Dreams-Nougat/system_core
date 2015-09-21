@@ -60,3 +60,11 @@ UUID: e99a4788_41e21243
 Bytes: 80
 ART has code to read elf files. Could we drag this over to libbacktrace instead?
 
+39:0-42:35
+Mon Sep 21 21:55:59 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4970b318_c4c59ec6
+UUID: e91fa7ee_d90633e7
+Bytes: 441
+If you search for "llvm::" here and ignore the useless glue stuff (like StringRef), you will see only references to getSectionName() and getSectionContents() from within their decoded ELF object. I don't know what ART has available for ELF "reading", but you might be able to use it here. The alternative, as Yabin suggested elsewhere (to prevent code bloat) is to link against libLLVM.so on the device, but the static libraries on the host.
+

@@ -52,3 +52,11 @@ UUID: 69d49737_f64f9658
 Bytes: 101
 because this file uses static libraries in external/llvm to read elf files, see the end of this file?
 
+39:0-42:35
+Mon Sep 21 21:55:27 2015 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 69d49737_f64f9658
+UUID: e99a4788_41e21243
+Bytes: 80
+ART has code to read elf files. Could we drag this over to libbacktrace instead?
+

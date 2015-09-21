@@ -9,3 +9,11 @@ UUID: 692bb717_49afb15f
 Bytes: 30
 that's quite a big increase...
 
+12
+Mon Sep 21 19:43:04 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 692bb717_49afb15f
+UUID: c9ae6393_b5eff7e9
+Bytes: 102
+If you feel uncomfortable, I can change to using shared library on device, and static library on host.
+

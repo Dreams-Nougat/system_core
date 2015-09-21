@@ -9,3 +9,12 @@ UUID: c9a3c3b1_e5337c8d
 Bytes: 150
 is there a reason we can't use the usual do { ... } while (false) instead? people are used to seeing that in a macro and don't have to think about it.
 
+123
+Mon Sep 21 19:40:38 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c9a3c3b1_e5337c8d
+UUID: e984075f_373e60ee
+Bytes: 54
+Because we need to write like this:
+LOG(DEBUG) << xxx;
+

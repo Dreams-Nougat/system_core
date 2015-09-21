@@ -68,3 +68,11 @@ UUID: e91fa7ee_d90633e7
 Bytes: 441
 If you search for "llvm::" here and ignore the useless glue stuff (like StringRef), you will see only references to getSectionName() and getSectionContents() from within their decoded ELF object. I don't know what ART has available for ELF "reading", but you might be able to use it here. The alternative, as Yabin suggested elsewhere (to prevent code bloat) is to link against libLLVM.so on the device, but the static libraries on the host.
 
+39:0-42:35
+Mon Sep 21 22:04:02 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e91fa7ee_d90633e7
+UUID: 495193a7_02b98eb2
+Bytes: 114
+I don't mind to change if art provides a separate library for elf file. But I don't want to copy & paste the code.
+

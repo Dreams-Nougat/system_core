@@ -35,3 +35,12 @@ UUID: c9ae6393_958033e9
 Bytes: 4
 Done
 
+File: libbacktrace/BacktraceOffline.cpp
+
+39:0-42:35
+Mon Sep 21 21:33:59 2015 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4970b318_c4c59ec6
+Bytes: 78
+What is it that is in this code that we don't have already in bionic/libc/art?
+

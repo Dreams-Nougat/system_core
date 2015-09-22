@@ -1,0 +1,11 @@
+Revision: cfe67b36a0d3c3bb24bb75c317d5e88a11d77ad9
+Base-for-patch-set: 1
+File: adb/adb.cpp
+
+1159:0-1171:5
+Tue Sep 22 00:21:43 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 49fc33c5_cde2c196
+Bytes: 107
+No longer needed, easier and more efficient to pass the entire feature set and unpack it on the other side.
+

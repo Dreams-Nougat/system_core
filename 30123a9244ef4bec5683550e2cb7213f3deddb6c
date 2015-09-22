@@ -1,0 +1,11 @@
+Revision: 30123a9244ef4bec5683550e2cb7213f3deddb6c
+Patch-set: 1
+File: adb/shell_service.h
+
+33:0-33:22
+Tue Sep 22 00:21:43 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 89470bec_b283488d
+Bytes: 66
+Not sure why this is here, will take it out in the next patch set.
+

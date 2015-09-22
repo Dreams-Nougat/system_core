@@ -11,6 +11,14 @@ i think i'd rather have this the other way round. lots of folks always do "adb d
 
 (given "adb features", i'm somewhat inclined to not show features at all in "adb devices" or add a "--features" to "adb devices"?)
 
+1566
+Tue Sep 22 19:21:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e9b7a7e1_58141450
+UUID: e984075f_3adf2577
+Bytes: 219
+Hmm yeah seems reasonable that the average user won't care about features. I think I'll take the features string off of `adb devices -l` for now, I can add it back with a "--features" option later if it would be useful.
+
 File: adb/transport.h
 
 39
@@ -19,4 +27,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c98bc36e_25138495
 Bytes: 120
 given that we haven't shipped shell_2 without shell_pty_args, i think it's fine to just roll the latter into the former.
+
+39
+Tue Sep 22 19:21:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c98bc36e_25138495
+UUID: c9a3c3b1_77073f92
+Bytes: 70
+Ah cool I was wondering about that, that will make it easier. Will do.
 

@@ -1,0 +1,11 @@
+Revision: ccd421e94f42476c2727378780838a7510cadc2c
+Patch-set: 2
+File: adb/adb_trace.h
+
+47
+Wed Sep 23 05:47:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 09aebbf9_d5904e14
+Bytes: 5
+tabs?
+

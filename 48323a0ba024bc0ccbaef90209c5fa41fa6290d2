@@ -32,3 +32,11 @@ UUID: ee132d4a_39d8ef07
 Bytes: 140
 I guess when you run "adb keygen" command, you always want to get some feedback for the what the command has done. Add nnk@ to confirm this.
 
+455:4-455:27
+Wed Sep 23 22:00:13 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ee132d4a_39d8ef07
+UUID: 2e19c572_5304a456
+Bytes: 42
+yes, that's exactly why this code is here.
+

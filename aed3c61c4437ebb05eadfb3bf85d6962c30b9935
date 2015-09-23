@@ -1,0 +1,11 @@
+Revision: aed3c61c4437ebb05eadfb3bf85d6962c30b9935
+Patch-set: 5
+File: adb/jdwp_service.cpp
+
+327:32-327:33
+Wed Sep 23 21:44:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2911bf09_a2cc80f5
+Bytes: 298
+Did you have to add this to remove a compiler warning? I guess it means that the if (...) ; else LOG(...) trick isn't good enough for deeply nested ifs. I guess this is why glog used ?: instead. I'm open to ideas. We could just fix VLOG() and LOG() to use ?: if this becomes too much of a headache.
+

@@ -1,0 +1,11 @@
+Revision: b02bb2dbad9ebb9287edffe816818b096eb2b8e1
+Patch-set: 1
+File: libbacktrace/Android.build.mk
+
+85:4-85:52
+Wed Sep 23 05:04:26 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 691737fc_9811f9d2
+Bytes: 96
+Put the comment here that LLVM_HOST_BUILD_MK overwrites this, so it must be after the include...
+

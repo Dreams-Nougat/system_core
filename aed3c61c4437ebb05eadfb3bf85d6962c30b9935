@@ -9,3 +9,11 @@ UUID: 2911bf09_a2cc80f5
 Bytes: 298
 Did you have to add this to remove a compiler warning? I guess it means that the if (...) ; else LOG(...) trick isn't good enough for deeply nested ifs. I guess this is why glog used ?: instead. I'm open to ideas. We could just fix VLOG() and LOG() to use ?: if this becomes too much of a headache.
 
+327:32-327:33
+Wed Sep 23 21:58:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2911bf09_a2cc80f5
+UUID: 4e1ef95a_f4c03869
+Bytes: 198
+Yes. When I removed the "do { } while(0)" in D(), the compiler warned me because -Wdangling-else is on. I don't mind keeping current code. It forces people to change code like what I have done here.
+

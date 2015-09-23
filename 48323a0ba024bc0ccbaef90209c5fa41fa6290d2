@@ -24,3 +24,11 @@ UUID: ce0ae913_f8f83184
 Bytes: 178
 Why does this code even exist in the first place? I thought the original code was just an accidental checkin, or am I mistaken? Maybe the original code author should review this?
 
+455:4-455:27
+Wed Sep 23 21:58:56 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce0ae913_f8f83184
+UUID: ee132d4a_39d8ef07
+Bytes: 140
+I guess when you run "adb keygen" command, you always want to get some feedback for the what the command has done. Add nnk@ to confirm this.
+

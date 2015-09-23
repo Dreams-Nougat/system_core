@@ -9,3 +9,11 @@ UUID: 09aebbf9_d55e8e0c
 Bytes: 119
 Yeah, I thought this was weird too. You might want to let the original committer know that you're fixing/deleting this.
 
+455:4-455:40
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 09aebbf9_d55e8e0c
+UUID: a9ba0f35_d505ecd8
+Bytes: 107
+I see. If generate_key() is called from `adb keygen` command, it wants to print information, otherwise not.
+

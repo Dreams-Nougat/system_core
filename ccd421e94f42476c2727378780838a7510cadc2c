@@ -9,12 +9,28 @@ UUID: 891c6b20_b99afbaa
 Bytes: 200
 Would you consider putting both lines into one LOG/VLOG statement, so that the logging_lock is grabbed once for all of the stuff, to keep the line(s) together? This used to annoy me with the old code.
 
+87:4-88:77
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 891c6b20_b99afbaa
+UUID: 09aebbf9_d831a523
+Bytes: 4
+Done
+
 97:4-98:76
 Wed Sep 23 07:34:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 691737fc_b87f95ef
 Bytes: 12
 Same comment
+
+97:4-98:76
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 691737fc_b87f95ef
+UUID: 2911bf09_5c24718b
+Bytes: 4
+Done
 
 File: adb/adb_trace.h
 
@@ -25,6 +41,14 @@ UUID: 09aebbf9_d5904e14
 Bytes: 5
 tabs?
 
+47
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 09aebbf9_d5904e14
+UUID: 699c97d8_506e3284
+Bytes: 4
+Done
+
 50:8-50:24
 Wed Sep 23 07:34:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,12 +56,28 @@ UUID: a9ba0f35_12414a2a
 Bytes: 9
 LIKELY()?
 
+50:8-50:24
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a9ba0f35_12414a2a
+UUID: 891c6b20_1ca2fd12
+Bytes: 4
+Done
+
 58:6-58:34
 Wed Sep 23 07:34:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 691737fc_58a641f5
 Bytes: 60
 Can this be deleted since VLOG() already does the same test?
+
+58:6-58:34
+Wed Sep 23 18:00:33 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 691737fc_58a641f5
+UUID: 2911bf09_fc7a9db5
+Bytes: 13
+Done. Thanks!
 
 File: adb/transport.cpp
 

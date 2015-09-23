@@ -17,3 +17,11 @@ UUID: 4e1ef95a_f4c03869
 Bytes: 198
 Yes. When I removed the "do { } while(0)" in D(), the compiler warned me because -Wdangling-else is on. I don't mind keeping current code. It forces people to change code like what I have done here.
 
+327:32-327:33
+Wed Sep 23 22:07:33 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4e1ef95a_f4c03869
+UUID: a9ba0f35_a3b59251
+Bytes: 151
+I see, so with do{}while(0) in D(), the warnings would not show up? That would convince me to keep do-while in D() :), but it's up to you. Sounds fine.
+

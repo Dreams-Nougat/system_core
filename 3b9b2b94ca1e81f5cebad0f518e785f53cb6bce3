@@ -1,0 +1,11 @@
+Revision: 3b9b2b94ca1e81f5cebad0f518e785f53cb6bce3
+Patch-set: 2
+File: libbacktrace/Android.mk
+
+42:0-42:1
+Wed Sep 23 22:29:00 2015 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c9e9032d_6040b2fc
+Bytes: 186
+This makes the selection based on the presence of the llvm tree (our buildbots use a manifest that does not fetch the full tree). We could change it to depend on an environment variable.
+

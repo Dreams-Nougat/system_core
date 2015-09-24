@@ -1,0 +1,11 @@
+Revision: 1ed9c6094ce6349b4e0a3a11a49c4f3ebb48019f
+Patch-set: 5
+File: liblog/logprint.c
+
+963:13-963:65
+Thu Sep 24 20:45:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae5bf53d_962fb222
+Bytes: 96
+This will now introduce a compile time error, requires use of indexed array for such constructs.
+

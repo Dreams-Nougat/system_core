@@ -11,3 +11,11 @@ clang _linker_ complains that it can not access EntryBase::pruned_len in UidEntr
 
 Suggest initializing in LogStatistics.cpp.
 
+161:0-162:39
+Thu Sep 24 21:25:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ee616dea_fd012f7c
+UUID: 8e52b121_8f3afdf6
+Bytes: 10
+constexpr?
+

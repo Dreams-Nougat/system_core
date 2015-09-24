@@ -1,0 +1,13 @@
+Revision: aa5263ea8a8e683fe68a8e7630c76ec3e6b50bcb
+Patch-set: 9
+File: logd/LogStatistics.h
+
+161:0-162:39
+Thu Sep 24 21:19:24 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ee616dea_fd012f7c
+Bytes: 136
+clang _linker_ complains that it can not access EntryBase::pruned_len in UidEntry:: context.
+
+Suggest initializing in LogStatistics.cpp.
+

@@ -40,3 +40,11 @@ UUID: ee616dea_d840b970
 Bytes: 156
 Declaring this here doesn't allocate storage for it. Can you put these into a namespace instead of a struct? That would allow you to use constexpr properly.
 
+161:0-162:39
+Thu Sep 24 23:49:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ee616dea_d840b970
+UUID: 4e4c398b_d3fe5ed6
+Bytes: 57
+Namespace works, the code >>expands<< as a result though.
+

@@ -9,6 +9,14 @@ UUID: 2e2e2591_341fd6f3
 Bytes: 98
 If the error number is helpful for figuring out what failed, you can use PLOG to append the errno.
 
+49:4-49:7
+Thu Sep 24 22:44:30 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e2e2591_341fd6f3
+UUID: 2e2e2591_ff5c8764
+Bytes: 4
+Done
+
 59:47-59:51
 Thu Sep 24 21:54:50 2015 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,27 @@ UUID: ee86cdd4_8aa0cf97
 Bytes: 152
 I'm not sure what our conventions are, but since this is for actual disk size (and maybe not a marketing number), should this be using 1024 as the base?
 
+59:47-59:51
+Thu Sep 24 22:44:30 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ee86cdd4_8aa0cf97
+UUID: 0e5fa128_b9cbcb32
+Bytes: 4
+Done
+
 63:63-63:66
 Thu Sep 24 21:54:50 2015 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ce582944_5cbcbda1
 Bytes: 35
 Why is 101 the max, instead of 100?
+
+63:63-63:66
+Thu Sep 24 22:44:30 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce582944_5cbcbda1
+UUID: 2e2e2591_9f634325
+Bytes: 241
+Actually, this function is kind of sketchy. The max is also used as the upper overflow: if I log an enum at 200, it will go to the max value.
+Making the maximum value at 101 allows us to keep incorrect data out of the correct values (0-100).
 

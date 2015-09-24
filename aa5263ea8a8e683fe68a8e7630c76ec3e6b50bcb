@@ -19,3 +19,16 @@ UUID: 8e52b121_8f3afdf6
 Bytes: 10
 constexpr?
 
+161:0-162:39
+Thu Sep 24 21:34:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8e52b121_8f3afdf6
+UUID: 4e4c398b_9824858e
+Bytes: 420
+constexpr did not work:
+
+out/target/product/flounder_lte/obj/EXECUTABLES/logd_intermediates/LogStatistics.o: In function `std::__1::__less<unsigned long, unsigned long>::operator()(unsigned long const&, unsigned long const&) const':
+/ssd/master/external/libcxx/include/algorithm:702: undefined reference to `EntryBase::pruned_len'
+
+Initializing them in LogStatistics.cpp worked, but it's probably now in 'text' space :-(
+

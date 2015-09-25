@@ -48,3 +48,11 @@ UUID: 4e4c398b_d3fe5ed6
 Bytes: 57
 Namespace works, the code >>expands<< as a result though.
 
+161:0-162:39
+Fri Sep 25 01:14:09 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4e4c398b_d3fe5ed6
+UUID: ee616dea_1eaab976
+Bytes: 86
+Is this a fair comparison against the previous code though or vs. a #defined constant?
+

@@ -1,0 +1,11 @@
+Revision: bd29a52b65305e2b865154be24765f394b741725
+Base-for-patch-set: 6
+File: logd/LogStatistics.cpp
+
+251:29-251:39
+Fri Sep 25 16:25:40 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e5fa128_ffda4386
+Bytes: 100
+Merde, this should have been upgraded to namespace EntryBaseConstants in the first CL in the series.
+

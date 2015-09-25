@@ -1,0 +1,11 @@
+Revision: 3e9f7632f245f00b80120e0309eaffeceb733a29
+Patch-set: 2
+File: adb/framebuffer_service.cpp
+
+185:4-185:46
+Fri Sep 25 01:06:29 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e2e2591_1a0e4177
+Bytes: 67
+why don't you send a SIGKILL to the child process before waitpid()?
+

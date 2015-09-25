@@ -11,3 +11,11 @@ This is slightly different than before. Will there be any problems for the mac b
 
 The code below only includes this if build_host is true.
 
+32:2-32:31
+Fri Sep 25 01:41:44 2015 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4e4c398b_1eb19d5e
+UUID: ee86cdd4_d59c3cd2
+Bytes: 163
+In that case, won't it just not build anything for Mac other than the device? I guess it would just be setting variables unnecessarily and then throwing them away.
+

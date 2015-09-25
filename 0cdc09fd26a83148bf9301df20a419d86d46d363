@@ -1,0 +1,11 @@
+Revision: 0cdc09fd26a83148bf9301df20a419d86d46d363
+Patch-set: 1
+File: adb/adb.h
+
+53:0-53:29
+Fri Sep 25 16:57:35 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e4c398b_b94983fc
+Bytes: 80
+lmk if we have a tighter policy around this and don't want to bump it like this.
+

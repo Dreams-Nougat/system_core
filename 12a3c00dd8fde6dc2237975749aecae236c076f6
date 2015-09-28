@@ -1,0 +1,11 @@
+Revision: 12a3c00dd8fde6dc2237975749aecae236c076f6
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+358:4-358:36
+Mon Sep 28 23:58:14 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8e52b121_e113bd8e
+Bytes: 61
+use "char buffer[SYNC_DATA_MAX]" here and remove send_buffer?
+

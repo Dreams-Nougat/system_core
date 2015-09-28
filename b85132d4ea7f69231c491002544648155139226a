@@ -1,0 +1,78 @@
+Revision: b85132d4ea7f69231c491002544648155139226a
+Patch-set: 1
+File: include/utils/LruCache.h
+
+24:30-24:31
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e9a4178_75c02289
+Bytes: 215
+nit: Two blank spaces between the end of the line and the comment.
+
+More generally, do we really need hash_t, hash_type and the associated cruft ? Is it used anywhere other than here, if not, could we move it here ?
+
+42
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e9a4178_95c4a69d
+Bytes: 9
+virtual ?
+
+60
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0eb5e1d9_bd78cb8a
+Bytes: 14
+<TKey, hash_t>
+
+61
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce074951_b3be0236
+Bytes: 110
+can be "const TKey value". Also "value" is a misleading name for this argument... I'd suggest naming it "key".
+
+75:12-75:30
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0eb5e1d9_fd7243a6
+Bytes: 152
+If you're going to store Entry* as value types, why not just make this std::unordered_set<Entry*> and hash the elements based only on their TKey value ?
+
+96
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ceae6993_beed2186
+Bytes: 13
+hiss !! tabs.
+
+145:4-145:9
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec27958_37a05296
+Bytes: 34
+does this really have to be auto ?
+
+149
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8ec8f176_1949cfa8
+Bytes: 14
+"Entry* entry"
+
+173
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce074951_93bbfe45
+Bytes: 34
+does this really have to be auto ?
+
+File: libutils/tests/LruCache_test.cpp
+
+224
+Mon Sep 28 12:31:46 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0eb5e1d9_dd757f91
+Bytes: 21
+remove all these tabs
+

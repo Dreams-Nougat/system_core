@@ -1,0 +1,11 @@
+Revision: 2f81ec8ffbc560a1dfea66477a95303bfd9b3835
+Patch-set: 10
+File: logd/LogStatistics.h
+
+152:40-152:42
+Mon Sep 28 15:56:55 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e470569_4f3993b6
+Bytes: 3
+WTF
+

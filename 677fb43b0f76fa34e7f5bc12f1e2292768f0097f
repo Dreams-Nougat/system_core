@@ -1,0 +1,18 @@
+Revision: 677fb43b0f76fa34e7f5bc12f1e2292768f0097f
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+723:13-723:24
+Tue Sep 29 22:14:23 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_33612895
+Bytes: 86
+I don't think adb uses SOCK_DGRAM, but might as well get this code right just in case.
+
+875:24-875:62
+Tue Sep 29 22:14:23 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e4c398b_eb66f335
+Bytes: 254
+I verified that when hints.ai_protocol is set to a specific value, that the resulting addrinfo that is returned by getaddrinfo does have the same ai_protocol value (which we then pass to socket()). I also ran 'adb connect' to verify that this code works.
+

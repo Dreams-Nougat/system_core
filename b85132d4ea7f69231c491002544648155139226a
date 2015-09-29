@@ -11,12 +11,28 @@ nit: Two blank spaces between the end of the line and the comment.
 
 More generally, do we really need hash_t, hash_type and the associated cruft ? Is it used anywhere other than here, if not, could we move it here ?
 
+24:30-24:31
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0e9a4178_75c02289
+UUID: ceae6993_9e221d6b
+Bytes: 177
+It seems we won't need it once we deprecate BasicHashTable completely (there is a wrapper around it called TinyHashTable that I'm going to tackle next, then we'd be good to go).
+
 42
 Mon Sep 28 12:31:46 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0e9a4178_95c4a69d
 Bytes: 9
 virtual ?
+
+42
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0e9a4178_95c4a69d
+UUID: eececd75_446d20cf
+Bytes: 4
+Done
 
 60
 Mon Sep 28 12:31:46 2015 +0000
@@ -25,12 +41,28 @@ UUID: 0eb5e1d9_bd78cb8a
 Bytes: 14
 <TKey, hash_t>
 
+60
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0eb5e1d9_bd78cb8a
+UUID: 6ec3bd5a_782f1dbf
+Bytes: 4
+Done
+
 61
 Mon Sep 28 12:31:46 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ce074951_b3be0236
 Bytes: 110
 can be "const TKey value". Also "value" is a misleading name for this argument... I'd suggest naming it "key".
+
+61
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce074951_b3be0236
+UUID: 6ec3bd5a_b8ed3586
+Bytes: 4
+Done
 
 75:12-75:30
 Mon Sep 28 12:31:46 2015 +0000
@@ -39,12 +71,28 @@ UUID: 0eb5e1d9_fd7243a6
 Bytes: 152
 If you're going to store Entry* as value types, why not just make this std::unordered_set<Entry*> and hash the elements based only on their TKey value ?
 
+75:12-75:30
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0eb5e1d9_fd7243a6
+UUID: 0e9a4178_b81fe11d
+Bytes: 4
+Done
+
 96
 Mon Sep 28 12:31:46 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ceae6993_beed2186
 Bytes: 13
 hiss !! tabs.
+
+96
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ceae6993_beed2186
+UUID: eeb7ade1_1ccb79e2
+Bytes: 59
+Configure vi to highlight them... Shouldn't happen again :(
 
 145:4-145:9
 Mon Sep 28 12:31:46 2015 +0000
@@ -61,6 +109,22 @@ UUID: eeb7ade1_1c0c5948
 Bytes: 64
 Well, never mind about this. I've been writing too much java :).
 
+145:4-145:9
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eeb7ade1_1c0c5948
+UUID: ceae6993_c172f8d8
+Bytes: 4
+Done
+
+145:4-145:9
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec27958_37a05296
+UUID: 6ec3bd5a_380925f8
+Bytes: 4
+Done
+
 149
 Mon Sep 28 12:31:46 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -68,12 +132,28 @@ UUID: 8ec8f176_1949cfa8
 Bytes: 14
 "Entry* entry"
 
+149
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8ec8f176_1949cfa8
+UUID: 0e9a4178_f829694e
+Bytes: 4
+Done
+
 173
 Mon Sep 28 12:31:46 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ce074951_93bbfe45
 Bytes: 34
 does this really have to be auto ?
+
+173
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce074951_93bbfe45
+UUID: ce074951_36de80f8
+Bytes: 4
+Done
 
 File: libutils/tests/LruCache_test.cpp
 
@@ -83,4 +163,12 @@ Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0eb5e1d9_dd757f91
 Bytes: 21
 remove all these tabs
+
+224
+Tue Sep 29 10:46:42 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0eb5e1d9_dd757f91
+UUID: 2ebd45ca_166a7a29
+Bytes: 4
+Done
 

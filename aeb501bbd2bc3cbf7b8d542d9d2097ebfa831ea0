@@ -1,0 +1,18 @@
+Revision: aeb501bbd2bc3cbf7b8d542d9d2097ebfa831ea0
+Patch-set: 2
+File: include/utils/LruCache.h
+
+87
+Tue Sep 29 10:51:56 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eececd75_6436a47a
+Bytes: 116
+please leave a blank line between this and the previous function (since you're defining here, not just declaring it)
+
+88
+Tue Sep 29 10:51:56 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec27958_b7fe22d5
+Bytes: 191
+why can't this be on the stack ? Are you worried about the size of the frame ? I think it's reasonable to assume that key and value are small enough, given that we're copying them into Entry.
+

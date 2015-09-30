@@ -1,0 +1,39 @@
+Revision: 0790494c3ac95c278cdf2b9a460459dc7ee3990b
+Patch-set: 3
+File: logd/LogWhiteBlackList.cpp
+
+80:15-80:36
+Wed Sep 30 00:27:52 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f86a1765_33a99ac0
+Bytes: 16
+nit: strcmp == 0
+
+84:4-84:6
+Wed Sep 30 00:27:52 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ee86cdd4_d258c423
+Bytes: 8
+else if?
+
+88:9-88:15
+Wed Sep 30 00:27:52 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e4c398b_3d920e16
+Bytes: 123
+why does this need to be a string? you just use it as a c_str below and you incur copy constructors assigning char[] to it.
+
+95:8-95:14
+Wed Sep 30 00:27:52 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_16661aad
+Bytes: 102
+you could store this in a char * to avoid the conversion cost since you may just throw this out below.
+
+98:13-98:38
+Wed Sep 30 00:27:52 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f86a1765_1383363e
+Bytes: 16
+nit: strcmp != 0
+

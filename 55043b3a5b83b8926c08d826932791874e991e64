@@ -16,3 +16,11 @@ UUID: f86a1765_d9013fd3
 Bytes: 43
 Do you mean adbd or adb server on the host?
 
+9:35-9:71
+Wed Sep 30 02:35:15 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5398a03_80b45608
+UUID: b5398a03_a0e35a09
+Bytes: 315
+I don't know the detail either. It is reported on test servers which are testing dozens of devices at the same time. The adb server on host runs out of file descriptors, because many sockets are in CLOSE_WAIT state. Without enough information to understand why this happens, I can only come up with this workaround.
+

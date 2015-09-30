@@ -1,0 +1,11 @@
+Revision: 659f5ade04a5a07347dfbec9db4ef97636f1ebfe
+Base-for-patch-set: 1
+File: fastboot/fastboot.cpp
+
+123
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e5fa128_d216464f
+Bytes: 96
+ah, i see. i was surprised to see bad code coming from you guys. this makes a lot more sense :-)
+

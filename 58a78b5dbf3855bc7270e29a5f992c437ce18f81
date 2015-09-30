@@ -1,0 +1,59 @@
+Revision: 58a78b5dbf3855bc7270e29a5f992c437ce18f81
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+106
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ee86cdd4_528a74a1
+Bytes: 70
+type*
+
+feel free to use more std::string too as you rewrite stuff too.
+
+114
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_f9e6ef1a
+Bytes: 71
+just asprintf this, or return a std::string.
+
+(no sprintf in new code.)
+
+118
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e4c398b_fd9356d5
+Bytes: 7
+nullptr
+
+124
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e5fa128_121dfe6d
+Bytes: 5
+same.
+
+962
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e5fa128_72c1da1c
+Bytes: 143
+use android::base::ReadFileToString in new code. (and minimize scope. the old guys might have been reprobate C programmers, but we're not :-) )
+
+1139
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ee86cdd4_d26524a8
+Bytes: 17
+always use braces
+
+1155
+Wed Sep 30 01:30:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e2e2591_06994268
+Bytes: 292
+remind me why we're not just using shell scripts for provisioning again? are we just going to reinvent that wheel slowly and incompletely?
+
+we could always add a "provision" function to envsetup.sh if all we need is a consistent name for the shell script. (or put a provision.py on the path.)
+

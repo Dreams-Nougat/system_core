@@ -9,6 +9,18 @@ UUID: b5526a4f_d8f2cdcd
 Bytes: 50
 why you think the previous way may lose the error?
 
+20:60-21:37
+Wed Sep 30 03:55:51 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5526a4f_d8f2cdcd
+UUID: 75439281_1eb54db4
+Bytes: 686
+Good question. My theory is that the caller might be writing data until errno=EAGAIN. Then fdevent_process() detects an error and the handler is called with func(fd, FDE_ERROR|FDE_READ, arg). if the handler is written like "if (events & FDE_WRITE) { adb_write... }", then it won't do anything and it won't see the error.
+
+My theory could be wrong if the OS always returns POLLOUT when returning POLLERR/POLLHUP/POLLINVAL (because then the handler would be called with FDE_WRITE|FDE_ERROR even without my change).
+
+My theory could also be wrong if no adb code does what I described. I just checked and I don't think adb gets into this situation, so then this would only benefit new code.
+
 File: adb/fdevent.cpp
 
 177:8-177:30
@@ -24,4 +36,12 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 15a33681_836bdef7
 Bytes: 46
 Do you have any reason to change the strategy?
+
+238:12-239:36
+Wed Sep 30 03:55:51 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 15a33681_836bdef7
+UUID: b5398a03_e068c2fc
+Bytes: 100
+No, this is only theoretical and might actually be impossible (as I described in the other comment).
 

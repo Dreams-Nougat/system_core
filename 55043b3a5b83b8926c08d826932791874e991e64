@@ -32,3 +32,11 @@ UUID: 354d9aaf_5c36bd17
 Bytes: 142
 this seems odd though. are we doing a close(2) where we should be doing a shutdown(2) instead? or a missing SO_LINGER? or a missing POLLRDHUP?
 
+9:35-9:71
+Wed Sep 30 19:02:21 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 354d9aaf_5c36bd17
+UUID: f5586271_c01e5270
+Bytes: 41
+Thanks! I think POLLRDHUP is what I need.
+

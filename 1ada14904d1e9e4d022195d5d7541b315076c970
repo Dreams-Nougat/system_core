@@ -1,0 +1,25 @@
+Revision: 1ada14904d1e9e4d022195d5d7541b315076c970
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+146:41-146:44
+Wed Sep 30 16:35:38 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 354d9aaf_1c839593
+Bytes: 16
+should be size_t
+
+148
+Wed Sep 30 16:35:38 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5526a4f_386789ad
+Bytes: 51
+I suspect all the variables below should be size_t.
+
+989
+Wed Sep 30 16:35:38 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15a33681_2321ca33
+Bytes: 6
+size_t
+

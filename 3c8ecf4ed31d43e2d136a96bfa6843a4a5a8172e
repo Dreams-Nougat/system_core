@@ -1,0 +1,27 @@
+Revision: 3c8ecf4ed31d43e2d136a96bfa6843a4a5a8172e
+Patch-set: 1
+File: /COMMIT_MSG
+
+11
+Wed Sep 30 01:02:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6e4d7d85_e8cb9531
+Bytes: 43
+why don't we just add them to the poll set?
+
+File: adb/fdevent.cpp
+
+136
+Wed Sep 30 01:02:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_f6c95eb6
+Bytes: 47
+should we be using the monotonic clock instead?
+
+228
+Wed Sep 30 01:02:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ce582944_295e5b84
+Bytes: 34
+(double indent after a line break)
+

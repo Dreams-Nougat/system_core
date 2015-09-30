@@ -87,3 +87,11 @@ I have used this boolean form exclusively in logd, so to change this to == 0 or 
 
 I have caught myself occasionally (!religiously ;-} ) checking for this in each project that I issue modifications to.
 
+98:13-98:38
+Wed Sep 30 22:58:17 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 15a33681_e3d0926d
+UUID: 75439281_e168c0fc
+Bytes: 133
+Sounds good. I realize there's no good standard for this, although I prefer to restrict if statements to booleans, which this is not.
+

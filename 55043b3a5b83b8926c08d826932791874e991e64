@@ -1,0 +1,18 @@
+Revision: 55043b3a5b83b8926c08d826932791874e991e64
+Patch-set: 2
+File: /COMMIT_MSG
+
+9:35-9:71
+Wed Sep 30 01:57:42 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5398a03_80b45608
+Bytes: 26
+Why? What is the scenario?
+
+9:24-9:34
+Wed Sep 30 01:57:42 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f86a1765_d9013fd3
+Bytes: 43
+Do you mean adbd or adb server on the host?
+

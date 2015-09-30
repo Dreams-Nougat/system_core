@@ -1,0 +1,43 @@
+Revision: 75617d7d05a48add6c4d0d60bb193a98ffac03ce
+Patch-set: 10
+File: logd/LogBuffer.cpp
+
+252:42-254:9
+Wed Sep 30 00:11:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_163cdaa3
+Bytes: 39
+nit: why declare and assign separately?
+
+442:12-442:13
+Wed Sep 30 00:11:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15197672_76daeee1
+Bytes: 40
+nit: mark scope begin/end with a comment
+
+490:16-490:24
+Wed Sep 30 00:11:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2e2e2591_630d98b1
+Bytes: 15
+can a PID be 0?
+
+File: logd/LogWhiteBlackList.cpp
+
+106:22-106:26
+Wed Sep 30 00:11:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4e4c398b_bd871e03
+Bytes: 78
+this filter notation is a bit confusing, can you document more how this works?
+
+File: logd/README.property
+
+26:69-26:72
+Wed Sep 30 00:11:13 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f86a1765_13f6d6fa
+Bytes: 71
+the chattiest UID, and the chattiest PID within the system UID of 1000?
+

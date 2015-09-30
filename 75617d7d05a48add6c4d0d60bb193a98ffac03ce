@@ -17,6 +17,14 @@ UUID: b5398a03_80d6168a
 Bytes: 55
 Line wrap, the 'type' and 'rval' exceed 100 characters.
 
+252:42-254:9
+Wed Sep 30 23:01:03 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5398a03_80d6168a
+UUID: 953c86f3_d38f5421
+Bytes: 29
+why not wrap the line itself?
+
 442:12-442:13
 Wed Sep 30 00:11:13 2015 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>

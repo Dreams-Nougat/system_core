@@ -9,3 +9,13 @@ UUID: b5526a4f_7eaf29f9
 Bytes: 42
 did you mean to change this in this patch?
 
+291:4-299:16
+Wed Sep 30 23:04:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5526a4f_7eaf29f9
+UUID: b5526a4f_5e3a255a
+Bytes: 206
+You are seeing a rebase-artifact. This was a change from a different patch that got merge into the tree.
+
+This only appears between 3 and 4, but if you compare against the new 'base' this remains unchanged.
+

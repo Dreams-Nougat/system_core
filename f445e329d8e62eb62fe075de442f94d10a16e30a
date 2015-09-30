@@ -16,3 +16,13 @@ UUID: f5586271_03f7b4f8
 Bytes: 66
 bump the protocol version again to avoid that? integers are cheap.
 
+19
+Wed Sep 30 22:30:34 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f5586271_03f7b4f8
+UUID: b5526a4f_de3bd587
+Bytes: 241
+It's a adbd problem not a server problem unfortunately, restarting the server won't fix it.
+
+What I could do is change the feature name so existing devices won't even try to use the feature at all. I'll check that out, I think it might work.
+

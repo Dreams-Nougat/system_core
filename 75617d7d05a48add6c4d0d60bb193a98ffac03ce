@@ -40,6 +40,14 @@ I find this form harder to read, uglier (matter of taste) and in some ways feels
 
 Does this grate against you in some manner? I know this is a matter of taste, neither is an Android Coding Standard issue. (I am in effect complying with the Linux Coding Standards on line wraps)
 
+252:42-254:9
+Wed Sep 30 23:16:53 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75439281_67216033
+UUID: b5526a4f_fed33965
+Bytes: 276
+I prefer that, when I first saw this line I thought the declaration was somewhere at the beginning of the file. Compiler probably fixes this but you do call a default constructor in the first line and a copy constructor in the second. Not a problem though as evinced by my +2.
+
 442:12-442:13
 Wed Sep 30 00:11:13 2015 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,3 +9,10 @@ UUID: 15a33681_296689ad
 Bytes: 117
 Thanks, this should keep ddmlib compatible. And I'll fix ddmlib in such a way that if it can detect v2, it'll use v2.
 
+19
+Wed Sep 30 22:22:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f5586271_03f7b4f8
+Bytes: 66
+bump the protocol version again to avoid that? integers are cheap.
+

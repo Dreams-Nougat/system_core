@@ -9,6 +9,14 @@ UUID: 6e4d7d85_e8cb9531
 Bytes: 43
 why don't we just add them to the poll set?
 
+11
+Wed Sep 30 01:48:30 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6e4d7d85_e8cb9531
+UUID: 15197672_794e5fb4
+Bytes: 200
+I already did that. But it doesn't work in my experiment. When a socket created by accept() becomes CLOSE_WAIT state, poll() can't detect that if the socket doesn't register POLLIN and POLLOUT events.
+
 File: adb/fdevent.cpp
 
 136
@@ -18,10 +26,26 @@ UUID: 15197672_f6c95eb6
 Bytes: 47
 should we be using the monotonic clock instead?
 
+136
+Wed Sep 30 01:48:30 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 15197672_f6c95eb6
+UUID: f86a1765_d93b7fb0
+Bytes: 27
+yes. I didn't realize that.
+
 228
 Wed Sep 30 01:02:47 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ce582944_295e5b84
 Bytes: 34
 (double indent after a line break)
+
+228
+Wed Sep 30 01:48:30 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ce582944_295e5b84
+UUID: 15197672_f914af82
+Bytes: 4
+Done
 

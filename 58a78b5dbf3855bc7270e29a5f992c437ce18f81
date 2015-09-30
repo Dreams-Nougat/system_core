@@ -57,3 +57,13 @@ remind me why we're not just using shell scripts for provisioning again? are we 
 
 we could always add a "provision" function to envsetup.sh if all we need is a consistent name for the shell script. (or put a provision.py on the path.)
 
+1155
+Wed Sep 30 16:32:15 2015 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2e2e2591_06994268
+UUID: 55704e4f_0d455180
+Bytes: 482
+I'm not so sure adding "fastboot provision" is akin to writing our own shell-script interpreter :-). FWIW, I don't like shell/python scripts for this as it gives way too much room for error / hacks and they're harder to read and it's harder to ensure that they work across Linux, OS X and Windows. It's also much easier to just inspect the ${ANDROID_PRODUCT_OUT}/provisioning-commands file for debugging.
+
+So if it's OK with you, I would prefer to continue down this path. Thoughts?
+

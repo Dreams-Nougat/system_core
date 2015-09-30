@@ -67,3 +67,19 @@ I'm not so sure adding "fastboot provision" is akin to writing our own shell-scr
 
 So if it's OK with you, I would prefer to continue down this path. Thoughts?
 
+1155
+Wed Sep 30 20:08:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 55704e4f_0d455180
+UUID: 75439281_64ab1e74
+Bytes: 1340
+does Brillo support platform development on Windows? Android doesn't.
+
+otherwise, i'm starting to think this is a mistake. we're doing command execution, but only in a very limited form. we're doing environment variable substitution, but badly. it feels like the best we can hope for is to achieve parity with the shell --- but we already have perfectly good shells.
+
+your example provisioning script looks identical as a shell script except that each line starts with "fastboot ".
+
+the "too much room for hacks" is probably a good thing --- sooner or later there's going to be some custom bullshit an OEM needs you to do, and then you either hack that in to fastboot or have a separate shell script you need to run in addition to "fastboot provision". this is why Android's init is such an awful mess. they wanted it to be "minimal" but bad things happen when you collide with reality. especially in areas where OEMs are involved. the recovery image links in an arbitrary OEM-provided .so to solve the equivalent problem there. yeah, the shell's not lovely, but the alternatives all tend to be worse...
+
+i think "Windows" is really the only strong counter-argument, and even there that just makes me think "python" rather than "shell". (although for the level of complexity you're talking about, a .bat file is probably sufficient anyway.)
+

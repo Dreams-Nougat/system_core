@@ -1,0 +1,27 @@
+Revision: b1f7c070ff21522384ce4d6e57c97e4a07ce3d0a
+Patch-set: 1
+File: /COMMIT_MSG
+
+20:60-21:37
+Wed Sep 30 02:56:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5526a4f_d8f2cdcd
+Bytes: 50
+why you think the previous way may lose the error?
+
+File: adb/fdevent.cpp
+
+177:8-177:30
+Wed Sep 30 02:56:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 953c86f3_1fa1c395
+Bytes: 38
+good detective. I think you are right.
+
+238:12-239:36
+Wed Sep 30 02:56:01 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15a33681_836bdef7
+Bytes: 46
+Do you have any reason to change the strategy?
+

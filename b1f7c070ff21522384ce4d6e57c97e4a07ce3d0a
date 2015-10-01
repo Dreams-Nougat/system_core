@@ -31,6 +31,30 @@ I think if some fd only wants to read or only wants to write, it will call synch
 
 I agree it is weird that why I get a FDE_READ when I only register for FDE_WRITE. Ideally I want to make all errors return FDE_ERROR. But I am not confident in making the change now. So I prefer to stay on using FDE_READ for error processing for stability.
 
+20:60-21:37
+Thu Oct 01 02:55:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 15a33681_d7918cd9
+UUID: d55b5e6b_083fcf77
+Bytes: 1679
+Ok. Let me know how I should proceed with this review.
+
+BTW, sysdeps_win32.cpp says in a comment 'fdevents emulation: this is a very simple implementation, we rely on the fact that ADB doesn't use FDE_ERROR'. I'm not really sure if the code is really relying on that.
+
+But I do think that the sysdeps_win32 fdevents code is somewhat scary:
+
+* Windows has select(), but because sysdeps has a custom socketpair implementation, select() won't work with it, so then WaitForMultipleObjects() + WSAEventSelect() was used instead.
+
+* (Even without the custom socketpair implementation, select() probably wouldn't work anyway because it is limited to 64 sockets on Windows. But WaitForSingleObjects() is also limited to 64 so sysdeps has a gross hack to make it work beyond 64.)
+
+* WSAEventSelect() requires that after an event occurs, that a 're-enabling' function (like recv/send) be called, and if it isn't called, you won't get future events for a socket. Is this requirement satisfied by adb code? Perhaps, but I'm not sure (maybe I will try to write a test case for this). The worst case scenario is hangs I guess.
+
+* Windows Vista has WSAPoll(), but from reading the web, it sounds buggy and not often used.
+
+Basically, Windows has a different I/O model than Unix. Windows really wants to use an I/O completion port with I/Os posted ahead of time instead of waiting for readiness. But that design is all about performance and I don't think Windows adb is having any performance issues (seems like reliability is the #1 issue hence why I'm looking at this sysdeps code).
+
+Anyway, I just wanted to give you a sense of what the Windows side has to deal with to keep fdevents working.
+
 File: adb/fdevent.cpp
 
 177:8-177:30

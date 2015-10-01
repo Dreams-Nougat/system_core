@@ -1,0 +1,11 @@
+Revision: 92c32e2cf961e69d40f547bfd798ec59f899b8f7
+Patch-set: 4
+File: init/property_service.cpp
+
+111
+Thu Oct 01 23:59:08 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 75439281_c8a04070
+Bytes: 81
+Ill caveat this with I am a C++ idiot, but why are we not using static_cast here?
+

@@ -55,6 +55,15 @@ Basically, Windows has a different I/O model than Unix. Windows really wants to 
 
 Anyway, I just wanted to give you a sense of what the Windows side has to deal with to keep fdevents working.
 
+20:60-21:37
+Thu Oct 01 03:21:52 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d55b5e6b_083fcf77
+UUID: b5398a03_d4ebbcd8
+Bytes: 410
+For this patch, everything looks good to me except handling error with FDE_WRITE. I prefer to update this CL without that change, or I can create a separate CL if you want to leave it for further discussion or as a reminder.
+I think fdevent implementation in sysdeps_win32 is pretty tricky. But I don't have any idea about how to improve it. Maybe it is already very stable and we don't need much change on it.
+
 File: adb/fdevent.cpp
 
 177:8-177:30

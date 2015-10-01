@@ -1,0 +1,36 @@
+Revision: ca2ccc15b80c1ad0ea63e34264a7eb29fc08fbec
+Patch-set: 2
+File: metricsd/Android.mk
+
+30:13-30:21
+Thu Oct 01 05:59:45 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9555663b_0b734ddc
+Bytes: 76
+nit: keep list alphabetical (also would apply to serialization folder below)
+
+45:13-45:21
+Thu Oct 01 05:59:45 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5398a03_4986f9e4
+Bytes: 27
+nit: keep list alphabetical
+
+File: metricsd/collectors/averaged_statistics_collector.cc
+
+43
+Thu Oct 01 05:59:45 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 354d9aaf_6595dc05
+Bytes: 94
+nit: comment for units here?  If I'm following this correctly, it would be page faults/second?
+
+File: metricsd/collectors/averaged_statistics_collector.h
+
+55:21-55:22
+Thu Oct 01 05:59:45 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 15a33681_4c84334b
+Bytes: 171
+nit: If Android follows the Google style guide, I think struct members don't have the trailing underscore (http://google.github.io/styleguide/cppguide.html#Variable_Names)
+

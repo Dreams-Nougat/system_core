@@ -18,6 +18,14 @@ UUID: 9555663b_007fa7e6
 Bytes: 33
 or just "no property_audit_data"?
 
+474
+Thu Oct 01 23:34:32 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9555663b_007fa7e6
+UUID: 354d9aaf_d1162e19
+Bytes: 137
+My goal with this was to keep this consistent with the previous logs which was property=NULL. However, I am ok with that message as well.
+
 File: init/property_service.cpp
 
 97
@@ -42,6 +50,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 15a33681_580389db
 Bytes: 5
 |sort
+
+20
+Thu Oct 01 23:34:32 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 15a33681_580389db
+UUID: 354d9aaf_d11bce36
+Bytes: 124
+This can be dropped. I originally had some uint32_t magic on the header just to make sure everything was sane for debugging.
 
 27
 Thu Oct 01 23:17:26 2015 +0000

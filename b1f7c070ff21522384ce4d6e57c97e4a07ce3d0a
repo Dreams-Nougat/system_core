@@ -64,6 +64,16 @@ Bytes: 410
 For this patch, everything looks good to me except handling error with FDE_WRITE. I prefer to update this CL without that change, or I can create a separate CL if you want to leave it for further discussion or as a reminder.
 I think fdevent implementation in sysdeps_win32 is pretty tricky. But I don't have any idea about how to improve it. Maybe it is already very stable and we don't need much change on it.
 
+20:60-21:37
+Thu Oct 01 06:35:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5398a03_d4ebbcd8
+UUID: 354d9aaf_70d8f80c
+Bytes: 385
+Ok, I updated the CL without the FDE_WRITE stuff. Please feel free to create a separate CL or http://b for further work.
+
+Just this evening I found that sysdeps_win32 fdevent always calls the handler with whatever events were requested by the caller, not the events that actually occurred. It isn't yet clear to me whether this is just a bug or whether it is By Design for some reason.
+
 File: adb/fdevent.cpp
 
 177:8-177:30

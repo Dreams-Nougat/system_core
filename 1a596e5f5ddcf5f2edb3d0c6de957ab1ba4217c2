@@ -15,3 +15,13 @@ How about doing something like this for all of the split strncmps you have in th
 
 Splitting the strings each time (eg "C"  "PU") makes the code less readable.
 
+164:1-166:1
+Fri Oct 02 22:23:27 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9555663b_59b6b632
+UUID: d55b5e6b_969e5da0
+Bytes: 307
+Because I would have to do this for strcmp, strncmp and strncasecmp, and some do null checking and some do not need to. The abstraction became cumbersome.
+
+But, this is C++, so maybe I should consider a common template (But now this would depend on LogUtils.h CL) and see if I can make it prettier that way.
+

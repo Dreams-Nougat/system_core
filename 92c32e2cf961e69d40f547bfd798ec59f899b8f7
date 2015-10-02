@@ -1,5 +1,14 @@
 Revision: 92c32e2cf961e69d40f547bfd798ec59f899b8f7
 Patch-set: 4
+File: init/init.cpp
+
+474
+Fri Oct 02 16:01:10 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f3eaded_3da80fab
+Bytes: 405
+This would not be readily parseable as part of an audit record (not name=value format).  Probably don't even need to test for !data, as that would be a bug in the caller, right?  Or if you want to allow for future selinux_check_access() calls by init that don't pass this data, then just do nothing in this case; you'll still get the regular avc message with the base fields (scontext= tcontext= tclass=).
+
 File: init/property_service.cpp
 
 111

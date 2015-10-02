@@ -35,6 +35,14 @@ UUID: 953c86f3_0baa20b3
 Bytes: 344
 Yes, this is what I took issue with in the service_manager patch. My position: we don't need this check, and I don't think name=value is an absolute requirement, but this should be considered in the context of the whole denial message.  Having "SELinux : avc:  denied  { perm } for No property audit data scontext=..." would be quite confusing.
 
+474
+Fri Oct 02 17:26:57 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 953c86f3_0baa20b3
+UUID: 15a33681_2c5e9213
+Bytes: 92
+Why do we need to add this to the audit record. Couldn't we just log the error and return 0?
+
 File: init/property_service.cpp
 
 109

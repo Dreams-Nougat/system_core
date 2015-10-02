@@ -2,6 +2,13 @@ Revision: 1a596e5f5ddcf5f2edb3d0c6de957ab1ba4217c2
 Patch-set: 2
 File: logd/LogStatistics.h
 
+165:48-165:52
+Fri Oct 02 22:30:15 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f5586271_906ca13c
+Bytes: 6
+name+1
+
 164:1-166:1
 Fri Oct 02 21:54:14 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,17 @@
+Revision: 1a596e5f5ddcf5f2edb3d0c6de957ab1ba4217c2
+Patch-set: 2
+File: logd/LogStatistics.h
+
+164:1-166:1
+Fri Oct 02 21:54:14 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9555663b_59b6b632
+Bytes: 307
+How about doing something like this for all of the split strncmps you have in this CL?
+
+  static inline bool logdstrncmp(const char *s1, const char *s2, size_t len) {
+    return (s1[0] != s2[0] || strncmp(s1+1, s2+1, len-1));
+  }
+
+Splitting the strings each time (eg "C"  "PU") makes the code less readable.
+

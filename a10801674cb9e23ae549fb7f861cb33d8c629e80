@@ -1,0 +1,13 @@
+Revision: a10801674cb9e23ae549fb7f861cb33d8c629e80
+Patch-set: 5
+File: adb/fdevent.cpp
+
+121:8-121:38
+Fri Oct 02 19:45:51 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d55b5e6b_db911eda
+Bytes: 250
+Should this get the existing flags with F_GETFL and | it with O_NONBLOCK? That's what the rest of adb/libcutils does.
+
+I checked the linux fcntl manpage and it doesn't sound like it makes a difference since the existing flags are very likely to be 0.
+

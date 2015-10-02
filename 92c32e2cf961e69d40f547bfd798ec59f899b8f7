@@ -21,6 +21,13 @@ You weighed in on exactly what I wanted you to. It un-parseable. I think we can 
 
 File: init/property_service.cpp
 
+109
+Fri Oct 02 16:24:41 2015 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9fb745b5_a7f4eab8
+Bytes: 79
+Should we just pass a pointer to the ucred and potentially include the uid too?
+
 111
 Thu Oct 01 23:59:08 2015 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>

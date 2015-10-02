@@ -68,6 +68,14 @@ UUID: b5398a03_75dbcab1
 Bytes: 39
 If we think that would provide value...
 
+109
+Fri Oct 02 17:29:25 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b5398a03_75dbcab1
+UUID: 953c86f3_be7530c2
+Bytes: 4
+Done
+
 111
 Thu Oct 01 23:59:08 2015 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -82,4 +90,12 @@ Parent: 75439281_c8a04070
 UUID: 354d9aaf_633dd1a3
 Bytes: 347
 you can. some people prefer reinterpret_cast because it shouts "danger! crappy type-unsafe C API here!". others prefer static_cast because it's the weakest cast that will still work. i'll +2 either (but tend to use reinterpret_cast personally; i've never seen anyone make the mistakes that static_cast would prevent in this specific circumstance).
+
+111
+Fri Oct 02 17:29:25 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 354d9aaf_633dd1a3
+UUID: 75439281_1b0f146a
+Bytes: 53
+I will leave it as you requested. I was just curious.
 

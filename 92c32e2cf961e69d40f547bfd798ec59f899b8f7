@@ -27,6 +27,14 @@ UUID: b5526a4f_ada51518
 Bytes: 181
 yeah, i almost made the same comment. only thing that held me back is that if anyone _does_ screw this up, it'll be really hard to debug because the device will reboot if init dies.
 
+474
+Fri Oct 02 17:01:18 2015 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 953c86f3_0bf50046
+UUID: 953c86f3_0baa20b3
+Bytes: 344
+Yes, this is what I took issue with in the service_manager patch. My position: we don't need this check, and I don't think name=value is an absolute requirement, but this should be considered in the context of the whole denial message.  Having "SELinux : avc:  denied  { perm } for No property audit data scontext=..." would be quite confusing.
+
 File: init/property_service.cpp
 
 109
@@ -43,6 +51,14 @@ Parent: 9fb745b5_a7f4eab8
 UUID: 354d9aaf_03a16d5f
 Bytes: 143
 I thought about that as well, I would be ok with that. uid could be a very helpful hint as well. At this point should we just dump gid as well?
+
+109
+Fri Oct 02 17:01:18 2015 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 354d9aaf_03a16d5f
+UUID: b5398a03_75dbcab1
+Bytes: 39
+If we think that would provide value...
 
 111
 Thu Oct 01 23:59:08 2015 +0000

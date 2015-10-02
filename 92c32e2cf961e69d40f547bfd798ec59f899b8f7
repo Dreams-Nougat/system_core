@@ -72,6 +72,14 @@ from my point of view:
 - on null, don't write "No property audit data" to buf (so that it doesn't get in the audit msg)
 - on null, log an error and return 0 (this will preseve the original audit entry and provide an additional err entry)
 
+474
+Fri Oct 02 17:41:33 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75439281_1b455481
+UUID: 15a33681_4ce98e71
+Bytes: 37
+Yep thats exactly what I had in mind.
+
 File: init/property_service.cpp
 
 109

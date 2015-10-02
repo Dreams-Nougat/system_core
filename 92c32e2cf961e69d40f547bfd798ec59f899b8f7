@@ -28,6 +28,14 @@ UUID: 9fb745b5_a7f4eab8
 Bytes: 79
 Should we just pass a pointer to the ucred and potentially include the uid too?
 
+109
+Fri Oct 02 16:45:22 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9fb745b5_a7f4eab8
+UUID: 354d9aaf_03a16d5f
+Bytes: 143
+I thought about that as well, I would be ok with that. uid could be a very helpful hint as well. At this point should we just dump gid as well?
+
 111
 Thu Oct 01 23:59:08 2015 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>

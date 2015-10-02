@@ -11,3 +11,11 @@ Should this get the existing flags with F_GETFL and | it with O_NONBLOCK? That's
 
 I checked the linux fcntl manpage and it doesn't sound like it makes a difference since the existing flags are very likely to be 0.
 
+121:8-121:38
+Fri Oct 02 19:58:33 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d55b5e6b_db911eda
+UUID: b5398a03_c78e6db5
+Bytes: 153
+i didn't realize we already had two copies of this in adb. yeah, we should factor all three out and have them read/modify/write rather than just clobber.
+

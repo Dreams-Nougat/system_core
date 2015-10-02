@@ -51,6 +51,16 @@ UUID: 953c86f3_9eecacc5
 Bytes: 226
 We don't, and I think we're in agreement. As currently written, this would insert "No property audit data" into the audit record buffer by virtue of being called in avc_suppl_audit (in avc.c), which I don't think we should do.
 
+474
+Fri Oct 02 17:36:59 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 953c86f3_9eecacc5
+UUID: f5586271_3a2db659
+Bytes: 156
+Just to clarify. Keep the null check, by log I mean just a normal error log to dmesg, not an audit record and then return 0?
+
+Is that what were settling on?
+
 File: init/property_service.cpp
 
 109

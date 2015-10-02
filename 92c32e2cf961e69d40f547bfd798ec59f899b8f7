@@ -9,6 +9,16 @@ UUID: 5f3eaded_3da80fab
 Bytes: 405
 This would not be readily parseable as part of an audit record (not name=value format).  Probably don't even need to test for !data, as that would be a bug in the caller, right?  Or if you want to allow for future selinux_check_access() calls by init that don't pass this data, then just do nothing in this case; you'll still get the regular avc message with the base fields (scontext= tcontext= tclass=).
 
+474
+Fri Oct 02 16:04:39 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5f3eaded_3da80fab
+UUID: 953c86f3_0bf50046
+Bytes: 266
+Yes I was wondering why we even bothered to check for nulls in any of this.
+
+You weighed in on exactly what I wanted you to. It un-parseable. I think we can just drop the whole NULL data, anyone object? Obviously this will follow suit with the other patches as well.
+
 File: init/property_service.cpp
 
 111

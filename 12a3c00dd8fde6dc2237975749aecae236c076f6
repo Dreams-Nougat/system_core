@@ -9,10 +9,26 @@ UUID: 8e52b121_6106ad28
 Bytes: 168
 Is there any worry about some kind of alignment issue with the next SyncRequest structure? Unless path_length is a multiple of 8, it seems that you might have an issue.
 
+138:8-138:25
+Fri Oct 02 21:48:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8e52b121_6106ad28
+UUID: d55b5e6b_b661e196
+Bytes: 55
+i'm not sure where the aligned((8)) came from. removed.
+
 358:4-358:36
 Mon Sep 28 23:58:14 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8e52b121_e113bd8e
 Bytes: 61
 use "char buffer[SYNC_DATA_MAX]" here and remove send_buffer?
+
+358:4-358:36
+Fri Oct 02 21:48:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8e52b121_e113bd8e
+UUID: b5526a4f_02a16b5f
+Bytes: 4
+Done
 

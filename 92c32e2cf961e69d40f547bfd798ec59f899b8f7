@@ -19,6 +19,14 @@ Yes I was wondering why we even bothered to check for nulls in any of this.
 
 You weighed in on exactly what I wanted you to. It un-parseable. I think we can just drop the whole NULL data, anyone object? Obviously this will follow suit with the other patches as well.
 
+474
+Fri Oct 02 16:58:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 953c86f3_0bf50046
+UUID: b5526a4f_ada51518
+Bytes: 181
+yeah, i almost made the same comment. only thing that held me back is that if anyone _does_ screw this up, it'll be really hard to debug because the device will reboot if init dies.
+
 File: init/property_service.cpp
 
 109
@@ -42,4 +50,12 @@ Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 75439281_c8a04070
 Bytes: 81
 Ill caveat this with I am a C++ idiot, but why are we not using static_cast here?
+
+111
+Fri Oct 02 16:58:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 75439281_c8a04070
+UUID: 354d9aaf_633dd1a3
+Bytes: 347
+you can. some people prefer reinterpret_cast because it shouts "danger! crappy type-unsafe C API here!". others prefer static_cast because it's the weakest cast that will still work. i'll +2 either (but tend to use reinterpret_cast personally; i've never seen anyone make the mistakes that static_cast would prevent in this specific circumstance).
 

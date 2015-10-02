@@ -61,6 +61,17 @@ Just to clarify. Keep the null check, by log I mean just a normal error log to d
 
 Is that what were settling on?
 
+474
+Fri Oct 02 17:40:24 2015 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f5586271_3a2db659
+UUID: 75439281_1b455481
+Bytes: 286
+from my point of view:
+- keep the null check to address enh@'s concerns
+- on null, don't write "No property audit data" to buf (so that it doesn't get in the audit msg)
+- on null, log an error and return 0 (this will preseve the original audit entry and provide an additional err entry)
+
 File: init/property_service.cpp
 
 109

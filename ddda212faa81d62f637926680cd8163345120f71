@@ -1,0 +1,13 @@
+Revision: ddda212faa81d62f637926680cd8163345120f71
+Patch-set: 3
+File: logd/LogKlog.cpp
+
+615:16-615:28
+Sat Oct 03 00:01:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9555663b_34de697f
+Bytes: 371
+This is effectively a fast<strncmp> prefix for the one on line 618, but it also bypasses this code correctly if the first characters do not match which causes us to not perform the two-word below on line 633, but instead the other one on 676.
+
+I should incorporated 617 test into 615, but then I feel like I am changing too much. I leave _that_ cleanup for another day...
+

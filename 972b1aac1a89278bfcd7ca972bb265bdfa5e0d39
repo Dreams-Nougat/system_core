@@ -1,0 +1,20 @@
+Revision: 972b1aac1a89278bfcd7ca972bb265bdfa5e0d39
+Patch-set: 12
+File: logd/LogBufferElement.cpp
+
+117:4-117:9
+Sat Oct 03 00:24:27 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f5586271_26c8fb8e
+Bytes: 21
+why make this change?
+
+File: logd/LogStatistics.cpp
+
+319:16-319:17
+Sat Oct 03 00:24:27 2015 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 354d9aaf_bcba56ed
+Bytes: 252
+this is more of a general comment, but it would help as a reviewer if your names were a bit more verbose. It's hard to understand what certain things are trying to accomplish without digging into other code when there variable names aren't descriptive.
+

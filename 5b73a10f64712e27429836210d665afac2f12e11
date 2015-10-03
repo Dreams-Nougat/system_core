@@ -1,0 +1,11 @@
+Revision: 5b73a10f64712e27429836210d665afac2f12e11
+Patch-set: 1
+File: adb/adb_client.cpp
+
+240:12-240:30
+Sat Oct 03 02:53:50 2015 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b5398a03_bdbc183c
+Bytes: 36
+May I say I love this spaghetti. :-)
+

@@ -27,6 +27,14 @@ UUID: c4f6494b_7db65779
 Bytes: 296
 Ah, so you're saying that a SRWLock is better than a critical section? Cool. That is new to me because most of my Win32 sync knowledge is from before SRWLock existed. But I can believe it, so let me know if you want me to change this to SRWLock or if you want to take care of it yourself. Thanks.
 
+14:2-14:45
+Mon Oct 05 02:19:23 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c4f6494b_7db65779
+UUID: 15a33681_201c5376
+Bytes: 223
+FYI, there was/is a SRWLock bug where threads may not be woken up: http://www.lenholgate.com/blog/2015/01/that-slim-readerwriter-lock-issue-is-a-kernel-bug.html . I don't know if the fix is already in Windows Update or not.
+
 23:2-23:39
 Tue Aug 11 23:06:56 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,20 @@
+Revision: 9cf005359151b29c6c05ef4b2ea4e7a6889f854f
+Patch-set: 1
+File: logcat/tests/logcat_test.cpp
+
+694:4-695:53
+Tue Oct 06 19:37:56 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105c2963_b9b9df09
+Bytes: 110
+"read" is never used. How about getting rid of it.. then you have:
+
+  while (getline(&line, &len, fp) != -1) {
+
+745
+Tue Oct 06 19:37:56 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504861a0_dbd93352
+Bytes: 15
+"read" not used
+

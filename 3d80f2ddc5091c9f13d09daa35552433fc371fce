@@ -1,0 +1,11 @@
+Revision: 3d80f2ddc5091c9f13d09daa35552433fc371fce
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+133
+Tue Oct 06 19:22:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d03c51f4_9fb67317
+Bytes: 54
+type* (everywhere) and { on same line. otherwise lgtm.
+

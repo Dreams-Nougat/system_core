@@ -17,3 +17,11 @@ UUID: 1001893d_d41e1229
 Bytes: 70
 (But this may not matter, just wanted to point it out in case it does)
 
+388:0-389:88
+Tue Oct 06 23:39:17 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1001893d_d41e1229
+UUID: d00a915c_d521ecb4
+Bytes: 201
+As jdwp_process_event() is only installed in jdwp_process_alloc(), and there are no other fcntl() in jdwp_service.cpp, I believe proc->socket always has O_NONBLOCK when it goes in jdwp_process_event().
+

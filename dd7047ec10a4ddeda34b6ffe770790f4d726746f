@@ -9,6 +9,14 @@ UUID: 8b92a812_86969046
 Bytes: 389
 It's not a strong rule, but the naming conventions for methods and parameters seems to using lowerCamelCase as in Java with underscore in front for custom methods/params. So this should have been "_enableAnalyticsReporting". This is not a requirement but everything from Google seems to be conforming to that style for now: https://developers.google.com/weave/guides/introductions/commands
 
+3:5-3:30
+Tue Oct 06 17:19:49 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8b92a812_86969046
+UUID: cb6900e6_8be9bd9b
+Bytes: 4
+Done
+
 File: metricsd/metrics_daemon.cc
 
 336:2-337:10
@@ -17,4 +25,12 @@ Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4b9c302a_4f9add3b
 Bytes: 11
 on one line
+
+336:2-337:10
+Tue Oct 06 17:19:49 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b9c302a_4f9add3b
+UUID: cb6900e6_2bde71f0
+Bytes: 4
+Done
 

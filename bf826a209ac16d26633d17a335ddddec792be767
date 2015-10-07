@@ -59,10 +59,26 @@ If this really bothers you, then I need to create logcat_error handler for the l
 
 The user is a script, I expect it does not care _which_ buffer failed. A user would consider 6 lines of dump bad behavior, so one message if at all possible.
 
+879
+Wed Oct 07 23:09:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0435d80_d83495cb
+UUID: 105c2963_68780bb5
+Bytes: 101
+How about we just avoid overwriting previous errors so we report the first error instead of the last.
+
 881:55-881:59
 Wed Oct 07 22:43:27 2015 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5061411e_3c301027
 Bytes: 66
 I do not need the quotes, makes it complicated if clearFail == ""?
+
+881:55-881:59
+Wed Oct 07 23:09:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5061411e_3c301027
+UUID: 30592d74_e46c43f8
+Bytes: 17
+seems fine to me.
 

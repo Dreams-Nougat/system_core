@@ -26,3 +26,13 @@ I thought Android supports MIPS as well. I might be wrong here..
 
 Do you still think it's worth submitting this patch ?
 
+380
+Wed Oct 07 05:47:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1001893d_57e50493
+UUID: 30592d74_4ed6f3b2
+Bytes: 311
+we support mips, but only little-endian. there's no big-endian code in the VM or libc, nor any interest in adding any. personally i'd remove the existing uses here rather than add new ones.
+
+(i hadn't noticed that this is actually device code --- we really ought to rename this file! it confuses me every time!)
+

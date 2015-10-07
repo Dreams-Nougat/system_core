@@ -11,3 +11,18 @@ not these?
 
 i mean, you'd have to visit the computer history museum for a big-endian host, so personally i'd just remove all these *_to_le* calls, but if you're going to add them, you may as well try to add them all. (the fact that you'll never find them all because you don't have a big-endian host to test on is part of the reason i wouldn't even try :-) .)
 
+380
+Wed Oct 07 05:41:54 2015 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1001893d_77e00885
+UUID: 1001893d_57e50493
+Bytes: 431
+Missed them..
+I was looking at wikipedia.
+https://en.wikipedia.org/wiki/MIPS_instruction_set
+"Since almost all MIPS microprocessors have the capability of operating with either little endian or big endian byte order, the term is used only for processors where little endian byte order has been pre-determined."
+
+I thought Android supports MIPS as well. I might be wrong here..
+
+Do you still think it's worth submitting this patch ?
+

@@ -9,6 +9,14 @@ UUID: 90673931_4a5b7fe0
 Bytes: 67
 Do you want to change the other NULLs in this function to nullptrs?
 
+801:28-801:32
+Wed Oct 07 22:35:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90673931_4a5b7fe0
+UUID: 504861a0_158ec428
+Bytes: 4
+Done
+
 File: adb/transport.cpp
 
 721:0-721:0
@@ -24,12 +32,28 @@ if (result == nullptr) {
 
 Then you could skip the three result checks down below.
 
+721:0-721:0
+Wed Oct 07 22:35:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 504861a0_3547808c
+UUID: b0435d80_f8a4f17d
+Bytes: 60
+they're not expensive and this would just add another check.
+
 722:28-722:38
 Wed Oct 07 22:24:04 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 504861a0_55420c7c
 Bytes: 54
 This is kind of confusing. Do you mean cannot be used?
+
+722:28-722:38
+Wed Oct 07 22:35:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 504861a0_55420c7c
+UUID: 105c2963_28d4531f
+Bytes: 129
+yes. they're no use to the caller, because the caller won't be able to do anything with them. i've rewritten both these comments.
 
 File: adb/transport.h
 
@@ -39,4 +63,12 @@ Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b0435d80_78162160
 Bytes: 54
 Is it worth mentioning that this value can be nullptr?
+
+126:47-126:59
+Wed Oct 07 22:35:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b0435d80_78162160
+UUID: b0435d80_d89db531
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 1743f22b5c20e8a0b7bf2a30ff6eb0aa99cb0de1
+Patch-set: 1
+File: logd/LogCommand.cpp
+
+79
+Wed Oct 07 20:36:01 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105c2963_6d781db5
+Bytes: 101
+If we don't find Gid/Uid/Log in the first pass, why do we think we'll find it in the 2nd or 3rd pass?
+

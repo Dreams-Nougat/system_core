@@ -1,0 +1,11 @@
+Revision: 750b16aa36829a987a8811d42188ed7a0f2cafe4
+Patch-set: 2
+File: fastboot/fastboot.cpp
+
+718
+Wed Oct 07 00:56:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 105c2963_7c929594
+Bytes: 18
+const std::string&
+

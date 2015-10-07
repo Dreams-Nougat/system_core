@@ -1,0 +1,25 @@
+Revision: bf826a209ac16d26633d17a335ddddec792be767
+Patch-set: 1
+File: logcat/logcat.cpp
+
+853
+Wed Oct 07 20:44:33 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 704d65ae_ab6975e6
+Bytes: 101
+If clear fails, should we set the new dev and "continue" instead of going on to setting the log size?
+
+858
+Wed Oct 07 20:44:33 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d03c51f4_939dccac
+Bytes: 25
+set new dev and continue?
+
+879
+Wed Oct 07 20:44:33 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504861a0_8ac6332c
+Bytes: 119
+We just report errors for the last dev with each error... is that OK? would we be more interested in the first failure?
+

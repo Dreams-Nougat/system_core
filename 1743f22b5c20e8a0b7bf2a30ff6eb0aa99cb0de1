@@ -9,3 +9,19 @@ UUID: 105c2963_6d781db5
 Bytes: 101
 If we don't find Gid/Uid/Log in the first pass, why do we think we'll find it in the 2nd or 3rd pass?
 
+79
+Wed Oct 07 21:35:44 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 105c2963_6d781db5
+UUID: b0435d80_2dbf3911
+Bytes: 1439
+Reading /proc/<pid>/status is rife with race conditions. All of /proc suffers from this and its use should be minimized.
+
+Notably the content from one 4KB page to the next 4KB page can be from a change in shape if we are gracious enough to attempt to read atomically. getline(here) and fgets(before) can not even guarantee a 1KB read is not split up and in effect can read from different vintages of the content from this /proc file.
+
+When this was originally coded, the reviewer adamantly hated the race condition, but could not come up with any other option. We settled to agree that this sucked. We read once (before) and declared the design was we would err on denying access if we could not get the clear content we expected. Tough. We ran a test on this continuously and found we never had a fallout on-platform; but now I suspect that test was flawed (maybe did not have the perms hidden in the groups, we should have run a test via adb as well, rather than natively on the platform).
+
+This design requirement has changed, as we are finding out in the field that a 'logcat -c' via adb (which has the perms hidden in the groups) occasionally is returned with permission denied and breaking scripts. gTest probably can never catch this problem, an external script calling adb on "user" may be a required. We still err on denying access if in doubt, but we expect the falses should be reduced significantly.
+
+Three times is a charm(tm)
+

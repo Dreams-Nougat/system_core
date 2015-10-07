@@ -1,0 +1,21 @@
+Revision: 53f2bc72b87f5eac0ca91d934d4cb5ebc52fa5f2
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+673:12-676:9
+Wed Oct 07 21:02:31 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 30592d74_2fae190a
+Bytes: 345
+Did you intend to do a "break" within the "retry == 1" block? If not, then this is really the 2nd-to-last pass since we will go back to the top of the loop and execute lines 665-667 again. Seems odd.
+
+Would it be better to change 668+ to:
+
+  if (!busy)
+      break;
+  if (!--retry) {
+    // last pass
+    <all the last pass stuff>
+    break;
+  }
+

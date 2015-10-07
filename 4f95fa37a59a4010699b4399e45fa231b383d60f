@@ -36,3 +36,11 @@ we support mips, but only little-endian. there's no big-endian code in the VM or
 
 (i hadn't noticed that this is actually device code --- we really ought to rename this file! it confuses me every time!)
 
+380
+Wed Oct 07 05:49:59 2015 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30592d74_4ed6f3b2
+UUID: 30592d74_8ee00b86
+Bytes: 108
+Sure.. Will abandon this change.. And will submit another change to remove all the cpu_to_le32 conversions..
+

@@ -19,3 +19,15 @@ Would it be better to change 668+ to:
     break;
   }
 
+673:12-676:9
+Wed Oct 07 22:50:32 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 30592d74_2fae190a
+UUID: 504861a0_15d364e4
+Bytes: 536
+The busy = prune(id, 1, uid)
+
+Does not clear, it merely removes one entry if it needs to. I figured the 1 is very clearly not a ULONG_MAX. Its real purpose it to check if it is still busy after the sleep, if it is still busy, then we want to tell all the readers to 'go away', we kill them, then do yet another run to clear all the entries ULONG_MAX. If it is not busy, then we preserve the readers and let one more run go unhindered.
+
+The one-line comment on line 663 describes what we are doing, it is obviously not enough comment ;-{
+

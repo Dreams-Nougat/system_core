@@ -1,0 +1,18 @@
+Revision: 1dd933e3b897cf1243beea5d5e0b5fdf115ba979
+Patch-set: 1
+File: /COMMIT_MSG
+
+12
+Wed Oct 07 05:20:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504861a0_a4dfe836
+Bytes: 78
+should one of these "extended os descriptor"s be "extended compat descriptor"?
+
+19
+Wed Oct 07 05:20:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d00a915c_f821856d
+Bytes: 49
+remove the line break so the link actually works?
+

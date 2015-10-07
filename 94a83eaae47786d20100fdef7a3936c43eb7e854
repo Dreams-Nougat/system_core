@@ -1,0 +1,42 @@
+Revision: 94a83eaae47786d20100fdef7a3936c43eb7e854
+Patch-set: 1
+File: adb/sockets.cpp
+
+801:28-801:32
+Wed Oct 07 22:24:04 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90673931_4a5b7fe0
+Bytes: 67
+Do you want to change the other NULLs in this function to nullptrs?
+
+File: adb/transport.cpp
+
+721:0-721:0
+Wed Oct 07 22:24:04 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504861a0_3547808c
+Bytes: 117
+You could do a:
+
+if (result == nullptr) {
+  return result;
+}
+
+Then you could skip the three result checks down below.
+
+722:28-722:38
+Wed Oct 07 22:24:04 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 504861a0_55420c7c
+Bytes: 54
+This is kind of confusing. Do you mean cannot be used?
+
+File: adb/transport.h
+
+126:47-126:59
+Wed Oct 07 22:24:04 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b0435d80_78162160
+Bytes: 54
+Is it worth mentioning that this value can be nullptr?
+

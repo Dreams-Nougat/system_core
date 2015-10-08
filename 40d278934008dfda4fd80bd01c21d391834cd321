@@ -13,6 +13,14 @@ Maybe add a comment here that these directories are group-writable by root so th
 # crash_reporter can still access them when it switches 
 # users.
 
+17:36-17:40
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5061411e_2760028d
+UUID: 504861a0_75cf48e0
+Bytes: 4
+Done
+
 File: crash_reporter/user_collector.cc
 
 93:44-93:59
@@ -22,12 +30,28 @@ UUID: 5061411e_e7ba8a48
 Bytes: 15
 Update comment?
 
+93:44-93:59
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5061411e_e7ba8a48
+UUID: d03c51f4_5990834c
+Bytes: 4
+Done
+
 231:63-231:71
 Wed Oct 07 16:52:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5061411e_67a83afb
 Bytes: 36
 Why do you need to get c_str() here?
+
+231:63-231:71
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5061411e_67a83afb
+UUID: 5061411e_1c69d473
+Bytes: 4
+Done
 
 234
 Wed Oct 07 15:50:17 2015 +0000
@@ -36,12 +60,28 @@ UUID: 50422131_8bcecd8c
 Bytes: 35
 there's no need for \ here or below
 
+234
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50422131_8bcecd8c
+UUID: 30592d74_c40f7ffc
+Bytes: 4
+Done
+
 241:34-241:45
 Wed Oct 07 16:52:22 2015 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5061411e_a799b2ec
 Bytes: 41
 Maybe log the permissions too? (in octal)
+
+241:34-241:45
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5061411e_a799b2ec
+UUID: 90673931_1ea8ac4e
+Bytes: 4
+Done
 
 426
 Wed Oct 07 15:50:17 2015 +0000
@@ -58,12 +98,28 @@ UUID: 504861a0_c49cb4de
 Bytes: 41
 This can only fail if the pointers fault.
 
+426
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 504861a0_c49cb4de
+UUID: 1001893d_ebcfed31
+Bytes: 153
+Done.  Since this code is called when something has crashed, it would be good not to take anything for granted and make sure that it has indeed suceeded.
+
 430
 Wed Oct 07 15:50:17 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 25e80d65_82a53ae2
 Bytes: 9
 same here
+
+430
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 25e80d65_82a53ae2
+UUID: 504861a0_30478e8c
+Bytes: 4
+Done
 
 434
 Wed Oct 07 15:50:17 2015 +0000
@@ -72,12 +128,28 @@ UUID: b026fd9a_06badafc
 Bytes: 9
 same here
 
+434
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b026fd9a_06badafc
+UUID: 704d65ae_f1d9aa51
+Bytes: 4
+Done
+
 438
 Wed Oct 07 15:50:17 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3033edd8_8acecb8c
 Bytes: 9
 same here
+
+438
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3033edd8_8acecb8c
+UUID: 1001893d_cb9dc931
+Bytes: 4
+Done
 
 459:12-459:25
 Wed Oct 07 16:52:22 2015 +0000
@@ -88,10 +160,28 @@ What's |container_dir| in this context? Shouldn't it be enough to give it group 
 
 I.e. you are running as root:root, change to <uid of crashing program>:root? Is it necessary to call setresgid above?
 
+459:12-459:25
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 704d65ae_854108cf
+UUID: b0435d80_d3b3d677
+Bytes: 1095
+container_dir is the PID folder generated in tmp.  So /data/misc/crash_reporter/tmp/<PID>.  All temporary files needed for generating the minidump and metadata files are put in this directory.  I'm not sure why, but just making the folder group writable wasn't allowing crash_reporter to write to new files in the directory after the UID/GID was switched back to root.  I haven't been able to pinpoint whether its a problem with supplemental groups or the libchrome functions that were trying to write the file, I can look into that once this lands and fixes the functionality.
+
+I tried doing these changes without changing the group, just the user.  But for some reason both the readlink("/proc/<pid>/exe", ..) call as well as trying to copy the proc files required that the fsgid be set to the correct group.  It wasn't required for writing the files themselves, just for reading things from /proc/<pid>.  Without changing the group, the readlink call gets a permission denied EACCES error, and copying the /proc/<pid>/auxv file gets getattr and search selinux denials for the proc filesystem.
+
 461
 Wed Oct 07 15:50:17 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 70200583_24b7d215
 Bytes: 33
 pretty sure this fits on one line
+
+461
+Thu Oct 08 01:18:48 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 70200583_24b7d215
+UUID: 90673931_3e4c8804
+Bytes: 4
+Done
 

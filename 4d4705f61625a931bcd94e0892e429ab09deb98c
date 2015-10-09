@@ -17,3 +17,11 @@ UUID: 2a6d3aed_fa39290d
 Bytes: 94
 Wouldn't this require converting fs_mgr to use C++ first, or some extern "C" magic in libbase?
 
+491
+Fri Oct 09 18:54:36 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a6d3aed_fa39290d
+UUID: 0536a9c7_8f709967
+Bytes: 96
+yes, but we should move in that direction anyway: https://android-review.googlesource.com/175161
+

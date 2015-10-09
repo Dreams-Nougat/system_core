@@ -1,0 +1,11 @@
+Revision: c5e60751b91b4cf4d3dcb70166ccc97af6d33885
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+232:19-232:43
+Fri Oct 09 11:59:10 2015 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a0fce78_23400a74
+Bytes: 42
+would you like to use constants for these?
+

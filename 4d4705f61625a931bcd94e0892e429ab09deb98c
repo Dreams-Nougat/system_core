@@ -1,0 +1,11 @@
+Revision: 4d4705f61625a931bcd94e0892e429ab09deb98c
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.c
+
+491
+Fri Oct 09 11:53:45 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 451b415b_091bcd3c
+Bytes: 108
+Can you use system/core/base/file.cpp function ReadFully() for this? It's better than writing your own loop.
+

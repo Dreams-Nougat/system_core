@@ -9,3 +9,11 @@ UUID: 451b415b_091bcd3c
 Bytes: 108
 Can you use system/core/base/file.cpp function ReadFully() for this? It's better than writing your own loop.
 
+491
+Fri Oct 09 12:00:35 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 451b415b_091bcd3c
+UUID: 2a6d3aed_fa39290d
+Bytes: 94
+Wouldn't this require converting fs_mgr to use C++ first, or some extern "C" magic in libbase?
+

@@ -1,0 +1,24 @@
+Revision: 5341964f5d35593f6181747ed2771c3bf1e77005
+Patch-set: 13
+File: logd/LogBuffer.cpp
+
+587:0-591:17
+Fri Oct 09 19:35:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 054dc959_b75cd0d6
+Bytes: 310
+This logic is flawed, it should not automatically set the head if UID is worst _if_ worstPid is in effect:
+
+if ((!gc && !worstPid) && ...
+
+The result in long term testing has shown that mLastWorstUid has a flawed value in it whenever the logs managed to get down to a single proprietor (sort returns only one).
+
+628:24-628:27
+Fri Oct 09 19:35:30 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8538d9b1_36b45e5c
+Bytes: 33
+ditto
+
+if ((!gc && !worstPid)) ||
+

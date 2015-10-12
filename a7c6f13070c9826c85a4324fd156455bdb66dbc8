@@ -1,5 +1,48 @@
 Revision: a7c6f13070c9826c85a4324fd156455bdb66dbc8
 Patch-set: 1
+File: adb/commandline.cpp
+
+457:12-460:13
+Mon Oct 12 23:00:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff32061b_aab33322
+Bytes: 334
+This may be a dumb question, but why isn't this just:
+
+if (args->protocol) {
+  // This method would send some protocol msg to cause adbd
+  // to do close(fd) so that the subprocess would get read() == 0
+  args->protocol->Close(...);
+} else {
+  // close the socket, so the other side will see recv() == 0
+  adb_close(args->write_fd);
+}
+
+570:8-570:21
+Mon Oct 12 23:00:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f30ba11_4b2eedc8
+Bytes: 136
+Couldn't stdin_read_thread() still be using `fd` (aka args->write_fd) concurrently? Is it safe to close it here without synchronization?
+
+File: adb/shell_service.cpp
+
+511:24-511:70
+Mon Oct 12 23:00:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff32061b_27abdec7
+Bytes: 175
+Just a reminder to test this error case. I found that (on Windows at least), shutdown() returned an error when the socket was no longer connected, which somewhat surprised me.
+
+File: adb/sysdeps.h
+
+491:23-491:58
+Mon Oct 12 23:00:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff32061b_c7b9521e
+Bytes: 113
+Thanks, I've been thinking of adding this too. This is what should have been there originally in the first place.
+
 File: adb/sysdeps_win32.cpp
 
 3273:0-3275:13
@@ -10,4 +53,12 @@ Bytes: 259
 (Spencer maybe you'll have some insight here? My Windows programming is weak)
 
 Does this seem like a reasonable value? I couldn't find much information on why this happens but it seems to be the same issue as this: http://sourceforge.net/p/sevenzip/bugs/645/.
+
+3273:0-3275:13
+Mon Oct 12 23:00:36 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfb7aeb4_6794b213
+UUID: df39c202_c9e4c904
+Bytes: 50
+Let me look into this further and get back to you.
 

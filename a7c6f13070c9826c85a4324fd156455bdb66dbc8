@@ -1,0 +1,13 @@
+Revision: a7c6f13070c9826c85a4324fd156455bdb66dbc8
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+3273:0-3275:13
+Mon Oct 12 17:14:19 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfb7aeb4_6794b213
+Bytes: 259
+(Spencer maybe you'll have some insight here? My Windows programming is weak)
+
+Does this seem like a reasonable value? I couldn't find much information on why this happens but it seems to be the same issue as this: http://sourceforge.net/p/sevenzip/bugs/645/.
+

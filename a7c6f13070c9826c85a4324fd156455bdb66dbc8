@@ -18,12 +18,38 @@ if (args->protocol) {
   adb_close(args->write_fd);
 }
 
+457:12-460:13
+Tue Oct 13 16:23:12 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_aab33322
+UUID: 7fa9b65d_bf1ce77e
+Bytes: 560
+Not a dumb question at all, I was attempting to make that exact approach work for a while :)
+
+Closing the socket entirely is great because this loop won't hang, but it could miss an arbitrary amount of return data. For example if we were to send a lot of data without the shell protocol:
+
+  $ cat <large_file> | adb shell -x cat
+
+this stdin loop will hit the end of input and close the FD before all the return data is received.
+
+Neither option is ideal but IMO it's better to be predictable and cumbersome than sometimes work and sometimes silently drop data.
+
 570:8-570:21
 Mon Oct 12 23:00:36 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1f30ba11_4b2eedc8
 Bytes: 136
 Couldn't stdin_read_thread() still be using `fd` (aka args->write_fd) concurrently? Is it safe to close it here without synchronization?
+
+570:8-570:21
+Tue Oct 13 16:23:12 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1f30ba11_4b2eedc8
+UUID: bfb7aeb4_f6cfeeb0
+Bytes: 422
+Hmm you're absolutely right, thanks! I'd love to properly exit the stdin read thread before this point but it seems tricky to do portably since afaik Windows doesn't have signals to interrupt reads and can't use select() on stdin.
+
+For now I think I'll just leave this FD open, which isn't great, but seems to be the current behavior for interactive `adb shell`. I'll have to take some time and revisit this in another CL.
 
 File: adb/shell_service.cpp
 
@@ -42,6 +68,14 @@ UUID: ff32061b_750f50b5
 Bytes: 226
 Naive question: why do you need to call shutdown(SHUT_WR) here if close() will be called in a moment anyway? I thought that shutdown(SHUT_WR) is typically only useful if you're going to read()/recv() before close()'ing the fd.
 
+511:24-511:70
+Tue Oct 13 16:23:12 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_750f50b5
+UUID: 1f30ba11_916e662c
+Bytes: 256
+This code is device-side only, doing exactly as you describe; this closes the subprocess stdin FD, but leaves stdout and stderr open so that the subprocess can continue to spit out data if necessary. I only close the entire FD if the shutdown() call fails.
+
 File: adb/sysdeps.h
 
 491:23-491:58
@@ -50,6 +84,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ff32061b_c7b9521e
 Bytes: 113
 Thanks, I've been thinking of adding this too. This is what should have been there originally in the first place.
+
+491:23-491:58
+Tue Oct 13 16:23:12 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_c7b9521e
+UUID: 3fa3be81_b2873e4f
+Bytes: 188
+Sorry to disappoint, I'm only defining it for Linux at the moment :( I only need this on the device side for this CL and didn't want to worry about any Windows stuff that I didn't have to.
 
 File: adb/sysdeps_win32.cpp
 
@@ -99,4 +141,12 @@ The idea is to use the original size for pipes & files and only do this weirdnes
 Please feel free to edit my suggestion as you like (i.e. you don't need to use my exact text, you can combine, edit, etc.). Thanks.
 
 P.S. I don't envy your test matrix. :)
+
+3273:0-3275:13
+Tue Oct 13 16:23:12 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: df39c202_34266886
+UUID: bfb7aeb4_a1d7f221
+Bytes: 57
+Will do, thanks! Really appreciate you looking into this.
 

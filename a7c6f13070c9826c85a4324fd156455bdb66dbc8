@@ -34,6 +34,31 @@ this stdin loop will hit the end of input and close the FD before all the return
 
 Neither option is ideal but IMO it's better to be predictable and cumbersome than sometimes work and sometimes silently drop data.
 
+457:12-460:13
+Tue Oct 13 20:56:28 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7fa9b65d_bf1ce77e
+UUID: 9fae6a64_a0ee06e0
+Bytes: 1301
+Given your cat example, why not do a socket half-close with shutdown(SHUT_WR), since that's what it was designed for? And as you've explained, you're already doing that in adbd? In other words:
+
+if (args->protocol) {
+  // This method would send some protocol msg to cause
+  // adbd to do shutdown(fd, SHUT_WR) so that the subprocess
+  // would get read()==0, but the subprocess would still
+  // be able to write, and adbd would still be able to read from
+  // the subprocess.
+  args->protocol->Close(ShellProtocol::kIdStdin); // this is basically already what you're doing
+} else {
+  // cause the other side to see recv()==0, but the other side
+  // can still write to the fd.
+  shutdown(args->write_fd, SHUT_WR);
+}
+
+Though one problem I see with this is that I've recently found that on Windows, if the adb client does close(sock) or shutdown(sock, SHUT_WR) before the adb server, the client socket stays in TIME_WAIT and eventually the adb client will run out of free ports and it will be unable to connect to the adb server until TIME_WAIT expires. I've got a code review to solve this for a variety of places in adb, but adding the shutdown() above might break my fix, but it still might be preferable to do the shutdown() call anyway since it will make 'adb shell echo hello' not hang.
+
+Thoughts?
+
 570:8-570:21
 Mon Oct 12 23:00:36 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,6 +75,16 @@ Bytes: 422
 Hmm you're absolutely right, thanks! I'd love to properly exit the stdin read thread before this point but it seems tricky to do portably since afaik Windows doesn't have signals to interrupt reads and can't use select() on stdin.
 
 For now I think I'll just leave this FD open, which isn't great, but seems to be the current behavior for interactive `adb shell`. I'll have to take some time and revisit this in another CL.
+
+570:8-570:21
+Tue Oct 13 20:56:28 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfb7aeb4_f6cfeeb0
+UUID: 9fae6a64_804c2ab3
+Bytes: 386
+Does it really make sense to have this thread cause the stdin_read_thread to exit? Or does it make more sense for this thread to wait for the stdin_read_thread to exit? The latter is not too hard to do cross-platform (basically, pthread_join on *nix, and WaitForSingleObject(thread_handle) on Windows).
+
+But yeah, I don't see this as super-critical, so fine to leave it for another day.
 
 File: adb/shell_service.cpp
 
@@ -75,6 +110,14 @@ Parent: ff32061b_750f50b5
 UUID: 1f30ba11_916e662c
 Bytes: 256
 This code is device-side only, doing exactly as you describe; this closes the subprocess stdin FD, but leaves stdout and stderr open so that the subprocess can continue to spit out data if necessary. I only close the entire FD if the shutdown() call fails.
+
+511:24-511:70
+Tue Oct 13 20:56:28 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1f30ba11_916e662c
+UUID: 9fae6a64_40563243
+Bytes: 30
+Ah, ok, thanks for explaining.
 
 File: adb/sysdeps.h
 

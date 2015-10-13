@@ -1,0 +1,39 @@
+Revision: 701d62e394ccb9f8a0d0b38b6d7b630acef7b878
+Patch-set: 4
+File: liblog/logprint.c
+
+987
+Tue Oct 13 16:09:22 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df39c202_cf41696f
+Bytes: 178
+Seems like it would be better to drop the "const" from the prototype rather than force-dropping it via the cast. The caller then is explicitly aware that entry might be modified.
+
+1019:27-1019:28
+Tue Oct 13 16:09:22 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfb7aeb4_568d9a75
+Bytes: 88
+This eclipses the "AndroidLogEntry *e" declared at 987. Can you use a unique local name?
+
+1264:4-1266:5
+Tue Oct 13 16:09:22 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5fa8725b_f808396b
+Bytes: 69
+Should this be done in the caller so we can keep the "const" promise?
+
+File: logcat/logcat.cpp
+
+174
+Tue Oct 13 16:09:22 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f30ba11_719c82aa
+Bytes: 179
+Do the conversion here?
+
+    if (g_logformat->monotonic_output) {
+        convertMonotonic(entry);
+    }
+    bytesWritten = android_log_printLogLine(g_logformat, g_outFD, &entry);
+

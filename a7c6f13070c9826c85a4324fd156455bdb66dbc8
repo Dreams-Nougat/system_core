@@ -34,6 +34,14 @@ UUID: ff32061b_27abdec7
 Bytes: 175
 Just a reminder to test this error case. I found that (on Windows at least), shutdown() returned an error when the socket was no longer connected, which somewhat surprised me.
 
+511:24-511:70
+Tue Oct 13 03:20:11 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_27abdec7
+UUID: ff32061b_750f50b5
+Bytes: 226
+Naive question: why do you need to call shutdown(SHUT_WR) here if close() will be called in a moment anyway? I thought that shutdown(SHUT_WR) is typically only useful if you're going to read()/recv() before close()'ing the fd.
+
 File: adb/sysdeps.h
 
 491:23-491:58

@@ -62,3 +62,33 @@ UUID: df39c202_c9e4c904
 Bytes: 50
 Let me look into this further and get back to you.
 
+3273:0-3275:13
+Tue Oct 13 02:10:22 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: df39c202_c9e4c904
+UUID: df39c202_34266886
+Bytes: 1475
+Ok, here's what I've learned: On Windows 7, reading from a console uses the LPC subsystem of Windows which happens to use a 64k "heap" which is chopped up for IO operations. In practice, 31366 bytes seems to be the max allowed size. 16384 would probably be fine to use, but I don't see any point: a conservative 4096 is fine since a larger value doesn't buy us anything since this is just console IO.
+
+Windows 10 doesn't seem to have this issue since they rewrote the console stuff. I didn't try Vista or Win8 and I think for simplification purposes it is fine to use the same size on all Windows versions.
+
+I do have one suggestion to make: instead of if (fd == STDIN..., how about something like:
+
+// Check if this is a console. This may also catch devices like NUL, but
+// that is ok as we just want to avoid pipes and files which don't need
+// size limiting. This isatty() test is very simple and quick
+// and doesn't call the OS.
+if (isatty(fd)) {
+  // On older versions of Windows (definitely 7, definitely not 10),
+  // ReadConsole() with a size >= 31367 fails, so limit the read size.
+  if (len > 4096) {
+    len = 4096;
+  }
+}
+
+The idea is to use the original size for pipes & files and only do this weirdness for consoles (and corner cases that isatty() gets wrong, but that aren't important).
+
+Please feel free to edit my suggestion as you like (i.e. you don't need to use my exact text, you can combine, edit, etc.). Thanks.
+
+P.S. I don't envy your test matrix. :)
+

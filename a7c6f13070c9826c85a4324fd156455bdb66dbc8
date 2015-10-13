@@ -86,6 +86,14 @@ Does it really make sense to have this thread cause the stdin_read_thread to exi
 
 But yeah, I don't see this as super-critical, so fine to leave it for another day.
 
+570:8-570:21
+Tue Oct 13 23:04:41 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9fae6a64_804c2ab3
+UUID: ff32061b_0d1cf434
+Bytes: 146
+I think my comment about waiting for stdin_read_thread is too naive because sometimes the command finishes, but stdin is still open. So ignore me.
+
 File: adb/shell_service.cpp
 
 511:24-511:70

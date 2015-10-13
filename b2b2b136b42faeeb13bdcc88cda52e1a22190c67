@@ -1,0 +1,11 @@
+Revision: b2b2b136b42faeeb13bdcc88cda52e1a22190c67
+Patch-set: 2
+File: logd/LogStatistics.h
+
+408:33-408:34
+Tue Oct 13 20:42:06 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7f2b7617_3b1ddf79
+Bytes: 52
+The rename from e to element is in another CL <sigh>
+

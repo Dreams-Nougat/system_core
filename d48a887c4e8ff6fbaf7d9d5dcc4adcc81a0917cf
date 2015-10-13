@@ -1,0 +1,11 @@
+Revision: d48a887c4e8ff6fbaf7d9d5dcc4adcc81a0917cf
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+100
+Tue Oct 13 16:21:38 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dfb462b2_c2d9c67e
+Bytes: 50
+does this compile? Should it be "e->getDropped()"?
+

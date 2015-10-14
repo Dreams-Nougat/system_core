@@ -1,0 +1,11 @@
+Revision: 2baded4bbcf80c3de931d979a8a594324f733516
+Patch-set: 1
+File: libcutils/tests/MemsetTest.cpp
+
+130
+Wed Oct 14 20:25:11 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfb7aeb4_e435f375
+Bytes: 68
+maybe use std::vector as a guard? instead of explicit new[]/delete[]
+

@@ -71,6 +71,18 @@ In a sense I'm using the shell protocol check to see if the device knows how to 
 
 Let me know if this is unclear or still seems incorrect and I'll dig a bit deeper, but in my testing so far this seems to be the case.
 
+457:12-460:13
+Wed Oct 14 00:59:41 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dfb462b2_651821c1
+UUID: 7fa9b65d_07012d84
+Bytes: 382
+Ah, ok, so backcompat is a big reason. That makes sense.
+
+Zero-length message sounds ok (it also happens to be better for the Windows TIME_WAIT issue), though maybe a 'real' message would be even better on the off chance that a zero-length message is sent accidentally. But I'll leave that sort of thing for you guys to decide.
+
+Thanks for discussing this with me, I'm satisfied. :)
+
 570:8-570:21
 Mon Oct 12 23:00:36 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

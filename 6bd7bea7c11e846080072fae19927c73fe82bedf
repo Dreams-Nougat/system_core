@@ -1,0 +1,43 @@
+Revision: 6bd7bea7c11e846080072fae19927c73fe82bedf
+Patch-set: 2
+File: metricsd/constants.h
+
+28:18-28:33
+Wed Oct 14 22:39:03 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df39c202_60bf870e
+Bytes: 13
+still in use?
+
+File: metricsd/metrics_daemon.cc
+
+162:2-162:33
+Wed Oct 14 22:39:03 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df39c202_608dc776
+Bytes: 136
+would this make more sense in the intialization? You are basically re-reading all the osrelease properties every time you get a request?
+
+164:3-164:7
+Wed Oct 14 22:39:03 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f30ba11_181c3235
+Bytes: 40
+you have a using std::string at the top.
+
+165:2-165:18
+Wed Oct 14 22:39:03 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fa9b65d_3686d816
+Bytes: 44
+this can fail, so your string will be empty.
+
+File: metricsd/uploader/system_profile_cache.cc
+
+95:2-95:8
+Wed Oct 14 22:39:03 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3fa3be81_76ac510f
+Bytes: 18
+same applies here.
+

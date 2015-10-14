@@ -11,3 +11,15 @@ system/core/libcutils/tests/MemsetTest.cpp:164:3: warning: 'delete' applied to a
 
 Consider using unique_ptr<uintN_t[]>.
 
+163:0-164:13
+Wed Oct 14 21:09:24 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff8686d4_04e4b88f
+UUID: bfb7aeb4_dfbd16ef
+Bytes: 102
+See CL:
+
+https://android-review.googlesource.com/#/c/175888/
+
+which implements the unique_ptr variant.
+

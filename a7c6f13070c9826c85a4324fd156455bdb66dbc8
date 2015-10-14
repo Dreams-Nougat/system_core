@@ -59,6 +59,18 @@ Though one problem I see with this is that I've recently found that on Windows, 
 
 Thoughts?
 
+457:12-460:13
+Wed Oct 14 00:05:18 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9fae6a64_a0ee06e0
+UUID: dfb462b2_651821c1
+Bytes: 711
+The problem is that adbd has to know to close only the subprocess stdin, which is only available with code added in this CL. I don't think there's any way to get around this just by changing client or server code, because for existing devices as soon as a read() returns 0 it will close the whole FD immediately.
+
+In a sense I'm using the shell protocol check to see if the device knows how to close just stdin. If so, either a 0-length message or shutdown(SHUT_WR) could probably be used to trigger this condition, but the explicit 0-length message requires much less logic.
+
+Let me know if this is unclear or still seems incorrect and I'll dig a bit deeper, but in my testing so far this seems to be the case.
+
 570:8-570:21
 Mon Oct 12 23:00:36 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -93,6 +105,14 @@ Parent: 9fae6a64_804c2ab3
 UUID: ff32061b_0d1cf434
 Bytes: 146
 I think my comment about waiting for stdin_read_thread is too naive because sometimes the command finishes, but stdin is still open. So ignore me.
+
+570:8-570:21
+Wed Oct 14 00:05:18 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_0d1cf434
+UUID: dfb462b2_45439d27
+Bytes: 118
+Yeah I was just about to mention that :) Unfortunately you're right either the subprocess or stdin could finish first.
 
 File: adb/shell_service.cpp
 

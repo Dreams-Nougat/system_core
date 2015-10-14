@@ -1,0 +1,18 @@
+Revision: ba967724789320053abaf90b1ea28af81831bce8
+Patch-set: 2
+File: adb/commandline.cpp
+
+466:8-488:9
+Wed Oct 14 23:38:22 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fa9b65d_76d45079
+Bytes: 155
+Do you want to apply these code to check the pipe input in `cat somefile | adb shell cat`? I don't know who need these code. Maybe we can try to remove it.
+
+524:0-526:18
+Wed Oct 14 23:38:22 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df39c202_fbd348e6
+Bytes: 184
+In adb, the main thread can't control when child threads dead. I think that costs much effort and has little benefits. After all, every resource is released when the main thread exits.
+

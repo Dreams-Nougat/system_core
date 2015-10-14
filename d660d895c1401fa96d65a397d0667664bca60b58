@@ -1,0 +1,13 @@
+Revision: d660d895c1401fa96d65a397d0667664bca60b58
+Patch-set: 3
+File: libcutils/tests/MemsetTest.cpp
+
+163:0-164:13
+Wed Oct 14 18:44:10 2015 +0000
+Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff8686d4_04e4b88f
+Bytes: 211
+system/core/libcutils/tests/MemsetTest.cpp:164:3: warning: 'delete' applied to a pointer that was allocated with 'new[]'; did you mean 'delete[]'? [-Wmismatched-new-delete]
+
+Consider using unique_ptr<uintN_t[]>.
+

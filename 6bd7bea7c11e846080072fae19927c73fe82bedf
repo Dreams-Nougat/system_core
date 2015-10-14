@@ -32,6 +32,14 @@ UUID: 7fa9b65d_3686d816
 Bytes: 44
 this can fail, so your string will be empty.
 
+165:2-165:18
+Wed Oct 14 22:47:55 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7fa9b65d_3686d816
+UUID: 1f30ba11_b8a6e62a
+Bytes: 178
+could set `version = kDefaultVersion` in the declaration, so that it will at least get a default stub version.  Would probably be good to LOG(ERROR) in the fail case too, though.
+
 File: metricsd/uploader/system_profile_cache.cc
 
 95:2-95:8

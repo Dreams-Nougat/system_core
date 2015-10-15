@@ -9,6 +9,14 @@ UUID: 1959ba73_830aa435
 Bytes: 63
 It seems like \n~~~~~~~~~. matches since there is no else case?
 
+482:20-482:26
+Thu Oct 15 23:38:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1959ba73_830aa435
+UUID: b9550e3b_605b08e1
+Bytes: 215
+Yup just tested it you're right. Probably not a big deal, I didn't change any of this logic so I think that's how it's always been. I'll try to remember to clean this up next time I touch this file though, thanks :)
+
 488:20-488:21
 Thu Oct 15 23:33:39 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

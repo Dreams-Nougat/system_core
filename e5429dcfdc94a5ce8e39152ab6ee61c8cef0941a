@@ -1,0 +1,11 @@
+Revision: e5429dcfdc94a5ce8e39152ab6ee61c8cef0941a
+Patch-set: 2
+File: adb/file_sync_client.cpp
+
+90:8-90:22
+Thu Oct 15 23:21:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f9bdc694_f5160316
+Bytes: 168
+If we couldn't send the quit message, we don't know what state the server is in, so we don't want to try waiting for it to close the server socket because it might not.
+

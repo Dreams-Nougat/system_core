@@ -1,0 +1,33 @@
+Revision: f9843ae79c7c6691d0f0695d95c546d54fa5b070
+Patch-set: 1
+File: adb/adb_io.h
+
+57
+Thu Oct 15 20:28:17 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d952c250_3ea131d0
+Bytes: 150
+Maybe describe return value here too? This returns true iff the server closed its side of the connection without sending any additional data, correct?
+
+File: adb/commandline.cpp
+
+580:12-580:26
+Thu Oct 15 20:28:17 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1959ba73_5dc7cf75
+Bytes: 413
+In shell_service.cpp I have a helper class ScopedFd that will automatically close an FD when the object goes out of scope.
+
+It could be useful here, though more than likely there are other places in this file that have this same pattern so it would probably be better to more methodically apply it to the file in another CL if we want to go that way. Feel free to ignore this, just wanted to mention the option :)
+
+File: adb/test_adb.py
+
+182:0-183:56
+Thu Oct 15 20:28:17 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99ae8a64_7a6441d7
+Bytes: 455
+Not a big deal but I'd recommend to either save the output to a variable and check it in test_emu_kill() or pass in the expected output to this function. That way the command input and expected output are defined close together in test_emu_kill to make the test more obvious.
+
+Side question: if assertEqual() fails here in a spawned thread does it in fact fail the test? I've never tried this but a quick Google search seems to indicate that it might not.
+

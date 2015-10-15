@@ -1,0 +1,18 @@
+Revision: 1ed57f0dc333c0bc0800e222c569cca8a71deb89
+Patch-set: 3
+File: adb/commandline.cpp
+
+482:20-482:26
+Thu Oct 15 23:33:39 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1959ba73_830aa435
+Bytes: 63
+It seems like \n~~~~~~~~~. matches since there is no else case?
+
+488:20-488:21
+Thu Oct 15 23:33:39 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99f12aa5_977f6ede
+Bytes: 93
+It seems like \n.............~. (or even \n.....~~~~~~.) matches since there is no else case?
+

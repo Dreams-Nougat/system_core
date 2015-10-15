@@ -27,6 +27,14 @@ UUID: df39c202_1bfb8cdb
 Bytes: 148
 Thanks for explanation. It would be better to me if you can add some comment for these code and enable the special check only for interactive shell.
 
+466:8-488:9
+Thu Oct 15 21:29:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: df39c202_1bfb8cdb
+UUID: 99ae8a64_c68a421d
+Bytes: 107
+Thanks for pointing this out, you're right, to match SSH this should only be done for PTY shells. Will fix.
+
 524:0-526:18
 Wed Oct 14 23:38:22 2015 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

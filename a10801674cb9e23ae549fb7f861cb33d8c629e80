@@ -38,3 +38,11 @@ I see at least one problem: service_to_fd() runs reverse_service() in a new thre
 
 I found this when trying to run a unittest I'm writing to test adb forward/reverse (to test some other random change I'm working on).
 
+236:12-236:46
+Thu Oct 15 03:53:48 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff32061b_e055578d
+UUID: bfb7aeb4_1535cfbe
+Bytes: 75
+ah, yes, good point. I will fix it. Maybe we should add more strict checks.
+

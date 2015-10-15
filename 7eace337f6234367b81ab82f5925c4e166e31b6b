@@ -1,0 +1,18 @@
+Revision: 7eace337f6234367b81ab82f5925c4e166e31b6b
+Patch-set: 13
+File: sdcard/sdcard.c
+
+1656
+Thu Oct 15 03:25:08 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7fa9b65d_7c43cf27
+Bytes: 277
+Yeah defining FUSE_TRACE 1 was easier than removing my logging calls to test the values :-P.
+
+Seems fine now with both values of FUSE_TRACE
+
+Same before and after:
+
+$ adb logcat | grep read_package
+10-15 03:17:55.373   704   704 D sdcard  : read_package_list: found 68 packages
+

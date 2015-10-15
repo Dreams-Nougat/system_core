@@ -1,0 +1,11 @@
+Revision: ff013a373d8812db94618b2fd394915d41ca4397
+Patch-set: 12
+File: sdcard/sdcard.c
+
+1658
+Thu Oct 15 03:12:27 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bfb7aeb4_75768b9a
+Bytes: 73
+Drop this. TRACE must get compiled out. So verify and move out of branch.
+

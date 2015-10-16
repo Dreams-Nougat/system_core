@@ -9,3 +9,11 @@ UUID: 19cc5a7c_02bceaee
 Bytes: 190
 I don't see it used anywhere else in adb, and maybe there is a reason for doing it this way (coding guidelines, or old compiler compatibility issues???) but this is what std::replace() does.
 
+324
+Fri Oct 16 17:05:59 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19cc5a7c_02bceaee
+UUID: 79d47637_ad965d16
+Bytes: 29
+No. std::replace() is better.
+

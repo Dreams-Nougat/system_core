@@ -1,0 +1,11 @@
+Revision: 0d4e654034b655275ac2fb318e6bf9ad0e8cbb39
+Patch-set: 3
+File: adb/services.cpp
+
+324
+Fri Oct 16 07:09:01 2015 +0000
+Author: Chris Desjardins <1055704@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19cc5a7c_02bceaee
+Bytes: 190
+I don't see it used anywhere else in adb, and maybe there is a reason for doing it this way (coding guidelines, or old compiler compatibility issues???) but this is what std::replace() does.
+

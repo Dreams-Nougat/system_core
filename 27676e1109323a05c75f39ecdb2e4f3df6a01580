@@ -1,0 +1,13 @@
+Revision: 27676e1109323a05c75f39ecdb2e4f3df6a01580
+Patch-set: 5
+File: fastboot/fastboot.cpp
+
+705
+Sat Oct 17 01:28:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39de7e5b_716a901b
+Bytes: 58
+or just
+
+  return android::base::Split(pSuffixesBuf, "n");
+

@@ -9,3 +9,12 @@ UUID: f9bdc694_f5160316
 Bytes: 168
 If we couldn't send the quit message, we don't know what state the server is in, so we don't want to try waiting for it to close the server socket because it might not.
 
+File: adb/test_adb.py
+
+204:12-204:54
+Mon Oct 19 18:40:19 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79fd56bf_148a225b
+Bytes: 129
+Nit: if we aren't using these values might as well just discard the return value so pylint won't complain about unused variables.
+

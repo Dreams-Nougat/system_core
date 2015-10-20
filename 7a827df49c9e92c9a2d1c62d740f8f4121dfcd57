@@ -1,0 +1,11 @@
+Revision: 7a827df49c9e92c9a2d1c62d740f8f4121dfcd57
+Patch-set: 3
+File: libsparse/simg2img.c
+
+74
+Tue Oct 20 20:55:12 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39111e0a_ad7ab1e8
+Bytes: 76
+lseek returns an off_t, is this going to cause problems on 64-bit platforms?
+

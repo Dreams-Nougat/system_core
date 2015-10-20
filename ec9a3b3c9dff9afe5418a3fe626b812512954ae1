@@ -1,0 +1,25 @@
+Revision: ec9a3b3c9dff9afe5418a3fe626b812512954ae1
+Patch-set: 1
+File: libziparchive/zip_writer.cc
+
+27
+Tue Oct 20 18:45:31 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39de7e5b_cb63d5ce
+Bytes: 71
+why is this required ? I haven't seen it in other places that use zlib.
+
+157
+Tue Oct 20 18:45:31 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9f26ee4_afdad9d3
+Bytes: 23
+unnecessary blank line.
+
+372
+Tue Oct 20 18:45:31 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 99f3ea1a_985d6d0b
+Bytes: 106
+this seems like an unrelated change. you might want to split this out or mention it in the commit message.
+

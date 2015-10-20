@@ -1,0 +1,13 @@
+Revision: 4f2c128aab1fd6b40fb707ff99f92bb016a4efa0
+Patch-set: 2
+File: libsparse/simg2img.c
+
+74
+Tue Oct 20 14:36:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39de7e5b_20e6f049
+Bytes: 146
+luckily, SEEK_SET == 0, so this worked anyway. but we should still fix it.
+
+while we're here, we should add the missing check that lseek succeeds.
+

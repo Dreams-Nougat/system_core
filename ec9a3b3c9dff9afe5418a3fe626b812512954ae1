@@ -9,6 +9,18 @@ UUID: 39de7e5b_cb63d5ce
 Bytes: 71
 why is this required ? I haven't seen it in other places that use zlib.
 
+27
+Tue Oct 20 19:40:49 2015 +0000
+Author: Adam Lesinski <1043034@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39de7e5b_cb63d5ce
+UUID: d90802ae_88b82c18
+Bytes: 423
+This was in the original AAPT zip writing code.
+
+We use the deflateInit2 function so that we can tell zlib not to include zlib header information when compressing data. This also forces us to manually specify some default parameters.
+
+The docs specify that memLevel=8 is the default, but it doesn't provide a constant definition. zutil.h provides this, but it is not part of the zlib project. It is a linux specific header.
+
 157
 Tue Oct 20 18:45:31 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +28,26 @@ UUID: b9f26ee4_afdad9d3
 Bytes: 23
 unnecessary blank line.
 
+157
+Tue Oct 20 19:40:49 2015 +0000
+Author: Adam Lesinski <1043034@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9f26ee4_afdad9d3
+UUID: b9ec2e3d_8b60700e
+Bytes: 4
+Done
+
 372
 Tue Oct 20 18:45:31 2015 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 99f3ea1a_985d6d0b
 Bytes: 106
 this seems like an unrelated change. you might want to split this out or mention it in the commit message.
+
+372
+Tue Oct 20 19:40:49 2015 +0000
+Author: Adam Lesinski <1043034@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 99f3ea1a_985d6d0b
+UUID: 79d47637_4a7fd264
+Bytes: 4
+Done
 

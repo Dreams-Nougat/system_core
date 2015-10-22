@@ -39,6 +39,20 @@ UUID: d953a2fb_d9f427f6
 Bytes: 244
 The old code was just calling fatal() here, but I didn't think that was appropriate for a general library like libbase. A bool is probably better and that's what Chromium's similar APIs return (though Chromium also has APIs that ignore errors).
 
+56:0-58:64
+Thu Oct 22 18:28:07 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194a9a42_2cd16f56
+Bytes: 122
+If I'm reading it right, according to http://en.cppreference.com/w/cpp/string/basic_string this is guaranteed as of C++11.
+
+62:0-65:3
+Thu Oct 22 18:28:07 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9618ebd_91ec4c7b
+Bytes: 313
+As I understand it this should never happen since WideCharToMultiByte() will return the same value on both calls, but if we're going to check this case anyway, perhaps this should be a fatal() if result > chars_required since that would indicate that we probably just corrupted some memory with a buffer overflow.
+
 71:5-71:67
 Thu Oct 22 08:45:47 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

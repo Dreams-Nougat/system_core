@@ -18,3 +18,13 @@ UUID: d6661112_bb35f39d
 Bytes: 68
 Weird, how did we all test this? Did they just add -Werror -Wunused?
 
+1640:4-1640:13
+Thu Oct 22 22:58:42 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6661112_bb35f39d
+UUID: 56a1415d_7f466bee
+Bytes: 153
+I guess I borked the rebase when they dropped the loop I left the counter. I still don't get how this compiled and worked for me....
+
+Good catch, thanks.
+

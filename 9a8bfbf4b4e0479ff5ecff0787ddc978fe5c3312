@@ -1,0 +1,78 @@
+Revision: 9a8bfbf4b4e0479ff5ecff0787ddc978fe5c3312
+Patch-set: 2
+File: base/Android.mk
+
+26:8-26:15
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f935c6bb_5808296b
+Bytes: 135
+Instead of using these *_windows_* variables, I could instead just put the contents of the file under #ifdef _WIN32. I'm open to ideas.
+
+File: base/u8.cpp
+
+28:5-28:15
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3942fe30_9fa0c3cd
+Bytes: 145
+These WideToUTF8 and UTF8ToWide functions are based on the widen()/narrow() functions from sysdeps_win32.cpp with some changes, elaborated below.
+
+31:2-31:18
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19337ad8_d90b3faa
+Bytes: 63
+The unittest found that the old code wasn't handling this case.
+
+42:4-42:24
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194a9a42_ac2b9fb8
+Bytes: 115
+The unittest found that the old code wasn't returning an error in some invalid char situations. This improves that.
+
+50:4-50:17
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d953a2fb_d9f427f6
+Bytes: 244
+The old code was just calling fatal() here, but I didn't think that was appropriate for a general library like libbase. A bool is probably better and that's what Chromium's similar APIs return (though Chromium also has APIs that ignore errors).
+
+71:5-71:67
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 59725292_8860a70e
+Bytes: 99
+The old code was passing -1 to WideCharToMultiByte(), but that just made the code more complicated.
+
+90:58-90:78
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d953a2fb_f9f9ebec
+Bytes: 95
+The old code passed 0 here, but the unittest found that this flag is better to identify errors.
+
+File: base/u8_test.cpp
+
+146:4-148:51
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194a9a42_ec25a7e2
+Bytes: 49
+This is a change I made to the Chromium unittest.
+
+187:0-187:22
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9618ebd_c67a8cea
+Bytes: 64
+This is another change I made to the original Chromium unittest.
+
+212:4-214:51
+Thu Oct 22 08:45:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3942fe30_dfaa4bab
+Bytes: 64
+This is another change I made to the original Chromium unittest.
+

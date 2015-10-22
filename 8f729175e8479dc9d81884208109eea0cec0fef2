@@ -1,0 +1,12 @@
+Revision: 8f729175e8479dc9d81884208109eea0cec0fef2
+Patch-set: 14
+File: sdcard/sdcard.c
+
+1640:4-1640:13
+Thu Oct 22 22:31:02 2015 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6d4f5d4_b403aedd
+Bytes: 105
+system/core/sdcard/sdcard.c:1640:12: error: unused variable 'i' [-Werror,-Wunused-variable]
+    size_t i;
+

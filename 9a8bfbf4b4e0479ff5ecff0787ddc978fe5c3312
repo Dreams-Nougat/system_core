@@ -9,6 +9,17 @@ UUID: f935c6bb_5808296b
 Bytes: 135
 Instead of using these *_windows_* variables, I could instead just put the contents of the file under #ifdef _WIN32. I'm open to ideas.
 
+File: base/file.cpp
+
+40:0-41:17
+Thu Oct 22 23:08:23 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16d269e7_75ed42ba
+Bytes: 584
+So on Windows these functions will always do the conversion, right? What I've read seems to indicate that the conversions are fairly expensive, do you think it's important to make this optional or add a check to these two functions to see if the conversion is necessary first? (Or maybe it's always necessary on Windows?)
+
+My instinct is that it's probably fine as-is, I don't think anyone is going to be opening or deleting files in a tight enough loop to make performance matter, just wanted to mention it since I am pretty clueless about what else uses these functions besides adb.
+
 File: base/u8.cpp
 
 28:5-28:15
@@ -68,6 +79,18 @@ Parent: b9618ebd_91ec4c7b
 UUID: 166d09ed_1da977fd
 Bytes: 436
 My thinking is that in reality the return value doesn't even need to be checked (since flags are already checked, invalid chars are already checked, size is already checked, etc.), but check it anyway for defensive programming (for anything unexpected). I'm By Design not doing CHECK/LOG(FATAL) here since it seems like that should be up to the caller instead of a base library. After all, who knows where they're getting their strings.
+
+62:0-65:3
+Thu Oct 22 23:08:23 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 166d09ed_1da977fd
+UUID: 16d269e7_f554d237
+Bytes: 765
+In general I agree returning an error is much better than dying. But the caller here has no way to know that this specific event occurred. There's a world of difference between "the conversion failed" and "the conversion failed and we may have corrupted some of your program's memory".
+
+If result > chars_required the program will hopefully have segfaulted already anyway, so exiting from the library is already a possibility. Adding a fatal() just makes it certain, to reduce randomness and prevent some poor programmer having to try to debug this if somehow it does come up.
+
+As you say, this will almost certainly never happen, so if nobody else cares I'm fine leaving this as-is, but IMO as long as we're defensive programming we might as well go all the way :)
 
 71:5-71:67
 Thu Oct 22 08:45:47 2015 +0000

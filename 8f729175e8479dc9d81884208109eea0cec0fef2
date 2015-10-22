@@ -10,3 +10,11 @@ Bytes: 105
 system/core/sdcard/sdcard.c:1640:12: error: unused variable 'i' [-Werror,-Wunused-variable]
     size_t i;
 
+1640:4-1640:13
+Thu Oct 22 22:51:52 2015 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6d4f5d4_b403aedd
+UUID: d6661112_bb35f39d
+Bytes: 68
+Weird, how did we all test this? Did they just add -Werror -Wunused?
+

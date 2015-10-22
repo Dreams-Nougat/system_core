@@ -9,6 +9,14 @@ UUID: 194a9a42_e1da10d5
 Bytes: 105
 no point copying obsolete paths into new files (especially in a deprecated style of copyright header) :-)
 
+1
+Thu Oct 22 11:11:18 2015 +0000
+Author: Ljubomir Papuga <1084949@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 194a9a42_e1da10d5
+UUID: 79739694_b544e0e3
+Bytes: 35
+Will be fixed in the next Patch Set
+
 File: libpixelflinger/codeflinger/MIPS64Assembler.cpp
 
 19
@@ -20,6 +28,14 @@ this is very similar to the existing MIPSAssembler.* files --- are you sure you 
 
 (especially because this is 4000 lines in total --- more than twice the size of the [equally copy & pasted] ARM and aarch64 ones.)
 
+19
+Thu Oct 22 11:11:18 2015 +0000
+Author: Ljubomir Papuga <1084949@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19337ad8_fecb89a8
+UUID: 962499a5_36f35857
+Bytes: 97
+We can rework this by inheriting classes from MIPSAssembler files and overriding where necessary.
+
 File: libpixelflinger/scanline.cpp
 
 44
@@ -29,6 +45,14 @@ UUID: b9618ebd_0645642c
 Bytes: 66
 i thought mips64r2 was dead to you now? simplify these conditions?
 
+44
+Thu Oct 22 11:11:18 2015 +0000
+Author: Ljubomir Papuga <1084949@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9618ebd_0645642c
+UUID: 391bde5c_37d9c056
+Bytes: 103
+I will check on that and make changes where applicable (if indeed MIPS64r6 is the only "living" target)
+
 File: libpixelflinger/tests/arch-mips64/assembler/mips64_assembler_test.cpp
 
 452
@@ -37,4 +61,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b956eeeb_4314c60c
 Bytes: 111
 did you consider using gtest instead? that would make it easier to fit these in to automated testing/reporting.
+
+452
+Thu Oct 22 11:11:18 2015 +0000
+Author: Ljubomir Papuga <1084949@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b956eeeb_4314c60c
+UUID: 79739694_f53e5853
+Bytes: 120
+We didn't consider using gtest, as we mimicked ARM tests. If you prefer, we can rewrite the tests using gtest interface.
 

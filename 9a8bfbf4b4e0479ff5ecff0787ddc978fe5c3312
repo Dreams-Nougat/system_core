@@ -46,12 +46,28 @@ UUID: 194a9a42_2cd16f56
 Bytes: 122
 If I'm reading it right, according to http://en.cppreference.com/w/cpp/string/basic_string this is guaranteed as of C++11.
 
+56:0-58:64
+Thu Oct 22 22:00:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 194a9a42_2cd16f56
+UUID: 3675adb9_969c8add
+Bytes: 65
+Yeah, I think this comment doesn't add anything, so I'll kill it.
+
 62:0-65:3
 Thu Oct 22 18:28:07 2015 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b9618ebd_91ec4c7b
 Bytes: 313
 As I understand it this should never happen since WideCharToMultiByte() will return the same value on both calls, but if we're going to check this case anyway, perhaps this should be a fatal() if result > chars_required since that would indicate that we probably just corrupted some memory with a buffer overflow.
+
+62:0-65:3
+Thu Oct 22 22:00:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9618ebd_91ec4c7b
+UUID: 166d09ed_1da977fd
+Bytes: 436
+My thinking is that in reality the return value doesn't even need to be checked (since flags are already checked, invalid chars are already checked, size is already checked, etc.), but check it anyway for defensive programming (for anything unexpected). I'm By Design not doing CHECK/LOG(FATAL) here since it seems like that should be up to the caller instead of a base library. After all, who knows where they're getting their strings.
 
 71:5-71:67
 Thu Oct 22 08:45:47 2015 +0000

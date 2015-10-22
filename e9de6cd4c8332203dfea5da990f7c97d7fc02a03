@@ -1,0 +1,40 @@
+Revision: e9de6cd4c8332203dfea5da990f7c97d7fc02a03
+Patch-set: 2
+File: libpixelflinger/arch-mips/col32cb16blend.S
+
+1
+Thu Oct 22 01:44:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 194a9a42_e1da10d5
+Bytes: 105
+no point copying obsolete paths into new files (especially in a deprecated style of copyright header) :-)
+
+File: libpixelflinger/codeflinger/MIPS64Assembler.cpp
+
+19
+Thu Oct 22 01:44:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 19337ad8_fecb89a8
+Bytes: 242
+this is very similar to the existing MIPSAssembler.* files --- are you sure you don't want to share more code?
+
+(especially because this is 4000 lines in total --- more than twice the size of the [equally copy & pasted] ARM and aarch64 ones.)
+
+File: libpixelflinger/scanline.cpp
+
+44
+Thu Oct 22 01:44:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b9618ebd_0645642c
+Bytes: 66
+i thought mips64r2 was dead to you now? simplify these conditions?
+
+File: libpixelflinger/tests/arch-mips64/assembler/mips64_assembler_test.cpp
+
+452
+Thu Oct 22 01:44:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b956eeeb_4314c60c
+Bytes: 111
+did you consider using gtest instead? that would make it easier to fit these in to automated testing/reporting.
+

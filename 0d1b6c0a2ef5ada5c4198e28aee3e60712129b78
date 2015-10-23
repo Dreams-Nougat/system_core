@@ -1,0 +1,38 @@
+Revision: 0d1b6c0a2ef5ada5c4198e28aee3e60712129b78
+Patch-set: 4
+File: adb/sysdeps_win32.cpp
+
+3512
+Fri Oct 23 00:18:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3675adb9_fc0b5d65
+Bytes: 103
+how many callers are there of these? should we just rewrite them to use UTF8ToWide/WideToUTF8 directly?
+
+File: base/include/base/u8.h
+
+17
+Fri Oct 23 00:18:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56a1415d_c290064a
+Bytes: 59
+why u8 rather than utf8? (for the files and the namespace.)
+
+59
+Fri Oct 23 00:18:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6661112_7eed09ba
+Bytes: 263
+why don't we want to be able to just #include this file and have open et cetera just work, even on Windows? shouldn't the 'using's be in this file? (and if the reason is that we want the "wide" functions independently, let's just move them into their own header.)
+
+File: base/u8.cpp
+
+38
+Fri Oct 23 00:18:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f66f95e4_a2e70447
+Bytes: 162
+no, let's definitely not consider anything other than deleting libutils :-)
+
+we really do need to find the time to work on Win32 libc++ though. hopefully in 2016.
+

@@ -25,6 +25,14 @@ UUID: 968019c6_9f8b3f5e
 Bytes: 50
 either's fine, i was just curious about direction.
 
+3512
+Fri Oct 23 05:08:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 968019c6_9f8b3f5e
+UUID: 56a1415d_651b3cbb
+Bytes: 95
+Ok, I'm thinking as a separate commit so that the stuff is broken for a minimal amount of time.
+
 File: base/include/base/u8.h
 
 17
@@ -49,6 +57,14 @@ Parent: b6699de6_3daeb706
 UUID: d6661112_9ed9fd7d
 Bytes: 43
 yeah, u8's too new, man from the future :-)
+
+17
+Fri Oct 23 05:08:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6661112_9ed9fd7d
+UUID: 3675adb9_8749b6a4
+Bytes: 48
+Ok, I'll rename u8 stuff to utf8 in the next PS.
 
 59
 Fri Oct 23 00:18:46 2015 +0000
@@ -80,6 +96,27 @@ UUID: 56a1415d_25c3f46c
 Bytes: 39
 why do we need the anonymous namespace?
 
+59
+Fri Oct 23 05:08:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a1415d_25c3f46c
+UUID: f66f95e4_487e479d
+Bytes: 304
+When I tried:
+
+using android::base::u8::open;
+void SomeFunc() {
+open(...
+
+Building host_cross_libbase_test said:
+
+error: ‘open’ is already declared in this scope
+ using android::base::u8::open;
+                          ^
+Weird, huh? Ideas?
+
+Let me know what you think and I can continue prototyping.
+
 File: base/u8.cpp
 
 38
@@ -108,4 +145,12 @@ Bytes: 188
 very crufty.
 
 the libchrome vs libbase question is an excellent one, and we should really come up with an actual plan on that front, but libutils is definitely something we'd like to kill.
+
+38
+Fri Oct 23 05:08:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a1415d_e5dc2c48
+UUID: 968019c6_4aaf23ba
+Bytes: 52
+Ok, I'll remove it from the comments in the next PS.
 

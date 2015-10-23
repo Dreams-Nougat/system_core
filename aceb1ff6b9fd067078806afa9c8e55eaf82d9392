@@ -1,0 +1,13 @@
+Revision: aceb1ff6b9fd067078806afa9c8e55eaf82d9392
+Patch-set: 2
+File: crash_reporter/crash_sender
+
+471
+Fri Oct 23 20:29:57 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6a371b1_90b3d422
+Bytes: 513
+where did we require/guarantee that |id| and |product| and |exec_name| do not have ' or trailing \ in them ?  we should add a json check func to sanitize & log an error when they're bad.
+
+i don't mean try and blacklist certain behavior like looking for a ' in the middle or a \ at the end -- you get into pathological cases like foo\'bar (which is valid) and bar\\\\ (which is valid).  let's whitelist values with a regex like [[:alnum:]_].  exec_name prob needs to allow through a bit more, but you get the idea.
+

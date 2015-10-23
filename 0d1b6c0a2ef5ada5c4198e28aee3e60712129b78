@@ -117,6 +117,21 @@ Weird, huh? Ideas?
 
 Let me know what you think and I can continue prototyping.
 
+59
+Fri Oct 23 17:55:29 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f66f95e4_487e479d
+UUID: b6699de6_6ba0e9cc
+Bytes: 578
+It makes sense that we can't bring in a second open() function with the same signature to the global namespace, I'm not sure there's any way to override global functions like that unless they are weakly linked.
+
+What about using the preprocessor to reroute open/unlink instead? It's the only way I can think of to automatically replace these functions without requiring the user to be in a namespace, but it may be preferable to stick with namespace + using instead.
+
+  #ifdef _WIN32
+  #define open ::android::base::u8::open
+  #define unlink ::android::base::u8::unlink
+  #endif
+
 File: base/u8.cpp
 
 38

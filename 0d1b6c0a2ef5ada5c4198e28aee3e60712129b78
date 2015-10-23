@@ -193,6 +193,18 @@ https://android.googlesource.com/platform/external/libchrome/+/master/base/strin
 
 So in theory, perhaps one could go hog-wild and kill most of libbase in favor of libchrome. I don't have a horse in the race (and I don't know the real purposes of libbase and libchrome), just sayin'. Probably a Googler with more context around who uses libbase and libchrome could analyze this situation better...
 
+59
+Fri Oct 23 22:58:06 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96df3923_c4869218
+UUID: b6d8bd3b_25757a8b
+Bytes: 545
+Ugh yeah forgot about someone wanting to declare their own thing called open and how the macros would behave. Gross.
+
+Would it be fairly straightforward to go with this "using" technique to get Windows fixed, but rather than re-implementing these 6 conversion functions link libchrome and use the existing functions instead? Or would that also involve bringing in a lot of additional libchrome stuff?
+
+I'm thinking that way we can punt on the larger unification question for now but at least we aren't adding more duplicate code between the two.
+
 File: base/u8.cpp
 
 38

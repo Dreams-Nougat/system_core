@@ -36,6 +36,14 @@ UUID: 962499a5_36f35857
 Bytes: 97
 We can rework this by inheriting classes from MIPSAssembler files and overriding where necessary.
 
+19
+Fri Oct 23 05:31:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 962499a5_36f35857
+UUID: 16d269e7_389b3141
+Bytes: 189
+it's up to you; i don't want to hold you to a higher standard than others have been held to. but given how similar mips and mips64 are i thought you might prefer to not maintain two copies.
+
 File: libpixelflinger/scanline.cpp
 
 44

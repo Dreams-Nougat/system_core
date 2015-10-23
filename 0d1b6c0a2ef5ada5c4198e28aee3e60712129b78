@@ -17,6 +17,14 @@ UUID: 166d09ed_80cbdada
 Bytes: 182
 ~14 callers to widen(), ~8 callers to narrow(). I think it makes sense to rewrite (especially because I like a non-fatal error-path), let me know the timing: in this commit or after?
 
+3512
+Fri Oct 23 04:46:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 166d09ed_80cbdada
+UUID: 968019c6_9f8b3f5e
+Bytes: 50
+either's fine, i was just curious about direction.
+
 File: base/include/base/u8.h
 
 17
@@ -33,6 +41,14 @@ Parent: 56a1415d_c290064a
 UUID: b6699de6_3daeb706
 Bytes: 143
 I think I was influenced by the C++ string literal prefix of 'u8', but it doesn't matter to me. Just give the word and I can change u8 => utf8.
+
+17
+Fri Oct 23 04:46:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6699de6_3daeb706
+UUID: d6661112_9ed9fd7d
+Bytes: 43
+yeah, u8's too new, man from the future :-)
 
 59
 Fri Oct 23 00:18:46 2015 +0000
@@ -56,6 +72,14 @@ void SomeFunction() {...
 
 I can try prototyping that, just give me suggestions on the filenames for the files containing the wide funcs and this file full of "using's".
 
+59
+Fri Oct 23 04:46:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6661112_3e9b1141
+UUID: 56a1415d_25c3f46c
+Bytes: 39
+why do we need the anonymous namespace?
+
 File: base/u8.cpp
 
 38
@@ -74,4 +98,14 @@ Parent: f66f95e4_a2e70447
 UUID: 166d09ed_c032328c
 Bytes: 115
 Ok, so libutils is crufty, I gather? Anyway, let me know if I should edit libutils/Unicode.cpp out of this comment.
+
+38
+Fri Oct 23 04:46:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 166d09ed_c032328c
+UUID: 56a1415d_e5dc2c48
+Bytes: 188
+very crufty.
+
+the libchrome vs libbase question is an excellent one, and we should really come up with an actual plan on that front, but libutils is definitely something we'd like to kill.
 

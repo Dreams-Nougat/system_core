@@ -178,6 +178,21 @@ Stepping back, I see only a few ways to solve the big issues:
 
 I'm open to ideas.
 
+59
+Fri Oct 23 22:27:43 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76dac536_63f4d6f5
+UUID: 96df3923_c4869218
+Bytes: 773
+I forgot to mention that libchrome also has other stuff that libbase provides:
+
+https://android.googlesource.com/platform/external/libchrome/+/master/base/logging.h
+https://android.googlesource.com/platform/external/libchrome/+/master/base/strings/stringprintf.h
+https://android.googlesource.com/platform/external/libchrome/+/master/base/strings/string_split.h
+https://android.googlesource.com/platform/external/libchrome/+/master/base/strings/string_util.h
+
+So in theory, perhaps one could go hog-wild and kill most of libbase in favor of libchrome. I don't have a horse in the race (and I don't know the real purposes of libbase and libchrome), just sayin'. Probably a Googler with more context around who uses libbase and libchrome could analyze this situation better...
+
 File: base/u8.cpp
 
 38

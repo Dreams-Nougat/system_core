@@ -11,3 +11,16 @@ where did we require/guarantee that |id| and |product| and |exec_name| do not ha
 
 i don't mean try and blacklist certain behavior like looking for a ' in the middle or a \ at the end -- you get into pathological cases like foo\'bar (which is valid) and bar\\\\ (which is valid).  let's whitelist values with a regex like [[:alnum:]_].  exec_name prob needs to allow through a bit more, but you get the idea.
 
+471
+Fri Oct 23 23:47:59 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6a371b1_90b3d422
+UUID: 96df3923_c4ccd2c1
+Bytes: 1791
+To clarify, when you say sanitize and whitelist values, are you saying that we should just "filter" out non alnum characters from the log?  So that a product name of "my_product'name\" just gets printed to the log as "myproductname" and logs an error when the filtered name isn't the same as the original?  That would be fine with me and pretty easy to do for just this log file.
+
+But if we're talking about checking the fields across all of crash_sender, including the actual sending of the report in the curl command above, I'm a little against the idea of doing any kind of modifications (other than adding character escapes) in the crash sender code, for several reasons.
+1) Except for ID, which is assigned by the crash server and I thought would always be in [:alnum:], these fields are all controlled by the device manufacturer.  Device users shouldn't be able to modify any of these fields on their device.  Manufacturers *shouldn't* be doing anything ridiculous like adding quotes or a trailing slash.  A trailing slash at least right now, actually is really hard to even accomplish for the fields as I believe it would break the Android build system where the fields are set.  Once we get the product spec/config work going, its also something we should add as a config validation and throw a build time error for invalid settings.
+2) Sending a value other than what was set will prevent the crash report from being directed to the correct project on the crash server.  Some products do have non-[:alnum:] characters.  Our own example applications use both ':' and '-' characters in their product names, for instance.
+3) Other parts of the system (like metrics) use these fields, so we shouldn't modify them (other than character escapes) when dealing with them outside the device.
+

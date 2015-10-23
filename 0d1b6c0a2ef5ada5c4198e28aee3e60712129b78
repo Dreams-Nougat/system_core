@@ -142,6 +142,42 @@ yeah, that's what we have in adb and what i assume spencer's trying to get away 
 
 i wonder how much of this goes away if we delete from libbase  the stuff we can get from libchrome? (iirc our Read/Write functions are a superset of the libchrome ones.)
 
+59
+Fri Oct 23 22:05:40 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96df3923_be3d19f7
+UUID: 76dac536_63f4d6f5
+Bytes: 993
+To use libchrome's base::ReadFileToString(), we'd need to pass it a FilePath object, which uses std::wstring internally on Windows and std::string elsewhere. To get a FilePath object, you can use `static FilePath FilePath::FromUTF8Unsafe(const std::string&)' or just go hog-wild and use FilePath all over the adb codebase.
+
+Let's face it, libchrome has a ton of useful stuff, it just requires the caller to 'get religion' and use its APIs the way they want them to be used. Remember the headaches we had getting mkdirs() to work? libchrome has FilePath and base::CreateDirectory() to solve that in a sec.
+
+So it's up to you guys what direction you want adb/libbase to take: POSIX-y like adb is generally right now, or more platform-neutral with various abstractions from libchrome. There's a lot to consider like what future people working on adb/base will be familiar with, will you be able to fix bugs in libchrome, etc.
+
+Let me know what you guys decide and then I can continue prototyping.
+
+59
+Fri Oct 23 22:05:40 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6699de6_6ba0e9cc
+UUID: 36e4cdf6_4116f663
+Bytes: 1607
+Yeah, it does make sense that you can't bring in a second open() -- that's why adding an anonymous namespace works, because you're importing an open() function into an empty anonymous namespace.
+
+I did the preprocessor tricks in adb's sysdeps.h and although it works, it is somewhat fragile. See what I had to do with #define stat adb_stat for an example. Or the fact that a struct member named open will probably fail to compile with the macros in your comment. Basically, the macro technique is fragile and maybe ok for the scope of a single app (like adb), but I'm hesitant to recommend it for a base library that is potentially used by more code (which I may not even be compiling).
+
+But really the call is up to you guys, I'll go with whatever direction you guys want. My primary goal is just to get adb stable on Windows, so I'm happy to go along with whatever big designs you guys want.
+
+Stepping back, I see only a few ways to solve the big issues:
+
+1. Make new APIs and have everyone call those. This might be android::base::utf8::open(), or it might be libchrome's base::file::OpenFile(const FilePath&), or some other abstraction. Other codebases that I've worked on have gone this route.
+
+2. Let code call open() and use source code tricks (macros or using) to redirect calls to substitutions. This is what adb does right now with macros.
+
+3. Let code call open() and use linker tricks (--wrap or some other symbol overriding technique, I think there is even an __asm() trick that I saw in bionic). I haven't tried this since it seems even more fragile and hard to comprehend.
+
+I'm open to ideas.
+
 File: base/u8.cpp
 
 38

@@ -9,6 +9,14 @@ UUID: 3675adb9_fc0b5d65
 Bytes: 103
 how many callers are there of these? should we just rewrite them to use UTF8ToWide/WideToUTF8 directly?
 
+3512
+Fri Oct 23 00:36:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3675adb9_fc0b5d65
+UUID: 166d09ed_80cbdada
+Bytes: 182
+~14 callers to widen(), ~8 callers to narrow(). I think it makes sense to rewrite (especially because I like a non-fatal error-path), let me know the timing: in this commit or after?
+
 File: base/include/base/u8.h
 
 17
@@ -18,12 +26,35 @@ UUID: 56a1415d_c290064a
 Bytes: 59
 why u8 rather than utf8? (for the files and the namespace.)
 
+17
+Fri Oct 23 00:36:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56a1415d_c290064a
+UUID: b6699de6_3daeb706
+Bytes: 143
+I think I was influenced by the C++ string literal prefix of 'u8', but it doesn't matter to me. Just give the word and I can change u8 => utf8.
+
 59
 Fri Oct 23 00:18:46 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d6661112_7eed09ba
 Bytes: 263
 why don't we want to be able to just #include this file and have open et cetera just work, even on Windows? shouldn't the 'using's be in this file? (and if the reason is that we want the "wide" functions independently, let's just move them into their own header.)
+
+59
+Fri Oct 23 00:36:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6661112_7eed09ba
+UUID: d6661112_3e9b1141
+Bytes: 375
+So your idea is to put "using android::base::u8::open,unlink,etc" in this file? Then the caller would do the following?
+
+namespace { // gotta put your code in a namespace
+#include "base/u8.h"
+void SomeFunction() {...
+} // namespace
+
+I can try prototyping that, just give me suggestions on the filenames for the files containing the wide funcs and this file full of "using's".
 
 File: base/u8.cpp
 
@@ -35,4 +66,12 @@ Bytes: 162
 no, let's definitely not consider anything other than deleting libutils :-)
 
 we really do need to find the time to work on Win32 libc++ though. hopefully in 2016.
+
+38
+Fri Oct 23 00:36:31 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f66f95e4_a2e70447
+UUID: 166d09ed_c032328c
+Bytes: 115
+Ok, so libutils is crufty, I gather? Anyway, let me know if I should edit libutils/Unicode.cpp out of this comment.
 

@@ -205,6 +205,16 @@ Would it be fairly straightforward to go with this "using" technique to get Wind
 
 I'm thinking that way we can punt on the larger unification question for now but at least we aren't adding more duplicate code between the two.
 
+59
+Fri Oct 23 23:10:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d8bd3b_25757a8b
+UUID: b6d8bd3b_a587caa4
+Bytes: 423
+I tried building the target libchrome-host, which required external/libevent and external/modp_b64, but it ended up building for Linux, not Windows. So I tried building the targets host_cross_libchrome-host and host_cross_libchrome, but neither worked.
+
+So it might be a while before I can get libchrome building, hence why I was suggesting that a Googler might be in a better position to integrate in another component. :)
+
 File: base/u8.cpp
 
 38

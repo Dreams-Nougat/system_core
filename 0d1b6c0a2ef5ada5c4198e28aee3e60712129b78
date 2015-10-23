@@ -132,6 +132,16 @@ What about using the preprocessor to reroute open/unlink instead? It's the only 
   #define unlink ::android::base::u8::unlink
   #endif
 
+59
+Fri Oct 23 18:03:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6699de6_6ba0e9cc
+UUID: 96df3923_be3d19f7
+Bytes: 331
+yeah, that's what we have in adb and what i assume spencer's trying to get away from, but it does seem like reality is trying to push us back in that direction.
+
+i wonder how much of this goes away if we delete from libbase  the stuff we can get from libchrome? (iirc our Read/Write functions are a superset of the libchrome ones.)
+
 File: base/u8.cpp
 
 38

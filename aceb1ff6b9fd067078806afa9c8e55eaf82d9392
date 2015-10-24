@@ -24,3 +24,15 @@ But if we're talking about checking the fields across all of crash_sender, inclu
 2) Sending a value other than what was set will prevent the crash report from being directed to the correct project on the crash server.  Some products do have non-[:alnum:] characters.  Our own example applications use both ':' and '-' characters in their product names, for instance.
 3) Other parts of the system (like metrics) use these fields, so we shouldn't modify them (other than character escapes) when dealing with them outside the device.
 
+471
+Sat Oct 24 15:45:54 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96df3923_c4ccd2c1
+UUID: 76880537_2d9bad72
+Bytes: 809
+correct values of |product| are gated by the server.  while the device manuf gets to choose it, it's done so based on the server constraints.  i threw out [:alnum:] as a straw man ... i'm happy to expand it further to include safe values like ".-+_".
+
+when it comes to program names, i don't think the Android build system has such a limitation.  it is possible to override what gets installed such that you end up with arbitrary (if weird/dumb) names in the fs.  further, if a device manuf has the ability to d/l & run arbitrary code (either their own apps or make a way for users to execute code), then the app name is also arbitrary.  we should keep from generating a corrupt json file because of that.
+
+note: the old format had the same problem -- any field containing a , or whitespace would break things
+

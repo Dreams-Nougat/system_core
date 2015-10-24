@@ -215,6 +215,23 @@ I tried building the target libchrome-host, which required external/libevent and
 
 So it might be a while before I can get libchrome building, hence why I was suggesting that a Googler might be in a better position to integrate in another component. :)
 
+59
+Sat Oct 24 00:27:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d8bd3b_a587caa4
+UUID: 96df3923_47bfe499
+Bytes: 789
+Ok, I tried to get libchrome building for Windows:
+
+* I figured out how to use LOCAL_MODULE_HOST_OS to try to get libchrome-host to compile for Windows.
+* I had to remove its dependency on libevent-host since I don't think it uses libevent on Windows.
+* When compiling, it gives an error about #pragma warning being unrecognized. Clearly this code is only designed to compile under Visual Studio when compiling for Windows.
+* The next warning was that -Wno-deprecated-register was unrecognized. Clearly this code is not designed to compile with the current version of gcc used for Windows in AOSP.
+
+So I'm a bit skeptical that libchrome in its current state is really meant to be used by other projects.
+
+Anyway, next week, let me know what you guys think about the overall direction here.
+
 File: base/u8.cpp
 
 38

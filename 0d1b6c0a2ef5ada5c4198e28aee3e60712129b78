@@ -232,6 +232,14 @@ So I'm a bit skeptical that libchrome in its current state is really meant to be
 
 Anyway, next week, let me know what you guys think about the overall direction here.
 
+59
+Mon Oct 26 22:04:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6661112_3e9b1141
+UUID: 76d48537_61b19e19
+Bytes: 222
+There's no need to make a file with a bunch of using statements. Just use "using namespace android::base::utf8;" the same way you'd use "using namespace std;". I'll have an updated PS with this and other improvements soon.
+
 File: base/u8.cpp
 
 38

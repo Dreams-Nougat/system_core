@@ -9,3 +9,11 @@ UUID: 16b509da_69daf1d5
 Bytes: 136
 Is there any chance that this could be really large and cause the stack to overflow? Should you allocate the bytes and use that instead?
 
+175:8-175:43
+Mon Oct 26 16:30:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16b509da_69daf1d5
+UUID: 56e941ce_b0dc6047
+Bytes: 174
+yeah, we have three VLAs here and one in the win32 code. they're all client-side, so no security worries, but i'll have a look in another patch. (i'll check performance too.)
+

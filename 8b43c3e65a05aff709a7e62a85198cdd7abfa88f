@@ -1,0 +1,11 @@
+Revision: 8b43c3e65a05aff709a7e62a85198cdd7abfa88f
+Patch-set: 3
+File: adb/file_sync_client.cpp
+
+175:8-175:43
+Mon Oct 26 15:21:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16b509da_69daf1d5
+Bytes: 136
+Is there any chance that this could be really large and cause the stack to overflow? Should you allocate the bytes and use that instead?
+

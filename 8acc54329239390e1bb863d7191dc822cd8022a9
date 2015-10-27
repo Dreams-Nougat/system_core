@@ -11,10 +11,26 @@ Bytes: 127
 
 same goes for below.
 
+477:26-477:29
+Tue Oct 27 21:48:54 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f69cf575_34469eed
+UUID: f636b56e_0162ea94
+Bytes: 233
+Done.  Apparently it doesn't throw an error, however it was just always just evaluating this case to true and printing the warning, even if the product name wasn't actually filtered.  I just didn't notice in the normal use case logs.
+
 478:6-478:25
 Tue Oct 27 21:33:48 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 56c22158_371db205
 Bytes: 37
 how about creating a `lwarn` helper ?
+
+478:6-478:25
+Tue Oct 27 21:48:54 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56c22158_371db205
+UUID: 16342965_2594d83b
+Bytes: 4
+Done
 

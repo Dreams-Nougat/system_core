@@ -49,3 +49,13 @@ UUID: b640bdd4_3f338792
 Bytes: 112
 Better yet, don't just take my word, just run the adb_test unittest for this (I'm pretty sure I check for this).
 
+574:43-574:44
+Tue Oct 27 21:37:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b640bdd4_3f338792
+UUID: b640bdd4_bf3f974e
+Bytes: 90
+d'oh!
+
+(i still haven't set up my Windows VM again since my physical machine upgrade :-( )
+

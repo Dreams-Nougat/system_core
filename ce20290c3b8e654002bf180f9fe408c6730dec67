@@ -1,0 +1,11 @@
+Revision: ce20290c3b8e654002bf180f9fe408c6730dec67
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+32:0-32:0
+Tue Oct 27 21:02:10 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36f76de3_c3be169d
+Bytes: 25
+Need to include <vector>.
+

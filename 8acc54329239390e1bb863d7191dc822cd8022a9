@@ -1,0 +1,20 @@
+Revision: 8acc54329239390e1bb863d7191dc822cd8022a9
+Patch-set: 3
+File: crash_reporter/crash_sender
+
+477:26-477:29
+Tue Oct 27 21:33:48 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f69cf575_34469eed
+Bytes: 127
+-ne is an integer compare.  i'm surprised this didn't throw an error.  you have to use != string compare.
+
+same goes for below.
+
+478:6-478:25
+Tue Oct 27 21:33:48 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56c22158_371db205
+Bytes: 37
+how about creating a `lwarn` helper ?
+

@@ -1,5 +1,44 @@
 Revision: 128ebd0548d5dd9c7bdf9e529432eed1c981c1d7
 Patch-set: 1
+File: adb/file_sync_client.cpp
+
+187:15-187:30
+Tue Oct 27 23:47:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b640bdd4_c25ba4de
+Bytes: 145
+Can you use ADB_FORMAT_ARCHETYPE (sysdeps.h) or FORMAT_ARCHETYPE (base/stringprintf.h) on the prototype to get the compiler checking of the args?
+
+File: adb/line_printer.cpp
+
+18:0-18:19
+Tue Oct 27 23:47:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76fd65bf_2835c3bc
+Bytes: 115
+I think you'll want to #include <sysdeps.h> here so that printf() really calls adb_printf() which can handle UTF-8.
+
+93:58-93:69
+Tue Oct 27 23:47:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d63d314e_a626b2ed
+Bytes: 124
+This should probably be to_print_wide[i] and earlier do something like "const std::wstring to_print_wide = widen(to_print);"
+
+93:24-93:33
+Tue Oct 27 23:47:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16342965_68fcf769
+Bytes: 36
+This should probably be UnicodeChar.
+
+96:4-96:22
+Tue Oct 27 23:47:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f636b56e_0450b8cc
+Bytes: 149
+If you're changing the code above to unconditionally set Char.UnicodeChar, then this should probably be changed to explicitly be WriteConsoleOutputW.
+
 File: adb/line_printer.h
 
 1

@@ -1,0 +1,11 @@
+Revision: 5be5f0e7468519fc847fef02a36d5dda7be59cde
+Patch-set: 3
+File: adb/sysdeps_win32.cpp
+
+570:4-570:15
+Tue Oct 27 21:53:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 565141a7_9cf3c50d
+Bytes: 45
+if it's quick 'n easy, can you add const? thx
+

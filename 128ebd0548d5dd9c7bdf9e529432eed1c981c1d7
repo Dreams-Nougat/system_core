@@ -1,0 +1,11 @@
+Revision: 128ebd0548d5dd9c7bdf9e529432eed1c981c1d7
+Patch-set: 1
+File: adb/line_printer.h
+
+1
+Tue Oct 27 23:07:08 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36f76de3_c6318427
+Bytes: 22
+(copied out of ninja.)
+

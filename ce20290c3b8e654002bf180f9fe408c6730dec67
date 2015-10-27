@@ -59,3 +59,11 @@ d'oh!
 
 (i still haven't set up my Windows VM again since my physical machine upgrade :-( )
 
+574:43-574:44
+Tue Oct 27 21:43:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b640bdd4_bf3f974e
+UUID: 964739ec_5e3f757e
+Bytes: 359
+Here is a secret to getting Windows VMs quickly going: avoid the whole installation headaches by just downloading these premade VMs from Microsoft: https://dev.modern.ie/tools/vms/windows/ . I used this recently to test my adb_strerror change on WinXP without having to go through a real install. Obviously, check that the license is appropriate for you, etc.
+

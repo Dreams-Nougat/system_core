@@ -32,3 +32,12 @@ UUID: 964739ec_3e1dc92e
 Bytes: 4
 Done
 
+File: adb/sysdeps_win32.cpp
+
+574:43-574:44
+Tue Oct 27 21:36:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76fd65bf_25c4cec5
+Bytes: 80
+This should be != because we want to check if the errmsg is not 'unknown error'.
+

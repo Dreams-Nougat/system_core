@@ -41,3 +41,11 @@ UUID: 76fd65bf_25c4cec5
 Bytes: 80
 This should be != because we want to check if the errmsg is not 'unknown error'.
 
+574:43-574:44
+Tue Oct 27 21:36:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76fd65bf_25c4cec5
+UUID: b640bdd4_3f338792
+Bytes: 112
+Better yet, don't just take my word, just run the adb_test unittest for this (I'm pretty sure I check for this).
+

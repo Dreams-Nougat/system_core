@@ -1,0 +1,11 @@
+Revision: cfaeb18be28a5714c2ed7baebe927125010f859c
+Patch-set: 2
+File: libutils/tests/StrongPointer_test.cpp
+
+40:4-40:13
+Wed Oct 28 23:07:56 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56ab01f0_f2a800fc
+Bytes: 136
+Should probably all be ASSERT_*. We're already in a pretty weird state if any of these fail so the following checks won't be meaningful.
+

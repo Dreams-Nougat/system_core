@@ -30,3 +30,13 @@ maybe it's easier just to move isatty to sysdeps right away, if we've already go
 
 (amusingly, my main reason for taking ninja's LinePrinter rather than just writing the ten lines of code myself was that they seemed to have Windows support and i thought "cool, i'll get Windows for free without having to think about it".)
 
+1392:21-1392:27
+Wed Oct 28 20:29:16 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 964739ec_816efc79
+UUID: 56ab01f0_8c1fe7a4
+Bytes: 311
+Yeah the only weird case I could think of is what you mentioned with nul which I didn't think was worth worrying about.
+
+But I agree that consolidating to a single function would be best, if it handles nul as well that's a nice upgrade here. I don't mind taking a stab at this, it sounds pretty straightforward.
+

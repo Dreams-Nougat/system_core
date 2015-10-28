@@ -20,3 +20,13 @@ This StackOverflow answer (http://stackoverflow.com/a/3650507) sums up the probl
 
 My thinking is to ignore this issue for now and maybe at some point (if it becomes really necessary) make adb_isatty() for Windows and #define isatty adb_isatty.
 
+1392:21-1392:27
+Wed Oct 28 00:48:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76fd65bf_e840cbd2
+UUID: 964739ec_816efc79
+Bytes: 343
+maybe it's easier just to move isatty to sysdeps right away, if we've already got the best code there?
+
+(amusingly, my main reason for taking ninja's LinePrinter rather than just writing the ten lines of code myself was that they seemed to have Windows support and i thought "cool, i'll get Windows for free without having to think about it".)
+

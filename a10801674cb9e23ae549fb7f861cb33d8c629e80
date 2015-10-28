@@ -62,3 +62,11 @@ UUID: d6d0d18a_2ea3531f
 Bytes: 53
 Let me know if you want a b.android.com bug for this.
 
+236:12-236:46
+Wed Oct 28 23:13:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b9698ee6_f7b14019
+UUID: b90b4ea8_7053a6ff
+Bytes: 106
+given our assumption that everything must happen on the main thread, that sounds like a good idea. yabinc?
+

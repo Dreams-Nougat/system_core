@@ -2,12 +2,33 @@ Revision: 128ebd0548d5dd9c7bdf9e529432eed1c981c1d7
 Patch-set: 1
 File: adb/file_sync_client.cpp
 
+174:17-174:19
+Wed Oct 28 17:35:54 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f636b56e_24c4dcc5
+Bytes: 74
+"ns" is a little misleading for a microsecond value, maybe "usec" instead?
+
 187:15-187:30
 Tue Oct 27 23:47:26 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b640bdd4_c25ba4de
 Bytes: 145
 Can you use ADB_FORMAT_ARCHETYPE (sysdeps.h) or FORMAT_ARCHETYPE (base/stringprintf.h) on the prototype to get the compiler checking of the args?
+
+302:8-302:77
+Wed Oct 28 17:35:54 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_27525afc
+Bytes: 84
+You could only print if percentage changes to avoid duplicate prints on large files.
+
+425:8-425:77
+Wed Oct 28 17:35:54 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_c56c1abf
+Bytes: 26
+Same re: duplicate prints.
 
 File: adb/line_printer.cpp
 

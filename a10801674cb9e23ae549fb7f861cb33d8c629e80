@@ -54,3 +54,11 @@ UUID: b9698ee6_f7b14019
 Bytes: 165
 I wonder if it makes sense for all the fdevents APIs to do CHECK_EQ(g_main_tid, gettid()). Or maybe just code review all the adb_thread_create() calls. I don't know.
 
+236:12-236:46
+Wed Oct 28 23:12:11 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bfb7aeb4_1535cfbe
+UUID: d6d0d18a_2ea3531f
+Bytes: 53
+Let me know if you want a b.android.com bug for this.
+

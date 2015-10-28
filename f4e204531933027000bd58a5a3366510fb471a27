@@ -1,0 +1,11 @@
+Revision: f4e204531933027000bd58a5a3366510fb471a27
+Base-for-patch-set: 1
+File: libcutils/Android.mk
+
+113
+Wed Oct 28 23:10:24 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d65e11fd_b86219cb
+Bytes: 209
+i couldn't find anywhere where libcutils_c_includes is defined. i guess it's possible that the variable name could be getting programmatically constructed, but the system seems to build without it, so *shrug*.
+

@@ -46,3 +46,11 @@ Do the conversion here?
     }
     bytesWritten = android_log_printLogLine(g_logformat, g_outFD, &entry);
 
+174
+Wed Oct 28 22:14:33 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1f30ba11_719c82aa
+UUID: 56ab01f0_5280f4c1
+Bytes: 271
+I do not want to export convertMonotonic if at all possible. g_logformat should also remain abstract. logcat should be as KISS as possible. There are other readers, we supply these functions for vendors to use, we do not want to foist upon them any changes in their code.
+

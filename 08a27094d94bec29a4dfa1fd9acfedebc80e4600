@@ -40,3 +40,11 @@ Yeah the only weird case I could think of is what you mentioned with nul which I
 
 But I agree that consolidating to a single function would be best, if it handles nul as well that's a nice upgrade here. I don't mind taking a stab at this, it sounds pretty straightforward.
 
+1392:21-1392:27
+Wed Oct 28 22:03:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56ab01f0_8c1fe7a4
+UUID: 96cad9dc_af1a99b4
+Bytes: 363
+Ok, I'll let you beat me to it. All I ask is for a adb_test unittest that covers the important cases listed in msdn:GetFileType, the nul case, stdin/stdout/stderr, etc.. In implementing the unittest, you may or may not find it useful to open the special files CONIN$ or CONOUT$ to always get a handle to the console, even in the face of stdin/out/err redirection.
+

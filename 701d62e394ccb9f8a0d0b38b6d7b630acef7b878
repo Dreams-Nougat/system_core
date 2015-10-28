@@ -16,6 +16,15 @@ UUID: bfb7aeb4_568d9a75
 Bytes: 88
 This eclipses the "AndroidLogEntry *e" declared at 987. Can you use a unique local name?
 
+1233:4-1233:33
+Wed Oct 28 22:00:38 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_8ea4ffe0
+Bytes: 246
+This is an API that has stood the test of time, I am concerned about upsetting it after 7 years ....
+
+I will rethink this, better to keep it constant and let convertMonotonic look after providing response outside of the AndroidLogEntry structure.
+
 1264:4-1266:5
 Tue Oct 13 16:09:22 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>

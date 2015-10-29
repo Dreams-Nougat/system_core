@@ -1,6 +1,33 @@
 Revision: 824a3cc23e9f5913257c072ee78c9bc22f7414ac
 Patch-set: 1
+File: /COMMIT_MSG
+
+14:0-14:10
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_f9cf3fe4
+Bytes: 318
+Since Windows is the one with the problems, I'd be ok if the Windows build just used a macro to map existing calls of isatty() to adb_isatty() (like how fprintf is mapped to adb_fprintf only for Windows). Then the code can stay unix-y. But it doesn't really matter to me, it's up to you guys, I'm fine with either way.
+
+File: adb/sysdeps.h
+
+185:3-185:47
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d0d18a_3188d2b3
+Bytes: 249
+Is this really true? isatty() should work on stdout/stderr which should only be writable.
+
+Can you add some sort of comment that this takes standard fds like 0/1/2 (STD{IN,OUT,ERR}_FILENO) and fds returned by unix_open(), but not the adb_open() fds?
+
 File: adb/sysdeps_win32.cpp
+
+2509:26-2509:80
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56ab01f0_f5446a14
+Bytes: 22
+same comment as before
 
 2512:35-2512:49
 Thu Oct 29 00:29:39 2015 +0000
@@ -9,10 +36,109 @@ UUID: b6d35d95_d09a123b
 Bytes: 239
 I decided to convert to a handle first based on Spencer's comment that isatty() likely calls GetFileType() internally, so using GetFileType() directly instead should eliminate the need for an extra _get_osfhandle() call inside of isatty().
 
+2512:35-2512:49
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_d09a123b
+UUID: 7621e584_4e09476d
+Bytes: 347
+Sorry for the confusion: I meant that isatty() is built-upon GetFileType(), but GetFileType() is actually called when the fd is setup. isatty() itself just grabs a cached value. So is it possible to call isatty() early here and not call GetFileType() at all?
+
+An extra call to _get_osfhandle() afterwards should be ok since it is cheap and simple.
+
 2518:0-2519:75
 Thu Oct 29 00:29:39 2015 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b6d35d95_30a0ce68
 Bytes: 203
 Is this true? Existing code has GetFileType() + GetConsoleMode() but from the docs it sounds like just GetConsoleMode() may be sufficient, so I'm assuming we have GetFileType() as well because it's fast.
+
+2518:0-2519:75
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_30a0ce68
+UUID: 769c85d8_81920ae0
+Bytes: 384
+I originally made stdin_raw_init() call GetFileType(), but I now think that it makes more sense to call isatty().
+
+GetFileType() can be "slow" (possibly kernel call) and it used to even hang (see my comments in adb.cpp about GFT()), though I don't think it hangs anymore. But basically, given how complicated it was/is, that is one reason to try to avoid calling it if we can help it.
+
+2522:13-2522:27
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d0d18a_b11202de
+Bytes: 239
+No suggested change here, just a comment: That StackOverflow answer said to use GetConsoleScreenBufferInfo() for writable handles, but I actually prefer if we just stick to using GetConsoleMode() here (like you've done) to simplify things.
+
+2538:4-2538:14
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36a68d28_ff0c47c3
+Bytes: 154
+isatty(3) reminds me that isatty() sets errno, but I'm fine with not setting it because who really reads errno after calling isatty()? Let's be real here.
+
+3392:11-3392:79
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_b9e94722
+Bytes: 268
+If you make adb_isatty() start by calling isatty(), you could get rid of this optimization, since then files/pipes would bail out of adb_isatty() early? I'm fine either way (with or without this optimization): whatever is better for you guys to maintain in the future.
+
+File: adb/sysdeps_win32_test.cpp
+
+101:31-101:54
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96cad9dc_3a3f0980
+Bytes: 39
+Might be simpler to just use: L"CONIN$"
+
+101:19-101:30
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_b0ae7e06
+Bytes: 121
+If this helps simplify things, I think you could also use the C Runtime open(), then you wouldn't need _open_osfhandle().
+
+102:46-102:59
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 769c85d8_c1aed207
+Bytes: 42
+we don't need GENERIC_WRITE, so kill this?
+
+104:32-104:56
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 769c85d8_a1b3c66d
+Bytes: 19
+same L"foo" comment
+
+105:32-105:44
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56c4e1d1_53910e4b
+Bytes: 9
+kill too?
+
+115:17-115:25
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_99172bce
+Bytes: 333
+adb_open() returns fds that are indices into _win32_fhs in sysdeps_win32.cpp (yes, this is crazy and exists because the C Runtime doesn't really well support socketpairs/sockets as fds). I think you want to call the C Runtime open() which returns indices that the C Runtime APIs like fileno()/isatty()/_get_osfhandle() can deal with.
+
+115:8-115:14
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_d0d4d279
+Bytes: 128
+Can you also open a writable fd to nul and call adb_isatty() on it? Also a readable fd and writable fd to a real disk file, too?
+
+120:4-120:61
+Thu Oct 29 02:22:01 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_30ba8e47
+Bytes: 246
+The socketpair fds are managed by sysdeps, so the fd can't be passed to fileno()/_get_osfhandle()/etc. I haven't tried this, but can you instead use _pipe() and test the read & write ends? That should simulate a pipe like "echo exit | adb shell".
 

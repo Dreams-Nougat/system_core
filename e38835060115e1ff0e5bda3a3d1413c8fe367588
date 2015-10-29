@@ -17,3 +17,11 @@ UUID: 36a68d28_05c626a3
 Bytes: 84
 Maybe 0750 root:shell? Local/serial console defaults to shell, adb defaults to root.
 
+128
+Thu Oct 29 16:47:53 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36a68d28_05c626a3
+UUID: 366dadb4_935d3c10
+Bytes: 209
+it's a bit weird since all of the directories leading up to it (including the individual test directories) are 0771 system:system, but i guess you can still run the test as the shell user if you know its name.
+

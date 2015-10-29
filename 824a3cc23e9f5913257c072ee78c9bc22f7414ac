@@ -9,6 +9,14 @@ UUID: 76c565cc_f9cf3fe4
 Bytes: 318
 Since Windows is the one with the problems, I'd be ok if the Windows build just used a macro to map existing calls of isatty() to adb_isatty() (like how fprintf is mapped to adb_fprintf only for Windows). Then the code can stay unix-y. But it doesn't really matter to me, it's up to you guys, I'm fine with either way.
 
+14:0-14:10
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_f9cf3fe4
+UUID: 56ab01f0_e045ca2e
+Bytes: 178
+Good point, but I think I slightly prefer to use adb_isatty() for both just so it's a little more obvious that there's something unusual going on here. I'll leave this one as-is.
+
 File: adb/sysdeps.h
 
 185:3-185:47
@@ -19,6 +27,18 @@ Bytes: 249
 Is this really true? isatty() should work on stdout/stderr which should only be writable.
 
 Can you add some sort of comment that this takes standard fds like 0/1/2 (STD{IN,OUT,ERR}_FILENO) and fds returned by unix_open(), but not the adb_open() fds?
+
+185:3-185:47
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6d0d18a_3188d2b3
+UUID: b6d35d95_1b9deb30
+Bytes: 485
+Good point will add comment.
+
+isatty() works, but GENERIC_READ is required for GetConsoleMode() unfortunately, as well as GetConsoleScreenBufferInfo(), so I don't think there's any way around it if we're going to do the full check. Messing with the unit test verifies that opening a console without GENERIC_READ causes it to always fail.
+
+Do you think this will be a problem? It seems that STDxxx_FILENO all work in my testing so it seems like they have GENERIC_READ access by default.
 
 File: adb/sysdeps_win32.cpp
 
@@ -46,6 +66,14 @@ Sorry for the confusion: I meant that isatty() is built-upon GetFileType(), but 
 
 An extra call to _get_osfhandle() afterwards should be ok since it is cheap and simple.
 
+2512:35-2512:49
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7621e584_4e09476d
+UUID: 76c565cc_944532e2
+Bytes: 38
+Ah thanks for clarifying, will change.
+
 2518:0-2519:75
 Thu Oct 29 00:29:39 2015 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -70,6 +98,14 @@ UUID: d6d0d18a_b11202de
 Bytes: 239
 No suggested change here, just a comment: That StackOverflow answer said to use GetConsoleScreenBufferInfo() for writable handles, but I actually prefer if we just stick to using GetConsoleMode() here (like you've done) to simplify things.
 
+2522:13-2522:27
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6d0d18a_b11202de
+UUID: d6d0d18a_fc21f13f
+Bytes: 108
+Yeah it seems to work for both stdin and stdout so as long as you don't see a problem here it seems cleaner.
+
 2538:4-2538:14
 Thu Oct 29 02:22:01 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -77,12 +113,28 @@ UUID: 36a68d28_ff0c47c3
 Bytes: 154
 isatty(3) reminds me that isatty() sets errno, but I'm fine with not setting it because who really reads errno after calling isatty()? Let's be real here.
 
+2538:4-2538:14
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36a68d28_ff0c47c3
+UUID: f6d955b5_1edaf949
+Bytes: 165
+Ha my thoughts exactly. I'll add a comment though that errno handling isn't reliable on Windows adb_isatty(), if we for some reason need it later we can add it then.
+
 3392:11-3392:79
 Thu Oct 29 02:22:01 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 76c565cc_b9e94722
 Bytes: 268
 If you make adb_isatty() start by calling isatty(), you could get rid of this optimization, since then files/pipes would bail out of adb_isatty() early? I'm fine either way (with or without this optimization): whatever is better for you guys to maintain in the future.
+
+3392:11-3392:79
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_b9e94722
+UUID: 96cad9dc_806deaef
+Bytes: 93
+Good call I'll do that, and maybe switch the length check first as a potential early bailout.
 
 File: adb/sysdeps_win32_test.cpp
 
@@ -100,12 +152,28 @@ UUID: b6d35d95_b0ae7e06
 Bytes: 121
 If this helps simplify things, I think you could also use the C Runtime open(), then you wouldn't need _open_osfhandle().
 
+101:19-101:30
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_b0ae7e06
+UUID: 56c4e1d1_b995c340
+Bytes: 116
+Ah so much better thanks! I was trying a bunch of different ways to get this to work but I didn't think of this one.
+
 102:46-102:59
 Thu Oct 29 02:22:01 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 769c85d8_c1aed207
 Bytes: 42
 we don't need GENERIC_WRITE, so kill this?
+
+102:46-102:59
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 769c85d8_c1aed207
+UUID: 769c85d8_c7c8a28a
+Bytes: 4
+Done
 
 104:32-104:56
 Thu Oct 29 02:22:01 2015 +0000
@@ -121,6 +189,14 @@ UUID: 56c4e1d1_53910e4b
 Bytes: 9
 kill too?
 
+105:32-105:44
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 56c4e1d1_53910e4b
+UUID: 76c565cc_94a9b2d1
+Bytes: 165
+See earlier comment about GetConsoleMode(), I think we do need this unfortunately (or, after moving to c runtime open(), we need O_RDONLY or O_RDWR; O_WRONLY fails).
+
 115:17-115:25
 Thu Oct 29 02:22:01 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -135,10 +211,34 @@ UUID: b6d35d95_d0d4d279
 Bytes: 128
 Can you also open a writable fd to nul and call adb_isatty() on it? Also a readable fd and writable fd to a real disk file, too?
 
+115:8-115:14
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_d0d4d279
+UUID: 7621e584_6e628340
+Bytes: 118
+Done - creating tempfiles on Windows is not in my wheelhouse so you'll probably have to correct some code there too :)
+
+115:17-115:25
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_99172bce
+UUID: 96cad9dc_a0e746c3
+Bytes: 79
+Yeah you're right I forgot that adb_open() always fails here, thanks. Will fix.
+
 120:4-120:61
 Thu Oct 29 02:22:01 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b6d35d95_30ba8e47
 Bytes: 246
 The socketpair fds are managed by sysdeps, so the fd can't be passed to fileno()/_get_osfhandle()/etc. I haven't tried this, but can you instead use _pipe() and test the read & write ends? That should simulate a pipe like "echo exit | adb shell".
+
+120:4-120:61
+Thu Oct 29 17:02:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_30ba8e47
+UUID: 76c565cc_9f9a6b6c
+Bytes: 4
+Done
 

@@ -1,0 +1,18 @@
+Revision: 824a3cc23e9f5913257c072ee78c9bc22f7414ac
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+2512:35-2512:49
+Thu Oct 29 00:29:39 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_d09a123b
+Bytes: 239
+I decided to convert to a handle first based on Spencer's comment that isatty() likely calls GetFileType() internally, so using GetFileType() directly instead should eliminate the need for an extra _get_osfhandle() call inside of isatty().
+
+2518:0-2519:75
+Thu Oct 29 00:29:39 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6d35d95_30a0ce68
+Bytes: 203
+Is this true? Existing code has GetFileType() + GetConsoleMode() but from the docs it sounds like just GetConsoleMode() may be sufficient, so I'm assuming we have GetFileType() as well because it's fast.
+

@@ -9,3 +9,11 @@ UUID: 7673a594_5539cc96
 Bytes: 136
 please let me know if 00750 root:shell is preferable here. i see a mix of 00750 root:shell, 00755 root:shell, and 00755 root:root below.
 
+128
+Thu Oct 29 16:18:25 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7673a594_5539cc96
+UUID: 36a68d28_05c626a3
+Bytes: 84
+Maybe 0750 root:shell? Local/serial console defaults to shell, adb defaults to root.
+

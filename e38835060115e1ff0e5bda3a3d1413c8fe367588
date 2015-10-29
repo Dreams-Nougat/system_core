@@ -1,0 +1,11 @@
+Revision: e38835060115e1ff0e5bda3a3d1413c8fe367588
+Patch-set: 2
+File: libcutils/fs_config.c
+
+128
+Thu Oct 29 15:50:27 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7673a594_5539cc96
+Bytes: 136
+please let me know if 00750 root:shell is preferable here. i see a mix of 00750 root:shell, 00755 root:shell, and 00755 root:root below.
+

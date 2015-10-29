@@ -9,3 +9,14 @@ UUID: 56ab01f0_5580dec1
 Bytes: 84
 Don't do this: in incremental build we share the object files across build variants.
 
+File: libcutils/fs_config.c
+
+128
+Thu Oct 29 15:24:45 2015 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6619dbd_7d04efe5
+Bytes: 319
+ah, i just got the impression from lee's initial suggestion that this should be guarded. i wouldn't have expected tests to get installed on non-debug builds either, but i don't know anything about anything. :-P
+
+i'm happy to remove this, but it's even better if there's another way to get the permissions set correctly.
+

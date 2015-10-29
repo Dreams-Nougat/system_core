@@ -9,6 +9,18 @@ UUID: 161fca56_37afd257
 Bytes: 174
 I'm definitely missing the gestalt here... why does the monotonic state affect the filename comparison? Is it that the filename is absolute if monotonic, but a prefix if not?
 
+425
+Thu Oct 29 22:59:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 161fca56_37afd257
+UUID: d63612de_957c464f
+Bytes: 696
+For the general case with realtime we check the gestalt (_all_ files) and look for the latest timestamp. This will even deal with an unexpected reboot or kernel panic. Deals with the race that happens when the files are being rotated.
+
+For the case of monotonic, which cycles on each boot, we can only use the 'last one', but we are prone to some issues on unexpected reboot while rotating. It would be _too_ complicated and risky to figure out which is the last file because of the monotonic cycling, so we only check the known active file (even if it is empty due to a file rotation :-( ).
+
+I will figure out how to expand the comment to make this clear without all the words I've used here ...
+
 File: logd/LogBuffer.h
 
 42
@@ -17,4 +29,16 @@ Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f6195673_36f7d6b8
 Bytes: 71
 why not "const int EPOCH_PLUS_10_YEARS (10 * 1461 / 4 * 24 * 60 * 60)"?
+
+42
+Thu Oct 29 22:59:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6195673_36f7d6b8
+UUID: 36204e91_18fe4923
+Bytes: 930
+No big reason. Alas explaining it is not 'small' :-(
+
+I am more comfortable with this comparing against all sorts of sizes of ints and unsigneds; while if it is specifically set to 'const int' we will run into trouble against a uint64_t comparison (which is what we have below) turning into a warning message about signed/unsigned comparison. A numerical #define constant remains agnostic about type and signedness inside the compiler parse tree until used. This removes the need to add a specific cast when in comparisons to appease the C standards gohds.
+
+The 'bad' part is that the #define is _wrong_ on a native 16-bit platform as it will assume native width (while remaining signed agnostic) for all calculations not otherwise cast or specified. To resolve that on the 16 bit platform for numbers of this size and still keeping it signed-agnostic is not possible :-( Fortunately we do not port Android to 16-bit platforms ;-}
 

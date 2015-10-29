@@ -25,6 +25,14 @@ This is an API that has stood the test of time, I am concerned about upsetting i
 
 I will rethink this, better to keep it constant and let convertMonotonic look after providing response outside of the AndroidLogEntry structure.
 
+1233:4-1233:33
+Thu Oct 29 18:08:16 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_8ea4ffe0
+UUID: 56ab01f0_3b8a631d
+Bytes: 192
+Has it been violating the "const" semantic for the last 7 years? If so, then I guess this is no worse than before. If not, can we be sure that callers never rely on entry remaining unmodified?
+
 1264:4-1266:5
 Tue Oct 13 16:09:22 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>

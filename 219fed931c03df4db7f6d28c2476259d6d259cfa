@@ -1,0 +1,11 @@
+Revision: 219fed931c03df4db7f6d28c2476259d6d259cfa
+Patch-set: 2
+File: adb/sysdeps_win32_test.cpp
+
+105:19-105:24
+Thu Oct 29 17:06:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76c565cc_1f703bc5
+Bytes: 122
+Is this correct to use the _xxx() functions? Or should I be doing #undef and calling the standard xxx() functions instead?
+

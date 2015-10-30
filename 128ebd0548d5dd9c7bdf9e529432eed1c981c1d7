@@ -9,6 +9,14 @@ UUID: f636b56e_24c4dcc5
 Bytes: 74
 "ns" is a little misleading for a microsecond value, maybe "usec" instead?
 
+174:17-174:19
+Fri Oct 30 00:00:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f636b56e_24c4dcc5
+UUID: d63612de_18152d19
+Bytes: 113
+d'oh! fixed. i've also renamed everything involved to include units too, to prevent this kind of thing in future.
+
 187:15-187:30
 Tue Oct 27 23:47:26 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,30 @@ UUID: b640bdd4_c25ba4de
 Bytes: 145
 Can you use ADB_FORMAT_ARCHETYPE (sysdeps.h) or FORMAT_ARCHETYPE (base/stringprintf.h) on the prototype to get the compiler checking of the args?
 
+187:15-187:30
+Fri Oct 30 00:00:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b640bdd4_c25ba4de
+UUID: 7643a650_b2d63e71
+Bytes: 4
+Done
+
 302:8-302:77
 Wed Oct 28 17:35:54 2015 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b6d35d95_27525afc
 Bytes: 84
 You could only print if percentage changes to avoid duplicate prints on large files.
+
+302:8-302:77
+Fri Oct 30 00:00:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_27525afc
+UUID: f6195673_f69efed4
+Bytes: 342
+yeah, this change taught me that i actually need to do this differently. i think SyncConnection needs to be in charge of the printing, and the callers need to tell it things like "i'm working on file 'x' of size y" and let it decide what to print when.
+
+that'll let me fix ccross' complaint which is "but where's my overall sync percentage?".
 
 425:8-425:77
 Wed Oct 28 17:35:54 2015 +0000
@@ -39,6 +65,14 @@ UUID: 76fd65bf_2835c3bc
 Bytes: 115
 I think you'll want to #include <sysdeps.h> here so that printf() really calls adb_printf() which can handle UTF-8.
 
+18:0-18:19
+Fri Oct 30 00:00:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76fd65bf_2835c3bc
+UUID: 5625c29e_f9bf137c
+Bytes: 4
+Done
+
 93:58-93:69
 Tue Oct 27 23:47:26 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,6 +86,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 16342965_68fcf769
 Bytes: 36
 This should probably be UnicodeChar.
+
+93:58-93:69
+Fri Oct 30 00:00:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d63d314e_a626b2ed
+UUID: 161fca56_da8325b8
+Bytes: 186
+punting on all this for now (not least because i still need to set up my VM [the hard part of which isn't installing the VM, but setting up all the network stuff]), but i've added TODOs.
 
 96:4-96:22
 Tue Oct 27 23:47:26 2015 +0000

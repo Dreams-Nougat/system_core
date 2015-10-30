@@ -1,0 +1,11 @@
+Revision: bdbfd332bfab9f07571f3375602dc02a264a525d
+Patch-set: 4
+File: adb/line_printer.cpp
+
+28:0-28:5
+Fri Oct 30 20:46:30 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36204e91_2471dc78
+Bytes: 72
+Is this test code, or is there some other define that should be checked?
+

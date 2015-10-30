@@ -1,5 +1,14 @@
 Revision: 219fed931c03df4db7f6d28c2476259d6d259cfa
 Patch-set: 2
+File: adb/sysdeps.h
+
+187:3-187:38
+Fri Oct 30 22:46:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 765c8636_30936e40
+Bytes: 321
+Maybe I'm a bit pedantic, but: theoretically if the same fd number is allocated by both CRT open() and adb_open(), then the result could be 1 or 0. Though I think in practice they are unlikely to overlap since adb_open() fds start at 100 and CRT fds start at zero and adb probably doesn't have maybe fds open via the CRT.
+
 File: adb/sysdeps_win32_test.cpp
 
 105:19-105:24
@@ -8,4 +17,20 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 76c565cc_1f703bc5
 Bytes: 122
 Is this correct to use the _xxx() functions? Or should I be doing #undef and calling the standard xxx() functions instead?
+
+105:19-105:24
+Fri Oct 30 22:46:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_1f703bc5
+UUID: f6195673_22367092
+Bytes: 846
+It doesn't really matter to me. Here's what I think of all the APIs (with open as an example):
+
+- _open() seems to be a Microsoft thing since open() is technically non-standard from the MS perspective (since they're not really POSIX). So if I see _open(), that makes me think the code is Windows-only.
+
+- open() is POSIX, but also available on Windows unless you #define __STD__ or something. Then adb does #define open __xxx_unix_open to remind people to explicitly call either unix_open or adb_open.
+
+- unix_open() really means "call OS/CRT open instead of an abstraction above the OS like sysdeps". If this test code were really part of adb, I think I'd expect this code to call unix_open().
+
+So, to fit the rest of the adb code, I guess unix_open/unix_close/unlink/pipe makes more sense, but it doesn't really matter to me one way or another.
 

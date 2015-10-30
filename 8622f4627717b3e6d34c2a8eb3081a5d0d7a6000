@@ -1,0 +1,11 @@
+Revision: 8622f4627717b3e6d34c2a8eb3081a5d0d7a6000
+Patch-set: 2
+File: adb/file_sync_client.cpp
+
+210
+Fri Oct 30 00:06:35 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 161fca56_5a2dd584
+Bytes: 51
+This should be clock_gettime with a monotonic clock
+

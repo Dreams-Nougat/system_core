@@ -1,0 +1,50 @@
+Revision: af7edcda09a96f358c981756573e56e0125cf473
+Patch-set: 1
+File: fastboot/engine.cpp
+
+80:4-80:7
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7643a650_be3e05b6
+Bytes: 7
+size_t?
+
+86:4-86:29
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 562a227b_d7189661
+Bytes: 104
+Doesn't vnsprintf take care of this already? I did a quick experiment and snprintf always adds the '\0'.
+
+106:15-106:48
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d63612de_e10cf0c3
+Bytes: 119
+I think this is better written as fs_get_generator() != nullptr. Or is there something subtle I'm missing?
+
+Same below.
+
+File: fastboot/fastboot.cpp
+
+576:21-576:29
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6195673_079f06d3
+Bytes: 164
+Is it worth checking if this is ULLONG_MAX and errno is set to ERANGE to indicate an error? I don't know enough about the protocol to know if this is even possible.
+
+847:4-847:47
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d63612de_21a0b8c1
+Bytes: 106
+Is it worth moving the variables to where the are first used? Only errMsg is used in the failed goto path.
+
+899:4-899:7
+Fri Oct 30 20:22:01 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 760e462a_e07998d8
+Bytes: 130
+This is a badly named variable. Maybe part_size, or maybe change this to partition_size, and partition_size to partition_size_str.
+

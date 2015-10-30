@@ -40,6 +40,14 @@ isatty() works, but GENERIC_READ is required for GetConsoleMode() unfortunately,
 
 Do you think this will be a problem? It seems that STDxxx_FILENO all work in my testing so it seems like they have GENERIC_READ access by default.
 
+185:3-185:47
+Fri Oct 30 22:46:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6d35d95_1b9deb30
+UUID: d63612de_87fe545c
+Bytes: 291
+If real console handles in practice always have GENERIC_READ, I don't think we need to worry about this. I think that if you manually verify once that real console handles (i.e. not from opening CONIN$/CONOUT$, but just running an app at the console) always have GENERIC_READ, we'll be fine.
+
 File: adb/sysdeps_win32.cpp
 
 2509:26-2509:80
@@ -196,6 +204,14 @@ Parent: 56c4e1d1_53910e4b
 UUID: 76c565cc_94a9b2d1
 Bytes: 165
 See earlier comment about GetConsoleMode(), I think we do need this unfortunately (or, after moving to c runtime open(), we need O_RDONLY or O_RDWR; O_WRONLY fails).
+
+105:32-105:44
+Fri Oct 30 22:46:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76c565cc_94a9b2d1
+UUID: 562a227b_62d11ed6
+Bytes: 306
+Ok, this should be ok then. I'd just recommend manually verifying once that a real console handle has the same results as using CONIN$/CONOUT$ and we should be good. (No need to codify that in a unittest because it is probably too big of a writing/maintenance pain to deal with AllocConsole and other APIs)
 
 115:17-115:25
 Thu Oct 29 02:22:01 2015 +0000

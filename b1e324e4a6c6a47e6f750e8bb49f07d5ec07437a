@@ -42,3 +42,11 @@ I am more comfortable with this comparing against all sorts of sizes of ints and
 
 The 'bad' part is that the #define is _wrong_ on a native 16-bit platform as it will assume native width (while remaining signed agnostic) for all calculations not otherwise cast or specified. To resolve that on the 16 bit platform for numbers of this size and still keeping it signed-agnostic is not possible :-( Fortunately we do not port Android to 16-bit platforms ;-}
 
+42
+Fri Oct 30 14:44:11 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36204e91_18fe4923
+UUID: 562a227b_745a0037
+Bytes: 155
+Solution will be to not 'export' EPOCH_PLUS_10_YEARS and use const; there was an instance of this code that had it used in a few places, but today no more.
+

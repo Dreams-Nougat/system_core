@@ -1,0 +1,26 @@
+Revision: d2e26c0e309dd43352d444e11191e7261621faf9
+Patch-set: 1
+File: /COMMIT_MSG
+
+12
+Fri Oct 30 22:23:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 765c8636_30a92ea1
+Bytes: 758
+https://cs.corp.google.com/#android/frameworks/native/cmds/dumpstate/dumpstate.c&q=%5Cbps%5Cb%20file:dumpstate&sq=package:%5Eandroid$&type=cs&l=317
+
+right now we have:
+
+    run_command("PROCESSES", 10, "ps", "-P", NULL);
+    run_command("PROCESSES AND THREADS", 10, "ps", "-t", "-p", "-P", NULL);
+    run_command("PROCESSES (SELINUX LABELS)", 10, "ps", "-Z", NULL);
+
+but i'd like to at least move to:
+
+    run_command("PROCESSES", 10, "ps", "-P", NULL);
+    run_command("PROCESSES AND THREADS", 10, "ps", "-Z", "-t", "-p", "-P", NULL);
+
+though i'm not sure why we have PROCESSES and PROCESSES AND THREADS, since the former is a subset of the latter already...
+
+(i can't find anyone parsing this via cs/, but maybe i just didn't come up with the right query?)
+

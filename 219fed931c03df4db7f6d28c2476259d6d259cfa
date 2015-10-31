@@ -56,3 +56,15 @@ Hmm actually in that case do you think adb_isatty() should be unix_isatty() inst
   adb_isatty(fd);
   unix_close(fd);
 
+105:19-105:24
+Sat Oct 31 00:26:47 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5625c29e_05e93c16
+UUID: 765c8636_fbe017eb
+Bytes: 612
+You have a good point that unix_isatty() makes more sense, especially since 1) unix_isatty() is used somewhat like how adb uses unix_read(), 2) sysdeps_win32.cpp has unix_read() call unix_isatty().
+
+The caveat I have with the "unix_" prefix is that splitting open() into unix_open() and adb_open() is already a huge headache and hard to maintain -- I've had to fixup calls in the past and it seems like a real uphill battle. The headache has made me wonder if I can just make adb_open() take the CRT fds.
+
+Anyway, I think your idea to rename adb_isatty() to unix_isatty() is a good idea and it makes sense to do.
+

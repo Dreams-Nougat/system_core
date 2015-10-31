@@ -1,0 +1,15 @@
+Revision: 8dcdb57dafd554e801de97012e7d0ef6ec63a5ac
+Patch-set: 1
+File: adb/commandline.cpp
+
+444:8-444:15
+Sat Oct 31 00:30:51 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7643a650_64f49043
+Bytes: 306
+Is it possible to change this to _WIN32 (one underscore) to match the rest of the codebase?
+
+If you search for "__WIN32" on this page, you can see that _WIN32 is the most well-supported constant:
+
+http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system
+

@@ -1,0 +1,13 @@
+Revision: a886a43f5565f29f7fb6b94b23ac83e3ff2300c0
+Patch-set: 1
+File: adb/services.cpp
+
+353
+Sat Oct 31 04:45:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36204e91_3efc4899
+Bytes: 271
+well, there's no creation here. should we just inline the code? or just move the socketpair into reverse_service? we don't need the strdups and frees either, since this is run synchronously on this thread.
+
+(is this a problem? can this take a significant amount of time?)
+

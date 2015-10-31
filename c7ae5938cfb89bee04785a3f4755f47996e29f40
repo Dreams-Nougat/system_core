@@ -1,0 +1,27 @@
+Revision: c7ae5938cfb89bee04785a3f4755f47996e29f40
+Patch-set: 3
+File: adb/commandline.cpp
+
+1070
+Sat Oct 31 05:02:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7643a650_a4b4b80d
+Bytes: 7
+'srcs'?
+
+1071
+Sat Oct 31 05:02:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96401a44_c4f21e02
+Bytes: 93
+time to make copy_attrs a bool, since this patch touches almost every line that refers to it?
+
+File: adb/file_sync_client.cpp
+
+806
+Sat Oct 31 05:02:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6195673_e8329732
+Bytes: 30
+make these calls to Error too?
+

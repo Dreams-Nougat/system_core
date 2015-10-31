@@ -1,0 +1,11 @@
+Revision: a3056a2f4a6c268d90bf82e8e9b15db9b4f89e53
+Patch-set: 1
+File: base/include/base/strings.h
+
+60
+Sat Oct 31 04:49:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36204e91_feddb030
+Bytes: 79
+? did you actually mean to add a SeparatorT template parameter to Join instead?
+

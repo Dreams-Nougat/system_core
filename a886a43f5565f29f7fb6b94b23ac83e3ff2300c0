@@ -1,5 +1,14 @@
 Revision: a886a43f5565f29f7fb6b94b23ac83e3ff2300c0
 Patch-set: 1
+File: adb/fdevent.cpp
+
+80:8-80:45
+Sun Nov 01 01:34:43 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5625c29e_1003bceb
+Bytes: 21
+use pthread_equal(3)?
+
 File: adb/services.cpp
 
 353

@@ -1,0 +1,11 @@
+Revision: a865d5e98f1223d9c1ef0561b293adaf57194d99
+Patch-set: 3
+File: libcutils/fs_config.c
+
+128
+Mon Nov 02 16:30:40 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7643a650_fb825a6c
+Bytes: 17
+nativetest64 too?
+

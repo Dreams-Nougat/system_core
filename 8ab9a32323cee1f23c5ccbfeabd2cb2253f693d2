@@ -1,0 +1,11 @@
+Revision: 8ab9a32323cee1f23c5ccbfeabd2cb2253f693d2
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+617:62-617:65
+Mon Nov 02 22:58:09 2015 +0000
+Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36204e91_374d8b18
+Bytes: 183
+We may want a type override here, as partition-type does not necessarily reflect the current state of that partition. I suspect this should be true if the fs we plan to flash is ext4.
+

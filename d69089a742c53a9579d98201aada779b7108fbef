@@ -1,0 +1,11 @@
+Revision: d69089a742c53a9579d98201aada779b7108fbef
+Patch-set: 3
+File: include/utils/StrongPointer.h
+
+204
+Mon Nov 02 21:38:15 2015 +0000
+Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 562a227b_43baa430
+Bytes: 78
+Doesn't it make the single template version redundant (consistency, I know..)?
+

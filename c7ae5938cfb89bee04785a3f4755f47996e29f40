@@ -9,12 +9,28 @@ UUID: 7643a650_a4b4b80d
 Bytes: 7
 'srcs'?
 
+1070
+Mon Nov 02 19:15:04 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7643a650_a4b4b80d
+UUID: 5625c29e_ebc971d2
+Bytes: 4
+Done
+
 1071
 Sat Oct 31 05:02:27 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 96401a44_c4f21e02
 Bytes: 93
 time to make copy_attrs a bool, since this patch touches almost every line that refers to it?
+
+1071
+Mon Nov 02 19:15:04 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96401a44_c4f21e02
+UUID: 5625c29e_0bcdcdde
+Bytes: 4
+Done
 
 File: adb/file_sync_client.cpp
 

@@ -1,0 +1,11 @@
+Revision: 20df78cd22e1bd8b9df415722c8308d49f99bded
+Patch-set: 3
+File: adb/sysdeps_win32_test.cpp
+
+122:16-122:22
+Mon Nov 02 22:49:38 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6195673_f2d3a151
+Bytes: 263
+adb_io_test.cpp and adb_utils_test.cpp use TemporaryFile from base\include\base\test_utils.h, however, it does not take flags. I'll let you decide whether to leave this as is (I can live with it), or whether to tweak TemporaryFile to be usable for this situation.
+

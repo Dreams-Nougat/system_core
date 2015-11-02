@@ -9,6 +9,14 @@ UUID: 5625c29e_1003bceb
 Bytes: 21
 use pthread_equal(3)?
 
+80:8-80:45
+Mon Nov 02 18:45:49 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5625c29e_1003bceb
+UUID: 760e462a_66afe0bf
+Bytes: 4
+Done
+
 File: adb/services.cpp
 
 353
@@ -19,4 +27,12 @@ Bytes: 271
 well, there's no creation here. should we just inline the code? or just move the socketpair into reverse_service? we don't need the strdups and frees either, since this is run synchronously on this thread.
 
 (is this a problem? can this take a significant amount of time?)
+
+353
+Mon Nov 02 18:45:49 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36204e91_3efc4899
+UUID: 562a227b_6877bf70
+Bytes: 151
+Done. I thought there may have other services need change like this, but currently no. reverse_service() takes about 2ms, which I think doesn't matter.
 

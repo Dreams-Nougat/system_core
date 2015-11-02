@@ -1,0 +1,20 @@
+Revision: 4a08571444340f8bffaf44e292ff1347bdd5643f
+Patch-set: 4
+File: adb/file_sync_client.cpp
+
+631
+Mon Nov 02 19:09:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 760e462a_c6658c61
+Bytes: 36
+Error deals with adding the "adb: ".
+
+File: adb/file_sync_service.h
+
+70
+Mon Nov 02 19:09:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6195673_1f99863c
+Bytes: 4
+bool
+

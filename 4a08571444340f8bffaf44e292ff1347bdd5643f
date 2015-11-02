@@ -9,6 +9,14 @@ UUID: 760e462a_c6658c61
 Bytes: 36
 Error deals with adding the "adb: ".
 
+631
+Mon Nov 02 19:15:04 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 760e462a_c6658c61
+UUID: 36204e91_54a9259f
+Bytes: 84
+Oops. I notice that it adds "adb: error: ", should be adding "error: "? cp/mv don't.
+
 File: adb/file_sync_service.h
 
 70
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f6195673_1f99863c
 Bytes: 4
 bool
+
+70
+Mon Nov 02 19:15:04 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6195673_1f99863c
+UUID: 760e462a_71f2f8c8
+Bytes: 4
+Done
 

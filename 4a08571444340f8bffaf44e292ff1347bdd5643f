@@ -17,6 +17,14 @@ UUID: 36204e91_54a9259f
 Bytes: 84
 Oops. I notice that it adds "adb: error: ", should be adding "error: "? cp/mv don't.
 
+631
+Mon Nov 02 20:47:44 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36204e91_54a9259f
+UUID: f6195673_12da9d41
+Bytes: 160
+dunno. we had a mix before, and i made it uniform. if we consistently said "warning: " in the non-errors we wouldn't need it, but that's not the case either :-)
+
 File: adb/file_sync_service.h
 
 70

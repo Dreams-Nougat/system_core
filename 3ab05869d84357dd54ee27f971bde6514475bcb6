@@ -1,0 +1,11 @@
+Revision: 3ab05869d84357dd54ee27f971bde6514475bcb6
+Patch-set: 1
+File: base/parseint_test.cpp
+
+77
+Mon Nov 02 17:14:06 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 765c8636_b6f2b600
+Bytes: 4
+"0"?
+

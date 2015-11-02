@@ -9,6 +9,14 @@ UUID: 765c8636_a1b4b20d
 Bytes: 30
 Wouldn't it work using base 0?
 
+37:51-37:52
+Mon Nov 02 20:44:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 765c8636_a1b4b20d
+UUID: 7643a650_ceb7d611
+Bytes: 134
+we're deliberately trying to avoid the confusing use of leading 0 to mean octal. (there are unit tests to make sure we don't do that.)
+
 File: base/parseint_test.cpp
 
 77

@@ -1,0 +1,18 @@
+Revision: f3b0e2a7f13efd6fe8432e31617c87c3c51523cf
+Patch-set: 2
+File: adb/commandline.cpp
+
+532
+Tue Nov 03 19:33:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96401a44_8ded56e9
+Bytes: 306
+as an aside: now we're always building for Windows too, i wonder if we should just get rid of these #defines for Unix? (but keep them for Windows.) that way Unix-only code doesn't need to do stuff like this, but we'll still know straight away if we've tried to use bare 'read' in code that runs on Windows.
+
+682
+Tue Nov 03 19:33:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96401a44_cdd35e29
+Bytes: 104
+(i'd like to move all this code out into a separate file, but i've been disruptive enough here already.)
+

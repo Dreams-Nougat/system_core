@@ -25,6 +25,14 @@ UUID: 760e462a_ac4ef73e
 Bytes: 58
 TemporaryFile doesn't take a param for O_RDONLY or O_RDWR.
 
+122:16-122:22
+Tue Nov 03 00:10:24 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 760e462a_ac4ef73e
+UUID: 161fca56_cae7ccfe
+Bytes: 113
+but we don't care here, do we? oh, he's testing both. he could always re-open the TemporaryFile.path as O_RDONLY.
+
 124
 Tue Nov 03 00:03:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

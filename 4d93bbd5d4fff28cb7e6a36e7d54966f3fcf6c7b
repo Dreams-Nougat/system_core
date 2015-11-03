@@ -1,0 +1,11 @@
+Revision: 4d93bbd5d4fff28cb7e6a36e7d54966f3fcf6c7b
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+914
+Tue Nov 03 16:17:42 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f66795cb_9cbb891e
+Bytes: 51
+style nit : does this need to be if () {\n .. \n} ?
+

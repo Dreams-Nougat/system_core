@@ -9,3 +9,16 @@ UUID: f66795cb_9cbb891e
 Bytes: 51
 style nit : does this need to be if () {\n .. \n} ?
 
+914
+Tue Nov 03 16:26:41 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f66795cb_9cbb891e
+UUID: 96401a44_fa4b76a8
+Bytes: 374
+https://google.github.io/styleguide/cppguide.html#Conditionals
+
+Short conditional statements may be written on one line if this enhances readability. You may use this only when the line is brief and the statement does not use the else clause.
+
+
+(i'm trying to save vertical space because this function is already far too long. fixing that is going to need a bigger rewrite.)
+

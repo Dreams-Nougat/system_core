@@ -17,6 +17,14 @@ UUID: d63612de_03ded12c
 Bytes: 43
 why can't you just use TemporaryFile as-is?
 
+122:16-122:22
+Tue Nov 03 00:08:49 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d63612de_03ded12c
+UUID: 760e462a_ac4ef73e
+Bytes: 58
+TemporaryFile doesn't take a param for O_RDONLY or O_RDWR.
+
 124
 Tue Nov 03 00:03:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

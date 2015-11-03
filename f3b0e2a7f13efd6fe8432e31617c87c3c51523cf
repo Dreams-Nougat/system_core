@@ -2,12 +2,38 @@ Revision: f3b0e2a7f13efd6fe8432e31617c87c3c51523cf
 Patch-set: 2
 File: adb/commandline.cpp
 
+448:44-448:75
+Tue Nov 03 22:08:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6bb729e_0af7fbb7
+Bytes: 405
+nit: raw ShellProtocol* might be preferable here, doesn't really matter to me I just remembered the C++ primer saying something about this.
+
+(from C++ primer: "In general, if you find yourself wanting to use a pointer or reference to a unique_ptr, you're probably not transferring ownership, so you should usually just pass a pointer or reference to the underlying object, and keep unique_ptr out of it.")
+
+470:4-470:18
+Tue Nov 03 22:08:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6335e1f_e17c4650
+Bytes: 291
+Is it safe to do this in a signal handler? I can't seem to find concrete information in the man pages but the articles/forum posts that I can find indicate this is unsafe.
+
+Would it be feasible to drop the lock and instead only enable SIGWINCH handling after the read thread has been set up?
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 96401a44_8ded56e9
 Bytes: 306
 as an aside: now we're always building for Windows too, i wonder if we should just get rid of these #defines for Unix? (but keep them for Windows.) that way Unix-only code doesn't need to do stuff like this, but we'll still know straight away if we've tried to use bare 'read' in code that runs on Windows.
+
+532
+Tue Nov 03 22:08:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96401a44_8ded56e9
+UUID: b6335e1f_a126be93
+Bytes: 173
+Makes sense to me, enabling a 3rd read() function is kind of a bummer but it seems necessary, and better than having to mess with macros for a legitimate use case like this.
 
 682
 Tue Nov 03 19:33:00 2015 +0000

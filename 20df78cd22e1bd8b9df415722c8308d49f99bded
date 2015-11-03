@@ -33,6 +33,14 @@ UUID: 161fca56_cae7ccfe
 Bytes: 113
 but we don't care here, do we? oh, he's testing both. he could always re-open the TemporaryFile.path as O_RDONLY.
 
+122:16-122:22
+Tue Nov 03 00:16:08 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 161fca56_cae7ccfe
+UUID: 765c8636_b0d3d980
+Bytes: 186
+That seems to be the easiest solution, modifying TemporaryFile looks like it might be a little more trouble than it's worth. I'll try re-opening TemporaryFile.path and see how that goes.
+
 124
 Tue Nov 03 00:03:16 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

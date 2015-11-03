@@ -20,6 +20,14 @@ Is it safe to do this in a signal handler? I can't seem to find concrete informa
 
 Would it be feasible to drop the lock and instead only enable SIGWINCH handling after the read thread has been set up?
 
+470:4-470:18
+Tue Nov 03 22:52:39 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6335e1f_e17c4650
+UUID: b65c3e65_5c987159
+Bytes: 114
+Why not just set a volatile sig_atomic_t flag here and read it when read() returns EINTR? As well as David's idea.
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -34,6 +42,19 @@ Parent: 96401a44_8ded56e9
 UUID: b6335e1f_a126be93
 Bytes: 173
 Makes sense to me, enabling a 3rd read() function is kind of a bummer but it seems necessary, and better than having to mess with macros for a legitimate use case like this.
+
+532
+Tue Nov 03 22:52:39 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6335e1f_a126be93
+UUID: 16a98a5f_e783bcb7
+Bytes: 278
+It's up to you guys. I guess there's two main schools of thought:
+
+- Make read() on Windows work with C Runtime fds and sysdeps fds.
+- Split read() into unix_read() which works with C Runtime fds and adb_read() which works with sysdeps fds.
+
+So the proposal is for a 3rd option?
 
 682
 Tue Nov 03 19:33:00 2015 +0000

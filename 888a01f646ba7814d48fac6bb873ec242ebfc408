@@ -1,0 +1,22 @@
+Revision: 888a01f646ba7814d48fac6bb873ec242ebfc408
+Patch-set: 4
+File: adb/commandline.cpp
+
+654:8-654:33
+Wed Nov 04 00:31:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6a3167e_29e689d8
+Bytes: 577
+I thought you might be considering moving from exit() to _exit() (which does not call atexit handlers) as described in https://android-review.googlesource.com/167998 ? Is it absolutely critical that this atexit handler run?
+
+BTW, if you make this change, please test on Windows* if you can (or hold your breath until I can try it) since calling stdin_raw_restore from an atexit handler probably goes down a different codepath on Windows (i.e. possibly loader lock held).
+
+[*] Yes, this means I should probably write a python unittest for adb shell in a real console on Windows.
+
+745:4-745:8
+Wed Nov 04 00:31:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16d0aae3_f50e0a4a
+Bytes: 104
+I guess it doesn't matter, but what is the point of switching from return'ing up the calltree to exit()?
+

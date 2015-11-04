@@ -62,6 +62,18 @@ I may be misunderstanding the problem here, but according to signal(7), signals 
 
 Can we just block SIGWINCH before spawning the thread, and then use pthread_sigmask() to unblock it only for this thread, guaranteeing that it's delivered to only this thread? Then we can avoid the SIGUSR1 secondary signal altogether.
 
+470:4-470:18
+Wed Nov 04 18:45:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d0aae3_fb9b5be2
+UUID: b6335e1f_eab6dba4
+Bytes: 442
+i couldn't get that to work before, but i just gave it another go, and it's working now.
+
+i think i gave up too early last time because i was under the misapprehension that this was running in the _server_ so we'd need to notify multiple threads anyway. when i realized it was in the client and simplified the working code i had, i didn't try hard enough to go back to using SIGWINCH directly.
+
+thanks for encouraging me to backtrack further!
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

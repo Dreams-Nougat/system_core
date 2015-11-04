@@ -9,3 +9,11 @@ UUID: b6335e1f_a42d2c6c
 Bytes: 82
 Why is the \r needed? I thought \n already moved to the next line and to column 0?
 
+575:40-575:62
+Wed Nov 04 01:08:48 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6335e1f_a42d2c6c
+UUID: d6bb729e_2da9b9b7
+Bytes: 171
+this code is only called when we're in raw mode, where that isn't the case. the old code did the stdin_raw_restore first, but now it's done by atexit, that comes too late.
+

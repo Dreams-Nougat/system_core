@@ -9,10 +9,34 @@ UUID: 36aa0e54_4b72d981
 Bytes: 82
 Now that the atexit has been reverted, does this need to call stdin_raw_restore()?
 
+574:24-574:65
+Wed Nov 04 02:04:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36aa0e54_4b72d981
+UUID: b65c3e65_22cbd477
+Bytes: 54
+yes. that was one thing that was nice about atexit :-)
+
+574:24-574:65
+Wed Nov 04 02:04:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36aa0e54_4b72d981
+UUID: 76df26f3_f8604512
+Bytes: 54
+yes. that was one thing that was nice about atexit :-)
+
 663:8-663:17
 Wed Nov 04 01:55:14 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 76df26f3_982fb9c9
 Bytes: 56
 Not sure if this matters, but now this leaves stdin raw?
+
+663:8-663:17
+Wed Nov 04 02:04:23 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76df26f3_982fb9c9
+UUID: 36aa0e54_4b4e5919
+Bytes: 57
+ugh. yeah, now you see why i want to rewrite all this :-)
 

@@ -9,3 +9,11 @@ UUID: b6335e1f_e720d678
 Bytes: 123
 you say "(broken)", but do you have an actual bug here? are any of the callers affected (positively or negatively) by this?
 
+9
+Wed Nov 04 21:09:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6335e1f_e720d678
+UUID: b69d1e72_b4dd2e32
+Bytes: 179
+None of the existing callers use it, but I was working on a patch that was broken by it. Having a POSIX adb_dirname live alongside a non-POSIX adb_basename seems pretty bad to me.
+

@@ -23,6 +23,14 @@ we'll leave the terminal in a bad state (requiring "stty sane") if this doesn't 
 
 if we really cared, we should set signal handlers for all the signals that default to killing the process. i'll switch this back to being called explicitly with a TODO for now, since no one's actually complained about this yet.
 
+654:8-654:33
+Wed Nov 04 01:40:03 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36c12e1a_d0844234
+UUID: d6bb729e_d0d9944d
+Bytes: 146
+We could also use at_quick_exit in addition here, and use quick_exit instead of _exit where we need to commit suicide without calling destructors.
+
 745:4-745:8
 Wed Nov 04 00:31:02 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

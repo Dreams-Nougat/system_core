@@ -28,6 +28,14 @@ UUID: b65c3e65_5c987159
 Bytes: 114
 Why not just set a volatile sig_atomic_t flag here and read it when read() returns EINTR? As well as David's idea.
 
+470:4-470:18
+Wed Nov 04 00:11:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b65c3e65_5c987159
+UUID: f6a3167e_26feb823
+Bytes: 295
+because read won't return EINTR unless i send the SIGUSR1. the SIGWINCH goes to the main thread (strictly, an arbitrary thread not of our choosing) so this signal handler exists merely to ensure that _some_ signal gets sent to the stdin read thread, which will cause the read to fail with EINTR.
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -55,6 +63,16 @@ It's up to you guys. I guess there's two main schools of thought:
 - Split read() into unix_read() which works with C Runtime fds and adb_read() which works with sysdeps fds.
 
 So the proposal is for a 3rd option?
+
+532
+Wed Nov 04 00:11:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16a98a5f_e783bcb7
+UUID: 36c12e1a_50ccd23e
+Bytes: 339
+a 4th option would be "remove the TEMP_FAILURE_RETRY from unix_read on Unix, and explicitly write TEMP_FAILURE_RETRY in all but one call site". (which is the real problem that brought me here, not so much the fact that we have two different reads.)
+
+i wasn't planning on doing anything about this right now, just throwing out another idea.
 
 682
 Tue Nov 03 19:33:00 2015 +0000

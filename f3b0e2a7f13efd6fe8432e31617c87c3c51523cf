@@ -36,6 +36,14 @@ UUID: f6a3167e_26feb823
 Bytes: 295
 because read won't return EINTR unless i send the SIGUSR1. the SIGWINCH goes to the main thread (strictly, an arbitrary thread not of our choosing) so this signal handler exists merely to ensure that _some_ signal gets sent to the stdin read thread, which will cause the read to fail with EINTR.
 
+470:4-470:18
+Wed Nov 04 00:31:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6a3167e_26feb823
+UUID: 36aa0e54_6821db2f
+Bytes: 82
+If you do David's suggestion, can you kill the mutex & check of stdin_read_thread?
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -73,6 +81,14 @@ Bytes: 339
 a 4th option would be "remove the TEMP_FAILURE_RETRY from unix_read on Unix, and explicitly write TEMP_FAILURE_RETRY in all but one call site". (which is the real problem that brought me here, not so much the fact that we have two different reads.)
 
 i wasn't planning on doing anything about this right now, just throwing out another idea.
+
+532
+Wed Nov 04 00:31:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36c12e1a_50ccd23e
+UUID: f6a3167e_c935751d
+Bytes: 89
+4th option sounds ok if you generally want to keep the codebase unix-ish (which is fine).
 
 682
 Tue Nov 03 19:33:00 2015 +0000

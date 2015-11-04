@@ -1,0 +1,11 @@
+Revision: ea76d5aa20bb4193e03d259e20aca9eedc001e7f
+Patch-set: 3
+File: adb/commandline.cpp
+
+575:40-575:62
+Wed Nov 04 00:31:02 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6335e1f_a42d2c6c
+Bytes: 82
+Why is the \r needed? I thought \n already moved to the next line and to column 0?
+

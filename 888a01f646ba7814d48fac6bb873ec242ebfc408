@@ -13,10 +13,30 @@ BTW, if you make this change, please test on Windows* if you can (or hold your b
 
 [*] Yes, this means I should probably write a python unittest for adb shell in a real console on Windows.
 
+654:8-654:33
+Wed Nov 04 01:22:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6a3167e_29e689d8
+UUID: 36c12e1a_d0844234
+Bytes: 313
+we'll leave the terminal in a bad state (requiring "stty sane") if this doesn't run.
+
+if we really cared, we should set signal handlers for all the signals that default to killing the process. i'll switch this back to being called explicitly with a TODO for now, since no one's actually complained about this yet.
+
 745:4-745:8
 Wed Nov 04 00:31:02 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 16d0aae3_f50e0a4a
 Bytes: 104
 I guess it doesn't matter, but what is the point of switching from return'ing up the calltree to exit()?
+
+745:4-745:8
+Wed Nov 04 01:22:18 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16d0aae3_f50e0a4a
+UUID: f6a3167e_29a0c9c1
+Bytes: 306
+because the "what happens next?" is pretty confusing for all this shell stuff. at this point, though i couldn't decide whether to move it up or down. adb_shell/RemoteShell seems less of a problem than RemoteShell/stdin_read_thread_loop/read_and_dump.
+
+since this didn't go anywhere, i'll revert it for now.
 

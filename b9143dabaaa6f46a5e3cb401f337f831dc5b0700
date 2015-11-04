@@ -17,3 +17,11 @@ UUID: b69d1e72_b4dd2e32
 Bytes: 179
 None of the existing callers use it, but I was working on a patch that was broken by it. Having a POSIX adb_dirname live alongside a non-POSIX adb_basename seems pretty bad to me.
 
+9
+Wed Nov 04 21:17:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b69d1e72_b4dd2e32
+UUID: 76a726c0_b2bc5e89
+Bytes: 80
+okay, but the commit message should say this and lose the misleading "(broken)".
+

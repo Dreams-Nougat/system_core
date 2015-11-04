@@ -1,0 +1,18 @@
+Revision: 43d80733c7364616e66c32f60daec4f5e4eb970e
+Patch-set: 5
+File: adb/commandline.cpp
+
+574:24-574:65
+Wed Nov 04 01:55:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36aa0e54_4b72d981
+Bytes: 82
+Now that the atexit has been reverted, does this need to call stdin_raw_restore()?
+
+663:8-663:17
+Wed Nov 04 01:55:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76df26f3_982fb9c9
+Bytes: 56
+Not sure if this matters, but now this leaves stdin raw?
+

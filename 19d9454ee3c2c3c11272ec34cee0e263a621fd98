@@ -1,0 +1,11 @@
+Revision: 19d9454ee3c2c3c11272ec34cee0e263a621fd98
+Base-for-patch-set: 5
+File: adb/commandline.cpp
+
+1346:43-1346:66
+Wed Nov 04 01:55:14 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76df26f3_d87c61cb
+Bytes: 29
+Killed the old joke I see. :)
+

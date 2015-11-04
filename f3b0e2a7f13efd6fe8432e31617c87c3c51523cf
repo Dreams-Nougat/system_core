@@ -52,6 +52,16 @@ UUID: 36aa0e54_0baf0157
 Bytes: 329
 there's no good way in our current code to implement the "after" part. (this lock is my implementation of the "after" part. it's how we know that the other thread got far enough for us to safely start sending it signals.) i think the real fix is to not have two threads, but that's a big enough change we should do it separately.
 
+470:4-470:18
+Wed Nov 04 17:02:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36aa0e54_0baf0157
+UUID: 16d0aae3_fb9b5be2
+Bytes: 407
+I may be misunderstanding the problem here, but according to signal(7), signals will be delivered to an arbitrary thread selected from those which do not block the signal.
+
+Can we just block SIGWINCH before spawning the thread, and then use pthread_sigmask() to unblock it only for this thread, guaranteeing that it's delivered to only this thread? Then we can avoid the SIGUSR1 secondary signal altogether.
+
 532
 Tue Nov 03 19:33:00 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

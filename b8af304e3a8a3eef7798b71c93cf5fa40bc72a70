@@ -1,0 +1,11 @@
+Revision: b8af304e3a8a3eef7798b71c93cf5fa40bc72a70
+Patch-set: 2
+File: libziparchive/zip_writer.cc
+
+296:11-296:22
+Thu Nov 05 09:03:57 2015 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6345268_82b03a04
+Bytes: 35
+data_to_write or write_size maybe ?
+

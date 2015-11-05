@@ -9,3 +9,11 @@ UUID: 568ea242_82e8ea34
 Bytes: 199
 do we want to explicitly import the ones we want? (to protect, say, against something we actually care about being removed.) the 'con' being that if we *add* stuff to utf8.h we'd have to opt in here.
 
+40
+Thu Nov 05 03:22:41 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 568ea242_82e8ea34
+UUID: 1698aa84_063c0ebd
+Bytes: 328
+It's up to you guys. I explicitly imported open & unlink before, and the comment I got was "make it shorter" (i.e. put the using's in an #include file). :) So that's why I 'made it shorter' (one line) this time around. It doesn't really matter to me one way or another. I can change it to whichever you prefer, just let me know.
+

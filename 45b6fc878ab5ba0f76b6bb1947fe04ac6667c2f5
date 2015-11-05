@@ -9,3 +9,13 @@ UUID: b69d1e72_b78370b8
 Bytes: 248
 any full sync performance difference when running with this new adbd? (i wondered with the original adb_dirname patch whether we should special-case bionic where we know we don't actually need all the extra copies. probably not, but i'm curious...)
 
+151
+Thu Nov 05 01:45:08 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b69d1e72_b78370b8
+UUID: f6923665_b10c58c3
+Bytes: 483
+It doesn't look like there's any difference (and there shouldn't be, since secure_mkdirs is only ever called when the directory for the file that's being created is missing, which probably doesn't happen much on sync).
+
+The variance between runs is pretty high, though (I'm seeing times between 40 and 50 seconds). We should maybe add some profiling infrastructure to see how much time we're actually spending doing stuff, and how much is just waiting for bits to come over the wire.
+

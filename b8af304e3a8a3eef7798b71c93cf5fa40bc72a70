@@ -9,3 +9,10 @@ UUID: d6345268_82b03a04
 Bytes: 35
 data_to_write or write_size maybe ?
 
+311
+Thu Nov 05 18:28:56 2015 +0000
+Author: Adam Lesinski <1043034@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b69d1e72_c5dd9a31
+Bytes: 121
+Does this mean that this is never executed. I think we can remove this writing code here since the stream is ended above.
+

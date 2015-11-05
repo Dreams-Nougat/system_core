@@ -1,0 +1,11 @@
+Revision: e680f358ece3d6047f7b61c07267d8d87cea9cf5
+Patch-set: 1
+File: crash_reporter/Android.mk
+
+107
+Thu Nov 05 03:24:58 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d69a9277_c6320233
+Bytes: 62
+so this won't fail a check build - $(call <unknown function>)?
+

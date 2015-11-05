@@ -19,3 +19,11 @@ It doesn't look like there's any difference (and there shouldn't be, since secur
 
 The variance between runs is pretty high, though (I'm seeing times between 40 and 50 seconds). We should maybe add some profiling infrastructure to see how much time we're actually spending doing stuff, and how much is just waiting for bits to come over the wire.
 
+151
+Thu Nov 05 01:57:03 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6923665_b10c58c3
+UUID: 36892e3b_5316dcd7
+Bytes: 66
+40-50s? on what device? it's pretty consistently 20s for me on N9.
+

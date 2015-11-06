@@ -9,6 +9,13 @@ UUID: ed56c9ec_0791e150
 Bytes: 214
 can we invert the sense so we can say "interactive" rather than "batch"? took me ages to work out what you meant by batch; i'm not sure in 2015 it's so obvious that that's the opposite of "interactive" any more :-)
 
+252
+Fri Nov 06 16:48:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b686fe2b_55786fa7
+Bytes: 63
+is the forkpty -> openpty change worth porting to the new code?
+
 313
 Thu May 28 06:24:44 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -28,6 +28,14 @@ But if there are runtime advantages to openpty like better security or error rep
 
 I don't think it would be a difficult change, I'd be happy to prepare a CL if we want to do a side-by-side comparison.
 
+252
+Fri Nov 06 17:58:10 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d69a9277_9263d1be
+UUID: b69d1e72_e63aa4a2
+Bytes: 152
+actually, no, i had openpty and forkpty the wrong way round. if we're managing to do everything we want to do with forkpty, that's probably best anyway.
+
 313
 Thu May 28 06:24:44 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

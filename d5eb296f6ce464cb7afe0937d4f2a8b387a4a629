@@ -16,6 +16,18 @@ UUID: b686fe2b_55786fa7
 Bytes: 63
 is the forkpty -> openpty change worth porting to the new code?
 
+252
+Fri Nov 06 17:33:11 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b686fe2b_55786fa7
+UUID: d69a9277_9263d1be
+Bytes: 520
+From a code structure standpoint, I simplified the fork logic quite a bit in Subprocess::ForkAndExec(), so I think splitting forkpty into openpty/fork/login_tty may create as much clutter as it removes. Though maybe I'm overestimating the readability of my current code :)
+
+But if there are runtime advantages to openpty like better security or error reporting, then it's probably worth looking into.
+
+I don't think it would be a difficult change, I'd be happy to prepare a CL if we want to do a side-by-side comparison.
+
 313
 Thu May 28 06:24:44 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

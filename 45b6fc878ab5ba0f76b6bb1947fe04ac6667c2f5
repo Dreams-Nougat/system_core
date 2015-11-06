@@ -27,3 +27,11 @@ UUID: 36892e3b_5316dcd7
 Bytes: 66
 40-50s? on what device? it's pretty consistently 20s for me on N9.
 
+151
+Fri Nov 06 20:17:00 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 36892e3b_5316dcd7
+UUID: d69a9277_6d1bee50
+Bytes: 55
+shamu. Are you still seeing 20s with my recent patches?
+

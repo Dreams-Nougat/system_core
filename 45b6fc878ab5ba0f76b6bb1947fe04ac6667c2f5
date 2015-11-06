@@ -35,3 +35,15 @@ UUID: d69a9277_6d1bee50
 Bytes: 55
 shamu. Are you still seeing 20s with my recent patches?
 
+151
+Fri Nov 06 20:48:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d69a9277_6d1bee50
+UUID: 1698aa84_f83eb6b6
+Bytes: 234
+it's maybe gone up very slightly, but i'm still seeing 22s from:
+
+  $ find out/target/product/flounder/system/ -type f | xargs touch
+  $ adb sync
+  /system/: 1757 files pushed. 175 files skipped. 23.0 MB/s (539096217 bytes in 22.348s)
+

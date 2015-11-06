@@ -1,5 +1,29 @@
 Revision: f580d09ea4f14d01e7f66dccaa6160a93e676f8b
 Patch-set: 1
+File: liblog/log_is_loggable.c
+
+32:4-49:54
+Fri Nov 06 23:40:05 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b620be2e_62b40c40
+Bytes: 460
+/*
++     * If we trigger a signal handler in the middle of locked activity and the
++     * signal handler logs a message, we could get into a deadlock state.
++     * Solution is to trylock a few times and give up.
++     */
++    int i = 10;
++    for (;;) {
++        if (!pthread_mutex_trylock(&lock_cache)) {
++            return true;
++        }
++        if (--i == 0) {
++            return false;
++        }
++        sched_yield();
++    }
++    /* NOTREACHED */
+
 File: liblog/logd_write.c
 
 84:9-84:10

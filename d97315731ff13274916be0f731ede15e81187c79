@@ -9,3 +9,11 @@ UUID: 568ea242_62af7e56
 Bytes: 41
 when does the empty case actually happen?
 
+547
+Fri Nov 06 20:22:19 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 568ea242_62af7e56
+UUID: b620be2e_ff8f57a0
+Bytes: 143
+I don't believe it ever does, I just blindly ported it from the original code. I'll make sure it never happens and remove it in a follow up CL.
+

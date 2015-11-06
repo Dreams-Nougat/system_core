@@ -1,5 +1,14 @@
 Revision: b1e324e4a6c6a47e6f750e8bb49f07d5ec07437a
 Patch-set: 5
+File: liblog/logd_write.c
+
+193:0-194:38
+Fri Nov 06 23:05:12 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96a49abb_10ab59dd
+Bytes: 287
+This takes a lock, and causes a regression. It increases the chances a lock is held while in signal context and can lead to deadlock if main thread is logging, and a signal happens in the middle of the code that is locked. Working on a fix on the hopes I do not have to revert this code.
+
 File: logcat/logcat.cpp
 
 425

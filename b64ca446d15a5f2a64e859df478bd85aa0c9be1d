@@ -1,0 +1,11 @@
+Revision: b64ca446d15a5f2a64e859df478bd85aa0c9be1d
+Patch-set: 3
+File: metricsd/metrics_daemon.rc
+
+4
+Sat Nov 07 00:23:05 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6b0760b_7ecdaddd
+Bytes: 35
+shouldn't this pass --logtosyslog ?
+

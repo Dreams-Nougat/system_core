@@ -24,6 +24,14 @@ Bytes: 460
 +    }
 +    /* NOTREACHED */
 
+32:4-49:54
+Sat Nov 07 00:56:27 2015 +0000
+Author: Mok Keith <1061414@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b620be2e_62b40c40
+UUID: b69d1e72_b0bff17c
+Bytes: 289
+I would purpose to add a new function for logging in signal handler which tells liblog does not use pthread_mutex directly, if we cannot find a way to determine we are in signal handler in a dynamic manner inside liblog. No pthread_mutex_x functions should be called inside signal handler.
+
 File: liblog/logd_write.c
 
 84:9-84:10

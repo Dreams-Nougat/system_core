@@ -1,0 +1,11 @@
+Revision: 4fc3bbd7282a5cce30624a7c7e3a5b077bcf0cc2
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:2-9:38
+Sun Nov 08 02:26:44 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36712e54_90539a1e
+Bytes: 179
+An alternative would be to make unix_read() not handle EINTR and to use TEMP_FAILURE_RETRY at all the existing unix_read() call-sites. Let me know if you'd rather do that instead.
+

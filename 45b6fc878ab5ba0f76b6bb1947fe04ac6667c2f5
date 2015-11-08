@@ -1,5 +1,37 @@
 Revision: 45b6fc878ab5ba0f76b6bb1947fe04ac6667c2f5
 Patch-set: 1
+File: adb/adb_utils.cpp
+
+99:53-99:60
+Sun Nov 08 01:19:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b620be2e_08f20fc8
+Bytes: 17
+delete this word?
+
+122:2-125:18
+Sun Nov 08 01:19:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b69d1e72_5096c570
+Bytes: 48
+Move this comment below the call to adb_dirname?
+
+139:12-139:18
+Sun Nov 08 01:19:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d683721b_0709693f
+Bytes: 7
+'path'?
+
+File: adb/file_sync_client.cpp
+
+397:17-397:60
+Sun Nov 08 01:19:00 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d66b7268_ca88830d
+Bytes: 112
+Can adb_dirname() be called before errno is read, causing errno to be overwritten? Maybe this is not a big deal.
+
 File: adb/file_sync_service.cpp
 
 151

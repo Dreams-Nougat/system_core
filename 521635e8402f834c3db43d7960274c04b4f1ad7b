@@ -9,3 +9,11 @@ UUID: 96b81a3f_139caeda
 Bytes: 182
 Small corner case: if state == kInEscape here, ssh will first send the pending escape character whereas this will just drop it. Maybe move this check to the end of the "else" clause?
 
+547:0-548:37
+Mon Nov 09 21:57:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96b81a3f_139caeda
+UUID: b6b19e59_7166d86d
+Bytes: 4
+Done
+

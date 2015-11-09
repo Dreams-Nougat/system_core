@@ -1,0 +1,20 @@
+Revision: afeca66261e2552a298460ded3ee34faf5b290c9
+Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Mon Nov 09 15:54:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b69d1e72_33ef8b71
+Bytes: 225
+why not 2? the documentation is a bit garbled, but it seems like 2 just means the same as 1 except you also can't stat the /proc/<pid> directories themselves. do we have anything that needs that but doesn't need the contents?
+
+File: init/init.cpp
+
+549
+Mon Nov 09 15:54:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b69d1e72_53f40f43
+Bytes: 41
+why can't you just use __STRING directly?
+

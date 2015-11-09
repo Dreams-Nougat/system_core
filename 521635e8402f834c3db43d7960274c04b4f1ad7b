@@ -1,0 +1,11 @@
+Revision: 521635e8402f834c3db43d7960274c04b4f1ad7b
+Patch-set: 1
+File: adb/commandline.cpp
+
+547:0-548:37
+Mon Nov 09 21:52:49 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96b81a3f_139caeda
+Bytes: 182
+Small corner case: if state == kInEscape here, ssh will first send the pending escape character whereas this will just drop it. Maybe move this check to the end of the "else" clause?
+

@@ -1,0 +1,20 @@
+Revision: 30fc3e7b796c65235a6c0629b689bdcb3d25be7d
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+186
+Mon Nov 09 18:21:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b620be2e_4863275c
+Bytes: 30
+(i'll switch this to isprint.)
+
+File: base/logging.cpp
+
+267
+Mon Nov 09 18:21:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d683721b_aa63041d
+Bytes: 51
+i've fixed the Mac comments to account for Windows.
+

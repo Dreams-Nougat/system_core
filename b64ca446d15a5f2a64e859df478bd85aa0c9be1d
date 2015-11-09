@@ -19,3 +19,11 @@ I may have misunderstood your email: I thought you suggested tying the logging m
 
 Do you instead want all daemons started by init to log to syslog ?
 
+4
+Mon Nov 09 22:58:02 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 760646d1_d74cdc1d
+UUID: 56cb02e2_06963a0b
+Bytes: 71
+right ... don't we want to syslog ?  stdout/stderr is going nowhere ...
+

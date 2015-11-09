@@ -19,3 +19,11 @@ i think this is just confusingly deep indentation.
 
 maybe the L846-849 'else' should be lifted up and L833 rewritten as if stat == -1 ...?
 
+843:0-845:25
+Mon Nov 09 21:23:14 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b60c3eef_d999b3ef
+UUID: b6b19e59_9176dc71
+Bytes: 90
+I'm not sure why I added this check, it's either wrong or redundant in all cases. Removed.
+

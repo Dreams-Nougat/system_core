@@ -1,0 +1,11 @@
+Revision: c39ba5ae32afb6329d42e61d2941d87ff66d92e3
+Patch-set: 4
+File: init/init.cpp
+
+550
+Mon Nov 09 17:27:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d683721b_078c0957
+Bytes: 200
+i was thinking of QUOTE and STRINGIFY in art/runtime/base/macros.h, but it looks like glibc and the BSDs (and google3) don't have any equivalent (that i can find), i guess we should just keep it here.
+

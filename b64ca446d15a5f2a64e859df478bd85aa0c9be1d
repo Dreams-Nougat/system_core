@@ -9,3 +9,13 @@ UUID: f6b0760b_7ecdaddd
 Bytes: 35
 shouldn't this pass --logtosyslog ?
 
+4
+Mon Nov 09 20:43:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6b0760b_7ecdaddd
+UUID: 760646d1_d74cdc1d
+Bytes: 283
+I may have misunderstood your email: I thought you suggested tying the logging mechanism (stderr or syslog) to how we ran the daemon (foreground or daemonized). As we run it in the foreground we would log to stderr.
+
+Do you instead want all daemons started by init to log to syslog ?
+

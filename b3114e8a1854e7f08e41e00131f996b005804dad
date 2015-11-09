@@ -1,0 +1,11 @@
+Revision: b3114e8a1854e7f08e41e00131f996b005804dad
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+843:0-845:25
+Mon Nov 09 20:57:34 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b60c3eef_d999b3ef
+Bytes: 146
+I think this error message could be confusing, e.g. if stat() fails due to lack of permissions won't this be printed even if |dst| is a directory?
+

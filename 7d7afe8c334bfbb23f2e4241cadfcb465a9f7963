@@ -9,12 +9,28 @@ UUID: 369daed4_f07c7e9c
 Bytes: 11
 (mode != 0)
 
+647
+Tue Nov 10 01:44:40 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_f07c7e9c
+UUID: b6da7ea7_8c7c0705
+Bytes: 4
+Done
+
 833
 Tue Nov 10 01:32:46 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 369daed4_308726c8
 Bytes: 17
 == -1 for clarity
+
+833
+Tue Nov 10 01:44:40 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_308726c8
+UUID: 16c50ace_a763e4c1
+Bytes: 4
+Done
 
 839
 Tue Nov 10 01:32:46 2015 +0000
@@ -23,10 +39,26 @@ UUID: 7689e6a7_df309b98
 Bytes: 4
 same
 
+839
+Tue Nov 10 01:44:40 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7689e6a7_df309b98
+UUID: 96d1fa8e_2b2a255c
+Bytes: 4
+Done
+
 849
 Tue Nov 10 01:32:46 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 369daed4_1084aabf
 Bytes: 4
 != 0
+
+849
+Tue Nov 10 01:44:40 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_1084aabf
+UUID: 56cb02e2_4cd17320
+Bytes: 4
+Done
 

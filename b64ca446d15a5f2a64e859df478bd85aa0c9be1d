@@ -44,3 +44,13 @@ UUID: f6a6b626_ae13b7a7
 Bytes: 360
 IIUC, I think all logs are actually output to stderr.  And either init or some other android functionality collects that and outputs it into logcat.  Adding the kLogToSyslog as far as I can tell, only adds a call to syslog(..) and does nothing else different from the other cases: http://cs/googleplex-android/external/libchromeos/brillo/syslog_logging.cc&l=70
 
+4
+Tue Nov 10 23:13:17 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6a6b626_ae13b7a7
+UUID: 7b0e2f2a_b7df6856
+Bytes: 318
+logging to syslog only will make libbrillo's logging handler return true which will prevent the default libchrome message handler from running (http://cs/android/external/libbrillo/brillo/syslog_logging.cc&l=74). This will then only log to syslog.
+
+Libbrillo's configuration seems to not do what we think it should to.
+

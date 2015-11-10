@@ -18,3 +18,11 @@ Bytes: 54
 Had to update the way we open the tracing files.
 Done.
 
+566:10-566:15
+Tue Nov 10 21:34:59 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6bf9630_23588a08
+UUID: 76d4867d_76f51e79
+Bytes: 172
+Why not just set the correct permissions on line 330, and rely on the SELinux controls to limit access on non-debuggable builds? This seems more complicated than necessary.
+

@@ -1,0 +1,11 @@
+Revision: 793b91ca22874ce5799e0de68ef63e8ad3a490a2
+Patch-set: 4
+File: adb/file_sync_client.cpp
+
+496
+Tue Nov 10 01:36:27 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d7f27c_ed4ae158
+Bytes: 44
+not the most useful local i've ever seen :-)
+

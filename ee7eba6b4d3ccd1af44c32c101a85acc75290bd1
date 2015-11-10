@@ -1,0 +1,11 @@
+Revision: ee7eba6b4d3ccd1af44c32c101a85acc75290bd1
+Patch-set: 3
+File: adb/file_sync_client.cpp
+
+859:36-859:39
+Tue Nov 10 00:53:08 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_8a022b20
+Bytes: 72
+Does this need to be changed for Windows? I'm not sure the context here.
+

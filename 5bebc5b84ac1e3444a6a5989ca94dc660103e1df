@@ -1,0 +1,11 @@
+Revision: 5bebc5b84ac1e3444a6a5989ca94dc660103e1df
+Patch-set: 6
+File: adb/file_sync_client.cpp
+
+896
+Tue Nov 10 02:51:35 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_c776e020
+Bytes: 34
+Found and fixed another one in PS6
+

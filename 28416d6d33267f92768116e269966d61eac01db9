@@ -9,3 +9,11 @@ UUID: 369daed4_100f8a47
 Bytes: 234
 So this will make unix_read() take a buffer of size 1? I think this will break my simple assumptions in https://github.com/android/platform_system_core/blob/master/adb/sysdeps_win32.cpp#L3320 . I'll have to investigate this further...
 
+509:8-509:24
+Tue Nov 10 01:24:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_100f8a47
+UUID: 369daed4_3099e63d
+Bytes: 201
+for the pty-and-valid-escape-char case, yes. i initially had the read(2) use (buffer_size - 1) so i could just memmove up or down, but then i realized that you could have more than one ~ in the buffer.
+

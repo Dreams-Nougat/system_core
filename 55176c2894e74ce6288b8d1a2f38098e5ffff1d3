@@ -1,0 +1,11 @@
+Revision: 55176c2894e74ce6288b8d1a2f38098e5ffff1d3
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+855
+Tue Nov 10 02:04:05 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16ac2a06_32eba8a1
+Bytes: 62
+add a TODO that S_ISLNK shouldn't be handled like this either?
+

@@ -1,0 +1,11 @@
+Revision: 33baa160134e282057ab76e9d1768121692f7d56
+Patch-set: 3
+File: adb/file_sync_client.cpp
+
+898
+Tue Nov 10 02:50:18 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_2b3b457b
+Bytes: 27
+Removed this redundant stat
+

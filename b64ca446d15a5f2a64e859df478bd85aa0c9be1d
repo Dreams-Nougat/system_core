@@ -36,3 +36,11 @@ Bytes: 180
 init seems to collect stderr and send it to logcat (I'm guessing this is done by init).
 launched by init with --foreground, the log messages from metrics_daemon are sent to logcat.
 
+4
+Tue Nov 10 00:00:05 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16ac2a06_ac90e374
+UUID: f6a6b626_ae13b7a7
+Bytes: 360
+IIUC, I think all logs are actually output to stderr.  And either init or some other android functionality collects that and outputs it into logcat.  Adding the kLogToSyslog as far as I can tell, only adds a call to syslog(..) and does nothing else different from the other cases: http://cs/googleplex-android/external/libchromeos/brillo/syslog_logging.cc&l=70
+

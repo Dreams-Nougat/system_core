@@ -17,3 +17,20 @@ UUID: 369daed4_3099e63d
 Bytes: 201
 for the pty-and-valid-escape-char case, yes. i initially had the read(2) use (buffer_size - 1) so i could just memmove up or down, but then i realized that you could have more than one ~ in the buffer.
 
+509:8-509:24
+Tue Nov 10 03:11:07 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_3099e63d
+UUID: 369daed4_f0b91e3c
+Bytes: 592
+Ok, I tested it on Windows and this breaks things. Repro: 1) adb shell, 2) press up arrow and it hangs forever (_console_read() returns -1 with errno == ENOMEM).
+
+I wrote _console_read() to assume that the buffer is always big enough to hold a full terminal sequence, so that I wouldn't have to keep track of an input queue buffer.
+
+I see two options:
+
+1. Make _console_read() maintain an input queue buffer so it can return one byte at a time.
+2. Make stdin_read_thread_loop() somehow do the 'coughing up' with memmove(), etc. correctly. (Sounds like it is harder than it sounds?)
+
+Thoughts?
+

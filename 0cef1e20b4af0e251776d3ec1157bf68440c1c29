@@ -1,0 +1,11 @@
+Revision: 0cef1e20b4af0e251776d3ec1157bf68440c1c29
+Patch-set: 2
+File: rootdir/init.rc
+
+566:10-566:15
+Tue Nov 10 19:44:54 2015 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d7f27c_13caf6c6
+Bytes: 5
+0773?
+

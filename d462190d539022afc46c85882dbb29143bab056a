@@ -17,3 +17,11 @@ UUID: 16c50ace_27589408
 Bytes: 123
 I wanted to be able to simply append "secure__" to the existing PROP_FILENAME.  I can change it if the name is problematic.
 
+609
+Tue Nov 10 02:09:12 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16c50ace_27589408
+UUID: 369daed4_10002adc
+Bytes: 91
+it just looks like a bug. (plus you just had "__properties__secure" in the selinux change.)
+

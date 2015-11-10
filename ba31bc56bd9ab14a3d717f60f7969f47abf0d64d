@@ -18,6 +18,34 @@ UUID: 76d4867d_c7e7fe61
 Bytes: 194
 Do we still need errorcheck, the lock and unlock function is used only internally, signal handler is disabled when pthread_mutex_lock and there will be performance penalty  in using error_check.
 
+28:0-28:76
+Tue Nov 10 01:07:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_c7e7fe61
+UUID: 56cb02e2_89523dba
+Bytes: 535
+I threw this over the wall, admittedly, as additional paranoia.
+
+_This_ is the only one where a performance penalty is an issue, the others are do-not-cares as they are not nearly as hot. I have yet to completely verify this change and run it through all the benchmarks. The biggest performance penalty is pthread_sigmask, which turns into a sigprocmask syscall (WAG 1us instead of tens of ns) so I have concerns over this approach, and much less over the additional overhead, paranoia and protection that this ERRORCHECK has to offer.
+
+38:8-38:50
+Tue Nov 10 01:07:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d7f27c_cd49ddb5
+Bytes: 806
+I am cogitating a way to mitigate the expensive syscall overhead this represents.
+
+Perhaps this is where your idea of a additional API comes in, if we could determine there are no signal handlers, or that they have no logging, we could speed this up by two syscalls! The problem is, a new API goes unused, especially one like this.
+
+We may have to accept the syscall performance penalty as it is 'correct' albeit costly. However, the cost is not just distributed to all the callers, because logd also uses this, where we are in precious CPU-capped background cgroup. Every log message is checked for is_loggable, however we at least only make the monotonic call once (and on logd-reinit). logd does _not_log in its signal handlers so this is not a cost I want to bear. I have pressure to invent a solution.
+
+51:4-51:49
+Tue Nov 10 01:07:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_2787f4c7
+Bytes: 69
+One speedup is to not perform the syscall call if sigmask is all off.
+
 File: liblog/logd_write.c
 
 61

@@ -17,3 +17,11 @@ a) Unicode command line params to fastboot never worked before this change and w
 
 b) Multi-byte codepage params to fastboot used to work before this change (I think? maybe?) and now won't, but is anyone really passing multi-byte codepage params to fastboot to begin with?
 
+29:2-31:52
+Tue Nov 10 23:52:12 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_4a2dd3ce
+UUID: 7689e6a7_93ba8ce1
+Bytes: 171
+fastboot doesn't seem to directly or indirectly call ReadFileToString()/WriteStringToFile(), so there should be no ill effects of this change. Famous last words, I know...
+

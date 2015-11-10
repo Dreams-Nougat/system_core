@@ -9,12 +9,28 @@ UUID: d6d7f27c_cd4b9d3b
 Bytes: 9
 dst_mode?
 
+646
+Tue Nov 10 02:48:59 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6d7f27c_cd4b9d3b
+UUID: 96d1fa8e_eb300d98
+Bytes: 4
+Done
+
 649
 Tue Nov 10 02:07:14 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7689e6a7_df9a5b93
 Bytes: 37
 this local is only used once? inline?
+
+649
+Tue Nov 10 02:48:59 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7689e6a7_df9a5b93
+UUID: 369daed4_d09982ef
+Bytes: 49
+Done, but it's coming back in the following patch
 
 833
 Tue Nov 10 02:07:14 2015 +0000
@@ -23,10 +39,26 @@ UUID: d6d7f27c_6d3b91a8
 Bytes: 26
 hmm. this is a bit subtle.
 
+833
+Tue Nov 10 02:48:59 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6d7f27c_6d3b91a8
+UUID: f6a6b626_515bd462
+Bytes: 20
+Replaced with memset
+
 852
 Tue Nov 10 02:07:14 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 76d4867d_ca76e320
 Bytes: 24
 inline single-use local?
+
+852
+Tue Nov 10 02:48:59 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_ca76e320
+UUID: 16ac2a06_f27c809c
+Bytes: 13
+same as above
 

@@ -9,3 +9,12 @@ UUID: d6d7f27c_13caf6c6
 Bytes: 5
 0773?
 
+566:10-566:15
+Tue Nov 10 21:29:23 2015 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d6d7f27c_13caf6c6
+UUID: f6bf9630_23588a08
+Bytes: 54
+Had to update the way we open the tracing files.
+Done.
+

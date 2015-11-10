@@ -1,0 +1,29 @@
+Revision: ba31bc56bd9ab14a3d717f60f7969f47abf0d64d
+Patch-set: 2
+File: liblog/fake_log_device.c
+
+101
+Tue Nov 10 00:09:50 2015 +0000
+Author: Mok Keith <1061414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 36c68eda_e5f83639
+Bytes: 194
+Do we still need errorcheck, the lock and unlock function is used only internally, signal handler is disabled when pthread_mutex_lock and there will be performance penalty  in using error_check.
+
+File: liblog/log_is_loggable.c
+
+28:0-28:76
+Tue Nov 10 00:09:50 2015 +0000
+Author: Mok Keith <1061414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_c7e7fe61
+Bytes: 194
+Do we still need errorcheck, the lock and unlock function is used only internally, signal handler is disabled when pthread_mutex_lock and there will be performance penalty  in using error_check.
+
+File: liblog/logd_write.c
+
+61
+Tue Nov 10 00:09:50 2015 +0000
+Author: Mok Keith <1061414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_44d4ae68
+Bytes: 194
+Do we still need errorcheck, the lock and unlock function is used only internally, signal handler is disabled when pthread_mutex_lock and there will be performance penalty  in using error_check.
+

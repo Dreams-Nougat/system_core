@@ -26,3 +26,11 @@ UUID: 76d4867d_76f51e79
 Bytes: 172
 Why not just set the correct permissions on line 330, and rely on the SELinux controls to limit access on non-debuggable builds? This seems more complicated than necessary.
 
+566:10-566:15
+Tue Nov 10 21:36:12 2015 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_76f51e79
+UUID: b6da7ea7_f8929d39
+Bytes: 37
+I requested this. I'm ok with either.
+

@@ -1,0 +1,32 @@
+Revision: 0a90234c970c83c097748012071135bb4b6350f1
+Patch-set: 3
+File: adb/file_sync_client.cpp
+
+646
+Tue Nov 10 02:07:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d7f27c_cd4b9d3b
+Bytes: 9
+dst_mode?
+
+649
+Tue Nov 10 02:07:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7689e6a7_df9a5b93
+Bytes: 37
+this local is only used once? inline?
+
+833
+Tue Nov 10 02:07:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d6d7f27c_6d3b91a8
+Bytes: 26
+hmm. this is a bit subtle.
+
+852
+Tue Nov 10 02:07:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_ca76e320
+Bytes: 24
+inline single-use local?
+

@@ -27,6 +27,14 @@ UUID: 76d4867d_50861d83
 Bytes: 22
 (wrap to 100, not 80.)
 
+555
+Wed Nov 11 07:11:38 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_50861d83
+UUID: 56cb02e2_03c0e14e
+Bytes: 38
+ok, is this a new thing? I'm relieved.
+
 570:28-570:75
 Wed Nov 11 03:30:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,6 +56,14 @@ your suggestion of having the Windows code collect ANSI escape sequences sounded
 i think that's the problem with this --- it mixes too much of the buffering with the interpretation, and it's always hard to follow code that's doing two things at once.
 
 (sorry i didn't reply to your suggestion earlier, but Netflix was broken today so i've been too busy to come back to this. or any of the other messes i've made recently :-( )
+
+580
+Wed Nov 11 07:11:38 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16ac2a06_21bb5402
+UUID: 96d1fa8e_2261a215
+Bytes: 76
+Ok, I'll abandon this and work on the sysdeps change over the next few days.
 
 590
 Wed Nov 11 06:26:22 2015 +0000
@@ -72,10 +88,26 @@ UUID: 16c50ace_1e003ddc
 Bytes: 33
 (how do these two groups differ?)
 
+3140:0-3174:22
+Wed Nov 11 07:11:38 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16c50ace_1e003ddc
+UUID: 96d1fa8e_e26e6a07
+Bytes: 106
+Good point, there is no difference. Maybe there was at some point, but clearly not anymore. I'll fix this.
+
 3323
 Wed Nov 11 06:26:22 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7b0e2f2a_bd3d07bc
 Bytes: 75
 see: Windows wants you to have a std::string of buffered output in here :-)
+
+3323
+Wed Nov 11 07:11:38 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7b0e2f2a_bd3d07bc
+UUID: 56cb02e2_c3c52963
+Bytes: 14
+Haha, yeah. :)
 

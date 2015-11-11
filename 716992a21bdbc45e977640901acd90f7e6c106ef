@@ -1,0 +1,29 @@
+Revision: 716992a21bdbc45e977640901acd90f7e6c106ef
+Patch-set: 1
+File: /COMMIT_MSG
+
+13:0-14:53
+Wed Nov 11 03:30:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7b0e2f2a_fd081f6f
+Bytes: 312
+This change is 'self-serving' in the sense that I 'solved' the issue by using a bigger buffer in the caller instead of making unix_read()/_console_read() internally buffer things up.
+
+I'm not totally opposed to making that change in-addition-to or in-lieu-of this change. Just let me know how you'd like it done.
+
+File: adb/commandline.cpp
+
+570:28-570:75
+Wed Nov 11 03:30:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 56cb02e2_708ebde1
+Bytes: 241
+enh suggested the memmove() technique in https://android-review.googlesource.com/181651, but he said there is a problem with it. I don't see a problem (correct me if I'm wrong), but if there is a problem, hopefully this CHECK() will find it.
+
+583:8-591:9
+Wed Nov 11 03:30:04 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_5e4f513c
+Bytes: 179
+Note that we could end up with r == 0 here and then we'd write zero bytes to the ShellProtocol or socket. In testing, this seems ok, but let me know if I should prevent this here.
+

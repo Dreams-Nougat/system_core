@@ -9,10 +9,26 @@ UUID: 7689e6a7_e21b08ae
 Bytes: 7
 stray ;
 
+547
+Wed Nov 11 22:02:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7689e6a7_e21b08ae
+UUID: 7b0e2f2a_8bee7d71
+Bytes: 4
+Done
+
 842
 Tue Nov 10 03:11:02 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 16c50ace_4abaf7e3
 Bytes: 116
 i meant the whole "we use the struct stat even if stat(2) fails" is a bit subtle. comment? or is there a better way?
+
+842
+Wed Nov 11 22:02:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16c50ace_4abaf7e3
+UUID: 16c50ace_8b0d0e17
+Bytes: 92
+Ah. Moved the dst_exists flag up here, defaulted to true, and set it to false if stat fails.
 

@@ -13,6 +13,20 @@ I'm not totally opposed to making that change in-addition-to or in-lieu-of this 
 
 File: adb/commandline.cpp
 
+510
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6a6b626_850a16a4
+Bytes: 189
+the case i was worried about was: what if we have multiple pseudo-escapes in the buffer? right now, though, i'm struggling to think how that could cause us to need more than one spare byte.
+
+555
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_50861d83
+Bytes: 22
+(wrap to 100, not 80.)
+
 570:28-570:75
 Wed Nov 11 03:30:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -20,10 +34,48 @@ UUID: 56cb02e2_708ebde1
 Bytes: 241
 enh suggested the memmove() technique in https://android-review.googlesource.com/181651, but he said there is a problem with it. I don't see a problem (correct me if I'm wrong), but if there is a problem, hopefully this CHECK() will find it.
 
+580
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16ac2a06_21bb5402
+Bytes: 758
+i think what really sold me on not doing the memmoves though was that the previous change made this code work better _and_ made it much easier to read.
+
+okay, so it broke Windows, but apart from that... :-)
+
+your suggestion of having the Windows code collect ANSI escape sequences sounded good to me. that seemed like it kept that where it belonged (and that code knows how long its maximum escape sequence is).
+
+i think that's the problem with this --- it mixes too much of the buffering with the interpretation, and it's always hard to follow code that's doing two things at once.
+
+(sorry i didn't reply to your suggestion earlier, but Netflix was broken today so i've been too busy to come back to this. or any of the other messes i've made recently :-( )
+
+590
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16ac2a06_019bb898
+Bytes: 386
+the other alternative seemed to be "flush more frequently", but the fact we have these two kinds of flushes (and the fact that we'd have to do the memmoves too) made it seem like that wouldn't be particularly attractive. and adding an extra class to abstract away the two systems seemed like it would make things more complicated overall (even if it made them less complicated locally).
+
 583:8-591:9
 Wed Nov 11 03:30:04 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b6da7ea7_5e4f513c
 Bytes: 179
 Note that we could end up with r == 0 here and then we'd write zero bytes to the ShellProtocol or socket. In testing, this seems ok, but let me know if I should prevent this here.
+
+File: adb/sysdeps_win32.cpp
+
+3140:0-3174:22
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_1e003ddc
+Bytes: 33
+(how do these two groups differ?)
+
+3323
+Wed Nov 11 06:26:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7b0e2f2a_bd3d07bc
+Bytes: 75
+see: Windows wants you to have a std::string of buffered output in here :-)
 

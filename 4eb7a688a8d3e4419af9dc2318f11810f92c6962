@@ -1,0 +1,32 @@
+Revision: 4eb7a688a8d3e4419af9dc2318f11810f92c6962
+Patch-set: 2
+File: base/include/base/SmartFileDescriptor.h
+
+20
+Thu Nov 12 23:02:29 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_37cd5ab1
+Bytes: 20
+nit: do we use this?
+
+36
+Thu Nov 12 23:02:29 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_f41030da
+Bytes: 92
+nit: I mildly prefer to not mark a function explicitly as inline and let the compiler decide
+
+68
+Thu Nov 12 23:02:29 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_19a049c2
+Bytes: 24
+nit: trailing whitespace
+
+72
+Thu Nov 12 23:02:29 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_94dc4c62
+Bytes: 85
+namespaces don't need semicolons, use two spaces before comments at the end of a line
+

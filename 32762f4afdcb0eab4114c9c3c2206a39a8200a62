@@ -18,10 +18,26 @@ UUID: 369daed4_b6c78990
 Bytes: 111
 std::string feels funny because the buffer may contain weird escape sequences or even NULLs. I'm open to ideas.
 
+2927:7-2927:24
+Thu Nov 12 01:13:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 369daed4_b6c78990
+UUID: f6a6b626_ad18d4c4
+Bytes: 108
+either's fine by me. (i don't have a problem with a std::string containing NULs, but i know some people do.)
+
 2941:12-2941:67
 Thu Nov 12 01:05:15 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 16c50ace_6ed42069
 Bytes: 91
 std::copy instead? I'm ambivalent since the destination buffer is just a plain byte buffer.
+
+2941:12-2941:67
+Thu Nov 12 01:13:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 16c50ace_6ed42069
+UUID: 7b0e2f2a_06cca4e0
+Bytes: 5
+lgtm.
 

@@ -1,0 +1,45 @@
+Revision: 1e529bca17c31a411877141589d328b234ffbfc0
+Patch-set: 1
+File: adb/sysdeps.h
+
+31:3-31:63
+Thu Nov 12 23:38:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b25eb9e_c55224e7
+Bytes: 176
+If '#define open __xxx_open' happens before #include <base/utf8.h>, there will be an error when utf8.h does 'namespace utf8 { using ::open; }' because there is no ::__xxx_open.
+
+File: adb/sysdeps_win32.cpp
+
+3871:8-3871:39
+Thu Nov 12 23:38:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b25eb9e_e59ac0de
+Bytes: 96
+This assigns to the same variable, but seems to work fine. The adb_test unittest passes no prob.
+
+3910:15-3910:28
+Thu Nov 12 23:38:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb2e9f8f_91ee9c1a
+Bytes: 162
+The point of this var is so that we unconditionally free(wbuf) even if WideToUTF8() fails. Another option would be to use unique_ptr<..., decltype(free)> on wbuf.
+
+File: base/include/base/utf8.h
+
+24:0-25:33
+Thu Nov 12 23:38:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_3e837673
+Bytes: 65
+This compiles fine on Linux, but I don't have a Mac to test that.
+
+File: base/utf8.cpp
+
+100:0-100:11
+Thu Nov 12 23:38:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_5a611314
+Bytes: 114
+I switched from static + preceding underscore to using an anonymous namespace since that seems to be more C++-ish.
+

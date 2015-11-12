@@ -11,10 +11,26 @@ it's fine to call free on null.
 
 (but do you really want a std::unique_ptr on L103 instead?)
 
+93
+Thu Nov 12 21:53:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b3453db_4fdd3192
+UUID: bb3987d2_dae43940
+Bytes: 53
+You're right I like that better, thanks, will change.
+
 103
 Thu Nov 12 19:04:52 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3b2597a9_90d21a7d
 Bytes: 8
 handle_?
+
+103
+Thu Nov 12 21:53:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b2597a9_90d21a7d
+UUID: bb3987d2_1a1c01f4
+Bytes: 225
+I chose "h" to try to minimize this CL as I was worried it was getting too large, but I think you're right I should just use the correct name. A simple name change shouldn't make this significantly harder to review. Will fix.
 

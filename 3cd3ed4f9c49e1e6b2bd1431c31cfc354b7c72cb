@@ -9,12 +9,40 @@ UUID: 5b25eb9e_3fcc4bb3
 Bytes: 198
 pthread_sigmask should only fail for an invalid mask or a bogus address... since both are programming errors, could this be an assertion instead and keep the lock method void (simplify the callers)?
 
+111
+Thu Nov 12 21:25:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b25eb9e_3fcc4bb3
+UUID: 5b25eb9e_4ae2a356
+Bytes: 839
+I see a return as simpler than assert.
+
+However, this code is for host, so I have no problem with KISS and switching back to void.
+
+The rationalization for returning an error (success/failure):
+
+We still want to check for pthread_mutex_lock failure below, although strictly in bionic _today_ it is also a can-not-happen for the specific class of mutex we are using because it simplifies to a semaphore and blocking syscall that only fails if we run out of memory (vm failures), but ...
+
+fakeLogDeviceLock = PTHREAD_ERRORCHECK_MUTEX_INITIALIZER_NP
+
+is one of the options I want to consider at a future date which will return an expected error on nested calls to catch deadlock, and as such failure propagation is _important_.
+
+We can cross the above bridge and associated complexity in the future. All the handling is 'dead code' right now.
+
 176
 Thu Nov 12 18:26:43 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 76d4867d_752d0bcf
 Bytes: 66
 What happens if we bail out here a bunch of times? Is this a leak?
+
+176
+Thu Nov 12 21:25:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_752d0bcf
+UUID: 5b25eb9e_ca5c73cc
+Bytes: 205
+Yes, and it is a can-not-happen and a do-not-care at the same time, this is for host. As such I consider it better to leak than to deadlock if the caller (?) decides to delete a virtual log buffer channel.
 
 File: logd/LogBuffer.cpp
 
@@ -24,4 +52,30 @@ Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1b3453db_af3db5bb
 Bytes: 303
 Seems a bit hacky to be OR'ing values declared in different namespaces. Not likely that someone will define a redundant 0x8000, but it seems better to declare ANDROID_LOGGABLE_NOT_WITHIN_SIGNAL in libc_logging.h along with the log levels that it will be OR'd with. Does it really need to be kept secret?
+
+196
+Thu Nov 12 21:25:49 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b3453db_af3db5bb
+UUID: 5b25eb9e_ea0defbd
+Bytes: 1639
+The other 'hacks' considered:
+
+- A call to a function to prep the library to no handle signals. Problem is must be run at init context in main, which we do not have access to in the jni call.
+- Code to detect if the caller is in 'signal' context, even more hacky than you can imagine.
+- A separate newly introduced function, rejected because I want to keep the API simple.
+- Overload def (this one).
+
+It does not need to be kept secret. It was only called secret because I chose to place it near the function definition that uses it, rather than in the level definitions. I will drop the word 'secret'.
+
+I am _not_ going to change the __android_log_is_loggable API, this is now chipped in stone. def is a value between 0 and a small integer, and that integers set has been that way since '08. Adding a semi-secret (as in not to be exposed in the API) feature-flag to this is low cost since the def value is always a constant #define and zero processing cost to overload.
+
+I can change the name to ANDROID_LOG_LOGGABLE_NOT_WITHIN_SIGNAL and add it near the android log levels, but it can _only_ be used with __android_log_is_loggable and no where else which startles me. If that will please your 'different namespace' issue. I cogitated over this for some time and decided to put its definition near the function so that it was strongly associated?
+
+Another choice would be to continue to define near __android_log_is_loggable the following API change:
+
+- redefine def to flags in the prototype and in the library implementation.
+
+#define ANDROID_LOGGABLE_FLAG_LEVEL_MASK        0x000F
+#define ANDROID_LOGGABLE_FLAG_NOT_WITHIN_SIGNAL 0x8000
 

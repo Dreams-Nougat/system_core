@@ -1,0 +1,11 @@
+Revision: b4af630b3619ff43d7d37ace3754a3a187013e32
+Patch-set: 1
+File: adb/remount_service.cpp
+
+38
+Thu Nov 12 03:05:49 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b25eb9e_ffb13309
+Bytes: 56
+this constant is only used in one place. just inline it?
+

@@ -1,0 +1,11 @@
+Revision: 7a2a3071921b11d7e476862e7f9cbe72be43d0f7
+Patch-set: 4
+File: liblog/logd_write.c
+
+308:0-308:33
+Thu Nov 12 23:48:09 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb2e9f8f_31a5a8dd
+Bytes: 65
+if another respin, move this to ENOTCONN block for correct scope.
+

@@ -1,0 +1,27 @@
+Revision: 32762f4afdcb0eab4114c9c3c2206a39a8200a62
+Patch-set: 2
+File: /COMMIT_MSG
+
+16:0-17:20
+Thu Nov 12 01:05:15 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_4ecde4dd
+Bytes: 37
+This change is net -50 lines of code!
+
+File: adb/sysdeps_win32.cpp
+
+2927:7-2927:24
+Thu Nov 12 01:05:15 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 369daed4_b6c78990
+Bytes: 111
+std::string feels funny because the buffer may contain weird escape sequences or even NULLs. I'm open to ideas.
+
+2941:12-2941:67
+Thu Nov 12 01:05:15 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 16c50ace_6ed42069
+Bytes: 91
+std::copy instead? I'm ambivalent since the destination buffer is just a plain byte buffer.
+

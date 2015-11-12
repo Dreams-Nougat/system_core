@@ -1,0 +1,20 @@
+Revision: 50dfae5239ad6958ca32982598b949ce67d332fa
+Patch-set: 1
+File: fastboot/usb_linux.cpp
+
+93
+Thu Nov 12 19:04:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_4fdd3192
+Bytes: 92
+it's fine to call free on null.
+
+(but do you really want a std::unique_ptr on L103 instead?)
+
+103
+Thu Nov 12 19:04:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_90d21a7d
+Bytes: 8
+handle_?
+

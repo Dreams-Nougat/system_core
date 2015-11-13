@@ -43,3 +43,11 @@ UUID: b6da7ea7_5a611314
 Bytes: 114
 I switched from static + preceding underscore to using an anonymous namespace since that seems to be more C++-ish.
 
+100:0-100:11
+Fri Nov 13 01:07:46 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6da7ea7_5a611314
+UUID: 5b25eb9e_7060b0e5
+Bytes: 168
+(personally i prefer static because you can tell locally, even if you're not using a fancy tool like VS. i wouldn't bother with a leading underscore on statics though.)
+

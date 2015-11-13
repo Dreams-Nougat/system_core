@@ -38,3 +38,15 @@ UUID: 5b25eb9e_8b9e7d77
 Bytes: 161
 you could add a AdbGetSerialNumberW, so you never accidentally have a mismatch? leaving this alone until/unless it actually becomes a problem sounds fine though.
 
+608:10-613:84
+Fri Nov 13 05:56:10 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b25eb9e_8b9e7d77
+UUID: 76d4867d_bf663d6a
+Bytes: 382
+Yeah, we could add a new API, but that would make adb have a hard dependency on a new AdbWinApi.dll & AdbWinUsbApi.dll for little gain.
+
+We could also make the DLLs static libs that could be linked into adb, but again, there wouldn't be enough gain to warrant doing that.
+
+Basically, the cost seems too high to solve this for minimal gain other than improving code quality somewhat.
+

@@ -9,3 +9,13 @@ UUID: 96d1fa8e_7ede8e5b
 Bytes: 4
 >= ?
 
+623:24-623:25
+Fri Nov 13 00:48:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96d1fa8e_7ede8e5b
+UUID: 5b532b27_2623369b
+Bytes: 260
+Good find, I was in fact not thinking that clearly (!) when adding this, but it does stands as-is. Must be able to host a match, _and_ a trailing colon in order to be recognized as a tag field for the Android Logs.
+
+I should add a comment to this effect above.
+

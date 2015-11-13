@@ -9,12 +9,28 @@ UUID: b6da7ea7_37cd5ab1
 Bytes: 20
 nit: do we use this?
 
+20
+Fri Nov 13 01:13:38 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6da7ea7_37cd5ab1
+UUID: 5b532b27_a63966af
+Bytes: 4
+Done
+
 36
 Thu Nov 12 23:02:29 2015 +0000
 Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b2a4b7b_f41030da
 Bytes: 92
 nit: I mildly prefer to not mark a function explicitly as inline and let the compiler decide
+
+36
+Fri Nov 13 01:13:38 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_f41030da
+UUID: 5b2a4b7b_17785e0b
+Bytes: 4
+Done
 
 68
 Thu Nov 12 23:02:29 2015 +0000
@@ -23,10 +39,26 @@ UUID: 76d4867d_19a049c2
 Bytes: 24
 nit: trailing whitespace
 
+68
+Fri Nov 13 01:13:38 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_19a049c2
+UUID: 5b2a4b7b_f76cb24f
+Bytes: 4
+Done
+
 72
 Thu Nov 12 23:02:29 2015 +0000
 Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b2a4b7b_94dc4c62
 Bytes: 85
 namespaces don't need semicolons, use two spaces before comments at the end of a line
+
+72
+Fri Nov 13 01:13:38 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_94dc4c62
+UUID: 3b2597a9_61047e2e
+Bytes: 4
+Done
 

@@ -30,3 +30,11 @@ UUID: b6da7ea7_20b4eea7
 Bytes: 403
 This is super, super unfortunate. We could fix the bug in adb_winusb_interface.cpp and then call the Unicode AdbGetSerialNumber(), but then if adb ran against the old AdbWinUsbApi.dll, it would be risking a potential crash. If we just don't touch this, there's no potential risk at all. And there's no real customer-facing reason to touch this, so I'm inclined to just not touch this. I'm open to ideas.
 
+608:10-613:84
+Fri Nov 13 04:39:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6da7ea7_20b4eea7
+UUID: 5b25eb9e_8b9e7d77
+Bytes: 161
+you could add a AdbGetSerialNumberW, so you never accidentally have a mismatch? leaving this alone until/unless it actually becomes a problem sounds fine though.
+

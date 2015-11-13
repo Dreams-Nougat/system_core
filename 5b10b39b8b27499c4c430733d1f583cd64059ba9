@@ -1,0 +1,25 @@
+Revision: 5b10b39b8b27499c4c430733d1f583cd64059ba9
+Patch-set: 3
+File: base/include/base/SmartFileDescriptor.h
+
+27
+Fri Nov 13 03:08:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_1b164727
+Bytes: 62
+is this a common enough operation to warrant being in the API?
+
+41
+Fri Nov 13 03:08:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_6260fee5
+Bytes: 52
+if you're in base you can pull in the macro instead.
+
+49
+Fri Nov 13 03:08:50 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_b9ddc095
+Bytes: 51
+shouldn't this try to be more like std::unique_ptr?
+

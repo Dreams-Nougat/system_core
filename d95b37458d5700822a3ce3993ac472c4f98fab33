@@ -19,3 +19,17 @@ Good find, I was in fact not thinking that clearly (!) when adding this, but it 
 
 I should add a comment to this effect above.
 
+731:35-731:50
+Fri Nov 13 03:06:56 2015 +0000
+Author: Andy Hung <1040213@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_d96354c1
+Bytes: 56
+theoretically better to put this first in the &&, but ok
+
+753:4-753:48
+Fri Nov 13 03:06:56 2015 +0000
+Author: Andy Hung <1040213@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bb3987d2_da39d4ae
+Bytes: 129
+if this library is sanitized the first two conditions on line 754 would never be reached as an abort would occur on line 752 :-).
+

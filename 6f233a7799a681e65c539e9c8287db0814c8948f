@@ -1,0 +1,11 @@
+Revision: 6f233a7799a681e65c539e9c8287db0814c8948f
+Patch-set: 3
+File: fastboot/usb_osx.cpp
+
+68
+Fri Nov 13 19:14:37 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_a6071a9c
+Bytes: 221
+(i don't want to hold you up any more, so this is fine, but this does make me wonder if we shouldn't rename this file and use "mac" or "apple" everywhere instead "[Mac] OS X" really doesn't make for good identifiers :-) )
+

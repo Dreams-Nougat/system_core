@@ -9,6 +9,14 @@ UUID: 1b3453db_1b164727
 Bytes: 62
 is this a common enough operation to warrant being in the API?
 
+27
+Fri Nov 13 19:16:42 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b3453db_1b164727
+UUID: 1b3453db_e60d22be
+Bytes: 38
+I think we use it a few times already.
+
 41
 Fri Nov 13 03:08:50 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 5b2a4b7b_6260fee5
 Bytes: 52
 if you're in base you can pull in the macro instead.
 
+41
+Fri Nov 13 19:16:42 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_6260fee5
+UUID: 3b2597a9_a7ab96da
+Bytes: 4
+Done
+
 49
 Fri Nov 13 03:08:50 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 96d1fa8e_b9ddc095
 Bytes: 51
 shouldn't this try to be more like std::unique_ptr?
+
+49
+Fri Nov 13 19:16:42 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96d1fa8e_b9ddc095
+UUID: 96d1fa8e_d4c2f981
+Bytes: 96
+How so? It's the same as unique_ptr's reset, and as close to the name as our style guide allows.
 

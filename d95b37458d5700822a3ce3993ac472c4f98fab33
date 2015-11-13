@@ -1,0 +1,11 @@
+Revision: d95b37458d5700822a3ce3993ac472c4f98fab33
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+623:24-623:25
+Fri Nov 13 00:13:40 2015 +0000
+Author: Andy Hung <1040213@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_7ede8e5b
+Bytes: 4
+>= ?
+

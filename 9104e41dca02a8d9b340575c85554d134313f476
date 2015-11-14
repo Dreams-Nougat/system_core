@@ -9,3 +9,11 @@ UUID: 5b2a4b7b_78c66ec0
 Bytes: 148
 i don't think this is the approved mechanism any more. i think you have to say LOCAL_STATIC_LIBRARIES_linux += and LOCAL_STATIC_LIBRARIES_darwin +=.
 
+266
+Sat Nov 14 03:32:19 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_78c66ec0
+UUID: b6da7ea7_e08771f2
+Bytes: 15
+That's correct.
+

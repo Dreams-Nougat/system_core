@@ -1,0 +1,13 @@
+Revision: af2b28ec842c8120c6faad5392579f53b9d69da5
+Patch-set: 2
+File: include/ziparchive/zip_archive_stream_entry.h
+
+29
+Mon Nov 16 20:07:59 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_79bdfc82
+Bytes: 118
+Why not Read(size_t size)?
+
+Also would it be helpful to have something like tempalate<typename T> void Read(T* value)?
+

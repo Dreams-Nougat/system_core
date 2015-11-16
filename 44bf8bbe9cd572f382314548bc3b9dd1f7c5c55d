@@ -25,3 +25,10 @@ UUID: b6da7ea7_63c0ab50
 Bytes: 151
 This is a premature optimization to handle the common case of no incomplete UTF-8 sequences. Thus, the common case won't do unnecessary buffer copying.
 
+3717:0-3717:71
+Mon Nov 16 20:05:02 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b532b27_1b49afb2
+Bytes: 117
+Might be slightly simpler to use vector swap() instead of std::move() in L3714 and skip this, but either way is fine.
+

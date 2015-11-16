@@ -32,3 +32,11 @@ UUID: 5b532b27_1b49afb2
 Bytes: 117
 Might be slightly simpler to use vector swap() instead of std::move() in L3714 and skip this, but either way is fine.
 
+3717:0-3717:71
+Mon Nov 16 21:04:58 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b532b27_1b49afb2
+UUID: db847bce_2b0f497a
+Bytes: 74
+That is an interesting idea, I'll look into it (probably make the change).
+

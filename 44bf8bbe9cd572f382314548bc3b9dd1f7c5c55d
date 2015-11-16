@@ -1,0 +1,27 @@
+Revision: 44bf8bbe9cd572f382314548bc3b9dd1f7c5c55d
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+3643:4-3643:56
+Mon Nov 16 01:00:08 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b532b27_b5a74a29
+Bytes: 46
+I'm open to alternatives to this copy & paste.
+
+3651:14-3651:31
+Mon Nov 16 01:00:08 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_4ca532dc
+Bytes: 206
+This has some nasty by-hand UTF-8 parsing because ICU is a huge dependency to take just for this. I also investigated C++ codecvt, but mingw doesn't support that.
+
+I'm open to ideas on alternatives to this.
+
+3707:8-3710:85
+Mon Nov 16 01:00:08 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_63c0ab50
+Bytes: 151
+This is a premature optimization to handle the common case of no incomplete UTF-8 sequences. Thus, the common case won't do unnecessary buffer copying.
+

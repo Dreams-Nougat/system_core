@@ -1,0 +1,11 @@
+Revision: e32cb1b14cb2cfc434ade4b4ec80fc51b49c6762
+Base-for-patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+3739:8-3739:19
+Mon Nov 16 01:00:08 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b6da7ea7_a3daa33f
+Bytes: 92
+0 is an impossible return value from adb_fprintf in this situation, so stop checking for it.
+

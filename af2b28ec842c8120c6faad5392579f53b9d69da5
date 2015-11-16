@@ -11,3 +11,33 @@ Why not Read(size_t size)?
 
 Also would it be helpful to have something like tempalate<typename T> void Read(T* value)?
 
+File: libziparchive/zip_archive_stream_entry.cc
+
+40
+Mon Nov 16 22:13:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b532b27_fbe933a6
+Bytes: 9
+strerror?
+
+89
+Mon Nov 16 22:13:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb2e9f8f_f7c82bce
+Bytes: 5
+errno
+
+93
+Mon Nov 16 22:13:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_6ac7ae1a
+Bytes: 60
+this seems like a bug. this is just the short read case, no?
+
+215
+Mon Nov 16 22:13:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_6999b33c
+Bytes: 25
+(same comments as above.)
+

@@ -1,0 +1,11 @@
+Revision: d5cf66ba6cae28f4c87205a8e109567eb9e4d30f
+Patch-set: 2
+File: adb/Android.mk
+
+266:2-266:81
+Tue Nov 17 23:58:09 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_65359a85
+Bytes: 87
+Should you ifdef out the inclusion of cutils include files in the affected source code?
+

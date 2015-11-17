@@ -1,0 +1,12 @@
+Revision: da8ae51ef0d3cd277acffdd7229b0196ff77a39d
+Patch-set: 3
+File: metricsd/metrics_collector.rc
+
+1:8-1:24
+Tue Nov 17 23:15:12 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7b6aafda_c64fac3a
+Bytes: 114
+"metrics_collector" is 17 characters long.
+The limit for service names is 16 characters so I dropped the _ to fit.
+

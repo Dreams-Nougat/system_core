@@ -40,3 +40,11 @@ Might be slightly more readable to pull the completed check out of the loop, som
   buffer.push_back(seq.back());
   TestParseCompleteUTF8(<complete args>);
 
+170:0-182:13
+Tue Nov 17 22:31:24 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: db847bce_177946d6
+UUID: db847bce_dfff7480
+Bytes: 54
+Yeah, I like it better that way, so I made the change.
+

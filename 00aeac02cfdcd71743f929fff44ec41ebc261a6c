@@ -18,6 +18,14 @@ UUID: db847bce_3c11d12e
 Bytes: 48
 Is there a reason this isn't just a std::string?
 
+389:2-389:39
+Tue Nov 17 22:45:06 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: db847bce_3c11d12e
+UUID: 7b6aafda_c609ec3f
+Bytes: 180
+engrave_tombstone returns a malloc'd char *, so we'd have to copy it into the std::string and then free the result. I'm going to be refactoring that code in a follow up patch soon.
+
 391:2-393:3
 Tue Nov 17 03:07:55 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +33,26 @@ UUID: 1b3453db_d8bb1ae5
 Bytes: 137
 I think you can simply remove this check completely. I can't see anything below that could use fd if DEBUGGER_ACTION_CRASH is the action.
 
+391:2-393:3
+Tue Nov 17 22:45:06 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b3453db_d8bb1ae5
+UUID: 5b2a4b7b_02f24c03
+Bytes: 4
+Done
+
 456:4-456:12
 Tue Nov 17 03:07:55 2015 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b2a4b7b_1a1d1a50
 Bytes: 41
 I don't think this is necessary any more.
+
+456:4-456:12
+Tue Nov 17 22:45:06 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_1a1d1a50
+UUID: fb75bfb9_dcb46143
+Bytes: 4
+Done
 

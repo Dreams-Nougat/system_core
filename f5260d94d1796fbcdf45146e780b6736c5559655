@@ -9,10 +9,34 @@ UUID: 3b2597a9_3b28da71
 Bytes: 187
 I did as suggested and changed it from a template function to a regular function, but still kept the majority of the code the same in case we want to go the other direction at some point.
 
+3651:7-3651:24
+Tue Nov 17 17:10:03 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b2597a9_3b28da71
+UUID: 5b25eb9e_22cc23e1
+Bytes: 16
+Perfect, thanks!
+
 3658:30-3658:35
 Tue Nov 17 02:08:26 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3b2597a9_db167633
 Bytes: 140
 Visual Studio gave some warning when this was a signed constant (probably due to sign-extension and since it is an int, bigger than a char).
+
+File: adb/sysdeps_win32_test.cpp
+
+170:0-182:13
+Tue Nov 17 17:10:03 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db847bce_177946d6
+Bytes: 292
+Might be slightly more readable to pull the completed check out of the loop, something like:
+
+  for (...; i < seq.size() - 1; ...) {
+    buffer.push_back(seq[i]);
+    TestParseCompleteUTF8(<not complete yet args>);
+  }
+  buffer.push_back(seq.back());
+  TestParseCompleteUTF8(<complete args>);
 

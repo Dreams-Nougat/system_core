@@ -1,0 +1,22 @@
+Revision: 74dde07615090c2c87699f3557f59a41b6dbdabc
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:0-7:45
+Tue Nov 17 01:42:34 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_1d34f4d7
+Bytes: 137
+There is more going on in this CL than this. Perhaps add something like:
+
+Use ScopedFd to remove levels of indentation in handle_request.
+
+File: debuggerd/debuggerd.cpp
+
+345:100-345:101
+Tue Nov 17 01:42:34 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 76d4867d_7638677c
+Bytes: 54
+So close, but breaches the 100 character limit by one.
+

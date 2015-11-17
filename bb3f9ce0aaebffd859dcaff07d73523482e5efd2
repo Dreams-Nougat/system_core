@@ -1,0 +1,11 @@
+Revision: bb3f9ce0aaebffd859dcaff07d73523482e5efd2
+Patch-set: 1
+File: libcutils/Android.mk
+
+19:0-19:13
+Tue Nov 17 01:01:05 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_dbbb16e5
+Bytes: 204
+As long as you are in here, it's probably worth changing these to add libcutils to the name. We've been bitten by using common names and then having them be overridden or something else happening to them.
+

@@ -1,0 +1,34 @@
+Revision: 00aeac02cfdcd71743f929fff44ec41ebc261a6c
+Patch-set: 2
+File: /COMMIT_MSG
+
+7:0-7:45
+Tue Nov 17 03:07:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_98c7d26b
+Bytes: 46
+See previous comment about the commit message.
+
+File: debuggerd/debuggerd.cpp
+
+389:2-389:39
+Tue Nov 17 03:07:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db847bce_3c11d12e
+Bytes: 48
+Is there a reason this isn't just a std::string?
+
+391:2-393:3
+Tue Nov 17 03:07:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_d8bb1ae5
+Bytes: 137
+I think you can simply remove this check completely. I can't see anything below that could use fd if DEBUGGER_ACTION_CRASH is the action.
+
+456:4-456:12
+Tue Nov 17 03:07:55 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_1a1d1a50
+Bytes: 41
+I don't think this is necessary any more.
+

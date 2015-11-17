@@ -1,0 +1,18 @@
+Revision: f5260d94d1796fbcdf45146e780b6736c5559655
+Patch-set: 2
+File: adb/sysdeps_win32.cpp
+
+3651:7-3651:24
+Tue Nov 17 02:08:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_3b28da71
+Bytes: 187
+I did as suggested and changed it from a template function to a regular function, but still kept the majority of the code the same in case we want to go the other direction at some point.
+
+3658:30-3658:35
+Tue Nov 17 02:08:26 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_db167633
+Bytes: 140
+Visual Studio gave some warning when this was a signed constant (probably due to sign-extension and since it is an int, bigger than a char).
+

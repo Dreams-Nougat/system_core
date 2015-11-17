@@ -25,6 +25,14 @@ UUID: bb3987d2_d3689fc9
 Bytes: 166
 my point was more "where do you stop? why not fcntl, say?". especially because SmartFileDescriptor::Dup(i) doesn't gain you anything over SmartFileDescriptor(dup(i)).
 
+27
+Tue Nov 17 20:52:37 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bb3987d2_d3689fc9
+UUID: 5b532b27_0c161b27
+Bytes: 8
+Alright.
+
 41
 Fri Nov 13 03:08:50 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -62,4 +70,12 @@ Parent: 96d1fa8e_d4c2f981
 UUID: 76d4867d_6d2a5f5d
 Bytes: 173
 i thought there was an exception for STL-like classes? "std::unique_ptr for fds" really ought to look like std::unique_ptr. (i.e. more like the existing ScopedFd/unique_fd.)
+
+49
+Tue Nov 17 20:52:37 2015 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 76d4867d_6d2a5f5d
+UUID: fb75bfb9_9924bb8e
+Bytes: 4
+Done
 

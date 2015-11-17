@@ -1,0 +1,11 @@
+Revision: a629e2e578acf83dbadd55b70c3221c4289d7031
+Patch-set: 2
+File: adb/Android.mk
+
+266
+Tue Nov 17 03:48:59 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_b854ce4a
+Bytes: 105
+"We don't need libcutils on Windows, because the functions we use are implemented in sysdeps_win32.cpp."?
+

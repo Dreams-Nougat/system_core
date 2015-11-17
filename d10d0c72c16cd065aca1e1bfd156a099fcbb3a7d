@@ -1,0 +1,11 @@
+Revision: d10d0c72c16cd065aca1e1bfd156a099fcbb3a7d
+Patch-set: 1
+File: libcutils/Android.mk
+
+19:0-19:21
+Tue Nov 17 23:50:57 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db847bce_421dc7a0
+Bytes: 55
+We usually use lower case for local makefile variables.
+

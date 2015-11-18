@@ -27,6 +27,14 @@ Bytes: 114
 "metrics_collector" is 17 characters long.
 The limit for service names is 16 characters so I dropped the _ to fit.
 
+1:8-1:24
+Wed Nov 18 18:03:36 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7b6aafda_c64fac3a
+UUID: fb75bfb9_c83a5bc1
+Bytes: 6
+*sigh*
+
 4:22-4:26
 Wed Nov 18 17:59:32 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>

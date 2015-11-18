@@ -35,6 +35,14 @@ UUID: fb75bfb9_c83a5bc1
 Bytes: 6
 *sigh*
 
+1:8-1:24
+Wed Nov 18 19:40:21 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb75bfb9_c83a5bc1
+UUID: 76d4867d_125ace77
+Bytes: 205
+IIRC, part of this limitation is because init creates "init.svc.$servicename" properties to tell the state of each service.  If we do ever manage to increase the size of properties, we could increase this.
+
 4:22-4:26
 Wed Nov 18 17:59:32 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>

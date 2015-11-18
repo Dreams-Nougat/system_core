@@ -1,0 +1,20 @@
+Revision: 166b428a20ce383041102ee4c53d195cd650aa33
+Patch-set: 5
+File: base/include/base/unique_fd.h
+
+27
+Wed Nov 18 00:50:50 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_073edeb6
+Bytes: 181
+nit: Consider marking this class final since the destructor is not virtual.
+
+This is library code.  It would be nice to leave your readers with an example of basic usage with open()
+
+61
+Wed Nov 18 00:50:50 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b3453db_c7ee9672
+Bytes: 16
+nit: indentation
+

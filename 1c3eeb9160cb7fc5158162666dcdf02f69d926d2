@@ -1,0 +1,36 @@
+Revision: 1c3eeb9160cb7fc5158162666dcdf02f69d926d2
+Patch-set: 2
+File: include/log/log.h
+
+619:0-620:54
+Thu Nov 19 00:08:18 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db847bce_53e59838
+Bytes: 67
+Is this needed now that we don't pass the "not within signal" flag?
+
+File: liblog/fake_log_device.c
+
+113:0-119:1
+Thu Nov 19 00:08:18 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_47629f1b
+Bytes: 124
+nit: is this whitespace addition intentional or just leftover from removing the DECLARE_SIGSET() stuff from the previous CL?
+
+File: liblog/log_is_loggable.c
+
+29:0-41:1
+Thu Nov 19 00:08:18 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b2a4b7b_e3c17fa7
+Bytes: 169
+now that lock/unlock are just mapped to the pthread_mutex lock/unlock, is this change needed? I guess it has some value as a place to put the deadlock warning message...
+
+207:1-224:46
+Thu Nov 19 00:08:18 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b816bc7_7d5bc838
+Bytes: 103
+This is the substance of the change... the deadlock cases you saw all involved android_log_timestamp()?
+

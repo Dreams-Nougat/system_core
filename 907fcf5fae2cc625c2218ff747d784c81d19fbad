@@ -9,6 +9,14 @@ UUID: 96d1fa8e_0689f90e
 Bytes: 99
 Shouldn't this word be removed? Maybe it was supposed to be too, but it doesn't seem to make sense.
 
+108:23-108:25
+Thu Nov 19 04:34:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96d1fa8e_0689f90e
+UUID: 1b3453db_083b8ac6
+Bytes: 117
+i spotted that too, but i think there's a missing "NUL:" or something. spencer will know what it's supposed to say...
+
 File: adb/commandline.cpp
 
 1301:4-1301:29
@@ -32,4 +40,12 @@ One question on this particular test:
 Is it possible that if the other side has a full disk, that the CopyDone could succeed but the write could be truncated?
 
 Would it be better to still have this return a bool, but return the result of this call && CopyDone to guarantee that if there is a failure, it's marked as a failure?
+
+142:8-142:57
+Thu Nov 19 04:34:26 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b25eb9e_abc7e818
+UUID: db847bce_c43f9c06
+Bytes: 233
+CopyDone only succeeds if the other side sends an ID_OKAY message. and we need to call CopyDone because that's what checks for the error. "CopyDone && did_send" should work though, and make everyone happier about ignoring the result.
 

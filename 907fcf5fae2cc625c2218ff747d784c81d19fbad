@@ -1,5 +1,14 @@
 Revision: 907fcf5fae2cc625c2218ff747d784c81d19fbad
 Patch-set: 1
+File: adb/client/main.cpp
+
+108:23-108:25
+Thu Nov 19 03:57:02 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 96d1fa8e_0689f90e
+Bytes: 99
+Shouldn't this word be removed? Maybe it was supposed to be too, but it doesn't seem to make sense.
+
 File: adb/commandline.cpp
 
 1301:4-1301:29
@@ -8,4 +17,19 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b816bc7_c00b0fff
 Bytes: 134
 Moving this here is good to keep the EPIPE behavior similar between Unix and Windows since Windows never produces SIGPIPE, only EPIPE.
+
+File: adb/file_sync_client.cpp
+
+142:8-142:57
+Thu Nov 19 03:57:02 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b25eb9e_abc7e818
+Bytes: 506
+From the comment, you are relying on CopyDone to error out if any error occurs here. It would be nice to have a comment somewhere explaining why errors are kind of ignored here.
+
+One question on this particular test:
+
+Is it possible that if the other side has a full disk, that the CopyDone could succeed but the write could be truncated?
+
+Would it be better to still have this return a bool, but return the result of this call && CopyDone to guarantee that if there is a failure, it's marked as a failure?
 

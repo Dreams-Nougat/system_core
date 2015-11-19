@@ -17,6 +17,14 @@ UUID: 1b3453db_083b8ac6
 Bytes: 117
 i spotted that too, but i think there's a missing "NUL:" or something. spencer will know what it's supposed to say...
 
+108:23-108:25
+Thu Nov 19 05:13:39 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b3453db_083b8ac6
+UUID: 7b6aafda_8f9ea077
+Bytes: 249
+Christopher is right, the word 'to' should be removed. Basically, the parent adb start-server process makes anonymous pipes, then hooks up the child process to those pipes. Then the C Runtime in the child process detects the pipes and buffers stdio.
+
 File: adb/commandline.cpp
 
 1301:4-1301:29

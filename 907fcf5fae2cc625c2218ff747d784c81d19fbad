@@ -25,6 +25,14 @@ UUID: 7b6aafda_8f9ea077
 Bytes: 249
 Christopher is right, the word 'to' should be removed. Basically, the parent adb start-server process makes anonymous pipes, then hooks up the child process to those pipes. Then the C Runtime in the child process detects the pipes and buffers stdio.
 
+108:23-108:25
+Thu Nov 19 19:13:25 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7b6aafda_8f9ea077
+UUID: 5b25eb9e_2e176631
+Bytes: 4
+Done
+
 File: adb/commandline.cpp
 
 1301:4-1301:29

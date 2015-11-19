@@ -1,0 +1,11 @@
+Revision: 907fcf5fae2cc625c2218ff747d784c81d19fbad
+Patch-set: 1
+File: adb/commandline.cpp
+
+1301:4-1301:29
+Thu Nov 19 03:52:06 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b816bc7_c00b0fff
+Bytes: 134
+Moving this here is good to keep the EPIPE behavior similar between Unix and Windows since Windows never produces SIGPIPE, only EPIPE.
+

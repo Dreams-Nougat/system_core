@@ -1,0 +1,18 @@
+Revision: 823d9a930b206ff08017208da4e1ec1ea7d3dce0
+Patch-set: 1
+File: libutils/tests/LruCache_test.cpp
+
+115
+Thu Nov 19 16:22:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb75bfb9_1002b5e7
+Bytes: 13
+delete k.ptr;
+
+329
+Thu Nov 19 16:22:15 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5b25eb9e_6b3af075
+Bytes: 71
+there's nothing we can assert? we just need to run this under valgrind?
+

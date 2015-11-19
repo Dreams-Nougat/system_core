@@ -9,6 +9,20 @@ UUID: db847bce_53e59838
 Bytes: 67
 Is this needed now that we don't pass the "not within signal" flag?
 
+619:0-620:54
+Thu Nov 19 01:16:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: db847bce_53e59838
+UUID: 1b3453db_c541eb1e
+Bytes: 869
+I want to entrench into the API that we are only supporting ANDROID_LOGGABLE_FLAG_DEFAULT_MASK bits for the default values in flag so that if the user puts a nonsensical value that we at least validate it with a mask (we may add range checking later). This leaves the door open for me to overload the bits.
+
+The alternative is that I toss the idea and let them put nonsensical values here so that they become the nonsensical return value from the function. There is value in that (a return value of 42, for instance, would allow the caller to determine that we hit the default, and they may chose to use that as a clue and take other actions.
+
+I'd prefer to limit the abuse of an API and add validation to a library function.
+
+NB: mask checking alone still allows them to abuse it :-(, ANDROID_LOGGABLE_FLAG_DEFAULT_MASK as a value is much like the 42 I outlined above.
+
 File: liblog/fake_log_device.c
 
 113:0-119:1
@@ -17,6 +31,14 @@ Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3b2597a9_47629f1b
 Bytes: 124
 nit: is this whitespace addition intentional or just leftover from removing the DECLARE_SIGSET() stuff from the previous CL?
+
+113:0-119:1
+Thu Nov 19 01:16:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b2597a9_47629f1b
+UUID: fb75bfb9_92f32d5c
+Bytes: 151
+Intentional, for clarity. I had to comply with this in previous CLs in the past, it is not part of the coding standard though. I touch it, I fix it ...
 
 File: liblog/log_is_loggable.c
 
@@ -27,10 +49,56 @@ UUID: 5b2a4b7b_e3c17fa7
 Bytes: 169
 now that lock/unlock are just mapped to the pthread_mutex lock/unlock, is this change needed? I guess it has some value as a place to put the deadlock warning message...
 
+29:0-41:1
+Thu Nov 19 01:16:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b2a4b7b_e3c17fa7
+UUID: 7b6aafda_599ff681
+Bytes: 851
+First reason was balance with the other code in the liblog library that also abstracted the lock and documented this problem.
+
+I wanted to keep the deadlock warning comment, and put it near the top, this just felt right. The code inlines effectively. I could have opted to put it in front of the lock_loggable mutex definition placed at the top and leave the code below alone. I decided to keep the abstraction to the lock function.
+
+This is also in preparation for the ToDo: as noted in the commit message. If we come to a solution, the change will be identical in each file, hitting the lock() code at the top.
+
+Another future is that this code is not designed to host on MSDOS. If we get a request, this will also simplify the port to MSDOS. The reasoning behind not porting was that legacy code in the MSDOS deliverables do not use this API (yet).
+
+186:4-186:53
+Thu Nov 19 01:16:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b2597a9_476a9f32
+Bytes: 341
+This is currently KISS. What we want to later is:
+
+switch (flag & ANDROID_LOGGABLE_FLAG_DEFAULT_MASK) {
+case ANDROID_LOG_VERBOSE:
+case ANDROID_LOG_DEBUG:
+case ANDROID_LOG_INFO:
+case ANDROID_LOG_WARN:
+case ANDROID_LOG_ERROR:
+case ANDROID_LOG_FATAL:
+    return flag & ANDROID_LOGGABLE_FLAG_DEFAULT_MASK;
+}
+return -1; /* ANDROID_LOG_SUPPRESS */
+
 207:1-224:46
 Thu Nov 19 00:08:18 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b816bc7_7d5bc838
 Bytes: 103
 This is the substance of the change... the deadlock cases you saw all involved android_log_timestamp()?
+
+207:1-224:46
+Thu Nov 19 01:16:02 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b816bc7_7d5bc838
+UUID: 5b2a4b7b_86cc093c
+Bytes: 1227
+Yes, the problem slapped us across the face when we shared the mutex for here and above. By splitting the mutex into two, we solve most of the problem. By allowing trylock we also allow for isLoggable in signal context (not in our codebase, but liblog is part of the API that vendors/partners use and they could do anything I expect, including isloggable in signal context).
+
+The visible problem was an isLoggable in the mainline process, when a signal came in and tried to log a message, the former code deadlocked.
+
+We still have the problem at a lower boil, people have reported deadlock and it was not repeatable with enough frequency to catch it. Now we know why. In the case of the other locks we just report and don't fix since we have an issue with BLOCK/UNBLOCK of signals that we have no intent on burning cycles to close yet. The comments may allow the vendors and partners to work around it.
+
+The _correct_ way (currently) of using any signal unsafe operations in a signal is to spawn a thread waiting on a semaphore, signal would trip the semaphore, which would run the signal request in a survivable context. However, that is not an option in the places in our codebase since spawning a thread would be verbotten.
 

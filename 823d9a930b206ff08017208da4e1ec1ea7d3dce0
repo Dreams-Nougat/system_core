@@ -9,10 +9,26 @@ UUID: fb75bfb9_1002b5e7
 Bytes: 13
 delete k.ptr;
 
+115
+Fri Nov 20 15:03:56 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb75bfb9_1002b5e7
+UUID: 569062ca_b2bf8820
+Bytes: 4
+Done
+
 329
 Thu Nov 19 16:22:15 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5b25eb9e_6b3af075
 Bytes: 71
 there's nothing we can assert? we just need to run this under valgrind?
+
+329
+Fri Nov 20 15:03:56 2015 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b25eb9e_6b3af075
+UUID: b67fde4b_f60d8681
+Bytes: 177
+I added the assertion that there's a single element and it's the expected one. Anyway, without the fix it was segfaulting at the second put, so the regression was being covered.
 

@@ -1,0 +1,20 @@
+Revision: ee287dba2d3da7549ead82793d12c8058fb674ce
+Patch-set: 1
+File: adb/commandline.cpp
+
+121:44-121:45
+Sat Nov 21 00:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bb2a67bd_ecf1c3ff
+Bytes: 35
+alphabetically sort by option char?
+
+740:0-741:12
+Sat Nov 21 00:20:19 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bb2a67bd_8c0da7bf
+Bytes: 171
+You can just use unix_open/unix_close instead of redefining the macros.
+
+Actually, see client/main.cpp:close_stdin() for a function that almost does exactly what you need.
+

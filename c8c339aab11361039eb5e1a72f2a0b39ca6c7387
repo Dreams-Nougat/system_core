@@ -9,3 +9,15 @@ UUID: 9b2123e5_51e7c664
 Bytes: 25
 UINT64_C from <stdint.h>?
 
+186
+Sat Nov 21 04:53:01 2015 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9b2123e5_51e7c664
+UUID: 7b246ff3_ad83492a
+Bytes: 197
+Yes, UINT64_C works for these literals too.
+Now I found other places with cast like
+  (uint64_t)(1 -(1<<16)) 
+They should be converted to UINT64(1 -(1<<16))
+too but UINT64_C(1 -(1<<16)) won't work.
+

@@ -1,0 +1,11 @@
+Revision: c8c339aab11361039eb5e1a72f2a0b39ca6c7387
+Patch-set: 1
+File: libpixelflinger/tests/arch-mips64/assembler/mips64_assembler_test.cpp
+
+186
+Sat Nov 21 04:34:31 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9b2123e5_51e7c664
+Bytes: 25
+UINT64_C from <stdint.h>?
+

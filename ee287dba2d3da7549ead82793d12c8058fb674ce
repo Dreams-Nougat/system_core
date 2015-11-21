@@ -18,3 +18,11 @@ You can just use unix_open/unix_close instead of redefining the macros.
 
 Actually, see client/main.cpp:close_stdin() for a function that almost does exactly what you need.
 
+740:0-741:12
+Sat Nov 21 00:30:17 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bb2a67bd_8c0da7bf
+UUID: db271bf3_d0ff3480
+Bytes: 116
+Huh, I tried grepping and somehow didn't see that. I'll pull that out to something shared and just use that instead.
+

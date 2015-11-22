@@ -1,0 +1,62 @@
+Revision: d8488e52e56ceb463ff98a45e8bef07014e30e84
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:41-7:69
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b167790_aec05bff
+Bytes: 138
+To get Android Studio to properly display UTF-8 from adb start-server, there is https://code.google.com/p/android/issues/detail?id=194648.
+
+13:0-15:28
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b153384_cd096140
+Bytes: 357
+An alternative would be to use the C Runtime pipe() (instead of CreatePipe() which is currently used) which will convert \r\n=>\n, then just use fwrite() with regular stdout/stderr which will convert \n=>\r\n. But that seems more gross to keep converting line-endings, when this kind of utility code shouldn't even be thinking about such data format issues.
+
+File: adb/adb.cpp
+
+517:34-517:40
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b167790_eeba5389
+Bytes: 320
+An alternative would be to just use STDOUT/STDERR_FILENO, but by calling fileno(), the C Runtime can tell us if we're not even connected to anything by returning -2. Plus, if stdout/stderr have been freopen'd, the file descriptor number could be different (but that is probably a crazy corner case we don't worry about).
+
+529:11-529:76
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3bed97ca_96dc9234
+Bytes: 120
+An alternative would be to do _open_osfhandle(DuplicateHandle(_get_osfhandle(fd), FALSE)), but that seems very esoteric.
+
+543:12-543:22
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db271bf3_f330822c
+Bytes: 171
+An alternative would be to move ScopedFd from shell_service.cpp to adb_utils.h. Libbase also has unique_fd, but that uses close() and adb has the crazy unix_close() macro.
+
+551:12-551:22
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7b246ff3_10d26adc
+Bytes: 22
+Same ScopedFd comment.
+
+585:12-585:44
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fbf69f9c_34795614
+Bytes: 220
+Remove this check? No one checks the return value from printf/fprintf, so why check this return value? This check happens to make this change dependent on my other UTF-8 change that fixes up the adb_write() return value.
+
+636:80-639:19
+Sun Nov 22 03:07:50 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db271bf3_33885a09
+Bytes: 95
+This comment is because I forgot why I did all this manual pipe reading and this is the reason.
+

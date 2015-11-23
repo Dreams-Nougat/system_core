@@ -1,0 +1,11 @@
+Revision: cc65c3b9f8edc6fb48ffe725376e65fac42851d6
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+304:64-304:79
+Mon Nov 23 00:08:28 2015 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: db271bf3_b3128a6f
+Bytes: 139
+If WriteFdExactly() encounters errno==EPIPE, it sets errno=0 (which in my mind is strange), then this strerror(errno) will say "No error.".
+

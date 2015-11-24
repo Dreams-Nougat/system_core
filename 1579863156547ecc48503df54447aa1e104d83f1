@@ -23,10 +23,42 @@ UUID: bbc4277e_ff39b724
 Bytes: 72
 close_stdin() is called by adb_server_main() even when "-n" is not used.
 
+48:50-48:61
+Tue Nov 24 05:12:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bbc4277e_ff39b724
+UUID: dbcc7b7f_25173827
+Bytes: 4
+Done
+
+48:8-48:15
+Tue Nov 24 05:12:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b153384_be588908
+UUID: fbe4dff8_5ef97170
+Bytes: 126
+Yeah, you can force this code to fail by exhausting file descriptors, but there shouldn't be any way to do this on the device.
+
+48:79-48:81
+Tue Nov 24 05:12:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fbf69f9c_74fbd9a1
+UUID: bbcfc771_e4d47415
+Bytes: 4
+Done
+
 50:8-50:50
 Tue Nov 24 04:32:09 2015 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3bed97ca_4215408c
 Bytes: 87
 If this fails, can you close fd? (Basically, fd is leaked in this unlikely error path.)
+
+50:8-50:50
+Tue Nov 24 05:12:55 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3bed97ca_4215408c
+UUID: dbc1db6d_baf7d146
+Bytes: 178
+It gets closed at line 53 because this doesn't early exit (but the second warning will always get printed if the first check fails, because that one doesn't return early either).
 

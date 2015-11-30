@@ -1,0 +1,11 @@
+Revision: 379499cd3ab8dbc26de7a8206567e5c49be52ac4
+Patch-set: 3
+File: metricsd/.clang-format
+
+1:14-1:20
+Mon Nov 30 14:15:40 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bbcfc771_6794e6b7
+Bytes: 182
+According to what Gaurav and Jim described way back when, I think this might need to be "Chromium" rather than "Google". I was using "Google" because I was doing work in system/core.
+

@@ -1,0 +1,11 @@
+Revision: e6eb83b31ff21093164beb4f1216fed44d9ee123
+Patch-set: 1
+File: liblog/Android.bp
+
+55
+Mon Nov 30 23:52:54 2015 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bb1267d6_8f59593f
+Bytes: 205
+This seems like a crude way to label every module that builds for windows.  enabled: true would make more sense.  There aren't many places that use disabled yet, maybe we should just swap that for enabled?
+

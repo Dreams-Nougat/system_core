@@ -145,3 +145,11 @@ $ diff google-style chromium-style
 
 Looks like the delta is related to additional formatting restrictions in Chromium (http://dev.chromium.org/developers/coding-style#Code_Formatting).
 
+1:14-1:20
+Mon Nov 30 20:11:37 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7bf38fea_0f556545
+UUID: fb0f7f76_57b33cc2
+Bytes: 144
+That's fine, again, I just want a consistent style. But I'd also like to not have to reformat all the Chromium OS code that we just ported over.
+

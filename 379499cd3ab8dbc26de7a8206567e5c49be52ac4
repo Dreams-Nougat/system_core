@@ -63,3 +63,11 @@ I actually prefer calling it as Google style (with tweaks) over calling it Chrom
 
 Since we aren't bound with compiler limitations (e.g. MSVS) as Chromium,  we are more aligned with Google C++ usage rather than Chromium C++ usage.
 
+1:14-1:20
+Mon Nov 30 17:12:14 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bbe987fc_71dbb845
+UUID: fbe4dff8_9a5a1c30
+Bytes: 153
+Right, but clang-format won't enforce those restrictions. "Chromium" in this context is specifically about formatting, not about coding style in general.
+

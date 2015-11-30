@@ -107,3 +107,41 @@ $ diff chromium google
 ---
 > DerivePointerAlignment: true
 
+1:14-1:20
+Mon Nov 30 19:06:32 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fbe4dff8_9a5a1c30
+UUID: 7bf38fea_0f556545
+Bytes: 1068
+I see, in that case Chromium should be fine as well. 
+
+My question then though is why not make it BasedOnStyle: Google + additional restriction of */& with type (PointerAlignment: Left)?
+
+More details below. (tl;dr: have a slight preference for deviating minimally from Google style).
+
+Here's the delta between BasedOnStyle Google vs. Chromium as defined by clang-format:
+
+$ diff google-style chromium-style 
+11c11
+< AllowAllParametersOfDeclarationOnNextLine: true
+---
+> AllowAllParametersOfDeclarationOnNextLine: false
+14,16c14,16
+< AllowShortFunctionsOnASingleLine: All
+< AllowShortIfStatementsOnASingleLine: true
+< AllowShortLoopsOnASingleLine: true
+---
+> AllowShortFunctionsOnASingleLine: Inline
+> AllowShortIfStatementsOnASingleLine: false
+> AllowShortLoopsOnASingleLine: false
+21c21
+< BinPackParameters: true
+---
+> BinPackParameters: false
+44c44
+< DerivePointerAlignment: true
+---
+> DerivePointerAlignment: false
+
+Looks like the delta is related to additional formatting restrictions in Chromium (http://dev.chromium.org/developers/coding-style#Code_Formatting).
+

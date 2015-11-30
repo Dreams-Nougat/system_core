@@ -9,3 +9,11 @@ UUID: 3bd59733_8dfcc129
 Bytes: 45
 this is doing more than just removing a \n...
 
+739
+Mon Nov 30 19:05:07 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3bd59733_8dfcc129
+UUID: 1bc3735c_37dbf210
+Bytes: 125
+Ugh. I should probably stop using `repo upload --cbr . --re="..."`, but the interface for adding reviewers on gerrit sucks :(
+

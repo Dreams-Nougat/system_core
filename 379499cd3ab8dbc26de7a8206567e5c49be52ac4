@@ -17,3 +17,13 @@ UUID: 5be08be0_d2057457
 Bytes: 199
 i think we want to converge on one.  is the difference between Chromium & Google significant to care about ?  i guess we could run clang format between the two on this codebase and check the diff ...
 
+1:14-1:20
+Mon Nov 30 15:05:14 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5be08be0_d2057457
+UUID: fb0f7f76_37c7a06d
+Bytes: 294
+Do we care that parts of system/core are already using Google style? I personally don't care, as long as we're consistent and enforcing we can do whatever. I'm happy to do Chromium for Brillo. I remember enh@ mentioning he was doing Chromium for new parts of Bionic.
+
+TL;DR: Let's use Chromium.
+

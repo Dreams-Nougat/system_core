@@ -1,0 +1,11 @@
+Revision: 3e6356834f71c78e41711fb456613849bc81b200
+Patch-set: 1
+File: libcutils/fs_config.c
+
+139
+Mon Nov 30 16:17:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7bf38fea_ef9d817c
+Bytes: 118
+being in /system/bin, this seems like it _would_ be on a user build. but cs/ only finds this match for pppd-ril. dead?
+

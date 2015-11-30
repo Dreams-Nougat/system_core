@@ -9,3 +9,13 @@ UUID: 9bd6830b_092ed1cb
 Bytes: 39
 Will these be cleaned up automatically?
 
+49:4-53:51
+Mon Nov 30 21:26:48 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9bd6830b_092ed1cb
+UUID: 9b0923b2_8b8031b1
+Bytes: 219
+Yes, the ScopedTempDir deletes itself recursively on destruction so both of those directory will be cleaned up.
+
+The ScopedTempDir will be created and cleaned up for each test so the environment will be fresh and clean.
+

@@ -1,0 +1,11 @@
+Revision: 76e2b24a539490d7d67560b3420aa98c22d1f698
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+739
+Mon Nov 30 18:59:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3bd59733_8dfcc129
+Bytes: 45
+this is doing more than just removing a \n...
+

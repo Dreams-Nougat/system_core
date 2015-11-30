@@ -9,3 +9,11 @@ UUID: 7bf38fea_ef9d817c
 Bytes: 118
 being in /system/bin, this seems like it _would_ be on a user build. but cs/ only finds this match for pppd-ril. dead?
 
+139
+Mon Nov 30 17:20:37 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7bf38fea_ef9d817c
+UUID: fbde9f59_6b098171
+Bytes: 129
+I can't find a reference to it either. https://android-review.googlesource.com/184310 is out for review which removes this entry.
+

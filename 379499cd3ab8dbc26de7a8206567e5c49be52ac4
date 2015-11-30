@@ -9,3 +9,11 @@ UUID: bbcfc771_6794e6b7
 Bytes: 182
 According to what Gaurav and Jim described way back when, I think this might need to be "Chromium" rather than "Google". I was using "Google" because I was doing work in system/core.
 
+1:14-1:20
+Mon Nov 30 15:03:28 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bbcfc771_6794e6b7
+UUID: 5be08be0_d2057457
+Bytes: 199
+i think we want to converge on one.  is the difference between Chromium & Google significant to care about ?  i guess we could run clang format between the two on this codebase and check the diff ...
+

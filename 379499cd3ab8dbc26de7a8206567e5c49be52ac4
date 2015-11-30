@@ -71,3 +71,39 @@ UUID: fbe4dff8_9a5a1c30
 Bytes: 153
 Right, but clang-format won't enforce those restrictions. "Chromium" in this context is specifically about formatting, not about coding style in general.
 
+1:14-1:20
+Mon Nov 30 19:02:25 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fbe4dff8_9a5a1c30
+UUID: 3bd59733_0d221181
+Bytes: 759
+FYI, difference between chromium and google style guide:
+
+$ clang-format -style=Google -dump-config > google
+$ clang-format -style=Chromium -dump-config > chromium
+$ diff chromium google 
+3c3
+< # BasedOnStyle:  Chromium
+---
+> # BasedOnStyle:  Google
+11c11
+< AllowAllParametersOfDeclarationOnNextLine: false
+---
+> AllowAllParametersOfDeclarationOnNextLine: true
+14,16c14,16
+< AllowShortFunctionsOnASingleLine: Inline
+< AllowShortIfStatementsOnASingleLine: false
+< AllowShortLoopsOnASingleLine: false
+---
+> AllowShortFunctionsOnASingleLine: All
+> AllowShortIfStatementsOnASingleLine: true
+> AllowShortLoopsOnASingleLine: true
+21c21
+< BinPackParameters: false
+---
+> BinPackParameters: true
+44c44
+< DerivePointerAlignment: false
+---
+> DerivePointerAlignment: true
+

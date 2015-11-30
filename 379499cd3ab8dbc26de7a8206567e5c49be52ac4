@@ -35,3 +35,11 @@ UUID: 9bd6830b_8603ae9b
 Bytes: 11
 sounds fine
 
+1:14-1:20
+Mon Nov 30 16:02:44 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9bd6830b_8603ae9b
+UUID: 9bd6830b_26c2e283
+Bytes: 224
+to clarify, i don't care which guide we converge on as long as we converge.  i just re-found the threads where we agreed to move to Chromium for C++, so let's do that here too.  metrics should already be written in that too.
+

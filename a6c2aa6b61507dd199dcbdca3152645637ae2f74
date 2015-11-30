@@ -1,0 +1,11 @@
+Revision: a6c2aa6b61507dd199dcbdca3152645637ae2f74
+Patch-set: 3
+File: metricsd/metrics_collector_test.cc
+
+48:42-48:51
+Mon Nov 30 20:33:14 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3bdbd73a_03f1528d
+Bytes: 91
+Shouldn't the test be using separate directories, to make sure things are actually working?
+

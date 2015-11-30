@@ -51,3 +51,15 @@ UUID: 5b1b2bb8_63ff8a59
 Bytes: 207
 yeah, iirc chromium is basically google but with type* rather than "type *", wrapping after binary operators rather than before, and using size_t --- fixing three of the worst things i remember from google3.
 
+1:14-1:20
+Mon Nov 30 17:07:44 2015 +0000
+Author: Gaurav Shah <1072350@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b1b2bb8_63ff8a59
+UUID: bbe987fc_71dbb845
+Bytes: 549
+What Jim and I came up with was the recommendation to use Google style with 2 minor tweaks (that I suppose Chromium style also adds) -- http://go/brillo-c++-style
+
+I actually prefer calling it as Google style (with tweaks) over calling it Chromium. Specifically, the latter has a different set of restrictions on C++11 usage than Google C++ style - see http://dev.chromium.org/developers/coding-style
+
+Since we aren't bound with compiler limitations (e.g. MSVS) as Chromium,  we are more aligned with Google C++ usage rather than Chromium C++ usage.
+

@@ -9,3 +9,11 @@ UUID: 9bf043de_33b9b206
 Bytes: 78
 maybe include [anon:.*] maps? Basically any map which is not backed by a file?
 
+103
+Mon Nov 30 22:11:19 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9bf043de_33b9b206
+UUID: bb1267d6_ecc0e3a4
+Bytes: 101
+I think an even better pattern would be to always add the start map address if the map starts with [.
+

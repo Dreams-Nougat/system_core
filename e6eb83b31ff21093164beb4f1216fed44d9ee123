@@ -9,3 +9,11 @@ UUID: bb1267d6_8f59593f
 Bytes: 205
 This seems like a crude way to label every module that builds for windows.  enabled: true would make more sense.  There aren't many places that use disabled yet, maybe we should just swap that for enabled?
 
+55
+Mon Nov 30 23:56:52 2015 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bb1267d6_8f59593f
+UUID: 9bf043de_59afb7a1
+Bytes: 87
+yeah, enabled sounds better to me across the board. I'll make up a change to switch us.
+

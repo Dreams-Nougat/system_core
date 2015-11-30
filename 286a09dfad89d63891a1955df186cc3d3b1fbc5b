@@ -1,0 +1,11 @@
+Revision: 286a09dfad89d63891a1955df186cc3d3b1fbc5b
+Patch-set: 1
+File: libbacktrace/Backtrace.cpp
+
+103
+Mon Nov 30 21:50:00 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9bf043de_33b9b206
+Bytes: 78
+maybe include [anon:.*] maps? Basically any map which is not backed by a file?
+

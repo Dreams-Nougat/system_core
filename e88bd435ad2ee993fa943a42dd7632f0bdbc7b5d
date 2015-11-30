@@ -19,3 +19,11 @@ Yes, the ScopedTempDir deletes itself recursively on destruction so both of thos
 
 The ScopedTempDir will be created and cleaned up for each test so the environment will be fresh and clean.
 
+49:4-53:51
+Mon Nov 30 21:28:35 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9b0923b2_8b8031b1
+UUID: fbe4dff8_3a4f4814
+Bytes: 59
+Cool, I was wondering if it did the recursive delete thing.
+

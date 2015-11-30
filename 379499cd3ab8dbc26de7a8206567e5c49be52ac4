@@ -27,3 +27,11 @@ Do we care that parts of system/core are already using Google style? I personall
 
 TL;DR: Let's use Chromium.
 
+1:14-1:20
+Mon Nov 30 15:06:38 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb0f7f76_37c7a06d
+UUID: 9bd6830b_8603ae9b
+Bytes: 11
+sounds fine
+

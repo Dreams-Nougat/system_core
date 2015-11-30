@@ -43,3 +43,11 @@ UUID: 9bd6830b_26c2e283
 Bytes: 224
 to clarify, i don't care which guide we converge on as long as we converge.  i just re-found the threads where we agreed to move to Chromium for C++, so let's do that here too.  metrics should already be written in that too.
 
+1:14-1:20
+Mon Nov 30 16:08:39 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9bd6830b_8603ae9b
+UUID: 5b1b2bb8_63ff8a59
+Bytes: 207
+yeah, iirc chromium is basically google but with type* rather than "type *", wrapping after binary operators rather than before, and using size_t --- fixing three of the worst things i remember from google3.
+

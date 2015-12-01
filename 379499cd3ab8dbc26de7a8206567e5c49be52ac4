@@ -153,3 +153,14 @@ UUID: fb0f7f76_57b33cc2
 Bytes: 144
 That's fine, again, I just want a consistent style. But I'd also like to not have to reformat all the Chromium OS code that we just ported over.
 
+1:14-1:20
+Tue Dec 01 21:58:05 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb0f7f76_57b33cc2
+UUID: fba69f26_4bb68517
+Bytes: 401
+Updated to be based on the Google style guide (as said on our style guide and because it is well known publicly).
+
+I tested the change on libbrillo, shill and update engine. We seem to be using a mix of Google/Chromium style (especially with arguments alignment, parameters packing, etc...).
+I couldn't find a configuration that would yield a significantly smaller diff in the common Chromium OS code.
+

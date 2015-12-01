@@ -1,0 +1,12 @@
+Revision: dc87a8021e2ebea64753487cb0dba709d7664da7
+Patch-set: 4
+File: metricsd/.clang-format
+
+2:0-2:41
+Tue Dec 01 21:58:05 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_7267f869
+Bytes: 95
+This rule is not very well followed.
+If we want to simplify this, it would be a good candidate.
+

@@ -1,0 +1,11 @@
+Revision: edc338863e8986e0c67f06869669562659d81a75
+Patch-set: 5
+File: metricsd/.clang-format
+
+8:0-8:22
+Wed Dec 02 15:07:45 2015 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b3917b5_6d8375e9
+Bytes: 133
+What is this line for? I'm running 'git clang-format' on lines that result is 81 chars long. Removing this line doesn't produce that.
+

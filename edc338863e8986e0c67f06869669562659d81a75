@@ -9,3 +9,19 @@ UUID: 3b3917b5_6d8375e9
 Bytes: 133
 What is this line for? I'm running 'git clang-format' on lines that result is 81 chars long. Removing this line doesn't produce that.
 
+8:0-8:22
+Wed Dec 02 16:41:50 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b3917b5_6d8375e9
+UUID: fb113f0a_c29d3c7d
+Bytes: 525
+From the clang page "The penalty for each character outside of the column limit. "
+
+I'm guessing this is the penalty in the score function, minimized by clang-format. There are also penalty for breaking a string, puting the return type on its own line etc..
+
+adb, debuggerd, base and bionic set this (this is where I got it), probably to allow for more flexible rules.
+
+Chromium and Google both defaults to 10000 (no flexibility, you shall never be more than 80 chars), we should probably do that too.
+
+I'll remove that line.
+

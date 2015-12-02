@@ -1,0 +1,11 @@
+Revision: b5cb06de9d38269ecd5fa2681782b4a4d6eb63df
+Patch-set: 1
+File: liblog/log_is_loggable.c
+
+205:9-205:15
+Wed Dec 02 22:05:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9bb8433f_8af21f02
+Bytes: 49
+as enh@ points out, this is not a retval any more
+

@@ -1,5 +1,14 @@
 Revision: e4dabb839a10ee1b47de3840759a06e4bf2203e0
 Patch-set: 10
+File: metricsd/uploader/metrics_service_runner.cc
+
+0
+Wed Dec 02 23:48:19 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_c11c0cfa
+Bytes: 142
+Possibly change the class and file names to reflect the renamed binder service as well, maybe don't care if only one applies to uploader/ path
+
 File: metricsd/uploader/metrics_service_runner.h
 
 0

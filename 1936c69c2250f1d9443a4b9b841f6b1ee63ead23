@@ -1,0 +1,20 @@
+Revision: 1936c69c2250f1d9443a4b9b841f6b1ee63ead23
+Patch-set: 9
+File: metricsd/aidl/android/brillo/metrics/IMetricsService.aidl
+
+19:10-19:25
+Wed Dec 02 23:13:33 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9bb8433f_45c14802
+Bytes: 194
+We'll add a second interface to metrics collector for (at least) the user crash event reporting.  In case you want to disambiguate the names of the two services by making this one more specific.
+
+File: metricsd/uploader/metrics_log.h
+
+38:5-38:17
+Wed Dec 02 23:13:33 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb113f0a_a853bfbf
+Bytes: 28
+nit: suggest "These methods"
+

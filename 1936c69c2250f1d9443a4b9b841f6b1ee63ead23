@@ -9,6 +9,14 @@ UUID: 9bb8433f_45c14802
 Bytes: 194
 We'll add a second interface to metrics collector for (at least) the user crash event reporting.  In case you want to disambiguate the names of the two services by making this one more specific.
 
+19:10-19:25
+Wed Dec 02 23:44:57 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9bb8433f_45c14802
+UUID: 9bb8433f_8581706b
+Bytes: 47
+As talked offline, IMetricsd is less ambiguous.
+
 File: metricsd/uploader/metrics_log.h
 
 38:5-38:17
@@ -17,4 +25,21 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fb113f0a_a853bfbf
 Bytes: 28
 nit: suggest "These methods"
+
+38:5-38:17
+Wed Dec 02 23:44:57 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb113f0a_a853bfbf
+UUID: fb113f0a_5ce0ecea
+Bytes: 4
+Done
+
+File: metricsd/uploader/metrics_service_runner.h
+
+0
+Wed Dec 02 23:44:57 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b18372c_2f3175e8
+Bytes: 13
+I kept the na
 

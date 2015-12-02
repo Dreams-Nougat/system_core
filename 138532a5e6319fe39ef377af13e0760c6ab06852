@@ -1,0 +1,11 @@
+Revision: 138532a5e6319fe39ef377af13e0760c6ab06852
+Patch-set: 1
+File: init/property_service.cpp
+
+84:8-84:14
+Wed Dec 02 15:40:27 2015 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bbb18759_45db0a45
+Bytes: 6
+delete
+

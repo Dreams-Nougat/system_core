@@ -1,0 +1,18 @@
+Revision: 08db90f7d576fb1189718eedaec02978a589ca8c
+Patch-set: 2
+File: adb/services.cpp
+
+525
+Wed Dec 02 18:18:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b17f3fd_c828bf78
+Bytes: 117
+even though the old code had strncmp, shouldn't these be strcmp? we don't want "adb wait-for-sideload-trailing-crap".
+
+532
+Wed Dec 02 18:18:57 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb113f0a_e259583e
+Bytes: 65
+explicitly check for "device" and have anything else be an error?
+

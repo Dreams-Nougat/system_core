@@ -1,0 +1,11 @@
+Revision: e4dabb839a10ee1b47de3840759a06e4bf2203e0
+Patch-set: 10
+File: metricsd/uploader/metrics_service_runner.h
+
+0
+Wed Dec 02 23:44:57 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb113f0a_7ce7a800
+Bytes: 137
+I kept the name metrics_service_runner as this class is specific to the binder service and is not a runner for the whole metricsd daemon.
+

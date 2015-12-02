@@ -50,6 +50,14 @@ Bytes: 90
 I think guide says 4 spaces for wrapped parameters, no?
 clang-format seems to do the same.
 
+175:0-175:4
+Wed Dec 02 23:13:33 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fba69f26_0544669b
+UUID: fb113f0a_28604f81
+Bytes: 16
+Gaah, sorry, nm.
+
 File: metricsd/uploader/binder_service.cc
 
 32:0-32:13

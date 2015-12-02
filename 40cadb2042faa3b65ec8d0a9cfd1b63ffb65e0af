@@ -16,12 +16,39 @@ UUID: dbae3bf9_b872e17f
 Bytes: 56
 Is the above isBinderAlive() call also appropriate here?
 
+138:2-138:5
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dbae3bf9_189b2de5
+UUID: 1bac5306_9bda770a
+Bytes: 4
+Done
+
+138:13-138:18
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dbae3bf9_b872e17f
+UUID: 3b18372c_e4a964b8
+Bytes: 225
+I don't think we need to.
+
+AFAICT, the binder is considered dead only when a transaction fails with a BINDER_DEAD status. As we haven't use the proxy yet, it will be considered alive and isBinderAlive will always return true.
+
 175:0-175:4
 Wed Dec 02 03:08:18 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bbb18759_da6fd901
 Bytes: 20
 inconsistent spacing
+
+175:0-175:4
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bbb18759_da6fd901
+UUID: fba69f26_0544669b
+Bytes: 90
+I think guide says 4 spaces for wrapped parameters, no?
+clang-format seems to do the same.
 
 File: metricsd/uploader/binder_service.cc
 
@@ -32,12 +59,30 @@ UUID: dbae3bf9_1884cd78
 Bytes: 234
 nit: the name is rather generic instead of specific to the metricsd uploader service, don't know if that's common practice here.  In general, binder services don't include "Binder" in the name, but maybe it helps to disambiguate here.
 
+32:0-32:13
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dbae3bf9_1884cd78
+UUID: fba69f26_254b62ab
+Bytes: 94
+Done, I renamed this BnMetricsServiceImpl, it seems to be more aligned with what android does.
+
 34:2-34:17
 Wed Dec 02 03:08:18 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1b17f3fd_7d25eb87
 Bytes: 107
 Theoretically might not want to crash and restart if passed a bad param, but doesn't matter much I suppose.
+
+34:2-34:17
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b17f3fd_7d25eb87
+UUID: 5b1deb19_25dd182f
+Bytes: 320
+I agree this is not ideal. We used to use DCHECKs for this but we don't build differently for debug and non-debug anymore :/
+
+In any case, this code path will be run consistently and early. A clean crash here would make it easier to detect bug than metricsd crashing when a crash is received (because counters_ is null).
 
 45:1-45:4
 Wed Dec 02 03:08:18 2015 +0000
@@ -53,6 +98,14 @@ UUID: 5ba24b12_0230da95
 Bytes: 35
 could log an error if else reached.
 
+78:2-78:3
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ba24b12_0230da95
+UUID: 3b18372c_afa2a5bc
+Bytes: 4
+Done
+
 File: metricsd/uploader/binder_service.h
 
 31:13-31:15
@@ -61,6 +114,14 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1b17f3fd_7d3e8bb7
 Bytes: 6
 nit: a
+
+31:13-31:15
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b17f3fd_7d3e8bb7
+UUID: bbb18759_2606cc62
+Bytes: 4
+Done
 
 File: metricsd/uploader/binder_thread.h
 
@@ -71,6 +132,14 @@ UUID: dbae3bf9_98dc3d98
 Bytes: 54
 nit: also suggest using a more specific name for this.
 
+24:6-24:18
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dbae3bf9_98dc3d98
+UUID: 3b18372c_0fa8f99a
+Bytes: 45
+Good call. Used MetricsServiceRunner instead.
+
 File: metricsd/uploader/metrics_log.cc
 
 33:0-34:57
@@ -80,6 +149,14 @@ UUID: 1b17f3fd_bd3b03ac
 Bytes: 64
 May be worth documenting this code assumes no concurrent access.
 
+33:0-34:57
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1b17f3fd_bd3b03ac
+UUID: 9bb8433f_e5fddc5d
+Bytes: 41
+Done. Added a comment in the header file.
+
 File: metricsd/uploader/metrics_log.h
 
 17:8-17:15
@@ -88,4 +165,12 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5ba24b12_a253c6bf
 Bytes: 43
 New files here modify this name to METRICSD
+
+17:8-17:15
+Wed Dec 02 23:01:03 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ba24b12_a253c6bf
+UUID: 9bb8433f_855fb04d
+Bytes: 4
+Done
 

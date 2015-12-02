@@ -1,0 +1,91 @@
+Revision: 40cadb2042faa3b65ec8d0a9cfd1b63ffb65e0af
+Patch-set: 8
+File: metricsd/metrics_library.cc
+
+138:2-138:5
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_189b2de5
+Bytes: 35
+nit: could just return this result.
+
+138:13-138:18
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_b872e17f
+Bytes: 56
+Is the above isBinderAlive() call also appropriate here?
+
+175:0-175:4
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bbb18759_da6fd901
+Bytes: 20
+inconsistent spacing
+
+File: metricsd/uploader/binder_service.cc
+
+32:0-32:13
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_1884cd78
+Bytes: 234
+nit: the name is rather generic instead of specific to the metricsd uploader service, don't know if that's common practice here.  In general, binder services don't include "Binder" in the name, but maybe it helps to disambiguate here.
+
+34:2-34:17
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b17f3fd_7d25eb87
+Bytes: 107
+Theoretically might not want to crash and restart if passed a bad param, but doesn't matter much I suppose.
+
+45:1-45:4
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1bac5306_f26c80a1
+Bytes: 20
+inconsistent spacing
+
+78:2-78:3
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5ba24b12_0230da95
+Bytes: 35
+could log an error if else reached.
+
+File: metricsd/uploader/binder_service.h
+
+31:13-31:15
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b17f3fd_7d3e8bb7
+Bytes: 6
+nit: a
+
+File: metricsd/uploader/binder_thread.h
+
+24:6-24:18
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dbae3bf9_98dc3d98
+Bytes: 54
+nit: also suggest using a more specific name for this.
+
+File: metricsd/uploader/metrics_log.cc
+
+33:0-34:57
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1b17f3fd_bd3b03ac
+Bytes: 64
+May be worth documenting this code assumes no concurrent access.
+
+File: metricsd/uploader/metrics_log.h
+
+17:8-17:15
+Wed Dec 02 03:08:18 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5ba24b12_a253c6bf
+Bytes: 43
+New files here modify this name to METRICSD
+

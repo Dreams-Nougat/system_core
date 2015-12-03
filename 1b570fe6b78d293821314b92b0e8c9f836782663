@@ -1,0 +1,11 @@
+Revision: 1b570fe6b78d293821314b92b0e8c9f836782663
+Patch-set: 4
+File: adb/jdwp_service.cpp
+
+527
+Thu Dec 03 01:19:11 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb113f0a_fc9e1884
+Bytes: 9
+C++ cast.
+

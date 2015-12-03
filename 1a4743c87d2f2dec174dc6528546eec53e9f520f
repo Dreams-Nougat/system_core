@@ -9,3 +9,17 @@ UUID: bbb18759_7ab988ec
 Bytes: 120
 Is there a better URL to use? http://b/22647138 gives 3 potential links but this one seems to be the most comprehensive.
 
+603
+Thu Dec 03 01:16:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb113f0a_3cd37056
+Bytes: 112
+oh, nice. when i read the commit message i was going to complain that we should check rather than just guess :-)
+
+622
+Thu Dec 03 01:16:02 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5ba24b12_4b879a7f
+Bytes: 90
+seems like we can say something stronger here? we know they're not a member at this point.
+

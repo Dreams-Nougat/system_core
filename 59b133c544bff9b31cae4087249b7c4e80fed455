@@ -1,0 +1,11 @@
+Revision: 59b133c544bff9b31cae4087249b7c4e80fed455
+Patch-set: 15
+File: metricsd/uploader/bn_metricsd_impl.cc
+
+23:0-23:26
+Thu Dec 03 23:36:22 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40933818_23e52e5e
+Bytes: 37
+Should add an include for String16.h.
+

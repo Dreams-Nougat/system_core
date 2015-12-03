@@ -1,0 +1,11 @@
+Revision: 1a4743c87d2f2dec174dc6528546eec53e9f520f
+Patch-set: 1
+File: adb/usb_linux.cpp
+
+600:43-600:82
+Thu Dec 03 00:56:40 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bbb18759_7ab988ec
+Bytes: 120
+Is there a better URL to use? http://b/22647138 gives 3 potential links but this one seems to be the most comprehensive.
+

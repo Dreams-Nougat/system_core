@@ -41,3 +41,15 @@ Yeah good point, I was also worried that if the server was started without plugd
 
 Maybe something like "adb server must be in plugdev group"? Or will that not make sense to the average user?
 
+622
+Thu Dec 03 17:54:30 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a00b1417_58903d30
+UUID: e0118c43_1ae4fdcf
+Bytes: 492
+most people in the building don't know what "server" means in this context. i assume it's even more of a mystery outside. (it's inherently confusing that there are *three* parts to adb.)
+
+if we were comfortable insisting that if plugdev exists, adb must be in it, we could move this check into [whichever is the appropriate] main and just never start a client/server in that case.
+
+or we can try this and see whether folks are still confused. this is definitely a step in the right direction.
+

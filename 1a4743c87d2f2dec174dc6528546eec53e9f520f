@@ -53,3 +53,15 @@ if we were comfortable insisting that if plugdev exists, adb must be in it, we c
 
 or we can try this and see whether folks are still confused. this is definitely a step in the right direction.
 
+622
+Thu Dec 03 19:02:42 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e0118c43_1ae4fdcf
+UUID: 2006440b_7cfc1963
+Bytes: 328
+Ah that makes sense, thanks.
+
+I think for Brillo we want to allow devices without any USB so adb would be ethernet-only; for this case I'd prefer to continue allowing adb to run without plugdev.
+
+But if it turns out this message still leaves people confused I can revisit this and put a stricter block in place like you mention.
+

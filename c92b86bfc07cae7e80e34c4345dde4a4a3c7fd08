@@ -49,6 +49,15 @@ Yeah, please use member_names_like_ this in code which is outside framework comp
 
 File: metricsd/metrics_library.cc
 
+25
+Thu Dec 03 23:36:22 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 404ed883_c8810fb4
+Bytes: 48
+Technically should:
+
+#include <utils/String16.h>
+
 135:2-135:10
 Thu Dec 03 22:34:54 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

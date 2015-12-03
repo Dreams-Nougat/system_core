@@ -39,6 +39,14 @@ Bytes: 56
 Done.
 I used metricsd_proxy_ to match the style guide :/
 
+177:51-177:57
+Thu Dec 03 22:58:41 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c08728d0_e76bd6c7
+UUID: e0842cce_e55f50be
+Bytes: 247
+Yeah, please use member_names_like_ this in code which is outside framework components.  There is a specific style guide for framework code intended to make it look as much like Java as possible.  Brillo code should follow Brillo/Google C++ style.
+
 File: metricsd/metrics_library.cc
 
 135:2-135:10

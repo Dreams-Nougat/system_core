@@ -16,10 +16,28 @@ UUID: fb113f0a_3cd37056
 Bytes: 112
 oh, nice. when i read the commit message i was going to complain that we should check rather than just guess :-)
 
+603
+Thu Dec 03 17:39:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb113f0a_3cd37056
+UUID: 800e1027_f7096075
+Bytes: 74
+Oh yeah my message is a bit vague on that sorry :) I'll clean it up a bit.
+
 622
 Thu Dec 03 01:16:02 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5ba24b12_4b879a7f
 Bytes: 90
 seems like we can say something stronger here? we know they're not a member at this point.
+
+622
+Thu Dec 03 17:39:36 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5ba24b12_4b879a7f
+UUID: a00b1417_58903d30
+Bytes: 286
+Yeah good point, I was also worried that if the server was started without plugdev (maybe over ssh or something) but the current user is in plugdev it could get real confusing.
+
+Maybe something like "adb server must be in plugdev group"? Or will that not make sense to the average user?
 

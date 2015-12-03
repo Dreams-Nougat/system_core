@@ -9,6 +9,18 @@ UUID: 00486077_0634bc85
 Bytes: 169
 It's common to name this libmetricsd (the binder implementation would be generally assumed on Android, unless it's important to disambiguate from a dbus implementation?)
 
+93:16-93:37
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 00486077_0634bc85
+UUID: 404ed883_6871fbc0
+Bytes: 395
+Actually, I'd rather keep that as is to avoid confusion with libmetrics :/
+
+We compile the aidl file separately only because we need to compile it without RTTI (because libbinder does not enable rtti) and libmetrics must be compiled with RTTI (because clients assumes it will have RTTI.
+
+Once we remove RTTI entirely, this will be merged into libmetrics (which will also be renamed libmetricsd).
+
 File: metricsd/include/metrics/metrics_library.h
 
 177:51-177:57
@@ -17,6 +29,15 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e06d0cee_dd869f3c
 Bytes: 163
 Names such as mMetricsd are also used in Android (maybe different naming convention) -- in any case, naming more specifically what it is a proxy for might be good.
+
+177:51-177:57
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e06d0cee_dd869f3c
+UUID: c08728d0_e76bd6c7
+Bytes: 56
+Done.
+I used metricsd_proxy_ to match the style guide :/
 
 File: metricsd/metrics_library.cc
 
@@ -27,6 +48,14 @@ UUID: e0842cce_e5275093
 Bytes: 17
 This can be const
 
+135:2-135:10
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e0842cce_e5275093
+UUID: 00486077_e611a0da
+Bytes: 4
+Done
+
 File: metricsd/uploader/bn_metricsd_impl.cc
 
 37
@@ -35,6 +64,14 @@ Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 20a2c463_3f1d43f0
 Bytes: 36
 You can just declare this as default
+
+37
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 20a2c463_3f1d43f0
+UUID: 8091b00f_4234f486
+Bytes: 4
+Done
 
 40
 Thu Dec 03 22:16:23 2015 +0000
@@ -46,6 +83,14 @@ Probably call as well:
 ProcessState::self()->setThreadPoolMaxThreadCount(0);
 IPCThreadState::self()->disableBackgroundScheduling(true);
 
+40
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8091b00f_02feec1e
+UUID: 204d6487_c7cb40cb
+Bytes: 4
+Done
+
 File: metricsd/uploader/metrics_service_runner.h
 
 24
@@ -54,4 +99,13 @@ Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 204d6487_a7096444
 Bytes: 68
 Maybe prefer to use this with std::thread, now that that is a thing?
+
+24
+Thu Dec 03 22:44:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 204d6487_a7096444
+UUID: 8091b00f_e238a87c
+Bytes: 27
+Done.
+It is also simpler :)
 

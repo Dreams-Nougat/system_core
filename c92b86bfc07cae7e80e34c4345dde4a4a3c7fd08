@@ -1,0 +1,30 @@
+Revision: c92b86bfc07cae7e80e34c4345dde4a4a3c7fd08
+Patch-set: 12
+File: metricsd/uploader/bn_metricsd_impl.cc
+
+37
+Thu Dec 03 22:16:23 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20a2c463_3f1d43f0
+Bytes: 36
+You can just declare this as default
+
+40
+Thu Dec 03 22:16:23 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8091b00f_02feec1e
+Bytes: 136
+Probably call as well:
+
+ProcessState::self()->setThreadPoolMaxThreadCount(0);
+IPCThreadState::self()->disableBackgroundScheduling(true);
+
+File: metricsd/uploader/metrics_service_runner.h
+
+24
+Thu Dec 03 22:16:23 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 204d6487_a7096444
+Bytes: 68
+Maybe prefer to use this with std::thread, now that that is a thing?
+

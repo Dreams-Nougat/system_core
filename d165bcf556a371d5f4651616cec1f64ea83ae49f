@@ -1,0 +1,20 @@
+Revision: d165bcf556a371d5f4651616cec1f64ea83ae49f
+Base-for-patch-set: 1
+File: crash_reporter/kernel_collector_test.cc
+
+256
+Thu Dec 03 00:38:30 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3b18372c_afc62594
+Bytes: 138
+Due to the lack of "users" in Brillo, we do not have different user-specific and system crash folders, so this test no longer makes sense.
+
+File: crash_reporter/user_collector_test.cc
+
+170
+Thu Dec 03 00:38:30 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bbb18759_c6f3800c
+Bytes: 83
+All the chrome-specific crash handling hooks have been removed from crash_reporter.
+

@@ -1,5 +1,32 @@
 Revision: c92b86bfc07cae7e80e34c4345dde4a4a3c7fd08
 Patch-set: 12
+File: metricsd/Android.mk
+
+93:16-93:37
+Thu Dec 03 22:34:54 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00486077_0634bc85
+Bytes: 169
+It's common to name this libmetricsd (the binder implementation would be generally assumed on Android, unless it's important to disambiguate from a dbus implementation?)
+
+File: metricsd/include/metrics/metrics_library.h
+
+177:51-177:57
+Thu Dec 03 22:34:54 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e06d0cee_dd869f3c
+Bytes: 163
+Names such as mMetricsd are also used in Android (maybe different naming convention) -- in any case, naming more specifically what it is a proxy for might be good.
+
+File: metricsd/metrics_library.cc
+
+135:2-135:10
+Thu Dec 03 22:34:54 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e0842cce_e5275093
+Bytes: 17
+This can be const
+
 File: metricsd/uploader/bn_metricsd_impl.cc
 
 37

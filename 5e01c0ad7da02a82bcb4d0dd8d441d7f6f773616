@@ -1,0 +1,11 @@
+Revision: 5e01c0ad7da02a82bcb4d0dd8d441d7f6f773616
+Patch-set: 2
+File: metricsd/metrics_library.cc
+
+224:2-224:47
+Fri Dec 04 17:31:31 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 204d6487_b8ece1e7
+Bytes: 152
+How does this work?  I didn't read through SharedBuffer too deeply, but won't the underlying storage for the string (mString) be released at this point?
+

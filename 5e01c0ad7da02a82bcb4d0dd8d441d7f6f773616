@@ -9,3 +9,11 @@ UUID: 204d6487_b8ece1e7
 Bytes: 152
 How does this work?  I didn't read through SharedBuffer too deeply, but won't the underlying storage for the string (mString) be released at this point?
 
+224:2-224:47
+Fri Dec 04 17:58:09 2015 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 204d6487_b8ece1e7
+UUID: 204d6487_b8098144
+Bytes: 59
+Nevermind, I was forgetting that the operator= copies here.
+

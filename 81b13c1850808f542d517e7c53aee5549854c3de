@@ -1,0 +1,27 @@
+Revision: 81b13c1850808f542d517e7c53aee5549854c3de
+Patch-set: 1
+File: libnativeloader/Android.mk
+
+56
+Sat Dec 05 05:09:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 009dc025_e43d0bb9
+Bytes: 1
+?
+
+File: libnativeloader/native_loader.cpp
+
+57
+Sat Dec 05 05:09:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00486077_ac3942ad
+Bytes: 30
+can't you use std::mutex here?
+
+127
+Sat Dec 05 05:09:29 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20a2c463_79c200ae
+Bytes: 3
+tab
+

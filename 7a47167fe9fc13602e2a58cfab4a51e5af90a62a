@@ -9,3 +9,11 @@ UUID: 60c91c79_19662fd5
 Bytes: 159
 Since we "may have been triggered by a SIGHUP", could we be in signal handler context? If so, could the normal process context be holding LogTimeEntry::lock()?
 
+168
+Mon Dec 07 21:48:14 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 60c91c79_19662fd5
+UUID: 40db3839_40c6f098
+Bytes: 410
+The actual path is signal handler sets a semaphore, and an administrative thread clears the semaphore and takes the actions to call things like this ::init() function, to which this issues a trigger to all the logtime entries while holding a LogTimeEntry::lock() which sends a pthread_cond to the associated reader threads to wake up. So, we are not in the signal handler context here or in the reader threads.
+

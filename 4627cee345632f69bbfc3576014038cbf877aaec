@@ -1,0 +1,101 @@
+Revision: 4627cee345632f69bbfc3576014038cbf877aaec
+Patch-set: 2
+File: fastboot/fastboot.cpp
+
+238:8-238:24
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40933818_524842b1
+Bytes: 331
+If crate_transport() tries to make a TCP connection and fails this will fall through and then attempt to make a USB connection, which is almost certainly not what the user wanted.
+
+We probably just want to return |transport| here whether it's null or not, and then add handling at the call site to error out if nullptr is returned.
+
+File: fastboot/tcp_linux.cpp
+
+46:0-49:2
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e06d0cee_14ae2ca9
+Bytes: 225
+If you want to just put sockfd directly as a member in LinuxTcpTransport that might be simpler. I only kept the "handle" structures in the USB code to avoid having to do a large refactor when I introduced the Transport class.
+
+66:33-66:50
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e06d0cee_b456604f
+Bytes: 241
+Prefer more descriptive variable names instead of prefixing _ for new code, maybe something like this:
+
+  ssize_t LinuxTcpTransport::Write(const void* data, size_t len) {
+    unsigned char* char_data = reinterpret_cast<unsigned char*>(data);
+
+68:4-68:54
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e0842cce_16b38c56
+Bytes: 77
+Prefer pointer next to the type for new code (see above comment for example).
+
+76:12-76:46
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00486077_3295ae20
+Bytes: 142
+Use TEMP_FAILURE_RETRY to handle EINTR, and I think we can drop EAGAIN handling if we're always blocking, to get rid of this switch statement.
+
+78:0-80:24
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40933818_b7a6582d
+Bytes: 89
+Probably better to return -1 here and let the main loop decide how to handle the failure.
+
+97:0-98:75
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00486077_52902a30
+Bytes: 119
+I assume this is to get around hardware limitations, is it necessary to repeat here? Might as well leave it out if not.
+
+101:0-102:20
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 009dc025_af0b61aa
+Bytes: 79
+Seems better to return |count| here and let the caller decide how to handle it.
+
+105:12-105:46
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40933818_97e0fc4f
+Bytes: 28
+Same re: TEMP_FAILURE_RETRY.
+
+107:0-108:24
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 204d6487_38747117
+Bytes: 10
+Return -1.
+
+112:15-112:18
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00486077_526b8a9c
+Bytes: 2
+n?
+
+115:9-115:43
+Mon Dec 07 20:49:50 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 60e03ce1_0165cc60
+Bytes: 941
+What's the bug here and do we have to replicate it?
+
+I'm not super familiar with USB internals, but it seems like this is just saying "if we get a smaller packet than we expected, we're done". This seems fine if USB packets aren't fragmented (though I'm not positive this is the case) since you're guaranteed to get everything the device sent.
+
+However TCP can definitely fragment packets right? If fragmentation happens here and the read() returns less than was sent by the device, this will exit early. The callers of this function make no attempt to re-read if they don't get all the bytes they want so this would likely cause a failure.
+
+The expectation seems to be that Read() may return fewer than |len| bytes, but it will always return everything the device has sent. I believe to achieve the same guarantee in TCP we'll have to add some sort of protocol indicating packet sizes so we can keep reading here until we get a full packet.
+

@@ -1,0 +1,11 @@
+Revision: c6f697702c5a984a94a08f737f27f4e274045939
+Patch-set: 1
+File: liblog/log_is_loggable.c
+
+252:4-253:59
+Mon Dec 07 21:01:04 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 80b290f4_7afc7528
+Bytes: 52
+Shouldn't "c" field be initialized to BOOLEAN_FALSE?
+

@@ -9,6 +9,14 @@ UUID: 009dc025_e43d0bb9
 Bytes: 1
 ?
 
+56
+Mon Dec 07 18:58:21 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 009dc025_e43d0bb9
+UUID: c0b808d7_1c39b922
+Bytes: 7
+removed
+
 File: libnativeloader/native_loader.cpp
 
 57
@@ -18,10 +26,26 @@ UUID: 00486077_ac3942ad
 Bytes: 30
 can't you use std::mutex here?
 
+57
+Mon Dec 07 18:58:21 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 00486077_ac3942ad
+UUID: e0b50cdb_9a386d7c
+Bytes: 4
+Done
+
 127
 Sat Dec 05 05:09:29 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 20a2c463_79c200ae
 Bytes: 3
 tab
+
+127
+Mon Dec 07 18:58:21 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 20a2c463_79c200ae
+UUID: a0af948e_d8f4adee
+Bytes: 4
+Done
 

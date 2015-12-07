@@ -9,3 +9,15 @@ UUID: 80b290f4_7afc7528
 Bytes: 52
 Shouldn't "c" field be initialized to BOOLEAN_FALSE?
 
+252:4-253:59
+Mon Dec 07 21:20:19 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 80b290f4_7afc7528
+UUID: 40db3839_80eab82c
+Bytes: 455
+Good Catch! But not quite for the right reasons ;-}
+
+Reading the specifications and engineering documents, r_do_cache _could_ be defined to BOOLEAN_FALSE so that we are default off if the ro.device_owner is not present. However, the specification also requires us to treat empty content (c == 0) as the equivalent to false, and anything else as true. Combination of both makes senses to be _sure_.
+
+p_security_cache, on the other hand, should remain as 0.
+

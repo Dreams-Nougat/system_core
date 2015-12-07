@@ -1,0 +1,11 @@
+Revision: 35ff737aabedd23fd2417a1a776d06d1a8a78d98
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Mon Dec 07 17:55:52 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e0b50cdb_dabbc58b
+Bytes: 22
+s/fastboot/set_active/
+

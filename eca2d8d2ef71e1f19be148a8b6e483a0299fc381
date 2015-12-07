@@ -1,0 +1,13 @@
+Revision: eca2d8d2ef71e1f19be148a8b6e483a0299fc381
+Patch-set: 6
+File: libcutils/socket_inaddr_any_server.c
+
+37:11-37:23
+Mon Dec 07 04:35:48 2015 +0000
+Author: Lorenzo Colitti <1000835@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20672434_746c6813
+Bytes: 401
+Looks like this is the only actual change in this CL. I wonder if it makes sense to split this CL into two? One would just have the no-op changes to change "sockaddr" to "sockaddr_storage" and the other would contain this change. That would have the advantage that if this change breaks something it can be rolled back by itself without impacting the sockaddr_storage changes.
+
+LGTM either way though.
+

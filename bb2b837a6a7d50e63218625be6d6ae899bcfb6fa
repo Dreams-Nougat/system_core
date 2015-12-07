@@ -9,3 +9,11 @@ UUID: a0af948e_98c15506
 Bytes: 57
 is this right? i thought there were more than two states?
 
+361
+Mon Dec 07 18:03:11 2015 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a0af948e_98c15506
+UUID: 60f2fca8_517196e5
+Bytes: 117
+There are four states for verified boot, but only "orange" means the device is unlocked, all others mean it's locked.
+

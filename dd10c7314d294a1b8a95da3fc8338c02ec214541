@@ -1,0 +1,44 @@
+Revision: dd10c7314d294a1b8a95da3fc8338c02ec214541
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+204:0-206:9
+Tue Dec 08 22:47:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c0e3a848_e1cfa6a8
+Bytes: 213
+Not accurate because credential GID checking not performed. Checking in LogListener.cpp (when fixed) is accurate and is _the_ line of defense. No need for us to do the checking here _except_ to bypass is_loggable.
+
+File: logd/LogBufferElement.cpp
+
+162:33-162:64
+Tue Dec 08 22:47:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 80ed303a_bf13f735
+Bytes: 129
+Not strictly needed here and below because we do not have spam filter on security buffer, required for completeness and accuracy.
+
+File: logd/LogListener.cpp
+
+96:0-99:42
+Tue Dec 08 22:47:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e0098cde_7aa5f970
+Bytes: 493
+wrong logic, messed up by trying to put clientHasLogCredentials last, or trying to do pre-check of local copies of uid. Here is accurate, but does not place clientHasLogCredentials last:
+
+if ((header->id == LOG_ID_SECURITY) && ((cred->uid != AID_SYSTEM) && (cred->uid != AID_ROOT) && !clientHasLogCredentials(cli)) || !__android_log_security())) {
+
+Here is KISS accurate dropping pre-check:
+
+if ((header->id == LOG_ID_SECURITY) && (!__android_log_security() || !clientHasLogCredentials(cli)) {
+
+File: logd/LogUtils.h
+
+42:0-42:5
+Tue Dec 08 22:47:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20fe44e6_9c472553
+Bytes: 33
+/* Furnished in LogCommand.cpp */
+

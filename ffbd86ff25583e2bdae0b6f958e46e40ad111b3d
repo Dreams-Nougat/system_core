@@ -1,0 +1,11 @@
+Revision: ffbd86ff25583e2bdae0b6f958e46e40ad111b3d
+Base-for-patch-set: 1
+File: logd/LogCommand.h
+
+29:0-29:49
+Tue Dec 08 22:47:00 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 00f940fe_fb4c6f78
+Bytes: 86
+Need to explicitly add include of LogUtils.h in LogCommand.cpp to guarantee prototype.
+

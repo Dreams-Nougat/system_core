@@ -1,0 +1,15 @@
+Revision: 143fdb7ca9bfcdf591ddb0816924fc134d055842
+Patch-set: 1
+File: include/log/logger.h
+
+84:33-84:37
+Tue Dec 08 23:42:36 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20fe44e6_3cbc11f6
+Bytes: 246
+Danger Will Robinson!
+
+I expect some tests and applications may run afoul of this new limit.
+
+We do _not_ require this to be changed, but in the spirit of keeping the allocations inside logd limited to <PAGESIZE it will have a significant effect.
+

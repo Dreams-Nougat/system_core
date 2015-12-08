@@ -9,3 +9,11 @@ UUID: 80b290f4_bd6a8732
 Bytes: 26
 should we remove this too?
 
+68:0-72:37
+Tue Dec 08 01:29:49 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 80b290f4_bd6a8732
+UUID: 60c91c79_ff0793f3
+Bytes: 241
+Yes.  service.cpp still uses this, but it looks like that's dead code since properties will always be initialized before we start running any services.  I'll push it in a separate commit since it doesn't relate to ANDROID_PROPERTY_WORKSPACE.
+

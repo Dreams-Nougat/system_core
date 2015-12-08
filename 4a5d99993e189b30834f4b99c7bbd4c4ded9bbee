@@ -1,0 +1,14 @@
+Revision: 4a5d99993e189b30834f4b99c7bbd4c4ded9bbee
+Patch-set: 1
+File: logcat/logcat.cpp
+
+752:24-757:25
+Tue Dec 08 21:03:39 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e0342c68_05d3d4de
+Bytes: 82
+Seems like this would be more readable:
+
+  if (i == LOG_ID_SECURITY)
+    continue;
+

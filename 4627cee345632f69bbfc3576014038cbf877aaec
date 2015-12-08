@@ -99,3 +99,11 @@ However TCP can definitely fragment packets right? If fragmentation happens here
 
 The expectation seems to be that Read() may return fewer than |len| bytes, but it will always return everything the device has sent. I believe to achieve the same guarantee in TCP we'll have to add some sort of protocol indicating packet sizes so we can keep reading here until we get a full packet.
 
+115:9-115:43
+Tue Dec 08 14:25:53 2015 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 60e03ce1_0165cc60
+UUID: 60f2fca8_11fc2ed9
+Bytes: 495
+Yes, it was related to the fact that passed |len| parameter is the maximum number of bytes that might be stored in the passed |data| buffer. In protocol.cpp:check_response() method the transport read method (line 55) always get the length of "status", which is 64 bytes. However we cannot expect to get 64 bytes all the time, given the fact that, IE, a "DATA" status will always return 12 bytes only. Therefore I have simplified LinuxTcpTransport::Read() method to the form that can be seen now.
+

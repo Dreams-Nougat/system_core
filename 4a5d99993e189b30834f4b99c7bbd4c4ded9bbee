@@ -12,3 +12,11 @@ Seems like this would be more readable:
   if (i == LOG_ID_SECURITY)
     continue;
 
+752:24-757:25
+Tue Dec 08 21:54:44 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e0342c68_05d3d4de
+UUID: 40efb832_9d5c432f
+Bytes: 85
+Agreed, not going to re-roll because the jury is still out as to whether to add this.
+

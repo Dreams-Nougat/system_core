@@ -9,10 +9,26 @@ UUID: c562daed_6c2113e4
 Bytes: 104
 nit: the rest of the file's style uses underscores (metrics_collector_service) for local variable names.
 
+98:40-98:63
+Wed Dec 09 20:38:29 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c562daed_6c2113e4
+UUID: a567a60d_58c5bd63
+Bytes: 159
+OK, I was trying to keep this identifier consistent with the library file name, for which there's mostly a precedent of no underscores for native service libs.
+
 102
 Wed Dec 09 19:49:35 2015 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 65984e34_211be8ad
 Bytes: 245
 Can you add a LOG(WARNING) here to log that it was unable to notify metrics_collector of a crash.  Otherwise if any of this ever breaks, its unlikely to ever be caught until somebody compares metrics numbers of crashes with crash report numbers.
+
+102
+Wed Dec 09 20:38:29 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_211be8ad
+UUID: a5596647_4b1ab94a
+Bytes: 36
+Oops, had meant to do this, will do.
 

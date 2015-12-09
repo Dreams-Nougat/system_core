@@ -9,3 +9,11 @@ UUID: 65984e34_24753615
 Bytes: 109
 since classloader-namespace is always isolated - the parameter actually can be renamed to java_permitted_path
 
+60
+Wed Dec 09 23:40:33 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_24753615
+UUID: 855c6237_6d15911a
+Bytes: 4
+Done
+

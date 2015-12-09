@@ -1,0 +1,18 @@
+Revision: 041d36b0e0dd47bb65a0633d567196572ebe6ff2
+Patch-set: 2
+File: crash_reporter/crash_reporter.cc
+
+98:40-98:63
+Wed Dec 09 19:49:35 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c562daed_6c2113e4
+Bytes: 104
+nit: the rest of the file's style uses underscores (metrics_collector_service) for local variable names.
+
+102
+Wed Dec 09 19:49:35 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_211be8ad
+Bytes: 245
+Can you add a LOG(WARNING) here to log that it was unable to notify metrics_collector of a crash.  Otherwise if any of this ever breaks, its unlikely to ever be caught until somebody compares metrics numbers of crashes with crash report numbers.
+

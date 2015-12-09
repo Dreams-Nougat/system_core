@@ -30,6 +30,14 @@ If metricsd serves little purpose without IMetricsd available then that's probab
 
 That can be a problem for another day; I'll crash metricsd on this error for now.
 
+47:4-47:11
+Wed Dec 09 21:24:01 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05487277_63a922bb
+UUID: e55fde25_70420847
+Bytes: 4
+Done
+
 48:0-48:1
 Wed Dec 09 15:52:24 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -44,4 +52,12 @@ Parent: 6553ee27_a6b966ed
 UUID: 253496db_cf07e15f
 Bytes: 14
 oops, will fix
+
+48:0-48:1
+Wed Dec 09 21:24:01 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_cf07e15f
+UUID: 855c6237_ea6cc7e1
+Bytes: 10
+Obsoleted.
 

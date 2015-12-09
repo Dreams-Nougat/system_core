@@ -11,3 +11,13 @@ nit: you could log a message here:
 
 CHECK(...) << "Thou shalt never crash without logging something meaningful.";
 
+44
+Wed Dec 09 21:34:20 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_81243c45
+UUID: 253496db_cf0fe1b6
+Bytes: 70
+Ooh, I didn't know you could, done.
+
+Fixed up one above while in here.
+

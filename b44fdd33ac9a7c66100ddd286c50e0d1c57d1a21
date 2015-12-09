@@ -1,0 +1,11 @@
+Revision: b44fdd33ac9a7c66100ddd286c50e0d1c57d1a21
+Patch-set: 3
+File: libnativeloader/native_loader.cpp
+
+85
+Wed Dec 09 17:56:47 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e55fde25_6a71f779
+Bytes: 175
+(to keep the naming less confusing, in libcore we used "j" or "java" to prefix the jobject types, since you always end up needing both, and thus two names for the same thing.)
+

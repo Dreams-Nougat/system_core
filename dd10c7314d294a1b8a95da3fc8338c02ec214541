@@ -33,6 +33,13 @@ Here is KISS accurate dropping pre-check:
 
 if ((header->id == LOG_ID_SECURITY) && (!__android_log_security() || !clientHasLogCredentials(cli)) {
 
+99:13-99:41
+Wed Dec 09 00:21:52 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 405a58de_886b77fb
+Bytes: 147
+Additional wrong-mindedness as the socket credentials associated with this transaction come from a side-channel payload passed in with the recvmsg.
+
 File: logd/LogUtils.h
 
 42:0-42:5

@@ -66,12 +66,28 @@ UUID: e55fde25_eacde7e0
 Bytes: 56
 This is to avoid mentionning MetricsCollector in the .h?
 
+7:0-7:9
+Wed Dec 09 19:24:03 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e55fde25_eacde7e0
+UUID: 254d7687_e7af5ca3
+Bytes: 81
+Yes... I'll try a forward declaration and see if that avoids these problems here.
+
 13:4-13:27
 Wed Dec 09 18:19:54 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 855c6237_67c5b264
 Bytes: 35
 does the void* avoid rtti problems?
+
+13:4-13:27
+Wed Dec 09 19:24:03 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 855c6237_67c5b264
+UUID: 6553ee27_692b4175
+Bytes: 156
+yeah, let me try a forward declare.  Since the old code did the same cast from a DBus callback void*, I figured I'd drop this in as a replacement, but, ugh.
 
 25:22-25:38
 Wed Dec 09 18:19:54 2015 +0000
@@ -83,6 +99,14 @@ This will not be thread safe and you may corrupt the state of metrics_collector.
 It may be simpler to post a task to MetricsCollector's main loop and have the work done there synchronously.
 Another option is to remove the other thread and add a binder watcher that integrates the binder service with the main loop (see brillo/binder_watcher.cc in libbrillo).
 This would allow us to process everything (timers, binder oneway calls, weave calls) synchronously without having to worry about multithreading.
+
+25:22-25:38
+Wed Dec 09 19:24:03 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 855c6237_0751560b
+UUID: e55fde25_cd323dea
+Bytes: 260
+OK, I had assumed the old D-Bus stuff did everything using a thread pool, including the stuff it still needs to do, but sounds like that's not correct, and part of this change also needs to handle both Binder and D-Bus callbacks in a single thread / main loop.
 
 File: metricsd/metricscollectorservice_trampoline.h
 

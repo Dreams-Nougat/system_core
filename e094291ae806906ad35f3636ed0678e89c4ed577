@@ -28,6 +28,13 @@ UUID: 454eea83_e55ab6fd
 Bytes: 24
 nit: Wrong include order
 
+38:4-38:71
+Wed Dec 09 21:08:23 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e55fde25_10b50ca4
+Bytes: 245
+Presumably this should also change to assert abort, just like metricsd service -- although metrics_collector could continue to handle weave events via D-Bus without this binder service, that's eventually slated to move to this interface as well.
+
 File: metricsd/metricscollectorservice_impl.h
 
 0

@@ -9,3 +9,13 @@ UUID: 405a58de_080c67c1
 Bytes: 104
 wouldn't it be better to have a hdr_version or something like that instead of relying on structure size?
 
+758
+Wed Dec 09 15:38:05 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 405a58de_080c67c1
+UUID: a5596647_28a66bd4
+Bytes: 1020
+There is history ... so no ;-}
+
+We have not crossed that bridge yet, and doing so back when I did logger_entry_v3 would have killed the user space logd project as the format is used by _any_ reader and I had to be constrained to what was already defined. There is java code out there interpreting the logger_entry_v2 header. I had spent a fair amount of time back then communicating with the various authors to get them to accept the hdr_size field and adjusting their code to make it extensible based on this one entry because no one used logger_entry_v2 (!) thus blocking acceptance. Keep in mind that logger_entry_v1 was around since 2008, had a reserved value there, and logger_entry_v2 (again never used) predated the project and started the ball rolling on hdr_size. these three are still basically the same form. In this case the baby-step of adding content on to the end works and I am not too fond of placing a version # near the end of a structure with this much history as I can not refactor the basic header.
+

@@ -13,3 +13,11 @@ I expect some tests and applications may run afoul of this new limit.
 
 We do _not_ require this to be changed, but in the spirit of keeping the allocations inside logd limited to <PAGESIZE it will have a significant effect.
 
+84:33-84:37
+Wed Dec 09 02:01:27 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 20fe44e6_3cbc11f6
+UUID: 405a58de_08f547e7
+Bytes: 117
+What will it look like if someone does run afoul of the new limit? Is there any way to make it obvious what happened?
+

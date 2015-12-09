@@ -36,6 +36,15 @@ UUID: 6553ee27_4c43f328
 Bytes: 209
 Shouldn't this be the correct one at the top, since this is the corresponding .cc file for this header?  Instead, shouldn't the metricscollectorservice_trampoline.h header be moved to below the system headers?
 
+17
+Wed Dec 09 22:40:46 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6553ee27_4c43f328
+UUID: 253496db_32c9282e
+Bytes: 129
+Yes, you are correct.
+This is the least useful comment as I linked it to the correct header instead of the whole include block :/
+
 38:4-38:71
 Wed Dec 09 21:08:23 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 58e997ab302dc04b82e9b66ba80ecce7bdce0aa4
+Patch-set: 1
+File: liblog/logprint.c
+
+758
+Wed Dec 09 02:12:21 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 405a58de_080c67c1
+Bytes: 104
+wouldn't it be better to have a hdr_version or something like that instead of relying on structure size?
+

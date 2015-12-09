@@ -10,6 +10,14 @@ Bytes: 174
 Actually, should we replace this by a CHECK?
 if we fail to start the binder part, we might as well crash and restart metricsd instead of keeping only half of metricsd running
 
+47:4-47:11
+Wed Dec 09 17:25:53 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e55fde25_6ac57764
+UUID: 253496db_4cabff4b
+Bytes: 85
+I tend to agree.  This would fail silently and leave metricsd running but not usable.
+
 48:0-48:1
 Wed Dec 09 15:52:24 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>

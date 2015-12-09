@@ -21,3 +21,13 @@ UUID: 405a58de_08f547e7
 Bytes: 117
 What will it look like if someone does run afoul of the new limit? Is there any way to make it obvious what happened?
 
+84:33-84:37
+Wed Dec 09 15:27:31 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 405a58de_08f547e7
+UUID: 40efb832_a62e4c82
+Bytes: 465
+Truncated content, average log length is 115 characters so most will not even notice. Crash logs do tend to pile on and hit the limits; I had instructed them to reference this value and use it to split the content up into multiple adjacent logs if they considered the bottom of the stack important.
+
+I am expecting noise over an 8 byte decrease in the maximum log buffer; it is not truly necessary since most never get close. Twist my rubber arm to _not_ change it?
+

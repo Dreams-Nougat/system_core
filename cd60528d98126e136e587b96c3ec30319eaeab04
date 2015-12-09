@@ -18,10 +18,30 @@ UUID: 253496db_4cabff4b
 Bytes: 85
 I tend to agree.  This would fail silently and leave metricsd running but not usable.
 
+47:4-47:11
+Wed Dec 09 19:00:37 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_4cabff4b
+UUID: 05487277_63a922bb
+Bytes: 622
+The service is auto-restarted by init, and the failing condition is likely to persist on a following execution, so the result is a metricsd crash loop -- which does more quickly bring it to a developer's attention and does stand out in logs collected in a debugging environment.  
+
+If metricsd serves little purpose without IMetricsd available then that's probably the way to go.  If metricsd can still upload information to the server then it might be nice to make a fatal errors metric available, so problems can be proactively notified?
+
+That can be a problem for another day; I'll crash metricsd on this error for now.
+
 48:0-48:1
 Wed Dec 09 15:52:24 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6553ee27_a6b966ed
 Bytes: 21
 nit: indent seems off
+
+48:0-48:1
+Wed Dec 09 19:00:37 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6553ee27_a6b966ed
+UUID: 253496db_cf07e15f
+Bytes: 14
+oops, will fix
 

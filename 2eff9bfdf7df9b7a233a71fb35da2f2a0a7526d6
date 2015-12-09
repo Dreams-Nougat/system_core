@@ -9,6 +9,14 @@ UUID: 2059e4e9_84f5a675
 Bytes: 31
 use ELFMAG instead from elf.h ?
 
+622
+Wed Dec 09 03:23:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2059e4e9_84f5a675
+UUID: 405a58de_6b31552c
+Bytes: 67
+This file uses llvm elf stuff, I don't want to mix that with elf.h.
+
 628
 Wed Dec 09 02:55:02 2015 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,4 +25,12 @@ Bytes: 40
 missing NULL check ?
 
 use the "e" flag ?
+
+628
+Wed Dec 09 03:23:50 2015 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 007b0038_4b8585be
+UUID: 80ed303a_82433cf2
+Bytes: 4
+Done
 

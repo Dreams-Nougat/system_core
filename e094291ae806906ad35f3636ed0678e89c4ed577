@@ -1,0 +1,104 @@
+Revision: e094291ae806906ad35f3636ed0678e89c4ed577
+Patch-set: 2
+File: metricsd/Android.mk
+
+32:2-32:36
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05487277_c32e9667
+Bytes: 33
+Preserve the ordering if possible
+
+File: metricsd/metrics_collector.h
+
+77:15-77:48
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 253496db_6cc35bb2
+Bytes: 106
+We should not need this.
+If we want to call ProcessUserCrash from another place, we should make it public.
+
+File: metricsd/metricscollectorservice_impl.cc
+
+17
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 454eea83_e55ab6fd
+Bytes: 24
+nit: Wrong include order
+
+File: metricsd/metricscollectorservice_impl.h
+
+0
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_9e181d5d
+Bytes: 79
+The convention is to separate the words with _, do you mind renaming the files?
+
+File: metricsd/metricscollectorservice_trampoline.cc
+
+0
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_de8305bc
+Bytes: 26
+Missing a Copyright notice
+
+1:0-5:17
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6553ee27_46cab274
+Bytes: 194
+the headers are in the wrong order I think. It should be
+
+associated header,
+generic c++ header
+local header files.
+
+https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+
+7:0-7:9
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e55fde25_eacde7e0
+Bytes: 56
+This is to avoid mentionning MetricsCollector in the .h?
+
+13:4-13:27
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 855c6237_67c5b264
+Bytes: 35
+does the void* avoid rtti problems?
+
+25:22-25:38
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 855c6237_0751560b
+Bytes: 504
+This will not be thread safe and you may corrupt the state of metrics_collector.
+
+It may be simpler to post a task to MetricsCollector's main loop and have the work done there synchronously.
+Another option is to remove the other thread and add a binder watcher that integrates the binder service with the main loop (see brillo/binder_watcher.cc in libbrillo).
+This would allow us to process everything (timers, binder oneway calls, weave calls) synchronously without having to worry about multithreading.
+
+File: metricsd/metricscollectorservice_trampoline.h
+
+35:5-35:22
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 454eea83_65ec867c
+Bytes: 80
+Can you forward declare it ?
+That would avoid actually including the header here
+
+36:2-36:35
+Wed Dec 09 18:19:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 253496db_acd7036d
+Bytes: 83
+nits: use the explicit keywords.
+This is the rule for single arguments constructors
+

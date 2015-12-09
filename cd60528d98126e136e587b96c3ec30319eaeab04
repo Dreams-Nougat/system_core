@@ -1,0 +1,11 @@
+Revision: cd60528d98126e136e587b96c3ec30319eaeab04
+Patch-set: 1
+File: metricsd/uploader/bn_metricsd_impl.cc
+
+48:0-48:1
+Wed Dec 09 15:52:24 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6553ee27_a6b966ed
+Bytes: 21
+nit: indent seems off
+

@@ -1,0 +1,13 @@
+Revision: 0442522e30a9d91d21422f1812115603e8682feb
+Patch-set: 2
+File: metricsd/uploader/bn_metricsd_impl.cc
+
+44
+Wed Dec 09 21:27:31 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_81243c45
+Bytes: 113
+nit: you could log a message here:
+
+CHECK(...) << "Thou shalt never crash without logging something meaningful.";
+

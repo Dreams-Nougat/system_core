@@ -2,6 +2,14 @@ Revision: cd60528d98126e136e587b96c3ec30319eaeab04
 Patch-set: 1
 File: metricsd/uploader/bn_metricsd_impl.cc
 
+47:4-47:11
+Wed Dec 09 15:54:26 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e55fde25_6ac57764
+Bytes: 174
+Actually, should we replace this by a CHECK?
+if we fail to start the binder part, we might as well crash and restart metricsd instead of keeping only half of metricsd running
+
 48:0-48:1
 Wed Dec 09 15:52:24 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>

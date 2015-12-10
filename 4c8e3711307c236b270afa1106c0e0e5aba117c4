@@ -1,0 +1,32 @@
+Revision: 4c8e3711307c236b270afa1106c0e0e5aba117c4
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+746
+Thu Dec 10 02:32:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 253496db_00e256f5
+Bytes: 7
+const&?
+
+792
+Thu Dec 10 02:32:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 454eea83_2e6d4b0e
+Bytes: 33
+or make mkcopyinfo a constructor?
+
+796
+Thu Dec 10 02:32:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 254d7687_38f6b14a
+Bytes: 40
+to see whether it's a file or directory.
+
+943
+Thu Dec 10 02:32:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 454eea83_ee661331
+Bytes: 30
+include the mode in the error?
+

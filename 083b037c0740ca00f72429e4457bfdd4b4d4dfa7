@@ -1,0 +1,14 @@
+Revision: 083b037c0740ca00f72429e4457bfdd4b4d4dfa7
+Patch-set: 2
+File: logcat/logcat.cpp
+
+703:24-713:25
+Thu Dec 10 23:12:32 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 855c6237_812bee73
+Bytes: 114
+Seems like this would be better:
+
+  if (i != LOG_ID_MAIN && i != LOG_ID_SYSTEM && i != LOG_ID_CRASH)
+    continue;
+

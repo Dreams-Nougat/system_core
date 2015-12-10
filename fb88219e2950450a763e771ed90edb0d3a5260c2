@@ -1,0 +1,11 @@
+Revision: fb88219e2950450a763e771ed90edb0d3a5260c2
+Patch-set: 1
+File: adb/line_printer.h
+
+50:7-50:20
+Thu Dec 10 01:57:48 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 253496db_f585ca31
+Bytes: 18
+should be removed?
+

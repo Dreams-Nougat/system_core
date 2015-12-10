@@ -1,0 +1,11 @@
+Revision: c16e120dd17b206231c366958a22bbc60d4cef35
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+797:51-797:60
+Thu Dec 10 20:54:54 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 454eea83_aba5ad24
+Bytes: 9
+agreement
+

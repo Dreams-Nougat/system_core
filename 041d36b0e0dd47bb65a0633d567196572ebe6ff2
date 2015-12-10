@@ -17,6 +17,14 @@ UUID: a567a60d_58c5bd63
 Bytes: 159
 OK, I was trying to keep this identifier consistent with the library file name, for which there's mostly a precedent of no underscores for native service libs.
 
+98:40-98:63
+Thu Dec 10 03:38:08 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a567a60d_58c5bd63
+UUID: e55fde25_19fbf730
+Bytes: 4
+Done
+
 102
 Wed Dec 09 19:49:35 2015 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,4 +39,12 @@ Parent: 65984e34_211be8ad
 UUID: a5596647_4b1ab94a
 Bytes: 36
 Oops, had meant to do this, will do.
+
+102
+Thu Dec 10 03:38:08 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5596647_4b1ab94a
+UUID: 855c6237_8a578ba4
+Bytes: 4
+Done
 

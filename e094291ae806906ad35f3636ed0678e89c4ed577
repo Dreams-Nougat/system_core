@@ -9,6 +9,14 @@ UUID: 05487277_c32e9667
 Bytes: 33
 Preserve the ordering if possible
 
+32:2-32:36
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05487277_c32e9667
+UUID: 855c6237_6a421747
+Bytes: 4
+Done
+
 File: metricsd/metrics_collector.h
 
 77:15-77:48
@@ -18,6 +26,14 @@ UUID: 253496db_6cc35bb2
 Bytes: 106
 We should not need this.
 If we want to call ProcessUserCrash from another place, we should make it public.
+
+77:15-77:48
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_6cc35bb2
+UUID: 855c6237_8a154b26
+Bytes: 5
+Done.
 
 File: metricsd/metricscollectorservice_impl.cc
 
@@ -45,12 +61,28 @@ Bytes: 129
 Yes, you are correct.
 This is the least useful comment as I linked it to the correct header instead of the whole include block :/
 
+17
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_32c9282e
+UUID: 65984e34_a43b86a3
+Bytes: 4
+Done
+
 38:4-38:71
 Wed Dec 09 21:08:23 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e55fde25_10b50ca4
 Bytes: 245
 Presumably this should also change to assert abort, just like metricsd service -- although metrics_collector could continue to handle weave events via D-Bus without this binder service, that's eventually slated to move to this interface as well.
+
+38:4-38:71
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e55fde25_10b50ca4
+UUID: 6553ee27_2cb0b7b3
+Bytes: 4
+Done
 
 File: metricsd/metricscollectorservice_impl.h
 
@@ -61,6 +93,14 @@ UUID: 65984e34_9e181d5d
 Bytes: 79
 The convention is to separate the words with _, do you mind renaming the files?
 
+0
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_9e181d5d
+UUID: 6553ee27_8c5d6b55
+Bytes: 4
+Done
+
 File: metricsd/metricscollectorservice_trampoline.cc
 
 0
@@ -69,6 +109,14 @@ Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 65984e34_de8305bc
 Bytes: 26
 Missing a Copyright notice
+
+0
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_de8305bc
+UUID: a567a60d_18f6654a
+Bytes: 4
+Done
 
 1:0-5:17
 Wed Dec 09 18:19:54 2015 +0000
@@ -82,6 +130,14 @@ generic c++ header
 local header files.
 
 https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+
+1:0-5:17
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6553ee27_46cab274
+UUID: 05487277_697341f4
+Bytes: 4
+Done
 
 7:0-7:9
 Wed Dec 09 18:19:54 2015 +0000
@@ -98,6 +154,16 @@ UUID: 254d7687_e7af5ca3
 Bytes: 81
 Yes... I'll try a forward declaration and see if that avoids these problems here.
 
+7:0-7:9
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 254d7687_e7af5ca3
+UUID: 65984e34_246d360e
+Bytes: 106
+Done.
+
+Oh, and the thread was just have a static-scope private object, but moved to class private instead.
+
 13:4-13:27
 Wed Dec 09 18:19:54 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -112,6 +178,14 @@ Parent: 855c6237_67c5b264
 UUID: 6553ee27_692b4175
 Bytes: 156
 yeah, let me try a forward declare.  Since the old code did the same cast from a DBus callback void*, I figured I'd drop this in as a replacement, but, ugh.
+
+13:4-13:27
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6553ee27_692b4175
+UUID: a5596647_4e7527ad
+Bytes: 4
+Done
 
 25:22-25:38
 Wed Dec 09 18:19:54 2015 +0000
@@ -132,6 +206,14 @@ UUID: e55fde25_cd323dea
 Bytes: 260
 OK, I had assumed the old D-Bus stuff did everything using a thread pool, including the stuff it still needs to do, but sounds like that's not correct, and part of this change also needs to handle both Binder and D-Bus callbacks in a single thread / main loop.
 
+25:22-25:38
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e55fde25_cd323dea
+UUID: 65984e34_279218ca
+Bytes: 72
+Done, added a BinderWatcher and let the existing main loop handle these.
+
 File: metricsd/metricscollectorservice_trampoline.h
 
 35:5-35:22
@@ -142,6 +224,14 @@ Bytes: 80
 Can you forward declare it ?
 That would avoid actually including the header here
 
+35:5-35:22
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 454eea83_65ec867c
+UUID: 65984e34_47e96437
+Bytes: 4
+Done
+
 36:2-36:35
 Wed Dec 09 18:19:54 2015 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -149,4 +239,12 @@ UUID: 253496db_acd7036d
 Bytes: 83
 nits: use the explicit keywords.
 This is the rule for single arguments constructors
+
+36:2-36:35
+Thu Dec 10 03:37:48 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_acd7036d
+UUID: 855c6237_8aad4bf3
+Bytes: 30
+Done, and for _impl.h as well.
 

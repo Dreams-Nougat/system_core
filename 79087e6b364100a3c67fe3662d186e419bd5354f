@@ -9,6 +9,14 @@ UUID: a567a60d_0c35c781
 Bytes: 55
 nits: 4 space indents to continue statements I believe.
 
+41:3-41:4
+Thu Dec 10 21:34:28 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a567a60d_0c35c781
+UUID: 454eea83_749c367e
+Bytes: 21
+Done via clang-format
+
 File: metricsd/metrics_collector_service_client.cc
 
 28:2-29:9
@@ -17,6 +25,14 @@ Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5596647_57437628
 Bytes: 37
 I think we don't indent in namespace.
+
+28:2-29:9
+Thu Dec 10 21:34:28 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5596647_57437628
+UUID: 454eea83_54a13aba
+Bytes: 21
+Done via clang-format
 
 File: metricsd/metrics_collector_service_impl.cc
 
@@ -27,6 +43,14 @@ UUID: 65984e34_cda03564
 Bytes: 51
 This should not be needed with a unique_ptr I think
 
+35:2-35:8
+Thu Dec 10 21:34:28 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_cda03564
+UUID: 6553ee27_fb6c93e1
+Bytes: 4
+Done
+
 File: metricsd/metrics_collector_service_impl.h
 
 55:10-55:23
@@ -36,6 +60,14 @@ UUID: 65984e34_ada3696e
 Bytes: 30
 can you use a unique_ptr here?
 
+55:10-55:23
+Thu Dec 10 21:34:28 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_ada3696e
+UUID: 6553ee27_9b635fee
+Bytes: 4
+Done
+
 File: metricsd/metrics_collector_service_trampoline.h
 
 56:2-56:31
@@ -44,4 +76,12 @@ Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 65984e34_4dce6537
 Bytes: 33
 I think this can be a unique_ptr.
+
+56:2-56:31
+Thu Dec 10 21:34:28 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65984e34_4dce6537
+UUID: 6553ee27_fbc25308
+Bytes: 4
+Done
 

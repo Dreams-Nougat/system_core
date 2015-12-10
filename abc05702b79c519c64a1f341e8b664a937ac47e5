@@ -1,0 +1,11 @@
+Revision: abc05702b79c519c64a1f341e8b664a937ac47e5
+Patch-set: 3
+File: crash_reporter/crash_reporter.cc
+
+32
+Thu Dec 10 20:40:59 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_0d329d32
+Bytes: 45
+nit: can you move this above metrics_library?
+

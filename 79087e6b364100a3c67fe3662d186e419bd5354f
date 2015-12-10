@@ -1,0 +1,47 @@
+Revision: 79087e6b364100a3c67fe3662d186e419bd5354f
+Patch-set: 3
+File: metricsd/include/metrics/metrics_collector_service_client.h
+
+41:3-41:4
+Thu Dec 10 19:58:40 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a567a60d_0c35c781
+Bytes: 55
+nits: 4 space indents to continue statements I believe.
+
+File: metricsd/metrics_collector_service_client.cc
+
+28:2-29:9
+Thu Dec 10 19:58:40 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5596647_57437628
+Bytes: 37
+I think we don't indent in namespace.
+
+File: metricsd/metrics_collector_service_impl.cc
+
+35:2-35:8
+Thu Dec 10 19:58:40 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_cda03564
+Bytes: 51
+This should not be needed with a unique_ptr I think
+
+File: metricsd/metrics_collector_service_impl.h
+
+55:10-55:23
+Thu Dec 10 19:58:40 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_ada3696e
+Bytes: 30
+can you use a unique_ptr here?
+
+File: metricsd/metrics_collector_service_trampoline.h
+
+56:2-56:31
+Thu Dec 10 19:58:40 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65984e34_4dce6537
+Bytes: 33
+I think this can be a unique_ptr.
+

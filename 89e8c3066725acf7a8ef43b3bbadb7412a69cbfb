@@ -1,0 +1,11 @@
+Revision: 89e8c3066725acf7a8ef43b3bbadb7412a69cbfb
+Patch-set: 1
+File: adb/daemon/main.cpp
+
+35
+Fri Dec 11 22:30:22 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05e5d2f2_5bb0a3b4
+Bytes: 116
+i really wish we didn't have to leak this even more. why can't we just do this in setcon? or have an android_setcon?
+

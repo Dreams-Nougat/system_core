@@ -1,0 +1,11 @@
+Revision: 0b252d5585479e3ec9088c6c759c953fe38fd491
+Patch-set: 1
+File: init/readme.txt
+
+119
+Fri Dec 11 21:17:58 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 254d7687_a1adc9f2
+Bytes: 64
+add the http:// so more terminals/editors will make this a link?
+

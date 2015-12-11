@@ -9,12 +9,28 @@ UUID: 253496db_00e256f5
 Bytes: 7
 const&?
 
+746
+Fri Dec 11 19:09:48 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 253496db_00e256f5
+UUID: e55fde25_5975efac
+Bytes: 127
+I'm immediately mutating it to append a slash, so using const& would copy the string twice on an insufficiently smart compiler.
+
 792
 Thu Dec 10 02:32:45 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 454eea83_2e6d4b0e
 Bytes: 33
 or make mkcopyinfo a constructor?
+
+792
+Fri Dec 11 19:09:48 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 454eea83_2e6d4b0e
+UUID: 65984e34_684d4c50
+Bytes: 4
+Done
 
 796
 Thu Dec 10 02:32:45 2015 +0000
@@ -23,10 +39,26 @@ UUID: 254d7687_38f6b14a
 Bytes: 40
 to see whether it's a file or directory.
 
+796
+Fri Dec 11 19:09:48 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 254d7687_38f6b14a
+UUID: a5596647_f28035b1
+Bytes: 4
+Done
+
 943
 Thu Dec 10 02:32:45 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 454eea83_ee661331
 Bytes: 30
 include the mode in the error?
+
+943
+Fri Dec 11 19:09:48 2015 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 454eea83_ee661331
+UUID: a567a60d_5f991c59
+Bytes: 4
+Done
 

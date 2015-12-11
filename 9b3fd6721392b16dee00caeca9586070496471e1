@@ -1,0 +1,47 @@
+Revision: 9b3fd6721392b16dee00caeca9586070496471e1
+Patch-set: 2
+File: adb/shell_service.cpp
+
+255
+Fri Dec 11 23:35:53 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5b5e6ad_e8b95305
+Bytes: 291
+note: it's entirely permissible for environ to be empty.  if it is, you segfault here.
+
+ $ cat test.c
+int main(int argc, char *argv[])
+{
+    if (argc == 2)
+        printf("%p\n", environ[0]);
+    else
+        execle(argv[0], argv[0], "--child", NULL, NULL);
+}
+
+ $ gcc test.c && ./a.out
+(nil)
+
+257:0-258:28
+Fri Dec 11 23:35:53 2015 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5b5e6ad_28a8cbb3
+Bytes: 478
+note: it's entirely permissible for the environ to contain binary data.  if there's a string that does not contain =, adb will segfault.  bash will typically ignore such values and pass them along to children.
+
+ $ cat test.c
+int main(int argc, char *argv[])
+{
+    char *new_argv[] = {
+        "foo",
+        NULL,
+    };
+
+    if (argc == 2)
+        printf("%s\n", environ[0]);
+    else
+        execle(argv[0], argv[0], "--child", NULL, new_argv);
+}
+
+ $ gcc test.c && ./a.out
+foo
+

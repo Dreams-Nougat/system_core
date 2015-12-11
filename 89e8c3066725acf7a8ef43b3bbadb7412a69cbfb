@@ -9,3 +9,13 @@ UUID: 05e5d2f2_5bb0a3b4
 Bytes: 116
 i really wish we didn't have to leak this even more. why can't we just do this in setcon? or have an android_setcon?
 
+35
+Fri Dec 11 22:48:57 2015 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05e5d2f2_5bb0a3b4
+UUID: 25157684_24f652fc
+Bytes: 380
+We did not want to add to setcon() since that's a generic implementation.  There is selinux_android_setcontext() that I am also adding this to, but it only deals with apps so it doesn't apply here and we thought to handle this one special case separately.
+
+@nnk is the best to comment if we should create an android_setcon() to prevent having to do this.  I would agree with that.
+

@@ -1,0 +1,11 @@
+Revision: cf7974841be2fba725deffc0063238d5f9e43d7e
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+390
+Sat Dec 12 01:49:43 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e5cc3e7f_88c49b67
+Bytes: 70
+warn that someone appears to be fucking with us? (or really broken...)
+

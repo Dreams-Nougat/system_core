@@ -2,10 +2,35 @@ Revision: cf7974841be2fba725deffc0063238d5f9e43d7e
 Patch-set: 1
 File: debuggerd/debuggerd.cpp
 
+382
+Sat Dec 12 15:47:11 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e5cc3e7f_28154f1b
+Bytes: 106
+since we're forking now, is there a concern about concurrent access to this file or other race conditions?
+
 390
 Sat Dec 12 01:49:43 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e5cc3e7f_88c49b67
 Bytes: 70
 warn that someone appears to be fucking with us? (or really broken...)
+
+412
+Sat Dec 12 15:47:11 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05107294_cccfa37c
+Bytes: 219
+please use setresuid(AID_DEBUGGERD, AID_DEBUGGERD, AID_DEBUGGERD) please. For hard to explain reasons, it's less dangerous that setuid().
+
+Also, you've never called setgid / setresgid, so you're still running with gid=0
+
+File: debuggerd/tombstone.cpp
+
+704:0-718:3
+Sat Dec 12 15:47:11 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5cf3a71_2742de45
+Bytes: 149
+this can be deleted. /data/tombstones is guaranteed to exist and have the correct SELinux label due to https://android-review.googlesource.com/127840
 

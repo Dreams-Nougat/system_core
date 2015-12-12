@@ -1,0 +1,11 @@
+Revision: d2acbd19312a66cbee2c49f455eddd82b6700d1d
+Patch-set: 2
+File: /COMMIT_MSG
+
+14
+Sat Dec 12 03:04:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65e04ee1_61f6904b
+Bytes: 56
+how did you test these without screwing up your machine?
+

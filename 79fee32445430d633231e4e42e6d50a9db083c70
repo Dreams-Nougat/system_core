@@ -43,3 +43,10 @@ Include a link to ubuntu.com? :)
 
 Do you want to hoist the less useful mac/windows messages into the library as well? All of the cases in this CL are "no permissions", but idk enough about what's going on here to know if you can always say that or not.
 
+765:0-765:22
+Mon Dec 14 18:27:03 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e598be91_02daca9a
+Bytes: 115
+Do we want "&& !defined(__ANDROID__)" here as well? Or was that just necessary above to get around compiler errors?
+

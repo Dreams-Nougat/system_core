@@ -9,3 +9,13 @@ UUID: 65e04ee1_61f6904b
 Bytes: 56
 how did you test these without screwing up your machine?
 
+14
+Mon Dec 14 17:36:04 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65e04ee1_61f6904b
+UUID: 25157684_6d530d1e
+Bytes: 327
+For a user not in plugdev I created a test account on my machine and ran tests from that account.
+
+For the other two I wasn't able to find a good way to do a true test so I had to modify the code a bit to simulate the conditions (e.g. check for a non-existent group instead of "plugdev") and make sure the response was correct.
+

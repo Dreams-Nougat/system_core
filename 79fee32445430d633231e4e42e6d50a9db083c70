@@ -39,6 +39,14 @@ UUID: 65e04ee1_c48052b2
 Bytes: 108
 well, ADB_HOST undefined. this isn't adb, this is just a stand-alone library that happened to come from adb.
 
+175
+Mon Dec 14 18:29:21 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65e04ee1_c48052b2
+UUID: 25157684_4de9f137
+Bytes: 41
+(d'oh. i've since noticed L170. removed.)
+
 File: adb/diagnose_linux_usb.cpp
 
 27

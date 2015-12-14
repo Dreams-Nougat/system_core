@@ -16,12 +16,28 @@ UUID: c5cf3a71_67f7867e
 Bytes: 34
 Do we still need to be doing this?
 
+169
+Mon Dec 14 18:27:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5cf3a71_67f7867e
+UUID: e598be91_22aeeeed
+Bytes: 217
+chh had to revert his "make clang the default default" patch over the weekend, but once that's in we can start removing the LOCAL_CLANG trues. (although that might break things for OEMs that choose to build with gcc.)
+
 175
 Sat Dec 12 03:33:08 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e5cc3e7f_48d453c6
 Bytes: 15
 But ADB_HOST=0?
+
+175
+Mon Dec 14 18:27:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e5cc3e7f_48d453c6
+UUID: 65e04ee1_c48052b2
+Bytes: 108
+well, ADB_HOST undefined. this isn't adb, this is just a stand-alone library that happened to come from adb.
 
 File: adb/diagnose_linux_usb.cpp
 
@@ -31,6 +47,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 25ead6c4_82e39ec9
 Bytes: 94
 Prefix with http:// to be nice to things that don't linkify well (gnome-terminal, for example)
+
+27
+Mon Dec 14 18:27:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 25ead6c4_82e39ec9
+UUID: 25157684_ed7edd43
+Bytes: 4
+Done
 
 File: adb/transport.cpp
 
@@ -42,6 +66,14 @@ Bytes: 252
 Include a link to ubuntu.com? :)
 
 Do you want to hoist the less useful mac/windows messages into the library as well? All of the cases in this CL are "no permissions", but idk enough about what's going on here to know if you can always say that or not.
+
+682
+Mon Dec 14 18:27:55 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5b81ad7_3c24bd43
+UUID: 45db4a39_f109900a
+Bytes: 100
+yeah, that sounds like a good idea. for some reason i thought they were different, but you're right.
 
 765:0-765:22
 Mon Dec 14 18:27:03 2015 +0000

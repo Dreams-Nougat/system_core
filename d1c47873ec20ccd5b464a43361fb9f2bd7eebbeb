@@ -2,6 +2,13 @@ Revision: d1c47873ec20ccd5b464a43361fb9f2bd7eebbeb
 Patch-set: 1
 File: adb/daemon/main.cpp
 
+44
+Tue Dec 15 19:50:55 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e598be91_96ce1cdb
+Bytes: 49
+Can this function be rewritten using libminijail?
+
 129
 Tue Dec 15 19:41:29 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

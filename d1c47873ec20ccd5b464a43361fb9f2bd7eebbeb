@@ -9,6 +9,14 @@ UUID: e598be91_96ce1cdb
 Bytes: 49
 Can this function be rewritten using libminijail?
 
+44
+Tue Dec 15 21:44:49 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e598be91_96ce1cdb
+UUID: 65e04ee1_98206ddf
+Bytes: 167
+The current code in libminijail will drop all caps (not just the bounding set). Would that be OK or should I add functionality for only dropping from the bounding set?
+
 113
 Tue Dec 15 19:51:18 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: c5b81ad7_8e99075d
 Bytes: 79
 unique_ptr? And probably name it "jail" so it doesn't look like a loop counter.
 
+113
+Tue Dec 15 21:44:49 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5b81ad7_8e99075d
+UUID: c5b81ad7_4e97ef6a
+Bytes: 182
+Can we pass custom deleters to unique_ptr? There's fields in the struct that need free'ing. Unfortunately minijail is still a C library. Alternatively I can add a ScopedJail wrapper.
+
 125:22-125:23
 Tue Dec 15 19:51:18 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 05107294_98ca01c6
 Bytes: 30
 Don't argue with clang-format.
+
+125:22-125:23
+Tue Dec 15 21:44:49 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05107294_98ca01c6
+UUID: 05e5d2f2_70de56fe
+Bytes: 159
+Found it weird that it doesn't add this space but it does add a space after AID_READPROC below. Doesn't look like clang-format would be inconsistent like that.
 
 129
 Tue Dec 15 19:41:29 2015 +0000
@@ -47,4 +71,12 @@ Parent: 05e5d2f2_3588409b
 UUID: 45db4a39_c9ff8419
 Bytes: 362
 What happens if the call to minijail_set_supplementary_gids() calloc() fails? We return ENOMEM, but the rest of this code proceeds without any supplemental groups ever being set. It appears that minijail_enter() won't die if minijail_set_supplementary_gids() has memory problems, leading to a mismatch between what's written in the code vs what actually happens.
+
+129
+Tue Dec 15 21:44:49 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45db4a39_c9ff8419
+UUID: e598be91_d12dce3e
+Bytes: 22
+That's true, will fix.
 

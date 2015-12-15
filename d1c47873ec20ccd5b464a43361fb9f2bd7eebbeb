@@ -9,3 +9,13 @@ UUID: 45db4a39_c98304bc
 Bytes: 84
 need to check return value. Can return ENOMEM or EINVAL under certain circumstances.
 
+129
+Tue Dec 15 19:42:56 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45db4a39_c98304bc
+UUID: 05e5d2f2_3588409b
+Bytes: 236
+So the way this works is that all priv-dropping operations are done at minijail_enter time. The other calls only configuring restrictions in the minijail.
+
+If we'd rather call setgroups here, I can add a separate call to minijail_enter.
+

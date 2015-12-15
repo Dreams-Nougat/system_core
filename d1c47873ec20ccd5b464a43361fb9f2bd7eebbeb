@@ -9,6 +9,20 @@ UUID: e598be91_96ce1cdb
 Bytes: 49
 Can this function be rewritten using libminijail?
 
+113
+Tue Dec 15 19:51:18 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5b81ad7_8e99075d
+Bytes: 79
+unique_ptr? And probably name it "jail" so it doesn't look like a loop counter.
+
+125:22-125:23
+Tue Dec 15 19:51:18 2015 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05107294_98ca01c6
+Bytes: 30
+Don't argue with clang-format.
+
 129
 Tue Dec 15 19:41:29 2015 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

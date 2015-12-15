@@ -19,3 +19,11 @@ So the way this works is that all priv-dropping operations are done at minijail_
 
 If we'd rather call setgroups here, I can add a separate call to minijail_enter.
 
+129
+Tue Dec 15 19:46:53 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05e5d2f2_3588409b
+UUID: 45db4a39_c9ff8419
+Bytes: 362
+What happens if the call to minijail_set_supplementary_gids() calloc() fails? We return ENOMEM, but the rest of this code proceeds without any supplemental groups ever being set. It appears that minijail_enter() won't die if minijail_set_supplementary_gids() has memory problems, leading to a mismatch between what's written in the code vs what actually happens.
+

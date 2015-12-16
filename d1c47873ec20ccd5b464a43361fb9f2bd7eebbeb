@@ -17,6 +17,16 @@ UUID: 65e04ee1_98206ddf
 Bytes: 167
 The current code in libminijail will drop all caps (not just the bounding set). Would that be OK or should I add functionality for only dropping from the bounding set?
 
+44
+Wed Dec 16 00:27:49 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65e04ee1_98206ddf
+UUID: 05107294_c2664731
+Bytes: 359
+We want adbd to drop all caps from the effective cap set, and modify the capability bounding set so that only only CAP_SETUID and CAP_SETGID are allowed. We need to allow the adb shell user to acquire CAP_SETUID/CAP_SETGID when it executes /system/bin/run-as, but it should be impossible to acquire any other privileges.
+
+I'm fine with leaving the code as-is.
+
 113
 Tue Dec 15 19:51:18 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

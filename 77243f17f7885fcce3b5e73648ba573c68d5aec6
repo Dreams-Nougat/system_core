@@ -1,0 +1,48 @@
+Revision: 77243f17f7885fcce3b5e73648ba573c68d5aec6
+Patch-set: 1
+File: fastboot/socket_linux_osx.cpp
+
+37
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0512320e_937f1cf5
+Bytes: 25
+"Unix" seems less clumsy?
+
+100
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5b8863e_303608e0
+Bytes: 5
+!= -1
+
+111
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 05a79224_ab4c4920
+Bytes: 5
+== -1
+
+125
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 850622ce_f79be092
+Bytes: 5
+== -1
+
+File: fastboot/socket_windows.cpp
+
+52
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5dadaa8_e96ad585
+Bytes: 52
+i thought spencer convinced us to stop calling this?
+
+127
+Wed Dec 16 22:47:38 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5b8863e_101ca44f
+Bytes: 8
+s/int //
+

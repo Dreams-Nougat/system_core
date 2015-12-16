@@ -9,12 +9,28 @@ UUID: 0512320e_937f1cf5
 Bytes: 25
 "Unix" seems less clumsy?
 
+37
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0512320e_937f1cf5
+UUID: 0512320e_16df7a26
+Bytes: 4
+Done
+
 100
 Wed Dec 16 22:47:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5b8863e_303608e0
 Bytes: 5
 != -1
+
+100
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5b8863e_303608e0
+UUID: 850622ce_5ab751f8
+Bytes: 4
+Done
 
 111
 Wed Dec 16 22:47:38 2015 +0000
@@ -23,12 +39,28 @@ UUID: 05a79224_ab4c4920
 Bytes: 5
 == -1
 
+111
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05a79224_ab4c4920
+UUID: 4518aa2c_3561d089
+Bytes: 4
+Done
+
 125
 Wed Dec 16 22:47:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 850622ce_f79be092
 Bytes: 5
 == -1
+
+125
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 850622ce_f79be092
+UUID: 459d0ad3_6d5b95d1
+Bytes: 4
+Done
 
 File: fastboot/socket_windows.cpp
 
@@ -39,10 +71,28 @@ UUID: c5dadaa8_e96ad585
 Bytes: 52
 i thought spencer convinced us to stop calling this?
 
+52
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5dadaa8_e96ad585
+UUID: 85bb823a_4f668d6f
+Bytes: 281
+My understanding was that not calling this was a concession to the fact that adb may have threads that are still using sockets when the program exits, which isn't the case here.
+
+But you may be right that he recommended it as a general rule, I'll look around and find out for sure.
+
 127
 Wed Dec 16 22:47:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5b8863e_101ca44f
 Bytes: 8
 s/int //
+
+127
+Wed Dec 16 22:54:51 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5b8863e_101ca44f
+UUID: 459d0ad3_0de77145
+Bytes: 16
+Oops good catch!
 

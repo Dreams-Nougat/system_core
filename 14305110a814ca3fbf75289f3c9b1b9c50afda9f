@@ -1,0 +1,26 @@
+Revision: 14305110a814ca3fbf75289f3c9b1b9c50afda9f
+Patch-set: 5
+File: adb/commandline.cpp
+
+1016:41-1016:60
+Wed Dec 16 20:28:59 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5e3ba48_a4192c57
+Bytes: 250
+Would it make more sense to make this a std::string? Since all of the StartsWith calls are going to convert it anyway.
+
+It would also get rid of the strcmp calls.
+
+The server modification lines could be changed to:
+
+service.erase(0, sizeof(XXX) - 1);
+
+File: adb/services.cpp
+
+487:32-487:48
+Wed Dec 16 20:28:59 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2580164e_af13d533
+Bytes: 65
+Same as the other comment, would this be better as a std::string?
+

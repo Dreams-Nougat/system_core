@@ -58,6 +58,14 @@ UUID: c5b81ad7_22b72ffa
 Bytes: 101
 Yes, the deleter is one of the template arguments: http://en.cppreference.com/w/cpp/memory/unique_ptr
 
+113
+Wed Dec 16 19:21:24 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c5b81ad7_22b72ffa
+UUID: 2580164e_cf72e1ef
+Bytes: 4
+Done
+
 125:22-125:23
 Tue Dec 15 19:51:18 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -80,6 +88,18 @@ Parent: 05e5d2f2_70de56fe
 UUID: 05e5d2f2_90584238
 Bytes: 135
 If I run clang-format on this block it removes the space after AID_READPROC, so it's just that the last person to touch it was wrong :)
+
+125:22-125:23
+Wed Dec 16 19:21:24 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05e5d2f2_90584238
+UUID: 455a6ade_a84673a4
+Bytes: 125
+Our clang-format, Who art in the computer
+Hallowed be Thy Style;
+Thy brackets come,
+Thy will be spaced,
+on C++ as it is in C.
 
 129
 Tue Dec 15 19:41:29 2015 +0000

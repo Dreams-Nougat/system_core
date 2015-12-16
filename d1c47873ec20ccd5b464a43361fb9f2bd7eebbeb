@@ -27,6 +27,14 @@ We want adbd to drop all caps from the effective cap set, and modify the capabil
 
 I'm fine with leaving the code as-is.
 
+44
+Wed Dec 16 01:00:00 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05107294_c2664731
+UUID: 25ead6c4_66a13fbb
+Bytes: 64
+I'll open a tracking but for that and include it in a future CL.
+
 113
 Tue Dec 15 19:51:18 2015 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

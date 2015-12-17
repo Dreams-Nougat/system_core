@@ -1,0 +1,11 @@
+Revision: feb1325f649a0c0746a4b47313d7ff38fe86b68d
+Patch-set: 2
+File: adb/daemon/main.cpp
+
+132:8-132:39
+Thu Dec 17 01:31:02 2015 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5d1668e_4bf159fb
+Bytes: 183
+long term, you may want to fix minijail_set_supplementary_gids so it's consistent with the other minijail APIs. Having to only check the return value for this function is error prone.
+

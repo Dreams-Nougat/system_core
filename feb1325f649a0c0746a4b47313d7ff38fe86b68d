@@ -9,6 +9,14 @@ UUID: 4518aa2c_fbbe27cf
 Bytes: 112
 why are these two separate libraries? can't we WHOLE_STATIC_LIBRARIES the generated code into the other library?
 
+351
+Thu Dec 17 18:39:45 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4518aa2c_fbbe27cf
+UUID: c5dadaa8_ef9bf592
+Bytes: 80
+We should be able to. Do you want me to fix before landing or in a follow-up CL?
+
 File: adb/daemon/main.cpp
 
 132:8-132:39
@@ -18,10 +26,26 @@ UUID: a5d1668e_4bf159fb
 Bytes: 183
 long term, you may want to fix minijail_set_supplementary_gids so it's consistent with the other minijail APIs. Having to only check the return value for this function is error prone.
 
+132:8-132:39
+Thu Dec 17 18:39:45 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5d1668e_4bf159fb
+UUID: 459d0ad3_56a10a65
+Bytes: 250
+Yes, that's a good point. There's other sections of the Minijail API that can fail (mostly for the same reason, failure to copy something to the minijail struct), but it might make sense for those functions to just fail instead of returning an error.
+
 136
 Thu Dec 17 01:46:40 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 459d0ad3_306f2646
 Bytes: 76
 why isn't this PLOG? how does minijail_set_supplementary_gids report errors?
+
+136
+Thu Dec 17 18:39:45 2015 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 459d0ad3_306f2646
+UUID: 0512320e_87407638
+Bytes: 142
+Because the error is failing to copy the groups array into an internal struct, which would not generate any usable error to print with perror.
 

@@ -1,0 +1,20 @@
+Revision: 9b98d795ec298e0f215cc2b1b13b48df736fd945
+Patch-set: 5
+File: /COMMIT_MSG
+
+10:33-10:40
+Thu Dec 17 00:21:27 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5b1fa58_14977a07
+Bytes: 6
+losing
+
+File: metricsd/uploader/upload_service.cc
+
+226:7-226:20
+Thu Dec 17 00:21:27 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 850622ce_ba1e6dec
+Bytes: 169
+We discussed this, I'd vote for keeping the log and either detect stale log upload later or just hope the situation rights itself in time for the next upload or restart.
+

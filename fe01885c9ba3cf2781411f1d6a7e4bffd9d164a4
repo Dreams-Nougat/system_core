@@ -35,3 +35,11 @@ UUID: 8a5c6f37_e7dac26c
 Bytes: 349
 Btw do we still need this "success" string check?  When I filed a feature request about adb install's status code (b/16326499), xav told me it was because the adb protocol doesn't support returning the status code back.  But it looks like now it's supported?  Like "adb shell exit 3; echo $?" now properly shows "3".  Can't we just use that instead?
 
+1863
+Thu Dec 17 23:18:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a5c6f37_e7dac26c
+UUID: 2a3463db_cfd92149
+Bytes: 124
+yes, we now return exit status in adb shell. but, no, adb install doesn't use the shell protocol. it's a weird special case.
+

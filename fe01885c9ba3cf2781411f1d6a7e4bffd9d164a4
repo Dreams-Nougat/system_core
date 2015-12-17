@@ -11,3 +11,11 @@ but it still installs them does it not?
 
 I see this message when installing apps to n9 - the apps get installed.
 
+1863
+Thu Dec 17 22:26:00 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a2f9f8d_8b3f8dae
+UUID: ca62e7ed_49d88117
+Bytes: 144
+hmm. that sounds more like the other non-adb bug --- that the install command is no longer reporting "Success" to us, even though we rely on it.
+

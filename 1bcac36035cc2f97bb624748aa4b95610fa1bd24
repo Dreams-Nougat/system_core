@@ -1,0 +1,18 @@
+Revision: 1bcac36035cc2f97bb624748aa4b95610fa1bd24
+Patch-set: 1
+File: adb/usb_linux_client.cpp
+
+40
+Thu Dec 17 21:52:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a5c6f37_07c15656
+Bytes: 77
+oh, i hadn't realized that these were actually unrelated limits. interesting.
+
+471
+Thu Dec 17 21:52:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a2adb7b_ae337731
+Bytes: 9
+std::min?
+

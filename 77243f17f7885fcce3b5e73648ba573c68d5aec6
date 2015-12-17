@@ -81,6 +81,16 @@ My understanding was that not calling this was a concession to the fact that adb
 
 But you may be right that he recommended it as a general rule, I'll look around and find out for sure.
 
+52
+Thu Dec 17 00:19:30 2015 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 85bb823a_4f668d6f
+UUID: 05a79224_0e264b98
+Bytes: 376
+I think I'll take it out, officially the docs still say you must call WSACleanup(), but general opinion seems to be that it hasn't actually been necessary for a long time (Win 3.1 possibly).
+
+Even though we shouldn't have the problematic thread interactions here, the code is cleaner if we don't have to worry about it, and the tests are still passing consistently without it.
+
 127
 Wed Dec 16 22:47:38 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

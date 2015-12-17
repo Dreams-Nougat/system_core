@@ -1,0 +1,13 @@
+Revision: fe01885c9ba3cf2781411f1d6a7e4bffd9d164a4
+Patch-set: 1
+File: adb/commandline.cpp
+
+1863
+Thu Dec 17 22:22:48 2015 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a2f9f8d_8b3f8dae
+Bytes: 112
+but it still installs them does it not?
+
+I see this message when installing apps to n9 - the apps get installed.
+

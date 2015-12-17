@@ -27,3 +27,11 @@ UUID: 8a5c6f37_c79fbed3
 Bytes: 113
 Yeah, I noticed that yesterday and fixed 835515. But, that only caught one install path, I need to fix the other.
 
+1863
+Thu Dec 17 23:16:35 2015 +0000
+Author: Makoto Onuki <1003801@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a5c6f37_c79fbed3
+UUID: 8a5c6f37_e7dac26c
+Bytes: 349
+Btw do we still need this "success" string check?  When I filed a feature request about adb install's status code (b/16326499), xav told me it was because the adb protocol doesn't support returning the status code back.  But it looks like now it's supported?  Like "adb shell exit 3; echo $?" now properly shows "3".  Can't we just use that instead?
+

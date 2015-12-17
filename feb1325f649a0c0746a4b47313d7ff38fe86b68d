@@ -1,5 +1,14 @@
 Revision: feb1325f649a0c0746a4b47313d7ff38fe86b68d
 Patch-set: 2
+File: adb/Android.mk
+
+351
+Thu Dec 17 01:45:45 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4518aa2c_fbbe27cf
+Bytes: 112
+why are these two separate libraries? can't we WHOLE_STATIC_LIBRARIES the generated code into the other library?
+
 File: adb/daemon/main.cpp
 
 132:8-132:39

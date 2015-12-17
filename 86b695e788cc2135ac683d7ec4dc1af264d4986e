@@ -1,0 +1,22 @@
+Revision: 86b695e788cc2135ac683d7ec4dc1af264d4986e
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+290:19-290:22
+Thu Dec 17 21:36:23 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a2517a8_cdd2492b
+Bytes: 8
+getPid()
+
+File: logd/LogStatistics.h
+
+66:16-68:46
+Thu Dec 17 21:36:23 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5dadaa8_f2747e1a
+Bytes: 59
+KISS:
+
+if (pid & entry.getPid() && (pid != entry.getPid()))
+

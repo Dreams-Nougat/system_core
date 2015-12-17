@@ -19,3 +19,11 @@ UUID: ca62e7ed_49d88117
 Bytes: 144
 hmm. that sounds more like the other non-adb bug --- that the install command is no longer reporting "Success" to us, even though we rely on it.
 
+1863
+Thu Dec 17 22:41:37 2015 +0000
+Author: Todd Kennedy <1060678@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca62e7ed_49d88117
+UUID: 8a5c6f37_c79fbed3
+Bytes: 113
+Yeah, I noticed that yesterday and fixed 835515. But, that only caught one install path, I need to fix the other.
+

@@ -1,0 +1,11 @@
+Revision: 744f2041ff38e504ca1075871827f3787fba34d6
+Patch-set: 2
+File: adb/file_sync_client.cpp
+
+270:12-270:33
+Fri Dec 18 22:05:40 2015 +0000
+Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a2f9f8d_5a2ba9be
+Bytes: 163
+in the single-file pulling case, we don't set "expected_total_bytes" and will always have a "[?]" for the overall process. shall we remove that to avoid confusion?
+

@@ -9,3 +9,12 @@ UUID: 4a2517a8_56314add
 Bytes: 141
 Also Bug 26178938 now, as part of developer options to turn off logging. Can not turn off security loging though, so may need to be adjusted.
 
+File: liblog/logd_write.c
+
+167:9-167:35
+Fri Dec 18 19:19:59 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a2adb7b_f45390ee
+Bytes: 119
+Global check is all well and good, but if there is an individual tag override to allow it through, we just broke it ...
+

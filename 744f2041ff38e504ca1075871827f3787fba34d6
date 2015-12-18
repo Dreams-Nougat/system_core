@@ -9,3 +9,13 @@ UUID: 0a2f9f8d_5a2ba9be
 Bytes: 163
 in the single-file pulling case, we don't set "expected_total_bytes" and will always have a "[?]" for the overall process. shall we remove that to avoid confusion?
 
+270:12-270:33
+Fri Dec 18 22:45:16 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a2f9f8d_5a2ba9be
+UUID: aa593347_97eb2e08
+Bytes: 268
+i've fixed the single-file cases to set an expectation.
+
+there's still a corner case where if you pull/push five arguments you'll go from 0-100% on each one independently. but since jmgao only added that feature recently, i doubt anyone will be offended any time soon.
+

@@ -9,6 +9,14 @@ UUID: 2a7b83af_345d702e
 Bytes: 138
 Sorry for this late answer, I just realized that with the sscanf version of check_wait_for_device_syntax, the transport will be mandatory.
 
+207:23-207:37
+Fri Dec 18 18:42:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a7b83af_345d702e
+UUID: 8a438f4f_7823154f
+Bytes: 68
+it shouldn't be. we expand "wait-for-device" before doing the check.
+
 210:74-210:87
 Fri Dec 18 18:32:48 2015 +0000
 Author: LeoX Sartre <1088532@85c56323-6fa9-3386-8a01-6480fb634889>

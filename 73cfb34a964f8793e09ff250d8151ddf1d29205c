@@ -1,0 +1,11 @@
+Revision: 73cfb34a964f8793e09ff250d8151ddf1d29205c
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+185:12-185:39
+Fri Dec 18 02:23:00 2015 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea5fab25_ad94a9f6
+Bytes: 183
+If you wind up reading more bytes than are expected in a file, should you attempt to cap the amount you will add to total_bytes_ to prevent the overall percentage from going over 100?
+

@@ -1,0 +1,13 @@
+Revision: ee3b838e13dc2140ac2051c1012d471effd0fd5f
+Patch-set: 2
+File: logd/LogStatistics.cpp
+
+327:51-328:64
+Fri Dec 18 21:26:03 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa593347_370a426e
+Bytes: 276
+One day we may wish to expose %u/%u/%u getPid(), getTid(), uid since we have the related pid now; but the columns get messed up if we did that.
+
+NB: getPid() == -1 or getPid() == getTid() would have no need to print getPid(); so this is only for the getPid() != getTid() case.
+

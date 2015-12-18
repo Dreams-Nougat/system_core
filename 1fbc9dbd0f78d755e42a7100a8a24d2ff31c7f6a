@@ -1,0 +1,18 @@
+Revision: 1fbc9dbd0f78d755e42a7100a8a24d2ff31c7f6a
+Patch-set: 6
+File: adb/commandline.cpp
+
+207:23-207:37
+Fri Dec 18 18:32:48 2015 +0000
+Author: LeoX Sartre <1088532@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a7b83af_345d702e
+Bytes: 138
+Sorry for this late answer, I just realized that with the sscanf version of check_wait_for_device_syntax, the transport will be mandatory.
+
+210:74-210:87
+Fri Dec 18 18:32:48 2015 +0000
+Author: LeoX Sartre <1088532@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a76bfc5_536044b1
+Bytes: 35
+Same here this is not true for now.
+

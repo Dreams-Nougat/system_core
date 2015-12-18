@@ -1,0 +1,11 @@
+Revision: 4bd45ccf839d57a5ed45254557348ffd7bac6b22
+Patch-set: 9
+File: /COMMIT_MSG
+
+9:5-9:13
+Fri Dec 18 18:55:15 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a2517a8_56314add
+Bytes: 141
+Also Bug 26178938 now, as part of developer options to turn off logging. Can not turn off security loging though, so may need to be adjusted.
+

@@ -9,6 +9,14 @@ UUID: ea5fab25_ad94a9f6
 Bytes: 183
 If you wind up reading more bytes than are expected in a file, should you attempt to cap the amount you will add to total_bytes_ to prevent the overall percentage from going over 100?
 
+185:12-185:39
+Fri Dec 18 21:31:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea5fab25_ad94a9f6
+UUID: 4a2517a8_c19e9227
+Bytes: 4
+Done
+
 300:13-300:34
 Fri Dec 18 02:29:51 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 2a3463db_b2e638ff
 Bytes: 48
 might not be initialized for a single file case?
 
+300:13-300:34
+Fri Dec 18 21:31:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a3463db_b2e638ff
+UUID: ca62e7ed_d291ba17
+Bytes: 4
+Done
+
 646:7-646:16
 Fri Dec 18 02:29:51 2015 +0000
 Author: Tao Bao <1056365@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a3463db_f2dcc03a
 Bytes: 84
 why in copy_local_dir_remote() for push? should be copy_remote_dir_local() for pull?
+
+646:7-646:16
+Fri Dec 18 21:31:14 2015 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a3463db_f2dcc03a
+UUID: 0a2f9f8d_3fd1ef51
+Bytes: 4
+Done
 

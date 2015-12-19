@@ -1,0 +1,11 @@
+Revision: bb086c5a57dcd8618e8514dc81582e11170e7c81
+Patch-set: 6
+File: metricsd/uploader/upload_service.cc
+
+227:10-227:15
+Sat Dec 19 02:30:19 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a53bb27_3afb49e1
+Bytes: 7
+lose :)
+

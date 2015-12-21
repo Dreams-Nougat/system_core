@@ -1,0 +1,18 @@
+Revision: 056cc18acfecfff0ed87fb86affae144f04596e5
+Patch-set: 1
+File: liblog/log_is_loggable.c
+
+23:0-23:17
+Mon Dec 21 23:15:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca62e7ed_72f689f9
+Bytes: 173
+Not needed, is an artifact of a previous attempt that used a timedwait lock. Performance checking discovered the cost was too high as compared to switching to 'direct' mode.
+
+129:22-129:30
+Mon Dec 21 23:15:54 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa593347_c5332d31
+Bytes: 28
+atomic spin in property code
+

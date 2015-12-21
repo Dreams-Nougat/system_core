@@ -9,6 +9,15 @@ UUID: 4a2517a8_a75ef654
 Bytes: 182
 This makes it sound like the metrics persist, at least in aggregate form, for all time on disk.  Maybe mention that something interesting happens when they are uploaded to the cloud?
 
+42
+Mon Dec 21 21:51:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a2517a8_a75ef654
+UUID: aa593347_325fedf8
+Bytes: 166
+Done. I tried keeping the help message concise and did not go in too much details.
+I'm updating the documentation in another CL which will give more context for this.
+
 File: metricsd/uploader/upload_service.cc
 
 227:10-227:15
@@ -18,6 +27,14 @@ UUID: 6a53bb27_3afb49e1
 Bytes: 7
 lose :)
 
+227:10-227:15
+Mon Dec 21 21:51:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a53bb27_3afb49e1
+UUID: 0a2f9f8d_d7408fe9
+Bytes: 4
+Done
+
 File: metricsd/uploader/upload_service.h
 
 82
@@ -26,4 +43,12 @@ Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4a2517a8_07394acc
 Bytes: 108
 Intentionally public methods?  These are only bound and given to the message loop by the class itself right?
+
+82
+Mon Dec 21 21:51:54 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a2517a8_07394acc
+UUID: 8a438f4f_5b4966b7
+Bytes: 38
+Nope, those should be private. Thanks!
 

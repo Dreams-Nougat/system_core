@@ -1,5 +1,14 @@
 Revision: bb086c5a57dcd8618e8514dc81582e11170e7c81
 Patch-set: 6
+File: metricsd/metricsd_main.cc
+
+42
+Mon Dec 21 16:00:32 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a2517a8_a75ef654
+Bytes: 182
+This makes it sound like the metrics persist, at least in aggregate form, for all time on disk.  Maybe mention that something interesting happens when they are uploaded to the cloud?
+
 File: metricsd/uploader/upload_service.cc
 
 227:10-227:15
@@ -8,4 +17,13 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6a53bb27_3afb49e1
 Bytes: 7
 lose :)
+
+File: metricsd/uploader/upload_service.h
+
+82
+Mon Dec 21 16:00:32 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a2517a8_07394acc
+Bytes: 108
+Intentionally public methods?  These are only bound and given to the message loop by the class itself right?
 

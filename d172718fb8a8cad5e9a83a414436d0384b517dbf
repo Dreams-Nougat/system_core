@@ -1,0 +1,27 @@
+Revision: d172718fb8a8cad5e9a83a414436d0384b517dbf
+Patch-set: 6
+File: metricsd/uploader/bn_metricsd_impl.cc
+
+42:0-54:1
+Mon Dec 21 04:08:49 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a3463db_86ebfe5e
+Bytes: 56
+All this could move up into main() and still make sense.
+
+56:0-58:1
+Mon Dec 21 04:08:49 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a5c6f37_3626c6a5
+Bytes: 92
+And then you wouldn't need to wrap this with a method on the binder object, which feels odd.
+
+File: metricsd/uploader/bn_metricsd_impl.h
+
+59
+Mon Dec 21 04:08:49 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a53bb27_f53822ca
+Bytes: 290
+It's weird that a particular binder object also contains a reference to the global mainloop that will run all binder objects in this process.  Can I convince you to move the message loop up into the main() or at least up to the upload service if you want to make that the top level concept?
+

@@ -1,0 +1,15 @@
+Revision: 954e1375e3724701beca8154bec0cc92a2d8fef2
+Patch-set: 1
+File: logd/main.cpp
+
+371:35-371:57
+Mon Dec 21 23:42:17 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca01073f_51aa3491
+Bytes: 456
+Discussion:
+
+logd.klogd _could_ be a default submitted here, thus we are not deprecating it; instead overriding it. The result would be that we add an alias that follows in the footsteps of logd.auditd. You can block the buffer (kernel), or you can block the internal daemon (klogd), both work.
+
+I do not believe anyone was using it before, so I do not need to preserve it for legacy. I also do not believe in offering too many (hidden or visible) choices.
+

@@ -1,0 +1,11 @@
+Revision: 8a1b764db9ea1681191662ea343c7598707d3510
+Base-for-patch-set: 1
+File: metricsd/collectors/averaged_statistics_collector_test.cc
+
+23:0-23:35
+Tue Dec 22 01:12:12 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2ae7be_49c7211c
+Bytes: 38
+Technically should #include <memory> ?
+

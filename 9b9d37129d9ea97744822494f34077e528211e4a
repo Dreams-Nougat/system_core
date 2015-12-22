@@ -1,0 +1,11 @@
+Revision: 9b9d37129d9ea97744822494f34077e528211e4a
+Patch-set: 1
+File: metricsd/uploader/upload_service.h
+
+144:2-144:17
+Tue Dec 22 01:12:12 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa2133e4_e8f09387
+Bytes: 86
+This header got scoped_ptr.h from another include, I guess, should #include <memory> ?
+

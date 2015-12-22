@@ -9,3 +9,13 @@ UUID: 0a2f9f8d_2a864ad0
 Bytes: 105
 how about a separate function to do this since the same code is repeated here and in android_log_clockid?
 
+325:1-338:30
+Tue Dec 22 00:17:10 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a2f9f8d_2a864ad0
+UUID: 6a1bbbb8_86d2aa29
+Bytes: 487
+It has too many outputs: change_detected, current_serial, r_do_cache and p_security_cache. I can grow it a bit to include part of the following and drop one output, but then I'd add two more inputs (property keys). I have to think about this, there are too many inputs and outputs to make this simple on this basis alone.
+
+If I grow struct_cache to a new structure that has the name; and pair them up along with the serial number in a combining structure, I can reduce this to one input.
+

@@ -1,0 +1,11 @@
+Revision: b16b806ea140d8eb99712e557adf63de6bc0bdfa
+Patch-set: 2
+File: liblog/log_is_loggable.c
+
+325:1-338:30
+Tue Dec 22 00:03:17 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a2f9f8d_2a864ad0
+Bytes: 105
+how about a separate function to do this since the same code is repeated here and in android_log_clockid?
+

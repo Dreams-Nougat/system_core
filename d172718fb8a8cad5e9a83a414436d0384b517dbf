@@ -32,6 +32,14 @@ UUID: 4a2517a8_c7da229b
 Bytes: 114
 This is actually needed as we have two main loops and I didn't want to export |message_loops_| out of this object.
 
+56:0-58:1
+Tue Dec 22 16:33:40 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a2517a8_c7da229b
+UUID: ca33c71e_c1030255
+Bytes: 182
+You need to quit the second mainloop, but that could also be done by passing a pointer to the second mainloop (or a closure wrapping the BreakLoop() function) to your first mainloop.
+
 File: metricsd/uploader/bn_metricsd_impl.h
 
 59
@@ -51,4 +59,16 @@ Actually, this is not a global main loop but the main loop used for the binder t
 There is another main loop for the uploader part (aggregate the metrics, upload them, save them to disk, etc...).
 
 We have two main loops to ensure we can receive lots of metrics samples even if we are doing IO work on the uploader thread.
+
+59
+Tue Dec 22 16:33:40 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca62e7ed_dee301c0
+UUID: aa3a13f4_a0cd1ae4
+Bytes: 939
+I realized that it was the loop handling just the Binder interface.  You could argue that since this main loop only drives this particular object, that it makes sense to keep it here.
+
+However, my objection was more fundamental, that a binder object (even if it were the only binder object) should not hold a mainloop, since it is the mainloop that will drive all binder objects, and not the other way around.  My point was just that this leaves a marginally more confusing hierarchy for  the next person to add an interface to this service.
+
+Suppose that later we want to register a callback binder with metricsd to receive notification of some interesting events.  That person has to reallize that those notifications happen on this message loop inside BnMetricsdImpl.  Dunno, maybe that's over engineering, but I thought it might be nice to see the threading structure of the program clearly laid out in the top level (main()) function.
 

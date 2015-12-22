@@ -9,3 +9,11 @@ UUID: aa2133e4_e8f09387
 Bytes: 86
 This header got scoped_ptr.h from another include, I guess, should #include <memory> ?
 
+144:2-144:17
+Tue Dec 22 17:28:50 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa2133e4_e8f09387
+UUID: eafecb6e_322cd086
+Bytes: 4
+Done
+

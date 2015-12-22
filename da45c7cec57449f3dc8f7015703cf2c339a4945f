@@ -1,0 +1,11 @@
+Revision: da45c7cec57449f3dc8f7015703cf2c339a4945f
+Patch-set: 2
+File: logd/main.cpp
+
+371:49-371:50
+Tue Dec 22 15:43:26 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca01073f_31c4d0b9
+Bytes: 14
+trailing space
+

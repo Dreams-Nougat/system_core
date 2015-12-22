@@ -1,0 +1,78 @@
+Revision: c89675d76dd02b74dc38a48bf8852729403454b2
+Patch-set: 3
+File: /COMMIT_MSG
+
+9:5-9:10
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eafecb6e_d2590487
+Bytes: 15
+What was fixed?
+
+File: metricsd/README.md
+
+59:0-59:9
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4aed17c9_ed338530
+Bytes: 54
+aggregates (to keep consistent with "that listens...")
+
+59:26-59:32
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2ae7be_a9dcdd39
+Bytes: 7
+uploads
+
+File: metricsd/uploader/upload_service.h
+
+39:7-39:13
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea27abf2_cacca38e
+Bytes: 9
+uploading
+
+41:49-41:57
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a1bbbb8_86d90a4a
+Bytes: 10
+locations:
+
+44:78-44:79
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca01073f_f1f08887
+Bytes: 52
+to make a backup of metrics data for uploading later
+
+45:17-45:25
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa2133e4_0815278f
+Bytes: 8
+protobuf
+
+53:48-53:50
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2afc637c_2c8d931f
+Bytes: 6
+), we:
+
+54:5-54:7
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a0b8f60_6f97912f
+Bytes: 29
+suggest move to previous line
+
+55:55-55:63
+Tue Dec 22 00:26:36 2015 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa2133e4_480f1f7d
+Bytes: 28
+also suggest "or the system"
+

@@ -72,3 +72,11 @@ However, my objection was more fundamental, that a binder object (even if it wer
 
 Suppose that later we want to register a callback binder with metricsd to receive notification of some interesting events.  That person has to reallize that those notifications happen on this message loop inside BnMetricsdImpl.  Dunno, maybe that's over engineering, but I thought it might be nice to see the threading structure of the program clearly laid out in the top level (main()) function.
 
+59
+Tue Dec 22 16:37:43 2015 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa3a13f4_a0cd1ae4
+UUID: ca33c71e_a1007e49
+Bytes: 487
+Actually, that's a more interesting example than I thought it would be, because you could theoretically call methods on the callback object from anywhere in your process without passing through the mainloop.  I'm unsure what happens when you call into the binder driver from a thread other than the one you'll be using for polling.  It seems safer to do this from that binder thread though, by passing the event to the binder message loop, and letting the callback happen on that thread.
+

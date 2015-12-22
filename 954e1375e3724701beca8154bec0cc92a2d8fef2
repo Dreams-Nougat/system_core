@@ -1,5 +1,21 @@
 Revision: 954e1375e3724701beca8154bec0cc92a2d8fef2
 Patch-set: 1
+File: logd/LogUtils.h
+
+47
+Tue Dec 22 00:13:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0af79f9a_abd5e915
+Bytes: 135
+nit: 0x0 means this isn't really a flag. How about getting rid of it and using !(flag & BOOL_DEFAULT_FLAG_TRUE) where a test is needed?
+
+48
+Tue Dec 22 00:13:00 2015 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eafecb6e_12926c3f
+Bytes: 139
+Shouldn't this have a more meaningful name given that all flags have states True/False and there are other flags? What does FLAG_TRUE mean?
+
 File: logd/main.cpp
 
 371:35-371:57

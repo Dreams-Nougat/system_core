@@ -11,6 +11,13 @@ What was fixed?
 
 File: metricsd/README.md
 
+21:8-21:18
+Tue Dec 22 00:28:50 2015 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4aed17c9_4d2579e6
+Bytes: 77
+might make it more explicitly clear that this is added to the Android.mk file
+
 59:0-59:9
 Tue Dec 22 00:26:36 2015 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

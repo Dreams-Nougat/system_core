@@ -9,12 +9,34 @@ UUID: 0af79f9a_abd5e915
 Bytes: 135
 nit: 0x0 means this isn't really a flag. How about getting rid of it and using !(flag & BOOL_DEFAULT_FLAG_TRUE) where a test is needed?
 
+47
+Tue Dec 22 00:20:04 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0af79f9a_abd5e915
+UUID: ca01073f_b1672026
+Bytes: 120
+I want a FALSE and TRUE to show.
+
+BOOL_DEFAULT_FLAG_TRUE_FALSE_MASK
+BOOL_DEFAULT_TRUE
+BOOL_DEFAULT_FALSE
+
+Would that do?
+
 48
 Tue Dec 22 00:13:00 2015 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: eafecb6e_12926c3f
 Bytes: 139
 Shouldn't this have a more meaningful name given that all flags have states True/False and there are other flags? What does FLAG_TRUE mean?
+
+48
+Tue Dec 22 00:20:04 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eafecb6e_12926c3f
+UUID: 8a0b8f60_4f256de6
+Bytes: 84
+means the default if nothing else can be found; it is passed to the 'def' parameter.
 
 File: logd/main.cpp
 

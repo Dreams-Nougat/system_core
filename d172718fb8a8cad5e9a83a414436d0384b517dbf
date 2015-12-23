@@ -80,3 +80,31 @@ UUID: ca33c71e_a1007e49
 Bytes: 487
 Actually, that's a more interesting example than I thought it would be, because you could theoretically call methods on the callback object from anywhere in your process without passing through the mainloop.  I'm unsure what happens when you call into the binder driver from a thread other than the one you'll be using for polling.  It seems safer to do this from that binder thread though, by passing the event to the binder message loop, and letting the callback happen on that thread.
 
+59
+Wed Dec 23 00:53:10 2015 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca33c71e_a1007e49
+UUID: 0af79f9a_4ead73bf
+Bytes: 1637
+Dig a bit more and initializing the binder main loop in main() actually looks pretty hard :/ It is also a miracle that this code works without me knowing all this:
+
+* main loops do a lot during initialization, including registering to a static global map of thread -> mainloops.
+Everything uses this map (binder_watcher, brillo's message loop, etc...).
+Initializing two main loop in the same thread is dangerous because we need to carefully unregister/register the right main loop at the right time to get the correct result.
+
+The fact that we actually have two static maps (one for brillo mainloop and one for the libchrome mainloop) tracking related object without coordination makes it scarier :/
+
+* We can't get a closure to quit the (binder) main loop until the main loop is running. This makes initialization racy as we need to start the binder thread and wait to get a correct quit closure.
+
+* debugging callback issues on a multi-threaded program is not fun, especially without all the DCHECKs. The service will just segfault without any message.
+
+
+IMO, the cleanest approaches would be either:
+1) keep the binder mainloop initialization in bn_metrics_impl but creating the instance and starting it (in a new thread) from main(). We would only pass a quit closure to UploadService.
+
+2) create a "launcher" object (metricsd_service_runner ?), instanciated and owned by main(), that will create and own the binder mainloop. This allows us to keep BnMetricsImpl as close as possible to the interface while exposing the thread hierarchy cleanly.
+
+Option 2 has my vote. It is more verbose but easier to understand.
+
+What do you think?
+

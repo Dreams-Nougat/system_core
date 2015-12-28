@@ -1,0 +1,11 @@
+Revision: 239e92e7cf45e5abebdce0efe9a5f304db79f4fc
+Patch-set: 11
+File: liblog/logd_write.c
+
+218:0-220:13
+Mon Dec 28 23:38:20 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca01073f_e5fa7e8d
+Bytes: 97
+trylock with log_init_lock. failure, use a _local_ copy of map, otherwise save it for future use.
+

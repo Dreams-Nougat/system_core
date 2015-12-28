@@ -1,0 +1,11 @@
+Revision: 4e8461fc50eb5c5adc2b6df67e92cabd28d6eff9
+Patch-set: 10
+File: liblog/logd_write.c
+
+231:42-233:73
+Mon Dec 28 21:37:21 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4aed17c9_5c2529e6
+Bytes: 225
+Tag must be represented as a nul-terminated string, we could buffer overflow if no nul within either vec[?].iov_base[iov_len]. smarter checking to ensure no one tricks us into a mistake that could cost us an access violation.
+

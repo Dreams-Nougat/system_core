@@ -1,0 +1,11 @@
+Revision: 899820475eed811f12542d53f4ff190cd9574a1e
+Patch-set: 3
+File: liblog/logd_write.c
+
+250:3-250:4
+Tue Dec 29 17:15:15 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2ae7be_7ef3b5c6
+Bytes: 26
+one more space for indent!
+

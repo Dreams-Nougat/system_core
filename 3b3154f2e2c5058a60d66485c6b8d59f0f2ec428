@@ -1,0 +1,11 @@
+Revision: 3b3154f2e2c5058a60d66485c6b8d59f0f2ec428
+Patch-set: 12
+File: liblog/logd_write.c
+
+77:4-80:7
+Wed Dec 30 18:10:21 2015 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2afc637c_9b0837b3
+Bytes: 37
+Drop this comment, bad copy and paste
+

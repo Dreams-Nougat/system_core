@@ -1,0 +1,11 @@
+Revision: cce617cea3d6b81e7b214dc43c37f0981d756bfa
+Patch-set: 4
+File: metricsd/metrics_collector.cc
+
+252:23-252:30
+Mon Jan 04 19:32:31 2016 +0000
+Author: Ralph Nathan <1075488@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0af79f9a_94dda509
+Bytes: 23
+nit: s/service/service_
+

@@ -9,3 +9,13 @@ UUID: aa2133e4_9d002f4a
 Bytes: 314
 Should probably put a LOG(ERROR) or perhaps even LOG(FATAL) here, as this is in the initialization path and if this somehow ever does fail, none of the command handlers will be registered and it won't necessarily be clear in the logs as to why the metrics collector is running but not responding to weave commands.
 
+253:2-254:11
+Mon Jan 04 20:11:51 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa2133e4_9d002f4a
+UUID: aa2133e4_5d4eb7c1
+Bytes: 296
+No, this is the correct behavior. This means, that weaved exited just after it claimed the service. Once it restarts and claims the service again, OnWeaveServiceConnected will be called again with a different instance of |service| which will hopefully lock correctly.
+
+So, this works as designed.
+

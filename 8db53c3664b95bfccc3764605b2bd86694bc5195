@@ -1,0 +1,11 @@
+Revision: 8db53c3664b95bfccc3764605b2bd86694bc5195
+Patch-set: 1
+File: libbinderwrapper/binder_wrapper.cc
+
+55:4-55:5
+Mon Jan 04 20:55:14 2016 +0000
+Author: Daniel Erat <1074340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea832b1b_58a17f64
+Bytes: 25
+nit: add space before '('
+

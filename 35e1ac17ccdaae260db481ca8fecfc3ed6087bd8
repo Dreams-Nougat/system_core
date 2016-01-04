@@ -1,0 +1,11 @@
+Revision: 35e1ac17ccdaae260db481ca8fecfc3ed6087bd8
+Patch-set: 2
+File: metricsd/Android.mk
+
+110:2-110:15
+Mon Jan 04 23:49:03 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a1bbbb8_b029d55b
+Bytes: 181
+This seems suspicious. Why do you need this? You shouldn't be adding system/weaved to the include path directly. Same with external/dbus. I think you are doing something wrong here.
+

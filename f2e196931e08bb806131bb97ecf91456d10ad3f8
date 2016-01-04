@@ -1,0 +1,11 @@
+Revision: f2e196931e08bb806131bb97ecf91456d10ad3f8
+Patch-set: 5
+File: metricsd/metrics_collector.cc
+
+253:2-254:11
+Mon Jan 04 20:06:59 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa2133e4_9d002f4a
+Bytes: 314
+Should probably put a LOG(ERROR) or perhaps even LOG(FATAL) here, as this is in the initialization path and if this somehow ever does fail, none of the command handlers will be registered and it won't necessarily be clear in the logs as to why the metrics collector is running but not responding to weave commands.
+

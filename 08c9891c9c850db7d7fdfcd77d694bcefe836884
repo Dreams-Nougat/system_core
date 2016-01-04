@@ -1,0 +1,11 @@
+Revision: 08c9891c9c850db7d7fdfcd77d694bcefe836884
+Patch-set: 3
+File: include/binderwrapper/binder_wrapper.h
+
+55:54-55:70
+Mon Jan 04 21:01:44 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ca2ae7be_5c10749f
+Bytes: 65
+not technically true, although the underlying code is the same :P
+

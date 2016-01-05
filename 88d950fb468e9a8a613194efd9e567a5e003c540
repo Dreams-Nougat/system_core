@@ -22,3 +22,11 @@ UUID: aa3e9347_860b6e3e
 Bytes: 56
 I vote for whatever clang-format -i --style=file says :)
 
+135:0-138:42
+Tue Jan 05 23:51:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a41cfd9_658ae28d
+UUID: 0a4ddf0f_017bce59
+Bytes: 105
+I couldn't be sure of the difference, so I ran clang-format on the file and then kept only the diff here.
+

@@ -1,0 +1,14 @@
+Revision: 6bf226b5c908662f16bda5793b8c6d859ae86a3e
+Patch-set: 4
+File: metricsd/metrics_collector.cc
+
+138:2-138:40
+Tue Jan 05 22:25:57 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea1debf7_a0e69e62
+Bytes: 316
+I wonder why you need unique_ptr here since you are just creating this object in this scope and then immediately destroying it at the end of the function. Looks like local stack allocation would work as well:
+
+  brillo::BinderWatcher binder_watcher;
+  CHECK(binder_watcher.Init()) << "Binder FD watcher init failed";
+

@@ -12,3 +12,11 @@ I wonder why you need unique_ptr here since you are just creating this object in
   brillo::BinderWatcher binder_watcher;
   CHECK(binder_watcher.Init()) << "Binder FD watcher init failed";
 
+138:2-138:40
+Tue Jan 05 23:08:25 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea1debf7_a0e69e62
+UUID: ca202730_5ce53134
+Bytes: 68
+Done.  Should have updated this when it moved to a long-lived scope.
+

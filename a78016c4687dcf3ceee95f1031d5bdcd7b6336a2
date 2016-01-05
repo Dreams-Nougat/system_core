@@ -1,0 +1,11 @@
+Revision: a78016c4687dcf3ceee95f1031d5bdcd7b6336a2
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+86
+Tue Jan 05 18:17:58 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a481bfe_fecc4143
+Bytes: 50
+Don't you also need to add an entry near line 188?
+

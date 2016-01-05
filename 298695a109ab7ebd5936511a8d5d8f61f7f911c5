@@ -1,0 +1,11 @@
+Revision: 298695a109ab7ebd5936511a8d5d8f61f7f911c5
+Patch-set: 3
+File: debuggerd/tombstone.cpp
+
+703
+Tue Jan 05 23:50:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a52a3ad_8537e81e
+Bytes: 42
+what happened to Mr Clang-Format here? :-)
+

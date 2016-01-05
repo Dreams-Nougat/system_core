@@ -16,3 +16,15 @@ UUID: ea1debf7_3a92c10a
 Bytes: 124
 Not sure what point you are making here since we've already mentioned scaling issue -- are there other unexpected behaviors?
 
+21:51-23:53
+Tue Jan 05 17:16:08 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea1debf7_3a92c10a
+UUID: 4a4357e2_bdc6bf1d
+Bytes: 661
+Indicating given the above statement, resulting in counterintuitive logger behavior.
+
+Have too much log spam, increase log buffer 8-fold to compensate. logger runs out of background cgroup cycles and pruning can not keep up with incoming content. As a result logd runs virtually continuously in the context of logd.writer thread desperately trying to remove aging content, but albeit slower than incoming. -EBUSY is returned to callers dropping content on the floor, logs are lost, CPU cycles are burned, battery dies. Logger is blamed for the problem, when the real issue is the excessive logspam.
+
+I have to report this in a total of two sentences or less ...
+

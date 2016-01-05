@@ -1,0 +1,16 @@
+Revision: 88d950fb468e9a8a613194efd9e567a5e003c540
+Patch-set: 5
+File: metricsd/metrics_collector.cc
+
+135:0-138:42
+Tue Jan 05 23:27:18 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a41cfd9_658ae28d
+Bytes: 270
+nit: I think the following formatting would be more conventional, but I'm not insisting:
+
+  android::status_t status =
+      android::defaultServiceManager()->
+      addService(metricscollectorservice->getInterfaceDescriptor(),
+                 metricscollectorservice);
+

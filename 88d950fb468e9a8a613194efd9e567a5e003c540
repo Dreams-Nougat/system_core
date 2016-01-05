@@ -14,3 +14,11 @@ nit: I think the following formatting would be more conventional, but I'm not in
       addService(metricscollectorservice->getInterfaceDescriptor(),
                  metricscollectorservice);
 
+135:0-138:42
+Tue Jan 05 23:50:04 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a41cfd9_658ae28d
+UUID: aa3e9347_860b6e3e
+Bytes: 56
+I vote for whatever clang-format -i --style=file says :)
+

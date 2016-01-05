@@ -9,6 +9,14 @@ UUID: ca202730_b94d7fc5
 Bytes: 346
 I don't think this is right. BnMetricsCollectorService is a ref-counted object and should be used inside android::sp<>. Creating it on the stack like that could mean that nasty things could happen (e.g. binder releases the last reference to it and try to call delete on the pointer, but this object is allocated on the stack and not on the heap).
 
+132:2-132:31
+Tue Jan 05 19:37:56 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ca202730_b94d7fc5
+UUID: aa3e9347_e0ad82c3
+Bytes: 137
+OK, thanks.  It looks like other code in metricsd_main.cc needs an update as well, will also send a patch for that after this is settled.
+
 File: metricsd/metrics_collector_service_impl.cc
 
 30:2-30:40

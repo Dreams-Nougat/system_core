@@ -77,3 +77,11 @@ Done.  Could pass the sp<BnMetricsCollectorServiceImpl> as an argument to Publis
 
 There's at least one other place in Android that needs fixing for this, will put that on the list.  Although I'm beginning to feel my dabbling in C++ userspace is not such a good idea :P
 
+34:0-38:68
+Tue Jan 05 23:27:18 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea1debf7_c3c07c55
+UUID: aa1773d7_dec375b1
+Bytes: 18
+Nah, crazy talk :)
+

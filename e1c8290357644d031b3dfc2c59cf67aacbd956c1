@@ -57,3 +57,13 @@ UUID: 8a1aaf01_9a42e923
 Bytes: 306
 I moved the binder watcher stuff to metrics_collector main, which yeah is truly global.  I left the service registration here in a Publish() method of the Impl class, for which there's existing precedent and it does seem a reasonable thing to encapsulate in the class, but still open to suggestion on this.
 
+34:0-38:68
+Tue Jan 05 22:25:57 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a1aaf01_9a42e923
+UUID: aa1773d7_9e097d7b
+Bytes: 740
+On a second look, the remaining code is also wrong. IServiceManager::addService() takes sp<IBinder> and not a raw binder pointer. What happens here is a new strong pointer is created for raw |this| pointer (and this pointer has a ref count of 0). Even though BnMetricsCollectorServiceImpl might be owned by another ref-counted strong pointer elsewhere, the ref count of sp<> passed to the service manager will not respect a global ref count. So, as soon as service manager releases the pointer, the object will be deleted, even though there might be other parties holding on to it.
+
+One more reason to remove publishing out of the instance of the class and delegate this to the daemon who is holding the original sp<> in the first place....
+

@@ -9,12 +9,28 @@ UUID: e5cc3e7f_28154f1b
 Bytes: 106
 since we're forking now, is there a concern about concurrent access to this file or other race conditions?
 
+382
+Tue Jan 05 23:42:21 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e5cc3e7f_28154f1b
+UUID: 2a52a3ad_62b89231
+Bytes: 115
+Added a waitpid to the parent to wait for the child to finish, so the behavior should be the same as it was before.
+
 390
 Sat Dec 12 01:49:43 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e5cc3e7f_88c49b67
 Bytes: 70
 warn that someone appears to be fucking with us? (or really broken...)
+
+390
+Tue Jan 05 23:42:21 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e5cc3e7f_88c49b67
+UUID: 8a41cfd9_45923e0b
+Bytes: 4
+Done
 
 412
 Sat Dec 12 15:47:11 2015 +0000
@@ -24,6 +40,14 @@ Bytes: 219
 please use setresuid(AID_DEBUGGERD, AID_DEBUGGERD, AID_DEBUGGERD) please. For hard to explain reasons, it's less dangerous that setuid().
 
 Also, you've never called setgid / setresgid, so you're still running with gid=0
+
+412
+Tue Jan 05 23:42:21 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 05107294_cccfa37c
+UUID: aa1773d7_1e6c8dd7
+Bytes: 4
+Done
 
 File: debuggerd/tombstone.cpp
 

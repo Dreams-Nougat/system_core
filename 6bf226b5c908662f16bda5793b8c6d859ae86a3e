@@ -2,6 +2,13 @@ Revision: 6bf226b5c908662f16bda5793b8c6d859ae86a3e
 Patch-set: 4
 File: metricsd/metrics_collector.cc
 
+133:45-133:68
+Tue Jan 05 23:29:08 2016 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a481bfe_a14e986f
+Bytes: 51
+while you're here, maybe metrics_collector_service?
+
 138:2-138:40
 Tue Jan 05 22:25:57 2016 +0000
 Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,4 +26,13 @@ Parent: ea1debf7_a0e69e62
 UUID: ca202730_5ce53134
 Bytes: 68
 Done.  Should have updated this when it moved to a long-lived scope.
+
+File: metricsd/metrics_collector_service_impl.h
+
+38
+Tue Jan 05 23:29:08 2016 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a4357e2_46e488f6
+Bytes: 60
+Maybe "Register the service with the system service manager?
 

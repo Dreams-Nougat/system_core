@@ -9,6 +9,14 @@ UUID: 6a481bfe_a14e986f
 Bytes: 51
 while you're here, maybe metrics_collector_service?
 
+133:45-133:68
+Tue Jan 05 23:51:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a481bfe_a14e986f
+UUID: 0a4ddf0f_8187de80
+Bytes: 4
+Done
+
 138:2-138:40
 Tue Jan 05 22:25:57 2016 +0000
 Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -35,4 +43,12 @@ Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4a4357e2_46e488f6
 Bytes: 60
 Maybe "Register the service with the system service manager?
+
+38
+Tue Jan 05 23:51:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a4357e2_46e488f6
+UUID: 8a1aaf01_fd43df97
+Bytes: 20
+Removed this method.
 

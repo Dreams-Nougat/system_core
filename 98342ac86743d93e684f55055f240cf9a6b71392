@@ -1,0 +1,18 @@
+Revision: 98342ac86743d93e684f55055f240cf9a6b71392
+Patch-set: 1
+File: logd/README.property
+
+20
+Tue Jan 05 16:56:22 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a4357e2_ddc70b1d
+Bytes: 57
+"not known to scale well" --> "known to not scale well" ?
+
+21:51-23:53
+Tue Jan 05 16:56:22 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea1debf7_3a92c10a
+Bytes: 124
+Not sure what point you are making here since we've already mentioned scaling issue -- are there other unexpected behaviors?
+

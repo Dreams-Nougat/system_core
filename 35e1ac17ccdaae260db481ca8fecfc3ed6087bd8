@@ -9,3 +9,13 @@ UUID: 6a1bbbb8_b029d55b
 Bytes: 181
 This seems suspicious. Why do you need this? You shouldn't be adding system/weaved to the include path directly. Same with external/dbus. I think you are doing something wrong here.
 
+110:2-110:15
+Tue Jan 05 00:35:39 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a1bbbb8_b029d55b
+UUID: ea27abf2_67ade5bf
+Bytes: 582
+metrics_collector.h doesn't compile without adding gtest, dbus, and weaved to the include path.  The metrics_collector executable gets the above two thru its shared libs dependencies on libdbus and libweaved.  The libmetricscollector library only needs to get the header file to compile; it doesn't actually depend on the library code.  So I did it this way.  
+
+Now that I think of it, metrics_collector_service_impl.cc was only compiled here in the library to be -fnortti.  I can probably now move it to compile with metrics_collector executable and get the include paths that way.
+

@@ -67,3 +67,13 @@ On a second look, the remaining code is also wrong. IServiceManager::addService(
 
 One more reason to remove publishing out of the instance of the class and delegate this to the daemon who is holding the original sp<> in the first place....
 
+34:0-38:68
+Tue Jan 05 23:08:25 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa1773d7_9e097d7b
+UUID: ea1debf7_c3c07c55
+Bytes: 358
+Done.  Could pass the sp<BnMetricsCollectorServiceImpl> as an argument to Publish(), but since there's a strong preference for moving it to the main will do that, thanks.
+
+There's at least one other place in Android that needs fixing for this, will put that on the list.  Although I'm beginning to feel my dabbling in C++ userspace is not such a good idea :P
+

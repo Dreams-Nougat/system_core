@@ -17,6 +17,14 @@ UUID: aa3e9347_e0ad82c3
 Bytes: 137
 OK, thanks.  It looks like other code in metricsd_main.cc needs an update as well, will also send a patch for that after this is settled.
 
+132:2-132:31
+Tue Jan 05 22:14:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa3e9347_e0ad82c3
+UUID: 2a52a3ad_3f55c3a0
+Bytes: 4
+Done
+
 File: metricsd/metrics_collector_service_impl.cc
 
 30:2-30:40
@@ -26,10 +34,26 @@ UUID: 8a1aaf01_37e418f6
 Bytes: 61
 This should be initialized in constructor's initializer list.
 
+30:2-30:40
+Tue Jan 05 22:14:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a1aaf01_37e418f6
+UUID: ca202730_bcf80d6b
+Bytes: 4
+Done
+
 34:0-38:68
 Tue Jan 05 16:12:09 2016 +0000
 Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8a1aaf01_d70fdc7d
 Bytes: 164
 I think this whole method could be moved to daemon's Init() method. There is no need to abstract the binder anymore. This will make the code even simpler (I think).
+
+34:0-38:68
+Tue Jan 05 22:14:22 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a1aaf01_d70fdc7d
+UUID: 8a1aaf01_9a42e923
+Bytes: 306
+I moved the binder watcher stuff to metrics_collector main, which yeah is truly global.  I left the service registration here in a Publish() method of the Impl class, for which there's existing precedent and it does seem a reasonable thing to encapsulate in the class, but still open to suggestion on this.
 

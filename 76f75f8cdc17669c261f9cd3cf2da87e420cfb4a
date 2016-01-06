@@ -9,3 +9,20 @@ UUID: 8a41cfd9_2ed03721
 Bytes: 69
 Out of curiosity, why use weak_ptr instead of base::Unretained here ?
 
+240:17-240:47
+Wed Jan 06 20:25:22 2016 +0000
+Author: Alex Vakulenko <1076863@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a41cfd9_2ed03721
+UUID: 2a52a3ad_f6c1c05a
+Bytes: 429
+Because if the object is killed while the callback is still pending, the callback will not be called later. Compare:
+
+std::unique_ptr<Class> inst(new Class);
+auto callback1 = base::Bind(&Class::Method, inst->weak_ptr_factory_.GetWeakPtr());
+auto callback2 = base::Bind(&Class::Method, base::Unretained(inst.get()));
+
+// kill inst...
+inst.reset();
+callback1.Run();  // works, but callback is not invoked
+callback2.Run();  // crash
+

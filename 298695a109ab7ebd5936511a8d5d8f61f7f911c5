@@ -9,3 +9,11 @@ UUID: 2a52a3ad_8537e81e
 Bytes: 42
 what happened to Mr Clang-Format here? :-)
 
+703
+Wed Jan 06 00:01:02 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a52a3ad_8537e81e
+UUID: aa3e9347_46400637
+Bytes: 188
+Oops, I think I missed the real formatting fixes in the sea of android_filesystem_config.h noise. (I need to get used to T* foo instead of T *foo, and clang-format really isn't helping...)
+

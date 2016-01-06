@@ -9,3 +9,11 @@ UUID: 6a481bfe_246a962e
 Bytes: 147
 this seems useless. it's true of all POSIX command line argument parsing. we're not going to explain how to quote shell metacharacters too, are we?
 
+331
+Wed Jan 06 03:39:06 2016 +0000
+Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a481bfe_246a962e
+UUID: 8a41cfd9_28934f80
+Bytes: 158
+I can remove it. I wasn't aware of that particular mechanic, but we're going to advise against suffixes starting with dashes anyways, so it shouldn't come up.
+

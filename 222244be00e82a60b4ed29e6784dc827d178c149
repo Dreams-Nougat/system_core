@@ -1,0 +1,11 @@
+Revision: 222244be00e82a60b4ed29e6784dc827d178c149
+Patch-set: 2
+File: fastboot/fastboot.cpp
+
+741
+Wed Jan 06 04:00:30 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2afd43c1_e4447a53
+Bytes: 44
+does this compile? die doesn't take a FILE*.
+

@@ -1,0 +1,25 @@
+Revision: 4ee07f392f2780036cd43480513119af7203b297
+Patch-set: 1
+File: fastboot/fastboot.cpp
+
+753
+Wed Jan 06 03:22:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a1aaf01_409c642d
+Bytes: 28
+die supplies the \n for you.
+
+757
+Wed Jan 06 03:22:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a52a3ad_3095f0f1
+Bytes: 4
+tabs
+
+761:0-762:20
+Wed Jan 06 03:22:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a41cfd9_48b9f300
+Bytes: 4
+die?
+

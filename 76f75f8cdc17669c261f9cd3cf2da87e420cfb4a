@@ -1,0 +1,11 @@
+Revision: 76f75f8cdc17669c261f9cd3cf2da87e420cfb4a
+Patch-set: 10
+File: metricsd/metrics_collector.cc
+
+240:17-240:47
+Wed Jan 06 19:10:31 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a41cfd9_2ed03721
+Bytes: 69
+Out of curiosity, why use weak_ptr instead of base::Unretained here ?
+

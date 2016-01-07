@@ -1,0 +1,13 @@
+Revision: 3ce8d8de3b36ce81930207e115424025c9a71a16
+Patch-set: 1
+File: init/builtins.cpp
+
+631:55-631:66
+Thu Jan 07 23:28:17 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa1773d7_7504bf5d
+Bytes: 317
+Using this flag to detect if |s| is the console service is a bit weird: This flag actually means "console required" but seems to only be used by console.
+
+Should we create a new service attribute (unterminable ? ignores_sigterm?) set for services that ignore the SIGTERM signal so that we don't have to wait for them?
+

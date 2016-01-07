@@ -11,3 +11,37 @@ Using this flag to detect if |s| is the console service is a bit weird: This fla
 
 Should we create a new service attribute (unterminable ? ignores_sigterm?) set for services that ignore the SIGTERM signal so that we don't have to wait for them?
 
+642:19-642:24
+Thu Jan 07 23:40:01 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a52a3ad_b2ac9daa
+Bytes: 76
+Maybe make this a constant? kTerminateServiceDelayMicroSeconds or something.
+
+File: init/service.cpp
+
+817:8-817:27
+Thu Jan 07 23:40:01 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a52a3ad_52fe7984
+Bytes: 14
+Can this fail?
+
+824:0-825:5
+Thu Jan 07 23:40:01 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a4ddf0f_38ccf0b8
+Bytes: 344
+Should this have a way of erroring out in case ReapOneProcess constantly returns true?
+
+I guess you're calling waitpid with WNOHANG and returning false in that case, you cannot always get and kill a process and never end... unless the system is in the middle of something like a fork bomb? I guess maybe in that case we don't care what happens.
+
+File: init/service.h
+
+184:35-184:42
+Thu Jan 07 23:40:01 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a4357e2_1f1d5ef7
+Bytes: 21
+Nit: "was cleaned up"
+

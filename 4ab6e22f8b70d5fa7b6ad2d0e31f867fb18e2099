@@ -9,3 +9,12 @@ UUID: 8a1aaf01_11f0fc49
 Bytes: 285
 I think you need another (blank) newline after this.  Otherwise the bullet points aren't parsed correctly.  You can view the processed markdown in the gitiles viewer from gerrit: https://android.googlesource.com/platform/system/core/+/4ab6e22f8b70d5fa7b6ad2d0e31f867fb18e2099/metricsd/
 
+63
+Thu Jan 07 01:22:07 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a1aaf01_11f0fc49
+UUID: 6a481bfe_f82531ea
+Bytes: 71
+Good catch!
+Thanks for the link too, it makes the review much simpler !
+

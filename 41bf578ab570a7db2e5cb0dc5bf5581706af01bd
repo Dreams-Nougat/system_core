@@ -1,0 +1,13 @@
+Revision: 41bf578ab570a7db2e5cb0dc5bf5581706af01bd
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+116:37-116:64
+Fri Jan 08 19:00:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa5f73f8_f831f195
+Bytes: 451
+In testing I can not discern much difference in performance between 256KB and 512KB buffer, so maybe worth upping this a little bit.
+
+The Developer options goes in power of 4, 64KL, 256K, 1MB, 4B, 16MB; so this will have no affect on the publicly used interface behavior. But will have an affect on platform decisions allowing the partners to select 512KB as their default if they choose with associated 'normal' (rather than eng/debug type) behavior.
+

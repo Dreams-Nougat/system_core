@@ -78,6 +78,20 @@ UUID: aa1773d7_95d87375
 Bytes: 247
 Given that the status quo is killing everything with SIGKILL, a solution that only calls waitpid kNotSoBigNumber times and then does SIGKILL still seems like a marked improvement to the current state, and doesn't include a seemingly infinite loop.
 
+824:0-825:5
+Fri Jan 08 17:40:24 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa1773d7_95d87375
+UUID: 6a901bcb_5e5d7571
+Bytes: 678
+IIUC, the pathological case already exist in init:
+* a rogue process spins lots of child process that exit (creating an infinity of process to wait for).
+* the SIGCHLD signal is received by init.
+* at the next iteration of the main loop, epoll_wait selects ReapAnyOutstandingChildren and will run forever (if we can generate an infinity of child process exiting).
+* As ReapAnyOutstandingChildren never exits, the main loop never processes any other event and cannot handle the reboot request (sent with a system property).
+
+Limiting the number of time we can call ReapOneProcess in ReapAnyOutstandingChildren sounds like a good idea. Any opinion on a good number? 10? 100? 1000?
+
 File: init/service.h
 
 184:35-184:42

@@ -70,6 +70,14 @@ UUID: 2a52a3ad_52b2f94f
 Bytes: 154
 Hmmm... I wonder if this is going to cause a problem if a third party process tries spinning up lots of processes, and prevents the user from rebooting...
 
+824:0-825:5
+Fri Jan 08 01:26:06 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a52a3ad_52b2f94f
+UUID: aa1773d7_95d87375
+Bytes: 247
+Given that the status quo is killing everything with SIGKILL, a solution that only calls waitpid kNotSoBigNumber times and then does SIGKILL still seems like a marked improvement to the current state, and doesn't include a seemingly infinite loop.
+
 File: init/service.h
 
 184:35-184:42

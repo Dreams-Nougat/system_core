@@ -1,0 +1,27 @@
+Revision: 3d62f4d1b00293477177b47c7c5554aba1685f64
+Patch-set: 2
+File: init/builtins.cpp
+
+633
+Fri Jan 08 17:58:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6a901bcb_9ed29df7
+Bytes: 144
+i think this is fine for now. you could always add a comment, but i don't think it's likely we'll have a non-console use for the 'console' flag.
+
+646
+Fri Jan 08 17:58:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a8b57a3_5d62db15
+Bytes: 40
+s/Shutdown/Terminating running services/
+
+File: init/service.cpp
+
+539
+Fri Jan 08 17:58:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2a9aa3ee_5c9f3d23
+Bytes: 169
+"Sending SIGTERM to service '%s' (pid %d)..." to match other logging. (having both the name and the pid is helpful when trying to work out what happened after the fact.)
+

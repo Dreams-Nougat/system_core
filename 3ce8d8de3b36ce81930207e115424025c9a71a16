@@ -100,6 +100,14 @@ UUID: 6a79fb72_765fb052
 Bytes: 126
 I defer to init owners on this (Elliot, feel free to comment) but capping at 1000 continuous failed ReapOneProcess calls SGTM.
 
+824:0-825:5
+Fri Jan 08 18:09:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a79fb72_765fb052
+UUID: 0a95dfbc_1bff7b1a
+Bytes: 150
+i don't really see the DoS here --- time will continue to advance no matter what, so eventually we'll fall out of the loop and just reboot regardless.
+
 File: init/service.h
 
 184:35-184:42

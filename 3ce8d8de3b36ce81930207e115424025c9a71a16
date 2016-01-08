@@ -62,6 +62,14 @@ There might be pathological cases where this will run forever but I don't think 
 
 A service crash loop will not cause this as we will first reap all stopped services before starting them again.
 
+824:0-825:5
+Fri Jan 08 00:49:27 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: aa1773d7_b5e6d762
+UUID: 2a52a3ad_52b2f94f
+Bytes: 154
+Hmmm... I wonder if this is going to cause a problem if a third party process tries spinning up lots of processes, and prevents the user from rebooting...
+
 File: init/service.h
 
 184:35-184:42

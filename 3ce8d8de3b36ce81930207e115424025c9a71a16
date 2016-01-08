@@ -92,6 +92,14 @@ IIUC, the pathological case already exist in init:
 
 Limiting the number of time we can call ReapOneProcess in ReapAnyOutstandingChildren sounds like a good idea. Any opinion on a good number? 10? 100? 1000?
 
+824:0-825:5
+Fri Jan 08 18:06:53 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a901bcb_5e5d7571
+UUID: 6a79fb72_765fb052
+Bytes: 126
+I defer to init owners on this (Elliot, feel free to comment) but capping at 1000 continuous failed ReapOneProcess calls SGTM.
+
 File: init/service.h
 
 184:35-184:42

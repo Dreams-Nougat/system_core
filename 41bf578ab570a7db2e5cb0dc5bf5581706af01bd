@@ -11,6 +11,18 @@ Isn't the behavior really "if buffer > 256KB, default to no spam filter"? Looks 
 
 If a filter is specified with buffer > 256KB, do you need to treat it like the 1MB case?
 
+9:0-9:41
+Fri Jan 08 20:54:33 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a8b57a3_401d9052
+UUID: ca6827a1_dcf42140
+Bytes: 696
+default to no spam filter is correct. If explicitly set, we do nothing to change it; they get what they ask for.
+
+There is a cost ranging from 0 to 17% (worst case, really spammy sources) to performing the filter, but at 1MB we can use this to compensate for the increasing cost due to memory and scale in other areas. A marginal tuning.
+
+I decided to turn off the default for spam filter because one of the sources of support 'noise' I get is the four fold increases in chatty messages for 1MB and the user reaction to the volume, mostly front-loaded on the logs making it look like reams of chatty with content sprinkled in. The very human reaction is quite negative and mean spirited at times.
+
 File: logd/LogBuffer.cpp
 
 116:37-116:64

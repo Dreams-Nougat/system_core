@@ -9,12 +9,28 @@ UUID: 6a901bcb_9ed29df7
 Bytes: 144
 i think this is fine for now. you could always add a comment, but i don't think it's likely we'll have a non-console use for the 'console' flag.
 
+633
+Fri Jan 08 19:18:56 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6a901bcb_9ed29df7
+UUID: 4a74377b_35bff0e9
+Bytes: 4
+Done
+
 646
 Fri Jan 08 17:58:44 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4a8b57a3_5d62db15
 Bytes: 40
 s/Shutdown/Terminating running services/
+
+646
+Fri Jan 08 19:18:56 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a8b57a3_5d62db15
+UUID: 4a8b57a3_c0ed20e3
+Bytes: 4
+Done
 
 File: init/service.cpp
 
@@ -24,4 +40,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2a9aa3ee_5c9f3d23
 Bytes: 169
 "Sending SIGTERM to service '%s' (pid %d)..." to match other logging. (having both the name and the pid is helpful when trying to work out what happened after the fact.)
+
+539
+Fri Jan 08 19:18:56 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a9aa3ee_5c9f3d23
+UUID: aa5f73f8_18db0573
+Bytes: 4
+Done
 

@@ -1,5 +1,16 @@
 Revision: 41bf578ab570a7db2e5cb0dc5bf5581706af01bd
 Patch-set: 1
+File: /COMMIT_MSG
+
+9:0-9:41
+Fri Jan 08 20:41:41 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4a8b57a3_401d9052
+Bytes: 257
+Isn't the behavior really "if buffer > 256KB, default to no spam filter"? Looks like the non-default case still does filtering and spam filter could be explicitly set.
+
+If a filter is specified with buffer > 256KB, do you need to treat it like the 1MB case?
+
 File: logd/LogBuffer.cpp
 
 116:37-116:64

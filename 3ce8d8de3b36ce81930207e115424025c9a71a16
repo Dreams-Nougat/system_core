@@ -18,6 +18,14 @@ UUID: 2a52a3ad_b2ac9daa
 Bytes: 76
 Maybe make this a constant? kTerminateServiceDelayMicroSeconds or something.
 
+642:19-642:24
+Fri Jan 08 00:48:11 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2a52a3ad_b2ac9daa
+UUID: 0a4ddf0f_7317fb31
+Bytes: 4
+Done
+
 File: init/service.cpp
 
 817:8-817:27
@@ -62,4 +70,12 @@ Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4a4357e2_1f1d5ef7
 Bytes: 21
 Nit: "was cleaned up"
+
+184:35-184:42
+Fri Jan 08 00:48:11 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4a4357e2_1f1d5ef7
+UUID: 8a1aaf01_b609017b
+Bytes: 4
+Done
 

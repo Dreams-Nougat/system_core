@@ -1,0 +1,25 @@
+Revision: 138a9dc66310ec3235136e3e4ca862f4e33a2cca
+Patch-set: 1
+File: logd/LogListener.cpp
+
+70:23-70:24
+Tue Jan 12 17:22:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c75ca266_42f088fc
+Bytes: 91
+KISS might be __aligned(1) here so that code below makes no compiler optimization mistakes?
+
+71:21-71:22
+Tue Jan 12 17:22:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_88f2c7c1
+Bytes: 144
+Even if one knows the compiler would align this appropriately, should state expected alignment with an attribute (<sys/cdefs.h> __aligned(4) ?);
+
+87:8-87:43
+Tue Jan 12 17:22:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c75ca266_624aec04
+Bytes: 97
+I am not sure we got an answer, why are we getting pcred not word aligned from the above loop :-(
+

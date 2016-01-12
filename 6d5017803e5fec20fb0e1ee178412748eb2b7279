@@ -17,3 +17,13 @@ UUID: 27673e34_832c683d
 Bytes: 67
 Agree, but I don't know of other method... I'm open to suggestions.
 
+415:0-417:51
+Tue Jan 12 23:04:23 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_832c683d
+UUID: 87562a44_068a2400
+Bytes: 171
+Why fprintf? Make it an ALOGD or so, maybe?
+
+This is the bridge library. I don't see a way to replace this for our tests, unless you want to copy all its code into art/...
+

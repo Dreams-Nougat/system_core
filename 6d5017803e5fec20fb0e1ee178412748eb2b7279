@@ -27,3 +27,13 @@ Why fprintf? Make it an ALOGD or so, maybe?
 
 This is the bridge library. I don't see a way to replace this for our tests, unless you want to copy all its code into art/...
 
+415:0-417:51
+Tue Jan 12 23:38:51 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87562a44_068a2400
+UUID: 47ed12c9_2ddc6d9b
+Bytes: 174
+can be a simple printf as well. ALOGD will not work either as its messages are not captured when we run-test.
+
+Keep in mind that this is temporary and not meant to stay here.
+

@@ -2,6 +2,13 @@ Revision: 138a9dc66310ec3235136e3e4ca862f4e33a2cca
 Patch-set: 1
 File: logd/LogListener.cpp
 
+49:50-49:51
+Tue Jan 12 17:45:07 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c75ca266_62182c05
+Bytes: 52
+Could this be the root of the problem? __aligned(4)?
+
 70:23-70:24
 Tue Jan 12 17:22:34 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,3 +9,16 @@ UUID: 07495aa4_efea6902
 Bytes: 5
 timer
 
+13:0-13:5
+Tue Jan 12 21:56:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_efea6902
+UUID: 27673e34_435ff028
+Bytes: 247
+tamer, as in the act of taming, as in more tamed, housebroken. Less conspicuous.
+
+255*16.7/100 = 42.6
+255*3.06/100 = 7.8
+
+So every 255 log entries, a spike of 7.8 times the normal processing period is introduced. 42.6 is of-course more noticeable.
+

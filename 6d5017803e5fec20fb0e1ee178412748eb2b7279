@@ -1,0 +1,11 @@
+Revision: 6d5017803e5fec20fb0e1ee178412748eb2b7279
+Patch-set: 1
+File: libnativebridge/native_bridge.cc
+
+415:0-417:51
+Tue Jan 12 22:49:49 2016 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27fc9e7c_ccafafe2
+Bytes: 88
+Annoying this duplication... Can't we selectively get the warnings for the 115 run-test?
+

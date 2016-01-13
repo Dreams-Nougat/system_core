@@ -66,6 +66,14 @@ UUID: 676db610_ebaff1e1
 Bytes: 176
 This is a bit ambiguous. Do you mean using crash reporter during development (instead of using gdb) or testing that crash reporter works for your executable during development?
 
+43:3-43:22
+Wed Jan 13 04:52:03 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 676db610_ebaff1e1
+UUID: c75ca266_eeaf03e2
+Bytes: 84
+I meant using crash reporter during development.  Will re-title it to be more clear.
+
 60:25-60:56
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -80,10 +88,26 @@ UUID: 07495aa4_d57f3cb7
 Bytes: 131
 should we just point to the SELinux documentation for this? The user will likely need more than this to get the application running
 
+64:0-67:49
+Wed Jan 13 04:52:03 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_d57f3cb7
+UUID: c75ca266_eed6e375
+Bytes: 497
+I wanted to keep this as self-contained as possible, since not all our documentation is public yet and documentation links also may change/move around.  And this isn't really supposed to be used as documentation for creating a service's init script, I also wanted to explicitly call this out with an example, as several people have already asked me about SELinux denials seen during their development, which wound up being due to running the program directly from a shell rather than through init.
+
 95:3-98:45
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 274e5eac_f1fb6a8f
 Bytes: 68
 Is there a way to add those rules only for eng and userdebug builds?
+
+95:3-98:45
+Wed Jan 13 04:52:03 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_f1fb6a8f
+UUID: 87562a44_d1e3c431
+Bytes: 131
+Technically, I could use the userdebug_or_eng() macro to add them to crash_reporter's default rules.  But would we want to do that?
 

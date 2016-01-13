@@ -1,0 +1,13 @@
+Revision: 7cc5817c0fdbdec01f1a50965456fb5282f0c7d1
+Patch-set: 1
+File: healthd/BatteryPropertiesRegistrar.cpp
+
+34:4-34:42
+Wed Jan 13 00:12:13 2016 +0000
+Author: Christopher Wiley <1057759@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e759a674_0f423541
+Bytes: 317
+Change this signature to take a const reference and you'll avoid creating a new sp<T> instance that increments the refcount by one, only to destroy and decrement that refcount again immediately after the function.
+
+Also, it is surprising to me that we can automatically cast from sp<T extends IBinder> to sp<IBinder>.
+

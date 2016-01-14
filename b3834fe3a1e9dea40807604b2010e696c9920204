@@ -1,0 +1,55 @@
+Revision: b3834fe3a1e9dea40807604b2010e696c9920204
+Patch-set: 3
+File: crash_reporter/README.md
+
+5
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7bb2ef1_5852fded
+Bytes: 74
+breakpad homepage is: https://chromium.googlesource.com/breakpad/breakpad/
+
+40:9-40:23
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27b65e05_bcf901e8
+Bytes: 22
+"via the Weave call" ?
+
+60:59-60:60
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 47a7d2d1_1de11318
+Bytes: 34
+i don't think this comma is needed
+
+66:66-66:68
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7bb2ef1_98753564
+Bytes: 14
+"as" or "in" ?
+
+70
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27b65e05_3cee1119
+Bytes: 62
+i guess it's not possible to add more rules for debug builds ?
+
+120:32-121:33
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a7bb2ef1_d8e04d4c
+Bytes: 88
+this part is a bit redundant.  how about:
+
+ If a developer does want to force an upload,
+
+121:50-121:57
+Thu Jan 14 16:43:42 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27b65e05_bc1221e6
+Bytes: 11
+through->by
+

@@ -9,10 +9,26 @@ UUID: 27673e34_315037b7
 Bytes: 9
 strerror?
 
+351
+Thu Jan 14 03:00:11 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_315037b7
+UUID: 676db610_4c66f8cf
+Bytes: 4
+Done
+
 474
 Thu Jan 14 02:14:16 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 07623a24_12fffd7f
 Bytes: 178
 can we refactor this so the attach/detach is in one function and the work (from 'while' to 'goto exit') is another that returns true/false? this is already a pretty big function.
+
+474
+Thu Jan 14 03:00:11 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07623a24_12fffd7f
+UUID: 07623a24_129edd26
+Bytes: 4
+Done
 

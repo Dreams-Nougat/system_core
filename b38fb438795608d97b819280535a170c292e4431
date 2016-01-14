@@ -1,0 +1,11 @@
+Revision: b38fb438795608d97b819280535a170c292e4431
+Patch-set: 3
+File: debuggerd/debuggerd.cpp
+
+547
+Thu Jan 14 22:34:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e759a674_ce2155de
+Bytes: 134
+this could move into perform_dump, and L553 becomes "if (drop_privileges() && perform_dump(...)) {" and no agampe tears are necessary?
+

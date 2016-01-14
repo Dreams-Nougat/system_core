@@ -1,0 +1,13 @@
+Revision: 62c65f3abfa2a4962dfb204af7ade5b4ada096af
+Patch-set: 2
+File: debuggerd/debuggerd.cpp
+
+528
+Thu Jan 14 03:02:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_14b889e4
+Bytes: 74
+bool drop_privileges()?
+
+every goto you write makes the baby agampe cry...
+

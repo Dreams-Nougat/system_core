@@ -11,12 +11,28 @@ crash reporter is a deamon running on the device that saves the call stack of cr
 
 (mentioning the server here is a bit confusing)
 
+3:0-4:14
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 676db610_eb909103
+UUID: 274e5eac_f7207788
+Bytes: 4
+Done
+
 6:61-7:16
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 274e5eac_16bd2cee
 Bytes: 62
 This sounds like the symbols are uploaded everytime you build.
+
+6:61-7:16
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_16bd2cee
+UUID: e759a674_309e7527
+Bytes: 4
+Done
 
 9:39-11:45
 Wed Jan 13 00:32:45 2016 +0000
@@ -28,6 +44,14 @@ In general, I'd make the three part more obvious:
 * what happens at run time
 * what happens on the server
 
+9:39-11:45
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 678e9643_94510c63
+UUID: 274e5eac_d26d8946
+Bytes: 4
+Done
+
 29:0-29:2
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -35,12 +59,28 @@ UUID: 678e9643_749bc059
 Bytes: 10
 nit: space
 
+29:0-29:2
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 678e9643_749bc059
+UUID: 27673e34_54d201fa
+Bytes: 4
+Done
+
 32:0-32:18
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 274e5eac_d1d62e21
 Bytes: 60
 Those are only set at build time as it is in /system, right?
+
+32:0-32:18
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_d1d62e21
+UUID: c75ca266_f6a19913
+Bytes: 165
+Not all are build time properties.  The enabled bit is set at run time.  Its not really that important to the documentation, though, so I'll remove this description.
 
 34:2-36:79
 Wed Jan 13 00:32:45 2016 +0000
@@ -51,6 +91,14 @@ Bytes: 179
 
 Weave should be the default for this.
 
+34:2-36:79
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e759a674_6ee137bb
+UUID: 87562a44_b6bf21e7
+Bytes: 4
+Done
+
 37:2-38:74
 Wed Jan 13 00:32:45 2016 +0000
 Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -58,6 +106,14 @@ UUID: 07623a24_e2b438f4
 Bytes: 120
 I'd invert the focus: how do you set this in your product config or Android.mk.
 Where it is on the disk is secondary IMO
+
+37:2-38:74
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07623a24_e2b438f4
+UUID: 27673e34_54c96130
+Bytes: 4
+Done
 
 43:3-43:22
 Wed Jan 13 00:32:45 2016 +0000
@@ -80,6 +136,14 @@ Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 678e9643_54f5e471
 Bytes: 16
 just user builds
+
+60:25-60:56
+Thu Jan 14 07:54:54 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 678e9643_54f5e471
+UUID: 4768b202_4849c267
+Bytes: 4
+Done
 
 64:0-67:49
 Wed Jan 13 00:32:45 2016 +0000

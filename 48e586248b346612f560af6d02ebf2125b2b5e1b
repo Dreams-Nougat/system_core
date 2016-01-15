@@ -1,0 +1,18 @@
+Revision: 48e586248b346612f560af6d02ebf2125b2b5e1b
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+452
+Fri Jan 15 04:47:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e759a674_dccc6fe7
+Bytes: 5
+type*
+
+456
+Fri Jan 15 04:47:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_45824d27
+Bytes: 64
+different error messages for the input pipe and the output pipe?
+

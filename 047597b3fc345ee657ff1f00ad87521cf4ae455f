@@ -1,0 +1,11 @@
+Revision: 047597b3fc345ee657ff1f00ad87521cf4ae455f
+Base-for-patch-set: 1
+File: include/cutils/sockets.h
+
+77:0-77:6
+Fri Jan 15 18:42:42 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07623a24_6122dd4c
+Bytes: 121
+Removed 'extern', as I understand this has no effect for function declarations. Is there any reason it should be left in?
+

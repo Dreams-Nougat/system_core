@@ -1,0 +1,15 @@
+Revision: 0007e9b7858d34b477cde51cc4ab4890d8fe2430
+Patch-set: 1
+File: fastboot/Android.mk
+
+59:4-59:13
+Fri Jan 15 18:42:42 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 274e5eac_f765101f
+Bytes: 307
+I'm a little nervous about this because http://r.android.com/182080 tried this and apparently caused some breakage.
+
+However I can't seem to replicate the failure, I cleaned my build then ran both `m checkbuild` and `lunch sdk-eng; make -j40 win_sdk` without problem.
+
+Is there any other build I should try?
+

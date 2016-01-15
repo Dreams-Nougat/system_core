@@ -9,3 +9,11 @@ UUID: 87562a44_e568bdf7
 Bytes: 11
 unique_ptr?
 
+44
+Fri Jan 15 20:52:37 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87562a44_e568bdf7
+UUID: c75ca266_ed325f97
+Bytes: 156
+Actually, this hash table should probably be converted to an unordered_map instead. Since that's a bigger change, I'll submit this first, then do that work.
+

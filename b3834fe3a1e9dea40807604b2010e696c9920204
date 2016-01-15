@@ -9,12 +9,28 @@ UUID: a7bb2ef1_5852fded
 Bytes: 74
 breakpad homepage is: https://chromium.googlesource.com/breakpad/breakpad/
 
+5
+Fri Jan 15 23:00:04 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7bb2ef1_5852fded
+UUID: 87562a44_34e4a928
+Bytes: 4
+Done
+
 40:9-40:23
 Thu Jan 14 16:43:42 2016 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 27b65e05_bcf901e8
 Bytes: 22
 "via the Weave call" ?
+
+40:9-40:23
+Fri Jan 15 23:00:04 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27b65e05_bcf901e8
+UUID: 2752dead_2b8a6501
+Bytes: 4
+Done
 
 60:59-60:60
 Thu Jan 14 16:43:42 2016 +0000
@@ -37,6 +53,14 @@ UUID: 27b65e05_3cee1119
 Bytes: 62
 i guess it's not possible to add more rules for debug builds ?
 
+70
+Fri Jan 15 23:00:04 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27b65e05_3cee1119
+UUID: 07495aa4_d3710a78
+Bytes: 409
+I was initially against adding rules for debug/eng builds, as I don't think its a great idea getting developers used to setting their selinux policies based on running from a shell, when in production it will be run differently.  But this is more about crash reporter than selinux, so I did decide to add the rules, with http://r.android.com/196505.  So this entire section is now unnecessary, I'll remove it.
+
 120:32-121:33
 Thu Jan 14 16:43:42 2016 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,4 +76,12 @@ Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 27b65e05_bc1221e6
 Bytes: 11
 through->by
+
+120:32-121:33
+Fri Jan 15 23:00:04 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7bb2ef1_d8e04d4c
+UUID: 676db610_13b41899
+Bytes: 4
+Done
 

@@ -9,3 +9,15 @@ UUID: c75ca266_f034f8d5
 Bytes: 81
 I don't think we need to negate here, won't this cause us to return 0 on success?
 
+860:15-860:16
+Fri Jan 15 22:58:48 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c75ca266_f034f8d5
+UUID: c75ca266_30183060
+Bytes: 231
+oops. i'd assumed this function returned a bool. i would say we should just make it do so, but i see this WTF at L1097:
+
+    int ret = handle_forward_request(service, type, serial, reply_fd);
+    if (ret >= 0)
+      return ret - 1;
+

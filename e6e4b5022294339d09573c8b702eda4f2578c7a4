@@ -1,0 +1,11 @@
+Revision: e6e4b5022294339d09573c8b702eda4f2578c7a4
+Patch-set: 1
+File: adb/adb.cpp
+
+860:15-860:16
+Fri Jan 15 22:57:11 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c75ca266_f034f8d5
+Bytes: 81
+I don't think we need to negate here, won't this cause us to return 0 on success?
+

@@ -11,6 +11,14 @@ Why not Read(size_t size)?
 
 Also would it be helpful to have something like tempalate<typename T> void Read(T* value)?
 
+29
+Fri Jan 15 00:53:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b6da7ea7_79bdfc82
+UUID: 676db610_e7b55a39
+Bytes: 218
+I didn't have a use case for a size parameter. Since I couldn't think of anything that would need an interface like this, I decided to keep it simple. If we decide we need something else, we could add it in the future.
+
 File: libziparchive/zip_archive_stream_entry.cc
 
 40
@@ -20,12 +28,28 @@ UUID: 5b532b27_fbe933a6
 Bytes: 9
 strerror?
 
+40
+Fri Jan 15 00:53:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5b532b27_fbe933a6
+UUID: 87562a44_b496f931
+Bytes: 5
+Done.
+
 89
 Mon Nov 16 22:13:58 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fb2e9f8f_f7c82bce
 Bytes: 5
 errno
+
+89
+Fri Jan 15 00:53:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb2e9f8f_f7c82bce
+UUID: 07623a24_b5bf13e7
+Bytes: 6
+Fixed.
 
 93
 Mon Nov 16 22:13:58 2015 +0000
@@ -34,10 +58,26 @@ UUID: 3b2597a9_6ac7ae1a
 Bytes: 60
 this seems like a bug. this is just the short read case, no?
 
+93
+Fri Jan 15 00:53:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b2597a9_6ac7ae1a
+UUID: c75ca266_f15ec3c7
+Bytes: 37
+Yep, I changed this to use ReadFully.
+
 215
 Mon Nov 16 22:13:58 2015 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 96d1fa8e_6999b33c
 Bytes: 25
 (same comments as above.)
+
+215
+Fri Jan 15 00:53:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96d1fa8e_6999b33c
+UUID: 4768b202_6316609e
+Bytes: 18
+Same fix as above.
 

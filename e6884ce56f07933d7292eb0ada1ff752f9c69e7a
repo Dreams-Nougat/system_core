@@ -1,0 +1,11 @@
+Revision: e6884ce56f07933d7292eb0ada1ff752f9c69e7a
+Patch-set: 3
+File: libziparchive/zip_archive_private.h
+
+44
+Fri Jan 15 04:33:06 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87562a44_e568bdf7
+Bytes: 11
+unique_ptr?
+

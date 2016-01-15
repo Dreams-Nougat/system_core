@@ -9,3 +9,11 @@ UUID: 07623a24_6122dd4c
 Bytes: 121
 Removed 'extern', as I understand this has no effect for function declarations. Is there any reason it should be left in?
 
+77:0-77:6
+Fri Jan 15 21:29:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07623a24_6122dd4c
+UUID: 27673e34_2682b870
+Bytes: 61
+no. i've mostly been removing it from the bionic headers too.
+

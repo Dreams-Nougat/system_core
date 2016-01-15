@@ -13,6 +13,23 @@ However I can't seem to replicate the failure, I cleaned my build then ran both 
 
 Is there any other build I should try?
 
+59:4-59:13
+Fri Jan 15 21:29:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_f765101f
+UUID: 274e5eac_428a4401
+Bytes: 95
+i remember cleaning up some gettid stuff, so maybe i just never came back to revert the revert?
+
+File: include/cutils/sockets.h
+
+141
+Fri Jan 15 21:29:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e759a674_6227785b
+Bytes: 32
+so maybe it shouldn't be public?
+
 File: libcutils/tests/sockets_test.cpp
 
 44:17-44:25

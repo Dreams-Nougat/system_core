@@ -13,3 +13,12 @@ However I can't seem to replicate the failure, I cleaned my build then ran both 
 
 Is there any other build I should try?
 
+File: libcutils/tests/sockets_test.cpp
+
+44:17-44:25
+Fri Jan 15 19:37:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87562a44_e987f780
+Bytes: 115
+Small change needed for Mac, recvfrom() behaves differently on TCP sockets. Will put the fix in the next patch set.
+

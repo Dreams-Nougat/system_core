@@ -65,12 +65,28 @@ UUID: 676db610_339e7427
 Bytes: 208
 General comment: diagnosability of this code in case any API call fails? I tried to make the networking code in sysdeps_win32.cpp log/trace/etc. failures and to make it clear exactly what API is failing, etc.
 
+74:7-74:31
+Fri Jan 15 23:18:10 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 676db610_339e7427
+UUID: 87562a44_ccd04151
+Bytes: 191
+I haven't quite figured out how to handle that yet, I think I'm going to punt on that until I start merging this into adb, but I expect to bring up at least some of the logging code from adb.
+
 79:41-79:42
 Fri Jan 15 22:59:32 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 07495aa4_33330ecc
 Bytes: 289
 In sysdeps_win32.cpp, I always specified this last param just in case it fixes some problem with antivirus or proxy client DLLs. I dunno if it matters though. FWIW, Chromium seems to always specify this param. I'm ok with 0 if you're going to be debugging any Windows networking issues. :)
+
+79:41-79:42
+Fri Jan 15 23:18:10 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_33330ecc
+UUID: 2752dead_abdbd511
+Bytes: 209
+I think I'll probably switch to your way when I bring in the adb stuff, I saw the comment in the code and it makes sense. I'll also be trying to modify what adb does as little as possible to avoid surprises :)
 
 File: libcutils/socket_network_client.c
 
@@ -80,6 +96,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 274e5eac_a24a2801
 Bytes: 95
 I see that you're already checking the returned pointer, but maybe check the return value also?
+
+146:4-146:15
+Fri Jan 15 23:18:10 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_a24a2801
+UUID: 87562a44_acd50d40
+Bytes: 18
+Good call will do.
 
 File: libcutils/tests/sockets_test.cpp
 

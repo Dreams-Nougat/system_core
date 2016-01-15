@@ -21,6 +21,16 @@ UUID: 274e5eac_428a4401
 Bytes: 95
 i remember cleaning up some gettid stuff, so maybe i just never came back to revert the revert?
 
+59:4-59:13
+Fri Jan 15 22:19:24 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_428a4401
+UUID: 07495aa4_138a52d2
+Bytes: 331
+Looks like the un-revert is at http://r.android.com/182090, but it doesn't contain the fastboot dependency on libcutils because you moved gettid to libbase.
+
+If it was in fact a fastboot dependency on libcutils causing the build breakage, it might show up again here, I just can't figure out how to replicate it if that's the case.
+
 File: include/cutils/sockets.h
 
 141
@@ -29,6 +39,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e759a674_6227785b
 Bytes: 32
 so maybe it shouldn't be public?
+
+141
+Fri Jan 15 22:19:24 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e759a674_6227785b
+UUID: 274e5eac_a247c833
+Bytes: 50
+Yeah I think you're right, I'll move it elsewhere.
 
 File: libcutils/tests/sockets_test.cpp
 

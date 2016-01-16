@@ -61,6 +61,14 @@ UUID: 07495aa4_d3710a78
 Bytes: 409
 I was initially against adding rules for debug/eng builds, as I don't think its a great idea getting developers used to setting their selinux policies based on running from a shell, when in production it will be run differently.  But this is more about crash reporter than selinux, so I did decide to add the rules, with http://r.android.com/196505.  So this entire section is now unnecessary, I'll remove it.
 
+70
+Sat Jan 16 02:30:58 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_d3710a78
+UUID: a717aed7_78d7e144
+Bytes: 94
+i tend to agree on that aspect, but i'm not sure that's enough to restrict crash reporter over
+
 120:32-121:33
 Thu Jan 14 16:43:42 2016 +0000
 Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>

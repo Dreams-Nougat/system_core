@@ -1,0 +1,11 @@
+Revision: 5db8d6aafa66cbeaef6bf736ff5ad5b711069d9e
+Patch-set: 1
+File: init/log.cpp
+
+30
+Tue Jan 19 17:37:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07495aa4_bcc36b10
+Bytes: 81
+if you're trying to minimize wasted work, why waste time on basename/getprogname?
+

@@ -1,0 +1,15 @@
+Revision: 0197ea56d9e98e84a79b2e8b22c5527964440a37
+Patch-set: 1
+File: adb/shell_service.cpp
+
+250:74-250:76
+Tue Jan 19 20:50:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 07623a24_34949cf6
+Bytes: 372
+I thought in our discussions that a zero-length string is not getting through to log_print (logcat)?
+
+I fully expect that they should get through to the raw log reader interface though, have you confirmed that these are picked up?
+
+If not to logcat, but is via the jni, this is actually a cool obfuscated trick :-). We should file a bug against log_print's failure though.
+

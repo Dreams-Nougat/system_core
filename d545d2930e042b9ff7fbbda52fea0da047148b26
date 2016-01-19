@@ -17,3 +17,11 @@ UUID: 2771fe1c_2d43b59b
 Bytes: 119
 Initial experiments show that a zero-length string is not logged, although I failed to find out where it gets filtered.
 
+680:4-680:35
+Tue Jan 19 20:30:44 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2771fe1c_2d43b59b
+UUID: 076cfa46_1711a4a4
+Bytes: 132
+It does get written actually (saw 9 bytes increase via logcat -S each time I write an empty string), but somehow it's not read back.
+

@@ -1,0 +1,11 @@
+Revision: 70d942c24a7b6268ed9e3a795c35aab454bb170e
+Patch-set: 2
+File: include/log/log.h
+
+628
+Tue Jan 19 23:03:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_15ba3cf5
+Bytes: 150
+ugh. we have a python script to auto-generate a .java file for each set of log tags (build/tools/java-event-log-tags.py), but nothing for native code?
+

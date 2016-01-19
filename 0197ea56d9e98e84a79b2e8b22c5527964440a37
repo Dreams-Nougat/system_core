@@ -13,3 +13,11 @@ I fully expect that they should get through to the raw log reader interface thou
 
 If not to logcat, but is via the jni, this is actually a cool obfuscated trick :-). We should file a bug against log_print's failure though.
 
+250:74-250:76
+Tue Jan 19 22:11:44 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07623a24_34949cf6
+UUID: 8780ea14_6d313195
+Bytes: 109
+Yes I tested with the JNI interface and it can be read back (but not showing up in logcat). Filed b/26646213.
+

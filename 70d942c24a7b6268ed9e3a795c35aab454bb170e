@@ -9,3 +9,15 @@ UUID: 27673e34_15ba3cf5
 Bytes: 150
 ugh. we have a python script to auto-generate a .java file for each set of log tags (build/tools/java-event-log-tags.py), but nothing for native code?
 
+628
+Tue Jan 19 23:14:03 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_15ba3cf5
+UUID: 07495aa4_c25bf208
+Bytes: 681
+Alas, this header is the wrong place for the list of tags in any case. So far we have been ad-hoc, and in some cases even added them to the associated Android.mk files as a -D define passed in to the compiler.
+
+As a baby-step, add a build-time tool or script to convert SecurityLog.logtag into a local header?
+
+NB: __android_log_security_bswrite() calls a subroutine which checks __android_log_security() in the cases where the LOG-SECURITY buffer is referenced. For this call, we are not saving enough cycles to warrant the pre-check. One would expect the caller to use __android_log_security() if there is some work to be done (eg: calculate a package SHA) to format the message.
+

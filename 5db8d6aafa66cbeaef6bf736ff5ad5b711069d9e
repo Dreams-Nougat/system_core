@@ -17,3 +17,11 @@ UUID: 274e5eac_a3f7cab1
 Bytes: 109
 because it's static, and presumably only executed once no matter how many times init_klog_vwrite is executed.
 
+30
+Tue Jan 19 17:58:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_a3f7cab1
+UUID: 27673e34_fad68f20
+Bytes: 15
+duh. too early.
+

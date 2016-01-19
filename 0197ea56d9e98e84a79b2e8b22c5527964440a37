@@ -9,12 +9,28 @@ UUID: 4768b202_40322d2f
 Bytes: 67
 this seems inappropriate. isn't there some central place for these?
 
+44
+Tue Jan 19 23:01:28 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4768b202_40322d2f
+UUID: 8780ea14_cd3f7d5d
+Bytes: 4
+Done
+
 327
 Tue Jan 19 22:14:29 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 87562a44_43da3c9b
 Bytes: 49
 should this if (a) b(...) pattern be its own API?
+
+327
+Tue Jan 19 23:01:28 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 87562a44_43da3c9b
+UUID: 47727221_8b8ad188
+Bytes: 24
+Make it a macro instead.
 
 File: adb/shell_service.cpp
 

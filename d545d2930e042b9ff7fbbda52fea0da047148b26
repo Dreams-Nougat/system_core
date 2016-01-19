@@ -1,0 +1,11 @@
+Revision: d545d2930e042b9ff7fbbda52fea0da047148b26
+Patch-set: 1
+File: liblog/logd_write.c
+
+680:4-680:35
+Tue Jan 19 17:20:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_cf1317ea
+Bytes: 217
+Has a zero-length string been tested manually? (gTests in system/core/liblog/tests/ have no security buffer interface testing, and the events variants do not check if zero length events strings get propagated, or not)
+

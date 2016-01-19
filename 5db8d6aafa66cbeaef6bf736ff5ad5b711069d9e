@@ -9,3 +9,11 @@ UUID: 07495aa4_bcc36b10
 Bytes: 81
 if you're trying to minimize wasted work, why waste time on basename/getprogname?
 
+30
+Tue Jan 19 17:43:52 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_bcc36b10
+UUID: 274e5eac_a3f7cab1
+Bytes: 109
+because it's static, and presumably only executed once no matter how many times init_klog_vwrite is executed.
+

@@ -9,3 +9,11 @@ UUID: 27673e34_cf1317ea
 Bytes: 217
 Has a zero-length string been tested manually? (gTests in system/core/liblog/tests/ have no security buffer interface testing, and the events variants do not check if zero length events strings get propagated, or not)
 
+680:4-680:35
+Tue Jan 19 20:03:09 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_cf1317ea
+UUID: 2771fe1c_2d43b59b
+Bytes: 119
+Initial experiments show that a zero-length string is not logged, although I failed to find out where it gets filtered.
+

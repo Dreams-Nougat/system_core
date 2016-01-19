@@ -1,5 +1,21 @@
 Revision: 0197ea56d9e98e84a79b2e8b22c5527964440a37
 Patch-set: 1
+File: adb/file_sync_service.cpp
+
+44
+Tue Jan 19 22:14:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4768b202_40322d2f
+Bytes: 67
+this seems inappropriate. isn't there some central place for these?
+
+327
+Tue Jan 19 22:14:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 87562a44_43da3c9b
+Bytes: 49
+should this if (a) b(...) pattern be its own API?
+
 File: adb/shell_service.cpp
 
 250:74-250:76

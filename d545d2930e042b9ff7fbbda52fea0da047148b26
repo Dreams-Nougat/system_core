@@ -25,3 +25,11 @@ UUID: 076cfa46_1711a4a4
 Bytes: 132
 It does get written actually (saw 9 bytes increase via logcat -S each time I write an empty string), but somehow it's not read back.
 
+680:4-680:35
+Tue Jan 19 20:40:12 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 076cfa46_1711a4a4
+UUID: 07931a6b_b4236681
+Bytes: 124
+OK it can be read back when using the liblog interface directly. But logcat will not print it out. So, should we fix logcat?
+

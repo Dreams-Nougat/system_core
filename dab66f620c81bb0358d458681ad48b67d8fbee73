@@ -1,0 +1,11 @@
+Revision: dab66f620c81bb0358d458681ad48b67d8fbee73
+Patch-set: 1
+File: crash_reporter/crash_collector_test.cc
+
+215:2-215:37
+Wed Jan 20 10:08:46 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4768b202_d121f1dd
+Bytes: 451
+Somewhat odd behavior here before I switched |kExpectedMeta| to a std::string (which it probably should have been anyway since |contents| is a std::string).  This expect statement kept failing, with |kExpectedMeta| showing with the "payload2-file" path.  Then swapping the order of |kExpectedMeta| and |contents|, it would still fail but with |kExpectedMeta| adding in random double escaping of '/' characters but with the correct "payload-file path".
+

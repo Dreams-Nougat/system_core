@@ -34,6 +34,14 @@ UUID: e70fe6af_2d94b9f5
 Bytes: 115
 This is quite valid and deserves a separate change as this change only extends a bit to the current implementation.
 
+28
+Wed Jan 20 19:22:07 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e70fe6af_2d94b9f5
+UUID: 671db61a_b6efa819
+Bytes: 361
+How much rewriting do you think is needed here?  This is already rewritten after I did the separation of .rc files.  I didn't emphasize "you should not have monolithic init.rc files anymore, but I list out the different intentions of the directories.  I can emphasize the changes more if you'd like, but I agree that it's likely out of the scope of this commit.
+
 270
 Tue Jan 19 18:05:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,4 +58,14 @@ Parent: 27673e34_baf257c1
 UUID: a7f08edd_d39266d0
 Bytes: 29
 Text is revised as suggested.
+
+270
+Wed Jan 20 19:22:07 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a7f08edd_d39266d0
+UUID: 27fe5ee6_3faec3a2
+Bytes: 221
+There's no requirement that the specified paths refer to partitions just mounted, so that shouldn't be stated.
+
+We are admittedly abusing mount_all, but that was the trade off for not having an `import_late` type command.
 

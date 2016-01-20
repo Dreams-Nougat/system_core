@@ -2,10 +2,27 @@ Revision: dab66f620c81bb0358d458681ad48b67d8fbee73
 Patch-set: 1
 File: crash_reporter/crash_collector_test.cc
 
+135:71-135:72
+Wed Jan 20 16:35:48 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 274e5eac_0efb422c
+Bytes: 21
+space after the comma
+
 215:2-215:37
 Wed Jan 20 10:08:46 2016 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4768b202_d121f1dd
 Bytes: 451
 Somewhat odd behavior here before I switched |kExpectedMeta| to a std::string (which it probably should have been anyway since |contents| is a std::string).  This expect statement kept failing, with |kExpectedMeta| showing with the "payload2-file" path.  Then swapping the order of |kExpectedMeta| and |contents|, it would still fail but with |kExpectedMeta| adding in random double escaping of '/' characters but with the correct "payload-file path".
+
+215:2-215:37
+Wed Jan 20 16:35:48 2016 +0000
+Author: Bertrand Simonnet <1076133@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4768b202_d121f1dd
+UUID: 2752dead_ceabc590
+Bytes: 216
+Could it be that the path of test used in StringPrintf already ends with a "/" ?
+
+Could you use test_dir_.path().Append("payload-file").value().c_str() directly and avoid manually appending the next part of the path?
 

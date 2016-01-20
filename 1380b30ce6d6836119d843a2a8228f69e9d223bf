@@ -15,3 +15,15 @@ But now that WaitForExit() is closed, this code passes local_socket_sfd_ to fdev
 
 I think we want to close this FD manually if ForkAndExec() failed, and check if it's valid before passing it here.
 
+670:0-684:5
+Wed Jan 20 02:25:57 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_ab77a06c
+UUID: c75ca266_33bdd580
+Bytes: 296
+Yeah, I think you're right.
+
+I'm wondering if it'd be cleaner to close the fd we read in fdevent_subproc_event_func in that case (also on line 312). Reading that function by itself makes me think that in those two error cases, it should either close the fd received or it should abort.
+
+Thoughts?
+

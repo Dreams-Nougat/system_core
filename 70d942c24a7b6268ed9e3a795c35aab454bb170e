@@ -21,3 +21,15 @@ As a baby-step, add a build-time tool or script to convert SecurityLog.logtag in
 
 NB: __android_log_security_bswrite() calls a subroutine which checks __android_log_security() in the cases where the LOG-SECURITY buffer is referenced. For this call, we are not saving enough cycles to warrant the pre-check. One would expect the caller to use __android_log_security() if there is some work to be done (eg: calculate a package SHA) to format the message.
 
+628
+Wed Jan 20 15:55:20 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07495aa4_c25bf208
+UUID: 8780ea14_103e0a09
+Bytes: 453
+No we don't have a tool for native code :(
+
+So if I do have such a script to generate header files from tag file, how does it interact with the build system? I'm not sure how we do it cross project cleanly, as the tag file is at frameworks/base/core/java/android/auditing/SecurityLog.logtags (Only exists in internal tree, needs cherry-pick back to AOSP). 
+
+Is there an alternative header file where we could put these defines, as a short term solution?
+

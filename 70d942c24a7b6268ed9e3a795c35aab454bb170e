@@ -33,3 +33,17 @@ So if I do have such a script to generate header files from tag file, how does i
 
 Is there an alternative header file where we could put these defines, as a short term solution?
 
+628
+Wed Jan 20 17:13:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8780ea14_103e0a09
+UUID: 27fe5ee6_bc1021a2
+Bytes: 326
+wingyang@ may get involved given the widespread and growing problem, but you are free to create your own generation tool.
+
+The tool would probably have a dependency on the generated global event-log-tags file.
+
+cherry-pick into AOSP, all of this should go to AOSP IMHO.
+
+If you can not wait, then create a _local_ header file.
+

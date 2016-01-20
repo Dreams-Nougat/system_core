@@ -9,6 +9,14 @@ UUID: 27673e34_3ad12727
 Bytes: 19
 no std:: on size_t.
 
+425
+Wed Jan 20 03:16:21 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_3ad12727
+UUID: 27e49e25_9225fce9
+Bytes: 4
+Done
+
 File: init/readme.txt
 
 28
@@ -18,6 +26,14 @@ UUID: 07623a24_3942d541
 Bytes: 122
 (this whole section seems like it needs rewriting now we're recommending each service's .rc file lives with that service.)
 
+28
+Wed Jan 20 03:16:21 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 07623a24_3942d541
+UUID: e70fe6af_2d94b9f5
+Bytes: 115
+This is quite valid and deserves a separate change as this change only extends a bit to the current implementation.
+
 270
 Tue Jan 19 18:05:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -26,4 +42,12 @@ Bytes: 211
 does this make sense? doesn't it seem like a bug that mount_all does two things?
 
 even if we do want to keep this behavior, it probably makes for clearer documentation if we just refer to the section above here.
+
+270
+Wed Jan 20 03:16:21 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27673e34_baf257c1
+UUID: a7f08edd_d39266d0
+Bytes: 29
+Text is revised as suggested.
 

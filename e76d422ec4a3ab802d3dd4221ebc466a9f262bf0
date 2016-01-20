@@ -1,0 +1,11 @@
+Revision: e76d422ec4a3ab802d3dd4221ebc466a9f262bf0
+Patch-set: 2
+File: init/readme.txt
+
+270:25-270:58
+Wed Jan 20 23:27:43 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4718b22c_db524b16
+Bytes: 244
+To be clear from my last comment - this is the text that is incorrect.  The code isn't making that restriction so we shouldn't include it here (or we should modify the code if we really want to make such a restriction, but I don't think we do).
+

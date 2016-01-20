@@ -1,0 +1,11 @@
+Revision: 74e5f31ffd63d4c4f5e231bac4b43c2a3282254f
+Patch-set: 2
+File: adb/shell_service.cpp
+
+186
+Wed Jan 20 01:45:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27673e34_bbbd39d4
+Bytes: 95
+there's only one caller left, and at least one place where the test is inlined instead. choose?
+

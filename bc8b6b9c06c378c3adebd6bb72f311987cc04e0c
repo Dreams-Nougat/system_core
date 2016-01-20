@@ -9,3 +9,11 @@ UUID: 27fe5ee6_9fd6f7ea
 Bytes: 120
 Can this condition just be taken out altogether? I would expect OpenPtyChildFd() to only be called for a PTY subprocess.
 
+411:8-411:37
+Wed Jan 20 23:36:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 27fe5ee6_9fd6f7ea
+UUID: 87062ace_e084b8c9
+Bytes: 73
+Yeah, this is only called in one place that's already wrapped in a check.
+

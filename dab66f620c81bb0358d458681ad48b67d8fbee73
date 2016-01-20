@@ -9,6 +9,14 @@ UUID: 274e5eac_0efb422c
 Bytes: 21
 space after the comma
 
+135:71-135:72
+Wed Jan 20 22:24:37 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 274e5eac_0efb422c
+UUID: c70ca2f0_1fb66b44
+Bytes: 4
+Done
+
 215:2-215:37
 Wed Jan 20 10:08:46 2016 +0000
 Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,4 +33,12 @@ Bytes: 216
 Could it be that the path of test used in StringPrintf already ends with a "/" ?
 
 Could you use test_dir_.path().Append("payload-file").value().c_str() directly and avoid manually appending the next part of the path?
+
+215:2-215:37
+Wed Jan 20 22:24:37 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2752dead_ceabc590
+UUID: c7b10259_171e5c4f
+Bytes: 4
+Done
 

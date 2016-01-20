@@ -1,0 +1,11 @@
+Revision: bc8b6b9c06c378c3adebd6bb72f311987cc04e0c
+Patch-set: 3
+File: adb/shell_service.cpp
+
+411:8-411:37
+Wed Jan 20 20:13:59 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 27fe5ee6_9fd6f7ea
+Bytes: 120
+Can this condition just be taken out altogether? I would expect OpenPtyChildFd() to only be called for a PTY subprocess.
+

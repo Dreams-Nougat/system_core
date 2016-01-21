@@ -17,3 +17,11 @@ UUID: 4722728b_c5a35abc
 Bytes: 169
 Yes, I was trying too hard to connect the action of importing .rc files to mounting filesystems. Added "e.g." to not make it sound like a restriction. What do you think?
 
+270:25-270:58
+Thu Jan 21 01:53:47 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4722728b_c5a35abc
+UUID: 34068e0b_bc318129
+Bytes: 249
+Looks better to me.  As enh@ pointed out, it's not ideal that we're doing the importing here, but it was a trade off that we took to keep the importing of init scripts confined to specific times (initial loading of init and now right after FS mount)
+

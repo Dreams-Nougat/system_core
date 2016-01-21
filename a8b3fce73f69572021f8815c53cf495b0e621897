@@ -1,0 +1,18 @@
+Revision: a8b3fce73f69572021f8815c53cf495b0e621897
+Patch-set: 1
+File: init/readme.txt
+
+52
+Thu Jan 21 03:46:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4f27e53_807536ac
+Bytes: 9
+s/and/or/
+
+67
+Thu Jan 21 03:46:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 34068e0b_7cac19c9
+Bytes: 142
+something like "...and will help you avoid merge conflicts."? appealing to self-interest might work better than just asking them to behave :-)
+

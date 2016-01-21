@@ -1,0 +1,11 @@
+Revision: 572bce29088521caf7f90c9fa66a8237a7674435
+Patch-set: 2
+File: fastboot/.clang-format
+
+11
+Thu Jan 21 22:31:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d439b2d1_54cf0239
+Bytes: 146
+(none of us would care if you reformatted all of fastboot 2-space. most of us would be pleased, in fact. we just don't have the balls personally.)
+

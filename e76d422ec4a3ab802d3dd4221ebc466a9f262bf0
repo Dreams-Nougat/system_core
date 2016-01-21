@@ -9,3 +9,11 @@ UUID: 4718b22c_db524b16
 Bytes: 244
 To be clear from my last comment - this is the text that is incorrect.  The code isn't making that restriction so we shouldn't include it here (or we should modify the code if we really want to make such a restriction, but I don't think we do).
 
+270:25-270:58
+Thu Jan 21 01:41:34 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4718b22c_db524b16
+UUID: 4722728b_c5a35abc
+Bytes: 169
+Yes, I was trying too hard to connect the action of importing .rc files to mounting filesystems. Added "e.g." to not make it sound like a restriction. What do you think?
+

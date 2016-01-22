@@ -9,10 +9,26 @@ UUID: b4f27e53_807536ac
 Bytes: 9
 s/and/or/
 
+52
+Fri Jan 22 21:26:42 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4f27e53_807536ac
+UUID: 74af2662_a9d919a5
+Bytes: 4
+Done
+
 67
 Thu Jan 21 03:46:53 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 34068e0b_7cac19c9
 Bytes: 142
 something like "...and will help you avoid merge conflicts."? appealing to self-interest might work better than just asking them to behave :-)
+
+67
+Fri Jan 22 21:26:42 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 34068e0b_7cac19c9
+UUID: b4b51eae_ae02831f
+Bytes: 4
+Done
 

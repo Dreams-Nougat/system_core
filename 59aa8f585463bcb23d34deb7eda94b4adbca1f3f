@@ -1,0 +1,11 @@
+Revision: 59aa8f585463bcb23d34deb7eda94b4adbca1f3f
+Patch-set: 1
+File: /COMMIT_MSG
+
+18
+Fri Jan 22 03:31:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f4115643_6f421199
+Bytes: 117
+why is the error output optional? that seems like a bug. do we want to encourage callers to have bad error reporting?
+

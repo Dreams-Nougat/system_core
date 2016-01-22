@@ -1,0 +1,18 @@
+Revision: 4376d2956bccea5b5b7e2e52a6ec0b8f810d6921
+Patch-set: 1
+File: trusty/libtrusty/tipc-test/tipc_test.c
+
+723:22-723:27
+Fri Jan 22 21:14:38 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d470d2c5_1978ab07
+Bytes: 42
+is the test worth runnign with msgsz == 0?
+
+728:30-728:41
+Fri Jan 22 21:14:38 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 547ce2a3_38a80599
+Bytes: 11
+nit: parens
+

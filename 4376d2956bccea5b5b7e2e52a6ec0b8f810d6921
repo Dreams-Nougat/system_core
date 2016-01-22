@@ -9,6 +9,14 @@ UUID: d470d2c5_1978ab07
 Bytes: 42
 is the test worth runnign with msgsz == 0?
 
+723:22-723:27
+Fri Jan 22 23:26:34 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d470d2c5_1978ab07
+UUID: 74af2662_2c73f77c
+Bytes: 158
+It turned out that sending zero length messages with "writev" will be eaten by vfs code before reaching driver. This is not the case with "write" call though.
+
 728:30-728:41
 Fri Jan 22 21:14:38 2016 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,4 +30,12 @@ Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 34d04ee4_92079ca2
 Bytes: 17
 iovs[0].iov_len ?
+
+728:30-728:41
+Fri Jan 22 23:26:34 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 34d04ee4_92079ca2
+UUID: 94b81aa8_b0cade70
+Bytes: 4
+Done
 

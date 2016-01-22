@@ -9,3 +9,13 @@ UUID: f4115643_6f421199
 Bytes: 117
 why is the error output optional? that seems like a bug. do we want to encourage callers to have bad error reporting?
 
+18
+Fri Jan 22 03:56:33 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f4115643_6f421199
+UUID: 54930218_80f8b8e2
+Bytes: 184
+Hmm that makes sense, I was trying to be more flexible but you're right I can't think of any case where we'd want to encourage ignoring the error message.
+
+I'll make it required again.
+

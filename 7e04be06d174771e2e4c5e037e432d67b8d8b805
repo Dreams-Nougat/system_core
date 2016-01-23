@@ -1,0 +1,11 @@
+Revision: 7e04be06d174771e2e4c5e037e432d67b8d8b805
+Patch-set: 2
+File: bootstat/Android.mk
+
+44
+Sat Jan 23 03:33:43 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f4bb169e_99e827d0
+Bytes: 99
+remove the -std=c++14s now? (so we're not holding this code back when the platform moves to c++17.)
+

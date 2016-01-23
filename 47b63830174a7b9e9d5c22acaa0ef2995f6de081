@@ -9,3 +9,11 @@ UUID: b4b51eae_379ee249
 Bytes: 227
 Nit: not /dev/urandom but Linux RNG. /dev/urandom and /dev/random are just different endpoints through which the Linux RNG can be accessed. In the case of mixing in stuff, it doesn't matter through which of the two you do that.
 
+7
+Sat Jan 23 03:59:38 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4b51eae_379ee249
+UUID: 14cb4a3e_74945e29
+Bytes: 4
+Done
+

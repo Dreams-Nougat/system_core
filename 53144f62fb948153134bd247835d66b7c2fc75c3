@@ -1,0 +1,13 @@
+Revision: 53144f62fb948153134bd247835d66b7c2fc75c3
+Patch-set: 1
+File: bootstat/Android.mk
+
+65:0-65:19
+Sat Jan 23 04:30:39 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 74c64632_b77e4a3f
+Bytes: 154
+Would you mind adding comment here (and below) to state that it's required because of C++14.
+
+(Otherwise somebody might clean up before GCC is removed...)
+

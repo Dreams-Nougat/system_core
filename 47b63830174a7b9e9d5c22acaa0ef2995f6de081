@@ -1,0 +1,11 @@
+Revision: 47b63830174a7b9e9d5c22acaa0ef2995f6de081
+Patch-set: 1
+File: /COMMIT_MSG
+
+7
+Sat Jan 23 02:16:36 2016 +0000
+Author: Alex Klyubin <1018773@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4b51eae_379ee249
+Bytes: 227
+Nit: not /dev/urandom but Linux RNG. /dev/urandom and /dev/random are just different endpoints through which the Linux RNG can be accessed. In the case of mixing in stuff, it doesn't matter through which of the two you do that.
+

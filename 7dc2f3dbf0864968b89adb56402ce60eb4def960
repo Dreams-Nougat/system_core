@@ -1,0 +1,18 @@
+Revision: 7dc2f3dbf0864968b89adb56402ce60eb4def960
+Patch-set: 1
+File: logd/LogListener.cpp
+
+40:8-40:29
+Mon Jan 25 17:12:31 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 34d04ee4_e6e422ce
+Bytes: 82
+why is this needed? I thought it's only suppose to be accessible to system_server?
+
+44:8-44:25
+Mon Jan 25 17:12:31 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 54c14218_a1636619
+Bytes: 9
+same here
+

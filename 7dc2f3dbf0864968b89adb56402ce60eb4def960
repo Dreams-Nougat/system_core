@@ -9,6 +9,14 @@ UUID: 34d04ee4_e6e422ce
 Bytes: 82
 why is this needed? I thought it's only suppose to be accessible to system_server?
 
+40:8-40:29
+Mon Jan 25 17:42:23 2016 +0000
+Author: Rubin Xu <1059499@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 34d04ee4_e6e422ce
+UUID: 14626a24_73a640e8
+Bytes: 250
+Since we need different ACL on reading and writing, I suppose we need to actually split up this method? We will need write access by adb (root/unroot) and system (and keyguard process, Michal is checking which uid that is), and read access by system.
+
 44:8-44:25
 Mon Jan 25 17:12:31 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

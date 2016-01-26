@@ -50,3 +50,20 @@ UUID: b4afde8e_2df8056a
 Bytes: 146
 I'm thinking that this should be `kFeatureFileSync2` instead, to cover stat/lstat/readlink/updated ls, instead of having one feature for each one.
 
+48
+Tue Jan 26 23:32:44 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4afde8e_2df8056a
+UUID: f4b5d6da_6942f1ef
+Bytes: 421
+Seems reasonable as long as there won't be any devices that only implement a subset of those new functions.
+
+If you are doing this in multiple CLs I would suggest not turning on kFeatureFileSync2 until all functions have landed (you can just put it in locally for your own use). That way there's no weirdness if somebody happens to have a build where kFeatureFileSync2 was enabled but only stat and lstat are implemented.
+
+796:0-797:73
+Tue Jan 26 23:32:44 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 14beeac6_e86997cb
+Bytes: 113
+Make sure to do this when you change features, it's a big pain if client and server feature lists get off-sync :)
+

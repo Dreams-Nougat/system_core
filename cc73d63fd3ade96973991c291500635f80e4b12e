@@ -9,6 +9,14 @@ UUID: f49a3677_61ba20db
 Bytes: 29
 or just pass in the function?
 
+96
+Tue Jan 26 22:56:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f49a3677_61ba20db
+UUID: 14beeac6_a8d31f2d
+Bytes: 103
+I was considering that, but doing a comparison on the function to set the proper packet id seems gross.
+
 File: adb/file_sync_service.h
 
 61
@@ -17,6 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 14beeac6_2d7e41f8
 Bytes: 34
 only ctime? why not all the times?
+
+61
+Tue Jan 26 22:56:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 14beeac6_2d7e41f8
+UUID: f49a3677_012f94c7
+Bytes: 179
+I accidentally deleted mtime when deleting blksize, blocks, and atime, I think. Do you think there's any value in sending over atime? (Do we even enable atime on our filesystems?)
 
 69
 Tue Jan 26 22:41:42 2016 +0000

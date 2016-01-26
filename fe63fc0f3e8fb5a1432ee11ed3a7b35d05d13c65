@@ -23,6 +23,14 @@ This probably isn't too important though, devices need to handle this case prope
 
 If you prefer I can reword the comment or just go back to a raw pointer and let the device deal with the RST.
 
+240
+Tue Jan 26 23:30:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 34c3ee5c_bbbfe8e6
+UUID: 34c3ee5c_1eb1aa46
+Bytes: 86
+especially if it's going to happen anyway, i think we may as well lose the destructor.
+
 252
 Tue Jan 26 21:12:32 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -86,4 +94,12 @@ Parent: 94b2daf4_e61b905b
 UUID: f4b5d6da_49928dce
 Bytes: 107
 Good point, I'll check it out. Windows doesn't seem to implement writev() but WSASend() might do the trick.
+
+155
+Tue Jan 26 23:30:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f4b5d6da_49928dce
+UUID: f49a3677_a121688d
+Bytes: 241
+yeah, in adb we cheated and made sure we always had space at the beginning of the buffer to write the header in later. (while experimenting i found it was actually faster to allocate a new buffer and insert the header than to do two writes.)
 

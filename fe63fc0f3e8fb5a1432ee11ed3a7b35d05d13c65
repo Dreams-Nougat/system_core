@@ -1,0 +1,45 @@
+Revision: fe63fc0f3e8fb5a1432ee11ed3a7b35d05d13c65
+Patch-set: 2
+File: fastboot/fastboot.cpp
+
+240
+Tue Jan 26 21:12:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4a43ebb_a4a09a10
+Bytes: 125
+what does "properly" mean? why isn't just having the kernel close them on exit sufficient? can we fix that instead?
+
+(_exit.)
+
+252
+Tue Jan 26 21:12:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4afde8e_074de049
+Bytes: 12
+while (true)
+
+File: fastboot/socket_test.cpp
+
+26
+Tue Jan 26 21:12:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4a43ebb_a4717a23
+Bytes: 53
+or just pass 0 and let the kernel choose a free port?
+
+File: fastboot/tcp.cpp
+
+97
+Tue Jan 26 21:12:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f49a3677_062faac7
+Bytes: 21
+no strerror on these?
+
+155
+Tue Jan 26 21:12:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 94b2daf4_e61b905b
+Bytes: 184
+you don't want to writev(2)? sending the length and the packet together was probably the largest adb sync speedup we made. (i was surprised it was as important as it turned out to be.)
+

@@ -1,0 +1,11 @@
+Revision: 4c5394c0f59a609b684e39942892aebd42e9fabb
+Patch-set: 3
+File: rootdir/init.rc
+
+336
+Tue Jan 26 01:10:34 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 34c3ee5c_68702be0
+Bytes: 51
+Even this line should go into the bootstat.rc file.
+

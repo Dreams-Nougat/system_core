@@ -11,12 +11,32 @@ what does "properly" mean? why isn't just having the kernel close them on exit s
 
 (_exit.)
 
+240
+Tue Jan 26 23:17:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4a43ebb_a4a09a10
+UUID: 34c3ee5c_bbbfe8e6
+Bytes: 445
+Windows in particular doesn't do the full TCP handshake if we don't close the socket manually (it just sends RST and the other side gets a "connection reset by peer" error).
+
+This probably isn't too important though, devices need to handle this case properly anyway since _exit() or being killed will still cause RST on all platforms.
+
+If you prefer I can reword the comment or just go back to a raw pointer and let the device deal with the RST.
+
 252
 Tue Jan 26 21:12:32 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b4afde8e_074de049
 Bytes: 12
 while (true)
+
+252
+Tue Jan 26 23:17:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4afde8e_074de049
+UUID: d4b8d2d6_4840c71e
+Bytes: 4
+Done
 
 File: fastboot/socket_test.cpp
 
@@ -27,6 +47,14 @@ UUID: b4a43ebb_a4717a23
 Bytes: 53
 or just pass 0 and let the kernel choose a free port?
 
+26
+Tue Jan 26 23:17:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4a43ebb_a4717a23
+UUID: 54c4e260_04eec01a
+Bytes: 85
+Didn't realize you could do that with a server but it makes sense, I'll check it out.
+
 File: fastboot/tcp.cpp
 
 97
@@ -36,10 +64,26 @@ UUID: f49a3677_062faac7
 Bytes: 21
 no strerror on these?
 
+97
+Tue Jan 26 23:17:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f49a3677_062faac7
+UUID: 94b2daf4_915bec37
+Bytes: 204
+It's going to be a bit tricky since Windows has its own error reporting mechanisms for socket errors, but I'll look into moving the adb error handling functionality into libcutils first and using it here.
+
 155
 Tue Jan 26 21:12:32 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 94b2daf4_e61b905b
 Bytes: 184
 you don't want to writev(2)? sending the length and the packet together was probably the largest adb sync speedup we made. (i was surprised it was as important as it turned out to be.)
+
+155
+Tue Jan 26 23:17:57 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 94b2daf4_e61b905b
+UUID: f4b5d6da_49928dce
+Bytes: 107
+Good point, I'll check it out. Windows doesn't seem to implement writev() but WSASend() might do the trick.
 

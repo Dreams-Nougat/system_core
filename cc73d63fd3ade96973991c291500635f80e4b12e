@@ -41,3 +41,12 @@ UUID: b4afde8e_92a68cdc
 Bytes: 40
 looks like `dent` has the same problems?
 
+File: adb/transport.cpp
+
+48
+Tue Jan 26 23:09:11 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4afde8e_2df8056a
+Bytes: 146
+I'm thinking that this should be `kFeatureFileSync2` instead, to cover stat/lstat/readlink/updated ls, instead of having one feature for each one.
+

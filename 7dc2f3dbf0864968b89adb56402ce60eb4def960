@@ -26,6 +26,26 @@ Bytes: 292
 1) Because I expect we _need_ the ability to diagnose the "Security" buffer on an eng/userdebug build.
 2) This is the read access adjustment only, adb has AID_LOG access, and I believe(?) also has AID_SYSTEM groups membership, leaving the write access check alone, it is more than sufficient.
 
+40:8-40:29
+Tue Jan 26 00:46:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 54c14218_2128d671
+UUID: 94b2daf4_7de0efb8
+Bytes: 682
+On second thought, this can be debugged with:
+
+adb shell su 1000,1000,1000 logcat -b security -d
+
+So no real _need_ to entrench AID_ROOT here.
+
+Now that I have stated that out loud in an open-source portal, it really doesn't change anything except a little bit more obscurity ...
+
+_If_ bugreports are to contain security logs, we will have problems now that we are dropping AID_LOG.
+
+dumpstate is uid=AID_SHELL, gid=AID_SHELL, groups=AID_LOG, AID_SDCARD_R, AID_SDCARD_RW and AID_MOUNT (logd only looks at the first four).
+
+Do we want or need security logs in the bugreports. It was promised as part of the follow-up report collected when a security violation was detected I thought?
+
 44:8-44:25
 Mon Jan 25 17:12:31 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

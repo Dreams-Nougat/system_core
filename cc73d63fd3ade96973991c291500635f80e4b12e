@@ -1,0 +1,27 @@
+Revision: cc73d63fd3ade96973991c291500635f80e4b12e
+Patch-set: 1
+File: adb/file_sync_service.cpp
+
+96
+Tue Jan 26 22:41:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f49a3677_61ba20db
+Bytes: 29
+or just pass in the function?
+
+File: adb/file_sync_service.h
+
+61
+Tue Jan 26 22:41:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 14beeac6_2d7e41f8
+Bytes: 34
+only ctime? why not all the times?
+
+69
+Tue Jan 26 22:41:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4afde8e_92a68cdc
+Bytes: 40
+looks like `dent` has the same problems?
+

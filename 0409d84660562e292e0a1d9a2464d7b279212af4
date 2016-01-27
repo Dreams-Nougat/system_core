@@ -12,3 +12,11 @@ if (!android::base::WriteFully(data_fd, buf, nr)) {
     goto out;
   }
 
+774:0-785:9
+Wed Jan 27 19:01:28 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4afde8e_75563f12
+UUID: 14beeac6_f206e1fd
+Bytes: 3
++1.
+

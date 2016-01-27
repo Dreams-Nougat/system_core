@@ -1,0 +1,14 @@
+Revision: 0409d84660562e292e0a1d9a2464d7b279212af4
+Patch-set: 3
+File: init/devices.cpp
+
+774:0-785:9
+Wed Jan 27 16:50:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4afde8e_75563f12
+Bytes: 83
+if (!android::base::WriteFully(data_fd, buf, nr)) {
+    ret = -1;
+    goto out;
+  }
+

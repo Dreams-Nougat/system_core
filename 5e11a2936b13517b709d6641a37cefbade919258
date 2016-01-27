@@ -1,0 +1,11 @@
+Revision: 5e11a2936b13517b709d6641a37cefbade919258
+Patch-set: 2
+File: libnativebridge/native_bridge.cc
+
+415:10-415:99
+Wed Jan 27 17:58:26 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 14beeac6_92112da1
+Bytes: 60
+You may want to delete this to mask this on the build bot...
+

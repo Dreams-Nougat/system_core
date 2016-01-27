@@ -1,0 +1,11 @@
+Revision: 0a23c5a84745504308bcac0c6f4ad3f97d187a6f
+Patch-set: 2
+File: init/devices.cpp
+
+774
+Wed Jan 27 09:25:45 2016 +0000
+Author: David Turner <1000411@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b4bb5ef1_185365bd
+Bytes: 75
+nit: there is no reason to put |nw| out of the loop, please keep it inside.
+

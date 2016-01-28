@@ -1,0 +1,25 @@
+Revision: fcfd909676fe9b077a9b8f44baaa598a41e01a17
+Patch-set: 1
+File: adb/shell_service.cpp
+
+171:8-171:50
+Thu Jan 28 01:11:39 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f4b5d6da_da4d7ac5
+Bytes: 47
+This error should probably be reported as well.
+
+686:8-686:15
+Thu Jan 28 01:11:39 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f49a3677_0f7fba3d
+Bytes: 17
+ShellProtocol::Id
+
+689
+Thu Jan 28 01:11:39 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 941ada01_00c50c66
+Bytes: 118
+Suggest writing an exit code packet as well, or else I think the client will exit 0 even though the subprocess failed.
+

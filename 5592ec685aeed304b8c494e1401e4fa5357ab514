@@ -31,6 +31,14 @@ OK just wasn't sure if you had a better grasp on the expectations here than me :
 
 I think ideally we want to conform to 2-space Google style (at least for fastboot I know that's the case) but I don't think it's been worth the time and effort for anybody to actually do.
 
+195:0-195:1
+Thu Jan 28 22:24:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 34fe8ee6_bcc5c1b9
+UUID: 9462dabe_f7f900a5
+Bytes: 156
+Yeah, we have two space indented files *in adb* as well. Reformatting all of the code is probably something we should do, but it sounds like a nightmare :-(
+
 247:8-247:72
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -54,12 +62,28 @@ UUID: d40c52f0_196debd7
 Bytes: 210
 Hmm yeah not sure, I'd be a little hesitant to exit on failure but if you and enh@ think that's the way to go I'm not opposed. The way this is seems fine if running out of FDs is the only way to hit this error.
 
+247:8-247:72
+Thu Jan 28 22:24:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d40c52f0_196debd7
+UUID: f465d6c4_3abb618c
+Bytes: 149
+Yeah, enh@ is out of the office for some manager training or something, so I'll probably wait for him to get back before actually making that change.
+
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 94b2daf4_ea08aa45
 Bytes: 106
 I think we should either keep PLOG() or add strerror() here so the user can get at the reason for failure.
+
+312:8-312:31
+Thu Jan 28 22:24:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 94b2daf4_ea08aa45
+UUID: 548b02a3_dde8ab35
+Bytes: 4
+Done
 
 399:8-399:54
 Thu Jan 28 16:59:30 2016 +0000
@@ -68,10 +92,26 @@ UUID: d4b8d2d6_51994f91
 Bytes: 49
 Same re: PLOG() or strerror() may be useful here.
 
+399:8-399:54
+Thu Jan 28 22:24:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4b8d2d6_51994f91
+UUID: 749006cb_fec80130
+Bytes: 4
+Done
+
 687:8-687:11
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b4a43ebb_269027fe
 Bytes: 5
 PLOG?
+
+687:8-687:11
+Thu Jan 28 22:24:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4a43ebb_269027fe
+UUID: b45fdef8_d86fcd01
+Bytes: 45
+(omitted for same reason as CreateSocketpair)
 

@@ -21,6 +21,16 @@ This is just what clang-format does, but I don't think this is actually what we 
 
 I'll remove this change.
 
+195:0-195:1
+Thu Jan 28 20:57:06 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 14f98afe_9b93ab41
+UUID: 34fe8ee6_bcc5c1b9
+Bytes: 270
+OK just wasn't sure if you had a better grasp on the expectations here than me :)
+
+I think ideally we want to conform to 2-space Google style (at least for fastboot I know that's the case) but I don't think it's been worth the time and effort for anybody to actually do.
+
 247:8-247:72
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -35,6 +45,14 @@ Parent: 54c4e260_72e4915f
 UUID: 94065ace_b72328e8
 Bytes: 322
 AFAIK the only plausible failure case in CreateSocketpair is running out of file descriptors. That means we've probably leaked thousands of FDs already, and nothing is going to work. I was considering just removing the error reporting of CreateSocketpair and making it exit on failure, but that might be a bit too drastic?
+
+247:8-247:72
+Thu Jan 28 20:57:06 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 94065ace_b72328e8
+UUID: d40c52f0_196debd7
+Bytes: 210
+Hmm yeah not sure, I'd be a little hesitant to exit on failure but if you and enh@ think that's the way to go I'm not opposed. The way this is seems fine if running out of FDs is the only way to hit this error.
 
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000

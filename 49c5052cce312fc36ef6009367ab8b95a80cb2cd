@@ -9,6 +9,14 @@ UUID: b4a43ebb_266747f7
 Bytes: 271
 Since we have adb_get_feature_set() now should we just drop this function and move the fprintf() to the call sites? I don't think the |transport_type| and |serial| parameters are ever different from |__adb_transport| and |__adb_serial| so we can drop them for uniformity.
 
+431:0-457:1
+Thu Jan 28 20:09:08 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4a43ebb_266747f7
+UUID: 54ef8232_dd9b6be7
+Bytes: 4
+Done
+
 File: adb/file_sync_client.cpp
 
 103:19-103:45
@@ -17,4 +25,12 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 94b2daf4_4a7516a9
 Bytes: 180
 I doubt this will make sense to anyone other than adb developers, just |error| alone I think would be a less confusing error message and will contain all the necessary information.
+
+103:19-103:45
+Thu Jan 28 20:09:08 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 94b2daf4_4a7516a9
+UUID: 74f48602_3e97e90b
+Bytes: 4
+Done
 

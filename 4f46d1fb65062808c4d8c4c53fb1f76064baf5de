@@ -1,0 +1,18 @@
+Revision: 4f46d1fb65062808c4d8c4c53fb1f76064baf5de
+Patch-set: 5
+File: init/devices.cpp
+
+775:8-775:11
+Thu Jan 28 17:25:31 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 54c4e260_52487510
+Bytes: 99
+`if (` is preferred to `if(`.  This file seems to mix them, but moving forward we should use `if (`
+
+777:12-777:21
+Thu Jan 28 17:25:31 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 14beeac6_416261bd
+Bytes: 114
+Seeing this written makes me realize we can replace this with a simple `break` and remove the out: label entirely.
+

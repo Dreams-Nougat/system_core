@@ -11,12 +11,30 @@ Is this right? I've been doing 2-space for access modifiers but I was never actu
 
 In either case this should be the same as public: above and access modifiers in the ScopedFd class.
 
+195:0-195:1
+Thu Jan 28 19:46:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4b8d2d6_d68ab544
+UUID: 14f98afe_9b93ab41
+Bytes: 297
+This is just what clang-format does, but I don't think this is actually what we want. (I don't actually know what we want.) It's probably just a side effect of the google style (2 space indentation, 1 space dedent for access modifiers), with only the indentation changed.
+
+I'll remove this change.
+
 247:8-247:72
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 54c4e260_72e4915f
 Bytes: 181
 Do you think adding strerror() would be useful in the CreateSocketpair() failure cases? Or does it make more sense to leave it up to the user to check logcat if they need more info?
+
+247:8-247:72
+Thu Jan 28 19:46:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 54c4e260_72e4915f
+UUID: 94065ace_b72328e8
+Bytes: 322
+AFAIK the only plausible failure case in CreateSocketpair is running out of file descriptors. That means we've probably leaked thousands of FDs already, and nothing is going to work. I was considering just removing the error reporting of CreateSocketpair and making it exit on failure, but that might be a bit too drastic?
 
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000

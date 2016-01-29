@@ -1,0 +1,11 @@
+Revision: 896e1d78f8eb86f3845175e213aa7331658a9f9b
+Patch-set: 1
+File: adb/adb_client.h
+
+36:73-36:102
+Fri Jan 29 20:46:01 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9489faaa_d3417494
+Bytes: 48
+Move to newline to preserve 100-character limit.
+

@@ -9,3 +9,13 @@ UUID: 9462dabe_da442134
 Bytes: 133
 I believe these should be info.dwSize.Y and info.dwSize.X respectively, since you can resize the buffer to be larger than the window.
 
+502:0-503:61
+Fri Jan 29 07:13:48 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9462dabe_da442134
+UUID: 349a0eef_0573987c
+Bytes: 526
+The problem with using info.dwSize.Y, is that it includes the scroll-back buffer (which everyone has enabled) which doesn't make sense to use in the logical window size. So I left it using info.srWindow. This is largely academic since no one runs full-screen programs with adb shell on Windows.
+
+I made the change to use info.dwSize.X, though I think that is largely theoretical since I don't think anyone runs a console window with the buffer wider than the window. But a good change to make to handle this pathological case.
+

@@ -19,3 +19,15 @@ The problem with using info.dwSize.Y, is that it includes the scroll-back buffer
 
 I made the change to use info.dwSize.X, though I think that is largely theoretical since I don't think anyone runs a console window with the buffer wider than the window. But a good change to make to handle this pathological case.
 
+502:0-503:61
+Fri Jan 29 09:09:04 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_0573987c
+UUID: 749006cb_64953e5f
+Bytes: 490
+> I don't think anyone runs a console window with the buffer wider than the window
+
+I noticed this first when increasing the size of the buffer through properties, which doesn't automatically increase the window size. The width of the window would get reported instead of the buffer size, and then resizing the window wouldn't get noticed, since the buffer size didn't change.
+
+(I'm not sure how many people are on pre-Win10, where this matters a lot more, but I'd bet it's pretty sizable.)
+

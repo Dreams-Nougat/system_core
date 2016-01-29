@@ -1,0 +1,11 @@
+Revision: 2a0fa05a73fb046f39fb5278d33c628233a67aa5
+Patch-set: 2
+File: adb/commandline.cpp
+
+502:0-503:61
+Fri Jan 29 02:40:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9462dabe_da442134
+Bytes: 133
+I believe these should be info.dwSize.Y and info.dwSize.X respectively, since you can resize the buffer to be larger than the window.
+

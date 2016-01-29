@@ -1,0 +1,20 @@
+Revision: e0a79f9ae22e651ec255404c7314225ee99f8ed8
+Patch-set: 3
+File: adb/adb_client.cpp
+
+314:24-314:27
+Fri Jan 29 16:35:38 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 349a0eef_a5966470
+Bytes: 17
+Unused parameter.
+
+File: adb/commandline.cpp
+
+1058:47-1058:54
+Fri Jan 29 16:35:38 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 548b02a3_d116d498
+Bytes: 141
+I don't think the error parameter can be null, the calls made by adb_get_feature_set() unconditionally assign to the error string on failure.
+

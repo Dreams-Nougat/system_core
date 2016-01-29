@@ -9,6 +9,14 @@ UUID: 349a0eef_a5966470
 Bytes: 17
 Unused parameter.
 
+314:24-314:27
+Fri Jan 29 21:29:47 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_a5966470
+UUID: b486fe94_14c90432
+Bytes: 4
+Done
+
 File: adb/commandline.cpp
 
 1058:47-1058:54
@@ -17,4 +25,12 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 548b02a3_d116d498
 Bytes: 141
 I don't think the error parameter can be null, the calls made by adb_get_feature_set() unconditionally assign to the error string on failure.
+
+1058:47-1058:54
+Fri Jan 29 21:29:47 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 548b02a3_d116d498
+UUID: 349a0eef_f6c3c010
+Bytes: 18
+Good catch, fixed.
 

@@ -31,3 +31,13 @@ I noticed this first when increasing the size of the buffer through properties, 
 
 (I'm not sure how many people are on pre-Win10, where this matters a lot more, but I'd bet it's pretty sizable.)
 
+502:0-503:61
+Fri Jan 29 21:59:44 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 749006cb_64953e5f
+UUID: 14950abd_8436ccb5
+Bytes: 711
+Looks like Win7 lets one drag the window edge to reduce the window width, but keep the buffer width the same. Win7 also lets the user change the buffer width without having to uncheck a checkbox (like Win10). So yeah, using info.dwSize.X makes sense (especially because the underlying OS event is about buffer resizing, not window resizing). I used it in PS3.
+
+I think Win10 was the first version to let the user drag the window edge to make the window (and buffer) wider (https://blogs.windows.com/buildingapps/2014/10/07/console-improvements-in-the-windows-10-technical-preview/). I think this SIGWINCH change will get most used by Win10 users (other than the initial sizing, which of course helps all users).
+

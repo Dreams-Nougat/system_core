@@ -1,0 +1,18 @@
+Revision: 4e797124635964a61598c67a9665abe55101ef6a
+Patch-set: 1
+File: bvb/bvbtool
+
+462:31-462:35
+Fri Jan 29 22:22:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 548b02a3_d77a44c2
+Bytes: 8
+'NONE' ?
+
+497:65-497:67
+Fri Jan 29 22:22:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d468d2a0_6807cbfa
+Bytes: 402
+Any reason to have these offsets all over the code instead of having a collections.namedtuple with pack/unpack methods that handle all that? You have effectively three copies of these offsets you need to keep in sync (in the unpack, the pack and here) which makes it hard to maintain and hard to detect errors. There are many examples of using a python object with member names and pack/unpack methods.
+

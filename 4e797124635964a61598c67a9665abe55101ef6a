@@ -9,10 +9,26 @@ UUID: 548b02a3_d77a44c2
 Bytes: 8
 'NONE' ?
 
+462:31-462:35
+Fri Jan 29 22:48:11 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 548b02a3_d77a44c2
+UUID: d468d2a0_939e1423
+Bytes: 13
+Yeah. Fixing.
+
 497:65-497:67
 Fri Jan 29 22:22:29 2016 +0000
 Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d468d2a0_6807cbfa
 Bytes: 402
 Any reason to have these offsets all over the code instead of having a collections.namedtuple with pack/unpack methods that handle all that? You have effectively three copies of these offsets you need to keep in sync (in the unpack, the pack and here) which makes it hard to maintain and hard to detect errors. There are many examples of using a python object with member names and pack/unpack methods.
+
+497:65-497:67
+Fri Jan 29 22:48:11 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d468d2a0_6807cbfa
+UUID: 9489faaa_b34790ff
+Bytes: 49
+Yeah, that'd be nicer. I'll look into doing this.
 

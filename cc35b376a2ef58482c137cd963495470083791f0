@@ -1,0 +1,27 @@
+Revision: cc35b376a2ef58482c137cd963495470083791f0
+Patch-set: 2
+File: base/errors_windows.cpp
+
+36:12-36:29
+Sat Jan 30 01:15:48 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d468d2a0_c27513d3
+Bytes: 275
+FWIW, the reason I named the original API SystemErrorCodeToString() was to match Chromium so in case devs came from Chromium to this codebase, they'd already be familiar with what this does. But this doesn't really matter and it's your codebase, so I'm fine with this rename.
+
+53:8-53:22
+Sat Jan 30 01:15:48 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5422228b_99c9cb37
+Bytes: 279
+In case you're curious, I think the reason that I used errno in the original code was because WideToUTF8() always sets errno so that the API is sensible cross-platform. But it happens to also setup GetLastError() on error, so this is fine too (and probably more specific/useful).
+
+File: base/include/android-base/errors.h
+
+24:7-25:22
+Sat Jan 30 01:15:48 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5422228b_59b8338d
+Bytes: 440
+My understanding of how this mess occurred: Winsock existed when Win16 and Win32 existed at the same time. Win16 didn't have GetLastError(), so Winsock couldn't build upon that and thus Winsock had to create WSAGetLastError(). But now, Win16 is dead and WSAGetLastError() just calls GetLastError() under the covers, so they're basically the same (and probably will continue to be the same moving forward) even if the docs suggest otherwise.
+

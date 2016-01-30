@@ -1,0 +1,27 @@
+Revision: 641ebfa99b4ce5bb405aabe560b83f6d61ad4418
+Patch-set: 1
+File: base/file.cpp
+
+152:5-152:22
+Sat Jan 30 01:36:13 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 349a0eef_66e29fc1
+Bytes: 43
+Would this be better as RemoveFileIfExists?
+
+155:8-155:16
+Sat Jan 30 01:36:13 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 349a0eef_e6d5cfdd
+Bytes: 113
+What about if this is a symbolic link? Are there are other file types that should be allowed or not allowed here.
+
+File: base/include/android-base/file.h
+
+40:0-40:4
+Sat Jan 30 01:36:13 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d468d2a0_6238c7c6
+Bytes: 128
+It might be worth adding a comment indicating what types of files this can delete (regular file only, or maybe some other list).
+

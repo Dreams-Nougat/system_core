@@ -1,0 +1,27 @@
+Revision: fe7027ff569174731430307ed8d6d7fdb1035fc0
+Patch-set: 1
+File: liblog/log_is_loggable.c
+
+154:23-154:52
+Sat Jan 30 00:46:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 548b02a3_86b7abf3
+Bytes: 113
+Something like this to deal with truncation:
+
+strncmp(last_tag + 1, tag + 1, min(strlen(tag),sizeof(tag) - 1))-1)
+
+154:23-154:53
+Sat Jan 30 00:46:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 548b02a3_26a89799
+Bytes: 130
+need something to deal with truncation of tag to PROP_NAME_MAX, I'd like to see strncmp instead min(tag + 1, sizeof(last_tag - 1))
+
+164:16-164:57
+Sat Jan 30 00:46:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b486fe94_4f2cd96b
+Bytes: 180
+no man strlcpy, merde, does this make sure the last location is null terminated or not? would make a difference to above request to deal with truncation here with strncmp above ...
+

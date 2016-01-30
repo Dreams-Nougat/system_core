@@ -16,6 +16,29 @@ UUID: 349a0eef_e6d5cfdd
 Bytes: 113
 What about if this is a symbolic link? Are there are other file types that should be allowed or not allowed here.
 
+155
+Sat Jan 30 01:40:37 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 749006cb_18193d08
+Bytes: 23
+this does not set errno
+
+158
+Sat Jan 30 01:40:37 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 14950abd_caeffbda
+Bytes: 15
+this sets errno
+
+File: base/file_test.cpp
+
+106
+Sat Jan 30 01:40:37 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b486fe94_cf9b8999
+Bytes: 87
++ try to remove file in a dir without search permission (a way to test unlink failure)?
+
 File: base/include/android-base/file.h
 
 40:0-40:4

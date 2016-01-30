@@ -9,6 +9,14 @@ UUID: 349a0eef_66e29fc1
 Bytes: 43
 Would this be better as RemoveFileIfExists?
 
+152:5-152:22
+Sat Jan 30 02:33:00 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_66e29fc1
+UUID: 9489faaa_79e967d2
+Bytes: 4
+Done
+
 155:8-155:16
 Sat Jan 30 01:36:13 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,6 +30,22 @@ Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 749006cb_18193d08
 Bytes: 23
 this does not set errno
+
+155
+Sat Jan 30 02:33:00 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 749006cb_18193d08
+UUID: 9462dabe_a623d8e7
+Bytes: 61
+yes, it makes the function hard to use. add an err parameter.
+
+155:8-155:16
+Sat Jan 30 02:33:00 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_e6d5cfdd
+UUID: 9489faaa_b9112fa4
+Bytes: 144
+I didn't consider symbol link seriously. But currently I don't have a need to handle symbol link. So maybe we can leave it unhandled on windows.
 
 158
 Sat Jan 30 01:40:37 2016 +0000

@@ -1,0 +1,20 @@
+Revision: a86d70ef30a2785e5bb53e4dcce0b848b7592d63
+Patch-set: 3
+File: base/file.cpp
+
+165:27-165:33
+Sat Jan 30 02:40:28 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9489faaa_3906ff68
+Bytes: 25
+" is not a regular file"?
+
+File: base/file_test.cpp
+
+110
+Sat Jan 30 02:40:28 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 349a0eef_46ba0329
+Bytes: 28
++ check with err == nullptr?
+

@@ -11,3 +11,13 @@ This looks fine, but why not just this? :
 
   return client->getUid() == AID_SYSTEM || client->getGid() == AID_SYSTEM;
 
+97:0-111:1
+Mon Feb 01 21:28:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9489faaa_f4dade0c
+UUID: 749006cb_68534cee
+Bytes: 350
+Will change. Prefer KISS in the end.
+
+Reasons: History (based on clientHasCredentials, so want to match its required style and simplicity), possible future adjustments (there has been too much churn here, may revert towards its progenitor), and line wrap (80 characters exactly in this implementation makes this last one a bit weak, but bothered me).
+

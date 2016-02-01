@@ -9,6 +9,16 @@ UUID: d468d2a0_c27513d3
 Bytes: 275
 FWIW, the reason I named the original API SystemErrorCodeToString() was to match Chromium so in case devs came from Chromium to this codebase, they'd already be familiar with what this does. But this doesn't really matter and it's your codebase, so I'm fine with this rename.
 
+36:12-36:29
+Mon Feb 01 19:11:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d468d2a0_c27513d3
+UUID: d468d2a0_3b243a8b
+Bytes: 263
+(amusingly dpursell is from Chrome[OS] :-) )
+
+unless dpursell has a counter-argument, i like keeping the old name (even though i don't actually like the name) for this reason. plus anyone grepping for "do we have SystemErrorCodeToString in Android?" will find it.
+
 53:8-53:22
 Sat Jan 30 01:15:48 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

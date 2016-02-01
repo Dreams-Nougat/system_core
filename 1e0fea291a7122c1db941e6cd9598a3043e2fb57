@@ -9,3 +9,21 @@ UUID: d468d2a0_16566d10
 Bytes: 202
 Do we need to include <cutils/threads.h> where gettid is used for this to work properly? I would expect to get some kind of warning using a function that wasn't defined, but maybe there are no warnings.
 
+64:1-64:10
+Mon Feb 01 21:11:20 2016 +0000
+Author: Than McIntosh <1059614@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d468d2a0_16566d10
+UUID: b1b530ae_28a76bcc
+Bytes: 392
+I think it's already picking up that header. From the -E output I see
+
+...
+# 31 "system/core/libbacktrace/Backtrace.cpp" 2
+# 1 "system/core/libbacktrace/thread_utils.h" 1
+# 23 "system/core/libbacktrace/thread_utils.h"
+# 1 "system/core/include/cutils/threads.h" 1 3
+# 29 "system/core/include/cutils/threads.h" 3
+extern "C" {
+# 40 "system/core/include/cutils/threads.h" 3
+extern pid_t gettid();
+

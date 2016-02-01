@@ -19,12 +19,28 @@ Bytes: 263
 
 unless dpursell has a counter-argument, i like keeping the old name (even though i don't actually like the name) for this reason. plus anyone grepping for "do we have SystemErrorCodeToString in Android?" will find it.
 
+36:12-36:29
+Mon Feb 01 19:32:44 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d468d2a0_3b243a8b
+UUID: 9462dabe_7107b8fa
+Bytes: 159
+Ha yeah I feel like I should have realized this :) Makes sense to me, I had no real reason to change this other than saving a few characters, will change back.
+
 53:8-53:22
 Sat Jan 30 01:15:48 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5422228b_99c9cb37
 Bytes: 279
 In case you're curious, I think the reason that I used errno in the original code was because WideToUTF8() always sets errno so that the API is sensible cross-platform. But it happens to also setup GetLastError() on error, so this is fine too (and probably more specific/useful).
+
+53:8-53:22
+Mon Feb 01 19:32:44 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5422228b_99c9cb37
+UUID: d468d2a0_dbf7beef
+Bytes: 124
+Thanks, I noticed that but figured (like you mentioned) that in this case GetLastError() is probably a little more specific.
 
 File: base/include/android-base/errors.h
 
@@ -34,4 +50,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5422228b_59b8338d
 Bytes: 440
 My understanding of how this mess occurred: Winsock existed when Win16 and Win32 existed at the same time. Win16 didn't have GetLastError(), so Winsock couldn't build upon that and thus Winsock had to create WSAGetLastError(). But now, Win16 is dead and WSAGetLastError() just calls GetLastError() under the covers, so they're basically the same (and probably will continue to be the same moving forward) even if the docs suggest otherwise.
+
+24:7-25:22
+Mon Feb 01 19:32:44 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5422228b_59b8338d
+UUID: 749006cb_85f161fa
+Bytes: 131
+Ah interesting, I was curious who thought a separate error function was a good idea, but this makes it seem a little less insane :)
 

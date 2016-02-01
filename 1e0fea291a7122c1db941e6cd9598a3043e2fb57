@@ -27,3 +27,11 @@ extern "C" {
 # 40 "system/core/include/cutils/threads.h" 3
 extern pid_t gettid();
 
+64:1-64:10
+Mon Feb 01 21:14:57 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b1b530ae_28a76bcc
+UUID: f465d6c4_370c4f58
+Bytes: 47
+Ah, didn't see it coming from that header file.
+

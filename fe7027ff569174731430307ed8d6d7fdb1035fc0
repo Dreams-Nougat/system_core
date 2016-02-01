@@ -26,6 +26,14 @@ UUID: 349a0eef_23a6c9dd
 Bytes: 99
 Since it is a single static buffer I could just make it longer than we expect a tag to usefully be.
 
+154:23-154:53
+Mon Feb 01 16:57:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_23a6c9dd
+UUID: 9462dabe_2635087e
+Bytes: 348
+As it stands, it is already there then :-) however tags can get very very long in our uncontrolled Android environment and we still need a strncmp here to allow the truncated value from applications that do not show tag-length restraint to match to keep the churn down. I am sure I saw a tag that was >32 characters in length in our own logging ...
+
 164:16-164:57
 Sat Jan 30 00:46:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,4 +49,12 @@ UUID: 9489faaa_2e887794
 Bytes: 106
 strlcpy is bsd, https://www.freebsd.org/cgi/man.cgi?query=strlcpy&sektion=3
 it guarantees null termination
+
+164:16-164:57
+Mon Feb 01 16:57:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9489faaa_2e887794
+UUID: 9489faaa_d9ca73c8
+Bytes: 80
+Thanks, replying to reviews with a phone can get combersome. strlcpy is perfect.
 

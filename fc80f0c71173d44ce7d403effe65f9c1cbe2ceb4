@@ -18,3 +18,13 @@ UUID: 9489faaa_7e93080d
 Bytes: 179
 ah. sneaky. are we sure we want socket_set_buffer rather than just structure initializers? (since the name is awkward, i wonder if structure initializers might look more natural?)
 
+68
+Tue Feb 02 16:57:59 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9489faaa_7e93080d
+UUID: 31c3005d_9495a405
+Bytes: 310
+The structure members have different names and the order is swapped between platforms so neither designated initializers or ordered initializers will work cross-platform, there has to be some abstraction.
+
+But yeah this approach isn't great, I'll look into changing it to what you suggest in the other comment.
+

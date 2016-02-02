@@ -55,6 +55,16 @@ oh, duh. misread. which perhaps just proves that the special case is confusing :
 
 is it useful? if your success/failure test is actually "does the return value equal the total size of the vector?", how does -1 help callers? (and doesn't that mean that success/failure is actually hard to test for because you need to iterate your vector/carry additional metadata. another argument in favor of a bool return?)
 
+206:0-211:9
+Tue Feb 02 23:37:55 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f127a8f2_10342ccd
+UUID: 71c9f878_fca6c129
+Bytes: 301
+Yeah agreed, switching it to a bool makes more sense here. And changing to a custom cutils_socket_buffer_t type is looking like it makes things a lot simpler too.
+
+Trying to rush too much to get the TCP done by tomorrow, sorry, I'll slow down a bit and try to think these things through a little more!
+
 235:0-235:17
 Tue Feb 02 21:58:28 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

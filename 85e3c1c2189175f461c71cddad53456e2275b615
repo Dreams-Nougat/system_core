@@ -45,6 +45,16 @@ I think this does what you're suggesting already unless I'm misunderstanding you
 
 The special case is just saying if we never completed a send at all, return -1 instead of 0. I'll look into reworking the code to make this a little more obvious.
 
+206:0-211:9
+Tue Feb 02 22:50:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 711bb8b8_ec37ffb3
+UUID: f127a8f2_10342ccd
+Bytes: 410
+oh, duh. misread. which perhaps just proves that the special case is confusing :-)
+
+is it useful? if your success/failure test is actually "does the return value equal the total size of the vector?", how does -1 help callers? (and doesn't that mean that success/failure is actually hard to test for because you need to iterate your vector/carry additional metadata. another argument in favor of a bool return?)
+
 235:0-235:17
 Tue Feb 02 21:58:28 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

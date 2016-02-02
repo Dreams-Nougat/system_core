@@ -9,6 +9,14 @@ UUID: 548b02a3_905b5d7d
 Bytes: 90
 why is this file .c rather than .cpp? (then you can lose the 'struct's and C-style casts.)
 
+39
+Tue Feb 02 16:33:32 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 548b02a3_905b5d7d
+UUID: 31fce07c_cc616f13
+Bytes: 138
+Since everything else in libcutils is C I wasn't sure if it was OK to start making C++ files. I'd much rather do C++, I'll change it over.
+
 41
 Tue Feb 02 06:57:17 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,4 +39,12 @@ Bytes: 98
 ...and you definitely don't need to parse a string!
 
 you know this is a sockaddr_in, so just cast.
+
+46
+Tue Feb 02 16:33:32 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 349a0eef_34f35656
+UUID: 711bb8b8_e69f1e1f
+Bytes: 134
+It can be sockaddr_in6 as well, but I should be able to manually select between the two without too much trouble. I'll change to that.
 

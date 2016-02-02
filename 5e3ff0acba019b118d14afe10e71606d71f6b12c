@@ -1,0 +1,25 @@
+Revision: 5e3ff0acba019b118d14afe10e71606d71f6b12c
+Patch-set: 2
+File: libcutils/ashmem-dev.c
+
+62:4-62:16
+Tue Feb 02 21:58:12 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31fce07c_b29f18d2
+Bytes: 28
+atomic_store_explicit forced
+
+87:11-87:22
+Tue Feb 02 21:58:12 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 711bb8b8_ac22278f
+Bytes: 71
+atomic_load_explicit to flush all cache and read after all are cleared.
+
+94:15-94:26
+Tue Feb 02 21:58:12 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b121b0e4_6e294b75
+Bytes: 165
+need to know if relaxed order is OK here given subroutine call above and atomic_store, if we are pre-empted, we could migrate to another CPU and read it's old value?
+

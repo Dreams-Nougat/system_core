@@ -48,3 +48,11 @@ UUID: 711bb8b8_e69f1e1f
 Bytes: 134
 It can be sockaddr_in6 as well, but I should be able to manually select between the two without too much trouble. I'll change to that.
 
+46
+Tue Feb 02 16:37:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 711bb8b8_e69f1e1f
+UUID: 31fce07c_4cdf3ffc
+Bytes: 125
+(up to you, but sockaddr_in6::sin6_port and sockaddr_in::sin_port overlap. we already make use of that in a bunch of places.)
+

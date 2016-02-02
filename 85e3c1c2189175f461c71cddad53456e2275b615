@@ -1,0 +1,11 @@
+Revision: 85e3c1c2189175f461c71cddad53456e2275b615
+Patch-set: 1
+File: fastboot/Android.mk
+
+68:4-68:17
+Tue Feb 02 21:57:13 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 711bb8b8_8c6dabd9
+Bytes: 88
+Needed for FRIEND_TEST() macro to allow tests to muck with some protected class members.
+

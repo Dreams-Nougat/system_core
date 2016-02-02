@@ -1,0 +1,18 @@
+Revision: 2d119ce8f1d0ce0ad071da03389afaf523ba925d
+Patch-set: 2
+File: libcutils/ashmem-dev.c
+
+86:15-86:26
+Tue Feb 02 21:39:54 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f127a8f2_8d30058f
+Bytes: 24
+this can go above the if
+
+88:26-88:33
+Tue Feb 02 21:39:54 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5116b490_8bbbd188
+Bytes: 268
+why these numbers? might be better to just move the log to each goto case since in this and the following case, one of the rdevs is not available for printing. Would be more clear to say exactly what went wrong in each case rather than try to glom all errors together.
+

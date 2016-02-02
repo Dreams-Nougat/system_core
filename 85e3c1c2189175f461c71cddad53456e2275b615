@@ -9,3 +9,35 @@ UUID: 711bb8b8_8c6dabd9
 Bytes: 88
 Needed for FRIEND_TEST() macro to allow tests to muck with some protected class members.
 
+File: fastboot/socket.cpp
+
+34
+Tue Feb 02 21:58:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 711bb8b8_ec437f45
+Bytes: 302
+the reason that having cutils_socket_buffer_t just be a typedef (to two different types) seemed reasonable was because it avoided any translation. if our only known user is going to have to do that anyway, should SendBuffer move to libcutils as cutils_socket_buffer_t, and the translation happen there?
+
+206:0-211:9
+Tue Feb 02 21:58:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_5abb35dc
+Bytes: 150
+what if you fail with ECONNRESET? this doesn't seem right. other than EINTR (which is already handled by TEMP_FAILURE_RETRY), why would you try again?
+
+235:0-235:17
+Tue Feb 02 21:58:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_67432cf4
+Bytes: 244
+returning -1 or total is misleading too. do you really just want a boolean here, since you seem to be assuming that the only thing to do on failure is give up anyway (since you return -1 rather than what, if anything, was actually transferred)?
+
+File: fastboot/socket.h
+
+54
+Tue Feb 02 21:58:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_baa8c997
+Bytes: 19
+why is this nested?
+

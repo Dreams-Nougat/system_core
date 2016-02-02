@@ -1,0 +1,11 @@
+Revision: 5fd24a98739ae273221f028d3dbc8683e851c40a
+Patch-set: 3
+File: libcutils/ashmem-dev.c
+
+120:12-120:16
+Tue Feb 02 22:39:56 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b121b0e4_8eb75f3e
+Bytes: 22
+nb: rdev may be 0 here
+

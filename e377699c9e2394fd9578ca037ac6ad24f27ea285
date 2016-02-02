@@ -1,0 +1,11 @@
+Revision: e377699c9e2394fd9578ca037ac6ad24f27ea285
+Patch-set: 2
+File: libcutils/Android.mk
+
+49:8-49:24
+Tue Feb 02 23:42:05 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_1a753d63
+Bytes: 193
+Switched these to C++ so I could use vectors, but if this might cause problems I can just use malloc/free instead. Everything still compiles fine for me though I have not done a checkbuild yet.
+

@@ -56,3 +56,11 @@ UUID: 31fce07c_4cdf3ffc
 Bytes: 125
 (up to you, but sockaddr_in6::sin6_port and sockaddr_in::sin_port overlap. we already make use of that in a bunch of places.)
 
+46
+Tue Feb 02 16:59:29 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31fce07c_4cdf3ffc
+UUID: 5116b490_c5401a3c
+Bytes: 155
+Oh ok, I saw that but couldn't find any guarantees that it is the case so wasn't sure if I could rely on it. But if we already are then that's much easier.
+

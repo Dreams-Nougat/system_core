@@ -34,6 +34,18 @@ UUID: 9462dabe_2635087e
 Bytes: 348
 As it stands, it is already there then :-) however tags can get very very long in our uncontrolled Android environment and we still need a strncmp here to allow the truncated value from applications that do not show tag-length restraint to match to keep the churn down. I am sure I saw a tag that was >32 characters in length in our own logging ...
 
+154:23-154:53
+Tue Feb 02 20:39:31 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9462dabe_2635087e
+UUID: 9124acf4_0d20952a
+Bytes: 333
+strncmp(last_tag + 1, tag + 1, min(strlen(tag),sizeof(last_tag) - 1))-1) will change the behavior, it will match any tag that is a prefix of last_tag.  I think it needs:
+
+  strncmp(last_tag + 1, tag + 1, sizeof(last_tag) - 2)
+
+The -2 is to drop the first character (from last_tag + 1), and to drop the trailing null from last_tag.￼
+
 164:16-164:57
 Sat Jan 30 00:46:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

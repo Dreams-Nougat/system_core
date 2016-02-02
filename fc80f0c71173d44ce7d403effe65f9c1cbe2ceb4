@@ -1,0 +1,20 @@
+Revision: fc80f0c71173d44ce7d403effe65f9c1cbe2ceb4
+Patch-set: 1
+File: include/cutils/sockets.h
+
+158
+Tue Feb 02 07:02:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5422228b_913c3f69
+Bytes: 129
+or lose cutils_socket_buffer and just pass void*[] and size_t[] (and a size_t for the number of elements) to socket_send_buffers?
+
+File: libcutils/sockets_unix.c
+
+68
+Tue Feb 02 07:02:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9489faaa_7e93080d
+Bytes: 179
+ah. sneaky. are we sure we want socket_set_buffer rather than just structure initializers? (since the name is awkward, i wonder if structure initializers might look more natural?)
+

@@ -9,3 +9,15 @@ UUID: b121b0e4_8eb75f3e
 Bytes: 22
 nb: rdev may be 0 here
 
+120:12-120:16
+Tue Feb 02 22:53:21 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b121b0e4_8eb75f3e
+UUID: 711bb8b8_6cce6fb4
+Bytes: 611
+Not quite, logically yes, but practically _never_.
+
+_Extremely_ impossible scenario since __ashmem_open return checking was performed, it is only possible to get a makedev(0,0) if someone did a 'mknod /dev/ashmem c 0 0'. Lines 107-109 are virtually useless lines of paranoia, and I _want_ ALOGE to print 0:0 in the message to catch this _very_ bad situation.
+
+However, this also means (in the next CL) that one can use 'mknod /dev/ashmem c 0 0' to brick the device (well, actually, brick binder, which adbd and logd do _not_ depend upon fortunately). We do not check other 'bad' mknod activities in /dev/ashmem.
+

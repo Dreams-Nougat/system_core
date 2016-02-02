@@ -1,0 +1,11 @@
+Revision: a6804cc651e19c03813fe9abb8e51d330703a8bb
+Patch-set: 1
+File: /COMMIT_MSG
+
+12
+Tue Feb 02 19:19:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9124acf4_2a49ff13
+Bytes: 68
+that seems like a bad idea. not least because it will break callers.
+

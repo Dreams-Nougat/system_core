@@ -46,6 +46,16 @@ strncmp(last_tag + 1, tag + 1, min(strlen(tag),sizeof(last_tag) - 1))-1) will ch
 
 The -2 is to drop the first character (from last_tag + 1), and to drop the trailing null from last_tag.￼
 
+154:23-154:53
+Tue Feb 02 21:00:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9124acf4_0d20952a
+UUID: 71c9f878_595d07fb
+Bytes: 84
+Agreed
+
+(I must admit I had one of Sasha special before the first-round review :-) )
+
 164:16-164:57
 Sat Jan 30 00:46:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

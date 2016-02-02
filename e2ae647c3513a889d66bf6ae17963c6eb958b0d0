@@ -1,0 +1,13 @@
+Revision: e2ae647c3513a889d66bf6ae17963c6eb958b0d0
+Patch-set: 2
+File: include/cutils/sockets.h
+
+157:23-157:43
+Tue Feb 02 18:57:07 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_371852c4
+Bytes: 355
+I made a function to create this type, it seems more flexible and less error-prone than a macro but still works as initialization. Since the structs are small copying them around shouldn't be a problem.
+
+But if you'd prefer the macro approach (or avoiding this type altogether and just passing void*[], size_t[] into the function) LMK and I can change it.
+

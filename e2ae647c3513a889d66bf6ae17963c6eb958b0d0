@@ -11,3 +11,11 @@ I made a function to create this type, it seems more flexible and less error-pro
 
 But if you'd prefer the macro approach (or avoiding this type altogether and just passing void*[], size_t[] into the function) LMK and I can change it.
 
+157:23-157:43
+Tue Feb 02 19:12:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31c3005d_371852c4
+UUID: 31c3005d_77764ade
+Bytes: 15
+call it make_*?
+

@@ -70,6 +70,14 @@ UUID: f465d6c4_3abb618c
 Bytes: 149
 Yeah, enh@ is out of the office for some manager training or something, so I'll probably wait for him to get back before actually making that change.
 
+247:8-247:72
+Wed Feb 03 01:27:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f465d6c4_3abb618c
+UUID: 711bb8b8_1a93ad43
+Bytes: 143
+exit on failure sounds unreasonable to me. just because we can't accept a new connection doesn't mean we should reset all the existing ones :-)
+
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 673410d7913ae863585e0dc45cc6ce8af947448f
+Patch-set: 4
+File: fastboot/socket_mock.cpp
+
+121:17-121:34
+Wed Feb 03 17:52:52 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 711bb8b8_95300e8f
+Bytes: 139
+This function doesn't work properly but nothing is using it yet. Will fix and add unit tests for this function in the next patch set or CL.
+

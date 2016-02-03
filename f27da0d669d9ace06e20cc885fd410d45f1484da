@@ -30,3 +30,11 @@ UUID: 31fce07c_35c4b294
 Bytes: 124
 Consume is currently pretty broken.  And it's not what you want here anyway.  Again, I think relaxed is fine here and above.
 
+95:51-95:72
+Wed Feb 03 00:21:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31fce07c_35c4b294
+UUID: 3115c084_2deab5cc
+Bytes: 178
+If relaxed is OK, like there are no subtle gains, then can you confirm that atomic_load() defaults to memory_order_relaxed? (online documents appeared to not state this clearly).
+

@@ -1,0 +1,11 @@
+Revision: 0604f6fbae9bf963b55c5d8f5b5730e9583f05e3
+Patch-set: 1
+File: rootdir/init.rc
+
+251:0-251:14
+Wed Feb 03 00:14:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_cdb20104
+Bytes: 235
+Here is the _real_ (tm) start of logd, important to start it before mounting (we found it started earlier, during an i/o and cpu lul; a few steps beyond this point and it contributed to a boot delay as it piled on CPU and I/O to exec).
+

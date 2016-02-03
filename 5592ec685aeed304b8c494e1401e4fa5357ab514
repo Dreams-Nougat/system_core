@@ -86,6 +86,14 @@ UUID: 3115c084_2d20f543
 Bytes: 43
 Should I add strerror to the error message?
 
+247:8-247:72
+Wed Feb 03 01:56:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_2d20f543
+UUID: 31a94060_473ad0a3
+Bytes: 46
+my answer to that question is always "yes" :-)
+
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>

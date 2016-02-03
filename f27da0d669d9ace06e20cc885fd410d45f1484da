@@ -38,3 +38,13 @@ UUID: 3115c084_2deab5cc
 Bytes: 178
 If relaxed is OK, like there are no subtle gains, then can you confirm that atomic_load() defaults to memory_order_relaxed? (online documents appeared to not state this clearly).
 
+95:51-95:72
+Wed Feb 03 00:53:14 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_2deab5cc
+UUID: f127a8f2_13d556de
+Bytes: 548
+All of the atomic operations (and plain atomic assignments) default to memory_order_seq_cst.  If you use nothing else, you get sequential consistency for the program.  I believe memory_order_relaxed is also fine here.  It's a trade-off of performance vs. code-understanding-complexity. The default is much easier to reason about.
+
+It's hard to get information from processor vendors as to whether fences cause buffers to be flushed sooner, as opposed to just waiting until they are flushed anyway.  My current theory is that it's mostly the latter.
+

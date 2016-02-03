@@ -9,3 +9,11 @@ UUID: 11a43c86_7d2af7bc
 Bytes: 144
 I think it's probably better to make the device-tree a property (it's optional and perhaps not all boards will use them). I'll make that change.
 
+258
+Wed Feb 03 19:43:06 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 11a43c86_7d2af7bc
+UUID: b1b530ae_11464eac
+Bytes: 4
+Done
+

@@ -56,6 +56,14 @@ Agreed
 
 (I must admit I had one of Sasha special before the first-round review :-) )
 
+154:23-154:53
+Wed Feb 03 02:27:07 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71c9f878_595d07fb
+UUID: 5116b490_34e83e63
+Bytes: 98
+I switch to strncpy below so last_tag is not always null terminated, and sizeof(last_tag) - 1 here
+
 164:16-164:57
 Sat Jan 30 00:46:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

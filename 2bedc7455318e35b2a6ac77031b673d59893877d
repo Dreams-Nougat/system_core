@@ -25,3 +25,11 @@ UUID: 71c9f878_0a35ebab
 Bytes: 126
 sorry, i mean the "/run/" part of this full path.  like, can't we just use "/data/misc/crash_reporter/kernel-crash-detected" ?
 
+17
+Wed Feb 03 08:37:33 2016 +0000
+Author: Steve Fung <1076778@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71c9f878_0a35ebab
+UUID: 3115c084_b86a61ee
+Bytes: 206
+Yea, we could.  But I did want to somewhat separate runtime data that should be cleared on a reboot from any persistent data.  I think it would probably make longterm upkeep of the code a little bit easier.
+

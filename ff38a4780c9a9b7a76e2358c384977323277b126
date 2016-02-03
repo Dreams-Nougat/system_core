@@ -1,0 +1,11 @@
+Revision: ff38a4780c9a9b7a76e2358c384977323277b126
+Patch-set: 3
+File: fastboot/tcp.h
+
+43
+Wed Feb 03 21:48:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31fce07c_73c00f56
+Bytes: 34
+constexpr instead of a bogus enum?
+

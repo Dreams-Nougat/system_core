@@ -1,0 +1,11 @@
+Revision: 2bedc7455318e35b2a6ac77031b673d59893877d
+Patch-set: 2
+File: crash_reporter/crash_reporter.rc
+
+17
+Wed Feb 03 00:36:57 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5116b490_99368bd9
+Bytes: 107
+does this even need /run anymore ?  the idea before of using /run was that it was guaranteed wiped at boot.
+

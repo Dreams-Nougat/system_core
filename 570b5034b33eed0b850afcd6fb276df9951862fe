@@ -1,0 +1,11 @@
+Revision: 570b5034b33eed0b850afcd6fb276df9951862fe
+Patch-set: 4
+File: libcutils/ashmem-dev.c
+
+77
+Wed Feb 03 17:59:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d1be2490_5225aaeb
+Bytes: 41
+pthread_mutex_unlock doesn't touch errno.
+

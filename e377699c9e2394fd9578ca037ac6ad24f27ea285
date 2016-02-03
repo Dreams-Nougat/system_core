@@ -9,3 +9,11 @@ UUID: 31c3005d_1a753d63
 Bytes: 193
 Switched these to C++ so I could use vectors, but if this might cause problems I can just use malloc/free instead. Everything still compiles fine for me though I have not done a checkbuild yet.
 
+49:8-49:24
+Wed Feb 03 00:01:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31c3005d_1a753d63
+UUID: b121b0e4_f1ed1aaf
+Bytes: 79
+danalbert says this will cause trouble for those who statically link libcutils.
+

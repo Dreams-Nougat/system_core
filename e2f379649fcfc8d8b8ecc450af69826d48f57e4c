@@ -53,3 +53,11 @@ UUID: 71c9f878_6a71ffe3
 Bytes: 98
 The Windows build gave me crap when I didn't do this, but I probably could have avoided it here :)
 
+68:8-68:17
+Wed Feb 03 02:59:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71c9f878_6a71ffe3
+UUID: 11a43c86_8c6a2bbd
+Bytes: 98
+hmm. that might be a bug. it's possible we don't have the same -std= for Windows hosts. danalbert?
+

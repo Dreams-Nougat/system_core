@@ -28,6 +28,14 @@ UUID: 11f7dc9a_1fed5373
 Bytes: 149
 no, it's not switching to C++ that can break stuff. it's just using the STL that's awkward. it's still worth moving to C++ for all the other reasons.
 
+31:16-31:17
+Wed Feb 03 02:54:09 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 11f7dc9a_1fed5373
+UUID: f127a8f2_531a2efc
+Bytes: 52
+Oh gotcha, sorry for the misunderstanding. Will fix.
+
 File: libcutils/sockets_unix.c
 
 68:8-68:17
@@ -36,4 +44,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b121b0e4_51ed0640
 Bytes: 72
 (even in C you shouldn't need to do this. but we should use C++ anyway.)
+
+68:8-68:17
+Wed Feb 03 02:54:09 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b121b0e4_51ed0640
+UUID: 71c9f878_6a71ffe3
+Bytes: 98
+The Windows build gave me crap when I didn't do this, but I probably could have avoided it here :)
 

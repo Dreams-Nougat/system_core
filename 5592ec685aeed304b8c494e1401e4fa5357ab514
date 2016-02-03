@@ -78,6 +78,14 @@ UUID: 711bb8b8_1a93ad43
 Bytes: 143
 exit on failure sounds unreasonable to me. just because we can't accept a new connection doesn't mean we should reset all the existing ones :-)
 
+247:8-247:72
+Wed Feb 03 01:54:00 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 711bb8b8_1a93ad43
+UUID: 3115c084_2d20f543
+Bytes: 43
+Should I add strerror to the error message?
+
 312:8-312:31
 Thu Jan 28 16:59:30 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>

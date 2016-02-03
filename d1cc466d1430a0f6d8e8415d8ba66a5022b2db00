@@ -1,0 +1,11 @@
+Revision: d1cc466d1430a0f6d8e8415d8ba66a5022b2db00
+Patch-set: 5
+File: libcutils/ashmem-dev.c
+
+127:0-127:13
+Wed Feb 03 20:22:31 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9124acf4_a686c33e
+Bytes: 186
+nit: i'd set rdev = 0 on line 98 and then goto 120 to avoid having a goto into in if block. Then again, you only have one case using the goto so maybe you could get rid of it completely?
+

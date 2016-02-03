@@ -20,3 +20,11 @@ enh: you recommended C++ for this file in https://android-review.googlesource.co
 
 I think the linkage may not matter here because nobody is using this file except fastboot, but it makes more sense to me to leave everything as C if switching some files to C++ can break stuff, so I changed this as well. LMK if you would rather I leave it as C++.
 
+31:16-31:17
+Wed Feb 03 01:19:50 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_4df8d166
+UUID: 11f7dc9a_1fed5373
+Bytes: 149
+no, it's not switching to C++ that can break stuff. it's just using the STL that's awkward. it's still worth moving to C++ for all the other reasons.
+

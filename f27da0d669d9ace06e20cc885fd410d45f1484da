@@ -1,0 +1,32 @@
+Revision: f27da0d669d9ace06e20cc885fd410d45f1484da
+Patch-set: 3
+File: libcutils/ashmem-dev.c
+
+38:3-38:8
+Wed Feb 03 00:15:30 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 11f7dc9a_d453b2ba
+Bytes: 8
+spelling
+
+39:27-39:40
+Wed Feb 03 00:15:30 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 11f7dc9a_94bdaaef
+Bytes: 126
+I would have found this easier to read with a comment that it's really a dev_t, and is always either zero or the ashmem dev_t.
+
+63:26-63:46
+Wed Feb 03 00:15:30 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_7aac71c5
+Bytes: 344
+I don't see why this really requires any ordering.  There is no other state you expect to be consistent as a a result of seeing a nonzero value.  I would use either memory_order_relaxed consistently (if the cost of a couple of fences matters), or a plain atomic_store (if it doesn't matter, and you want to keep the code as simple as possible).
+
+95:51-95:72
+Wed Feb 03 00:15:30 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31fce07c_35c4b294
+Bytes: 124
+Consume is currently pretty broken.  And it's not what you want here anyway.  Again, I think relaxed is fine here and above.
+

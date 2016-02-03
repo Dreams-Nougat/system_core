@@ -1,0 +1,11 @@
+Revision: cbbb185c8eefc97cfa708631dfddc7a0d201581d
+Patch-set: 6
+File: adb/shell_service.cpp
+
+425
+Wed Feb 03 22:57:52 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71c9f878_2bf9c96d
+Bytes: 33
+Should we send SIGKILL here also?
+

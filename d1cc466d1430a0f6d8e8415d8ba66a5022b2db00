@@ -9,3 +9,21 @@ UUID: 9124acf4_a686c33e
 Bytes: 186
 nit: i'd set rdev = 0 on line 98 and then goto 120 to avoid having a goto into in if block. Then again, you only have one case using the goto so maybe you could get rid of it completely?
 
+127:0-127:13
+Wed Feb 03 20:43:50 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9124acf4_a686c33e
+UUID: 3115c084_beab6993
+Bytes: 665
+I had it that way, then asked myself, why did I pick rdev = 0, and that propelled me into adding a comment:
+
+    rdev = 0; /* Too much complexity to pick up __ashmem_rdev */
+
+which looked like I was being _petty_ about enh@'s comments ;-> which I wasn't. I just wanted to make sure future selves understood why we did not just pick it up. My worries are a future self doing it without atomics or locking ... thus the need for the warning that it is not just as simple as:
+
+    rdev = __ashmem_rdev;
+
+We can not eliminate the goto, IMHO coding and maintenance standard abhors the duplicate identical ALOGE messages.
+
+Now that I got that off my chest, will respin ;-}
+

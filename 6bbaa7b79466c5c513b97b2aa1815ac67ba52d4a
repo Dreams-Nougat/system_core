@@ -13,3 +13,11 @@ at this point are we better off without StringPrintf?
   if (path_holder.back() != '/') path_holder.push_back('/');
   path_holder += adb_basename(src_path);
 
+761
+Thu Feb 04 00:24:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71c9f878_9da784ca
+UUID: b121b0e4_bd87f3cc
+Bytes: 11
+Good point.
+

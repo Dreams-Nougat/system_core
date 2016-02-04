@@ -1,0 +1,15 @@
+Revision: 6bbaa7b79466c5c513b97b2aa1815ac67ba52d4a
+Patch-set: 2
+File: adb/file_sync_client.cpp
+
+761
+Thu Feb 04 00:15:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71c9f878_9da784ca
+Bytes: 182
+at this point are we better off without StringPrintf?
+
+  path_holder = dst_path;
+  if (path_holder.back() != '/') path_holder.push_back('/');
+  path_holder += adb_basename(src_path);
+

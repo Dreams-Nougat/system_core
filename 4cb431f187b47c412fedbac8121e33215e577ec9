@@ -9,3 +9,18 @@ UUID: b121b0e4_9c9cb5de
 Bytes: 129
 you should probably add a comment at the top of this file explaining that it's for ChromeOS. otherwise it's likely to be deleted.
 
+1:24-1:41
+Thu Feb 04 23:30:15 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 11f7dc9a_d9d11e80
+Bytes: 30
+these are CPPFLAGS, not CFLAGS
+
+1
+Thu Feb 04 23:30:15 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b121b0e4_9c9cb5de
+UUID: f127a8f2_a79cfddd
+Bytes: 58
+files also need comment blocks with copyright/license info
+

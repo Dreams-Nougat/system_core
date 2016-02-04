@@ -1,0 +1,11 @@
+Revision: 5fda50afc40b7a0d5d7df1f97332a4dafb15eec6
+Patch-set: 1
+File: /COMMIT_MSG
+
+9
+Thu Feb 04 06:20:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_4b5d562d
+Bytes: 206
+is this actually a necessary dependency? the checkin comment that added libcutils says "move gettid to libcutils", but libbase only calls the bionic gettid anyway. can we just drop the libcutils dependency?
+

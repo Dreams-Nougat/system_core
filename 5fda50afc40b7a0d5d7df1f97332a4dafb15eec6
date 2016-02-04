@@ -20,3 +20,11 @@ Looks like we get liblog through libcutils. So we can switch libcutils to liblog
 system/core/base/file.cpp: error: undefined reference to '__android_log_print'
 system/core/base/logging.cpp: error: undefined reference to '__android_log_buf_print'
 
+9
+Thu Feb 04 06:35:30 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31fce07c_69aca2c5
+UUID: 31fce07c_49960675
+Bytes: 28
+ah, liblog makes more sense!
+

@@ -9,3 +9,14 @@ UUID: 3115c084_4b5d562d
 Bytes: 206
 is this actually a necessary dependency? the checkin comment that added libcutils says "move gettid to libcutils", but libbase only calls the bionic gettid anyway. can we just drop the libcutils dependency?
 
+9
+Thu Feb 04 06:25:54 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_4b5d562d
+UUID: 31fce07c_69aca2c5
+Bytes: 301
+Looks like we get liblog through libcutils. So we can switch libcutils to liblog and it still compiles under soong (didn't try w/make).
+
+system/core/base/file.cpp: error: undefined reference to '__android_log_print'
+system/core/base/logging.cpp: error: undefined reference to '__android_log_buf_print'
+

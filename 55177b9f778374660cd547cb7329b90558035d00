@@ -1,0 +1,11 @@
+Revision: 55177b9f778374660cd547cb7329b90558035d00
+Patch-set: 2
+File: rootdir/Android.mk
+
+21:21-21:30
+Thu Feb 04 20:55:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31fce07c_8748d50d
+Bytes: 51
+Does this have to be KISS (eg: debug includes eng)?
+

@@ -9,3 +9,13 @@ UUID: 11f7dc9a_3962e2ec
 Bytes: 37
 shouldn't this be closer to the fork?
 
+132
+Fri Feb 05 01:42:10 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 11f7dc9a_3962e2ec
+UUID: 711bb8b8_b2e0b5b8
+Bytes: 303
+My rationale was that ctrl-c in between the "starting server" and "done starting server" messages should probably kill the server, but it's basically instant. (It's not on my Windows VM with adb.exe being pulled over a network mount, which is what made me think to do this.)
+
+Moving it next to the fork.
+

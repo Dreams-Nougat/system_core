@@ -1,0 +1,20 @@
+Revision: 02b987a52980b53fc58b8b2bc0f2583850cea195
+Patch-set: 6
+File: adb/services.cpp
+
+369:45-369:54
+Fri Feb 05 03:12:19 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 910cacc1_2abb7ffa
+Bytes: 94
+It is my understanding that this is only available on Linux (but not Mac OS). See fdevent.cpp.
+
+File: adb/sysdeps_win32.cpp
+
+1195:8-1195:14
+Fri Feb 05 03:12:19 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71c9f878_4cc7f8c1
+Bytes: 146
+MSDN says that select() returns SOCKET_ERROR on error. In reality, SOCKET_ERROR is -1 (and I doubt this will ever change), so this is probably ok.
+

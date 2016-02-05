@@ -1,0 +1,18 @@
+Revision: 933a150206e36c9eb8ebb6c442c099b9c383690f
+Patch-set: 5
+File: adb/sysdeps_win32.cpp
+
+1127:4-1127:15
+Fri Feb 05 03:43:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_3446855e
+Bytes: 17
+sockaddr_storage?
+
+1157:8-1160:31
+Fri Feb 05 03:43:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 910cacc1_ea7e87f5
+Bytes: 119
+adb_socket_accept() already does logging and it actually sets errno, so strerror(errno) is probably the way to go here.
+

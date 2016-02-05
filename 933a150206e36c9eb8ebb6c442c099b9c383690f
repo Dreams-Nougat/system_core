@@ -2,6 +2,13 @@ Revision: 933a150206e36c9eb8ebb6c442c099b9c383690f
 Patch-set: 5
 File: adb/sysdeps_win32.cpp
 
+1090:0-1098:18
+Fri Feb 05 16:47:05 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31c3005d_d4b7113d
+Bytes: 199
+I added socket_get_local_port() to libcutils recently, it may simplify things to use that instead, then this function doesn't need |sockaddr| or |optlen| parameters and can just return a port number.
+
 1127:4-1127:15
 Fri Feb 05 03:43:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

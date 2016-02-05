@@ -1,0 +1,18 @@
+Revision: fa9c01ce14c4906c7eb429a7f356772b24b3d01f
+Patch-set: 2
+File: trusty/nvram/trusty_nvram.cpp
+
+32:2-32:21
+Fri Feb 05 18:37:57 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 11543cb0_03b9ae8f
+Bytes: 15
+nvram_device_t?
+
+311:2-311:21
+Fri Feb 05 18:37:57 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d16e247a_69bc0581
+Bytes: 15
+nvram_device_t?
+

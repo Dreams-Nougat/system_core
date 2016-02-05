@@ -9,6 +9,16 @@ UUID: 31c3005d_d4b7113d
 Bytes: 199
 I added socket_get_local_port() to libcutils recently, it may simplify things to use that instead, then this function doesn't need |sockaddr| or |optlen| parameters and can just return a port number.
 
+1090:0-1098:18
+Fri Feb 05 19:26:27 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31c3005d_d4b7113d
+UUID: b1653098_884297ee
+Bytes: 242
+Actually I just realized adb doesn't link to libcutils yet and it might be a pain if there's name conflicts and stuff. 
+
+If it's a big headache then just leave this and I'll look into replacing it with socket_get_local_port() myself later on.
+
 1127:4-1127:15
 Fri Feb 05 03:43:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

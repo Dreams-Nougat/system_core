@@ -1,0 +1,37 @@
+Revision: cb3f6b2856347ea8a67a72ae17cc92146447942a
+Patch-set: 3
+File: bvb/bvbtool
+
+36:4-36:14
+Sat Feb 06 02:30:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_6b4bf2b1
+Bytes: 89
+docstrings everywhere plz?. Like, mention that you store the number in big-endian format.
+
+37:13-37:36
+Sat Feb 06 02:30:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_8b462eaa
+Bytes: 115
+How about avoid the division?
+
+  for bit_pos in range(num_bits, 0, -8):
+    octet = (value >> (bit_pos - 8)) & 0xff
+
+240:57-240:61
+Sat Feb 06 02:30:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3115c084_abd16a27
+Bytes: 35
+struct.calcsize(self.FORMAT_STRING)
+
+296:21-296:41
+Sat Feb 06 02:30:29 2016 +0000
+Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d19b848b_c178620a
+Bytes: 137
+'\0' * (self.size - struct.calcsize(self.FORMAT_STRING))
+
+or make this part of your FORMAT_STRING and expect calcsize to be == self.SIZE.
+

@@ -1,0 +1,34 @@
+Revision: 60f6daf78e03a783ebddf007bef5118296511be8
+Patch-set: 1
+File: /COMMIT_MSG
+
+10:18-11:39
+Sat Feb 06 01:32:16 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f165e8c4_fa7d69f7
+Bytes: 91
+Not necessarily at that path, suggest not trying to go into the details of that check here.
+
+11:45-11:58
+Sat Feb 06 01:32:16 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7179f872_b97bfbc4
+Bytes: 146
+Should more accurately describe what this patch does: if no chargers are found and there is a battery present, do not use fake battery properties.
+
+File: healthd/BatteryMonitor.cpp
+
+595:7-595:64
+Sat Feb 06 01:32:16 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7179f872_19822fee
+Bytes: 102
+If this goes in, the comment should also be updated to reflect the other situation being handled here.
+
+598:8-598:54
+Sat Feb 06 01:32:16 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f165e8c4_ba83f12b
+Bytes: 290
+Not sure if there's a reason to base the check on whether charger devices were found instead of whether a battery device was found.  It seems like folding this into the "!mBatteryDevicePresent" case below would meet the criteria of the above comment and do the right thing for QC's drivers?
+

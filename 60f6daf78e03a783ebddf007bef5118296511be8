@@ -32,3 +32,18 @@ UUID: f165e8c4_ba83f12b
 Bytes: 290
 Not sure if there's a reason to base the check on whether charger devices were found instead of whether a battery device was found.  It seems like folding this into the "!mBatteryDevicePresent" case below would meet the criteria of the above comment and do the right thing for QC's drivers?
 
+598:8-598:54
+Sat Feb 06 09:53:01 2016 +0000
+Author: Adarsh Reddy <1049213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f165e8c4_ba83f12b
+UUID: fd1e9c58_54c36c55
+Bytes: 832
+1. !mChargerNames.size() check isn't removed in order to not disturb the google's base behaviour/expectation. We too thought this is not required as we are specifically checking if battery is present or not (from commit message).
+2. Shall i remove this !mChargerNames.size() check ? in next patchset?
+3.Now, regarding "mBatteryDevicePresent", it will be true, if the path "/sys/class/power_supply/battery/" exists. But we should be ideally checking for /sys/class/power_supply/battery/online" path to know if the actual battery is present or not.
+Hence using the logic :
+props.batteryPresent = getBooleanField(mHealthdConfig->batteryPresentPath);
+[line 589-594]
+ 
+Note: mBatteryDevicePresent will be true if battery is present or not (as the path /sys/class/power_supply/battery is present even if battery is not present on device.)
+

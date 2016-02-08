@@ -1,0 +1,13 @@
+Revision: ec7b69497a3d44438f542912a344368d4f7c8f75
+Patch-set: 2
+File: toolbox/Android.mk
+
+87:87-87:122
+Mon Feb 08 22:43:11 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dda3987e_e325f289
+Bytes: 160
+You can't use PRIVATE_* variables here -- this is the local context, not the rule-specific context.
+
+(Verified by inspecting out/build-*.ninja with this change)
+

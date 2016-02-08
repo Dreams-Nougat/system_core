@@ -24,6 +24,14 @@ UUID: 1d3ff0e9_fd1d0758
 Bytes: 72
 can i remove the Android.mk dependency here? do i get that for free now?
 
+87:21-87:45
+Mon Feb 08 22:34:03 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d3ff0e9_fd1d0758
+UUID: 7d3aacf7_807a96fd
+Bytes: 129
+You still need it for the USE_NINJA=false case, we don't add an implicit dependency on Android.mk for transform-generated-source.
+
 83:0-89:30
 Mon Feb 08 22:11:42 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

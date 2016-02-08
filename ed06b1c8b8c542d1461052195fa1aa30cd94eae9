@@ -1,0 +1,11 @@
+Revision: ed06b1c8b8c542d1461052195fa1aa30cd94eae9
+Patch-set: 1
+File: libnativebridge/tests/NeedsNativeBridge_test.cpp
+
+21:100-21:110
+Mon Feb 08 22:21:44 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d3ff0e9_fd6fc7c7
+Bytes: 14
+Line too long.
+

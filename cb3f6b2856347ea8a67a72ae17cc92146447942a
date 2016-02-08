@@ -9,6 +9,14 @@ UUID: 3115c084_6b4bf2b1
 Bytes: 89
 docstrings everywhere plz?. Like, mention that you store the number in big-endian format.
 
+36
+Mon Feb 08 16:44:13 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_6b4bf2b1
+UUID: bde8a466_62b7d620
+Bytes: 8
+Will do.
+
 37:13-37:36
 Sat Feb 06 02:30:29 2016 +0000
 Author: Alex Deymo <1077068@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,6 +26,14 @@ How about avoid the division?
 
   for bit_pos in range(num_bits, 0, -8):
     octet = (value >> (bit_pos - 8)) & 0xff
+
+37
+Mon Feb 08 16:44:13 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3115c084_8b462eaa
+UUID: 3dfcb42a_5e0275a2
+Bytes: 33
+I agree that's nicer. Doing that.
 
 240:57-240:61
 Sat Feb 06 02:30:29 2016 +0000
@@ -34,4 +50,12 @@ Bytes: 137
 '\0' * (self.size - struct.calcsize(self.FORMAT_STRING))
 
 or make this part of your FORMAT_STRING and expect calcsize to be == self.SIZE.
+
+296
+Mon Feb 08 16:44:13 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d19b848b_c178620a
+UUID: 3dfcb42a_fe1701d7
+Bytes: 42
+I'll make the padding part of FORMAT_SIZE.
 

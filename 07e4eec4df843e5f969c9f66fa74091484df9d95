@@ -1,0 +1,11 @@
+Revision: 07e4eec4df843e5f969c9f66fa74091484df9d95
+Patch-set: 1
+File: toolbox/Android.mk
+
+83:0-89:30
+Mon Feb 08 22:11:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d3aacf7_c04f7e36
+Bytes: 154
+bdc thinks soong won't be happy with this, but that sounds like a problem for another day? unless there's another way to do this that's more future-proof?
+

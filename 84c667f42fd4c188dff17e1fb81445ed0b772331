@@ -1,0 +1,11 @@
+Revision: 84c667f42fd4c188dff17e1fb81445ed0b772331
+Patch-set: 1
+File: logd/LogAudit.cpp
+
+135
+Tue Feb 09 21:08:49 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddbd58cb_b625468b
+Bytes: 138
+It would be good to at least add a warning message to dmesg, even on userdebug/eng builds, to at least know this code is getting executed.
+

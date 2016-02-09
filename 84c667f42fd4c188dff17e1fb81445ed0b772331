@@ -9,3 +9,13 @@ UUID: ddbd58cb_b625468b
 Bytes: 138
 It would be good to at least add a warning message to dmesg, even on userdebug/eng builds, to at least know this code is getting executed.
 
+135
+Tue Feb 09 21:18:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddbd58cb_b625468b
+UUID: fdc21c56_ddcbbf67
+Bytes: 248
+That is happening, the logToDmesg is such a warning. Or do you want it a WARNING level, as these are all at INFO level.
+
+Please look at https://android-review.googlesource.com/#/c/201775, sounds like _that_ needs to be extended to support prwarn()?
+

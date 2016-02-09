@@ -19,3 +19,28 @@ That is happening, the logToDmesg is such a warning. Or do you want it a WARNING
 
 Please look at https://android-review.googlesource.com/#/c/201775, sounds like _that_ needs to be extended to support prwarn()?
 
+135
+Tue Feb 09 21:24:54 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdc21c56_ddcbbf67
+UUID: 1d89b03a_9319249f
+Bytes: 598
+line 141 is only reachable if AUDITD_ENFORCE_INTEGRITY is true, which is only on user builds. On userdebug / eng builds, this entire block is a no-op.
+
+Specifically, I'd like to see this block replaced by something like:
+
+if (loaded) {
+  if (policyLoaded) {
+    // Policy changes are not allowed. Reboot to safe mode to limit
+    // damage.
+    if (AUDITD_ENFORCE_INTEGRITY) { 
+      enterSafeMode();
+    } else {
+      logToDmesg("Integrity Enforcement Suppressed - not rebooting to safe mode");
+    }
+  } else {
+    logToDmesg("policy loaded; enforcing integrity");
+    policyLoaded = true;
+  }
+}
+

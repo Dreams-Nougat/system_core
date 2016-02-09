@@ -1,0 +1,11 @@
+Revision: 7c8304adbb5941f62232ccb50e38bd1be093cf21
+Patch-set: 1
+File: logd/main.cpp
+
+220:62-220:63
+Tue Feb 09 00:27:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd4dbcaf_22e46ac8
+Bytes: 101
+Perhaps should always have 'logd: ' hard-coded prefix to make it easy to spot or filter out of dmesg.
+

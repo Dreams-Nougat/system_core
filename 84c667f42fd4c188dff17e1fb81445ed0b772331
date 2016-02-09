@@ -2,6 +2,13 @@ Revision: 84c667f42fd4c188dff17e1fb81445ed0b772331
 Patch-set: 1
 File: logd/LogAudit.cpp
 
+36:0-38:6
+Tue Feb 09 21:32:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d89b03a_137b749e
+Bytes: 25
+getprop("ro.build.type")?
+
 101:4-101:46
 Tue Feb 09 21:31:18 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

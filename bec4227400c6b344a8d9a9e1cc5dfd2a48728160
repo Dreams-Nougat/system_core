@@ -1,0 +1,27 @@
+Revision: bec4227400c6b344a8d9a9e1cc5dfd2a48728160
+Patch-set: 2
+File: fastboot/udp.cpp
+
+125
+Tue Feb 09 22:54:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd977c52_cfcea1d1
+Bytes: 126
+or just use a deque if you don't need contiguity?
+
+(is this actually worthwhile at all? why are we so keen to avoid resizing?)
+
+313
+Tue Feb 09 22:54:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5da7a8bf_e3ce1ad1
+Bytes: 66
+why not a while loop? do we actually want to send an empty packet?
+
+387
+Tue Feb 09 22:54:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd83441c_73a832b4
+Bytes: 70
+i guess so. comment on the do loops above, since do loops are unusual?
+

@@ -2,6 +2,22 @@ Revision: 84c667f42fd4c188dff17e1fb81445ed0b772331
 Patch-set: 1
 File: logd/LogAudit.cpp
 
+101:4-101:46
+Tue Feb 09 21:31:18 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d8e7442_f14d02b5
+Bytes: 415
+logd is running _before_ /data is mounted. What are the implications if persist properties are not written? (device                   is stuck in a reboot loop, or randomly reboots and does not enter safe mode, either are bad).
+
+You can add some redundancy in those that check these flags by also inspecting /sys/fs/pstore/console-ramoops for the log message. Not to be trusted, but it takes you from 99% to 99.99%.
+
+109:4-109:43
+Tue Feb 09 21:31:18 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdc21c56_fd523b3c
+Bytes: 186
+The reboot message can also be used as a means of communicating safe mode rather than depending on /data presence or integrity, it would show in the kernel command line as reboot reason?
+
 135
 Tue Feb 09 21:08:49 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

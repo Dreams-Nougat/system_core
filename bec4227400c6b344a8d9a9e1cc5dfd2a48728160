@@ -11,6 +11,18 @@ or just use a deque if you don't need contiguity?
 
 (is this actually worthwhile at all? why are we so keen to avoid resizing?)
 
+125
+Tue Feb 09 23:10:54 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd977c52_cfcea1d1
+UUID: 5da7a8bf_c3dbd662
+Bytes: 733
+TBH no it's not important right now, since I don't think we have any commands that sends a lot of data from the device to the host. This just adds some future-proofing in case fastboot adds a command that does this later on.
+
+As a comparison, when I implemented the device side in Python, the difference between keeping a list of buffers vs. appending to a single buffer as packets came in was enormous (<10 seconds vs several minutes for downloading a partition). I haven't actually tried in C++ though, so those numbers may not apply here.
+
+In any case I'm happy to leave this out if you think it adds more complexity than it's worth and/or if there's no chance we're going to implement reading large amounts of data from a device.
+
 313
 Tue Feb 09 22:54:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,4 +36,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd83441c_73a832b4
 Bytes: 70
 i guess so. comment on the do loops above, since do loops are unusual?
+
+387
+Tue Feb 09 23:10:54 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd83441c_73a832b4
+UUID: 7da46cba_1981cfed
+Bytes: 61
+Will do, I was surprised myself to be finding a use for them.
 

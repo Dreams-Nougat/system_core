@@ -9,3 +9,11 @@ UUID: bd30a413_a8a7bfd0
 Bytes: 180
 it didn't seem like any of the callers actually needed to override this? they were just being overly-specific? shouldn't we just remove the hard-coded names from the tests instead?
 
+26
+Tue Feb 09 00:56:30 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd30a413_a8a7bfd0
+UUID: dda3987e_86c1acf9
+Bytes: 224
+I thought it might be useful to distinguish different temp files with different name to debug unit tests. But I agree that is not that useful, because temp files are always deleted no matter the unit test successes or fails.
+

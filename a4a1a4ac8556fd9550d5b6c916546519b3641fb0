@@ -9,6 +9,14 @@ UUID: ddbd58cb_79447f23
 Bytes: 257
 btw, you can add your test to an internal master makefile to have it automatically run. see https://googleplex-android-review.git.corp.google.com/#/c/860076/ for examples. (this is fairly new, i only learned about it last week or i'd have told you earlier.)
 
+158
+Wed Feb 10 00:25:05 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddbd58cb_79447f23
+UUID: bd9a6476_6614f686
+Bytes: 30
+Great!  Tracked in b/27107906.
+
 File: bootstat/bootstat.cpp
 
 98
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5da7a8bf_9ef2018b
 Bytes: 128
 we should probably add this to libbase (and call __system_property_get directly, so there's no need for a libcutils dependency).
+
+98
+Wed Feb 10 00:25:05 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5da7a8bf_9ef2018b
+UUID: 1d89b03a_e1fc4e61
+Bytes: 50
+sgtm.  Filed b/27107533 to track that requirement.
 

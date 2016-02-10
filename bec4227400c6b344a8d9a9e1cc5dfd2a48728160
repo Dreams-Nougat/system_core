@@ -23,6 +23,16 @@ As a comparison, when I implemented the device side in Python, the difference be
 
 In any case I'm happy to leave this out if you think it adds more complexity than it's worth and/or if there's no chance we're going to implement reading large amounts of data from a device.
 
+125
+Wed Feb 10 00:17:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5da7a8bf_c3dbd662
+UUID: dd92b865_3ac3dd56
+Bytes: 184
+does python have some pathological problem resizing vectors?
+
+did i misread the implementation below? how do you end up with large numbers of outstanding packets? seemed synchronous...
+
 313
 Tue Feb 09 22:54:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

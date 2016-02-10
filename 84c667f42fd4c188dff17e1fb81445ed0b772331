@@ -9,6 +9,14 @@ UUID: 1d89b03a_d36f2cc8
 Bytes: 175
 You also need to update build/core/cleanbuild.mk, specifically the variable "installclean_files". Otherwise you could end up with userdebug/eng logd installed on a user build.
 
+45
+Wed Feb 10 23:44:38 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d89b03a_d36f2cc8
+UUID: 9dc4c07e_c2cdf831
+Bytes: 49
+Done in Id3ca7889ede30b54b7af73dd50653ca1a20d59aa
+
 File: logd/LogAudit.cpp
 
 36:0-38:6
@@ -36,6 +44,14 @@ Bytes: 415
 logd is running _before_ /data is mounted. What are the implications if persist properties are not written? (device                   is stuck in a reboot loop, or randomly reboots and does not enter safe mode, either are bad).
 
 You can add some redundancy in those that check these flags by also inspecting /sys/fs/pstore/console-ramoops for the log message. Not to be trusted, but it takes you from 99% to 99.99%.
+
+101:4-101:46
+Wed Feb 10 23:44:38 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d8e7442_f14d02b5
+UUID: ddc9d89d_a7dfb281
+Bytes: 175
+I changed this to reboot to recovery if logd hasn't received a reinit command (to indicate persistent properties have been loaded). This should prevent boot looping. Thoughts?
 
 109:4-109:43
 Tue Feb 09 21:31:18 2016 +0000
@@ -85,4 +101,12 @@ if (loaded) {
     policyLoaded = true;
   }
 }
+
+135
+Wed Feb 10 23:44:38 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d89b03a_9319249f
+UUID: 7dbb8cf2_a10b24bc
+Bytes: 4
+Done
 

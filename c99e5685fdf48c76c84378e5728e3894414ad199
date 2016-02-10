@@ -17,6 +17,13 @@ UUID: ddbd58cb_bc39a5d9
 Bytes: 4
 Done
 
+133:23-133:40
+Wed Feb 10 02:14:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdb5bcf8_bf8c53b5
+Bytes: 140
+since "detached" is the reasonable default, maybe leave this creating detached threads and call the new function abd_thread_create_joinable?
+
 135:14-135:17
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -19,3 +19,11 @@ Define safe ;-}
 
 mazda@ is no longer with us, but referencing the bug, the dropbox is _safe_ in my humble opinion if it does _not_ disable it. The idea regarding the issue is that the dropbox results in increased boot times affecting the test, on user builds we want the dropbox to retain its full size and scope, and if in doubt about what system we have, we want it to be in that state.
 
+196
+Wed Feb 10 18:18:15 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5dbec8e3_fdb1bf2c
+UUID: fdce9ca2_6894cbba
+Bytes: 90
+I don't understand the existing code, and this isn't a big deal, so let's just stay as-is.
+

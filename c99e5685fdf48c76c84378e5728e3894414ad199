@@ -1,0 +1,50 @@
+Revision: c99e5685fdf48c76c84378e5728e3894414ad199
+Patch-set: 2
+File: adb/sysdeps.h
+
+128:4-129:16
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7da46cba_24302ae7
+Bytes: 115
+Copy *data to the stack so that you can deallocate data before calling the threadfunc which can be very long lived?
+
+135:14-135:17
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7da46cba_840d561a
+Bytes: 83
+nit: it's really a handle, so maybe the var could be named handle or thandle, etc.?
+
+155:12-155:32
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d8e7442_b4efe8a1
+Bytes: 322
+So if you call adb_thread_join(), it succeeds, then if you subsequently call adb_thread_join/adb_thread_detach, you'll be closing someone else's handle?
+
+I read the manpage for pthread_join/detach and they seem to suggest that such call sequences are illegal to begin with, so that is ok? If you agree, that is ok with me.
+
+163:8-163:15
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7da46cba_64f15249
+Bytes: 18
+abort/assert/etc.?
+
+719:4-719:17
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddbd58cb_7c670d24
+Bytes: 30
+set *thread in the error case?
+
+File: adb/sysdeps_test.cpp
+
+49:11-49:13
+Wed Feb 10 01:26:46 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d8e7442_d42714f7
+Bytes: 47
+LE? Since there might have been 500 increments?
+

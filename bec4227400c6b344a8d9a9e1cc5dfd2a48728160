@@ -33,6 +33,20 @@ does python have some pathological problem resizing vectors?
 
 did i misread the implementation below? how do you end up with large numbers of outstanding packets? seemed synchronous...
 
+125
+Wed Feb 10 01:19:12 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd92b865_3ac3dd56
+UUID: 5da7a8bf_c925b58a
+Bytes: 583
+I'm not sure, I could very well have had bugs in my code, it was a bit of a surprise.
+
+The outstanding packets happen because a device can ACK and provide return data in the same packet. In this case, we're still in the fastboot write function so we need to buffer the returned data for the next fastboot read.
+
+After thinking on it though, this is definitely an unnecessary optimization. It only saves ~50 round-trips in a "flashall" out of >100K. Tomorrow I'll change it to always separate write and read packets, that should let me remove all this packet buffering stuff.
+
+Thanks!
+
 313
 Tue Feb 09 22:54:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -105,3 +105,11 @@ I wanted to make sure that the test verifies that adb_thread_create actually cre
 
 Hopefully, the sleep at line 24 should make it sufficiently non-flakey.
 
+49:11-49:13
+Wed Feb 10 02:18:21 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5dbec8e3_7a293566
+UUID: 5da7a8bf_643dd016
+Bytes: 41
+Ah, ok, makes sense. Maybe add a comment?
+

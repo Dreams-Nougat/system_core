@@ -1,0 +1,13 @@
+Revision: e760c6f01de291e1a44f9fb03ec248d4a7446556
+Patch-set: 1
+File: adb/sysdeps_win32_test.cpp
+
+94:4-94:62
+Wed Feb 10 00:54:42 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d8e7442_54140486
+Bytes: 162
+How about EXPECT instead of ASSERT so that the test doesn't stop if this one thing fails?
+
+How about appending << success, so that the value is dumped on failure?
+

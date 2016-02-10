@@ -1,0 +1,11 @@
+Revision: 85c45bd5a185f09f24bb0d790b2038fe72b567a9
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+181:25-181:29
+Wed Feb 10 23:10:04 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5dbec8e3_46fd7c59
+Bytes: 151
+This should be 'path' instead of 'parent'. I should have caught this during the previous code review that changed (improved) the semantics of mkdirs().
+

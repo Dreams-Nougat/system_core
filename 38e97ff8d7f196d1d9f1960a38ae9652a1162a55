@@ -9,3 +9,13 @@ UUID: fdb5bcf8_c5a070be
 Bytes: 128
 Recommend build_type != '0'. This would fail safe if ro.debuggable is set to something besides 0 or 1, or if it's not available.
 
+196
+Wed Feb 10 18:15:55 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdb5bcf8_c5a070be
+UUID: 5dbec8e3_fdb1bf2c
+Bytes: 388
+Define safe ;-}
+
+mazda@ is no longer with us, but referencing the bug, the dropbox is _safe_ in my humble opinion if it does _not_ disable it. The idea regarding the issue is that the dropbox results in increased boot times affecting the test, on user builds we want the dropbox to retain its full size and scope, and if in doubt about what system we have, we want it to be in that state.
+

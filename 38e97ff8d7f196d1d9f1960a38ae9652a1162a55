@@ -1,0 +1,11 @@
+Revision: 38e97ff8d7f196d1d9f1960a38ae9652a1162a55
+Patch-set: 1
+File: init/perfboot.py
+
+196
+Wed Feb 10 17:58:07 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdb5bcf8_c5a070be
+Bytes: 128
+Recommend build_type != '0'. This would fail safe if ro.debuggable is set to something besides 0 or 1, or if it's not available.
+

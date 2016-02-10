@@ -24,6 +24,14 @@ UUID: fdb5bcf8_bf8c53b5
 Bytes: 140
 since "detached" is the reasonable default, maybe leave this creating detached threads and call the new function abd_thread_create_joinable?
 
+133:23-133:40
+Wed Feb 10 02:28:14 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdb5bcf8_bf8c53b5
+UUID: 7da46cba_5fa177be
+Bytes: 183
+Is it the reasonable default, though? The default state for pthread_create makes the thread joinable, and so does C++11. (std::thread::~thread will join unless you explicitly detach).
+
 135:14-135:17
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

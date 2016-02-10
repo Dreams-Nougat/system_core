@@ -64,6 +64,14 @@ UUID: 7da46cba_640792b1
 Bytes: 85
 Yeah, pthread_join/detach on an already detached/joined thread is undefined behavior.
 
+155:12-155:32
+Wed Feb 10 02:28:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d8e7442_b4efe8a1
+UUID: bd83441c_991787d8
+Bytes: 206
+For pthread, if you call pthread_join() after pthread_detach/pthread_join, you may get a errno, or an abort, or joining other threads, depending on the implementation and situation. So I think here is fine.
+
 163:8-163:15
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -120,4 +128,13 @@ Parent: 5dbec8e3_7a293566
 UUID: 5da7a8bf_643dd016
 Bytes: 41
 Ah, ok, makes sense. Maybe add a comment?
+
+File: adb/transport_local.cpp
+
+314:42-314:60
+Wed Feb 10 02:28:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5da7a8bf_a45b385c
+Bytes: 17
+reinterpret_cast?
 

@@ -9,12 +9,28 @@ UUID: 7da46cba_24302ae7
 Bytes: 115
 Copy *data to the stack so that you can deallocate data before calling the threadfunc which can be very long lived?
 
+128:4-129:16
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7da46cba_24302ae7
+UUID: ddbd58cb_bc39a5d9
+Bytes: 4
+Done
+
 135:14-135:17
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7da46cba_840d561a
 Bytes: 83
 nit: it's really a handle, so maybe the var could be named handle or thandle, etc.?
+
+135:14-135:17
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7da46cba_840d561a
+UUID: 3d8e7442_b47288b1
+Bytes: 4
+Done
 
 155:12-155:32
 Wed Feb 10 01:26:46 2016 +0000
@@ -25,6 +41,14 @@ So if you call adb_thread_join(), it succeeds, then if you subsequently call adb
 
 I read the manpage for pthread_join/detach and they seem to suggest that such call sequences are illegal to begin with, so that is ok? If you agree, that is ok with me.
 
+155:12-155:32
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d8e7442_b4efe8a1
+UUID: 7da46cba_640792b1
+Bytes: 85
+Yeah, pthread_join/detach on an already detached/joined thread is undefined behavior.
+
 163:8-163:15
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,12 +56,28 @@ UUID: 7da46cba_64f15249
 Bytes: 18
 abort/assert/etc.?
 
+163:8-163:15
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7da46cba_64f15249
+UUID: fdc21c56_ee77e360
+Bytes: 4
+Done
+
 719:4-719:17
 Wed Feb 10 01:26:46 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ddbd58cb_7c670d24
 Bytes: 30
 set *thread in the error case?
+
+719:4-719:17
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddbd58cb_7c670d24
+UUID: 3d8e7442_344e9867
+Bytes: 133
+I don't think we should, pthread_create doesn't. (There isn't a canonical invalid value for pthread_t that we can set it to, anyway.)
 
 File: adb/sysdeps_test.cpp
 
@@ -47,4 +87,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3d8e7442_d42714f7
 Bytes: 47
 LE? Since there might have been 500 increments?
+
+49:11-49:13
+Wed Feb 10 02:14:26 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d8e7442_d42714f7
+UUID: 5dbec8e3_7a293566
+Bytes: 241
+I wanted to make sure that the test verifies that adb_thread_create actually creates a thread and doesn't just call the function synchronously and return, or something.
+
+Hopefully, the sleep at line 24 should make it sufficiently non-flakey.
 

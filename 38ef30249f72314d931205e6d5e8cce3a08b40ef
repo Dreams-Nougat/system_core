@@ -1,0 +1,33 @@
+Revision: 38ef30249f72314d931205e6d5e8cce3a08b40ef
+Patch-set: 2
+File: logd/LogAudit.cpp
+
+113:8-113:47
+Thu Feb 11 00:21:42 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_2dcf19cf
+Bytes: 79
+Could we do something like this?:
+
+property_set("sys.powerctl", "reboot,safe");
+
+115:9-116:56
+Thu Feb 11 00:21:42 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7df0ecdc_b307e2f7
+Bytes: 62
+This is probably the best you can do to prevent a reboot loop.
+
+File: logd/main.cpp
+
+297:22-297:23
+Thu Feb 11 00:21:42 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d1200d7_6cacf3fe
+Bytes: 427
+Hitting here does _not_ mean /data is mounted or persist.<property> can be set, we sometimes get this happening twice during a reboot because of an inherent stutter in the fs_mgr <sigh> :-(
+
+We accept the stutter above, because nothing gets set, we just re-read it in as many times as it happens.
+
+But for writing this becomes critical. Maybe check if /data/property/ directory exists? (worry lines on face about factory reset)
+

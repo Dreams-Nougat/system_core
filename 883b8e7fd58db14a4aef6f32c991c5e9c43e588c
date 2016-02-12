@@ -9,6 +9,14 @@ UUID: 3ddaf464_bdb1eb5b
 Bytes: 33
 move this line to fdevent_reset ?
 
+369:12-369:35
+Fri Feb 12 23:17:53 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ddaf464_bdb1eb5b
+UUID: 3d4834fd_877b6c50
+Bytes: 4
+Done
+
 File: adb/sysdeps_test.cpp
 
 73:0-74:22
@@ -17,6 +25,14 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fde3fc1c_2925baee
 Bytes: 45
 EXPECT_EQ(0, adb_close(...)) just to be sure?
+
+73:0-74:22
+Fri Feb 12 23:17:53 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_2925baee
+UUID: 5df328ea_e49da094
+Bytes: 4
+Done
 
 File: adb/sysdeps_win32.cpp
 
@@ -27,10 +43,26 @@ UUID: 7df0ecdc_4597c86e
 Bytes: 84
 Should this be fprintf(stderr, ...)? Also I think we want to end the string with \n.
 
+108:12-108:47
+Fri Feb 12 23:17:53 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7df0ecdc_4597c86e
+UUID: 9de920fd_c42e1388
+Bytes: 59
+Didn't mean to include this, reverted back to the original.
+
 2243:12-2243:35
 Fri Feb 12 18:27:18 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd0fc4b0_b48fcd17
 Bytes: 22
 move to fdevent_reset?
+
+2243:12-2243:35
+Fri Feb 12 23:17:53 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_b48fcd17
+UUID: 7dbb8cf2_ad043533
+Bytes: 4
+Done
 

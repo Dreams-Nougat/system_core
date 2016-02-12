@@ -1,0 +1,358 @@
+Revision: c59409ccf20580bf0f2c1cba1f54f0db6837b5fc
+Patch-set: 4
+File: bvb/Android.mk
+
+19
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7dbb8cf2_eccfd3a0
+Bytes: 8
+-Werror?
+
+45
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7dbb8cf2_aca79be2
+Bytes: 30
+Just use LOCAL_MODULE_HOST_OS?
+
+50
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_31a3d80d
+Bytes: 15
+nit: not needed
+
+51
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5dbec8e3_6b73a9b8
+Bytes: 16
+nit: not needed?
+
+53:39-53:55
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3dacb4b4_0db2fd30
+Bytes: 71
+Is this intentional? Should this default to a production build instead?
+
+54
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_714040dd
+Bytes: 15
+nit: not needed
+
+58
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdce9ca2_0e80bf20
+Bytes: 48
+nit: inconsistent use of tabs / spaces to indent
+
+72
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddc9d89d_cda2cdd4
+Bytes: 16
+nit: not needed?
+
+File: bvb/README
+
+61:0-63:13
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddc9d89d_2d94a167
+Bytes: 27
+optional nit: not necessary
+
+125:56-125:64
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdb5bcf8_eb37bd35
+Bytes: 115
+Any guidance on exactly where we expect these variables to go in the typical case? Makefile vars? Environment vars?
+
+129:36-129:40
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdb5bcf8_cbee41d9
+Bytes: 212
+Can we use 4096 as the default? 8192 gives marginal crypto improvement for massive key generation cost and significant signature size and verification cost. I'd rather not send the message that 8192 is preferred.
+
+134
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdce9ca2_0968b9f5
+Bytes: 83
+Is this the root public key that needs to be baked into the hw or fw? Clarify this?
+
+136:39-136:63
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bde6e426_d29b848f
+Bytes: 24
+Describe how this works?
+
+139
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bdc1846e_239ef8da
+Bytes: 38
+Is there a default if this is missing?
+
+File: bvb/bvb_boot_image_header.h
+
+17
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_8c972fc0
+Bytes: 131
+BVB_BVB_BOOT_IMAGE_HEADER_H_ would be google style -- is this an Android-ism?
+
+(Same in other headers if you decide to change this)
+
+40
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_ac89cbe5
+Bytes: 75
+style nit: inconsistent max line length -- these lines wrap well before 80.
+
+97:62-97:70
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1dd0d03a_a92e6586
+Bytes: 121
+nit: usually the term 'key pair' refers to the public and private key, not fields of the public key -- use 'number pair'?
+
+98:43-98:56
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d1200d7_29fa6d8c
+Bytes: 97
+Could more accurately (and relevantly) say "... and can always be represented in |key_num_bits|"?
+
+133:17-133:25
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdce9ca2_dbb724fd
+Bytes: 94
+why the null bytes? use of null-terminated strings for keys / values should be discouraged IMO
+
+134:3-134:9
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bdc1846e_ee10e7a4
+Bytes: 8
+followed
+
+146:2-146:25
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d1200d7_89edd9ad
+Bytes: 320
+Sometimes this can tempt implementers to cast from an arbitrary point in a buffer which can lead to alignment errors on some architectures. Maybe that's not a concern here? The alternative is to leave the representation of the struct in memory up to the compiler and write Encode / Decode functions to serialize / parse.
+
+209
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5df328ea_a389d2e5
+Bytes: 456
+IIUC, we'll be pulling this in from external non-volatile memory during a sensitive stage (i.e. an exploit at this stage would be very bad)? If so, this set of size values is ripe for integer or buffer overflow vulns and all code that touches this struct should assume the values in here are hostile. I'll try to find spots where overflow checks are needed but more eyes on this would be good.
+
+Maybe a function to sanity check the header would be helpful?
+
+211:10-211:15
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5df328ea_43990632
+Bytes: 93
+Magic is ok but a CRC would be better to catch non-malicious corruption or other data errors.
+
+247:42-247:46
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5df328ea_2fc269fd
+Bytes: 90
+How? The term 'index' is ambiguous here, a bit more detail (or better name) would be nice.
+
+File: bvb/bvb_property.c
+
+24:28-24:29
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1dd0d03a_a943051b
+Bytes: 38
+nit: eschew abbreviation -- more below
+
+32
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d1200d7_58a8c9a1
+Bytes: 118
+optional: I prefer to use braces even for single-line statements to defend against bad merges. More of these all over.
+
+36
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5df328ea_980cf91c
+Bytes: 56
+nit: There's no cleanup to do -- return instead of goto?
+
+59
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d1200d7_83a13270
+Bytes: 170
+Do we know whether image_data is on a <arch-word-size> boundary? If we keep this approach, maybe call this out as a precondition or in the struct documentation (or both)?
+
+62
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d09ccae_1d535f43
+Bytes: 15
+overflow checks
+
+66
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_241bae64
+Bytes: 15
+overflow checks
+
+68
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1dd53033_471eb254
+Bytes: 24
+integer overflow checks?
+
+74
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ddaf464_d7cff6a0
+Bytes: 9
+alignment
+
+77
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9de920fd_9a43ccea
+Bytes: 66
+overflow check
+
+also, please document literals
+
+ 2 /* NUL bytes */
+
+78
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7df0ecdc_1ff8efd8
+Bytes: 84
+nit: add spaces: total & 7
+optional nit2: use 'total % 8' and let compiler optimize?
+
+122
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bde6e426_3919905a
+Bytes: 36
+same here, no cleanup, prefer return
+
+129:15-129:25
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d09ccae_af43fa1a
+Bytes: 66
+nit: not used
+
+also, safer to just get value_size from the lookup?
+
+132
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bde6e426_f960a8ae
+Bytes: 29
+use value_size instead of \0?
+
+File: bvb/bvb_property.h
+
+24
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7df0ecdc_b0da3892
+Bytes: 31
+optional: bvb/ prefix on these?
+
+45:12-45:31
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7df0ecdc_846a565a
+Bytes: 51
+CamelCase? (Or any reason not to use Google style?)
+
+51:36-51:47
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9de920fd_f13448c5
+Bytes: 24
+hexidecimal->hexadecimal
+
+52:3-52:12
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fde3fc1c_cc6e4f92
+Bytes: 27
+format? 0x prefix required?
+
+File: bvb/bvb_rsa.h
+
+41:11-41:12
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fde3fc1c_13334b4e
+Bytes: 27
+nit: inconsistent 0 vs zero
+
+43:4-43:17
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5df328ea_e3335aaa
+Bytes: 13
+BvbRSAVerify?
+
+File: bvb/bvb_sysdeps.h
+
+32
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bde6e426_07d1c477
+Bytes: 163
+Why require double brackets at every call site? Is there a case where '#define BVB_DEBUG bvb_debug' or '#define BVB_DEBUG(params) bvb_debug(params)' wouldn't work?
+
+37:7-37:16
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_84a13a70
+Bytes: 17
+BVB_ENABLE_DEBUG?
+
+38:8-38:18
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_649e462e
+Bytes: 9
+all caps?
+
+File: bvb/bvb_sysdeps_stub.c
+
+26
+Fri Feb 12 00:13:06 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fde3fc1c_21c95470
+Bytes: 37
+nit: brace on prev line -- more below
+

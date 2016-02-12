@@ -9,10 +9,26 @@ UUID: 11543cb0_03b9ae8f
 Bytes: 15
 nvram_device_t?
 
+32:2-32:21
+Fri Feb 12 16:50:20 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 11543cb0_03b9ae8f
+UUID: 7daf0c90_e149bc31
+Bytes: 8
+Obsolete
+
 311:2-311:21
 Fri Feb 05 18:37:57 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d16e247a_69bc0581
 Bytes: 15
 nvram_device_t?
+
+311:2-311:21
+Fri Feb 12 16:50:20 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d16e247a_69bc0581
+UUID: 1dc45060_fea7957d
+Bytes: 9
+Obsolete.
 

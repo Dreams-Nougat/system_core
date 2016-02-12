@@ -2,6 +2,30 @@ Revision: 32eab9021c52ff8e2a54d77c725bae915d255cda
 Patch-set: 1
 File: adb/sysdeps.h
 
+126:7-126:25
+Fri Feb 12 23:28:14 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ddaf464_03ad3c66
+Bytes: 178
+If you care, the Windows-ish prototype is:
+
+DWORD WINAPI ThreadProc(
+  _In_ LPVOID lpParameter
+);
+
+https://msdn.microsoft.com/en-us/library/windows/desktop/ms686736(v=vs.85).aspx
+
+172:4-172:14
+Fri Feb 12 23:28:14 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fde3fc1c_02bd332f
+Bytes: 465
+If you're using _beginthreadex(), the corresponding exit function is endthreadex(), I think. https://msdn.microsoft.com/en-us/library/hw264s73.aspx
+
+In reality, it really only matters if you happen to use the static C Runtime (which I don't think adb does). If you use the dynamically linked C Runtime, it has a DllMain hook that cleans up any C Runtime thread stuff.
+
+But anyway, if you use _beginthreadex(), it's probably cleanest to also use _endthreadex() here.
+
 720
 Fri Feb 12 22:44:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -10,4 +34,12 @@ Bytes: 127
 delete this second, so i don't have to think about the copy above? (and maybe don't bother copying?)
 
 (in the Windows one too.)
+
+720
+Fri Feb 12 23:28:14 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d4834fd_0780bcb7
+UUID: bd0fc4b0_6a728ced
+Bytes: 210
+My thinking was: why have this block allocated for the duration of the thread life when it isn't really needed that long? But if you think it's cleaner the other way around, of course, feel free to override me.
 

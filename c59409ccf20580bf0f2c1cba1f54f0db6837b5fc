@@ -9,12 +9,28 @@ UUID: 7dbb8cf2_eccfd3a0
 Bytes: 8
 -Werror?
 
+19
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7dbb8cf2_eccfd3a0
+UUID: 7d09ccae_f2843536
+Bytes: 6
+Added.
+
 45
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7dbb8cf2_aca79be2
 Bytes: 30
 Just use LOCAL_MODULE_HOST_OS?
+
+45
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7dbb8cf2_aca79be2
+UUID: bd0fc4b0_f13317aa
+Bytes: 45
+OK, I didn't know about that one. Doing that.
 
 50
 Fri Feb 12 00:13:06 2016 +0000
@@ -23,12 +39,28 @@ UUID: 1da7f0d2_31a3d80d
 Bytes: 15
 nit: not needed
 
+50
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1da7f0d2_31a3d80d
+UUID: 7df0ecdc_45fb48d8
+Bytes: 4
+Done
+
 51
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5dbec8e3_6b73a9b8
 Bytes: 16
 nit: not needed?
+
+51
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5dbec8e3_6b73a9b8
+UUID: 3ddaf464_3d997b33
+Bytes: 4
+Done
 
 53:39-53:55
 Fri Feb 12 00:13:06 2016 +0000
@@ -37,12 +69,30 @@ UUID: 3dacb4b4_0db2fd30
 Bytes: 71
 Is this intentional? Should this default to a production build instead?
 
+53:39-53:55
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3dacb4b4_0db2fd30
+UUID: bde6e426_ef01f69d
+Bytes: 361
+It's intentional. Remember, the model (spelled out in README) is here that partners copy-paste the code into their own build-system for their bootloader and there they would likely not define BVB_ENABLE_DEBUG in production builds.
+
+The only reason we build it is to ensure it compiles and works (unit tests)... it's handy to have the debug information for that.
+
 54
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1da7f0d2_714040dd
 Bytes: 15
 nit: not needed
+
+54
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1da7f0d2_714040dd
+UUID: 5df328ea_9e3d0178
+Bytes: 4
+Done
 
 58
 Fri Feb 12 00:13:06 2016 +0000
@@ -51,12 +101,28 @@ UUID: fdce9ca2_0e80bf20
 Bytes: 48
 nit: inconsistent use of tabs / spaces to indent
 
+58
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdce9ca2_0e80bf20
+UUID: bd0fc4b0_714047dd
+Bytes: 27
+Done (throughout the file).
+
 72
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ddc9d89d_cda2cdd4
 Bytes: 16
 nit: not needed?
+
+72
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddc9d89d_cda2cdd4
+UUID: fde3fc1c_89d94e3f
+Bytes: 4
+Done
 
 File: bvb/README
 
@@ -67,12 +133,30 @@ UUID: ddc9d89d_2d94a167
 Bytes: 27
 optional nit: not necessary
 
+61:0-63:13
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddc9d89d_2d94a167
+UUID: 3ddaf464_dd66f7f8
+Bytes: 4
+Done
+
 125:56-125:64
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fdb5bcf8_eb37bd35
 Bytes: 115
 Any guidance on exactly where we expect these variables to go in the typical case? Makefile vars? Environment vars?
+
+125:56-125:64
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdb5bcf8_eb37bd35
+UUID: 3d4834fd_7e7351b8
+Bytes: 320
+It's expected to be set by the BSP, after all the board has to support Brillo Verified Boot until it can be enabled. Each Brillo app (e.g. ledtester) is not supposed to have to do anything, it should just work out of the box. (Except for the rollback index, see below.)
+
+How it'll work with the BDK, I'm not sure yet....
 
 129:36-129:40
 Fri Feb 12 00:13:06 2016 +0000
@@ -81,12 +165,30 @@ UUID: fdb5bcf8_cbee41d9
 Bytes: 212
 Can we use 4096 as the default? 8192 gives marginal crypto improvement for massive key generation cost and significant signature size and verification cost. I'd rather not send the message that 8192 is preferred.
 
+129:36-129:40
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdb5bcf8_cbee41d9
+UUID: 5df328ea_be4fa508
+Bytes: 322
+Oops, sorry, this should say SHA256_RSA2048 as the default -see https://android-review.googlesource.com/#/c/199750/ for where the default is set. I'll update this README file.
+
+As for 4096 vs 2048, I believe SHA256_RSA2048 still falls within current NIST recommendation so I'd like to go with that if it's the same to you?
+
 134
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fdce9ca2_0968b9f5
 Bytes: 83
 Is this the root public key that needs to be baked into the hw or fw? Clarify this?
+
+134
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdce9ca2_0968b9f5
+UUID: 3ddaf464_dd4dd76a
+Bytes: 41
+It is. I'll add a paragraph stating this.
 
 136:39-136:63
 Fri Feb 12 00:13:06 2016 +0000
@@ -95,12 +197,34 @@ UUID: bde6e426_d29b848f
 Bytes: 24
 Describe how this works?
 
+136:39-136:63
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bde6e426_d29b848f
+UUID: 9de920fd_d3b6dfb9
+Bytes: 1054
+It's already described in the "Rollback protection" section of "Brillo Boot Loader Requirements" [1] which is shared with partners. I'm not keen to reference that document in a public file since the document is available only under NDA... thoughts?
+
+The initial Brillo Verified Boot plan called for the Developer Console to manage user keys and the rollback index, but unfortunately that idea was rejected (complexity and other things)... so now the poor users have to manage both keys (yikes!) and remember to increase the rollback index. It's really not ideal.
+
+I imagine we might still want to automate this down the road (current situation sucks)... until, I don't think we should say too much about it since in the ideal world, users should never have to configure verified boot or worry about rollback indexes or whatever (it really should just work out of the box and the developer console should manage all the difficult bits).
+
+[1] : see https://docs.google.com/document/d/1bNFwTzPI0kcxTPUfO1kiHbWSCs9MwUmY956pkIrMsaw/edit#heading=h.fj4s28f8rdcd
+
 139
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bdc1846e_239ef8da
 Bytes: 38
 Is there a default if this is missing?
+
+139
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc1846e_239ef8da
+UUID: 1dd53033_594d7613
+Bytes: 46
+Yes, zero. I'm adding a paragraph to say this.
 
 File: bvb/bvb_boot_image_header.h
 
@@ -112,6 +236,14 @@ Bytes: 131
 BVB_BVB_BOOT_IMAGE_HEADER_H_ would be google style -- is this an Android-ism?
 
 (Same in other headers if you decide to change this)
+
+17
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1da7f0d2_8c972fc0
+UUID: 1da7f0d2_3702a8ec
+Bytes: 15
+I'll change it.
 
 40
 Fri Feb 12 00:13:06 2016 +0000
@@ -127,12 +259,28 @@ UUID: 1dd0d03a_a92e6586
 Bytes: 121
 nit: usually the term 'key pair' refers to the public and private key, not fields of the public key -- use 'number pair'?
 
+97:62-97:70
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1dd0d03a_a92e6586
+UUID: fde3fc1c_692bc2c7
+Bytes: 33
+Nice catch, I'll just use 'pair'.
+
 98:43-98:56
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9d1200d7_29fa6d8c
 Bytes: 97
 Could more accurately (and relevantly) say "... and can always be represented in |key_num_bits|"?
+
+98:43-98:56
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9d1200d7_29fa6d8c
+UUID: 3d4834fd_dee62592
+Bytes: 4
+Done
 
 133:17-133:25
 Fri Feb 12 00:13:06 2016 +0000
@@ -141,6 +289,16 @@ UUID: fdce9ca2_dbb724fd
 Bytes: 94
 why the null bytes? use of null-terminated strings for keys / values should be discouraged IMO
 
+133:17-133:25
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdce9ca2_dbb724fd
+UUID: 5df328ea_decf09a1
+Bytes: 590
+The extra NUL-byte in the encoding gives you the nice guarantee that users of of bvb_lookup_property() can treat the returned value as a NUL-terminated string. This is a lot more convenient than having to fumble with both a char* and a size_t if you *know* that the value is going to be a string. This is perfectly safe as you'd only use this on a verified boot image.
+
+(Note however that properties however are not restricted to strings - any blob can be stored, see e.g. BVBTool.CheckProperties - which is why bvb_lookup_property() returns both a pointer to the value and the size value.)
+
 134:3-134:9
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -148,12 +306,28 @@ UUID: bdc1846e_ee10e7a4
 Bytes: 8
 followed
 
+134:3-134:9
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc1846e_ee10e7a4
+UUID: 3d4834fd_7e1fd140
+Bytes: 4
+Done
+
 146:2-146:25
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9d1200d7_89edd9ad
 Bytes: 320
 Sometimes this can tempt implementers to cast from an arbitrary point in a buffer which can lead to alignment errors on some architectures. Maybe that's not a concern here? The alternative is to leave the representation of the struct in memory up to the compiler and write Encode / Decode functions to serialize / parse.
+
+146:2-146:25
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9d1200d7_89edd9ad
+UUID: 3d4834fd_de34e5c5
+Bytes: 142
+Alignment is not a concern here and users will never actually use the struct. It's only mentioned here because it's part of the binary format.
 
 209
 Fri Feb 12 00:13:06 2016 +0000
@@ -164,6 +338,16 @@ IIUC, we'll be pulling this in from external non-volatile memory during a sensit
 
 Maybe a function to sanity check the header would be helpful?
 
+209
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_a389d2e5
+UUID: bde6e426_6f71861e
+Bytes: 320
+Yup, verification of this struct is extremely important which is why it should never be touched until bvb_verify_boot_image() says it's good. I'll add a sentence pointing this out, I agree I missed that.
+
+As for sanity checking, since you're supposed to use bvb_verify_boot_image(), I've put all the sanity checks there.
+
 211:10-211:15
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -171,12 +355,32 @@ UUID: 5df328ea_43990632
 Bytes: 93
 Magic is ok but a CRC would be better to catch non-malicious corruption or other data errors.
 
+211:10-211:15
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_43990632
+UUID: 5df328ea_3ee975fd
+Bytes: 130
+Corruption will be caught during verification (the hash includes the header) so a CRC for just the header is unnecessary, I think.
+
 247:42-247:46
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5df328ea_2fc269fd
 Bytes: 90
 How? The term 'index' is ambiguous here, a bit more detail (or better name) would be nice.
+
+247:42-247:46
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_2fc269fd
+UUID: fde3fc1c_a9608adb
+Bytes: 432
+It's specified in the "Verifying boot partitions" part of https://docs.google.com/document/d/1bNFwTzPI0kcxTPUfO1kiHbWSCs9MwUmY956pkIrMsaw/edit#heading=h.8c7pmldvx8f6 ... which is shared with partners under NDA.
+
+Btw, I expect to extend libbvb_refimpl to do this in the future, as well as A/B. But first things first...
+
+As for the name rollback_index, is it really that bad? I mean, naming is hard and I kinda like that name now :-)
 
 File: bvb/bvb_property.c
 
@@ -186,6 +390,14 @@ Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 1dd0d03a_a943051b
 Bytes: 38
 nit: eschew abbreviation -- more below
+
+24:28-24:29
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1dd0d03a_a943051b
+UUID: 3ddaf464_9d43cf1b
+Bytes: 252
+In general, I use very long variable names but in this case |h| makes perfect sense much the same way |n| is used for counting and |i| is used for iterators. E.g. it makes sense here since the BvbBootImageHeader is a central concept to the whole thing.
 
 32
 Fri Feb 12 00:13:06 2016 +0000
@@ -201,12 +413,30 @@ UUID: 5df328ea_980cf91c
 Bytes: 56
 nit: There's no cleanup to do -- return instead of goto?
 
+36
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_980cf91c
+UUID: fdce9ca2_31c99770
+Bytes: 110
+For C, I prefer to consistently used 'goto out' (and for C++, I prefer to consistently use 'return' and RAII).
+
 59
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9d1200d7_83a13270
 Bytes: 170
 Do we know whether image_data is on a <arch-word-size> boundary? If we keep this approach, maybe call this out as a precondition or in the struct documentation (or both)?
+
+59
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9d1200d7_83a13270
+UUID: 7dbb8cf2_72671892
+Bytes: 199
+I'd add an assert... the tricky part is to determine what <arch-word-size> is. Is there a guaranteed way to get it from the compiler? I'd rather not play offsetof() games...
+
+I'll add a TODO for now.
 
 62
 Fri Feb 12 00:13:06 2016 +0000
@@ -229,12 +459,33 @@ UUID: 1dd53033_471eb254
 Bytes: 24
 integer overflow checks?
 
+68
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1dd53033_471eb254
+UUID: bd0fc4b0_b17ebff0
+Bytes: 194
+I think replacing this with
+
+  if (prop_start < image_data || prop_start > image_end ||
+      prop_end < image_data || prop_end > image_end)
+
+should be enough and include overflow checks, right?
+
 74
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3ddaf464_d7cff6a0
 Bytes: 9
 alignment
+
+74
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ddaf464_d7cff6a0
+UUID: fde3fc1c_a9f52a36
+Bytes: 40
+I'll add a TODO (cf. the comment above).
 
 77
 Fri Feb 12 00:13:06 2016 +0000
@@ -247,6 +498,16 @@ also, please document literals
 
  2 /* NUL bytes */
 
+77
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9de920fd_9a43ccea
+UUID: 5df328ea_49b5a5f8
+Bytes: 74
+Overflow check is done below "if (total + p > prop_end)".
+
+Adding the doc.
+
 78
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -254,6 +515,14 @@ UUID: 7df0ecdc_1ff8efd8
 Bytes: 84
 nit: add spaces: total & 7
 optional nit2: use 'total % 8' and let compiler optimize?
+
+78
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7df0ecdc_1ff8efd8
+UUID: bd0fc4b0_1497b965
+Bytes: 4
+Done
 
 122
 Fri Feb 12 00:13:06 2016 +0000
@@ -271,12 +540,28 @@ nit: not used
 
 also, safer to just get value_size from the lookup?
 
+129:15-129:25
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d09ccae_af43fa1a
+UUID: 9de920fd_3319ab5a
+Bytes: 11
+Nice catch.
+
 132
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bde6e426_f960a8ae
 Bytes: 29
 use value_size instead of \0?
+
+132
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bde6e426_f960a8ae
+UUID: fde3fc1c_29193a5a
+Bytes: 64
+That'd be an extra line (for declaring the value_size variable).
 
 File: bvb/bvb_property.h
 
@@ -287,12 +572,28 @@ UUID: 7df0ecdc_b0da3892
 Bytes: 31
 optional: bvb/ prefix on these?
 
+24
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7df0ecdc_b0da3892
+UUID: 5df328ea_7ec6dd83
+Bytes: 159
+Since the code is supposed to be copy-pasted by the partner into their own buildsystem, adding this requirement would put burden on them. So I'd prefer not to.
+
 45:12-45:31
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7df0ecdc_846a565a
 Bytes: 51
 CamelCase? (Or any reason not to use Google style?)
+
+45:12-45:31
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7df0ecdc_846a565a
+UUID: bde6e426_d2b7f9fc
+Bytes: 113
+Mostly because it's C and not C++ and underscores help drive home that point. I would prefer to keep it this way.
 
 51:36-51:47
 Fri Feb 12 00:13:06 2016 +0000
@@ -301,12 +602,28 @@ UUID: 9de920fd_f13448c5
 Bytes: 24
 hexidecimal->hexadecimal
 
+51:36-51:47
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9de920fd_f13448c5
+UUID: 1dd53033_390f4abe
+Bytes: 4
+Done
+
 52:3-52:12
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fde3fc1c_cc6e4f92
 Bytes: 27
 format? 0x prefix required?
+
+52:3-52:12
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_cc6e4f92
+UUID: 1da7f0d2_b75a38f9
+Bytes: 42
+0x prefix required. I'll clarify the docs.
 
 File: bvb/bvb_rsa.h
 
@@ -317,12 +634,28 @@ UUID: fde3fc1c_13334b4e
 Bytes: 27
 nit: inconsistent 0 vs zero
 
+41:11-41:12
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_13334b4e
+UUID: 3d4834fd_de2e2543
+Bytes: 4
+Done
+
 43:4-43:17
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5df328ea_e3335aaa
 Bytes: 13
 BvbRSAVerify?
+
+43:4-43:17
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_e3335aaa
+UUID: 3ddaf464_7d7ee342
+Bytes: 219
+I'd rather change it to bvb_rsa_verify. I did it this way because it was just RSAVerify which won't work with the model we're targeting (partner code could have a RSAVerify() symbol already) so namespacing is paramount.
 
 File: bvb/bvb_sysdeps.h
 
@@ -333,6 +666,16 @@ UUID: bde6e426_07d1c477
 Bytes: 163
 Why require double brackets at every call site? Is there a case where '#define BVB_DEBUG bvb_debug' or '#define BVB_DEBUG(params) bvb_debug(params)' wouldn't work?
 
+32
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bde6e426_07d1c477
+UUID: bd0fc4b0_f4c2e550
+Bytes: 249
+Yeah, it's double brackets right now because that's what vboot_reference did.
+
+I'll change the code to just use bvb_debug() and then make it a static empty inline function if BVB_ENABLE_DEBUG is not defined (much like the linux kernel sources does).
+
 37:7-37:16
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -340,12 +683,28 @@ UUID: bd0fc4b0_84a13a70
 Bytes: 17
 BVB_ENABLE_DEBUG?
 
+37:7-37:16
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_84a13a70
+UUID: 1dd53033_0c1a0ab6
+Bytes: 19
+nice catch, thanks!
+
 38:8-38:18
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd0fc4b0_649e462e
 Bytes: 9
 all caps?
+
+38:8-38:18
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_649e462e
+UUID: 5df328ea_e910d9a4
+Bytes: 115
+Mmm, libc's assert() is lower-case and now BVB_DEBUG is also lower-case. So I'd prefer to keep this lower-case too!
 
 File: bvb/bvb_sysdeps_stub.c
 
@@ -355,4 +714,12 @@ Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fde3fc1c_21c95470
 Bytes: 37
 nit: brace on prev line -- more below
+
+26
+Fri Feb 12 18:07:53 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_21c95470
+UUID: 7d09ccae_a5043933
+Bytes: 31
+Fixed throughout, in all files.
 

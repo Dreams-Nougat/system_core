@@ -15,6 +15,16 @@ DWORD WINAPI ThreadProc(
 
 https://msdn.microsoft.com/en-us/library/windows/desktop/ms686736(v=vs.85).aspx
 
+126:7-126:25
+Fri Feb 12 23:36:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ddaf464_03ad3c66
+UUID: 1dd53033_45f8e5d9
+Bytes: 212
+_beginthreadex declares the argument as `unsigned ( __stdcall *start_address )( void * )`. They're equivalent, but is one of them encouraged over the other?
+
+https://msdn.microsoft.com/en-us/library/kdzttdcb.aspx
+
 172:4-172:14
 Fri Feb 12 23:28:14 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,6 +35,14 @@ If you're using _beginthreadex(), the corresponding exit function is endthreadex
 In reality, it really only matters if you happen to use the static C Runtime (which I don't think adb does). If you use the dynamically linked C Runtime, it has a DllMain hook that cleans up any C Runtime thread stuff.
 
 But anyway, if you use _beginthreadex(), it's probably cleanest to also use _endthreadex() here.
+
+172:4-172:14
+Fri Feb 12 23:36:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_02bd332f
+UUID: bde6e426_0302d1a1
+Bytes: 4
+Done
 
 720
 Fri Feb 12 22:44:12 2016 +0000
@@ -42,4 +60,12 @@ Parent: 3d4834fd_0780bcb7
 UUID: bd0fc4b0_6a728ced
 Bytes: 210
 My thinking was: why have this block allocated for the duration of the thread life when it isn't really needed that long? But if you think it's cleaner the other way around, of course, feel free to override me.
+
+720
+Fri Feb 12 23:36:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_6a728ced
+UUID: 7df0ecdc_0dcb2699
+Bytes: 97
+I added a comment and renamed the variables, so it should be immediately obvious what's going on.
 

@@ -1,5 +1,14 @@
 Revision: 883b8e7fd58db14a4aef6f32c991c5e9c43e588c
 Patch-set: 2
+File: adb/fdevent.cpp
+
+369:12-369:35
+Fri Feb 12 18:27:18 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ddaf464_bdb1eb5b
+Bytes: 33
+move this line to fdevent_reset ?
+
 File: adb/sysdeps_test.cpp
 
 73:0-74:22
@@ -17,4 +26,11 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7df0ecdc_4597c86e
 Bytes: 84
 Should this be fprintf(stderr, ...)? Also I think we want to end the string with \n.
+
+2243:12-2243:35
+Fri Feb 12 18:27:18 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_b48fcd17
+Bytes: 22
+move to fdevent_reset?
 

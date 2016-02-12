@@ -1,0 +1,13 @@
+Revision: 32eab9021c52ff8e2a54d77c725bae915d255cda
+Patch-set: 1
+File: adb/sysdeps.h
+
+720
+Fri Feb 12 22:44:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d4834fd_0780bcb7
+Bytes: 127
+delete this second, so i don't have to think about the copy above? (and maybe don't bother copying?)
+
+(in the Windows one too.)
+

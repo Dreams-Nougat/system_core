@@ -25,6 +25,16 @@ _beginthreadex declares the argument as `unsigned ( __stdcall *start_address )( 
 
 https://msdn.microsoft.com/en-us/library/kdzttdcb.aspx
 
+126:7-126:25
+Fri Feb 12 23:41:33 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1dd53033_45f8e5d9
+UUID: bde6e426_e3ab4db8
+Bytes: 455
+Good point. :) I think what is going on is that CreateThread() with DWORD WINAPI etc. existed first. Then _beginthreadex() was written as a wrapper, but they didn't want to use DWORD and WINAPI because then the C Runtime process.h would take a dependency on windows.h.
+
+My thinking was that WINAPI is preferable to __stdcall (which seems really low-level), but the fact that process.h (and your MSDN link) use __stdcall makes me fine with what you've got.
+
 172:4-172:14
 Fri Feb 12 23:28:14 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

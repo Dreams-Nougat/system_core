@@ -1,0 +1,11 @@
+Revision: 2f46451d5d05ac3985e526c4627d703adb2bfebb
+Patch-set: 4
+File: adb/sysdeps_win32.cpp
+
+2275
+Sat Feb 13 00:30:45 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_b25a46f9
+Bytes: 74
+One reason why the tests are failing: this is apparently completely wrong.
+

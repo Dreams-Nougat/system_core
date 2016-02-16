@@ -1,0 +1,115 @@
+Revision: b0c1cce65762c692611a9f1832c28a8df26ee179
+Patch-set: 5
+File: bvb/bvb_rsa.c
+
+46
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1dd53033_4011f36f
+Bytes: 45
+keep const on first arg?
+
+nit: line too long?
+
+50:26-50:30
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bdc1846e_09d435be
+Bytes: 77
+What about 3072? It could be a nice alternative if 4096 has poor performance.
+
+66:57-66:61
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd0fc4b0_aa3d2477
+Bytes: 99
+nit: 2 * h.key_num_bits / 8 is more clear (and is used above also, maybe put in a descriptive var?)
+
+72
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddc9d89d_f501cb9d
+Bytes: 92
+optional: key->n = (uint32_t *) (key + 1); is more succinct (although maybe not as obvious)?
+
+73
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d4834fd_52a8c44f
+Bytes: 28
+key->rr = key->n + key->len;
+
+76
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3dacb4b4_68e96cfc
+Bytes: 267
+The documentation for the image describes a big-endian number but this is documented as little endian. In that case, this code should also reverse the order of all the uint32_t's? Or is the documentation wrong? Is it a big-endian number composed of host-endian words?
+
+160
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1da7f0d2_92506ad9
+Bytes: 52
+nit: consistency w/ 'a == NULL' statements elsewhere
+
+161
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3dacb4b4_28800421
+Bytes: 68
+log in this case and free any successful allocs (like verify below)?
+
+225:39-225:40
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ddc9d89d_958df760
+Bytes: 20
+nit: spaces around *
+
+255:53-255:86
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7df0ecdc_708cc5f1
+Bytes: 58
+hash_num_bytes (length consistency already verified above)
+
+260:9-260:11
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bde6e426_1e246a48
+Bytes: 17
+nit: double-space
+
+File: bvb/bvb_sha.h
+
+48:9-48:12
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fdce9ca2_74737db8
+Bytes: 32
+nit: lower case for consistency?
+
+File: bvb/bvb_unittest_util.h
+
+25:8-25:22
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d8c6c87_d0983ca7
+Bytes: 59
+Looks like this macro could just as well be a class method?
+
+34
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_3347481d
+Bytes: 25
+nit: override destructor?
+
+83
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d76744b_b1181abb
+Bytes: 17
+base::DeleteFile?
+

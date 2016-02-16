@@ -1,0 +1,17 @@
+Revision: eb121dd697d1d360dc4ecdc193ca0285d3dcfa87
+Patch-set: 2
+File: healthd/healthd.cpp
+
+111:0-111:21
+Tue Feb 16 23:01:04 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd2a1c13_bd57a3f8
+Bytes: 140
+Nit: Usually positive boolean checks are more readable, so maybe switch these around:
+
+#ifdef CHARGER_NO_UI
+...
+#else
+<original code>
+#endif
+

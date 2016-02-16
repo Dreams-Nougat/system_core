@@ -175,6 +175,14 @@ Oops, sorry, this should say SHA256_RSA2048 as the default -see https://android-
 
 As for 4096 vs 2048, I believe SHA256_RSA2048 still falls within current NIST recommendation so I'd like to go with that if it's the same to you?
 
+129:36-129:40
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_be4fa508
+UUID: bdc1846e_297c99bc
+Bytes: 172
+Yes, 2048 is acceptable, but it's also the minimum acceptable and I'd prefer to default reasonably high (like 4096) and let BSPs reduce this as needed for boot performance.
+
 134
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -210,6 +218,14 @@ The initial Brillo Verified Boot plan called for the Developer Console to manage
 I imagine we might still want to automate this down the road (current situation sucks)... until, I don't think we should say too much about it since in the ideal world, users should never have to configure verified boot or worry about rollback indexes or whatever (it really should just work out of the box and the developer console should manage all the difficult bits).
 
 [1] : see https://docs.google.com/document/d/1bNFwTzPI0kcxTPUfO1kiHbWSCs9MwUmY956pkIrMsaw/edit#heading=h.fj4s28f8rdcd
+
+136:39-136:63
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9de920fd_d3b6dfb9
+UUID: bde6e426_436d79ce
+Bytes: 11
+Understood.
 
 139
 Fri Feb 12 00:13:06 2016 +0000
@@ -382,6 +398,14 @@ Btw, I expect to extend libbvb_refimpl to do this in the future, as well as A/B.
 
 As for the name rollback_index, is it really that bad? I mean, naming is hard and I kinda like that name now :-)
 
+247:42-247:46
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_a9608adb
+UUID: fde3fc1c_c25a8bfa
+Bytes: 38
+Name is fine if explained elsewhere...
+
 File: bvb/bvb_property.c
 
 24:28-24:29
@@ -398,6 +422,16 @@ Parent: 1dd0d03a_a943051b
 UUID: 3ddaf464_9d43cf1b
 Bytes: 252
 In general, I use very long variable names but in this case |h| makes perfect sense much the same way |n| is used for counting and |i| is used for iterators. E.g. it makes sense here since the BvbBootImageHeader is a central concept to the whole thing.
+
+24:28-24:29
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ddaf464_9d43cf1b
+UUID: 5df328ea_180c848d
+Bytes: 479
+Arguably makes sense but I disagree :). This comment was a result of me having to go back and remind myself what variables mean what. |h| is fine, though it seems |header| is also succinct. |key_nb| and |value_nb| I had to double-check. For |prop_start| I popped back to the header file to remember that this was one of the top-level sections; |property_section_start| would have been better. I forget what |p| is exactly.
+
+My 2 cents as a reader. Do what you think is best... :)
 
 32
 Fri Feb 12 00:13:06 2016 +0000
@@ -472,6 +506,14 @@ I think replacing this with
 
 should be enough and include overflow checks, right?
 
+68
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_b17ebff0
+UUID: fde3fc1c_6264f78b
+Bytes: 32
+And ' || prop_end < prop_start'?
+
 74
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -486,6 +528,14 @@ Parent: 3ddaf464_d7cff6a0
 UUID: fde3fc1c_a9f52a36
 Bytes: 40
 I'll add a TODO (cf. the comment above).
+
+74
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_a9f52a36
+UUID: 5df328ea_9800744f
+Bytes: 172
+This might be guaranteed if |h| is aligned? Each property is padded to 8, so as long as each section before the property section is also padded, we just need the one check.
 
 77
 Fri Feb 12 00:13:06 2016 +0000
@@ -507,6 +557,14 @@ Bytes: 74
 Overflow check is done below "if (total + p > prop_end)".
 
 Adding the doc.
+
+77
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_49b5a5f8
+UUID: 7d09ccae_ae7531d5
+Bytes: 26
+|| total + p < prop_start?
 
 78
 Fri Feb 12 00:13:06 2016 +0000
@@ -563,6 +621,14 @@ UUID: fde3fc1c_29193a5a
 Bytes: 64
 That'd be an extra line (for declaring the value_size variable).
 
+132
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_29193a5a
+UUID: 5df328ea_b88fb817
+Bytes: 52
+:) I just don't like null terminators. This is fine.
+
 File: bvb/bvb_property.h
 
 24
@@ -594,6 +660,14 @@ Parent: 7df0ecdc_846a565a
 UUID: bde6e426_d2b7f9fc
 Bytes: 113
 Mostly because it's C and not C++ and underscores help drive home that point. I would prefer to keep it this way.
+
+45:12-45:31
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bde6e426_d2b7f9fc
+UUID: 3dacb4b4_e8557cca
+Bytes: 78
+I'm ok with this. A bunch of my style nits can probably be ignored given this.
 
 51:36-51:47
 Fri Feb 12 00:13:06 2016 +0000
@@ -656,6 +730,14 @@ Parent: 5df328ea_e3335aaa
 UUID: 3ddaf464_7d7ee342
 Bytes: 219
 I'd rather change it to bvb_rsa_verify. I did it this way because it was just RSAVerify which won't work with the model we're targeting (partner code could have a RSAVerify() symbol already) so namespacing is paramount.
+
+43:4-43:17
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ddaf464_7d7ee342
+UUID: 7d09ccae_ae5c1155
+Bytes: 24
+Agreed - bvb_rsa_verify.
 
 File: bvb/bvb_sysdeps.h
 

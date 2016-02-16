@@ -1,0 +1,175 @@
+Revision: 4167efbdaf09fe9995c618cdd50ab1773991b200
+Patch-set: 6
+File: bvb/bvb_util.c
+
+44:8-44:16
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d8c6c87_b3410285
+Bytes: 108
+nit: eliminate these macros please -- while succinct, they are not necessary and IMO they reduce readability
+
+File: bvb/bvb_util.h
+
+37
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d76744b_d18046ec
+Bytes: 101
+nit: consistent naming: header_in / header_out, src / dest, or big_endian_header / host_order_header.
+
+File: bvb/bvb_util_unittest.cc
+
+29
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd7ab832_8e3cdb1b
+Bytes: 143
+nit: while 42 has the advantage of being the ultimate answer, use a value that exercises all bytes? n32 = 0x11223344; n64 = 0x1122334455667788;
+
+File: bvb/bvb_verify.c
+
+22
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d71b053_13c254fd
+Bytes: 109
+nit: lines > 80
+suggestion: put just hash prefixes in constants and build the rest of the padding dynamically
+
+49
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd2a1c13_dad06576
+Bytes: 75
+nit: not used -- maybe it should be compared to the hash_size in the block?
+
+120
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d76744b_b7b6ca4f
+Bytes: 47
+/* */ comment style throughout for consistency?
+
+126
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d76744b_341bb864
+Bytes: 11
+nit: period
+
+136:44-136:62
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_b604a633
+Bytes: 6
+const?
+
+157
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d71b053_10fb2ad9
+Bytes: 21
+overflow checks here?
+
+163
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5d8fa87c_a361b211
+Bytes: 177
+overflow checks here too? For example, offset=1, size=~0 would pass this test.
+
+In all cases below too...
+
+Maybe a utility function to implement the subtleties would be helpful?
+
+File: bvb/bvb_verify.h
+
+56:40-56:42
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd7ab832_4ef35391
+Bytes: 5
+typo?
+
+60:61-60:68
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd2a1c13_57f3ce90
+Bytes: 4
+typo
+
+67:4-67:23
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_b354b89d
+Bytes: 21
+out_public_key_length
+
+72:3-72:17
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d71b053_f0d53e63
+Bytes: 130
+Should these policy checks be done by the verify function? Doesn't seem hard if public key and rollback index inputs are provided?
+
+82:62-82:69
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_f61e9ea7
+Bytes: 4
+typo
+
+File: bvb/bvb_verify_unittest.cc
+
+48
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd7ab832_545c4254
+Bytes: 32
+nit: on line above? (more below)
+
+125:19-125:36
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d76744b_5743e6ea
+Bytes: 39
+Also verify minor version change is ok?
+
+262:19-262:36
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd2a1c13_7aeef117
+Bytes: 68
+Tests for overflow conditions for each of these out-of-bounds tests.
+
+File: bvb/bvbtool_unittest.cc
+
+39:20-39:23
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5d8fa87c_a38c52b5
+Bytes: 28
+nit: inconsistent BVB vs Bvb
+
+49:20-49:28
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd2a1c13_fab68122
+Bytes: 21
+Use ReadFileToString?
+
+83
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7d8c6c87_566a045d
+Bytes: 36
+line > 80 (run through clang-format)
+
+320
+Tue Feb 16 21:59:10 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_16cf9ace
+Bytes: 94
+optional: This seems brittle. Maybe that's intentional / useful as a reminder to update tests?
+

@@ -1,0 +1,11 @@
+Revision: d46d4ae5e1663644fe84cb7e5110e3b3b9ec573e
+Patch-set: 1
+File: liblog/fake_log_device.c
+
+196:5-196:7
+Wed Feb 17 19:42:51 2016 +0000
+Author: Hiroshi Yamauchi <1022530@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dd255844_074e8666
+Bytes: 139
+I am not familiar with the style in this code, but maybe either moving the || to the previous line or use a 2-space or 4-space indentation?
+

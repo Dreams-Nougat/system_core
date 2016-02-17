@@ -183,6 +183,14 @@ UUID: bdc1846e_297c99bc
 Bytes: 172
 Yes, 2048 is acceptable, but it's also the minimum acceptable and I'd prefer to default reasonably high (like 4096) and let BSPs reduce this as needed for boot performance.
 
+129:36-129:40
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc1846e_297c99bc
+UUID: bd0984df_1a9e7d2c
+Bytes: 41
+Roger. Changing it to use a 4096-bit key.
+
 134
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -433,6 +441,14 @@ Arguably makes sense but I disagree :). This comment was a result of me having t
 
 My 2 cents as a reader. Do what you think is best... :)
 
+24:28-24:29
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_180c848d
+UUID: ddf8f8fc_1bf03b82
+Bytes: 132
+Yeah, it's always a trade-off especially with the draconian 80-character limit. I'll change |h| to |header|, I agree that will help!
+
 32
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -471,6 +487,14 @@ Bytes: 199
 I'd add an assert... the tricky part is to determine what <arch-word-size> is. Is there a guaranteed way to get it from the compiler? I'd rather not play offsetof() games...
 
 I'll add a TODO for now.
+
+59
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7dbb8cf2_72671892
+UUID: 7deaac21_8014d662
+Bytes: 84
+Thinking more about this, I'll introduce a bvb_assert_word_aligned() macro for this.
 
 62
 Fri Feb 12 00:13:06 2016 +0000
@@ -514,6 +538,14 @@ UUID: fde3fc1c_6264f78b
 Bytes: 32
 And ' || prop_end < prop_start'?
 
+68
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fde3fc1c_6264f78b
+UUID: dd5398c8_83cd9e32
+Bytes: 20
+Nice catch - thanks!
+
 74
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -536,6 +568,14 @@ Parent: fde3fc1c_a9f52a36
 UUID: 5df328ea_9800744f
 Bytes: 172
 This might be guaranteed if |h| is aligned? Each property is padded to 8, so as long as each section before the property section is also padded, we just need the one check.
+
+74
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5df328ea_9800744f
+UUID: 7deaac21_c0d37ed7
+Bytes: 70
+I'll add it anyway - can't hurt (plus prop_start could be un-aligned).
 
 77
 Fri Feb 12 00:13:06 2016 +0000
@@ -565,6 +605,14 @@ Parent: 5df328ea_49b5a5f8
 UUID: 7d09ccae_ae7531d5
 Bytes: 26
 || total + p < prop_start?
+
+77
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d09ccae_ae7531d5
+UUID: 5dede836_3f8fe7e8
+Bytes: 39
+Yeah, I guess it could overflow. Fixed.
 
 78
 Fri Feb 12 00:13:06 2016 +0000
@@ -738,6 +786,14 @@ Parent: 3ddaf464_7d7ee342
 UUID: 7d09ccae_ae5c1155
 Bytes: 24
 Agreed - bvb_rsa_verify.
+
+43:4-43:17
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d09ccae_ae5c1155
+UUID: 9d0cc0ef_1915ebce
+Bytes: 4
+Done
 
 File: bvb/bvb_sysdeps.h
 

@@ -9,6 +9,14 @@ UUID: 7d8c6c87_b3410285
 Bytes: 108
 nit: eliminate these macros please -- while succinct, they are not necessary and IMO they reduce readability
 
+44:8-44:16
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d8c6c87_b3410285
+UUID: 5dede836_3f97e7c1
+Bytes: 12
+OK. Will do.
+
 File: bvb/bvb_util.h
 
 37
@@ -18,6 +26,14 @@ UUID: 3d76744b_d18046ec
 Bytes: 101
 nit: consistent naming: header_in / header_out, src / dest, or big_endian_header / host_order_header.
 
+37
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d76744b_d18046ec
+UUID: fdfdbce9_dc57edf7
+Bytes: 75
+OK, src/dest it is since the function name already has _to_host_byte_order.
+
 File: bvb/bvb_util_unittest.cc
 
 29
@@ -26,6 +42,14 @@ Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dd7ab832_8e3cdb1b
 Bytes: 143
 nit: while 42 has the advantage of being the ultimate answer, use a value that exercises all bytes? n32 = 0x11223344; n64 = 0x1122334455667788;
+
+29
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd7ab832_8e3cdb1b
+UUID: bdaee4f7_722898c9
+Bytes: 24
+Yeah, good point. Wilco.
 
 File: bvb/bvb_verify.c
 
@@ -37,12 +61,28 @@ Bytes: 109
 nit: lines > 80
 suggestion: put just hash prefixes in constants and build the rest of the padding dynamically
 
+22
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d71b053_13c254fd
+UUID: ddf8f8fc_9b344bdc
+Bytes: 178
+Uh, I don't think I want to build it dynamically since I want it to be easy to see (using e.g. diff(1)) if it has been tampered with. I'm not keen on breaking the lines either...
+
 49
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd2a1c13_dad06576
 Bytes: 75
 nit: not used -- maybe it should be compared to the hash_size in the block?
+
+49
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd2a1c13_dad06576
+UUID: fdfdbce9_bc2f8186
+Bytes: 23
+Nice catch. Doing that.
 
 120
 Tue Feb 16 21:59:10 2016 +0000
@@ -51,6 +91,14 @@ UUID: 3d76744b_b7b6ca4f
 Bytes: 47
 /* */ comment style throughout for consistency?
 
+120
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d76744b_b7b6ca4f
+UUID: fdfdbce9_fc290982
+Bytes: 4
+Done
+
 126
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -58,12 +106,28 @@ UUID: 3d76744b_341bb864
 Bytes: 11
 nit: period
 
+126
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d76744b_341bb864
+UUID: 5dede836_5f758b57
+Bytes: 4
+Done
+
 136:44-136:62
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dd255844_b604a633
 Bytes: 6
 const?
+
+136:44-136:62
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd255844_b604a633
+UUID: 7deaac21_a012ba39
+Bytes: 4
+Done
 
 157
 Tue Feb 16 21:59:10 2016 +0000
@@ -92,12 +156,28 @@ UUID: dd7ab832_4ef35391
 Bytes: 5
 typo?
 
+56:40-56:42
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd7ab832_4ef35391
+UUID: 1d18d02b_d5edfcac
+Bytes: 4
+Done
+
 60:61-60:68
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd2a1c13_57f3ce90
 Bytes: 4
 typo
+
+60:61-60:68
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd2a1c13_57f3ce90
+UUID: bde0a43d_a2d59e64
+Bytes: 4
+Done
 
 67:4-67:23
 Tue Feb 16 21:59:10 2016 +0000
@@ -106,6 +186,14 @@ UUID: dd255844_b354b89d
 Bytes: 21
 out_public_key_length
 
+67:4-67:23
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd255844_b354b89d
+UUID: dd11d80a_b31978c3
+Bytes: 4
+Done
+
 72:3-72:17
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -113,12 +201,28 @@ UUID: 1d71b053_f0d53e63
 Bytes: 130
 Should these policy checks be done by the verify function? Doesn't seem hard if public key and rollback index inputs are provided?
 
+72:3-72:17
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d71b053_f0d53e63
+UUID: 5d06c8d0_f713e09c
+Bytes: 113
+I'm planning to do this in a higher-level function in libbvb_refimpl() yet to be written, which will also do A/B.
+
 82:62-82:69
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dd255844_f61e9ea7
 Bytes: 4
 typo
+
+82:62-82:69
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd255844_f61e9ea7
+UUID: 9d0cc0ef_d9b09327
+Bytes: 78
+yeah, my brain tends to get ahead of my fingers... or the other way around :-)
 
 File: bvb/bvb_verify_unittest.cc
 

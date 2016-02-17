@@ -11,12 +11,28 @@ keep const on first arg?
 
 nit: line too long?
 
+46
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1dd53033_4011f36f
+UUID: dd5398c8_23962a02
+Bytes: 4
+Done
+
 50:26-50:30
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bdc1846e_09d435be
 Bytes: 77
 What about 3072? It could be a nice alternative if 4096 has poor performance.
+
+50:26-50:30
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc1846e_09d435be
+UUID: 9d0cc0ef_39c54fae
+Bytes: 163
+That's a good question. I feel it's a slippery slope, though... that, and boot time performance is probably less sensitive on IoT compared to phones and laptops...
 
 66:57-66:61
 Tue Feb 16 21:59:10 2016 +0000
@@ -25,12 +41,28 @@ UUID: bd0fc4b0_aa3d2477
 Bytes: 99
 nit: 2 * h.key_num_bits / 8 is more clear (and is used above also, maybe put in a descriptive var?)
 
+66:57-66:61
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd0fc4b0_aa3d2477
+UUID: 5dede836_fff0df47
+Bytes: 4
+Done
+
 72
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ddc9d89d_f501cb9d
 Bytes: 92
 optional: key->n = (uint32_t *) (key + 1); is more succinct (although maybe not as obvious)?
+
+72
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddc9d89d_f501cb9d
+UUID: 7deaac21_6096f202
+Bytes: 52
+That'll work but I prefer the more explicit version.
 
 73
 Tue Feb 16 21:59:10 2016 +0000
@@ -39,12 +71,36 @@ UUID: 3d4834fd_52a8c44f
 Bytes: 28
 key->rr = key->n + key->len;
 
+73
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d4834fd_52a8c44f
+UUID: bd0984df_ba2f9186
+Bytes: 4
+Done
+
 76
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3dacb4b4_68e96cfc
 Bytes: 267
 The documentation for the image describes a big-endian number but this is documented as little endian. In that case, this code should also reverse the order of all the uint32_t's? Or is the documentation wrong? Is it a big-endian number composed of host-endian words?
+
+76
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3dacb4b4_68e96cfc
+UUID: bde0a43d_e29166ce
+Bytes: 1420
+The on-disk data is defined to be most-significant-bit first because that's the format I decided on since it's natural, simple to explain and mentally parse (using e.g. hexdump(1)), and actually doesn't involve specifying endianness... [0].
+
+The code I inherited from vboot_reference (which is using the Key struct that I convert the on-disk key format into here) seems to be somewhat little-endian centric [1] so that's why there's this conversion step... I could probably nuke the conversion step here if I did the requisite changes to subM(), geM(), montMulAdd(), montMul(), modpowF4() below ... but that goes against my wish of trying to change as little as possible from the inherited code (and against the general doctrine of "don't write your own crypto).
+
+I would prefer to leave things as is (that is, don't change any crypto) for now and possibly revisit it later if needed. FWIW, I don't think this code - in Brillo nor CrOS - currently work on big-endian... but that's another problem for another day, I think :-)
+
+[0] : well, except you could say that the entire 256-byte "word" for the 2048 bits is encoded as big endian ... I actually use that language in bvbtool's write_long() function which is what writes the stuff to disk.
+
+[1] : the on-disk format used in CrOS certainly *appears* to be little-endian... TBH, it doesn't look like the encoding is specified anywhere which is somewhat disconcerting...
 
 160
 Tue Feb 16 21:59:10 2016 +0000
@@ -53,12 +109,28 @@ UUID: 1da7f0d2_92506ad9
 Bytes: 52
 nit: consistency w/ 'a == NULL' statements elsewhere
 
+160
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1da7f0d2_92506ad9
+UUID: 9d0cc0ef_59f803da
+Bytes: 4
+Done
+
 161
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3dacb4b4_28800421
 Bytes: 68
 log in this case and free any successful allocs (like verify below)?
+
+161
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3dacb4b4_28800421
+UUID: bde0a43d_429772c0
+Bytes: 87
+Not sure logging will work if we're OOM. I'll replace the return with goto out instead.
 
 225:39-225:40
 Tue Feb 16 21:59:10 2016 +0000
@@ -67,6 +139,14 @@ UUID: ddc9d89d_958df760
 Bytes: 20
 nit: spaces around *
 
+225:39-225:40
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ddc9d89d_958df760
+UUID: 9d0cc0ef_b9231f42
+Bytes: 4
+Done
+
 255:53-255:86
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -74,12 +154,28 @@ UUID: 7df0ecdc_708cc5f1
 Bytes: 58
 hash_num_bytes (length consistency already verified above)
 
+255:53-255:86
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7df0ecdc_708cc5f1
+UUID: 1d5a90dd_a591bece
+Bytes: 33
+yeah, that's nicer... doing that.
+
 260:9-260:11
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bde6e426_1e246a48
 Bytes: 17
 nit: double-space
+
+260:9-260:11
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bde6e426_1e246a48
+UUID: dd5398c8_8307def7
+Bytes: 4
+Done
 
 File: bvb/bvb_sha.h
 
@@ -90,6 +186,14 @@ UUID: fdce9ca2_74737db8
 Bytes: 32
 nit: lower case for consistency?
 
+48:9-48:12
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fdce9ca2_74737db8
+UUID: fdfdbce9_5c6d9dce
+Bytes: 4
+Done
+
 File: bvb/bvb_unittest_util.h
 
 25:8-25:22
@@ -99,6 +203,14 @@ UUID: 7d8c6c87_d0983ca7
 Bytes: 59
 Looks like this macro could just as well be a class method?
 
+25:8-25:22
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d8c6c87_d0983ca7
+UUID: 3df4b401_1e3aedcc
+Bytes: 82
+Unfortunately not, it needs to be a macro to give the right file/line information.
+
 34
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -106,10 +218,26 @@ UUID: dd255844_3347481d
 Bytes: 25
 nit: override destructor?
 
+34
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd255844_3347481d
+UUID: 7deaac21_6044323f
+Bytes: 4
+Done
+
 83
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3d76744b_b1181abb
 Bytes: 17
 base::DeleteFile?
+
+83
+Wed Feb 17 23:09:08 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d76744b_b1181abb
+UUID: bd0984df_5a02b5ec
+Bytes: 4
+Done
 

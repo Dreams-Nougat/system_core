@@ -1,0 +1,11 @@
+Revision: 36cd48b3c1016a24443eed603a85ac761bd2d586
+Patch-set: 2
+File: include/utils/String16.h
+
+70
+Wed Feb 17 00:20:32 2016 +0000
+Author: Roshan Pius <1074459@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1d71b053_96a2b2d3
+Bytes: 108
+I guess we could also add a std_string() method to String8 as well so that we are consistent across the two.
+

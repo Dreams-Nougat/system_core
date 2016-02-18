@@ -11,3 +11,12 @@ Hmm, good fix, I don't know why I didn't do this in the first place. The one wei
 
 But this is very, very corner case and in practice probably pointless, so I'll leave it up to you to ignore this or open a bug, etc.
 
+914:0-914:101
+Thu Feb 18 22:46:28 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2199973_d6c0a29f
+Bytes: 215
+It's weird that clang-format goes over 100 lines for curly braces, I've noticed it doing that for me as well. Is that a clang-format bug?
+
+Not necessarily something you need to fix here, just wanted to point it out.
+

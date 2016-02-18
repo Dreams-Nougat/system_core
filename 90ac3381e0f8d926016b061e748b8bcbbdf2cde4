@@ -15,6 +15,14 @@ My understanding is that this returns a pseudo-handle, in other words it always 
 
 3. Use adb_thread_id() instead?
 
+184:11-184:27
+Thu Feb 18 22:03:46 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d8968a7_22c6d082
+UUID: c23655de_d89c4535
+Bytes: 127
+Oh, yikes. I didn't read that documentation page carefully enough. (i.e., at all, apparently). Switched to using adb_thread_id.
+
 188:11-188:47
 Thu Feb 18 02:51:02 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,6 +60,14 @@ UUID: 3d9034ca_2175e8d3
 Bytes: 334
 Do we have to worry about someone else connecting to this (localhost) socket maliciously or inadvertently? My thinking is no, but just throwing it out there... Seems pointless to worry about maliciousness when port 5037 has no security for starters. The connect happens pretty fast so hopefully no inadvertent connect should get in...
 
+1136:4-1136:18
+Thu Feb 18 22:03:46 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d9034ca_2175e8d3
+UUID: 6243e950_1524d446
+Bytes: 223
+Yeah, this seemed a bit scary to me as well, but I dismissed it for the same reason. Perhaps this should generate a random token that gets validated on both sides, but it might be better to leave that for a follow up patch.
+
 1140:4-1140:15
 Thu Feb 18 02:51:02 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -59,12 +75,28 @@ UUID: bd6504c6_a0de5ef7
 Bytes: 17
 sockaddr_storage?
 
+1140:4-1140:15
+Thu Feb 18 22:03:46 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd6504c6_a0de5ef7
+UUID: 620e892a_40da8493
+Bytes: 4
+Done
+
 1147:8-1147:18
 Thu Feb 18 02:51:02 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd993cfa_9ffc57d6
 Bytes: 210
 network_loopback_server doesn't set errno (since it sets the error string instead), so errno isn't meaningful here. Maybe something to fix in the future (seems like David is working on socket stuff these days).
+
+1147:8-1147:18
+Thu Feb 18 22:03:46 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd993cfa_9ffc57d6
+UUID: 021f8d56_daa9e5ed
+Bytes: 76
+I made network_loopback_server/client set errno in one of the other patches.
 
 1165:8-1165:18
 Thu Feb 18 02:51:02 2016 +0000

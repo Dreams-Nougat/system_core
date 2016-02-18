@@ -9,6 +9,14 @@ UUID: bdc1846e_c9cd1d32
 Bytes: 198
 Now that you have fdevent_terminate_loop(), is it cleaner to call it instead of adb_thread_exit()? I thought the whole point of fdevent_terminate_loop() was so that you don't need adb_thread_exit().
 
+151:8-151:23
+Thu Feb 18 01:31:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc1846e_c9cd1d32
+UUID: 3d9034ca_7ebdd1f8
+Bytes: 4
+Done
+
 File: adb/fdevent_test.h
 
 24:17-24:23
@@ -18,6 +26,14 @@ UUID: 7dbb8cf2_8d7611a7
 Bytes: 66
 Is this dead code? Or is the param to TerminateThread() dead code?
 
+24:17-24:23
+Thu Feb 18 01:31:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7dbb8cf2_8d7611a7
+UUID: 3dacb4b4_7b8c98f1
+Bytes: 42
+The member variable is dead code. Removed.
+
 File: adb/sysdeps_win32.cpp
 
 2266:7-2266:86
@@ -26,6 +42,14 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3dacb4b4_a88d3460
 Bytes: 86
 This seems super scary? I guess sysdeps doesn't have enough free fds compared to unix?
+
+2266:7-2266:86
+Thu Feb 18 01:31:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3dacb4b4_a88d3460
+UUID: dd9478c3_de13419d
+Bytes: 74
+All of the fdevent stuff in this CL has been removed in the next revision.
 
 2268:8-2268:21
 Sat Feb 13 00:34:41 2016 +0000

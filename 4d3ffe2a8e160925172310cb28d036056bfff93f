@@ -9,6 +9,14 @@ UUID: dd9478c3_fe89dde4
 Bytes: 113
 Do you have a reference for this? The best I could find is https://msdn.microsoft.com/en-us/library/6e3b887c.aspx
 
+9:0-9:37
+Thu Feb 18 03:01:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd9478c3_fe89dde4
+UUID: 5d8968a7_e5a072be
+Bytes: 88
+I believe the one I saw was this: https://msdn.microsoft.com/en-us/library/kdfaxaay.aspx
+
 9:39-10:44
 Thu Feb 18 02:06:17 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,12 +24,28 @@ UUID: 9d7f604c_44dcc05b
 Bytes: 299
 This seems like a very good idea to move the base up. I suppose you could even move it up to 2048 (max configurable via _setmaxstdio), but that seems like overkill. What would really be overkill is to call _getmaxstdio() at runtime (probably a bad idea since it might get way bigger than we expect).
 
+9:39-10:44
+Thu Feb 18 03:01:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9d7f604c_44dcc05b
+UUID: fd993cfa_3f40a3dc
+Bytes: 40
+Bumping it up to 2048 sounds reasonable.
+
 11:29-11:67
 Thu Feb 18 02:06:17 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd7c2458_45211c94
 Bytes: 278
 The reason I started from the last allocated FD is to try to prevent potential use-after-free bugs https://android-review.googlesource.com/161566 . The reason I was concerned about that was because of crazy fd bugs like https://android-review.googlesource.com/153804 . Thoughts?
+
+11:29-11:67
+Thu Feb 18 03:01:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd7c2458_45211c94
+UUID: 5d8968a7_85c96672
+Bytes: 187
+Hmm. Exposing those bugs seems like a neutral to good thing to me (but I'm biased, since I don't use adb on Windows, and anything this mitigates on windows would be bugs on linux/darwin).
 
 File: adb/sysdeps_win32.cpp
 
@@ -32,10 +56,26 @@ UUID: 7d862c98_462be6c6
 Bytes: 165
 It seems like if you're maintaining _win32_fh_next to be the lowest available, you could start the search there and you could probably simplify the body of the loop.
 
+244:4-247:43
+Thu Feb 18 03:01:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7d862c98_462be6c6
+UUID: 5d8968a7_027f0cef
+Bytes: 4
+Done
+
 251:12-251:18
 Thu Feb 18 02:06:17 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5d8968a7_82f87cdb
 Bytes: 239
 If you break here, _win32_fh_next is WIN32_MAX_FHS, so the next call to _fh_from_int() will do L247, incrementing _win32_fh_next to WIN32_MAX_FHS+1, then on L253, it will read _win32_fhs[WIN32_MAX_FHS] which is beyond the end of the array.
+
+251:12-251:18
+Thu Feb 18 03:01:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d8968a7_82f87cdb
+UUID: bd6504c6_4072e2ec
+Bytes: 16
+Ugh, good catch.
 

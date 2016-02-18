@@ -9,6 +9,14 @@ UUID: e200b9f1_db421386
 Bytes: 100
 As long as we're defining it should this be adb_pollfd? (Even though it seems to be the same thing.)
 
+55:2-55:10
+Thu Feb 18 21:47:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e200b9f1_db421386
+UUID: 4225059f_b9f99bdf
+Bytes: 4
+Done
+
 289:13-289:32
 Thu Feb 18 18:22:39 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,14 @@ Bytes: 143
 Is this necessary? It seems weird that we would ever build with ADB_HOST == 0 on Windows.
 
 If we do need this, logical && instead of bitwise &?
+
+289:13-289:32
+Thu Feb 18 21:47:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 820b7d17_d870cde5
+UUID: 820b7d17_1ef50d36
+Bytes: 43
+You're right, this is unnecessary. Removed.
 
 File: adb/sysdeps_test.cpp
 
@@ -30,6 +46,14 @@ I actually was doing a similar test yesterday, and it turns out this can be weir
 This never happened on my Linux machine but it did rarely on a Mac Pro I was testing on. (I was also using select() rather than poll(), but I think there's the same risk with either).
 
 I think a safer way to do this is poll on the receiver only, so it definitely waits until the data has been passed through, and then poll for both like you're doing here.
+
+102:4-102:38
+Thu Feb 18 21:47:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 620e892a_b7f9a8df
+UUID: 8240dd43_760fa813
+Bytes: 21
+Ah, good point. Done.
 
 143:4-143:38
 Thu Feb 18 18:22:39 2016 +0000
@@ -47,10 +71,26 @@ It looks like Posix does as well (http://pubs.opengroup.org/onlinepubs/009695399
 
   EXPECT_EQ(POLLRDNORM, pfd[0].revents);
 
+145:0-146:42
+Thu Feb 18 21:47:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 021f8d56_743428c5
+UUID: 021f8d56_3a63391b
+Bytes: 90
+Huh, so it does. Switched to using POLLRDNORM (and POLLWRNORM for consistency) throughout.
+
 167:4-167:15
 Thu Feb 18 18:22:39 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8240dd43_d08adcd4
 Bytes: 90
 Will this test fail on Windows then? Could we allow either 1 or 2 so it passes everywhere?
+
+167:4-167:15
+Thu Feb 18 21:47:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8240dd43_d08adcd4
+UUID: c23655de_5586de3f
+Bytes: 129
+Yes, this will fail on windows. This is something that we can fix in adb_poll, so I wanted to leave it as failing until I fix it.
 

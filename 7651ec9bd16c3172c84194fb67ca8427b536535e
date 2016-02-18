@@ -1,0 +1,61 @@
+Revision: 7651ec9bd16c3172c84194fb67ca8427b536535e
+Patch-set: 2
+File: bvb/bvbtool
+
+321:21-321:24
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4225059f_39e8eb9a
+Bytes: 9
+nit: have
+
+380
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e200b9f1_7e808dea
+Bytes: 157
+nit: line length throughout this file -- run through gpylint? On a related note, if you don't have python readability, this tool may be a good way to get it.
+
+922
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 021f8d56_5ae395c2
+Bytes: 159
+Maybe here would be a good spot to summarize (or link to documentation for) the dm-verity approach and image hashes layout? Would be nice to have it somewhere.
+
+929:28-929:42
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 820b7d17_def67540
+Bytes: 65
+sha256? In fact, should we explicitly not support md5, sha1, etc?
+
+988:16-988:18
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2199973_b62886c8
+Bytes: 28
+nit: more descriptive please
+
+991:26-991:37
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4225059f_79cae393
+Bytes: 50
+Include a descriptive string for easier debugging?
+
+998:40-998:41
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0206ad0a_c2f906df
+Bytes: 23
+nit: spaces around this
+
+1032
+Thu Feb 18 21:32:52 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e200b9f1_deec411f
+Bytes: 91
+nit: Please add documentation.
+optional: Seems like recursion could look more elegant here.
+

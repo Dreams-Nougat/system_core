@@ -33,6 +33,13 @@ Wow, does the caller really pass bad stuff in practice?
 
 So the point of `sockets' is to filter the invalid/non-socket handles and also to create WSAPoll structures with Win32 HANDLE values (from fh->u.socket) instead of sysdeps fd values?
 
+1136:4-1136:18
+Thu Feb 18 02:54:04 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3d9034ca_2175e8d3
+Bytes: 334
+Do we have to worry about someone else connecting to this (localhost) socket maliciously or inadvertently? My thinking is no, but just throwing it out there... Seems pointless to worry about maliciousness when port 5037 has no security for starters. The connect happens pretty fast so hopefully no inadvertent connect should get in...
+
 1140:4-1140:15
 Thu Feb 18 02:51:02 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

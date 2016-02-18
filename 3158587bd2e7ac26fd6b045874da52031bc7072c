@@ -9,10 +9,26 @@ UUID: 9d7f604c_e73eb6a2
 Bytes: 253
 It seems like the fundamental issue here is that adb_socket_accept() does not set errno if _fh_alloc fails. Maybe consider fixing that and then kill the errno checking in this func? (sorry, I should fixed adb_socket_accept myself when I last touched it)
 
+1166:4-1166:14
+Thu Feb 18 21:47:47 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9d7f604c_e73eb6a2
+UUID: 021f8d56_fa24a1a8
+Bytes: 108
+Yeah, I was just being lazy. I fixed up all of the spots I could find where errno wasn't being properly set.
+
 1170:12-1173:35
 Thu Feb 18 03:40:04 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3d9034ca_c10a8442
 Bytes: 101
 If you make that change, maybe kill this since adb_socket_accept already does the equivalent to this?
+
+1170:12-1173:35
+Thu Feb 18 21:47:47 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d9034ca_c10a8442
+UUID: 820b7d17_de679591
+Bytes: 4
+Done
 

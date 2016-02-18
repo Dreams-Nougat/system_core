@@ -136,6 +136,16 @@ UUID: 1d71b053_10fb2ad9
 Bytes: 21
 overflow checks here?
 
+157
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1d71b053_10fb2ad9
+UUID: 1d22908a_45e3eaec
+Bytes: 361
+Actually, the code right now is wrong. It requires the user to pass in the exact length of the boot image which he of course doesn't know .... he will just load the entire 16 or 32 MiB boot partition and pass that size as length. I'll change the code so it works that way and I'll also point it out in the docs for this function.
+
+I'll also add overflow checks.
+
 163
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -146,6 +156,14 @@ overflow checks here too? For example, offset=1, size=~0 would pass this test.
 In all cases below too...
 
 Maybe a utility function to implement the subtleties would be helpful?
+
+163
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d8fa87c_a361b211
+UUID: 9d3680c6_69536542
+Bytes: 43
+Yeah, adding a utility function to do this.
 
 File: bvb/bvb_verify.h
 
@@ -233,6 +251,14 @@ UUID: dd7ab832_545c4254
 Bytes: 32
 nit: on line above? (more below)
 
+48
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd7ab832_545c4254
+UUID: bd3344d6_8a808beb
+Bytes: 4
+Done
+
 125:19-125:36
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -240,12 +266,28 @@ UUID: 3d76744b_5743e6ea
 Bytes: 39
 Also verify minor version change is ok?
 
+125:19-125:36
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d76744b_5743e6ea
+UUID: 1d22908a_654e26b2
+Bytes: 20
+Good point. Will do.
+
 262:19-262:36
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd2a1c13_7aeef117
 Bytes: 68
 Tests for overflow conditions for each of these out-of-bounds tests.
+
+262:19-262:36
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd2a1c13_7aeef117
+UUID: bd3344d6_0a757bd3
+Bytes: 10
+Yup. Done.
 
 File: bvb/bvbtool_unittest.cc
 
@@ -256,12 +298,28 @@ UUID: 5d8fa87c_a38c52b5
 Bytes: 28
 nit: inconsistent BVB vs Bvb
 
+39:20-39:23
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d8fa87c_a38c52b5
+UUID: 22f73149_1df3d3c3
+Bytes: 4
+Done
+
 49:20-49:28
 Tue Feb 16 21:59:10 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd2a1c13_fab68122
 Bytes: 21
 Use ReadFileToString?
+
+49:20-49:28
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd2a1c13_fab68122
+UUID: dd1b9859_03756ed3
+Bytes: 37
+Yeah, it's cleaner that way. Will do.
 
 83
 Tue Feb 16 21:59:10 2016 +0000
@@ -276,4 +334,12 @@ Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dd255844_16cf9ace
 Bytes: 94
 optional: This seems brittle. Maybe that's intentional / useful as a reminder to update tests?
+
+320
+Thu Feb 18 18:34:47 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dd255844_16cf9ace
+UUID: 22201191_b5cc0081
+Bytes: 23
+Yeah, it's intentional.
 

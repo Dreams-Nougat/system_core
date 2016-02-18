@@ -1,0 +1,13 @@
+Revision: a28fc8ba01fee2cbc46eeda6d11086bb4d99f603
+Patch-set: 2
+File: adb/sysdeps_win32.cpp
+
+718:12-718:34
+Thu Feb 18 22:30:29 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8240dd43_99a6bf83
+Bytes: 416
+Hmm, good fix, I don't know why I didn't do this in the first place. The one weirdness is that if errno is set here, _fh_socket_close() returns 0 and adb_close() ignores that and returns 0 itself. So adb_close() is "wrong" in the sense that it may set errno even when 0 is returned.
+
+But this is very, very corner case and in practice probably pointless, so I'll leave it up to you to ignore this or open a bug, etc.
+

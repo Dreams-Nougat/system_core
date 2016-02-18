@@ -33,6 +33,18 @@ Wow, does the caller really pass bad stuff in practice?
 
 So the point of `sockets' is to filter the invalid/non-socket handles and also to create WSAPoll structures with Win32 HANDLE values (from fh->u.socket) instead of sysdeps fd values?
 
+667:4-667:94
+Thu Feb 18 03:19:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d9034ca_0142ac87
+UUID: bd7c2458_05239440
+Bytes: 297
+In practice, probably not (hopefully not, at least). There was a test that was running into this, though.
+
+> So the point of `sockets' is to filter the invalid/non-socket handles and also to create WSAPoll structures with Win32 HANDLE values (from fh->u.socket) instead of sysdeps fd values?
+
+Yep.
+
 1136:4-1136:18
 Thu Feb 18 02:54:04 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -20,3 +20,11 @@ It's weird that clang-format goes over 100 lines for curly braces, I've noticed 
 
 Not necessarily something you need to fix here, just wanted to point it out.
 
+914:0-914:101
+Thu Feb 18 22:50:55 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2199973_d6c0a29f
+UUID: 6243e950_1889a9e2
+Bytes: 295
+clang-format is like TeX, it has a formula for determining how bad it is to go over the column limit compared to inserting a line break. I know for a fact that our clang-format style file is not exactly correct, though. (Speaking of which, I'll upload a CL to fix the access modifier dedent now)
+

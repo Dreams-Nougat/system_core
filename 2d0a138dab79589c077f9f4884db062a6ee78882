@@ -1,0 +1,11 @@
+Revision: 2d0a138dab79589c077f9f4884db062a6ee78882
+Patch-set: 7
+File: bvb/bvb_boot_image_header.h
+
+206
+Thu Feb 18 22:23:37 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 620e892a_604d8868
+Bytes: 24
+word missing after 'it'?
+

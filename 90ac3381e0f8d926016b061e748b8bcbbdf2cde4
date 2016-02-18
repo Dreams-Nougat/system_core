@@ -68,6 +68,14 @@ UUID: 6243e950_1524d446
 Bytes: 223
 Yeah, this seemed a bit scary to me as well, but I dismissed it for the same reason. Perhaps this should generate a random token that gets validated on both sides, but it might be better to leave that for a follow up patch.
 
+1136:4-1136:18
+Thu Feb 18 22:37:32 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6243e950_1524d446
+UUID: 8240dd43_9900ffe4
+Bytes: 45
+Yeah, seems fine to leave that to the future.
+
 1140:4-1140:15
 Thu Feb 18 02:51:02 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>

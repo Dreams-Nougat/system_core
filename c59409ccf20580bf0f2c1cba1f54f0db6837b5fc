@@ -40,6 +40,14 @@ UUID: 021f8d56_da8a05d5
 Bytes: 127
 I don't see LOCAL_MODULE_HOST_OS := linux here in PS7 -- not needed? (Consistency with unittest binary below seems reasonable).
 
+45
+Fri Feb 19 16:34:13 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 021f8d56_da8a05d5
+UUID: c259f574_3afca1d3
+Bytes: 4
+Done
+
 50
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -321,6 +329,14 @@ Parent: 3d4834fd_dee62592
 UUID: 6243e950_b5cd08d6
 Bytes: 92
 It's the modulus that can always be represented in |key_num_bits|, not the entire key block.
+
+98:43-98:56
+Fri Feb 19 16:34:13 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6243e950_b5cd08d6
+UUID: 02678d33_972b06c5
+Bytes: 91
+That's what I tried to say - I'm rephrasing it slightly to see if I can make it more clear!
 
 133:17-133:25
 Fri Feb 12 00:13:06 2016 +0000

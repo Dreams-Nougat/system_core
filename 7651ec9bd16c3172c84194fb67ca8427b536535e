@@ -34,6 +34,14 @@ Fixing that line.
 
 As for gpylint, it's chatty! Since bvbtool is split across two CLs cleaning things up is going to be very painful. Do you mind if I just squash things together so there's only one CL?
 
+380
+Fri Feb 19 17:34:43 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c259f574_dae48526
+UUID: c2d2d5e6_064e0a3a
+Bytes: 54
+I'd rather have a third CL that just cleans up lint...
+
 922
 Thu Feb 18 21:32:52 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>

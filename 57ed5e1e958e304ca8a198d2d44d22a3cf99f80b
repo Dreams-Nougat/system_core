@@ -1,0 +1,11 @@
+Revision: 57ed5e1e958e304ca8a198d2d44d22a3cf99f80b
+Patch-set: 8
+File: bvb/bvb_property.c
+
+114:4-114:30
+Fri Feb 19 21:25:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_3f04c7f7
+Bytes: 57
+this doesn't handle overflow correctly. why not strtoull?
+

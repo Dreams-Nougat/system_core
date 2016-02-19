@@ -94,6 +94,14 @@ I recommend sha1 as our baseline because sha256 without hardware accel usually h
 
 Am I way off?
 
+929:28-929:42
+Fri Feb 19 21:07:28 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02678d33_576a0e7c
+UUID: 82bb7df1_58f79d3c
+Bytes: 127
+I have a blanket reaction to md5 / sha1.:) If there are practical reasons to keep it as the default it seems fine in this case.
+
 979:8-979:28
 Fri Feb 19 17:09:46 2016 +0000
 Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>

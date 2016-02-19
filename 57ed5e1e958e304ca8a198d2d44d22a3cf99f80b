@@ -9,3 +9,19 @@ UUID: 62a5a9c6_3f04c7f7
 Bytes: 57
 this doesn't handle overflow correctly. why not strtoull?
 
+114:4-114:30
+Fri Feb 19 21:52:50 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a5a9c6_3f04c7f7
+UUID: 02986d84_0c07d73c
+Bytes: 681
+> this doesn't handle overflow correctly.
+
+Yeah, see TEST(BvbToolTest, CheckProperties) in bvbtool_unittest.cc where it says we currently don't handle overflow but possibly could.
+
+Should we handle overflow, though? I don't think it's needed especially because data has already been positively verified though bvb_verify_image() before properties are accessed. IOW, the fact we don't handle overflow is not an attack vector.
+
+> why not strtoull?
+
+Then we'd have to require the user of the code (bootloader vendor) to implement it as bvb_stroull() as part of the bvb_sysdeps.h contract... not sure I want to put that burden on them for something that is just a convenience function.
+

@@ -1,0 +1,11 @@
+Revision: 08b3b7342a54dc4d16b43545b098711f8a5d03dc
+Patch-set: 8
+File: adb/sysdeps_test.cpp
+
+209:35-209:36
+Fri Feb 19 22:13:46 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02b6ad04_9cb7654e
+Bytes: 161
+I'm not positive but I think closing a socket may suffer from the same problem of data potentially not flushing through in time, I would use 100 here to be safe.
+

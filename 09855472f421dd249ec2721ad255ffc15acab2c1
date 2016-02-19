@@ -1,0 +1,11 @@
+Revision: 09855472f421dd249ec2721ad255ffc15acab2c1
+Patch-set: 9
+File: adb/sysdeps_test.cpp
+
+204:17-204:28
+Fri Feb 19 22:56:02 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2b0b90b_7b7fff3c
+Bytes: 76
+Maybe set pfd.revents to ~0 ahead of time to verify that adb_poll() sets it?
+

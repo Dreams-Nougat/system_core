@@ -9,12 +9,30 @@ UUID: 4225059f_39e8eb9a
 Bytes: 9
 nit: have
 
+321:21-321:24
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4225059f_39e8eb9a
+UUID: 623da9ed_ff95ff67
+Bytes: 4
+Done
+
 380
 Thu Feb 18 21:32:52 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e200b9f1_7e808dea
 Bytes: 157
 nit: line length throughout this file -- run through gpylint? On a related note, if you don't have python readability, this tool may be a good way to get it.
+
+380
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e200b9f1_7e808dea
+UUID: c259f574_dae48526
+Bytes: 202
+Fixing that line.
+
+As for gpylint, it's chatty! Since bvbtool is split across two CLs cleaning things up is going to be very painful. Do you mind if I just squash things together so there's only one CL?
 
 922
 Thu Feb 18 21:32:52 2016 +0000
@@ -23,12 +41,37 @@ UUID: 021f8d56_5ae395c2
 Bytes: 159
 Maybe here would be a good spot to summarize (or link to documentation for) the dm-verity approach and image hashes layout? Would be nice to have it somewhere.
 
+922
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 021f8d56_5ae395c2
+UUID: 823a9df4_a3fd2485
+Bytes: 68
+Will link to https://gitlab.com/cryptsetup/cryptsetup/wikis/DMVerity
+
 929:28-929:42
 Thu Feb 18 21:32:52 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 820b7d17_def67540
 Bytes: 65
 sha256? In fact, should we explicitly not support md5, sha1, etc?
+
+929:28-929:42
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 820b7d17_def67540
+UUID: 02678d33_17e376c3
+Bytes: 328
+I think drewry@ wanted us to use SHA1 for performance reasons. I'll loop him into this discussion.
+
+As for explicitly disallowing hash algorithms, I'd rather not do it at this level ... but would of course support such policy enforcement checks at the dev-console level when you submit the image (that's a better place I think).
+
+979:8-979:28
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 623da9ed_4296d46a
+Bytes: 40
+I'll move this into a separate function.
 
 988:16-988:18
 Thu Feb 18 21:32:52 2016 +0000
@@ -44,12 +87,28 @@ UUID: 4225059f_79cae393
 Bytes: 50
 Include a descriptive string for easier debugging?
 
+991:26-991:37
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4225059f_79cae393
+UUID: 02678d33_97ee66a4
+Bytes: 32
+I'll change it into an assert().
+
 998:40-998:41
 Thu Feb 18 21:32:52 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0206ad0a_c2f906df
 Bytes: 23
 nit: spaces around this
+
+998:40-998:41
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0206ad0a_c2f906df
+UUID: 426d0510_b6dd685a
+Bytes: 4
+Done
 
 1032
 Thu Feb 18 21:32:52 2016 +0000
@@ -58,4 +117,14 @@ UUID: e200b9f1_deec411f
 Bytes: 91
 nit: Please add documentation.
 optional: Seems like recursion could look more elegant here.
+
+1032
+Fri Feb 19 17:09:46 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e200b9f1_deec411f
+UUID: e2619920_f31250e6
+Bytes: 194
+Will add docs.
+
+As for recursion, yeah, would likely be fewer lines of code but in this case I prefer the iterative version, especially when dealing with having to build the array incrementally.
 

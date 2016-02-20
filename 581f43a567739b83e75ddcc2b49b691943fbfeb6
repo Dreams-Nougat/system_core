@@ -9,3 +9,13 @@ UUID: 62a5a9c6_e23248a8
 Bytes: 3
 ???
 
+255:48-255:65
+Sat Feb 20 01:48:10 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a5a9c6_e23248a8
+UUID: e2def959_eb31f145
+Bytes: 311
+'no ID_DONE' is a pretty useless error message, especially when it happens because of EOF, resulting in the message 'failed to copy foo to bar: no ID_DONE: Success'. I don't think any other errors are plausible, since the fd is actually an internal socketpair.
+
+Maybe 'disconnected from device' would be better?
+

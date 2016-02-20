@@ -1,0 +1,11 @@
+Revision: 581f43a567739b83e75ddcc2b49b691943fbfeb6
+Patch-set: 1
+File: adb/file_sync_client.cpp
+
+255:48-255:65
+Sat Feb 20 00:22:33 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_e23248a8
+Bytes: 3
+???
+

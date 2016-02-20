@@ -9,3 +9,11 @@ UUID: e2b0b90b_7b7fff3c
 Bytes: 76
 Maybe set pfd.revents to ~0 ahead of time to verify that adb_poll() sets it?
 
+204:17-204:28
+Sat Feb 20 02:10:59 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2b0b90b_7b7fff3c
+UUID: 62a5a9c6_65208282
+Bytes: 53
+I'll do this in a follow up commit in the smoke test.
+

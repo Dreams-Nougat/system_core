@@ -19,3 +19,11 @@ Bytes: 311
 
 Maybe 'disconnected from device' would be better?
 
+255:48-255:65
+Sat Feb 20 01:49:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2def959_eb31f145
+UUID: a29b218c_75c6f013
+Bytes: 99
+or "couldn't read from device", which is strictly true, sounds specific, but is still vague enough.
+

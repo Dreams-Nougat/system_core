@@ -1,0 +1,25 @@
+Revision: 91248e971b2939648fcf0b5084b518f1aa0ee33c
+Patch-set: 1
+File: adb/file_sync_service.cpp
+
+224
+Sat Feb 20 01:41:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22d0113b_5eed4917
+Bytes: 51
+explain why, because this is "obviously" stupid :-)
+
+226:8-226:25
+Sat Feb 20 01:41:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2981592_e5b7f01e
+Bytes: 20
+why is this up here?
+
+239:8-239:11
+Sat Feb 20 01:41:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a29b218c_d5e7fccb
+Bytes: 42
+in fact, why is this worth a local at all?
+

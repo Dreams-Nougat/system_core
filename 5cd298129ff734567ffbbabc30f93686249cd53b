@@ -1,0 +1,35 @@
+Revision: 5cd298129ff734567ffbbabc30f93686249cd53b
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+317:16-318:67
+Mon Feb 22 21:43:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_b9690f89
+Bytes: 674
+This has annoyed me for some time, and I have basically written it off as unnecessary since we are not overflowing the buffer. But this needs to stop, this code is supposed to be a good example :-)
+
+This (and all the others) are a bug waiting to happen to overflow the buffer and lead to negative values for sizeof(dmesgline) - len. Replace the sequence with something like:
+
+ int n = snprintf(...);
+ len += min(n, sizeof(dmesgline) - len));
+
+-or-
+
+ len += min(snprintf(...), sizeof(dmesgline) - len));
+
+(if your implementation of min() has no side effects)
+
+snprintf returns the number of bytes it would have written, if it could, not the number of bytes it actually wrote.
+
+322:7-328:9
+Mon Feb 22 21:43:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82bb7df1_d83ba221
+Bytes: 170
+alternate:
+
+leave 322 alone, drop len=strlen(dmesgline) (?) on line 330 and add len = snprintf on line 326?
+
+Saves one more pour through the buffer to get the len on 330.
+

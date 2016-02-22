@@ -24,6 +24,16 @@ UUID: bd83441c_6a7f57ef
 Bytes: 13
 gnu++11? why?
 
+34
+Mon Feb 22 20:08:23 2016 +0000
+Author: David Zeuthen <1076971@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd83441c_6a7f57ef
+UUID: 428ee542_d4e1d4e5
+Bytes: 132
+Because I cargo-culted it from system/update_engine/Android.mk ;-)
+
+I'll nuke it, it builds without warnings/errors fine without it.
+
 45
 Fri Feb 12 00:13:06 2016 +0000
 Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>

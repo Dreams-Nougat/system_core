@@ -9,3 +9,11 @@ UUID: e2def959_311d2846
 Bytes: 114
 Instead of creating a new method, it will be better to add it as a property and then call getProperty for the same
 
+344:12-344:34
+Mon Feb 22 19:42:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2def959_311d2846
+UUID: 22d0113b_6fc4cd79
+Bytes: 206
+The reason for not using getProperty() is: The id in getProperty() is provided by BatteryService.h, which is suggested to match constants in BatterManager.java. And I think we don't want to touch API stuff.
+

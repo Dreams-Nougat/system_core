@@ -9,12 +9,34 @@ UUID: 22d0113b_1e9591f5
 Bytes: 126
 What if the consumer of the log is expecting the log to be in the list format regardless of whether it has 1 or more elements?
 
+308
+Mon Feb 22 20:52:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22d0113b_1e9591f5
+UUID: 62be89e4_b1401081
+Bytes: 739
+A case of this code being too smart for it's own good?
+
+The list handler is pre-loaded with a virtual list that catches and corrects the case of a list of elements without a list begin or end as a service to deal with intent and protocol accuracy. In essence, we _add_ a list to make it correct, not subtract a list because they submitted a single element. If the caller wants a list of 1 element, then they must specifically issue a list begin and end. Specifically specifying a list should always work consistently.
+
+I do need to document this in a way that makes sense to everyone (including me :-) ).
+
+I should have a test case for explicitly specifying a list begin and end for a single-element list (if I continue to like this idea).
+
 367:24-367:25
 Mon Feb 22 18:49:56 2016 +0000
 Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 62be89e4_6bc60914
 Bytes: 52
 Nit: switch to true (as it is below) for consistency
+
+367:24-367:25
+Mon Feb 22 20:52:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62be89e4_6bc60914
+UUID: 22d0113b_aaec13af
+Bytes: 286
+Yes ... ((int)true) == 1 according to the standard, but we are using stdbool.h? I expect landing this into a uint16_t should not be an issue. FYI: I expect at some future date, if we need more bits, this could be a bitfield, why I split your initial definition into a pair of uint16_t's
 
 398:25-398:26
 Mon Feb 22 18:49:56 2016 +0000
@@ -30,6 +52,16 @@ UUID: a29b218c_d65ca227
 Bytes: 120
 FYI: If you decide to support the empty list, then the count == 0, and this pre-decrement will make the condition false.
 
+418:33-418:38
+Mon Feb 22 20:52:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a29b218c_d65ca227
+UUID: 62a5a9c6_f9e2f7bd
+Bytes: 266
+Good catch ... this gets caught in the subsequent pass at line 356 to produce the expected result(s) but we get two objects back, rather than an early-stop indication as WAS the intent here.
+
+I failed to follow through with this design choice and create a test case.
+
 File: liblog/tests/liblog_test.cpp
 
 2037
@@ -38,4 +70,21 @@ Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 62a5a9c6_ae19c7be
 Bytes: 87
 How about a test that just has an empty list, "[]", or one that includes an empty list?
+
+2037
+Mon Feb 22 20:52:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a5a9c6_ae19c7be
+UUID: 82bb7df1_150fa313
+Bytes: 12
+yes, agreed!
+
+2149:0-2155:56
+Mon Feb 22 20:52:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62be89e4_912f4cd2
+Bytes: 150
+We should expose in the API the maximum list nesting depth, rather than letting it remain internal.
+
+This should turn into a loop based on that value.
 

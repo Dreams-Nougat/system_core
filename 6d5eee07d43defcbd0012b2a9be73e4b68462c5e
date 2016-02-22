@@ -23,6 +23,23 @@ I do need to document this in a way that makes sense to everyone (including me :
 
 I should have a test case for explicitly specifying a list begin and end for a single-element list (if I continue to like this idea).
 
+308
+Mon Feb 22 21:47:23 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62be89e4_b1401081
+UUID: a29b218c_8dc60411
+Bytes: 585
+Ok, I see, I originally did not have a mechanism to add nested lists (only for parsing nested lists), so I thought the _begin you added was strictly for adding lists within lists :)
+
+So what would the output be like if I never used _begin/_end, and just started adding more than 1 element? Say:
+
+create_android_logger,
+write_int32,
+write_string8,
+write_list,
+
+would the output have two enclosing brackets, [[29657235, "hello"]], one bracket, or would it just fail? I noticed that in the test case you specifically test for writing one element without the _begin, but not more than one.
+
 367:24-367:25
 Mon Feb 22 18:49:56 2016 +0000
 Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -37,6 +54,20 @@ Parent: 62be89e4_6bc60914
 UUID: 22d0113b_aaec13af
 Bytes: 286
 Yes ... ((int)true) == 1 according to the standard, but we are using stdbool.h? I expect landing this into a uint16_t should not be an issue. FYI: I expect at some future date, if we need more bits, this could be a bitfield, why I split your initial definition into a pair of uint16_t's
+
+367:24-367:25
+Mon Feb 22 21:47:23 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22d0113b_aaec13af
+UUID: 22d0113b_2a2fe368
+Bytes: 377
+Ok I see. I just noticed the change to uint16_t's from uint32_t's, which is fine with me.
+
+I actually meant to say that you have
+
+elem.complete = true
+
+on lines 447, etc., and so it's probably better to keep it consistent and choose either 1 or true. If we want to make this be extensible later (as a bit field), then you're right we should just use 1 everywhere below as well.
 
 398:25-398:26
 Mon Feb 22 18:49:56 2016 +0000
@@ -64,6 +95,31 @@ I failed to follow through with this design choice and create a test case.
 
 File: liblog/tests/liblog_test.cpp
 
+1927
+Mon Feb 22 21:47:23 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2c1f56d_35bf47da
+Bytes: 547
+Maybe also have a test that has two elements without a _begin and make sure it behaves as intended?:
+
+static const char *event_test_no_begin(uint32_t tag, size_t &expected_len) {
+    android_log_context ctx;
+
+    EXPECT_TRUE(NULL != (ctx = create_android_logger(tag)));
+    if (!ctx) {
+        return NULL;
+    }
+
+    EXPECT_LE(0, android_log_write_int32(ctx, 0x40302010));
+    EXPECT_LE(0, android_log_write_int64(ctx,
+            0x8070605040302010));
+
+    EXPECT_LE(0, android_log_write_list(ctx, LOG_ID_EVENTS));
+
+        :
+        :
+        :
+
 2037
 Mon Feb 22 18:49:56 2016 +0000
 Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -87,4 +143,12 @@ Bytes: 150
 We should expose in the API the maximum list nesting depth, rather than letting it remain internal.
 
 This should turn into a loop based on that value.
+
+2149:0-2155:56
+Mon Feb 22 21:47:23 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62be89e4_912f4cd2
+UUID: 22d0113b_aade5383
+Bytes: 96
+Yes, good call. Maybe also add a test where it goes over the max, to check it behaves correctly?
 

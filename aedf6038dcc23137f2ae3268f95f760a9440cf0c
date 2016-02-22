@@ -1,0 +1,11 @@
+Revision: aedf6038dcc23137f2ae3268f95f760a9440cf0c
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+344:12-344:34
+Mon Feb 22 18:40:19 2016 +0000
+Author: Ruchi Kandoi <1041663@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2def959_311d2846
+Bytes: 114
+Instead of creating a new method, it will be better to add it as a property and then call getProperty for the same
+

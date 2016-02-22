@@ -1,0 +1,11 @@
+Revision: 0100283b984f98bd9aaf41aeb7ddcbb1dc4e4b6f
+Patch-set: 1
+File: adb/sysdeps_unix.cpp
+
+40:71-40:91
+Mon Feb 22 23:37:48 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2c1f56d_6b46fe4a
+Bytes: 281
+http://developer.android.com/sdk/index.html#Requirements lists 10.8.5 as the minimum supported OSX so I don't think these conditional checks are strictly necessary, but I figured it doesn't hurt to keep them anyway just in case someone wants to try to compile this for an older OS.
+

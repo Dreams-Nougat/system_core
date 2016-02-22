@@ -1,0 +1,41 @@
+Revision: 6d5eee07d43defcbd0012b2a9be73e4b68462c5e
+Patch-set: 1
+File: liblog/log_event_list.c
+
+308
+Mon Feb 22 18:49:56 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22d0113b_1e9591f5
+Bytes: 126
+What if the consumer of the log is expecting the log to be in the list format regardless of whether it has 1 or more elements?
+
+367:24-367:25
+Mon Feb 22 18:49:56 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62be89e4_6bc60914
+Bytes: 52
+Nit: switch to true (as it is below) for consistency
+
+398:25-398:26
+Mon Feb 22 18:49:56 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2c1f56d_a1fafd22
+Bytes: 52
+Nit: switch to true (as it is below) for consistency
+
+418:33-418:38
+Mon Feb 22 18:49:56 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a29b218c_d65ca227
+Bytes: 120
+FYI: If you decide to support the empty list, then the count == 0, and this pre-decrement will make the condition false.
+
+File: liblog/tests/liblog_test.cpp
+
+2037
+Mon Feb 22 18:49:56 2016 +0000
+Author: William Luh <1020966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_ae19c7be
+Bytes: 87
+How about a test that just has an empty list, "[]", or one that includes an empty list?
+

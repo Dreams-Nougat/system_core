@@ -1,5 +1,14 @@
 Revision: 0100283b984f98bd9aaf41aeb7ddcbb1dc4e4b6f
 Patch-set: 1
+File: adb/services.cpp
+
+423:0-423:12
+Tue Feb 23 01:41:38 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2def959_85f016f6
+Bytes: 54
+This is already guarded by an #if ADB_HOST (line 356).
+
 File: adb/sysdeps_unix.cpp
 
 40:71-40:91
@@ -8,4 +17,11 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c2c1f56d_6b46fe4a
 Bytes: 281
 http://developer.android.com/sdk/index.html#Requirements lists 10.8.5 as the minimum supported OSX so I don't think these conditional checks are strictly necessary, but I figured it doesn't hurt to keep them anyway just in case someone wants to try to compile this for an older OS.
+
+48:90-49:40
+Tue Feb 23 01:41:38 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02e4ed24_c19f3079
+Bytes: 68
+At first glance, this makes it seem like it's only available on Mac.
 

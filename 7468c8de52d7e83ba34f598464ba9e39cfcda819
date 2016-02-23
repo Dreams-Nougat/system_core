@@ -22,3 +22,11 @@ UUID: 428ee542_c2211297
 Bytes: 92
 you need to import print_function up here for proper behavior and to keep it from regressing
 
+18
+Tue Feb 23 21:29:16 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 428ee542_c2211297
+UUID: a29b218c_1563161b
+Bytes: 74
+Spelling is `from __future__ import print_function`, and yes, it's needed.
+

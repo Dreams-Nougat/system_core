@@ -1,0 +1,24 @@
+Revision: 7468c8de52d7e83ba34f598464ba9e39cfcda819
+Patch-set: 1
+File: mkbootimg/mkbootimg
+
+138
+Tue Feb 23 20:08:31 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 428ee542_a2f96631
+Bytes: 212
+instead of duplicating the output logic, reformat the return value first
+
+ if isinstance(img_id, str):
+     # Python 2's struct.pack returns a string, but py3 returns bytes.
+     img_id = [ord(x) for x in img_id]
+
+File: toolbox/generate-input.h-labels.py
+
+18
+Tue Feb 23 20:08:31 2016 +0000
+Author: Mike Frysinger <1040868@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 428ee542_c2211297
+Bytes: 92
+you need to import print_function up here for proper behavior and to keep it from regressing
+

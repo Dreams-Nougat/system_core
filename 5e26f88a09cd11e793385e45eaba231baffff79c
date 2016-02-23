@@ -1,0 +1,13 @@
+Revision: 5e26f88a09cd11e793385e45eaba231baffff79c
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+91
+Tue Feb 23 20:34:48 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22d0113b_6d50504f
+Bytes: 195
+already taken internally :-(
+
+subset of https://googleplex-android.git.corp.google.com/platform/system/core/+/cd2ef4ef1cc91997c305925af7e24318cc00913a should probably be cherrypicked out to AOSP.
+

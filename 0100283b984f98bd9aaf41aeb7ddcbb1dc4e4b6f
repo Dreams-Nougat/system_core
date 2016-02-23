@@ -9,6 +9,14 @@ UUID: e2def959_85f016f6
 Bytes: 54
 This is already guarded by an #if ADB_HOST (line 356).
 
+423:0-423:12
+Tue Feb 23 17:12:35 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2def959_85f016f6
+UUID: 62be89e4_561d2544
+Bytes: 21
+Oh thanks good catch.
+
 File: adb/sysdeps_unix.cpp
 
 40:71-40:91
@@ -24,4 +32,12 @@ Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 02e4ed24_c19f3079
 Bytes: 68
 At first glance, this makes it seem like it's only available on Mac.
+
+48:90-49:40
+Tue Feb 23 17:12:35 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02e4ed24_c19f3079
+UUID: a29b218c_0f9b0491
+Bytes: 31
+Oops you're right. Will reword.
 

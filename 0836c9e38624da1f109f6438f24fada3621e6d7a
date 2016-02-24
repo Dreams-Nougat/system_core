@@ -9,3 +9,11 @@ UUID: a29b218c_18ed86aa
 Bytes: 56
 what actually changed here? was there a \r or something?
 
+14
+Wed Feb 24 18:10:03 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a29b218c_18ed86aa
+UUID: 82bb7df1_746373ec
+Bytes: 163
+I believe something like that, yes. I did not open it with a hex editor but some primitive editors (like mcedit) were not showing a newline at the end of the file.
+

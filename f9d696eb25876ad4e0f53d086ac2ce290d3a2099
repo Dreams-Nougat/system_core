@@ -25,3 +25,11 @@ Hmm this actually might double-close the FD as well if I'm reading it right. Clo
 
 Not sure what the solution is here, maybe we want to set the FDE_DONT_CLOSE flag on this event and just always do it ourselves?
 
+234:0-238:5
+Wed Feb 24 22:44:41 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02e4ed24_022ad315
+UUID: e2b0b90b_fa854032
+Bytes: 59
+Yeah, FDE_DONT_CLOSE seems like the right thing to do here.
+

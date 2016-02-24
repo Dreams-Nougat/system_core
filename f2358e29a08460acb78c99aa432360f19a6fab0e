@@ -1,0 +1,27 @@
+Revision: f2358e29a08460acb78c99aa432360f19a6fab0e
+Patch-set: 2
+File: adb/adb_auth_client.cpp
+
+168
+Wed Feb 24 23:48:48 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2c1f56d_f0cd447c
+Bytes: 464
+I think we want to call fdevent_remove() here, otherwise is this possible?
+
+  1. adb_auth_listener() sets framework_fd
+  2. adb_auth_confirm_key() installs auth_fde on framework_fd
+  3. USB unplugs -> usb_disconnected()
+  4. framework_fd closes -> adb_auth_event() fires
+
+Now at this point usb_transport is NULL, which means in adb_auth_event() the fdevent_remove() call never happens, so I think the fdevent loop keeps calling adb_auth_event() on every iteration.
+
+182:0-185:13
+Wed Feb 24 23:48:48 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2def959_a6ed4e1a
+Bytes: 397
+Thinking on it more, if adb_auth_listener() closes framework_fd then assigns it a new value, won't this fire and then just close the new framework_fd right away? But we can't close |fd| instead because it may have already been closed in adb_auth_listener().
+
+Maybe if we close framework_fd in adb_auth_listener() and usb_transport exists we also want to call fdevent_remove() so this isn't called?
+

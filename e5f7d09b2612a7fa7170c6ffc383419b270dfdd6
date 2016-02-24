@@ -1,0 +1,11 @@
+Revision: e5f7d09b2612a7fa7170c6ffc383419b270dfdd6
+Patch-set: 1
+File: bootstat/bootstat.rc
+
+17
+Wed Feb 24 17:07:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22d0113b_e6f23ebe
+Bytes: 128
+i thought --record_factory_reset means "i'm telling you a factory reset happened", not "check whether a factory reset happened"?
+

@@ -22,6 +22,18 @@ This (and all the others) are a bug waiting to happen to overflow the buffer and
 
 snprintf returns the number of bytes it would have written, if it could, not the number of bytes it actually wrote.
 
+317:16-318:67
+Wed Feb 24 06:53:02 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a5a9c6_b9690f89
+UUID: c2981592_422fa767
+Bytes: 305
+that's _still_ an accident waiting to happen. and really ugly verbose code.
+
+this kind of thing is what asprintf (or, since this is actually C++ and you need to string a bunch of these together anyway, android::base::StringPrintf and std::string operator+=) is for.
+
+just say no to fixed-length buffers...
+
 322:7-328:9
 Mon Feb 22 21:43:49 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

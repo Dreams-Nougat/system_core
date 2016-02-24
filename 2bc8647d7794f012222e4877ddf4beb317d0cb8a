@@ -1,0 +1,11 @@
+Revision: 2bc8647d7794f012222e4877ddf4beb317d0cb8a
+Patch-set: 1
+File: libcutils/trace-dev.c
+
+217:12-217:20
+Wed Feb 24 02:41:57 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2def959_5ece74d1
+Bytes: 69
+does this include \0? I am not sure you need + 1 above for name_len..
+

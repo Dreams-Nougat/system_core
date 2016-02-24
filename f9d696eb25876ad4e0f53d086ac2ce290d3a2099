@@ -1,0 +1,27 @@
+Revision: f9d696eb25876ad4e0f53d086ac2ce290d3a2099
+Patch-set: 1
+File: adb/adb_auth_client.cpp
+
+180:0-185:13
+Wed Feb 24 17:42:59 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_d1f022f7
+Bytes: 286
+I think if |usb_transport| exists this will close |framework_fd| twice which might be a race condition. Would this work instead?
+
+  if (usb_transport) {
+    fdevent_remove(&usb_transport->auth_fde);
+  } else if (framework_fd >= 0) {
+    adb_close(framework_fd);
+  }
+  framework_fd = -1;
+
+234:0-238:5
+Wed Feb 24 17:42:59 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02e4ed24_022ad315
+Bytes: 349
+Hmm this actually might double-close the FD as well if I'm reading it right. Closing here will cause adb_auth_event() to fire, then if |usb_transport| exists the fdevent_remove() call will try to close the same FD again.
+
+Not sure what the solution is here, maybe we want to set the FDE_DONT_CLOSE flag on this event and just always do it ourselves?
+

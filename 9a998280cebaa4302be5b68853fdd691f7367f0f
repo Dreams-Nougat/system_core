@@ -1,0 +1,49 @@
+Revision: 9a998280cebaa4302be5b68853fdd691f7367f0f
+Patch-set: 3
+File: libcutils/tests/Android.mk
+
+26
+Wed Feb 24 16:31:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82bb7df1_11b2092f
+Bytes: 4
+tab?
+
+File: libcutils/tests/trace-dev_test.cpp
+
+42
+Wed Feb 24 16:31:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2c1f56d_b4fea77d
+Bytes: 265
+not just
+
+  TemporaryFile tmp_file_;
+
+and fiddle with atrace_marker_fd in the constructor/destructor?
+
+https://github.com/google/googletest/blob/master/googletest/docs/FAQ.md#should-i-use-the-constructordestructor-of-the-test-fixture-or-the-set-uptear-down-function
+
+259:2-262:3
+Wed Feb 24 16:31:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2981592_e21ebbf5
+Bytes: 109
+factor this out as MakeName(size_t length) so the different lengths -- the interesting bit -- stand out more?
+
+File: libcutils/trace-dev.c
+
+208:54-208:58
+Wed Feb 24 16:31:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c2981592_c223b73f
+Bytes: 126
+if you're doing this, do you want to factor out the %c|%d| too and pass a "char type" instead of a "const char* format_begin"?
+
+224:23-224:34
+Wed Feb 24 16:31:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82bb7df1_b16fdd37
+Bytes: 109
+doesn't the way you've done this mean you can rewrite atrace_begin_body with "" as format_end and 0 as value?
+

@@ -1,0 +1,11 @@
+Revision: 2353bfa3725d28467f89a76d48c3414daa33c082
+Patch-set: 1
+File: lmkd/lmkd.c
+
+275:4-275:21
+Thu Feb 25 00:51:05 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a5a9c6_60b17e0d
+Bytes: 72
+Technically uid_t is unsigned int, not sure if ever an issue on Android.
+

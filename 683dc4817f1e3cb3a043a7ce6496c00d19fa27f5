@@ -1,0 +1,11 @@
+Revision: 683dc4817f1e3cb3a043a7ce6496c00d19fa27f5
+Patch-set: 3
+File: adb/Android.mk
+
+350:4-351:25
+Thu Feb 25 23:47:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2b0b90b_c98880e1
+Bytes: 40
+(weren't you going to merge these? :-P )
+

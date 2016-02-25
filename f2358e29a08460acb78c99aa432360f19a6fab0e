@@ -25,3 +25,13 @@ Thinking on it more, if adb_auth_listener() closes framework_fd then assigns it 
 
 Maybe if we close framework_fd in adb_auth_listener() and usb_transport exists we also want to call fdevent_remove() so this isn't called?
 
+182:0-185:13
+Thu Feb 25 02:00:54 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2def959_a6ed4e1a
+UUID: 02e4ed24_84a00c1a
+Bytes: 321
+I think the core problem is that the framework socket and usb transport have unrelated lifecycles, but the usb transport contains the fdevent for the framework socket, which makes things unnecessarily hard to reason about.
+
+PS3 moves auth_fde to a static variable in this file, instead of being a member of usb_transport.
+

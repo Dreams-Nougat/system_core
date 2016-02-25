@@ -24,12 +24,28 @@ and fiddle with atrace_marker_fd in the constructor/destructor?
 
 https://github.com/google/googletest/blob/master/googletest/docs/FAQ.md#should-i-use-the-constructordestructor-of-the-test-fixture-or-the-set-uptear-down-function
 
+42
+Thu Feb 25 20:46:03 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c2c1f56d_b4fea77d
+UUID: e2def959_5262e081
+Bytes: 5
+Done.
+
 259:2-262:3
 Wed Feb 24 16:31:45 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c2981592_e21ebbf5
 Bytes: 109
 factor this out as MakeName(size_t length) so the different lengths -- the interesting bit -- stand out more?
+
+259:2-262:3
+Thu Feb 25 20:46:03 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c2981592_e21ebbf5
+UUID: 62be89e4_9e25078c
+Bytes: 4
+Done
 
 File: libcutils/trace-dev.c
 

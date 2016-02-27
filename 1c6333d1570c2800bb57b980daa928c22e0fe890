@@ -1,0 +1,13 @@
+Revision: 1c6333d1570c2800bb57b980daa928c22e0fe890
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+68:0-68:38
+Sat Feb 27 02:16:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2927965_0df9886c
+Bytes: 162
+even for mkdirs (the other caller)?
+
+(looks like we still need mkdirs' sole remaining call site because old adbds won't ask us to create the missing directories?)
+

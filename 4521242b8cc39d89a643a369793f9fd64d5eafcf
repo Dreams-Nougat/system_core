@@ -31,3 +31,11 @@ void LogAudit::enforceIntegrity() {
             if (!once) logToDmesg("....");
             return;
 
+112:0-115:79
+Mon Feb 29 20:10:07 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22ef3134_e3bde6dd
+UUID: e2b0b90b_5ca42713
+Bytes: 17
+Good points. Done
+

@@ -1,5 +1,16 @@
 Revision: 0bb06bce00ce7340a572f14b849386e0dd2ce8e4
 Patch-set: 1
+File: /COMMIT_MSG
+
+7:15-7:36
+Mon Feb 29 23:04:08 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c26bb568_e7e57587
+Bytes: 166
+suggest: if a battery device exists
+
+To disambiguate from whether a removable battery is currently present.  (The name of the variable for this is a bit unfortunate.)
+
 File: healthd/BatteryMonitor.cpp
 
 187:8-187:41
@@ -46,10 +57,27 @@ Good, but I see that you can simplify on line 215.
 
 NB: N9 cat /sys/devices/platform/htc_battery_max17050.8/power_supply/flounder-battery/present = 1
 
+519:48-519:63
+Mon Feb 29 23:04:08 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22ef3134_4c74c7d8
+Bytes: 468
+mBatteryDevicePresent is supposed to reflect whether the hardware has any battery device (removable or not), independent of whether a platform that has a removable battery currently has a battery installed or not.  The names of these two fields are unfortunately too similar.
+
+I don't know what anybody does with an Android device that has a removable battery that is actually removed (and presumably running on charger power), but safest to leave this the way it was.
+
 619:8-619:30
 Mon Feb 29 22:18:15 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 02feade5_055d7821
 Bytes: 112
 So, if battery is present, and there are no charger supplies found, what does that mean in the scheme of things?
+
+619:8-619:30
+Mon Feb 29 23:04:08 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02feade5_055d7821
+UUID: 22ef3134_cc68d7f8
+Bytes: 138
+It would reflect a battery-operated device that must be charged separately, I suppose.  Such a thing has probably never been tested by us.
 

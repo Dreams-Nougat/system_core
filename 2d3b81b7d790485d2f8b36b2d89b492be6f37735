@@ -1,0 +1,20 @@
+Revision: 2d3b81b7d790485d2f8b36b2d89b492be6f37735
+Patch-set: 1
+File: logd/LogAudit.cpp
+
+95:10-97:9
+Mon Feb 29 18:25:18 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a26ec178_b8dec583
+Bytes: 151
+IMHO, this would be more readable as:
+
+  if (once) {
+    if (loggedOnce) {
+      return;
+    }
+    loggedOnce = true;
+  }
+
+The else block isn't needed.
+

@@ -1,0 +1,55 @@
+Revision: 0bb06bce00ce7340a572f14b849386e0dd2ce8e4
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+187:8-187:41
+Mon Feb 29 22:18:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02feade5_6548bc2b
+Bytes: 352
+If we change to:
+
+if (!path.isEmpty() && readFromFile(path, buf, SIZE) > 0) {
+
+we will be able to simplify 215 suggestion I made to not require the check for isEmpty.
+
+This would add an additional sense of security that getBooleanField does not even try to open the file for reading for an empty path should it be used for something else in the future.
+
+200:17-200:18
+Mon Feb 29 22:18:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a26ec178_9e6409b2
+Bytes: 366
+Just A Comment, no action requested. If I was to go crazy (which is not in-fact, in doubt ;-} ), you could also add empty checking here as well, and you will find you can KISS strip out a few .isEmpty() calls that if() { } around getIntField. Of course, not all of them, because an empty field is used to report an error ... whereas a zero return is not an error ...
+
+215:8-215:53
+Mon Feb 29 22:18:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02594de9_ed36bd3b
+Bytes: 328
+mBatteryDevicePresent will always be false now if there is no batteryPresentPath.
+
+KISS:
+
+props.batteryPresent = !mHealthdConfig->batteryPresentPath.isEmpty() && getBooleanField(mHealthdConfig->batteryPresentPath);
+
+Edit: if you change line 187, then:
+
+props.batteryPresent = getBooleanField(mHealthdConfig->batteryPresentPath);
+
+519:24-519:70
+Mon Feb 29 22:18:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c26bb568_54f751ea
+Bytes: 149
+Good, but I see that you can simplify on line 215.
+
+NB: N9 cat /sys/devices/platform/htc_battery_max17050.8/power_supply/flounder-battery/present = 1
+
+619:8-619:30
+Mon Feb 29 22:18:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02feade5_055d7821
+Bytes: 112
+So, if battery is present, and there are no charger supplies found, what does that mean in the scheme of things?
+

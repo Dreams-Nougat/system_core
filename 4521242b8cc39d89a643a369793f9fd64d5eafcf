@@ -1,0 +1,33 @@
+Revision: 4521242b8cc39d89a643a369793f9fd64d5eafcf
+Patch-set: 2
+File: logd/LogAudit.cpp
+
+90:26-90:34
+Mon Feb 29 19:01:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2b0b90b_9c8bcfd9
+Bytes: 128
+unnecessary initialization that results in this being moved from BSS to initialized data, C++ standard guarantees false is zero.
+
+112:0-115:79
+Mon Feb 29 19:01:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22ef3134_e3bde6dd
+Bytes: 851
+Since the pair of messages are mutually exclusive, this works by adding common functionality to the dmesg log handler, but might not be intuitively obvious to future selves that wish to add a third logged once message, or allow runtime switching of AUDITD_ENFORCE_INTEGRITY, that could result in unexpected suppression?
+
+Adding the loggedOnce flag into context of enforceIntegrity function could be clearer without the need to add a clarity comment regarding the abstracted behavior in logToDmesg. eg:
+
+void LogAudit::enforceIntegrity() {
+    static bool loggedOnce;
+    bool once = loggedOnce;
+
+    loggedOnce = true;
+
+    if (!AUDITD_ENFORCE_INTEGRITY) {
+        if (!once) logToDmesg("....");
+    } else if (RebootToSafeMode) {
+        if (getProperty("persist.sys.safemode") == "1") {
+            if (!once) logToDmesg("....");
+            return;
+

@@ -1,0 +1,11 @@
+Revision: 263f3fac0f74d7fdd810c15d989a69e6a7edacfd
+Patch-set: 1
+File: adb/transport_local.cpp
+
+257:15-257:41
+Tue Mar 01 08:31:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e27a7932_a319a00d
+Bytes: 33
+Shouldn't this be !ReadFdExactly?
+

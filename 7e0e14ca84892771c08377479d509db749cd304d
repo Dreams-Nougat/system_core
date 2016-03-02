@@ -1,0 +1,25 @@
+Revision: 7e0e14ca84892771c08377479d509db749cd304d
+Patch-set: 2
+File: base/include/android-base/logging.h
+
+170:2-174:37
+Wed Mar 02 19:33:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02594de9_e4e32ff2
+Bytes: 3
+{ }
+
+181:2-185:77
+Wed Mar 02 19:33:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c26bb568_cd9f2779
+Bytes: 3
+{ }
+
+204:0-208:65
+Wed Mar 02 19:33:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02594de9_44dfa31d
+Bytes: 3
+{ }
+

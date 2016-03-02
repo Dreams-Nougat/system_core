@@ -11,3 +11,11 @@ even for mkdirs (the other caller)?
 
 (looks like we still need mkdirs' sole remaining call site because old adbds won't ask us to create the missing directories?)
 
+68:0-68:38
+Wed Mar 02 23:31:41 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2927965_0df9886c
+UUID: 22ef3134_a52630fa
+Bytes: 221
+This is actually only true for mkdirs. directory_exists gets used in a few other places, most of which look like they'd be fine with this, but at least one of which (remount_service) is not. Moving the change into mkdirs.
+

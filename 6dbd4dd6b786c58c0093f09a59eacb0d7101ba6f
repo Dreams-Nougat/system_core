@@ -1,0 +1,11 @@
+Revision: 6dbd4dd6b786c58c0093f09a59eacb0d7101ba6f
+Patch-set: 2
+File: adb/transport_local.cpp
+
+264:16-264:20
+Wed Mar 02 01:31:10 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02594de9_6eaac09c
+Bytes: 22
+Space between if and (
+

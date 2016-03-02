@@ -9,3 +9,13 @@ UUID: a2e32149_55b9def0
 Bytes: 110
 Is there a reason you aren't just storing this as a long? I didn't see any obvious reason to keep it a string.
 
+65:4-65:15
+Wed Mar 02 15:55:06 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a2e32149_55b9def0
+UUID: e27a7932_10a78be5
+Bytes: 266
+see L364 --- everyone else translates pr < -9 into the string "RT". rather than complicate the already messy printf part of the code, i do this translation when i read pr rather than when i output it.
+
+there's no such tradition for ni, so it's just stored as a long.
+

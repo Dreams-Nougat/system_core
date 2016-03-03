@@ -9,3 +9,13 @@ UUID: c26bb568_ee7a1efe
 Bytes: 21
 want to log to dmesg?
 
+406:8-406:16
+Thu Mar 03 19:14:28 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_ee7a1efe
+UUID: a26ec178_369893a3
+Bytes: 332
+At the point this function is called, klog_init() has not yet been called, and /dev/__kmsg__ is not available for writing. If we call klog_init() before open_devnull_stdio(), klog_fd will likely be assigned fd=0 or fd=1, which will be clobbered when open_devnull_stdio is called.
+
+I don't think logging to dmesg is practical here...
+

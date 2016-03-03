@@ -31,6 +31,16 @@ Local result:
       bar.txt
     test/  <-- I think this should not be here
 
+998:16-998:27
+Thu Mar 03 22:52:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 82d1bd8e_28422be8
+UUID: a2e32149_e3194a0d
+Bytes: 309
+I'm dumb, and this actually was being done in copy_remote_dir_local, except with a bug (basename on rpath instead of lpath). I didn't notice what was going on because I was pulling directly into the adb source directory, which already has a test subdirectory.
+
+Removed this, and replaced it with a proper fix.
+
 File: adb/test_device.py
 
 918:46-918:52
@@ -40,6 +50,14 @@ UUID: 22ef3134_eacda07c
 Bytes: 255
 nit: we should try to stick with either single or double quotes for strings. At the moment it's a bit of both, but the majority seems to be single so I would suggest using single quotes here. (I wouldn't worry about the rest of the file in this CL though)
 
+918:46-918:52
+Thu Mar 03 22:52:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22ef3134_eacda07c
+UUID: 22ef3134_3e57cafb
+Bytes: 91
+Done, follow up CL for the most of the rest (since this test started off with a copy/paste)
+
 931:20-931:38
 Thu Mar 03 19:01:14 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -47,10 +65,26 @@ UUID: 02feade5_b7430838
 Bytes: 121
 |dest_dir| already has |host_dir| in it, it's a little confusing to join it again even though in practice it still works.
 
+931:20-931:38
+Thu Mar 03 22:52:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02feade5_b7430838
+UUID: 82d1bd8e_2ea0736a
+Bytes: 4
+Done
+
 938:0-939:0
 Thu Mar 03 19:01:14 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 02feade5_17e63c93
 Bytes: 49
 nit: only one newline between methods in a class.
+
+938:0-939:0
+Thu Mar 03 22:52:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02feade5_17e63c93
+UUID: e211990a_66a0b36b
+Bytes: 4
+Done
 

@@ -1,0 +1,27 @@
+Revision: f64481f63234f30b93d5ebb0676fbbacf4666ef1
+Patch-set: 1
+File: /COMMIT_MSG
+
+7:11-7:14
+Thu Mar 03 22:50:08 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02feade5_2806793c
+Bytes: 3
+ptr
+
+File: libion/tests/allocate_test.cpp
+
+94
+Thu Mar 03 22:50:08 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e211990a_06061f3c
+Bytes: 12
+make_unique?
+
+94:39-94:53
+Thu Mar 03 22:50:08 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a2e32149_e3f02af7
+Bytes: 50
+wouldn't new char[4096]{} initialize this to zero?
+

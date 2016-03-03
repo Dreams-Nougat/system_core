@@ -19,3 +19,13 @@ At the point this function is called, klog_init() has not yet been called, and /
 
 I don't think logging to dmesg is practical here...
 
+406:8-406:16
+Thu Mar 03 19:17:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a26ec178_369893a3
+UUID: 82ea9d1e_27ed0aab
+Bytes: 164
+makes sense. copy and paste that into a code comment here? :-)
+
+(since i have a feeling i probably asked you the same question last time you touched this code :-) )
+

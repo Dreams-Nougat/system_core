@@ -1,0 +1,11 @@
+Revision: b4809d5845c395d4955d690eb9257a967d0e8373
+Patch-set: 1
+File: init/util.cpp
+
+406:8-406:16
+Thu Mar 03 19:08:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c26bb568_ee7a1efe
+Bytes: 21
+want to log to dmesg?
+

@@ -11,10 +11,28 @@ The previously discussed proposal was to collapse this if statement and the foll
 
 The two separate if statements are not needed, and we don't want to do this when there is a removable battery that is currently removed, as this patch does.
 
+623:8-623:29
+Thu Mar 03 10:25:22 2016 +0000
+Author: Adarsh Reddy <1049213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a2e32149_ee7e58b5
+UUID: 22fe51bd_0edfaf1e
+Bytes: 694
+There are two properties here: props.batteryPresent and mBatteryDevicePresent.
+From my observation, i think the better way to detect if a battery is actually Inserted on a device or not is to check the whole path - (/sys/class/power_supply/battery/present)=(i.e. props.batteryPresent) and not , (/sys/class/power_supply/battery/)=(i.e mBatteryDevicePresent), because, even if battery is not inserted into the device, mBatteryDevicePresent will still be true, as the directory creation of /sys/class/power_supply/battery/ happens in kernel itself during boot.. so,a better way to check, is to go further inside, and check for /sys/class/power_supply/battery/present.
+Let me know what you think..
+
 624:8-624:59
 Thu Mar 03 00:26:27 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e211990a_fc90d8cb
 Bytes: 112
 This log message is no longer needed, now that we are no longer checking the condition of "no charger supplies".
+
+624:8-624:59
+Thu Mar 03 10:25:22 2016 +0000
+Author: Adarsh Reddy <1049213@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e211990a_fc90d8cb
+UUID: 22fe51bd_ee0c538f
+Bytes: 17
+Sure will remove.
 

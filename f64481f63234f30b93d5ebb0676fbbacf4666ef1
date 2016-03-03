@@ -9,6 +9,14 @@ UUID: 02feade5_2806793c
 Bytes: 3
 ptr
 
+7:11-7:14
+Thu Mar 03 23:19:36 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02feade5_2806793c
+UUID: 82ea9d1e_7c09640b
+Bytes: 4
+Done
+
 File: libion/tests/allocate_test.cpp
 
 94
@@ -24,4 +32,20 @@ Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a2e32149_e3f02af7
 Bytes: 50
 wouldn't new char[4096]{} initialize this to zero?
+
+94:39-94:53
+Thu Mar 03 23:19:36 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a2e32149_e3f02af7
+UUID: 82d1bd8e_8e135f40
+Bytes: 50
+Thanks. Now I used new char[4096]() and no memset.
+
+94
+Thu Mar 03 23:19:36 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e211990a_06061f3c
+UUID: a2e32149_262a20c1
+Bytes: 77
+make_unique would require c++14 so I prefer simple unique_ptr for unit tests.
 

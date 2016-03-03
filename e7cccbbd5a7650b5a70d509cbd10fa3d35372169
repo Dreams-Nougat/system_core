@@ -1,0 +1,56 @@
+Revision: e7cccbbd5a7650b5a70d509cbd10fa3d35372169
+Patch-set: 2
+File: adb/file_sync_client.cpp
+
+998:16-998:27
+Thu Mar 03 19:01:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82d1bd8e_28422be8
+Bytes: 561
+I think this needs to be done in copy_remote_dir_local() instead (or it needs to be modified somehow), it looks like that function is still creating a local copy of the remote folder with the original name as well as the changed name.
+
+Here's what I'm finding when I try this:
+
+Local structure:
+  foo/  (empty)
+
+Remote structure:
+  data/
+    local/
+      tmp/
+        test/
+          foo.txt
+          bar.txt
+
+$ adb pull data/local/tmp/test foo/subdir
+
+Local result:
+  foo/
+    subdir/
+      foo.txt
+      bar.txt
+    test/  <-- I think this should not be here
+
+File: adb/test_device.py
+
+918:46-918:52
+Thu Mar 03 19:01:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 22ef3134_eacda07c
+Bytes: 255
+nit: we should try to stick with either single or double quotes for strings. At the moment it's a bit of both, but the majority seems to be single so I would suggest using single quotes here. (I wouldn't worry about the rest of the file in this CL though)
+
+931:20-931:38
+Thu Mar 03 19:01:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02feade5_b7430838
+Bytes: 121
+|dest_dir| already has |host_dir| in it, it's a little confusing to join it again even though in practice it still works.
+
+938:0-939:0
+Thu Mar 03 19:01:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 02feade5_17e63c93
+Bytes: 49
+nit: only one newline between methods in a class.
+

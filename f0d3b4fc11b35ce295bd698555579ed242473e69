@@ -1,0 +1,11 @@
+Revision: f0d3b4fc11b35ce295bd698555579ed242473e69
+Patch-set: 1
+File: adb/adb_utils.h
+
+47
+Fri Mar 04 23:26:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a26ec178_99372738
+Bytes: 25
+android::base::unique_fd?
+

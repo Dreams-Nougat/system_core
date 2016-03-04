@@ -1,0 +1,11 @@
+Revision: e8b2956e666d9af6d45fb59a314b52d40e0fc569
+Patch-set: 3
+File: libion/tests/device_test.cpp
+
+137
+Fri Mar 04 01:27:52 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e2b0b90b_e26fc436
+Bytes: 20
+make_unique here too
+

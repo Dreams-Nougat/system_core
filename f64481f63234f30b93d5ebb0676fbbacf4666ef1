@@ -57,3 +57,11 @@ UUID: a26ec178_0f6a0e7c
 Bytes: 45
 we're already using C++14 for the platform...
 
+94
+Fri Mar 04 01:27:43 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a26ec178_0f6a0e7c
+UUID: 82ea9d1e_d2dfb71b
+Bytes: 51
+PTAL PS3. New make_unique requires clang and c++14.
+

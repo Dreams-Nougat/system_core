@@ -9,6 +9,15 @@ UUID: 02594de9_e4e32ff2
 Bytes: 3
 { }
 
+170:2-174:37
+Fri Mar 04 22:59:27 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02594de9_e4e32ff2
+UUID: e2b0b90b_139440ba
+Bytes: 176
+I cannot add blocks here, because current usage pattern of CHECK(x) << "extra messages".
+The for(;;abort()) prefix makes sure that abort() is called after the "extra messages".
+
 181:2-185:77
 Wed Mar 02 19:33:47 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +25,26 @@ UUID: c26bb568_cd9f2779
 Bytes: 3
 { }
 
+181:2-185:77
+Fri Mar 04 22:59:27 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_cd9f2779
+UUID: c26bb568_b026b9fa
+Bytes: 28
+Same problem as in CHECK(x).
+
 204:0-208:65
 Wed Mar 02 19:33:47 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 02594de9_44dfa31d
 Bytes: 3
 { }
+
+204:0-208:65
+Fri Mar 04 22:59:27 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 02594de9_44dfa31d
+UUID: c26bb568_50809dea
+Bytes: 19
+Same as in CHECK(x)
 

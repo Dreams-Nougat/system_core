@@ -21,6 +21,18 @@ There are two properties here: props.batteryPresent and mBatteryDevicePresent.
 From my observation, i think the better way to detect if a battery is actually Inserted on a device or not is to check the whole path - (/sys/class/power_supply/battery/present)=(i.e. props.batteryPresent) and not , (/sys/class/power_supply/battery/)=(i.e mBatteryDevicePresent), because, even if battery is not inserted into the device, mBatteryDevicePresent will still be true, as the directory creation of /sys/class/power_supply/battery/ happens in kernel itself during boot.. so,a better way to check, is to go further inside, and check for /sys/class/power_supply/battery/present.
 Let me know what you think..
 
+623:8-623:29
+Fri Mar 04 02:38:29 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22fe51bd_0edfaf1e
+UUID: c26bb568_acfaebd0
+Bytes: 518
+The two variables have unfortunately similar names, but serve different purposes.  mBatteryDevicePresent is true when there is a battery device registered on the platform, although the battery device might not be currently present if it is removable.  
+
+props.batteryPresent is true if the battery is currently present (either a removable battery that is currently installed or a non-removable battery).
+
+The fake battery properties are to be used only when there is no battery at all (mBatteryDevicePresent == false).
+
 624:8-624:59
 Thu Mar 03 00:26:27 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,12 +9,28 @@ UUID: e211990a_a14c7518
 Bytes: 97
 Typo for "CLANG", but is this actually needed? Are there devices that don't default to Clang now?
 
+20
+Fri Mar 04 17:24:30 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e211990a_a14c7518
+UUID: 82d1bd8e_9c8435ff
+Bytes: 144
+Fixed typo. Most devices don't set default but global default can be changed to test gcc. Modules don't compile with prebuilt gcc should say so.
+
 22:33-22:43
 Fri Mar 04 01:29:59 2016 +0000
 Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 82ea9d1e_1212bfac
 Bytes: 67
 I think you can just remove this entirely. We default to c++14 now.
+
+22:33-22:43
+Fri Mar 04 17:24:30 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 82ea9d1e_1212bfac
+UUID: e2b0b90b_c51052e0
+Bytes: 4
+Done
 
 File: libion/tests/device_test.cpp
 
@@ -24,4 +40,12 @@ Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: e2b0b90b_e26fc436
 Bytes: 20
 make_unique here too
+
+137
+Fri Mar 04 17:24:30 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e2b0b90b_e26fc436
+UUID: 22ef3134_07e6fe2b
+Bytes: 4
+Done
 

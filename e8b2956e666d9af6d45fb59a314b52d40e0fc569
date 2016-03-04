@@ -1,5 +1,21 @@
 Revision: e8b2956e666d9af6d45fb59a314b52d40e0fc569
 Patch-set: 3
+File: libion/tests/Android.mk
+
+20
+Fri Mar 04 01:29:59 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e211990a_a14c7518
+Bytes: 97
+Typo for "CLANG", but is this actually needed? Are there devices that don't default to Clang now?
+
+22:33-22:43
+Fri Mar 04 01:29:59 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82ea9d1e_1212bfac
+Bytes: 67
+I think you can just remove this entirely. We default to c++14 now.
+
 File: libion/tests/device_test.cpp
 
 137

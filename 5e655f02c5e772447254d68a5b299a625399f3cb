@@ -1,0 +1,11 @@
+Revision: 5e655f02c5e772447254d68a5b299a625399f3cb
+Patch-set: 2
+File: bootstat/bootstat.rc
+
+11
+Fri Mar 04 01:38:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c26bb568_ec8ea3e9
+Bytes: 149
+doesn't this mean that if i reboot my encrypted device before going to bed, and enter my password the next morning, we'll record a 10-hour boot time?
+

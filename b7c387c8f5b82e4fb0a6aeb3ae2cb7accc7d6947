@@ -9,12 +9,28 @@ UUID: c26bb568_b546ae47
 Bytes: 71
 zeroes is only used here, zeroes_ptr.get() and remove the void* zeroes?
 
+130:33-130:39
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_b546ae47
+UUID: e2b0b90b_6809530b
+Bytes: 4
+Done
+
 136
 Fri Mar 04 18:57:13 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a26ec178_a815f75f
 Bytes: 32
 remove this to avoid double free
+
+136
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a26ec178_a815f75f
+UUID: c26bb568_55241247
+Bytes: 4
+Done
 
 File: libion/tests/device_test.cpp
 
@@ -25,12 +41,28 @@ UUID: c26bb568_753116ec
 Bytes: 53
 alloc is only used to initialize buf, alloc_ptr.get()
 
+139:46-139:51
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_753116ec
+UUID: c26bb568_f5de6653
+Bytes: 4
+Done
+
 167
 Fri Mar 04 18:57:13 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c26bb568_352b9e7a
 Bytes: 32
 remove this to avoid double free
+
+167
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_352b9e7a
+UUID: 82d1bd8e_7c96a174
+Bytes: 4
+Done
 
 172
 Fri Mar 04 18:57:13 2016 +0000
@@ -39,10 +71,26 @@ UUID: 22ef3134_0a63a385
 Bytes: 15
 missed this one
 
+172
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22ef3134_0a63a385
+UUID: 02feade5_ebfc885f
+Bytes: 4
+Done
+
 239
 Fri Mar 04 18:57:13 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c26bb568_f52506a3
 Bytes: 15
 missed this one
+
+239
+Fri Mar 04 19:33:47 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_f52506a3
+UUID: e211990a_08810927
+Bytes: 4
+Done
 

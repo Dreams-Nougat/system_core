@@ -1,0 +1,11 @@
+Revision: fc50e9aeafaa641839736ae7eabb27dd6f2bd110
+Patch-set: 1
+File: adb/commandline.cpp
+
+1077:4-1077:7
+Fri Mar 04 23:06:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 82ea9d1e_fe29e421
+Bytes: 36
+Oops, forgot to make this a ScopedFd
+

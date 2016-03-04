@@ -9,3 +9,15 @@ UUID: c26bb568_ec8ea3e9
 Bytes: 149
 doesn't this mean that if i reboot my encrypted device before going to bed, and enter my password the next morning, we'll record a 10-hour boot time?
 
+11
+Fri Mar 04 18:13:48 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c26bb568_ec8ea3e9
+UUID: c26bb568_9acf19a1
+Bytes: 295
+> doesn't this mean that if i reboot my encrypted device before going
+ > to bed, and enter my password the next morning, we'll record a
+ > 10-hour boot time?
+
+Currently, yes.  That's also the case with the data we're getting from this metric in the wild.  I am tracking that issue in b/27497357.
+

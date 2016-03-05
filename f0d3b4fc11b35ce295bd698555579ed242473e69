@@ -17,3 +17,11 @@ UUID: 22ef3134_b652da09
 Bytes: 178
 I don't think we can use that, because we need to call adb_close on windows. I suppose we could make the close function a template argument, but do we want to do that in libbase?
 
+47
+Sat Mar 05 02:56:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 22ef3134_b652da09
+UUID: e21b5959_e6d300d5
+Bytes: 103
+ah, duh. yeah, probably not worth the deleter on unique_fd. (not until we have another user, at least.)
+

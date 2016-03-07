@@ -1,0 +1,11 @@
+Revision: 1cd680ce759effd33602de82197790fb027c1721
+Base-for-patch-set: 1
+File: mkbootimg/bootimg.h
+
+46:13-46:19
+Mon Mar 07 22:50:26 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77dc8dfd_d31f663e
+Bytes: 11
+Convenient!
+

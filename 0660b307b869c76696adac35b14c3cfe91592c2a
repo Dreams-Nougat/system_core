@@ -1,0 +1,11 @@
+Revision: 0660b307b869c76696adac35b14c3cfe91592c2a
+Patch-set: 1
+File: bootstat/bootstat.cpp
+
+173
+Wed Mar 09 01:30:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_0d557522
+Bytes: 83
+do you care about abs(INT_MIN)? you said you're not actually seeing INT_MIN, right?
+

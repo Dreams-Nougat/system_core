@@ -9,3 +9,11 @@ UUID: b70fe5b0_0d557522
 Bytes: 83
 do you care about abs(INT_MIN)? you said you're not actually seeing INT_MIN, right?
 
+173
+Wed Mar 09 16:21:52 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_0d557522
+UUID: b70fe5b0_1017cc24
+Bytes: 169
+Na, probably not.  The few negative values I've seen are pretty small.  Mostly I just expect -1, but wanted to see if there are any other values that need to be handled.
+

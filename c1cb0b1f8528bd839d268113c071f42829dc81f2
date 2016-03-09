@@ -1,0 +1,13 @@
+Revision: c1cb0b1f8528bd839d268113c071f42829dc81f2
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+472:8-472:16
+Wed Mar 09 20:14:18 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_93e1864b
+Bytes: 106
+Should you send the kill signal even if you are exiting? Same as below.
+
+This error seems unlikely though.
+

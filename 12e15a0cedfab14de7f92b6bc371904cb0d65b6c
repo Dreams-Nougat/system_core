@@ -1,0 +1,11 @@
+Revision: 12e15a0cedfab14de7f92b6bc371904cb0d65b6c
+Patch-set: 2
+File: liblog/uio.c
+
+31:0-31:8
+Thu Mar 10 20:27:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_f1daf7e9
+Bytes: 9
+<grumble>
+

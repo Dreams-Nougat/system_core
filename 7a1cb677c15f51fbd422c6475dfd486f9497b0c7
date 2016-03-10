@@ -2,6 +2,15 @@ Revision: 7a1cb677c15f51fbd422c6475dfd486f9497b0c7
 Patch-set: 1
 File: liblog/log_is_loggable.c
 
+259:0-259:15
+Thu Mar 10 02:10:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_798f135a
+Bytes: 322
+we called it __LIBC_HIDDEN__ because we are libc. you might want to choose a different name.
+
+(better still, you should switch to -fvisibility=hidden and explicitly *export* public functions. we eventually did that [and could actually remove all the __LIBC_HIDDEN__s at this point, and will probably do so at some point].)
+
 274:39-274:52
 Thu Mar 10 00:49:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

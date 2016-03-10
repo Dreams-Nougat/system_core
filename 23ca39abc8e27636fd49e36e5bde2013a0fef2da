@@ -1,0 +1,18 @@
+Revision: 23ca39abc8e27636fd49e36e5bde2013a0fef2da
+Patch-set: 3
+File: trusty/nvram/trusty_nvram_implementation.cpp
+
+38:0-41:60
+Thu Mar 10 23:47:25 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_917d3e90
+Bytes: 121
+If you have an application/daemon that will load this module, it's better to provide these arguments on its command line.
+
+121:23-121:29
+Thu Mar 10 23:47:25 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_91e9be66
+Bytes: 68
+any reason this is not a constructor param instead of a separate fn?
+

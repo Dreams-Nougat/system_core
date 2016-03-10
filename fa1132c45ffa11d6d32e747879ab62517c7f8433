@@ -9,6 +9,14 @@ UUID: b70fe5b0_f9c8a39e
 Bytes: 6
 begin?
 
+39:59-39:64
+Thu Mar 10 19:12:26 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_f9c8a39e
+UUID: b70fe5b0_9f0d07d4
+Bytes: 4
+Done
+
 File: libbacktrace/Backtrace.cpp
 
 161:21-161:28
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b70fe5b0_59da0f60
 Bytes: 88
 libbacktrace? (to increase the chances of the bugreport being in the right component...)
+
+161:21-161:28
+Thu Mar 10 19:12:26 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_59da0f60
+UUID: b70fe5b0_5ff0aff0
+Bytes: 17
+Good point, done.
 

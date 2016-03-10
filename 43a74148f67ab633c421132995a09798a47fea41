@@ -1,0 +1,13 @@
+Revision: 43a74148f67ab633c421132995a09798a47fea41
+Patch-set: 1
+File: adb/commandline.cpp
+
+1032:14-1032:20
+Thu Mar 10 19:27:46 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_df86df3e
+Bytes: 159
+Any reason not to use 21? This looks a bit weird, maybe it would be better to use a define instead to make it obvious what's going on.
+
+But this is just a nit.
+

@@ -11,3 +11,15 @@ Any reason not to use 21? This looks a bit weird, maybe it would be better to us
 
 But this is just a nit.
 
+1032:14-1032:20
+Thu Mar 10 19:36:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_df86df3e
+UUID: b70fe5b0_f1c0b74c
+Bytes: 427
+i wanted to match the '20's in the sscanf format string. unlike printf, sscanf doesn't have a way to let you say "i'll give you the width as an argument".
+
+i did consider macro stringification and StringPrintf'ing the format string, but both of those were impressively unreadable.
+
+in the absence of better ideas (not counting the "port libc++ to Windows so we can use <regex> that's already a TODO here"), i'll add comments...
+

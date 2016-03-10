@@ -1,0 +1,13 @@
+Revision: e9217ddd21448d98b58e5281caf3e7617686cd1a
+Patch-set: 1
+File: liblog/fake_log_device.c
+
+703:0-703:24
+Thu Mar 10 18:47:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_1f735775
+Bytes: 94
+Missed some spots :-(
+
+Good news, confirmed no one used fakeLogClose during the build test :-)
+

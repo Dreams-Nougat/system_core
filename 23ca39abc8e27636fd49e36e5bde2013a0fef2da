@@ -16,3 +16,11 @@ UUID: 37a21512_91e9be66
 Bytes: 68
 any reason this is not a constructor param instead of a separate fn?
 
+121:23-121:29
+Thu Mar 10 23:49:31 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_91e9be66
+UUID: 37a21512_31f9ea2f
+Bytes: 117
+also, is this going to be threadsafe? if not you can avoid the allocation and copy the response into a static buffer.
+

@@ -1,0 +1,22 @@
+Revision: 36b3a77718a15872b58cc907a179895c933d7694
+Patch-set: 2
+File: /COMMIT_MSG
+
+14:0-14:37
+Thu Mar 10 20:52:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_cef563a4
+Bytes: 123
+no, this just makes the service syntax more complex. ("the first argument is magic if and only if 'console' was also set"?)
+
+16:4-16:11
+Thu Mar 10 20:52:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_6ee54ff1
+Bytes: 99
+what i meant was that you'd have
+
+  console tty0
+
+here. with plain 'console' just taking the first?
+

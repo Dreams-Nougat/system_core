@@ -21,6 +21,14 @@ Bytes: 288
 
 I will split this CL into two, the first will add explicit exports. What makes me sad and holds me back is that I see some history in sys/cdefs.h regarding 'binary compatibility for LP32' ... why was that introduced?
 
+259:0-259:15
+Thu Mar 10 16:03:30 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_64c406b3
+UUID: b70fe5b0_245f2eb6
+Bytes: 216
+well, that's no-op private implementation cruft that we're also going to remove. (the right way to do things when you have a huge API surface like the C library is using linker maps, not annotations in header files.)
+
 274:39-274:52
 Thu Mar 10 00:49:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

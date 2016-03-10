@@ -1,0 +1,15 @@
+Revision: ba24cfd6e06b0ca4fe1eb524941ed14adc308401
+Patch-set: 3
+File: liblog/cdefs.h
+
+22
+Thu Mar 10 20:56:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_2e022759
+Bytes: 192
+this header is internal-use only? not exported?
+
+otherwise i'd say "include `liblog` in the name".
+
+you still might want to avoid __ though --- those names are reserved (and not for you :-) ).
+

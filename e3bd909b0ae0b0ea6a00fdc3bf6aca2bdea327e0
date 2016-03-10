@@ -9,6 +9,14 @@ UUID: b70fe5b0_84681a66
 Bytes: 72
 this seems weird. why not change "console" to take an optional argument?
 
+22:4-22:23
+Thu Mar 10 17:41:59 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_84681a66
+UUID: d77a9932_ce80a37e
+Bytes: 4
+Done
+
 File: init/init.cpp
 
 301:4-301:11
@@ -18,12 +26,28 @@ UUID: b70fe5b0_84413ae6
 Bytes: 21
 move to L312 and L321
 
+301:4-301:11
+Thu Mar 10 17:41:59 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_84413ae6
+UUID: 375f75cd_09fc6d83
+Bytes: 4
+Done
+
 304
 Thu Mar 10 16:01:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b70fe5b0_643e4670
 Bytes: 14
 always use {}s
+
+304
+Thu Mar 10 17:41:59 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_643e4670
+UUID: 3776954b_f1d78267
+Bytes: 4
+Done
 
 305
 Thu Mar 10 16:01:21 2016 +0000
@@ -32,10 +56,26 @@ UUID: b70fe5b0_444b4204
 Bytes: 11
 // comments
 
+305
+Thu Mar 10 17:41:59 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_444b4204
+UUID: 3776954b_91dcfe8d
+Bytes: 4
+Done
+
 319:4-319:16
 Thu Mar 10 16:01:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b70fe5b0_e458f6d3
 Bytes: 83
 this global can be removed now. accesses can be replaced by !console_names.empty().
+
+319:4-319:16
+Thu Mar 10 17:41:59 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_e458f6d3
+UUID: 375f75cd_29f92994
+Bytes: 4
+Done
 

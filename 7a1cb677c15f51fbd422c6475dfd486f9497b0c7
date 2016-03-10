@@ -29,6 +29,16 @@ UUID: b70fe5b0_245f2eb6
 Bytes: 216
 well, that's no-op private implementation cruft that we're also going to remove. (the right way to do things when you have a huge API surface like the C library is using linker maps, not annotations in header files.)
 
+259:0-259:15
+Thu Mar 10 17:02:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b70fe5b0_245f2eb6
+UUID: b70fe5b0_0482ea2c
+Bytes: 470
+The surface is admittedly small on liblog, the list comes to only 70 is my WAG, and we do _not_ want it to grow much, if at all. I will add __ABI_PUBLIC__ to each implementation in the the C files.
+
+I will add __ABI_PUBLIC__ in another dependent CL and for this one add __HIDDEN__ definition as _clarity_ (b/27405083 could result in several more __HIDDEN__s I am expecting as I will introduce a series of individual back-end drivers for each log write and read handler).
+
 274:39-274:52
 Thu Mar 10 00:49:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

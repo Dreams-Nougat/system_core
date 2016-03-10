@@ -1,0 +1,41 @@
+Revision: e3bd909b0ae0b0ea6a00fdc3bf6aca2bdea327e0
+Patch-set: 1
+File: /COMMIT_MSG
+
+22:4-22:23
+Thu Mar 10 16:01:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_84681a66
+Bytes: 72
+this seems weird. why not change "console" to take an optional argument?
+
+File: init/init.cpp
+
+301:4-301:11
+Thu Mar 10 16:01:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_84413ae6
+Bytes: 21
+move to L312 and L321
+
+304
+Thu Mar 10 16:01:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_643e4670
+Bytes: 14
+always use {}s
+
+305
+Thu Mar 10 16:01:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_444b4204
+Bytes: 11
+// comments
+
+319:4-319:16
+Thu Mar 10 16:01:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: b70fe5b0_e458f6d3
+Bytes: 83
+this global can be removed now. accesses can be replaced by !console_names.empty().
+

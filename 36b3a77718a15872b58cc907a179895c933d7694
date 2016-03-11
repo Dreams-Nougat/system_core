@@ -9,6 +9,14 @@ UUID: 37a21512_cef563a4
 Bytes: 123
 no, this just makes the service syntax more complex. ("the first argument is magic if and only if 'console' was also set"?)
 
+14:0-14:37
+Fri Mar 11 13:37:11 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_cef563a4
+UUID: b76525c6_9a5f0d1b
+Bytes: 4
+Done
+
 16:4-16:11
 Thu Mar 10 20:52:44 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,4 +27,12 @@ what i meant was that you'd have
   console tty0
 
 here. with plain 'console' just taking the first?
+
+16:4-16:11
+Fri Mar 11 13:37:11 2016 +0000
+Author: Viorel Suman <1047984@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_6ee54ff1
+UUID: f7995dfa_9cfe25ca
+Bytes: 4
+Done
 

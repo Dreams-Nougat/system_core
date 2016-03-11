@@ -1,0 +1,45 @@
+Revision: 4bce2e369507790bd842896d810dcff8e1a2c8fe
+Patch-set: 2
+File: bootstat/Android.mk
+
+23:0-24:25
+Fri Mar 11 23:12:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_482cc3e0
+Bytes: 109
+(this is the advantage of including trailing '\'s --- you only touch one line when you add/remove something.)
+
+File: bootstat/uptime_parser.cpp
+
+30:4-30:7
+Fri Mar 11 23:12:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_68237fee
+Bytes: 4
+PLOG
+
+31
+Fri Mar 11 23:12:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_8826abfc
+Bytes: 13
+return 0? -1?
+
+File: bootstat/uptime_parser.h
+
+24:0-24:2
+Fri Mar 11 23:12:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_282977d0
+Bytes: 1
+?
+
+File: bootstat/uptime_parser_test.cpp
+
+35
+Fri Mar 11 23:12:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_4877a3da
+Bytes: 61
+seems like a useless test to copy & paste the implementation.
+

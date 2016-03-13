@@ -1,0 +1,25 @@
+Revision: 56eac61048b7e94004d6dbca07f7b62270f0ed2d
+Patch-set: 5
+File: liblog/log_is_loggable.c
+
+262
+Sun Mar 13 15:13:58 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_9581a3ec
+Bytes: 503
+Similar to what's done in places like system/core/init and system/core/adb, you could make this a compile time setting. This would avoid the code complexity and performance costs.
+
+  ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
+  LOCAL_CFLAGS += -DLOG_DEBUGGABLE=1
+  else
+  LOCAL_CFLAGS += -DLOG_DEBUGGABLE=0
+  endif
+
+and
+
+LIBLOG_HIDDEN int __android_log_is_debuggable() {
+  return LOG_DEBUGGABLE;
+}
+
+This would also solve early boot problems where the property space may not be initialized.
+

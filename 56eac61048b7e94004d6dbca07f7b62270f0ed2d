@@ -23,3 +23,15 @@ LIBLOG_HIDDEN int __android_log_is_debuggable() {
 
 This would also solve early boot problems where the property space may not be initialized.
 
+262
+Mon Mar 14 14:42:20 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_9581a3ec
+UUID: 37a21512_b835b62e
+Bytes: 848
+Thanks for pointing them out ... The fundamental difference is that we have a library here, and those are executables. What makes it worse, is this library is included by _everyone_. My concern was causing a rebuild of the library between userdebug and user builds. For this, there is no precedence.
+
+However, if there is a case to be made, by making sure __android_log_is_debuggable() is not part of the object module that switches paths, leaving the dead code, the library will not change shape between one and the other. The risk that remains is that if this library changes a timestamp, then _everything_ in the system gets rebuilt.
+
+For any minor changes I make to liblog, relinking libraries, executables _and_ dex2oat is done on _everything_; my dev cycle must use mmma system/code/liblog followed by an adb sync to get around it to shorten.
+

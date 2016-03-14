@@ -1,0 +1,11 @@
+Revision: 2f83d679dd7910cc76d895eb74ab4fabd1e349b2
+Patch-set: 1
+File: liblog/logprint.c
+
+30:0-30:22
+Mon Mar 14 16:15:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_18e7aacf
+Bytes: 65
+Probably can remove this now that we no longer use MIN() or MAX()
+

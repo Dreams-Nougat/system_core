@@ -1,0 +1,29 @@
+Revision: 4f2c8e4fd9ebfe44fe363000c1c221e3bda104c3
+Patch-set: 3
+File: mkbootimg/bootimg.h
+
+46:30-46:70
+Tue Mar 15 15:41:52 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_c41257a9
+Bytes: 290
+Maybe make it a little stronger yet? e.g. "reserved: DO NOT USE, MUST BE 0",
+
+At some point perhaps we should add code in some relevant place that actually checks that the value is 0, and refuses to continue otherwise. Obviously we can't do that now because it would break loads of devices.
+
+File: mkbootimg/mkbootimg
+
+60:76-60:82
+Tue Mar 15 15:41:52 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_040d7f89
+Bytes: 4
+MUST
+
+124:15-124:20
+Tue Mar 15 15:41:52 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_44ff877a
+Bytes: 117
+Could be y >= 0... or maybe it should be y >= 16, since no one should be generating devices with dates prior to 2016.
+

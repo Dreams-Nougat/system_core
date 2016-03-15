@@ -17,6 +17,15 @@ UUID: d79459c3_1b3f7bbc
 Bytes: 224
 Can you elaborate on a use case for this? I'm happy to make them configurable if that's helpful, but I don't understand the benefit yet. FWIW, the TIPC gatekeeper and keymaster implementation also hard-code these parameters.
 
+38:0-41:60
+Tue Mar 15 14:42:02 2016 +0000
+Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d79459c3_1b3f7bbc
+UUID: 37a21512_6976de17
+Bytes: 310
+ah, yeah the secure storage daemon puts this on the command line, but not the gatekeeper or keymaster modules. Since not all trusty devices are really guaranteed to be on the same device node,  it would mean you wouldn't have to recompile 
+the module for a different device. It's not a big win though, I agree.
+
 121:23-121:29
 Thu Mar 10 23:47:25 2016 +0000
 Author: Andres Morales <1038928@85c56323-6fa9-3386-8a01-6480fb634889>

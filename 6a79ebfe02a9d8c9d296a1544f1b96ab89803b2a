@@ -11,6 +11,14 @@ maybe now would be a good time to change this to "reserved for future expansion:
 
 or, if we're not going to try to get Qualcomm to clean up their mess, we should probably document that here and now to save the next person who comes along...
 
+46:30-46:59
+Tue Mar 15 15:24:20 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_64a9e3a8
+UUID: 37a21512_24b6bb00
+Bytes: 4
+Done
+
 51:27-51:30
 Tue Mar 15 15:17:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -28,4 +36,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 37a21512_84b04f08
 Bytes: 104
 ah, so it was deliberate. still probably worth having at least these two comments in the .h file though.
+
+123:0-123:61
+Tue Mar 15 15:24:20 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_84b04f08
+UUID: 37a21512_04bbbfe9
+Bytes: 4
+Done
 

@@ -1,0 +1,31 @@
+Revision: 6a79ebfe02a9d8c9d296a1544f1b96ab89803b2a
+Patch-set: 2
+File: mkbootimg/bootimg.h
+
+46:30-46:59
+Tue Mar 15 15:17:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_64a9e3a8
+Bytes: 252
+maybe now would be a good time to change this to "reserved for future expansion: MUST be 0"?
+
+or, if we're not going to try to get Qualcomm to clean up their mess, we should probably document that here and now to save the next person who comes along...
+
+51:27-51:30
+Tue Mar 15 15:17:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_a4b3cb13
+Bytes: 168
+do you really mean 0x7f rather than 0xff? (this is why i prefer hex!)
+
+would actually be good to have all the missing '&'s, to see how big these fields are at a glance.
+
+File: mkbootimg/mkbootimg
+
+123:0-123:61
+Tue Mar 15 15:17:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_84b04f08
+Bytes: 104
+ah, so it was deliberate. still probably worth having at least these two comments in the .h file though.
+

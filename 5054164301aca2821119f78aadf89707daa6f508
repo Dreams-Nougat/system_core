@@ -1,0 +1,11 @@
+Revision: 5054164301aca2821119f78aadf89707daa6f508
+Patch-set: 1
+File: libutils/Threads.cpp
+
+90:7-90:22
+Tue Mar 15 17:21:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21512_040bbf07
+Bytes: 45
+this is #if 0. i think you meant __ANDROID__.
+

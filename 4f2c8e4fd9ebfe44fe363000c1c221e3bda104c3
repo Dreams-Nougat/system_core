@@ -20,10 +20,26 @@ UUID: 37a21512_040d7f89
 Bytes: 4
 MUST
 
+60:76-60:82
+Tue Mar 15 16:41:45 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_040d7f89
+UUID: 37a21512_e4d5d3ba
+Bytes: 16
+Good catch. Done
+
 124:15-124:20
 Tue Mar 15 15:41:52 2016 +0000
 Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 37a21512_44ff877a
 Bytes: 117
 Could be y >= 0... or maybe it should be y >= 16, since no one should be generating devices with dates prior to 2016.
+
+124:15-124:20
+Tue Mar 15 16:41:45 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21512_44ff877a
+UUID: 37a21512_64ca831b
+Bytes: 156
+As discussed, there's probably no point in enforcing a minimum patch level year here. It should be sufficient that the value is not negative. Changed to >=.
 

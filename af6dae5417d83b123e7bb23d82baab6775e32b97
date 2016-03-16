@@ -1,0 +1,11 @@
+Revision: af6dae5417d83b123e7bb23d82baab6775e32b97
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+432:8-432:14
+Wed Mar 16 22:27:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c67120f_ccc7cf5d
+Bytes: 135
+This is the only way to get out of the loop with crash_signal being unchanged. I would just add a *crash_signal = SIGKILL just in case.
+

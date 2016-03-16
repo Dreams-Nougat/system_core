@@ -9,3 +9,11 @@ UUID: 7c67120f_ccc7cf5d
 Bytes: 135
 This is the only way to get out of the loop with crash_signal being unchanged. I would just add a *crash_signal = SIGKILL just in case.
 
+432:8-432:14
+Wed Mar 16 23:08:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c67120f_ccc7cf5d
+UUID: 7c67120f_2c544bf4
+Bytes: 174
+The SIGSTOP case above could happen too. It seems deceptive to set *crash_signal in a case that isn't a crash, so I'm going to initialize the signal to SIGKILL in the caller.
+

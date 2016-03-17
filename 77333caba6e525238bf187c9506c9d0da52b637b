@@ -1,5 +1,16 @@
 Revision: 77333caba6e525238bf187c9506c9d0da52b637b
 Patch-set: 1
+File: include/private/android_logger.h
+
+119:47-119:55
+Thu Mar 17 19:00:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_aad96f3b
+Bytes: 382
+write function should be passed an obj just in case it needs to manipulate something back up in the caller.
+
+This may have the side-effect that an ignored void *obj should be passed into __android_log_pmsg_file_write to maintain argument compatibility. We could deal with this by making it the last argument in the set and casting or requiring a static wrapper to perform this duty.
+
 File: liblog/pmsg_reader.c
 
 87:0-87:30
@@ -15,4 +26,11 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_67f052b5
 Bytes: 169
 LOG_ID_EVENTS(binary), LOG_ID_SECURITY(binary), LOGD_ID_KERNEL(internal) explicitly not supported. FYI __android_log_pmsg_file_write does not enforce this on push (yet).
+
+414:0-415:52
+Thu Mar 17 19:00:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_6a3ad71d
+Bytes: 323
+We should add the filenames in sorted-order to facilitate file rotation. eg: recovery/log_file recovery/log_file.1 and so on. Thus the caller does not _need_ to run multiple passes to get the directory, then act upon it. e.g. if recovery/log_file does not exist, there is no need to rotate the filenames on 'refresh' cycle.
 

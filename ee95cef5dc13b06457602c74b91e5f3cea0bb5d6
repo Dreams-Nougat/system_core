@@ -1,0 +1,11 @@
+Revision: ee95cef5dc13b06457602c74b91e5f3cea0bb5d6
+Patch-set: 2
+File: liblog/pmsg_writer.c
+
+182:17-182:22
+Thu Mar 17 16:42:00 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_47f54ea3
+Bytes: 257
+This is an internal API, so we assume caller will honor LOG_ID_EVENTS(binary), LOG_ID_SECURITY(binary), LOGD_ID_KERNEL(internal) explicitly not supported. If we respin for any other reason, we should check for these and return an error for pedantic reasons.
+

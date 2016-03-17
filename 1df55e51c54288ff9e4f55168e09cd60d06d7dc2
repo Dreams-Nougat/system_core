@@ -9,12 +9,28 @@ UUID: 7c59d244_cb4fc936
 Bytes: 20
 move L589 down here?
 
+593
+Thu Mar 17 18:29:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c59d244_cb4fc936
+UUID: 5c240ef3_473b8e7f
+Bytes: 4
+Done
+
 601
 Thu Mar 17 03:50:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7c59d244_ab4c9542
 Bytes: 20
 move L590 down here?
+
+601
+Thu Mar 17 18:29:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c59d244_ab4c9542
+UUID: 5c240ef3_a73fea69
+Bytes: 4
+Done
 
 656
 Thu Mar 17 03:50:12 2016 +0000
@@ -24,4 +40,12 @@ Bytes: 158
 move this whole block out into its own function? it's grown pretty large now.
 
 maybe the implicit == 0 code below, too, to make the fork structure more clear.
+
+656
+Thu Mar 17 18:29:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c59d244_6b80dd7c
+UUID: 5c240ef3_873c6676
+Bytes: 4
+Done
 

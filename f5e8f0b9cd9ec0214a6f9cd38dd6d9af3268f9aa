@@ -1,0 +1,18 @@
+Revision: f5e8f0b9cd9ec0214a6f9cd38dd6d9af3268f9aa
+Patch-set: 2
+File: debuggerd/debuggerd.cpp
+
+18
+Thu Mar 17 18:49:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_e7e56224
+Bytes: 17
+no longer needed?
+
+31
+Thu Mar 17 18:49:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_c7e2de19
+Bytes: 9
+this too?
+

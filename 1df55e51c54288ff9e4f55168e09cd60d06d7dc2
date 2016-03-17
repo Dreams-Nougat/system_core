@@ -1,0 +1,27 @@
+Revision: 1df55e51c54288ff9e4f55168e09cd60d06d7dc2
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+593
+Thu Mar 17 03:50:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c59d244_cb4fc936
+Bytes: 20
+move L589 down here?
+
+601
+Thu Mar 17 03:50:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c59d244_ab4c9542
+Bytes: 20
+move L590 down here?
+
+656
+Thu Mar 17 03:50:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c59d244_6b80dd7c
+Bytes: 158
+move this whole block out into its own function? it's grown pretty large now.
+
+maybe the implicit == 0 code below, too, to make the fork structure more clear.
+

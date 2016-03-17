@@ -2,12 +2,36 @@ Revision: 8990212f433f5d580815443e1d2c2e80a0657d17
 Patch-set: 1
 File: liblog/log_cdefs.h
 
+23:0-31:6
+Thu Mar 17 22:17:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_4d60cddd
+Bytes: 117
+This should move down to the section that defines expected but missing definitions in some OS variants of sys/cdefs.h
+
 65
 Thu Mar 17 22:00:45 2016 +0000
 Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_ada18972
 Bytes: 181
 What is this comment telling me? We include unistd.h, so is this saying that it should have been defined there but wasn't? Or are there some build flavors that remove it via #ifdef?
+
+65
+Thu Mar 17 22:17:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_ada18972
+UUID: 5c240ef3_0d66d5fc
+Bytes: 954
+log_cdefs.h is the logical wrapper for sys/cdefs.h for all OS variants, first section is cdefs-like definitions we add for our convenience in much the same vein as __LIBC_HIDDEN, and __LIBC_PUBLIC, second section is to deal with some OS variants that do not define all of the expected sys/cdefs.h definitions (eg: Mac does not define __unused for example).
+
+This short comment indicates two things:
+1) delineates between sys/cdefs.h and unistd.h missing definitions
+2) complains about the fact that we are borrowing log_cdefs.h to look after what should pedantically be a local log_unistd.h file with the intent to cause future selves to make the split if this list grows.
+
+I will cogitate over a better way of explaining this, e.g.:
+
+/* START of section dealing with some OS variants not defining expected definitions in unistd.h */
+/* If this grows beyond just the one, suggest moving these to log_unistd.h or renaming this file to log_portability.h */
 
 File: liblog/logd_reader.c
 
@@ -17,4 +41,13 @@ Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_4debad99
 Bytes: 10
 whitespace
+
+File: liblog/pmsg_reader.c
+
+85:10-85:18
+Thu Mar 17 22:17:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_ed6ee1cd
+Bytes: 52
+should be a call to the internal __android_log_uid()
 

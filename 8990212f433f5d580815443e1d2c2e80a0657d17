@@ -1,0 +1,20 @@
+Revision: 8990212f433f5d580815443e1d2c2e80a0657d17
+Patch-set: 1
+File: liblog/log_cdefs.h
+
+65
+Thu Mar 17 22:00:45 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_ada18972
+Bytes: 181
+What is this comment telling me? We include unistd.h, so is this saying that it should have been defined there but wasn't? Or are there some build flavors that remove it via #ifdef?
+
+File: liblog/logd_reader.c
+
+607
+Thu Mar 17 22:00:45 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_4debad99
+Bytes: 10
+whitespace
+

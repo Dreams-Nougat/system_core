@@ -9,3 +9,11 @@ UUID: 5c240ef3_47f54ea3
 Bytes: 257
 This is an internal API, so we assume caller will honor LOG_ID_EVENTS(binary), LOG_ID_SECURITY(binary), LOGD_ID_KERNEL(internal) explicitly not supported. If we respin for any other reason, we should check for these and return an error for pedantic reasons.
 
+182:17-182:22
+Thu Mar 17 21:46:46 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_47f54ea3
+UUID: 5c240ef3_0d1ed5a5
+Bytes: 49
+How does the caller know which are not supported?
+

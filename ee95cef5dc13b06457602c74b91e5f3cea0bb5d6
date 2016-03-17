@@ -17,3 +17,19 @@ UUID: 5c240ef3_0d1ed5a5
 Bytes: 49
 How does the caller know which are not supported?
 
+182:17-182:22
+Thu Mar 17 23:31:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_0d1ed5a5
+UUID: 5c240ef3_8dee4516
+Bytes: 835
+Nope, not strictly, but the only caller is recovery right now, via this android _private_ interface, and it uses LOG_ID_SYSTEM.
+
+One never know what will follow, but the key here is this is NOT part of the Android API.
+
+It looks like I may have to respin this (adding support for optional void * argument needed for __android_log_pmsg_file_write) so I will check for logId validity and return an error.
+
+Pedantically we can handle _any_ id but not the binary, since pmsg actually has no restrictions; but doing so will prevent logcat -L from extracting them. I must think about this, maybe that is a good thing ... maybe I will add a special LOG_ID_HIDDEN to cover this case?
+
+Log buffers are limited because they are binary or inaccessible. We could add support for the binary format in the future, but I see no need for it right now.
+

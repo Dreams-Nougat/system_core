@@ -9,6 +9,14 @@ UUID: 5c3deeec_9f403381
 Bytes: 115
 It has been removed in the patch-set 10, see https://android-review.googlesource.com/#/c/207258/9..10/init/init.cpp
 
+378:34-378:43
+Thu Mar 17 16:55:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c3deeec_9f403381
+UUID: 5c240ef3_2782daf5
+Bytes: 127
+yeah, naming ':' just seemed to make things less clear (because the reader has to go look up SEPARATOR to find out what it is).
+
 453:51-453:90
 Thu Mar 17 04:46:40 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +31,12 @@ Parent: 7c59d244_0bba8133
 UUID: 1cc1b619_6d3b35b2
 Bytes: 217
 Just wanted to provide an unified way to handle preprocess and postprocess functions, IE if such needed, for example, in selinux_status_from_cmdline(). Let's follow your suggestion if this is seen as over-engineering.
+
+453:51-453:90
+Thu Mar 17 16:55:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1cc1b619_6d3b35b2
+UUID: 5c240ef3_6713329e
+Bytes: 341
+yeah, i'd want to see at least two uses. even then, these don't get called at an interesting time --- you'd always be able to rewrite import_kernel_cmdline(..., a, b) as a(); import_kernel_cmdline(...); b(); anyway. passing functions just makes this harder to understand because they make the reader assume something interesting is going on.
 

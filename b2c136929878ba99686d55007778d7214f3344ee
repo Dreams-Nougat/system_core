@@ -1,0 +1,11 @@
+Revision: b2c136929878ba99686d55007778d7214f3344ee
+Patch-set: 7
+File: init/init.cpp
+
+453:51-453:90
+Thu Mar 17 04:46:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c59d244_0bba8133
+Bytes: 120
+i don't understand this. why don't you just call p_map.clear() before import_kernel_cmdline and have your loop after it?
+

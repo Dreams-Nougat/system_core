@@ -1,0 +1,33 @@
+Revision: db4ff8499bfc47a5029a67182190135922c44bd8
+Patch-set: 2
+File: liblog/pmsg_reader.c
+
+418:0-422:20
+Fri Mar 18 20:05:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_96f49237
+Bytes: 331
+Although more 'odd', we may prefer a mechanism that places more weight on the first numbers than the remaining content sorted order. e.g.
+
+log.10
+log.9
+klog.9
+log.8
+klog.8
+. . .
+log.1
+klog.1
+log
+klog
+
+This would mean that the most recent content log and klog are written last and thus will have less chance of overflowing the FIFO.
+
+438:32-438:36
+Fri Mar 18 20:05:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_565e9aec
+Bytes: 329
+optimization, switch above to a while loop, do not subtract one here, and instead add the increments to the block for *l == *r below.
+
+Given the above comment, this comment may be meaningless ... we may switch out this whole loop for a strpbrk(l, "0123456789") for each string, then compare numbers, and if equal, then strcmp ...
+

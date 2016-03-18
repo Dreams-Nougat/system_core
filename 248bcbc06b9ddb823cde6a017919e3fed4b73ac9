@@ -1,5 +1,14 @@
 Revision: 248bcbc06b9ddb823cde6a017919e3fed4b73ac9
 Patch-set: 1
+File: /COMMIT_MSG
+
+12:0-12:23
+Fri Mar 18 19:56:24 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_f6206e94
+Bytes: 169
+It is not hard to add a gTest to confirm this feature in the tests/logcat_tests.cpp file. You may have to borrow from the tests that inject input and confirm end-to-end.
+
 File: logcat/logcat.cpp
 
 158:30-158:61

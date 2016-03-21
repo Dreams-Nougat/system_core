@@ -1,0 +1,11 @@
+Revision: 77ee7658c6ef69b334e4e5cb8e725712e020d727
+Patch-set: 2
+File: liblog/logd_writer.c
+
+226:0-226:51
+Mon Mar 21 15:41:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_d3d0d718
+Bytes: 41
+nit: drop this line, Value not used below
+

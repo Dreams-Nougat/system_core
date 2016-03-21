@@ -1,0 +1,36 @@
+Revision: 326e999e46068dec230e98e94d74a39a9346ea9d
+Patch-set: 3
+File: base/include/android-base/logging.h
+
+103
+Mon Mar 21 21:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_06634f88
+Bytes: 72
+move the logging.h change out into its own CL, since it seems unrelated?
+
+File: include/ziparchive/ziparchive.h
+
+20:0-20:35
+Mon Mar 21 21:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_a63c0376
+Bytes: 119
+<ziparchive/ziparchive.h> versus <ziparchive/zip_archive.h> seems weird. just include this in the existing header file?
+
+30
+Mon Mar 21 21:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_265ad3c9
+Bytes: 96
+this seems like too-low-level an API. do we need to expose the ZipArchiveHandle at all? narayan?
+
+File: libziparchive/ziparchive.cc
+
+24
+Mon Mar 21 21:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_c6681766
+Bytes: 42
+don't we have this somewhere else already?
+

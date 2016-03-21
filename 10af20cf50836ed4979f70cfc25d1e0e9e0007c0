@@ -9,6 +9,14 @@ UUID: 5c240ef3_336693fd
 Bytes: 12
 Extra space.
 
+649:60-649:61
+Mon Mar 21 18:35:02 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_336693fd
+UUID: 5c240ef3_b3260397
+Bytes: 4
+Done
+
 667:0-678:2
 Mon Mar 21 18:19:42 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +31,15 @@ Parent: 5c240ef3_730c8b1d
 UUID: 5c240ef3_333b33b3
 Bytes: 84
 I was going to comment that I think you can do this with a unique_ptr and a deleter.
+
+667:0-678:2
+Mon Mar 21 18:35:02 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_333b33b3
+UUID: 5c240ef3_d393b7d1
+Bytes: 389
+I have considered using unique_ptr. But unique_ptr holds a pointer, not a value (Although I know ZipArchiveHandle is in fact a pointer).
+So I can't use unique_ptr<ZiparchiveHandle, decltype(CloseArchive)>.
+
+AFAIK, I can only use unique_ptr like this: unique_ptr<void, decltype(&CloseArchive)> p(handle, CloseArchive); Is it fine to take advantage of knowing that ZiparchiveHandle is void*?
 

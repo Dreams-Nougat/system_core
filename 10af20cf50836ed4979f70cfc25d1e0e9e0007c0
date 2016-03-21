@@ -43,3 +43,11 @@ So I can't use unique_ptr<ZiparchiveHandle, decltype(CloseArchive)>.
 
 AFAIK, I can only use unique_ptr like this: unique_ptr<void, decltype(&CloseArchive)> p(handle, CloseArchive); Is it fine to take advantage of knowing that ZiparchiveHandle is void*?
 
+667:0-678:2
+Mon Mar 21 18:44:47 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_d393b7d1
+UUID: 9cb846d6_fc732572
+Bytes: 146
+Sorry, this API is badly designed and one of my biggest regrets. I should have foreseen a future where there'd be more C++ callers than C callers.
+

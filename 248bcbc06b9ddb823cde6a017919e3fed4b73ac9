@@ -9,6 +9,14 @@ UUID: 5c240ef3_f6206e94
 Bytes: 169
 It is not hard to add a gTest to confirm this feature in the tests/logcat_tests.cpp file. You may have to borrow from the tests that inject input and confirm end-to-end.
 
+12:0-12:23
+Mon Mar 21 19:26:50 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_f6206e94
+UUID: 5c240ef3_b3c1e36d
+Bytes: 4
+Done
+
 File: logcat/logcat.cpp
 
 158:30-158:61
@@ -21,4 +29,12 @@ For logId = LOG_ID_EVENTS or LOG_ID_SECURITY you are dealing with a raw binary b
 The alternative is to regex the formatted output string and not worry about it. A small refactor of the code below (look at logprint.c:android_log_printLogLine, snarf that as open-coded) can allow you to switch to the formatted content.
 
 FYI: binary content packets contain int32_t and int64_t in nl-order and may contain an embedded string object. The tag is a numerical lookup.
+
+158:30-158:61
+Mon Mar 21 19:26:50 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_1638a2cb
+UUID: 5c240ef3_d3c4577f
+Bytes: 23
+I'll skip them for now.
 

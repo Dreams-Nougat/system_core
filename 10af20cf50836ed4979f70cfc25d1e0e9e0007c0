@@ -1,0 +1,11 @@
+Revision: 10af20cf50836ed4979f70cfc25d1e0e9e0007c0
+Patch-set: 1
+File: libbacktrace/BacktraceOffline.cpp
+
+667:0-678:2
+Mon Mar 21 18:19:42 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_730c8b1d
+Bytes: 44
++narayan in case he has thoughts about this.
+

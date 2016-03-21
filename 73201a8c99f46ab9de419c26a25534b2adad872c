@@ -1,0 +1,25 @@
+Revision: 73201a8c99f46ab9de419c26a25534b2adad872c
+Patch-set: 2
+File: logcat/tests/logcat_test.cpp
+
+985:8-985:9
+Mon Mar 21 20:05:29 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_666a0bef
+Bytes: 150
+nit: maybe check to make sure the log message that is collected has logcat_test in its content rather than filtering out any begin messages? strstr(3)
+
+989:28-989:29
+Mon Mar 21 20:05:29 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_26877306
+Bytes: 130
+you may also wish to set the alarm to zero to make sure if this test fails, it does not leave an alarm around to hurt other tests.
+
+991:23-991:24
+Mon Mar 21 20:05:29 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_4619c7bc
+Bytes: 90
+pclose(fp) is required to cleanly kill the zombie, which otherwise could outlive the test.
+

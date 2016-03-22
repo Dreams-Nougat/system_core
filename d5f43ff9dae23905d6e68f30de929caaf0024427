@@ -17,3 +17,11 @@ UUID: 5c240ef3_bf8a4245
 Bytes: 96
 Are you thinking that it makes sense to have only the long option since it's a secondary option?
 
+100:13-100:15
+Tue Mar 22 18:10:01 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_bf8a4245
+UUID: 5c240ef3_7f828a2b
+Bytes: 81
+that too, but also because -v makes me think "verbose" or "version", not "value".
+

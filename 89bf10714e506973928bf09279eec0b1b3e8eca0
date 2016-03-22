@@ -1,0 +1,18 @@
+Revision: 89bf10714e506973928bf09279eec0b1b3e8eca0
+Patch-set: 1
+File: bootstat/boot_event_record_store.cpp
+
+49:30-49:34
+Tue Mar 22 21:28:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_350af343
+Bytes: 4
+open
+
+87
+Tue Mar 22 21:28:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_95ff5f4c
+Bytes: 33
+or android::base::WriteStringToFd
+

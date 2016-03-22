@@ -1,0 +1,20 @@
+Revision: 53371e5f90b9c3e499486caa7e680550b03d7381
+Patch-set: 7
+File: base/include/android-base/file.h
+
+46
+Tue Mar 22 18:37:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_ba409080
+Bytes: 110
+we should probably document that this is meant for portable code; Linux-only code should always use O_CLOEXEC.
+
+File: libziparchive/zip_archive_holder.cc
+
+57:22-57:36
+Tue Mar 22 18:37:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_1a271cfd
+Bytes: 157
+wait, this seems weird. surely any CLOEXEC stuff should be at the site of the original open, not here. why would ZipArchiveHolder have an opinion on CLOEXEC?
+

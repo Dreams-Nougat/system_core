@@ -9,6 +9,16 @@ UUID: 5c240ef3_666a0bef
 Bytes: 150
 nit: maybe check to make sure the log message that is collected has logcat_test in its content rather than filtering out any begin messages? strstr(3)
 
+985:8-985:9
+Tue Mar 22 01:52:56 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_666a0bef
+UUID: 5c240ef3_e9fecc12
+Bytes: 212
+We want to filter begin messages separately, since if we get a message that is neither one of ours /nor/ the begin message it means the filter didn't work.
+
+But checking for the logcat test string is a good idea.
+
 989:28-989:29
 Mon Mar 21 20:05:29 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +26,28 @@ UUID: 5c240ef3_26877306
 Bytes: 130
 you may also wish to set the alarm to zero to make sure if this test fails, it does not leave an alarm around to hurt other tests.
 
+989:28-989:29
+Tue Mar 22 01:52:56 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_26877306
+UUID: 5c240ef3_29e90463
+Bytes: 4
+Done
+
 991:23-991:24
 Mon Mar 21 20:05:29 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_4619c7bc
 Bytes: 90
 pclose(fp) is required to cleanly kill the zombie, which otherwise could outlive the test.
+
+991:23-991:24
+Tue Mar 22 01:52:56 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_4619c7bc
+UUID: 5c240ef3_89ee3069
+Bytes: 428
+I ran into trouble with this. pclose blocks until the process terminates, which in this case it never does, at least not voluntarily. The other tests solve this by calling fclose first (which is NOT allowed by my reading of the manpage), writing to the log again to cause SIGPIPE, then calling pclose, but I can't seem to make that work correctly.
+
+Best plan I have is to just wait until we have max-count and solve it that way.
 

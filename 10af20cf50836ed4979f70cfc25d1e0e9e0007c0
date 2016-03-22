@@ -63,3 +63,11 @@ looks like art has a better API wrapping this. is the right answer "don't use th
 
 _alternatively_ yabinc's approach here is the minimal approach. and if we want it here, we probably want it in the public header so others can use it. isn't the code in the dynamic linker wrong, for example? i see two 'continue's before the CloseArchive scope_guard. the fastboot code looks right, would be cleaner using this.
 
+667:0-678:2
+Tue Mar 22 00:54:04 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_f3ccfbda
+UUID: 5c240ef3_e646fbf9
+Bytes: 31
+copy ZipArchive class from art.
+

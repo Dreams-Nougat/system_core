@@ -1,5 +1,14 @@
 Revision: 53371e5f90b9c3e499486caa7e680550b03d7381
 Patch-set: 7
+File: /COMMIT_MSG
+
+7:0-7:11
+Tue Mar 22 22:38:42 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_7568eb84
+Bytes: 12
+libbacktrace
+
 File: base/include/android-base/file.h
 
 46

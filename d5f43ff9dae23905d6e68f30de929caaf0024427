@@ -9,3 +9,11 @@ UUID: 5c240ef3_9fabfeb9
 Bytes: 84
 sure you want to take -v for this? (you don't _have_ to have a short option at all.)
 
+100:13-100:15
+Tue Mar 22 18:05:02 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_9fabfeb9
+UUID: 5c240ef3_bf8a4245
+Bytes: 96
+Are you thinking that it makes sense to have only the long option since it's a secondary option?
+

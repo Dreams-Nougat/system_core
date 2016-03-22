@@ -28,12 +28,28 @@ UUID: 5c240ef3_a63c0376
 Bytes: 119
 <ziparchive/ziparchive.h> versus <ziparchive/zip_archive.h> seems weird. just include this in the existing header file?
 
+20:0-20:35
+Tue Mar 22 01:03:13 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_a63c0376
+UUID: 5c240ef3_641963bd
+Bytes: 344
+yes. And there is a internal class ZipArchive used by libziparchive. So I rename this class to ZipArchiveHolder. Including this class to zip_archive.h is fine, but zip_archive.h gives me a hint that it can included in a pure c environment. In addition, the header name zip_archive_holder.h is also suitable for this class. Other considerations?
+
 30
 Mon Mar 21 21:47:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_265ad3c9
 Bytes: 96
 this seems like too-low-level an API. do we need to expose the ZipArchiveHandle at all? narayan?
+
+30
+Tue Mar 22 01:03:13 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_265ad3c9
+UUID: 5c240ef3_e42c33e2
+Bytes: 164
+I think unless we provide all the function interfaces in zip_archive.h in this class (which might overkill the need in this CL), we need to export ZipArchiveHandle.
 
 File: libziparchive/ziparchive.cc
 

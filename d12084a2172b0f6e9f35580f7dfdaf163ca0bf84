@@ -1,0 +1,11 @@
+Revision: d12084a2172b0f6e9f35580f7dfdaf163ca0bf84
+Patch-set: 1
+File: adf/libadf/adf.c
+
+82:0-82:5
+Tue Mar 22 03:08:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_840c571e
+Bytes: 114
+or just switch to C++ and use unique_ptr and lose the goto for code that's more readable for humans and computers?
+

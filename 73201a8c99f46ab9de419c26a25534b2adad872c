@@ -51,3 +51,15 @@ I ran into trouble with this. pclose blocks until the process terminates, which 
 
 Best plan I have is to just wait until we have max-count and solve it that way.
 
+991:23-991:24
+Tue Mar 22 14:40:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_89ee3069
+UUID: 5c240ef3_bfa402d1
+Bytes: 209
+Yes, killing it with an fclose and writing to cause SIGPIPE is not 100% POSIX 100% compliant. Maybe something like:
+
+"logcat --pid %d -e logcat_test_a+b& pid=$! ; sleep 4 ; kill $pid"
+
+would be more compliant?
+

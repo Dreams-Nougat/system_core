@@ -9,6 +9,16 @@ UUID: 5c240ef3_06634f88
 Bytes: 72
 move the logging.h change out into its own CL, since it seems unrelated?
 
+103
+Tue Mar 22 00:54:04 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_06634f88
+UUID: 5c240ef3_24cbeb6b
+Bytes: 247
+Splitted to https://android-review.googlesource.com/#/c/209507/1. But is is needed to compile DCHECK()s in zip_archive_holder.cc, because of
+error: add explicit braces to avoid dangling else [-Werror,-Wdangling-else]
+  DCHECK(filename != nullptr);
+
 File: include/ziparchive/ziparchive.h
 
 20:0-20:35
@@ -33,4 +43,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_c6681766
 Bytes: 42
 don't we have this somewhere else already?
+
+24
+Tue Mar 22 00:54:04 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_c6681766
+UUID: 5c240ef3_4499bf93
+Bytes: 130
+yes, we have. Many places use FD_CLOEXEC. Move SetCloseOnExec() to android-base/file.h, but leave using of it for further changes.
 

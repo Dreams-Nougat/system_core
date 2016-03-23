@@ -1,0 +1,11 @@
+Revision: 37e03fef880e98356f65cadc5195ad7bbb42dcf5
+Patch-set: 1
+File: debuggerd/signal_sender.cpp
+
+54
+Wed Mar 23 02:20:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_394dcd3e
+Bytes: 70
+just call pthread_setname_np instead of leaking and making ccross sad?
+

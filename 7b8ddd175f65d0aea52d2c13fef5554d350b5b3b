@@ -1,0 +1,18 @@
+Revision: 7b8ddd175f65d0aea52d2c13fef5554d350b5b3b
+Patch-set: 2
+File: init/init.cpp
+
+299:0-308:3
+Wed Mar 23 16:55:08 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_7ce4538d
+Bytes: 10
+see below.
+
+356:0-362:3
+Wed Mar 23 16:55:08 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_3c02dbef
+Bytes: 181
+see above comment. These two comment sections are roughly equivalent. Should probably only have one.  Actual commit hashes (as in above comment) might be better? I'm ok with either.
+

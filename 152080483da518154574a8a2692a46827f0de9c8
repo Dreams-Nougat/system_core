@@ -13,3 +13,11 @@ ERROR("Unable to set minimum required entropy ..."
       "Please make sure you apply the following kernel patches "
       "... list of patches  ...");
 
+338:0-339:33
+Wed Mar 23 00:51:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_19c289fe
+UUID: bc9a6a76_52a414e3
+Bytes: 83
+or just put it in a code comment here, since that might be a bit large for dmesg...
+

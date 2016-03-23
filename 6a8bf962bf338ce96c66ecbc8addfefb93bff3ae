@@ -1,0 +1,11 @@
+Revision: 6a8bf962bf338ce96c66ecbc8addfefb93bff3ae
+Patch-set: 2
+File: debuggerd/debuggerd.cpp
+
+622:37-622:43
+Wed Mar 23 19:57:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_9f049937
+Bytes: 34
+want to %d the actual signal here?
+

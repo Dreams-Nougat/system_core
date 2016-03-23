@@ -1,0 +1,15 @@
+Revision: 152080483da518154574a8a2692a46827f0de9c8
+Patch-set: 1
+File: init/init.cpp
+
+338:0-339:33
+Wed Mar 23 00:48:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c240ef3_19c289fe
+Bytes: 181
+should we say something like:
+
+ERROR("Unable to set minimum required entropy ..."
+      "Please make sure you apply the following kernel patches "
+      "... list of patches  ...");
+

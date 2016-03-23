@@ -16,3 +16,11 @@ UUID: 5c240ef3_3c02dbef
 Bytes: 181
 see above comment. These two comment sections are roughly equivalent. Should probably only have one.  Actual commit hashes (as in above comment) might be better? I'm ok with either.
 
+356:0-362:3
+Wed Mar 23 17:02:35 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_3c02dbef
+UUID: 5c240ef3_dc1d7f46
+Bytes: 45
+Oh good point. I've merged these now. Thanks!
+

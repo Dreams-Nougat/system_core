@@ -1,0 +1,13 @@
+Revision: d143008746f18c4ddaef096ff628d7e3331ed71a
+Patch-set: 4
+File: logcat/tests/logcat_test.cpp
+
+994:4-995:17
+Thu Mar 24 20:49:30 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cbb2e3b_12acaafd
+Bytes: 367
+(paraphrase from maxcount review)
+
+One possible easy solution is to push the X lines of content, wait one second to settle (there is roughly a 20ms latency from pushing a log entry, to it showing up in logd, timestamp is accurate, its just delayed delivery) _before_ running logcat. Add the -d flag to logcat and it will close when it has no more content. Easy peasy.
+

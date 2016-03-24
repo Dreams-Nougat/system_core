@@ -1,0 +1,25 @@
+Revision: d74e930603d07fb871d1dd412a9cd090772b82d3
+Patch-set: 1
+File: bootstat/boot_event_record_store_test.cpp
+
+23
+Thu Mar 24 23:31:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cbb2e3b_f54e300d
+Bytes: 49
+more modern suggestion below (from <sys/stat.h>).
+
+60:6-60:10
+Thu Mar 24 23:31:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cbb2e3b_754a4000
+Bytes: 29
+fstat, since you have the fd?
+
+67:6-67:11
+Thu Mar 24 23:31:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5cbb2e3b_55473cf6
+Bytes: 9
+futimens?
+

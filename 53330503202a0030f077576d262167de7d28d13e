@@ -9,6 +9,14 @@ UUID: 5c240ef3_02c5f278
 Bytes: 89
 why does this return EXIT_FAILURE while the other functions return a negative error code?
 
+50
+Thu Mar 24 23:42:39 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_02c5f278
+UUID: 5cbb2e3b_efaae1b5
+Bytes: 4
+Done
+
 File: trusty/storage/proxy/proxy.c
 
 34
@@ -18,6 +26,14 @@ UUID: 5c240ef3_42bfeaf0
 Bytes: 52
 why is this 8k? Can you get messages larger than 4k?
 
+34
+Thu Mar 24 23:42:39 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_42bfeaf0
+UUID: 5cbb2e3b_4ff96dda
+Bytes: 4
+Done
+
 45
 Thu Mar 24 03:26:28 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,12 +41,28 @@ UUID: 5c240ef3_22bc76fa
 Bytes: 89
 I don't think trusty_dev should be a required argument. It should not be device specific.
 
+45
+Thu Mar 24 23:42:39 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_22bc76fa
+UUID: 5cbb2e3b_cf255d47
+Bytes: 98
+Currently it is device specific as this name comes from secure side, so implementer can change it.
+
 69
 Thu Mar 24 03:26:28 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_a2a986ba
 Bytes: 129
 why do we want this? init already sets the requested user, and I don't see why this server has top run as the system user at all.
+
+69
+Thu Mar 24 23:42:39 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_a2a986ba
+UUID: 5cbb2e3b_75fc00cc
+Bytes: 116
+it is inherited from predecessor. We can fix it separately as it would require making modification in init.rc files.
 
 File: trusty/storage/proxy/rpmb.c
 
@@ -40,4 +72,12 @@ Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_028e925c
 Bytes: 167
 this should be based on a message flag. It is not needed for every rpmb write. Also req->write_size is never 0  so this path is also taken when reading data from rpmb.
+
+167
+Thu Mar 24 23:42:39 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_028e925c
+UUID: 5cbb2e3b_952b641b
+Bytes: 76
+Fixed. Later patch added explicit flag to optionally trigger this operation.
 

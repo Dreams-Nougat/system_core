@@ -11,6 +11,14 @@ Because system/core has tons of _stuff_ in it, prefix with logcat:. e.g.:
 
 logcat: add --max-count
 
+7:0-7:22
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_2d1919be
+UUID: 5cbb2e3b_d20d028a
+Bytes: 4
+Done
+
 11:0-11:52
 Thu Mar 17 21:56:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -18,12 +26,28 @@ UUID: 5c240ef3_6d13119e
 Bytes: 56
 Historically this should be the last line in the footer.
 
+11:0-11:52
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_6d13119e
+UUID: 5cbb2e3b_f2580602
+Bytes: 4
+Done
+
 12:0-12:36
 Thu Mar 17 21:56:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_ad2ce9e0
 Bytes: 152
 All changes _should_ have a gTest designed for it. You can probably copy-n-paste the tail test(s) in tests/logcat_test.cpp and that should do the trick.
+
+12:0-12:36
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_ad2ce9e0
+UUID: 5cbb2e3b_3203ae5f
+Bytes: 4
+Done
 
 File: logcat/logcat.cpp
 
@@ -40,6 +64,14 @@ Also, because head makes _no_sense for logcat because log resolution and pertine
 
 I will have troubles allowing a premature Commit of this CL without this one being a patch-stack dependency on the (future) --regex CL. Also, in that future CL, it should alter the help for this flag here to indicate that this argument is meant (but not limited) to be paired with --regex.
 
+279:0-280:45
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_8dcda581
+UUID: 5cbb2e3b_52fab288
+Bytes: 4
+Done
+
 288:25-288:36
 Thu Mar 17 21:56:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -49,12 +81,28 @@ POSIX tends towards --buffer-size, boy did we make a mistake here :-( We should 
 
 Please put a refactor as a dependent CL to this one, or I can whip this up myself independently if you feel like I am pulling you into a quagmire ...
 
+288:25-288:36
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_cdc79d5d
+UUID: 5cbb2e3b_f2392629
+Bytes: 36
+Yeah, I'd rather sit this one out :)
+
 657:16-661:17
 Thu Mar 17 21:56:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5c240ef3_eabec7f3
 Bytes: 73
 local getSizeTArg does all this and more size_t arguments in fewer lines.
+
+657:16-661:17
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_eabec7f3
+UUID: 5cbb2e3b_d217c286
+Bytes: 4
+Done
 
 1158:11-1158:51
 Thu Mar 17 21:56:45 2016 +0000
@@ -64,4 +112,12 @@ Bytes: 779
 nit: _maybe_ validate g_maxCount against tail_lines as sourced by -t option, they should be considered mutually exclusive. The -T option (tail, then new content after block) on the other hand is acceptable since it does not strictly limit the number of lines collected from tail as it continues to flow afterwards. For example, one may use -T 1 to print from this time forward rather than letting all memorized content be evaluated.
 
 Once --regex is introduced, pedantically g_maxCount must only be smaller than tail_lines selected with -t; but is still in flakey behavior territory. Restate: --regex makes sense with -t, -m does not makes sense with -t, but --regex plus -m does make some limited sense with -t albeit weak enough not to quibble over and acceptable to error out.
+
+1158:11-1158:51
+Thu Mar 24 20:29:00 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c240ef3_8dec85b0
+UUID: 5cbb2e3b_926ffafe
+Bytes: 4
+Done
 

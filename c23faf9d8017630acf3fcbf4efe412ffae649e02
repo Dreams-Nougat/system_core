@@ -1,0 +1,11 @@
+Revision: c23faf9d8017630acf3fcbf4efe412ffae649e02
+Patch-set: 5
+File: logcat/tests/logcat_test.cpp
+
+985:4-985:23
+Fri Mar 25 19:27:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 51987933_84fe8ac7
+Bytes: 43
+Alas, we are now missing the pclose(fp) ...
+

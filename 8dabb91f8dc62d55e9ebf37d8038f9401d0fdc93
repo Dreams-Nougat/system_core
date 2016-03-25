@@ -9,6 +9,14 @@ UUID: 5cbb2e3b_b27f9e45
 Bytes: 176
 This is _not_ the way to solve this, because if regex fails and matches more than expected, you will still only get three messages and a statement that the test was successful.
 
+970:54-970:58
+Fri Mar 25 18:33:51 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_b27f9e45
+UUID: bc4a6a40_554d5e3c
+Bytes: 4
+Done
+
 994:4-994:15
 Thu Mar 24 20:51:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -22,6 +30,14 @@ One possible easy solution is to push the X lines of content, wait one second to
 
 This comment should have been made in the --regex CL, please fix there if the above paragraph solves your problem.
 
+994:4-994:15
+Fri Mar 25 18:33:51 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_7277f661
+UUID: bc4a6a40_754a6227
+Bytes: 4
+Done
+
 1015:4-1015:91
 Thu Mar 24 20:51:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,6 +47,14 @@ Send a fourth one, we need that in order to test count of 3.
 
 (NB: if any test runs first, e.g. logcat.regex runs first, it has already pushed more than 4 lines; this deals with the case where someone runs logcat_unit_test --gtest_filter=logcat.maxcount)
 
+1015:4-1015:91
+Fri Mar 25 18:33:51 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_f28926a7
+UUID: bc4a6a40_957fc645
+Bytes: 4
+Done
+
 1029:4-1029:15
 Thu Mar 24 20:51:45 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -39,4 +63,12 @@ Bytes: 477
 As pointed out earlier, w/o closure due to a bug (no signal to kill logcat process), this will pause forever. The net result will be go/apct will report a timeout failure (all tests are given 60 seconds to run) and we can investigate, so not that big of a deal. Please put a comment here stating the possibility.
 
 As noted earlier, you can add the -d flag to logcat to solve this problem, but to do so requires a one second sleep between pushing content and starting up logcat.
+
+1029:4-1029:15
+Fri Mar 25 18:33:51 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_926d3a99
+UUID: bc4a6a40_b584ca90
+Bytes: 4
+Done
 

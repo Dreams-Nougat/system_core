@@ -9,6 +9,14 @@ UUID: 5cbb2e3b_f54e300d
 Bytes: 49
 more modern suggestion below (from <sys/stat.h>).
 
+23
+Fri Mar 25 16:35:00 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_f54e300d
+UUID: bc4a6a40_5271f41b
+Bytes: 4
+Done
+
 60:6-60:10
 Thu Mar 24 23:31:33 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 5cbb2e3b_754a4000
 Bytes: 29
 fstat, since you have the fd?
 
+60:6-60:10
+Fri Mar 25 16:35:00 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_754a4000
+UUID: bc4a6a40_32d9d069
+Bytes: 4
+Done
+
 67:6-67:11
 Thu Mar 24 23:31:33 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5cbb2e3b_55473cf6
 Bytes: 9
 futimens?
+
+67:6-67:11
+Fri Mar 25 16:35:00 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_55473cf6
+UUID: bc4a6a40_3274700d
+Bytes: 53
+Done.  I'll do the same in the impl in a followup CL.
 

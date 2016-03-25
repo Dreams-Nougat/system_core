@@ -11,3 +11,11 @@ Bytes: 367
 
 One possible easy solution is to push the X lines of content, wait one second to settle (there is roughly a 20ms latency from pushing a log entry, to it showing up in logd, timestamp is accurate, its just delayed delivery) _before_ running logcat. Add the -d flag to logcat and it will close when it has no more content. Easy peasy.
 
+994:4-995:17
+Fri Mar 25 18:33:57 2016 +0000
+Author: Casey Dahlin <1080302@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5cbb2e3b_12acaafd
+UUID: bc4a6a40_b563eabb
+Bytes: 4
+Done
+

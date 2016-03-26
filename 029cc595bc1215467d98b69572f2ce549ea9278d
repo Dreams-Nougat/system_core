@@ -1,0 +1,53 @@
+Revision: 029cc595bc1215467d98b69572f2ce549ea9278d
+Patch-set: 8
+File: libbacktrace/BacktraceOffline.cpp
+
+680:51-680:54
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_23b64a21
+Bytes: 221
+This name is confusing. What does it mean to return this empty value. I assume it just means that there is no owning binary, so maybe name this nothing so it's obvious down below that when this is returned, it's an error.
+
+691:2-691:5
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_c3c01669
+Bytes: 32
+Technically, this is an int32_t.
+
+693:4-693:25
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_43b54610
+Bytes: 32
+Remove, the archive didn't open.
+
+699:6-699:16
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_239daa99
+Bytes: 93
+You should probably do the same as above, ret_code =, and then display the error if it fails.
+
+703:4-703:15
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_03a22ed1
+Bytes: 52
+Add an error message here indicating why you failed.
+
+709:4-709:15
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_63a7a2e1
+Bytes: 99
+Is there any error message that can be added to describe what went wrong? Same for the check below.
+
+715:2-715:8
+Sat Mar 26 00:13:29 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_43dee65b
+Bytes: 29
+Just return should work here.
+

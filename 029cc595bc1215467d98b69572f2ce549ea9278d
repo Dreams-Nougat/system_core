@@ -9,12 +9,28 @@ UUID: f10fad76_23b64a21
 Bytes: 221
 This name is confusing. What does it mean to return this empty value. I assume it just means that there is no owning binary, so maybe name this nothing so it's obvious down below that when this is returned, it's an error.
 
+680:51-680:54
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_23b64a21
+UUID: f10fad76_e6a60080
+Bytes: 49
+OwningBinary is similar to std::unique_ptr. Done.
+
 691:2-691:5
 Sat Mar 26 00:13:29 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_c3c01669
 Bytes: 32
 Technically, this is an int32_t.
+
+691:2-691:5
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_c3c01669
+UUID: f10fad76_26d018cf
+Bytes: 4
+Done
 
 693:4-693:25
 Sat Mar 26 00:13:29 2016 +0000
@@ -23,12 +39,28 @@ UUID: f10fad76_43b54610
 Bytes: 32
 Remove, the archive didn't open.
 
+693:4-693:25
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_43b54610
+UUID: f10fad76_66ca101f
+Bytes: 146
+This is the tricky part of libziparchive. It allocates memory in handle no matter opening archive successfully or not. Hopefully we will fix this.
+
 699:6-699:16
 Sat Mar 26 00:13:29 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_239daa99
 Bytes: 93
 You should probably do the same as above, ret_code =, and then display the error if it fails.
+
+699:6-699:16
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_239daa99
+UUID: f10fad76_e69c4029
+Bytes: 4
+Done
 
 703:4-703:15
 Sat Mar 26 00:13:29 2016 +0000
@@ -37,6 +69,14 @@ UUID: f10fad76_03a22ed1
 Bytes: 52
 Add an error message here indicating why you failed.
 
+703:4-703:15
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_03a22ed1
+UUID: f10fad76_c6994437
+Bytes: 4
+Done
+
 709:4-709:15
 Sat Mar 26 00:13:29 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -44,10 +84,26 @@ UUID: f10fad76_63a7a2e1
 Bytes: 99
 Is there any error message that can be added to describe what went wrong? Same for the check below.
 
+709:4-709:15
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_63a7a2e1
+UUID: f10fad76_066b5cbf
+Bytes: 4
+Done
+
 715:2-715:8
 Sat Mar 26 00:13:29 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_43dee65b
 Bytes: 29
 Just return should work here.
+
+715:2-715:8
+Sat Mar 26 23:12:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_43dee65b
+UUID: f10fad76_666050d8
+Bytes: 4
+Done
 

@@ -1,0 +1,20 @@
+Revision: 1581e2fa4ad9eca6034f33ba8975a66548301928
+Patch-set: 2
+File: init/builtins.cpp
+
+35
+Mon Mar 28 15:08:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_e92ed168
+Bytes: 5
+|sort
+
+70
+Mon Mar 28 15:08:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_c92b1557
+Bytes: 14
+sgtm.
+
++romlem
+

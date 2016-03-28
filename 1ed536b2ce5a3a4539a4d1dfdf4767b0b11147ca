@@ -1,0 +1,29 @@
+Revision: 1ed536b2ce5a3a4539a4d1dfdf4767b0b11147ca
+Patch-set: 6
+File: liblog/Android.bp
+
+86:8-86:41
+Mon Mar 28 18:53:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_0c8c1bb9
+Bytes: 56
+incomplete because we do not know syntax of conditionals
+
+File: liblog/Android.mk
+
+27:0-31:5
+Mon Mar 28 18:53:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_4c9613cb
+Bytes: 115
+cost of this is a complete relink of everything on incremental build from userdebug; and all java files recompiled.
+
+File: liblog/pmsg_writer.c
+
+109:0-122:6
+Mon Mar 28 18:53:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_6c682f81
+Bytes: 165
+Fragment like this change library offsets. If the debuggable check is in another module returning 1 or 0, we can eliminate library offsets. Is this worth the effort?
+

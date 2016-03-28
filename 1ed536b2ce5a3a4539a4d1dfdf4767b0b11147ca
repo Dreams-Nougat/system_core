@@ -20,6 +20,13 @@ cost of this is a complete relink of everything on incremental build from userde
 
 File: liblog/pmsg_writer.c
 
+110:0-112:5
+Mon Mar 28 19:03:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_acc867cb
+Bytes: 144
+pmsgAvailable looks after this, and this breaks the ability for __android_log_pmsg_file_write to function for recovery functions on A/B systems.
+
 109:0-122:6
 Mon Mar 28 18:53:56 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

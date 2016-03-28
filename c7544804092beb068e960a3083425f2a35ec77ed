@@ -22,3 +22,11 @@ UUID: f10fad76_f254f647
 Bytes: 64
 That gives const value_type * (aka 'const char *') unfortunately
 
+278:0-279:82
+Mon Mar 28 23:37:08 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_f254f647
+UUID: f10fad76_32668ef7
+Bytes: 122
+Huh really even with a non-const std::string? That seems odd. Let me play around with this a bit and I'll get back to you.
+

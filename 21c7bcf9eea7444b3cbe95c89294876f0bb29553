@@ -1,0 +1,11 @@
+Revision: 21c7bcf9eea7444b3cbe95c89294876f0bb29553
+Patch-set: 1
+File: adb/shell_service.cpp
+
+249:30-249:48
+Mon Mar 28 22:59:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_d2f29aac
+Bytes: 23
+&env_string[0] instead?
+

@@ -18,6 +18,20 @@ UUID: f10fad76_4c9613cb
 Bytes: 115
 cost of this is a complete relink of everything on incremental build from userdebug; and all java files recompiled.
 
+27:0-31:5
+Mon Mar 28 20:27:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_4c9613cb
+UUID: f10fad76_77663826
+Bytes: 364
+From the build team, and paraphrased:
+
+Android builds will not be support make time conditionals. Soong specifically does not support this.
+
+It is strongly discouraged to have build variant differences in any file. Recommended to use runtime or std::once. ABI differences are tracked by Soong
+
+Will restore runtime is_debuggable function in the previous Patch Set.
+
 File: liblog/pmsg_writer.c
 
 110:0-112:5

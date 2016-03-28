@@ -14,3 +14,11 @@ Would this work instead? Feels a little better than const_cast'ing c_str():
     ...
   }
 
+278:0-279:82
+Mon Mar 28 23:04:37 2016 +0000
+Author: Dan Austin <1079886@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_12e6f2fd
+UUID: f10fad76_f254f647
+Bytes: 64
+That gives const value_type * (aka 'const char *') unfortunately
+

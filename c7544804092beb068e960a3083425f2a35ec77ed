@@ -1,0 +1,16 @@
+Revision: c7544804092beb068e960a3083425f2a35ec77ed
+Patch-set: 1
+File: adb/socket_test.cpp
+
+278:0-279:82
+Mon Mar 28 22:59:49 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_12e6f2fd
+Bytes: 219
+Would this work instead? Feels a little better than const_cast'ing c_str():
+
+  void VerifySkipHostSerial(std::string serial, const char* expected) {
+    char* result = internal::skip_host_serial(&serial[0]);
+    ...
+  }
+

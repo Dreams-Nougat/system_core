@@ -1,0 +1,57 @@
+Revision: b7a0d3f9111f14182ea03d4d78f6df31569f2a89
+Patch-set: 3
+File: trusty/storage/proxy/Android.mk
+
+29
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_57a21cc0
+Bytes: 24
+what is this needed for?
+
+File: trusty/storage/proxy/ipc.c
+
+47
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_f7b06807
+Bytes: 20
+when does this fail?
+
+File: trusty/storage/proxy/storage.c
+
+45
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_57469ca0
+Bytes: 16
+enum sync_state?
+
+92
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_172384ee
+Bytes: 41
+why do these functions return the handle?
+
+190
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_b74a70a1
+Bytes: 55
+why do you increment here instead of setting the state?
+
+493:29-493:30
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_972e54d1
+Bytes: 9
+SS_CLEAN?
+
+506
+Mon Mar 28 20:21:06 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_3785e0fe
+Bytes: 75
+If you create two files, and then delete one of them this code will not run
+

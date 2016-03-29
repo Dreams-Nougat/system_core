@@ -30,3 +30,11 @@ UUID: f10fad76_32668ef7
 Bytes: 122
 Huh really even with a non-const std::string? That seems odd. Let me play around with this a bit and I'll get back to you.
 
+278:0-279:82
+Tue Mar 29 00:44:53 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_32668ef7
+UUID: f10fad76_523a2a7b
+Bytes: 51
+Try &serial[0], the standard requires that to work.
+

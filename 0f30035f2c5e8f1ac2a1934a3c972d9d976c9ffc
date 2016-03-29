@@ -9,3 +9,19 @@ UUID: f10fad76_f8b05507
 Bytes: 86
 So this works with new libcxx, but not the current one. How would you like this fixed?
 
+279:53-279:54
+Tue Mar 29 17:08:03 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_f8b05507
+UUID: f10fad76_98d16119
+Bytes: 602
+Sorry I may have been unclear or perhaps I'm misunderstanding what's happening here.
+
+I'm suggesting two changes:
+1. VerifySkipHostSerial() should take a std::string argument, not a reference and not const.
+2. Use &serial[0] (as this patch set does).
+
+I believe this should cause &serial[0] to return a non-const char* for all compilers. It seems to work for me on current ToT; if it doesn't work with the new compiler could you post the error message?
+
+I'm actually surprised this works on the new libcxx. As written shouldn't &serial[0] return a const char* which can't be passed to skip_host_serial?
+

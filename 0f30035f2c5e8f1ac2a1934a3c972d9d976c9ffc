@@ -1,0 +1,11 @@
+Revision: 0f30035f2c5e8f1ac2a1934a3c972d9d976c9ffc
+Patch-set: 2
+File: adb/socket_test.cpp
+
+279:53-279:54
+Tue Mar 29 16:57:59 2016 +0000
+Author: Dan Austin <1079886@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_f8b05507
+Bytes: 86
+So this works with new libcxx, but not the current one. How would you like this fixed?
+

@@ -1,0 +1,11 @@
+Revision: a11e5aac9fd75e8d66d4a1b5df892a8dd2371e50
+Patch-set: 8
+File: liblog/pmsg_writer.c
+
+78:13-78:40
+Tue Mar 29 19:17:08 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_4c93ae7c
+Bytes: 154
+not defined, add extern placeholder at top of file (future CL moves __android_log_is_debuggable to LIBLOG_ABI_PRIVATE and into <private/android_logger.h>)
+

@@ -1,0 +1,11 @@
+Revision: 3792629d04d2eb8092397db9f1cd100d97217088
+Patch-set: 9
+File: liblog/pmsg_writer.c
+
+38:1-38:41
+Tue Mar 29 20:56:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_ec141a27
+Bytes: 46
+second thought, move this to logger.h, cleaner
+

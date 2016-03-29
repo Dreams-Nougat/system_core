@@ -38,3 +38,11 @@ UUID: f10fad76_523a2a7b
 Bytes: 51
 Try &serial[0], the standard requires that to work.
 
+278:0-279:82
+Tue Mar 29 16:57:59 2016 +0000
+Author: Dan Austin <1079886@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_523a2a7b
+UUID: f10fad76_3db65f21
+Bytes: 67
+Must have had repo issues, this does work, will upload that change.
+

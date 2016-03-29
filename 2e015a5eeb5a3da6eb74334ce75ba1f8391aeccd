@@ -1,0 +1,13 @@
+Revision: 2e015a5eeb5a3da6eb74334ce75ba1f8391aeccd
+Patch-set: 7
+File: include/private/android_logger.h
+
+128:0-128:34
+Tue Mar 29 14:34:55 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f10fad76_fd45e718
+Bytes: 57
+not an LIBLOG_ABI_PRIVATE interface
+
+(leaked WIP CL :-( )
+

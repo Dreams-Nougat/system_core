@@ -9,6 +9,14 @@ UUID: f10fad76_57a21cc0
 Bytes: 24
 what is this needed for?
 
+29
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_57a21cc0
+UUID: f10fad76_b8153d66
+Bytes: 8
+Removed.
+
 File: trusty/storage/proxy/ipc.c
 
 47
@@ -17,6 +25,14 @@ Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_f7b06807
 Bytes: 20
 when does this fail?
+
+47
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_f7b06807
+UUID: f10fad76_5d407b12
+Bytes: 132
+Normally it should not. But potentially it could a bunch of conditions like out of memory on server side, not service available etc.
 
 File: trusty/storage/proxy/storage.c
 
@@ -27,12 +43,28 @@ UUID: f10fad76_57469ca0
 Bytes: 16
 enum sync_state?
 
+45
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_57469ca0
+UUID: f10fad76_bd240f8b
+Bytes: 4
+Done
+
 92
 Mon Mar 28 20:21:06 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_172384ee
 Bytes: 41
 why do these functions return the handle?
+
+92
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_172384ee
+UUID: f10fad76_9d21537b
+Bytes: 169
+to do handle translation (if needed) from handle provided by server to file handle on proxy side. One-to-one correspondence for now, but it could be something different.
 
 190
 Mon Mar 28 20:21:06 2016 +0000
@@ -41,6 +73,14 @@ UUID: f10fad76_b74a70a1
 Bytes: 55
 why do you increment here instead of setting the state?
 
+190
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_b74a70a1
+UUID: f10fad76_fd2e8768
+Bytes: 4
+Done
+
 493:29-493:30
 Mon Mar 28 20:21:06 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,10 +88,26 @@ UUID: f10fad76_972e54d1
 Bytes: 9
 SS_CLEAN?
 
+493:29-493:30
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_972e54d1
+UUID: f10fad76_1d5d63f8
+Bytes: 4
+Done
+
 506
 Mon Mar 28 20:21:06 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f10fad76_3785e0fe
 Bytes: 75
 If you create two files, and then delete one of them this code will not run
+
+506
+Tue Mar 29 17:43:22 2016 +0000
+Author: Michael Ryleev <1045553@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_3785e0fe
+UUID: f10fad76_7d5297e7
+Bytes: 70
+Why? Both create and delete file marks directory entry state as dirty.
 

@@ -1,0 +1,11 @@
+Revision: 3fc36c7702d5f4c43702cd595f9d3a7a3432f7f6
+Patch-set: 2
+File: debuggerd/signal_sender.cpp
+
+38:23-38:33
+Wed Mar 30 00:48:35 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1198c184_8c9ca73a
+Bytes: 38
+there's a getprogname() in <stdlib.h>.
+

@@ -11,3 +11,17 @@ Maybe we should keep API intact?
 it's ok to pass parameter which is not used.
 it might be used again. It is logically right thing to be able to filter based on message class.
 
+152:48-152:61
+Wed Mar 30 23:15:24 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 915f51f9_21917480
+UUID: 915f51f9_4cd21f1d
+Bytes: 357
+The log_id_t is present in entry as well. This function was introduced within the past week, so it is OK to refine it.
+
+If we preserved this internal (static) API, we would need to adjust the definition as follows to prevent unused argument _error_:
+
+static bool regexOk(const AndroidLogEntry& entry, log_id_t /* id */)
+
+I prefer to remove such ugliness :-)
+

@@ -1,0 +1,11 @@
+Revision: 10d81bd7cd2edbb53306494f84c84dbf9430a114
+Patch-set: 1
+File: adb/adb_auth_host.cpp
+
+50:3-50:7
+Wed Mar 30 00:19:06 2016 +0000
+Author: David Benjamin <1031048@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 314305e4_bd08ff0c
+Bytes: 219
+This is really ugly. :-) I'm not sure how you'd prefer this done. I think sysdeps.h, given how violent it is, should always get included *last*. but perhaps you all were including it first to make inline functions work?
+

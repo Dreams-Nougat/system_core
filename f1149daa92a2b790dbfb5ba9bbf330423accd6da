@@ -1,0 +1,11 @@
+Revision: f1149daa92a2b790dbfb5ba9bbf330423accd6da
+Patch-set: 2
+File: adb/commandline.cpp
+
+106:42-106:80
+Thu Mar 31 04:11:42 2016 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae3950d2_9150dc52
+Bytes: 177
+btw, not sure if something like this should be exposed. Also missing the - in front of every description, and the text is a little too much about internal implementation detail.
+

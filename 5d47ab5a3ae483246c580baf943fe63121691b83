@@ -1,0 +1,11 @@
+Revision: 5d47ab5a3ae483246c580baf943fe63121691b83
+Base-for-patch-set: 3
+File: adb/transport.cpp
+
+620:8-620:33
+Thu Mar 31 22:28:07 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 915f51f9_9ffe1411
+Bytes: 25
+Why is this code deleted?
+

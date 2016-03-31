@@ -1,0 +1,20 @@
+Revision: eaf53fb52855029b83e903a6e825cea4136b541d
+Patch-set: 4
+File: /COMMIT_MSG
+
+29:5-29:13
+Thu Mar 31 04:16:40 2016 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae3950d2_5124b4f5
+Bytes: 10
+incorrect?
+
+File: adb/commandline.cpp
+
+106:10-106:19
+Thu Mar 31 04:16:40 2016 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae3950d2_311930c2
+Bytes: 187
+similar comment as in previous CL, you guys know better whether this should be documented. I like the "Used for debugging adb" part of it, maybe you want to lead with that phrase instead.
+

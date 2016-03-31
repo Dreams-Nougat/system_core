@@ -9,3 +9,11 @@ UUID: 915f51f9_9ffe1411
 Bytes: 25
 Why is this code deleted?
 
+620:8-620:33
+Thu Mar 31 23:42:40 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 915f51f9_9ffe1411
+UUID: 915f51f9_3f1428d7
+Bytes: 150
+because it is a duplication. each transport needs only to be kicked once.   In each place calling transport_unref(), kick_transport() has been called.
+

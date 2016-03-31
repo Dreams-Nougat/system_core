@@ -11,3 +11,19 @@ Is this actually "if device is USB, disconnect and let device polling automatica
 
 FWIW, when I was debugging Windows USB issues, I overloaded adb disconnect to be able to disconnect USB devices (and then let the device polling automatically reconnect). I never checked-in that change since it was just for debugging. The benefit was that I didn't have to add a new host:reconnect command. I don't know if this is a better route than what you've got.
 
+1138:26-1138:35
+Thu Mar 31 23:42:40 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 915f51f9_3f1ee849
+UUID: 915f51f9_5f755c05
+Bytes: 153
+Probably it works as what you described. But I don't want to mix this command with `adb disconnect` command. Maybe I should rename it to kick-connection?
+
+1138:26-1138:35
+Thu Mar 31 23:42:40 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 915f51f9_3f1ee849
+UUID: 915f51f9_5f8e3c5f
+Bytes: 241
+Probably it works as you described. Because for transports created by `adb connect host:port`, there is no mechanism reconnecting them. Instead of confusing this with `adb disconnect` command. I'd rather add description in the command usage.
+

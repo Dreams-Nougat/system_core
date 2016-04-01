@@ -1,0 +1,11 @@
+Revision: 21e3a90ecf4fc568baa82835b399d2e244d1af82
+Patch-set: 3
+File: trusty/storage/interface/include/trusty/interface/storage.h
+
+27:43-27:44
+Fri Apr 01 02:54:02 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 915f51f9_a2a73f12
+Bytes: 1
+y
+

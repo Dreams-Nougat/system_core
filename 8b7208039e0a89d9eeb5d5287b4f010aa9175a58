@@ -1,0 +1,47 @@
+Revision: 8b7208039e0a89d9eeb5d5287b4f010aa9175a58
+Patch-set: 7
+File: adb/adb.h
+
+80
+Fri Apr 01 20:37:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_91a55e77
+Bytes: 14
+not constexpr?
+
+File: adb/commandline.cpp
+
+1914
+Fri Apr 01 20:37:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_51d136d3
+Bytes: 17
+why not on linux?
+
+File: adb/sockets.cpp
+
+89:7-89:15
+Fri Apr 01 20:37:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_d1c44611
+Bytes: 9
+uint32_t?
+
+File: adb/transport.h
+
+130:64-130:71
+Fri Apr 01 20:37:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_f1c142fe
+Bytes: 5
+Sent?
+
+136:65-136:74
+Fri Apr 01 20:37:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_91bebe81
+Bytes: 45
+Received?
+
+these are both in the past, right?
+

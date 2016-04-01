@@ -1,0 +1,18 @@
+Revision: 3727bd0e638d2278878ce31080e2e18bb8a25f60
+Patch-set: 1
+File: logcat/logcat.cpp
+
+469:0-469:0
+Fri Apr 01 16:13:26 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 915f51f9_357a878a
+Bytes: 165
+you could create extra scope here to include this code fragment; this way it will be destroyed right here, and also show that this new var is not used anywhere else.
+
+470:37-470:38
+Fri Apr 01 16:13:26 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 915f51f9_f5880fe7
+Bytes: 26
+space before variable name
+

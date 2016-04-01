@@ -34,6 +34,14 @@ UUID: f10fad76_5d407b12
 Bytes: 132
 Normally it should not. But potentially it could a bunch of conditions like out of memory on server side, not service available etc.
 
+47
+Fri Apr 01 02:53:27 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_5d407b12
+UUID: 915f51f9_62ad27f5
+Bytes: 37
+Init can handle restarts in that case
+
 File: trusty/storage/proxy/storage.c
 
 45
@@ -110,4 +118,12 @@ Parent: f10fad76_3785e0fe
 UUID: f10fad76_7d5297e7
 Bytes: 70
 Why? Both create and delete file marks directory entry state as dirty.
+
+506
+Fri Apr 01 02:53:27 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f10fad76_7d5297e7
+UUID: 915f51f9_22bb2f38
+Bytes: 46
+Not in patchset 3, delete increments dir_state
 

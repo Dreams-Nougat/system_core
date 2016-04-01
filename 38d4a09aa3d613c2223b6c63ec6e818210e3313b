@@ -35,3 +35,11 @@ UUID: 915f51f9_a20d7f59
 Bytes: 198
 I think 'reconnect' is ok. What I described above is what actually happens in the code, but it isn't really the intent which is to act like a device has been physically disconnected and reconnected.
 
+1138:26-1138:35
+Fri Apr 01 18:13:54 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 915f51f9_a20d7f59
+UUID: 4ec61432_ce1ee348
+Bytes: 15
+other opinions?
+

@@ -60,3 +60,13 @@ UUID: 4ec61432_886c4bd6
 Bytes: 132
 use the betoh(16|32|64) macros? then it's the c library's problem. (though i guess i'm not sure that mac/windows have these macros.)
 
+21
+Mon Apr 04 21:23:58 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_886c4bd6
+UUID: 6e3d98ed_bf789700
+Bytes: 269
+Windows doesn't. That's actually the reason for this file's existence :)
+
+I could alternatively use ntohl/htonl (which conveniently convert to big endian byte order). The resulting code will still not work on big-endian hosts, but we already established that this moot.
+

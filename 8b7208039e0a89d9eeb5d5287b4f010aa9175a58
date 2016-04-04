@@ -11,12 +11,28 @@ not constexpr?
 
 File: adb/commandline.cpp
 
+243:9-243:10
+Mon Apr 04 18:18:43 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_f13ce2c4
+Bytes: 51
+nit: looks like everything else uses 2 spaces here.
+
 1914
 Fri Apr 01 20:37:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4ec61432_51d136d3
 Bytes: 17
 why not on linux?
+
+File: adb/services.cpp
+
+356:55-356:62
+Mon Apr 04 18:18:43 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_82974a68
+Bytes: 74
+nit: I don't think this is necessary since transport is already a pointer.
 
 File: adb/sockets.cpp
 
@@ -27,7 +43,36 @@ UUID: 4ec61432_d1c44611
 Bytes: 9
 uint32_t?
 
+94:0-96:5
+Mon Apr 04 18:18:43 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_e2a5eec7
+Bytes: 166
+nit: this sort of defeats the purpose of having a constant since it assumes HEARTBEAT_SOCKET_ID is 0xFFFFFFFF. But if it won't ever change it probably doesn't matter.
+
+File: adb/transport.cpp
+
+601:16-601:41
+Mon Apr 04 18:18:43 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_a2a5a676
+Bytes: 543
+This might be a little aggressive for TCP transports, depending on the system's TCP backoff/retransmission settings 1 second might mean just 1 or 2 retransmissions will kill the connection which could potentially make adb over WiFi pretty flaky.
+
+In http://r.android.com/204446 I added a 10-second TCP timeout using the TCP keepalive feature, but I was considering an approach similar to this as well. Maybe it makes more sense to just set this timeout higher for TCP transports and I should revert http://r.android.com/204446 once this lands?
+
 File: adb/transport.h
+
+53:33-53:58
+Mon Apr 04 18:18:43 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_a2afe6a3
+Bytes: 201
+What do you think about aliasing this to make the code a little more readable? Something like
+
+  typedef std::chrono::steady_clock clock;
+
+inside the atransport class might cut down on some repetition.
 
 130:64-130:71
 Fri Apr 01 20:37:12 2016 +0000

@@ -36,3 +36,11 @@ Well, this gets built as part of adb, and adb theoretically runs on Linux hosts 
 
 Anyhow, I figured I'd rather not add to the problem, and I think it's nice to have the swap macros at the right points in the code if only for documentation purposes.
 
+21
+Mon Apr 04 21:04:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6e3d98ed_3f85a737
+UUID: 4ec61432_68031f34
+Bytes: 138
+we removed all the big-endian host code too several releases ago. because we have no big-endian hosts or targets, it's just untested code.
+

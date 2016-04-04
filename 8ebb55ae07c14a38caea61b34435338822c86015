@@ -1,0 +1,20 @@
+Revision: 8ebb55ae07c14a38caea61b34435338822c86015
+Patch-set: 1
+File: libcrypto_utils/Android.mk
+
+48
+Mon Apr 04 20:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_6809df80
+Bytes: 49
+you didn't need this for the host shared library?
+
+File: libcrypto_utils/include/crypto_utils/byte_order.h
+
+21
+Mon Apr 04 20:47:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_08d13b17
+Bytes: 68
+(android is little-endian, so feel free to just remove any of this.)
+

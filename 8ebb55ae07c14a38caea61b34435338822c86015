@@ -9,6 +9,14 @@ UUID: 4ec61432_6809df80
 Bytes: 49
 you didn't need this for the host shared library?
 
+48
+Mon Apr 04 21:01:28 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_6809df80
+UUID: 8e3accf4_e0960276
+Bytes: 259
+This copies what libcrypto is doing. It has the LOCAL_MODULE_HOST_OS only for the static library (I think it's present for building adb). If I add the same line for the host shared library, I'll run into trouble since there is no suitable libcrypto available.
+
 File: libcrypto_utils/include/crypto_utils/byte_order.h
 
 21
@@ -17,4 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4ec61432_08d13b17
 Bytes: 68
 (android is little-endian, so feel free to just remove any of this.)
+
+21
+Mon Apr 04 21:01:28 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_08d13b17
+UUID: 6e3d98ed_3f85a737
+Bytes: 394
+Well, this gets built as part of adb, and adb theoretically runs on Linux hosts which might use big-endian byte order. I guess we just don't support this, at least I wouldn't feel confident adb works on big-endian Linux hosts?
+
+Anyhow, I figured I'd rather not add to the problem, and I think it's nice to have the swap macros at the right points in the code if only for documentation purposes.
 

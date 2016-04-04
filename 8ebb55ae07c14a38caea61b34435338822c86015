@@ -52,3 +52,11 @@ UUID: 2eaac053_05693283
 Bytes: 387
 Hm, keeping untested code doesn't make much sense indeed. However I still need some conversion to meet BoringSSL's expectation of binary-encoded numbers being big endian. I could just drop all the macros for specific cases and use crypto_utils_bswap32 in the places where I need to convert? That may still look/weird incorrect to people reading the code. Will think some more about this.
 
+21
+Mon Apr 04 21:16:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2eaac053_05693283
+UUID: 4ec61432_886c4bd6
+Bytes: 132
+use the betoh(16|32|64) macros? then it's the c library's problem. (though i guess i'm not sure that mac/windows have these macros.)
+

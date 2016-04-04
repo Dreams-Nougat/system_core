@@ -1,0 +1,21 @@
+Revision: fd376b97f7e9c8ca6cb755d53d0f0fc9196c94e0
+Patch-set: 1
+File: include/utils/Condition.h
+
+130:4-134:5
+Mon Apr 04 23:48:53 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_b5539f5e
+Bytes: 234
+I think you could do this:
+
+  if (__builtin_add_overflow(ts.tv_sec, reltime_sec, &ts.tv_sec)) {
+#if defined(__LP64__)
+    ts.tv_sec = INT64_MAX;
+#else
+    ts.tv_sec = INT32_MAX;
+#endif
+  }
+
+Which would replace the code down below too.
+

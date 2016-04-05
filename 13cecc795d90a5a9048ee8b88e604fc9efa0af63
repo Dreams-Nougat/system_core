@@ -1,0 +1,11 @@
+Revision: 13cecc795d90a5a9048ee8b88e604fc9efa0af63
+Patch-set: 1
+File: init/builtins.cpp
+
+134:13-134:14
+Tue Apr 05 17:00:14 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_bf53785e
+Bytes: 77
+Need to wait for all processes to die before considering restarting watchdog.
+

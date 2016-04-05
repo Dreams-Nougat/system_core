@@ -13,3 +13,11 @@ I encounter many different kernels working on Android Wear due to the range/vari
 
 That having been said, I haven't caught a case yet where a kernel failed to update monotonic boottime properly before end of kernel resume cycle, so I'm ok with removing this test if that's your preference.
 
+7:28-7:48
+Tue Apr 05 00:48:43 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_1564f388
+UUID: eef6e89c_2b857937
+Bytes: 37
+can we write CTS tests to catch this?
+

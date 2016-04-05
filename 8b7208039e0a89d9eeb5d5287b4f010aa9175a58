@@ -9,6 +9,14 @@ UUID: 4ec61432_91a55e77
 Bytes: 14
 not constexpr?
 
+80
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_91a55e77
+UUID: 4ec61432_b59b9f2d
+Bytes: 4
+Done
+
 File: adb/commandline.cpp
 
 243:9-243:10
@@ -18,12 +26,28 @@ UUID: 4ec61432_f13ce2c4
 Bytes: 51
 nit: looks like everything else uses 2 spaces here.
 
+243:9-243:10
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_f13ce2c4
+UUID: 4ec61432_956c63d6
+Bytes: 4
+Done
+
 1914
 Fri Apr 01 20:37:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4ec61432_51d136d3
 Bytes: 17
 why not on linux?
+
+1914
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_51d136d3
+UUID: 4ec61432_75f8d7db
+Bytes: 142
+the comment is no longer true as using an active method from patch 3. For patch 1/2 it is true because only linux has poll POLLRDHUP function.
 
 File: adb/services.cpp
 
@@ -34,6 +58,14 @@ UUID: 4ec61432_82974a68
 Bytes: 74
 nit: I don't think this is necessary since transport is already a pointer.
 
+356:55-356:62
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_82974a68
+UUID: 4ec61432_b5f5dfe0
+Bytes: 19
+moved to const_cast
+
 File: adb/sockets.cpp
 
 89:7-89:15
@@ -43,12 +75,28 @@ UUID: 4ec61432_d1c44611
 Bytes: 9
 uint32_t?
 
+89:7-89:15
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_d1c44611
+UUID: 4ec61432_f5a5a7c7
+Bytes: 4
+Done
+
 94:0-96:5
 Mon Apr 04 18:18:43 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4ec61432_e2a5eec7
 Bytes: 166
 nit: this sort of defeats the purpose of having a constant since it assumes HEARTBEAT_SOCKET_ID is 0xFFFFFFFF. But if it won't ever change it probably doesn't matter.
+
+94:0-96:5
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_e2a5eec7
+UUID: 4ec61432_7592177b
+Bytes: 108
+It doesn't assume HEARTBEAT_SOCKET_ID is 0xffffffff. But it did limit valid ids to [1, HEARTBEAT_SOCKET_ID).
 
 File: adb/transport.cpp
 
@@ -60,6 +108,18 @@ Bytes: 543
 This might be a little aggressive for TCP transports, depending on the system's TCP backoff/retransmission settings 1 second might mean just 1 or 2 retransmissions will kill the connection which could potentially make adb over WiFi pretty flaky.
 
 In http://r.android.com/204446 I added a 10-second TCP timeout using the TCP keepalive feature, but I was considering an approach similar to this as well. Maybe it makes more sense to just set this timeout higher for TCP transports and I should revert http://r.android.com/204446 once this lands?
+
+601:16-601:41
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_a2a5a676
+UUID: 4ec61432_55083b7a
+Bytes: 602
+1 second may be strict, and I am ready to loosen it when someone complains. Changed the rule to something like TCP keepalive:
+each transport has a heartbeat interval and failed_count_before_invalid. In each interval, the transport sends an A_OPEN packet, waiting for A_CLSE packet. If the adb host hasn't received response for [failed_count_before_invalid] A_OPEN packets, it will kick the transport. Current setting is:
+for usb devices, [interval=1, failed_count_before_invalid=2]
+for emulators, [interval=1, failed_count_before_invalid=3]
+for tcp devices, [interval=1, failed_count_before_invalid=10]
 
 File: adb/transport.h
 
@@ -74,12 +134,28 @@ What do you think about aliasing this to make the code a little more readable? S
 
 inside the atransport class might cut down on some repetition.
 
+53:33-53:58
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_a2afe6a3
+UUID: 4ec61432_d5ac2bb1
+Bytes: 49
+yes, I should do it if it undermines readability.
+
 130:64-130:71
 Fri Apr 01 20:37:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4ec61432_f1c142fe
 Bytes: 5
 Sent?
+
+130:64-130:71
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_f1c142fe
+UUID: 4ec61432_35d80f6d
+Bytes: 4
+Done
 
 136:65-136:74
 Fri Apr 01 20:37:12 2016 +0000
@@ -89,4 +165,12 @@ Bytes: 45
 Received?
 
 these are both in the past, right?
+
+136:65-136:74
+Tue Apr 05 23:18:09 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4ec61432_91bebe81
+UUID: 4ec61432_55dd9b5b
+Bytes: 10
+yes, Done.
 

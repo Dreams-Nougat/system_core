@@ -23,3 +23,11 @@ UUID: ae9b108c_a4bb2c35
 Bytes: 92
 Is it theoretically possible that we would like to write to brightness files in all subdirs?
 
+136:12-136:19
+Tue Apr 05 22:52:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_a4bb2c35
+UUID: ae9b108c_2445dcef
+Bytes: 69
+Given that it is under '.../backlight/', I have no problem with that.
+

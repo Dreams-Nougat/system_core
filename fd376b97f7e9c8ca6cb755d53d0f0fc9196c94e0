@@ -29,3 +29,13 @@ isn't that unavailable in GCC until GCC 5? this code is used by a lot of vendor 
 
 maybe in an #if __clang__ so we can remove this in a few years?
 
+130:4-134:5
+Tue Apr 05 00:51:34 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eef6e89c_ab8fa959
+UUID: 4ec61432_d5f2ebf5
+Bytes: 201
+Yes, if you have to compile with gcc, and it's used in vendor code, this isn't a good solution.
+
+I don't know if it's worth it to keep two copies around in that case. I'll leave the decision up to you.
+

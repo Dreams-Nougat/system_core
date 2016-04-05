@@ -21,3 +21,11 @@ UUID: eef6e89c_2b857937
 Bytes: 37
 can we write CTS tests to catch this?
 
+7:28-7:48
+Tue Apr 05 01:01:17 2016 +0000
+Author: Nick Vaccaro <1061159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eef6e89c_2b857937
+UUID: 4ec61432_f5ca8789
+Bytes: 421
+I recently added a CTS Verifier test to catch sensor stacks that are using UPTIME instead of BOOTTIME as the clock source for event timestamps.   It will also catch cases where sensor driver collects timestamp at sensor driver resume() time, but monotonic boottime is not adjusted to include sleep until later in the resume() cycle).   If monotonic boottime is not getting updated at all, my test will catch that as well.
+

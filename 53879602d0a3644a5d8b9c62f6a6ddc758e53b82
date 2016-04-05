@@ -1,0 +1,11 @@
+Revision: 53879602d0a3644a5d8b9c62f6a6ddc758e53b82
+Patch-set: 2
+File: init/builtins.cpp
+
+137:43-137:48
+Tue Apr 05 18:32:39 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ec61432_1afada87
+Bytes: 7
+"eager"
+

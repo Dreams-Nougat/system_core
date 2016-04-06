@@ -1,0 +1,18 @@
+Revision: 91c4ee105594e49bc8d46c81968731e8641bed78
+Patch-set: 4
+File: libcrypto_utils/android_pubkey.c
+
+62:0-62:3
+Wed Apr 06 15:09:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_d6682282
+Bytes: 31
+bool? (even C has <stdbool.h>.)
+
+68:0-68:17
+Wed Apr 06 15:09:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_166faa8b
+Bytes: 213
+even if you want to keep a C API, you can still use C++ in the implementation. the Android build system doesn't keep track of C vs C++, so everyone gets the C++ support (and libc++!) linked in all the time anyway.
+

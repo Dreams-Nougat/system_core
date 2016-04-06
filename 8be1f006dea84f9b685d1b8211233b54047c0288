@@ -1,0 +1,25 @@
+Revision: 8be1f006dea84f9b685d1b8211233b54047c0288
+Patch-set: 4
+File: adb/adb_auth_host.cpp
+
+107
+Wed Apr 06 15:17:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_16bd6a2b
+Bytes: 92
+you could lose the 'goto's if you made this a std::string and the FILE* a std::unique_ptr...
+
+141:0-146:5
+Wed Apr 06 15:17:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_b6bb5e35
+Bytes: 46
+or just switch to android::base::StringPrintf.
+
+147:0-165:5
+Wed Apr 06 15:17:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_56abf2e0
+Bytes: 101
+actually, all this is just android::base::WriteStringToFile if you made the std::string change above.
+

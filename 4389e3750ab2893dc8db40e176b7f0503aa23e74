@@ -25,6 +25,15 @@ Change-Id: Ib1ae1e0cbdcaaf60deb3759681a6030b615c069c
 
 File: init/util.cpp
 
+55:25-55:33
+Thu Apr 07 15:04:03 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_59c2fe71
+Bytes: 243
+init is single threaded, so no need to use getpwnam_r here.
+
+NB: I stated in b/27999086 that if in doubt about references, uid or gid, where an AID is actually being referenced, use the pwd.h functions. This complies with that design decision.
+
 57
 Thu Apr 07 02:24:27 2016 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>

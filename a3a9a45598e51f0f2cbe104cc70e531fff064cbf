@@ -56,3 +56,11 @@ UUID: ae9b108c_4fd10bd4
 Bytes: 308
 I would just have the other threads post requests to the system thread to fulfill them and give them their response. I wouldn't touch the perms on the packages.lst file itself. Slight re-architecture of this code I would imagine. I'm not super familiar with the logd code, id have to spend more time with it.
 
+165:4-181:20
+Thu Apr 07 21:23:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_4fd10bd4
+UUID: ae9b108c_2f51270c
+Bytes: 375
+Basically yes, that was my final possible solution, getpwuid() would call back to package_aid_to_name(aid); the WEAK stub in libc library would make direct calls to WEAK stubs in libc that looked like libpackageparser calls. We would implement a local package_aid_to_name(aid) function that calls to logd.daemon to pick up the content (shown here as android::uidToName(aid)).
+

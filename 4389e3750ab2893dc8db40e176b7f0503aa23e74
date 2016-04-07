@@ -49,3 +49,11 @@ UUID: ae9b108c_d9516eb3
 Bytes: 229
 Good to know. Please remove this error path in any case, there will be log stutter as init will no doubt complain at a higher layer (hopefully with line numbers and context) that the name referenced in the command does not exist.
 
+57
+Thu Apr 07 15:43:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_d9516eb3
+UUID: ae9b108c_d407f56a
+Bytes: 159
+to make it clearer that that's true (and because this is now basically a one-liner) we should probably just inline android_name_to_id into do_decode_uid below.
+

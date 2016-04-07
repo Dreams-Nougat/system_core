@@ -9,6 +9,14 @@ UUID: ae9b108c_efa0dfb9
 Bytes: 53
 this could be getuid(), if Im self, its string auditd
 
+160
+Thu Apr 07 21:02:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_efa0dfb9
+UUID: ae9b108c_8ff83367
+Bytes: 143
+Wanted to keep this constant, rather than runtime. At issue is some of the threads within logd are actually run in other-than-AID_LOGD user id.
+
 165:4-181:20
 Thu Apr 07 18:31:13 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,4 +31,20 @@ Parent: ae9b108c_6f5bb05f
 UUID: ae9b108c_cfcf5b79
 Bytes: 206
 Yeah but it would be nice to get rid of this... I was looking at the design of this again last night, and its quite clunky. But we can address packageparser after we get some integration into grp/pwd later.
+
+165:4-181:20
+Thu Apr 07 21:02:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_cfcf5b79
+UUID: ae9b108c_af141768
+Bytes: 753
+AID_LOGD does _not_ have access to /data/system/packages.list, so getpwuid_r would fail to be enhanced when libpackagelistparser is referenced.
+
+Allow AID_LOGD access to /data/system; but making it system/logd will have ramifications.
+
+uid name is picked up here (in context of logcat -S command in logd.control thread) and in chatty (in context of logcat logd.reader.per transitory thread); and we use logd.daemon thread to perform the data pickup. Elevating logd.reader.per to AID_SYSTEM is not security-wise possible.
+
+The solution I expect is to double-wrap libpackageparser with a WEAK package_aid_to_name(aid) in libc that in-turn has WEAK stubs to libpackageparser; and override package_aid_to_name(aid) here with our own version.
+
+later dude ;-}
 

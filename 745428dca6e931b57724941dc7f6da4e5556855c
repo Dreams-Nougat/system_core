@@ -1,0 +1,11 @@
+Revision: 745428dca6e931b57724941dc7f6da4e5556855c
+Patch-set: 3
+File: /COMMIT_MSG
+
+11:42-11:43
+Thu Apr 07 20:42:27 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_cfd4fb0a
+Bytes: 137
+I missed the virtues you extolled over this change from the other CL :-) ueventd.*.rc file parsing now will handle oem_<id> for starters.
+

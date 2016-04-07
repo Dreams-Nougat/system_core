@@ -1,5 +1,28 @@
 Revision: 4389e3750ab2893dc8db40e176b7f0503aa23e74
 Patch-set: 2
+File: /COMMIT_MSG
+
+11:0-11:52
+Thu Apr 07 14:40:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_79f6e2ec
+Bytes: 341
+Advantages:
+- one copy of android_ids in libc, removing it from init objects.
+- immediately starts supporting in rc files oem_2900 to oem_2999, oem_5000 to oem_5999 and u<userid>_i<appid> (this last one is of little use, nnk@ please comment, we may wish to _prevent_ these?).
+- future will support _named_ oem ids (re: backend improvements).
+
+13:0-14:60
+Thu Apr 07 14:40:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_b967ca8e
+Bytes: 257
+I know you do not have visibility, but there is an associated google bug for this. This will help rationalizations and tracking.
+
+Signed-off-by: William Roberts <william.c.roberts@intel.com>
+Bug: 27999086
+Change-Id: Ib1ae1e0cbdcaaf60deb3759681a6030b615c069c
+
 File: init/util.cpp
 
 57
@@ -8,4 +31,12 @@ Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ae9b108c_1e8b3ca3
 Bytes: 64
 I tested this on aosp_x86_64 I never saw it hit this error path.
+
+57
+Thu Apr 07 14:40:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_1e8b3ca3
+UUID: ae9b108c_d9516eb3
+Bytes: 229
+Good to know. Please remove this error path in any case, there will be log stutter as init will no doubt complain at a higher layer (hopefully with line numbers and context) that the name referenced in the command does not exist.
 

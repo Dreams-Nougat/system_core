@@ -2,6 +2,13 @@ Revision: 902efef869a046426aead3c026b1e5e9920081db
 Patch-set: 1
 File: adb/daemon/main.cpp
 
+60
+Thu Apr 07 15:49:51 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_74dee927
+Bytes: 175
+All of this code is ifdefed out on user builds, so the changes below only apply to userdebug/eng builds. None of the code you have below is even compiled on production builds.
+
 96:30-96:42
 Thu Apr 07 15:32:33 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,6 +30,13 @@ UUID: ae9b108c_799a629c
 Bytes: 63
 EVENT_TYPE_INT is for int32_t, this will fail on BE64 compiles.
 
+103
+Thu Apr 07 15:49:51 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_54dbe535
+Bytes: 135
+There's no way to restart adbd from a user build, so the only effect this has is to generate an event on every boot. This is pointless.
+
 File: adb/set_verity_enable_state_service.cpp
 
 91:4-91:7
@@ -38,6 +52,13 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ae9b108c_3985fa36
 Bytes: 44
 enable is enough, this is a C++ native bool.
+
+101
+Thu Apr 07 15:49:51 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_74f709a0
+Bytes: 219
+This is a compile time constant, which is set to false on user builds. As a result, the code on lines 90-94 will never even be compiled on production builds. The only place this would show up is on userdebug/eng builds.
 
 File: include/log/logd.h
 

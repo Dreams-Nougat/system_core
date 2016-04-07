@@ -2,10 +2,25 @@ Revision: a3a9a45598e51f0f2cbe104cc70e531fff064cbf
 Patch-set: 1
 File: logd/LogStatistics.cpp
 
+160
+Thu Apr 07 20:34:45 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_efa0dfb9
+Bytes: 53
+this could be getuid(), if Im self, its string auditd
+
 165:4-181:20
 Thu Apr 07 18:31:13 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ae9b108c_6f5bb05f
 Bytes: 296
 In the future, parse of /data/system/packages.list _could_ be integrated into getpwuid. However, this is difficult here in logd since a separate thread running as AID_SYSTEM is accessing that data, and this thread is AID_LOGD (android::uidToName actually does some serialized rpc to that thread).
+
+165:4-181:20
+Thu Apr 07 20:34:45 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_6f5bb05f
+UUID: ae9b108c_cfcf5b79
+Bytes: 206
+Yeah but it would be nice to get rid of this... I was looking at the design of this again last night, and its quite clunky. But we can address packageparser after we get some integration into grp/pwd later.
 

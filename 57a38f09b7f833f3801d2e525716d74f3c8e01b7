@@ -1,0 +1,22 @@
+Revision: 57a38f09b7f833f3801d2e525716d74f3c8e01b7
+Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Thu Apr 07 13:47:28 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_79ab82e1
+Bytes: 3
+and
+
+File: init/init.cpp
+
+513
+Thu Apr 07 13:47:28 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_59a8bee2
+Bytes: 183
+Mark, what about in other files where they have AID_SYSTEM or something like that, should we just code 1000 or do getpwnam("system");
+
+Do you prefer the string const or the uid const?
+

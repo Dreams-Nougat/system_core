@@ -48,3 +48,11 @@ The solution I expect is to double-wrap libpackageparser with a WEAK package_aid
 
 later dude ;-}
 
+165:4-181:20
+Thu Apr 07 21:07:01 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_af141768
+UUID: ae9b108c_4fd10bd4
+Bytes: 308
+I would just have the other threads post requests to the system thread to fulfill them and give them their response. I wouldn't touch the perms on the packages.lst file itself. Slight re-architecture of this code I would imagine. I'm not super familiar with the logd code, id have to spend more time with it.
+

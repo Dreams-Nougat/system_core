@@ -1,0 +1,11 @@
+Revision: a3a9a45598e51f0f2cbe104cc70e531fff064cbf
+Patch-set: 1
+File: logd/LogStatistics.cpp
+
+165:4-181:20
+Thu Apr 07 18:31:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_6f5bb05f
+Bytes: 296
+In the future, parse of /data/system/packages.list _could_ be integrated into getpwuid. However, this is difficult here in logd since a separate thread running as AID_SYSTEM is accessing that data, and this thread is AID_LOGD (android::uidToName actually does some serialized rpc to that thread).
+

@@ -15,6 +15,13 @@ Change-Id: I25a6f536bb11683d5cd69a0d7b348d25a272dd3b
 
 File: init/ueventd.cpp
 
+99
+Thu Apr 07 15:46:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_3436213a
+Bytes: 89
+(move the declarations down to where they can be assigned, and prefer type* in new code.)
+
 155:4-161:22
 Thu Apr 07 14:55:21 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

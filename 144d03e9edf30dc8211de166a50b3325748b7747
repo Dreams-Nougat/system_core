@@ -1,0 +1,15 @@
+Revision: 144d03e9edf30dc8211de166a50b3325748b7747
+Patch-set: 1
+File: /COMMIT_MSG
+
+11:1-12:60
+Thu Apr 07 14:49:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_790f02c1
+Bytes: 262
+I know you do not have visibility, but there is an associated google bug for this. This will help rationalizations and tracking. e.g.
+
+Signed-off-by: William Roberts <william.c.roberts@intel.com>
+Bug: 27999086
+Change-Id: I691513d50a3fdb7563a63aee7551137ba983825c
+

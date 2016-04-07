@@ -1,0 +1,11 @@
+Revision: 4389e3750ab2893dc8db40e176b7f0503aa23e74
+Patch-set: 2
+File: init/util.cpp
+
+57
+Thu Apr 07 02:24:27 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_1e8b3ca3
+Bytes: 64
+I tested this on aosp_x86_64 I never saw it hit this error path.
+

@@ -1,0 +1,11 @@
+Revision: 938eba8e7273d5e5fcb0c0e0f84393b78250f519
+Patch-set: 3
+File: init/util.cpp
+
+52
+Thu Apr 07 20:24:25 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_6f9a909c
+Bytes: 132
+I really want to bracket all of these single line statements, and this file is quite inconsistent on whether or not to bracket them.
+

@@ -24,6 +24,14 @@ UUID: ae9b108c_afdf7752
 Bytes: 306
 I do not know what to do with this. 256 is 'safe' today, failure (an option) just falls through and finds other possible names, and in the end we do print the UID number if it fails. A long name like this will give logcat -S a real formatting headache, so here we do not really care if ERANGE is triggered.
 
+167:18-167:21
+Fri Apr 08 03:43:58 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_afdf7752
+UUID: ae9b108c_95aba6e0
+Bytes: 7
+Agreed.
+
 165:4-181:20
 Thu Apr 07 18:31:13 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -70,4 +78,18 @@ Parent: ae9b108c_4fd10bd4
 UUID: ae9b108c_2f51270c
 Bytes: 375
 Basically yes, that was my final possible solution, getpwuid() would call back to package_aid_to_name(aid); the WEAK stub in libc library would make direct calls to WEAK stubs in libc that looked like libpackageparser calls. We would implement a local package_aid_to_name(aid) function that calls to logd.daemon to pick up the content (shown here as android::uidToName(aid)).
+
+165:4-181:20
+Fri Apr 08 03:43:58 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_2f51270c
+UUID: ae9b108c_b53b4a7b
+Bytes: 532
+Where is the package_aid_to_name(), is it the weak stub in libc your referring to?
+
+Why couldn't we just put a weak stub calls to libpackageparser in libc, and gave the pwd functions call them, if you want full appid resolution link your binary to libc + libpackageparser.
+
+Why does logd need to implement teh override package_aid_to_name? Eventually uidToName() would just be replaced with getpwduid().
+
+I guess I don't understand what the additional indirection of having logs have to implement this package_aid_to_name() routine.
 

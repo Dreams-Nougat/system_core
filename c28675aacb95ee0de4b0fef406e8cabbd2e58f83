@@ -1,0 +1,11 @@
+Revision: c28675aacb95ee0de4b0fef406e8cabbd2e58f83
+Patch-set: 3
+File: logd/LogStatistics.cpp
+
+189
+Fri Apr 08 23:51:52 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae36b0c5_9202822e
+Bytes: 61
+Are you just subbing this in now for the future or something?
+

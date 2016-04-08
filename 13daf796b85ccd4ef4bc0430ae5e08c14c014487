@@ -1,0 +1,33 @@
+Revision: 13daf796b85ccd4ef4bc0430ae5e08c14c014487
+Patch-set: 8
+File: adb/transport.cpp
+
+589:36-589:37
+Fri Apr 08 00:05:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_929cdc26
+Bytes: 321
+For safety I think this should probably be at least as long as the heartbeat timeout period, maybe create a function something like:
+
+  atransport::GetInitialConnectionTimeoutSec() {
+    return std::max(3, heartbeat_interval_ * heartbeat_failed_count_before_invalid_);
+  }
+
+and then use that instead of hardcoding 3 here?
+
+File: adb/transport.h
+
+62:15-62:55
+Fri Apr 08 00:05:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_526774f3
+Bytes: 59
+nit: these seem like they should be int rather than size_t.
+
+63:24-63:37
+Fri Apr 08 00:05:14 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae9b108c_326cf0d3
+Bytes: 38
+nit: don't need std::chrono:: anymore.
+

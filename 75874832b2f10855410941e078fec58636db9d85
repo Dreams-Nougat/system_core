@@ -1,0 +1,15 @@
+Revision: 75874832b2f10855410941e078fec58636db9d85
+Patch-set: 4
+File: liblog/logprint.c
+
+1362:1-1362:6
+Fri Apr 08 19:33:17 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae36b0c5_8f917977
+Bytes: 280
+warning is good enough IMHO.
+
+We use -Werror on all system/core builds (if not, it is a BUG).
+
+The code will 'mostly work' for host builds (which this is excluded from in any case if you look at Android.mk), and the only _real_ user of this is logcat (which _is_ single threaded).
+

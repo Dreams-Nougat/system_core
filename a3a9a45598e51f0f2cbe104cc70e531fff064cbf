@@ -93,3 +93,21 @@ Why does logd need to implement teh override package_aid_to_name? Eventually uid
 
 I guess I don't understand what the additional indirection of having logs have to implement this package_aid_to_name() routine.
 
+165:4-181:20
+Fri Apr 08 16:20:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_b53b4a7b
+UUID: ae36b0c5_c987f1d3
+Bytes: 1435
+Phase 5 'stretch goal', yes, exactly as I have been saying regarding implementation details, just the wurds are not connecting ;-/. We are saying the same thing minus the details of the MAC and DAC permissions.
+
+logd.* threads, minus logd.daemon, do _not_ run with any DAC privileges high enough to access libpackageparser and get results, so a libc+libpackagparser will _fail_; only the logd.daemon context which has _both_ MAC and DAC permissions (at an rpc and sequentialization cost) can gain access to the file.
+
+libc would implement a WEAK __package_aid_to_name() functional stub for those that have MAC and DAC permissions to use libc+libpackageparser in the caller's context.
+
+logd would implement an override replacement of __package_aid_to_name() that rpc's out to logd.daemon to make the libpackageparser calls in appropriate context. Others could also do so with an rpc binder call to package manager for instance.
+
+NB: callers that do not wish the extra 'weight' of libpackageparser base overhead in getpwuid not needing the name resolution for that set can disable the callouts by providing a dead stub for __package_aid_to_name(). I do not expect that there is any security issues with this callback as of yet. libpackageparser callouts would only happen for AID_APP+ I would expect, but that is too many details, too soon.
+
+None of this affects the current change, there is a reason to defer this to another set of CLs.
+

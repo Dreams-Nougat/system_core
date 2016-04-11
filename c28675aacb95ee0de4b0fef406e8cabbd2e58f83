@@ -1,0 +1,11 @@
+Revision: c28675aacb95ee0de4b0fef406e8cabbd2e58f83
+Base-for-patch-set: 2
+File: include/private/android_filesystem_config.h
+
+151
+Mon Apr 11 16:28:59 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ae36b0c5_d8b09925
+Bytes: 253
+What if we just tag this with __attribute__ ((deprecated)) with a big fat comment. Then when were ready to drop, drop it (which I can upload the patch, doesn't mean we have to take it today). Whatever workflow makes it easiest on you guys, i'm game for.
+

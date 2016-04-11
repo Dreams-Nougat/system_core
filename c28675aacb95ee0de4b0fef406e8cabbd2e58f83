@@ -9,3 +9,13 @@ UUID: ae36b0c5_d8b09925
 Bytes: 253
 What if we just tag this with __attribute__ ((deprecated)) with a big fat comment. Then when were ready to drop, drop it (which I can upload the patch, doesn't mean we have to take it today). Whatever workflow makes it easiest on you guys, i'm game for.
 
+151
+Mon Apr 11 16:32:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae36b0c5_d8b09925
+UUID: 2bc1d219_6d3a551c
+Bytes: 346
+if we had 400 callers, i think that would make sense. with 4 (+1), we should just fix them right now. it's just annoying that those remaining callers are in proprietary vendor code otherwise you could just do it for us :-)
+
+they all look easy though (and even if they weren't, the 4 instances are just copy & paste), so it shouldn't be a problem.
+

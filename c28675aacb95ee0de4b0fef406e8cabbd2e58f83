@@ -9,3 +9,13 @@ UUID: ae36b0c5_9202822e
 Bytes: 61
 Are you just subbing this in now for the future or something?
 
+189
+Mon Apr 11 15:22:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae36b0c5_9202822e
+UUID: ae36b0c5_787a4d47
+Bytes: 263
+This is a (short term) _enhancement_ and a view of the future inside grp_pwd.cpp, if an application id is not present in packages.list, we construct a name from the default.
+
+logd appears the be the most hostile participant in this transition towards grp_pwd.cpp.
+

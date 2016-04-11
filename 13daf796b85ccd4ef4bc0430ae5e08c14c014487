@@ -15,6 +15,14 @@ For safety I think this should probably be at least as long as the heartbeat tim
 
 and then use that instead of hardcoding 3 here?
 
+589:36-589:37
+Mon Apr 11 17:43:59 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_929cdc26
+UUID: ae36b0c5_c3d50ac1
+Bytes: 24
+sounds reasonable. done.
+
 File: adb/transport.h
 
 62:15-62:55
@@ -24,10 +32,26 @@ UUID: ae9b108c_526774f3
 Bytes: 59
 nit: these seem like they should be int rather than size_t.
 
+62:15-62:55
+Mon Apr 11 17:43:59 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_526774f3
+UUID: ae36b0c5_03d002cd
+Bytes: 65
+my team prefers to using size_t than int for non-negative values.
+
 63:24-63:37
 Fri Apr 08 00:05:14 2016 +0000
 Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ae9b108c_326cf0d3
 Bytes: 38
 nit: don't need std::chrono:: anymore.
+
+63:24-63:37
+Mon Apr 11 17:43:59 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ae9b108c_326cf0d3
+UUID: ae36b0c5_23c5060b
+Bytes: 4
+Done
 

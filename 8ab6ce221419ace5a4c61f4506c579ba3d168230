@@ -1,0 +1,23 @@
+Revision: 8ab6ce221419ace5a4c61f4506c579ba3d168230
+Patch-set: 1
+File: logcat/logcat.cpp
+
+538
+Tue Apr 12 22:49:34 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_9d90630b
+Bytes: 232
+few notes:
+string parser does not report errors (missing '}'). It does not allow recursive expansion by design, but does not warn if recursive expression is found.
+It does not allow to use literal sequence "${...}" (no escape char).
+
+797:15-798:57
+Tue Apr 12 22:49:34 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b410ad7_1fc6c366
+Bytes: 153
+std::vector<char> copy(expanded.data(), expanded.data() + expanded.size());
+char *str = copy.data();
+
+essentially the same, but no mixed c/c++ allocation
+

@@ -37,6 +37,16 @@ But now we are back to the confusing options at the leading edge and I am tempte
 
 We mayb need to accept a two character indent of --rotate-kbytes= ? as the rule of thumb when we wrap option list in order to keep the amount of 'left space' minimal.
 
+283:23-284:52
+Tue Apr 12 23:18:24 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b410ad7_5f7bebc3
+UUID: 6b410ad7_7f402f33
+Bytes: 456
+I would very much prefer the 1st example, because it is very clear; and if clarity (meaningful) is in the commit subject line, then IMO this is a way to go.
+If you changed them all like this is would become very stylish and perfectly readable help screen.
+So, as long as both short and long options are on their own line (which improves view quite a bit), the indent of the reminder could decrease to allow less lines, if you really feel like saving lines.
+
 294:35-294:36
 Tue Apr 12 22:51:46 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

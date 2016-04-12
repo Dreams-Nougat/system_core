@@ -1,0 +1,18 @@
+Revision: 203e9d7bf57aee3f72a079ab2c34a54796e71e1f
+Patch-set: 2
+File: logcat/tests/logcat_test.cpp
+
+444:3-444:12
+Tue Apr 12 21:32:45 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_9dece3ae
+Bytes: 132
+if all the difference is the executed command line, maybe it is better have shared code in a function, and call it from both places?
+
+453:16-453:20
+Tue Apr 12 21:32:45 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_fdf31f85
+Bytes: 33
+5 * 1024 is easier for me to read
+

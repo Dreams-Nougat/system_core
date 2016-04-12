@@ -1,0 +1,11 @@
+Revision: 1a92664220f762730db43cbc6dd6c5fffe77b373
+Patch-set: 2
+File: include/private/android_filesystem_config.h
+
+26:3-28:63
+Tue Apr 12 14:51:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eba33a7e_6c556f9c
+Bytes: 191
+Please do not, this is more disruptive than the four in the set that did collapse the names. I see no harm in the underbar, a possible requirement since we explicity do not support CamelCase.
+

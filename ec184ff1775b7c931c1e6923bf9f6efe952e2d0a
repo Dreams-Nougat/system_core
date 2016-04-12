@@ -9,3 +9,38 @@ UUID: 6b410ad7_7fc90f77
 Bytes: 10
 meaningful
 
+File: logcat/logcat.cpp
+
+282:32-282:35
+Tue Apr 12 22:51:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b410ad7_df34db2f
+Bytes: 56
+One I did not try was ', ' Would that please you Alexey?
+
+283:23-284:52
+Tue Apr 12 22:51:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b410ad7_5f7bebc3
+Bytes: 717
+Too long, we would do this in the current state:
+
+-r <kbytes>, --rotate-kbytes=<kbytes>
+                   Rotate log every kbytes. Requires -f option.
+
+Adds yet another line when we add expansion to this option though, 3 lines for one simple well-known legacy (circa 2008) option. So what about this to keep us to 80 characters:
+
+-r <kbytes>,       Rotate log every kbytes. Permits property expansion.
+--rotate-kbytes=<kbytes>    Requires -f option.
+
+But now we are back to the confusing options at the leading edge and I am tempted back to ' or '.
+
+We mayb need to accept a two character indent of --rotate-kbytes= ? as the rule of thumb when we wrap option list in order to keep the amount of 'left space' minimal.
+
+294:35-294:36
+Tue Apr 12 22:51:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b410ad7_df093b86
+Bytes: 1
+=
+

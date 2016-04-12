@@ -9,10 +9,28 @@ UUID: 6bb2eaf7_9dece3ae
 Bytes: 132
 if all the difference is the executed command line, maybe it is better have shared code in a function, and call it from both places?
 
+444:3-444:12
+Tue Apr 12 21:47:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bb2eaf7_9dece3ae
+UUID: 6bb2eaf7_7dff0f49
+Bytes: 54
+See https://android-review.googlesource.com/#/c/215215
+
 453:16-453:20
 Tue Apr 12 21:32:45 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6bb2eaf7_fdf31f85
 Bytes: 33
 5 * 1024 is easier for me to read
+
+453:16-453:20
+Tue Apr 12 21:47:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bb2eaf7_fdf31f85
+UUID: 6bb2eaf7_7dbaaf99
+Bytes: 286
+I will cover this in a rebase of https://android-review.googlesource.com/#/c/215215 as this represents a single location.
+
+Its just a number ... 5 *1024 is merely picked out of thin air, but does represent the minimum legacy pipe buffer size on *NIX systems to ease popen() performance.
 

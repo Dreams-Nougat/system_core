@@ -1,0 +1,28 @@
+Revision: beba0b968c9a5be25b7eebf54ea1944a95259371
+Patch-set: 3
+File: include/private/android_filesystem_config.h
+
+158
+Tue Apr 12 16:13:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_97d6840d
+Bytes: 143
+move this down to the crap it still guards? (one day we should split this into its own libfs_config, and just keep the #defines mostly-public.)
+
+163:26-163:30
+Tue Apr 12 16:13:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_17e354f1
+Bytes: 68
+the #define AID_ constants in this header file
+
+
+(just to be clear.)
+
+163:26-163:30
+Tue Apr 12 16:13:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bb2eaf7_f7ab4098
+Bytes: 7
+the enu
+

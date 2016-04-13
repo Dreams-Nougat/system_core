@@ -62,6 +62,14 @@ Nope, once you are running on the system, the number is but a distant memory in 
 
 su will be fixed to take names when b/27999086 is in phase 5 (stretch goals and improvements).
 
+43:5-43:9
+Wed Apr 13 21:28:45 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_2f498db1
+UUID: abda22a7_4f2e816b
+Bytes: 89
+su was fixed since this script was originally delivered, we can use the AID name now! :-)
+
 59:2-59:9
 Wed Apr 13 20:06:56 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>

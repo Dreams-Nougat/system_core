@@ -1,0 +1,26 @@
+Revision: 5c99f6ee922d7a24461955818b1a8a447392fb39
+Patch-set: 1
+File: logcat/logpersist
+
+19:3-21:30
+Wed Apr 13 20:06:56 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_6c743308
+Bytes: 55
+just to confirm:
+all these options mean the same thing?
+
+43:5-43:9
+Wed Apr 13 20:06:56 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_cf9f117b
+Bytes: 47
+is there a better alternative to raw user ids ?
+
+59:2-59:9
+Wed Apr 13 20:06:56 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_2fd7cd0b
+Bytes: 18
+start ${service} ?
+

@@ -11,6 +11,14 @@ few notes:
 string parser does not report errors (missing '}'). It does not allow recursive expansion by design, but does not warn if recursive expression is found.
 It does not allow to use literal sequence "${...}" (no escape char).
 
+538
+Wed Apr 13 15:13:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bb2eaf7_9d90630b
+UUID: abda22a7_09a2c9bf
+Bytes: 218
+No use for literals. In all cases you cite the caller will report an error for any syntax issues by showing before and after with a reason attached. I will add comments here so that it is clear _why_ we parse this way.
+
 797:15-798:57
 Tue Apr 12 22:49:34 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -20,4 +28,12 @@ std::vector<char> copy(expanded.data(), expanded.data() + expanded.size());
 char *str = copy.data();
 
 essentially the same, but no mixed c/c++ allocation
+
+797:15-798:57
+Wed Apr 13 15:13:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b410ad7_1fc6c366
+UUID: abda22a7_29cced87
+Bytes: 246
+will remove mixed allocations, except strtok() is not appropriate to use on _any_ C++ object data too. I chose strdup to switch to C. data() is not c_str(), vector is inaccurate. If I am to remove strdup, I will have to use C++ token parsing too.
 

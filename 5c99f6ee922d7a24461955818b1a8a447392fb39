@@ -22,6 +22,29 @@ It is getting complicated enough that we may resort to delivering a binary based
 
 The eventual goal is to deprecate the script and replace it with menus in Developer Options as per b/28120456. It remains a stretch goal (as officially I have no Java readability ;-} although evidence shows otherwise).
 
+27:12-27:33
+Wed Apr 13 20:57:48 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_8f535911
+Bytes: 16
+wrong indent :-(
+
+35:0-36:7
+Wed Apr 13 20:57:48 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_6f2425a2
+Bytes: 213
+if it has a value, we need to confirm that ${size} is numerical-only, and is within range.
+
+[ 0 -lt ${size} ] 2>/dev/null will be false if size is non-numerical and also checks if we have a positive value (bonus).
+
+38:2-38:9
+Wed Apr 13 20:57:48 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_af357dd3
+Bytes: 132
+We can use 'logcat -b ${buffer} -g >/dev/null 2>&1' return code to check the validity of the buffer set if it is [ -n "${buffer}" ].
+
 43:5-43:9
 Wed Apr 13 20:06:56 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>

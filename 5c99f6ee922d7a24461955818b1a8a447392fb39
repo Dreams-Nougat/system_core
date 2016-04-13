@@ -10,6 +10,18 @@ Bytes: 55
 just to confirm:
 all these options mean the same thing?
 
+19:3-21:30
+Wed Apr 13 20:21:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_6c743308
+UUID: abda22a7_cf08b180
+Bytes: 679
+yes, except some are not relevant for each linked command name (*.cat *.start and *.stop) as you see below. There is minimal checking if the options are selected and not used at line 41, 50 and 63. This is a 'developer' command never released on "user".
+
+It is getting complicated enough that we may resort to delivering a binary based off C++ for this. But as you can see it is a throw-away in the future. The script has grown from an original of 5 lines ...
+
+The eventual goal is to deprecate the script and replace it with menus in Developer Options as per b/28120456. It remains a stretch goal (as officially I have no Java readability ;-} although evidence shows otherwise).
+
 43:5-43:9
 Wed Apr 13 20:06:56 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,10 +29,28 @@ UUID: abda22a7_cf9f117b
 Bytes: 47
 is there a better alternative to raw user ids ?
 
+43:5-43:9
+Wed Apr 13 20:21:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_cf9f117b
+UUID: abda22a7_2f498db1
+Bytes: 432
+Nope, once you are running on the system, the number is but a distant memory in the source files, or part of a binary android_ids[] list. There is a separate effort going on to solve this kind of issue b/27999086 so that names to AID translations are centralized and unified. Once done, even init.rc files can take names for _all_ AIDs.
+
+su will be fixed to take names when b/27999086 is in phase 5 (stretch goals and improvements).
+
 59:2-59:9
 Wed Apr 13 20:06:56 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: abda22a7_2fd7cd0b
 Bytes: 18
 start ${service} ?
+
+59:2-59:9
+Wed Apr 13 20:21:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_2fd7cd0b
+UUID: abda22a7_8f2079e4
+Bytes: 189
+Look at logcatd.rc, this trigger a series of actions on property. One of the final actions is to exec logcat with a set of parameters. sleep is, what it is ... gives time for init to react.
 

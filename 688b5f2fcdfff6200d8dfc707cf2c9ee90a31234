@@ -1,0 +1,13 @@
+Revision: 688b5f2fcdfff6200d8dfc707cf2c9ee90a31234
+Patch-set: 2
+File: logcat/logpersist
+
+77:0-79:11
+Thu Apr 14 20:44:30 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_b5e78bfa
+Bytes: 289
+This should be else on clear.
+
+Start will otherwise turn into restart with this operation; and depends on proper last detection in the logrotate code in logcat. This is _required_ if --clear is requested, but it crudely does so blindly if clear is not selected but the parms are unchanged.
+

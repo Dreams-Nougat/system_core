@@ -1,0 +1,18 @@
+Revision: b8a95bd3c9502d48b203b9f1e5df9b84a5df6281
+Patch-set: 4
+File: logd/LogStatistics.cpp
+
+158:0-158:5
+Thu Apr 14 15:17:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_63a6fe82
+Bytes: 58
+how is this getting freed if you're returning const char*?
+
+233:8-233:32
+Thu Apr 14 15:17:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_c3d1aad3
+Bytes: 109
+oh. yuck. you really don't want const_cast anywhere. but that's an existing problem, not new with this patch.
+

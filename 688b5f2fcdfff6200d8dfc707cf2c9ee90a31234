@@ -2,6 +2,13 @@ Revision: 688b5f2fcdfff6200d8dfc707cf2c9ee90a31234
 Patch-set: 2
 File: logcat/logpersist
 
+44:0-45:12
+Thu Apr 14 20:59:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: abda22a7_f56c6307
+Bytes: 56
+Turn these constructs into if then fi, not maintainable.
+
 77:0-79:11
 Thu Apr 14 20:44:30 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

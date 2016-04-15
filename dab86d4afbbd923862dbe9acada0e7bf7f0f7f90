@@ -1,0 +1,18 @@
+Revision: dab86d4afbbd923862dbe9acada0e7bf7f0f7f90
+Patch-set: 2
+File: adb/usb_linux_client.cpp
+
+282
+Fri Apr 15 18:10:30 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_5a1035a5
+Bytes: 124
+The atomic should probably only be loaded once? Otherwise, the logging might be inconsistent with what's actually happening.
+
+321
+Fri Apr 15 18:10:30 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_fafee979
+Bytes: 85
+`int fd = h->fd.exchange(-1)` saves a line, but I don't have a preference either way.
+

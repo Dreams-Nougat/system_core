@@ -1,0 +1,32 @@
+Revision: 94df0cb194e7b3613fe304bdf0ed836b673ec3a2
+Patch-set: 4
+File: adb/usb_osx.cpp
+
+55:21-55:23
+Fri Apr 15 21:25:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_bdfd0b16
+Bytes: 21
+extra whitespace here
+
+62
+Fri Apr 15 21:25:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_5dc4afb3
+Bytes: 31
+Any reason to not use a vector?
+
+101:27-101:39
+Fri Apr 15 21:25:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_fd802376
+Bytes: 37
+This probably needs to be CFReleased.
+
+523:0-523:18
+Fri Apr 15 21:25:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8111c44_7dbf7323
+Bytes: 77
+Maybe make g_usb_handles a container of unique_ptr<usb_handle> to avoid this?
+

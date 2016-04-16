@@ -9,10 +9,26 @@ UUID: c8111c44_5a1035a5
 Bytes: 124
 The atomic should probably only be loaded once? Otherwise, the logging might be inconsistent with what's actually happening.
 
+282
+Sat Apr 16 01:23:07 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_5a1035a5
+UUID: e847c065_26cd7836
+Bytes: 106
+This remind me that only using atomic variables is not enough. So changed to use atomic variable + dup2().
+
 321
 Fri Apr 15 18:10:30 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c8111c44_fafee979
 Bytes: 85
 `int fd = h->fd.exchange(-1)` saves a line, but I don't have a preference either way.
+
+321
+Sat Apr 16 01:23:07 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_fafee979
+UUID: e847c065_06d27cd4
+Bytes: 17
+no longer needed.
 

@@ -9,3 +9,11 @@ UUID: e847c065_52282a1a
 Bytes: 92
 Any reason to have a setter for just kick? It's inconsistent with the rest of the callbacks.
 
+391
+Mon Apr 18 21:25:05 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e847c065_52282a1a
+UUID: e847c065_52a38ad8
+Bytes: 199
+I think the final goal is to make all/most public variables in atransport private. As this patch touches kicked and kick, I made them private while leaving others unchanged. It is a step forward, no?
+

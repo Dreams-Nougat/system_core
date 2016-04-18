@@ -1,0 +1,11 @@
+Revision: 7f27490e7f386401dc38287a67dcb8826e2260c5
+Patch-set: 1
+File: adb/transport_local.cpp
+
+391
+Mon Apr 18 21:15:27 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e847c065_52282a1a
+Bytes: 92
+Any reason to have a setter for just kick? It's inconsistent with the rest of the callbacks.
+

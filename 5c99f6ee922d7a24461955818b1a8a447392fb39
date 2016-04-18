@@ -70,6 +70,14 @@ UUID: abda22a7_4f2e816b
 Bytes: 89
 su was fixed since this script was originally delivered, we can use the AID name now! :-)
 
+43:5-43:9
+Mon Apr 18 15:30:32 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_4f2e816b
+UUID: 4b3e069d_589cb235
+Bytes: 15
+this is cool :)
+
 59:2-59:9
 Wed Apr 13 20:06:56 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -84,4 +92,14 @@ Parent: abda22a7_2fd7cd0b
 UUID: abda22a7_8f2079e4
 Bytes: 189
 Look at logcatd.rc, this trigger a series of actions on property. One of the final actions is to exec logcat with a set of parameters. sleep is, what it is ... gives time for init to react.
+
+59:2-59:9
+Mon Apr 18 15:30:32 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abda22a7_8f2079e4
+UUID: 4b3e069d_d8d6e2c8
+Bytes: 487
+I missed this. But now this is raising different question, in fact 2 of them:
+1) sleep 1 does not in fact guarantee anything, because it does not synchronize with anything. it is just likely to be "long enough". so, generating error code this way may give false negative
+2) there is an asymmetry in a way how service is started/stopped (through property handler vs directly with shell command). There may be good reason to do this, but in this case it is better to document it in comment
 

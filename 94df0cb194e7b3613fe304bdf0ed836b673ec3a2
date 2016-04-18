@@ -9,12 +9,28 @@ UUID: c8111c44_bdfd0b16
 Bytes: 21
 extra whitespace here
 
+55:21-55:23
+Mon Apr 18 19:21:42 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_bdfd0b16
+UUID: e847c065_97f454e1
+Bytes: 4
+Done
+
 62
 Fri Apr 15 21:25:28 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c8111c44_5dc4afb3
 Bytes: 31
 Any reason to not use a vector?
+
+62
+Mon Apr 18 19:21:42 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_5dc4afb3
+UUID: e847c065_57281c1a
+Bytes: 109
+copied from usb_linux.cpp. in order to call g_usb_handles.remove() in usb_close(). But I don't mind changing.
 
 101:27-101:39
 Fri Apr 15 21:25:28 2016 +0000
@@ -23,10 +39,26 @@ UUID: c8111c44_fd802376
 Bytes: 37
 This probably needs to be CFReleased.
 
+101:27-101:39
+Mon Apr 18 19:21:42 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_fd802376
+UUID: e847c065_975b34cb
+Bytes: 241
+As in https://developer.apple.com/library/mac/documentation/IOKit/Reference/IOKitLib_header_reference/index.html#//apple_ref/c/func/IOServiceGetMatchingServices, the reference of matchingDict will be consumed by IOServiceGetMatchingServices.
+
 523:0-523:18
 Fri Apr 15 21:25:28 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c8111c44_7dbf7323
 Bytes: 77
 Maybe make g_usb_handles a container of unique_ptr<usb_handle> to avoid this?
+
+523:0-523:18
+Mon Apr 18 19:21:42 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8111c44_7dbf7323
+UUID: e847c065_d7776c0d
+Bytes: 4
+Done
 

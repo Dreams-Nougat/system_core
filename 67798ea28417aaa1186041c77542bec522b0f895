@@ -1,0 +1,11 @@
+Revision: 67798ea28417aaa1186041c77542bec522b0f895
+Patch-set: 2
+File: adb/sysdeps_test.cpp
+
+238
+Mon Apr 18 21:22:40 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e847c065_f2c83695
+Bytes: 47
+Does it make sense to try to read the data too?
+

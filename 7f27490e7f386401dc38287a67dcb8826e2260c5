@@ -17,3 +17,11 @@ UUID: e847c065_52a38ad8
 Bytes: 199
 I think the final goal is to make all/most public variables in atransport private. As this patch touches kicked and kick, I made them private while leaving others unchanged. It is a step forward, no?
 
+391
+Mon Apr 18 21:38:36 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e847c065_52a38ad8
+UUID: e847c065_dd766bda
+Bytes: 133
+I think it's worse to have only one switched over like this, but I don't feel super strongly about it. What does everyone else think?
+

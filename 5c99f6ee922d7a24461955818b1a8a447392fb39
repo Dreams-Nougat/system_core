@@ -103,3 +103,11 @@ I missed this. But now this is raising different question, in fact 2 of them:
 1) sleep 1 does not in fact guarantee anything, because it does not synchronize with anything. it is just likely to be "long enough". so, generating error code this way may give false negative
 2) there is an asymmetry in a way how service is started/stopped (through property handler vs directly with shell command). There may be good reason to do this, but in this case it is better to document it in comment
 
+59:2-59:9
+Mon Apr 18 15:54:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b3e069d_d8d6e2c8
+UUID: e847c065_0c417b19
+Bytes: 332
+Service start/stop takes 20ms as measured on moderate load. If I was waiting for the service to stop, which is grossly complicated in this case, I would put a 1 second timeout. We do not actually care, it is only here to make the ps -t line report the service started as a debug response. If it did not show, only I would notice ...
+

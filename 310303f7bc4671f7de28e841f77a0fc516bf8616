@@ -19,3 +19,11 @@ Yes we can use sizeof since its char datatype array but my understanding of size
 
 I can upload the patchset if required upon your suggestion. Thanks !
 
+310:23-310:38
+Tue Apr 19 20:21:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a8c4e87d_bc022dee
+UUID: 48ac4cb5_41ea14f0
+Bytes: 296
+shouldn't a guaranteed compile-time constant sizeof() have better performance (or at least the same)? Although performance isn't really an issue here. Avoiding statfile_length makes the coder cleaner. And if you search android code, you can find it is a common case to use sizeof() with snprintf.
+

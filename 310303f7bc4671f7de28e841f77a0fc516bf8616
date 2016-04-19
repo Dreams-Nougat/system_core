@@ -1,0 +1,11 @@
+Revision: 310303f7bc4671f7de28e841f77a0fc516bf8616
+Patch-set: 1
+File: libcutils/sched_policy.c
+
+310:23-310:38
+Tue Apr 19 19:03:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 48ac4cb5_e12120e9
+Bytes: 21
+use sizeof(statfile)?
+

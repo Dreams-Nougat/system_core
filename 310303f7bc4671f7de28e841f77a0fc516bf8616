@@ -9,3 +9,13 @@ UUID: 48ac4cb5_e12120e9
 Bytes: 21
 use sizeof(statfile)?
 
+310:23-310:38
+Tue Apr 19 19:43:45 2016 +0000
+Author: Raja M <1080508@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 48ac4cb5_e12120e9
+UUID: a8c4e87d_bc022dee
+Bytes: 377
+Yes we can use sizeof since its char datatype array but my understanding of sizeof is a compile-time construct that determines the amount of memory particular type or a variable occupies. So thought of using int constant may betters with execution performance. Please let me know if my assumption is wrong. 
+
+I can upload the patchset if required upon your suggestion. Thanks !
+

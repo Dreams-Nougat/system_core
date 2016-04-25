@@ -1,0 +1,28 @@
+Revision: 1cc82ce95c6f42c313744553430c7a6eb3edbf45
+Patch-set: 1
+File: logcat/tests/logcat_benchmark.cpp
+
+52:17-52:46
+Mon Apr 25 21:12:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_eee46557
+Bytes: 203
+I do not see anything wrong with timestamp ts = "04-23 12:22:56.332";
+
+Explain to me why the compiler makes the decision we want to limit this kind of activity?
+
+No matter, we are not doing this anyways.
+
+File: logd/LogBuffer.cpp
+
+383:4-383:61
+Mon Apr 25 21:12:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_0ed69973
+Bytes: 120
+I may have liked to be able to do
+
+LogBufferElementKey key = uint64_t_key_value;
+
+But no matter, not doing that anyways.
+

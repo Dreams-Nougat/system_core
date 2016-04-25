@@ -1,0 +1,11 @@
+Revision: c6897085d6358622821c8aa1a9f94bc47289f95f
+Patch-set: 1
+File: fastboot/util_windows.cpp
+
+44
+Mon Apr 25 23:22:14 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_0517578e
+Bytes: 99
+For error handling: https://msdn.microsoft.com/en-us/library/windows/desktop/ms683197(v=vs.85).aspx
+

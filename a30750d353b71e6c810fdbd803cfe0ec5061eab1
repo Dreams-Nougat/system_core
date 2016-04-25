@@ -1,0 +1,18 @@
+Revision: a30750d353b71e6c810fdbd803cfe0ec5061eab1
+Patch-set: 1
+File: libziparchive/zip_archive_stream_entry.cc
+
+51:72-51:104
+Mon Apr 25 21:47:12 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_420b057d
+Bytes: 59
+Small nit, but this line is now longer than 100 characters.
+
+113:69-113:102
+Mon Apr 25 21:47:12 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_621089a6
+Bytes: 26
+Same as above > 100 chars.
+

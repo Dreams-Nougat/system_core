@@ -1,5 +1,44 @@
 Revision: c6897085d6358622821c8aa1a9f94bc47289f95f
 Patch-set: 1
+File: fastboot/fastboot.cpp
+
+1180:19-1180:20
+Tue Apr 26 18:22:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_857e84d3
+Bytes: 19
+Nit, missing space.
+
+File: fastboot/protocol.cpp
+
+83:68-83:74
+Tue Apr 26 18:22:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_c5732c04
+Bytes: 111
+Does the Read function guarantee that status is nul terminated? This seems like it could cause an issue if not.
+
+136:18-136:45
+Tue Apr 26 18:22:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_25d1b8dd
+Bytes: 25
+Function call not needed.
+
+219:22-219:50
+Tue Apr 26 18:22:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_e553d05a
+Bytes: 50
+Not needed, since you aren't modifying the string.
+
+233:22-233:49
+Tue Apr 26 18:22:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_c54a4c9c
+Bytes: 14
+Same as above.
+
 File: fastboot/util_linux.cpp
 
 37:38-37:50

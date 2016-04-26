@@ -1,5 +1,14 @@
 Revision: c6897085d6358622821c8aa1a9f94bc47289f95f
 Patch-set: 1
+File: fastboot/util_linux.cpp
+
+37:38-37:50
+Tue Apr 26 08:00:13 2016 +0000
+Author: Raja M <1080508@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c8659cc5_63fe1012
+Bytes: 271
+oh android StringPrintf eventually using vsnprintf, nice but it is using fixed buffer size of 1024 irrespective of current data expected size which is 64 in this case. Can we make a new method to take size too ? This can avoid unnecessary char array static allocation...!
+
 File: fastboot/util_windows.cpp
 
 44

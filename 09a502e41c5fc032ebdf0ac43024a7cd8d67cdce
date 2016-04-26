@@ -1,0 +1,12 @@
+Revision: 09a502e41c5fc032ebdf0ac43024a7cd8d67cdce
+Patch-set: 1
+File: trusty/keymaster/module.cpp
+
+51
+Tue Apr 26 08:03:11 2016 +0000
+Author: Bing Zhu <1082545@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68683071_3b34f82d
+Bytes: 145
+Does trusty keymaster HAL only support v0.3 at this moment? any reason of not using KEYMASTER_MODULE_API_VERSION_2_0?
+or any plan to support 2.0?
+

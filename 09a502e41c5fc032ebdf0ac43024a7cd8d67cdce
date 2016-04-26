@@ -10,3 +10,11 @@ Bytes: 145
 Does trusty keymaster HAL only support v0.3 at this moment? any reason of not using KEYMASTER_MODULE_API_VERSION_2_0?
 or any plan to support 2.0?
 
+51
+Tue Apr 26 22:04:16 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 68683071_3b34f82d
+UUID: a884e9cc_6b3791a1
+Bytes: 154
+We should definitely update this to support 2.0. Unless there's a reason to push this in quickly, I suggest that we hold off until I can update it to 2.0.
+

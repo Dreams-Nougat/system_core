@@ -9,6 +9,14 @@ UUID: a884e9cc_4214f2e4
 Bytes: 90
 @nnk: Do I see more silent fails here like socket code? Perhaps we should die loudly here.
 
+248
+Tue Apr 26 17:32:07 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_4214f2e4
+UUID: a884e9cc_422b9220
+Bytes: 76
+in theory I guess an invalid label should never be in the fc... but still...
+
 260
 Tue Apr 26 17:30:17 2016 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -17,10 +17,26 @@ UUID: a884e9cc_422b9220
 Bytes: 76
 in theory I guess an invalid label should never be in the fc... but still...
 
+248
+Tue Apr 26 17:49:59 2016 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_422b9220
+UUID: 08c17519_4db679ee
+Bytes: 340
+Yes, we can probably add hard failures throughout (for setegid too below?).  Originally was soft-fail to allow for clean operation on SELinux-disabled without having to wrap everything with if (is_selinux_enabled()), plus worst case scenario was that the file would end up defaulting to the type of /dev and thus likely inaccessible anyway.
+
 260
 Tue Apr 26 17:30:17 2016 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a884e9cc_02f6eae7
 Bytes: 93
 @nnk: should we die loud here too, or fix it up in a separate patch addressing comment above?
+
+260
+Tue Apr 26 17:49:59 2016 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_02f6eae7
+UUID: 08c17519_2d9e8d67
+Bytes: 42
+lsetfilecon() so we don't follow symlinks?
 

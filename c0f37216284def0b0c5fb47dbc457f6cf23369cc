@@ -1,0 +1,46 @@
+Revision: c0f37216284def0b0c5fb47dbc457f6cf23369cc
+Patch-set: 1
+File: fs_mgr/fs_mgr_verity.cpp
+
+846:11-846:18
+Tue Apr 26 16:47:35 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_02d82afe
+Bytes: 57
+This is a static function, so drop fs_mgr_, it's cleaner.
+
+850:0-850:43
+Tue Apr 26 16:47:35 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_4272b2d6
+Bytes: 256
+You can use std::string and android::base::Split to avoid C-style string processing.
+
+  auto tokens = android::base::Split(*table);
+
+  for (const auto token : words) {
+      ...
+  }
+
+Then again, we might just as well clean up the entire file in another CL.
+
+884:4-884:23
+Tue Apr 26 16:47:35 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_42d632d7
+Bytes: 30
+Why not just use params.table?
+
+949:0-950:17
+Tue Apr 26 16:47:35 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a884e9cc_82cc3a47
+Bytes: 150
+Coding style should match the rest of the file. Should be:
+
+  if (!verity.table) {
+      goto out;
+  }
+
+The same elsewhere where brackets are omitted.
+

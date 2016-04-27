@@ -1,0 +1,11 @@
+Revision: 9b79378ceee78d0f457cc420118b3aeb5c3d5df3
+Patch-set: 2
+File: init/devices.cpp
+
+260
+Wed Apr 27 13:14:24 2016 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e84d01b0_7c6e19bb
+Bytes: 164
+technically, secontext could be NULL here, so we either need to add && secontext to the conditional above or bail out earlier if selabel_lookup_best_match() failed.
+

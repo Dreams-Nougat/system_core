@@ -1,0 +1,18 @@
+Revision: 56f7cddc8b23de081ff65f204f273c76e0105abf
+Patch-set: 3
+File: init/devices.cpp
+
+247:75-248:29
+Wed Apr 27 15:53:55 2016 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e84d01b0_1c3c3583
+Bytes: 102
+This part of the conditional shouldn't be necessary; if it returns 0, then secontext must be non-NULL.
+
+269
+Wed Apr 27 15:53:55 2016 +0000
+Author: Stephen Smalley <1010111@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e84d01b0_7c41f9fa
+Bytes: 87
+Since the test above ensures secontext is non-NULL here, we can drop this if statement.
+

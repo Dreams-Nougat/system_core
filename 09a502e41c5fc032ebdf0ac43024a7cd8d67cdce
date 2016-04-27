@@ -18,3 +18,13 @@ UUID: a884e9cc_6b3791a1
 Bytes: 154
 We should definitely update this to support 2.0. Unless there's a reason to push this in quickly, I suggest that we hold off until I can update it to 2.0.
 
+51
+Wed Apr 27 07:05:13 2016 +0000
+Author: Bing Zhu <1082545@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_6b3791a1
+UUID: 6853d155_fe54d9bb
+Bytes: 203
+Got it. Previously I assumed that Trusty should be ready in N, and N requires Keymaster 2.0, so I would think this code supported 2.0 then.
+
+And I think it should be ready for 2.0 before or at N release?
+

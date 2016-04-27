@@ -28,3 +28,11 @@ Got it. Previously I assumed that Trusty should be ready in N, and N requires Ke
 
 And I think it should be ready for 2.0 before or at N release?
 
+51
+Wed Apr 27 15:45:04 2016 +0000
+Author: Shawn Willden <1043663@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6853d155_fe54d9bb
+UUID: 6853d155_2ca0eb03
+Bytes: 54
+I should be able to update it to 2.0 before N release.
+

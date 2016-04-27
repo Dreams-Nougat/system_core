@@ -9,3 +9,11 @@ UUID: e84d01b0_7c6e19bb
 Bytes: 164
 technically, secontext could be NULL here, so we either need to add && secontext to the conditional above or bail out earlier if selabel_lookup_best_match() failed.
 
+260
+Wed Apr 27 15:43:25 2016 +0000
+Author: Mihai Serban <1012238@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e84d01b0_7c6e19bb
+UUID: 68d6710e_e0e62254
+Bytes: 4
+Done
+

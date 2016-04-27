@@ -1,0 +1,11 @@
+Revision: f16c119b4923beaa7b17713df0f223229e0b3dfe
+Patch-set: 4
+File: init/devices.cpp
+
+264
+Wed Apr 27 17:39:20 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6853d155_0777c0f3
+Bytes: 240
+I would be prone to print an error on lsetfilecon failures. I was just recently burned by init failing silently so perhaps I am a bit gun shy at the moment. However, I won't require it for my +1 and will defer to whatever @sds or @nnk want.
+

@@ -1,0 +1,18 @@
+Revision: 27339b42efac067d90cb53f1a59febb4b0e09a75
+Patch-set: 5
+File: init/devices.cpp
+
+263
+Thu Apr 28 10:39:33 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e84d01b0_23be2910
+Bytes: 209
+Brackets for the if block, and parens around the errno comparison:
+
+  if (mknod(path, mode, dev) && (errno == EEXIST)) {
+      if (lsetfilecon(path, secontext)) {
+          ERROR(...);
+      }
+  }
+  chown(...)
+

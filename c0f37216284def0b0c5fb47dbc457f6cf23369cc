@@ -42,6 +42,14 @@ I tend to agree a CL should be dedicated to that task for the fs_mgr project at 
 
 However, if you really insist I'd do it for this function in this CL.
 
+850:0-850:43
+Thu Apr 28 16:55:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 08c41560_78d63dd7
+UUID: 6853d155_0de7e151
+Bytes: 100
+if you're writing new code, it should be in the new style. crazy to have to write and test it twice.
+
 884:4-884:23
 Tue Apr 26 16:47:35 2016 +0000
 Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -9,6 +9,14 @@ UUID: a884e9cc_857e84d3
 Bytes: 19
 Nit, missing space.
 
+1180:19-1180:20
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_857e84d3
+UUID: a8e6a926_46aa322b
+Bytes: 4
+Done
+
 File: fastboot/protocol.cpp
 
 83:68-83:74
@@ -18,12 +26,28 @@ UUID: a884e9cc_c5732c04
 Bytes: 111
 Does the Read function guarantee that status is nul terminated? This seems like it could cause an issue if not.
 
+83:68-83:74
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_c5732c04
+UUID: a8e6a926_e667e613
+Bytes: 209
+no, that's the 65/64 cruft in this function. there are actually a whole bunch of Read implementations though, so doing it here -- even if it didn't have to be quite so C-style -- is probably the better choice.
+
 136:18-136:45
 Tue Apr 26 18:22:10 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a884e9cc_25d1b8dd
 Bytes: 25
 Function call not needed.
+
+136:18-136:45
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_25d1b8dd
+UUID: a8e6a926_667416bf
+Bytes: 4
+Done
 
 219:22-219:50
 Tue Apr 26 18:22:10 2016 +0000
@@ -32,12 +56,28 @@ UUID: a884e9cc_e553d05a
 Bytes: 50
 Not needed, since you aren't modifying the string.
 
+219:22-219:50
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_e553d05a
+UUID: a8e6a926_267e0e9f
+Bytes: 4
+Done
+
 233:22-233:49
 Tue Apr 26 18:22:10 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a884e9cc_c54a4c9c
 Bytes: 14
 Same as above.
+
+233:22-233:49
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a884e9cc_c54a4c9c
+UUID: a8e6a926_064aea73
+Bytes: 4
+Done
 
 File: fastboot/util_linux.cpp
 
@@ -48,6 +88,14 @@ UUID: c8659cc5_63fe1012
 Bytes: 271
 oh android StringPrintf eventually using vsnprintf, nice but it is using fixed buffer size of 1024 irrespective of current data expected size which is 64 in this case. Can we make a new method to take size too ? This can avoid unnecessary char array static allocation...!
 
+37:38-37:50
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c8659cc5_63fe1012
+UUID: a8e6a926_66ad3641
+Bytes: 156
+it's not a static buffer. it's just going to add 1024 to the stack pointer. making callers supply a size has no real benefit and makes the API more awkward.
+
 File: fastboot/util_windows.cpp
 
 44
@@ -56,4 +104,12 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 68683071_0517578e
 Bytes: 99
 For error handling: https://msdn.microsoft.com/en-us/library/windows/desktop/ms683197(v=vs.85).aspx
+
+44
+Fri Apr 29 15:30:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 68683071_0517578e
+UUID: a8e6a926_262cce9a
+Bytes: 232
+done. (in the same crappy way as we handle this for linux. yagni. but we should maybe move these into libbase; both fastboot and adb have [different] copies of this code. then spencer can tell us what we should really be doing :-) )
 

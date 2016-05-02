@@ -1,0 +1,11 @@
+Revision: c297191c54eb4fb7482b412da54c8370779f5267
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+1140:34-1140:41
+Mon May 02 21:20:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_374ba01d
+Bytes: 96
+may as well support AF_INET6 too, even though on Windows we don't currently create IPv6 sockets?
+

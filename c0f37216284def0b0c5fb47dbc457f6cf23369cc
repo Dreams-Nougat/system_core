@@ -50,6 +50,14 @@ UUID: 6853d155_0de7e151
 Bytes: 100
 if you're writing new code, it should be in the new style. crazy to have to write and test it twice.
 
+850:0-850:43
+Mon May 02 13:09:36 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6853d155_0de7e151
+UUID: 68d6710e_66f30a1b
+Bytes: 88
+Good point. I made the change.  I'll test the new patch on Monday and push it to gerrit.
+
 884:4-884:23
 Tue Apr 26 16:47:35 2016 +0000
 Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>

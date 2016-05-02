@@ -9,3 +9,11 @@ UUID: 88b1e559_374ba01d
 Bytes: 96
 may as well support AF_INET6 too, even though on Windows we don't currently create IPv6 sockets?
 
+1140:34-1140:41
+Mon May 02 21:28:59 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 88b1e559_374ba01d
+UUID: 88b1e559_97308c90
+Bytes: 22
+Makes sense, will fix.
+

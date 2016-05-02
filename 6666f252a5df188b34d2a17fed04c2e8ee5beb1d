@@ -1,0 +1,32 @@
+Revision: 6666f252a5df188b34d2a17fed04c2e8ee5beb1d
+Patch-set: 8
+File: trusty/storage/lib/include/trusty/lib/storage.h
+
+76
+Mon May 02 22:30:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_ba813560
+Bytes: 51
+remove extra blank lines to match other lib version
+
+101
+Mon May 02 22:30:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_5a48094c
+Bytes: 6
+remove
+
+110:0-110:3
+Mon May 02 22:30:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_ba9ad5d3
+Bytes: 33
+ssize like the other lib version?
+
+124:0-124:3
+Mon May 02 22:30:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_daa999f1
+Bytes: 34
+ssize_t like the other lib version
+

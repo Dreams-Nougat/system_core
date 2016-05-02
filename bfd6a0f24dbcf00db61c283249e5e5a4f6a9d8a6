@@ -1,0 +1,11 @@
+Revision: bfd6a0f24dbcf00db61c283249e5e5a4f6a9d8a6
+Base-for-patch-set: 1
+File: adb/adb.h
+
+119:0-140:2
+Mon May 02 21:01:47 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_577e249f
+Bytes: 54
+Moved to adb_listeners.h since nobody else needs this.
+

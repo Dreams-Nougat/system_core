@@ -1,0 +1,11 @@
+Revision: a72f1979aed65f99e880a03a70ce3292039ac19e
+Patch-set: 4
+File: fs_mgr/fs_mgr_verity.cpp
+
+853:12-854:59
+Mon May 02 14:52:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8837256b_70a37eaf
+Bytes: 47
+android::base::StartsWith(token, "/dev/block")?
+

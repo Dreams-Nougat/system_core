@@ -1,5 +1,30 @@
 Revision: c297191c54eb4fb7482b412da54c8370779f5267
 Patch-set: 1
+File: adb/adb_listeners.cpp
+
+196:44-196:63
+Mon May 02 21:32:55 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_77bec810
+Bytes: 126
+This is a pretty weird way to define a linked list. Change the prev/next pointers to null at the head/tail while you're at it?
+
+File: adb/commandline.cpp
+
+127
+Mon May 02 21:32:55 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_17f65ce7
+Bytes: 42
+You should probably mention tcp:0 in usage
+
+1742
+Mon May 02 21:32:55 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 88b1e559_d7b854f8
+Bytes: 179
+I think we should forbid `adb forward tcp:1234 tcp:0` and `adb reverse tcp:0 tcp:1234`. Right now, both of them will return success. (apparently so does adb forward tcp:-1 tcp:-1)
+
 File: adb/sysdeps_win32.cpp
 
 1140:34-1140:41

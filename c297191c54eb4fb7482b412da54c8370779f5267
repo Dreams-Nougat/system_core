@@ -19,6 +19,16 @@ Yeah it is a little odd, I played around with changing to an STL container as we
 
 I'll take a look at changing the endpoints to nullptr though if you would prefer that, should be a fairly small change.
 
+196:44-196:63
+Tue May 03 18:31:21 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 88b1e559_7aad0d98
+UUID: 2dfc8b2a_b24408a9
+Bytes: 401
+I think I'm just going to change to a std::list after all for simplicity, there's a little more bookkeeping changing the head/tail to nullptr than it's worth.
+
+Removing a forward/reversal with std::list will be slightly slower (one additional O(N) operation) but this should be negligible given the small size of the forward lists, unless you know of a use case that forwards something like 10k ports.
+
 File: adb/commandline.cpp
 
 127

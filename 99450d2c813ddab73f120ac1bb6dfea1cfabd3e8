@@ -1,0 +1,25 @@
+Revision: 99450d2c813ddab73f120ac1bb6dfea1cfabd3e8
+Patch-set: 1
+File: init/devices.cpp
+
+153
+Fri May 06 17:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd94cfc3_3bcc3798
+Bytes: 52
+move to L167. (you can lose the 'struct's here too.)
+
+158
+Fri May 06 17:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd94cfc3_7beddffd
+Bytes: 68
+just use android::base::StringPrintf and lose the fixed-size buffer.
+
+175
+Fri May 06 17:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd94cfc3_bbbf67de
+Bytes: 10
+same here.
+

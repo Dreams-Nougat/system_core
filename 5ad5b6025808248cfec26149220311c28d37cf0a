@@ -1,0 +1,11 @@
+Revision: 5ad5b6025808248cfec26149220311c28d37cf0a
+Patch-set: 2
+File: adb/adb_listeners.cpp
+
+35
+Fri May 06 22:12:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ed20b384_07273804
+Bytes: 134
+IMO, while you're at it, we should turn free_listener into alistener's destructor, and make this a list of std::unique_ptr<alistener>.
+

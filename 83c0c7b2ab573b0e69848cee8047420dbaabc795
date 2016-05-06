@@ -1,0 +1,17 @@
+Revision: 83c0c7b2ab573b0e69848cee8047420dbaabc795
+Patch-set: 1
+File: sdcard/Android.mk
+
+10
+Fri May 06 06:12:14 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd4ccf16_ca173b41
+Bytes: 433
+I see u have already fixed unsigned integer overflow (df9c4a01), 2 things..
+
+- sanitize is good to debug leaks and overflow for many areas like thread, stack, memory, data flow etc..
+
+- Any reason only enabling only integer here (which you have already fixed). You can use "-fsanitize=undefined" for all checks, if you want to get rid of other errors..
+
+Good for debugging at local build but not sure if it should go to integration..
+

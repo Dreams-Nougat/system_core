@@ -17,3 +17,12 @@ UUID: cd4ccf16_af81a1d6
 Bytes: 3
 yes
 
+File: libnativeloader/native_loader.cpp
+
+113:7-113:10
+Fri May 06 10:01:34 2016 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ad6b1b69_0a4f7bad
+Bytes: 3
+For
+

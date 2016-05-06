@@ -1,0 +1,18 @@
+Revision: ee4dee38dce18b25492f1ce1b3d84756cb7ff34e
+Patch-set: 1
+File: init/devices.cpp
+
+143
+Fri May 06 05:17:25 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd4ccf16_6a270704
+Bytes: 55
+Can use "SYS_PREFIX", already defined start of the file
+
+153
+Fri May 06 05:17:25 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd4ccf16_2a21ffec
+Bytes: 27
+can return type be boolean?
+

@@ -1,0 +1,11 @@
+Revision: a8dd339c21b95ed60ef1a746408566367f277b44
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:37-9:52
+Fri May 06 00:46:28 2016 +0000
+Author: Hiroshi Yamauchi <1022530@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cd4ccf16_8fcdc56e
+Bytes: 78
+Is this 1 in the userdebug build and the eng build, but not in the user build?
+

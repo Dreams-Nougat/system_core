@@ -16,3 +16,11 @@ UUID: cd4ccf16_2a21ffec
 Bytes: 27
 can return type be boolean?
 
+153
+Fri May 06 12:42:37 2016 +0000
+Author: Rob Herring <1087673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cd4ccf16_2a21ffec
+UUID: cd4ccf16_b59d701b
+Bytes: 80
+Yes, I originally had fnmatch case in here, so I was following its return codes.
+

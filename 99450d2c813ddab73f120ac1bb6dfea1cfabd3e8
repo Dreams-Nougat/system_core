@@ -24,6 +24,14 @@ UUID: d248f0a2_fb46afb1
 Bytes: 207
 Okay, but that seems kind of unrelated to this change. I'm just re-ordering the existing code and renaming a variable due to that here. Plus the rest of the file doesn't use std:string, just plain C strings.
 
+158
+Mon May 09 17:16:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d248f0a2_fb46afb1
+UUID: 32778c10_e61a9eb3
+Bytes: 82
+reordering the code means you've lost the advantage of minimizing the diff anyway.
+
 175
 Fri May 06 17:38:36 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

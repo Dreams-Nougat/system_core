@@ -1,0 +1,11 @@
+Revision: aad6caaf789f89a5e310197fd565a46bf612d10b
+Patch-set: 2
+File: init/devices.cpp
+
+152
+Mon May 09 17:16:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 32778c10_067b3ae4
+Bytes: 28
+no new fixed-length buffers.
+

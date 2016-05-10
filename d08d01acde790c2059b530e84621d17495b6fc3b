@@ -1,0 +1,11 @@
+Revision: d08d01acde790c2059b530e84621d17495b6fc3b
+Patch-set: 1
+File: debuggerd/crasher.cpp
+
+165:8-165:12
+Tue May 10 20:36:38 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 926e7879_8f1db952
+Bytes: 124
+Is there any easy way to verify this is calling the fortify version? Just in case something happens and fortify is disabled.
+

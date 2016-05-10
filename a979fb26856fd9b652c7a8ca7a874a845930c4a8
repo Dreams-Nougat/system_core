@@ -1,0 +1,11 @@
+Revision: a979fb26856fd9b652c7a8ca7a874a845930c4a8
+Patch-set: 1
+File: libnativeloader/native_loader.cpp
+
+113
+Tue May 10 00:59:07 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 32778c10_6fb76104
+Bytes: 19
+what happened here?
+

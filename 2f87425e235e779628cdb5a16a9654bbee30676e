@@ -36,3 +36,11 @@ UUID: 7254a4e4_e5adbc97
 Bytes: 130
 this is another upstream-* directory, so either send a patch upstream, or just ignore it --- we'll replace it with toybox dd in O.
 
+206
+Thu May 12 20:02:06 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_e5adbc97
+UUID: 7254a4e4_e5321c4c
+Bytes: 60
+Np, we can ignore upstream and external lint errors for now.
+

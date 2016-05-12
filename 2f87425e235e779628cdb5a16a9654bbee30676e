@@ -1,0 +1,38 @@
+Revision: 2f87425e235e779628cdb5a16a9654bbee30676e
+Patch-set: 2
+File: debuggerd/elf_utils.cpp
+
+32
+Thu May 12 19:52:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_c5919856
+Bytes: 32
+these should be inline functions
+
+File: fastboot/engine.cpp
+
+41
+Thu May 12 19:52:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_65ab8c88
+Bytes: 73
+these should all be replaced with arraysize from <android-base/macros.h>.
+
+File: libbacktrace/backtrace_test.cpp
+
+1423
+Thu May 12 19:52:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_85a8708b
+Bytes: 43
+these kinds of things should be constexprs.
+
+File: toolbox/upstream-netbsd/bin/dd/misc.c
+
+206
+Thu May 12 19:52:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_e5adbc97
+Bytes: 130
+this is another upstream-* directory, so either send a patch upstream, or just ignore it --- we'll replace it with toybox dd in O.
+

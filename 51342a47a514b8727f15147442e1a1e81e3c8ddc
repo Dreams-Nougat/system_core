@@ -1,0 +1,22 @@
+Revision: 51342a47a514b8727f15147442e1a1e81e3c8ddc
+Patch-set: 5
+File: libutils/RefBase.cpp
+
+405
+Fri May 13 22:52:45 2016 +0000
+Author: Mathias Agopian <1021189@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_dcc24afb
+Bytes: 110
+some kind of assert() here would be nice (even if enabled by a local #define). could be useful when debugging.
+
+406
+Fri May 13 22:52:45 2016 +0000
+Author: Mathias Agopian <1021189@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_fc138e52
+Bytes: 686
+It looks like using memory_order_relaxed is not safe (as opposed to acquire), because if, two threads call incStrong() at the same time, but the thread who "wins" the first incStrong race, is different from the thread that constructed the object then, when it calls onFirstRef(), it might not see the (non-atomic) memory set in the constructor.
+
+HOWEVER, I think in reality it's not an issue, because no other thread can act on the newly created object, since they have no way to have a reference to it, and I'm assuming that creating a thread, or somehow passing the pointer to another thread would have to perform an acquire.
+
+So... if you guys agree, I think this deserves a comment.
+

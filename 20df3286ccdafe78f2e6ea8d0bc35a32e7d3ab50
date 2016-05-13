@@ -1,0 +1,20 @@
+Revision: 20df3286ccdafe78f2e6ea8d0bc35a32e7d3ab50
+Patch-set: 2
+File: adb/adb_utils.h
+
+63
+Fri May 13 23:06:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_dc396a93
+Bytes: 27
+and s/ScopedFd/unique_fd/g?
+
+File: base/include/android-base/unique_fd.h
+
+68
+Fri May 13 23:06:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_fc3e2e78
+Bytes: 53
+isn't inheritance weird? why not a template argument?
+

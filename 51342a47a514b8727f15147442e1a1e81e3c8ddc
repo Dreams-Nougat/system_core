@@ -20,3 +20,13 @@ HOWEVER, I think in reality it's not an issue, because no other thread can act o
 
 So... if you guys agree, I think this deserves a comment.
 
+406
+Fri May 13 23:48:31 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_fc138e52
+UUID: 7254a4e4_22aed093
+Bytes: 546
+I think the end of construction always has to happen before (in the technical sense) the incStrong call. That's just a consequence of the C++ lifetime rules.  Constructor races are never legal.
+
+But it would be wonderful to really pin down the usage rules here. Presumably I can create a weak reference (or ordinary pointer) to a new object, properly pass it to a second thread, have them both call incStrong concurrently, and have it be nondeterministic who gets the onFirstRef call.  Is that all allowed?  I guess it doesn't cause any problems.
+

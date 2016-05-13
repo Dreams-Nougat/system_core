@@ -9,10 +9,26 @@ UUID: 7254a4e4_9c1b62b8
 Bytes: 62
 this comment probably belongs with the ::close call above now.
 
+65
+Fri May 13 23:03:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_9c1b62b8
+UUID: 7254a4e4_7ce95e26
+Bytes: 4
+Done
+
 66:6-66:11
 Fri May 13 22:12:17 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_3c2436ff
 Bytes: 27
 you're still calling close.
+
+66:6-66:11
+Fri May 13 23:03:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_3c2436ff
+UUID: 7254a4e4_5cdc9a81
+Bytes: 39
+Ugh, screwed up the conflict resolution
 

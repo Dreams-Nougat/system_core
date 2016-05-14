@@ -1,0 +1,11 @@
+Revision: ddc63f263ae9891e1694956f1fac791670de0b2a
+Patch-set: 1
+File: adb/sockets.cpp
+
+227
+Sat May 14 16:23:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_05f1d678
+Bytes: 130
+should we have an asocket::destroy? (it would at least make it more obvious that we'd explicitly considered all the 'else' cases.)
+

@@ -9,6 +9,14 @@ UUID: 7254a4e4_dc396a93
 Bytes: 27
 and s/ScopedFd/unique_fd/g?
 
+63
+Sat May 14 03:53:32 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_dc396a93
+UUID: 7254a4e4_859ea660
+Bytes: 121
+I was planning on cherry-picking this for N and removing ScopedFd in a followup in master, should I do that in N as well?
+
 File: base/include/android-base/unique_fd.h
 
 68

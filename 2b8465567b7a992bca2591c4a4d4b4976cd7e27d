@@ -1,0 +1,34 @@
+Revision: 2b8465567b7a992bca2591c4a4d4b4976cd7e27d
+Patch-set: 1
+File: adb/jdwp_service.cpp
+
+17
+Sat May 14 16:31:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_45ebde8a
+Bytes: 51
+lose the comment, since the names are wrong anyway?
+
+43:9-43:26
+Sat May 14 16:31:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_6500e228
+Bytes: 14
+also not true?
+
+183
+Sat May 14 16:31:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_85fdc64b
+Bytes: 133
+man, i thought i'd switched all of these to std::string already :-(
+
+seems like returning std::string would be even more idiomatic...
+
+474:12-474:29
+Sat May 14 16:31:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_a5faca4f
+Bytes: 110
+can you describe more of these kinds of changes in the commit message? this is more than just idiomatic C++...
+

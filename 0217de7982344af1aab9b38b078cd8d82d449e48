@@ -1,0 +1,11 @@
+Revision: 0217de7982344af1aab9b38b078cd8d82d449e48
+Patch-set: 1
+File: adb/adb.cpp
+
+71
+Sat May 14 16:20:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_c5e0aeab
+Bytes: 82
+should we log fatal too, if we're on the device? where does adbd's stderr even go?
+

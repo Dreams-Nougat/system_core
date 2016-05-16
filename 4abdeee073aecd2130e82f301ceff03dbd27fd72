@@ -18,10 +18,26 @@ UUID: 7254a4e4_5c949399
 Bytes: 6
 FATAL?
 
+74:8-74:13
+Mon May 16 23:17:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_5c949399
+UUID: 7254a4e4_5c49f323
+Bytes: 109
+This is probably a bad reason, but I didn't want the abort location to be different between host and non-host
+
 91:4-91:7
 Mon May 16 23:10:11 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_9c8efb89
 Bytes: 5
 PLOG?
+
+91:4-91:7
+Mon May 16 23:17:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_9c8efb89
+UUID: 7254a4e4_bce65f53
+Bytes: 63
+PLOG would require restoring errno, do you think that's better?
 

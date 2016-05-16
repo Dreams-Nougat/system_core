@@ -11,6 +11,14 @@ so the reason to keep fprintf on host is to show adb command error message like:
 "error: hello"
 instead of "adb E  3513  3513 adb.cpp:96] error: hello"?
 
+72:4-72:40
+Mon May 16 23:18:47 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_bcbd7f11
+UUID: 7254a4e4_9c535bd0
+Bytes: 96
+Yeah. We use fatal/fatal_errno in commandline.cpp in a few places, so that seems like a problem.
+
 74:8-74:13
 Mon May 16 23:10:11 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

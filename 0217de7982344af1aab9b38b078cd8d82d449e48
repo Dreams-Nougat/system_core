@@ -1,5 +1,14 @@
 Revision: 0217de7982344af1aab9b38b078cd8d82d449e48
 Patch-set: 1
+File: /COMMIT_MSG
+
+12:0-12:3
+Mon May 16 21:33:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_b16128c7
+Bytes: 23
+also add to b/28467098?
+
 File: adb/adb.cpp
 
 71
@@ -8,4 +17,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_c5e0aeab
 Bytes: 82
 should we log fatal too, if we're on the device? where does adbd's stderr even go?
+
+71
+Mon May 16 21:33:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_c5e0aeab
+UUID: 7254a4e4_31753883
+Bytes: 140
+stderr goes to adb log file in /data/adb if tracing is enabled, otherwise no where. I prefer to replace fatal and fatal_errno to LOG(FATAL).
 

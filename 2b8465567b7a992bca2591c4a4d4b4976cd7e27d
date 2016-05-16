@@ -16,6 +16,13 @@ UUID: 7254a4e4_6500e228
 Bytes: 14
 also not true?
 
+179
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_fdce076b
+Bytes: 40
+As mentioned later can be PID_MAXCHAR +1
+
 183
 Sat May 14 16:31:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -24,6 +31,41 @@ Bytes: 133
 man, i thought i'd switched all of these to std::string already :-(
 
 seems like returning std::string would be even more idiomatic...
+
+206
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_9dc26346
+Bytes: 10
+std:string
+
+207
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_bdbf1fb7
+Bytes: 44
+possibly expecting comment to have +4 here..
+
+223
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_5dde1b20
+Bytes: 60
+used at many places.. can it be replaced with PID_MAXCHAR ??
+
+351
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_7de3d7ec
+Bytes: 122
+would be good if we return error code instead -1. it can be same as returned from adb_socketpair or -EBADF or -EFAULT etc.
+
+394
+Mon May 16 03:28:29 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17935a19_ddd1cb0b
+Bytes: 89
+Though not part of this change.. would prefer to have proper error code return on failure
 
 474:12-474:29
 Sat May 14 16:31:12 2016 +0000

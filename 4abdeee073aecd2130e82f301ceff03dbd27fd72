@@ -19,6 +19,14 @@ UUID: 7254a4e4_9c535bd0
 Bytes: 96
 Yeah. We use fatal/fatal_errno in commandline.cpp in a few places, so that seems like a problem.
 
+72:4-72:40
+Mon May 16 23:25:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_9c535bd0
+UUID: 7254a4e4_1c284b26
+Bytes: 48
+provide your own AdbStderrLogger to InitLogging?
+
 74:8-74:13
 Mon May 16 23:10:11 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,18 @@
+Revision: ddc63f263ae9891e1694956f1fac791670de0b2a
+Base-for-patch-set: 1
+File: adb/jdwp_service.cpp
+
+575:4-578:5
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_f1c2d0fa
+Bytes: 81
+Can you reason that peer is null here? or at least have a CHECK(peer == nullptr)?
+
+669:4-669:15
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_51271cbc
+Bytes: 26
+check for peer is nullptr?
+

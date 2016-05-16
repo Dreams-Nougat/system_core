@@ -16,6 +16,13 @@ UUID: 7254a4e4_6500e228
 Bytes: 14
 also not true?
 
+163:9-163:15
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_f1c9f038
+Bytes: 15
+RemoveFromList?
+
 179
 Mon May 16 03:28:29 2016 +0000
 Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -67,10 +74,45 @@ UUID: 17935a19_ddd1cb0b
 Bytes: 89
 Though not part of this change.. would prefer to have proper error code return on failure
 
+444:16-444:34
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_b1da0823
+Bytes: 53
+already have TEMP_FAILURE_RETRY in adb_socket_accept?
+
 474:12-474:29
 Sat May 14 16:31:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_a5faca4f
 Bytes: 110
 can you describe more of these kinds of changes in the commit message? this is more than just idiomatic C++...
+
+501:8-501:26
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_116bd4e4
+Bytes: 45
+remote_socket has already taken care of this?
+
+510:8-510:13
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_51755cb8
+Bytes: 103
+CHECK(s != nullptr)? or create JdwpSocket using make_unique like in create_jdwp_tracker_service_socket?
+
+554:4-555:71
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_913184f6
+Bytes: 60
+have a JdwpTracker::RemoveFromList like JdwpProcess::Remove?
+
+577:43-577:44
+Mon May 16 21:29:29 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_d14eac60
+Bytes: 84
+shall we consider merging JdwpTracker and JdwpSocket, their code are mostly similar.
 

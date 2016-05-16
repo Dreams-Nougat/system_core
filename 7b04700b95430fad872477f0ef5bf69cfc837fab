@@ -9,3 +9,17 @@ UUID: 7254a4e4_761fb6f6
 Bytes: 168
 Tempted to always set transp->ret in the subroutine, and not just for #412 and #431. The efficiency gain in line #477 path is not worth the maintenance complexity here.
 
+468:41-469:50
+Mon May 16 22:02:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_11dbd45e
+Bytes: 107
+srmohan points out this is still an out of bounds access if transp->ret is < oldest->logMsg.entry.hdr_size.
+
+469:20-471:52
+Mon May 16 22:02:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_d15b0ce6
+Bytes: 126
+This is no longer needed because android_transport_read ensures that the header is v2 format or higher by filling in hdr_size.
+

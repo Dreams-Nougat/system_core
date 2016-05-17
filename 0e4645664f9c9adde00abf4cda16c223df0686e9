@@ -9,10 +9,26 @@ UUID: 7254a4e4_a9538058
 Bytes: 7
 by who?
 
+534:31-534:43
+Tue May 17 05:33:08 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_a9538058
+UUID: 7254a4e4_8ca16aaa
+Bytes: 83
+By compare_exchange_weak.  That's just a reminder about a standard C++ library API.
+
 535
 Tue May 17 02:15:16 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_8956bc48
 Bytes: 137
 Are you sure this should have relaxed memory ordering? In incStrong the caller knows it already has a strong ref, while here it does not.
+
+535
+Tue May 17 05:33:08 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_8956bc48
+UUID: 7254a4e4_ac9e2e60
+Bytes: 378
+You're commenting on the compare_exchange?  All that matters by the reasoning in the comment at the top is that if this succeeds it happens before a corresponding decrement, and hence all memory effects are visible by the time it matters, i.e. when a zero count is detected. I'm assuming that we never act on a nonzero count; the calls to retrieve counts are only for debugging.
 

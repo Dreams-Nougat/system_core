@@ -9,6 +9,14 @@ UUID: 7254a4e4_f63726eb
 Bytes: 384
 the asocket::close function pointer is also (and mainly) used in local_socket_event_func()? However, one bad place may be close_all_sockets(), which ignores s->close() and use local_socket_close_locked() anyway (it affects when a transport is destroyed). Maybe we can try to make socket_list_lock a recursive lock and make local_socket close/destroy/close_locked inside asocket class.
 
+9:12-10:40
+Tue May 17 22:26:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_f63726eb
+UUID: 7254a4e4_e97668f2
+Bytes: 52
+Yeah, that's definitely cleaner. Doing that instead.
+
 File: adb/sockets.cpp
 
 227
@@ -17,4 +25,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_05f1d678
 Bytes: 130
 should we have an asocket::destroy? (it would at least make it more obvious that we'd explicitly considered all the 'else' cases.)
+
+227
+Tue May 17 22:26:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_05f1d678
+UUID: d7f6229d_4ba56565
+Bytes: 227
+AFAICT, this *is* asocket::destroy. local sockets are weird because close doesn't immediately destroy them, because we want to flush whatever's left in the socket before we destroy them, so the actual destruction gets deferred.
 

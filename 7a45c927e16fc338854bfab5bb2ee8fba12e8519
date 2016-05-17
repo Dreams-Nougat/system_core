@@ -69,6 +69,14 @@ the old emulator (using port forwarding method) can't advertise its port recursi
 keeping a list of known emulators to disk is not an easy task.
 I prefer not to change until there is a real need. If emulator count is an issue, we can simply increase ADB_LOCAL_TRANSPORT_MAX.
 
+155:4-155:32
+Tue May 17 22:16:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d761c220_b373b8d6
+UUID: d7f6229d_ab6de925
+Bytes: 128
+the brillo folks are independently looking at using mdns for this kind of thing. that sounds like a better long-term plan to me.
+
 166:97-166:105
 Tue May 17 20:35:44 2016 +0000
 Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>

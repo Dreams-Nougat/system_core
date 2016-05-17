@@ -9,12 +9,28 @@ UUID: 7254a4e4_45ebde8a
 Bytes: 51
 lose the comment, since the names are wrong anyway?
 
+17
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_45ebde8a
+UUID: 7254a4e4_567e3208
+Bytes: 4
+Done
+
 43:9-43:26
 Sat May 14 16:31:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_6500e228
 Bytes: 14
 also not true?
+
+43:9-43:26
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_6500e228
+UUID: 7254a4e4_767b3617
+Bytes: 4
+Done
 
 163:9-163:15
 Mon May 16 21:29:29 2016 +0000
@@ -30,6 +46,14 @@ UUID: 17935a19_fdce076b
 Bytes: 40
 As mentioned later can be PID_MAXCHAR +1
 
+179
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17935a19_fdce076b
+UUID: 7254a4e4_71598049
+Bytes: 4
+Done
+
 183
 Sat May 14 16:31:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -39,12 +63,30 @@ man, i thought i'd switched all of these to std::string already :-(
 
 seems like returning std::string would be even more idiomatic...
 
+183
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_85fdc64b
+UUID: 7254a4e4_0529d67b
+Bytes: 262
+I don't think changing the return type would be an improvement, because these only get used to directly write into a char buffer. It'd just spread the bad across more call site.
+
+I changed this to build the string with a std::string and the memcpy it at the end.
+
 206
 Mon May 16 03:28:29 2016 +0000
 Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 17935a19_9dc26346
 Bytes: 10
 std:string
+
+206
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17935a19_9dc26346
+UUID: 7254a4e4_71dc2082
+Bytes: 58
+Using a std::string here doesn't seem to improve anything.
 
 207
 Mon May 16 03:28:29 2016 +0000
@@ -53,12 +95,28 @@ UUID: 17935a19_bdbf1fb7
 Bytes: 44
 possibly expecting comment to have +4 here..
 
+207
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17935a19_bdbf1fb7
+UUID: 7254a4e4_51947c99
+Bytes: 84
+Added a comment and another constexpr variable for all of the "4"s in this function.
+
 223
 Mon May 16 03:28:29 2016 +0000
 Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 17935a19_5dde1b20
 Bytes: 60
 used at many places.. can it be replaced with PID_MAXCHAR ??
+
+223
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 17935a19_5dde1b20
+UUID: 7254a4e4_b18be879
+Bytes: 81
+Added (used PID_LEN instead, since it's not just the max, it has to be that long)
 
 351
 Mon May 16 03:28:29 2016 +0000
@@ -88,6 +146,14 @@ UUID: 7254a4e4_a5faca4f
 Bytes: 110
 can you describe more of these kinds of changes in the commit message? this is more than just idiomatic C++...
 
+474:12-474:29
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_a5faca4f
+UUID: 7254a4e4_d1d14c67
+Bytes: 58
+I believe this change isn't actually correct? Reverted it.
+
 501:8-501:26
 Mon May 16 21:29:29 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -95,12 +161,28 @@ UUID: 7254a4e4_116bd4e4
 Bytes: 45
 remote_socket has already taken care of this?
 
+501:8-501:26
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_116bd4e4
+UUID: 7254a4e4_5122bc45
+Bytes: 7
+Removed
+
 510:8-510:13
 Mon May 16 21:29:29 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_51755cb8
 Bytes: 103
 CHECK(s != nullptr)? or create JdwpSocket using make_unique like in create_jdwp_tracker_service_socket?
+
+510:8-510:13
+Tue May 17 21:03:06 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_51755cb8
+UUID: 923678c6_b234e19a
+Bytes: 192
+I don't think it can be a unique_ptr, because the lifetime escapes this file. (there should probably be a global id -> asocket map in sockets.cpp, but I'm going to hold off on doing that in N)
 
 554:4-555:71
 Mon May 16 21:29:29 2016 +0000

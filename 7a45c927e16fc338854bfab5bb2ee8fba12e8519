@@ -1,0 +1,64 @@
+Revision: 7a45c927e16fc338854bfab5bb2ee8fba12e8519
+Patch-set: 3
+File: adb/transport_local.cpp
+
+147:46-147:73
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_deac01b5
+Bytes: 172
+Curios: What's the reason for putting this in heap rather than text? Smaller binary size?
+What implications does this have w.r.t. initialization / cleanup order of globals?
+
+155:4-155:32
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_7eecf505
+Bytes: 632
+FR:
+We could get rid of this initial poll (and hence the 16 emulators limit / polling problems) if we did two things:
+- Emulator currently advertizes its port to adb-server exactly once on start up. Instead, on start-up, it keeps advertising 'emulator-XXXX' until adb-server first connects to the emulator on the advertised port
+- adb-server persists it's list of known emulators (added in this CL) to disk.
+
+This way,
+- If the emulator is started first, it'll keep yelling out for any adb-server that starts later.
+- If adb-server dies, the list of currently known emulators will still be available for the restarted server.
+
+wdyt?
+
+166:97-166:105
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_b2b301fa
+Bytes: 66
+nit: 80 char colums? 100 char columns? Not sure what the style is.
+
+168:21-168:52
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_3e7b5d18
+Bytes: 186
+Note: This might appear as a slight regression in re-connection speed to the end user.
+Before this CL, this delay was somewhere between 0 - 1 second. After this CL, it's always 1 second.
+
+179:15-179:43
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_129ccd6a
+Bytes: 48
+VLOG here that we stopped retrying on this port?
+
+221:12-223:13
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_f2ad7997
+Bytes: 92
+Seems unrelated to the main CL. Please land as a separate bugfix CL for easy cherry-picking.
+
+317:16-318:74
+Tue May 17 20:35:44 2016 +0000
+Author: Prathmesh Prabhu <1079748@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 923678c6_32c8f168
+Bytes: 92
+Seems unrelated to the main CL. Please land as a separate bugfix CL for easy cherry-picking.
+

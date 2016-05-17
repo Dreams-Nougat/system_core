@@ -1,0 +1,18 @@
+Revision: 0e4645664f9c9adde00abf4cda16c223df0686e9
+Patch-set: 6
+File: libutils/RefBase.cpp
+
+534:31-534:43
+Tue May 17 02:15:16 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_a9538058
+Bytes: 7
+by who?
+
+535
+Tue May 17 02:15:16 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7254a4e4_8956bc48
+Bytes: 137
+Are you sure this should have relaxed memory ordering? In incStrong the caller knows it already has a strong ref, while here it does not.
+

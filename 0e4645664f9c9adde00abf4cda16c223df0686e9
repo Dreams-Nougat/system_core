@@ -25,6 +25,14 @@ UUID: 7254a4e4_ccc29246
 Bytes: 218
 I don't know where that code is defined, in the the versions I saw (I did not find the exact version you are using) the current count is passed by value, not by reference, so the local copy could not have been updated.
 
+534:31-534:43
+Tue May 17 15:42:14 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_ccc29246
+UUID: 323eac9c_677b6c7b
+Bytes: 108
+The standard C++11 version always takes a reference for the first argument, and the behavior is specified...
+
 535
 Tue May 17 02:15:16 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>

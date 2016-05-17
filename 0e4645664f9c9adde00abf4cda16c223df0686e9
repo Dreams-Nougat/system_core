@@ -41,6 +41,14 @@ UUID: 7254a4e4_0c4f3a5e
 Bytes: 267
 It's the C++ standard library compare_exchange_weak.  curCount is passed by reference, for better or worse.  See http://en.cppreference.com/w/cpp/atomic/atomic/compare_exchange, for example.  I can add a comment, but I think we usually don't for the standard library.
 
+534:31-534:43
+Tue May 17 20:48:34 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_0c4f3a5e
+UUID: 923678c6_1e221945
+Bytes: 135
+OK. I would suggest adding " by compare_exchange_weak" to your existing comment, as this is different from other compare_exchange apis.
+
 535
 Tue May 17 02:15:16 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>

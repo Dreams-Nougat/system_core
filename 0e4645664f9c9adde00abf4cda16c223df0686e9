@@ -33,6 +33,14 @@ UUID: 323eac9c_677b6c7b
 Bytes: 108
 The standard C++11 version always takes a reference for the first argument, and the behavior is specified...
 
+534:31-534:43
+Tue May 17 15:42:32 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_ccc29246
+UUID: 7254a4e4_0c4f3a5e
+Bytes: 267
+It's the C++ standard library compare_exchange_weak.  curCount is passed by reference, for better or worse.  See http://en.cppreference.com/w/cpp/atomic/atomic/compare_exchange, for example.  I can add a comment, but I think we usually don't for the standard library.
+
 535
 Tue May 17 02:15:16 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -55,4 +63,14 @@ Parent: 7254a4e4_ac9e2e60
 UUID: 7254a4e4_0cdf3a1c
 Bytes: 452
 I'm referring to the entire function. It is possible there is no problem, but the clients of this code are different from the clients of incStrong. A call to either function is similar to a mutex_lock call in that the client expects the object to be valid after the call returns. If there is no transition from invalid to valid then this is probably ok, but the code below to handle the initial state seems to indicate that this is not always the case.
+
+535
+Tue May 17 15:42:32 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_0cdf3a1c
+UUID: 7254a4e4_8c6a4aa4
+Bytes: 742
+Careful scrutiny here is certainly good, but I think it's OK as is. We were presumably passed the weak pointer using proper synchronization, so object construction happens before us.  If this function succeeds, then the object can't be deallocated until we, or a thread we pass the reference to, calls decStrong. So, by the arguments above, anything here happens before destruction.
+
+I don't fully understand the usage model. If someone is using this for  synchronization, i.e. assuming that because this succeeded they will see certain prior memory effects, then we have a problem.  I'll add a comment saying that this is not guaranteed. But it never was. We'd just be preserving the brokenness, though possibly increasing failure frequency.
 

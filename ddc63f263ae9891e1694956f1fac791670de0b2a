@@ -34,3 +34,11 @@ UUID: d7f6229d_4ba56565
 Bytes: 227
 AFAICT, this *is* asocket::destroy. local sockets are weird because close doesn't immediately destroy them, because we want to flush whatever's left in the socket before we destroy them, so the actual destruction gets deferred.
 
+227
+Tue May 17 22:36:42 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_4ba56565
+UUID: d7f6229d_cb05d507
+Bytes: 38
+yes, and this is a necessary behavior.
+

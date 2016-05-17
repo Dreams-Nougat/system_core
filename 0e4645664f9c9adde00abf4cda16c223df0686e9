@@ -49,6 +49,14 @@ UUID: 923678c6_1e221945
 Bytes: 135
 OK. I would suggest adding " by compare_exchange_weak" to your existing comment, as this is different from other compare_exchange apis.
 
+534:31-534:43
+Tue May 17 23:24:05 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 923678c6_1e221945
+UUID: d7f6229d_4bb1e506
+Bytes: 125
+Did that, at least for the first occurrence. Both the standard C and C++ APIs work that way. I agree that most others do not.
+
 535
 Tue May 17 02:15:16 2016 +0000
 Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>

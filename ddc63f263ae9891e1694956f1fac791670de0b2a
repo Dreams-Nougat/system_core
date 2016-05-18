@@ -42,3 +42,11 @@ UUID: d7f6229d_cb05d507
 Bytes: 38
 yes, and this is a necessary behavior.
 
+227
+Wed May 18 17:44:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_cb05d507
+UUID: d7f6229d_5a06c977
+Bytes: 120
+This change was actually incorrect, the real problem was that local_socket_close was getting called instead of s->close.
+

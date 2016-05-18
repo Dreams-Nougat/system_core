@@ -40,3 +40,11 @@ UUID: d7f6229d_054ce660
 Bytes: 203
 yes, we don't record which id is used. but letting it abort seems not very proper (especially on device aborts are treated as bugs). How about leaving this until refactoring local_socket_list into a map?
 
+94:8-94:42
+Wed May 18 21:32:58 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_054ce660
+UUID: d7f6229d_e0f1c8a4
+Bytes: 167
+A guaranteed abort for something that is highly unlikely seems a lot better than the alternative of getting the wrong socket and completely mangling the state machine.
+

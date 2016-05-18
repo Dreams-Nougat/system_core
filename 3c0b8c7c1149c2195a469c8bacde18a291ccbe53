@@ -15,3 +15,15 @@ does moving mSize cause any binary compatibility problems? (i'm not sure whether
 
 maybe drop the reserved fields altogether and round up in alloc()?
 
+108
+Wed May 18 20:17:50 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_9a38312a
+UUID: d7f6229d_da6119c7
+Bytes: 740
+Interesting questions.
+
+I presumed it should be 16 (or a multiple) for the following reasons: The presence of the mReserved array didn't otherwise make any sense to me. And, at least on x86, the usual (non-Android (?)) convention is that allocated memory is 16 byte aligned to support vector units that need alignment. Note that the code below uses "this + 1" to compute the beginning of the payload data. What's the maximum alignment requirement on ARM?
+
+One alternative is to leave mSize in its old place, but conditionally remove mReserved for 64 bit.  That should still result in a 16 byte size with reasonable ABI alignment conventions, though via more complicated reasoning.  Another alternative is to just remove the 16 byte comment.
+

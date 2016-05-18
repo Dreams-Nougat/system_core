@@ -1,0 +1,15 @@
+Revision: 305254be60865e38b08a823d2fd9208f77eb1924
+Patch-set: 6
+File: adb/sysdeps_test.cpp
+
+253:17-253:29
+Wed May 18 20:36:36 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_85cd76cc
+Bytes: 228
+I like the idea of testing try_lock() after lock(), but this suggests that the behavior may be undefined:
+
+http://en.cppreference.com/w/cpp/thread/mutex/try_lock
+
+Something to watch out for in case this test fails in the future?
+

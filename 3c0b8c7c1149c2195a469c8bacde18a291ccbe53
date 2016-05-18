@@ -27,3 +27,11 @@ I presumed it should be 16 (or a multiple) for the following reasons: The presen
 
 One alternative is to leave mSize in its old place, but conditionally remove mReserved for 64 bit.  That should still result in a 16 byte size with reasonable ABI alignment conventions, though via more complicated reasoning.  Another alternative is to just remove the 16 byte comment.
 
+108
+Wed May 18 20:23:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_da6119c7
+UUID: d7f6229d_8571f69a
+Bytes: 188
+[+cferris] as usual sufferer from alignment issues (and who knows what our corresponding heap guarantees have been --- "this should match the heap" sounds like a very convincing argument).
+

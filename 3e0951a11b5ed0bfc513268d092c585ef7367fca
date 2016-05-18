@@ -1,0 +1,11 @@
+Revision: 3e0951a11b5ed0bfc513268d092c585ef7367fca
+Patch-set: 4
+File: adb/sysdeps/mutex.h
+
+80:12-80:30
+Wed May 18 19:24:26 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_05dce61e
+Bytes: 89
+Maybe invert this to a != check? That would catch erroneous transitions from 2 to 1, etc.
+

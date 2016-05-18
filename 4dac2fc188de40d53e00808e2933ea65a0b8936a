@@ -32,3 +32,11 @@ UUID: d7f6229d_4511ce9d
 Bytes: 120
 Right, but the previous behavior is broken, because it'll allocate that socket id without checking if it's still in use.
 
+94:8-94:42
+Wed May 18 20:25:14 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_4511ce9d
+UUID: d7f6229d_054ce660
+Bytes: 203
+yes, we don't record which id is used. but letting it abort seems not very proper (especially on device aborts are treated as bugs). How about leaving this until refactoring local_socket_list into a map?
+

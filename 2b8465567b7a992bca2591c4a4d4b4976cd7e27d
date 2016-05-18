@@ -39,6 +39,14 @@ UUID: 7254a4e4_f1c9f038
 Bytes: 15
 RemoveFromList?
 
+163:9-163:15
+Wed May 18 19:25:41 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_f1c9f038
+UUID: d7f6229d_3a349d9a
+Bytes: 4
+Done
+
 179
 Mon May 16 03:28:29 2016 +0000
 Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -138,6 +146,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 7254a4e4_b1da0823
 Bytes: 53
 already have TEMP_FAILURE_RETRY in adb_socket_accept?
+
+444:16-444:34
+Wed May 18 19:25:41 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7254a4e4_b1da0823
+UUID: d7f6229d_ba47ed10
+Bytes: 56
+blindly changed this based on the previous code, removed
 
 474:12-474:29
 Sat May 14 16:31:12 2016 +0000

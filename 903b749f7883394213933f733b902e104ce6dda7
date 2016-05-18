@@ -1,0 +1,11 @@
+Revision: 903b749f7883394213933f733b902e104ce6dda7
+Patch-set: 7
+File: adb/sysdeps_test.cpp
+
+269:3-269:15
+Wed May 18 21:44:26 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_a06a2009
+Bytes: 55
+do you care of it? the destructor of m is never called.
+

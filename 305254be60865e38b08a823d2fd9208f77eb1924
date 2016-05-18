@@ -23,3 +23,11 @@ Yeah, you're right. It seems that (at least my reading of) POSIX says that pthre
 
 (Also noticed in reading the spec that destroying a mutex while it's held is UB, so fixed that.)
 
+253:17-253:29
+Wed May 18 21:25:37 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_8096044c
+UUID: d7f6229d_20e3d0ed
+Bytes: 363
+I guess I meant that if the spec says that if lock+try_lock is UB, if you write a test to do that and even if it passes right now, in the future it might not pass and might crash or have general weirdness. So do you want to be on the hook for that in the future?, or just comment out that portion of the test. You guys are maintaining the code, so it's your call.
+

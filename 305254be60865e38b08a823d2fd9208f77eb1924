@@ -13,3 +13,13 @@ http://en.cppreference.com/w/cpp/thread/mutex/try_lock
 
 Something to watch out for in case this test fails in the future?
 
+253:17-253:29
+Wed May 18 21:21:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_85cd76cc
+UUID: d7f6229d_8096044c
+Bytes: 271
+Yeah, you're right. It seems that (at least my reading of) POSIX says that pthread_mutex_trylock has defined behavior in this case, so we can probably get away with it here?
+
+(Also noticed in reading the spec that destroying a mutex while it's held is UB, so fixed that.)
+

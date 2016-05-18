@@ -200,6 +200,14 @@ UUID: 923678c6_b234e19a
 Bytes: 192
 I don't think it can be a unique_ptr, because the lifetime escapes this file. (there should probably be a global id -> asocket map in sockets.cpp, but I'm going to hold off on doing that in N)
 
+510:8-510:13
+Wed May 18 21:53:51 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 923678c6_b234e19a
+UUID: d7f6229d_e0f70867
+Bytes: 59
+I agree. s will be freed, so my previous comment was wrong.
+
 554:4-555:71
 Mon May 16 21:29:29 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

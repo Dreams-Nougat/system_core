@@ -1,0 +1,18 @@
+Revision: 4dac2fc188de40d53e00808e2933ea65a0b8936a
+Patch-set: 4
+File: adb/sockets.cpp
+
+44:29-44:51
+Wed May 18 19:16:38 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_65edead4
+Bytes: 539
+Just remembered that as all asockets are used only in main thread, the lock actually doesn't take effect. And if we really need to operate asockets in different threads, only local_socket_list_lock might not be enough. I thought of removing the lock, but didn't take action as having the lock doesn't hurt anything. maybe we can remove it when totally refactored asocket into a c++ class (so we have better control of its use). However, I think it is an improvement to change the lock into recursive mutex, as we can remove code like L236.
+
+94:8-94:42
+Wed May 18 19:16:38 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_fa785519
+Bytes: 70
+I think it might overflow, like when you have created (1<<32) sockets.
+

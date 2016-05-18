@@ -39,3 +39,16 @@ UUID: d7f6229d_808444e8
 Bytes: 275
 I think the try_locks in the tests are fine. I think the cppreference.com means try_lock can return false even if the lock is just released by other threads. But in L286, the try_lock is called just after m.lock(), I can't imagine any implementation can have it return false.
 
+253:17-253:29
+Wed May 18 22:20:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_808444e8
+UUID: d7f6229d_e08b8877
+Bytes: 679
+The standard says no: "Requires: If m is of type std::mutex, std::timed_mutex, or std::shared_timed_mutex, the calling
+thread does not own the mutex"
+
+Before I added this, the implementation of mutex I had did something that was technically legal (since it was UB), but still unexpected. Even if something technically is UB, we should either detect it and abort, or do something sensible. I think it's worth the potential failure in the future (which is probably unlikely?) to ensure this.
+
+(And if it ever does break, it should probably be regarded as a bug in the C++ implementation. Just because the standard gives you license to hurt your users doesn't mean that you should.)
+

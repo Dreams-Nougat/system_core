@@ -9,3 +9,11 @@ UUID: d7f6229d_97012761
 Bytes: 24
 same comments as before.
 
+26
+Thu May 19 01:14:20 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d7f6229d_97012761
+UUID: d7f6229d_971f6748
+Bytes: 278
+I think it would be safer to do it in a different CL to replace ARRAY_SIZE macro with arraysize, which depends on C++ template. There are hundreds of such definitions and thousands of uses. Many of them could use C++ templates, and I am not sure which would need to be C macros.
+

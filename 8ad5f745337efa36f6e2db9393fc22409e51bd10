@@ -1,0 +1,11 @@
+Revision: 8ad5f745337efa36f6e2db9393fc22409e51bd10
+Patch-set: 1
+File: init/util.h
+
+26
+Thu May 19 00:08:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d7f6229d_97012761
+Bytes: 24
+same comments as before.
+

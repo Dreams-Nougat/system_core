@@ -1,0 +1,23 @@
+Revision: 87dcb805fd97325e4299519ae4063da89c4606d9
+Patch-set: 3
+File: libutils/SharedBuffer.cpp
+
+52
+Fri May 20 22:42:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_021f3a49
+Bytes: 247
+This does not look safe. If this function is ever called by anyone who did not see 1 returned from SharedBuffer::release you have two race conditions. 1. two threads could free the same buffer. 2. free could be called without acquire memory order.
+
+123
+Fri May 20 22:42:09 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_6230bed8
+Bytes: 235
+What is the point having two ways to release the last reference? Why not:
+prev = mRefs.fetch_sub(1, std::memory_order_release);
+if (prev == 1) {
+  atomic_thread_fence(std::memory_order_acquire);
+  if ((flags & eKeepStorage) == 0) {
+...
+

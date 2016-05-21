@@ -1,0 +1,41 @@
+Revision: f588164eb48386e348002483660d65549a4d489e
+Patch-set: 5
+File: adb/sysdeps.h
+
+119
+Sat May 21 00:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_1d92ffae
+Bytes: 94
+Implement std::condition_variable on Windows in sysdeps like I did with mutex/recursive_mutex?
+
+File: adb/transport_local.cpp
+
+148
+Sat May 21 00:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_bde92b2e
+Bytes: 10
+std::mutex
+
+155:4-155:32
+Sat May 21 00:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_7de86322
+Bytes: 160
+How do emulators that start after the adb server does get connected? It seem like this is the only place where this is called, and the loop below lasts forever.
+
+163
+Sat May 21 00:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_3ddedb7a
+Bytes: 31
+ports = std::move(retry_ports);
+
+189
+Sat May 21 00:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 37a21e12_1ddb1f8b
+Bytes: 35
+retry_ports = std::move(next_ports)
+

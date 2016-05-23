@@ -28,6 +28,14 @@ thread A:              thread B
 
 If we don't --m.lock_count here, the m.lock() in thread B will find that m.lock_count is already 0 and fatal().
 
+42:8-43:25
+Mon May 23 21:33:35 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_c5124ef1
+UUID: 3c91230e_f398788e
+Bytes: 98
+Ah, ok, so basically we need to keep lock_count in sync with what is really going on, makes sense.
+
 File: adb/sysdeps/mutex.h
 
 58

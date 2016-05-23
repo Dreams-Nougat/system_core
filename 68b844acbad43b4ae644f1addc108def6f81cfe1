@@ -9,3 +9,11 @@ UUID: 3c91230e_79b8c784
 Bytes: 46
 I have a #pragma once at the top of this file.
 
+19
+Mon May 23 23:47:40 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_79b8c784
+UUID: 3c91230e_99210b9f
+Bytes: 85
+any reason to use #pragma once instead of include guard? it seems not the convention.
+

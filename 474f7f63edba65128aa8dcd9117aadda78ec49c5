@@ -1,0 +1,16 @@
+Revision: 474f7f63edba65128aa8dcd9117aadda78ec49c5
+Patch-set: 7
+File: adb/sysdeps/mutex.h
+
+58
+Mon May 23 20:22:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_45fcfee5
+Bytes: 146
+std::mutex has another name for this:
+
+
+native_handle_type native_handle();
+		
+Returns the underlying implementation-defined native handle object.
+

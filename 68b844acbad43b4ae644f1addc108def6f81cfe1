@@ -1,0 +1,11 @@
+Revision: 68b844acbad43b4ae644f1addc108def6f81cfe1
+Patch-set: 9
+File: adb/sysdeps/mutex.h
+
+19
+Mon May 23 23:32:21 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_79b8c784
+Bytes: 46
+I have a #pragma once at the top of this file.
+

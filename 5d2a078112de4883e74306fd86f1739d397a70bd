@@ -1,0 +1,20 @@
+Revision: 5d2a078112de4883e74306fd86f1739d397a70bd
+Patch-set: 8
+File: adb/sysdeps/condition_variable.h
+
+26
+Mon May 23 23:13:01 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_f9f377aa
+Bytes: 44
+This should include sysdeps/mutex.h as well.
+
+File: adb/transport_local.cpp
+
+20
+Mon May 23 23:13:01 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_59ff0373
+Bytes: 8
+here too
+

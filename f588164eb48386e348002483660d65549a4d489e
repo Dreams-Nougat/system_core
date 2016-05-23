@@ -9,6 +9,14 @@ UUID: 37a21e12_1d92ffae
 Bytes: 94
 Implement std::condition_variable on Windows in sysdeps like I did with mutex/recursive_mutex?
 
+119
+Mon May 23 20:02:03 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21e12_1d92ffae
+UUID: 3c91230e_c52fae8b
+Bytes: 4
+Done
+
 File: adb/transport_local.cpp
 
 148
@@ -18,12 +26,28 @@ UUID: 37a21e12_bde92b2e
 Bytes: 10
 std::mutex
 
+148
+Mon May 23 20:02:03 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21e12_bde92b2e
+UUID: 37a21e12_1df79fe3
+Bytes: 4
+Done
+
 155:4-155:32
 Sat May 21 00:58:24 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 37a21e12_7de86322
 Bytes: 160
 How do emulators that start after the adb server does get connected? It seem like this is the only place where this is called, and the loop below lasts forever.
+
+155:4-155:32
+Mon May 23 20:02:03 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21e12_7de86322
+UUID: 37a21e12_3dfa5bcb
+Bytes: 84
+if emulators start after adb server, the emulators will send emu:xxxx to adb server.
 
 163
 Sat May 21 00:58:24 2016 +0000
@@ -32,10 +56,26 @@ UUID: 37a21e12_3ddedb7a
 Bytes: 31
 ports = std::move(retry_ports);
 
+163
+Mon May 23 20:02:03 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21e12_3ddedb7a
+UUID: 37a21e12_dd5b57e2
+Bytes: 44
+changed to vector.swap, which seems simpler.
+
 189
 Sat May 21 00:58:24 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 37a21e12_1ddb1f8b
 Bytes: 35
 retry_ports = std::move(next_ports)
+
+189
+Mon May 23 20:02:03 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 37a21e12_1ddb1f8b
+UUID: 37a21e12_5d680779
+Bytes: 76
+there may have other ports added to retry_ports, so can't just overwrite it.
 

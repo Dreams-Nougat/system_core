@@ -1,5 +1,14 @@
 Revision: 474f7f63edba65128aa8dcd9117aadda78ec49c5
 Patch-set: 7
+File: adb/sysdeps/condition_variable.h
+
+42:8-43:25
+Mon May 23 20:32:03 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_855f66d8
+Bytes: 132
+I don't understand why the lock is acquired and the count adjusted. It seems like the lock should already be acquired by the caller?
+
 File: adb/sysdeps/mutex.h
 
 58
@@ -13,4 +22,22 @@ std::mutex has another name for this:
 native_handle_type native_handle();
 		
 Returns the underlying implementation-defined native handle object.
+
+File: adb/sysdeps_test.cpp
+
+315:8-315:25
+Mon May 23 20:32:03 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_056b5673
+Bytes: 104
+It seems that the more popular usage is to notify outside the critical section, maybe test that instead?
+
+File: adb/transport_local.cpp
+
+410:25-410:35
+Mon May 23 20:32:03 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c91230e_650102a9
+Bytes: 28
+notify outside the critsect?
 

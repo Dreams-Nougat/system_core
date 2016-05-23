@@ -9,6 +9,25 @@ UUID: 3c91230e_855f66d8
 Bytes: 132
 I don't understand why the lock is acquired and the count adjusted. It seems like the lock should already be acquired by the caller?
 
+42:8-43:25
+Mon May 23 20:52:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_855f66d8
+UUID: 3c91230e_c5124ef1
+Bytes: 281
+It works like this:
+thread A:              thread B
+  m.lock()
+  cond.wait(m)    ->   
+                       m.lock()
+
+                       m.unlock()
+
+  m.unlock()
+
+
+If we don't --m.lock_count here, the m.lock() in thread B will find that m.lock_count is already 0 and fatal().
+
 File: adb/sysdeps/mutex.h
 
 58
@@ -23,6 +42,14 @@ native_handle_type native_handle();
 		
 Returns the underlying implementation-defined native handle object.
 
+58
+Mon May 23 20:52:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_45fcfee5
+UUID: 3c91230e_e5eaf2e6
+Bytes: 4
+Done
+
 File: adb/sysdeps_test.cpp
 
 315:8-315:25
@@ -32,6 +59,14 @@ UUID: 3c91230e_056b5673
 Bytes: 104
 It seems that the more popular usage is to notify outside the critical section, maybe test that instead?
 
+315:8-315:25
+Mon May 23 20:52:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_056b5673
+UUID: 3c91230e_45bddee0
+Bytes: 194
+That actually makes no difference. the main thread doesn't have a chance to verify the flag until it holds the lock. So even if cond.notify_one() is seen before "flag = true", it doesn't matter.
+
 File: adb/transport_local.cpp
 
 410:25-410:35
@@ -40,4 +75,12 @@ Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3c91230e_650102a9
 Bytes: 28
 notify outside the critsect?
+
+410:25-410:35
+Mon May 23 20:52:24 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c91230e_650102a9
+UUID: 3c91230e_65a582c1
+Bytes: 14
+no difference.
 

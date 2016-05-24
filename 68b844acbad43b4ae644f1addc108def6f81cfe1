@@ -27,3 +27,11 @@ It's pretty much strictly better than regular include guards, since you can't sc
 
 IMO, we should use it moving forward, and switch all of the include guards we have over at some point.
 
+19
+Tue May 24 20:50:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c24c3f2_0db7f5e4
+UUID: 3c24c3f2_ad6349c9
+Bytes: 90
+sgtm. maybe it should come after the copyright header so folks actually notice it's there?
+

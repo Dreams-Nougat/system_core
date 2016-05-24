@@ -1,0 +1,11 @@
+Revision: 41bd91f2faaa4b85d7a56d84b4bd8e8660bac557
+Patch-set: 1
+File: trusty/storage/proxy/Android.mk
+
+23
+Tue May 24 19:58:02 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c24c3f2_8add8b86
+Bytes: 39
+these are already on your include path.
+

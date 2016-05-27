@@ -1,0 +1,11 @@
+Revision: ed01d17e1bf54edad1989c2da7505e0efb673a9b
+Base-for-patch-set: 1
+File: liblog/Android.mk
+
+30:59-30:72
+Fri May 27 01:06:55 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c037f92_d715a33e
+Bytes: 30
+Hmm, we probably broke this :(
+

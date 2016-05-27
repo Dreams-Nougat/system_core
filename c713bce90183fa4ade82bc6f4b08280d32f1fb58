@@ -9,3 +9,15 @@ UUID: 1c037f92_572d307a
 Bytes: 30
 Is this still needed here now?
 
+123:83-123:95
+Fri May 27 18:33:17 2016 +0000
+Author: Chih-hung Hsieh <1052399@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c037f92_572d307a
+UUID: 1c037f92_378cf449
+Bytes: 356
+Yes, clang-tidy gave two warnings.
+(1) Missing () around 'con', which is true and fixed.
+(2) Missing () around whole "expression-like" body,
+  which is misleading. We cannot add parentheses around the declaration statement.
+This kind of declaration macro is always dangerous. I think we should try to do without it completely in the next round of clean up.
+

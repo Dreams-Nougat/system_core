@@ -40,3 +40,19 @@ Bytes: 201
 
 There is no need for that - there are no host arch libraries to load for NB app.
 
+117
+Tue May 31 04:39:30 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_a337529a
+UUID: 3cbbe33c_03545eb8
+Bytes: 548
+> >>> "it is not going to be used anyways."
+ > >We think it will be used by native bridge via the callback of
+ > native loader.
+ > 
+ > There is no need for that - there are no host arch libraries to
+ > load for NB app.
+
+NB app could have host arch libs. Apps packs cross ABI libs together, checks ABI and load ABI-matched libs.
+Even apps don't, native bridge needs to load a host arch libc.so for a non-host-arch libc.so whenever it's loaded. native bridge lives in mix-ABI world and interacts with many modules of Android, host-arch lib is a must.
+

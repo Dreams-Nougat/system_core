@@ -11,3 +11,21 @@ create one or the other - there is no need in created host namespace, it is not 
 
 (and as an advantage - you no longer need access to default/anonymous namespaces)
 
+117
+Tue May 31 04:16:11 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_83bdee28
+UUID: 3cbbe33c_23dec280
+Bytes: 988
+>>> "it is not going to be used anyways."
+We think it will be used by native bridge via the callback of native loader.
+
+>>> "no longer need access to default/anonymous namespaces"
+I think these is no relationship between the code here and default/anonymous namespaces.
+
+Please note this, for apps run in emulated subsystem, native bridge and dynamic linker always need to load "same" libraries for different ABI. For example, if an app wants to load libc.so in the subsystem, native bridge loads a non-native libc.so and it calls dlopen() to load a native libc.so with at dynamic linker side. This is very important to the emulated subsystem, otherwise nothing works. Though this operation is transparent to apps.
+
+With namespace introduced, namespace should be created at both dynamic linker and native bridge side. Only in this way, can the native bridge load libraries of different ABIs in peered namespace.
+
+That's why "host namespace" and why default/anonymous namespaces are needed.
+

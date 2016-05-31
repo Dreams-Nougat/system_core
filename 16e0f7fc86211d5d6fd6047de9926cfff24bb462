@@ -1,0 +1,13 @@
+Revision: 16e0f7fc86211d5d6fd6047de9926cfff24bb462
+Patch-set: 1
+File: libnativeloader/native_loader.cpp
+
+117
+Tue May 31 03:55:57 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3cbbe33c_83bdee28
+Bytes: 188
+create one or the other - there is no need in created host namespace, it is not going to be used anyways.
+
+(and as an advantage - you no longer need access to default/anonymous namespaces)
+

@@ -29,3 +29,14 @@ With namespace introduced, namespace should be created at both dynamic linker an
 
 That's why "host namespace" and why default/anonymous namespaces are needed.
 
+117
+Tue May 31 04:18:21 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_23dec280
+UUID: 3cbbe33c_a337529a
+Bytes: 201
+>>> "it is not going to be used anyways."
+>We think it will be used by native bridge via the callback of native loader.
+
+There is no need for that - there are no host arch libraries to load for NB app.
+

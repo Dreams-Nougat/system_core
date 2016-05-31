@@ -66,3 +66,11 @@ Bytes: 260
 
 I do not think this is true - if it is it would make NB app different from regular ones. Android does not allow mixing ABI for native libs in an app.
 
+117
+Tue May 31 08:34:02 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_9edd412a
+UUID: 3cbbe33c_9e042172
+Bytes: 345
+native bridge needs to load a host arch libc.so for a non-host-arch libc.so whenever the non-host-arch one is loaded. native bridge lives in mix-ABI world and interacts with many modules of Android, host-arch lib is a must for native bridge implementation. If Android provides mix-ABI support, the mapping of libraries and namespace is required.
+

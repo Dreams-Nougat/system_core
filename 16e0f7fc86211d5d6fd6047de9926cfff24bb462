@@ -74,3 +74,11 @@ UUID: 3cbbe33c_9e042172
 Bytes: 345
 native bridge needs to load a host arch libc.so for a non-host-arch libc.so whenever the non-host-arch one is loaded. native bridge lives in mix-ABI world and interacts with many modules of Android, host-arch lib is a must for native bridge implementation. If Android provides mix-ABI support, the mapping of libraries and namespace is required.
 
+117
+Tue May 31 14:57:56 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_9e042172
+UUID: 3cbbe33c_fe156d3e
+Bytes: 252
+Still application namespace does not have host libraries at least from the nativeloader point of view... if NB implementation requires them it can call linker behind the scenes to create one... there is no need to involve nativeloader in this is there?
+

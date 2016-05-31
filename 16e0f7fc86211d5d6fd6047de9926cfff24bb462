@@ -56,3 +56,13 @@ Bytes: 548
 NB app could have host arch libs. Apps packs cross ABI libs together, checks ABI and load ABI-matched libs.
 Even apps don't, native bridge needs to load a host arch libc.so for a non-host-arch libc.so whenever it's loaded. native bridge lives in mix-ABI world and interacts with many modules of Android, host-arch lib is a must.
 
+117
+Tue May 31 08:26:36 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3cbbe33c_03545eb8
+UUID: 3cbbe33c_9edd412a
+Bytes: 260
+> NB app could have host arch libs. Apps packs cross ABI libs together, checks ABI and load ABI-matched libs.
+
+I do not think this is true - if it is it would make NB app different from regular ones. Android does not allow mixing ABI for native libs in an app.
+

@@ -1,0 +1,33 @@
+Revision: 1d945119c0b7e99dc720c1872c7b833b0a527476
+Patch-set: 3
+File: logcat/logpersist
+
+112:2-112:10
+Thu Jun 02 21:41:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193e319c_f15662f9
+Bytes: 639
+The _act_ of setting this property actually starts logcatd (on property in logcatd.rc)
+
+Also, just felt like saying it, this su is necessary today because selinux currently blocks shell context from accessing this property. One could debate the use of 'su root <command>' as a security hole or hack. Since this script is _only_ delivered on userdebug and eng builds we will play fast and loose with the security in this script.
+
+I expect if nnk@ or jeffv@ looked at this critically they would prefer to open up this property context to be adjustable in shell.te in userdebug_or_eng(`') thus saving a few su process elevation activities ...
+
+113:2-113:21
+Thu Jun 02 21:41:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193e319c_11284e85
+Bytes: 223
+returns the 'value' of ${property} "persist.logd.logpersistd" which is ${service} "logcatd" as set by the property above.
+
+This prints logcatd on the stdout _if_ you have all the appropriate permissions to set the property.
+
+117:2-117:35
+Thu Jun 02 21:41:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 193e319c_b1213aa0
+Bytes: 416
+This returns a PID for the logcat that is running in uid logd to the stdout (145 in the example)
+
+Until pgrep is fixed (see other comments), this will always return error code 0 (success) _even_ if the process does not exist. After pgrep is fixed, it will return code 1 if the process is not found, and return code 0 if the process is found. (code path of pgrep -> ;; -> esac --> EOF does not disturb the exit code).
+

@@ -9,3 +9,13 @@ UUID: 19c9d179_b6d2a8e2
 Bytes: 115
 Is this output meaningful?  If you just want to pass grep's error code along, you can pipe its output to /dev/null.
 
+117
+Thu Jun 02 14:22:21 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 19c9d179_b6d2a8e2
+UUID: 39a5b5c7_45845eb4
+Bytes: 376
+I actually added this to _show_ to me that the service started; the error code (not part of my design criteria) was the bonus ;-}. So yes, to me it is helpful to see _what_ related to ${data} and ${service} got started if there are any bugs levied against the script.
+
+As someone else has already noted, they do not care if I spam the output, as long as we get the error code.
+

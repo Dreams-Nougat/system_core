@@ -9,3 +9,13 @@ UUID: 39a5b5c7_a221e08d
 Bytes: 181
 Does that not make this test useless? I would expect sched_yield to have barriers that would mask any bug in RefBase so reporting a successful test run if you hit this is not ideal.
 
+120
+Thu Jun 02 22:00:48 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 39a5b5c7_a221e08d
+UUID: 193e319c_511736e3
+Bytes: 602
+If we execute that code, yes, largely. The theory was that the sched_yield should not be executed on a multiprocessor, unless the scheduler does something weird or the machine is overloaded.  On second thought, I'm not completely sure I believe that either, though.  Once one thread does a sched_yield, it's probably hard to get out of that mode and start spinning again.
+
+Maybe the best we can easily do is look at _SC_NPROCESSORS_ONLN, and skip the test if it's less than two, assuming the Linux scheduler will do something reasonable to prevent the threads from getting scheduled against each other?
+

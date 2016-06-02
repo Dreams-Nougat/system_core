@@ -1,5 +1,18 @@
 Revision: 66cc58040a4adf79405a0bdce38ba2bd9ca92faf
 Patch-set: 1
+File: /COMMIT_MSG
+
+13
+Thu Jun 02 18:33:43 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39d4d57c_4792eeb3
+Bytes: 52
+Please add:
+
+  Bug: 25355957
+
+to the commit message.
+
 File: libprocessgroup/processgroup.cpp
 
 256

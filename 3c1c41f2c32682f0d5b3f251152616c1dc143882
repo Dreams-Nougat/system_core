@@ -1,0 +1,11 @@
+Revision: 3c1c41f2c32682f0d5b3f251152616c1dc143882
+Patch-set: 3
+File: libutils/tests/RefBase_test.cpp
+
+120
+Thu Jun 02 03:09:16 2016 +0000
+Author: Arve Hjønnevåg <1000205@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 39a5b5c7_a221e08d
+Bytes: 181
+Does that not make this test useless? I would expect sched_yield to have barriers that would mask any bug in RefBase so reporting a successful test run if you hit this is not ideal.
+

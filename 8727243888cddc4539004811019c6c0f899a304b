@@ -1,0 +1,11 @@
+Revision: 8727243888cddc4539004811019c6c0f899a304b
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+141:4-142:10
+Fri Jun 03 03:09:56 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 26c67231_917c7ed2
+Bytes: 40
+Style nit, probably should be "} else {"
+

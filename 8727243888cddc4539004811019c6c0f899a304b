@@ -2,6 +2,13 @@ Revision: 8727243888cddc4539004811019c6c0f899a304b
 Patch-set: 1
 File: healthd/BatteryMonitor.cpp
 
+140:17-140:19
+Fri Jun 03 03:22:16 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 26c67231_71c6b22d
+Bytes: 127
+Also, if you are nulling the buffer at the newline, isn't the count value returned possibly too long here? This all feels iffy.
+
 141:4-142:10
 Fri Jun 03 03:09:56 2016 +0000
 Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>

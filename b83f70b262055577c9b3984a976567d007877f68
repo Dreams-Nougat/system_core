@@ -1,0 +1,36 @@
+Revision: b83f70b262055577c9b3984a976567d007877f68
+Patch-set: 4
+File: libutils/tests/BlobCache_test.cpp
+
+347:6-347:13
+Fri Jun 03 21:03:15 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_40caceb6
+Bytes: 82
+Shall we tighten getFlattenedSize() to real build.id size, maybe in another patch?
+
+File: libutils/tests/README.txt
+
+7:21-7:27
+Fri Jun 03 21:03:15 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_003ba686
+Bytes: 106
+Is this README.txt useful? There is no special rule to run libutils_tests comparing to other native tests.
+
+File: libutils/tests/RefBase_test.cpp
+
+51:14-51:19
+Fri Jun 03 21:03:15 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_c057febc
+Bytes: 94
+define INITIAL_STRONG_VALUE in this file and use it instead? so we can get rid of the comment.
+
+147:4-147:15
+Fri Jun 03 21:03:15 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_0024464c
+Bytes: 38
+Why not omit the test on uniprocessor?
+

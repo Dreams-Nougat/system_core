@@ -1,0 +1,11 @@
+Revision: 8df014d02ec1360fc7937a4a0e331c687125b2d0
+Patch-set: 2
+File: init/builtins.cpp
+
+277:25-277:29
+Fri Jun 03 20:45:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_601552d6
+Bytes: 182
+like i said, this is called --force-vermagic in modprobe, and we should do the same. (not least because i'm assuming we'll have --force-modversion at some point. -f/--force is both.)
+

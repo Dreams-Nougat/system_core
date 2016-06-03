@@ -27,3 +27,11 @@ UUID: 193e319c_3481b8b6
 Bytes: 128
 If you want to be sure your threads run on different cpus you need to set the affinity of both threads to be mutually exclusive.
 
+120
+Fri Jun 03 17:37:24 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 193e319c_3481b8b6
+UUID: 26c67231_571e0665
+Bytes: 185
+I ended up doing that and removing the sched_yield completely.  This just fails (quickly) on a uniprocessor.  If you're running these tests on a uniprocessor, you probably deserve that.
+

@@ -1,0 +1,22 @@
+Revision: f5054756ab9ede19d9da175289d1db1d60a631d5
+Patch-set: 2
+File: init/Android.mk
+
+55
+Fri Jun 03 04:01:48 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 26c67231_116f2eed
+Bytes: 195
+you shouldn't need this. libprocessgroup's Android.mk already contains a LOCAL_EXPORT_C_INCLUDE_DIRS.
+
+(you should _never_ need to add these. you should always prefer to fix the library instead.)
+
+File: libprocessgroup/processgroup.cpp
+
+258
+Fri Jun 03 04:01:48 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 26c67231_91823ea9
+Bytes: 66
+we should just call clock_gettime instead and lose the dependency.
+

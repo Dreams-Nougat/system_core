@@ -2,6 +2,13 @@ Revision: 8727243888cddc4539004811019c6c0f899a304b
 Patch-set: 1
 File: healthd/BatteryMonitor.cpp
 
+124
+Fri Jun 03 03:26:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 26c67231_31d02ada
+Bytes: 188
+just replace this with a call to android::base::Trim(android::base::ReadFileToString(...)) (with a conversion to String8 if we're not ready to clean all this up and switch to std::string)?
+
 140:17-140:19
 Fri Jun 03 03:22:16 2016 +0000
 Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>

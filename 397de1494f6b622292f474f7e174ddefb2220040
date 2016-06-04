@@ -1,0 +1,12 @@
+Revision: 397de1494f6b622292f474f7e174ddefb2220040
+Patch-set: 2
+File: init/devices.cpp
+
+269
+Sat Jun 04 12:54:28 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 83eb9062_61dfd61e
+Bytes: 87
+I would prefer (readable format)
+bool different = strcmp(fcon, secontext) ? true:false;
+

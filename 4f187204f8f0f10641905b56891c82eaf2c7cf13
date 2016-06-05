@@ -9,3 +9,19 @@ UUID: 66ea2a22_c61d5668
 Bytes: 26
 libutils no longer needed?
 
+File: libprocessgroup/processgroup.cpp
+
+249:14-249:21
+Sun Jun 05 02:12:12 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_0fa7511b
+Bytes: 41
+Put the units in the name of the function
+
+259:24-259:34
+Sun Jun 05 02:12:12 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_efab0de5
+Bytes: 117
+Getting seconds here isn't very useful, this function only waits for up to 200ms.  Milliseconds would be more useful.
+

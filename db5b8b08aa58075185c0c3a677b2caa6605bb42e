@@ -1,0 +1,33 @@
+Revision: db5b8b08aa58075185c0c3a677b2caa6605bb42e
+Patch-set: 2
+File: healthd/BatteryMonitor.cpp
+
+155
+Mon Jun 06 04:53:42 2016 +0000
+Author: Michael Scott <1059563@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_fa646936
+Bytes: 79
+Removing lines 136-137 and changing this to:
+if (readFromFile(path, &buf) <= 0)
+
+180
+Mon Jun 06 04:53:42 2016 +0000
+Author: Michael Scott <1059563@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_da652535
+Bytes: 80
+I don't like where I landed this.  I'll move it up a line for consistency in v3.
+
+183
+Mon Jun 06 04:53:42 2016 +0000
+Author: Michael Scott <1059563@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_5a5ab574
+Bytes: 70
+ugh, I thought I had this as stoi() but apparently not.  Fixing in v3.
+
+243
+Mon Jun 06 04:53:42 2016 +0000
+Author: Michael Scott <1059563@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_ba6ae102
+Bytes: 64
+hmm.. not sure how this extra line got here.  Will remove in v3.
+

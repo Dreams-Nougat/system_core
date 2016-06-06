@@ -1,0 +1,13 @@
+Revision: 770ed33b8474d440b1f26e84759ea0c408e2bc98
+Patch-set: 3
+File: healthd/BatteryMonitor.cpp
+
+126
+Mon Jun 06 16:16:41 2016 +0000
+Author: Sandeep Patil <1108565@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 66ea2a22_9a01dda8
+Bytes: 202
+FYI, until this, healthd didn't use std:: and stayed in global and android:: namespace.
+
+Not that this is wrong in any way, in fact, may be this is the start of moving healthd to start using std:: more.
+

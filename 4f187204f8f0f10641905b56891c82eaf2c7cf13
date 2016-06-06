@@ -25,3 +25,12 @@ UUID: 66ea2a22_efab0de5
 Bytes: 117
 Getting seconds here isn't very useful, this function only waits for up to 200ms.  Milliseconds would be more useful.
 
+259:24-259:34
+Mon Jun 06 07:10:43 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 66ea2a22_efab0de5
+UUID: 0325e0a8_cd8249bc
+Bytes: 69
+better..
+time_t startTime = gettime(); // to avoid platform depedency
+

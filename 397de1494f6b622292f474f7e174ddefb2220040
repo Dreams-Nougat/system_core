@@ -10,3 +10,11 @@ Bytes: 87
 I would prefer (readable format)
 bool different = strcmp(fcon, secontext) ? true:false;
 
+269
+Mon Jun 06 15:17:23 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 83eb9062_61dfd61e
+UUID: 66ea2a22_5a98f5d2
+Bytes: 101
+I don't think that actual enhances the readability at all and adds a branch for no particular reason.
+

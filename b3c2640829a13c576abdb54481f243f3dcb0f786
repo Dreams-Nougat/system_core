@@ -1,0 +1,13 @@
+Revision: b3c2640829a13c576abdb54481f243f3dcb0f786
+Patch-set: 1
+File: adb/client/main.cpp
+
+59:43-59:53
+Tue Jun 07 21:43:15 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03724020_cb54c947
+Bytes: 62
+adb.%d.log seems like a better name.
+
+(also, pedantic nit: %u)
+

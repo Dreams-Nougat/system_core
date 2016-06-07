@@ -1,0 +1,13 @@
+Revision: 6bb90e5b55594388ba144fd03dff1442fea3dc42
+Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Tue Jun 07 17:13:30 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03724020_4540ca4e
+Bytes: 328
+For cleanliness, I'm still against this being the first line of this commit message as it doesn't explain what this commit 'does' and won't help anyone viewing `git log --oneline` understand what's happening here.
+
+The first line should be "Add support for ${x.y:-default} expansion" which is what this commit functionally does.
+

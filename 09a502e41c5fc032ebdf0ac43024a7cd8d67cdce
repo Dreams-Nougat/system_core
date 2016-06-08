@@ -36,3 +36,14 @@ UUID: 6853d155_2ca0eb03
 Bytes: 54
 I should be able to update it to 2.0 before N release.
 
+51
+Wed Jun 08 07:33:25 2016 +0000
+Author: Bing Zhu <1082545@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6853d155_2ca0eb03
+UUID: 23310483_79e5a316
+Bytes: 154
+> I should be able to update it to 2.0 before N release.
+
+Hi, Willden,
+May I know what's your current status for Trusty Keymaster 2.0 support?  thank you.
+

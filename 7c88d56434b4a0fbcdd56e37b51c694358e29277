@@ -1,0 +1,11 @@
+Revision: 7c88d56434b4a0fbcdd56e37b51c694358e29277
+Patch-set: 1
+File: rootdir/init.usb.configfs.rc
+
+19:4-19:51
+Wed Jun 08 07:44:51 2016 +0000
+Author: Winter Wang <1100063@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23310483_f9c1b36c
+Bytes: 104
+I think rmdir here is not needed, for switching functions, framework will always kick into "none" first.
+

@@ -1,0 +1,11 @@
+Revision: 5defa1d1d2eb06fbd43694f7744da181e69304c5
+Patch-set: 2
+File: adb/file_sync_service.cpp
+
+65
+Wed Jun 08 16:06:51 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23310483_ff075376
+Bytes: 30
+comment is no longer accurate.
+

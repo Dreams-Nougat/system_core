@@ -13,6 +13,14 @@ However, I could be wrong... Haven't dug into this in a while...
 
 Regardless, removing the xattr saves inode storage space, so it's good to do regardless of whether it's effective or not.
 
+54
+Wed Jun 08 15:55:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23310483_76c850bb
+UUID: 23310483_9f917f5b
+Bytes: 104
+seems like it doesn't cost anything measurable time-wise either, which is something i was worried about.
+
 65
 Wed Jun 08 00:57:09 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

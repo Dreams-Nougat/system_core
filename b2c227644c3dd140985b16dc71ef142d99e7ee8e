@@ -1,0 +1,22 @@
+Revision: b2c227644c3dd140985b16dc71ef142d99e7ee8e
+Patch-set: 1
+File: adb/file_sync_service.cpp
+
+54
+Wed Jun 08 00:57:09 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23310483_76c850bb
+Bytes: 380
+IIRC, yes, this is necessary. A zero defined capability set is a sign that the executable is capabilities aware, whereas a missing capability means that the executable isn't capability aware.
+
+However, I could be wrong... Haven't dug into this in a while...
+
+Regardless, removing the xattr saves inode storage space, so it's good to do regardless of whether it's effective or not.
+
+65
+Wed Jun 08 00:57:09 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23310483_764130ff
+Bytes: 144
+We only set capabilities on files on /system, which support xattrs. So, unlike http://b/23530370, checking the return value here is appropriate.
+

@@ -1,0 +1,20 @@
+Revision: d2bf5069ac395b091b1118e3f718f4f2e3c18b11
+Patch-set: 1
+File: trusty/nvram/nvram_wipe.cpp
+
+51
+Tue Jun 14 15:43:23 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d43385f3_6f922dc7
+Bytes: 31
+just print usage? and return...
+
+File: trusty/nvram/trusty_nvram_implementation.cpp
+
+41
+Tue Jun 14 15:43:23 2016 +0000
+Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 54595544_71c32a68
+Bytes: 76
+= default in the header? similarly recommend an explicit default constructor
+

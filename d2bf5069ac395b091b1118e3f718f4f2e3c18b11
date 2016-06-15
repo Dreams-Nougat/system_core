@@ -9,6 +9,14 @@ UUID: d43385f3_6f922dc7
 Bytes: 31
 just print usage? and return...
 
+51
+Wed Jun 15 12:14:46 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d43385f3_6f922dc7
+UUID: 947cad58_8216ba98
+Bytes: 4
+Done
+
 File: trusty/nvram/trusty_nvram_implementation.cpp
 
 41
@@ -17,4 +25,12 @@ Author: Darren Krahn <1079236@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 54595544_71c32a68
 Bytes: 76
 = default in the header? similarly recommend an explicit default constructor
+
+41
+Wed Jun 15 12:14:46 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 54595544_71c32a68
+UUID: f48a499e_ddf6eb9a
+Bytes: 54
+Actually, I accidentally nuked the code. Restored now.
 

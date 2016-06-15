@@ -1,0 +1,11 @@
+Revision: ffc73a39fd813c8823ca0e4cdc52b79521ce84da
+Patch-set: 1
+File: adb/adb.cpp
+
+331:0-331:1
+Wed Jun 15 21:59:20 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_dd57df40
+Bytes: 30
+Put on the same line as above?
+

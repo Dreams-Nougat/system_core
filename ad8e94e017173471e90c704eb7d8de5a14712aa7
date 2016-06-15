@@ -1,0 +1,11 @@
+Revision: ad8e94e017173471e90c704eb7d8de5a14712aa7
+Patch-set: 1
+File: init/service.cpp
+
+533
+Wed Jun 15 22:32:53 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_dd523ffa
+Bytes: 85
+i thought writing to errno was generally frowned upon outside of the standard library
+

@@ -9,3 +9,11 @@ UUID: d4162500_dd523ffa
 Bytes: 85
 i thought writing to errno was generally frowned upon outside of the standard library
 
+533
+Wed Jun 15 23:49:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_dd523ffa
+UUID: d4162500_28297395
+Bytes: 92
+i can't think of any way in which it matters. but you could just have returned a boolean :-(
+

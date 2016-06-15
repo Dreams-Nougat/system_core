@@ -1,0 +1,11 @@
+Revision: 6b4fbbaed4fa1664ff38715f04320b61584a6ba3
+Patch-set: 1
+File: adb/commandline.cpp
+
+883
+Wed Jun 15 21:58:55 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_3d641336
+Bytes: 111
+If this is going to be printed anyway just add it after the "loading..." message instead of here and "\nfailed"
+

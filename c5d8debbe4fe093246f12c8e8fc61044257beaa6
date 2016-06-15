@@ -1,0 +1,11 @@
+Revision: c5d8debbe4fe093246f12c8e8fc61044257beaa6
+Patch-set: 2
+File: adb/commandline.cpp
+
+883
+Wed Jun 15 22:07:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_5d02af35
+Bytes: 5
+d'oh!
+

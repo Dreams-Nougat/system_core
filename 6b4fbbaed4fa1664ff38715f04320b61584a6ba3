@@ -9,3 +9,12 @@ UUID: d4162500_3d641336
 Bytes: 111
 If this is going to be printed anyway just add it after the "loading..." message instead of here and "\nfailed"
 
+883:4-883:26
+Wed Jun 15 22:01:15 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_9d7447ed
+Bytes: 194
+Does ReadFileToString print any error output? Otherwise, can't you just add the \n to the loading message and remove the \n from the front of the failed message?
+
+Then this line isn't necessary.
+

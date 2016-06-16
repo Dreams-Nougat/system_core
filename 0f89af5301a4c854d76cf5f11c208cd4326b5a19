@@ -30,6 +30,29 @@ UUID: d4162500_fbe2a0db
 Bytes: 90
 re: typedefs in this file --- do we have any C clients left, or can we make this C++-only?
 
+43:0-43:40
+Thu Jun 16 20:14:01 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_0ede3f16
+UUID: d4162500_1e614a91
+Bytes: 451
+(replying to the comment on the other CL here for convenience)
+
+ > I didn't see that you were moving this into debuggerd at first. I
+ > think you should move this the other way around. Having the bionic
+ > linker depend on debuggerd seems bad, but having debuggerd depend
+ > on the bionic linker seems okay.
+
+I'm not very attached to the location of the library, but this way seemed cleaner to me since it keeps the client and server in the same repo.
+
+43:0-43:7
+Thu Jun 16 20:14:01 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_fbe2a0db
+UUID: d4162500_be6bf670
+Bytes: 139
+AFAIK, just cutils. I held off on moving that into libdebuggerd_client until I knew for sure that it'd be going here instead of the linker.
+
 File: include/cutils/debugger.h
 
 31

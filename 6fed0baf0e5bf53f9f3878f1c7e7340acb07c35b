@@ -1,0 +1,11 @@
+Revision: 6fed0baf0e5bf53f9f3878f1c7e7340acb07c35b
+Patch-set: 1
+File: adb/Android.mk
+
+322:22-322:27
+Thu Jun 16 02:08:27 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_ae010b68
+Bytes: 115
+Might be better to use keep_symbols. This doesn't increase the binary as much but still preserves the symbol table.
+

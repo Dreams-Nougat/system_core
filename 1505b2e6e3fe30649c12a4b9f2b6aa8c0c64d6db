@@ -1,0 +1,11 @@
+Revision: 1505b2e6e3fe30649c12a4b9f2b6aa8c0c64d6db
+Patch-set: 1
+File: libbacktrace/UnwindMap.cpp
+
+89:30-89:39
+Thu Jun 16 02:42:42 2016 +0000
+Author: Mathieu Chartier <1015378@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_cef6076d
+Bytes: 154
+What about the case where one thread is modifying the map and another thread is reading? I don't think STL data structures can usually safely handle that.
+

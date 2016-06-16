@@ -1,0 +1,16 @@
+Revision: 0f89af5301a4c854d76cf5f11c208cd4326b5a19
+Patch-set: 1
+File: debuggerd/include/debuggerd/client.h
+
+43:0-43:40
+Thu Jun 16 02:17:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_0ede3f16
+Bytes: 267
+You removed this comment:
+
+// NOTE: Any changes to this structure must also be reflected in
+//       bionic/linker/debugger.cpp.
+
+Given that comment, maybe it would be better to move this to a header file exported by the linker itself, then to always have two copies.
+

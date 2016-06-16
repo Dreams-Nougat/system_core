@@ -1,0 +1,11 @@
+Revision: 62cc17de8c20231185229f39efb84d31e3ba5a0b
+Base-for-patch-set: 1
+File: debuggerd/client/debuggerd_client.cpp
+
+0
+Thu Jun 16 02:17:10 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_8e408f8e
+Bytes: 176
+I think it might be better to have the linker code that this is a copy of put in a library in the linker. This library could then be used here instead of being a straight copy.
+

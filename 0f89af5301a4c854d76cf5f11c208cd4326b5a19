@@ -53,6 +53,14 @@ UUID: d4162500_be6bf670
 Bytes: 139
 AFAIK, just cutils. I held off on moving that into libdebuggerd_client until I knew for sure that it'd be going here instead of the linker.
 
+43:0-43:7
+Thu Jun 16 20:19:11 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_be6bf670
+UUID: d4162500_7e203e40
+Bytes: 213
+The reason I thought it might be better in linker is that it reduces the number of external dependencies that bionic has. However, since debuggerd and the linker are so intertwined, it might not make a difference.
+
 File: include/cutils/debugger.h
 
 31

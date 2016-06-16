@@ -1,5 +1,14 @@
 Revision: 0f89af5301a4c854d76cf5f11c208cd4326b5a19
 Patch-set: 1
+File: debuggerd/Android.mk
+
+60:13-60:25
+Thu Jun 16 17:11:38 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_7bba10d3
+Bytes: 26
+why isn't it using liblog?
+
 File: debuggerd/include/debuggerd/client.h
 
 43:0-43:40
@@ -13,4 +22,20 @@ You removed this comment:
 //       bionic/linker/debugger.cpp.
 
 Given that comment, maybe it would be better to move this to a header file exported by the linker itself, then to always have two copies.
+
+43:0-43:7
+Thu Jun 16 17:11:38 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_fbe2a0db
+Bytes: 90
+re: typedefs in this file --- do we have any C clients left, or can we make this C++-only?
+
+File: include/cutils/debugger.h
+
+31
+Thu Jun 16 17:11:38 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d4162500_7bcfb05b
+Bytes: 84
+seems like this stuff should be in a libdebuggerd_client library rather than cutils?
 

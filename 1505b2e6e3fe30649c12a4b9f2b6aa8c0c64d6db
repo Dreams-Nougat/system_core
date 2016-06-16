@@ -9,3 +9,13 @@ UUID: d4162500_cef6076d
 Bytes: 154
 What about the case where one thread is modifying the map and another thread is reading? I don't think STL data structures can usually safely handle that.
 
+89:30-89:39
+Thu Jun 16 18:06:59 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_cef6076d
+UUID: d4162500_7b58500d
+Bytes: 205
+This whole thing is a mess having to deal with the libunwind interface.
+
+Fortunately, the only place that accesses the map data is the iterator code so I'm going to have to change the callers to do a lock.
+

@@ -9,6 +9,14 @@ UUID: d4162500_7bba10d3
 Bytes: 26
 why isn't it using liblog?
 
+60:13-60:25
+Fri Jun 17 01:04:17 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d4162500_7bba10d3
+UUID: a92eb88e_317da8cd
+Bytes: 132
+Logging happens inside of a signal handler, and liblog doesn't seem to be async signal safe. ("Do not use LOG in a signal handler.")
+
 File: debuggerd/include/debuggerd/client.h
 
 43:0-43:40

@@ -25,6 +25,16 @@ UUID: a92eb88e_51b0340c
 Bytes: 88
 do we have any reason to believe libc_logging is any safer? they both do the same thing.
 
+60:13-60:25
+Fri Jun 17 18:39:48 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a92eb88e_51b0340c
+UUID: 49affc8f_38fa0917
+Bytes: 400
+From inspection, the only thing I can see in libc_logging that's not standards compliant is a use of pthread_mutex_trylock, which should be safe with our implementation.
+
+liblog does lots of stuff that could be problematic. The first log write does a mutex lock (probably not a problem for the linker, possibly a problem for other users), it calls malloc and mmap to allocate an event tag cache, etc.
+
 File: debuggerd/include/debuggerd/client.h
 
 43:0-43:40

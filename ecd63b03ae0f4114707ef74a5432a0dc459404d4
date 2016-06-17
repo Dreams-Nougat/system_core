@@ -1,0 +1,11 @@
+Revision: ecd63b03ae0f4114707ef74a5432a0dc459404d4
+Patch-set: 2
+File: debuggerd/Android.soong.mk
+
+98:23-98:34
+Fri Jun 17 18:52:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 49affc8f_b85e19f9
+Bytes: 56
+as an aside, isn't there some standard #define for this?
+

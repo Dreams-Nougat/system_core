@@ -1,0 +1,11 @@
+Revision: 4b55c20d8094ade7eeccef8bf5e7bb3348ba8ad7
+Patch-set: 1
+File: adb/shell_service.cpp
+
+168
+Sat Jun 18 00:36:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 49affc8f_a14d04b3
+Bytes: 111
+Maybe this would be better as something along the lines of static bool StartThread(std::unique_ptr<Subprocess>)
+

@@ -1,0 +1,11 @@
+Revision: 4e5fd111d84de8f9b0f80a822a29b873921cf75f
+Patch-set: 1
+File: base/logging.cpp
+
+200:11-200:20
+Tue Jun 21 22:23:04 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ee2436af_0de73120
+Bytes: 139
+I prefer to use clock_gettime(CLOCK_MONOTONIC), which shows the time since machine started. It is useful when comparing adb log with dmesg.
+

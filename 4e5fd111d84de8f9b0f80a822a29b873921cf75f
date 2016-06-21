@@ -9,3 +9,11 @@ UUID: ee2436af_0de73120
 Bytes: 139
 I prefer to use clock_gettime(CLOCK_MONOTONIC), which shows the time since machine started. It is useful when comparing adb log with dmesg.
 
+200:11-200:20
+Tue Jun 21 23:28:52 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ee2436af_0de73120
+UUID: 8e849acd_02beeac5
+Bytes: 158
+this is for all logging users. CLOCK_MONOTONIC only makes sense for adbd. if we want, adbd can install its own logger instead of using the default (this one).
+

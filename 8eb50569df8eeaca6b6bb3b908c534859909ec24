@@ -1,0 +1,20 @@
+Revision: 8eb50569df8eeaca6b6bb3b908c534859909ec24
+Patch-set: 1
+File: adb/adb_auth_host.cpp
+
+93:21-93:76
+Wed Jun 22 00:15:22 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8ed2dae5_121dec67
+Bytes: 135
+Would this be betters as path(std::string(private_key_path) + ".pub")?
+
+I don't know which one is easier to read than the other though.
+
+95:8-95:12
+Wed Jun 22 00:15:22 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0ec6ea30_0e8e2b3f
+Bytes: 77
+All other errors in the file use D(...). Should they be switched to PLOG too?
+

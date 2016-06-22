@@ -17,3 +17,10 @@ UUID: 83eb9062_81889a30
 Bytes: 160
 I thought you want to follow the convention. I can only find "-f" option for insmod: http://www.skrenta.com/rt/man/insmod.1.html. Or do we want to add modprobe?
 
+279
+Wed Jun 22 19:41:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4ea462ba_70fe7071
+Bytes: 79
+just args.pop_front() here and replace the loop below with android::base::Join.
+

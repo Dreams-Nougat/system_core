@@ -1,0 +1,11 @@
+Revision: 863d8e11b9b62388d9d00d7192b5e6f39fa089fa
+Base-for-patch-set: 1
+File: adb/adb_auth_host.cpp
+
+69:4-69:16
+Wed Jun 22 00:12:53 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6ed5a6ce_51ccd43f
+Bytes: 153
+new code loses this check and the check in L84. so it prefers gethostname instead of HOSTNAME env, prefers getlogin() instead of LOGNAME. Does it matter?
+

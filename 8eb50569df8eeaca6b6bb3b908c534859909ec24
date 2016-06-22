@@ -11,10 +11,28 @@ Would this be betters as path(std::string(private_key_path) + ".pub")?
 
 I don't know which one is easier to read than the other though.
 
+93:21-93:76
+Wed Jun 22 15:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8ed2dae5_121dec67
+UUID: eec0b617_01c7da49
+Bytes: 4
+Done
+
 95:8-95:12
 Wed Jun 22 00:15:22 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 0ec6ea30_0e8e2b3f
 Bytes: 77
 All other errors in the file use D(...). Should they be switched to PLOG too?
+
+95:8-95:12
+Wed Jun 22 15:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0ec6ea30_0e8e2b3f
+UUID: 6ed5a6ce_a572965f
+Bytes: 207
+PLOG is the form of LOG that adds strerror to the end (i remember it as "P as in perror").
+
+but, yeah, the other failures should probably be ERROR too. i've no idea why this code was so quiet about failures.
 

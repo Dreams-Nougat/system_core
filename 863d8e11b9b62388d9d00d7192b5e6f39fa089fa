@@ -9,3 +9,11 @@ UUID: 6ed5a6ce_51ccd43f
 Bytes: 153
 new code loses this check and the check in L84. so it prefers gethostname instead of HOSTNAME env, prefers getlogin() instead of LOGNAME. Does it matter?
 
+69:4-69:16
+Wed Jun 22 15:38:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6ed5a6ce_51ccd43f
+UUID: 8ed2dae5_416e3cb3
+Bytes: 121
+certainly in general the intention is that environment variables override other sources of truth, so i'll change it back.
+

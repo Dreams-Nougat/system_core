@@ -17,3 +17,11 @@ UUID: 8e849acd_02beeac5
 Bytes: 158
 this is for all logging users. CLOCK_MONOTONIC only makes sense for adbd. if we want, adbd can install its own logger instead of using the default (this one).
 
+200:11-200:20
+Wed Jun 22 00:04:23 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8e849acd_02beeac5
+UUID: ae9cfe2a_3b031708
+Bytes: 6
+I see.
+

@@ -26,6 +26,14 @@ UUID: 03fc052a_de65652e
 Bytes: 52
 this command is to clean file log_path? add comment?
 
+507:20-507:33
+Thu Jun 23 21:15:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03fc052a_de65652e
+UUID: e3c37158_756728d0
+Bytes: 4
+Done
+
 512:8-512:24
 Thu Jun 23 03:32:57 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,10 +41,30 @@ UUID: 03fc052a_9e46bd92
 Bytes: 183
 a more stable way might be to write something at first after adb_signal_test_helper has installed signal handlers. And you can wait until you can read it using self.device.shell(cat).
 
+512:8-512:24
+Thu Jun 23 21:15:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03fc052a_9e46bd92
+UUID: e3c37158_356db0b2
+Bytes: 74
+I just removed this check, it should be unnecessary with the shell script.
+
 516:7-517:19
 Thu Jun 23 03:32:57 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8e33bad6_70142890
 Bytes: 263
 what is the meaning of this comment? my understanding is: if you send SIGINT to adb client, the connect is closed on adb server and adbd, and local_socket_fd is closed on adbd. Then the adb_signal_test_helper gets SIGHUP. right? can we add some comment like this.
+
+516:7-517:19
+Thu Jun 23 21:15:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8e33bad6_70142890
+UUID: e3c37158_155c346c
+Bytes: 238
+The comment is about the local value of signal.SIGHUP/SIGINT potentially not matching the one on the device (if you're running the test on a mac or windows)
+
+(But this code was wrong, anyway. Removed.)
+
+Is the test description sufficient?
 

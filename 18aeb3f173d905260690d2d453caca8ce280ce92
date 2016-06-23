@@ -1,0 +1,25 @@
+Revision: 18aeb3f173d905260690d2d453caca8ce280ce92
+Patch-set: 2
+File: adb/test_device.py
+
+507:20-507:33
+Thu Jun 23 03:32:57 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03fc052a_de65652e
+Bytes: 52
+this command is to clean file log_path? add comment?
+
+512:8-512:24
+Thu Jun 23 03:32:57 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03fc052a_9e46bd92
+Bytes: 183
+a more stable way might be to write something at first after adb_signal_test_helper has installed signal handlers. And you can wait until you can read it using self.device.shell(cat).
+
+516:7-517:19
+Thu Jun 23 03:32:57 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8e33bad6_70142890
+Bytes: 263
+what is the meaning of this comment? my understanding is: if you send SIGINT to adb client, the connect is closed on adb server and adbd, and local_socket_fd is closed on adbd. Then the adb_signal_test_helper gets SIGHUP. right? can we add some comment like this.
+

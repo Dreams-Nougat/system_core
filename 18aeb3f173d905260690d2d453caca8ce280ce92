@@ -26,6 +26,14 @@ UUID: e3c37158_f89ded72
 Bytes: 297
 more specific? the real process is you send ctrl-c to adb client, then adb server closes connection, and adbd closes the local_socket_fd, then protocol_fd is detected dead in ShellSubprocess, then it sends SIGHUP to the child process. It is hard to imagine all these things with the short comment.
 
+500:8-500:70
+Thu Jun 23 22:11:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3c37158_f89ded72
+UUID: e3c37158_58f261a3
+Bytes: 265
+I don't think we should include that sort of information in the test description. It doesn't matter how much we change the implementation, the point of the test is to make sure that if someone uses `adb shell screenrecord` and ctrl-Cs it, the process gets a SIGHUP.
+
 507:20-507:33
 Thu Jun 23 03:32:57 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

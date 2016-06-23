@@ -49,6 +49,14 @@ UUID: e3c37158_356db0b2
 Bytes: 74
 I just removed this check, it should be unnecessary with the shell script.
 
+512:8-512:24
+Thu Jun 23 21:56:28 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3c37158_356db0b2
+UUID: e3c37158_75bc88e6
+Bytes: 66
+Just kidding, it's even more necessary. Doing the proposed change.
+
 516:7-517:19
 Thu Jun 23 03:32:57 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

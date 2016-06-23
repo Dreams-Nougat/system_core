@@ -1,0 +1,11 @@
+Revision: cd5d7376dceb14b5bb5d84540192b63b3c86b4d3
+Patch-set: 2
+File: adb/shell_service.cpp
+
+764:8-764:14
+Thu Jun 23 03:19:47 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 23f5893d_1f23c3ac
+Bytes: 33
+close local_socket before return?
+

@@ -1,5 +1,14 @@
 Revision: 18aeb3f173d905260690d2d453caca8ce280ce92
 Patch-set: 2
+File: adb/signal_test_helper.cpp
+
+39
+Thu Jun 23 03:47:14 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0e90aac9_1e1dadb5
+Bytes: 33
+might want to return from here...
+
 File: adb/test_device.py
 
 507:20-507:33

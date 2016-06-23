@@ -9,6 +9,14 @@ UUID: 0e90aac9_1e1dadb5
 Bytes: 33
 might want to return from here...
 
+39
+Thu Jun 23 17:00:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0e90aac9_1e1dadb5
+UUID: 03c6c530_ee207f3e
+Bytes: 47
+http://man7.org/linux/man-pages/man3/err.3.html
+
 File: adb/test_device.py
 
 507:20-507:33

@@ -19,3 +19,11 @@ Oops. Doing this in a follow up commit for ease of cherry-picking.
 
 (enh: should this fix go into N or N-MR1?)
 
+764:8-764:14
+Thu Jun 23 19:04:15 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a3617921_7650ee1d
+UUID: c3666d36_5aa9958a
+Bytes: 212
+LGTM to do in another patch. I suggest still using unique_fd for local_socket, just losing the dup(). Although creating a thread is unlikely to fail, I think we'd better also fix in N and N-MR1 to keep code safe.
+

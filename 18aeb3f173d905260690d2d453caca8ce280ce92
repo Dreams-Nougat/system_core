@@ -19,6 +19,13 @@ http://man7.org/linux/man-pages/man3/err.3.html
 
 File: adb/test_device.py
 
+500:8-500:70
+Thu Jun 23 22:03:17 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e3c37158_f89ded72
+Bytes: 297
+more specific? the real process is you send ctrl-c to adb client, then adb server closes connection, and adbd closes the local_socket_fd, then protocol_fd is detected dead in ShellSubprocess, then it sends SIGHUP to the child process. It is hard to imagine all these things with the short comment.
+
 507:20-507:33
 Thu Jun 23 03:32:57 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -56,6 +63,19 @@ Parent: e3c37158_356db0b2
 UUID: e3c37158_75bc88e6
 Bytes: 66
 Just kidding, it's even more necessary. Doing the proposed change.
+
+512:8-512:24
+Thu Jun 23 22:03:17 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e3c37158_75bc88e6
+UUID: e3c37158_7892bd66
+Bytes: 198
+And in L521, you may cat the log_path before the shell script can finished writing it. you may write in the log file like:
+""test start
+SIGHUP
+test end""
+
+and search for key strings in the log file.
 
 516:7-517:19
 Thu Jun 23 03:32:57 2016 +0000

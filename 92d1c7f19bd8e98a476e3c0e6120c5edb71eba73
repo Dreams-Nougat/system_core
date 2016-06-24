@@ -9,6 +9,14 @@ UUID: 03cb25e3_86450a37
 Bytes: 16
 just use static.
 
+54
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_86450a37
+UUID: c00583ff_7cf9b986
+Bytes: 4
+Done
+
 57:18-57:43
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -23,12 +31,28 @@ UUID: 03cb25e3_a6400627
 Bytes: 16
 why the newline?
 
+58:0-58:1
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_a6400627
+UUID: c00583ff_9cca454e
+Bytes: 4
+Done
+
 62
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03cb25e3_e64afe44
 Bytes: 18
 use a better name.
+
+62
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_e64afe44
+UUID: c00583ff_bccd016a
+Bytes: 4
+Done
 
 65
 Fri Jun 24 19:26:09 2016 +0000
@@ -37,6 +61,14 @@ UUID: 03cb25e3_c64f0253
 Bytes: 12
 c++ comments
 
+65
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_c64f0253
+UUID: c00583ff_5cfefd70
+Bytes: 4
+Done
+
 66:20-66:29
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -44,12 +76,28 @@ UUID: 03cb25e3_c6a54218
 Bytes: 22
 oh, just use a lambda.
 
+66:20-66:29
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_c6a54218
+UUID: c00583ff_dcc0cd33
+Bytes: 39
+Compiler doesn't seem to like a lambda.
+
 72
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03cb25e3_263536c8
 Bytes: 19
 braces or same line
+
+72
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_263536c8
+UUID: c00583ff_3cf331a9
+Bytes: 4
+Done
 
 475
 Fri Jun 24 19:26:09 2016 +0000
@@ -115,6 +163,14 @@ UUID: 03cb25e3_465312f6
 Bytes: 44
 don't exit with -1; use a valid return code.
 
+488
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_465312f6
+UUID: c00583ff_bc9f416a
+Bytes: 4
+Done
+
 492
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -139,4 +195,12 @@ Parent: c00583ff_fc95c94d
 UUID: a31b395a_238a6adb
 Bytes: 235
 grr. i wish those functions were all called Parse* instead of Handle*. i just meant "this function is way too large, and this is making it worse; let's break this out into a new function, and then inline `init` into that new function".
+
+492
+Fri Jun 24 22:44:22 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a31b395a_238a6adb
+UUID: c00583ff_9c9c8576
+Bytes: 51
+I can do that. This function is too large, I agree.
 

@@ -141,6 +141,19 @@ UUID: a31b395a_038d6ef2
 Bytes: 131
 if you don't mind that your logging won't actually go anywhere until we write a kmsg logger and switch the rest of init over... :-(
 
+478
+Fri Jun 24 23:20:14 2016 +0000
+Author: Lee Campbell <1052976@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a31b395a_038d6ef2
+UUID: a31b395a_0392cebc
+Bytes: 265
+I can't remember why I didn't land this??
+But anyhow here is a CL from Aug last year that changes Init to use libbase logging
+
+https://android-review.googlesource.com/#/c/162872/7
+
+It will need fixing up for today's init but it probably does 90% of the boring work.
+
 482
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

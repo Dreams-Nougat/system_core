@@ -60,6 +60,14 @@ type*
 
 but don't introduce a name for a constant that's only used once.
 
+475
+Fri Jun 24 22:03:10 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_866ceab6
+UUID: 8309d5df_1a4dddb1
+Bytes: 4
+Done
+
 478
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -69,12 +77,28 @@ sadly, the shitty init logging requires a \n
 
 i keep meaning to switch init over to libbase's google-style logging, but haven't found the time.
 
+478
+Fri Jun 24 22:03:10 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_e6615ebd
+UUID: 8309d5df_7a4a199b
+Bytes: 95
+I can use google-style logging for these new statements if you don't mind breaking consistency.
+
 482
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03cb25e3_c666e2d2
 Bytes: 62
 all of these should have the usual ": %s", ... strerror(errno)
+
+482
+Fri Jun 24 22:03:10 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_c666e2d2
+UUID: c00583ff_3c8c5147
+Bytes: 4
+Done
 
 488
 Fri Jun 24 19:26:09 2016 +0000
@@ -89,4 +113,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 03cb25e3_e6a03e0a
 Bytes: 94
 why just pull out that part? seems like this whole section of code should just be HandlePidns.
+
+492
+Fri Jun 24 22:03:10 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 03cb25e3_e6a03e0a
+UUID: c00583ff_fc95c94d
+Bytes: 197
+HandlePidns is called when init reads the directive in the .rc file, but this section happens on fork -- not sure how to combine the two.
+
+Do you mean I should just inline the init() function here?
 

@@ -1,0 +1,92 @@
+Revision: 92d1c7f19bd8e98a476e3c0e6120c5edb71eba73
+Patch-set: 4
+File: init/service.cpp
+
+54
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_86450a37
+Bytes: 16
+just use static.
+
+57:18-57:43
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_4625d299
+Bytes: 25
+just comment out the name
+
+58:0-58:1
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_a6400627
+Bytes: 16
+why the newline?
+
+62
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_e64afe44
+Bytes: 18
+use a better name.
+
+65
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_c64f0253
+Bytes: 12
+c++ comments
+
+66:20-66:29
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_c6a54218
+Bytes: 22
+oh, just use a lambda.
+
+72
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_263536c8
+Bytes: 19
+braces or same line
+
+475
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_866ceab6
+Bytes: 71
+type*
+
+but don't introduce a name for a constant that's only used once.
+
+478
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_e6615ebd
+Bytes: 143
+sadly, the shitty init logging requires a \n
+
+i keep meaning to switch init over to libbase's google-style logging, but haven't found the time.
+
+482
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_c666e2d2
+Bytes: 62
+all of these should have the usual ": %s", ... strerror(errno)
+
+488
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_465312f6
+Bytes: 44
+don't exit with -1; use a valid return code.
+
+492
+Fri Jun 24 19:26:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 03cb25e3_e6a03e0a
+Bytes: 94
+why just pull out that part? seems like this whole section of code should just be HandlePidns.
+

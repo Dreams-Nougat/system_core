@@ -1,0 +1,11 @@
+Revision: aa9f37185fa9a1dc0ff90a5cf9c35a7d54f3da4b
+Base-for-patch-set: 1
+File: init/devices.cpp
+
+734
+Sat Jun 25 01:21:40 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c00583ff_1cd99500
+Bytes: 168
+I'd leave this part so the /dev/mtd/mtd%d dev nodes don't move.  Even if they are never used by the platform, devices might use them for the radio or another processor.
+

@@ -154,6 +154,16 @@ https://android-review.googlesource.com/#/c/162872/7
 
 It will need fixing up for today's init but it probably does 90% of the boring work.
 
+478
+Sat Jun 25 01:31:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a31b395a_0392cebc
+UUID: a31b395a_86408c27
+Bytes: 162
+gah, i'd completely forgotten about that. and didn't see this message until i'd already reinvented the wheel:
+
+https://android-review.googlesource.com/#/c/243119/
+
 482
 Fri Jun 24 19:26:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,32 @@
+Revision: c2ded863eaf09622802a30f749d3561cc969e69d
+Patch-set: 1
+File: include/utils/LruCache.h
+
+60
+Mon Jun 27 21:41:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c04ca38d_643c8ad8
+Bytes: 228
+This should be doable without a virtual method call, at the cost of some complexity (a flag + placement new into a union + manual destructor call). The difference might be unmeasurable compared to the goal of this patch, though.
+
+67
+Mon Jun 27 21:41:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c04ca38d_041a7665
+Bytes: 23
+Make the classes final?
+
+74:19-74:23
+Mon Jun 27 21:41:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c04ca38d_a43de2af
+Bytes: 39
+Isn't the naming scheme here backwards?
+
+76
+Mon Jun 27 21:41:22 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c04ca38d_44206e91
+Bytes: 15
+The methods too
+

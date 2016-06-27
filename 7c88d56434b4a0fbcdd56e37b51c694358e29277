@@ -9,3 +9,12 @@ UUID: 23310483_f9c1b36c
 Bytes: 104
 I think rmdir here is not needed, for switching functions, framework will always kick into "none" first.
 
+19:4-19:51
+Mon Jun 27 21:01:00 2016 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 23310483_f9c1b36c
+UUID: c04ca38d_84e426b1
+Bytes: 242
+private boolean trySetEnabledFunctions(String functions, boolean forceRestart)appears to be the only function through which the UsbFunctions seem to be changed.
+@Amit: Did you notice a different path through which the functions are switched ?
+

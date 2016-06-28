@@ -1,0 +1,18 @@
+Revision: f20275b784f5412e0f23c159abc04d3bcc2fa279
+Patch-set: 8
+File: init/service.cpp
+
+57:63-57:69
+Tue Jun 28 21:57:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20df3ff4_b202deae
+Bytes: 37
+ps8 switches to a consistent == -1...
+
+76:24-76:59
+Tue Jun 28 21:57:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20df3ff4_52313297
+Bytes: 21
+...and uses a lambda.
+

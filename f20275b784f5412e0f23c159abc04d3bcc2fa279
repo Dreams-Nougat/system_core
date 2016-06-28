@@ -9,6 +9,13 @@ UUID: 20df3ff4_b202deae
 Bytes: 37
 ps8 switches to a consistent == -1...
 
+58
+Tue Jun 28 22:04:16 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 20df3ff4_122baa25
+Bytes: 36
+should these be FATAL or call _exit?
+
 76:24-76:59
 Tue Jun 28 21:57:40 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

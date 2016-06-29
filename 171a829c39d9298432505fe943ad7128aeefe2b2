@@ -9,6 +9,14 @@ UUID: 408c3387_50c44c46
 Bytes: 160
 There's a cross-process race here you may have made more common by calling this more often.  Maybe use a unique name so a process doesn't get EEXIST from mknod?
 
+46
+Wed Jun 29 23:57:57 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 408c3387_50c44c46
+UUID: c09903fb_fcde4918
+Bytes: 63
+it's still only called if you actually try to log. (see below.)
+
 59
 Wed Jun 29 23:54:41 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,4 +25,12 @@ Bytes: 275
 does this mean everything that links against libcutils will now open klog?  that might cause lots of selinux failures from the mknod, etc.  I'm also not sure what opening klog costs in the kernel.
 
 Also, if zygote opens this it will stay open in apps and they could abuse it.
+
+59
+Wed Jun 29 23:57:57 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 408c3387_b0ded817
+UUID: c09903fb_5cb9fdd8
+Bytes: 123
+no, it means anyone who calls klog_writev will [in a thread-safe manner] call __open_klog if it hasn't already been called.
 

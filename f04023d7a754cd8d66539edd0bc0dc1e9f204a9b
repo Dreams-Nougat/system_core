@@ -9,6 +9,14 @@ UUID: 40ea7321_e0de8218
 Bytes: 5
 PLOG?
 
+36:8-36:11
+Thu Jun 30 18:00:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 40ea7321_e0de8218
+UUID: bd4d1ab1_1c59d549
+Bytes: 4
+Done
+
 File: adb/adb_auth.h
 
 48
@@ -17,6 +25,14 @@ Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c047433d_2cbc13ca
 Bytes: 87
 Are these supposed to not be called? Should they just be removed or turned into aborts?
+
+48
+Thu Jun 30 18:00:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c047433d_2cbc13ca
+UUID: bd4d1ab1_9c64c5fc
+Bytes: 99
+unclear. danalbert left it like this when he started factoring things out of the adb.c monolith :-)
 
 File: adb/adb_auth_client.cpp
 
@@ -30,4 +46,12 @@ Bytes: 372
 Implicit conversion from C style 0 success to bool wasn't apparent until I'd read the whole patch. Read this is looking for at least one good key rather than failing on the first bad one.
 
 Some documentation on `for_each_public_key` stating that it stops iterating if the callback returns true and returns true if stopped would be good too.
+
+92
+Thu Jun 30 18:00:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c0202385_a4fd8274
+UUID: bd4d1ab1_fc6189ea
+Bytes: 106
+this stuff made sense when i thought this code was reusable, but it's not, so i've inlined it all instead.
 

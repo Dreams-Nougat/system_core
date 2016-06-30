@@ -1,0 +1,18 @@
+Revision: 1704983fae9d9419dde0b61273c3b486d70d98a4
+Patch-set: 2
+File: init/init.cpp
+
+456:4-456:10
+Thu Jun 30 17:44:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd4d1ab1_fc4b499d
+Bytes: 29
+shouldn't need `struct` here.
+
+458:0-459:21
+Thu Jun 30 17:44:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd4d1ab1_5c5d1d63
+Bytes: 83
+same line or braces: https://google.github.io/styleguide/cppguide.html#Conditionals
+

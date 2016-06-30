@@ -34,3 +34,11 @@ UUID: c09903fb_5cb9fdd8
 Bytes: 123
 no, it means anyone who calls klog_writev will [in a thread-safe manner] call __open_klog if it hasn't already been called.
 
+59
+Thu Jun 30 01:19:25 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c09903fb_5cb9fdd8
+UUID: 408c3387_902f14e8
+Bytes: 29
+That is surprisingly sensible
+

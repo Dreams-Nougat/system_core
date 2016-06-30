@@ -1,0 +1,11 @@
+Revision: b3be60435cd87987c36d44622d192dcf33303083
+Patch-set: 3
+File: adb/adb_auth_client.cpp
+
+60:17-60:21
+Thu Jun 30 18:06:17 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd4d1ab1_1c2b9589
+Bytes: 1
+&
+

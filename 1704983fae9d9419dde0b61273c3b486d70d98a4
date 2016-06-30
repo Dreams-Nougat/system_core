@@ -32,3 +32,11 @@ UUID: bd4d1ab1_dffabf43
 Bytes: 125
 Is there a chance of having more than one gadget controller to be registered ? Do we always want the first one to be chosen ?
 
+457:0-459:21
+Thu Jun 30 20:33:50 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_dffabf43
+UUID: bd4d1ab1_bf8093ac
+Bytes: 175
+Maybe should this logic only trigger if sys.usb.controller isn't set by device specific logic? Or is this too early, so device specific logic could then override this default?
+

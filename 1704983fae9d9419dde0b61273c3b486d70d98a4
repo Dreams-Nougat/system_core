@@ -1,5 +1,14 @@
 Revision: 1704983fae9d9419dde0b61273c3b486d70d98a4
 Patch-set: 2
+File: /COMMIT_MSG
+
+15:29-16:46
+Thu Jun 30 20:28:25 2016 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd4d1ab1_ffe69bb9
+Bytes: 217
+I think you are already implying this but trying to make sure. The Vendor id and the gadget id parts will stay in init.$platform.usb.rc just to give the flexibility to enable partners to ship with their own if needed.
+
 File: init/init.cpp
 
 456:4-456:10
@@ -15,4 +24,11 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd4d1ab1_5c5d1d63
 Bytes: 83
 same line or braces: https://google.github.io/styleguide/cppguide.html#Conditionals
+
+457:0-459:21
+Thu Jun 30 20:28:25 2016 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd4d1ab1_dffabf43
+Bytes: 125
+Is there a chance of having more than one gadget controller to be registered ? Do we always want the first one to be chosen ?
 

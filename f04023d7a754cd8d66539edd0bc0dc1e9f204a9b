@@ -1,0 +1,33 @@
+Revision: f04023d7a754cd8d66539edd0bc0dc1e9f204a9b
+Patch-set: 1
+File: adb/adb_auth.cpp
+
+36:8-36:11
+Thu Jun 30 01:33:04 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40ea7321_e0de8218
+Bytes: 5
+PLOG?
+
+File: adb/adb_auth.h
+
+48
+Thu Jun 30 01:33:04 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c047433d_2cbc13ca
+Bytes: 87
+Are these supposed to not be called? Should they just be removed or turned into aborts?
+
+File: adb/adb_auth_client.cpp
+
+92
+Thu Jun 30 01:33:04 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c0202385_a4fd8274
+Bytes: 372
+`return RSA_verify(...) != 0;`
+
+Implicit conversion from C style 0 success to bool wasn't apparent until I'd read the whole patch. Read this is looking for at least one good key rather than failing on the first bad one.
+
+Some documentation on `for_each_public_key` stating that it stops iterating if the callback returns true and returns true if stopped would be good too.
+

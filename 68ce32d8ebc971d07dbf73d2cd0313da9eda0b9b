@@ -1,0 +1,13 @@
+Revision: 68ce32d8ebc971d07dbf73d2cd0313da9eda0b9b
+Patch-set: 1
+File: init/init.cpp
+
+454
+Thu Jun 30 04:15:00 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 40ea7321_601a72c3
+Bytes: 179
+would you like to LOG(ERROR) here and exit? 
+
+it will ensure kernel compatibility in future. (in case /sys/class/udc - gets changed which is not likely the case for near future :)
+

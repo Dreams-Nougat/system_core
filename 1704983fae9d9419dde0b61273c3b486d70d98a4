@@ -9,6 +9,14 @@ UUID: bd4d1ab1_ffe69bb9
 Bytes: 217
 I think you are already implying this but trying to make sure. The Vendor id and the gadget id parts will stay in init.$platform.usb.rc just to give the flexibility to enable partners to ship with their own if needed.
 
+15:29-16:46
+Fri Jul 01 14:07:41 2016 +0000
+Author: Amit Pundir <1031448@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_ffe69bb9
+UUID: 5dcfbe72_c191225e
+Bytes: 276
+Yes I realized this later hence updated the commit message. But I always thought that the standard Android gadget functions always set same idVendor and idProduct. So if AOSP partners may ship their products with changed Vendor/Product IDs then I'll reword the commit message.
+
 File: init/init.cpp
 
 456:4-456:10
@@ -17,6 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd4d1ab1_fc4b499d
 Bytes: 29
 shouldn't need `struct` here.
+
+456:4-456:10
+Fri Jul 01 14:07:41 2016 +0000
+Author: Amit Pundir <1031448@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_fc4b499d
+UUID: 5dcfbe72_4186f22c
+Bytes: 4
+Ack.
 
 458:0-459:21
 Thu Jun 30 17:44:25 2016 +0000
@@ -39,4 +55,20 @@ Parent: bd4d1ab1_dffabf43
 UUID: bd4d1ab1_bf8093ac
 Bytes: 175
 Maybe should this logic only trigger if sys.usb.controller isn't set by device specific logic? Or is this too early, so device specific logic could then override this default?
+
+458:0-459:21
+Fri Jul 01 14:07:41 2016 +0000
+Author: Amit Pundir <1031448@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_5c5d1d63
+UUID: 5dcfbe72_618bf633
+Bytes: 3
+Ok.
+
+457:0-459:21
+Fri Jul 01 14:07:41 2016 +0000
+Author: Amit Pundir <1031448@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_dffabf43
+UUID: 5dcfbe72_8190fa5b
+Bytes: 203
+Theoretically yes. And we may not want the first one to be chosen everytime. Thats why this piece of code is triggered before parsing init.rc. So this property can be override later in platform rc files.
 

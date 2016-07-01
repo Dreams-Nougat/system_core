@@ -34,6 +34,14 @@ UUID: bd4d1ab1_9c64c5fc
 Bytes: 99
 unclear. danalbert left it like this when he started factoring things out of the adb.c monolith :-)
 
+48
+Fri Jul 01 17:48:21 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd4d1ab1_9c64c5fc
+UUID: bd1efa57_2e341b3a
+Bytes: 178
+I think so. they are here just to be linkable by adb.cpp or adb_auth.cpp. make them abort is a good idea. maybe we can wrap adb_auth functions into classes to make it more clear.
+
 File: adb/adb_auth_client.cpp
 
 92

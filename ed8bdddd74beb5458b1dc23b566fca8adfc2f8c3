@@ -1,0 +1,11 @@
+Revision: ed8bdddd74beb5458b1dc23b566fca8adfc2f8c3
+Patch-set: 4
+File: adb/transport.h
+
+110:21-110:25
+Fri Jul 01 17:48:21 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd1efa57_2e865bfa
+Bytes: 121
+shall we make it private and operate it by member functions? I hope we can reduce member variables exposed in this class.
+

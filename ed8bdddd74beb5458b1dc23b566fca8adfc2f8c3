@@ -1,5 +1,23 @@
 Revision: ed8bdddd74beb5458b1dc23b566fca8adfc2f8c3
 Patch-set: 4
+File: adb/adb_auth.cpp
+
+53
+Fri Jul 01 18:29:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd1efa57_fabb81d1
+Bytes: 37
+Is this saying that we leak the RSA*?
+
+File: adb/adb_auth.h
+
+47:5-47:30
+Fri Jul 01 18:29:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bd1efa57_9a9b6d7c
+Bytes: 153
+Any reason to not make this just return the std::deque? This doesn't return success, and the only caller I could find calls it with an empty destination.
+
 File: adb/transport.h
 
 110:21-110:25

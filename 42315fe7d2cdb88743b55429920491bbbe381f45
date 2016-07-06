@@ -1,0 +1,33 @@
+Revision: 42315fe7d2cdb88743b55429920491bbbe381f45
+Patch-set: 1
+File: /COMMIT_MSG
+
+11
+Wed Jul 06 17:38:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_a8b5e38f
+Bytes: 208
+note that as long as they're written on the same line, this is fine: https://google.github.io/styleguide/cppguide.html#Conditionals
+
+okay:
+
+  if (x) {
+    y();
+  }
+
+  if (x) y();
+
+not okay:
+
+  if (x)
+    y();
+
+File: libcutils/canned_fs_config.c
+
+65:54-65:56
+Wed Jul 06 17:38:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_e898bb32
+Bytes: 267
+this seems like a pointless step backwards. (a) this is perfectly valid and (b) a better step for long term code health would be renaming this from .c to .cpp anyway. even if you don't take advantage of C++ now, it makes it easier to do so when making future changes.
+

@@ -1,0 +1,19 @@
+Revision: 87dbf6a39e7fc788f8b46419dca09792cc3a9b61
+Patch-set: 1
+File: /COMMIT_MSG
+
+8:0-8:15
+Wed Jul 06 21:29:50 2016 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_8e52e7f9
+Bytes: 19
+Next line ??
+Bug:??
+
+10:0-10:52
+Wed Jul 06 21:29:50 2016 +0000
+Author: Badhri Jagan Sridharan <1042384@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_ae36cbd0
+Bytes: 33
+Shouldn't this be the last line ?
+

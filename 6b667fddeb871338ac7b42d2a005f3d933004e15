@@ -1,0 +1,11 @@
+Revision: 6b667fddeb871338ac7b42d2a005f3d933004e15
+Base-for-patch-set: 1
+File: libusbhost/usbhost.c
+
+0
+Wed Jul 06 21:32:58 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_8ea4a71e
+Bytes: 57
+Don't change the permissions on the file to be executable
+

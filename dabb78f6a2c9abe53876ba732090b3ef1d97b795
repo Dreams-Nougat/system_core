@@ -38,6 +38,13 @@ UUID: 5db89ed4_0daa6196
 Bytes: 135
 NIT: For balance in the library, missing an unload_canned_fs_config to free up the associated resources. Need a cleanup patch for this.
 
+52
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_481d275d
+Bytes: 11
+getline(3).
+
 57:0-57:38
 Wed Jul 06 16:08:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -55,6 +62,14 @@ UUID: 5db89ed4_e8743be2
 Bytes: 130
 I am fairly certain that this is allowed per C99, its not a C++ thing. However, what every style you may want is a separate issue.
 
+57:0-57:38
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5db89ed4_e8743be2
+UUID: 5db89ed4_88001ffe
+Bytes: 238
+yeah, that was only true in C*8*9, and even most of the C code does the right thing and doesn't declare until it can initialize. it's a small step towards better code, but it's one you can even take in C. we shouldn't wind this backwards.
+
 58:0-64:3
 Wed Jul 06 16:08:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -66,12 +81,27 @@ bool rootdir = line[0] == ' ';
 p->path = strdup(rootdir ? "" : strtok(line, " "));
 p->uid = atoi(strtok(rootdir ? line : NULL, " "));
 
+67
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_6812eb4d
+Bytes: 60
+none of these calls actually check that the input was valid.
+
 70:13-70:21
 Wed Jul 06 16:08:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5db89ed4_4d9b798a
 Bytes: 32
 NIT: unnecessary initialization.
+
+70:13-70:21
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5db89ed4_4d9b798a
+UUID: 5db89ed4_a8040311
+Bytes: 48
+(i'd certainly rather see this as a while loop.)
 
 73:48-73:50
 Wed Jul 06 16:08:57 2016 +0000
@@ -84,6 +114,14 @@ static const char cap[] = "capabilities="
 
 replace 13 with sizeof(cap) - 1
 
+73:48-73:50
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5db89ed4_8d959155
+UUID: 5db89ed4_e80efb2e
+Bytes: 99
+no, use strlen. it's optimized out by the compiler too, and easier to read and harder to get wrong.
+
 71:0-77:18
 Wed Jul 06 16:08:57 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -92,6 +130,14 @@ Bytes: 86
 BADNIT: Tempted ... for a later day ...
 
 while ((token = strtok(NULL, " ")) != NULL) {
+
+71:0-77:18
+Wed Jul 06 17:56:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5db89ed4_6d903d64
+UUID: 5db89ed4_2818f36d
+Bytes: 124
+well, long-term would be android::base::Split. i think we could switch to a while loop in even the most superficial cleanup.
 
 95:0-97:58
 Wed Jul 06 16:08:57 2016 +0000

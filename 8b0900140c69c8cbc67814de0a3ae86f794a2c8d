@@ -1,0 +1,11 @@
+Revision: 8b0900140c69c8cbc67814de0a3ae86f794a2c8d
+Patch-set: 2
+File: libcutils/canned_fs_config.c
+
+45:10-45:11
+Wed Jul 06 17:44:41 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_e8619bea
+Bytes: 4
+farg
+

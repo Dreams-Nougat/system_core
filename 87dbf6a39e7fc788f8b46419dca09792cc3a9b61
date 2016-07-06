@@ -17,3 +17,13 @@ UUID: 5db89ed4_ae36cbd0
 Bytes: 33
 Shouldn't this be the last line ?
 
+10:0-10:52
+Wed Jul 06 21:34:30 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5db89ed4_ae36cbd0
+UUID: 5db89ed4_0eb09751
+Bytes: 171
+Yes, and because it is not Gerrit did not recognize the Change ID and autoassigned its own.  For the next patch, use:
+
+Change-Id: I88e202b3ad40d84f64af7fa63d432e1c266e129e
+

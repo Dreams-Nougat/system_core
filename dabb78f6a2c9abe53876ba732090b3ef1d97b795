@@ -1,0 +1,88 @@
+Revision: dabb78f6a2c9abe53876ba732090b3ef1d97b795
+Patch-set: 1
+File: libcutils/canned_fs_config.c
+
+17:0-23:20
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_edac4db5
+Bytes: 129
+NIT: headers are not sorted correctly for the Android coding standard. We need a cleanup patch for this and the tabs in the file.
+
+41:1-41:51
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_6db91df4
+Bytes: 356
+What about stripping leading '/' to ensure that all paths are correct for the comparison, and thus allow a solitary / to denote the root directory as a bonus?
+
+static int path_compare(const void* a, const void* b) {
+    Path* ap = a;
+    Path* bp = b;
+    return strcmp(ap->path + (ap->path[0] == '/'),
+                  bp->path + (bp->path[0] == '/'));
+}
+
+44:4-44:43
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_0daa6196
+Bytes: 135
+NIT: For balance in the library, missing an unload_canned_fs_config to free up the associated resources. Need a cleanup patch for this.
+
+57:0-57:38
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_2d964563
+Bytes: 127
+NIT: This is a C++'ism where parameters are defined in the middle where used.
+
+Need a cleanup patch to make this 'C' compliant.
+
+58:0-64:3
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_edd1ad2c
+Bytes: 173
+KISS to get around strtok misbehavior?
+
+bool rootdir = line[0] == ' ';
+p->path = strdup(rootdir ? "" : strtok(line, " "));
+p->uid = atoi(strtok(rootdir ? line : NULL, " "));
+
+70:13-70:21
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_4d9b798a
+Bytes: 32
+NIT: unnecessary initialization.
+
+73:48-73:50
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_8d959155
+Bytes: 80
+NIT:
+
+static const char cap[] = "capabilities="
+
+replace 13 with sizeof(cap) - 1
+
+71:0-77:18
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_6d903d64
+Bytes: 86
+BADNIT: Tempted ... for a later day ...
+
+while ((token = strtok(NULL, " ")) != NULL) {
+
+95:0-97:58
+Wed Jul 06 16:08:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5db89ed4_cd9f8979
+Bytes: 369
+Indent fubar, this entire file needs a cleanup patch to replace tabs with spaces. But that is another day.
+
+In addition, with comment for line 41 above, this checking piece is not needed. If 41 is accepted to enhance this CL, then "correct" indent to tabs, we (me? mkayyash?) will use a separate followup CL to switch the file over to Android coding standard of spaces.
+

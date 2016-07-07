@@ -2,6 +2,20 @@ Revision: f6ecf11258185671e0e0189104629000d114ca2b
 Patch-set: 2
 File: include/nativebridge/native_bridge.h
 
+224:0-224:18
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd3dd29f_8e425b2f
+Bytes: 14
+why the ifdef?
+
+230:15-230:24
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd3dd29f_0e2cab8b
+Bytes: 67
+I assume all libraries? What if only one is not supported? Document
+
 231:9-231:24
 Thu Jul 07 06:41:46 2016 +0000
 Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -21,7 +35,66 @@ one way to implement this is to scan directories and see of .so files have suppo
 
 The difference between this and the old one is this should be determined for application before any of the actual loading starts. Also old one uses path to .so file - this one should be able to accept list of directories (native library search path)
 
+231:9-231:24
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d8cca86_d6803412
+UUID: 3d2daa77_a8f55b22
+Bytes: 65
+Yea, it looks a bit redundant. Any reason to not use the old one?
+
+237:5-237:15
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9d42162f_abd2a963
+Bytes: 20
+document the format.
+
+250:72-250:80
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5dda5eaa_c92431b7
+Bytes: 83
+By original, you mean the namespace maintained by the linker? Be explicit about it.
+
+253:100-253:103
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5d36dec8_e9f595ef
+Bytes: 13
+line too long
+
+256:0-257:75
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3dd12a8d_c830af91
+Bytes: 70
+I'm not sure I get this. What is it used for and when is it permitted?
+
+File: libnativebridge/native_bridge.cc
+
+158:6-158:15
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd787271_9638cc94
+Bytes: 61
+where is this coming from? Did you delete the arg by mistake?
+
+516:52-516:53
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5d36dec8_49e5c13c
+Bytes: 132
+Let's add a symbolic name. isCompatibleWith(kVersion2) reads better. Or maybe rename isCompatibleWith to isCompetibleWithVersion(..)
+
 File: libnativeloader/native_loader.cpp
+
+75:0-77:47
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5d36dec8_c9c7f1a4
+Bytes: 148
+Looks a bit odd to me. You could get away with a single void* and get_as_native_bridge_ns() and get_as_android_ns() together with some extra checks.
 
 149:25-149:48
 Thu Jul 07 06:41:46 2016 +0000
@@ -62,6 +135,16 @@ It looks like an accident to me... I do not think these apps are doing it on pur
 
 Also can you send me names of apps doing this (the more than better)?
 
+152:26-152:42
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd26b29b_a643c652
+UUID: 5d4dfe58_d1f08402
+Bytes: 247
+Agree with Dimitry. I am not sure what these apps you are mentioning are doing but it looks to be a mistake. They would not be able to use different ABI libs on a normal device. There's no reason to support it on native bridge.
+
+Do you have names?
+
 302:9-302:25
 Thu Jul 07 06:41:46 2016 +0000
 Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -77,6 +160,16 @@ For the first one, the path is library path of app. NativeBridge cannot determin
 For the second one(we won't expect it here right?), the path is a library path, seems ok.
 
 I think that, InitNamespaces is just like let NativeBridge turn into a mode such that it could well handle library loading. I suggest let namespace of NativeBridge always init. This only actually happens on Intel devices which really equipped with nativebridge implementation.
+
+302:9-302:25
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bdc43ad3_44494ea5
+UUID: fd3dd29f_ce4c6365
+Bytes: 162
+I am not sure I follow. Why cannot NB determine that the apps needs it here?
+
+Also, please remember this is a generic piece of functionality (not Intel specific).
 
 454:19-454:26
 Thu Jul 07 06:41:46 2016 +0000
@@ -107,4 +200,12 @@ Parent: bdc43ad3_849fc61d
 UUID: fd26b29b_2630b6f4
 Bytes: 33
 it is currently done by art code.
+
+477:5-477:23
+Thu Jul 07 16:36:24 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd26b29b_2630b6f4
+UUID: fd787271_565714b8
+Bytes: 77
+Where? You mean UnloadNativeBridge? That's only for the entire native bridge.
 

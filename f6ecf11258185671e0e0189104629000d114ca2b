@@ -9,12 +9,28 @@ UUID: fd3dd29f_8e425b2f
 Bytes: 14
 why the ifdef?
 
+224:0-224:18
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd3dd29f_8e425b2f
+UUID: fd26b29b_663e2eaa
+Bytes: 57
+mostly because host linker does not support namespaces...
+
 230:15-230:24
 Thu Jul 07 16:36:24 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd3dd29f_0e2cab8b
 Bytes: 67
 I assume all libraries? What if only one is not supported? Document
+
+230:15-230:24
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd3dd29f_0e2cab8b
+UUID: fd26b29b_66b0ee53
+Bytes: 65
+well - what if app has 1 corrupted library which is never loaded?
 
 231:9-231:24
 Thu Jul 07 06:41:46 2016 +0000
@@ -42,6 +58,14 @@ Parent: 3d8cca86_d6803412
 UUID: 3d2daa77_a8f55b22
 Bytes: 65
 Yea, it looks a bit redundant. Any reason to not use the old one?
+
+231:9-231:24
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3d2daa77_a8f55b22
+UUID: fd26b29b_86940ab3
+Bytes: 217
+the old one assumes path to an actual library. Changing expected behavior and parameter of already exiting function did not seem right to me (even though parameter has the same c++ type - the actual type is different)
 
 237:5-237:15
 Thu Jul 07 16:36:24 2016 +0000
@@ -71,6 +95,14 @@ UUID: 3dd12a8d_c830af91
 Bytes: 70
 I'm not sure I get this. What is it used for and when is it permitted?
 
+256:0-257:75
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3dd12a8d_c830af91
+UUID: fd26b29b_06a9faf4
+Bytes: 60
+for example - currently everything under /data is permitted.
+
 File: libnativebridge/native_bridge.cc
 
 158:6-158:15
@@ -79,6 +111,14 @@ Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fd787271_9638cc94
 Bytes: 61
 where is this coming from? Did you delete the arg by mistake?
+
+158:6-158:15
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd787271_9638cc94
+UUID: fd26b29b_e67a1e58
+Bytes: 58
+I am not sure what happened here - this is coming from ps1
 
 516:52-516:53
 Thu Jul 07 16:36:24 2016 +0000
@@ -95,6 +135,16 @@ Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 5d36dec8_c9c7f1a4
 Bytes: 148
 Looks a bit odd to me. You could get away with a single void* and get_as_native_bridge_ns() and get_as_android_ns() together with some extra checks.
+
+75:0-77:47
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d36dec8_c9c7f1a4
+UUID: fd26b29b_e6f5beef
+Bytes: 199
+I would like to avoid static/reinterpret_casts...
+
+I will need a flag anyways.. I was considering flag + union but it effectively is a hidden reinterpret_cast<> so I went with explicit pointer types.
 
 149:25-149:48
 Thu Jul 07 06:41:46 2016 +0000
@@ -208,4 +258,12 @@ Parent: fd26b29b_2630b6f4
 UUID: fd787271_565714b8
 Bytes: 77
 Where? You mean UnloadNativeBridge? That's only for the entire native bridge.
+
+477:5-477:23
+Thu Jul 07 17:09:41 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd787271_565714b8
+UUID: fd26b29b_86cdeaca
+Bytes: 42
+You are right - I forgot to add it - done.
 

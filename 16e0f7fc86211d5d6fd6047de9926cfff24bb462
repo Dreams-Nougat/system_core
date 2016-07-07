@@ -1,5 +1,14 @@
 Revision: 16e0f7fc86211d5d6fd6047de9926cfff24bb462
 Patch-set: 1
+File: libnativebridge/tests/Android.mk
+
+24:0-25:35
+Thu Jul 07 16:43:55 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fd26b29b_a61ca662
+Bytes: 63
+this files are missing - can you please add them to the commit?
+
 File: libnativeloader/native_loader.cpp
 
 117

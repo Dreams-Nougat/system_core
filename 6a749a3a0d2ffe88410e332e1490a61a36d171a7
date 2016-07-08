@@ -1,0 +1,34 @@
+Revision: 6a749a3a0d2ffe88410e332e1490a61a36d171a7
+Patch-set: 1
+File: /COMMIT_MSG
+
+14
+Fri Jul 08 19:25:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fafb1832_b29408fd
+Bytes: 20
+(we use 100 columns)
+
+File: init/service.cpp
+
+55:48-56:4
+Fri Jul 08 19:25:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fafb1832_32c238f7
+Bytes: 25
+ugh (and also wrong, no?)
+
+64
+Fri Jul 08 19:25:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fafb1832_92c34cfd
+Bytes: 37
+yeah, don't do that. 100 columns ftw!
+
+77:33-78:8
+Fri Jul 08 19:25:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fafb1832_12b73c99
+Bytes: 3
+ugh
+

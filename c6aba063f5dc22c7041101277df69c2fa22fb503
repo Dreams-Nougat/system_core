@@ -9,12 +9,28 @@ UUID: fafb1832_52fa6411
 Bytes: 128
 since all but one of these doesn't actually use `rc` outside the test, you can lose the local and move these inside their `if`s.
 
+61:4-62:14
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_52fa6411
+UUID: ba7a80a8_742c489f
+Bytes: 4
+Done
+
 67
 Fri Jul 08 19:45:07 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fafb1832_b20ac817
 Bytes: 48
 do unique_ptr holders make this better or worse?
+
+67
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_b20ac817
+UUID: ba7a80a8_142154a6
+Bytes: 47
+unique_ptr for the char*'s to avoid the free's?
 
 210:47-210:51
 Fri Jul 08 19:45:07 2016 +0000
@@ -23,6 +39,14 @@ UUID: fafb1832_92f0ec33
 Bytes: 32
 service_context, socket_context?
 
+210:47-210:51
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_92f0ec33
+UUID: ba7a80a8_5427ccbd
+Bytes: 49
+There's socketcon below, so maybe just |context|?
+
 212:8-214:89
 Fri Jul 08 19:45:07 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -30,10 +54,33 @@ UUID: fafb1832_f2173049
 Bytes: 46
 the old formatting of this was easier to read.
 
+212:8-214:89
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_f2173049
+UUID: ba7a80a8_943b24d8
+Bytes: 4
+Done
+
 225
 Fri Jul 08 19:45:07 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fafb1832_72f56021
 Bytes: 42
 should we check the return value here too?
+
+225
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_72f56021
+UUID: ba7a80a8_b438a0db
+Bytes: 155
+This call actually fails for the console service, I'm guessing that's why it's not currently being checked. Happy to investigate further in a follow-up CL.
+
+229:17-229:22
+Fri Jul 08 20:43:36 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba7a80a8_3426d0bf
+Bytes: 27
+Also made these PLOG(FATAL)
 

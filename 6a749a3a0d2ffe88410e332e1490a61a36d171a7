@@ -26,6 +26,14 @@ UUID: ba7a80a8_f465b8f8
 Bytes: 46
 I might need to adjust my clang-format config.
 
+55:48-56:4
+Fri Jul 08 19:31:52 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba7a80a8_f465b8f8
+UUID: fafb1832_12697cd3
+Bytes: 98
+seems like we have a bunch under system/core/ already, none of them consistent with each other :-(
+
 64
 Fri Jul 08 19:25:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -195,6 +195,22 @@ Agree with Dimitry. I am not sure what these apps you are mentioning are doing b
 
 Do you have names?
 
+152:26-152:42
+Fri Jul 08 03:17:53 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5d4dfe58_d1f08402
+UUID: fafb1832_04049a0f
+Bytes: 111
+Yes, I have. And I will list the reasons of why nativebridge_namespace and android_namespace is needed in mail.
+
+152:26-152:42
+Fri Jul 08 03:17:53 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd26b29b_a643c652
+UUID: fafb1832_24ff9601
+Bytes: 151
+Well, on platforms with nativebridge implementation, we really need both nativebridge_namespace and android_namespace. I will list the reasons in mail.
+
 302:9-302:25
 Thu Jul 07 06:41:46 2016 +0000
 Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>

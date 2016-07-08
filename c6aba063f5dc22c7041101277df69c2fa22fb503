@@ -32,6 +32,14 @@ UUID: ba7a80a8_142154a6
 Bytes: 47
 unique_ptr for the char*'s to avoid the free's?
 
+67
+Fri Jul 08 22:31:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba7a80a8_142154a6
+UUID: fafb1832_cdd25531
+Bytes: 123
+yeah. it's always awkward when you have one of these ugly C APIs to interact with. i wish they'd just returned the pointer.
+
 210:47-210:51
 Fri Jul 08 19:45:07 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -76,6 +84,14 @@ Parent: fafb1832_72f56021
 UUID: ba7a80a8_b438a0db
 Bytes: 155
 This call actually fails for the console service, I'm guessing that's why it's not currently being checked. Happy to investigate further in a follow-up CL.
+
+225
+Fri Jul 08 22:31:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba7a80a8_b438a0db
+UUID: fafb1832_adcf0989
+Bytes: 29
+oh, yeah, that's interesting.
 
 229:17-229:22
 Fri Jul 08 20:43:36 2016 +0000

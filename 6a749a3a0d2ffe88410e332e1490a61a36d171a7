@@ -18,6 +18,14 @@ UUID: fafb1832_32c238f7
 Bytes: 25
 ugh (and also wrong, no?)
 
+55:48-56:4
+Fri Jul 08 19:28:08 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_32c238f7
+UUID: ba7a80a8_f465b8f8
+Bytes: 46
+I might need to adjust my clang-format config.
+
 64
 Fri Jul 08 19:25:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +33,26 @@ UUID: fafb1832_92c34cfd
 Bytes: 37
 yeah, don't do that. 100 columns ftw!
 
+64
+Fri Jul 08 19:28:08 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_92c34cfd
+UUID: ba7a80a8_3454900f
+Bytes: 8
+Will do.
+
 77:33-78:8
 Fri Jul 08 19:25:15 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fafb1832_12b73c99
 Bytes: 3
 ugh
+
+77:33-78:8
+Fri Jul 08 19:28:08 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_12b73c99
+UUID: ba7a80a8_d468bcd1
+Bytes: 9
+Will fix.
 

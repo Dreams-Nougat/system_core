@@ -40,6 +40,14 @@ UUID: fafb1832_cdd25531
 Bytes: 123
 yeah. it's always awkward when you have one of these ugly C APIs to interact with. i wish they'd just returned the pointer.
 
+67
+Mon Jul 11 13:59:27 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fafb1832_cdd25531
+UUID: ba7a80a8_7729aae5
+Bytes: 190
+The new PS uses unique_ptrs, but I still had to declare a couple of raw pointers because I cannot do &unique_ptr.get(), because get() is an rvalue (or something). Let me know what you think.
+
 210:47-210:51
 Fri Jul 08 19:45:07 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 6d71cc357017a5ee958dd2187dd8c4e20a45430e
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+211:7-211:20
+Mon Jul 11 15:50:08 2016 +0000
+Author: Richard Coles <1021004@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: da2494af_30a366b1
+Bytes: 5
+typo?
+

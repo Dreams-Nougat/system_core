@@ -11,3 +11,11 @@ coward :-)
 
 srcfs and objfs worked fine in C++, and they were a lot more complicated than sdcard. i don't think anyone would have wanted to try to write those in C.
 
+14
+Wed Jul 13 17:24:21 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba144089_bafa4ebb
+UUID: 9a921c65_51bdf476
+Bytes: 170
+I'll make you a deal: I'll do it, but in this CL I'll just static_cast all the pointers instead of using new. Then I'll follow up with another CL using smart pointers =).
+

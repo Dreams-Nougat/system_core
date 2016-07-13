@@ -1,0 +1,18 @@
+Revision: 801e1eb50bf7151f3f94c007d7d7ec96ffc0c80e
+Patch-set: 1
+File: liblog/logger_lock.c
+
+52:30-52:34
+Wed Jul 13 00:41:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_048a2bca
+Bytes: 6
+! HOST
+
+73:0-76:6
+Wed Jul 13 00:41:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_245ac73d
+Bytes: 111
+Determined not necessary in testing, but we want to cover all our bases for any doubt cast on the cache values.
+

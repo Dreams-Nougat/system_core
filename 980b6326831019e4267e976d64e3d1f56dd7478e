@@ -1,0 +1,11 @@
+Revision: 980b6326831019e4267e976d64e3d1f56dd7478e
+Patch-set: 2
+File: libpixelflinger/arch-mips/col32cb16blend.S
+
+62
+Wed Jul 13 18:37:02 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_3582ef70
+Bytes: 19
+balign for clarity?
+

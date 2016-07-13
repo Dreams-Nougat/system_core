@@ -1,0 +1,13 @@
+Revision: c255f25ccb700880483c73d9ff823bf9540dd616
+Patch-set: 4
+File: /COMMIT_MSG
+
+14
+Wed Jul 13 17:19:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_bafa4ebb
+Bytes: 164
+coward :-)
+
+srcfs and objfs worked fine in C++, and they were a lot more complicated than sdcard. i don't think anyone would have wanted to try to write those in C.
+

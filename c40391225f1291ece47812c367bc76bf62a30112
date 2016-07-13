@@ -24,3 +24,10 @@ This would be better if we could combine the libz and libz-host modules, and jus
 
 But this should work too -- we just may not share libz with other libraries in the process, or include libz-host.so when it isn't necessary.
 
+71:0-71:24
+Wed Jul 13 03:16:10 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_bf4fe0aa
+Bytes: 98
+Ok, you were right, this needs to be cc_library { host_supported: true, device_supported: false }.
+

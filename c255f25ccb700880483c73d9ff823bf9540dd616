@@ -19,3 +19,13 @@ UUID: 9a921c65_51bdf476
 Bytes: 170
 I'll make you a deal: I'll do it, but in this CL I'll just static_cast all the pointers instead of using new. Then I'll follow up with another CL using smart pointers =).
 
+14
+Wed Jul 13 18:43:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9a921c65_51bdf476
+UUID: ba144089_55cfabc0
+Bytes: 207
+sgtm. or leave this CL as-is and move the other file in a separate CL. starting to break the monolith is worthwhile in its own right.
+
+(and lots of small changes is usually better/safer than one big change!)
+

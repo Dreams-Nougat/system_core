@@ -1,0 +1,11 @@
+Revision: 1a45423ff5c57c83326bdcca4a7b706cfd95380c
+Patch-set: 1
+File: libnativebridge/Android.bp
+
+27
+Wed Jul 13 22:27:55 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_16e1ba31
+Bytes: 6
+Remove
+

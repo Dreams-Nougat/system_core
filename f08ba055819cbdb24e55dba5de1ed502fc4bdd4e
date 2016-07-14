@@ -1,0 +1,11 @@
+Revision: f08ba055819cbdb24e55dba5de1ed502fc4bdd4e
+Patch-set: 2
+File: sdcard/fuse.cpp
+
+1409:35-1409:41
+Thu Jul 14 16:46:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba144089_ea74f14c
+Bytes: 75
+(remember you don't actually need all the `struct`s now you're in C++ :-) )
+

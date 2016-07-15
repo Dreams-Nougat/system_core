@@ -1,0 +1,11 @@
+Revision: 07af8dcb8c598f6bec8267b8175106fb33077e5f
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+578:20-592:21
+Fri Jul 15 18:25:51 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_9fcc1f44
+Bytes: 50
+template here? This block is identical to 558-572.
+

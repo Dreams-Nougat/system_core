@@ -1,0 +1,25 @@
+Revision: b2415e3b6318201f1b68789faf705456aa2fe669
+Patch-set: 3
+File: init/init.cpp
+
+451
+Fri Jul 15 22:03:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_caad47b5
+Bytes: 53
+nit: we don't name constants that are only used once.
+
+453
+Fri Jul 15 22:03:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_aab28310
+Bytes: 46
+nit: we use decltype ("don't make me think!").
+
+456
+Fri Jul 15 22:03:04 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_0ab8efee
+Bytes: 11
+nit: type*.
+

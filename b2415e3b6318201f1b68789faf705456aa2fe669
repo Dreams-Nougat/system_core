@@ -30,3 +30,11 @@ UUID: 3ab8503d_0a910f69
 Bytes: 27
 Was it added intentionally?
 
+500:4-500:22
+Fri Jul 15 22:10:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ab8503d_0a910f69
+UUID: 3ab8503d_659bac7c
+Bytes: 88
+the logging code changed since they originally wrote it. nothing to do with this change.
+

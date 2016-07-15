@@ -1,0 +1,11 @@
+Revision: d20ef81e81ee7f2ee1c531fd81a5c5680526d297
+Patch-set: 1
+File: logd/event.logtags
+
+38
+Fri Jul 15 18:09:48 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_7f421b9d
+Bytes: 160
+Should this line be removed? If it is being left as a historical artifact, then perhaps a comment line so this doesn't look like an accidental removal of liblog
+

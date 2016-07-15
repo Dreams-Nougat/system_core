@@ -9,3 +9,13 @@ UUID: 3ab8503d_7f421b9d
 Bytes: 160
 Should this line be removed? If it is being left as a historical artifact, then perhaps a comment line so this doesn't look like an accidental removal of liblog
 
+38
+Fri Jul 15 18:16:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ab8503d_7f421b9d
+UUID: 3ab8503d_ff58cb75
+Bytes: 199
+I added it so that folks would know it was reserved (elsewhere, in system/core/liblog/event.logtags). I thought I'd leave a clue.
+
+I can remove it (but then someone will wonder where 1005 went? ;-} )
+

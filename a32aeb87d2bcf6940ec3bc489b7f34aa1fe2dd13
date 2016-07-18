@@ -1,0 +1,18 @@
+Revision: a32aeb87d2bcf6940ec3bc489b7f34aa1fe2dd13
+Patch-set: 1
+File: /COMMIT_MSG
+
+13:60-13:61
+Mon Jul 18 17:54:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_cde55e46
+Bytes: 20
+remove one space ...
+
+21:53-23:18
+Mon Jul 18 17:54:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_add3ba69
+Bytes: 16
+drop this fluff.
+

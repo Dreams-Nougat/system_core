@@ -9,12 +9,28 @@ UUID: c04ca38d_643c8ad8
 Bytes: 228
 This should be doable without a virtual method call, at the cost of some complexity (a flag + placement new into a union + manual destructor call). The difference might be unmeasurable compared to the goal of this patch, though.
 
+60
+Mon Jul 18 13:57:34 2016 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c04ca38d_643c8ad8
+UUID: fa26b89b_262a7670
+Bytes: 314
+Do we do that kinds of hacks usually? Is this performance sensitive enough as to do that? As I'm seeing it, you'll avoid two vtable entries (destructor and getKey) but have the flag (so you have one word). And no vtable indirection but flag checking (so unclear for number of instructions). Am I missing something?
+
 67
 Mon Jun 27 21:41:22 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c04ca38d_041a7665
 Bytes: 23
 Make the classes final?
+
+67
+Mon Jul 18 13:57:34 2016 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c04ca38d_041a7665
+UUID: caf9233e_1dabd321
+Bytes: 4
+Done
 
 74:19-74:23
 Mon Jun 27 21:41:22 2016 +0000
@@ -23,10 +39,26 @@ UUID: c04ca38d_a43de2af
 Bytes: 39
 Isn't the naming scheme here backwards?
 
+74:19-74:23
+Mon Jul 18 13:57:34 2016 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c04ca38d_a43de2af
+UUID: caf9233e_fd9f07f8
+Bytes: 4
+Done
+
 76
 Mon Jun 27 21:41:22 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c04ca38d_44206e91
 Bytes: 15
 The methods too
+
+76
+Mon Jul 18 13:57:34 2016 +0000
+Author: Sergio Giro <1067467@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c04ca38d_44206e91
+UUID: eafc272d_fe5a61f8
+Bytes: 4
+Done
 

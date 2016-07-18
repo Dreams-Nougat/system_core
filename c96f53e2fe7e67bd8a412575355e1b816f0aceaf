@@ -1,0 +1,11 @@
+Revision: c96f53e2fe7e67bd8a412575355e1b816f0aceaf
+Patch-set: 2
+File: sdcard/sdcard.cpp
+
+212:45-212:81
+Mon Jul 18 15:58:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_7a5346cd
+Bytes: 42
+(<android-base/macros.h> has arraysize().)
+

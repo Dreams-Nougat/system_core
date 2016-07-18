@@ -16,3 +16,12 @@ UUID: 3ab8503d_add3ba69
 Bytes: 16
 drop this fluff.
 
+File: logd/LogAudit.cpp
+
+187:8-192:10
+Mon Jul 18 19:29:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ab8503d_50758145
+Bytes: 34
+Prudent to remove example here ...
+

@@ -18,3 +18,11 @@ Bytes: 242
 private boolean trySetEnabledFunctions(String functions, boolean forceRestart)appears to be the only function through which the UsbFunctions seem to be changed.
 @Amit: Did you notice a different path through which the functions are switched ?
 
+19:4-19:51
+Tue Jul 19 07:40:01 2016 +0000
+Author: Amit Pundir <1031448@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c04ca38d_84e426b1
+UUID: 2ab2bfc5_68f9e382
+Bytes: 176
+Function switching path is fine. I did not remove function links from configs/b.1 before removing rndis function. Thats why it was acting weird. Uploading new patch for review.
+

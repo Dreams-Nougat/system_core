@@ -1,0 +1,11 @@
+Revision: a377ff0d4a1286b4e53b42f8a3a6731f42661a34
+Patch-set: 3
+File: /COMMIT_MSG
+
+9:0-10:18
+Tue Jul 19 18:23:49 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a2d6b96_74f9deeb
+Bytes: 43
++1 to standardizing security sensitive code
+

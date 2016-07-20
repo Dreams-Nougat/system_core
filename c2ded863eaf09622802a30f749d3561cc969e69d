@@ -27,6 +27,14 @@ Bytes: 111
 
 No idea, I just wanted to mention it in case it was. :-)
 
+60
+Wed Jul 20 18:40:39 2016 +0000
+Author: Chris Craik <1010334@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3ab8503d_102db939
+UUID: caef63c1_ed29c535
+Bytes: 236
+You could use the benchmarking infrastructure in hwui, one of the primary consumers of LruCache. Would be fairly straightforward to write a benchmark around one of the primary use cases (e.g. TessellationCache) that has big, hefty keys.
+
 67
 Mon Jun 27 21:41:22 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,13 @@
+Revision: 9ba23e44f81359e5e78883b7d77baa97975ee76c
+Patch-set: 1
+File: logcat/logpersist
+
+172:0-178:2
+Thu Jul 21 21:17:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa94ef50_dbf57f23
+Bytes: 179
+To prevent the multiple calls to getprop use this instead:
+
+if [ X"${log_tag}" != X"`getprop ${log_tag_property}`"] && [ X"${logd_logpersistd}" != X"`getprop ${property}`" ]; then
+

@@ -1,0 +1,12 @@
+Revision: ab8fe428db9503a623e946a55cbf7b3605dc5658
+Patch-set: 2
+File: trusty/nvram/trusty_nvram_implementation.h
+
+40
+Sat Jul 23 13:49:08 2016 +0000
+Author: Bing Zhu <1082545@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0a67bba0_079d3656
+Bytes: 212
+supposed that you're talking "Trusty app" here.. which is the code located as below, right? if yes, but I didn't see any code here? something i missed? thankyou.
+https://android.googlesource.com/trusty/app/nvram/
+

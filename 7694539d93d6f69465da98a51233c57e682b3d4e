@@ -9,3 +9,11 @@ UUID: 8a248b48_1371ecdd
 Bytes: 54
 Can this be empty? If so, what's the expected outcome?
 
+149:53-149:65
+Mon Jul 25 22:50:25 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8a248b48_1371ecdd
+UUID: ca45a3e6_f20eae36
+Bytes: 66
+yes, we should default to android_namespace_t in this case. - done
+

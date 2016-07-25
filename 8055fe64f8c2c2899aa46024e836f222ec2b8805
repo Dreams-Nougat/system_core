@@ -1,0 +1,13 @@
+Revision: 8055fe64f8c2c2899aa46024e836f222ec2b8805
+Patch-set: 4
+File: libnativeloader/native_loader.cpp
+
+39
+Thu Jul 21 03:54:25 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa94ef50_efd43d13
+Bytes: 144
+wrong upload.
+
+local repo doesn't include patch set 2&3. Do we have a way to abandon patch set 4? sorry for that, not familiar with aosp/gerrit.
+

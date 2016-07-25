@@ -1,0 +1,11 @@
+Revision: 8a1a6c44215402a43bcd8075ed89a3dd4328c7ad
+Patch-set: 5
+File: libnativebridge/tests/Android.mk
+
+24:0-25:35
+Thu Jul 21 19:21:18 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: aa94ef50_60677af5
+Bytes: 27
+still missing these files..
+

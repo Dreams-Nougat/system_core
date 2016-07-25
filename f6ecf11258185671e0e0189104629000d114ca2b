@@ -120,6 +120,14 @@ UUID: fd26b29b_e67a1e58
 Bytes: 58
 I am not sure what happened here - this is coming from ps1
 
+158:6-158:15
+Mon Jul 25 22:50:25 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fd26b29b_e67a1e58
+UUID: ea798774_7c0dd18a
+Bytes: 33
+It is just using global directly.
+
 516:52-516:53
 Thu Jul 07 16:36:24 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

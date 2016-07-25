@@ -1,0 +1,20 @@
+Revision: 22f7bc4ffdb504979ef4f2a9f1637b53128f90b5
+Patch-set: 7
+File: include/nativebridge/native_bridge.h
+
+73
+Mon Jul 25 22:57:31 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea798774_1c44dda0
+Bytes: 100
+I think we can safely remove this - since we are not going to support v2 in newer platform versions.
+
+File: libnativebridge/native_bridge.cc
+
+203
+Mon Jul 25 22:57:31 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea798774_fc4e41c3
+Bytes: 77
+This check seems redundant - isCompatibleWith checks for callback != nullptr.
+

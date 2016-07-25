@@ -1,0 +1,11 @@
+Revision: 7694539d93d6f69465da98a51233c57e682b3d4e
+Patch-set: 6
+File: libnativeloader/native_loader.cpp
+
+149:53-149:65
+Mon Jul 25 15:03:20 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8a248b48_1371ecdd
+Bytes: 54
+Can this be empty? If so, what's the expected outcome?
+

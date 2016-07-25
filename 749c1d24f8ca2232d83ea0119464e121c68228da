@@ -1,0 +1,13 @@
+Revision: 749c1d24f8ca2232d83ea0119464e121c68228da
+Patch-set: 3
+File: libnativebridge/native_bridge.cc
+
+547:35-547:51
+Tue Jul 12 02:15:54 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: da673430_b526005c
+Bytes: 237
+If we can fallback to v2 for slightly backward compatibility when v3 is not supported here? just like what we do in NativeBridgeLoadLibraryExt().
+
+NativeBridge implementation could be either v2 or v3, though v2 may not support namespace.
+

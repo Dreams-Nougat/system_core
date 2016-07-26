@@ -1,0 +1,11 @@
+Revision: 35f5d04620a3221b9f57194ab0239c7c7ba5a726
+Patch-set: 1
+File: init/log.cpp
+
+29:3-30:46
+Tue Jul 26 17:11:54 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cf22159a_550ecc3e
+Bytes: 80
+Is one of these meant to be "NOTICE"? Or did you intend to remove it altogether?
+

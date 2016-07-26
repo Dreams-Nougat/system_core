@@ -10,3 +10,11 @@ Bytes: 212
 supposed that you're talking "Trusty app" here.. which is the code located as below, right? if yes, but I didn't see any code here? something i missed? thankyou.
 https://android.googlesource.com/trusty/app/nvram/
 
+40
+Tue Jul 26 12:03:41 2016 +0000
+Author: Mattias Nissler <1080683@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0a67bba0_079d3656
+UUID: efafd95f_86652a4b
+Bytes: 424
+Correct. The intention is to publish that code on AOSP eventually. We have already shared it with partners, so you might already have access via the partner repository? In either case, there's not much code there, just glue code to (1) set up a Trusty IPC endpoint that's backed by an instance of the reference implementation and (2) wire up Trusty secure storage as the storage backend used by the reference implementation.
+

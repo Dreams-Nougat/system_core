@@ -18,3 +18,11 @@ UUID: efafd95f_86652a4b
 Bytes: 424
 Correct. The intention is to publish that code on AOSP eventually. We have already shared it with partners, so you might already have access via the partner repository? In either case, there's not much code there, just glue code to (1) set up a Trusty IPC endpoint that's backed by an instance of the reference implementation and (2) wire up Trusty secure storage as the storage backend used by the reference implementation.
 
+40
+Tue Jul 26 14:53:56 2016 +0000
+Author: Bing Zhu <1082545@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: efafd95f_86652a4b
+UUID: 6f85a9c7_25ef78b6
+Bytes: 84
+THank you Mattias, I will check that code in partner repo.. (maybe from brillo team)
+

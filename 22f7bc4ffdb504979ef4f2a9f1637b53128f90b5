@@ -9,6 +9,14 @@ UUID: ea798774_1c44dda0
 Bytes: 100
 I think we can safely remove this - since we are not going to support v2 in newer platform versions.
 
+73
+Tue Jul 26 00:57:08 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea798774_1c44dda0
+UUID: ea798774_df24171a
+Bytes: 92
+maybe we can left it here(or return false?) and use the NativeBridgeIsPathSupported() of v3?
+
 File: libnativebridge/native_bridge.cc
 
 203
@@ -17,4 +25,27 @@ Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ea798774_fc4e41c3
 Bytes: 77
 This check seems redundant - isCompatibleWith checks for callback != nullptr.
+
+203
+Tue Jul 26 00:57:08 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea798774_fc4e41c3
+UUID: ea798774_1fc12f2a
+Bytes: 293
+maybe we can use isCompatibleWith() for all? however, the comments said:
+      // Two failure conditions: could not find library (dlopen failed), or could not find native
+      // bridge interface (dlsym failed). Both are an error and close the native bridge.
+
+maybe we can just leave it here.
+
+File: libnativeloader/native_loader.cpp
+
+465:8-465:31
+Tue Jul 26 00:57:08 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ea798774_df725716
+Bytes: 281
+this is where the legacy NativeBridgeIsSupported() is used.
+
+However, i am curious if nativeloader still handles library loading in non-app-mode(ifndef ANDROID). what's the scenario of art calls nativeloader in non-app-mode, for a test purpose? if JNI is involved in such scenario?
 

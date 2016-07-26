@@ -49,3 +49,11 @@ this is where the legacy NativeBridgeIsSupported() is used.
 
 However, i am curious if nativeloader still handles library loading in non-app-mode(ifndef ANDROID). what's the scenario of art calls nativeloader in non-app-mode, for a test purpose? if JNI is involved in such scenario?
 
+465:8-465:31
+Tue Jul 26 18:43:57 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ea798774_df725716
+UUID: 8f601d1d_f3fff098
+Bytes: 155
+art host tests use this I think... which brings us to the next point - these tests are not very useful since they run only on host? should we rewrite them?
+

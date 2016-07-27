@@ -57,3 +57,13 @@ UUID: 8f601d1d_f3fff098
 Bytes: 155
 art host tests use this I think... which brings us to the next point - these tests are not very useful since they run only on host? should we rewrite them?
 
+465:8-465:31
+Wed Jul 27 00:43:40 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8f601d1d_f3fff098
+UUID: 8f601d1d_dc280189
+Bytes: 171
+i have tried to run nativebridge related art host test before, they failed, in my memory...
+
+art host test has a sub test of nativebridge, i will do some study about it...
+

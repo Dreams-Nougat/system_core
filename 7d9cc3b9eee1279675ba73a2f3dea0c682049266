@@ -1,0 +1,11 @@
+Revision: 7d9cc3b9eee1279675ba73a2f3dea0c682049266
+Patch-set: 1
+File: adb/commandline.cpp
+
+1280:27-1280:44
+Wed Jul 27 23:47:56 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2fed7107_f6131810
+Bytes: 108
+This change is incorrect, OS_PATH_SEPARATORS is "/" on posix, but "/\\" (or something like that) on windows.
+

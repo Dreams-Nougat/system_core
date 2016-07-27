@@ -12,10 +12,26 @@ Small optimization:
   write(fd, valstr, len);
 Not a big deal though...
 
+307:8-307:16
+Wed Jul 27 21:28:29 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2fed7107_50bb0c28
+UUID: 2fed7107_f0ca0072
+Bytes: 4
+Done
+
 317:8-317:13
 Wed Jul 27 21:10:26 2016 +0000
 Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2fed7107_f09200a5
 Bytes: 48
 Do we want ret = prctl() ? or it doesn't matter?
+
+317:8-317:13
+Wed Jul 27 21:28:29 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2fed7107_f09200a5
+UUID: 2fed7107_70df3031
+Bytes: 91
+We don't do anything with the return value, but this is probably a good idea none the less.
 

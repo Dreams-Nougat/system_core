@@ -1,0 +1,21 @@
+Revision: f33377c3e51ba6dd7b0e23a5bfabd1915175d398
+Patch-set: 4
+File: libcutils/sched_policy.c
+
+307:8-307:16
+Wed Jul 27 21:10:26 2016 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2fed7107_50bb0c28
+Bytes: 94
+Small optimization:
+  int len = snprintf();
+  write(fd, valstr, len);
+Not a big deal though...
+
+317:8-317:13
+Wed Jul 27 21:10:26 2016 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2fed7107_f09200a5
+Bytes: 48
+Do we want ret = prctl() ? or it doesn't matter?
+

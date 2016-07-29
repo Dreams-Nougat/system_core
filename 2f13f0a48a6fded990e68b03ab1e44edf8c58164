@@ -24,6 +24,16 @@ UUID: 6f6689d2_f44ad8af
 Bytes: 48
 This seems like it should be in a separate patch
 
+163:38-163:39
+Fri Jul 29 21:46:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_f44ad8af
+UUID: 6f6689d2_74d408bb
+Bytes: 185
+well, you added a new error so i fixed them all. this file was already mostly correct, which is well above average.
+
+the sooner there are no broken examples to copy & paste, the better!
+
 303:12-303:17
 Fri Jul 29 21:38:09 2016 +0000
 Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,12 +41,28 @@ UUID: 6f6689d2_943c3c16
 Bytes: 64
 On write errors shouldn't we fall back to PR_SET_TIMERSLACK_PID?
 
+303:12-303:17
+Fri Jul 29 21:46:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_943c3c16
+UUID: 6f6689d2_94ea7c6e
+Bytes: 123
+shouldn't any given kernel only have one mechanism or the other? if timerslack_ns existed, we're dealing with a new kernel.
+
 306:8-306:13
 Fri Jul 29 21:38:09 2016 +0000
 Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6f6689d2_b4b5c09a
 Bytes: 74
 This also skips checking the potential close errors that Kees pointed out.
+
+306:8-306:13
+Fri Jul 29 21:46:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_b4b5c09a
+UUID: 6f6689d2_f48d78d8
+Bytes: 63
+if we're not going to fall back to prctl, there's no reason to.
 
 332:39-332:48
 Fri Jul 29 21:38:09 2016 +0000

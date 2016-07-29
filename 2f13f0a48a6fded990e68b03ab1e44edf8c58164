@@ -17,3 +17,31 @@ UUID: 6f6689d2_345c5083
 Bytes: 39
 it's the fopen equivalent of O_CLOEXEC.
 
+163:38-163:39
+Fri Jul 29 21:38:09 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_f44ad8af
+Bytes: 48
+This seems like it should be in a separate patch
+
+303:12-303:17
+Fri Jul 29 21:38:09 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_943c3c16
+Bytes: 64
+On write errors shouldn't we fall back to PR_SET_TIMERSLACK_PID?
+
+306:8-306:13
+Fri Jul 29 21:38:09 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_b4b5c09a
+Bytes: 74
+This also skips checking the potential close errors that Kees pointed out.
+
+332:39-332:48
+Fri Jul 29 21:38:09 2016 +0000
+Author: John Stultz <1010110@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_b4506066
+Bytes: 38
+Shouldn't this be in a separate patch?
+

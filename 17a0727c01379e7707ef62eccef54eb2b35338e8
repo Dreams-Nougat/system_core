@@ -1,0 +1,27 @@
+Revision: 17a0727c01379e7707ef62eccef54eb2b35338e8
+Patch-set: 1
+File: adb/sysdeps/stat_test.cpp
+
+41
+Fri Jul 29 21:20:43 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_74ca4846
+Bytes: 192
+Your comment makes me wonder if it would be a good idea to have a test that calls stat() with a trailing slash/backslash, to a path that doesn't exist and then check errno. Thoughts? Overkill?
+
+File: adb/sysdeps/win32/stat.cpp
+
+43:8-43:23
+Fri Jul 29 21:20:43 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_b4a6a0a9
+Bytes: 132
+Does this error code make sense for a fail to convert a UTF8 string? UTF8ToWide() already sets errno to EILSEQ or EINVAL on failure.
+
+55:4-55:23
+Fri Jul 29 21:20:43 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_54b8e4c2
+Bytes: 100
+Why the temp var? Because you don't want *s to be set to bogus stuff in the ENOTDIR case? If so, ok.
+

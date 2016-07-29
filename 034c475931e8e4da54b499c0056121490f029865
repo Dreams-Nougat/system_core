@@ -9,3 +9,11 @@ UUID: 6f6689d2_bdf92b85
 Bytes: 92
 This looks like a weird constructor to use implicitly, maybe fix the code to allow explicit?
 
+52
+Fri Jul 29 07:59:01 2016 +0000
+Author: Mathias Agopian <1021189@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_bdf92b85
+UUID: 6f6689d2_809ebaa7
+Bytes: 110
+libpixelflinger is soooo hardly used. I wouldn't bother changing anything not absolutely required. my 2 cents.
+

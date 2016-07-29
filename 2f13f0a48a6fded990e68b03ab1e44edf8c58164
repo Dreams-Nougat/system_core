@@ -1,0 +1,11 @@
+Revision: 2f13f0a48a6fded990e68b03ab1e44edf8c58164
+Patch-set: 7
+File: libcutils/sched_policy.c
+
+163:31-163:33
+Fri Jul 29 21:35:22 2016 +0000
+Author: Dmitry Shmidt <1000414@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_f471f813
+Bytes: 44
+I've never head about mode "re". What is it?
+

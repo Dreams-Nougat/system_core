@@ -1,0 +1,11 @@
+Revision: 034c475931e8e4da54b499c0056121490f029865
+Patch-set: 5
+File: libpixelflinger/codeflinger/GGLAssembler.h
+
+52
+Fri Jul 29 00:11:51 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_bdf92b85
+Bytes: 92
+This looks like a weird constructor to use implicitly, maybe fix the code to allow explicit?
+

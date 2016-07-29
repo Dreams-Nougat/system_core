@@ -9,3 +9,11 @@ UUID: 6f6689d2_f471f813
 Bytes: 44
 I've never head about mode "re". What is it?
 
+163:31-163:33
+Fri Jul 29 21:35:46 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_f471f813
+UUID: 6f6689d2_345c5083
+Bytes: 39
+it's the fopen equivalent of O_CLOEXEC.
+

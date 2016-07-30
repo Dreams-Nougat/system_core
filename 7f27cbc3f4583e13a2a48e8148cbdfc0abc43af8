@@ -1,0 +1,11 @@
+Revision: 7f27cbc3f4583e13a2a48e8148cbdfc0abc43af8
+Patch-set: 1
+File: libutils/RefBase.cpp
+
+588:25-588:27
+Sat Jul 30 01:48:13 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_4f63ed16
+Bytes: 75
+It is the same as curCount > 0, because curCount should always >= 0, right?
+

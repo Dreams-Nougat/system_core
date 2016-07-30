@@ -9,3 +9,11 @@ UUID: 6f6689d2_4f63ed16
 Bytes: 75
 It is the same as curCount > 0, because curCount should always >= 0, right?
 
+588:25-588:27
+Sat Jul 30 05:38:02 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_4f63ed16
+UUID: af96c1c6_e22942a1
+Bytes: 143
+Yes. The difference is with curCount > INITIAL_STRONG_VALUE. I made them both nonequal tests, since they are both testing analogous conditions.
+

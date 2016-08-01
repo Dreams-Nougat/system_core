@@ -9,10 +9,28 @@ UUID: 942d9696_ab3fe908
 Bytes: 276
 It's probably not that hard to make it compatible with v2. We can just delegate to the methods with no namespaces. However I think it makes little sense to ship an OTA with updated interface but without a native bridge update, so I'm good to leave v3 not backwards compatible.
 
+153:0-153:35
+Mon Aug 01 05:09:14 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 942d9696_ab3fe908
+UUID: d450ee1d_451cea1d
+Bytes: 294
+Yes.
+
+The compatibility issue of nativebridge is unclear. The problem is, v3 supports namespace but sometime there is no namespace info provided by the caller(nativeloader on host or test purpose). I am considering of describing these scenario usage of nativebridge. let's discuss this in mail.
+
 582:25-582:26
 Fri Jul 29 13:41:14 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: b4029af5_5c56fd36
 Bytes: 97
 let's use symbolic constants instead of 2,3 .... It gets ugly now that we are at the 3rd version.
+
+582:25-582:26
+Mon Aug 01 05:09:14 2016 +0000
+Author: Zhenhua WANG <1104175@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: b4029af5_5c56fd36
+UUID: d450ee1d_2521ee59
+Bytes: 43
+yes... we need a better way to handle this.
 

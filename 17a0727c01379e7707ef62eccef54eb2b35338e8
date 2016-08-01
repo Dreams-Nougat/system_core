@@ -9,6 +9,14 @@ UUID: 6f6689d2_74ca4846
 Bytes: 192
 Your comment makes me wonder if it would be a good idea to have a test that calls stat() with a trailing slash/backslash, to a path that doesn't exist and then check errno. Thoughts? Overkill?
 
+41
+Mon Aug 01 20:48:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_74ca4846
+UUID: d450ee1d_7445561b
+Bytes: 17
+Good idea, added.
+
 File: adb/sysdeps/win32/stat.cpp
 
 43:8-43:23
@@ -18,10 +26,28 @@ UUID: 6f6689d2_b4a6a0a9
 Bytes: 132
 Does this error code make sense for a fail to convert a UTF8 string? UTF8ToWide() already sets errno to EILSEQ or EINVAL on failure.
 
+43:8-43:23
+Mon Aug 01 20:48:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_b4a6a0a9
+UUID: d450ee1d_d4d2ca54
+Bytes: 212
+My rationale was that EILSEQ and EINVAL aren't specified as possible errors for stat, and an invalid path also doesn't exist. (e.g. stat("") fails with ENOENT)
+
+I doubt this will actually affect anything, though.
+
 55:4-55:23
 Fri Jul 29 21:20:43 2016 +0000
 Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6f6689d2_54b8e4c2
 Bytes: 100
 Why the temp var? Because you don't want *s to be set to bogus stuff in the ENOTDIR case? If so, ok.
+
+55:4-55:23
+Mon Aug 01 20:48:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6f6689d2_54b8e4c2
+UUID: d450ee1d_b4cf4eaf
+Bytes: 4
+Yep.
 

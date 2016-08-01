@@ -1,0 +1,34 @@
+Revision: ebe646bee7d082d30b3e52fafb7204fb8ce0147f
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:35-10:15
+Mon Aug 01 23:52:21 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d450ee1d_51238712
+Bytes: 375
+So far as I know this implementation decision is specific to certain QC drivers; for the other upstream drivers I was aware of (back when I worked on this), a USB type charger driver might set attributes for online vs. offline status, but doesn't set its type to UNKNOWN while uncabled.  If the Android folks want to make healthd support that behavior better it's fine by me.
+
+11:54-11:64
+Mon Aug 01 23:52:21 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d450ee1d_f12953f0
+Bytes: 17
+typo: initializes
+
+16:12-16:35
+Mon Aug 01 23:52:21 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d450ee1d_f1c5d307
+Bytes: 196
+Up to the Android folks whether they want to silently skip unknown chargers, ignoring charger types healthd doesn't recognize on all platforms.  This is, again, a QC driver quirk so far as I know.
+
+File: healthd/BatteryMonitor.cpp
+
+256:7-256:55
+Mon Aug 01 23:52:21 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d450ee1d_114cef9b
+Bytes: 106
+Don't need to keep this vector if not using as a cache of chargers found at startup time, can just remove.
+

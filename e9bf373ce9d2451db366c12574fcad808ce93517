@@ -1,0 +1,11 @@
+Revision: e9bf373ce9d2451db366c12574fcad808ce93517
+Patch-set: 2
+File: fs_mgr/fs_mgr.c
+
+201:0-201:70
+Tue Aug 02 17:22:47 2016 +0000
+Author: Jeff Sharkey <1013508@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6f6689d2_3507e7e9
+Bytes: 127
+Just confirming, are we mixing block sizes here?  This one appears to use 4k blocks, but BLKGETSIZE below uses 512-byte blocks.
+

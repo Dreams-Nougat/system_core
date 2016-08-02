@@ -1,0 +1,18 @@
+Revision: 1e73024653d962b769387dd4c9ff544b6c8b7cc9
+Patch-set: 1
+File: init/service.cpp
+
+200
+Tue Aug 02 21:22:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3464ea09_3edeb10d
+Bytes: 56
+this seems like a rare enough event to be worth logging.
+
+203:0-208:5
+Tue Aug 02 21:22:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3464ea09_dec21530
+Bytes: 39
+...and logging failures is always good.
+

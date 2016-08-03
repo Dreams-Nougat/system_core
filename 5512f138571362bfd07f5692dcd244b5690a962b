@@ -1,0 +1,18 @@
+Revision: 5512f138571362bfd07f5692dcd244b5690a962b
+Patch-set: 1
+File: libcutils/tests/sched_policy_test.cpp
+
+46:10-46:22
+Wed Aug 03 23:11:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3414ead3_58177d56
+Bytes: 7
+size_t?
+
+46:4-46:9
+Wed Aug 03 23:11:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3414ead3_b831f908
+Bytes: 10
+constexpr?
+

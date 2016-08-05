@@ -9,12 +9,32 @@ UUID: d97e679c_7e8185f6
 Bytes: 29
 nit: condition is always true
 
+608:4-608:27
+Fri Aug 05 21:26:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_7e8185f6
+UUID: d97e679c_fe49158b
+Bytes: 333
+Not if the buffer is prematurely empty (*p is a nul) or rather if the dmesg contains an embedded nul (we had this coming from a partner kernel).
+
+Will also skip out if the character is a newline, which happens _often_ in vendor code that wants to make itself _loud_ by adding a bunch of empty lines. We do not care to log that noise.
+
 632:12-632:22
 Fri Aug 05 20:54:50 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d97e679c_3ef6ad91
 Bytes: 53
 this could be out-of-bounds access, if taglen is zero
+
+632:12-632:22
+Fri Aug 05 21:26:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_3ef6ad91
+UUID: d97e679c_de153950
+Bytes: 485
+not sure if I want to expend yet another indent on this minor transgression, let me see if I can make this cleaner ..
+
+Regarding my use of minor transgression: The issue we have is either we progress beyond the buffer bounds until we hit a protective page boundary, or we don't and then scribble a large swath of buffer-beyond-bounds into an output. So this is a minor transgression as it will trigger neither of these catastrophic behaviors; but it can cause corrupted output content.
 
 638:12-638:34
 Fri Aug 05 20:54:50 2016 +0000
@@ -23,6 +43,14 @@ UUID: d97e679c_1efbb169
 Bytes: 191
 the only guarantee here about size is "size > 0".
 the code below makes certain assumptions about size, without proving them. Calculating (size - 5) may render unwanted results if size is < 5.
+
+638:12-638:34
+Fri Aug 05 21:26:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_1efbb169
+UUID: d97e679c_be1cfd77
+Bytes: 37
+Yes, we need to check if size > 5 ...
 
 702:12-702:57
 Fri Aug 05 19:56:57 2016 +0000

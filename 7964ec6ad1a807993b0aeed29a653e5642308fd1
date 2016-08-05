@@ -23,6 +23,20 @@ However, -d, -t and -L all result in a terminate content, in that logcat does no
 
 In these cases we get better behavior from logcat if we are in the foreground cgroup.
 
+7:19-7:29
+Fri Aug 05 20:14:36 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_d8b8f1c3
+UUID: d97e679c_1b81835e
+Bytes: 586
+Not seeing -f going to background in the code. You said "formally" so does it mean it used to be that way in the past?
+
+Now it seems to me we're mentioning -d and -t to have a description of the overall status right now, and at the same time we're mentioning -f to get a sense of what's been changing.
+
+I think either the description can focus on the current status, or the delta since the last commit. For the former, I'd just say -d -t and -L won't go into background. For the latter, I'd say switching -L to foreground to keep up with -d and -t.
+
+Sorry about the nit-picking here. :)
+
 File: logcat/logcat.cpp
 
 239:0-239:45
@@ -45,4 +59,26 @@ This is a static function, do not care if the signature changes.
 Checking outside means that the caller also needs to understand the meanings of g_outputFileName. The policy for output remains here.
 
 The eventual goal is to remove all g_* variables and make them part of the function variables, but that is outside the scope of the fix here. This is but a first step towards that goal _perhaps_.
+
+239:0-239:45
+Fri Aug 05 20:14:36 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_7be2f7a1
+UUID: d97e679c_db4c6b9e
+Bytes: 1175
+> This is a static function, do not care if the signature changes.
+
+This is true. Signature change is the end result. Regardless of that I don't think this is written cleanly. What I don't like is it's not like the output will be any different when mode changes. The output only depends on the file name. Scheduling depends on both the file name and mode. It's only this common dependency on the file name that holds these two parts together in this one function. And the function name doesn't even reflect the scheduling.
+
+ > 
+ > Checking outside means that the caller also needs to understand the
+ > meanings of g_outputFileName. The policy for output remains here.
+ > 
+ > The eventual goal is to remove all g_* variables and make them part
+ > of the function variables, but that is outside the scope of the fix
+ > here. This is but a first step towards that goal _perhaps_.
+
+Yeah. The global variables can be eliminated by passing them in the parameters. In that case eventually I hope we can say setupOutput(name); setScheduling(name, mode).
+
+Feel free to ignore this comment, as this is not introduced by you. And this is perhaps not the most important part of the code.
 

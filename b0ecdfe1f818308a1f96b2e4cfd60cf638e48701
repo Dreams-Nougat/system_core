@@ -9,3 +9,11 @@ UUID: d97e679c_783afdce
 Bytes: 241
 This is beyond my knowledge. By man'ing su, I see that you can execute under another user using "su -". Since this is in the old script, and I don't know the flavor of the user-level tools we're running on the phones I assume this must work.
 
+77:5-77:9
+Fri Aug 05 19:22:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_783afdce
+UUID: d97e679c_fbc4c70d
+Bytes: 70
+su - does _not_ work on Android's su, that syntax was deprecated in M.
+

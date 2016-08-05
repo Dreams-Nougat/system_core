@@ -9,3 +9,13 @@ UUID: d97e679c_3b00ff58
 Bytes: 155
 The suffix is removed twice, and only used once. How about keeping $data as is and concat the suffix in the grepping part? What does "data" represent here?
 
+78:22-78:26
+Fri Aug 05 19:22:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_3b00ff58
+UUID: d97e679c_bb3def10
+Bytes: 446
+data now represents what is passed exactly to the logcat command by logcatd.rc and thus is also _more_ _correct_ for propagation to the grep command. logcat uses similar rules to split out the directory and file portion of the path, thus my preference to ensure they are aligned.
+
+In the past, I have tested the performance of the shell with the % and # operators and could not measure their effect; so this is not a burden from that perspective.
+

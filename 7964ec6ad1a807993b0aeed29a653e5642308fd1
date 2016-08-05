@@ -139,6 +139,42 @@ The background cgroup policy is closely tied to where/what the input is coming f
 
 FYI the mode argument is actually representing the _input_ mode.
 
+239:0-239:45
+Fri Aug 05 22:19:24 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_3b9a3f68
+UUID: d97e679c_696a2d22
+Bytes: 1424
+> Will setupOutputAndPolicy(bool blocking) and setupOutputAndPolicy(mode
+ > & ANDROID_LOG_NONBLOCK) make you happier for this moment? If not, I
+ > will split it.
+
+Not really. But I don't think this part is super important either. So adding a TODO will probably make me the happiest. :)
+
+ > 
+ > Splitting this into two functions is clearer from one maintenance
+ > perspective, but the pair of functions would _still_ need to be
+ > called in tight sequence; moving one or the other around (and if
+ > you look at the patch set in this series, this is happening) and
+ > thus introduces maintenance risk. As soon as we consider opening
+ > the output file, we want to drop to background cgroup.
+
+In that case we're creating the freedom and we're making a conscientious choice to group the calls together, rather than being forced to lump them.
+
+ > 
+ > I may wish to reconsider this, maybe it is better to set the
+ > priority just before we _really_ start reading, rather than when we
+ > decide to open the output file for writing? (my answer will come
+ > when I respin this CL in the patch series)
+ > 
+ > The background cgroup policy is closely tied to where/what the
+ > input is coming from and where the output is going, and controls
+ > the flow rate of the input and output.
+ > 
+ > FYI the mode argument is actually representing the _input_ mode.
+
+Yes. This part is clear. I'm not complaining about output isn't accepting mode.
+
 240:0-254:9
 Fri Aug 05 21:05:05 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

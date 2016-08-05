@@ -12,10 +12,30 @@ Is't it better to move this check up and make it common precondition for all sub
 good place would be right after line that calculates size;
 (@line 635)
 
+666:24-666:37
+Fri Aug 05 18:02:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_581861d9
+UUID: d97e679c_d8c79110
+Bytes: 417
+three of five paths need this check, the others will _break_ the parser if we check this ahead.
+
+The optimizer will do what you are asking in that the check will set up a compiler parse tree for the three paths that need this. I want the check to be prior to the blocks that care so it is _clear_ who needs it (of course, one can view this as source of error, witness that I needed to come back and add them here ;-/)
+
 676:22-676:39
 Fri Aug 05 17:44:46 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d97e679c_3827a520
 Bytes: 53
 this could benefit from taglen > size check, as well.
+
+676:22-676:39
+Fri Aug 05 18:02:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_3827a520
+UUID: d97e679c_58b4e19a
+Bytes: 317
+Already kind-of checked on line 634 for all, for the common good, and the check you are asking for will _break_ this path since all we care about here is that there is _one_ character left in taglen, not that taglen is greater than size.
+
+The taglen > size check is to find 'future tag stutter' in continuing content.
 

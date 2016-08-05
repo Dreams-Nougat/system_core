@@ -1,0 +1,11 @@
+Revision: b0ecdfe1f818308a1f96b2e4cfd60cf638e48701
+Patch-set: 2
+File: logcat/logcat.cpp
+
+986:13-986:20
+Fri Aug 05 22:42:11 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_e91f1d5d
+Bytes: 70
+I assume the call won't return an error if the id file does not exist?
+

@@ -17,3 +17,13 @@ UUID: d97e679c_89e8e90f
 Bytes: 36
 The error is file_ok will be 'false'
 
+986:13-986:20
+Fri Aug 05 23:39:31 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_89e8e90f
+UUID: d97e679c_448b9815
+Bytes: 167
+Right. Sorry I should've looked at the library code more carefully.
+
+So the first time we pass down --id, we won't clear past logs. Is this the expected behavior then?
+

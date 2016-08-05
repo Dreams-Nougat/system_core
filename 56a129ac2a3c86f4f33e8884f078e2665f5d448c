@@ -11,6 +11,14 @@ if you read all the buffer here and ']' is not found, you might break the outer 
 e.g. taglen could be zero here; or *et could be zero.
 both are unconditionally modified in outer cycle increment-statement.
 
+620:15-623:16
+Fri Aug 05 18:26:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_98427946
+UUID: d97e679c_b8cdf5b6
+Bytes: 11
+Good catch!
+
 666:24-666:37
 Fri Aug 05 17:44:46 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -56,4 +64,14 @@ UUID: d97e679c_3886c577
 Bytes: 249
 line 634 only checks for taglen > 0; this check guarantees that there is at least one byte available to parse;
 here, you looking ahead of current pointer by size bytes without making sure you have that much; this creates a buffer overread condition.
+
+676:22-676:39
+Fri Aug 05 18:26:43 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_3886c577
+UUID: d97e679c_986119b1
+Bytes: 49
+True ...
+
+Code refactor since 4 of five paths ...
 

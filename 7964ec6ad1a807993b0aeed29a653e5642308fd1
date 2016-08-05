@@ -9,6 +9,20 @@ UUID: d97e679c_15395487
 Bytes: 24
 -L with -f or -L always?
 
+7:19-7:29
+Fri Aug 05 19:23:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_15395487
+UUID: d97e679c_d8b8f1c3
+Bytes: 650
+Will add a comma after -L to group the list linguistically.
+
+Formerly -f would 'blindly' go into background regardless of any other flags. This was done because we would coalesce continuing content in batches, and make sure that while writing logrotate content we do not use up enough cpu cycles to affect foreground activities. As new log content arrives, we limit our wakeups to process the content.
+
+However, -d, -t and -L all result in a terminate content, in that logcat does not continue to sit around waiting for new content, it stops once it hits the end.
+
+In these cases we get better behavior from logcat if we are in the foreground cgroup.
+
 File: logcat/logcat.cpp
 
 239:0-239:45
@@ -19,4 +33,16 @@ Bytes: 298
 I don't like this part, but this is not your fault. You're a victim because the function signature has to changed for a not-so-obvious reason.
 
 This is setting the priority of the process, without anything to do with the output. IMO this could have been taken outside to form a function of its own.
+
+239:0-239:45
+Fri Aug 05 19:23:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_d580bc2a
+UUID: d97e679c_7be2f7a1
+Bytes: 396
+This is a static function, do not care if the signature changes.
+
+Checking outside means that the caller also needs to understand the meanings of g_outputFileName. The policy for output remains here.
+
+The eventual goal is to remove all g_* variables and make them part of the function variables, but that is outside the scope of the fix here. This is but a first step towards that goal _perhaps_.
 

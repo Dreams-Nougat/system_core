@@ -1,0 +1,11 @@
+Revision: 500e8f96978c680441f6e9eeb2571db9236fa0bc
+Patch-set: 1
+File: /COMMIT_MSG
+
+10
+Fri Aug 05 15:34:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_f51138aa
+Bytes: 146
+we're not using toybox grep yet, so i suspect you either got your regex wrong, or needed to use egrep rather than grep for the syntax you used :-)
+

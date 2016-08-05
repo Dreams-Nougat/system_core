@@ -1,0 +1,18 @@
+Revision: 6f308c4aafabe08b0ccbeca7b9c13897385be546
+Patch-set: 2
+File: logd/LogKlog.cpp
+
+702:12-702:57
+Fri Aug 05 19:56:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_fb49278b
+Bytes: 104
+Oh well, trust the optimizer, the repeated checks above in each other case saves us resorting to a goto.
+
+718:8-718:19
+Fri Aug 05 19:56:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_bb43af69
+Bytes: 58
+I am reserving the right to make this a ssize_t in future.
+

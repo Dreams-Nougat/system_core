@@ -19,6 +19,16 @@ Not if the buffer is prematurely empty (*p is a nul) or rather if the dmesg cont
 
 Will also skip out if the character is a newline, which happens _often_ in vendor code that wants to make itself _loud_ by adding a bunch of empty lines. We do not care to log that noise.
 
+608:4-608:27
+Fri Aug 05 21:36:18 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_fe49158b
+UUID: d97e679c_7e966598
+Bytes: 414
+condition is true here, because we tested it in line 598;
+we went through line 601 check also (and this pruved that if we made it to line 604 then (p < &buf[len]) in line 598 is true); this means that (isspace(*p) || !*p) condition in line 598 is false, and consequently that the opposite of it is true: (!isspace(*p) && *p) which is exactly the check in line 608.
+But again, it is only a nit; no harmful behavior.
+
 632:12-632:22
 Fri Aug 05 20:54:50 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>

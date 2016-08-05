@@ -29,6 +29,13 @@ condition is true here, because we tested it in line 598;
 we went through line 601 check also (and this pruved that if we made it to line 604 then (p < &buf[len]) in line 598 is true); this means that (isspace(*p) || !*p) condition in line 598 is false, and consequently that the opposite of it is true: (!isspace(*p) && *p) which is exactly the check in line 608.
 But again, it is only a nit; no harmful behavior.
 
+609:8-609:33
+Fri Aug 05 22:07:41 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_fe8b5519
+Bytes: 127
+These do not appear after this block, optimizer will have no problems with this, so I will take your nit and save an indent ...
+
 632:12-632:22
 Fri Aug 05 20:54:50 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>

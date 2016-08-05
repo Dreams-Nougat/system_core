@@ -37,6 +37,47 @@ I think either the description can focus on the current status, or the delta sin
 
 Sorry about the nit-picking here. :)
 
+7:19-7:29
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_1b81835e
+UUID: d97e679c_7be5170f
+Bytes: 742
+The title needs to be accurate and succinct (eg: <70 characters).
+
+The replacement title will likely read:
+
+logcat: -d, -t or -L, along with -f, do not set background cgroup
+
+The body of the message describes why we are doing this, and can be as wordy as necessary to get the point across.
+
+I said formerly ;-}, as in before this CL.
+
+In the current code -f sets the global filename, and thus the whole process goes to background cgroup, batch scheduling and process priority regardless of which other flags are used.
+
+The change is that if one uses any one or more of the -d, -t and -L flags in any combination, and also one specifies the -f flag, that we will _not_ go into the background cgroup (and thus _not_ cause a priority inversion).
+
+10:0-10:7
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_dec77910
+Bytes: 14
+process cgroup
+
+11:18-11:28
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_fec4b50d
+Bytes: 42
+place ourselves into the background cgroup
+
+11:59-11:66
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_5edda9d8
+Bytes: 70
+content and we are pushing that content to the logrotate set of files.
+
 File: logcat/logcat.cpp
 
 239:0-239:45
@@ -81,4 +122,27 @@ This is true. Signature change is the end result. Regardless of that I don't thi
 Yeah. The global variables can be eliminated by passing them in the parameters. In that case eventually I hope we can say setupOutput(name); setScheduling(name, mode).
 
 Feel free to ignore this comment, as this is not introduced by you. And this is perhaps not the most important part of the code.
+
+239:0-239:45
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_db4c6b9e
+UUID: d97e679c_3b9a3f68
+Bytes: 1006
+Will setupOutputAndPolicy(bool blocking) and setupOutputAndPolicy(mode & ANDROID_LOG_NONBLOCK) make you happier for this moment? If not, I will split it.
+
+Splitting this into two functions is clearer from one maintenance perspective, but the pair of functions would _still_ need to be called in tight sequence; moving one or the other around (and if you look at the patch set in this series, this is happening) and thus introduces maintenance risk. As soon as we consider opening the output file, we want to drop to background cgroup.
+
+I may wish to reconsider this, maybe it is better to set the priority just before we _really_ start reading, rather than when we decide to open the output file for writing? (my answer will come when I respin this CL in the patch series)
+
+The background cgroup policy is closely tied to where/what the input is coming from and where the output is going, and controls the flow rate of the input and output.
+
+FYI the mode argument is actually representing the _input_ mode.
+
+240:0-254:9
+Fri Aug 05 21:05:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_9b88331f
+Bytes: 79
+ToDo: We should switch to using libminijail, except that is _new_ and not in N,
 

@@ -1,0 +1,22 @@
+Revision: 7964ec6ad1a807993b0aeed29a653e5642308fd1
+Patch-set: 2
+File: /COMMIT_MSG
+
+7:19-7:29
+Fri Aug 05 17:31:07 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_15395487
+Bytes: 24
+-L with -f or -L always?
+
+File: logcat/logcat.cpp
+
+239:0-239:45
+Fri Aug 05 17:31:07 2016 +0000
+Author: Xin Li <1116123@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_d580bc2a
+Bytes: 298
+I don't like this part, but this is not your fault. You're a victim because the function signature has to changed for a not-so-obvious reason.
+
+This is setting the priority of the process, without anything to do with the output. IMO this could have been taken outside to form a function of its own.
+

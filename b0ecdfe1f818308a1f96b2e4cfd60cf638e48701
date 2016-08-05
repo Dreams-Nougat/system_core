@@ -9,3 +9,11 @@ UUID: d97e679c_e91f1d5d
 Bytes: 70
 I assume the call won't return an error if the id file does not exist?
 
+986:13-986:20
+Fri Aug 05 23:09:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_e91f1d5d
+UUID: d97e679c_89e8e90f
+Bytes: 36
+The error is file_ok will be 'false'
+

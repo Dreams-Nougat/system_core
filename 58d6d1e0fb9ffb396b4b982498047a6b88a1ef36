@@ -9,3 +9,11 @@ UUID: 946cb6b9_b6adc6f1
 Bytes: 22
 no std::chrono either?
 
+101
+Fri Aug 05 01:04:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 946cb6b9_b6adc6f1
+UUID: 946cb6b9_19feab07
+Bytes: 73
+Ooh, I forgot that it's just chrono literals that are missing on windows.
+

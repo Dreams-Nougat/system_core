@@ -1,0 +1,46 @@
+Revision: 7f4dcfb1d46902e955e355e344e33f0a3cff6639
+Patch-set: 4
+File: logd/LogKlog.cpp
+
+656:24-656:34
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_e9c71d10
+Bytes: 57
+this is safe, because taglen is guaranteed to be > 0 here
+
+660:28-660:38
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_09c5b907
+Bytes: 41
+this is not safe; taglen may be zero here
+
+671:24-671:34
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_2990b5ef
+Bytes: 41
+this is not safe; taglen may be zero here
+
+682:20-682:30
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_89b46983
+Bytes: 41
+this is not safe; taglen may be zero here
+
+705:20-705:30
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_49ae5133
+Bytes: 41
+this is not safe; taglen may be zero here
+
+718:20-718:30
+Fri Aug 05 22:39:36 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_295af558
+Bytes: 41
+this is not safe; taglen may be zero here
+

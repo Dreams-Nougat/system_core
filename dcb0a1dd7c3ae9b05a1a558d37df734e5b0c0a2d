@@ -18,3 +18,11 @@ UUID: d97e679c_359570e0
 Bytes: 165
 I would've said "the Settings application", but I'm not a native speaker. In the commit message the article was added as well. Are we trying to save some space here?
 
+176:25-176:45
+Fri Aug 05 16:41:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_359570e0
+UUID: d97e679c_d5a2fc44
+Bytes: 232
+No space needs to be saved so will add. I do admit I try to drop 'the' in sentences as it generally does not add any value; however it does make the sentence 'uncomfortable' for some. I do not want to be the source of discomfort ;-}
+

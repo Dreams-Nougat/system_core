@@ -2,6 +2,15 @@ Revision: 56a129ac2a3c86f4f33e8884f078e2665f5d448c
 Patch-set: 1
 File: logd/LogKlog.cpp
 
+620:15-623:16
+Fri Aug 05 18:17:17 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_98427946
+Bytes: 216
+if you read all the buffer here and ']' is not found, you might break the outer cycle logic:
+e.g. taglen could be zero here; or *et could be zero.
+both are unconditionally modified in outer cycle increment-statement.
+
 666:24-666:37
 Fri Aug 05 17:44:46 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -38,4 +47,13 @@ Bytes: 317
 Already kind-of checked on line 634 for all, for the common good, and the check you are asking for will _break_ this path since all we care about here is that there is _one_ character left in taglen, not that taglen is greater than size.
 
 The taglen > size check is to find 'future tag stutter' in continuing content.
+
+676:22-676:39
+Fri Aug 05 18:17:17 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d97e679c_58b4e19a
+UUID: d97e679c_3886c577
+Bytes: 249
+line 634 only checks for taglen > 0; this check guarantees that there is at least one byte available to parse;
+here, you looking ahead of current pointer by size bytes without making sure you have that much; this creates a buffer overread condition.
 

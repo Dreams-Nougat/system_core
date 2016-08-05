@@ -1,0 +1,21 @@
+Revision: 56a129ac2a3c86f4f33e8884f078e2665f5d448c
+Patch-set: 1
+File: logd/LogKlog.cpp
+
+666:24-666:37
+Fri Aug 05 17:44:46 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_581861d9
+Bytes: 216
+I understand this is buffer overflow protection.
+Is't it better to move this check up and make it common precondition for all subsequent checks ?
+good place would be right after line that calculates size;
+(@line 635)
+
+676:22-676:39
+Fri Aug 05 17:44:46 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_3827a520
+Bytes: 53
+this could benefit from taglen > size check, as well.
+

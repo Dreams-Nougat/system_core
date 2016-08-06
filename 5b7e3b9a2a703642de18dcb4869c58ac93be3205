@@ -1,0 +1,11 @@
+Revision: 5b7e3b9a2a703642de18dcb4869c58ac93be3205
+Base-for-patch-set: 1
+File: adb/Android.mk
+
+114:49-114:65
+Sat Aug 06 00:30:22 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d97e679c_4434f8df
+Bytes: 59
+Replace libcrypto_static with libcrypto while you are at it
+

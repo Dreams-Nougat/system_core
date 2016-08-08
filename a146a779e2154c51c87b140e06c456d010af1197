@@ -1,0 +1,11 @@
+Revision: a146a779e2154c51c87b140e06c456d010af1197
+Patch-set: 5
+File: logd/LogKlog.cpp
+
+652:19-652:63
+Mon Aug 08 17:27:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9dd872d_60220c11
+Bytes: 78
+This _additional_ type of tag-parsing added to help greatly simplify the code.
+

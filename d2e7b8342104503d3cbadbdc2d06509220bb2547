@@ -1,0 +1,11 @@
+Revision: d2e7b8342104503d3cbadbdc2d06509220bb2547
+Patch-set: 3
+File: logcat/tests/logcat_test.cpp
+
+23:9-23:22
+Mon Aug 08 17:10:24 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d9dd872d_a08fb41f
+Bytes: 28
+missing sys/stat.h for chmod
+

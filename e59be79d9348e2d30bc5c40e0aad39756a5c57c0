@@ -11,6 +11,13 @@ do you have an example of such a constructor (to satisfy my curiosity)
 
 File: libutils/RefBase.cpp
 
+86:11-86:62
+Tue Aug 09 21:11:26 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 799bbb7c_35e21aa1
+Bytes: 78
+Why not abort if we plan to forbidden this? Logging is likely to be neglected.
+
 87:58-87:66
 Tue Aug 09 11:17:50 2016 +0000
 Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -31,6 +38,13 @@ Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 990eaf7b_03722e7e
 Bytes: 2
 :(
+
+706:0-706:77
+Tue Aug 09 21:11:26 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 799bbb7c_55687ec5
+Bytes: 128
+This comment is confusing to me? why mStrong == INITIAL_STRONG_VALUE means we never acquired a weak reference? can we remove it?
 
 713:23-713:74
 Tue Aug 09 12:10:09 2016 +0000

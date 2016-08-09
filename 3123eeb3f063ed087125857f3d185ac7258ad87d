@@ -1,0 +1,11 @@
+Revision: 3123eeb3f063ed087125857f3d185ac7258ad87d
+Patch-set: 2
+File: libcutils/canned_fs_config.c
+
+47:0-47:17
+Tue Aug 09 14:43:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79ff3b6c_38e31137
+Bytes: 109
+rootdir should probably be defined in the block it is utilized in (line #58, where char* line is introduced).
+

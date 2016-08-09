@@ -1,0 +1,43 @@
+Revision: 1eb8d491dc1d91d5204732e00343ee25979119b6
+Patch-set: 4
+File: include/utils/RefBase.h
+
+24:13-24:14
+Tue Aug 09 09:12:28 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_a3bb5a25
+Bytes: 198
+nit: I'd replace this with a "." and then say "These pointers work as long as the object they are templated with implements that protocol" - personally, i find the current phrasing a little awkward.
+
+25:39-26:74
+Tue Aug 09 09:12:28 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_c3c2d69d
+Bytes: 85
+are you sure you want to keep this sentence in ? it's awkward and seems out of place.
+
+121:67-121:75
+Tue Aug 09 09:12:28 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_23912a9f
+Bytes: 106
+suggestion: s/probably/almost always/.
+
+are there any callers ? should we just make it private or delete ?
+
+132:0-136:28
+Tue Aug 09 09:12:28 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_4390a697
+Bytes: 304
+I had to go look at the implementation to understand what attemptIncStrong was doing. It isn't pretty :(.
+
+I think you've written this as clearly as possible. However, I'd suggest adding an additional warning here that this is not for general purpose use ? I don't really think this is a common use case.
+
+149:46-149:47
+Tue Aug 09 09:12:28 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_0396ae96
+Bytes: 5
+their
+

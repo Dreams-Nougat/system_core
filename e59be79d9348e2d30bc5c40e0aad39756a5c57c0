@@ -1,0 +1,18 @@
+Revision: e59be79d9348e2d30bc5c40e0aad39756a5c57c0
+Patch-set: 5
+File: libutils/RefBase.cpp
+
+87:58-87:66
+Tue Aug 09 11:17:50 2016 +0000
+Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 79bc9b97_edede18b
+Bytes: 7
+Remove.
+
+440:15-440:49
+Tue Aug 09 11:17:50 2016 +0000
+Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_e3d0b24e
+Bytes: 155
+This comment is very confusing. I think it refers to the fact that we keep mWeak>=mStrong and we have decremented only mStrong above, so mWeak cannot be 0.
+

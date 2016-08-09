@@ -9,6 +9,14 @@ UUID: bd1efa57_fabb81d1
 Bytes: 37
 Is this saying that we leak the RSA*?
 
+53
+Tue Aug 09 21:56:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1efa57_fabb81d1
+UUID: 3914e3d3_18d265ce
+Bytes: 57
+worse: there's sharing with no locking at all in this ps.
+
 File: adb/adb_auth.h
 
 47:5-47:30
@@ -18,6 +26,14 @@ UUID: bd1efa57_9a9b6d7c
 Bytes: 153
 Any reason to not make this just return the std::deque? This doesn't return success, and the only caller I could find calls it with an empty destination.
 
+47:5-47:30
+Tue Aug 09 21:56:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1efa57_9a9b6d7c
+UUID: 3914e3d3_78e841ab
+Bytes: 4
+Done
+
 File: adb/transport.h
 
 110:21-110:25
@@ -26,4 +42,12 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bd1efa57_2e865bfa
 Bytes: 121
 shall we make it private and operate it by member functions? I hope we can reduce member variables exposed in this class.
+
+110:21-110:25
+Tue Aug 09 21:56:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1efa57_2e865bfa
+UUID: 3914e3d3_984c35cf
+Bytes: 5
+done.
 

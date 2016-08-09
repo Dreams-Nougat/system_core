@@ -1,5 +1,14 @@
 Revision: e59be79d9348e2d30bc5c40e0aad39756a5c57c0
 Patch-set: 5
+File: /COMMIT_MSG
+
+15:54-16:56
+Tue Aug 09 12:10:09 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_6367a2c0
+Bytes: 70
+do you have an example of such a constructor (to satisfy my curiosity)
+
 File: libutils/RefBase.cpp
 
 87:58-87:66
@@ -15,4 +24,27 @@ Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 990eaf7b_e3d0b24e
 Bytes: 155
 This comment is very confusing. I think it refers to the fact that we keep mWeak>=mStrong and we have decremented only mStrong above, so mWeak cannot be 0.
+
+517:11-525:69
+Tue Aug 09 12:10:09 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_03722e7e
+Bytes: 2
+:(
+
+713:23-713:74
+Tue Aug 09 12:10:09 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_a357dace
+Bytes: 145
+How many similar cases ? My general thinking here is that they're few enough, we should get rid of them and abort unconditionally if we get here.
+
+File: libutils/tests/RefBase_test.cpp
+
+225:8-225:39
+Tue Aug 09 12:10:09 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 990eaf7b_436c26a1
+Bytes: 216
+just curious : why did you choose to have one thread that does NITERS/20 iterations instead of one racing thread per iteration ? In other words, why not move this std::thread construction & join inside the for loop ?
 

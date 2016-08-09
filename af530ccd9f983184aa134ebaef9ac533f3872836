@@ -1,0 +1,11 @@
+Revision: af530ccd9f983184aa134ebaef9ac533f3872836
+Patch-set: 6
+File: adb/client/main.cpp
+
+125
+Tue Aug 09 22:45:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3914e3d3_7b44bba3
+Bytes: 139
+i've moved this down (or, alternatively, moved the "start logging to our log file" up) so that logging from this code doesn't go to stderr.
+

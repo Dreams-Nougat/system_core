@@ -25,6 +25,16 @@ suggestion: s/probably/almost always/.
 
 are there any callers ? should we just make it private or delete ?
 
+121:67-121:75
+Tue Aug 09 22:24:41 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_23912a9f
+UUID: 799bbb7c_b52fea3a
+Bytes: 168
+Fixed the wording as you suggested.
+
+It's used fairly frequently when logging, and that probably make sense. I found one non-debugging/logging use and filed b/30261110.
+
 132:0-136:28
 Tue Aug 09 09:12:28 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,6 +43,14 @@ Bytes: 304
 I had to go look at the implementation to understand what attemptIncStrong was doing. It isn't pretty :(.
 
 I think you've written this as clearly as possible. However, I'd suggest adding an additional warning here that this is not for general purpose use ? I don't really think this is a common use case.
+
+132:0-136:28
+Tue Aug 09 22:24:41 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_4390a697
+UUID: 3914e3d3_d80b8d27
+Bytes: 189
+I made an attempt to better express this. I think everything except promote() is very special purpose. Promote() should really be the standard way to access the object referenced by a wp<>.
 
 149:46-149:47
 Tue Aug 09 09:12:28 2016 +0000

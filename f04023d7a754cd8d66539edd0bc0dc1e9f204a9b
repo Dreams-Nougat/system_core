@@ -42,6 +42,14 @@ UUID: bd1efa57_2e341b3a
 Bytes: 178
 I think so. they are here just to be linkable by adb.cpp or adb_auth.cpp. make them abort is a good idea. maybe we can wrap adb_auth functions into classes to make it more clear.
 
+48
+Tue Aug 09 21:56:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bd1efa57_2e341b3a
+UUID: 3914e3d3_f8d21102
+Bytes: 4
+Done
+
 File: adb/adb_auth_client.cpp
 
 92

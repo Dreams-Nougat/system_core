@@ -9,6 +9,18 @@ UUID: 990eaf7b_6367a2c0
 Bytes: 70
 do you have an example of such a constructor (to satisfy my curiosity)
 
+15:54-16:56
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_6367a2c0
+UUID: 3914e3d3_3bf5e3e7
+Bytes: 526
+See b/30292538 for one.  I also generated some, now abandoned, CLs that make the offending wp constructor explicit. There are a bunch of cases in which weak pointers
+are implicitly generated in constructors. go/aog/251984 contains most of the changes required for that experiment.
+Threads.cpp is an interesting sample.
+
+This convinced me that we really do not want to have weak pointer construction and destruction impact object lifetime.  (It still does for Binder proxies, but the damage there appears to be well-contained.)
+
 File: libutils/RefBase.cpp
 
 86:11-86:62
@@ -17,6 +29,14 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 799bbb7c_35e21aa1
 Bytes: 78
 Why not abort if we plan to forbidden this? Logging is likely to be neglected.
+
+86:11-86:62
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 799bbb7c_35e21aa1
+UUID: 3914e3d3_7b783b89
+Bytes: 131
+This comment is not currently accurate, and got left in by mistake. See the discussion below. We may want to make it correct again.
 
 87:58-87:66
 Tue Aug 09 11:17:50 2016 +0000
@@ -32,12 +52,34 @@ UUID: 990eaf7b_e3d0b24e
 Bytes: 155
 This comment is very confusing. I think it refers to the fact that we keep mWeak>=mStrong and we have decremented only mStrong above, so mWeak cannot be 0.
 
+440:15-440:49
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_e3d0b24e
+UUID: 3914e3d3_bb301305
+Bytes: 188
+I attempted to make this clearer. The destructor does not delete mRefs unless the strong count is INITIAL_STRONG_VALUE, which is impossible, since we just decremented it for the last time.
+
 517:11-525:69
 Tue Aug 09 12:10:09 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 990eaf7b_03722e7e
 Bytes: 2
 :(
+
+517:11-525:69
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_03722e7e
+UUID: 3914e3d3_1b2a5f83
+Bytes: 670
+Agreed this is not perfect. But:
+
+- We have better tools for debugging leaks than heap corruption.
+
+- If this indeed ever happens, I think it is far more likely the new version is correct. There is some amount of code that acquires a weak pointer in the constructor (sometimes silently, since the wp constructor is not explicit), and I can't analyze the code sufficiently to ensure it always outlives the constructor, though it usually does. If the ALOGW is executed, it is likely to be in such a race scenario, where the new behavior is correct.
+
+- Based on the recollection of the original authors of this code, the current behavior appears to have been unintentional.
 
 706:0-706:77
 Tue Aug 09 21:11:26 2016 +0000
@@ -46,12 +88,34 @@ UUID: 799bbb7c_55687ec5
 Bytes: 128
 This comment is confusing to me? why mStrong == INITIAL_STRONG_VALUE means we never acquired a weak reference? can we remove it?
 
+706:0-706:77
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 799bbb7c_55687ec5
+UUID: 3914e3d3_3b40833d
+Bytes: 129
+Removed the part about weak references. That was preserved from the original, but I'm also not sure what it was intended to mean.
+
 713:23-713:74
 Tue Aug 09 12:10:09 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 990eaf7b_a357dace
 Bytes: 145
 How many similar cases ? My general thinking here is that they're few enough, we should get rid of them and abort unconditionally if we get here.
+
+713:23-713:74
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_a357dace
+UUID: 3914e3d3_5b7bf786
+Bytes: 660
+I also just had this discussion with bdc.
+
+One of the others is go/aog/253530, which is just a +2 away from disappearing.
+
+The other(s) would be much easier to track down once I got rid of the aapt issue. They only result in occasional messages.
+
+Fixing the aapt case would involve heap allocating an object that is currently stack allocated. I seemed to get on the order of half a dozen log messages per aapt invocation, so I doubt that changing this is a measurable performance issue. If there is consensus that's the right thing to do, I can upload a CL and track down the others. I wouldn't mind, but it seemed potentially more controversial than the rest.
 
 File: libutils/tests/RefBase_test.cpp
 
@@ -61,4 +125,14 @@ Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 990eaf7b_436c26a1
 Bytes: 216
 just curious : why did you choose to have one thread that does NITERS/20 iterations instead of one racing thread per iteration ? In other words, why not move this std::thread construction & join inside the for loop ?
+
+225:8-225:39
+Wed Aug 10 00:05:59 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 990eaf7b_436c26a1
+UUID: 3914e3d3_1b149fef
+Bytes: 373
+It would presumably be MUCH slower. And the potentially interfering part of the code would execute much faster than the overhead of thread creation, probably making it less likely that the interesting code pieces would ever be simultaneously scheduled.
+
+The intent here is to maximize that chance that the core of the two loops are really run on two cores at the same time.
 

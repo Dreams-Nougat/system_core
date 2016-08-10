@@ -81,6 +81,14 @@ Agreed this is not perfect. But:
 
 - Based on the recollection of the original authors of this code, the current behavior appears to have been unintentional.
 
+517:11-525:69
+Wed Aug 10 08:32:05 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3914e3d3_1b2a5f83
+UUID: 39cea3f0_c8dc2f15
+Bytes: 123
+Yeah, my guess was this was unintentional behaviour that we're now somewhat stuck with. I agree with your other two points.
+
 706:0-706:77
 Tue Aug 09 21:11:26 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -116,6 +124,18 @@ One of the others is go/aog/253530, which is just a +2 away from disappearing.
 The other(s) would be much easier to track down once I got rid of the aapt issue. They only result in occasional messages.
 
 Fixing the aapt case would involve heap allocating an object that is currently stack allocated. I seemed to get on the order of half a dozen log messages per aapt invocation, so I doubt that changing this is a measurable performance issue. If there is consensus that's the right thing to do, I can upload a CL and track down the others. I wouldn't mind, but it seemed potentially more controversial than the rest.
+
+713:23-713:74
+Wed Aug 10 08:32:05 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3914e3d3_5b7bf786
+UUID: 99a5cf1d_0bb63dd6
+Bytes: 327
+re: go/oag/253530, i've tried to move things along. I will +2 it if the owners don't look.
+
+I've found that many of them ignore aosp changes for the most part and i've often had to send them a change internally or nag them over IM / email to get them to look.
+
+My vote is for fixing the aapt issue and tracking down the others.
 
 File: libutils/tests/RefBase_test.cpp
 

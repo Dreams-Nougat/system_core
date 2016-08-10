@@ -52,6 +52,14 @@ UUID: 3914e3d3_d80b8d27
 Bytes: 189
 I made an attempt to better express this. I think everything except promote() is very special purpose. Promote() should really be the standard way to access the object referenced by a wp<>.
 
+132:0-136:28
+Wed Aug 10 08:17:31 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3914e3d3_d80b8d27
+UUID: 99f78f09_bbcdc765
+Bytes: 40
+The new version is much clearer, thanks.
+
 149:46-149:47
 Tue Aug 09 09:12:28 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>

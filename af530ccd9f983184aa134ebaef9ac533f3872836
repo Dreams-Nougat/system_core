@@ -9,6 +9,14 @@ UUID: f927ab96_6f9c41af
 Bytes: 11
 const auto&
 
+60:17-60:21
+Thu Aug 11 20:53:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f927ab96_6f9c41af
+UUID: 5ed89d08_31d83025
+Bytes: 17
+done (on L50 too)
+
 File: adb/adb_auth_host.cpp
 
 227
@@ -17,6 +25,14 @@ Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f927ab96_2f55e9c5
 Bytes: 25
 What's the point of this?
+
+227
+Thu Aug 11 20:53:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f927ab96_2f55e9c5
+UUID: 9e74d5be_93281c86
+Bytes: 19
+will add a comment.
 
 File: adb/client/main.cpp
 

@@ -1,5 +1,23 @@
 Revision: af530ccd9f983184aa134ebaef9ac533f3872836
 Patch-set: 6
+File: adb/adb_auth_client.cpp
+
+60:17-60:21
+Thu Aug 11 18:48:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f927ab96_6f9c41af
+Bytes: 11
+const auto&
+
+File: adb/adb_auth_host.cpp
+
+227
+Thu Aug 11 18:48:51 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f927ab96_2f55e9c5
+Bytes: 25
+What's the point of this?
+
 File: adb/client/main.cpp
 
 125

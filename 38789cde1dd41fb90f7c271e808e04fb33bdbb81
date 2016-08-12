@@ -1,0 +1,11 @@
+Revision: 38789cde1dd41fb90f7c271e808e04fb33bdbb81
+Patch-set: 1
+File: debuggerd/debuggerd.cpp
+
+463:4-463:46
+Fri Aug 12 00:29:55 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9e0e957b_03806ef3
+Bytes: 107
+Could you add a comment about why the timeout isn't needed here? That way someone doesn't think it's a bug.
+

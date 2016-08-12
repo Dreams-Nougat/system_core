@@ -1,5 +1,14 @@
 Revision: 8d97660a2b15eb7c0e579eef3e49dc40334b2663
 Patch-set: 7
+File: fs_mgr/fs_mgr_verity.cpp
+
+1035:0-1035:59
+Fri Aug 12 08:41:09 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ec2c172_9a89ad22
+Bytes: 95
+I'm not convinced test_access is really needed here. How about we just remove it for all cases?
+
 File: init/devices.cpp
 
 993
@@ -16,6 +25,13 @@ UUID: 3914e3d3_928dec28
 Bytes: 6
 Ditto.
 
+1035:56-1035:57
+Fri Aug 12 08:41:09 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ec2c172_faa1c98e
+Bytes: 5
+true?
+
 File: init/init.cpp
 
 479:4-479:33
@@ -24,6 +40,13 @@ Author: Iliyan Malchev <1000866@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3914e3d3_a7b1d44a
 Bytes: 151
 This line repeats process_kernel_cmdline().  Maybe move it out of both functions and put it in main() before the if() in which early_mount() is called.
+
+535:36-535:44
+Fri Aug 12 08:41:09 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7ec2c172_5a8c352d
+Bytes: 213
+nit: If you changed the second parameter of early_create_dev to be an enum instead of a boolean, the code would be more readable and you wouldn't need to add comments to remind the reader what true or false means.
 
 547
 Wed Aug 10 20:50:58 2016 +0000

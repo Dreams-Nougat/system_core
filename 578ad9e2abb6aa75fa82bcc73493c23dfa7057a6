@@ -1,0 +1,22 @@
+Revision: 578ad9e2abb6aa75fa82bcc73493c23dfa7057a6
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+188:25-188:36
+Fri Aug 12 00:27:37 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dec3ad20_706f8e93
+Bytes: 168
+Did you verify that this is working properly for a few signals?
+
+I think this should be fine, but would want to make sure we don't screw up if the signal is not a SEGV.
+
+452:2-452:29
+Fri Aug 12 00:27:37 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dec3ad20_5043721a
+Bytes: 308
+This appears to be slightly different behavior than the old code. I believe that you can invoke the behavior where the signal is zero if you force a tombstone creation by running debuggerd <PID>. Did you happen to test this path?
+
+In this case, there is no real signal, so you don't want to dump signal info.
+

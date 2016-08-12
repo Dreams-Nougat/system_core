@@ -11,6 +11,14 @@ Did you verify that this is working properly for a few signals?
 
 I think this should be fine, but would want to make sure we don't screw up if the signal is not a SEGV.
 
+188:25-188:36
+Fri Aug 12 18:01:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dec3ad20_706f8e93
+UUID: 3ed3e91e_66a22a42
+Bytes: 44
+This check is already iffy, filed b/30819045
+
 452:2-452:29
 Fri Aug 12 00:27:37 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,4 +27,12 @@ Bytes: 308
 This appears to be slightly different behavior than the old code. I believe that you can invoke the behavior where the signal is zero if you force a tombstone creation by running debuggerd <PID>. Did you happen to test this path?
 
 In this case, there is no real signal, so you don't want to dump signal info.
+
+452:2-452:29
+Fri Aug 12 18:01:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dec3ad20_5043721a
+UUID: 3ed3e91e_86a72e4f
+Bytes: 43
+This prints SIGSTOP, which seems reasonable
 

@@ -9,3 +9,11 @@ UUID: 1e40e5d2_d365b417
 Bytes: 76
 can we remove this #include now, or is it still used elsewhere in this file?
 
+26
+Sat Aug 13 22:29:41 2016 +0000
+Author: Hans Boehm <1042828@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1e40e5d2_d365b417
+UUID: 1e40e5d2_7300680a
+Bytes: 100
+Good point. Though it was allowing me unqualified access to the memory_order enum. Oops. Fixed both.
+

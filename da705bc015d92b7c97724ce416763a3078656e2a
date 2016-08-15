@@ -1,0 +1,32 @@
+Revision: da705bc015d92b7c97724ce416763a3078656e2a
+Patch-set: 9
+File: init/init.cpp
+
+463:0-469:1
+Mon Aug 15 19:44:53 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3bef7b71_807ad61a
+Bytes: 29
+Why not use std::string here?
+
+501:4-501:16
+Mon Aug 15 19:44:53 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5e0fbde2_d91ff314
+Bytes: 23
+std::unique_ptr<fstab>?
+
+520:12-520:30
+Mon Aug 15 19:44:53 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ee76958_c03d3ee6
+Bytes: 55
+std::string mount_point; mount_point == "/vendor" etc.?
+
+525:26-525:34
+Mon Aug 15 19:44:53 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3ee76958_4052ce3d
+Bytes: 38
+What happens if get_path returns NULL?
+

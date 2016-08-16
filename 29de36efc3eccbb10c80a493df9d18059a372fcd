@@ -1,0 +1,11 @@
+Revision: 29de36efc3eccbb10c80a493df9d18059a372fcd
+Patch-set: 1
+File: adb/services.cpp
+
+97:0-102:6
+Tue Aug 16 16:28:17 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fbc6c32f_973b0e32
+Bytes: 144
+Small suggestion, maybe pass a parameter to this function to select between these cases so we can remove this last ADB_HOST check from the file.
+

@@ -32,6 +32,18 @@ UUID: 9ba2277b_43a96624
 Bytes: 135
 We need to call fs_mgr_free_fstab(fstab) to fully reclaim its memory. I think it justifies a separate patch to fix all usages of fstab.
 
+501:4-501:16
+Tue Aug 16 14:18:53 2016 +0000
+Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9ba2277b_43a96624
+UUID: 9b9b0733_1b2e5ba5
+Bytes: 337
+Sure, but you might just as well fix this instance now. You can specify a 'deleter' function for unique_ptr as follows:
+
+  std::unique_ptr<struct fstab, decltype(&fs_mgr_free_fstab)> fstab(fs_mgr_read_fstab_file(fstab_file), fs_mgr_free_fstab);
+
+Also, checking return values for fmemopen and fs_mgr_read_fstab_file would be prudent here.
+
 520:12-520:30
 Mon Aug 15 19:44:53 2016 +0000
 Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 2adc9ea5d12a7bfcaecd67dd506b0d6020d15a34
+Patch-set: 1
+File: libsync/sync.c
+
+96
+Tue Aug 16 16:03:18 2016 +0000
+Author: Rob Herring <1087673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fbc6c32f_77f6a292
+Bytes: 53
+Isn't relying on enabling debugfs a security problem?
+

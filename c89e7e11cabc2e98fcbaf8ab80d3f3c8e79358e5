@@ -9,6 +9,14 @@ UUID: 7b8573c7_228a0ec5
 Bytes: 85
 You can use android::base::unique_fd for these and just return when there's an error.
 
+1017:4-1017:7
+Wed Aug 17 09:37:30 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7b8573c7_228a0ec5
+UUID: 9baf87ac_fba2ef92
+Bytes: 4
+Done
+
 File: init/init.cpp
 
 520:12-520:13
@@ -18,6 +26,14 @@ UUID: 3b64db09_b87ad9c3
 Bytes: 15
 Unnecessary ().
 
+520:12-520:13
+Wed Aug 17 09:37:30 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b64db09_b87ad9c3
+UUID: 9baf87ac_dba733a1
+Bytes: 8
+Removed.
+
 525:26-525:73
 Tue Aug 16 14:18:53 2016 +0000
 Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +41,26 @@ UUID: 9b9b0733_3b331710
 Bytes: 120
 This is wrong, fs_mgr_free_fstab calls free on blk_device, so you need to use strdup here and check that it didn't fail.
 
+525:26-525:73
+Wed Aug 17 09:37:30 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9b9b0733_3b331710
+UUID: 9baf87ac_3bb177db
+Bytes: 17
+Done. Nice catch!
+
 531:12-531:34
 Tue Aug 16 14:18:53 2016 +0000
 Author: Sami Tolvanen <1058768@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3b64db09_987d95c0
 Bytes: 94
 dm_syspath is not really needed anymore, you can just do early_create_dev(get_path(...), ...);
+
+531:12-531:34
+Wed Aug 17 09:37:30 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3b64db09_987d95c0
+UUID: 9baf87ac_1baebb77
+Bytes: 4
+Done
 

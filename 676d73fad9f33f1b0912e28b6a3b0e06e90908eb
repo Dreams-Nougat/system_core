@@ -1,0 +1,39 @@
+Revision: 676d73fad9f33f1b0912e28b6a3b0e06e90908eb
+Patch-set: 2
+File: adb/adb_auth_host.cpp
+
+190:20-190:31
+Fri Aug 19 22:40:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c849337d_a4496290
+Bytes: 56
+here uses fingerprint as key, but L194 uses file as key?
+
+223:14-223:15
+Fri Aug 19 22:40:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb27a396_2375fd90
+Bytes: 21
+check dir == nullptr?
+
+231:12-231:21
+Fri Aug 19 22:40:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb27a396_e3b76539
+Bytes: 32
+check return value of read_keys?
+
+231:51-231:56
+Fri Aug 19 22:40:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb27a396_43bf590f
+Bytes: 44
+so only plan to support one directory depth?
+
+231:30-231:33
+Fri Aug 19 22:40:55 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fb27a396_a3800d60
+Bytes: 34
+do we need OS_PATH_SEPARATOR here?
+

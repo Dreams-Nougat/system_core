@@ -9,6 +9,14 @@ UUID: c849337d_a4496290
 Bytes: 56
 here uses fingerprint as key, but L194 uses file as key?
 
+190:20-190:31
+Fri Aug 19 22:54:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c849337d_a4496290
+UUID: c849337d_046a76ba
+Bytes: 99
+Oops. I had code to handle deleting keys when files were removed, but I screwed up when killing it.
+
 223:14-223:15
 Fri Aug 19 22:40:55 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -36,4 +44,30 @@ Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fb27a396_a3800d60
 Bytes: 34
 do we need OS_PATH_SEPARATOR here?
+
+231:30-231:33
+Fri Aug 19 22:54:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb27a396_a3800d60
+UUID: c849337d_846c26cb
+Bytes: 4
+Done
+
+231:51-231:56
+Fri Aug 19 22:54:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb27a396_43bf590f
+UUID: c849337d_a46f22bf
+Bytes: 232
+Yes, inotify doesn't work recursively and managing the logic to emulate it is copmlicated, so I think it's better to be consistent and not load keys in nested directories than load them at the start, but not monitor the nested dirs.
+
+231:12-231:21
+Fri Aug 19 22:54:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fb27a396_e3b76539
+UUID: c849337d_c4bd7e17
+Bytes: 257
+What would we do with it? e.g. if there's a directory filled with keys, and we failed to read it, would we return false?
+
+The only thing the return value gets used for is printing an error message during initalization, anyway, and that gets done throughout.
 

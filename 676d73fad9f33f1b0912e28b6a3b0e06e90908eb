@@ -17,6 +17,13 @@ UUID: c849337d_046a76ba
 Bytes: 99
 Oops. I had code to handle deleting keys when files were removed, but I screwed up when killing it.
 
+191:12-191:19
+Fri Aug 19 23:11:32 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c849337d_c4f57eb6
+Bytes: 186
+what if you read a directory at init, then read the directory again when a file is added. Then you will read keys for old files in the directory. Do you want a warning in this situation?
+
 223:14-223:15
 Fri Aug 19 22:40:55 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -70,4 +77,20 @@ Bytes: 257
 What would we do with it? e.g. if there's a directory filled with keys, and we failed to read it, would we return false?
 
 The only thing the return value gets used for is printing an error message during initalization, anyway, and that gets done throughout.
+
+231:51-231:56
+Fri Aug 19 23:11:32 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c849337d_a46f22bf
+UUID: c849337d_64412a13
+Bytes: 181
+I agree, if there is no need, we don't need to support nested directories. can you add your words in comment? I didn't expect the reason is inotify doesn't support nested directory.
+
+231:12-231:21
+Fri Aug 19 23:11:32 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c849337d_c4bd7e17
+UUID: c849337d_2434528b
+Bytes: 276
+I think it is the caller to decide how to handle return value of read_keys(). Since read_keys() returns a bool value, we'd better make it catch all error situations. As you want to continue even meeting error here, why not use `bool result` to record the failure and continue?
 

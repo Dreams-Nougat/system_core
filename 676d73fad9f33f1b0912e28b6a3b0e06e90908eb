@@ -40,6 +40,14 @@ UUID: c849337d_e74e3c71
 Bytes: 173
 I thought you read the whole directory again, as you use read_keys(path) instead of read_keys(path, false) in adb_auth_inotify_update(). Not sure if you want to change that.
 
+191:12-191:19
+Sat Aug 20 00:34:58 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c849337d_e74e3c71
+UUID: c849337d_278e9484
+Bytes: 10
+Ah, fixed.
+
 223:14-223:15
 Fri Aug 19 22:40:55 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

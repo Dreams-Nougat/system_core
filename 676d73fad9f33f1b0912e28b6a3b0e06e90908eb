@@ -32,6 +32,14 @@ UUID: c849337d_a71164ad
 Bytes: 152
 It doesn't read the whole directory again, just new files that appear. I'll downgrade this to an INFO message, though, since it's not really unexpected.
 
+191:12-191:19
+Sat Aug 20 00:22:07 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c849337d_a71164ad
+UUID: c849337d_e74e3c71
+Bytes: 173
+I thought you read the whole directory again, as you use read_keys(path) instead of read_keys(path, false) in adb_auth_inotify_update(). Not sure if you want to change that.
+
 223:14-223:15
 Fri Aug 19 22:40:55 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>

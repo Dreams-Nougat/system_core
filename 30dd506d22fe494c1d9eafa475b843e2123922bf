@@ -1,0 +1,20 @@
+Revision: 30dd506d22fe494c1d9eafa475b843e2123922bf
+Patch-set: 1
+File: liblog/logd_writer.c
+
+70:72-70:88
+Mon Aug 22 21:47:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68d2071a_a1541ecf
+Bytes: 125
+perfect. For socket there is no 'open' locking checking, so this works as expected to remove the need for a subsequent fcntl.
+
+File: logd/tests/logd_test.cpp
+
+346:38-346:51
+Mon Aug 22 21:47:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 68d2071a_41eb5208
+Bytes: 304
+There is a subtle difference with O_NONBLOCK for the open call. It will fail immediately if the referenced device is locked (exclusive or in an EBUSY state). I would prefer this remain blocking for open as a DOS attack on the kernel logger could (possibly) make this test pass and I want a positive fail.
+

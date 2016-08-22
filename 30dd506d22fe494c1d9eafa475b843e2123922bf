@@ -18,3 +18,11 @@ UUID: 68d2071a_41eb5208
 Bytes: 304
 There is a subtle difference with O_NONBLOCK for the open call. It will fail immediately if the referenced device is locked (exclusive or in an EBUSY state). I would prefer this remain blocking for open as a DOS attack on the kernel logger could (possibly) make this test pass and I want a positive fail.
 
+346:38-346:51
+Mon Aug 22 23:20:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 68d2071a_41eb5208
+UUID: 68d2071a_67314603
+Bytes: 4
+Done
+

@@ -1,0 +1,11 @@
+Revision: 27b243f6cd76515015f5c009549647e6aa1a6547
+Patch-set: 1
+File: liblog/logger_write.c
+
+154:41-154:71
+Tue Aug 23 22:26:17 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e800b787_8e4f1f3e
+Bytes: 97
+over-the-shoulder review pointed out that __android_log_persist_write list iteration was missing.
+

@@ -9,3 +9,11 @@ UUID: fbc6c32f_77f6a292
 Bytes: 53
 Isn't relying on enabling debugfs a security problem?
 
+96
+Tue Aug 23 23:41:34 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fbc6c32f_77f6a292
+UUID: e800b787_190edbe6
+Bytes: 147
+Moving forward, CONFIG_SW_SYNC_USER is only intended for unit-testing the sync framework.  So you shouldn't have this on production devices anyway.
+

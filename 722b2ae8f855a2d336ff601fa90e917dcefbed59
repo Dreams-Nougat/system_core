@@ -1,0 +1,11 @@
+Revision: 722b2ae8f855a2d336ff601fa90e917dcefbed59
+Patch-set: 1
+File: base/file.cpp
+
+182
+Tue Aug 23 23:47:04 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e800b787_19d7fb18
+Bytes: 121
+Can we use len to detect race condition here? and maybe fallback to pagesize if len returned by readlink is not expected?
+

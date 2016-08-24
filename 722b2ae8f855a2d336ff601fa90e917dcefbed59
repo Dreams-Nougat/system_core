@@ -9,3 +9,11 @@ UUID: e800b787_19d7fb18
 Bytes: 121
 Can we use len to detect race condition here? and maybe fallback to pagesize if len returned by readlink is not expected?
 
+182
+Wed Aug 24 01:13:35 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: e800b787_19d7fb18
+UUID: e82ef725_0999b9c9
+Bytes: 161
+no, because the length returned isn't the actual length --- it's what the syscall truncated to. if the symlink gets bigger between your two calls, you're fucked.
+

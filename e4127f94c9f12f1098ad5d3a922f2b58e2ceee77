@@ -1,0 +1,11 @@
+Revision: e4127f94c9f12f1098ad5d3a922f2b58e2ceee77
+Patch-set: 1
+File: adb/sysdeps_win32.cpp
+
+1163:0-1205:5
+Wed Aug 24 01:08:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e82ef725_09877978
+Bytes: 32
+or memset beforehand and memcmp?
+

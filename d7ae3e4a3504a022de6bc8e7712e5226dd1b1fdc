@@ -1,0 +1,34 @@
+Revision: d7ae3e4a3504a022de6bc8e7712e5226dd1b1fdc
+Patch-set: 1
+File: adb/socket_spec.cpp
+
+39:0-49:6
+Thu Aug 25 03:26:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 083fcb98_512736b6
+Bytes: 28
+should this be in sysdeps.h?
+
+File: adb/socket_spec.h
+
+21
+Thu Aug 25 03:26:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 083fcb98_111dae6a
+Bytes: 4
+why?
+
+24:5-24:24
+Thu Aug 25 03:26:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 083fcb98_11020e15
+Bytes: 15
+is_socket_spec?
+
+28
+Thu Aug 25 03:26:28 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 083fcb98_912fde8c
+Bytes: 30
+is this used by a later patch?
+

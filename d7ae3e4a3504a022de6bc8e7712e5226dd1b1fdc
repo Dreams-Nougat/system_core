@@ -9,6 +9,14 @@ UUID: 083fcb98_512736b6
 Bytes: 28
 should this be in sysdeps.h?
 
+39:0-49:6
+Thu Aug 25 05:17:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 083fcb98_512736b6
+UUID: 083fcb98_5103b6ae
+Bytes: 93
+Maybe, but sysdeps.h is a giant mess. Maybe sysdeps/macros.h that gets included by sysdeps.h?
+
 File: adb/socket_spec.h
 
 21
@@ -18,6 +26,14 @@ UUID: 083fcb98_111dae6a
 Bytes: 4
 why?
 
+21
+Thu Aug 25 05:17:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 083fcb98_111dae6a
+UUID: 083fcb98_719fd2a8
+Bytes: 8
+Removed.
+
 24:5-24:24
 Thu Aug 25 03:26:28 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,10 +41,26 @@ UUID: 083fcb98_11020e15
 Bytes: 15
 is_socket_spec?
 
+24:5-24:24
+Thu Aug 25 05:17:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 083fcb98_11020e15
+UUID: 083fcb98_51a2d6ef
+Bytes: 72
+Thanks, I couldn't think of a good name that started with "socket_spec_"
+
 28
 Thu Aug 25 03:26:28 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 083fcb98_912fde8c
 Bytes: 30
 is this used by a later patch?
+
+28
+Thu Aug 25 05:17:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 083fcb98_912fde8c
+UUID: 083fcb98_31a54af7
+Bytes: 63
+I was, but I don't think it's actually needed. Removed for now.
 

@@ -1,0 +1,11 @@
+Revision: b421783fda80cca167fe59a18a728add9f3e2186
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+141
+Fri Aug 26 23:44:57 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_6190724a
+Bytes: 51
+don't forget to add the case to the switch above...
+

@@ -1,0 +1,11 @@
+Revision: 0add1f0f5fb06f28bb6ce75e61f781c2279b934c
+Patch-set: 1
+File: adb/Android.mk
+
+140
+Fri Aug 26 23:37:20 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_e15ec220
+Bytes: 5
+Fixed
+

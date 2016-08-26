@@ -11,3 +11,11 @@ This makes adb commands always go through the One True Server if one exists loca
 
 Thoughts?
 
+1609
+Fri Aug 26 23:39:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_e1e802e5
+UUID: a5afcaab_410216ad
+Bytes: 78
+are there really people running multiple adb servers? are they only using TCP?
+

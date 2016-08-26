@@ -1,0 +1,18 @@
+Revision: cd60a2ec14433533595652363c520eeefccde37f
+Patch-set: 4
+File: adb/commandline.cpp
+
+1569:0-1578:9
+Fri Aug 26 23:42:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_a1c43a62
+Bytes: 58
+just let the regular socket spec parser parse "tmp" below?
+
+1590
+Fri Aug 26 23:42:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_61a752b9
+Bytes: 5
+leak?
+

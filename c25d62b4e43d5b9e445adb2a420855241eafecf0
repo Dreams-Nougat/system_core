@@ -27,3 +27,19 @@ UUID: a5afcaab_e47c9016
 Bytes: 168
 What is the behavior if you actually have multiple adb servers w/ adb connect? I thought your bug said that they all contend for USB and the behavior will be undefined?
 
+1609
+Fri Aug 26 23:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_410216ad
+UUID: a5afcaab_84626c40
+Bytes: 142
+I might be completely misremembering, but I think some of the internal testing stuff has TCP-only servers connected to emulators or something?
+
+1609
+Fri Aug 26 23:58:24 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_e47c9016
+UUID: a5afcaab_a47c48e3
+Bytes: 153
+If there aren't any USB devices, I think it should work. If there are, when you plug in a devices, it'll get connected to one of the servers arbitrarily.
+

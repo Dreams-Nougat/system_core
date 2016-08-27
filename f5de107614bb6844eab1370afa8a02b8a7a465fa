@@ -50,6 +50,20 @@ UUID: a5afcaab_c42ab47a
 Bytes: 34
 oh. given L325, lose the 'P' here?
 
+368:4-368:20
+Sat Aug 27 00:55:21 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_44d5843f
+Bytes: 22
+C++ comments here too?
+
+369:0-377:5
+Sat Aug 27 00:55:21 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_64d88079
+Bytes: 44
+This can just call drop_privs() in line 194.
+
 388
 Sat Aug 27 00:35:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

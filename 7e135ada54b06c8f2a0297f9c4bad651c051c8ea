@@ -47,3 +47,10 @@ UUID: a5afcaab_e45b7088
 Bytes: 130
 rather than have the operation in the constructor, i think we should expose the fd array so we can use this with the whole family.
 
+78
+Sat Aug 27 00:12:34 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_a43b28eb
+Bytes: 219
+This seems like it would be more useful to have this generally available for any unix domain socket, not just socketpairs created through this class. We have dozens of copies of this boilerplate throughout the codebase.
+

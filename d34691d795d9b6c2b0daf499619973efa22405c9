@@ -1,0 +1,25 @@
+Revision: d34691d795d9b6c2b0daf499619973efa22405c9
+Patch-set: 3
+File: sdcard/sdcard.cpp
+
+320
+Sat Aug 27 15:36:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_2ffa510c
+Bytes: 3
+tab
+
+378
+Sat Aug 27 15:36:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_0f08b52e
+Bytes: 69
+no, i meant "keep the error message you already had, it was fine" :-)
+
+493:21-493:32
+Sat Aug 27 15:36:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_ef0c6944
+Bytes: 51
+you don't need to do that. the compiler will do it.
+

@@ -1,0 +1,70 @@
+Revision: f5de107614bb6844eab1370afa8a02b8a7a465fa
+Patch-set: 1
+File: sdcard/sdcard.cpp
+
+315:7-315:10
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_84770c97
+Bytes: 80
+bool and flip the callers? (especially since you've added other bool functions.)
+
+319
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_6419a07c
+Bytes: 57
+StringPrintf would let you lose the fixed-length buffers.
+
+325
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_0431bcee
+Bytes: 259
+PLOG does the strerror part for you. so just:
+
+  PLOG(ERROR) << "failed to mount sdcardfs filesystem";
+
+(i remember it as P for perror(3).)
+
+you might want to add the source_path and/or dest_path, though, given that you have a *lot* of calls to this function.
+
+340
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_8445cc56
+Bytes: 112
+(here you don't even need StringPrintf. you can just use std::string's operator+. but StringPrintf is fine too.)
+
+345
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_64740092
+Bytes: 11
+// comments
+
+352
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_c42ab47a
+Bytes: 34
+oh. given L325, lose the 'P' here?
+
+388
+Sat Aug 27 00:35:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_e487f076
+Bytes: 269
+or:
+
+  std::string filesystems;
+  if (!android::base::ReadFileToString("/proc/filesystems")) {
+    PLOG(ERROR) << "...";
+    return false;
+  }
+
+  for (const auto& fs : android::base::Split(filesystems, "\n")) {
+    if (fs == "sdcardfs") return true;
+  }
+  return false;
+

@@ -9,6 +9,14 @@ UUID: a5afcaab_c4fe3454
 Bytes: 40
 generalize this for the pipe family too?
 
+31
+Sat Aug 27 00:05:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_c4fe3454
+UUID: a5afcaab_84edcc89
+Bytes: 62
+Can't this just be a `bool socketpair(unique_fd[2])` overload?
+
 53
 Fri Aug 26 23:59:18 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 247924a36fe5623be87017d42704fc1fd939010b
+Patch-set: 1
+File: base/include/android-base/macros.h
+
+64:3-64:38
+Mon Aug 29 17:54:36 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_553f6cb4
+Bytes: 21
+isn't it always true?
+

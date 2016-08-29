@@ -2,6 +2,13 @@ Revision: 247924a36fe5623be87017d42704fc1fd939010b
 Patch-set: 1
 File: base/include/android-base/macros.h
 
+47:0-47:26
+Mon Aug 29 18:01:15 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_5571ac9f
+Bytes: 38
+See here. I just made it consistent...
+
 64:3-64:38
 Mon Aug 29 17:54:36 2016 +0000
 Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -17,6 +17,14 @@ UUID: 850ac6d0_9d7c4716
 Bytes: 249
 This check is so that if we're connecting to an adb server on a different machine, we don't try to check the lockfile for our current machine. We never try to start a server if this would return true (adb_client.cpp:171), so I think this is correct.
 
+1599:8-1599:28
+Mon Aug 29 21:00:09 2016 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 850ac6d0_9d7c4716
+UUID: 850ac6d0_9d20c705
+Bytes: 41
+Ah, got it, thanks for the clarification.
+
 1609
 Fri Aug 26 23:37:20 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

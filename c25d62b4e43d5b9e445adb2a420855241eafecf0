@@ -9,6 +9,14 @@ UUID: a5afcaab_55264cbc
 Bytes: 172
 In the common case, users use adb both from command line and from Studio. If we have this check (i.e. a lock file is not always created), then this won't really work right?
 
+1599:8-1599:28
+Mon Aug 29 20:45:12 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_55264cbc
+UUID: 850ac6d0_9d7c4716
+Bytes: 249
+This check is so that if we're connecting to an adb server on a different machine, we don't try to check the lockfile for our current machine. We never try to start a server if this would return true (adb_client.cpp:171), so I think this is correct.
+
 1609
 Fri Aug 26 23:37:20 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

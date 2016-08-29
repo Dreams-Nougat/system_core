@@ -556,7 +556,6 @@ void VectorImpl::_do_move_backward(void* dest, const void* from, size_t num) con
     do_move_backward(dest, from, num);
 }
 
-#ifdef NEEDS_VECTORIMPL_SYMBOLS
 void VectorImpl::reservedVectorImpl1() { }
 void VectorImpl::reservedVectorImpl2() { }
 void VectorImpl::reservedVectorImpl3() { }
@@ -565,7 +564,6 @@ void VectorImpl::reservedVectorImpl5() { }
 void VectorImpl::reservedVectorImpl6() { }
 void VectorImpl::reservedVectorImpl7() { }
 void VectorImpl::reservedVectorImpl8() { }
-#endif
 
 /*****************************************************************************/
 
@@ -686,7 +684,6 @@ ssize_t SortedVectorImpl::remove(const void* item)
     return i;
 }
 
-#ifdef NEEDS_VECTORIMPL_SYMBOLS
 void SortedVectorImpl::reservedSortedVectorImpl1() { };
 void SortedVectorImpl::reservedSortedVectorImpl2() { };
 void SortedVectorImpl::reservedSortedVectorImpl3() { };
@@ -695,7 +692,6 @@ void SortedVectorImpl::reservedSortedVectorImpl5() { };
 void SortedVectorImpl::reservedSortedVectorImpl6() { };
 void SortedVectorImpl::reservedSortedVectorImpl7() { };
 void SortedVectorImpl::reservedSortedVectorImpl8() { };
-#endif
 
 /*****************************************************************************/
 

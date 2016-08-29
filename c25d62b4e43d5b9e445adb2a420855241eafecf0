@@ -2,6 +2,13 @@ Revision: c25d62b4e43d5b9e445adb2a420855241eafecf0
 Patch-set: 3
 File: adb/commandline.cpp
 
+1599:8-1599:28
+Mon Aug 29 17:48:52 2016 +0000
+Author: Siva Velusamy <1010055@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5afcaab_55264cbc
+Bytes: 172
+In the common case, users use adb both from command line and from Studio. If we have this check (i.e. a lock file is not always created), then this won't really work right?
+
 1609
 Fri Aug 26 23:37:20 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

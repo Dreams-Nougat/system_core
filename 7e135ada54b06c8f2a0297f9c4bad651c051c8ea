@@ -38,6 +38,18 @@ UUID: a5afcaab_44cea42f
 Bytes: 29
 This seems super error prone.
 
+101
+Mon Aug 29 23:21:30 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_44cea42f
+UUID: a5afcaab_f53f9867
+Bytes: 445
+I've gone back-and-forth on this one.  On the one hand you can shoot yourself in the foot by passing in an object that doesn't like being bitwise copied.  On the other hand send()/recv() already let you shoot yourself in the foot by doing exactly that.
+
+I'm fine with removing it, or restricting it to POD types.  I'm mainly interested in the fd-sharing case, where the cmsg API is kind of fiddly and IMO not all that well documented.
+
+Thoughts?
+
 File: base/multiprocess.cpp
 
 30
@@ -47,10 +59,28 @@ UUID: a5afcaab_e45b7088
 Bytes: 130
 rather than have the operation in the constructor, i think we should expose the fd array so we can use this with the whole family.
 
+30
+Mon Aug 29 23:21:30 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_e45b7088
+UUID: 45836e87_4074ae91
+Bytes: 145
+I like Josh's idea of just implementing bool socketpair(unique_fd[2]) and pipe(unique_fd[2]), so none of these details are hidden inside a class.
+
 78
 Sat Aug 27 00:12:34 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5afcaab_a43b28eb
 Bytes: 219
 This seems like it would be more useful to have this generally available for any unix domain socket, not just socketpairs created through this class. We have dozens of copies of this boilerplate throughout the codebase.
+
+78
+Mon Aug 29 23:21:30 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_a43b28eb
+UUID: a5afcaab_d5625cab
+Bytes: 200
+As in, break this method out into its own helper function, or make local_socketstream work with other kinds of sockets?
+
+If it's the latter, there's already a constructor that just consumes a bare fd.
 

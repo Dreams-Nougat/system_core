@@ -1,0 +1,11 @@
+Revision: 0fc52ee845d91cc2364b1327bc9286faf47be323
+Patch-set: 1
+File: adb/protocol.txt
+
+80
+Mon Aug 29 22:57:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 45836e87_c058be67
+Bytes: 88
+i think these would make more sense up on the lines that introduce them. (so here, L56.)
+

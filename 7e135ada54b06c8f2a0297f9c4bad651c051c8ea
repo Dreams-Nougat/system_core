@@ -67,6 +67,14 @@ UUID: 45836e87_4074ae91
 Bytes: 145
 I like Josh's idea of just implementing bool socketpair(unique_fd[2]) and pipe(unique_fd[2]), so none of these details are hidden inside a class.
 
+30
+Tue Aug 30 00:25:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45836e87_4074ae91
+UUID: 45836e87_231974d6
+Bytes: 46
+yeah, sgtm. (plus pipe2. or maybe only pipe2?)
+
 78
 Sat Aug 27 00:12:34 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

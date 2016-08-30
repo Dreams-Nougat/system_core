@@ -50,6 +50,14 @@ I'm fine with removing it, or restricting it to POD types.  I'm mainly intereste
 
 Thoughts?
 
+101
+Tue Aug 30 00:48:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_f53f9867
+UUID: 45836e87_4373d8f2
+Bytes: 154
+I think most people would expect << to do something similar to iostreams when used in this context. Maybe rename it to something like read(void*, size_t)?
+
 File: base/multiprocess.cpp
 
 30
@@ -75,6 +83,14 @@ UUID: 45836e87_231974d6
 Bytes: 46
 yeah, sgtm. (plus pipe2. or maybe only pipe2?)
 
+30
+Tue Aug 30 00:48:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 45836e87_231974d6
+UUID: 45836e87_a38104af
+Bytes: 74
+You could have a flags arg that defaults to 0 for the best of both worlds.
+
 78
 Sat Aug 27 00:12:34 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -91,4 +107,12 @@ Bytes: 200
 As in, break this method out into its own helper function, or make local_socketstream work with other kinds of sockets?
 
 If it's the latter, there's already a constructor that just consumes a bare fd.
+
+78
+Tue Aug 30 00:48:40 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_d5625cab
+UUID: 45836e87_0391d0f7
+Bytes: 173
+I mean a "sendmsg that sends FDs" helper (and corresponding recvmsg) that does all of the CMSG junk for you. If you grep for CMSG, this exact sequence of code is everywhere.
 

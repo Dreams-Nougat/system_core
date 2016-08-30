@@ -1,0 +1,25 @@
+Revision: 233cea20250d3b28508b54f7cdebe4c317d3c1b8
+Patch-set: 2
+File: base/include/android-base/local_socket.h
+
+35
+Tue Aug 30 20:50:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 315b2141_a724cabc
+Bytes: 163
+Hmm, it might be better to have two arguments for this and socketpair. I think that most people are probably going to want to name each end of the pipe/socketpair.
+
+44:13-44:69
+Tue Aug 30 20:50:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 315b2141_e7488258
+Bytes: 92
+This seems like it needs to return ssize_t, or else you're screwed if sendmsg returns short.
+
+49:13-49:73
+Tue Aug 30 20:50:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 315b2141_c76c5ec8
+Bytes: 49
+But it doesn't tell you how long the message was?
+

@@ -26,3 +26,13 @@ UUID: f1c6e968_983b1929
 Bytes: 31
 the emulator seems to set it...
 
+268
+Wed Aug 31 19:57:31 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1c6e968_983b1929
+UUID: f1c6e968_789c7d16
+Bytes: 304
+The emulator sets it to false (i.e. it always wants the real home directory).
+
+The function that gets the adbkey path is the caller that sets it to true. Hmm, this is to avoid annoying folders in the user's home directory? If so, there's a canonical place to put stuff in that we should be using instead.
+

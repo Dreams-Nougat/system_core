@@ -1,0 +1,11 @@
+Revision: 87ef739dba1a6bb6c9ebb9b73e78eb2f14cd3fd7
+Base-for-patch-set: 1
+File: adb/adb_utils.cpp
+
+268
+Wed Aug 31 19:31:32 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f1c6e968_f82ded00
+Bytes: 105
+This logic was done since authentication was first added, but it probably doesn't actually serve any use?
+

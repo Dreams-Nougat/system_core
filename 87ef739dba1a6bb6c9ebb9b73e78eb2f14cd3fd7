@@ -36,3 +36,11 @@ The emulator sets it to false (i.e. it always wants the real home directory).
 
 The function that gets the adbkey path is the caller that sets it to true. Hmm, this is to avoid annoying folders in the user's home directory? If so, there's a canonical place to put stuff in that we should be using instead.
 
+268
+Wed Aug 31 20:00:07 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1c6e968_789c7d16
+UUID: f1c6e968_f875edc1
+Bytes: 10
++vsiva :-)
+

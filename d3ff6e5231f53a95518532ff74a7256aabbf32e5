@@ -1,0 +1,11 @@
+Revision: d3ff6e5231f53a95518532ff74a7256aabbf32e5
+Patch-set: 2
+File: base/file.cpp
+
+184
+Wed Aug 31 16:36:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 313c01f2_73e5a89a
+Bytes: 52
+(i tested the doubling code by setting this to 128.)
+

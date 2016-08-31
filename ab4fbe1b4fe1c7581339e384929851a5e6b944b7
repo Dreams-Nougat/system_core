@@ -1,0 +1,11 @@
+Revision: ab4fbe1b4fe1c7581339e384929851a5e6b944b7
+Patch-set: 1
+File: init/init.cpp
+
+592
+Wed Aug 31 23:07:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71ecb90a_5152f468
+Bytes: 52
+do you get any selinux spam after booting with this?
+

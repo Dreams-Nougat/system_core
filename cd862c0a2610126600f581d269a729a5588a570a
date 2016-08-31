@@ -1,0 +1,11 @@
+Revision: cd862c0a2610126600f581d269a729a5588a570a
+Patch-set: 1
+File: adb/adb_unique_fd.h
+
+24
+Wed Aug 31 19:40:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f1c6e968_586b4119
+Bytes: 64
+this is still a sysdeps.h dependency, no? take this out of line?
+

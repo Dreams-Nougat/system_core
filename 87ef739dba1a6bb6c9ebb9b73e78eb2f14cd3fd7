@@ -1,5 +1,14 @@
 Revision: 87ef739dba1a6bb6c9ebb9b73e78eb2f14cd3fd7
 Base-for-patch-set: 1
+File: adb/adb_auth_host.cpp
+
+257
+Wed Aug 31 19:45:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f1c6e968_58426191
+Bytes: 37
+why don't we need the mkdir any more?
+
 File: adb/adb_utils.cpp
 
 268
@@ -8,4 +17,12 @@ Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: f1c6e968_f82ded00
 Bytes: 105
 This logic was done since authentication was first added, but it probably doesn't actually serve any use?
+
+268
+Wed Aug 31 19:45:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1c6e968_f82ded00
+UUID: f1c6e968_983b1929
+Bytes: 31
+the emulator seems to set it...
 

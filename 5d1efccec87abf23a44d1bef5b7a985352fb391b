@@ -1,0 +1,11 @@
+Revision: 5d1efccec87abf23a44d1bef5b7a985352fb391b
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+306
+Wed Aug 31 19:45:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f1c6e968_b838d52c
+Bytes: 25
+ah, the mkdir moved here.
+

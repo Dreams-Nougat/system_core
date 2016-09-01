@@ -9,10 +9,26 @@ UUID: a5afcaab_a1c43a62
 Bytes: 58
 just let the regular socket spec parser parse "tmp" below?
 
+1569:0-1578:9
+Thu Sep 01 22:51:17 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_a1c43a62
+UUID: 31d32198_ea09273e
+Bytes: 4
+Done
+
 1590
 Fri Aug 26 23:42:53 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a5afcaab_61a752b9
 Bytes: 5
 leak?
+
+1590
+Thu Sep 01 22:51:17 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5afcaab_61a752b9
+UUID: 31d32198_8a14eb57
+Bytes: 45
+Fixed (adb_set_socket_spec takes a char* now)
 

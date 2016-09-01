@@ -26,10 +26,34 @@ yeah, lets us remove the close from "fail:" too. we should have the One True clo
 
 /me wishes this file was C++ so we could just use unique_fd...
 
+91:38-91:39
+Thu Sep 01 20:44:07 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d113a50f_f4ad983d
+UUID: d113a50f_9446e473
+Bytes: 396
+a little more complicated because on line 87 it wants us to call close in fail.
+
+errno gets clobbered all over the place here, if we wanted to be accurate we should hold on to a save_errno after important calls calls (open, lseek, mmap & processFile()), and restore in fail path.
+
+Beyond the scope of this fix, will look into correcting that in a followup orphan'd patch to AOSP for Android next.
+
 95
 Thu Sep 01 20:30:36 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d113a50f_94b8a481
 Bytes: 149
 isn't there a bug here? MAP_FAILED != NULL, so we'll try to munmap on L122. i guess it doesn't matter because no-one checks the result of the munmap.
+
+95
+Thu Sep 01 20:44:07 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d113a50f_94b8a481
+UUID: d113a50f_d4697cf1
+Bytes: 281
+Cleanliness suggests do not call munmap if mapAddr == MAP_FAILED ... but it is not harmful.
+
+As for NULL, it is supposed to be a can-not-happen, but I have checked for both as 'failures' in other arenas so should be done.
+
+Also outside the scope of this CL, so will followup later.
 

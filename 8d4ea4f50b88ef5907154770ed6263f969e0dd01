@@ -1,0 +1,23 @@
+Revision: 8d4ea4f50b88ef5907154770ed6263f969e0dd01
+Patch-set: 1
+File: base/file.cpp
+
+213:27-213:48
+Thu Sep 01 02:06:57 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71ecb90a_7494c643
+Bytes: 792
+I don't think this will always work, the documentation says the following:
+
+If the agent that launched the program did not specify the full path to the program's executable in the argv parameters, the main bundle value might be NULL. Bundles rely on either the path to the executable being in argv[0] or the presence of the executable's path in the PATH environment variable. If neither of these is present, the bundle routines might not be able to find the main bundle directory. Programs launched by xinetd often experience this problem when xinetd changes the current directory to /.
+
+Change this to use _NSGetExecutablePath instead? https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man3/dyld.3.html
+(This has way less of apple's absurd nonsense, as well)
+
+222
+Thu Sep 01 02:06:57 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71ecb90a_74e60608
+Bytes: 72
+Maybe switch this to #elif defined(_WIN32) and stick an #error in #else?
+

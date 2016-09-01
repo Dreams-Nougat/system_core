@@ -1,0 +1,24 @@
+Revision: 15668433ba77936284b5c1ef67c95b280f720a53
+Patch-set: 1
+File: libcutils/socket_network_client_unix.c
+
+63
+Thu Sep 01 22:54:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31d32198_6afed700
+Bytes: 18
+why not "= addrs"?
+
+64
+Thu Sep 01 22:54:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31d32198_6a2537b7
+Bytes: 110
+isn't this usually
+
+  for (struct addrinfo* addr = addrs; addr != NULL; addr = addr->ai_next) {
+    ...
+  }
+
+?
+

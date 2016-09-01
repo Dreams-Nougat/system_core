@@ -14,10 +14,26 @@ If the agent that launched the program did not specify the full path to the prog
 Change this to use _NSGetExecutablePath instead? https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man3/dyld.3.html
 (This has way less of apple's absurd nonsense, as well)
 
+213:27-213:48
+Thu Sep 01 16:26:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71ecb90a_7494c643
+UUID: 71ecb90a_1a5b5c5b
+Bytes: 111
+raised http://b/31240820 and added a TODO (since this is just moving code around and i can't build or test it).
+
 222
 Thu Sep 01 02:06:57 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 71ecb90a_74e60608
 Bytes: 72
 Maybe switch this to #elif defined(_WIN32) and stick an #error in #else?
+
+222
+Thu Sep 01 16:26:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 71ecb90a_74e60608
+UUID: 71ecb90a_fa5f7842
+Bytes: 118
+done. i've added a trivial test too, so we at least know we have a symbol that returns _something_ on each platform...
 

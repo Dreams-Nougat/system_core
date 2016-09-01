@@ -14,3 +14,22 @@ fd = -1;
 
 Should do the trick.
 
+91:38-91:39
+Thu Sep 01 20:30:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 51625590_cb2889a9
+UUID: d113a50f_f4ad983d
+Bytes: 244
+yeah, lets us remove the close from "fail:" too. we should have the One True close occur after the "if" below, though, so we don't clobber errno...
+
+...except that has a goto fail.
+
+/me wishes this file was C++ so we could just use unique_fd...
+
+95
+Thu Sep 01 20:30:36 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d113a50f_94b8a481
+Bytes: 149
+isn't there a bug here? MAP_FAILED != NULL, so we'll try to munmap on L122. i guess it doesn't matter because no-one checks the result of the munmap.
+

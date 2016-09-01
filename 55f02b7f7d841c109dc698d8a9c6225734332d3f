@@ -1,0 +1,11 @@
+Revision: 55f02b7f7d841c109dc698d8a9c6225734332d3f
+Patch-set: 1
+File: base/include/android-base/logging.h
+
+269
+Thu Sep 01 04:35:31 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 71ecb90a_a0f8a466
+Bytes: 226
+This is pretty nitpicky, but does this violate ODR if a one translation unit is compiled with C++11 and another is compiled with C++03? I think the function below is fine because it's static, but this seems a bit more sketchy.
+

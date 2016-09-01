@@ -9,6 +9,14 @@ UUID: 31d32198_076d96c1
 Bytes: 56
 Consider using android::Mutex::Autolock to manage locks;
 
+492:4-492:24
+Thu Sep 01 22:02:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31d32198_076d96c1
+UUID: 31d32198_87486613
+Bytes: 90
+better still, we have fully functional std::mutex and std::lock_guard ready and waiting...
+
 511:11-511:42
 Thu Sep 01 21:56:33 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>

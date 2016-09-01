@@ -1,0 +1,16 @@
+Revision: b2f019ec1eb2dec1c87050dcf797cc8538d805b9
+Patch-set: 1
+File: liblog/event_tag_map.c
+
+91:38-91:39
+Thu Sep 01 19:31:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 51625590_cb2889a9
+Bytes: 183
+If fd is no longer required, it should be closed here right after mmap(), circumventing any closes below, but worry about file closes above.
+
+close(fd);
+fd = -1;
+
+Should do the trick.
+

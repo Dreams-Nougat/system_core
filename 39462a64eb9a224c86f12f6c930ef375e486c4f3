@@ -1,0 +1,20 @@
+Revision: 39462a64eb9a224c86f12f6c930ef375e486c4f3
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+492:4-492:24
+Thu Sep 01 21:56:33 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 31d32198_076d96c1
+Bytes: 56
+Consider using android::Mutex::Autolock to manage locks;
+
+511:11-511:42
+Thu Sep 01 21:56:33 2016 +0000
+Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 51b5f542_f383ea5a
+Bytes: 160
+not exactly true; 
+it is called from line 836 without clear_all; and from line 857 with clear_all;
+I don't believe it breaks the logic; just a little misleading
+

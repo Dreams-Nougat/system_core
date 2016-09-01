@@ -61,3 +61,17 @@ I don't know if any of that helps, but if you start with $HOME/.android, I'd be 
 
 If you need a more specific recommendation, let me know and I can email the team.
 
+268
+Thu Sep 01 00:49:41 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f1c6e968_db94ab3c
+UUID: 71ecb90a_b46a2e14
+Bytes: 1034
+> I don't know if any of that helps, but if you start with $HOME/.android, I'd be perfectly fine with that as long as you are using it specifically for tiny files. (Specifically because $HOME/.android is where we keep a uid.txt)
+
+Yeah, on linux/OS X, the behavior for adbkey should be unchanged (~/.android/adbkey), and the lockfile will placed alongside it. The lockfile itself will just contain where the adb socket is (e.g. 'tcp:5037').
+
+The Windows-only logic here seems like it can only cause problems. (e.g. https://code.google.com/p/android/issues/detail?id=62766). Also, if ANDROID_SDK_HOME is unset, it uses the $HOME\.android as on linux/OS X, but dotfiles aren't hidden on windows. It seems like windows users should be complaining about the home directory pollution even more :-)
+
+Should we move to using the %localappdata% path instead? It seems to be the canonical path for this kind of thing. (e.g. C:\Users\jmgao\AppData\Local\Android\adbkey (adb instead of Android? Google\Android\adb? let the bikeshedding commence))
+

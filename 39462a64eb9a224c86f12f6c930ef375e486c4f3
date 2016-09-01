@@ -17,6 +17,14 @@ UUID: 31d32198_87486613
 Bytes: 90
 better still, we have fully functional std::mutex and std::lock_guard ready and waiting...
 
+492:4-492:24
+Thu Sep 01 22:13:20 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 31d32198_87486613
+UUID: 31d32198_c7c7fe55
+Bytes: 61
+Agreed, will not use android:: if there is a std:: available.
+
 511:11-511:42
 Thu Sep 01 21:56:33 2016 +0000
 Author: Alexey Polyudov <1097918@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,4 +33,16 @@ Bytes: 160
 not exactly true; 
 it is called from line 836 without clear_all; and from line 857 with clear_all;
 I don't believe it breaks the logic; just a little misleading
+
+511:11-511:42
+Thu Sep 01 22:13:20 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 51b5f542_f383ea5a
+UUID: 31d32198_47ddce2c
+Bytes: 396
+Both are clearall. The assumption that pruneRows == ULONG_MAX is no longer correct because of the retry logic setting it to 1 on the last pass to collect a status return value.
+
+The logic is still correct as it will report busy, it just will not exit after one pass through the loop to quickly report busy.
+
+Need to fix this, but not at priority (technical debt), sonot in the context of this CL.
 

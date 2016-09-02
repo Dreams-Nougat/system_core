@@ -38,6 +38,16 @@ errno gets clobbered all over the place here, if we wanted to be accurate we sho
 
 Beyond the scope of this fix, will look into correcting that in a followup orphan'd patch to AOSP for Android next.
 
+91:38-91:39
+Fri Sep 02 10:54:47 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d113a50f_9446e473
+UUID: 16fd3327_5ec9554b
+Bytes: 137
+I'd suggest moving this file over to C++ - there's a lot that can be cleaned up. 
+
+(That includes the error message that says "ARRRRGH".)
+
 95
 Thu Sep 01 20:30:36 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

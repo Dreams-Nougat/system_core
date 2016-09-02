@@ -9,10 +9,26 @@ UUID: 313c01f2_a27d20be
 Bytes: 173
 Check for mismatch between desired and actual reserved blocks (as you're doing inside the blocks). Then check for access to TUNE2FS and turn this into ERROR if access fails.
 
+218:12-218:16
+Fri Sep 02 01:00:59 2016 +0000
+Author: minghao lee <1064403@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 313c01f2_a27d20be
+UUID: 313c01f2_a2e240ef
+Bytes: 4
+Done
+
 236:60-236:64
 Wed Aug 31 01:31:59 2016 +0000
 Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 313c01f2_629cb816
 Bytes: 4
 Why?
+
+236:60-236:64
+Fri Sep 02 01:00:59 2016 +0000
+Author: minghao lee <1064403@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 313c01f2_629cb816
+UUID: 313c01f2_c2fe6499
+Bytes: 90
+Avoid to reserve too large  size for some small partition, such as cache which have 200MB.
 

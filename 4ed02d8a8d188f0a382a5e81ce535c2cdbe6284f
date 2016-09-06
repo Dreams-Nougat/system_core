@@ -1,0 +1,20 @@
+Revision: 4ed02d8a8d188f0a382a5e81ce535c2cdbe6284f
+Patch-set: 1
+File: adb/sysdeps_test.cpp
+
+23
+Tue Sep 06 20:43:50 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_90a5ba54
+Bytes: 19
+Move up to <atomic>
+
+File: adb/transport_local.cpp
+
+20
+Tue Sep 06 20:43:50 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_f0a23e48
+Bytes: 21
+Move down to <vector>
+

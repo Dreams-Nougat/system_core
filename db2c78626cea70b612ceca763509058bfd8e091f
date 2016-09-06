@@ -1,0 +1,18 @@
+Revision: db2c78626cea70b612ceca763509058bfd8e091f
+Patch-set: 12
+File: fs_mgr/fs_mgr.c
+
+241:34-241:76
+Tue Sep 06 21:01:57 2016 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_b01b968b
+Bytes: 25
+Use sb->s_log_block_size?
+
+243
+Tue Sep 06 21:01:57 2016 +0000
+Author: Mohamad Ayyash <1037321@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_506fd223
+Bytes: 56
+add: "...falling back to 2% of total blocks" for clarity
+

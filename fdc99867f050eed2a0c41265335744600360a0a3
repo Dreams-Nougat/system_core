@@ -1,0 +1,25 @@
+Revision: fdc99867f050eed2a0c41265335744600360a0a3
+Patch-set: 2
+File: /COMMIT_MSG
+
+7:14-7:16
+Tue Sep 06 20:48:29 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_b056f623
+Bytes: 9
+condition
+
+10:36-10:51
+Tue Sep 06 20:48:29 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_f0507e28
+Bytes: 22
+Just delete this part.
+
+10:25-10:27
+Tue Sep 06 20:48:29 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f6efbfc0_9053fa33
+Bytes: 9
+condition
+

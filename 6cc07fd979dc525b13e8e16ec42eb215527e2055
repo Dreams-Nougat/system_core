@@ -19,6 +19,14 @@ FATAL_WITHOUT_ABORT
 
 (Sounds idiotic, but is clearer.)
 
+44
+Wed Sep 07 20:04:38 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 96992396_22fcae03
+UUID: 364077d3_dfb4db8e
+Bytes: 4
+Done
+
 File: base/logging.cpp
 
 193
@@ -45,6 +53,14 @@ Bytes: 202
 anyone know why it got this wrong but got L257 right?
 
 (at least for a believable value of "right". i've never been sure whether these should be one indent or two. but four indents is definitely wrong!)
+
+193
+Wed Sep 07 20:04:38 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 364077d3_1f8a43c5
+UUID: 364077d3_ffb99f83
+Bytes: 21
+I assume it's the [].
 
 File: base/logging_test.cpp
 

@@ -28,6 +28,14 @@ UUID: f6009f87_a51b1ede
 Bytes: 75
 surely this isn't even right? all these lines are *way* too indented now...
 
+193
+Wed Sep 07 19:54:12 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: f6009f87_a51b1ede
+UUID: 364077d3_1f5ec372
+Bytes: 40
+That's the result of git clang-format...
+
 File: base/logging_test.cpp
 
 127

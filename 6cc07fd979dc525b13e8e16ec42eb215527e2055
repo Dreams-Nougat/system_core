@@ -36,6 +36,16 @@ UUID: 364077d3_1f5ec372
 Bytes: 40
 That's the result of git clang-format...
 
+193
+Wed Sep 07 20:03:54 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 364077d3_1f5ec372
+UUID: 364077d3_1f8a43c5
+Bytes: 202
+anyone know why it got this wrong but got L257 right?
+
+(at least for a believable value of "right". i've never been sure whether these should be one indent or two. but four indents is definitely wrong!)
+
 File: base/logging_test.cpp
 
 127

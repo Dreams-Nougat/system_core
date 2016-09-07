@@ -1,0 +1,11 @@
+Revision: 2d4c3b843b6ab6b909240b9bfddaa1e5a81371ea
+Patch-set: 1
+File: base/logging_test.cpp
+
+129:6-134:28
+Wed Sep 07 18:34:31 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 961043d0_0a755bc1
+Bytes: 68
+This was easier to write, but if you prefer a big blob, let me know.
+

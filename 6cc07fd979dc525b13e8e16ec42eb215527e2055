@@ -62,6 +62,14 @@ UUID: 364077d3_ffb99f83
 Bytes: 21
 I assume it's the [].
 
+193
+Wed Sep 07 20:05:59 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 364077d3_ffb99f83
+UUID: 364077d3_bfb317a2
+Bytes: 98
+Confirmed. Removing the [] from the first entry moves everything back to the right 4-space indent.
+
 File: base/logging_test.cpp
 
 127

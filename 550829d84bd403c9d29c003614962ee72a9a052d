@@ -18,6 +18,16 @@ UUID: 4b562216_88d8b70c
 Bytes: 15
 Comment on why?
 
+191:10-191:11
+Thu Sep 08 15:55:04 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b562216_88d8b70c
+UUID: 1691b3ce_241c1683
+Bytes: 223
+Haven't seen this commented on before, so was keeping this in line with current usage in the codebase (is a made-up excuse).
+
+Correct answer: [] initializers are a GNU extension that isn't handled correctly by clang-format.
+
 File: base/logging_test.cpp
 
 273

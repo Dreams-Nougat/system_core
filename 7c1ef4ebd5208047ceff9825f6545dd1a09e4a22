@@ -29,6 +29,14 @@ i feel like it fits https://google.github.io/styleguide/cppguide.html#Default_Ar
 
 i guess also "most people don't need either of two extra arguments, more people will need the first of them than the second"... it's really ticking the "there's a big difference between the `argv` argument and the other arguments, and overloading makes that less clear" box.
 
+86
+Thu Sep 08 22:34:09 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1691b3ce_47a92494
+UUID: 1691b3ce_2d9f99b1
+Bytes: 4
+Done
+
 File: base/logging.cpp
 
 254

@@ -9,6 +9,15 @@ UUID: 1691b3ce_6109b087
 Bytes: 4
 Doh!
 
+File: base/logging.cpp
+
+191:10-191:11
+Thu Sep 08 10:50:12 2016 +0000
+Author: Nicolas Geoffray <1038443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b562216_88d8b70c
+Bytes: 15
+Comment on why?
+
 File: base/logging_test.cpp
 
 273

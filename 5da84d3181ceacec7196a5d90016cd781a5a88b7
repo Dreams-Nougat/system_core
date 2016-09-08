@@ -1,0 +1,11 @@
+Revision: 5da84d3181ceacec7196a5d90016cd781a5a88b7
+Patch-set: 2
+File: libsync/include/sync/sync.h
+
+143:18-143:37
+Thu Sep 08 16:42:49 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1691b3ce_449cc2ba
+Bytes: 48
+The names in this comment seem to be out of date
+

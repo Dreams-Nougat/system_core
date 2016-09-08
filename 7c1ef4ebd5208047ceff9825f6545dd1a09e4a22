@@ -17,6 +17,18 @@ UUID: 1691b3ce_c720d460
 Bytes: 49
 I just kept the style, let me know what you want.
 
+86
+Thu Sep 08 18:52:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1691b3ce_c720d460
+UUID: 1691b3ce_47a92494
+Bytes: 534
+for me the cutover point (for copy&paste or overloads or...) is usually three. i have no reasonable basis for that, but it at least makes me somewhat consistent :-)
+
+i feel like it fits https://google.github.io/styleguide/cppguide.html#Default_Arguments too.
+
+i guess also "most people don't need either of two extra arguments, more people will need the first of them than the second"... it's really ticking the "there's a big difference between the `argv` argument and the other arguments, and overloading makes that less clear" box.
+
 File: base/logging.cpp
 
 254

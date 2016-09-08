@@ -1,0 +1,29 @@
+Revision: 7c1ef4ebd5208047ceff9825f6545dd1a09e4a22
+Patch-set: 1
+File: base/include/android-base/logging.h
+
+86
+Thu Sep 08 18:31:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1691b3ce_e7f950e3
+Bytes: 64
+are we sure we prefer three overloads to default arguments here?
+
+File: base/logging.cpp
+
+254
+Thu Sep 08 18:31:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1691b3ce_07ff1cc6
+Bytes: 17
+two-space indent.
+
+File: base/logging_test.cpp
+
+335:17-335:21
+Thu Sep 08 18:31:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1691b3ce_e7d23053
+Bytes: 68
+maybe add the word "called" to make it clearer what L346 is testing.
+

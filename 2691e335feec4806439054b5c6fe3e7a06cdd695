@@ -1,0 +1,11 @@
+Revision: 2691e335feec4806439054b5c6fe3e7a06cdd695
+Patch-set: 3
+File: base/include/android-base/logging.h
+
+86
+Fri Sep 09 00:04:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1691b3ce_9821cdae
+Bytes: 61
+heh, this may have been why we did it wrong to start with :-)
+

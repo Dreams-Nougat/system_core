@@ -2,6 +2,22 @@ Revision: 6c66b57d8d2443dcf89df954855b9961fc54cfe1
 Patch-set: 2
 File: libsync/sync.c
 
+43:0-44:17
+Mon Sep 12 22:25:02 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b1e5af2_49a7ada9
+Bytes: 190
+You need to check fds.revents, since poll() also returns 1 when the fd had an error event.  (A trivial example is to send in a bogus fd: poll() will return 1 and set fds.revents = POLLNVAL.)
+
+45:4-45:15
+Mon Sep 12 22:25:02 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b1e5af2_09f3f59a
+Bytes: 263
+On timeout poll() returns 0, whereas ioctl(SYNC_IOC_LEGACY_WAIT) returns -1 with errno = ETIME.
+
+This causes the FenceTest.OneTimelineWait and FenceTest.MultiTimelineWait unit tests to fail, since they both deliberately wait on unfired fences with a timeout of 0.
+
 130:4-130:8
 Thu Sep 08 17:01:00 2016 +0000
 Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>

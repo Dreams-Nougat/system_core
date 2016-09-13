@@ -9,6 +9,14 @@ UUID: 2b672ea1_7009468b
 Bytes: 98
 push_front? "Functions passed to at_quick_exit are called in reverse order of their registration."
 
+42
+Tue Sep 13 23:00:35 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b672ea1_7009468b
+UUID: 2b672ea1_5006822d
+Bytes: 38
+Changed the order of iteration instead
+
 File: base/quick_exit_test.cpp
 
 29:0-30:8
@@ -24,4 +32,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2b672ea1_1006ca7a
 Bytes: 126
 maybe have a couple of handlers set a global to several different values, so you can check the order? (or build 42 by "*10+"?)
+
+48
+Tue Sep 13 23:00:35 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b672ea1_1006ca7a
+UUID: 2b672ea1_7003861c
+Bytes: 4
+Done
 

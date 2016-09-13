@@ -9,12 +9,28 @@ UUID: 2b672ea1_50e202c6
 Bytes: 244
 or put this in std:: for windows? on the assumption that when we have a working libc++ for Windows it'll make it easier to switch (and in the meantime, just writing std::mutex works fine and you don't need to remember that it's a special case)?
 
+23:0-24:16
+Tue Sep 13 23:00:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b672ea1_50e202c6
+UUID: 2b672ea1_9034fa00
+Bytes: 4
+Done
+
 46
 Tue Sep 13 22:22:11 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2b672ea1_b0d57ee0
 Bytes: 21
 make it non-copyable?
+
+46
+Tue Sep 13 23:00:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b672ea1_b0d57ee0
+UUID: 2b672ea1_b039fef9
+Bytes: 4
+Done
 
 File: base/logging.cpp
 
@@ -24,4 +40,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 2b672ea1_70b866c2
 Bytes: 50
 should <android-base/mutex.h> just guarantee this?
+
+40
+Tue Sep 13 23:00:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2b672ea1_70b866c2
+UUID: 2b672ea1_30266ed6
+Bytes: 121
+Once pirama merges his mingw update, android-base/mutex.h should be going away, I think we might as well leave this here?
 

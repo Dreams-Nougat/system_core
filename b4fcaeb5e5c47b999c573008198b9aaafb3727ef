@@ -11,6 +11,13 @@ push_front? "Functions passed to at_quick_exit are called in reverse order of th
 
 File: base/quick_exit_test.cpp
 
+29:0-30:8
+Tue Sep 13 22:31:05 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b672ea1_f067764d
+Bytes: 42
+Time to switch to the bionic gtest runner?
+
 48
 Tue Sep 13 22:28:51 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

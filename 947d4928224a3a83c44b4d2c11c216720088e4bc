@@ -1,0 +1,27 @@
+Revision: 947d4928224a3a83c44b4d2c11c216720088e4bc
+Patch-set: 1
+File: base/include/android-base/mutex.h
+
+23:0-24:16
+Tue Sep 13 22:22:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b672ea1_50e202c6
+Bytes: 244
+or put this in std:: for windows? on the assumption that when we have a working libc++ for Windows it'll make it easier to switch (and in the meantime, just writing std::mutex works fine and you don't need to remember that it's a special case)?
+
+46
+Tue Sep 13 22:22:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b672ea1_b0d57ee0
+Bytes: 21
+make it non-copyable?
+
+File: base/logging.cpp
+
+40
+Tue Sep 13 22:22:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b672ea1_70b866c2
+Bytes: 50
+should <android-base/mutex.h> just guarantee this?
+

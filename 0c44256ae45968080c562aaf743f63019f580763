@@ -1,0 +1,11 @@
+Revision: 0c44256ae45968080c562aaf743f63019f580763
+Patch-set: 3
+File: base/logging.cpp
+
+122
+Wed Sep 14 01:00:09 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b672ea1_7bb28753
+Bytes: 112
+Moved these changes out to the followup commit that does adb as well, to avoid breaking and then unbreaking adb.
+

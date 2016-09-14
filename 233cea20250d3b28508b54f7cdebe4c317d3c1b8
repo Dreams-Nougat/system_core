@@ -9,12 +9,28 @@ UUID: 315b2141_a724cabc
 Bytes: 163
 Hmm, it might be better to have two arguments for this and socketpair. I think that most people are probably going to want to name each end of the pipe/socketpair.
 
+35
+Wed Sep 14 21:10:26 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 315b2141_a724cabc
+UUID: 2b672ea1_469327a8
+Bytes: 4
+Done
+
 44:13-44:69
 Tue Aug 30 20:50:29 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 315b2141_e7488258
 Bytes: 92
 This seems like it needs to return ssize_t, or else you're screwed if sendmsg returns short.
+
+44:13-44:69
+Wed Sep 14 21:10:26 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 315b2141_e7488258
+UUID: 2b672ea1_46eec717
+Bytes: 262
+The sendmsg() documentation is incredibly vague about what happens to the control message on a short read, so I've just removed the payload completely.  I don't see anywhere in our codebase where we use SCM_RIGHTS with anything but a bogus 1-byte payload anyway.
 
 49:13-49:73
 Tue Aug 30 20:50:29 2016 +0000

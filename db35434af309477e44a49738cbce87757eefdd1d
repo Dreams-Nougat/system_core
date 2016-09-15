@@ -1,0 +1,12 @@
+Revision: db35434af309477e44a49738cbce87757eefdd1d
+Patch-set: 2
+File: rootdir/init.rc
+
+362:10-362:30
+Thu Sep 15 22:43:08 2016 +0000
+Author: Pavlin Radoslavov <1071489@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_11612ea8
+Bytes: 127
+Per in-person conversation, please search AOSP and internal tree
+for usage of "/data/misc/bluetooth" and update as appropriate.
+

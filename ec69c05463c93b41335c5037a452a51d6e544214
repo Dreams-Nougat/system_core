@@ -1,0 +1,11 @@
+Revision: ec69c05463c93b41335c5037a452a51d6e544214
+Patch-set: 1
+File: include/cutils/atomic.h
+
+75:31-75:54
+Fri Sep 16 06:24:27 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_77c5fa83
+Bytes: 141
+I was wondering if we should move something like __BIONIC_CAST into macros.h. We'll probably need something like this in a handful of places.
+

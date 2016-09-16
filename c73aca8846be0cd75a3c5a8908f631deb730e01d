@@ -1,0 +1,11 @@
+Revision: c73aca8846be0cd75a3c5a8908f631deb730e01d
+Patch-set: 1
+File: include/system/graphics.h
+
+616
+Fri Sep 16 06:39:41 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_17883e58
+Bytes: 198
+I wonder if we should just disable this globally. We default to C11, so it's not really helpful (though we should make sure we do check NDK headers with it, since those can be included by anything).
+

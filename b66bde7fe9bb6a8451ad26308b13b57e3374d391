@@ -1,0 +1,11 @@
+Revision: b66bde7fe9bb6a8451ad26308b13b57e3374d391
+Patch-set: 3
+File: rootdir/init.rc
+
+362:46-362:58
+Fri Sep 16 16:16:15 2016 +0000
+Author: Jeff Sharkey <1006166@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_3d228314
+Bytes: 143
+Could we slowly deprecate the "net_bt_stack" GID and replace it with the "bluetooth" GID?  It doesn't really have much to do with "networking".
+

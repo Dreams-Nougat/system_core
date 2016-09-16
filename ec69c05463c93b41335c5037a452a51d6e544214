@@ -9,3 +9,11 @@ UUID: 4b2aa261_77c5fa83
 Bytes: 141
 I was wondering if we should move something like __BIONIC_CAST into macros.h. We'll probably need something like this in a handful of places.
 
+75:31-75:54
+Fri Sep 16 15:26:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_77c5fa83
+UUID: 4b2aa261_82b6aef1
+Bytes: 79
+note that this would also have needed the non-existent __BIONIC_CONST_CAST too.
+

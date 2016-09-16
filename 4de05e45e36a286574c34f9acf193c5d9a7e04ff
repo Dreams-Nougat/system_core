@@ -1,0 +1,13 @@
+Revision: 4de05e45e36a286574c34f9acf193c5d9a7e04ff
+Patch-set: 1
+File: include/ziparchive/zip_archive.h
+
+39:2-39:10
+Fri Sep 16 18:26:24 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_af2aba9f
+Bytes: 93
+should we just make this size_t instead?
+
+otherwise i feel like we have a missing CHECK here.
+

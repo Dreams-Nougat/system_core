@@ -1,0 +1,11 @@
+Revision: 0a77fbd8ce72a77b5ce3814265161876ee76065e
+Patch-set: 1
+File: adb/commandline.cpp
+
+1563:26-1563:31
+Fri Sep 16 20:29:59 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_b2a05d01
+Bytes: 53
+server_port is a long, what's the point of this cast?
+

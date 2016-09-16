@@ -1,0 +1,52 @@
+Revision: c2cb04b8a928cee994b1f62544228a936831204f
+Patch-set: 10
+File: adb/sysdeps/lockfile.cpp
+
+48
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_e50e913e
+Bytes: 40
+shouldn't be needed given the LOG(FATAL)
+
+File: adb/sysdeps/lockfile_private.h
+
+22
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_05148549
+Bytes: 66
+https://google.github.io/styleguide/cppguide.html#Enumerator_Names
+
+File: adb/sysdeps/posix/lockfile.cpp
+
+41:11-41:15
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_45167d52
+Bytes: 5
+!= -1
+
+66:11-66:14
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_25198983
+Bytes: 5
+== -1
+
+File: adb/sysdeps/win32/lockfile.cpp
+
+27
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_652381b7
+Bytes: 7
+static?
+
+50:8-50:11
+Fri Sep 16 22:22:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_852075aa
+Bytes: 48
+does PLOG do the right thing for Windows errors?
+

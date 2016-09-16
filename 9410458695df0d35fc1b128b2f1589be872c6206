@@ -1,0 +1,27 @@
+Revision: 9410458695df0d35fc1b128b2f1589be872c6206
+Patch-set: 1
+File: include/utils/Looper.h
+
+28
+Fri Sep 16 06:37:36 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_576b9687
+Bytes: 29
+Why not rename the parameter?
+
+File: include/utils/TypeHelpers.h
+
+186
+Fri Sep 16 06:37:36 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_97734e7a
+Bytes: 51
+Is this whole check just a complicated std::is_pod?
+
+308:30-308:32
+Fri Sep 16 06:37:36 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_b7785257
+Bytes: 35
+Accidentally added some spaces here
+

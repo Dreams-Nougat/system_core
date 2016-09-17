@@ -1,0 +1,11 @@
+Revision: 3a9bc6774f24d5d36572b1ba7256d84db9c721ca
+Patch-set: 1
+File: rootdir/init.rc
+
+559
+Sat Sep 17 05:51:41 2016 +0000
+Author: Iliyan Malchev <1000866@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b2aa261_fed0def1
+Bytes: 81
+Should be before core, as some core services will need HALs (healthd for example)
+

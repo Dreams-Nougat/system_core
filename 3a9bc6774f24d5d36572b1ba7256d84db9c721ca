@@ -9,3 +9,11 @@ UUID: 4b2aa261_fed0def1
 Bytes: 81
 Should be before core, as some core services will need HALs (healthd for example)
 
+559
+Sat Sep 17 13:04:51 2016 +0000
+Author: Hung-ying Tyan <1061057@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_fed0def1
+UUID: 4b2aa261_7ea4ee55
+Bytes: 4
+Done
+

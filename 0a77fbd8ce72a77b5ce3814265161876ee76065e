@@ -9,6 +9,14 @@ UUID: 4b2aa261_b2a05d01
 Bytes: 53
 server_port is a long, what's the point of this cast?
 
+1563:26-1563:31
+Sat Sep 17 00:14:20 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_b2a05d01
+UUID: 4b2aa261_48b21453
+Bytes: 4
+Done
+
 1563:12-1564:58
 Sat Sep 17 00:00:35 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,4 +25,12 @@ Bytes: 188
 use android::base::ParseInt, like the other two places we parse ports?
 
 although it looks like we're doing it wrong there too: we should pass ", 1, 65535" to ParseInt to limit the range...
+
+1563:12-1564:58
+Sat Sep 17 00:14:20 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_a8a0f000
+UUID: 4b2aa261_88932ca7
+Bytes: 4
+Done
 

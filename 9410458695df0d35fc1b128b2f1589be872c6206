@@ -36,6 +36,14 @@ Nope, they manually mark some objects as trivially moveable, for example android
 
 Clang disagrees that these are really trivially moveable, as they have a vtable pointer in them, and warns anyways on the memmove.  I have to add reinterpret_cast<void*> to the memmove to silence it.
 
+186
+Mon Sep 19 05:55:52 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_3d93635b
+UUID: 4b2aa261_99045cba
+Bytes: 107
+(i really wish we could move libutils back into frameworks as a clear "don't use this craziness" signal...)
+
 308:30-308:32
 Fri Sep 16 06:37:36 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

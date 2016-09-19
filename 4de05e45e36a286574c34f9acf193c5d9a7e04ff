@@ -11,3 +11,11 @@ should we just make this size_t instead?
 
 otherwise i feel like we have a missing CHECK here.
 
+39:2-39:10
+Mon Sep 19 08:45:14 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_af2aba9f
+UUID: 30907f09_7ff74fef
+Bytes: 141
+I think it's best to leave this as uint16_t because that's what the spec specifies. I do agree that we should add a CHECK in the constructor.
+

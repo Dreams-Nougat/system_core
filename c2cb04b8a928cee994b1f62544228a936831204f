@@ -9,6 +9,16 @@ UUID: 4b2aa261_e50e913e
 Bytes: 40
 shouldn't be needed given the LOG(FATAL)
 
+48
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_e50e913e
+UUID: 4b2aa261_c5826d6b
+Bytes: 200
+LOG(FATAL) isn't tagged with noreturn, so clang complains about falling off the end of the function, and I don't think we can easily make it work.
+
+abort seems better than an (incorrect) return false.
+
 File: adb/sysdeps/lockfile_private.h
 
 22
@@ -17,6 +27,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4b2aa261_05148549
 Bytes: 66
 https://google.github.io/styleguide/cppguide.html#Enumerator_Names
+
+22
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_05148549
+UUID: 4b2aa261_faf707eb
+Bytes: 4
+Done
 
 File: adb/sysdeps/posix/lockfile.cpp
 
@@ -27,12 +45,28 @@ UUID: 4b2aa261_45167d52
 Bytes: 5
 != -1
 
+41:11-41:15
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_45167d52
+UUID: 4b2aa261_1afdbbcc
+Bytes: 4
+Done
+
 66:11-66:14
 Fri Sep 16 22:22:32 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4b2aa261_25198983
 Bytes: 5
 == -1
+
+66:11-66:14
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_25198983
+UUID: 4b2aa261_3a027fe2
+Bytes: 4
+Done
 
 File: adb/sysdeps/win32/lockfile.cpp
 
@@ -43,10 +77,26 @@ UUID: 4b2aa261_652381b7
 Bytes: 7
 static?
 
+27
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_652381b7
+UUID: 4b2aa261_5ae7333c
+Bytes: 4
+Done
+
 50:8-50:11
 Fri Sep 16 22:22:32 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4b2aa261_852075aa
 Bytes: 48
 does PLOG do the right thing for Windows errors?
+
+50:8-50:11
+Mon Sep 19 18:44:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_852075aa
+UUID: 4b2aa261_1ad4db3a
+Bytes: 45
+It only does errno, so it's not helpful here.
 

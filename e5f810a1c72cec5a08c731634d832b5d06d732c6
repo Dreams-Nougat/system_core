@@ -30,3 +30,11 @@ UUID: 4b2aa261_83930d50
 Bytes: 150
 you can assert in the child too: https://cs.corp.google.com/android/bionic/tests/stdlib_test.cpp?q=fork+file:bionic/tests&sq=package:%5Eandroid$&l=398
 
+78
+Mon Sep 19 20:17:06 2016 +0000
+Author: Connor O'Brien <1115183@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_83930d50
+UUID: 4b2aa261_1dc5b551
+Bytes: 244
+Is there a way to do this that produces good error messages? It seems like assertion failures in the child either cause results to print twice (if you fork explicitly) or fail to tell you which assertion failed (if you wrap them in ASSERT_EXIT)
+

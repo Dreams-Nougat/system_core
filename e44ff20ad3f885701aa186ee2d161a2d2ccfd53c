@@ -1,0 +1,11 @@
+Revision: e44ff20ad3f885701aa186ee2d161a2d2ccfd53c
+Patch-set: 2
+File: libziparchive/zip_archive.cc
+
+1081
+Tue Sep 20 15:59:52 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_b3fd0a01
+Bytes: 33
+CHECK_LE for a better diagnostic?
+

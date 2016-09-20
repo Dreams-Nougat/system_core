@@ -1,0 +1,13 @@
+Revision: 7ddccf688ca08fa21e2a16be36881ab29f4b50f6
+Patch-set: 1
+File: init/service.cpp
+
+999:22-999:61
+Tue Sep 20 05:29:33 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_cd96dd4b
+Bytes: 112
+PROP_NAME_MAX - sizeof("init.svc.")
+
+sizeof() is preferred to strlen() since it can be computed at compile time.
+

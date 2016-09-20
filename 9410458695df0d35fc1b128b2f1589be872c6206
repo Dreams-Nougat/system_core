@@ -44,6 +44,14 @@ UUID: 4b2aa261_99045cba
 Bytes: 107
 (i really wish we could move libutils back into frameworks as a clear "don't use this craziness" signal...)
 
+186
+Tue Sep 20 00:09:26 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4b2aa261_99045cba
+UUID: 90bccb98_aac58f87
+Bytes: 126
+I filed a bug to revisit whether Vector<> is really trivially movable and added a comment below to remove the reinterpret_cast
+
 308:30-308:32
 Fri Sep 16 06:37:36 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

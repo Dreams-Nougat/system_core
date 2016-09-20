@@ -49,3 +49,18 @@ UUID: 90bccb98_ad1e0966
 Bytes: 240
 Yeah, this is a hack, but it only matters for tcp reverse forwarding on the device side (i.e. connect to host and have it forwarded to connect to a port on the device), which is uncommon (and rejected connecting to localhost:1234 entirely).
 
+157:12-157:29
+Tue Sep 20 03:09:55 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_ad1e0966
+UUID: 90bccb98_6da5710f
+Bytes: 396
+So what's the purpose for this CL?  just for "adb connect"? But from the test you mentioned, it seems you are expecting it also work with adb server. But from my test (patched your CL):
+
+killall adb
+
+/out/host/linux-x86/bin/adb -L 'tcp:127.0.0.1:5037' devices
+List of devices attached
+** Cannot start server on remote host
+error: cannot connect to daemon at tcp:127.0.0.1:5037: Connection refused
+

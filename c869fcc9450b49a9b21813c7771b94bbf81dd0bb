@@ -1,0 +1,25 @@
+Revision: c869fcc9450b49a9b21813c7771b94bbf81dd0bb
+Patch-set: 1
+File: adb/socket_spec.cpp
+
+81:12-81:22
+Tue Sep 20 02:03:12 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_6dbc9171
+Bytes: 5
+<= 0?
+
+93:48-93:49
+Tue Sep 20 02:03:12 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_2db69991
+Bytes: 64
+What does this comment mean? Why we want a "0" port number here?
+
+157:12-157:29
+Tue Sep 20 02:03:12 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_ed6881ec
+Bytes: 131
+Now this is somewhat confusing, it seems if hostname=="127.0.0.1", we don't consider it as localhost and will go the else branch...
+

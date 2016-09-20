@@ -9,6 +9,14 @@ UUID: 90bccb98_b3242acf
 Bytes: 29
 nit: keep these alphabetical.
 
+66:4-66:24
+Tue Sep 20 21:09:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_b3242acf
+UUID: 90bccb98_99b7c7f1
+Bytes: 4
+oops
+
 File: adb/socket_spec.cpp
 
 69:8-69:56
@@ -19,6 +27,14 @@ Bytes: 113
 Possibly slightly more readable and I think does the same thing:
 
   if (!android::base::StartsWith(spec, "tcp:"))
+
+69:8-69:56
+Tue Sep 20 21:09:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_9321e6b0
+UUID: 90bccb98_19fc37cf
+Bytes: 4
+Done
 
 81:12-81:22
 Tue Sep 20 02:03:12 2016 +0000
@@ -43,6 +59,14 @@ Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 90bccb98_53560e01
 Bytes: 113
 What's the value of goto here? If we just make the second block an "else" doesn't that accomplish the same thing?
+
+85:0-89:5
+Tue Sep 20 21:09:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_53560e01
+UUID: 90bccb98_b9ec0b1e
+Bytes: 45
+Remnant from an intermediate change, removed.
 
 93:48-93:49
 Tue Sep 20 02:03:12 2016 +0000
@@ -88,4 +112,12 @@ killall adb
 List of devices attached
 ** Cannot start server on remote host
 error: cannot connect to daemon at tcp:127.0.0.1:5037: Connection refused
+
+157:12-157:29
+Tue Sep 20 21:09:29 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_6da5710f
+UUID: 90bccb98_196f5790
+Bytes: 106
+Oops, forgot that tcp_host_is_local is used for that too. That's an orthogonal issue that I'm fixing next.
 

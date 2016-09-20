@@ -1,0 +1,11 @@
+Revision: 559637b657610dcbaf1a408260fab98b0a036699
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+118:0-119:77
+Tue Sep 20 19:01:11 2016 +0000
+Author: Pavlin Radoslavov <1071489@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_feaa698a
+Bytes: 15
+Don't renumber.
+

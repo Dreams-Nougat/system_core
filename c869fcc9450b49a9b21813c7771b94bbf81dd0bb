@@ -1,6 +1,24 @@
 Revision: c869fcc9450b49a9b21813c7771b94bbf81dd0bb
 Patch-set: 1
+File: adb/Android.mk
+
+66:4-66:24
+Tue Sep 20 16:19:46 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_b3242acf
+Bytes: 29
+nit: keep these alphabetical.
+
 File: adb/socket_spec.cpp
+
+69:8-69:56
+Tue Sep 20 16:19:46 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_9321e6b0
+Bytes: 113
+Possibly slightly more readable and I think does the same thing:
+
+  if (!android::base::StartsWith(spec, "tcp:"))
 
 81:12-81:22
 Tue Sep 20 02:03:12 2016 +0000
@@ -18,6 +36,13 @@ Bytes: 208
 No, listening on port 0 has meaning. It means "listen on an available port", which you can get the value of with getsockname.
 
 Connecting on port 0 is meaningless, but AFAIK we handle that properly elsewhere.
+
+85:0-89:5
+Tue Sep 20 16:19:46 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 90bccb98_53560e01
+Bytes: 113
+What's the value of goto here? If we just make the second block an "else" doesn't that accomplish the same thing?
 
 93:48-93:49
 Tue Sep 20 02:03:12 2016 +0000

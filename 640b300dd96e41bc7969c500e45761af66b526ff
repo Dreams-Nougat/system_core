@@ -11,3 +11,11 @@ The canonical way to solve this is: getaddrinfo("localhost", ...), and loop over
 
 http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html#simpleclient
 
+49:20-49:27
+Tue Sep 20 06:55:57 2016 +0000
+Author: Tao Wu <1071888@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 90bccb98_6da251a2
+UUID: 90bccb98_d054341d
+Bytes: 185
+That will break on client which configure a wrong local host in hosts file.since this is some basic library used by Android, I would like to don't touch old code path whenever possible.
+

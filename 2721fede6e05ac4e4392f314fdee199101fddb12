@@ -1,0 +1,18 @@
+Revision: 2721fede6e05ac4e4392f314fdee199101fddb12
+Patch-set: 2
+File: adb/usb_linux_client.cpp
+
+352:4-361:34
+Wed Sep 21 23:52:51 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 300b1fab_477fceb1
+Bytes: 91
+Does this leave some members uninitialized? control/bulk_out/bulk_in? Maybe doesn't matter?
+
+569:4-580:34
+Wed Sep 21 23:52:51 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 300b1fab_879ca613
+Bytes: 37
+Leaves h->fd uninitialized? maybe ok?
+

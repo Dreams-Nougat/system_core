@@ -1,0 +1,27 @@
+Revision: 0a5b1fa0260d7205a35a0fa1e1a999fbf6a9890d
+Patch-set: 1
+File: adb/adb_utils.cpp
+
+104:2-104:20
+Wed Sep 21 22:41:40 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 709e777e_6acdeb25
+Bytes: 94
+In modern C++, static initialization of function-level static variables is thread-safe, right?
+
+File: adb/usb_linux_client.cpp
+
+352:50-352:56
+Wed Sep 21 22:41:40 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: f0d7c739_4d21390f
+Bytes: 36
+Same operator new question as below.
+
+570:50-570:56
+Wed Sep 21 22:41:40 2016 +0000
+Author: Spencer Low <1065256@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50d3331d_60c69211
+Bytes: 178
+When is usb_handle's constructor called (which should initialize the mutex & cv)? Seems like you either need to use placement new or (better) just switch to operator new instead?
+

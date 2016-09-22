@@ -52,3 +52,13 @@ The following seems a bit surprising, though:
 
 Also, the comment should probably go in the header.
 
+27
+Thu Sep 22 01:38:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_276dfac1
+UUID: 300b1fab_c7a73ebf
+Bytes: 419
+what seems surprising? it's perhaps not how i'd have designed system properties myself, but then i think i'd have done just about *everything* differently. but this seems consistent with how they've always worked to me.
+
+if we find a caller who'd use the bool we can always change later. but i don't think anyone's ever needed it yet. (not least because you can't delete a property. so 'empty' is a fairly usual state.)
+

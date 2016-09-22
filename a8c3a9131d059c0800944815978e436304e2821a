@@ -36,6 +36,13 @@ try the latest patchset :-)
 
 the trouble with system properties is that nothing is obvious --- i actually didn't document these because i didn't want to get bogged down explaining all the weird nonsense. i'm very tempted to just make SetProperty void too and admit that, honestly, there's no good way to know whether your attempt to set actually succeeded. (but it's not _completely_ useless because we will return false if your key or value are too long, for example: it's all the more subtle failures that will be reported as success.)
 
+29:0-29:5
+Thu Sep 22 16:57:55 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0272349_b43fc0e2
+Bytes: 134
+should this be bool too ? is there a distinction between the key being too long (is that a thing ?) and the property not being found ?
+
 File: base/properties.cpp
 
 27

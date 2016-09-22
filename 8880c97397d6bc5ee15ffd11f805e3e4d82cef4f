@@ -1,0 +1,45 @@
+Revision: 8880c97397d6bc5ee15ffd11f805e3e4d82cef4f
+Patch-set: 1
+File: adf/libadfhwc/adfhwc.cpp
+
+217
+Thu Sep 22 23:22:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_3a52792f
+Bytes: 67
+since this is C++ you can just say
+
+  struct sigaction action = {};
+
+220
+Thu Sep 22 23:22:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_fa3801f5
+Bytes: 132
+you can also use a lambda here if you don't want the handle_thread_exit function.
+
+    sa.sa_handler = [](int) { pthread_exit(0); };
+
+222
+Thu Sep 22 23:22:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_3a1b598b
+Bytes: 93
+-1 is the only failure return, and you don't need the local.
+
+  if (sigaction(...) == -1) ...
+
+241:11-242:22
+Thu Sep 22 23:22:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_ba176959
+Bytes: 68
+TEMP_FAILURE_RETRY around the call to poll would let you remove this
+
+302
+Thu Sep 22 23:22:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_9a038d19
+Bytes: 56
+this code never runs in a VM, right? (ART uses SIGUSR1.)
+

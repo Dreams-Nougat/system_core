@@ -43,6 +43,22 @@ UUID: d0272349_b43fc0e2
 Bytes: 134
 should this be bool too ? is there a distinction between the key being too long (is that a thing ?) and the property not being found ?
 
+29:0-29:5
+Thu Sep 22 17:04:54 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0272349_b43fc0e2
+UUID: 300b1fab_bbc57f04
+Bytes: 1079
+there hasn't historically been such a distinction, and i couldn't think of a case where we'd need one.
+
+the big question here does seem to be "should we distinguish 'not found' from 'empty'", and my provisional answer there is similar (for the reason outlined on an earlier comment to jmgao: you can't delete system properties, so there isn't much of a useful distinction between 'not found' and 'empty' anyway). if anyone has examples where it would have been useful to distinguish, let me know.
+
+(we can also easily go from void -> bool later; return types aren't part of the mangled name.)
+
+personally i'm actually more tempted to make SetProperty void... if you look at https://cs.corp.google.com/android/external/toybox/toys/android/setprop.c?type=cs&q=file:setprop.c&sq=package:%5Eandroid$&l=3 you'll see that a caller that cares really ends up duplicating most of the init logic anyway.
+
+new reviewers: note that this is not the current patchset. please look at the current one (https://android-review.googlesource.com/#/c/277377/3/base/include/android-base/properties.h).
+
 File: base/properties.cpp
 
 27

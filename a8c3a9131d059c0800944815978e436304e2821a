@@ -26,6 +26,16 @@ I know these commands are kind of obvious, but I would document them.
 
 For exmaple, looking at both, my first doubt was does SetProperty returns a boolean and GetProperty doesn't? It would be nice it does (so I know whether the property exist or not), but I guess that's not possible due to how it's implemented...
 
+29
+Thu Sep 22 16:57:07 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_1b2b6bef
+UUID: 300b1fab_5b0a0381
+Bytes: 537
+try the latest patchset :-)
+
+the trouble with system properties is that nothing is obvious --- i actually didn't document these because i didn't want to get bogged down explaining all the weird nonsense. i'm very tempted to just make SetProperty void too and admit that, honestly, there's no good way to know whether your attempt to set actually succeeded. (but it's not _completely_ useless because we will return false if your key or value are too long, for example: it's all the more subtle failures that will be reported as success.)
+
 File: base/properties.cpp
 
 27

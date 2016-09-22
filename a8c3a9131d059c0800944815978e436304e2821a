@@ -67,6 +67,20 @@ UUID: d0272349_9433a419
 Bytes: 147
 I only asked because IIRC, keys have a size limit too. I was under the impression that callers would want to abort on bad keys. Maybe nobody cares.
 
+29:0-29:5
+Thu Sep 22 17:52:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0272349_9433a419
+UUID: 9035ab64_85b7e4d1
+Bytes: 867
+but there are other limitations on keys too (valid characters, prefixes, ...) and those change.
+
+i didn't use the result of the C API in /system/bin/getprop (https://cs.corp.google.com/android/external/toybox/toys/android/getprop.c?q=file:getprop.c&sq=package:%5Eandroid$&l=2) because it doesn't tell you anything useful. if you look at __system_property_get, it can't fail. even if the key is missing it returns 0 / fills in the empty string.
+
+from what i can see of existing callers, they mainly use the return value because it's the length. but s.length()/s.empty() replace that.
+
+we've seen tons of complaints about system properties over the years, but afaik, no one's ever complained about 'get' never failing and not distinguishing between 'empty' and 'missing'. (because, i think, you can't _remove_ a system property. so it just doesn't come up in practice.)
+
 File: base/properties.cpp
 
 27

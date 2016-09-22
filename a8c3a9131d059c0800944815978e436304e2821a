@@ -126,3 +126,11 @@ what seems surprising? it's perhaps not how i'd have designed system properties 
 
 if we find a caller who'd use the bool we can always change later. but i don't think anyone's ever needed it yet. (not least because you can't delete a property. so 'empty' is a fairly usual state.)
 
+27
+Thu Sep 22 22:54:47 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_c7a73ebf
+UUID: d06f23aa_571c6e1f
+Bytes: 298
+Once a property exists, it can never go away.  libcutils property_get treats non-existent property and zero-length property as the same value, and returns the default value in that case.  This implementation overwrites the default value with "" if the property has been "unset" by setting it to "".
+

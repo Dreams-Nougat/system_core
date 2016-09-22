@@ -9,6 +9,14 @@ UUID: 300b1fab_676c1200
 Bytes: 179
 Given the recent __ANDROID__ vs __BIONIC__ cleanups, this error doesn't match the ifdef. It seems like we'll want at least a stub system properties implementation for host bionic?
 
+21:12-21:18
+Thu Sep 22 00:11:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_676c1200
+UUID: 300b1fab_471b4e8a
+Bytes: 72
+duh, meant to say __BIONIC__. going to be a hard habit to get out of ...
+
 File: base/properties.cpp
 
 27
@@ -19,4 +27,14 @@ Bytes: 171
 But we don't pass that on to the caller?
 
 Properties with an empty value can exist, right? If so, should this return a bool instead, denoting whether a property was found?
+
+27
+Thu Sep 22 00:11:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_47690eee
+UUID: 300b1fab_a70c4a4e
+Bytes: 391
+as you can see, i was a bit confused on that point myself. yes, they can. but the existing APIs (other than doing what you see here) don't let you tell the difference. i'm not sure whether that difference is useful: setting a default seems to be the actual usual intent.
+
+i think just replacing this comment with something like "if unset, leave `value` so it can serve as a default" is fine.
 

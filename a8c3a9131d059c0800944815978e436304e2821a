@@ -59,6 +59,14 @@ personally i'm actually more tempted to make SetProperty void... if you look at 
 
 new reviewers: note that this is not the current patchset. please look at the current one (https://android-review.googlesource.com/#/c/277377/3/base/include/android-base/properties.h).
 
+29:0-29:5
+Thu Sep 22 17:13:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_bbc57f04
+UUID: d0272349_9433a419
+Bytes: 147
+I only asked because IIRC, keys have a size limit too. I was under the impression that callers would want to abort on bad keys. Maybe nobody cares.
+
 File: base/properties.cpp
 
 27

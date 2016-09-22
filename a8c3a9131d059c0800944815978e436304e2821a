@@ -17,6 +17,15 @@ UUID: 300b1fab_471b4e8a
 Bytes: 72
 duh, meant to say __BIONIC__. going to be a hard habit to get out of ...
 
+29
+Thu Sep 22 16:54:07 2016 +0000
+Author: Felipe Leme <1013984@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 300b1fab_1b2b6bef
+Bytes: 314
+I know these commands are kind of obvious, but I would document them.
+
+For exmaple, looking at both, my first doubt was does SetProperty returns a boolean and GetProperty doesn't? It would be nice it does (so I know whether the property exist or not), but I guess that's not possible due to how it's implemented...
+
 File: base/properties.cpp
 
 27

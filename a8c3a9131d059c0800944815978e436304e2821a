@@ -38,3 +38,17 @@ as you can see, i was a bit confused on that point myself. yes, they can. but th
 
 i think just replacing this comment with something like "if unset, leave `value` so it can serve as a default" is fine.
 
+27
+Thu Sep 22 00:30:03 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 300b1fab_a70c4a4e
+UUID: 300b1fab_276dfac1
+Bytes: 186
+The following seems a bit surprising, though:
+
+    SetProperty("foo", "");
+    std::string bar = "bar";
+    GetProperty("foo", &bar);
+
+Also, the comment should probably go in the header.
+

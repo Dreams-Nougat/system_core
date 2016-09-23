@@ -54,3 +54,13 @@ UUID: d06f23aa_fb272075
 Bytes: 107
 gcc isn't supported in O. only clang is supported. what code do you have that's still being built with gcc?
 
+64
+Fri Sep 23 20:55:33 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_fb272075
+UUID: d06f23aa_7e077e77
+Bytes: 203
+is_trivially_copyable sounds like a great idea, will add.
+
+It compiles fone on aosp_shamu-eng, but if we find evidence that an older compiler is still in use that doesn't support it I can go back to PS1.
+

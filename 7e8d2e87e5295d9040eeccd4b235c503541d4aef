@@ -9,3 +9,18 @@ UUID: d06f23aa_83f08859
 Bytes: 135
 lists with multiple elements should have 1 element per line.  bpfmt -w Android.bp will rewrite the file for you in the canonical style.
 
+File: base/include/android-base/properties.h
+
+38:5-38:16
+Fri Sep 23 09:17:18 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5850fca_62c1f628
+Bytes: 200
+GetBooleanProperty maybe ? it's easy to figure out what it does when i read it here, but i might be a bit more confused if i see :
+
+  if (!GetProperty("random", false)) {
+    foo();
+  }
+
+in some file.
+

@@ -9,3 +9,15 @@ UUID: d06f23aa_4e15b744
 Bytes: 164
 Please ignore if already discussed in the commends, but if the return value "isn't particularly meaningful" and can't be reliable, shouldn't it return void instead?
 
+44
+Fri Sep 23 17:03:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_4e15b744
+UUID: d06f23aa_8e38afd8
+Bytes: 430
+well, "false means false, but true doesn't mean much".
+
+the argument went something like "most callers [of the C API] ignore the return value, but those that do check and deal with failures aren't wrong --- they're just not catching all the failures".
+
+and maybe it's just time we removed the timeout? https://cs.corp.google.com/android/bionic/libc/bionic/system_properties.cpp?q=__system_property_set&sq=package:%5Eandroid$&l=556
+

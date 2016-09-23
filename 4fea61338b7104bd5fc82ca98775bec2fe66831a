@@ -28,3 +28,11 @@ If the static_assert is added, code such as the following also have to be change
 
 https://cs.corp.google.com/android/frameworks/native/libs/gui/IGraphicBufferProducer.cpp?rcl=96fc72d19e17d6d6dae1f3bdaca888a2db658f77&l=792
 
+64
+Fri Sep 23 19:54:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_9b89ccd3
+UUID: d06f23aa_bb2928ae
+Bytes: 22
+is_trivially_copyable?
+

@@ -25,3 +25,11 @@ UUID: d06f23aa_d183236f
 Bytes: 22
 +salyzyn might know...
 
+5:0-6:145
+Fri Sep 23 23:06:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_f15f3f0e
+UUID: d06f23aa_71f08ff1
+Bytes: 97
+__android_log_buf_print predates me :-( introduced in 2010 by Joe Onorato according to git blame.
+

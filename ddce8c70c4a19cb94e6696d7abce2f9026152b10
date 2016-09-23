@@ -1,0 +1,11 @@
+Revision: ddce8c70c4a19cb94e6696d7abce2f9026152b10
+Patch-set: 1
+File: liblog/liblog.map.txt
+
+5:0-6:145
+Fri Sep 23 22:48:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_9138cbd8
+Bytes: 46
+really? these were in mips and x86 before arm?
+

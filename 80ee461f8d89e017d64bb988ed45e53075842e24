@@ -1,0 +1,11 @@
+Revision: 80ee461f8d89e017d64bb988ed45e53075842e24
+Patch-set: 7
+File: base/include/android-base/properties.h
+
+44
+Fri Sep 23 16:58:15 2016 +0000
+Author: Felipe Leme <1013984@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_4e15b744
+Bytes: 164
+Please ignore if already discussed in the commends, but if the return value "isn't particularly meaningful" and can't be reliable, shouldn't it return void instead?
+

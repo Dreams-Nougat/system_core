@@ -1,0 +1,11 @@
+Revision: 4fea61338b7104bd5fc82ca98775bec2fe66831a
+Patch-set: 1
+File: include/utils/Flattenable.h
+
+64
+Fri Sep 23 19:24:27 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_5b857406
+Bytes: 29
+static_assert std::is_pod<T>?
+

@@ -1,0 +1,11 @@
+Revision: 5a4608591dee6dc8de377553a9c8f05157d49702
+Patch-set: 1
+File: include/cutils/sockets.h
+
+57
+Fri Sep 23 17:19:54 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_eea923eb
+Bytes: 62
+this makes no sense to me. shouldn't we move this out of line?
+

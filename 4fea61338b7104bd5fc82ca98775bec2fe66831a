@@ -36,3 +36,13 @@ UUID: d06f23aa_bb2928ae
 Bytes: 22
 is_trivially_copyable?
 
+64
+Fri Sep 23 20:15:13 2016 +0000
+Author: Peng Xu <1074523@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_bb2928ae
+UUID: d06f23aa_db50a4d4
+Bytes: 192
+Sounds good but only problem is that gcc 4.9 does not have it yet. :(  gcc 5.0 has it though.
+
+Context: http://stackoverflow.com/questions/25123458/is-trivially-copyable-is-not-a-member-of-std
+

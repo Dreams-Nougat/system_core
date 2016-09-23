@@ -89,6 +89,16 @@ UUID: d06f23aa_9a61cd3f
 Bytes: 261
 This function should be targeting users of cutils property_get, not __system_property_get.  It would be fine to return bool, but it should return true and leave value unset for an unset property, the same behavior as a "" property, and false for an invalid key.
 
+29:0-29:5
+Fri Sep 23 00:17:16 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_9a61cd3f
+UUID: d06f23aa_9d57072b
+Bytes: 271
+i've changed the "empty" behavior to match property_get (and changed the test).
+
+i'll keep the void return for now, since we don't actually know what the init that's maintaining the properties considers valid (malchev has a change up to change that for treble right now).
+
 File: base/properties.cpp
 
 27
@@ -141,4 +151,12 @@ Parent: 300b1fab_c7a73ebf
 UUID: d06f23aa_571c6e1f
 Bytes: 298
 Once a property exists, it can never go away.  libcutils property_get treats non-existent property and zero-length property as the same value, and returns the default value in that case.  This implementation overwrites the default value with "" if the property has been "unset" by setting it to "".
+
+27
+Fri Sep 23 00:17:16 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_571c6e1f
+UUID: d06f23aa_7d5dcb71
+Bytes: 4
+Done
 

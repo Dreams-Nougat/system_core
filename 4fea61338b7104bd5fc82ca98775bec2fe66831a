@@ -9,3 +9,22 @@ UUID: d06f23aa_5b857406
 Bytes: 29
 static_assert std::is_pod<T>?
 
+64
+Fri Sep 23 19:46:52 2016 +0000
+Author: Peng Xu <1074523@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_5b857406
+UUID: d06f23aa_9b89ccd3
+Bytes: 375
+Is is_pod going to be too strict?
+
+The structure below fails the test.
+
+  struct C {
+    int m;
+    C(int _m) : m(_m) {}
+  };
+
+If the static_assert is added, code such as the following also have to be changed the same time to compile.
+
+https://cs.corp.google.com/android/frameworks/native/libs/gui/IGraphicBufferProducer.cpp?rcl=96fc72d19e17d6d6dae1f3bdaca888a2db658f77&l=792
+

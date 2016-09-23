@@ -9,3 +9,11 @@ UUID: d06f23aa_9138cbd8
 Bytes: 46
 really? these were in mips and x86 before arm?
 
+5:0-6:145
+Fri Sep 23 22:50:16 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_9138cbd8
+UUID: d06f23aa_f15f3f0e
+Bytes: 162
+That's what our functions.txt files say. These were never actually exposed in the headers, so I'm not really sure if they were *intentionally* added to the NDK :\
+

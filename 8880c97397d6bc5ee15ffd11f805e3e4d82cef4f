@@ -11,6 +11,14 @@ since this is C++ you can just say
 
   struct sigaction action = {};
 
+217
+Fri Sep 23 17:43:12 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_3a52792f
+UUID: d06f23aa_ee276375
+Bytes: 4
+Done
+
 220
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,6 +27,14 @@ Bytes: 132
 you can also use a lambda here if you don't want the handle_thread_exit function.
 
     sa.sa_handler = [](int) { pthread_exit(0); };
+
+220
+Fri Sep 23 17:43:12 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_fa3801f5
+UUID: d06f23aa_0e2d7f54
+Bytes: 4
+Done
 
 222
 Thu Sep 22 23:22:23 2016 +0000
@@ -29,6 +45,14 @@ Bytes: 93
 
   if (sigaction(...) == -1) ...
 
+222
+Fri Sep 23 17:43:12 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_3a1b598b
+UUID: d06f23aa_2e123b10
+Bytes: 4
+Done
+
 241:11-242:22
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -36,10 +60,28 @@ UUID: d06f23aa_ba176959
 Bytes: 68
 TEMP_FAILURE_RETRY around the call to poll would let you remove this
 
+241:11-242:22
+Fri Sep 23 17:43:12 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_ba176959
+UUID: d06f23aa_5d072f77
+Bytes: 261
+Thanks for reviewing the code!
+
+It looks like this section is doing "while (err == -1 && errno != EINTR)" and TEMP_FAILURE_RETRY does "while (err == -1 && errno == EINTR)". This code might have been written wrong originally. TEMP_FAILURE_RETRY makes more sense.
+
 302
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d06f23aa_9a038d19
 Bytes: 56
 this code never runs in a VM, right? (ART uses SIGUSR1.)
+
+302
+Fri Sep 23 17:43:12 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_9a038d19
+UUID: d06f23aa_4e0f77e7
+Bytes: 4
+Done
 

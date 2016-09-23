@@ -36,6 +36,18 @@ UUID: d06f23aa_0e2d7f54
 Bytes: 4
 Done
 
+220
+Fri Sep 23 19:33:17 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_0e2d7f54
+UUID: d06f23aa_3be358cb
+Bytes: 334
+What are the semantics of pthread_exit()?  fds[] is allocated on the heap and needs to be cleaned up.
+
+If pthread_exit() unwinds the stack, then we just need to change fds[] from a C-style array to a std::vector and let its destructor handle everything.
+
+(Also, nitpick: use nullptr instead of 0 since pthread_exit() returns a void *)
+
 222
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -77,6 +89,14 @@ Parent: d06f23aa_5d072f77
 UUID: d06f23aa_e9cafd69
 Bytes: 130
 oh wow, i didn't notice that! presumably they meant `continue`, but ghackmann will know. (worth a comment if this was deliberate!)
+
+241:11-242:22
+Fri Sep 23 19:33:17 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_e9cafd69
+UUID: d06f23aa_fb96403c
+Bytes: 166
+The intent was that pthread_kill() from the parent thread would interrupt poll().  Which doesn't actually work as intended, since there's no signal handler installed.
 
 302
 Thu Sep 22 23:22:23 2016 +0000

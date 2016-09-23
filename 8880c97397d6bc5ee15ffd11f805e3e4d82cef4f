@@ -70,6 +70,14 @@ Thanks for reviewing the code!
 
 It looks like this section is doing "while (err == -1 && errno != EINTR)" and TEMP_FAILURE_RETRY does "while (err == -1 && errno == EINTR)". This code might have been written wrong originally. TEMP_FAILURE_RETRY makes more sense.
 
+241:11-242:22
+Fri Sep 23 19:14:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_5d072f77
+UUID: d06f23aa_e9cafd69
+Bytes: 130
+oh wow, i didn't notice that! presumably they meant `continue`, but ghackmann will know. (worth a comment if this was deliberate!)
+
 302
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: 7e8d2e87e5295d9040eeccd4b235c503541d4aef
+Patch-set: 5
+File: base/Android.bp
+
+42
+Fri Sep 23 04:32:37 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_83f08859
+Bytes: 135
+lists with multiple elements should have 1 element per line.  bpfmt -w Android.bp will rewrite the file for you in the canonical style.
+

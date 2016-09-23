@@ -60,6 +60,16 @@ annoyingly, we have an open bug on that: http://b/27860783
 
 you can probably just get away with a VLA in the meantime, as long as you're not worried about intf_fds.size()*sizeof(pollfd) being a significant amount of stack.
 
+220
+Fri Sep 23 19:51:07 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_fb9720ef
+UUID: d06f23aa_1bb69c90
+Bytes: 187
+intf_fds.size() == # of displays, so it shouldn't be too large in practice.
+
+But at the time I wrote this, gcc followed ISO C++ and forbade VLAs in C++ mode ... does clang allow this now?
+
 222
 Thu Sep 22 23:22:23 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,20 @@
+Revision: fd40cdbc71ebca91ea4e40c8126673825aedd2ce
+Patch-set: 2
+File: base/include/android-base/logging.h
+
+133
+Sat Sep 24 17:10:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_cf40de5f
+Bytes: 92
+i think listing them explicitly like this makes it clear what you're doing and how it works.
+
+File: base/logging.cpp
+
+395
+Sat Sep 24 17:10:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_af73a2db
+Bytes: 28
+this file is 2-space indent.
+

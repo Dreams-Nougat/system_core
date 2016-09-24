@@ -9,6 +9,14 @@ UUID: d06f23aa_b44bf527
 Bytes: 104
 I'd mention something here about this being an internal detail and that other people shouldn't use this.
 
+124
+Sat Sep 24 16:42:39 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_b44bf527
+UUID: d06f23aa_afa2c248
+Bytes: 4
+Done
+
 125:36-125:37
 Sat Sep 24 01:34:26 2016 +0000
 Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: d06f23aa_74c95da1
 Bytes: 1
 ?
 
+125:36-125:37
+Sat Sep 24 16:42:39 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_74c95da1
+UUID: d06f23aa_8fa50655
+Bytes: 89
+Required when "severity" is an expression that uses variables and fields, and not a name.
+
 130:1-132:32
 Sat Sep 24 01:34:26 2016 +0000
 Author: Igor Murashkin <1021471@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d06f23aa_94c6f990
 Bytes: 32
 using namespace ::android::base;
+
+130:1-132:32
+Sat Sep 24 16:42:39 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_94c6f990
+UUID: d06f23aa_cf57fe29
+Bytes: 99
+Google style says no to that (though in this case it's scoped to the lambda). Enh, jmgao, opinions?
 

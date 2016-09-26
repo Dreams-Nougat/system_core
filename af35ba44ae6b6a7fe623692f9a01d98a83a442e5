@@ -1,0 +1,20 @@
+Revision: af35ba44ae6b6a7fe623692f9a01d98a83a442e5
+Patch-set: 1
+File: liblog/logger_write.c
+
+173:4-173:32
+Mon Sep 26 14:58:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_85da45db
+Bytes: 397
+This causes a build problem for MSDOS host builds as it is not provided? Yet android_openEventTagMap is referenced here, but it is in an #if defined(__BIONIC__). What we also missed because of linux host build was ok:
+
+Android.bp excerpt:
+        windows: {
+            srcs: ["uio.c"],
+            enabled: true,
+        },
+        not_windows: {
+            srcs: ["event_tag_map.c"],
+        },
+

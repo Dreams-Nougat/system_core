@@ -16,3 +16,13 @@ UUID: d06f23aa_659a89bf
 Bytes: 29
 enh@ is SIGUSR2 already used?
 
+304:36-304:43
+Mon Sep 26 16:50:15 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d06f23aa_659a89bf
+UUID: d06f23aa_25f7b1bd
+Bytes: 295
+ART doesn't seem to use it, and bionic internally steals a few of the RT signals (and then lies about what the minimum RT signal actually is so that it's harder to step on its toes).
+
+(the usual alternative is to just have an extra "control" fd that you can write some kind of STOP signal down.)
+

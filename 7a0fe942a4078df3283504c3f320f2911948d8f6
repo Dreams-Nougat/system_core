@@ -1,0 +1,18 @@
+Revision: 7a0fe942a4078df3283504c3f320f2911948d8f6
+Patch-set: 3
+File: adf/libadfhwc/adfhwc.cpp
+
+278:4-282:50
+Mon Sep 26 16:20:34 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_05fc75ce
+Bytes: 152
+Necessary so libadfhwc can still close before the event thread is even scheduled. Previously, the SIGUSR2 signal would end up killing the parent thread.
+
+304:36-304:43
+Mon Sep 26 16:20:34 2016 +0000
+Author: Marissa Wall <1073546@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_659a89bf
+Bytes: 29
+enh@ is SIGUSR2 already used?
+

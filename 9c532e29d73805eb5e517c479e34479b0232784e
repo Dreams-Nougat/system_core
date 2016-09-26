@@ -1,0 +1,18 @@
+Revision: 9c532e29d73805eb5e517c479e34479b0232784e
+Patch-set: 2
+File: liblog/event_tag_map.c
+
+90:4-90:16
+Mon Sep 26 16:21:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_a594a190
+Bytes: 45
+C++ would register a casting error from void*
+
+181:4-181:26
+Mon Sep 26 16:21:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d06f23aa_250171de
+Bytes: 45
+C++ would register a casting error from void*
+

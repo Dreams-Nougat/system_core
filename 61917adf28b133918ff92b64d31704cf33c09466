@@ -11,3 +11,11 @@ You presumably don't actually mean to pass a pointer that coerces to true here.
 
 Maybe this should take an enum class to prevent this kind of thing?
 
+361:57-361:59
+Mon Sep 26 20:14:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 65507749_d89acd11
+UUID: 85bbabd0_79264725
+Bytes: 127
+ugh. my least favorite implicit conversion. fixed. (no enum, though; i don't want to force all callers to learn something new.)
+

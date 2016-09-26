@@ -1,0 +1,13 @@
+Revision: 61917adf28b133918ff92b64d31704cf33c09466
+Patch-set: 1
+File: adb/transport_local.cpp
+
+361:57-361:59
+Mon Sep 26 19:51:42 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 65507749_d89acd11
+Bytes: 148
+You presumably don't actually mean to pass a pointer that coerces to true here.
+
+Maybe this should take an enum class to prevent this kind of thing?
+

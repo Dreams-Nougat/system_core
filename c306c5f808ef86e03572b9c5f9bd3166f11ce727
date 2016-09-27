@@ -1,0 +1,29 @@
+Revision: c306c5f808ef86e03572b9c5f9bd3166f11ce727
+Patch-set: 4
+File: libutils/FileMap.cpp
+
+250
+Tue Sep 27 02:09:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5c8439b_9912db6c
+Bytes: 140
+does this really need to be here? can't you have all the blockfile-specific code in OTA and just pass the resulting void*/size_t to FileMap?
+
+File: libziparchive/zip_archive.cc
+
+1158
+Tue Sep 27 02:09:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5c8439b_9911bb63
+Bytes: 51
+why do these functions need to be in libziparchive?
+
+File: libziparchive/zip_util.cc
+
+29
+Tue Sep 27 02:09:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5c8439b_5914434e
+Bytes: 47
+why do these functions belong in libziparchive?
+

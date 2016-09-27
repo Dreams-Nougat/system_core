@@ -1,0 +1,11 @@
+Revision: eb02247c671b2a2852aa7cee9f8e4e827a3ff48c
+Patch-set: 1
+File: include/utils/RefBase.h
+
+221
+Tue Sep 27 20:36:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5d8afb0_0a3d9b17
+Bytes: 9
+= delete?
+

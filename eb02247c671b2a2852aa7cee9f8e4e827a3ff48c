@@ -17,3 +17,11 @@ UUID: a5d8afb0_aaba8f8b
 Bytes: 63
 Seems like the comment would imply = default, but ¯\_(ツ)_/¯
 
+221
+Tue Sep 27 20:41:30 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a5d8afb0_aaba8f8b
+UUID: a5d8afb0_8a8d0be8
+Bytes: 192
+Yeah, default seems correct.  This is just putting it back the way it was before I tried to move it to a .cpp file to fix the weak-vtables warning, which didn't help because it is not virtual.
+

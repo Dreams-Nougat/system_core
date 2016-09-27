@@ -1,0 +1,11 @@
+Revision: 7f9c2dcd19295e1c85580b1ddf6e9b5a1d5117fe
+Patch-set: 4
+File: init/service.cpp
+
+999
+Tue Sep 27 00:48:41 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c5c8439b_b6392691
+Bytes: 87
+yeah, strlen is preferred because the same optimization applies and it's more readable.
+

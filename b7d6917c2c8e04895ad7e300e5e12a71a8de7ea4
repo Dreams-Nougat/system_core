@@ -1,0 +1,18 @@
+Revision: b7d6917c2c8e04895ad7e300e5e12a71a8de7ea4
+Patch-set: 1
+File: adb/usb_libusb.cpp
+
+111:40-111:61
+Wed Sep 28 23:37:24 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5d8afb0_51346393
+Bytes: 52
+most of the failure logging below is missing this...
+
+269:36-269:41
+Wed Sep 28 23:37:24 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a5d8afb0_3131efa3
+Bytes: 30
+i love living in the future...
+

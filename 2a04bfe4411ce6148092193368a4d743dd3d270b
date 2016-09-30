@@ -37,3 +37,11 @@ like you say, it usually doesn't matter, but your new friend <libgen.h> is actua
 
 if you're really keen on reordering, i'll mail you my script...
 
+24:0-25:30
+Fri Sep 30 19:52:24 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_81bc0ed9
+UUID: 425b693f_dcb66944
+Bytes: 382
+I am not keen on re-ordering, just on code I touch, only if I think I can make things better, and only if it makes sense. For instance, I am hurting myself by doing this because these changes are more likely to get merge conflicts ... but given the sweeping cleanup motion of this change, felt right to beautify after setting the standard to android/log.h, I considered it worth it.
+

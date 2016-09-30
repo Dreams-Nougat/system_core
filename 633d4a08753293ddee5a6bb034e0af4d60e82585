@@ -1,0 +1,99 @@
+Revision: 633d4a08753293ddee5a6bb034e0af4d60e82585
+Patch-set: 2
+File: adb/file_sync_service.cpp
+
+34:0-38:30
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_81a64e16
+Bytes: 13
+fix these too
+
+File: base/logging.cpp
+
+46:0-47:33
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_21b5623a
+Bytes: 16
+use <> for these
+
+File: bootstat/bootstat.cpp
+
+21:0-29:17
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_01ba5e28
+Bytes: 5
+order
+
+File: bootstat/histogram_logger.cpp
+
+25:9-25:35
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_818f6e86
+Bytes: 66
+liblog has this functionality now, followup cleanup to transition.
+
+File: debuggerd/backtrace.cpp
+
+24:0-29:23
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_218e8288
+Bytes: 5
+order
+
+File: debuggerd/tombstone.cpp
+
+27:1-30:21
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_a19952ce
+Bytes: 5
+order
+
+43:0-44:35
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_81f40eea
+Bytes: 5
+order
+
+File: debuggerd/utility.cpp
+
+21:0-26:21
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_61f91ade
+Bytes: 5
+order
+
+File: libdiskconfig/diskutils.c
+
+26:1-27:21
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_e1cd0ab2
+Bytes: 5
+order
+
+File: libnativeloader/native_loader.cpp
+
+33:0-35:33
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_614fda36
+Bytes: 2
+<>
+
+File: libziparchive/zip_archive.cc
+
+33:1-39:26
+Fri Sep 30 17:58:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_4154d6ca
+Bytes: 2
+<>
+

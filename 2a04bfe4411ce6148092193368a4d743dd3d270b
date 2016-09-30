@@ -9,3 +9,15 @@ UUID: 425b693f_21732210
 Bytes: 199
 this worries me a bit. since this is the file implementing <memtrack/memtrack.h>, it's usual for that to come first (albeit _after_ the LOG_TAG). i don't know whether this relies on #include order...
 
+24:0-25:30
+Fri Sep 30 17:23:48 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_21732210
+UUID: 425b693f_a18272ae
+Bytes: 505
+This one is OK, but a good point.
+
+Audit shows this exported file, and thus part of the 'android' group at system/core/libmemtrack/include/memtrack/memtrack.h does not have anything that would give us an order headache like you suggest. As an export, it should never have an order issue IMHO.
+
+Do I have to reset my own internal rules to accept that implementation files can go first before system or android-system files? I expect there is three years of spot cleanups like this that I have messed up ...
+

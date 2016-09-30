@@ -1,0 +1,11 @@
+Revision: ff2dcd9af994a23ed483939a416b48bdc10eefd5
+Patch-set: 3
+File: libnativeloader/native_loader.cpp
+
+24:9-25:30
+Fri Sep 30 19:54:18 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_fcd00d4e
+Bytes: 7
+nit: <>
+

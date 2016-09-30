@@ -1,0 +1,11 @@
+Revision: ce02af0f65f2bee25fdf5dd5eddfaff04fb0cdf6
+Patch-set: 2
+File: libpixelflinger/codeflinger/load_store.cpp
+
+30:1-30:5
+Fri Sep 30 17:35:49 2016 +0000
+Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_c129e6a0
+Bytes: 34
+delete the unnecessary space here?
+

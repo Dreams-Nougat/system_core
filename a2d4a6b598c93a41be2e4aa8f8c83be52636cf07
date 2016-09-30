@@ -1,0 +1,11 @@
+Revision: a2d4a6b598c93a41be2e4aa8f8c83be52636cf07
+Base-for-patch-set: 6
+File: libziparchive/zip_archive_private.h
+
+34:2-34:33
+Fri Sep 30 01:51:52 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_9b9b5b15
+Bytes: 119
+the central directory isn't very big anyway..So I make a copy in the memory and thus remove the dependency on libutils.
+

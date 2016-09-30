@@ -1,0 +1,18 @@
+Revision: 0cc00677dcd3ad2daf75571be1b095851fca36ec
+Patch-set: 6
+File: libziparchive/zip_archive.cc
+
+222:31-222:49
+Fri Sep 30 01:51:52 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_fb7137d5
+Bytes: 105
+ziparchive is const in the findEntry interface. So we pass file_reader by value here. A little unnerving.
+
+1162:4-1162:53
+Fri Sep 30 01:51:52 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_5b63a30e
+Bytes: 58
+not happy about the memcpy. Looking for a better solution.
+

@@ -43,3 +43,28 @@ UUID: 425b693f_611a3a89
 Bytes: 82
 (we posted at the same time) since we are respinning, fix this trailing space too.
 
+File: libsuspend/autosuspend_earlysuspend.c
+
+25:0-26:21
+Fri Sep 30 17:44:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_6107da27
+Bytes: 5
+oopps
+
+File: libsysutils/src/NetlinkListener.cpp
+
+21:0-22:23
+Fri Sep 30 17:44:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_c138c6d7
+Bytes: 4
+oops
+
+24:26-24:26
+Fri Sep 30 17:44:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_81508e09
+Bytes: 78
+This must remain, socket frame needs to be included before linux/netlink.h ...
+

@@ -21,3 +21,19 @@ Audit shows this exported file, and thus part of the 'android' group at system/c
 
 Do I have to reset my own internal rules to accept that implementation files can go first before system or android-system files? I expect there is three years of spot cleanups like this that I have messed up ...
 
+24:0-25:30
+Fri Sep 30 18:12:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_a18272ae
+UUID: 425b693f_81bc0ed9
+Bytes: 851
+i just follow https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+
+when i was in google3 i got sick of doing this manually and actually have a python script to do it. (at that time the lint tool would complain, but wouldn't fix it/tell you the fix. not sure if they've improved that since.)
+
+like you say, it usually doesn't matter, but your new friend <libgen.h> is actually a pathological example: everything in that header file is also in <string.h> --- except that they're different functions (that behave differently) with the same names. so having SOP be "implementation header first" keeps us out of mischief when people do stupid things like that.
+
+*hopefully* no-one's doing that to new headers, but like they say in google3, "hope is not a strategy".
+
+if you're really keen on reordering, i'll mail you my script...
+

@@ -1,0 +1,11 @@
+Revision: a0069b3abdcfe1c957e5f09670ee7e481a7b05fe
+Patch-set: 4
+File: adb/usb_libusb.cpp
+
+443
+Fri Sep 30 21:22:00 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_f06ef1f0
+Bytes: 63
+if you're just going to use the result as a bool, make it bool?
+

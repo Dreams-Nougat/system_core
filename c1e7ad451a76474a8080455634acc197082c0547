@@ -1,0 +1,11 @@
+Revision: c1e7ad451a76474a8080455634acc197082c0547
+Patch-set: 1
+File: liblog/event_tag_map.c
+
+28:0-28:35
+Fri Sep 30 17:06:12 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 425b693f_41205608
+Bytes: 92
+Does not belong in this CL, belongs in 'liblog: add private android_log_write_list_buffer()'
+

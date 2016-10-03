@@ -1,0 +1,20 @@
+Revision: e8d5170e0d0c415cdd07af6d99f820a42ad2c0e2
+Patch-set: 2
+File: libsparse/output_file.c
+
+157:1-157:9
+Mon Oct 03 21:04:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a14daa_70111061
+Bytes: 29
+clearer as
+
+  while (len > 0)
+
+162
+Mon Oct 03 21:04:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62a14daa_d01f1c69
+Bytes: 88
+may as well fix `ret` by making it the correct ssize_t, and fix len by making it size_t?
+

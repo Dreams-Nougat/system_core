@@ -1,0 +1,11 @@
+Revision: 5600c2bbc7815c4ca1c328639a89890aead42f95
+Patch-set: 2
+File: logd/main.cpp
+
+47:0-47:35
+Tue Oct 04 21:36:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_e0c30200
+Bytes: 56
+taken from 'logd: use __android_log_is_debuggable()' fix
+

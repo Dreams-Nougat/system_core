@@ -11,12 +11,28 @@ clearer as
 
   while (len > 0)
 
+157:1-157:9
+Tue Oct 04 14:18:45 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a14daa_70111061
+UUID: 02d8916b_2d038d1f
+Bytes: 4
+Done
+
 160
 Mon Oct 03 21:26:54 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 62a14daa_70dcb069
 Bytes: 59
 if (errno != EINTR), or TEMP_FAILURE_RETRY around the write
+
+160
+Tue Oct 04 14:18:45 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a14daa_70dcb069
+UUID: 02d8916b_0d00d10e
+Bytes: 4
+Done
 
 162
 Mon Oct 03 21:04:03 2016 +0000
@@ -40,6 +56,14 @@ UUID: 62a14daa_30f948df
 Bytes: 113
 gzwrite doesn't produce partial writes, it should always return 0 or len, but there are some other problems here.
 
+245
+Tue Oct 04 14:18:45 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a14daa_30f948df
+UUID: 420b69a9_a7468aa7
+Bytes: 64
+Indeed.  But it returns an error is LEN is greater than INT_MAX.
+
 246
 Mon Oct 03 21:26:54 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -47,10 +71,26 @@ UUID: 62a14daa_7003d0e8
 Bytes: 26
 gzwrite returns 0 on error
 
+246
+Tue Oct 04 14:18:45 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a14daa_7003d0e8
+UUID: 821561c1_e9a5750b
+Bytes: 4
+Done
+
 247
 Mon Oct 03 21:26:54 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 62a14daa_90e75437
 Bytes: 34
 gzwrite sets gzerror(), not errno.
+
+247
+Tue Oct 04 14:18:45 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 62a14daa_90e75437
+UUID: 821561c1_c9aab1d9
+Bytes: 4
+Done
 

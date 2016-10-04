@@ -1,0 +1,25 @@
+Revision: adcd6cbf556e6f0a410bcf6ed8f6d06f749f9677
+Patch-set: 3
+File: libsparse/output_file.c
+
+240:62-240:74
+Tue Oct 04 16:34:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 829e417b_8786ea15
+Bytes: 67
+with the min below, you might as well make these size_t and ssize_t
+
+249:45-249:52
+Tue Oct 04 16:34:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 829e417b_44934060
+Bytes: 22
+You can pass NULL here
+
+716
+Tue Oct 04 16:34:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 829e417b_079bfa6d
+Bytes: 72
+why not make len and buffer_size size_t, then this check is unnecessary.
+

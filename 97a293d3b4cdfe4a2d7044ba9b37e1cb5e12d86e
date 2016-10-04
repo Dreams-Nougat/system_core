@@ -1,0 +1,25 @@
+Revision: 97a293d3b4cdfe4a2d7044ba9b37e1cb5e12d86e
+Patch-set: 3
+File: include/android/log.h
+
+189:0-190:69
+Tue Oct 04 23:21:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_a3e824a3
+Bytes: 29
+These should not be exported.
+
+1295:0-1295:59
+Tue Oct 04 23:21:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_c31a88df
+Bytes: 24
+should not be in the NDK
+
+1297:4-1297:29
+Tue Oct 04 23:21:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_232a54e7
+Bytes: 56
+Maybe should not be in the NDK as it supports SafetyNet.
+

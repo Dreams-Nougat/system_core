@@ -9,6 +9,15 @@ UUID: 829e417b_8786ea15
 Bytes: 67
 with the min below, you might as well make these size_t and ssize_t
 
+240:62-240:74
+Wed Oct 05 11:55:16 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 829e417b_8786ea15
+UUID: 22283569_26da760c
+Bytes: 59
+gzwrite returns an int, let's keep int there.
+size_t len OK
+
 249:45-249:52
 Tue Oct 04 16:34:13 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +25,60 @@ UUID: 829e417b_44934060
 Bytes: 22
 You can pass NULL here
 
+249:45-249:52
+Wed Oct 05 11:55:16 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 829e417b_44934060
+UUID: 22283569_06dd7a03
+Bytes: 4
+Done
+
 716
 Tue Oct 04 16:34:13 2016 +0000
 Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 829e417b_079bfa6d
 Bytes: 72
 why not make len and buffer_size size_t, then this check is unnecessary.
+
+716
+Wed Oct 05 11:55:16 2016 +0000
+Author: Jeremy Compostella <1051574@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 829e417b_079bfa6d
+UUID: 422fe970_c76d1e29
+Bytes: 1205
+size_t type is architecture dependent (usually 32 bits on 32 bits architecture and 64 bits on 64 bits architecture).
+
+If we compile for 32 bits architecture and buffer_size is size_t, buffer_size could be overflowed.
+
+Or I could propose the following solution:
+@@ -699,13 +699,13 @@ int write_fill_chunk(struct output_file *out, unsigned int len,
+ 	return out->sparse_ops->write_fill_chunk(out, len, fill_val);
+ }
+ 
+-int write_fd_chunk(struct output_file *out, unsigned int len,
++int write_fd_chunk(struct output_file *out, size_t len,
+ 		int fd, int64_t offset)
+ {
+ 	int ret;
+ 	int64_t aligned_offset;
+-	int aligned_diff;
+-	uint64_t buffer_size;
++	size_t aligned_diff;
++	size_t buffer_size;
+ 	char *ptr;
+ 
+ 	aligned_offset = offset & ~(4096 - 1);
+@@ -713,7 +713,7 @@ int write_fd_chunk(struct output_file *out, unsigned int len,
+ 	buffer_size = len + aligned_diff;
+ 
+ #ifndef USE_MINGW
+-	if (buffer_size > SIZE_MAX)
++	if (SIZE_MAX - len > aligned_diff)
+ 		return -E2BIG;
+ 	char *data = mmap64(NULL, buffer_size, PROT_READ, MAP_SHARED, fd,
+ 			aligned_offset);
+
+On the other hand,  write_fd_chunk() is about writing a data chunk which is by design limited to UINT_MAX.
+
+Please let me know what you prefer.
 

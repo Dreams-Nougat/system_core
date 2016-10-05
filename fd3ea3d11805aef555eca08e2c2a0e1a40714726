@@ -1,0 +1,11 @@
+Revision: fd3ea3d11805aef555eca08e2c2a0e1a40714726
+Patch-set: 1
+File: libcutils/native_handle.c
+
+54
+Wed Oct 05 21:12:01 2016 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1f546c0d_261fb6cf
+Bytes: 127
+Also check that handle->data[i] >= 0; the original handle might have some fd slots that aren't used for this particular handle.
+

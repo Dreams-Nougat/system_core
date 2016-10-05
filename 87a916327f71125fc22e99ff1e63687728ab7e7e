@@ -1,0 +1,11 @@
+Revision: 87a916327f71125fc22e99ff1e63687728ab7e7e
+Patch-set: 1
+File: libcutils/trace-dev.c
+
+29:1-29:23
+Wed Oct 05 16:12:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_29d15551
+Bytes: 64
+unnecessary if including private/android_logger.h by definition.
+

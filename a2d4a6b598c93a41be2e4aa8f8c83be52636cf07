@@ -17,3 +17,11 @@ UUID: 420b69a9_67b412cd
 Bytes: 228
 What do you mean by "big" ? The central directory for applications can how several thousand entries. That's 10s of kilobytes at the very least. I'd like to see a clearer justification (by way of microbenchmarks) for this change.
 
+34:2-34:33
+Wed Oct 05 21:12:57 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 420b69a9_67b412cd
+UUID: 1f546c0d_e6287ef2
+Bytes: 210
+tested on facebook.apk. With the memcpy, opening the archive takes 16ms instead of 3ms on my workstation. Should be worse on an actual device. So I changed the central directory to use (a uin8_t* and a size_t).
+

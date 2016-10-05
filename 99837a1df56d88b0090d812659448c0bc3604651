@@ -1,0 +1,32 @@
+Revision: 99837a1df56d88b0090d812659448c0bc3604651
+Patch-set: 4
+File: include/android/log.h
+
+189:0-190:69
+Wed Oct 05 14:50:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_297235da
+Bytes: 155
+callers are frameworks/base/core/jni/android_app_admin_SecurityLog.cpp, system/core/adb. Moving these into system/core/private/android_logger.h is 'doable'
+
+695:0-1070:52
+Wed Oct 05 14:50:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_c94b8980
+Bytes: 294
+This fragment allows native code to read their logs. It was originally designed to be exported in 'L', but we hesitated because considered exec logcat to be the defacto API and this native interface would only add confusion and choices. We should comment regarding the preference to use logcat.
+
+1262:1-1266:62
+Wed Oct 05 14:50:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_897981bb
+Bytes: 170
+called throughout the system for SafteyNet, not easy to scale this and __android_log_error_write() out. We expect vendors to also report these events, so these must stay.
+
+1295:0-1295:59
+Wed Oct 05 14:50:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_496f79ed
+Bytes: 155
+callers are frameworks/base/core/jni/android_app_admin_SecurityLog.cpp, system/core/adb. Moving these into system/core/private/android_logger.h is 'doable'
+

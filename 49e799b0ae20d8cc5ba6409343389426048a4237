@@ -1,0 +1,11 @@
+Revision: 49e799b0ae20d8cc5ba6409343389426048a4237
+Patch-set: 1
+File: debuggerd/tombstone.cpp
+
+35:0-35:24
+Wed Oct 05 16:12:49 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 62830d88_49ce99ae
+Bytes: 68
+unnecessary when private/android_logger.h is included by definition.
+

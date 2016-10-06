@@ -41,6 +41,13 @@ We are only going to export _one_ header to the NDK, and we should use the same 
 
 We have to move everyone to the LOG macros, they are in external documentation yet the NDK is lacking them!!!
 
+224:0-231:6
+Thu Oct 06 22:16:58 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ffddd82c_513404fd
+Bytes: 90
+All of these are designed to be overridden, lets not ifdef then out with the feature flag.
+
 826:4-826:27
 Thu Oct 06 21:51:30 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>

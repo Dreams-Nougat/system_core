@@ -17,3 +17,11 @@ UUID: 5f50a448_58807dfc
 Bytes: 178
 It does not look like we allow that.  For example, such handle is considered invalid in Parcel::readNativeHandle and Parcel::writeNativeHandle.  I think we could fail early here.
 
+54
+Thu Oct 06 16:07:47 2016 +0000
+Author: Jesse Hall <1010672@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5f50a448_58807dfc
+UUID: 9f6e9ce8_e00096ad
+Bytes: 50
+Oh, okay. If it's invalid elsewhere, this is fine.
+

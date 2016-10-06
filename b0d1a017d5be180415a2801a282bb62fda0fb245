@@ -1,0 +1,11 @@
+Revision: b0d1a017d5be180415a2801a282bb62fda0fb245
+Patch-set: 2
+File: libsparse/output_file.c
+
+162
+Thu Oct 06 15:05:52 2016 +0000
+Author: Satish Patel <1101148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5f50a448_1890c5fb
+Bytes: 220
+return value never be greater then len. So change it to ret == len ( as per the man description of write call, if in case you have found some link which says it can written greater than value, then kindly share the link)
+

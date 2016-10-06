@@ -1,0 +1,11 @@
+Revision: 2a2c61532527847c92d8c7f58e3098d2355a69dd
+Patch-set: 1
+File: init/init_parser.cpp
+
+127:8-127:34
+Thu Oct 06 21:36:23 2016 +0000
+Author: Andy Hung <1040213@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fe1cce4_e4354edd
+Bytes: 44
+minor nit: would be better inside of the if.
+

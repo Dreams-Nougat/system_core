@@ -1,0 +1,25 @@
+Revision: 420a94e7b006b08d9ee0cb3d18b18771c26fa2b5
+Patch-set: 1
+File: include/android/log.h
+
+90:13-90:32
+Thu Oct 06 21:51:30 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fe1cce4_04c07a8f
+Bytes: 137
+I think anything prefixed with "android_" is probably okay. That's essentially a C namespace, and users should stay out of our namespace.
+
+157:7-157:14
+Thu Oct 06 21:51:30 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fe1cce4_a49fc6b2
+Bytes: 226
+If we're going with a feature flag, the name should probably clearly be a feature flag. ANDROID_ENABLE_LOG_MACROS or something? We can set this flag globally in the build system for platform code and NDK code can opt in to it.
+
+826:4-826:27
+Thu Oct 06 21:51:30 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1fe1cce4_e499cecd
+Bytes: 36
+Accidentally hid some functions too.
+

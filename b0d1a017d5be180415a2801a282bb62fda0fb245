@@ -9,3 +9,11 @@ UUID: 5f50a448_1890c5fb
 Bytes: 220
 return value never be greater then len. So change it to ret == len ( as per the man description of write call, if in case you have found some link which says it can written greater than value, then kindly share the link)
 
+162
+Thu Oct 06 15:56:03 2016 +0000
+Author: Ivan Maidanski <1084139@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5f50a448_1890c5fb
+UUID: 5f50a448_b8a55952
+Bytes: 5
+Agree
+

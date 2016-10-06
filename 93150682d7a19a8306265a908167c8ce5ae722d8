@@ -1,0 +1,107 @@
+Revision: 93150682d7a19a8306265a908167c8ce5ae722d8
+Patch-set: 7
+File: include/ziparchive/zip_archive.h
+
+135
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_3d9a3b1d
+Bytes: 46
+we don't want a debug name for error messages?
+
+221
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_bd85ebba
+Bytes: 111
+is this name actually useful, or should we just use the type directly in the ProcessZipEntryContents signature?
+
+File: libziparchive/zip_archive.cc
+
+223
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_7db7538a
+Bytes: 207
+shouldn't this be a member of FileReaderWrapper? so instead of calling ReadAtOffset(file_reader, ...), callers call file_reader.ReadAtOffset(...). presumably then you can make more of the fields private too?
+
+244:0-254:3
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_1dac173e
+Bytes: 42
+should this be a call to ReadAtOffset now?
+
+373
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_fda28346
+Bytes: 68
+(pre-existing bug, but seems like we should have a null check here.)
+
+463
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_7d62f30c
+Bytes: 121
+we're effectively passing `archive` twice here. just pass `archive` once and extract `file_reader` from it in the callee?
+
+1086
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_fd6da3f8
+Bytes: 43
+what if the file_reader doesn't have an fd?
+
+1115
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_9d7a67ac
+Bytes: 49
+or just
+
+  ProcessWriter writer(func, cookie);
+
+?
+
+1181
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_5d44cf73
+Bytes: 303
+would it make more sense to have two functions: an underlying Create(void*, size_t) that recovery calls directly, and the code above that ends up calling the (void*,size_t) version?
+
+also, Create doesn't really seem like the right verb. (admittedly copied from the old code, but it was wrong there too.)
+
+File: libziparchive/zip_archive_private.h
+
+29:6-29:23
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_9d51072e
+Bytes: 90
+or just FileReader or MappedZipFile? i'm not sure what the "Wrapper" is trying to tell me.
+
+31
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_bdeacb64
+Bytes: 7
+has_fd?
+
+35
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_5d2fefad
+Bytes: 38
+how many of these can we make private?
+
+62
+Thu Oct 06 01:38:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f6e9ce8_1d3977f4
+Bytes: 131
+is this the right place for directory_map?
+
+should it be in ZipArchive? maybe in a std::unique_ptr to make the optional-ness clear?
+

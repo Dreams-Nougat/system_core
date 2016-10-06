@@ -9,3 +9,11 @@ UUID: 1f546c0d_261fb6cf
 Bytes: 127
 Also check that handle->data[i] >= 0; the original handle might have some fd slots that aren't used for this particular handle.
 
+54
+Thu Oct 06 02:31:36 2016 +0000
+Author: Chia-I Wu <1096171@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1f546c0d_261fb6cf
+UUID: 5f50a448_58807dfc
+Bytes: 178
+It does not look like we allow that.  For example, such handle is considered invalid in Parcel::readNativeHandle and Parcel::writeNativeHandle.  I think we could fail early here.
+

@@ -10,12 +10,28 @@ Bytes: 371
 atomic variables are hard to use and understand. There are already three atomic variables in usb_handle, and two variables with mutex in themselves (read/write), maybe using a mutex in usb_handle and removing atomics is a better way. It is also what we did in usb_linux.cpp.
 But I don't know if you have any special consideration (like for doing usb_read and usb_write?).
 
+129:9-129:15
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_89e9d0a7
+UUID: 1f546c0d_66d48e12
+Bytes: 316
+Yeah, there's a simpler way to do this. I replaced the active_transfers and device_handle atomics with a mutex that guards device_handle, which gets acquired and then released after the libusb_submit_transfer call returns. libusb_submit_transfer will have incremented the refcount, so it's safe to libusb_close then.
+
 163:43-163:58
 Sat Oct 01 01:42:04 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 425b693f_4622a762
 Bytes: 103
 why recursive_mutex? Can we replace it with a normal mutex, which is easier to understand and maintain?
+
+163:43-163:58
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_4622a762
+UUID: 1f546c0d_66712e35
+Bytes: 39
+Yeah, this can be non-recursive. Fixed.
 
 165:20-165:38
 Sat Oct 01 01:42:04 2016 +0000
@@ -24,12 +40,28 @@ UUID: 425b693f_e6087be2
 Bytes: 21
 no need to be global?
 
+165:20-165:38
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_e6087be2
+UUID: 1f546c0d_e683de3e
+Bytes: 52
+Forgot to add the code that actually uses it, fixed.
+
 281:56-281:73
 Sat Oct 01 01:42:04 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 425b693f_66dc8b3b
 Bytes: 40
 It seems being hold for a too long code?
+
+281:56-281:73
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_66dc8b3b
+UUID: 1f546c0d_06d27afb
+Bytes: 163
+This was to keep usb_close from closing a device that we've opened here, but the check should be sufficient, since usb_close holds the lock the entire time. Fixed.
 
 390:8-390:92
 Sat Oct 01 01:42:04 2016 +0000
@@ -51,10 +83,26 @@ cv.notify_one();
 
 This is because cv.wait() can be waked Spuriously. see http://pubs.opengroup.org/onlinepubs/7908799/xsh/pthread_cond_wait.html
 
+390:8-390:92
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_c98fc827
+UUID: 1f546c0d_66700e6a
+Bytes: 35
+Thanks, I forgot about that. Fixed.
+
 509:16-509:21
 Sat Oct 01 01:42:04 2016 +0000
 Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 425b693f_89ff904c
 Bytes: 57
 why close it twice? we have closed it in usb_kick, right?
+
+509:16-509:21
+Thu Oct 06 00:35:25 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 425b693f_89ff904c
+UUID: 1f546c0d_4653d269
+Bytes: 151
+It's actually 3 times, it gets Closed against in the destructor. Removed this one, but left the one in the destructor alone, since it's basically free.
 

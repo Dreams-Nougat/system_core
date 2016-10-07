@@ -1,5 +1,14 @@
 Revision: a400e930b4a416c016b90c3a81a614189e3c2eac
 Patch-set: 2
+File: include/android/log.h
+
+225:46-225:53
+Fri Oct 07 15:36:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dfcbb492_ba47c9a5
+Bytes: 159
+without LOG_TAG defined, these prototypes all fail ... needs more ifdef work to deal with LOG_TAG missing. Setting LOG_TAG to NULL is the tip of an iceberg ...
+
 File: include/log/log.h
 
 17:0-18:23

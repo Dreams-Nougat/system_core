@@ -44,3 +44,12 @@ UUID: ff007887_0bbe81a8
 Bytes: 36
 Created the SafetyNet interface in M
 
+File: include/private/android_logger.h
+
+22:0-24:6
+Fri Oct 07 21:36:50 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_6b2975f4
+Bytes: 215
+I know I could switch back to log/log.h to generate the LOG_TAG as NULL, but I want to project the good example of using android/log.h throughout our codebase for vendors to call upon when they construct their code.
+

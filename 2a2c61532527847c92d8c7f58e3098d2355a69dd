@@ -9,3 +9,16 @@ UUID: 1fe1cce4_e4354edd
 Bytes: 44
 minor nit: would be better inside of the if.
 
+134
+Fri Oct 07 00:25:43 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_e738dc25
+Bytes: 248
+you might want to add
+
+  // Sort first so we load files in a consistent order (http://b/31996208).
+
+so no-one comes along and "optimizes" this in future.
+
+(there is init_parser_test.cpp, but it's not obvious to me that we can unit test this as is.)
+

@@ -1,0 +1,72 @@
+Revision: b4a0d5cf8fdf2938a9bd16875a30fc465d6d9583
+Patch-set: 8
+File: libziparchive/zip_archive.cc
+
+319
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_479530eb
+Bytes: 220
+(at this point i realize despite all the work to pass around a debug file name, exactly *one* of our existing log statements actually uses it :-/ but let's just file a bug and come back and fix that in a later change...)
+
+346
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_a77b44c1
+Bytes: 124
+you can just say
+
+  std::vector<uint8_t> scan_buffer(read_amount);
+
+http://en.cppreference.com/w/cpp/container/vector/vector
+
+586
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_27b7548b
+Bytes: 10
+same here.
+
+1084:74-1084:76
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_87a56852
+Bytes: 3
+) {
+
+1114:4-1114:9
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_e79c5c0e
+Bytes: 6
+else {
+
+1174:0-1174:4
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_2762f40b
+Bytes: 17
+wrong indentation
+
+File: libziparchive/zip_archive_private.h
+
+31
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_47da90de
+Bytes: 67
+https://google.github.io/styleguide/cppguide.html#Declaration_Order
+
+33
+Fri Oct 07 00:51:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_673eacde
+Bytes: 171
+comments like
+
+  // `fd` is valid if `has_fd` is true.
+
+  // `read_pos`, `base_ptr`, and `data_length` are valid if `has_fd` is false.
+
+and blank lines between the groups?
+

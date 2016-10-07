@@ -1,0 +1,18 @@
+Revision: be8fba62b4df8eb7b1b5b2b98bfe7c7f5b1f7d54
+Patch-set: 3
+File: include/android/log.h
+
+203:0-203:30
+Fri Oct 07 21:29:29 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_6bacd58c
+Bytes: 203
+If LOG_TAG is not defined at all at inclusion, this permanently ignores any overrides as designed, unless __ANDROID_LOG_TAG is overridden.  Should teach folks to define LOG_TAG at the top of their files.
+
+204:0-207:26
+Fri Oct 07 21:29:29 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_ebc20530
+Bytes: 53
+Like #warning, except it does not respond to -Werror.
+

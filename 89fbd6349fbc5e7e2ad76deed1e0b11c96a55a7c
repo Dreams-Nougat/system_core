@@ -1,0 +1,15 @@
+Revision: 89fbd6349fbc5e7e2ad76deed1e0b11c96a55a7c
+Patch-set: 1
+File: base/include/android-base/parseint.h
+
+34:29-34:58
+Fri Oct 07 23:52:56 2016 +0000
+Author: Steven Moreland <1120458@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_6eb98332
+Bytes: 104
+not sure what the convention is here, but I prefer
+
+tolower(s[1]) == 'x'
+
+probably doesn't matter though
+

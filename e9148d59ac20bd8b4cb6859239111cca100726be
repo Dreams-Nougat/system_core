@@ -1,0 +1,11 @@
+Revision: e9148d59ac20bd8b4cb6859239111cca100726be
+Patch-set: 4
+File: sdcard/fuse.cpp
+
+582:8-583:73
+Fri Oct 07 08:57:39 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bff52093_2b2f39af
+Bytes: 65
+please mention these logging improvements in the commit message ?
+

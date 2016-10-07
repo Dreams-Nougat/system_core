@@ -1,0 +1,15 @@
+Revision: d058ba8d26ed703c240e0b666c28a5448d993c8a
+Patch-set: 1
+File: cpio/mkbootfs.c
+
+85:0-88:9
+Fri Oct 07 23:10:44 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_6e5bc388
+Bytes: 102
+or
+
+  int is_dir = S_ISDIR(s->st_mode) || strcmp(path, TRAILER) == 0;
+
+to make the "or" a bit clearer.
+

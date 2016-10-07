@@ -20,6 +20,14 @@ I had to snuff this one out as it would be redefined if one did:
 #include <android/log.h>
 #include <log/log.h>
 
+90:13-90:32
+Fri Oct 07 19:45:42 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fe1cce4_a400a6ac
+UUID: ff007887_a569de88
+Bytes: 31
+How? It isn't defined in log.h.
+
 157:7-157:14
 Thu Oct 06 21:51:30 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -40,6 +48,24 @@ I am not 100% behind LOG_TAG as the flag, I would prefer to add an #ifndef ANDRO
 We are only going to export _one_ header to the NDK, and we should use the same header internally in exactly the same manner to make sure it is _correct_. Any more than one header and we cause confusion. I can not count the number of times vendors have asked us which header to use internally, or where I caught them picking the wrong one and adding their own flavours of workarounds.
 
 We have to move everyone to the LOG macros, they are in external documentation yet the NDK is lacking them!!!
+
+157:7-157:14
+Fri Oct 07 19:45:42 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fe1cce4_64c93e72
+UUID: ff007887_a552feda
+Bytes: 636
+> I would prefer to add an #ifndef ANDROID_LEGACY that the bad code can use if they insist on near zero maintenance.
+
+This would work too. ANDROID_ENABLE_LOG_MACROS has the advantage of meaning that anything that currently builds will continue building without any work, but agreed that it puts more burden on the people that do want the better functionality.
+
+> I can not count the number of times vendors have asked us which header to use internally
+
+Well, if every header is called "log.h", yeah, that's confusing. Better naming could fix that :)
+
+> they are in external documentation yet the NDK is lacking them!!!
+
+They are? Where?
 
 224:0-231:6
 Thu Oct 06 22:16:58 2016 +0000

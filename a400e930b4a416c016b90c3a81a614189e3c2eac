@@ -1,0 +1,11 @@
+Revision: a400e930b4a416c016b90c3a81a614189e3c2eac
+Patch-set: 2
+File: include/log/log.h
+
+17:0-18:23
+Thu Oct 06 22:44:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_84f3a661
+Bytes: 219
+Dressing is not purely necessary, but it does allow us to add content here (undesirable to do so, just sayin) and will not define LOG_TAG again if the code undef'd it since including this file (desireable, do as a say).
+

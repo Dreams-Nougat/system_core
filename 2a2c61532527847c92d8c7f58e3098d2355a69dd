@@ -9,6 +9,14 @@ UUID: 1fe1cce4_e4354edd
 Bytes: 44
 minor nit: would be better inside of the if.
 
+127:8-127:34
+Fri Oct 07 20:57:03 2016 +0000
+Author: Glenn Kasten <1004395@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1fe1cce4_e4354edd
+UUID: ff007887_e8a44b11
+Bytes: 4
+Done
+
 134
 Fri Oct 07 00:25:43 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -21,4 +29,12 @@ you might want to add
 so no-one comes along and "optimizes" this in future.
 
 (there is init_parser_test.cpp, but it's not obvious to me that we can unit test this as is.)
+
+134
+Fri Oct 07 20:57:03 2016 +0000
+Author: Glenn Kasten <1004395@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: df6d7444_e738dc25
+UUID: ff007887_c8a98fe9
+Bytes: 4
+Done
 

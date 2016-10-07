@@ -1,0 +1,11 @@
+Revision: 75699335320b2d339220b81489cdb3227fefa5b7
+Patch-set: 1
+File: sdcard/sdcard.cpp
+
+115
+Fri Oct 07 00:08:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: df6d7444_67978c3c
+Bytes: 65
+(PLOG includes strerror. i remember it as "'P' as in perror(3)".)
+

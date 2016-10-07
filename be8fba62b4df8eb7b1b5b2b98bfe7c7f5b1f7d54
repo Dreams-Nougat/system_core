@@ -16,3 +16,31 @@ UUID: ff007887_ebc20530
 Bytes: 53
 Like #warning, except it does not respond to -Werror.
 
+232:0-243:6
+Fri Oct 07 21:34:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_abe3edc5
+Bytes: 307
+Customers can have their own defined ahead of this file, and if they define them after this file will get warnings _if_ they differ in some substantive way from ours. Sadly, I introduced __ANDROID_LOG_TAG to internally hold on to the 'defined' LOG_TAG which will always warn, but override, in customer code.
+
+735:0-745:40
+Fri Oct 07 21:34:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_6bb735cf
+Bytes: 42
+Created the native event log library in N.
+
+873:0-883:43
+Fri Oct 07 21:34:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_4bb479c8
+Bytes: 38
+Created the is loggable interface in M
+
+898:0-906:6
+Fri Oct 07 21:34:22 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_0bbe81a8
+Bytes: 36
+Created the SafetyNet interface in M
+

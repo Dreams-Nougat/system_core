@@ -1,0 +1,11 @@
+Revision: 1718581336ce68a44b1881cbe31bd6ef5c896bfe
+Patch-set: 1
+File: debuggerd/client/debuggerd_client.cpp
+
+271:0-273:3
+Sat Oct 08 00:57:46 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ff007887_ce46370b
+Bytes: 75
+how many fds do you need? loop to 1024 but break once you've closed enough?
+

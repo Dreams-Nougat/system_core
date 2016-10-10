@@ -9,3 +9,11 @@ UUID: ff007887_ce46370b
 Bytes: 75
 how many fds do you need? loop to 1024 but break once you've closed enough?
 
+271:0-273:3
+Mon Oct 10 21:10:38 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff007887_ce46370b
+UUID: ff007887_42169304
+Bytes: 52
+PS2 changes this to closing every fd from 3 to 1023.
+

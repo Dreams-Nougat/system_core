@@ -13,3 +13,11 @@ tolower(s[1]) == 'x'
 
 probably doesn't matter though
 
+34:29-34:58
+Tue Oct 11 04:57:44 2016 +0000
+Author: Pawin Vongmasa <1105338@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ff007887_6eb98332
+UUID: 9f669ccf_fd42c364
+Bytes: 43
+Using tolower here might be less efficient.
+

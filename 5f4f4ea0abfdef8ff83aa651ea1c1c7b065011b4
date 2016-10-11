@@ -1,0 +1,11 @@
+Revision: 5f4f4ea0abfdef8ff83aa651ea1c1c7b065011b4
+Patch-set: 5
+File: include/android/log.h
+
+829:0-837:6
+Tue Oct 11 16:08:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f669ccf_607e063b
+Bytes: 122
+Ooops ... 21 supports __android_log_is_loggable, and 23 supports __android_log_is_loggable_len ... and lower has no 'test'
+

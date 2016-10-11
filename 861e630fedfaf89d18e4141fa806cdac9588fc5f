@@ -1,0 +1,11 @@
+Revision: 861e630fedfaf89d18e4141fa806cdac9588fc5f
+Patch-set: 6
+File: include/android/log.h
+
+934:4-934:21
+Tue Oct 11 17:54:17 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f669ccf_430cacf7
+Bytes: 136
+Confirmed that clang defines __GNUC__ ... which in-effect has changed meaning to indicate that the compiler supports the GNU extensions.
+

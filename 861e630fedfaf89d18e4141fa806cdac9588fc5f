@@ -2,6 +2,20 @@ Revision: 861e630fedfaf89d18e4141fa806cdac9588fc5f
 Patch-set: 6
 File: include/android/log.h
 
+232:0-232:20
+Tue Oct 11 18:15:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f669ccf_eee3e7c4
+Bytes: 184
+Do we want to print a warning message that LOG_TAG was not pre-defined? I decided to leave that out as beyond the scope of this CL and make it a separate one so as to track violations.
+
+843:0-851:6
+Tue Oct 11 18:15:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9f669ccf_6ed8b711
+Bytes: 16
+double ooops ;-/
+
 895:30-895:34
 Tue Oct 11 17:57:12 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

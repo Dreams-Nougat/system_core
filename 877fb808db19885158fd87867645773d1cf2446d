@@ -1,0 +1,22 @@
+Revision: 877fb808db19885158fd87867645773d1cf2446d
+Patch-set: 1
+File: healthd/BatteryMonitor.cpp
+
+186:8-186:45
+Wed Oct 12 20:26:52 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c99da37_677b407f
+Bytes: 196
+It makes me a bit nervous to depend on the fact that if the parse fails, value is not set and stays zero. I think it would be better to explicitly return 0 on failure.
+
+But this is a bit of a nit.
+
+File: init/builtins.cpp
+
+919:4-919:49
+Wed Oct 12 20:26:52 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 1c99da37_678d808f
+Bytes: 75
+Same as before, relying on a failure not setting log_level make me nervous.
+

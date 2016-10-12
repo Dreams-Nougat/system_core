@@ -1,0 +1,11 @@
+Revision: f09ad05b5851c5d8d6a8e3319dd25c4c7fb1f514
+Patch-set: 2
+File: include/cutils/native_handle.h
+
+27
+Wed Oct 12 23:25:04 2016 +0000
+Author: Chia-I Wu <1096171@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_9484c44a
+Bytes: 127
+I am thinking renaming this to NATIVE_HANDLE_DECLARE_STORAGE, since its arguments are maxFds/maxInts instead of numFds/numInts.
+

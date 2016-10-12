@@ -1,0 +1,11 @@
+Revision: 5619bf0da4ad259b1ff7a0de25c7100d0967f372
+Patch-set: 11
+File: include/android/log.h
+
+113:0-113:27
+Wed Oct 12 20:03:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c693ee5_9abb49d8
+Bytes: 217
+Ooops, missed a spot. Introduced in AOSP post-n, but has been back-ported to k, l, m and n. Need to update exports and ifdef this on version. Since it is an __ function, should not be called directly, but via a macro.
+

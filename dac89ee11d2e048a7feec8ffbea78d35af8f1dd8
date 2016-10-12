@@ -1,0 +1,11 @@
+Revision: dac89ee11d2e048a7feec8ffbea78d35af8f1dd8
+Patch-set: 9
+File: liblog/README
+
+72:0-72:5
+Wed Oct 12 15:47:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c1ef2a6_a86fbbef
+Bytes: 17
+FARG, no tabs ...
+

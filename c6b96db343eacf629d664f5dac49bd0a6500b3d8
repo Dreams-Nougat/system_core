@@ -1,0 +1,11 @@
+Revision: c6b96db343eacf629d664f5dac49bd0a6500b3d8
+Patch-set: 1
+File: liblog/tests/liblog_test.cpp
+
+2613:0-2614:65
+Wed Oct 12 23:00:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_349210af
+Bytes: 69
+Need to test that a subsequent log message opens everything up again.
+

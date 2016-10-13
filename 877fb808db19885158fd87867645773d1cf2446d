@@ -19,6 +19,14 @@ UUID: 9c994a96_02664a51
 Bytes: 257
 that's a deliberate design decision in all the libbase functions that removes the need for explicit support for default values. but there isn't actually a test for that in parseint_test.cpp like there is for the string/property functions, so i'll add one...
 
+186:8-186:45
+Thu Oct 13 17:18:28 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c994a96_02664a51
+UUID: 9c994a96_022e4ab0
+Bytes: 55
+Should the comments in the header files be updated too?
+
 File: init/builtins.cpp
 
 919:4-919:49

@@ -9,3 +9,13 @@ UUID: 9c314a19_65de8061
 Bytes: 36
 Why not move this into the for loop?
 
+97:4-97:10
+Thu Oct 13 21:42:10 2016 +0000
+Author: Kyle Repinski <1072203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c314a19_65de8061
+UUID: 5c3b525a_402eae42
+Bytes: 134
+> Why not move this into the for loop?
+
+I was just keeping with the layout of the original functions. That could certainly be changed.
+

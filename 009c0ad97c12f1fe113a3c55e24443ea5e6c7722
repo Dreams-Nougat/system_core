@@ -1,0 +1,11 @@
+Revision: 009c0ad97c12f1fe113a3c55e24443ea5e6c7722
+Patch-set: 1
+File: libcutils/native_handle.c
+
+97:4-97:10
+Thu Oct 13 21:17:31 2016 +0000
+Author: Anas Karbila <1104364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c314a19_65de8061
+Bytes: 36
+Why not move this into the for loop?
+

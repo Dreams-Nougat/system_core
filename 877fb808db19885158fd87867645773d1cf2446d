@@ -11,6 +11,14 @@ It makes me a bit nervous to depend on the fact that if the parse fails, value i
 
 But this is a bit of a nit.
 
+186:8-186:45
+Thu Oct 13 16:31:34 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1c99da37_677b407f
+UUID: 9c994a96_02664a51
+Bytes: 257
+that's a deliberate design decision in all the libbase functions that removes the need for explicit support for default values. but there isn't actually a test for that in parseint_test.cpp like there is for the string/property functions, so i'll add one...
+
 File: init/builtins.cpp
 
 919:4-919:49

@@ -1,0 +1,27 @@
+Revision: 2c279c82f7aae09f9cce01a9af3ae04769c82f52
+Patch-set: 2
+File: liblog/pmsg_reader.c
+
+168:13-168:18
+Thu Oct 13 19:44:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ce78a24_52fd5493
+Bytes: 67
+Here we are OK because we take an effort to stay away from 0 or -1.
+
+File: liblog/pmsg_writer.c
+
+57:8-57:48
+Thu Oct 13 19:44:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ce78a24_72e978d3
+Bytes: 105
+nit: We should move this into an intermediate (eg: int i) before checking to match code style on line 59.
+
+60:15-60:18
+Thu Oct 13 19:44:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9ce78a24_f2eb28d7
+Bytes: 4
+>= 0
+

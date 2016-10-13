@@ -1,0 +1,34 @@
+Revision: 844519b76ec910b124cd1b0fb11887fc25f7740e
+Patch-set: 3
+File: /COMMIT_MSG
+
+12:2-12:15
+Thu Oct 13 04:39:22 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_1d1457b2
+Bytes: 56
+why does webview_zygote need access to emulated storage?
+
+13:38-13:46
+Thu Oct 13 04:39:22 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_fdd5dbd8
+Bytes: 8
+bounding
+
+File: libcutils/fs_config.c
+
+153:28-153:37
+Thu Oct 13 04:39:22 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_5df7af71
+Bytes: 8
+AID_ROOT
+
+153:6-153:10
+Thu Oct 13 04:39:22 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dcbf42c0_3d02f370
+Bytes: 10
+750 or 754
+

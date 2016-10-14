@@ -34,6 +34,14 @@ UUID: 5c0d132b_b71088fe
 Bytes: 67
 Ok, will squash to __ANDROID_API__ and assume defined further down.
 
+22
+Fri Oct 14 22:21:45 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_b71088fe
+UUID: fc9ec720_3ccc7153
+Bytes: 73
+Hmmm, sys/cdefs.h ... all platforms ... what about host (eg: CTS) builds?
+
 162:0-194:6
 Fri Oct 14 22:06:56 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,18 @@
+Revision: 0df83324241d422592660bb7eb3b413af21fdc59
+Patch-set: 14
+File: include/android/log.h
+
+22
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0d132b_57d36cbf
+Bytes: 289
+Whether or not this is true depends on the include order of this file. __ANDROID_API__ is defined as soon as you include a libc header (even for platform code).
+
+    #include <android/log.h> // Won't be defined.
+
+But
+
+    #include <stdio.h>
+    #include <android/log.h> // Will be defined.
+

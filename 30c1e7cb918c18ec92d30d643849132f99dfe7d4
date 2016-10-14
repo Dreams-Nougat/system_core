@@ -197,3 +197,11 @@ even if logging isn't the _only_ thing, fixing this would be a step in the right
 
 (the _real_ question is your earlier one about "do you really understand the long-term implications of exposing something in the NDK?". we should definitely make sure we've read salyzyn his rights [and that he's understood them] before we let him incriminate himself...)
 
+262
+Fri Oct 14 22:16:48 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_f73f207c
+UUID: 3c2bff7f_17297eb7
+Bytes: 326
+danalbert@ suggested I make a special lib_radiolog that is a drop-in replacement thunk for liblog, for radio use that stops them from futzing things (their logging to the main log always lands in radio <period>). Nothing needs to be here to stop 'em and I can get rid of the strcmp'ii at runtime in __android_log_buf_write ...
+

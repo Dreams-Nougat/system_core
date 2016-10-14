@@ -33,6 +33,16 @@ UUID: bc41ae2d_0b5c9dec
 Bytes: 167
 Because some use ANDROID_NATIVE_API_LEVEL (some stuff in-tree BTW) and some use __ANDROID_API__, where the later is ours I believe, and the other is used sporadically.
 
+22
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_0b5c9dec
+UUID: 5c0d132b_d7ad3c6b
+Bytes: 241
+Where do you see ANDROID_NATIVE_API_LEVEL? I see it only in cmake files in external: https://cs.corp.google.com/search/?q=ANDROID_NATIVE_API_LEVEL&m=100&sq=package:android&type=cs
+
+ANDROID_NATIVE_API_LEVEL means nothing to the NDK right now.
+
 112
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -65,6 +75,16 @@ Double underscore functions exposed to the NDK, but not recommended to be called
 
 However, I kept it here because it represents completeness, a partner's code caller should have the power to close logging after a fork, and before an exec (the FDs are CLOEXEC so it is a weak argument) or before they continue on the process (the stronger argument).
 
+125
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_0b857d44
+UUID: 5c0d132b_17e3b4c0
+Bytes: 201
+If it gets exposed in the NDK it can *never* change. The ABI and the behavior needs to remain consistent forever.
+
+Don't expose anything for completeness. Expose things because they are useful to apps.
+
 176
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -82,6 +102,14 @@ Do you feel a comment is warranted is why you said this, or is this just a delin
 
 I should move CLOSE interface down here too ...
 
+176
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c39f6b7_6ca453a2
+UUID: 5c0d132b_770b1098
+Bytes: 313
+My point is that anything below this point is something you're committing to maintain the ABI and behavior of forever. Not thinking about what libc APIs to expose is a mistake that was made nearly a decade ago that we're still paying for. If there's anything in here that isn't useful for an app, don't expose it.
+
 219
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -96,6 +124,14 @@ Parent: bc41ae2d_0b22ddc1
 UUID: bc128f45_3a90e128
 Bytes: 141
 False, if the caller does not define __ANDROID_API__ or ANDROID_NATIVE_API_LEVEL. I found that in most builds, this is the cased (undefined).
+
+219
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc128f45_3a90e128
+UUID: 5c0d132b_371598b2
+Bytes: 308
+Whoops. Yes, you're right. That goes to prove my point that ANDROID_NATIVE_API_LEVEL is confusing when we already have __ANDROID_API__ though. __ANDROID_API__ is always defined, ANDROID_NATIVE_API_LEVEL isn't, despite the fact that they have more or less the same name and seem to represent the same concept.
 
 221
 Fri Oct 14 19:11:32 2016 +0000
@@ -118,6 +154,16 @@ I do not want to define any interfaces here that will not work if targeted for J
 
 For the case of the MACROs, we are special and also switch this all on if LOG_TAG defined which is a substantive bypass, the gate on API Version is to make sure we do not fail in external builds that count on the legacy variant of android/log.h.
 
+221
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_9789040a
+UUID: 5c0d132b_f733a056
+Bytes: 424
+Yes, just the macros. ABI should be gated by the version that it's available in.
+
+ANDROID_USE_LOG_MACROS (or ANDROID_HIDE_LOG_MACROS, if we prefer on by default, either works for me) would make this a lot more clear. It isn't obvious that LOG_TAG would change the interface provided here. Also remember that the reason this came up in the first place is that some external code was using LOG_TAG to mean something different.
+
 262
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -132,4 +178,12 @@ Parent: bc41ae2d_0b0bbd39
 UUID: bc41ae2d_0b0e5df0
 Bytes: 122
 Because we would like to allow radio components to be able to built out-of-tree. I had the BRCM folks complain about this.
+
+262
+Fri Oct 14 20:20:11 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_0b0e5df0
+UUID: 5c0d132b_57ac8c41
+Bytes: 131
+Is the radio log really the only thing blocking that? Most vendor code depends on a ton of things that aren't available in the NDK.
 

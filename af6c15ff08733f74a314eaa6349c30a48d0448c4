@@ -1,0 +1,11 @@
+Revision: af6c15ff08733f74a314eaa6349c30a48d0448c4
+Patch-set: 1
+File: debuggerd/client/debuggerd_client.cpp
+
+222
+Fri Oct 14 15:28:54 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc244e48_82fda496
+Bytes: 91
+should this be android::base::WriteFully? (and android::base::ReadFully on the other side?)
+

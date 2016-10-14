@@ -25,12 +25,28 @@ UUID: bc41ae2d_6b61a131
 Bytes: 23
 Why a different define?
 
+22
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_6b61a131
+UUID: bc41ae2d_0b5c9dec
+Bytes: 167
+Because some use ANDROID_NATIVE_API_LEVEL (some stuff in-tree BTW) and some use __ANDROID_API__, where the later is ours I believe, and the other is used sporadically.
+
 112
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bc41ae2d_4b8865d2
 Bytes: 42
 The comment should stay with the function.
+
+112
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_4b8865d2
+UUID: bc41ae2d_4b186530
+Bytes: 8
+True ...
 
 125
 Fri Oct 14 19:11:32 2016 +0000
@@ -39,12 +55,32 @@ UUID: bc41ae2d_eb983125
 Bytes: 147
 This is new ABI. Do you really want to expose this? Would an app ever need this? The only caller in the entire tree is the Zygote forking function.
 
+125
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_eb983125
+UUID: bc41ae2d_0b857d44
+Bytes: 399
+Double underscore functions exposed to the NDK, but not recommended to be called directly; so there is a point to not include this.
+
+However, I kept it here because it represents completeness, a partner's code caller should have the power to close logging after a fork, and before an exec (the FDs are CLOEXEC so it is a weak argument) or before they continue on the process (the stronger argument).
+
 176
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bc41ae2d_6b50c128
 Bytes: 37
 Everything from here down is new ABI.
+
+176
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_6b50c128
+UUID: 7c39f6b7_6ca453a2
+Bytes: 145
+Do you feel a comment is warranted is why you said this, or is this just a delineation of sorts?
+
+I should move CLOSE interface down here too ...
 
 219
 Fri Oct 14 19:11:32 2016 +0000
@@ -53,6 +89,14 @@ UUID: bc41ae2d_0b22ddc1
 Bytes: 19
 This is never true.
 
+219
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_0b22ddc1
+UUID: bc128f45_3a90e128
+Bytes: 141
+False, if the caller does not define __ANDROID_API__ or ANDROID_NATIVE_API_LEVEL. I found that in most builds, this is the cased (undefined).
+
 221
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -60,10 +104,32 @@ UUID: bc41ae2d_8b16cd61
 Bytes: 215
 As I said before, we shouldn't be gating any of these things based on target API level (especially not a fake target API level, this is only going to further confuse and already confusing topic for NDK development).
 
+221
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_8b16cd61
+UUID: 5c0d132b_9789040a
+Bytes: 563
+We are going to need to talk about this. This might not be the right forum to educate me ...
+
+Are you talking universally, or just for the MACROs?
+
+I do not want to define any interfaces here that will not work if targeted for JB for example, and generally this gives a strong layer of lint checking to their builds.
+
+For the case of the MACROs, we are special and also switch this all on if LOG_TAG defined which is a substantive bypass, the gate on API Version is to make sure we do not fail in external builds that count on the legacy variant of android/log.h.
+
 262
 Fri Oct 14 19:11:32 2016 +0000
 Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: bc41ae2d_0b0bbd39
 Bytes: 45
 Why are we exposing the radio log to the NDK?
+
+262
+Fri Oct 14 19:52:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc41ae2d_0b0bbd39
+UUID: bc41ae2d_0b0e5df0
+Bytes: 122
+Because we would like to allow radio components to be able to built out-of-tree. I had the BRCM folks complain about this.
 

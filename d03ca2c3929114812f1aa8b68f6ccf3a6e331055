@@ -1,0 +1,38 @@
+Revision: d03ca2c3929114812f1aa8b68f6ccf3a6e331055
+Patch-set: 11
+File: include/android/log.h
+
+771:0-1210:75
+Fri Oct 14 22:12:28 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0d132b_dade81c4
+Bytes: 37
+This to land in private/android_log.h
+
+File: include/log/logprint.h
+
+22:0-22:24
+Fri Oct 14 22:12:28 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0d132b_da65613a
+Bytes: 42
+replace this with private/android_logger.h
+
+File: liblog/README
+
+60:0-60:38
+Fri Oct 14 22:12:28 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0d132b_1a9bd9ff
+Bytes: 29
+remove this as it is private.
+
+File: liblog/liblog.map.txt
+
+13:0-51:24
+Fri Oct 14 22:12:28 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0d132b_3a4d7db1
+Bytes: 79
+None of these (except __android_log_is_loggable()) are to be exposed to the NDK
+

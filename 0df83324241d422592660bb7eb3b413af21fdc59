@@ -56,6 +56,14 @@ ah, sucks to be you :-(
 
 (glibc has <sys/cdefs.h>, but mac and/or windows doesn't.)
 
+22
+Fri Oct 14 23:40:07 2016 +0000
+Author: Dan Albert <1043845@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc9ec720_bcd5e146
+UUID: fc9ec720_7c5c3908
+Bytes: 120
+Ah, yes. I always forget that liblog is used on the host. Everywhere I said "always defined" only applies to the device.
+
 162:0-194:6
 Fri Oct 14 22:06:56 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

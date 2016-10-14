@@ -9,12 +9,30 @@ UUID: dcbf42c0_1d1457b2
 Bytes: 56
 why does webview_zygote need access to emulated storage?
 
+12
+Fri Oct 14 00:02:53 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcbf42c0_1d1457b2
+UUID: fc95e6fb_8cc78f40
+Bytes: 662
+I'm granting this so that this call in ForkAndSpecializeCommon() can succeed: https://android.googlesource.com/platform/frameworks/base/+/e4f8d69c58e3/core/jni/com_android_internal_os_Zygote.cpp#483. But we don't ever call https://android.googlesource.com/platform/frameworks/base/+/e4f8d69c58e3/core/jni/com_android_internal_os_Zygote.cpp#668 in the webview_zygote, so we may be able to skip this. The issue is that currently the framework tries to unshare/remount unconditionally, so this fails without the cap.
+
+Maybe there's a better alternative (check for emulated storage, and if it's not currently mounted, don't proceed?)? I wanted your thoughts on that.
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dcbf42c0_fdd5dbd8
 Bytes: 8
 bounding
+
+13
+Fri Oct 14 00:02:53 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcbf42c0_fdd5dbd8
+UUID: fc95e6fb_aca60baa
+Bytes: 4
+Done
 
 File: libcutils/fs_config.c
 
@@ -31,4 +49,20 @@ Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: dcbf42c0_3d02f370
 Bytes: 10
 750 or 754
+
+153
+Fri Oct 14 00:02:53 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcbf42c0_3d02f370
+UUID: fc95e6fb_ecde53fe
+Bytes: 4
+Done
+
+153
+Fri Oct 14 00:02:53 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcbf42c0_5df7af71
+UUID: fc95e6fb_4ceae79a
+Bytes: 4
+Done
 

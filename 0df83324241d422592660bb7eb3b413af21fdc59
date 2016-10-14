@@ -42,6 +42,20 @@ UUID: fc9ec720_3ccc7153
 Bytes: 73
 Hmmm, sys/cdefs.h ... all platforms ... what about host (eg: CTS) builds?
 
+22
+Fri Oct 14 23:31:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc9ec720_3ccc7153
+UUID: fc9ec720_bcd5e146
+Bytes: 145
+ah, sucks to be you :-(
+
+  #if defined(__ANDROID__)
+  #include <sys/cdefs.h>
+  #endif
+
+(glibc has <sys/cdefs.h>, but mac and/or windows doesn't.)
+
 162:0-194:6
 Fri Oct 14 22:06:56 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

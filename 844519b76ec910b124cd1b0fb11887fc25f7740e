@@ -35,6 +35,14 @@ UUID: bc528ec4_c928958e
 Bytes: 328
 We can definitely skip the attempts to mount(). The app zygote currently sets up a new mount namespace when it starts (though we could have init do this for webview_zygote if necessary). And each time the zygote forks, it also creates a new mount namespace in the child. Can we skip that since we're not mounting in the storage?
 
+12
+Fri Oct 14 21:34:59 2016 +0000
+Author: Jeff Sharkey <1013508@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc528ec4_c928958e
+UUID: 5c0d132b_97e464f4
+Bytes: 165
+Yeah, I'm fully supportive of finding a way to remove CAP_SYS_ADMIN from webview_zygote.  Hopefully skipping any unshare() or mount() operations can accomplish that?
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

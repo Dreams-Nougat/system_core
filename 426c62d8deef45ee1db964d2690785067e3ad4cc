@@ -1,0 +1,11 @@
+Revision: 426c62d8deef45ee1db964d2690785067e3ad4cc
+Patch-set: 2
+File: logd/LogBuffer.cpp
+
+28:0-28:23
+Fri Oct 14 14:41:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: bc244e48_62d3a858
+Bytes: 35
+#include <private/android_logger.h>
+

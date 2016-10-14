@@ -19,6 +19,14 @@ I'm granting this so that this call in ForkAndSpecializeCommon() can succeed: ht
 
 Maybe there's a better alternative (check for emulated storage, and if it's not currently mounted, don't proceed?)? I wanted your thoughts on that.
 
+12
+Fri Oct 14 03:44:25 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc95e6fb_8cc78f40
+UUID: bc244e48_c7b2ce50
+Bytes: 40
+can we skip checking for webview_zygote?
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

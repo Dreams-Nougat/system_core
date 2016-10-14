@@ -27,6 +27,14 @@ UUID: bc244e48_c7b2ce50
 Bytes: 40
 can we skip checking for webview_zygote?
 
+12
+Fri Oct 14 20:40:49 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: bc244e48_c7b2ce50
+UUID: bc528ec4_c928958e
+Bytes: 328
+We can definitely skip the attempts to mount(). The app zygote currently sets up a new mount namespace when it starts (though we could have init do this for webview_zygote if necessary). And each time the zygote forks, it also creates a new mount namespace in the child. Can we skip that since we're not mounting in the storage?
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

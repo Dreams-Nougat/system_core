@@ -187,3 +187,13 @@ UUID: 5c0d132b_57ac8c41
 Bytes: 131
 Is the radio log really the only thing blocking that? Most vendor code depends on a ton of things that aren't available in the NDK.
 
+262
+Fri Oct 14 21:23:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_57ac8c41
+UUID: 5c0d132b_f73f207c
+Bytes: 363
+even if logging isn't the _only_ thing, fixing this would be a step in the right direction.
+
+(the _real_ question is your earlier one about "do you really understand the long-term implications of exposing something in the NDK?". we should definitely make sure we've read salyzyn his rights [and that he's understood them] before we let him incriminate himself...)
+

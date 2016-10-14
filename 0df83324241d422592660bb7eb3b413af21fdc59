@@ -16,3 +16,13 @@ But
     #include <stdio.h>
     #include <android/log.h> // Will be defined.
 
+22
+Fri Oct 14 21:23:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_57d36cbf
+UUID: 5c0d132b_372fd857
+Bytes: 86
+and if you want to ensure that __ANDROID_API__ is available:
+
+  #include <sys/cdefs.h>
+

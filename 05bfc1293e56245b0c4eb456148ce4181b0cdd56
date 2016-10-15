@@ -1,0 +1,52 @@
+Revision: 05bfc1293e56245b0c4eb456148ce4181b0cdd56
+Patch-set: 12
+File: include/ziparchive/zip_archive.h
+
+29:0-29:17
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_6a7a57ae
+Bytes: 27
+why is this included here ?
+
+File: libziparchive/zip_archive.cc
+
+1086
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_4a7793c4
+Bytes: 7
+defined
+
+File: libziparchive/zip_archive_private.h
+
+32
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_aa444f75
+Bytes: 8
+explicit
+
+65:2-65:21
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_8a498b8d
+Bytes: 81
+couldn't this be replaced by (fd_ == -1) ? Up to you whether you want to keep it.
+
+81:2-81:11
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_ea3e47e3
+Bytes: 148
+"const uint8_t*" here and in the field.
+
+It would be a fatal error to ever write anything to this mapping, and plus i think it makes things clearer.
+
+120:15-120:19
+Sat Oct 15 10:52:16 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9cd86ab1_ca438369
+Bytes: 76
+i realize this is old code, but you're using nullptr elsewhere in this file.
+

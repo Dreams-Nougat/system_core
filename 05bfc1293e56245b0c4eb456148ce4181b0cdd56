@@ -9,6 +9,14 @@ UUID: 9cd86ab1_6a7a57ae
 Bytes: 27
 why is this included here ?
 
+29:0-29:17
+Sun Oct 16 06:18:28 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9cd86ab1_6a7a57ae
+UUID: fc9ec720_22776ab8
+Bytes: 4
+Done
+
 File: libziparchive/zip_archive.cc
 
 1086
@@ -27,6 +35,14 @@ UUID: 9cd86ab1_aa444f75
 Bytes: 8
 explicit
 
+32
+Sun Oct 16 06:18:28 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9cd86ab1_aa444f75
+UUID: fc9ec720_025eee2c
+Bytes: 4
+Done
+
 65:2-65:21
 Sat Oct 15 10:52:16 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -43,10 +59,26 @@ Bytes: 148
 
 It would be a fatal error to ever write anything to this mapping, and plus i think it makes things clearer.
 
+81:2-81:11
+Sun Oct 16 06:18:28 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9cd86ab1_ea3e47e3
+UUID: fc9ec720_427cf699
+Bytes: 4
+Done
+
 120:15-120:19
 Sat Oct 15 10:52:16 2016 +0000
 Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 9cd86ab1_ca438369
 Bytes: 76
 i realize this is old code, but you're using nullptr elsewhere in this file.
+
+120:15-120:19
+Sun Oct 16 06:18:28 2016 +0000
+Author: Tianjie Xu <1088085@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9cd86ab1_ca438369
+UUID: fc9ec720_e260a2eb
+Bytes: 4
+Done
 

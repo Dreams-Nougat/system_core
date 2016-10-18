@@ -1,0 +1,20 @@
+Revision: 6d2d7add81a8bb941e696b4393ec5c2fb9134c3b
+Patch-set: 1
+File: base/include/android-base/parsedouble.h
+
+31
+Tue Oct 18 21:22:11 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0a735e_38f828a7
+Bytes: 245
+This seems a bit dangerous. Do you really want this to compile if you accidentally pass a char* into out?
+
+It seems like this should reject non-floating point T. Change the return type to std::enable_if_t<std::is_floating_point<T>::value, bool>?
+
+32:5-32:16
+Tue Oct 18 21:22:11 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0a735e_784bd024
+Bytes: 54
+ParseDouble<float> seems wrong. ParseFloat<T> instead?
+

@@ -19,6 +19,16 @@ UUID: 5c0a735e_62ce7b19
 Bytes: 101
 I only need is double type, maybe we don't need float, and even if we need it, we can add ParseFloat.
 
+31
+Wed Oct 19 23:29:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0a735e_62ce7b19
+UUID: fc7c072f_2c0cd356
+Bytes: 147
+but if you're going to call it ParseDouble and say it only works on double, you shouldn't have a type parameter T.
+
+choose one way or the other :-)
+
 32:5-32:16
 Tue Oct 18 21:22:11 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

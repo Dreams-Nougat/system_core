@@ -1,0 +1,11 @@
+Revision: 997cba4271513aafbeac455fa1e87d31ac16a2fb
+Patch-set: 2
+File: base/include/android-base/parsedouble.h
+
+31
+Wed Oct 19 23:30:01 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc7c072f_8cf1472c
+Bytes: 27
+ah, you did. stupid gerrit.
+

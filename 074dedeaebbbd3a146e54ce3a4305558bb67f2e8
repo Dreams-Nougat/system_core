@@ -1,0 +1,11 @@
+Revision: 074dedeaebbbd3a146e54ce3a4305558bb67f2e8
+Patch-set: 15
+File: include/log/log.h
+
+937:4-937:5
+Wed Oct 19 17:20:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 5c0a735e_e7043d34
+Bytes: 40
+Missing Append() and Release() functions
+

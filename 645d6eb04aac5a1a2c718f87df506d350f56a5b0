@@ -1,0 +1,11 @@
+Revision: 645d6eb04aac5a1a2c718f87df506d350f56a5b0
+Patch-set: 1
+File: adb/shell_service_protocol_test.cpp
+
+94
+Thu Oct 20 01:55:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc7c072f_4f6111ed
+Bytes: 300
+this seems a bit weird. would it make more sense to change https://cs.corp.google.com/android/system/core/adb/shell_service_protocol_test.cpp?type=cs&q=packetequals+file:core/adb&sq=package:%5Eandroid$&l=133 to actually supply a valid buffer? (ShellProtocol itself will always return a valid buffer.)
+

@@ -9,3 +9,11 @@ UUID: fc7c072f_4f6111ed
 Bytes: 300
 this seems a bit weird. would it make more sense to change https://cs.corp.google.com/android/system/core/adb/shell_service_protocol_test.cpp?type=cs&q=packetequals+file:core/adb&sq=package:%5Eandroid$&l=133 to actually supply a valid buffer? (ShellProtocol itself will always return a valid buffer.)
 
+94
+Thu Oct 20 02:42:20 2016 +0000
+Author: George Burgess IV <1096946@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc7c072f_4f6111ed
+UUID: fc7c072f_6fe16d14
+Bytes: 55
+yeah, that sounds like a better approach to me; thanks.
+

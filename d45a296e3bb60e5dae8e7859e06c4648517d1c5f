@@ -1,0 +1,11 @@
+Revision: d45a296e3bb60e5dae8e7859e06c4648517d1c5f
+Patch-set: 22
+File: /COMMIT_MSG
+
+9:46-10:16
+Thu Oct 20 02:20:32 2016 +0000
+Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc7c072f_8f9b79af
+Bytes: 78
+Is it the other way round? The log/log.h file seems to be empty previously....
+

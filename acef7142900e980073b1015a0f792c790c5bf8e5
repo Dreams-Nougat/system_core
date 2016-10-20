@@ -1,0 +1,11 @@
+Revision: acef7142900e980073b1015a0f792c790c5bf8e5
+Patch-set: 18
+File: include/log/log.h
+
+433:21-433:45
+Thu Oct 20 02:05:41 2016 +0000
+Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fc7c072f_ec824b21
+Bytes: 33
+Is this comment still useful now?
+

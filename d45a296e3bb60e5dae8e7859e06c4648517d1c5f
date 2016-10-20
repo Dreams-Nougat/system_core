@@ -9,3 +9,17 @@ UUID: fc7c072f_8f9b79af
 Bytes: 78
 Is it the other way round? The log/log.h file seems to be empty previously....
 
+9:46-10:16
+Thu Oct 20 15:24:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fc7c072f_8f9b79af
+UUID: fc7c072f_d24b6426
+Bytes: 552
+Yes, correct ... but it is more complicated than that so I may need to think about being more descriptive.
+
+Resulted from recent history. I went nutz and moved _everything_ in log/log.h to android/log.h, and this is the controlled revert of that recent activity. This whole thing is like a wild animal in a controlled frenzy doing a revert ... hard to tell what happened with all the gutz and fur flying all over the place ;->
+
+"I had to do it or nothing would be done about it"
+
+liblog: (partial revert) add Logging Macros to android/log.h (part deux)
+

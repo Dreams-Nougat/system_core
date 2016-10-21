@@ -60,6 +60,18 @@ Removing CAP_SYS_ADMIN from webview_zygote will mean we can't perform any of the
 
 isolated_app inherits read perms from appdomain into /storage, so is that OK?
 
+12
+Fri Oct 21 16:21:24 2016 +0000
+Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c83b787_a395841d
+UUID: 7c83b787_296b15a1
+Bytes: 330
+> isolated_app inherits read perms from appdomain into /storage, so is that OK?
+
+That doesn't seem OK at all. Here's a CL to address that: https://android-review.googlesource.com/#/c/292656/
+
+With isolated_app no longer allowed to access storage, what security properties do we lose by inheriting webview_zygote's mount namespace?
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

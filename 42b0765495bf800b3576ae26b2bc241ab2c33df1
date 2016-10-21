@@ -1,0 +1,16 @@
+Revision: 42b0765495bf800b3576ae26b2bc241ab2c33df1
+Patch-set: 1
+File: adb/test_device.py
+
+478:8-478:21
+Fri Oct 21 21:16:46 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3c1e9f18_df9237a1
+Bytes: 381
+If you don't find this too annoying it should be fine, but if the delay is too long or we want more wiggle room than 1 second it might be better to run the check in a loop, something like:
+
+  end_time = time.time() + 3
+  while self.device.shell_nocheck(proc_query)[0] != 1:
+    self.assertFalse(time.time() > end_time,
+                     'subprocess failed to terminate in time')
+

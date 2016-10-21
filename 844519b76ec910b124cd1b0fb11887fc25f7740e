@@ -43,6 +43,23 @@ UUID: 5c0d132b_97e464f4
 Bytes: 165
 Yeah, I'm fully supportive of finding a way to remove CAP_SYS_ADMIN from webview_zygote.  Hopefully skipping any unshare() or mount() operations can accomplish that?
 
+12
+Fri Oct 21 00:49:05 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5c0d132b_97e464f4
+UUID: 7c83b787_a395841d
+Bytes: 1203
+I agree removing CAP_SYS_ADMIN would be great. To recap how storage currently works:
+
+When the zygote starts, it creates a mount namespace, remounts the rootfs as MS_SLAVE, and then unmounts /storage. Every time the zygote creates a process, in the child it creates another mount namespace, re-mounts /storage from /mnt/runtime depending on the app's permission, and then mounts the multi-user specific storage area.
+
+Removing CAP_SYS_ADMIN from webview_zygote will mean we can't perform any of the unmount/remounting. Init has a feature to start a service in a new mount namespace, so we can use that. And since isolated apps are always MOUNT_EXTERNAL_NONE, we don't ever need to mount /mnt/runtime into the namespace. The one task we can't do, though, is unmount /storage in the webview_zygote. So by just removing CAP_SYS_ADMIN (and finding a clean way to short-circuit MountEmulatedStorage) there would be two differences between isolated_app from zygote and webview_zygote:
+
+- /storage wouldn't be unmounted
+- No individual mount namespaces per process (it would inherit the namespace webview_zygote was put in by init)
+
+isolated_app inherits read perms from appdomain into /storage, so is that OK?
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

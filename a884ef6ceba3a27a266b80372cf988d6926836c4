@@ -1,0 +1,20 @@
+Revision: a884ef6ceba3a27a266b80372cf988d6926836c4
+Patch-set: 3
+File: adb/commandline.cpp
+
+740:61-741:57
+Fri Oct 21 18:57:12 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c83b787_8fe3415b
+Bytes: 514
+I don't think this behavior is being enforced anymore since shell_type_arg will now default to PTY even for non-interactive? I'm pretty sure this is what SSH does so if we want to match we should clear shell_type_arg if stdin is a tty and use_shell_protocol is true.
+
+I never could think of a way to test tty stdin cases from the python test script which is why it doesn't check this :( Manually testing SSH, behavior should match this:
+
+$ ssh localhost '[ -t 0 ]; echo $?'
+1
+
+$ ssh localhost
+% [ -t 0 ]; echo $?
+0
+

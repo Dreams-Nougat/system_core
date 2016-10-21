@@ -9,6 +9,16 @@ UUID: 7c83b787_e68f9a07
 Bytes: 116
 Should we let -t work on devices that don't have the shell protocol? The behavior is different if stdin isn't a tty.
 
+739
+Fri Oct 21 18:01:05 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c83b787_e68f9a07
+UUID: 7c83b787_14cae4a8
+Bytes: 325
+Hmm yeah it seems weird to allow a remote PTY on `adb shell` for non-tty stdin but not `adb shell -t`, but I think in this case it might make sense.
+
+If someone passes a -t/-T flag it indicates to me they want to match SSH behavior, and if we can't do that exactly we should either fail or at least print a warning to stderr.
+
 746
 Fri Oct 21 02:14:19 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

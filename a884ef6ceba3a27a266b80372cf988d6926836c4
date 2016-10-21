@@ -18,3 +18,11 @@ $ ssh localhost
 % [ -t 0 ]; echo $?
 0
 
+740:61-741:57
+Fri Oct 21 19:27:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 7c83b787_8fe3415b
+UUID: 7c83b787_9a70ddfa
+Bytes: 161
+yeah, the -x test actually caught this. the next ps adds a !is_interactive here and also makes -x forcefully reset all the settings to the historical defaults...
+

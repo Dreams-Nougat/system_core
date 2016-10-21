@@ -1,0 +1,11 @@
+Revision: ba0c8dbd1d3b080415edd4115cbe172f38e261d5
+Patch-set: 1
+File: adb/commandline.cpp
+
+724
+Fri Oct 21 00:01:35 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c83b787_004b8625
+Bytes: 97
+This is a bit nitpicky, but `ssh -Tt` acts like `ssh -t`, not `ssh` (and `ssh -Ttt` == `ssh -tt`)
+

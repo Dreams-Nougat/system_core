@@ -1,0 +1,18 @@
+Revision: ae6870b49344d6684227f91d0eb3883835839259
+Patch-set: 2
+File: adb/commandline.cpp
+
+739
+Fri Oct 21 02:14:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c83b787_e68f9a07
+Bytes: 116
+Should we let -t work on devices that don't have the shell protocol? The behavior is different if stdin isn't a tty.
+
+746
+Fri Oct 21 02:14:19 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 7c83b787_46a76691
+Bytes: 24
+Should we let -xtt work?
+

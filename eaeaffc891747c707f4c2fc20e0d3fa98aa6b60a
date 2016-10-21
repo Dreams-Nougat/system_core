@@ -21,3 +21,11 @@ you're right.
 
 argh! this is such a nightmare to test. i've fixed up the pty tests so we can run most of them on old devices too.
 
+749:42-749:57
+Fri Oct 21 21:33:37 2016 +0000
+Author: David Pursell <1078119@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dcf74308_6f37f9a1
+UUID: 9c0f8be2_28e17315
+Bytes: 107
+Ah good idea, I should have done that in the first place instead of blanket skipping the whole test case :\
+

@@ -11,3 +11,13 @@ I think on legacy devices something like `adb shell echo foo` will end up reques
 
 (Alternately maybe it makes more sense to initialize tty as kPtyDefinitely if the shell protocol isn't supported, that way this case will never be hit).
 
+749:42-749:57
+Fri Oct 21 21:23:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3c3f7f99_4e8dd313
+UUID: dcf74308_6f37f9a1
+Bytes: 129
+you're right.
+
+argh! this is such a nightmare to test. i've fixed up the pty tests so we can run most of them on old devices too.
+

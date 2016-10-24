@@ -1,0 +1,174 @@
+Revision: 59efa1221c30837332a8b6f11fe5118bca7d342b
+Patch-set: 20
+File: include/log/log.h
+
+257:38-257:57
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_b18ccb51
+Bytes: 68
+const void* payload
+
+new(?) android coding standard, please address.
+
+352:0-353:49
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_319c3ba6
+Bytes: 163
+This is log_time shaped and also on u64 boundary, suggest moving log_time definitions above here, and utilizing a union at this point in the logger_entry* packets.
+
+449:0-449:53
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_f1f2c3c7
+Bytes: 204
+As a minimum this round, we should consider the preemptive strike of
+
+#ifdef _SYSTEM_CORE_INCLUDE_PRIVATE_ANDROID_LOGGER_H_
+#define _struct_log_time_private_defined
+    static const timespec EPOCH;
+#endif
+
+449:0-451:6
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_f15643e7
+Bytes: 1805
+There is an issue that if private/android_logger.h is included after this file, which is the normal flow if we follow android header include standards. Do something like:
+
+Here:
+
+#ifdef _SYSTEM_CORE_INCLUDE_PRIVATE_ANDROID_LOGGER_H_
+#define _struct_log_time_private_defined
+    static const timespec EPOCH;
+#endif
+
+In system/core/include/private/android_logger.h:
+
+#ifdef _LIBS_LOG_LOG_H
+#ifdef _struct_log_time_defined
+#ifndef _struct_log_time_private_defined
+#define _struct_log_time_private_defined
+#ifdef __cplusplus
+struct log_time_private : log_time {
+    static const timespec EPOCH;
+
+    log_time operator-= (const timespec &T);
+    log_time operator- (const timespec &T) const
+    {
+        log_time local(*this);
+        return local -= T;
+    }
+    log_time operator+= (const timespec &T);
+    log_time operator+ (const timespec &T) const
+    {
+        log_time local(*this);
+        return local += T;
+    }
+
+    log_time operator-= (const log_time &T);
+    log_time operator- (const log_time &T) const
+    {
+        log_time local(*this);
+        return local -= T;
+    }
+    log_time operator+= (const log_time &T);
+    log_time operator+ (const log_time &T) const
+    {
+        log_time local(*this);
+        return local += T;
+    }
+
+    static const char default_format[];
+
+    /* Add %#q for the fraction of a second to the standard library functions */
+    char* strptime(const char* s, const char* format = default_format);
+    char* strftime(const char* s, size_t l, const char* format = default_format);
+#if defined(_USING_LIBCXX)
+    std::string strftime(const char* format = default_format);
+#endif
+} __attribute__((__packed__));
+
+#define log_time log_time_private
+#endif
+#endif
+#endif
+#endif
+
+and add supportive reflections(?) of these functions to system/core/liblog/log_time.cpp
+
+508:0-521:6
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_9189c742
+Bytes: 5
+ditto
+
+551:0-564:6
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_f124837b
+Bytes: 5
+ditto
+
+575:4-575:71
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_31c55b98
+Bytes: 111
+completeness:
+
+std::string strftime(const char *format = default_format);
+
+we can find convenient uses for this
+
+575:10-575:18
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_51cc4fc1
+Bytes: 178
+completeness:
+
+std::string strftime(const char *format = default_format);
+
+We can find convenient uses for this in the tree (liblog/logprint.c for one, after it converts to C++?)
+
+571:0-576:6
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_d1297f53
+Bytes: 5
+ditto
+
+File: liblog/log_time.cpp
+
+26:0-27:61
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_312f1b57
+Bytes: 573
+#undef log_time_private
+
+LIBLOG_ABI_PRIVATE const char log_time::default_format[] = "%m-%d %H:%M:%S.%q";
+LIBLOG_ABI_PRIVATE const timespec log_time::EPOCH = { 0, 0 };
+LIBLOG_ABI_PRIVATE const char log_time_private::default_format[] = "%m-%d %H:%M:%S.%q";
+LIBLOG_ABI_PRIVATE const timespec log_time_private::EPOCH = { 0, 0 };
+
+LIBLOG_ABI_PRIVATE char *log_time::strptime(const char* s, const char* format) {
+. . .
+}
+
+LIBLOG_ABI_PRIVATE char *log_time_private::strptime(const char* s, const char* format) {
+    return reinterpret_cast<log_time*>(this)->strptime(s, format);
+}
+
+File: liblog/logprint.c
+
+1316:4-1352:5
+Mon Oct 24 16:28:38 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 9c0f8be2_3146fb1c
+Bytes: 97
+If logprint.c became logprint.cpp, this whole thing would be replaced by log_time::strftime() ...
+

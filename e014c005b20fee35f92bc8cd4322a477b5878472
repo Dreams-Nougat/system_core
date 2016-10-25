@@ -27,3 +27,13 @@ We could just use is_legal_property_name("init.svc." + name) in service.cpp, but
 
 Thoughts?
 
+160:0-163:55
+Tue Oct 25 02:02:23 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a15fc857_39a30fed
+UUID: a15fc857_5917e32a
+Bytes: 177
+you've already done the '.' check above, and our isalnum is fine: it's ASCII only. (iswalnum might be more interesting.)
+
+exposing the higher-level function instead sgtm though.
+

@@ -1,0 +1,18 @@
+Revision: b7401cc3b33a6b191dd26642a3849852f8f4ee8f
+Patch-set: 1
+File: adb/commandline.cpp
+
+2047
+Tue Oct 25 21:37:36 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1c7c880_3ce73d6b
+Bytes: 159
+This changes behavior for apks named e.g. "foo.APK", and it looks like the resulting behavior for something like `adb install foo.APK bar.apk` is really weird.
+
+2212
+Tue Oct 25 21:37:36 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1c7c880_dc2281be
+Bytes: 30
+Can we deduplicate this logic?
+

@@ -1,0 +1,13 @@
+Revision: 60636fa872382a8cde0440b72cdfc9032b5fa7d0
+Patch-set: 2
+File: /COMMIT_MSG
+
+15:13-15:57
+Tue Oct 25 22:34:30 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1c7c880_3c105dfe
+Bytes: 181
+looses 4 bytes on 32-bit :-(. There is also a performance speedup in prune() because getTag() is now very light weight.
+
+Not going to update commit, no need for more chest thumping.
+

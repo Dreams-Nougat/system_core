@@ -1,0 +1,17 @@
+Revision: e014c005b20fee35f92bc8cd4322a477b5878472
+Patch-set: 9
+File: init/property_service.cpp
+
+160:0-163:55
+Tue Oct 25 01:00:11 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a15fc857_9957bb18
+Bytes: 156
+factor out a
+
+  bool IsValidPropertyNameChar(char ch) {
+    return isalnum(ch) || strchr("@_.-", ch) != nullptr;
+  }
+
+and have both of these just call that?
+

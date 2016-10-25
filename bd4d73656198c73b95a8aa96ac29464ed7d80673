@@ -1,0 +1,11 @@
+Revision: bd4d73656198c73b95a8aa96ac29464ed7d80673
+Patch-set: 1
+File: /COMMIT_MSG
+
+13:21-13:35
+Tue Oct 25 21:48:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1c7c880_bc758db0
+Bytes: 138
+strictly speaking, not adding getTag(), modifying it to reflect the new object adjustments. Remove reference to getTag() in this sentence.
+

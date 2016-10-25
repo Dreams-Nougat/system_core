@@ -17,3 +17,11 @@ UUID: a1c7c880_3c6a9dc9
 Bytes: 156
 We could, but, you would want to update everything in this file to std::string (which is a lot). Seems like we're starting to get out of scope with this CL.
 
+37:53-37:67
+Tue Oct 25 22:00:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1c7c880_3c6a9dc9
+UUID: a1c7c880_7cfc95c7
+Bytes: 139
+this is the only function we're touching now, so it's fine to just fix this one and leave the others until we have some reason to fix them.
+

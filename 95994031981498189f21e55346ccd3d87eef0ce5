@@ -1,0 +1,11 @@
+Revision: 95994031981498189f21e55346ccd3d87eef0ce5
+Patch-set: 11
+File: init/property_service.h
+
+37:53-37:67
+Tue Oct 25 21:27:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1c7c880_bc190da0
+Bytes: 228
+rather than propagate this, can we just use const std::string& to carry around the length more cleanly? seems like the callers all just call strlen first anyway, so we may as well let std::string keep the length and data for us.
+

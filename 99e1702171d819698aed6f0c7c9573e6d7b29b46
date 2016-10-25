@@ -1,0 +1,50 @@
+Revision: 99e1702171d819698aed6f0c7c9573e6d7b29b46
+Patch-set: 10
+File: include/nativebridge/native_bridge.h
+
+123:5-123:30
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_19954b8d
+Bytes: 78
+Can you document who's responsible to call this and when? (i.e. native loader)
+
+130:27-130:54
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_399a0fbc
+Bytes: 5
+ditto
+
+File: libnativebridge/tests/DummyNativeBridge3.cpp
+
+24:100-24:101
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_d954b315
+Bytes: 13
+line too long
+
+File: libnativeloader/native_loader.cpp
+
+81:100-81:106
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_5976e3bc
+Bytes: 13
+line too long
+
+82:100-82:101
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_797ba7a1
+Bytes: 13
+line too long
+
+476:2-477:64
+Tue Oct 25 16:42:50 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a1bb48d0_b95c5f34
+Bytes: 68
+can you add a DCHECK that the namespace is not a native bridge once?
+

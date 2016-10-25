@@ -9,6 +9,14 @@ UUID: a1bb48d0_19954b8d
 Bytes: 78
 Can you document who's responsible to call this and when? (i.e. native loader)
 
+123:5-123:30
+Tue Oct 25 18:11:26 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_19954b8d
+UUID: a1bb48d0_b9ca9fa3
+Bytes: 190
+It does not seem right for an interface to specify who should call it. We should be able to move stuff around and make it ART responsibility without changing interface or it's documentation.
+
 130:27-130:54
 Tue Oct 25 16:42:50 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -25,6 +33,14 @@ UUID: a1bb48d0_d954b315
 Bytes: 13
 line too long
 
+24:100-24:101
+Tue Oct 25 18:11:26 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_d954b315
+UUID: a1bb48d0_19a38bec
+Bytes: 4
+Done
+
 File: libnativeloader/native_loader.cpp
 
 81:100-81:106
@@ -34,6 +50,14 @@ UUID: a1bb48d0_5976e3bc
 Bytes: 13
 line too long
 
+81:100-81:106
+Tue Oct 25 18:11:26 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_5976e3bc
+UUID: a1bb48d0_b9f8dfd3
+Bytes: 4
+Done
+
 82:100-82:101
 Tue Oct 25 16:42:50 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,10 +65,26 @@ UUID: a1bb48d0_797ba7a1
 Bytes: 13
 line too long
 
+82:100-82:101
+Tue Oct 25 18:11:26 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_797ba7a1
+UUID: 211918c1_65d5e602
+Bytes: 4
+Done
+
 476:2-477:64
 Tue Oct 25 16:42:50 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a1bb48d0_b95c5f34
 Bytes: 68
 can you add a DCHECK that the namespace is not a native bridge once?
+
+476:2-477:64
+Tue Oct 25 18:11:26 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_b95c5f34
+UUID: c1cd9c7a_02522a26
+Bytes: 4
+Done
 

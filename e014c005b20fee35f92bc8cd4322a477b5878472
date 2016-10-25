@@ -15,3 +15,15 @@ factor out a
 
 and have both of these just call that?
 
+160:0-163:55
+Tue Oct 25 01:36:35 2016 +0000
+Author: Steven Moreland <1120458@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a15fc857_9957bb18
+UUID: a15fc857_39a30fed
+Bytes: 282
+So, there are a couple of problems with that. '.' requires special behavior, isalnum returns true for other characters ('locale-specific').
+
+We could just use is_legal_property_name("init.svc." + name) in service.cpp, but that would require an extra string concatenation.
+
+Thoughts?
+

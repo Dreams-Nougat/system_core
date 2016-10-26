@@ -61,3 +61,15 @@ I'm not sure what the performance requirements of property_service are, but read
 
 Are you sure you want me to make this change?
 
+37:53-37:67
+Wed Oct 26 00:16:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1c7c880_7f32470f
+UUID: a1c7c880_ff0777f9
+Bytes: 474
+you know that bug you were commenting on yesterday, about variable-length property support? this is that code. so it'll change to std::string sooner or later anyway :-)
+
+(and if Android ever needs to cope with a high rate of property updates, that code is going to need an even bigger rewrite because it's currently bottlenecked by the main init polling loop.)
+
+we shouldn't take a bad private interface and make it public when we can just make it a clear interface instead.
+

@@ -1,5 +1,14 @@
 Revision: 4e9f9ada54de8e8315bacb40732e15019d7ac50f
 Patch-set: 2
+File: init/Android.mk
+
+138:0-138:28
+Wed Oct 26 20:52:19 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_b094c091
+Bytes: 27
+LOCAL_MODULE_TAG := eng   ?
+
 File: init/capabilities.cpp
 
 25:8-25:21
@@ -219,6 +228,13 @@ Parent: c1d83cb2_b0a5e058
 UUID: 815c8406_f893b1a4
 Bytes: 132
 The inner function is already reporting an error, and it's unclear whether the error reported here would add any useful information.
+
+160:0-163:16
+Wed Oct 26 20:52:19 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_10866c62
+Bytes: 33
+return set_ambient_caps(to_keep);
 
 File: init/service.cpp
 

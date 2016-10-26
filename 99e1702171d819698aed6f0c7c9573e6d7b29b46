@@ -17,6 +17,14 @@ UUID: a1bb48d0_b9ca9fa3
 Bytes: 190
 It does not seem right for an interface to specify who should call it. We should be able to move stuff around and make it ART responsibility without changing interface or it's documentation.
 
+123:5-123:30
+Wed Oct 26 12:26:41 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1bb48d0_b9ca9fa3
+UUID: 411e0c19_76723005
+Bytes: 11
+Fair point.
+
 130:27-130:54
 Tue Oct 25 16:42:50 2016 +0000
 Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>

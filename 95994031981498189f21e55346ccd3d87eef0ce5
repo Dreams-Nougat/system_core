@@ -25,3 +25,39 @@ UUID: a1c7c880_7cfc95c7
 Bytes: 139
 this is the only function we're touching now, so it's fine to just fix this one and leave the others until we have some reason to fix them.
 
+37:53-37:67
+Wed Oct 26 00:01:38 2016 +0000
+Author: Steven Moreland <1120458@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1c7c880_7cfc95c7
+UUID: a1c7c880_7f32470f
+Bytes: 1093
+Yes, but the problem is that if you just change this one thing to a std::string, we'll be making additional copies of property names (in two places). Example:
+
+before:
+
+    case PROP_MSG_SETPROP:
+        msg.name[PROP_NAME_MAX-1] = 0;
+        msg.value[PROP_VALUE_MAX-1] = 0;
+
+        if (!is_legal_property_name(msg.name, strlen(msg.name))) {
+             ...
+        }
+
+after:
+
+    case PROP_MSG_SETPROP:
+        msg.name[PROP_NAME_MAX-1] = 0;
+        msg.value[PROP_VALUE_MAX-1] = 0;
+
+        std::string value(msg.name); // copies buffer
+
+        if (!is_legal_property_name(value)) {
+             ...
+        }
+
+This corresponds to an additional allocation every time a property is set/updated and every time the epoll handler for property_service receives the message PROP_MSG_SETPROP.
+
+I'm not sure what the performance requirements of property_service are, but reading the code, they look pretty tight (the extra string concatenation in service.cpp seemed a little more reasonable because the number of services that exist are far fewer).
+
+Are you sure you want me to make this change?
+

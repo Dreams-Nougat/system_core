@@ -71,6 +71,40 @@ UUID: c1d83cb2_50362417
 Bytes: 51
 yeah, we're currently 4.4.11 and only move forward.
 
+69:30-69:44
+Wed Oct 26 20:11:55 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_50362417
+UUID: c1d83cb2_90225cbd
+Bytes: 1237
+The build will break when a new kernel adds a new capability, but that's easier to debug than failures at runtime. The horrible thing AppArmor does to pull capabilities at build time is:
+
+CAPABILITIES=$(shell echo "\#include <linux/capability.h>" | cpp -dM | LC_ALL=C sed -n -e '/CAP_EMPTY_SET/d' -e 's/^\#define[ \t]\+CAP_\([A-Z0-9_]\+\)[ \t]\+\([0-9xa-f]\+\)\(.*\)$$/CAP_\1/p' | sort)
+
+cap_names.h: /usr/include/linux/capability.h
+        echo "$(CAPABILITIES)" | LC_ALL=C sed -n -e "s/[ \\t]\\?CAP_\\([A-Z0-9_]\\+\\)/\{\"\\L\\1\", \\UCAP_\\1\},\\n/pg" > $@
+
+Which produces cap_names.h containing:
+
+{"audit_control", CAP_AUDIT_CONTROL},
+{"audit_write", CAP_AUDIT_WRITE},
+...
+
+Which gets included like this (adding the ability to pre-define capabilities that may not yet exist in the build kernel headers):
+
+static struct keyword_table capability_table[] = {
+        /* capabilities */
+        #include "cap_names.h"
+#ifndef CAP_SYSLOG
+        {"syslog", 34},
+#endif
+        /* terminate */
+        {NULL, 0}
+};
+
+
+If we wanted extreme future-proofing, something similar could be done here, and then adjust the assert to CAP_LAST_CAP check is >= not ==, and any time we needed to depend on a new cap existing, we could update the assert.
+
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>

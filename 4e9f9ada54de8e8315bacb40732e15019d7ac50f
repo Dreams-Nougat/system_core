@@ -105,6 +105,14 @@ static struct keyword_table capability_table[] = {
 
 If we wanted extreme future-proofing, something similar could be done here, and then adjust the assert to CAP_LAST_CAP check is >= not ==, and any time we needed to depend on a new cap existing, we could update the assert.
 
+69:30-69:44
+Wed Oct 26 20:23:25 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_90225cbd
+UUID: 815c8406_18cea5ba
+Bytes: 259
+I'm not too worried about the build breaking when the last time a cap was added was in April, 2014. One build breakage every >2 years on average when we update kernel headers doesn't seem terrible. IMHO it doesn't justify having the shell stuff in a Makefile.
+
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>

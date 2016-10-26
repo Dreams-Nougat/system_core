@@ -2,6 +2,27 @@ Revision: 2f3bd776adc409820434a38707e42ddabc42139a
 Patch-set: 5
 File: debuggerd/crash_dump.cpp
 
+49
+Wed Oct 26 18:06:06 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_2defd9d3
+Bytes: 88
+This can be spoofed via PID recycling.  You must use openat(), open()/fopen() is unsafe.
+
+78
+Wed Oct 26 18:06:06 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_6de9d1cb
+Bytes: 88
+This can be spoofed via PID recycling.  You must use openat(), open()/fopen() is unsafe.
+
+101
+Wed Oct 26 18:06:06 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_4de68dfd
+Bytes: 88
+This can be spoofed via PID recycling.  You must use openat(), open()/fopen() is unsafe.
+
 180:13-180:32
 Wed Oct 26 03:12:56 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>

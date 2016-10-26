@@ -1,0 +1,11 @@
+Revision: 2f3bd776adc409820434a38707e42ddabc42139a
+Patch-set: 5
+File: debuggerd/crash_dump.cpp
+
+180:13-180:32
+Wed Oct 26 03:12:56 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_aa0f2f51
+Bytes: 62
+FIXME: this is presumably not the correct way of doing things.
+

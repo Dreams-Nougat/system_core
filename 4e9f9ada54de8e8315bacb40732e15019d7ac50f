@@ -1,5 +1,14 @@
 Revision: 4e9f9ada54de8e8315bacb40732e15019d7ac50f
 Patch-set: 2
+File: /COMMIT_MSG
+
+21
+Wed Oct 26 21:48:05 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_70e9a8cb
+Bytes: 197
+That's not true with SELinux and Android is gauranteed to have it on. Only if init executes the service will it end up in the proper SELinux domain, assuming nothing but init is in the init domain.
+
 File: init/Android.mk
 
 138:0-138:28
@@ -252,4 +261,22 @@ Parent: c1d83cb2_70dd28c5
 UUID: 815c8406_18894572
 Bytes: 57
 It does. And this is post-fork so we're not killing init.
+
+File: init/service.h
+
+165
+Wed Oct 26 21:48:05 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_13add668
+Bytes: 46
+Any reason why were fixing this in this patch?
+
+File: init/test/test_service.cpp
+
+25
+Wed Oct 26 21:48:05 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_13a83660
+Bytes: 92
+Why not check that the status is what was set, is their someway we could make the test fail.
 

@@ -17,6 +17,14 @@ UUID: c1d83cb2_0d9ad557
 Bytes: 233
 The idea was to fetch all of these values, and then check that the process hasn't died yet via getppid, but I like openat much better. ptrace is still vulnerable to this, so we still need to make sure that the process is still alive.
 
+49
+Wed Oct 26 18:45:53 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_0d9ad557
+UUID: c1d83cb2_b00960a0
+Bytes: 230
+Yeah, it's probably an easier solution to pass around a file descriptor with /proc/XXX open.  I'm not sure how to avoid the race condition with ptrace, except to use openat() to get /proc/XXX and then check /status for "TracerPID"
+
 78
 Wed Oct 26 18:06:06 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>

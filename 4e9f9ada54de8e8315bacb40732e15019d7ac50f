@@ -28,6 +28,14 @@ We don't need the list to be in the correct order: this is a map, so it will map
 
 whatever the position of that line on the list is.
 
+25:8-25:21
+Wed Oct 26 19:59:27 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81b56446_76836852
+UUID: c1d83cb2_70608819
+Bytes: 41
+Ah-ha! Okay, awesome. Yay smart types. :)
+
 69:30-69:44
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -47,6 +55,14 @@ I'm pretty sure kernel-headers for Android is in the 4.x range (I had to fix a b
 
 libcap auto-generates a list of caps based on the headers: https://kernel.googlesource.com/pub/scm/linux/kernel/git/morgan/libcap/+/master/libcap/_makenames.c
 
+69:30-69:44
+Wed Oct 26 19:59:27 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 81b56446_b6b95026
+UUID: c1d83cb2_b02a00ad
+Bytes: 133
+This seems frustratingly fragile, but yeah, I can't think of a better way that doesn't fail at runtime which is MUCH harder to debug.
+
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -63,6 +79,14 @@ Bytes: 222
 It can only fail with EINVAL if you pass bad values for e.g. the CAP_SET argument. I'm happy to remove this error case but I wanted to fail close if e.g. we ever update libcap and things change.
 
 I can add the failing cap.
+
+98:31-98:43
+Wed Oct 26 19:59:27 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_7867a100
+UUID: c1d83cb2_902ffcbc
+Bytes: 123
+Right, yeah, I meant "improving this error message seems silly since it'll never fail", but yeah, let's add the cap anyway.
 
 125
 Wed Oct 26 19:26:44 2016 +0000
@@ -82,6 +106,14 @@ But it matches the capability names used in files like: https://cs.corp.google.c
 and all other Android devices.
 
 Also, cap_from_name() uses a linear search while the map is log().
+
+125
+Wed Oct 26 19:59:27 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_98947592
+UUID: c1d83cb2_303f30ee
+Bytes: 150
+Well, the names could be mangled for cap_from_name(), but since it's both less fragile and more efficient than cap_from_name(), I'm fine with this. :)
 
 139:9-139:29
 Wed Oct 26 19:26:44 2016 +0000
@@ -114,6 +146,14 @@ Bytes: 303
 The reason to skip here is that drop_bounding_set is already printing an error. Given that we call set_inh_prm_eff_caps() twice, it made sense to print an extra error here to differentiate which call was failing.
 
 Happy to add an error here as well though, but I don't think it can add more information.
+
+145:15-145:20
+Wed Oct 26 19:59:27 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_d88eed7b
+UUID: c1d83cb2_7039a805
+Bytes: 11
+Ah, gotcha.
 
 161:15-161:20
 Wed Oct 26 19:26:44 2016 +0000

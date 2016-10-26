@@ -15,12 +15,37 @@ I'm not sure how to do with with a std::map, but building this with a C array co
 
 However, see my comment in lookup_cap(), maybe this will all just go away. :)
 
+25:8-25:21
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_b04040a4
+UUID: 81b56446_76836852
+Bytes: 349
+We don't need the list to be in the correct order: this is a map, so it will map strings to ints, and the ints are set by the define, not by the order of the definition. We can change the order to whatever, and it will still do the same thing:
+
+"CAP_SETPCAP", CAP_SETPCAP which is
+"CAP_SETPCAP", 8
+
+whatever the position of that line on the list is.
+
 69:30-69:44
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_f03ab82d
 Bytes: 204
 This assumes all builders will have the kernel headers from v3.16 or later (introduction of CAP_AUDIT_READ). Does libcap's cap_from_name() hard code these or does it depend on the kernel uapi headers too?
+
+69:30-69:44
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_f03ab82d
+UUID: 81b56446_b6b95026
+Bytes: 353
+That is true. At least we'd fail at compile time.
+
+I'm pretty sure kernel-headers for Android is in the 4.x range (I had to fix a bug in Minijail when they were changed) but I can double-check.
+
+libcap auto-generates a list of caps based on the headers: https://kernel.googlesource.com/pub/scm/linux/kernel/git/morgan/libcap/+/master/libcap/_makenames.c
 
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
@@ -29,12 +54,34 @@ UUID: c1d83cb2_702fe8e8
 Bytes: 134
 While it boggles the mind how cap_set_flag() could fail as used here, I think this should report which cap was being attempted anyway.
 
+98:31-98:43
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_702fe8e8
+UUID: 815c8406_7867a100
+Bytes: 222
+It can only fail with EINVAL if you pass bad values for e.g. the CAP_SET argument. I'm happy to remove this error case but I wanted to fail close if e.g. we ever update libcap and things change.
+
+I can add the failing cap.
+
 125
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_304c50e1
 Bytes: 172
 Why this instead of wrapping cap_from_name() instead? This code also deviates from everything else using cap_from_name(), in that the "cap_" prefix isn't used in the names.
+
+125
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_304c50e1
+UUID: 815c8406_98947592
+Bytes: 298
+But it matches the capability names used in files like: https://cs.corp.google.com/android/device/google/marlin/marlin/android_filesystem_config.h?q=android_filesystem_config+package:%5Eandroid$&l=1
+
+and all other Android devices.
+
+Also, cap_from_name() uses a linear search while the map is log().
 
 139:9-139:29
 Wed Oct 26 19:26:44 2016 +0000
@@ -43,6 +90,14 @@ UUID: c1d83cb2_f0c8f809
 Bytes: 73
 Is this to cover the case were SETPCAP is in Permitted but not Effective?
 
+139:9-139:29
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_f0c8f809
+UUID: 815c8406_b89939c9
+Bytes: 92
+Yes, SETPCAP needs to be in Effective for the bounding set dropping operation below to work.
+
 145:15-145:20
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -50,12 +105,30 @@ UUID: c1d83cb2_502c64f2
 Bytes: 57
 Other failure points report to ERROR, so this should too.
 
+145:15-145:20
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_502c64f2
+UUID: 815c8406_d88eed7b
+Bytes: 303
+The reason to skip here is that drop_bounding_set is already printing an error. Given that we call set_inh_prm_eff_caps() twice, it made sense to print an extra error here to differentiate which call was failing.
+
+Happy to add an error here as well though, but I don't think it can add more information.
+
 161:15-161:20
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_b0a5e058
 Bytes: 70
 As with the bounding set failure, this should report to ERROR as well.
+
+161:15-161:20
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_b0a5e058
+UUID: 815c8406_f893b1a4
+Bytes: 132
+The inner function is already reporting an error, and it's unclear whether the error reported here would add any useful information.
 
 File: init/service.cpp
 
@@ -65,4 +138,12 @@ Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_70dd28c5
 Bytes: 61
 Just to double-check: does the FATAL target kill the process?
+
+268:8-268:9
+Wed Oct 26 19:40:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_70dd28c5
+UUID: 815c8406_18894572
+Bytes: 57
+It does. And this is post-fork so we're not killing init.
 

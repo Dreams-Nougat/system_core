@@ -9,10 +9,26 @@ UUID: a1c7c880_3ce73d6b
 Bytes: 159
 This changes behavior for apks named e.g. "foo.APK", and it looks like the resulting behavior for something like `adb install foo.APK bar.apk` is really weird.
 
+2047
+Wed Oct 26 00:23:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1c7c880_3ce73d6b
+UUID: a1c7c880_9fef5b03
+Bytes: 31
+switched all three to caseless.
+
 2212
 Tue Oct 25 21:37:36 2016 +0000
 Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a1c7c880_dc2281be
 Bytes: 30
 Can we deduplicate this logic?
+
+2212
+Wed Oct 26 00:23:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a1c7c880_dc2281be
+UUID: 810004b4_f8c59129
+Bytes: 45
+one is finding the first, the other the last.
 

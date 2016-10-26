@@ -1,0 +1,68 @@
+Revision: 4e9f9ada54de8e8315bacb40732e15019d7ac50f
+Patch-set: 2
+File: init/capabilities.cpp
+
+25:8-25:21
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_b04040a4
+Bytes: 464
+While you have an assert that the cap list hasn't changed, there is nothing that keeps this cap list in the correct order. While it looks correct to me as-is, I find this to be a fragile way to construct it.
+
+I'm not sure how to do with with a std::map, but building this with a C array could be done like this to force array positions:
+
+#define CAP_MAP_ENTRY(cap) [CAP_ ## cap] = #cap
+
+However, see my comment in lookup_cap(), maybe this will all just go away. :)
+
+69:30-69:44
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_f03ab82d
+Bytes: 204
+This assumes all builders will have the kernel headers from v3.16 or later (introduction of CAP_AUDIT_READ). Does libcap's cap_from_name() hard code these or does it depend on the kernel uapi headers too?
+
+98:31-98:43
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_702fe8e8
+Bytes: 134
+While it boggles the mind how cap_set_flag() could fail as used here, I think this should report which cap was being attempted anyway.
+
+125
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_304c50e1
+Bytes: 172
+Why this instead of wrapping cap_from_name() instead? This code also deviates from everything else using cap_from_name(), in that the "cap_" prefix isn't used in the names.
+
+139:9-139:29
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_f0c8f809
+Bytes: 73
+Is this to cover the case were SETPCAP is in Permitted but not Effective?
+
+145:15-145:20
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_502c64f2
+Bytes: 57
+Other failure points report to ERROR, so this should too.
+
+161:15-161:20
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_b0a5e058
+Bytes: 70
+As with the bounding set failure, this should report to ERROR as well.
+
+File: init/service.cpp
+
+268:8-268:9
+Wed Oct 26 19:26:44 2016 +0000
+Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_70dd28c5
+Bytes: 61
+Just to double-check: does the FATAL target kill the process?
+

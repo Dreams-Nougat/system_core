@@ -287,6 +287,14 @@ UUID: 815c8406_380369bc
 Bytes: 28
 Because consistency is good?
 
+165
+Thu Oct 27 02:19:32 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_380369bc
+UUID: c1d83cb2_5edab5ce
+Bytes: 37
+Separate patch for changes unrelated.
+
 File: init/test/test_service.cpp
 
 25
@@ -305,4 +313,12 @@ Bytes: 476
 This service doesn't actually test anything. It's just an easy way to have something to run to test things when one is working on init. I'm just gonna split it off to a separate CL.
 
 We could have this service check that the right capabilities have been set, but I was envisioning this code to be used by folks to test all sorts of things -- every time I write new init functionality, I end up writing a simple test service -- this allows me to not have to do that every time.
+
+25
+Thu Oct 27 02:19:32 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_d8fb4da1
+UUID: c1d83cb2_be73f10c
+Bytes: 214
+Ahh got you, yeah I have had to do this a few times, it gets old. I can't speak as to the general idiom of adding possibly dead test code to the tree since its not coupled into any form of general testing paradigm.
 

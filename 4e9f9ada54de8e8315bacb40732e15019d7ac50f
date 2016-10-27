@@ -26,6 +26,16 @@ UUID: c1d83cb2_b094c091
 Bytes: 27
 LOCAL_MODULE_TAG := eng   ?
 
+138:0-138:28
+Thu Oct 27 14:36:35 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_b094c091
+UUID: 815c8406_9b738f0d
+Bytes: 205
+In https://android-review.googlesource.com/#/c/252620/ I was recommended against LOCAL_MODULE_TAG by Dan Willemsen.
+
+In any case I'm gonna put this code in a separate CL, so we can discuss this in that CL.
+
 File: init/capabilities.cpp
 
 25:8-25:21
@@ -164,6 +174,14 @@ UUID: c1d83cb2_902ffcbc
 Bytes: 123
 Right, yeah, I meant "improving this error message seems silly since it'll never fail", but yeah, let's add the cap anyway.
 
+98:31-98:43
+Thu Oct 27 14:36:35 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_902ffcbc
+UUID: 815c8406_fb82cb97
+Bytes: 4
+Done
+
 125
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -253,6 +271,14 @@ UUID: c1d83cb2_10866c62
 Bytes: 33
 return set_ambient_caps(to_keep);
 
+160:0-163:16
+Thu Oct 27 14:36:35 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_10866c62
+UUID: 815c8406_1b685f11
+Bytes: 4
+Done
+
 File: init/service.cpp
 
 268:8-268:9
@@ -295,6 +321,14 @@ UUID: c1d83cb2_5edab5ce
 Bytes: 37
 Separate patch for changes unrelated.
 
+165
+Thu Oct 27 14:36:35 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_5edab5ce
+UUID: 815c8406_3b65233a
+Bytes: 4
+Done
+
 File: init/test/test_service.cpp
 
 25
@@ -321,4 +355,12 @@ Parent: 815c8406_d8fb4da1
 UUID: c1d83cb2_be73f10c
 Bytes: 214
 Ahh got you, yeah I have had to do this a few times, it gets old. I can't speak as to the general idiom of adding possibly dead test code to the tree since its not coupled into any form of general testing paradigm.
+
+25
+Thu Oct 27 14:36:35 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_be73f10c
+UUID: 815c8406_5b72d704
+Bytes: 49
+Removed from this CL, will upload in separate CL.
 

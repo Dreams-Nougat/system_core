@@ -1,0 +1,11 @@
+Revision: 8a26c34534b50a30e50f805f4eea8b2d9b713dcb
+Patch-set: 3
+File: init/service.cpp
+
+820:0-821:70
+Thu Oct 27 20:30:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_0786f6ad
+Bytes: 37
+iterate through checking isalphanum()
+

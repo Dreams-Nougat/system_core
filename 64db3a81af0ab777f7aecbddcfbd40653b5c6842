@@ -1,0 +1,36 @@
+Revision: 64db3a81af0ab777f7aecbddcfbd40653b5c6842
+Patch-set: 3
+File: libcutils/files.cpp
+
+41:0-42:67
+Thu Oct 27 20:41:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_c7dc5ecc
+Bytes: 109
+copy and paste from android_get_control_socket implementation sucks.
+
+This should use asprintf in both cases.
+
+45:33-45:37
+Thu Oct 27 20:41:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_a7d96ada
+Bytes: 84
+also '-' spaces etc.
+
+Switch to using isalphanum() and iterate through it ourselves.
+
+57:25-57:32
+Thu Oct 27 20:41:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_8788a6ae
+Bytes: 51
+sysconf(_SC_OPEN_MAX) (also for socket variant too)
+
+61:4-61:51
+Thu Oct 27 20:41:23 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_6741327f
+Bytes: 139
+The risk of this is we will have something in the environment declaring this file, and yet the fd has been closed ... or _worse_ reused!!!!
+

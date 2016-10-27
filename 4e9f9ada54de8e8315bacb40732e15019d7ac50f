@@ -9,6 +9,14 @@ UUID: c1d83cb2_70e9a8cb
 Bytes: 197
 That's not true with SELinux and Android is gauranteed to have it on. Only if init executes the service will it end up in the proper SELinux domain, assuming nothing but init is in the init domain.
 
+21
+Thu Oct 27 01:03:41 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_70e9a8cb
+UUID: 815c8406_780de1e1
+Bytes: 210
+I think that's splitting hairs -- the process will have the capabilities if you look at /proc/self/status. You won't be able to use them if you don't have them allowed in SELinux policy though, that is correct.
+
 File: init/Android.mk
 
 138:0-138:28
@@ -271,6 +279,14 @@ UUID: c1d83cb2_13add668
 Bytes: 46
 Any reason why were fixing this in this patch?
 
+165
+Thu Oct 27 01:03:41 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_13add668
+UUID: 815c8406_380369bc
+Bytes: 28
+Because consistency is good?
+
 File: init/test/test_service.cpp
 
 25
@@ -279,4 +295,14 @@ Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_13a83660
 Bytes: 92
 Why not check that the status is what was set, is their someway we could make the test fail.
+
+25
+Thu Oct 27 01:03:41 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_13a83660
+UUID: 815c8406_d8fb4da1
+Bytes: 476
+This service doesn't actually test anything. It's just an easy way to have something to run to test things when one is working on init. I'm just gonna split it off to a separate CL.
+
+We could have this service check that the right capabilities have been set, but I was envisioning this code to be used by folks to test all sorts of things -- every time I write new init functionality, I end up writing a simple test service -- this allows me to not have to do that every time.
 

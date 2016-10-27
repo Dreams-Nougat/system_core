@@ -17,3 +17,12 @@ UUID: 665b2640_6777f2f7
 Bytes: 80
 a separate patch for a one-character change is just a waste of everybody's time.
 
+File: init/capabilities.cpp
+
+69:14-69:26
+Thu Oct 27 21:41:45 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_0743965e
+Bytes: 283
+Please note that the kernels could be ahead of the header files, so it's probably a good idea to determine this value at runtime rather than relying on header files. To determine CAP_LAST_CAP at runtime, you can sit in a loop calling getcap() until it returns EINVAL. See b/26217031.
+

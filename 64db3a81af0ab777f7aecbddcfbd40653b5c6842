@@ -34,3 +34,14 @@ UUID: 665b2640_6741327f
 Bytes: 139
 The risk of this is we will have something in the environment declaring this file, and yet the fd has been closed ... or _worse_ reused!!!!
 
+62:4-62:33
+Thu Oct 27 20:49:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_072716e7
+Bytes: 264
+Perform a fcntl(fd, F_GETFD) to see if the file descriptor is still open and valid.
+
+We should also consider readlink(/proc/self/fd/<pid>,...) and check for a match to the incoming name.
+
+NB: same could be done for socket variant, except we use getsockname(fd,...)
+

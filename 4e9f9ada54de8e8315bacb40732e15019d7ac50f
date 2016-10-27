@@ -36,6 +36,21 @@ In https://android-review.googlesource.com/#/c/252620/ I was recommended against
 
 In any case I'm gonna put this code in a separate CL, so we can discuss this in that CL.
 
+138:0-138:28
+Thu Oct 27 16:43:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_9b738f0d
+UUID: c1d83cb2_fe2d695c
+Bytes: 239
+yeah, LOCAL_MODULE_TAG is deprecated. unfortunately, there's still a lot of it lying around and -- other than where we switch from Android.mk to Android.bp -- it's not getting actively cleaned up, so it keeps getting cargo-culted around...
+
+147
+Thu Oct 27 16:43:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_de3225be
+Bytes: 123
+(...just like "LOCAL_CLANG := true", which is the pretty much inescapable default in O, even though it was important once.)
+
 File: init/capabilities.cpp
 
 25:8-25:21
@@ -149,6 +164,13 @@ UUID: 815c8406_18cea5ba
 Bytes: 259
 I'm not too worried about the build breaking when the last time a cap was added was in April, 2014. One build breakage every >2 years on average when we update kernel headers doesn't seem terrible. IMHO it doesn't justify having the shell stuff in a Makefile.
 
+72:9-72:21
+Thu Oct 27 16:43:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_be4c913e
+Bytes: 26
+size_t here and elsewhere?
+
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -181,6 +203,14 @@ Parent: c1d83cb2_902ffcbc
 UUID: 815c8406_fb82cb97
 Bytes: 4
 Done
+
+98:31-98:43
+Thu Oct 27 16:43:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 815c8406_fb82cb97
+UUID: c1d83cb2_de4b4522
+Bytes: 5
+PLOG?
 
 125
 Wed Oct 26 19:26:44 2016 +0000
@@ -278,6 +308,15 @@ Parent: c1d83cb2_10866c62
 UUID: 815c8406_1b685f11
 Bytes: 4
 Done
+
+File: init/capabilities.h
+
+22:4-22:14
+Thu Oct 27 16:43:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c1d83cb2_7e22196b
+Bytes: 136
+(we're trying to move to google3 style, so feel free to use it for new stuff, even if it doesn't always match the existing furniture...)
 
 File: init/service.cpp
 

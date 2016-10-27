@@ -1,0 +1,11 @@
+Revision: daf832ce8c68efb3b7ee8aff1e227d81338f5579
+Patch-set: 2
+File: libcutils/Android.bp
+
+81:0-81:2
+Thu Oct 27 19:41:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_47ebce9c
+Bytes: 4
+tabs
+

@@ -171,6 +171,14 @@ UUID: c1d83cb2_be4c913e
 Bytes: 26
 size_t here and elsewhere?
 
+72:9-72:21
+Thu Oct 27 17:43:26 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_be4c913e
+UUID: 815c8406_9ba2afe6
+Bytes: 4
+Done
+
 98:31-98:43
 Wed Oct 26 19:26:44 2016 +0000
 Author: Kees Cook <1082649@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -211,6 +219,14 @@ Parent: 815c8406_fb82cb97
 UUID: c1d83cb2_de4b4522
 Bytes: 5
 PLOG?
+
+98:31-98:43
+Thu Oct 27 17:43:26 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_de4b4522
+UUID: 815c8406_7bd5db44
+Bytes: 4
+Done
 
 125
 Wed Oct 26 19:26:44 2016 +0000
@@ -317,6 +333,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: c1d83cb2_7e22196b
 Bytes: 136
 (we're trying to move to google3 style, so feel free to use it for new stuff, even if it doesn't always match the existing furniture...)
+
+22:4-22:14
+Thu Oct 27 17:43:26 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c1d83cb2_7e22196b
+UUID: 815c8406_db9c27a8
+Bytes: 4
+Done
 
 File: init/service.cpp
 

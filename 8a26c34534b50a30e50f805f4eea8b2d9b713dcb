@@ -9,3 +9,12 @@ UUID: 665b2640_0786f6ad
 Bytes: 37
 iterate through checking isalphanum()
 
+File: init/util.cpp
+
+195:4-195:57
+Thu Oct 27 20:53:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 665b2640_a735ea09
+Bytes: 142
+could block (eg, on a tty with hardware carrier active controls), add O_NDELAY and run fcntl to remove O_NDELAY if not specified in the flags.
+

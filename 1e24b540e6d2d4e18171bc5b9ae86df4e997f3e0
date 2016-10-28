@@ -1,0 +1,11 @@
+Revision: 1e24b540e6d2d4e18171bc5b9ae86df4e997f3e0
+Patch-set: 1
+File: adb/transport.cpp
+
+915
+Fri Oct 28 00:14:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 61ba3039_0e3bde33
+Bytes: 58
+This isn't actually necessary, removed this and ClearKeys.
+

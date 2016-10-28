@@ -1,0 +1,17 @@
+Revision: 82e8f879b3ae9dbf9b74a09da228035f298a08ce
+Patch-set: 1
+File: init/init.cpp
+
+617
+Fri Oct 28 19:29:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_1cbef50a
+Bytes: 127
+or as an 'else' here? actually, maybe best is
+
+  if (is_first_stage) {
+    early_mount();
+  } else {
+    ... all this stuff
+  }
+

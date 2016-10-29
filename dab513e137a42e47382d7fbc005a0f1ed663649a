@@ -1,0 +1,41 @@
+Revision: dab513e137a42e47382d7fbc005a0f1ed663649a
+Patch-set: 2
+File: base/include/android-base/process_info.h
+
+61:49-61:57
+Sat Oct 29 00:56:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_c2b8267d
+Bytes: 11
+| O_CLOEXEC
+
+94:45-94:53
+Sat Oct 29 00:56:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_a2b51a83
+Bytes: 11
+| O_CLOEXEC
+
+File: base/process_info.cpp
+
+33
+Sat Oct 29 00:56:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_82af3e37
+Bytes: 24
+StringPrintf or PATH_MAX
+
+53:32-53:33
+Sat Oct 29 00:56:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_62b4b287
+Bytes: 2
+re
+
+63
+Sat Oct 29 00:56:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 064b4a9d_02c32ef3
+Bytes: 7
+getline
+

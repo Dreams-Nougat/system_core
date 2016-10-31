@@ -88,6 +88,14 @@ OK, glad we are in agreement on that ;). It wasn't totally clear given the SELin
 
 The mount namespace is only created so that per-process mounts can be added (this commit covers some of the background: https://android.googlesource.com/platform/dalvik/+/d8de46c475830792eeb6fb0f7b59aab51f55e817). Since isolated processes never have additional mounts added, the mount namespace would be identical to that of the parent. The main difference would be that /storage is still mounted in the process, but access to it is denied by SELinux. Since Jeff (Sharkey) authored that above commit, hopefully he can weigh in on that.
 
+12
+Mon Oct 31 15:35:06 2016 +0000
+Author: Robert Sesek <1042203@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 9c0f8be2_873ea4ef
+UUID: 662326ed_eda1c17e
+Bytes: 195
+I uploaded https://android-review.googlesource.com/297858, which skips the unshare() if the new zygote child won't mount() anything inside the new namespace. With that, we can drop CAP_SYS_ADMIN.
+
 13:38-13:46
 Thu Oct 13 04:39:22 2016 +0000
 Author: Jeffrey Vander Stoep <1054468@85c56323-6fa9-3386-8a01-6480fb634889>

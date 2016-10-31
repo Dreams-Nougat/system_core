@@ -9,12 +9,28 @@ UUID: 064b4a9d_422896b8
 Bytes: 84
 can we add std::string comm or char comm[TASK_COMM_LEN+1]? it is used by simpleperf.
 
+43
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_422896b8
+UUID: 86ed7a09_100ea452
+Bytes: 102
+Added it as 'std::string name', to match the header in /proc/self/status. Any objections to that name?
+
 61:49-61:57
 Sat Oct 29 00:56:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 064b4a9d_c2b8267d
 Bytes: 11
 | O_CLOEXEC
+
+61
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_c2b8267d
+UUID: 86ed7a09_50042c32
+Bytes: 4
+Done
 
 85:43-85:46
 Sat Oct 29 01:36:06 2016 +0000
@@ -23,12 +39,28 @@ UUID: 064b4a9d_622792e6
 Bytes: 72
 can we switch the order of arguments? The convention is input arguments.
 
+85
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_622792e6
+UUID: 86ed7a09_f0f9e013
+Bytes: 4
+Done
+
 94:45-94:53
 Sat Oct 29 00:56:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 064b4a9d_a2b51a83
 Bytes: 11
 | O_CLOEXEC
+
+94
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_a2b51a83
+UUID: 86ed7a09_d0fedcf9
+Bytes: 4
+Done
 
 File: base/process_info.cpp
 
@@ -46,10 +78,26 @@ UUID: 064b4a9d_62b4b287
 Bytes: 2
 re
 
+53
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_62b4b287
+UUID: 86ed7a09_b0f35830
+Bytes: 72
+glibc claims to ignore e in fdopen, I added O_CLOEXEC to the open above.
+
 63
 Sat Oct 29 00:56:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 064b4a9d_02c32ef3
 Bytes: 7
 getline
+
+63
+Mon Oct 31 23:35:43 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 064b4a9d_02c32ef3
+UUID: 86ed7a09_f043205f
+Bytes: 4
+Done
 

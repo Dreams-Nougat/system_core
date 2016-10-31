@@ -1,0 +1,21 @@
+Revision: f09053123071a9e51c1c6a1f0807c04c1c25c2c8
+Patch-set: 9
+File: init/service.cpp
+
+232:4-233:84
+Mon Oct 31 20:22:04 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 066eea3f_27103430
+Bytes: 300
+very _minor_ nit. Does not gate my approval ...
+
+style below, which this fragment does not match:
+
+if (conditions) {
+    if (function() != 0) {
+        PLOG(FATAL, "bad things");
+    }
+}
+
+But I am only concerned about the function() (or rather prctl) indent serendipitously matching the block indent.
+

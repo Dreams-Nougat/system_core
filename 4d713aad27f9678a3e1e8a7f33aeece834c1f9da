@@ -11,6 +11,22 @@ We only need this if uid_ is set.
 
 Also, we should clear KEEPCAPS _after_ we set the uid as the assumption in the executables is that this is always clear unless they set it (i.e.: make them work for their crumbs)
 
+232:0-234:5
+Mon Oct 31 16:25:29 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 066eea3f_24a592ef
+UUID: 662326ed_4d860daf
+Bytes: 653
+I don't think that's necessarily true. It's possible for a process to keep UID=0 but drop caps, and if you drop CAP_SETPCAP and the bounding set, you won't be able to gain those caps back.
+
+As for KEEPCAPS, the capabilities(7) man page confirms it's cleared on execve(2):
+SECBIT_KEEP_CAPS
+"This flag is always cleared  on  an  execve(2).   (This  flag  provides the same functionality as the older prctl(2) PR_SET_KEEPCAPS operation.)
+
+We could lock the secure bit if we were being extra paranoid but since we're dropping the bounding set, there's no extra caps that can ever be gained.
+
+We could also set no-new-privs if we wanted to be extra paranoid.
+
 245:12-245:64
 Mon Oct 31 16:10:36 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -20,10 +36,26 @@ You will need CAP_SETGID for this, but if we do this, do we want to specifically
 
 Hmm, maybe outside the cope of this change, come to think of it, if supp_gids is empty, maybe we should make sure setgroups empties the supp_gids?
 
+245:12-245:64
+Mon Oct 31 16:25:29 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 066eea3f_c4d67e50
+UUID: 662326ed_8d676543
+Bytes: 193
+We don't. The only thing done above is settings KEEPCAPS. Capabilities are actually dropped below, in the SetCapsForExec() function, so at this point the process can still do whatever it wants.
+
 252:8-252:9
 Mon Oct 31 16:10:36 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 066eea3f_84b3a635
 Bytes: 37
 expect we should clear KEEPCAPS here?
+
+252:8-252:9
+Mon Oct 31 16:25:29 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 066eea3f_84b3a635
+UUID: 662326ed_ad6a290b
+Bytes: 26
+Why? The process is dying.
 

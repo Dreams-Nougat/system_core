@@ -26,3 +26,15 @@ UUID: 665b2640_0743965e
 Bytes: 283
 Please note that the kernels could be ahead of the header files, so it's probably a good idea to determine this value at runtime rather than relying on header files. To determine CAP_LAST_CAP at runtime, you can sit in a loop calling getcap() until it returns EINVAL. See b/26217031.
 
+69:14-69:26
+Mon Oct 31 15:46:18 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 665b2640_0743965e
+UUID: 662326ed_4dce0d50
+Bytes: 826
+I guess that's possible given that vendors can use any kernel they want, but it also seems unlikely right? We're at 4.4 headers right now and nothing is shipping with 4.4 kernels.
+
+Moreover, note that this is failing closed: the capability sets are fully cleared before enabling any capabilities, so if the kernel supports extra capabilities that we don't know about, we'll just never set them. Moreover, even if we did know the kernel supported extra caps, with older headers we wouldn't have a #define for them, so we would not be able to parse them nor set them (except by setting them by number, which is ugly.)
+
+Given that situation I actually think it's a better idea to keep this compile-time assert. Note the assert will not fail with newer kernels, only if we ever update the kernel headers and that brings a new cap.
+

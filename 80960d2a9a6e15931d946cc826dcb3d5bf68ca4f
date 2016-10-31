@@ -9,3 +9,11 @@ UUID: 066eea3f_846ac60b
 Bytes: 53
 have you verified that this can't be the primary GID?
 
+588:0-589:45
+Mon Oct 31 01:16:39 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 066eea3f_846ac60b
+UUID: 066eea3f_4498ce00
+Bytes: 239
+I suspect changing init's primary GID to 3009 (AID_READPROC) would also work, but I figured this was a more conservative change which had lower probability of breaking other init-spawned programs. I haven't explicitly tested the other way.
+

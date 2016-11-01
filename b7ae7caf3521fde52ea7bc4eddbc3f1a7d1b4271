@@ -1,0 +1,26 @@
+Revision: b7ae7caf3521fde52ea7bc4eddbc3f1a7d1b4271
+Patch-set: 1
+File: logd/main.cpp
+
+235:0-241:42
+Tue Nov 01 00:05:07 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_b347f819
+Bytes: 64
+Same as below:
+
+cap_t caps;
+cap_clear(caps);
+cap_set_proc(caps);
+
+366:0-372:42
+Tue Nov 01 00:05:07 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_d35274d9
+Bytes: 62
+With libcap:
+
+cap_t caps;
+cap_clear(caps);
+cap_set_proc(caps);
+

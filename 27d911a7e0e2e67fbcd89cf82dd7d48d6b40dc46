@@ -1,0 +1,11 @@
+Revision: 27d911a7e0e2e67fbcd89cf82dd7d48d6b40dc46
+Patch-set: 2
+File: logd/main.cpp
+
+122:29-122:39
+Tue Nov 01 23:34:55 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_ac7623f8
+Bytes: 31
+One can use -1 here as well ...
+

@@ -1,0 +1,42 @@
+Revision: 5b74f5a7c570f89f075d34c402104a9531127a3d
+Patch-set: 4
+File: init/service.cpp
+
+239
+Tue Nov 01 01:43:46 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_96b3ca9f
+Bytes: 270
+All of these functions can/should be the overrides of the base class's Create/Public/Clean functions.
+
+I'd actually go one further; since CreateSocket() and PublishSocket() are never called separately from one another, there could be just one function that handles both.
+
+279
+Tue Nov 01 01:43:46 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_36c3d6f4
+Bytes: 124
+Assuming the above is done, then this can be replaced with
+
+for (const auto& di : descriptors_) {
+  di.CreateAndPublish();
+}
+
+File: init/service.h
+
+64:0-66:55
+Tue Nov 01 01:43:46 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_16569a6f
+Bytes: 138
+Since this is already C++, it'd be best if these were virtual functions and there were SocketInfo and FileInfo classes that overrode them.
+
+File: init/util.cpp
+
+205:4-208:5
+Tue Nov 01 01:43:46 2016 +0000
+Author: Tom Cherry <1064128@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_16c0dae3
+Bytes: 43
+Should this be right after the open() call?
+

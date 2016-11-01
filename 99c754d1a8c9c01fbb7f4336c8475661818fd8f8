@@ -1,0 +1,11 @@
+Revision: 99c754d1a8c9c01fbb7f4336c8475661818fd8f8
+Patch-set: 1
+File: libcutils/fs_config.c
+
+142:42-142:43
+Tue Nov 01 00:05:38 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: e6c8f69a_53fc24c5
+Bytes: 49
+Align with the line below for better readability?
+

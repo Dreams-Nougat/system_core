@@ -18,3 +18,11 @@ UUID: c634d2c0_0a92dbde
 Bytes: 78
 Is there anyway to DCHECK this. If it's not supported how come it gets called?
 
+476:3-476:45
+Wed Nov 02 15:34:07 2016 +0000
+Author: Dimitry Ivanov <1041673@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: c634d2c0_0a92dbde
+UUID: 06a98af7_3263a8fa
+Bytes: 144
+it gets called for future use in vulkan layer lookup. If necessary that is if vunkan is in use... the lookup logic skips lookup if ns is nullptr
+

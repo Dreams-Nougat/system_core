@@ -1,0 +1,25 @@
+Revision: f16f61eeef2d28175700ef9dbf3009caed5addde
+Patch-set: 3
+File: logd/main.cpp
+
+114:17-114:24
+Wed Nov 02 14:24:55 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a6827e80_048638ad
+Bytes: 69
+For the future: use android-base/logging.h and the LOG(DEBUG) macros?
+
+126:21-126:61
+Wed Nov 02 14:24:55 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a6827e80_246b3c13
+Bytes: 68
+Nit, does not block landing: arraysize() from android-base/macros.h?
+
+138:18-138:52
+Wed Nov 02 14:24:55 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: a6827e80_44684014
+Bytes: 11
+arraysize()
+

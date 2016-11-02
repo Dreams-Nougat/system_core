@@ -1,0 +1,20 @@
+Revision: c46b88532581046ac754b9c016ef32e0321491f6
+Patch-set: 7
+File: init/descriptors.cpp
+
+19:0-19:18
+Wed Nov 02 20:02:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_95f526af
+Bytes: 24
+plus #include <ctypes.h>
+
+File: init/service.cpp
+
+19:0-19:18
+Wed Nov 02 20:02:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_d5ffae8a
+Bytes: 18
+not needed anymore
+

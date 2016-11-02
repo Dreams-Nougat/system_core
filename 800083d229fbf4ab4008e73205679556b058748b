@@ -1,0 +1,20 @@
+Revision: 800083d229fbf4ab4008e73205679556b058748b
+Patch-set: 3
+File: /COMMIT_MSG
+
+13:5-13:13
+Wed Nov 02 15:30:48 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c634d2c0_aaa2af35
+Bytes: 29
+drop and keep only the number
+
+File: libnativeloader/native_loader.cpp
+
+476:3-476:45
+Wed Nov 02 15:30:48 2016 +0000
+Author: Calin Juravle <1022077@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: c634d2c0_0a92dbde
+Bytes: 78
+Is there anyway to DCHECK this. If it's not supported how come it gets called?
+

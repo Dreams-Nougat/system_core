@@ -9,12 +9,32 @@ UUID: a6827e80_048638ad
 Bytes: 69
 For the future: use android-base/logging.h and the LOG(DEBUG) macros?
 
+114:17-114:24
+Wed Nov 02 16:34:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a6827e80_048638ad
+UUID: 06a98af7_f22640d1
+Bytes: 500
+This is the logger, can not log in the logger per-se, so we have to make our own arrangements. prdebug logs to the kernel, and does so directly in a signature manner as we use it to manage klogd as well ...
+
+logd is the android logger, the kernel logger, and the audit logger; all built into one.
+
+Any attempts by libraries we call to log are dropped on the floor (in liblog and others, or after they try to arrive on the sockets), because that circularity can not be the cause of logger instability.
+
 126:21-126:61
 Wed Nov 02 14:24:55 2016 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: a6827e80_246b3c13
 Bytes: 68
 Nit, does not block landing: arraysize() from android-base/macros.h?
+
+126:21-126:61
+Wed Nov 02 16:34:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: a6827e80_246b3c13
+UUID: 06a98af7_122e6ca8
+Bytes: 102
+Yes, this macro is safe for use in logd (we have to evaluate each, because "the logger", see above...)
 
 138:18-138:52
 Wed Nov 02 14:24:55 2016 +0000

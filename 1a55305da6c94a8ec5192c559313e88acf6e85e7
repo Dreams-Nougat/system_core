@@ -1,0 +1,17 @@
+Revision: 1a55305da6c94a8ec5192c559313e88acf6e85e7
+Patch-set: 1
+File: fs_mgr/fs_mgr_main.c
+
+38:9-38:17
+Thu Nov 03 18:50:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_21335457
+Bytes: 317
+trying to deal with lint should aim for more correct code moving forward.
+
+Because of legacy, main is usually not specified correctly. It is supposed to be int main(int c, char *const argv[]);
+
+basename as specified may modify the contents of argv[0].
+
+Maybe create a global reference to hold strdup contents instead?
+

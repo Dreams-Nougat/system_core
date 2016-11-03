@@ -1,0 +1,18 @@
+Revision: 80d8a53ef59ccb87142a0a54bf9556d8cc2909e7
+Patch-set: 6
+File: libcutils/sockets.cpp
+
+55:0-61:11
+Thu Nov 03 20:30:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_61871c2e
+Bytes: 4
+KISS
+
+113:0-122:28
+Thu Nov 03 20:30:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_a12bc44b
+Bytes: 36
+give up on _WIN32 for this fragment.
+

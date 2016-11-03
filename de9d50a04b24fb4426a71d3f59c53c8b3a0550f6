@@ -1,0 +1,25 @@
+Revision: de9d50a04b24fb4426a71d3f59c53c8b3a0550f6
+Patch-set: 2
+File: logd/LogStatistics.h
+
+494:0-509:5
+Thu Nov 03 19:54:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_416300f9
+Bytes: 47
+This is dependent on 'logd: cache package list'
+
+513:67-514:35
+Thu Nov 03 19:54:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_816de8e4
+Bytes: 5
+ditto
+
+523:0-526:9
+Thu Nov 03 19:54:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_616a7ccc
+Bytes: 5
+ditto
+

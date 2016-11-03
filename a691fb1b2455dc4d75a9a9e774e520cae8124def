@@ -1,0 +1,15 @@
+Revision: a691fb1b2455dc4d75a9a9e774e520cae8124def
+Patch-set: 5
+File: fs_mgr/fs_mgr_main.c
+
+38:4-38:52
+Thu Nov 03 21:41:37 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_d343435f
+Bytes: 572
+You misread me.
+
+This code is now a bastardized version of the NULL check for argv[0] and I stated it was unnecessary. You can not do + 1 since strrchr can return a NULL and now me will be a dereferenced NULL pointer. Please revert back. This one is 'fragile' because it was open-coded as we can see as you made a common mistake in refactoring it.
+
+Revert back, or take enh's suggestion to switch to the alternate char * basename(const char *path). This one is fragile because a change elsewhere, or switching includes, can cause it to switch back to the posix variant ...
+

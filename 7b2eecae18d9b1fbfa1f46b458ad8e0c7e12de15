@@ -1,0 +1,18 @@
+Revision: 7b2eecae18d9b1fbfa1f46b458ad8e0c7e12de15
+Patch-set: 1
+File: liblog/logprint.c
+
+1029:56-1029:59
+Thu Nov 03 20:22:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_a1590418
+Bytes: 14
+Too many 'the'
+
+1029:30-1029:34
+Thu Nov 03 20:22:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_c15410e0
+Bytes: 5
+let's
+

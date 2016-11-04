@@ -1,0 +1,11 @@
+Revision: 34d9b1ca43e4fc02fbb17ea282988c7b58f7420f
+Patch-set: 3
+File: logd/LogStatistics.h
+
+61:47-61:60
+Fri Nov 04 00:40:42 2016 +0000
+Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 06a98af7_7606bdfa
+Bytes: 73
+why do we need a size of void* here? can we use a constant to replace it?
+

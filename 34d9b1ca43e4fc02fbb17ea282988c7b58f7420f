@@ -9,3 +9,18 @@ UUID: 06a98af7_7606bdfa
 Bytes: 73
 why do we need a size of void* here? can we use a constant to replace it?
 
+61:47-61:60
+Fri Nov 04 14:33:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06a98af7_7606bdfa
+UUID: ab04074e_71801893
+Bytes: 277
+Remember, this is an estimate of unordered_map memory usage. map wastes a void* internally to hold on to details per entry, this concept is taken from several resources. I can add a comment here to make it clearer, or static const size_t unordered_map_overhead = sizeof(void*).
+
+62:49-62:62
+Fri Nov 04 14:33:56 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_518514a1
+Bytes: 89
+There is a separate overhead void* pointer here to internally manage the buckets as well.
+

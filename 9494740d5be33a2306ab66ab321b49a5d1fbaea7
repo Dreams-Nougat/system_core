@@ -42,3 +42,15 @@ UUID: ab04074e_f1524824
 Bytes: 201
 Actually, this test _should_ succeed on the host (untested). It is perhaps meaningless on windows host, but not Mac or Linux host. I revel in additional testing/hardening/coverage for libcutils pieces.
 
+225
+Fri Nov 04 16:17:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_f1524824
+UUID: ab04074e_7191389c
+Bytes: 288
+what you've written will fail on the mac because toggle_O_NONBLOCK always returns failure on the Mac.
+
+you've also broken Linux because you're setting SOCK_NONBLOCK and then unsetting it on the next line.
+
+and if you are still going to do this, let's not copy & paste toggle_O_NONBLOCK...
+

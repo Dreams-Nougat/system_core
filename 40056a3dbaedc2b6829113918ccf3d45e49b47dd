@@ -1,5 +1,16 @@
 Revision: 40056a3dbaedc2b6829113918ccf3d45e49b47dd
 Patch-set: 2
+File: /COMMIT_MSG
+
+16:0-16:12
+Fri Nov 04 16:09:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_11738ccb
+Bytes: 318
+We should add a gTest based on known event log tags (this makes us sensitive to changes in code elsewhere in the tree, so pick a log tag that has been unchanged since KitKat).
+
+When we create the runtime event log tag service, we will be able to construct our own, but for now relying on a static one is all we can do.
+
 File: liblog/logprint.c
 
 695:17-695:20

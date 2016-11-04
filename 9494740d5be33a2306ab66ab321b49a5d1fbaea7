@@ -34,3 +34,11 @@ around the whole body of this test instead? it's meaningless on the host anyway.
 
 (if you look at the bionic tests, we sometimes have an explicit log statement in a #else explaining why the test is meaningless in the #else case, but that's not necessary.)
 
+225
+Fri Nov 04 16:03:41 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_d13624fc
+UUID: ab04074e_f1524824
+Bytes: 201
+Actually, this test _should_ succeed on the host (untested). It is perhaps meaningless on windows host, but not Mac or Linux host. I revel in additional testing/hardening/coverage for libcutils pieces.
+

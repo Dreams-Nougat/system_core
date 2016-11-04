@@ -1,0 +1,11 @@
+Revision: addbd876bb58424cb06b687bfc67b763a1f268a5
+Patch-set: 2
+File: libcutils/tests/sockets_test.cpp
+
+202:68-202:69
+Fri Nov 04 17:35:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_b4a8ae64
+Bytes: 28
+THIS IS WRONG should be an _
+

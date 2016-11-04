@@ -32,6 +32,14 @@ UUID: ab04074e_f757d86b
 Bytes: 11
 const char*
 
+88:4-88:10
+Fri Nov 04 22:45:30 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_f757d86b
+UUID: ab04074e_376e80e5
+Bytes: 54
+we would want to modify the ptr, right? why use const?
+
 89:4-89:10
 Fri Nov 04 21:04:40 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -46,10 +54,25 @@ UUID: ab04074e_b704307e
 Bytes: 11
 const char*
 
+90:4-90:10
+Fri Nov 04 22:45:30 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_b704307e
+UUID: ab04074e_bab7f58a
+Bytes: 66
+can't do this since fs_mgr_mount_all, etc will modify the content.
+
 100:12-100:42
 Fri Nov 04 21:05:36 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_574224ab
 Bytes: 66
 prototype of this takes a const char* argument, so we are ok here.
+
+105:46-105:55
+Fri Nov 04 22:45:30 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_fac17deb
+Bytes: 59
+have to cast to (char *) since fs_mgr_do_mount expect that.
 

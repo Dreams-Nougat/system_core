@@ -1,0 +1,48 @@
+Revision: 6cd3cc3691f95aa170d1b2ae3d371bda010c60d0
+Patch-set: 7
+File: fs_mgr/fs_mgr_main.c
+
+41:36-41:43
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_17489cc9
+Bytes: 5
+ditto
+
+41:21-41:34
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_974accc5
+Bytes: 82
+hmmm, something like this should have caused a build warning?
+
+const char** n_name
+
+83:19-83:31
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_57f06473
+Bytes: 67
+Here too for good measure? There are side effects of this decision.
+
+88:4-88:10
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_f757d86b
+Bytes: 11
+const char*
+
+89:4-89:10
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_374320b3
+Bytes: 11
+const char*
+
+90:4-90:10
+Fri Nov 04 21:04:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_b704307e
+Bytes: 11
+const char*
+

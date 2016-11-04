@@ -54,3 +54,15 @@ you've also broken Linux because you're setting SOCK_NONBLOCK and then unsetting
 
 and if you are still going to do this, let's not copy & paste toggle_O_NONBLOCK...
 
+225
+Fri Nov 04 17:02:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_7191389c
+UUID: ab04074e_b16720d5
+Bytes: 544
+I copy and pasted it because libcutils depends on toggle_O_NONBLOCK and thus must work. Why would it not work (not having a MAC capable of building Android tree to test this out)? Windows host build does not define G_GETFL, so _that_ is the one that will not work.
+
+IF SOCK_NONBLOCK is defined as it is on linux, toggle_O_NONBLOCK will do nothing as it is replaced with 'return s;'. Agreed, it would be clearer to make this set_O_NONBLOCK rather than copying an existing functional(?) routine.
+
+(respinning to clarify rather than cut and paste)
+

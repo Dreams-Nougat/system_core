@@ -1,0 +1,36 @@
+Revision: 9494740d5be33a2306ab66ab321b49a5d1fbaea7
+Patch-set: 1
+File: libcutils/tests/sockets_test.cpp
+
+225
+Fri Nov 04 15:59:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_d13624fc
+Bytes: 391
+this seems like a lot of work to go to just to write a test that will always fail.
+
+why not just 
+
+  #if defined(__ANDROID__)
+  #endif
+
+around the whole body of this test instead? it's meaningless on the host anyway.
+
+(if you look at the bionic tests, we sometimes have an explicit log statement in a #else explaining why the test is meaningless in the #else case, but that's not necessary.)
+
+225
+Fri Nov 04 15:59:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_3145f065
+Bytes: 401
+this seems like an awful lot of work to go to just to write a test that will always fail :-)
+
+why not just 
+
+  #if defined(__ANDROID__)
+  #endif
+
+around the whole body of this test instead? it's meaningless on the host anyway.
+
+(if you look at the bionic tests, we sometimes have an explicit log statement in a #else explaining why the test is meaningless in the #else case, but that's not necessary.)
+

@@ -86,6 +86,14 @@ UUID: 86ed7a09_b0f35830
 Bytes: 72
 glibc claims to ignore e in fdopen, I added O_CLOEXEC to the open above.
 
+53
+Sat Nov 05 21:50:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 86ed7a09_b0f35830
+UUID: ab04074e_0058509a
+Bytes: 41
+ah, so do we... i mistook this for fopen.
+
 63
 Sat Oct 29 00:56:21 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

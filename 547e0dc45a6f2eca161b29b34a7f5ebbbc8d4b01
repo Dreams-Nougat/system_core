@@ -1,0 +1,27 @@
+Revision: 547e0dc45a6f2eca161b29b34a7f5ebbbc8d4b01
+Patch-set: 7
+File: libcutils/sockets.cpp
+
+90:0-96:6
+Sat Nov 05 20:59:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_801280c7
+Bytes: 239
+i don't think these mean what you think they mean --- they're not as useful as they sound (and probably shouldn't be used here). in general, these are what i like to call "minimum maximums". so pretty meaningless except as a _lower_ bound.
+
+107
+Sat Nov 05 20:59:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_60179cb9
+Bytes: 160
+why do you even define this function for Windows? is this ever useful off the device? seems like you're just making everything more complicated to no advantage?
+
+File: libcutils/tests/sockets_test.cpp
+
+215:31-215:35
+Sat Nov 05 20:59:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_c01be8e0
+Bytes: 30
+this is an int, not a boolean.
+

@@ -1,0 +1,18 @@
+Revision: 30fd1e6c21fd4c96aabb4eab33b04cb2f930ab8a
+Patch-set: 3
+File: logd/main.cpp
+
+372
+Sat Nov 05 21:14:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_60695c38
+Bytes: 121
+better than this is android::base::WriteStringToFd --- it transparently deals with short writes, and it's less typing :-)
+
+385
+Sat Nov 05 21:14:29 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_c04da8e1
+Bytes: 42
+we have a corresponding Read function too.
+

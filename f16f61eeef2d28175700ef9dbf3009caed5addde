@@ -21,6 +21,16 @@ logd is the android logger, the kernel logger, and the audit logger; all built i
 
 Any attempts by libraries we call to log are dropped on the floor (in liblog and others, or after they try to arrive on the sockets), because that circularity can not be the cause of logger instability.
 
+114:17-114:24
+Sat Nov 05 21:10:16 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 06a98af7_f22640d1
+UUID: ab04074e_205f548b
+Bytes: 651
+one of the advantages of <android-base/logging.h> is that you can install your own log destination. (see the SetLogger function.) so you can pass SetLogger something that basically does what your prdebug does, and all P?LOG(blah) output will automatically go there. including from any other libraries you've linked to: calling code doesn't need to worry about _where_ the logging ends up.
+
+(this is why, in case you've been wondering, we've sometimes made changes to switch libraries over to <android-base/logging.h> without making any other changes to the libraries --- it's so that the library's logging "just works" even in weird places like init.)
+
 126:21-126:61
 Wed Nov 02 14:24:55 2016 +0000
 Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>

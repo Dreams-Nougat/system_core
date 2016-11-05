@@ -1,0 +1,48 @@
+Revision: 8b53426171120eaefd427fd399768be28434d676
+Patch-set: 1
+File: debuggerd/open_files_list.cpp
+
+38
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_a0b4e486
+Bytes: 15
+std::unique_ptr
+
+45
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_60b31ca1
+Bytes: 22
+also known as `while`?
+
+51
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_00c210ef
+Bytes: 21
+no fixed-size buffers
+
+54
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_e0beec62
+Bytes: 23
+android::base::Readlink
+
+65
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_40cd381b
+Bytes: 12
+const auto&?
+
+File: debuggerd/utility.cpp
+
+39
+Sat Nov 05 23:49:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_80ae0039
+Bytes: 38
+definitely not. that's way too spammy.
+

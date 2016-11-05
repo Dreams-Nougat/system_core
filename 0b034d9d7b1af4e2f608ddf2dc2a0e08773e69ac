@@ -1,0 +1,80 @@
+Revision: 0b034d9d7b1af4e2f608ddf2dc2a0e08773e69ac
+Patch-set: 10
+File: include/cutils/files.h
+
+31
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_0026902f
+Bytes: 145
+can we rename this header "android_get_control_file.h"? "files.h" is so general this is just going to be a magnet for all kinds of random junk...
+
+File: libcutils/Android.bp
+
+37
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_e0226c19
+Bytes: 22
+likewise; be specific.
+
+File: libcutils/files.cpp
+
+31
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_40f1b879
+Bytes: 35
+(C++ is automatically _GNU_SOURCE.)
+
+46
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_20f63473
+Bytes: 61
+same comment about Windows support as on the previous change.
+
+51:0-69:25
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_60f03c74
+Bytes: 36
+do we have to copy & paste all this?
+
+72:46-79:6
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_80eba089
+Bytes: 34
+same comment as in the other file.
+
+90
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_00ffb041
+Bytes: 35
+this block deserves a code comment.
+
+92:40-92:42
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_c004887f
+Bytes: 84
+would be less confusing if you'd made `fd` an int, so this could be the expected %d.
+
+96:49-96:53
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_a001846d
+Bytes: 8
+why + 2?
+
+File: libcutils/tests/files_test.cpp
+
+34
+Sat Nov 05 21:05:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_e0fb8c51
+Bytes: 50
+does this test pass if you're not running as root?
+

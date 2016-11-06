@@ -1,0 +1,32 @@
+Revision: 7ffdba95fccd373f2685873f17d3fbc5dfa81321
+Patch-set: 8
+File: fs_mgr/fs_mgr_main.c
+
+49
+Sun Nov 06 00:54:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_8080c093
+Bytes: 47
+(ugh. would it have killed them to use getopt?)
+
+88
+Sun Nov 06 00:54:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_207bd4e2
+Bytes: 27
+why isn't this const char*?
+
+96:32-96:47
+Sun Nov 06 00:54:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_4076d8fc
+Bytes: 9
+unneeded?
+
+106:15-106:30
+Sun Nov 06 00:54:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab04074e_e0d70ca3
+Bytes: 81
+can't we fix this to take const char* like it should? (damn those c programmers!)
+

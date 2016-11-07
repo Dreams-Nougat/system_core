@@ -41,6 +41,14 @@ getopt agreed, but outside scope of this change. There are syntactical issues wi
 
 (the embedded guy in me would have skipped getopt _and_ strcmp and used an if '-' switch "trick". I only state this to give enh@ a joy filled conniption fit :-) )
 
+68
+Mon Nov 07 20:28:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abd88709_3dc79afd
+UUID: 8bd3c31c_83d80038
+Bytes: 119
+(note that if you actually need getopt to not permute, you can supply '+' as the first character of the option string.)
+
 75:0-78:5
 Mon Nov 07 18:06:18 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

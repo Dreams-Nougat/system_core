@@ -45,3 +45,13 @@ UUID: ab04074e_c01be8e0
 Bytes: 30
 this is an int, not a boolean.
 
+215:31-215:35
+Mon Nov 07 15:51:14 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_c01be8e0
+UUID: abd88709_46aad06e
+Bytes: 260
+C++ Reference: 4.7 the type bool can be converted to int with the value false becoming ​0​ and true becoming 1. No cast is necessary as this is an implied conversion.
+
+If this is abhorrent with regards to the Android Coding standard (?) then I will respin.
+

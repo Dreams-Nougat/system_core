@@ -9,12 +9,32 @@ UUID: ab04074e_801280c7
 Bytes: 239
 i don't think these mean what you think they mean --- they're not as useful as they sound (and probably shouldn't be used here). in general, these are what i like to call "minimum maximums". so pretty meaningless except as a _lower_ bound.
 
+90:0-96:6
+Mon Nov 07 15:39:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_801280c7
+UUID: abd88709_a6e61cfe
+Bytes: 298
+SC_OPEN_MAX is system per-process maximum as reported by Linux. The others are, as you say, minimum maximums and in my exuberance used them to retain the check in the face of windows or MAC builds.
+
+Thanks. Looking at it again, I see them as clutter and will remove them from here in a followup CL.
+
 107
 Sat Nov 05 20:59:18 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_60179cb9
 Bytes: 160
 why do you even define this function for Windows? is this ever useful off the device? seems like you're just making everything more complicated to no advantage?
+
+107
+Mon Nov 07 15:39:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_60179cb9
+UUID: abd88709_c6e320ed
+Bytes: 357
+Maybe cargo, it was defined, did not want to audit whether it was right to be in the windows or MAC build, only accepted that it was. Removing this file from the windows build is a separate investigation and CL-set.
+
+(I thought this fragment would work on Windows, but I am missing the include-fu, so I opted to ifdef it out since it was new functionality).
 
 File: libcutils/tests/sockets_test.cpp
 

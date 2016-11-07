@@ -9,6 +9,14 @@ UUID: ab04074e_0026902f
 Bytes: 145
 can we rename this header "android_get_control_file.h"? "files.h" is so general this is just going to be a magnet for all kinds of random junk...
 
+31
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_0026902f
+UUID: abd88709_069cc84f
+Bytes: 12
+Fair enough!
+
 File: libcutils/Android.bp
 
 37
@@ -27,6 +35,14 @@ UUID: ab04074e_40f1b879
 Bytes: 35
 (C++ is automatically _GNU_SOURCE.)
 
+31
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_40f1b879
+UUID: abd88709_a6985c5c
+Bytes: 135
+Apparently not, because windows build requires this. But once I move the common helper code to sockets.cpp, this will not be necessary.
+
 46
 Sat Nov 05 21:05:37 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,12 +57,30 @@ UUID: ab04074e_60f03c74
 Bytes: 36
 do we have to copy & paste all this?
 
+51:0-69:25
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_60f03c74
+UUID: abd88709_5a7b842f
+Bytes: 243
+I was keeping sockets.cpp separate from this. Besides not copy and paste, more like create and paste ;->, I expanded/corrected the code, and it has ANDROID_FILE_ENV_PREFIX unique.
+
+Will move common stuff to an (internal) helper in sockets.cpp.
+
 72:46-79:6
 Sat Nov 05 21:05:37 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_80eba089
 Bytes: 34
 same comment as in the other file.
+
+72:46-79:6
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_80eba089
+UUID: abd88709_fa7fd818
+Bytes: 31
+Except I am keeping SC_OPEN_MAX
 
 90
 Sat Nov 05 21:05:37 2016 +0000
@@ -62,12 +96,32 @@ UUID: ab04074e_c004887f
 Bytes: 84
 would be less confusing if you'd made `fd` an int, so this could be the expected %d.
 
+92:40-92:42
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_c004887f
+UUID: abd88709_da8694fa
+Bytes: 103
+If I put an internal private helper in sockets.cpp and use it here, that will deal with the conversion.
+
 96:49-96:53
 Sat Nov 05 21:05:37 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_a001846d
 Bytes: 8
 why + 2?
+
+96:49-96:53
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_a001846d
+UUID: abd88709_ba89500b
+Bytes: 372
+definition of readlink is that it does _not_ place the terminating nul, and will override the nul in len + 1 if the link path is greater. We want it to, to ensure truncation does not result in equality:
+
+eg: file points to /dev/logdr, and we supplied /dev/logd in the getenv.
+
+Needs a comment, but that was going to be taken care of in thes block deserving a code comment.
 
 File: libcutils/tests/files_test.cpp
 
@@ -77,4 +131,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_e0fb8c51
 Bytes: 50
 does this test pass if you're not running as root?
+
+34
+Mon Nov 07 16:45:06 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_e0fb8c51
+UUID: abd88709_fa691818
+Bytes: 301
+No. There are a multitude of gTests that will not pass unless we are root. I understand, no excuses ... I could certainly use /data/local/tmp/ (but selinux may not allow access to that either by the end of this development cycle). I also _want_ this test to work on host so I have some thinkin' to do.
 

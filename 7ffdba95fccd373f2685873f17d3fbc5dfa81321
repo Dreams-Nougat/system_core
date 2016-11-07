@@ -9,12 +9,28 @@ UUID: abd88709_9d00061d
 Bytes: 149
 const always gives me headache for **'s. const char *x passed as an &x I thought was const char* n_name[] (?) but this will do if it is _correct_....
 
+41:21-41:40
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abd88709_9d00061d
+UUID: 8bd3c31c_00dea64f
+Bytes: 163
+I thought about it for some time and feel ** is less misleading than *[] since the parameter in line 96 is exactly pointer to a pointer (&n_name) instead of array.
+
 49
 Sun Nov 06 00:54:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_8080c093
 Bytes: 47
 (ugh. would it have killed them to use getopt?)
+
+49
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_8080c093
+UUID: 8bd3c31c_6077727e
+Bytes: 242
+Agreed as Mark mentioned but scope of this patch is to fix a memleak warning. It's already gone a bit beyond that : ) I wanted to focus on one issue at a time and make this patch as simple as possible. We should do getopt in a separate patch.
 
 49:4-68:5
 Mon Nov 07 18:06:18 2016 +0000
@@ -32,12 +48,28 @@ UUID: abd88709_1d673646
 Bytes: 59
 really can not happen ... ever ... unless we use getopt ...
 
+75:0-78:5
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abd88709_1d673646
+UUID: 8bd3c31c_e03c6286
+Bytes: 219
+Agree this cannot happen yet, though nothing prevents someone modifying code to break the assumption in line 75. I feel a safe net kind of error check here is reasonable. Again, this is also outside scope of this patch.
+
 88
 Sun Nov 06 00:54:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_207bd4e2
 Bytes: 27
 why isn't this const char*?
+
+88
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_207bd4e2
+UUID: 8bd3c31c_236c947b
+Bytes: 219
+fs_mgr_do_mount doesn't expect a const name. we can change it and this will touch two more files. Luckily all callers of fs_mgr_do_mount happen to pass in a const string. So this is on my fence of out of scope change...
 
 96:32-96:47
 Sun Nov 06 00:54:09 2016 +0000
@@ -46,10 +78,26 @@ UUID: ab04074e_4076d8fc
 Bytes: 9
 unneeded?
 
+96:32-96:47
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_4076d8fc
+UUID: 8bd3c31c_439a784a
+Bytes: 20
+yup, will remove it.
+
 106:15-106:30
 Sun Nov 06 00:54:09 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_e0d70ca3
 Bytes: 81
 can't we fix this to take const char* like it should? (damn those c programmers!)
+
+106:15-106:30
+Mon Nov 07 19:34:50 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_e0d70ca3
+UUID: 8bd3c31c_e3254c24
+Bytes: 350
+I hope so but this becomes a conversion to "char * const argv[]" all over the universe. For this particular one, it's passed to check_fs function, which uses the string in char * e2fsck_argv[], which is passed to android_fork_execvp_ext, who doesn't respect const argvs as we have in this file. Who knows what we end up with downstream from there : )
 

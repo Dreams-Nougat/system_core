@@ -19,6 +19,14 @@ SC_OPEN_MAX is system per-process maximum as reported by Linux. The others are, 
 
 Thanks. Looking at it again, I see them as clutter and will remove them from here in a followup CL.
 
+90:0-96:6
+Mon Nov 07 16:49:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: abd88709_a6e61cfe
+UUID: abd88709_1a517c49
+Bytes: 321
+(you're right that SC_OPEN_MAX does actually do something useful [returning the current rlimit], but since you can inherit fds above your own rlimit this would have been a potential source of false positives anyway. [though we'd hope that init hasn't used/leaked enough fds for that to actually happen in practice! :-) ])
+
 107
 Sat Nov 05 20:59:18 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,73 @@
+Revision: 659006af4d7ba3804fab4df71b5e39c6ccff8ba1
+Patch-set: 14
+File: debuggerd/handler/debuggerd_handler.cpp
+
+172
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_cf394906
+Bytes: 237
+Is there any particular reason for the selection of 1024?
+
+It seems more robust to ensure O_CLOEXEC is set on all file descriptors that we care about, and in particular to check /proc/self/fd/ instead of relying on a hard-coded constant.
+
+198
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_6f267dd5
+Bytes: 83
+It's not clear what this actually does, since any effects will be lost via the exec
+
+227
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_cf2ce9b1
+Bytes: 158
+This needs to be done in a loop, checking for the exit status.  For example, a SIGSTOP sent to the child should still cause this wait to exit.  See WIFEXITED.
+
+271
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_af8a4566
+Bytes: 97
+Why are we not just using pthread here?  I'm sure there's a good reason, it's just not mentioned.
+
+341
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_afcb25ab
+Bytes: 167
+Why are we doing all of this manually instead of using pthread?
+
+Presumably, it's to limit the size of the stack and ensure it's bounded by guard pages on either side.
+
+346
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_0fac11d4
+Bytes: 86
+I'm not sure I understand why we're skipping over 0x10 bytes at the base of the stack.
+
+File: debuggerd/tombstoned/tombstoned.cpp
+
+79
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_0f2ed1ed
+Bytes: 10
+O_CLOEXEC?
+
+89
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_6fae7d3c
+Bytes: 26
+This should be atomic, no?
+
+165
+Tue Nov 08 00:47:45 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_4fd299bb
+Bytes: 84
+There's a race condition here, if multiple concurrent dumps take the 'false' branch.
+

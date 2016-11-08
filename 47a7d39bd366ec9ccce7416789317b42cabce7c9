@@ -42,6 +42,14 @@ UUID: 8bd3c31c_dd165c0a
 Bytes: 85
 ... maybe I need to move this function into sockets_unix.cpp and sockets_windows.cpp.
 
+112
+Tue Nov 08 18:18:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_dd165c0a
+UUID: 8bd3c31c_5ddecc26
+Bytes: 391
+no, just forget about windows! you're just making everyone's life harder (including your own) trying to support a function on windows that's useless on windows. (and the "i want to test on the host" argument doesn't hold up there because i *know* how hard it is to test on windows, and that we have no infrastructure, and no-one is doing it even for the stuff that *does* matter on windows!)
+
 130
 Tue Nov 08 17:19:48 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

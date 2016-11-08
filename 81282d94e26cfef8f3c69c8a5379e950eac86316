@@ -1,0 +1,13 @@
+Revision: 81282d94e26cfef8f3c69c8a5379e950eac86316
+Patch-set: 2
+File: fs_mgr/fs_mgr_avb.cpp
+
+393:27-393:45
+Tue Nov 08 14:51:54 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b7f379a_b8ddf554
+Bytes: 106
+This might overflow.
+We should verify descriptor first, then compare the len.
+And skip if len isn't match.
+

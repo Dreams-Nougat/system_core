@@ -11,12 +11,28 @@ Is there any particular reason for the selection of 1024?
 
 It seems more robust to ensure O_CLOEXEC is set on all file descriptors that we care about, and in particular to check /proc/self/fd/ instead of relying on a hard-coded constant.
 
+172
+Tue Nov 08 01:07:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_cf394906
+UUID: 8bd3c31c_3a6cb17b
+Bytes: 287
+This is an arbitrary number selected to hopefully close all of the file descriptors. The point of this isn't to reimplement O_CLOEXEC, it's to allow us to log failure and create communication pipes when all of the file descriptors *before* the exec happens. (see the comment at line 162)
+
 198
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8bd3c31c_6f267dd5
 Bytes: 83
 It's not clear what this actually does, since any effects will be lost via the exec
+
+198
+Tue Nov 08 01:07:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_6f267dd5
+UUID: 8bd3c31c_8faae16b
+Bytes: 38
+It gets passed as an argument to exec.
 
 227
 Tue Nov 08 00:47:45 2016 +0000
@@ -31,6 +47,14 @@ Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8bd3c31c_af8a4566
 Bytes: 97
 Why are we not just using pthread here?  I'm sure there's a good reason, it's just not mentioned.
+
+271
+Tue Nov 08 01:07:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_af8a4566
+UUID: 8bd3c31c_ba7fe119
+Bytes: 27
+See the comment at line 162
 
 341
 Tue Nov 08 00:47:45 2016 +0000
@@ -48,6 +72,14 @@ UUID: 8bd3c31c_0fac11d4
 Bytes: 86
 I'm not sure I understand why we're skipping over 0x10 bytes at the base of the stack.
 
+346
+Tue Nov 08 01:07:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_0fac11d4
+UUID: 8bd3c31c_9a94dd1d
+Bytes: 46
+To satisfy ABI requirements on stack alignment
+
 File: debuggerd/tombstoned/tombstoned.cpp
 
 79
@@ -63,6 +95,14 @@ Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8bd3c31c_6fae7d3c
 Bytes: 26
 This should be atomic, no?
+
+89
+Tue Nov 08 01:07:49 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_6fae7d3c
+UUID: 8bd3c31c_7ac8f941
+Bytes: 125
+This process is entirely single threaded, these callbacks happen in a serialized fashion upon input on a socket (or timeout).
 
 165
 Tue Nov 08 00:47:45 2016 +0000

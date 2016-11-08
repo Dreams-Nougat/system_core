@@ -34,6 +34,14 @@ UUID: 8bd3c31c_dd5e5c29
 Bytes: 123
 no, i mean "it is a mistake that these functions that are only useful on the target are in a file that's built for windows"
 
+112
+Tue Nov 08 18:16:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_dd5e5c29
+UUID: 8bd3c31c_dd165c0a
+Bytes: 85
+... maybe I need to move this function into sockets_unix.cpp and sockets_windows.cpp.
+
 130
 Tue Nov 08 17:19:48 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -56,6 +64,14 @@ Parent: 8bd3c31c_bd2fd8a3
 UUID: 8bd3c31c_9d7db495
 Bytes: 31
 i meant the spurious empty line
+
+130
+Tue Nov 08 18:16:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_9d7db495
+UUID: 8bd3c31c_5d824c25
+Bytes: 6
+<grin>
 
 File: libcutils/tests/files_test.cpp
 

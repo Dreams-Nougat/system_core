@@ -1,0 +1,11 @@
+Revision: 623d6ed68dbaa37571641727ebc0532ce31ed11b
+Patch-set: 1
+File: init/util.cpp
+
+177
+Tue Nov 08 17:21:34 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8bd3c31c_bd4d18e2
+Bytes: 72
+just move it after the logging so you don't need to assume/comment that?
+

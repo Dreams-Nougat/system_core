@@ -9,3 +9,13 @@ UUID: 8bd3c31c_bd4d18e2
 Bytes: 72
 just move it after the logging so you don't need to assume/comment that?
 
+177
+Tue Nov 08 17:37:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_bd4d18e2
+UUID: 8bd3c31c_7d4ab09b
+Bytes: 437
+I would still need to comment for this one even if I moved it below because we want to reserve errno for return. Besides, best practices are to free resources and unlock before calling any logging routines.
+
+We _know_ that PLOG preserved errno for _return_ as well. But I wanted to make sure no one wastes time like I did confirming that freecon does not upset errno in order to evaluate if it must be saved and restored before _return_.
+

@@ -26,6 +26,14 @@ UUID: 8bd3c31c_3d458865
 Bytes: 90
 and yet, abstracting this one-of to sockets_unix.c would make this even more miserable ...
 
+112
+Tue Nov 08 17:56:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_3d458865
+UUID: 8bd3c31c_dd5e5c29
+Bytes: 123
+no, i mean "it is a mistake that these functions that are only useful on the target are in a file that's built for windows"
+
 130
 Tue Nov 08 17:19:48 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -40,6 +48,14 @@ Parent: 8bd3c31c_1d23641f
 UUID: 8bd3c31c_bd2fd8a3
 Bytes: 115
 Nope, not an ooops, by adding the helper which checks INT_MAX range, we can use int fd here instead of long fd. :-)
+
+130
+Tue Nov 08 17:56:58 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_bd2fd8a3
+UUID: 8bd3c31c_9d7db495
+Bytes: 31
+i meant the spurious empty line
 
 File: libcutils/tests/files_test.cpp
 

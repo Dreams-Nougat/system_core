@@ -18,12 +18,28 @@ UUID: 8bd3c31c_3df1087b
 Bytes: 76
 (we already have a sockets_unix.c for stuff that makes no sense on windows.)
 
+112
+Tue Nov 08 17:53:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_3df1087b
+UUID: 8bd3c31c_3d458865
+Bytes: 90
+and yet, abstracting this one-of to sockets_unix.c would make this even more miserable ...
+
 130
 Tue Nov 08 17:19:48 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8bd3c31c_1d23641f
 Bytes: 5
 oops?
+
+130
+Tue Nov 08 17:53:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_1d23641f
+UUID: 8bd3c31c_bd2fd8a3
+Bytes: 115
+Nope, not an ooops, by adding the helper which checks INT_MAX range, we can use int fd here instead of long fd. :-)
 
 File: libcutils/tests/files_test.cpp
 
@@ -33,4 +49,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 8bd3c31c_7deb908a
 Bytes: 7
 rename?
+
+1
+Tue Nov 08 17:53:32 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_7deb908a
+UUID: 8bd3c31c_5d4a4c74
+Bytes: 19
+yes ... good catch!
 

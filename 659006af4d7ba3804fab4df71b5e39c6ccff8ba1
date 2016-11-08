@@ -29,6 +29,19 @@ It seems then that we'd want to look in /proc/self/fd and check our ulimit to se
 
 If we're in a sufficiently weird state that we've hit the ulimit for file descriptors, it's reasonable that we may also be in a sufficiently weird state that they're all above 1024.
 
+172
+Tue Nov 08 22:41:12 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_75764a4b
+UUID: 2bc73767_260e56e3
+Bytes: 149
+Actually, it looks like you may just be able to increase the soft limit at runtime.
+
+shell@angler:/ $ ulimit -n
+1024
+shell@angler:/ $ ulimit -nH
+4096
+
 198
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>

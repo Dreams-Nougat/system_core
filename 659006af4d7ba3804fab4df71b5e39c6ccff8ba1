@@ -19,6 +19,16 @@ UUID: 8bd3c31c_3a6cb17b
 Bytes: 287
 This is an arbitrary number selected to hopefully close all of the file descriptors. The point of this isn't to reimplement O_CLOEXEC, it's to allow us to log failure and create communication pipes when all of the file descriptors *before* the exec happens. (see the comment at line 162)
 
+172
+Tue Nov 08 02:07:01 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_3a6cb17b
+UUID: 8bd3c31c_75764a4b
+Bytes: 319
+It seems then that we'd want to look in /proc/self/fd and check our ulimit to see if we need to do this, rather than making assumptions.
+
+If we're in a sufficiently weird state that we've hit the ulimit for file descriptors, it's reasonable that we may also be in a sufficiently weird state that they're all above 1024.
+
 198
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -33,6 +43,14 @@ Parent: 8bd3c31c_6f267dd5
 UUID: 8bd3c31c_8faae16b
 Bytes: 38
 It gets passed as an argument to exec.
+
+198
+Tue Nov 08 02:07:01 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_8faae16b
+UUID: 8bd3c31c_356cc27b
+Bytes: 4
+Done
 
 227
 Tue Nov 08 00:47:45 2016 +0000
@@ -55,6 +73,14 @@ Parent: 8bd3c31c_af8a4566
 UUID: 8bd3c31c_ba7fe119
 Bytes: 27
 See the comment at line 162
+
+271
+Tue Nov 08 02:07:01 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_ba7fe119
+UUID: 8bd3c31c_f5897a0a
+Bytes: 129
+It's probably worthwhile to add a line comment that just calls out "this is basically pthread_create without CLONE_FILES and XYZ"
 
 341
 Tue Nov 08 00:47:45 2016 +0000
@@ -80,6 +106,14 @@ UUID: 8bd3c31c_9a94dd1d
 Bytes: 46
 To satisfy ABI requirements on stack alignment
 
+346
+Tue Nov 08 02:07:01 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_9a94dd1d
+UUID: 8bd3c31c_f5a25a82
+Bytes: 230
+0xABCDE000 is sufficiently aligned as 0xABCDE010.  There shouldn't be a need to skip over 16 bytes, unless there's code that does something silly like dereferencing sp.  Stack frame allocation usually decrements SP before storing.
+
 File: debuggerd/tombstoned/tombstoned.cpp
 
 79
@@ -103,6 +137,14 @@ Parent: 8bd3c31c_6fae7d3c
 UUID: 8bd3c31c_7ac8f941
 Bytes: 125
 This process is entirely single threaded, these callbacks happen in a serialized fashion upon input on a socket (or timeout).
+
+89
+Tue Nov 08 02:07:01 2016 +0000
+Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_7ac8f941
+UUID: 8bd3c31c_b5da92fc
+Bytes: 38
+Then the name is a bit misleading, no?
 
 165
 Tue Nov 08 00:47:45 2016 +0000

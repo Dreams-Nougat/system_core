@@ -9,12 +9,28 @@ UUID: ab04074e_a0b4e486
 Bytes: 15
 std::unique_ptr
 
+38
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_a0b4e486
+UUID: 0b28b31a_54374c43
+Bytes: 11
+Better now?
+
 45
 Sat Nov 05 23:49:47 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_60b31ca1
 Bytes: 22
 also known as `while`?
+
+45
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_60b31ca1
+UUID: 0b28b31a_1431d44c
+Bytes: 4
+Done
 
 51
 Sat Nov 05 23:49:47 2016 +0000
@@ -23,6 +39,14 @@ UUID: ab04074e_00c210ef
 Bytes: 21
 no fixed-size buffers
 
+51
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_00c210ef
+UUID: eb243f49_534e84dd
+Bytes: 11
+Better now?
+
 54
 Sat Nov 05 23:49:47 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -30,12 +54,28 @@ UUID: ab04074e_e0beec62
 Bytes: 23
 android::base::Readlink
 
+54
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_e0beec62
+UUID: 6b192f0e_57b8ac79
+Bytes: 4
+Done
+
 65
 Sat Nov 05 23:49:47 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_40cd381b
 Bytes: 12
 const auto&?
+
+65
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_40cd381b
+UUID: 8b14a3d5_3855e963
+Bytes: 4
+Done
 
 File: debuggerd/utility.cpp
 
@@ -45,4 +85,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_80ae0039
 Bytes: 38
 definitely not. that's way too spammy.
+
+39
+Wed Nov 09 17:09:23 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab04074e_80ae0039
+UUID: 4b32ab88_96adec3f
+Bytes: 4
+Done
 

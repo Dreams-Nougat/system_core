@@ -1,0 +1,11 @@
+Revision: 7c6c87bf97cef3d6d7e85a2f21e2a86fcd8a66b0
+Patch-set: 1
+File: include/cutils/trace.h
+
+73:8-73:23
+Wed Nov 09 16:44:31 2016 +0000
+Author: Iliyan Malchev <1000866@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b9f4379_94305404
+Bytes: 28
+Better to reuse the HAL tag.
+

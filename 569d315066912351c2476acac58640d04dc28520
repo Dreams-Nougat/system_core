@@ -1,0 +1,15 @@
+Revision: 569d315066912351c2476acac58640d04dc28520
+Patch-set: 1
+File: init/devices.cpp
+
+120
+Wed Nov 09 02:43:23 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6bbdafe5_fa07858b
+Bytes: 215
+If the allocation on line 111 succeeds, but the allocation on 118 fails, "node" will be freed but "node->dp.name" will not be freed. It seems like we also need:
+
+  free(node->dp.name);
+
+immediately before this line.
+

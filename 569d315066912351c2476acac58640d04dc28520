@@ -2,6 +2,18 @@ Revision: 569d315066912351c2476acac58640d04dc28520
 Patch-set: 1
 File: init/devices.cpp
 
+103
+Wed Nov 09 02:50:17 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2bd3b749_d516dc6d
+Bytes: 210
+wow, nobody ever checks this return value... So the error codes from this function are ignored.
+
+We should either
+
+1) check the return value ueventd.cpp and error out
+2) Drop the return value and add error logs
+
 120
 Wed Nov 09 02:43:23 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

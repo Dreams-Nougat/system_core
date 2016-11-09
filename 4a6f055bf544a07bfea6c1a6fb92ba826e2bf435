@@ -1,0 +1,36 @@
+Revision: 4a6f055bf544a07bfea6c1a6fb92ba826e2bf435
+Patch-set: 2
+File: include/cutils/sockets.h
+
+38:0-38:23
+Wed Nov 09 16:09:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab9ec77a_358748f8
+Bytes: 130
+this removes some evil in callers that utilize cutils/sockets.h. Consider this a 'bet' for TreeHugger to find a nook or cranny ...
+
+File: libcutils/android_get_control_file.cpp
+
+97:0-98:27
+Wed Nov 09 16:09:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cbc21b71_63a6309a
+Bytes: 48
+free does not affect errno, what was I thinking?
+
+102:0-106:23
+Wed Nov 09 16:09:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ebafdfaa_a441e8a7
+Bytes: 45
+same here, errno is safe for free and strcmp.
+
+File: libcutils/sockets_windows.cpp
+
+89:4-89:14
+Wed Nov 09 16:09:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2bd3b749_1b5b6369
+Bytes: 111
+this may make enh@ happy, I tossed a coin as to whether to put in the android_get_control_env call or not here.
+

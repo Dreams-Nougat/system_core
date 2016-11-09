@@ -17,3 +17,11 @@ UUID: ab888773_a01be493
 Bytes: 66
 I thought ms looks cleaner and maybe better for human readability?
 
+121:37-121:44
+Wed Nov 09 23:42:03 2016 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_a01be493
+UUID: ab888773_000f5014
+Bytes: 48
+with one multiplication. anyway it is trivial :)
+

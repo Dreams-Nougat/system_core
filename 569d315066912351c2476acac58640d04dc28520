@@ -14,6 +14,16 @@ We should either
 1) check the return value ueventd.cpp and error out
 2) Drop the return value and add error logs
 
+103
+Wed Nov 09 06:12:06 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2bd3b749_d516dc6d
+UUID: 4bd62b38_39af4bcc
+Bytes: 287
+yeah, LOG(FATAL) might be the easiest choice here, and lose all the free(3)s. the calling code doesn't have anything very useful it can do in this situation anyway.
+
+(i notice the calling code has code to carefully free `tmp` despite never assigning anything but 0 to it... what a mess.)
+
 120
 Wed Nov 09 02:43:23 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

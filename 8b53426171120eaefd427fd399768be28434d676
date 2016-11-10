@@ -32,6 +32,16 @@ UUID: 0b28b31a_1431d44c
 Bytes: 4
 Done
 
+45
+Thu Nov 10 09:09:56 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b28b31a_1431d44c
+UUID: 6beccf3c_5fa0eb79
+Bytes: 238
+Now I remember why I had it as a for loop. With a for loop it's impossible to forget to call de = readdir(dir), even when a 'continue' is reached.
+
+I removed all use of 'continue' in the body of the loop to avoid this problem. Better now?
+
 51
 Sat Nov 05 23:49:47 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

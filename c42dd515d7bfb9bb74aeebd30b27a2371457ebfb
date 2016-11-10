@@ -9,6 +9,14 @@ UUID: ab888773_7d6a820e
 Bytes: 45
 sure you want this in the public header file?
 
+34
+Thu Nov 10 16:31:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_7d6a820e
+UUID: ab888773_d0183559
+Bytes: 95
+I _missed_ that we had some local header files ... and did not want to set a precedent. My bad.
+
 File: libcutils/Android.bp
 
 78
@@ -26,4 +34,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab888773_1da49642
 Bytes: 30
 why is this built for windows?
+
+43
+Thu Nov 10 16:31:26 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_1da49642
+UUID: ab888773_10547dc4
+Bytes: 138
+Because I have troubles letting go? ;-}
+
+I will move both android_get_control_socket and android_get_control_file tests to non-windows ...
 

@@ -26,6 +26,14 @@ UUID: ab888773_9d9086d7
 Bytes: 44
 move android_get_control_file.cpp down here?
 
+78
+Thu Nov 10 17:30:12 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_9d9086d7
+UUID: ab888773_931957eb
+Bytes: 87
+The hidden function is used by sockets_unix.cpp which lands on host? Will look into it.
+
 File: libcutils/android_get_control_file.cpp
 
 43

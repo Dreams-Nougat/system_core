@@ -17,6 +17,14 @@ UUID: ab888773_d0183559
 Bytes: 95
 I _missed_ that we had some local header files ... and did not want to set a precedent. My bad.
 
+34
+Thu Nov 10 17:33:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_d0183559
+UUID: ab888773_f359c3a6
+Bytes: 87
+even if you were the first, you should think of it more as "setting a good example" :-)
+
 File: libcutils/Android.bp
 
 78
@@ -33,6 +41,16 @@ Parent: ab888773_9d9086d7
 UUID: ab888773_931957eb
 Bytes: 87
 The hidden function is used by sockets_unix.cpp which lands on host? Will look into it.
+
+78
+Thu Nov 10 17:33:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_931957eb
+UUID: ab888773_33ff4b42
+Bytes: 217
+host but not windows.
+
+(personally i think it would be fine to make them target-only, but that's probably more work right now. not adding more stuff to support under windows is just trying to maintain the status quo.)
 
 File: libcutils/android_get_control_file.cpp
 

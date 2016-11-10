@@ -1,0 +1,29 @@
+Revision: c42dd515d7bfb9bb74aeebd30b27a2371457ebfb
+Patch-set: 3
+File: include/cutils/android_get_control_file.h
+
+34
+Thu Nov 10 05:12:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab888773_7d6a820e
+Bytes: 45
+sure you want this in the public header file?
+
+File: libcutils/Android.bp
+
+78
+Thu Nov 10 05:12:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab888773_9d9086d7
+Bytes: 44
+move android_get_control_file.cpp down here?
+
+File: libcutils/android_get_control_file.cpp
+
+43
+Thu Nov 10 05:12:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab888773_1da49642
+Bytes: 30
+why is this built for windows?
+

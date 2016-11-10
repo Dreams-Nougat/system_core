@@ -1,0 +1,22 @@
+Revision: c117cda7f0b65d992740972def32b44c9cf49e3b
+Patch-set: 3
+File: debuggerd/open_files_list.cpp
+
+57
+Thu Nov 10 17:05:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab888773_1371e751
+Bytes: 148
+why make it hard to read? just write the same loop everyone else does:
+
+  https://cs.corp.google.com/search/?q=while.*readdir&sq=package:%5Eandroid$
+
+File: debuggerd/test/open_files_list_test.cpp
+
+31
+Thu Nov 10 17:05:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab888773_937dd722
+Bytes: 18
+use TemporaryFile.
+

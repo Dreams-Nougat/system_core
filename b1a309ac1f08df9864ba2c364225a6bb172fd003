@@ -25,3 +25,11 @@ UUID: ab888773_000f5014
 Bytes: 48
 with one multiplication. anyway it is trivial :)
 
+121:37-121:44
+Thu Nov 10 00:25:14 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_000f5014
+UUID: ab888773_2bffd541
+Bytes: 233
+at some point we should move https://cs.corp.google.com/android/art/runtime/base/time_utils.cc?type=cs&q=prettyduration&sq=package:%5Eandroid$&l=32 out of art and into libbase and let the computer choose the most appropriate units...
+

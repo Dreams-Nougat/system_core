@@ -11,6 +11,16 @@ why make it hard to read? just write the same loop everyone else does:
 
   https://cs.corp.google.com/search/?q=while.*readdir&sq=package:%5Eandroid$
 
+57
+Fri Nov 11 09:30:33 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_1371e751
+UUID: 6beccf3c_ff257fc7
+Bytes: 36
+Thanks for the clarification.
+
+Done.
+
 File: debuggerd/test/open_files_list_test.cpp
 
 31
@@ -19,4 +29,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab888773_937dd722
 Bytes: 18
 use TemporaryFile.
+
+31
+Fri Nov 11 09:30:33 2016 +0000
+Author: Richard Uhler <1057373@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_937dd722
+UUID: 6beccf3c_3f308702
+Bytes: 4
+Done
 

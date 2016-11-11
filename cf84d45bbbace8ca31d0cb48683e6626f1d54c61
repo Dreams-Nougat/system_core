@@ -1,0 +1,18 @@
+Revision: cf84d45bbbace8ca31d0cb48683e6626f1d54c61
+Patch-set: 2
+File: libappfuse/FuseBuffer.cc
+
+34:6-34:32
+Fri Nov 11 16:54:53 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_71241a77
+Bytes: 26
+Fits on the previous line.
+
+58:0-58:54
+Fri Nov 11 16:54:53 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_51171e06
+Bytes: 27
+Don't leave commented code.
+

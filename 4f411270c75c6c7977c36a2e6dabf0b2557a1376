@@ -9,3 +9,16 @@ UUID: 0b97d3c5_cb20e1ba
 Bytes: 97
 As mentioned, this could be static. Then it's easier in the caller, just FuseBridgeLoop::Start...
 
+32:2-32:12
+Fri Nov 11 05:01:08 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b97d3c5_cb20e1ba
+UUID: 0b1ef349_24027271
+Bytes: 520
+Sorry for missing the fix. According to Google C++ style guide, a global function is preferred to a class containing only static members.
+https://google.github.io/styleguide/cppguide.html#Nonmember,_Static_Member,_and_Global_Functions
+
+So I turned this and FuseAppLoop::Start into global functions. For FuseBridgeLoop, I could not delete the class in this patch because the class is used in the framework code. I'll delete the class after I changed the framework code so that it uses the new global function.
+
+Thank you!
+

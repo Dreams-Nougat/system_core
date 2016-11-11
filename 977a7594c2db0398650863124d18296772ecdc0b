@@ -9,6 +9,14 @@ UUID: ab888773_06b0c8dc
 Bytes: 164
 I've seen multiline preferred for this, when written by ccross. It does ensure smaller deltas when adding things later. (Also note that a trailing comma is allowed)
 
+18:11-18:65
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_06b0c8dc
+UUID: 0b1ef349_e47a1a2b
+Bytes: 4
+Done
+
 File: libappfuse/FuseAppLoop.cc
 
 44:6-44:58
@@ -18,12 +26,28 @@ UUID: ab888773_bac79032
 Bytes: 66
 I don't understand this wrt/ line 35 (and the comment in line 36).
 
+44:6-44:58
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_bac79032
+UUID: 0b1ef349_048016e0
+Bytes: 120
+I simplified the part so that it just checks if the end of filename is 0. Now the behavior is the same with the comment.
+
 60:0-67:46
 Thu Nov 10 02:41:24 2016 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab888773_faf0b878
 Bytes: 151
 Is there some link you could add in a comment or so that describes this layout/data? Maybe in the header of this file? Would help future maintainers...
+
+60:0-67:46
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_faf0b878
+UUID: 0b1ef349_247d1221
+Bytes: 86
+Yes, the layout is a bit confusing... Added comments about the layout to FuseBuffer.h.
 
 File: libappfuse/include/libappfuse/FuseAppLoop.h
 
@@ -33,6 +57,14 @@ Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab888773_da84d4a7
 Bytes: 48
 Do you expect subclasses? If not, mark it final.
+
+24:6-24:19
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_da84d4a7
+UUID: 0b1ef349_448a0e00
+Bytes: 42
+Done for all classes that should be final.
 
 51:2-51:21
 Thu Nov 10 02:41:24 2016 +0000
@@ -45,6 +77,14 @@ Is the FuseBuffer large? Couldn't you just stack-allocate it in the Start() func
 
 That would ensure that you can call Start() in as many threads as you want (could even make everything static). In fact, making the buffer a parameter allows to hide the Handle functions from the header, as they don't have to be members.
 
+51:2-51:21
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_5ad8e4d2
+UUID: 0b1ef349_64870af7
+Bytes: 72
+Done for FuseAppLoop and FuseBridgeLoop which is similar to FuseAppLoop.
+
 File: libappfuse/tests/FuseAppLoopTest.cc
 
 59:43-59:53
@@ -54,6 +94,14 @@ UUID: ab888773_baad503f
 Bytes: 178
 android-base/macros.h has ATTRIBUTE_UNUSED. More verbose, but gives the added guarantee that Clang will fail you if you switch to actually using it (unexpectedly). Your choice...
 
+59:43-59:53
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_baad503f
+UUID: 0b1ef349_a4990257
+Bytes: 4
+Done
+
 File: libappfuse/tests/FuseBridgeLoopTest.cc
 
 109:4-116:5
@@ -62,4 +110,12 @@ Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab888773_5a8a24a7
 Bytes: 19
 Consider unique_fd?
+
+109:4-116:5
+Fri Nov 11 01:36:00 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ab888773_5a8a24a7
+UUID: 0b1ef349_84940620
+Bytes: 4
+Done
 

@@ -1,0 +1,11 @@
+Revision: 4f411270c75c6c7977c36a2e6dabf0b2557a1376
+Patch-set: 6
+File: libappfuse/include/libappfuse/FuseBridgeLoop.h
+
+32:2-32:12
+Fri Nov 11 02:53:36 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_cb20e1ba
+Bytes: 97
+As mentioned, this could be static. Then it's easier in the caller, just FuseBridgeLoop::Start...
+

@@ -9,6 +9,14 @@ UUID: 6b612fbb_74d88105
 Bytes: 32
 kTerminateServiceTime = 50000us?
 
+71
+Sat Nov 12 19:13:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6b612fbb_74d88105
+UUID: 0b97d3c5_547b822f
+Bytes: 54
+only used in a single usleep(3) call. inlined instead.
+
 File: init/readme.txt
 
 444:2-444:44
@@ -18,6 +26,16 @@ UUID: d0464c6b_23f0ca70
 Bytes: 81
 Time in ns that init started, presumably? (also, maybe throw in a "since epoch"?)
 
+444:2-444:44
+Sat Nov 12 19:13:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0464c6b_23f0ca70
+UUID: 0b97d3c5_5494621b
+Bytes: 351
+yeah, added a note to that effect.
+
+i deliberately just referred to the underlying clock rather than specify an epoch because -- despite the name -- the epoch is strictly _un_specified. i've added "after boot" anyway, to make it clear that even if the underlying implementation changes, this is our intention and we'd then come up with some other way.
+
 File: init/service.cpp
 
 746:64-746:80
@@ -26,6 +44,14 @@ Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: d0464c6b_c3069685
 Bytes: 30
 (next_start - now)/1s instead?
+
+746:64-746:80
+Sat Nov 12 19:13:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0464c6b_c3069685
+UUID: 0b97d3c5_74a95e67
+Bytes: 4
+why?
 
 File: init/util.h
 
@@ -39,4 +65,18 @@ Does this actually work? std::chrono::seconds's representation is an integral ty
 http://ideone.com/YBitwa
 
 (now() - start) / 1.0s does the right thing.
+
+55
+Sat Nov 12 19:13:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: eb935fd8_90afd862
+UUID: 0b97d3c5_94a6ea96
+Bytes: 330
+oops; i had this but accidentally in the next change...
+
+-    return std::chrono::duration_cast<std::chrono::seconds>(boot_clock::now() - start_).count();
++    typedef std::chrono::duration<double> double_duration;
++    return std::chrono::duration_cast<double_duration>(boot_clock::now() - start_).count();
+
+will bring that back.
 

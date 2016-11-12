@@ -1,0 +1,152 @@
+Revision: 09ef6393c03e62f89445df9b51b5adca37909a8e
+Patch-set: 21
+File: libandroid_unwind/ArmExidx.cpp
+
+204:6-204:20
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0464c6b_031eeeda
+Bytes: 271
+If we put code calling logging besides code executing unwind instructions, I am worried that it affects the code efficiency. Maybe we can add a separate logging function to dump all the to-be-executed unwind instructions? And we can use VLOG(OP) to make the code cleaner?
+
+File: libandroid_unwind/Dwarf.h
+
+65:23-65:29
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b612fbb_d4c14d42
+Bytes: 11
+cie_offset?
+
+119:37-119:46
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b612fbb_f9c64afe
+Bytes: 67
+This pushes '\0' into std::string, which is at least not necessary.
+
+193:7-193:19
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eb935fd8_8d2d03ad
+Bytes: 7
+GetFDE?
+
+193:29-193:35
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b5ca306_d8818221
+Bytes: 56
+rename offset to something more meaningful, like ip, pc?
+
+196:7-196:16
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b5ca306_d8dd022a
+Bytes: 161
+instead of copying DwarfCIE and DwarfFDE data, can we just pass a const DwarfCIE pointer and a const DwarfFDE pointer? so we can save the time and space copying.
+
+226:8-226:23
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 8b5ca306_7824f676
+Bytes: 153
+maybe we can use some way to show what is the error, use error code, or debug logging? Although I am not comfortable with the debug logging of libunwind.
+
+File: libandroid_unwind/DwarfEhFrame.h
+
+65:21-65:27
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b8e57b3_51c716a2
+Bytes: 45
+make it more clear, like eh_frame_hdr_offset?
+
+89:12-89:25
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cb669bd0_b185c458
+Bytes: 59
+can we hide this inside ReadEncodedValue(), like libunwind?
+
+94:12-94:25
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b773781_43dbc502
+Bytes: 4
+dito
+
+139:23-139:34
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_8dc0a638
+Bytes: 27
+how to ensure current >= 1?
+
+149:23-149:34
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4b7aab69_644e08de
+Bytes: 39
+how to ensure current < fde_count_ - 1?
+
+161:6-161:25
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b773781_033f0dcd
+Bytes: 62
+when will this happen? I can't find similar code in libunwind.
+
+File: libandroid_unwind/DwarfStructs.h
+
+30:7-30:14
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cb669bd0_918e004a
+Bytes: 82
+names used by libunwind seem more clear, which are start_ip_offset and fde_offset.
+
+File: libandroid_unwind/LocalGetRegsX86.S
+
+36:11-36:13
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab6b279a_518b8f6c
+Bytes: 57
+can we use some macro names instead of these raw numbers?
+
+File: libandroid_unwind/Maps.cpp
+
+32:36-32:39
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2b8e57b3_b10e9ae0
+Bytes: 64
+this argument is confusing, it depends whether to use it or not.
+
+47:2-47:7
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cb669bd0_dcfa4f06
+Bytes: 28
+bsearch or std::upper_bound?
+
+65:12-65:16
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cb669bd0_bce67b6c
+Bytes: 63
+I will make this in libprocinfo, it also appears in simpleperf.
+
+File: libandroid_unwind/Regs.h
+
+169:0-169:40
+Sat Nov 12 02:25:31 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ab6b279a_3119bb5b
+Bytes: 163
+If it doesn't has custom behavior, instead of writing the whole class, we can use:
+using Regs32 = RegsTmpl<uint32_t>.
+
+It also applies for ElfInterface32, Dwarf32.
+

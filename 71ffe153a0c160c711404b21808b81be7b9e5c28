@@ -1,0 +1,42 @@
+Revision: 71ffe153a0c160c711404b21808b81be7b9e5c28
+Patch-set: 4
+File: init/builtins.cpp
+
+71
+Sat Nov 12 02:46:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6b612fbb_74d88105
+Bytes: 32
+kTerminateServiceTime = 50000us?
+
+File: init/readme.txt
+
+444:2-444:44
+Sat Nov 12 02:46:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0464c6b_23f0ca70
+Bytes: 81
+Time in ns that init started, presumably? (also, maybe throw in a "since epoch"?)
+
+File: init/service.cpp
+
+746:64-746:80
+Sat Nov 12 02:46:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: d0464c6b_c3069685
+Bytes: 30
+(next_start - now)/1s instead?
+
+File: init/util.h
+
+55
+Sat Nov 12 02:46:23 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: eb935fd8_90afd862
+Bytes: 256
+Does this actually work? std::chrono::seconds's representation is an integral type, so I think this truncates the fractional part and then silently does an integer to double promotion.
+
+http://ideone.com/YBitwa
+
+(now() - start) / 1.0s does the right thing.
+

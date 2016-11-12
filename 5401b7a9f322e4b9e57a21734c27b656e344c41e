@@ -1,0 +1,44 @@
+Revision: 5401b7a9f322e4b9e57a21734c27b656e344c41e
+Patch-set: 1
+File: init/devices.cpp
+
+855
+Sat Nov 12 19:50:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_5469c237
+Bytes: 49
+ccross: is this line a bug and should be removed?
+
+856
+Sat Nov 12 19:50:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_d455d264
+Bytes: 27
+(oops. will remove in ps2.)
+
+869
+Sat Nov 12 19:50:49 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_b458469d
+Bytes: 1610
+there's a huge difference in how long some of these take (0.2s vs 0.001s)...
+
+[    4.036059] ueventd: process_firmware_event for sensor_hub.img took 0.208769s
+[    4.043086] ueventd: process_firmware_event for synaptics.img took 0.107088s
+[    4.047027] ueventd: process_firmware_event for sar0_CY8C.img took 0.203958s
+[    4.049436] ueventd: process_firmware_event for sar1_CY8C.img took 0.203308s
+[    6.929875] ueventd: process_firmware_event for gk20a/gpmu_ucode.bin took 0.00203617s
+[    6.940145] ueventd: process_firmware_event for tegra13x/gpmu_ucode.bin took 0.00596842s
+[    6.950186] ueventd: process_firmware_event for gk20a/NETB_img.bin took 0.00276275s
+[    6.960312] ueventd: process_firmware_event for tegra13x/NETB_img.bin took 0.00530658s
+[    6.968670] ueventd: process_firmware_event for gk20a/fecs.bin took 0.00647925s
+[    6.981622] ueventd: process_firmware_event for tegra13x/fecs.bin took 0.00779108s
+[    6.984656] ueventd: process_firmware_event for gk20a/gpccs.bin took 0.00174917s
+[    6.994490] ueventd: process_firmware_event for tegra13x/gpccs.bin took 0.00484792s
+[    7.296675] ueventd: process_firmware_event for tegra13x/vic03_ucode.bin took 0.00101183s
+[   19.355761] ueventd: process_firmware_event for nvavp_os_8ff00000.bin took 0.00142608s
+[   19.362416] ueventd: process_firmware_event for nvavp_vid_ucode.bin took 0.00202042s
+[   19.364773] ueventd: process_firmware_event for nvavp_vid_ucode_alt.bin took 0.00230783s
+
+luckily they're all done in separate children that we don't wait for, so i don't think it matters. remove this logging (which is new in this change)?
+

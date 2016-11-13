@@ -9,6 +9,14 @@ UUID: 0b97d3c5_5469c237
 Bytes: 49
 ccross: is this line a bug and should be removed?
 
+855
+Sun Nov 13 19:34:19 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b97d3c5_5469c237
+UUID: 0b97d3c5_b731284f
+Bytes: 126
+No, this is necessary to tell the kernel that the firmware is not coming so it can fail the driver's call to request_firmware.
+
 856
 Sat Nov 12 19:50:49 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -41,4 +49,14 @@ there's a huge difference in how long some of these take (0.2s vs 0.001s)...
 [   19.364773] ueventd: process_firmware_event for nvavp_vid_ucode_alt.bin took 0.00230783s
 
 luckily they're all done in separate children that we don't wait for, so i don't think it matters. remove this logging (which is new in this change)?
+
+869
+Sun Nov 13 19:34:19 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b97d3c5_b458469d
+UUID: 0b97d3c5_d72eb4ec
+Bytes: 215
+The size of these files can vary dramatically. How big are the files for the longest uploads (sar0_CY8C.img)?
+
+The logging looks useful, although I might drop the time, and add the name of the device it was sent to?
 

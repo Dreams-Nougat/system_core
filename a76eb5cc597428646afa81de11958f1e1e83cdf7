@@ -1,0 +1,11 @@
+Revision: a76eb5cc597428646afa81de11958f1e1e83cdf7
+Patch-set: 2
+File: init/devices.cpp
+
+854
+Sun Nov 13 19:43:01 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 0b97d3c5_17a9fc32
+Bytes: 90
+Remove this TODO, maybe comment that the -1 is to error the firmware request in the kernel
+

@@ -17,6 +17,14 @@ UUID: 0b97d3c5_b731284f
 Bytes: 126
 No, this is necessary to tell the kernel that the firmware is not coming so it can fail the driver's call to request_firmware.
 
+855
+Mon Nov 14 17:25:05 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b97d3c5_b731284f
+UUID: 0b97d3c5_dd44156b
+Bytes: 88
+so just opening the file starts the process then? not the write of "1" in load_firmware?
+
 856
 Sat Nov 12 19:50:49 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

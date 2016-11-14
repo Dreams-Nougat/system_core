@@ -25,6 +25,14 @@ UUID: 0b97d3c5_dd44156b
 Bytes: 88
 so just opening the file starts the process then? not the write of "1" in load_firmware?
 
+855
+Mon Nov 14 19:00:12 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b97d3c5_dd44156b
+UUID: 0b97d3c5_c8de154f
+Bytes: 379
+No, a kernel driver calling request_firmware() starts it, then the kernel sends a uevent to ueventd, and the driver sits there waiting until it gets a response.  There probably isn't even a timeout - sometimes drivers have to wait a long time (for system to be mounted) before they can get a response.  If ueventd isn't going to respond with a firmware it should always write -1.
+
 856
 Sat Nov 12 19:50:49 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

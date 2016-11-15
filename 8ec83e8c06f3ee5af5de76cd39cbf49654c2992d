@@ -1,0 +1,11 @@
+Revision: 8ec83e8c06f3ee5af5de76cd39cbf49654c2992d
+Patch-set: 8
+File: libappfuse/Android.bp
+
+32:32-32:33
+Tue Nov 15 00:18:27 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_59de332f
+Bytes: 14
+Trailing comma
+

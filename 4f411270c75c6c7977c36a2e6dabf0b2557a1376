@@ -30,3 +30,11 @@ UUID: 10ad446a_59acf386
 Bytes: 153
 If you're going with Google C++ style, then you should also heed the other advice and not pollute namespaces. How about adding a nested "fuse" namespace?
 
+32:2-32:12
+Tue Nov 15 00:50:20 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_59acf386
+UUID: 0b1ef349_0d375944
+Bytes: 4
+Done
+

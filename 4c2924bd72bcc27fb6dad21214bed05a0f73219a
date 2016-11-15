@@ -1,0 +1,11 @@
+Revision: 4c2924bd72bcc27fb6dad21214bed05a0f73219a
+Patch-set: 4
+File: libappfuse/include/libappfuse/FuseBuffer.h
+
+21:0-21:22
+Tue Nov 15 01:16:23 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_7fcf4f17
+Bytes: 19
+Move this one, too?
+

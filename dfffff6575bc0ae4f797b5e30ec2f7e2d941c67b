@@ -1,0 +1,11 @@
+Revision: dfffff6575bc0ae4f797b5e30ec2f7e2d941c67b
+Patch-set: 3
+File: libappfuse/include/libappfuse/FuseBuffer.h
+
+96:0-98:49
+Tue Nov 15 01:10:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_bf9ce746
+Bytes: 71
+Move to .cc file. That way it gets evaluated only once when building...
+

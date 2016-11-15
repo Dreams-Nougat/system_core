@@ -1,0 +1,11 @@
+Revision: f219028bbc2d4bc949fafa78735e796872bee65b
+Patch-set: 3
+File: init/ueventd.cpp
+
+149
+Tue Nov 15 23:48:49 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_1cde5bca
+Bytes: 103
+we should improve this error message. This isn't helpful as-is. Include name, attr, perm, uid, etc... ?
+

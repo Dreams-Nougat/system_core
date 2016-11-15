@@ -1,0 +1,59 @@
+Revision: c3df986aee4758bf89bc9ff7c46d932bb2444fe1
+Patch-set: 4
+File: init/builtins.cpp
+
+905:11-905:24
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_3ced5746
+Bytes: 228
+wouldn't this make more sense the other way round? so do_restorecon_recursive is
+
+  {
+    args.insert(std::next(args.begin()), "--recursive");
+    return do_restorecon(args);
+  }
+
+and `restorecon` is the general-purpose routine?
+
+920:12-920:18
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_7cc98f0e
+Bytes: 8
+skip-ce?
+
+928:12-928:50
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_3cdb17da
+Bytes: 40
+android::base::StartsWith(args[i], "--")
+
+931:20-931:63
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_dc6e8319
+Bytes: 26
+(args[i] == flags[j].name)
+
+941:0-943:9
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_5c1ff387
+Bytes: 175
+you actually want
+
+  restorecon_recursive /fs1 --flag /fs2
+
+to use different flags for /fs1 and /fs2? doesn't it seem likely folks will only ever actually do that by accident?
+
+File: init/util.cpp
+
+377:4-377:24
+Tue Nov 15 23:56:17 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_3c2c77a9
+Bytes: 37
+looks like we can collapse these too.
+

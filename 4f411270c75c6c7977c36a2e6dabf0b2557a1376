@@ -22,3 +22,11 @@ So I turned this and FuseAppLoop::Start into global functions. For FuseBridgeLoo
 
 Thank you!
 
+32:2-32:12
+Tue Nov 15 00:18:27 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 0b1ef349_24027271
+UUID: 10ad446a_59acf386
+Bytes: 153
+If you're going with Google C++ style, then you should also heed the other advice and not pollute namespaces. How about adding a nested "fuse" namespace?
+

@@ -1,0 +1,43 @@
+Revision: d7d6feb7dc58fdb05c22d7929dbca00024c14c42
+Patch-set: 1
+File: /COMMIT_MSG
+
+9:41-9:47
+Tue Nov 15 17:16:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_c2b6a3ba
+Bytes: 4
+typo
+
+9:72-9:76
+Tue Nov 15 17:16:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_e2b39fc7
+Bytes: 30
+Commit message lines too long.
+
+File: libappfuse/FuseAppLoop.cc
+
+217:2-217:41
+Tue Nov 15 17:16:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_42dab308
+Bytes: 59
+Is this really necessary? hackbod hates (expected) logging.
+
+File: libappfuse/FuseBridgeLoop.cc
+
+29:2-29:5
+Tue Nov 15 17:16:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_02d4bbd6
+Bytes: 6
+size_t
+
+85:8-86:30
+Tue Nov 15 17:16:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_22d1b7e6
+Bytes: 36
+Protect against RELEASE before OPEN?
+

@@ -9,12 +9,28 @@ UUID: 10ad446a_273c69d6
 Bytes: 47
 for command "x", the function should be "do_x".
 
+916:11-916:41
+Tue Nov 15 22:58:47 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_273c69d6
+UUID: 10ad446a_f93831ff
+Bytes: 4
+Done
+
 921
 Tue Nov 15 16:43:50 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_47416555
 Bytes: 12
 C++ comments
+
+921
+Tue Nov 15 22:58:47 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_47416555
+UUID: 10ad446a_99157d6a
+Bytes: 4
+Done
 
 922:40-922:51
 Tue Nov 15 16:43:50 2016 +0000
@@ -30,6 +46,14 @@ this would all probably be easier to read as just
 ?
 
 i'm not sure the iterators are helping here.
+
+922:40-922:51
+Tue Nov 15 22:58:47 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_876e7ddd
+UUID: 10ad446a_591f0588
+Bytes: 4
+Done
 
 File: init/util.cpp
 
@@ -47,4 +71,20 @@ Parent: 10ad446a_679021a0
 UUID: 10ad446a_87e3ddec
 Bytes: 227
 With this we'll already have 3 variations of restorecon, so combining them would be my preference.  We might one day want to have one that follows symlinks. This would mean updating all of the consuming rc files, though.  +nnk@
+
+404
+Tue Nov 15 22:58:47 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_87e3ddec
+UUID: 10ad446a_59f62520
+Bytes: 276
+Done sort of. I've not replaced restorecon_recursive with restorecon --recursive since there are many uses of restorecon_recursive (38 in Google internal, many more in OEM repositories I suspect), but I've added flags to restorecon_recursive so we can keep it at two commands.
+
+404
+Tue Nov 15 22:58:47 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_679021a0
+UUID: 10ad446a_19098d4e
+Bytes: 4
+Done
 

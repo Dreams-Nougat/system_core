@@ -1,0 +1,15 @@
+Revision: 13427bf404d94f05c67755d41ce9b669e5095e7e
+Patch-set: 2
+File: init/ueventd.cpp
+
+150
+Tue Nov 15 23:40:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_dc2c430b
+Bytes: 91
+this can be rewritten as just
+
+  PLOG(ERROR) << "add_dev_perms";
+
+('P'LOG as in perror(3).)
+

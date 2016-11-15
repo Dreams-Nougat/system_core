@@ -1,0 +1,42 @@
+Revision: 76955b405462dc5805afb29646ff8f346c74f53a
+Patch-set: 1
+File: init/builtins.cpp
+
+916:11-916:41
+Tue Nov 15 16:43:50 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_273c69d6
+Bytes: 47
+for command "x", the function should be "do_x".
+
+921
+Tue Nov 15 16:43:50 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_47416555
+Bytes: 12
+C++ comments
+
+922:40-922:51
+Tue Nov 15 16:43:50 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_876e7ddd
+Bytes: 166
+this would all probably be easier to read as just
+
+  for (size_t i = 1; i < args.size(); ++i) {
+    ...args[i]...
+  }
+
+?
+
+i'm not sure the iterators are helping here.
+
+File: init/util.cpp
+
+404
+Tue Nov 15 16:43:50 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_679021a0
+Bytes: 157
+are there other flags we're likely to expose later? i.e. "should we be adding a switch to `restorecon_recursive` rather than adding a separate new command?".
+

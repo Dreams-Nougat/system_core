@@ -1,0 +1,11 @@
+Revision: 519b4e3e264da07a9605af4e684f1f4e8ede4aaa
+Patch-set: 1
+File: init/action.cpp
+
+252
+Tue Nov 15 16:49:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_27a0e9d6
+Bytes: 24
+don't you mean !empty()?
+

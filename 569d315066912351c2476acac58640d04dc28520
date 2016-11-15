@@ -24,6 +24,14 @@ yeah, LOG(FATAL) might be the easiest choice here, and lose all the free(3)s. th
 
 (i notice the calling code has code to carefully free `tmp` despite never assigning anything but 0 to it... what a mess.)
 
+103
+Tue Nov 15 23:37:23 2016 +0000
+Author: Ting-Yuan Huang <1077838@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4bd62b38_39af4bcc
+UUID: 10ad446a_9c0faba7
+Bytes: 79
+Fixed by the way. Let me know if you would like this to be in a separate patch.
+
 120
 Wed Nov 09 02:43:23 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -34,4 +42,12 @@ If the allocation on line 111 succeeds, but the allocation on 118 fails, "node" 
   free(node->dp.name);
 
 immediately before this line.
+
+120
+Tue Nov 15 23:37:23 2016 +0000
+Author: Ting-Yuan Huang <1077838@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6bbdafe5_fa07858b
+UUID: 10ad446a_5cda9308
+Bytes: 5
+Done.
 

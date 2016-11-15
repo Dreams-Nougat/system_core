@@ -40,3 +40,11 @@ UUID: 10ad446a_679021a0
 Bytes: 157
 are there other flags we're likely to expose later? i.e. "should we be adding a switch to `restorecon_recursive` rather than adding a separate new command?".
 
+404
+Tue Nov 15 17:05:48 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_679021a0
+UUID: 10ad446a_87e3ddec
+Bytes: 227
+With this we'll already have 3 variations of restorecon, so combining them would be my preference.  We might one day want to have one that follows symlinks. This would mean updating all of the consuming rc files, though.  +nnk@
+

@@ -1,0 +1,36 @@
+Revision: 538bc12c0807ceb850749b8803546b058e049146
+Patch-set: 1
+File: liblog/logprint.c
+
+1058:0-1058:35
+Wed Nov 16 23:51:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_9de5571f
+Bytes: 106
+strictly not necessary, but we must do for return code parity with legacy behavior, until we can evaluate.
+
+1082:0-1082:18
+Wed Nov 16 23:51:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_3de22315
+Bytes: 93
+missed in the logprint patch to permit events to contain no content ... this fixes the gTest.
+
+File: liblog/tests/liblog_test.cpp
+
+331:0-333:13
+Wed Nov 16 23:51:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_fd532bfa
+Bytes: 24
+truth in advertising ...
+
+File: logcat/logcat.cpp
+
+192:5-192:32
+Wed Nov 16 23:51:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_dd62efbe
+Bytes: 72
+Thus allows us to see corrupted log content, otherwise we suppress them.
+

@@ -176,6 +176,14 @@ UUID: 8bd3c31c_0f2ed1ed
 Bytes: 10
 O_CLOEXEC?
 
+79
+Wed Nov 16 22:11:32 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_0f2ed1ed
+UUID: 10ad446a_4f1c052e
+Bytes: 16
+Done (and below)
+
 89
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -198,6 +206,14 @@ Parent: 8bd3c31c_7ac8f941
 UUID: 8bd3c31c_b5da92fc
 Bytes: 38
 Then the name is a bit misleading, no?
+
+89
+Wed Nov 16 22:11:32 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_b5da92fc
+UUID: 10ad446a_cf6235bf
+Bytes: 136
+The dumps *are* concurrent in separate processes, we just handle the output from them serially. Can you think of a better name for this?
 
 165
 Tue Nov 08 00:47:45 2016 +0000

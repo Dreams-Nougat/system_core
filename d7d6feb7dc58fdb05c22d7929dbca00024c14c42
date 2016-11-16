@@ -16,6 +16,22 @@ UUID: 10ad446a_e2b39fc7
 Bytes: 30
 Commit message lines too long.
 
+9:72-9:76
+Wed Nov 16 07:54:56 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_e2b39fc7
+UUID: b0ff186b_f5c072e9
+Bytes: 4
+Done
+
+9:41-9:47
+Wed Nov 16 07:54:56 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_c2b6a3ba
+UUID: b0ff186b_95b3e69a
+Bytes: 4
+Done
+
 File: libappfuse/FuseAppLoop.cc
 
 217:2-217:41
@@ -24,6 +40,14 @@ Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_42dab308
 Bytes: 59
 Is this really necessary? hackbod hates (expected) logging.
+
+217:2-217:41
+Wed Nov 16 07:54:56 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_42dab308
+UUID: b0ff186b_d5bd6e67
+Bytes: 20
+OK, removed the log.
 
 File: libappfuse/FuseBridgeLoop.cc
 
@@ -34,10 +58,26 @@ UUID: 10ad446a_02d4bbd6
 Bytes: 6
 size_t
 
+29:2-29:5
+Wed Nov 16 07:54:56 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_02d4bbd6
+UUID: b0ff186b_35cafa07
+Bytes: 4
+Done
+
 85:8-86:30
 Tue Nov 15 17:16:30 2016 +0000
 Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_22d1b7e6
 Bytes: 36
 Protect against RELEASE before OPEN?
+
+85:8-86:30
+Wed Nov 16 07:54:56 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_22d1b7e6
+UUID: b0ff186b_15cff617
+Bytes: 4
+Done
 

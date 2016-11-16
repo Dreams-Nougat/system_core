@@ -1,0 +1,11 @@
+Revision: b1ee0bfdf62a893aff5228263946c153ac1788f7
+Patch-set: 1
+File: toolbox/getevent.c
+
+112
+Wed Nov 16 00:45:34 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_87de742c
+Bytes: 59
+i think just calling err(3) probably makes more sense here.
+

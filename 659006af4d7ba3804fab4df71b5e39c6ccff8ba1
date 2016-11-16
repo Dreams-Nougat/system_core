@@ -42,6 +42,20 @@ shell@angler:/ $ ulimit -n
 shell@angler:/ $ ulimit -nH
 4096
 
+172
+Wed Nov 16 21:56:02 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 2bc73767_260e56e3
+UUID: 10ad446a_8fd0bd5b
+Bytes: 745
+Handling this "properly" in all cases is pretty painful (and maybe impossible?)
+Things that are annoying:
+  We can't use opendir because we can't use malloc, so we're stuck using getdents directly.
+  If we're out of file descriptors, we can't even do that, because we can't get a directory fd (and chdir + AT_FDCWD doesn't work with getdents).
+  The hard limit can be lowered, so we might not be able to rely on being able to raise it, or being able to loop to it.
+
+This is intended to be able to report crashes for apps that run out of file descriptors (because of a leak or whatever), not to be safe against someone screwing with us. If we fail here, the worst thing that can happen should be that the process mysteriously dies with no output.
+
 198
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -72,6 +86,16 @@ UUID: 8bd3c31c_cf2ce9b1
 Bytes: 158
 This needs to be done in a loop, checking for the exit status.  For example, a SIGSTOP sent to the child should still cause this wait to exit.  See WIFEXITED.
 
+227
+Wed Nov 16 21:56:02 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_cf2ce9b1
+UUID: 0b97d3c5_f74737ba
+Bytes: 100
+Replaced with TEMP_FAILURE_RETRY(waitid(P_PID, forkpid, &foo, WEXITED)
+
+(the WNOHANG was also a bug)
+
 271
 Tue Nov 08 00:47:45 2016 +0000
 Author: Zach Riggle <1059554@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -94,6 +118,14 @@ Parent: 8bd3c31c_ba7fe119
 UUID: 8bd3c31c_f5897a0a
 Bytes: 129
 It's probably worthwhile to add a line comment that just calls out "this is basically pthread_create without CLONE_FILES and XYZ"
+
+271
+Wed Nov 16 21:56:02 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_f5897a0a
+UUID: ab888773_c57aba2b
+Bytes: 4
+Done
 
 341
 Tue Nov 08 00:47:45 2016 +0000
@@ -126,6 +158,14 @@ Parent: 8bd3c31c_9a94dd1d
 UUID: 8bd3c31c_f5a25a82
 Bytes: 230
 0xABCDE000 is sufficiently aligned as 0xABCDE010.  There shouldn't be a need to skip over 16 bytes, unless there's code that does something silly like dereferencing sp.  Stack frame allocation usually decrements SP before storing.
+
+346
+Wed Nov 16 21:56:02 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 8bd3c31c_f5a25a82
+UUID: 8bd3c31c_b504527e
+Bytes: 180
+The manpage says that child_stack should point to "the topmost address of the memory space", and I misinterpreted that to mean to the greatest address that was in the range. Fixed.
 
 File: debuggerd/tombstoned/tombstoned.cpp
 

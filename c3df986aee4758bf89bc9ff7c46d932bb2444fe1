@@ -16,12 +16,28 @@ wouldn't this make more sense the other way round? so do_restorecon_recursive is
 
 and `restorecon` is the general-purpose routine?
 
+905:11-905:24
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_3ced5746
+UUID: 10ad446a_729213e8
+Bytes: 4
+Done
+
 920:12-920:18
 Tue Nov 15 23:56:17 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_7cc98f0e
 Bytes: 8
 skip-ce?
+
+920:12-920:18
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_7cc98f0e
+UUID: 10ad446a_92978fd5
+Bytes: 4
+Done
 
 928:12-928:50
 Tue Nov 15 23:56:17 2016 +0000
@@ -30,12 +46,28 @@ UUID: 10ad446a_3cdb17da
 Bytes: 40
 android::base::StartsWith(args[i], "--")
 
+928:12-928:50
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_3cdb17da
+UUID: 10ad446a_328c9bc6
+Bytes: 4
+Done
+
 931:20-931:63
 Tue Nov 15 23:56:17 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_dc6e8319
 Bytes: 26
 (args[i] == flags[j].name)
+
+931:20-931:63
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_dc6e8319
+UUID: 10ad446a_d24c27bc
+Bytes: 4
+Done
 
 941:0-943:9
 Tue Nov 15 23:56:17 2016 +0000
@@ -48,6 +80,14 @@ you actually want
 
 to use different flags for /fs1 and /fs2? doesn't it seem likely folks will only ever actually do that by accident?
 
+941:0-943:9
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_5c1ff387
+UUID: 10ad446a_7251b350
+Bytes: 4
+Done
+
 File: init/util.cpp
 
 377:4-377:24
@@ -56,4 +96,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 10ad446a_3c2c77a9
 Bytes: 37
 looks like we can collapse these too.
+
+377:4-377:24
+Wed Nov 16 20:15:15 2016 +0000
+Author: Paul Lawrence <1044551@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_3c2c77a9
+UUID: 10ad446a_52fef7bd
+Bytes: 124
+I'm thinking you meant remove restorecon_recursive and use restorecon with the SELINUX_RESTORECON_RECURSE flag. If so, done.
 

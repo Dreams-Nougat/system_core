@@ -1,0 +1,11 @@
+Revision: 1a57ae3a7d2e33531ce26fa2d2fefaae679b6eeb
+Patch-set: 1
+File: liblog/logprint.c
+
+1081:11-1081:12
+Wed Nov 16 22:35:30 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_323c92f2
+Bytes: 41
+we need to re-evaluate the error code ...
+

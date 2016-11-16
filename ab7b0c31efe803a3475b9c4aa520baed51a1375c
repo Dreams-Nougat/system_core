@@ -1,0 +1,11 @@
+Revision: ab7b0c31efe803a3475b9c4aa520baed51a1375c
+Patch-set: 3
+File: libappfuse/FuseBridgeLoop.cc
+
+85:8-87:9
+Wed Nov 16 16:57:30 2016 +0000
+Author: Andreas Gampe <1041833@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_f22cc30a
+Bytes: 59
+You could print a warning in the else case, if you want to.
+

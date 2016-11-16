@@ -9,3 +9,11 @@ UUID: 10ad446a_87de742c
 Bytes: 59
 i think just calling err(3) probably makes more sense here.
 
+112
+Wed Nov 16 00:52:46 2016 +0000
+Author: Ting-Yuan Huang <1077838@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 10ad446a_87de742c
+UUID: 10ad446a_e7964835
+Bytes: 50
+You mean just print an error and exit the process?
+

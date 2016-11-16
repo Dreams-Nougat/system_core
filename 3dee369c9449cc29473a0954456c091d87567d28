@@ -1,0 +1,11 @@
+Revision: 3dee369c9449cc29473a0954456c091d87567d28
+Patch-set: 5
+File: init/ueventd.cpp
+
+150
+Wed Nov 16 00:40:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10ad446a_27e5401d
+Bytes: 57
+no, this will make everything after it come out in octal!
+

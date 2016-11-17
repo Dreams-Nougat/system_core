@@ -9,3 +9,11 @@ UUID: 50b17cf0_46b19cdd
 Bytes: 82
 that's not really true, though, is it? these ranges are hard-coded in the scripts?
 
+36:3-38:28
+Thu Nov 17 22:57:26 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50b17cf0_46b19cdd
+UUID: 50b17cf0_912a0c8f
+Bytes: 103
+This is true, we dropped those hardcodes along the way once Mark suggested we start scraping this file.
+

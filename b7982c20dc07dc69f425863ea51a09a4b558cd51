@@ -1,0 +1,11 @@
+Revision: b7982c20dc07dc69f425863ea51a09a4b558cd51
+Patch-set: 10
+File: include/private/android_filesystem_config.h
+
+36:3-38:28
+Thu Nov 17 22:24:51 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50b17cf0_46b19cdd
+Bytes: 82
+that's not really true, though, is it? these ranges are hard-coded in the scripts?
+

@@ -9,6 +9,14 @@ UUID: d0464c6b_031eeeda
 Bytes: 271
 If we put code calling logging besides code executing unwind instructions, I am worried that it affects the code efficiency. Maybe we can add a separate logging function to dump all the to-be-executed unwind instructions? And we can use VLOG(OP) to make the code cleaner?
 
+204:6-204:20
+Fri Nov 18 23:39:37 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: d0464c6b_031eeeda
+UUID: 700680a0_37b762b8
+Bytes: 41
+This code is not nearly ready for review.
+
 File: libandroid_unwind/Dwarf.h
 
 65:23-65:29

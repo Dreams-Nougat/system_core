@@ -27,3 +27,11 @@ ctx.write(); // send composed event log content;
 
 (ctx.close merely releases the resources, going out of context or delete will do this job too).
 
+2654:4-2655:62
+Fri Nov 18 21:16:08 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 700680a0_ee469b99
+UUID: 700680a0_6e562b22
+Bytes: 353
+me? i'd avoid operator<< for binary stuff since it tends to cause C string confusion and integer promotion confusion. the overloading is a good thing for the human-readable logging, but scares me for actual binary logging. so -- without having ever seen an actual caller, and being put on the spot like this -- i think i'd have explicit methods instead.
+

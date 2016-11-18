@@ -31,6 +31,31 @@ The options are:
 
 NB: there will be exactly _one_ internal user of this API. I can not imagine more, but imagination should not stifle planning.
 
+966
+Fri Nov 18 18:05:32 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50b17cf0_b9f1b2b5
+UUID: 50b17cf0_8f5d8009
+Bytes: 1450
+> This #ifdef is to prevent the definition of this method if one does not include the private API
+
+like i said, i don't understand why you have three completely different things all in one file:
+
+1. NDK API: available to all *apps* for all time. not even minor ABI changes allowed.
+
+2. platform API: available to the platform. even source-incompatible changes allowed, though you'll have to work to keep blobs working etc.
+
+3. internal API: stuff that not even OEMs should be messing with (and if they do, it's basically the same as changing logd itself).
+
+at the moment, because you only have one file, you're basically lumping everything into 1. which doesn't seem good for anyone.
+
+(you're also making it harder for folks *reading* the headers to know what's what. even folks trying to be good are likely to be confused, and since there's no *enforcement* of the distinction between 2 and 3 above [and even 1's enforcement is circumventable], you're asking for a free-for-all.)
+
+
+i think you want [at least] three distinct files, and you should ask yourself which file each specific thing belongs in. (and typically the answer for any *class* is "a file of its own", but even just having the clear NDK/platform/internal distinction would be a step forward.)
+
+the problem with the old headers wasn't that we had multiple files: it was that there was no logic behind what was in what file. (plus there were two *different* files for the "NDK" role.)
+
 File: liblog/log_event_list.c
 
 355:10-355:14

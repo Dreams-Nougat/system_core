@@ -9,3 +9,21 @@ UUID: 700680a0_4ed127e6
 Bytes: 10
 nit: ooops
 
+File: liblog/tests/liblog_test.cpp
+
+2654:4-2655:62
+Fri Nov 18 21:02:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700680a0_ee469b99
+Bytes: 498
+We could rewrite this if necessary. How would you make the base class work for android-base/logging.h?
+
+android_log_event_context ctx(1005); // instantiation with  tag
+ctx.begin(); // [ open brace for array
+ctx << binary stuff << binary stuff ...; // create content
+ctx << more binary stuff; // create more content
+ctx.end(); // ] close brace for array
+ctx.write(); // send composed event log content;
+
+(ctx.close merely releases the resources, going out of context or delete will do this job too).
+

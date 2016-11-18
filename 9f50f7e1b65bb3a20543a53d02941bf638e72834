@@ -1,0 +1,11 @@
+Revision: 9f50f7e1b65bb3a20543a53d02941bf638e72834
+Patch-set: 3
+File: include/private/android_logger.h
+
+174:0-174:57
+Fri Nov 18 20:40:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700680a0_4ed127e6
+Bytes: 10
+nit: ooops
+

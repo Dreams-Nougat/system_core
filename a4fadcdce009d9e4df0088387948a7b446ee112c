@@ -11,3 +11,12 @@ Bytes: 182
 
 (why is all this stuff even in <log/log.h> anyway? seems like there's way too much in here with no distinction between app API, platform API, and internal implementation details.)
 
+File: liblog/log_event_list.c
+
+355:10-355:14
+Fri Nov 18 02:32:03 2016 +0000
+Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50b17cf0_e3053d32
+Bytes: 5
+oops?
+

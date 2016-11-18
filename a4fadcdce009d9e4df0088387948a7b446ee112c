@@ -1,0 +1,13 @@
+Revision: a4fadcdce009d9e4df0088387948a7b446ee112c
+Patch-set: 2
+File: include/log/log.h
+
+966
+Fri Nov 18 02:10:43 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50b17cf0_43150967
+Bytes: 182
+!
+
+(why is all this stuff even in <log/log.h> anyway? seems like there's way too much in here with no distinction between app API, platform API, and internal implementation details.)
+

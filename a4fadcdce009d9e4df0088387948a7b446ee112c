@@ -11,6 +11,26 @@ Bytes: 182
 
 (why is all this stuff even in <log/log.h> anyway? seems like there's way too much in here with no distinction between app API, platform API, and internal implementation details.)
 
+966
+Fri Nov 18 15:54:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50b17cf0_43150967
+UUID: 50b17cf0_b9f1b2b5
+Bytes: 1206
+I am glad you broached this question. I have had troubles engaging anyone on how to architect this.
+
+This #ifdef is to prevent the definition of this method if one does not include the private API. This file is being cultivate/curated to be _the_ Vendor API.
+
+If a class can completely be defined inline, it can be used by a vendor. If I implement that class details in a library, we can not allow a vendor to use it because its shape carries the risk of changing from release to release. (I should add a comment at the top of the class to 'spain that goal)
+
+The options are:
+
+- two classes, one with, and one without. The one with in private Is-A of the one without defined here. (Google coding standard asks that we stay away from Is-A and implement Has-A instead which will be exceedingly noisy)
+- Make this a public API. (However, I do not feel comfortable making android_log_write_list_buffer vendor public)
+- forgo adding this to the class, leave the android_log_write_list_buffer private, native, and C. (works too, class operator to return android_log_context reference)
+
+NB: there will be exactly _one_ internal user of this API. I can not imagine more, but imagination should not stifle planning.
+
 File: liblog/log_event_list.c
 
 355:10-355:14
@@ -19,4 +39,44 @@ Author: Chenbo Feng <1121354@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 50b17cf0_e3053d32
 Bytes: 5
 oops?
+
+355:10-355:14
+Fri Nov 18 15:54:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 50b17cf0_e3053d32
+UUID: 50b17cf0_39c5a24e
+Bytes: 333
+Good catch! I leave it as an exercise to the reader to determine the nature of this.
+
+On purpose, hoping it would never get caught, and never be ascribed nefarious. It is my signature. :-) there has to be at least one booger joke in our code base, or we appear too serious.
+
+Or a freudian slip?
+
+Either way, caught, means it goes ...
+
+File: liblog/tests/liblog_test.cpp
+
+2654:4-2654:29
+Fri Nov 18 15:54:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50b17cf0_39acc286
+Bytes: 79
+... or android_log_event_context_private, an Is-A of android_log_event_context?
+
+2655:23-2655:80
+Fri Nov 18 15:54:54 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 50b17cf0_59b176dd
+Bytes: 450
+Discussion with enh@ could change this piece of implied conversion to std::string into something a bit more complicated? This fragment is to like a code example, shows us the minimum.
+
+Not in class:
+
+ctx << 1005 << "tag_def" << "(tag|1),(name|3),(format|3)";
+const char* data = NULL;
+size_t length = 0;
+android_log_write_list_buffer(ctx, &data, &length);
+EXPECT_TRUE(data != NULL);
+. . .
+EXPECT_EQ(android_log_buffer_to_string(data, length, msgbuf...
 

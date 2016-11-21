@@ -1,0 +1,20 @@
+Revision: c20d12b405f217c114fc2ae3fd0f17aea62210b0
+Patch-set: 18
+File: debuggerd/libdebuggerd/tombstone.cpp
+
+575:48-575:66
+Mon Nov 21 19:22:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700680a0_b9b10097
+Bytes: 67
+Changing this in https://android-review.googlesource.com/#/c/306049
+
+627:2-629:37
+Mon Nov 21 19:22:40 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 700680a0_99387c32
+Bytes: 127
+Why go back to open coding this trio?
+
+__android_log_is_debuggable() takes only 22ns to resolve an answer after the first call.
+

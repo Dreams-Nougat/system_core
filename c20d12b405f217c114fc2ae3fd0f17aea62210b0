@@ -18,3 +18,11 @@ Why go back to open coding this trio?
 
 __android_log_is_debuggable() takes only 22ns to resolve an answer after the first call.
 
+627:2-629:37
+Mon Nov 21 19:45:44 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 700680a0_99387c32
+UUID: 700680a0_79538830
+Bytes: 92
+Bad merge resolution during a rebase, probably. I'll do a pass looking for similar screwups.
+

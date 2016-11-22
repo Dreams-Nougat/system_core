@@ -1,0 +1,25 @@
+Revision: 9d16e4d019b798b61be1ebbe9674ca2632c61361
+Patch-set: 5
+File: init/bootchart.cpp
+
+179:10-179:15
+Tue Nov 22 10:20:29 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10d8e46b_503f92e8
+Bytes: 35
+does this need TEMP_FAILURE_RETRY ?
+
+180:4-180:19
+Tue Nov 22 10:20:29 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10d8e46b_303c06f2
+Bytes: 36
+do we need error checking for acct ?
+
+194:4-194:13
+Tue Nov 22 10:20:29 2016 +0000
+Author: Narayan Kamath <1014443@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 10d8e46b_70428e7c
+Bytes: 13
+stray paste ?
+

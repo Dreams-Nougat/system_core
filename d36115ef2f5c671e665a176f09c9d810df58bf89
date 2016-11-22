@@ -1,0 +1,13 @@
+Revision: d36115ef2f5c671e665a176f09c9d810df58bf89
+Patch-set: 3
+File: init/init.cpp
+
+181
+Tue Nov 22 21:37:56 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102f0424_5b845b5d
+Bytes: 370
+If, for whatever reason, coldboot fails while booting in normal mode, I can't imagine it's going to do much better in recovery mode. None of the code which is executed here differs between a normal and recovery boot.
+
+Perhaps instead of rebooting into recovery, we should just to a shutdown / power off? That way, we preserve the user's battery and avoid thermal issues.
+

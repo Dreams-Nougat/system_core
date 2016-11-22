@@ -1,0 +1,16 @@
+Revision: 3b0c0c9138a996084ac3f338dfcaedbbbe880d5b
+Patch-set: 2
+File: toolbox/getevent.c
+
+114
+Tue Nov 22 23:20:43 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102f0424_7e06e53e
+Bytes: 270
+OOPS:
+
+system/core/toolbox/getevent.c:114:17: error: implicit declaration of function 'err' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+                err(1, "failed to allocate buffer of size %d\n", (int)bits_size);
+                ^
+1 error generated.
+

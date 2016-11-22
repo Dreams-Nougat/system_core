@@ -15,3 +15,11 @@ Like we do in init/builtins.cpp, I would recommend adding the following line aft
 
 to handle this particular case and make sure the boot doesn't continue.
 
+181
+Tue Nov 22 21:25:53 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_fb13e7d1
+UUID: 10d8e46b_d0b022dd
+Bytes: 128
+Oh I see. I had been wondering why the never reached code is there. It makes more sense now. The comment is slightly misleading.
+

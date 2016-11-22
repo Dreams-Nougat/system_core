@@ -1,0 +1,23 @@
+Revision: 6152d40c032b0e441e5f01945154ed104623a974
+Patch-set: 1
+File: init/init.cpp
+
+185:17-185:40
+Tue Nov 22 18:50:45 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102f0424_35be5063
+Bytes: 44
+How about "ro.bootstats.cold_boot_duration"?
+
+185:62-185:72
+Tue Nov 22 18:50:45 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102f0424_35d5f0a0
+Bytes: 521
+system/core/init/init.cpp:186:71: error: called object type 'double' is not a function or function pointer
+    property_set("ro.cold_boot.duration", StringPrintf("%fs", duration()).c_str());
+                                                              ~~~~~~~~^
+system/core/init/init.cpp:187:70: error: called object type 'double' is not a function or function pointer
+    LOG(VERBOSE) << "Waiting for " COLDBOOT_DONE " took " << duration() << "s.";
+                                                             ~~~~~~~~^
+

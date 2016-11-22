@@ -21,3 +21,19 @@ system/core/init/init.cpp:187:70: error: called object type 'double' is not a fu
     LOG(VERBOSE) << "Waiting for " COLDBOOT_DONE " took " << duration() << "s.";
                                                              ~~~~~~~~^
 
+185:17-185:40
+Tue Nov 22 20:27:37 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_35be5063
+UUID: 10d8e46b_10e90ac8
+Bytes: 4
+Done
+
+185:62-185:72
+Tue Nov 22 20:27:37 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_35d5f0a0
+UUID: 10d8e46b_f0c43e53
+Bytes: 36
+Ops. Refactoring mistake. Fixed now.
+

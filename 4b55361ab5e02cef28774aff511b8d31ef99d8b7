@@ -1,0 +1,11 @@
+Revision: 4b55361ab5e02cef28774aff511b8d31ef99d8b7
+Patch-set: 3
+File: adb/file_sync_service.h
+
+26:24-26:31
+Wed Nov 23 02:18:49 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 102f0424_89e5c91e
+Bytes: 58
+Is it a type error? STAT_V2 with LS, and LSTAT_V2 with ST?
+

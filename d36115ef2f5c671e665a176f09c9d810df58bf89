@@ -11,3 +11,11 @@ If, for whatever reason, coldboot fails while booting in normal mode, I can't im
 
 Perhaps instead of rebooting into recovery, we should just to a shutdown / power off? That way, we preserve the user's battery and avoid thermal issues.
 
+181
+Wed Nov 23 11:31:26 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_5b845b5d
+UUID: d0a56c1c_2b385930
+Bytes: 222
+The intention of dropping into recovery mode is not so much to really "recover" from it, but to give the user/developer an indication that something is wrong. I don't think just shutting down is the sensible approach here.
+

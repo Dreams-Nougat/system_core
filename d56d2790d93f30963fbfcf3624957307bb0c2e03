@@ -1,0 +1,18 @@
+Revision: d56d2790d93f30963fbfcf3624957307bb0c2e03
+Patch-set: 1
+File: liblog/tests/liblog_test.cpp
+
+33
+Mon Nov 28 23:55:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdff9321_fd049a37
+Bytes: 25
+#if defined(__ANDROID__)?
+
+58:0-106:92
+Mon Nov 28 23:55:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: cdff9321_5df70e1c
+Bytes: 169
+what useful + passing tests does this actually leave for the host? are you sure you don't just want to move any tests that actually work on the host into their own file?
+

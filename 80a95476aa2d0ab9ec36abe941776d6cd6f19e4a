@@ -48,3 +48,11 @@ UUID: 903934bb_bc47501d
 Bytes: 161
 It makes sense. If stripped, backtrace_test32 relies on .ARM.exidx to unwind, which hasn't been supported. As it is only a test, I think its size doesn't matter.
 
+114:0-114:36
+Tue Nov 29 20:19:34 2016 +0000
+Author: Pirama Arumuga Nainar <1058860@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_bc47501d
+UUID: 903934bb_77ced346
+Bytes: 126
+Right, but it fails to build gce_x86 which limits size of userdata.img to 50M.  Uploaded go/ag/1663167 to bump the size limit.
+

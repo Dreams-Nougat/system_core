@@ -9,3 +9,11 @@ UUID: 903934bb_7a5a373e
 Bytes: 56
 Q: what does this mean? host builds with bionic library?
 
+76
+Tue Nov 29 23:15:27 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_7a5a373e
+UUID: 903934bb_5ad3b368
+Bytes: 82
+Yes, configured for the host, but using bionic instead of the host-provided glibc.
+

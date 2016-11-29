@@ -9,10 +9,30 @@ UUID: cdff9321_fd049a37
 Bytes: 25
 #if defined(__ANDROID__)?
 
+33
+Tue Nov 29 00:06:55 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdff9321_fd049a37
+UUID: 702a0062_d766a663
+Bytes: 236
+I had thought of that, and decided to use the negative of the following #ifdef HOST since this is all about facilitating a gtest executable to provide test enumeration.
+
+I am not wedded to either way, but both need to use the same test.
+
 58:0-106:92
 Mon Nov 28 23:55:37 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: cdff9321_5df70e1c
 Bytes: 169
 what useful + passing tests does this actually leave for the host? are you sure you don't just want to move any tests that actually work on the host into their own file?
+
+58:0-106:92
+Tue Nov 29 00:06:55 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: cdff9321_5df70e1c
+UUID: 30288869_35aa9a4f
+Bytes: 155
+There are _no_ tests on the host.
+
+CTS gTest integration needs the host executable to _only_ respond to --gtest_list_tests in order to provide enumeration.
 

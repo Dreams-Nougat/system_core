@@ -1,0 +1,18 @@
+Revision: 2ebd06005907f6fbc04730e6b7c3b67d1090c1d3
+Patch-set: 1
+File: adb/transport.cpp
+
+238:8-238:23
+Tue Nov 29 19:13:06 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_dcbde49c
+Bytes: 55
+want to have an adb-wide android::base:: removal first?
+
+983
+Tue Nov 29 19:13:06 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_7cb798b6
+Bytes: 57
+huh. my inner java programmer assumed the lhs was better.
+

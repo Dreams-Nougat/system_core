@@ -11,6 +11,14 @@ did you mean to | something in here?
 
 (also weird indentation on this line and L345.)
 
+339:31-339:32
+Tue Nov 29 04:55:38 2016 +0000
+Author: Daniel Rosenberg <1045980@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_c3250a72
+UUID: 903934bb_9ef609b7
+Bytes: 73
+Added options to the remount to keep it consistent with the normal mount.
+
 348
 Tue Nov 29 02:25:40 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

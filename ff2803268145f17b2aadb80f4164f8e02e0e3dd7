@@ -1,0 +1,20 @@
+Revision: ff2803268145f17b2aadb80f4164f8e02e0e3dd7
+Patch-set: 1
+File: sdcard/sdcard.cpp
+
+339:31-339:32
+Tue Nov 29 02:25:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_c3250a72
+Bytes: 85
+did you mean to | something in here?
+
+(also weird indentation on this line and L345.)
+
+348
+Tue Nov 29 02:25:40 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_6371be89
+Bytes: 5
+PLOG?
+

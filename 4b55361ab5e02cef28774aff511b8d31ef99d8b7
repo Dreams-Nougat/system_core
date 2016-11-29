@@ -9,6 +9,14 @@ UUID: 903934bb_d87a59db
 Bytes: 50
 (and that arm/aarch64/x86/x86_64 linux all match.)
 
+333
+Tue Nov 29 18:33:34 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_d87a59db
+UUID: 903934bb_c6ab536e
+Bytes: 164
+The linux ones all match (they're defined in asm-generic), but the windows/darwin ones don't. Added sysdeps/errno.h to do translation between linux and host errnos.
+
 File: adb/file_sync_service.cpp
 
 102
@@ -17,6 +25,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 903934bb_588669a5
 Bytes: 5
 = {}?
+
+102
+Tue Nov 29 18:33:34 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_588669a5
+UUID: 903934bb_26918f31
+Bytes: 4
+Done
 
 File: adb/file_sync_service.h
 
@@ -27,6 +43,14 @@ UUID: 102f0424_89e5c91e
 Bytes: 58
 Is it a type error? STAT_V2 with LS, and LSTAT_V2 with ST?
 
+26:24-26:31
+Tue Nov 29 18:33:34 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_89e5c91e
+UUID: 903934bb_46a68393
+Bytes: 48
+Yeah, fixed (also renamed them to STA2 and LSA2)
+
 File: adb/transport.cpp
 
 778
@@ -35,4 +59,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 903934bb_78624d1d
 Bytes: 1
 ?
+
+778
+Tue Nov 29 18:33:34 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_78624d1d
+UUID: 903934bb_a6865ff9
+Bytes: 105
+Oops, removed the version bump from the latest iteration of the patch because I thought it wasn't needed.
 

@@ -31,3 +31,11 @@ UUID: 903934bb_062bab46
 Bytes: 155
 (checking codesearch, most callers don't do this. can anyone think of a reason why we shouldn't just make android_reboot do this for you and never return?)
 
+181
+Tue Nov 29 18:43:32 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_062bab46
+UUID: 903934bb_6106113f
+Bytes: 44
+Having android_reboot() do this for us SGTM.
+

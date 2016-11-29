@@ -9,3 +9,13 @@ UUID: 903934bb_f27ad9da
 Bytes: 127
 is this different from just moving the "property_triggers_enabled = 1;" _before_ the QueueAllPropertyTriggers in this function?
 
+363
+Tue Nov 29 09:20:53 2016 +0000
+Author: Alvin Cao <1073563@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_f27ad9da
+UUID: ed30d7ea_ef073d3a
+Bytes: 516
+Yes.
+
+This change makes sure triggers before ("", "") don't have chances to perform the real action. They just set the property and let ("", "") do the real action. If we set property_triggers_enabled too early, all triggers coming before ("", "") will both change the property value and queue the trigger. So they will be executed twice, the other one is from ("", ""). In most cases, executing twice does not cause problems but anyway it's not logically right. And in some cases like ours, it does cause a problem.
+

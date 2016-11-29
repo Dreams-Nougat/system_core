@@ -1,0 +1,11 @@
+Revision: 0910d2dbb924fd70911e89526ad936282c54a650
+Patch-set: 1
+File: liblog/Android.bp
+
+76:8-76:20
+Tue Nov 29 23:13:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_7a5a373e
+Bytes: 56
+Q: what does this mean? host builds with bionic library?
+

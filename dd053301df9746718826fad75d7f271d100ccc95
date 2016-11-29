@@ -1,0 +1,11 @@
+Revision: dd053301df9746718826fad75d7f271d100ccc95
+Patch-set: 2
+File: liblog/tests/liblog_test.cpp
+
+2368
+Tue Nov 29 16:09:43 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_a868eed3
+Bytes: 129
+(usually we just don't compile the helpers at all, rather than try to keep them compilable even though they're no longer called.)
+

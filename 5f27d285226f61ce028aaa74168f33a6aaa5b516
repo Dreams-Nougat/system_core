@@ -23,3 +23,11 @@ UUID: 10d8e46b_d0b022dd
 Bytes: 128
 Oh I see. I had been wondering why the never reached code is there. It makes more sense now. The comment is slightly misleading.
 
+181
+Tue Nov 29 18:16:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 102f0424_fb13e7d1
+UUID: 903934bb_062bab46
+Bytes: 155
+(checking codesearch, most callers don't do this. can anyone think of a reason why we shouldn't just make android_reboot do this for you and never return?)
+

@@ -1,0 +1,11 @@
+Revision: 80a95476aa2d0ab9ec36abe941776d6cd6f19e4a
+Patch-set: 1
+File: /COMMIT_MSG
+
+16:6-16:21
+Tue Nov 29 01:00:14 2016 +0000
+Author: Pirama Arumuga Nainar <1058860@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_f829dd9c
+Bytes: 120
+ART no longer seems to link against LLVM libraries or libbacktrace_offline.  Nonetheless, tested everything builds fine.
+

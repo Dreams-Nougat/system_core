@@ -26,3 +26,17 @@ UUID: 903934bb_c64353b1
 Bytes: 86
 I am not sure if stripping backtrace_test breaks test, I will test it today and reply.
 
+114:0-114:36
+Tue Nov 29 19:22:56 2016 +0000
+Author: Pirama Arumuga Nainar <1058860@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_c64353b1
+UUID: 903934bb_1c805c92
+Bytes: 223
+The 32-bit version fails 3 tests on Angler:
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] libbacktrace.offline
+[  FAILED  ] libbacktrace.offline_max_trace
+[  FAILED  ] libbacktrace.ptrace_threads
+
+The 64-bit test passes.
+

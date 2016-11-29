@@ -1,0 +1,27 @@
+Revision: dc44a6170feaf1fe542ca0d608b9a78d59c9a608
+Patch-set: 4
+File: adb/sysdeps/errno.cpp
+
+31
+Tue Nov 29 19:08:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_0101d5b7
+Bytes: 28
+you predicted my comment :-)
+
+62
+Tue Nov 29 19:08:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_81c30544
+Bytes: 68
+do you need to call it? we'll get the static asserts regardless, no?
+
+File: adb/sysdeps/errno.h
+
+19
+Tue Nov 29 19:08:19 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_a1c00938
+Bytes: 48
+should spencer's windows strerror live here too?
+

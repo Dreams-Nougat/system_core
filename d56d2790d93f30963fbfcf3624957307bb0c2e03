@@ -19,6 +19,18 @@ I had thought of that, and decided to use the negative of the following #ifdef H
 
 I am not wedded to either way, but both need to use the same test.
 
+33
+Tue Nov 29 00:20:47 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 702a0062_d766a663
+UUID: 903934bb_bde2f7e7
+Bytes: 219
+ah, *that* problem. yeah. stupid CTS.
+
+here's what we do in bionic: https://android.googlesource.com/platform/bionic/+/master/tests/system_properties_test.cpp#222
+
+it's a bit noisier, but it is very intention-revealing.
+
 58:0-106:92
 Mon Nov 28 23:55:37 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

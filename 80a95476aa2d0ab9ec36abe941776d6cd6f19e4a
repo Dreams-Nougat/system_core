@@ -9,3 +9,12 @@ UUID: 903934bb_f829dd9c
 Bytes: 120
 ART no longer seems to link against LLVM libraries or libbacktrace_offline.  Nonetheless, tested everything builds fine.
 
+File: libbacktrace/Android.mk
+
+114:0-114:36
+Tue Nov 29 08:29:09 2016 +0000
+Author: Pirama Arumuga Nainar <1058860@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_32155104
+Bytes: 299
+Because backtrace_test is not stripped, its size increases from 5M to ~50M.  Yabin, looks like you did that as a part of https://android-review.googlesource.com/#/c/171967/3/libbacktrace/Android.mk, where you did the shared-library approach.  Shall I remove this and strip symbols in backtrace_test?
+

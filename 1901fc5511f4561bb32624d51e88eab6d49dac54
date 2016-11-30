@@ -1,0 +1,18 @@
+Revision: 1901fc5511f4561bb32624d51e88eab6d49dac54
+Patch-set: 1
+File: liblog/event_tag_map.cpp
+
+177:0-192:78
+Wed Nov 30 22:45:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_581d1ddc
+Bytes: 77
+this could be bool map->emplace(tagIndex, TagFmt&&) to abstract out to class.
+
+320:0-325:35
+Wed Nov 30 22:45:10 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_d8280df5
+Bytes: 62
+This should be const map->find(tagIndex) as part of the class.
+

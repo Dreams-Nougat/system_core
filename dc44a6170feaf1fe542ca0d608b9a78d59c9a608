@@ -16,6 +16,16 @@ UUID: 903934bb_81c30544
 Bytes: 68
 do you need to call it? we'll get the static asserts regardless, no?
 
+62
+Wed Nov 30 19:22:56 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_81c30544
+UUID: 903934bb_7ca07874
+Bytes: 143
+We'll get the static asserts regardless of whether the function gets called, yeah.
+
+(The cast to void is to silence an unused function warning)
+
 File: adb/sysdeps/errno.h
 
 19
@@ -24,4 +34,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 903934bb_a1c00938
 Bytes: 48
 should spencer's windows strerror live here too?
+
+19
+Wed Nov 30 19:22:56 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_a1c00938
+UUID: 903934bb_341feb88
+Bytes: 77
+Done in a followup commit: https://android-review.googlesource.com/#/c/308238
 

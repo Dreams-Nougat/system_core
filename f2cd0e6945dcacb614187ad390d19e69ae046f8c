@@ -1,0 +1,11 @@
+Revision: f2cd0e6945dcacb614187ad390d19e69ae046f8c
+Patch-set: 5
+File: adb/sysdeps/errno.cpp
+
+64
+Wed Nov 30 21:13:22 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_2f0152b8
+Bytes: 32
+UNUSED(initialize_translations)?
+

@@ -1,0 +1,41 @@
+Revision: 329cfcbc19ecc229a159fa3c17858f499d56dc09
+Patch-set: 3
+File: libbacktrace/BacktraceOffline.cpp
+
+54:11-54:20
+Wed Nov 30 00:10:51 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_9d6fe514
+Bytes: 141
+It seems redundant to have eh_frame in the variable name when the struct is named EhFrame. Applies to all of the variables in this structure.
+
+56:11-56:43
+Wed Nov 30 00:10:51 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_dd979dd6
+Bytes: 41
+Should probably just be fde_table_offset.
+
+286:5-286:54
+Wed Nov 30 00:10:51 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_ddfb1d08
+Bytes: 193
+This isn't true, the last address is stored in the program headers section. The executable PT_LOAD will have the virt address as the start, and the size plus that will give you the end address.
+
+File: libbacktrace/BacktraceOffline.h
+
+52:8-52:23
+Wed Nov 30 00:10:51 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_5d848d5d
+Bytes: 136
+It's not clear why you need this. Couldn't you have some way to modify the has_arm_exidx or other variables from DebugFrameInfo instead?
+
+58:30-59:3
+Wed Nov 30 00:10:51 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 903934bb_5de80df7
+Bytes: 24
+= default instead of {}.
+

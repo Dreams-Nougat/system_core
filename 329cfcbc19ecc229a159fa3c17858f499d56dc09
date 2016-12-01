@@ -65,6 +65,16 @@ Bytes: 445
 libbacktrace_test.so on arm is built with both .debug_frame and .ARM.exidx info, both works. I want to test explicit either .debug_frame or .ARM_exidx, or both. So I need to a way to tell BacktraceOffline to only use .debug_frame, or only use .ARM.exidx, or use both.
 DebugFrameInfo is not exported outside BacktraceOffline.cpp, and is generated during unwinding (not before unwinding), so modifying DebugFrameInfo before unwinding doesn't work.
 
+52:8-52:23
+Thu Dec 01 18:54:20 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 903934bb_20a08ed7
+UUID: 6d506749_a72a548b
+Bytes: 305
+Why can't you have a test that has one or the other or both?
+
+The way this is currently working indicates either a deficient test, or a deficient design. I think it's okay to expose some internal of an object to be able to test it, but adding in code specifically called test indicates something is wrong.
+
 58:30-59:3
 Wed Nov 30 00:10:51 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

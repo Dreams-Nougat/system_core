@@ -1,0 +1,11 @@
+Revision: 1d2af62855c2e188a88801678b8e74e9ad87bae0
+Patch-set: 2
+File: init/init.cpp
+
+184:18-184:49
+Thu Dec 01 07:32:13 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_a181a44f
+Bytes: 197
+jhawkins, fkupolov: are you using the existing init\..*\.start properties already? i'm wondering whether to rename them (because "ro." seems like an obviously good idea) or to rename this to match.
+

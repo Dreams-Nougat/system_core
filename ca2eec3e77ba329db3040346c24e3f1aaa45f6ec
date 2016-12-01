@@ -9,3 +9,13 @@ UUID: 6d506749_e1627ceb
 Bytes: 64
 where did 45s come from? what does a kasan kernel actually need?
 
+179:37-179:40
+Thu Dec 01 11:32:42 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_e1627ceb
+UUID: 6dd9470d_f0586044
+Bytes: 448
+45s is an arbitrary amount of time that was decided to be the ultimate threshold that we could accept and consider as a considerably long period of time.
+
+There is no answer to your second question, unfortunately, because for different devices, it seemed to be very different. And we really don't know say, for a future device and a different kernel version, is the time needed going to be longer or shorter than the one that is currently deployed.
+

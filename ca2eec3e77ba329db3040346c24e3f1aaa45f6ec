@@ -29,3 +29,11 @@ do you have current real-world numbers for specific devices? for things like thi
 
 (right now it's not obvious whether 45s is 1x your worst device's kasan time or 2x or 10x...)
 
+179:37-179:40
+Thu Dec 01 16:40:55 2016 +0000
+Author: Billy Lau <1069095@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_acdb5bd6
+UUID: 6dd9470d_f0ef00cc
+Bytes: 168
+Currently, for marlin, measured for one particular boot, it's 5.04889. So, I estimate that the magnitude of 45s should be about 9-10x worst device's current kasan time.
+

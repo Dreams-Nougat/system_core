@@ -19,3 +19,13 @@ Bytes: 448
 
 There is no answer to your second question, unfortunately, because for different devices, it seemed to be very different. And we really don't know say, for a future device and a different kernel version, is the time needed going to be longer or shorter than the one that is currently deployed.
 
+179:37-179:40
+Thu Dec 01 16:33:55 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6dd9470d_f0586044
+UUID: 6d506749_acdb5bd6
+Bytes: 225
+do you have current real-world numbers for specific devices? for things like this it's good to leave a comment that has specifics.
+
+(right now it's not obvious whether 45s is 1x your worst device's kasan time or 2x or 10x...)
+

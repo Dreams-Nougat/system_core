@@ -9,3 +9,11 @@ UUID: 6d506749_a181a44f
 Bytes: 197
 jhawkins, fkupolov: are you using the existing init\..*\.start properties already? i'm wondering whether to rename them (because "ro." seems like an obviously good idea) or to rename this to match.
 
+184:18-184:49
+Thu Dec 01 18:16:25 2016 +0000
+Author: James Hawkins <1081159@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_a181a44f
+UUID: 6d506749_274ac4c5
+Bytes: 58
+I haven't.  Let me know if you settle on one or the other.
+

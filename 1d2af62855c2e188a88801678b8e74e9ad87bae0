@@ -1,5 +1,14 @@
 Revision: 1d2af62855c2e188a88801678b8e74e9ad87bae0
 Patch-set: 2
+File: /COMMIT_MSG
+
+7
+Thu Dec 01 21:08:52 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_127ffc7f
+Bytes: 119
+Please update the commit message to better indicate the purpose of this change. This is no longer a revert of a revert.
+
 File: init/init.cpp
 
 184:18-184:49
@@ -16,4 +25,11 @@ Parent: 6d506749_a181a44f
 UUID: 6d506749_274ac4c5
 Bytes: 58
 I haven't.  Let me know if you settle on one or the other.
+
+185
+Thu Dec 01 21:08:52 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_52be9409
+Bytes: 85
+Delete? It's already available in the property, and logging is just extra overhead...
 

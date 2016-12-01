@@ -1,0 +1,13 @@
+Revision: 2c9b1de35b4c232f520feab91c52aef0fee9a7cb
+Patch-set: 2
+File: liblog/event_tag_map.cpp
+
+72:0-72:14
+Thu Dec 01 23:46:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_df4f4cd9
+Bytes: 100
+This should an IsA and borrow from std::pair
+
+class TagFmt : public std:pair<MapString, MapString> {
+

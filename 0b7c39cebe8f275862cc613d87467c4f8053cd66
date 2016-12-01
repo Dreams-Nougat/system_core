@@ -18,12 +18,28 @@ UUID: 6d506749_fb1d0b2b
 Bytes: 56
 move these into the scope where they're actually needed.
 
+429:0-430:23
+Thu Dec 01 19:09:56 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_fb1d0b2b
+UUID: 6d506749_ec10b303
+Bytes: 4
+Done
+
 441:16-441:54
 Thu Dec 01 01:22:33 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d506749_9b104f15
 Bytes: 40
 arraysize() from <android-base/macros.h>
+
+441:16-441:54
+Thu Dec 01 19:09:56 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_9b104f15
+UUID: 6d506749_4cdf1f29
+Bytes: 4
+Done
 
 450
 Thu Dec 01 01:22:33 2016 +0000
@@ -32,10 +48,29 @@ UUID: 6d506749_3b494332
 Bytes: 10
 free here.
 
+450
+Thu Dec 01 19:09:56 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_3b494332
+UUID: 6d506749_2ce46bf5
+Bytes: 4
+Done
+
 465
 Thu Dec 01 01:22:33 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d506749_bb139320
 Bytes: 53
 what's the before/after timing impact of this change?
+
+465
+Thu Dec 01 19:09:56 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_bb139320
+UUID: 6d506749_acefdbcc
+Bytes: 66
+Before:  0.691207s
+After:   1.08033s
+
+device: bullhead after wipe.
 

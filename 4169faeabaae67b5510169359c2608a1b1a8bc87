@@ -2,6 +2,20 @@ Revision: 4169faeabaae67b5510169359c2608a1b1a8bc87
 Patch-set: 2
 File: init/util.cpp
 
+168
+Fri Dec 02 22:29:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_d29dc4f7
+Bytes: 58
+this will just bit-rot. either compile it in or delete it.
+
+172
+Fri Dec 02 22:29:18 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_728df0c0
+Bytes: 23
+errno won't be set here
+
 187
 Fri Dec 02 22:22:24 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

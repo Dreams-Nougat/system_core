@@ -34,6 +34,14 @@ UUID: 6d506749_d5b72bd8
 Bytes: 95
 Misleading name. This function will open an existing file if it exists, not just create a file.
 
+172
+Fri Dec 02 15:24:47 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_d5b72bd8
+UUID: 6d506749_187f1a80
+Bytes: 225
+Perhaps we can fold back the definition of the file command to only open existing files rather than open _or_ create. So far no one needs it to create a file (and one could be created with init scripts prior with writes etc).
+
 173:29-173:48
 Fri Dec 02 06:13:34 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

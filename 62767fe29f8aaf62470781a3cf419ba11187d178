@@ -189,3 +189,11 @@ UUID: 6d506749_f597cf30
 Bytes: 70
 line 93 already asserted this is not null, so this check is redundant.
 
+94
+Fri Dec 02 16:09:42 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_f597cf30
+UUID: 6d506749_f8b1862a
+Bytes: 59
+The following has an access violation which kills the test.
+

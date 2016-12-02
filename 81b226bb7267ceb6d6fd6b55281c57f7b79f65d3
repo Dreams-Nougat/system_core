@@ -40,6 +40,14 @@ O_NDELAY jiggery-pokery is to deal with devices that act like serial ports and t
 
 Agreed, separate CL ...
 
+166
+Fri Dec 02 23:34:04 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_95784632
+UUID: ede0d714_b517c2be
+Bytes: 77
+There are two users of this function actually; but one of them is a gTest ...
+
 178
 Fri Dec 02 23:20:29 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

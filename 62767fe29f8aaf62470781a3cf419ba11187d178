@@ -42,6 +42,14 @@ UUID: 6d506749_187f1a80
 Bytes: 225
 Perhaps we can fold back the definition of the file command to only open existing files rather than open _or_ create. So far no one needs it to create a file (and one could be created with init scripts prior with writes etc).
 
+172
+Fri Dec 02 15:36:59 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_187f1a80
+UUID: 6d506749_18dc3a75
+Bytes: 4
+sgtm
+
 173:29-173:48
 Fri Dec 02 06:13:34 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -50,6 +50,14 @@ UUID: ede0d714_ac1d438f
 Bytes: 75
 Maybe the bionic folks would be interested in changing str*cmp accordingly?
 
+49:8-51:66
+Fri Dec 02 19:23:24 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_ac1d438f
+UUID: ede0d714_ac71c3c0
+Bytes: 363
+This is a compiler optimization with builtin, a tools issue. The nice thing about fast<strncmp>() is that it optimizes accordingly for builtin inlining (and should result in no code effects in that case after optimization kicks in). bionic library implementation still would cause a cache locality issue as we jump from this area of memory to libc area of memory.
+
 90:37-92:50
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

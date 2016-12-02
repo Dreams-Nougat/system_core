@@ -56,6 +56,18 @@ UUID: ede0d714_551f7ed3
 Bytes: 96
 The safest way to avoid this would be to have the subprocess open the file descriptor instead...
 
+166
+Fri Dec 02 23:41:13 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_551f7ed3
+UUID: ede0d714_75503a7d
+Bytes: 305
+It is, so correct, not single threaded here, but still subprocess blocking is wrong.
+
+Moving this to FileInfo::Create because it solves my worry about someone doing 'something smart' here breaking FileInfo::Create getting an O_CREAT flag handed to it.
+
+(remember the code fragment I had in #ifndef NDEBUG)
+
 178
 Fri Dec 02 23:20:29 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

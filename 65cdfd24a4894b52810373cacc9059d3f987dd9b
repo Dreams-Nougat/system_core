@@ -1,0 +1,27 @@
+Revision: 65cdfd24a4894b52810373cacc9059d3f987dd9b
+Patch-set: 1
+File: init/descriptors.cpp
+
+90:69-91:66
+Fri Dec 02 21:36:38 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_6fb86dc8
+Bytes: 47
+these are always going to be the default value.
+
+95:21-95:47
+Fri Dec 02 21:36:38 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_6ff3cdbe
+Bytes: 6
+unused
+
+File: init/util.cpp
+
+187
+Fri Dec 02 21:36:38 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_6f0aadd4
+Bytes: 7
+Delete?
+

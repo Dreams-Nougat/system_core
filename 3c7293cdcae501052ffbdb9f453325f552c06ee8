@@ -16,3 +16,18 @@ UUID: ede0d714_2f338555
 Bytes: 38
 Not comparatively profiled with clang.
 
+27:34-27:43
+Fri Dec 02 20:36:27 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_2f338555
+UUID: ede0d714_af92d5e5
+Bytes: 82
+Were you using gcc, or just saying that you didn't run this with actual profiling?
+
+36:11-36:21
+Fri Dec 02 20:36:27 2016 +0000
+Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_ef98dd09
+Bytes: 305
+This isn't semantically equivalent to the actual string comparison function though, because you are only checking for equality/inequality, rather than ordering (i.e. the +1/-1 side of if). I hesitate to call this "fast" anything, unless you really want to go do the anti-correctness pattern of "fastmath".
+

@@ -75,6 +75,14 @@ Why can't you have a test that has one or the other or both?
 
 The way this is currently working indicates either a deficient test, or a deficient design. I think it's okay to expose some internal of an object to be able to test it, but adding in code specifically called test indicates something is wrong.
 
+52:8-52:23
+Fri Dec 02 02:29:18 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_a72a548b
+UUID: 6d506749_22dc6f75
+Bytes: 83
+instead of using test_option, changed to test with customized libbacktrace_test.so.
+
 58:30-59:3
 Wed Nov 30 00:10:51 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -42,6 +42,14 @@ So maybe I should move the 'fast' template into its own utils include file _firs
 
 A new file system/core/include/utils/FastStrcmp.h ...
 
+49:8-51:66
+Fri Dec 02 19:18:30 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_d3d103e9
+UUID: ede0d714_ac1d438f
+Bytes: 75
+Maybe the bionic folks would be interested in changing str*cmp accordingly?
+
 90:37-92:50
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

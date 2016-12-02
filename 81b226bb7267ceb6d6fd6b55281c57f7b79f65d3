@@ -48,6 +48,14 @@ UUID: ede0d714_b517c2be
 Bytes: 77
 There are two users of this function actually; but one of them is a gTest ...
 
+166
+Fri Dec 02 23:34:54 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_f5e0aab4
+UUID: ede0d714_551f7ed3
+Bytes: 96
+The safest way to avoid this would be to have the subprocess open the file descriptor instead...
+
 178
 Fri Dec 02 23:20:29 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

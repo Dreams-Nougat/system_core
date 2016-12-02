@@ -1,0 +1,11 @@
+Revision: 1b31d64449bbe9f5972045c8c0c4b4c2ff349b07
+Patch-set: 4
+File: liblog/event_tag_map.cpp
+
+305:0-305:12
+Fri Dec 02 19:33:01 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_ccabefbc
+Bytes: 18
+not necessary ....
+

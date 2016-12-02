@@ -9,12 +9,28 @@ UUID: ede0d714_6fb86dc8
 Bytes: 47
 these are always going to be the default value.
 
+90:69-91:66
+Fri Dec 02 22:25:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_6fb86dc8
+UUID: ede0d714_b265985a
+Bytes: 33
+No problem. Defaults are good ;-}
+
 95:21-95:47
 Fri Dec 02 21:36:38 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_6ff3cdbe
 Bytes: 6
 unused
+
+95:21-95:47
+Fri Dec 02 22:25:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_6ff3cdbe
+UUID: ede0d714_926a9c26
+Bytes: 46
+Wow! Why did I not get a compile warning then?
 
 File: init/util.cpp
 
@@ -24,4 +40,12 @@ Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_6f0aadd4
 Bytes: 7
 Delete?
+
+187
+Fri Dec 02 22:25:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_6f0aadd4
+UUID: ede0d714_f24440bc
+Bytes: 48
+Want to know if it is Read, Write or Read/Write.
 

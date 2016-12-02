@@ -1,0 +1,18 @@
+Revision: 3c7293cdcae501052ffbdb9f453325f552c06ee8
+Patch-set: 2
+File: include/utils/FastStrcmp.h
+
+22:17-22:39
+Fri Dec 02 20:31:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_ef445dbc
+Bytes: 18
+nit: cache stutter
+
+27:34-27:43
+Fri Dec 02 20:31:52 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_2f338555
+Bytes: 38
+Not comparatively profiled with clang.
+

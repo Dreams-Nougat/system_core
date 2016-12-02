@@ -9,3 +9,11 @@ UUID: ede0d714_d2cf0414
 Bytes: 7
 Delete?
 
+187
+Fri Dec 02 22:27:02 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_d2cf0414
+UUID: ede0d714_d274a4f1
+Bytes: 29
+I want to keep path and mode.
+

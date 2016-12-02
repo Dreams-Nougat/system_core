@@ -1,0 +1,11 @@
+Revision: 6d56b982a8178f0dcec79bb4b6758e5e25ba606e
+Patch-set: 3
+File: init/init.cpp
+
+451
+Fri Dec 02 00:12:53 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_1f12647b
+Bytes: 134
+(if you do switch to C++ as seemed to be being discussed on another thread, it would be good to stop dealing in void*/size_t pairs...)
+

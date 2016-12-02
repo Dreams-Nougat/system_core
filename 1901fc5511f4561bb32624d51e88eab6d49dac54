@@ -58,6 +58,14 @@ UUID: ede0d714_ac71c3c0
 Bytes: 363
 This is a compiler optimization with builtin, a tools issue. The nice thing about fast<strncmp>() is that it optimizes accordingly for builtin inlining (and should result in no code effects in that case after optimization kicks in). bionic library implementation still would cause a cache locality issue as we jump from this area of memory to libc area of memory.
 
+49:8-51:66
+Fri Dec 02 19:25:03 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_ac71c3c0
+UUID: ede0d714_0c6337f2
+Bytes: 26
+Ah, OK, s/bionic/clang/ :)
+
 90:37-92:50
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

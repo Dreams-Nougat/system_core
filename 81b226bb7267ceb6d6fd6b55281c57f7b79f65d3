@@ -11,6 +11,14 @@ yeah, nnk's claim that no-one uses the `seclabel` argument appears to be true:
 
 https://cs.corp.google.com/search/?q=socket%5Cs%2B%5CS%2B%5Cs%2B%5CS%2B%5Cs%2B%5CS%2B%5Cs%2B%5CS%2B%5Cs%2B%5CS%2B%5Cs%2B%5CS%2B+file:init.*rc&m=100&sort=1&sq=package:%5Eandroid$&type=cs
 
+143
+Fri Dec 02 23:27:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_529e7450
+UUID: ede0d714_35b632bc
+Bytes: 40
+For another CL, thanks for the research!
+
 File: init/util.cpp
 
 166
@@ -21,6 +29,16 @@ Bytes: 299
 there's only one user of this, and open_file is a very vague name, and the only interesting thing this function does (the O_NDELAY) is in neither the name nor the doc comment. can we move it into FileInfo::Create?
 
 (not in this change though, since it seems like there's more cleanup coming anyway.)
+
+166
+Fri Dec 02 23:27:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_95784632
+UUID: ede0d714_f5e0aab4
+Bytes: 219
+O_NDELAY jiggery-pokery is to deal with devices that act like serial ports and their carrier detect facility. I wanted _zero_ risk that the single threaded init would be blocked by an open call.
+
+Agreed, separate CL ...
 
 178
 Fri Dec 02 23:20:29 2016 +0000

@@ -24,10 +24,39 @@ UUID: ede0d714_af92d5e5
 Bytes: 82
 Were you using gcc, or just saying that you didn't run this with actual profiling?
 
+27:34-27:43
+Fri Dec 02 20:58:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_af92d5e5
+UUID: ede0d714_cf952191
+Bytes: 162
+Profiling was done on logd back when we were using gcc. Saved 3% off total processing time to log messages.
+
+Not sure if clang would built_in improve this though.
+
+29:4-29:8
+Fri Dec 02 20:58:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_2f7f0580
+Bytes: 155
+Now that this has moved out of logd, it probably should be called fastcmp?
+
+Much larger impact on logd code, but all purely mechanical (+/- line wrapping).
+
 36:11-36:21
 Fri Dec 02 20:36:27 2016 +0000
 Author: Stephen Hines <1010056@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_ef98dd09
 Bytes: 305
 This isn't semantically equivalent to the actual string comparison function though, because you are only checking for equality/inequality, rather than ordering (i.e. the +1/-1 side of if). I hesitate to call this "fast" anything, unless you really want to go do the anti-correctness pattern of "fastmath".
+
+36:11-36:21
+Fri Dec 02 20:58:57 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_ef98dd09
+UUID: ede0d714_8f8f197b
+Bytes: 126
+Yes, see line 32 ;-}
+
+The idea of course is to prevent a subroutine call and overhead, and a possible cache locality slowdown.
 

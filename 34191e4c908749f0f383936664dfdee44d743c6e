@@ -1,0 +1,11 @@
+Revision: 34191e4c908749f0f383936664dfdee44d743c6e
+Patch-set: 5
+File: liblog/event_tag_map.cpp
+
+67:15-67:64
+Fri Dec 02 20:35:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_af79b5e7
+Bytes: 238
+This is sensitive to the standard template library implementation. There has to be a better way, that is still fast, to get the same value as hash<std::string>. We are _not_ going to allocate a std::string to borrow it on every lookup ...
+

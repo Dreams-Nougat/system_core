@@ -1,0 +1,11 @@
+Revision: d2440c732709513c92ddbcba020018d43e7b8bd1
+Patch-set: 3
+File: liblog/event_tag_map.cpp
+
+76:14-76:35
+Fri Dec 02 02:02:59 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_4219a3a1
+Bytes: 68
+not sure why both first and second are being compared to rval.first?
+

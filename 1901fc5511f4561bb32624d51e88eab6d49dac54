@@ -9,12 +9,55 @@ UUID: 6d506749_6d7f7dca
 Bytes: 39
 Is this faster than a single strncmp()?
 
+49:8-51:66
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_6d7f7dca
+UUID: 6d506749_d3d103e9
+Bytes: 1210
+Yes, _much_ faster. In logd I saved 3% of the processing time by converting all str*cmps to a check of the first characters followed by a call out if match. In a library, it is always worth it to shave off nano-seconds IMHO, as long as it is not unwieldy of course. In logd I made it more readable though with (system/core/logd/LogUtils.h)
+
+template <int (*cmp)(const char *l, const char *r, const size_t s)>
+static inline int fast(const char *l, const char *r, const size_t s) {
+    return (*l != *r) || cmp(l + 1, r + 1, s - 1);
+}
+
+template <int (*cmp)(const void *l, const void *r, const size_t s)>
+static inline int fast(const void *lv, const void *rv, const size_t s) {
+    const char *l = static_cast<const char *>(lv);
+    const char *r = static_cast<const char *>(rv);
+    return (*l != *r) || cmp(l + 1, r + 1, s - 1);
+}
+
+template <int (*cmp)(const char *l, const char *r)>
+static inline int fast(const char *l, const char *r) {
+    return (*l != *r) || cmp(l + 1, r + 1);
+}
+
+Then using it ala:
+
+fast<strncmp>(name, "zygote", 6).
+
+So maybe I should move the 'fast' template into its own utils include file _first_ so all can take advantage of it!
+
+A new file system/core/include/utils/FastStrcmp.h ...
+
 90:37-92:50
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d506749_ad8995b6
 Bytes: 29
 Not sure what this is saying?
+
+90:37-92:50
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_ad8995b6
+UUID: 6d506749_d3074381
+Bytes: 237
+If I did a hash that was the combination of both the tag and the format strings, rather than just tag alone, I lost 100ns for lookups with no real gain since typically tag is unique.
+
+I will revise the comment so that it is not so terse.
 
 177:0-192:78
 Wed Nov 30 22:45:10 2016 +0000
@@ -30,6 +73,14 @@ UUID: 6d506749_cd65e9c8
 Bytes: 20
 could be a bool type
 
+211:4-211:21
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_cd65e9c8
+UUID: 6d506749_3305df79
+Bytes: 4
+Yup!
+
 279:4-279:17
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -37,12 +88,36 @@ UUID: 6d506749_22874fa3
 Bytes: 53
 fd < 0 already checked at line 258, won't reach here?
 
+279:4-279:17
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_22874fa3
+UUID: 6d506749_f34fe7d8
+Bytes: 180
+Good catch!
+
+I do not know how this check even got added.
+
+Suspect it was a result of my 50 or so patches in my private development branch, a rebase probably snuck it in unnoticed.
+
 301:4-301:21
 Fri Dec 02 01:59:06 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d506749_8d2ad13e
 Bytes: 134
 fd is always already closed when fail_unmap label can be reached, could skip fail_close processing, or check for fd != -1 at line 303.
+
+301:4-301:21
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_8d2ad13e
+UUID: 6d506749_13309b44
+Bytes: 340
+close with an fd = -1 (set in line 284) does nothing. Error path is unlikely, so IMHO not worth adding little checks like this as this section can be KISS.
+
+The real issue is all the gotos, we are supposed to remove them with appropriate C++ isms. For instance fd could be an unique_fd instead and close automagically.
+
+Will look into that.
 
 320:0-325:35
 Wed Nov 30 22:45:10 2016 +0000
@@ -64,4 +139,16 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 6d506749_a2507f4f
 Bytes: 76
 This a FR for "Add an event log tag service", what bug is being caused here?
+
+353:61-353:71
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_a2507f4f
+UUID: 6d506749_13d6dbae
+Bytes: 644
+The bug has changed a bit since it started, as part of the discovery we pointed out in the bug that *cp = '\0' caused Shared page backed by a file converted to a Private Dirty page backed by swap (a waste). Just from boot there was 200MB of wasted memory attributed to this one line.
+
+So part of the bug was to deprecate android_lookupEventTag and replace it with a new function android_lookupEventTag_len.
+
+This _existing_ comment should be rewritten to describe the fix (the commit message comment from https://android-review.googlesource.com/#/c/282291 might do the trick ...) and the rason this function is marked deprecated in the headers.
 

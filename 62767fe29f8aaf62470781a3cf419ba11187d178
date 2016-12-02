@@ -1,6 +1,49 @@
 Revision: 62767fe29f8aaf62470781a3cf419ba11187d178
 Patch-set: 10
+File: init/descriptors.cpp
+
+99:66-99:81
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_b5b437d5
+Bytes: 15
+always not null
+
+File: init/readme.txt
+
+143:47-143:61
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_1888ba06
+Bytes: 190
+as best I'm aware, this seclabel functionality associated with sockets has never been used. We might want to consider deleting it just to reduce complexity... (same for seclabel on line 151)
+
+153:24-156:43
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_15c24341
+Bytes: 198
+what's not clear from reading this documentation is that the default UID/GID/SELinux context will be assigned to the file, even if it already exists. That seems incredibly error prone and dangerous.
+
 File: init/util.cpp
+
+172
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_d5b72bd8
+Bytes: 95
+Misleading name. This function will open an existing file if it exists, not just create a file.
+
+173:29-173:48
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_f51a2f30
+Bytes: 246
+create_file is only called from descriptors.cpp, which has the following line:
+
+  create_file(name().c_str(), flags, perm(), uid(), gid(), context.c_str());
+
+"context" will always be not null. Statements like line 178 are always true as a result.
 
 176
 Sat Nov 05 20:50:44 2016 +0000
@@ -9,12 +52,81 @@ UUID: ab04074e_60e67cd4
 Bytes: 249
 (i know this is copy & paste, but in all these cases where the return code isn't actually used, prefer to just compare to -1 directly and lose the temporary variable... it just makes readers think there's something clever going on when there isn't.)
 
+179
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_354e673a
+Bytes: 324
+setsockcreatecon(arg) is a lot like umask(), in that it affects the SELinux context of newly created socket objects. However, in the code below, you are never creating any sockets, so setting the socket creation default label doesn't have any effect.
+
+More on setsockcreatecon at https://linux.die.net/man/3/setsockcreatecon
+
+183:6-193:5
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_d53c4b86
+Bytes: 82
+filecon is always not-null (see comment on line 173), so this code is unreachable.
+
+199
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_55f67bba
+Bytes: 827
+In most cases, filecon will be the SELinux domain of the target service (unless an explicit label is specified for the file), so this will attempt to set the SELinux label of the target file to the service name.
+
+For instance, system/core/logd/logd.rc has the following lines:
+
+service logd /system/bin/logd
+    file /proc/kmsg r
+    file /dev/kmsg w
+
+which will attempt to run lsetfilecon("/dev/kmsg", "u:r:logd:s0") and assign it to an improper SELinux label. This is causing the existing SELinux denial, because init isn't allowed to relabel /dev/kmsg (for good reason) and it likely would have caused an additional error once logd took ownership of this file.
+
+Also, because you already have an open file descriptor here, it would have been much better to use fsetfilecon() here. See https://linux.die.net/man/3/fsetfilecon
+
+200:6-203:5
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_35fb07a1
+Bytes: 17
+unreachable code.
+
 206
 Sat Nov 05 20:50:44 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_c0dac8fd
 Bytes: 206
 the filecon code above may have mangled errno by the time you try to log it here. (the function above saves/restores errno, but i don't understand why we don't just do the filecon stuff afterwards instead?)
+
+212
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_75057fc3
+Bytes: 498
+IMHO, this is error prone. For instance, logd.rc has the following line:
+
+  file /dev/kmsg w
+
+If /dev/kmsg was anything other than UID=0/GID=0, this would have the effect of resetting the UID and GID to zero. The use of this directive on a pre-existing file could cause that file to become unreadable or open it up more widely than intended.
+
+Silently changing the ownership of a file isn't something to be taken lightly. For the vast majority of files in /dev, this should only be done by ueventd.
+
+225:17-225:33
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_b506f7cc
+Bytes: 360
+contrary to what this function is titled, it does much more than just create files. It also opens existing files. In particular, this line is misleading, since it will claim that /dev/kmsg is created, when in reality, it was only opened from it's existing location.
+
+If you really want this to be a create-only function, then you should add O_EXCL on line 195.
+
+226
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_75d3bf1a
+Bytes: 80
+Mode isn't relevant if an existing file is opened (vs a new file being created).
 
 233
 Sat Nov 05 20:50:44 2016 +0000
@@ -32,10 +144,24 @@ UUID: ab04074e_4008989b
 Bytes: 57
 use TemporaryFile in <android-base/test_utils.h> instead.
 
+69
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_f5beafb0
+Bytes: 56
+If there's an error creating this file, the test passes?
+
 77
 Sat Nov 05 20:50:44 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ab04074e_00d5f0cc
 Bytes: 96
 should be EXPECT_STREQ. (there's an ASSERT_STREQ too.) or you can use the trick you used on L95.
+
+94
+Fri Dec 02 06:13:34 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d506749_f597cf30
+Bytes: 70
+line 93 already asserted this is not null, so this check is redundant.
 

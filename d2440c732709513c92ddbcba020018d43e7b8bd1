@@ -9,3 +9,11 @@ UUID: 6d506749_4219a3a1
 Bytes: 68
 not sure why both first and second are being compared to rval.first?
 
+76:14-76:35
+Fri Dec 02 17:50:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_4219a3a1
+UUID: 6d506749_7370f7fc
+Bytes: 34
+Good catch, both should be second.
+

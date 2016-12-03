@@ -1,0 +1,31 @@
+Revision: 1888ceddf7938405cd92c81e7a5c086d28ff473c
+Patch-set: 6
+File: init/descriptors.cpp
+
+115
+Sat Dec 03 00:23:43 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_952286c7
+Bytes: 429
+I'm confused by this. Per "man fcntl", the only supported F_SETFD flag is "FD_CLOEXEC". Passing in O_NDELAY, O_RDONLY, O_WRONLY, or O_RDWR doesn't seem to do anything.
+
+As O_NDELAY is defined as O_NONBLOCK, and O_NONBLOCK is settable via F_SETFL, perhaps you meant that? F_SETFL != F_SETFD.
+
+Also, no return value checking.
+
+Is this really needed at all? This should be entirely handled by the open() call... If not, it's a race.
+
+118:29-118:37
+Sat Dec 03 00:23:43 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_d5012e23
+Bytes: 122
+probably better to print this out in hex...
+
+O_RDONLY=0
+O_WRONLY=1
+O_RDWR=2
+O_NDELAY=00004000
+
+Octal is weird for flags...
+

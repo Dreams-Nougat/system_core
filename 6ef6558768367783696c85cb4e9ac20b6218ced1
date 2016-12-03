@@ -9,6 +9,14 @@ UUID: ede0d714_a0df82f4
 Bytes: 46
 I'd just delete this. It's no longer accurate.
 
+12
+Sat Dec 03 18:54:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_a0df82f4
+UUID: ede0d714_7bd26b67
+Bytes: 4
+Done
+
 23
 Sat Dec 03 03:00:08 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,6 +25,18 @@ Bytes: 280
 Is there value in knowing what time the process started, vs how long it took to start?
 
 I personally wouldn't find this information useful, especially if the device has a persistent clock which carries over across reboots, or if time is adjusted in the middle of the boot process.
+
+23
+Sat Dec 03 18:54:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_e0122ad0
+UUID: ede0d714_9bccf7c7
+Bytes: 724
+it's not clear what "how long it took to start" means. maybe what you're missing (it's in the readme) is that "when it started" is measured in ns since boot (CLOCK_BOOTTIME), so it _is_ "how long it took to start" in the sense of "how long until init started it".
+
+(why aren't i putting the units in the property name, like i always insist on for identifiers in code? because we're already within one character of the system property name length limit for some of these services :-( )
+
+not all of these are interesting, of course, but rather than have init keep a list of which ones we care about (across multiple devices), it's easier to just record them all and let folks like wvw@ decide which ones they want to pull out.
 
 File: init/init.cpp
 
@@ -35,6 +55,14 @@ UUID: ede0d714_80ac866a
 Bytes: 56
 ya, I was wondering about this... Perhaps add a comment?
 
+451
+Sat Dec 03 18:54:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_80ac866a
+UUID: ede0d714_fbbd3b0c
+Bytes: 4
+Done
+
 657
 Sat Dec 03 02:36:03 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -48,6 +76,14 @@ Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_40b69ebc
 Bytes: 140
 You should clear the environment variable after you read it, to avoid polluting the environment space + leak information to child processes.
+
+659
+Sat Dec 03 18:54:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_40b69ebc
+UUID: ede0d714_dbc27f96
+Bytes: 55
+we already have a whitelist elsewhere, but done anyway.
 
 File: init/util.cpp
 
@@ -73,4 +109,12 @@ Parent: ede0d714_807ec61a
 UUID: ede0d714_604d1ae0
 Bytes: 186
 aborting would reboot, although probably not taking destination into account.  Seems fine though, it shouldn't ever happen, and if it does it will show up in the kernel panic dashboards.
+
+481
+Sat Dec 03 18:54:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_604d1ae0
+UUID: ede0d714_bbc7b3a4
+Bytes: 4
+Done
 

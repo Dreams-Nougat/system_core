@@ -1,5 +1,23 @@
 Revision: 6ef6558768367783696c85cb4e9ac20b6218ced1
 Patch-set: 3
+File: /COMMIT_MSG
+
+12
+Sat Dec 03 03:00:08 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_a0df82f4
+Bytes: 46
+I'd just delete this. It's no longer accurate.
+
+23
+Sat Dec 03 03:00:08 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_e0122ad0
+Bytes: 280
+Is there value in knowing what time the process started, vs how long it took to start?
+
+I personally wouldn't find this information useful, especially if the device has a persistent clock which carries over across reboots, or if time is adjusted in the middle of the boot process.
+
 File: init/init.cpp
 
 451
@@ -9,12 +27,27 @@ UUID: ede0d714_d5b12ee1
 Bytes: 98
 (the first stage can't set properties, so i have to pass this through to the second stage to set.)
 
+451
+Sat Dec 03 03:00:08 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_d5b12ee1
+UUID: ede0d714_80ac866a
+Bytes: 56
+ya, I was wondering about this... Perhaps add a comment?
+
 657
 Sat Dec 03 02:36:03 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_607bda2c
 Bytes: 91
 fkupolov: when you add the coldboot time to tron, note that this property name changed too.
+
+659
+Sat Dec 03 03:00:08 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_40b69ebc
+Bytes: 140
+You should clear the environment variable after you read it, to avoid polluting the environment space + leak information to child processes.
 
 File: init/util.cpp
 
@@ -24,4 +57,12 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ede0d714_359bd260
 Bytes: 7
 ccross?
+
+481
+Sat Dec 03 03:00:08 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_359bd260
+UUID: ede0d714_807ec61a
+Bytes: 170
+I like the idea of aborting. It would provide slightly more debugging information in the kernel trace, and would effectively have the same effect as rebooting the device.
 

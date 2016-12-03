@@ -9,6 +9,13 @@ UUID: ede0d714_d5b12ee1
 Bytes: 98
 (the first stage can't set properties, so i have to pass this through to the second stage to set.)
 
+657
+Sat Dec 03 02:36:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ede0d714_607bda2c
+Bytes: 91
+fkupolov: when you add the coldboot time to tron, note that this property name changed too.
+
 File: init/util.cpp
 
 481

@@ -66,3 +66,11 @@ UUID: ede0d714_807ec61a
 Bytes: 170
 I like the idea of aborting. It would provide slightly more debugging information in the kernel trace, and would effectively have the same effect as rebooting the device.
 
+481
+Sat Dec 03 03:26:15 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_807ec61a
+UUID: ede0d714_604d1ae0
+Bytes: 186
+aborting would reboot, although probably not taking destination into account.  Seems fine though, it shouldn't ever happen, and if it does it will show up in the kernel panic dashboards.
+

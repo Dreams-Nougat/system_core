@@ -15,6 +15,14 @@ Also, no return value checking.
 
 Is this really needed at all? This should be entirely handled by the open() call... If not, it's a race.
 
+115
+Mon Dec 05 19:16:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_952286c7
+UUID: ede0d714_b37eb7cb
+Bytes: 192
+Good catch, this has been borken for some time. The correct flag is F_SETFL. O_NDELAY == O_NONBLOCK, but I should really use the later since the former is legacy UNIX and not late-model POSIX.
+
 118:29-118:37
 Sat Dec 03 00:23:43 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -28,4 +36,16 @@ O_RDWR=2
 O_NDELAY=00004000
 
 Octal is weird for flags...
+
+118:29-118:37
+Mon Dec 05 19:16:09 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_d5012e23
+UUID: ede0d714_935a9b6b
+Bytes: 188
+All these flags are octal in the header files, hence why I use octal to print.
+
+I grew up on the PDP11, all we had there was octal, hex had not been invented yet ;->
+
+00004000 _is_ _octal_
 

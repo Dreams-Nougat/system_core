@@ -9,3 +9,13 @@ UUID: ede0d714_73596f46
 Bytes: 232
 It might be clearer if you specify "0" here instead. Per line 98-100, this flag can only have O_RDONLY, O_WRONLY, or O_RDWR. Per "man fcntl", all of these flags are ignored. So just passing in "0" has the same effect but is clearer.
 
+115:21-115:26
+Mon Dec 05 19:38:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ede0d714_73596f46
+UUID: ede0d714_b3a597e9
+Bytes: 666
+0 is not clearer IMHO, as this was broken in 1981 ;-}, I was there when this got fixed in SysVR3 ;-/. It has since been generally accepted practice to always send the same flags you issued to open, to fcntl with the modifications you want to make for backward portability (waaaaaay backward, I admit). POSIX added the clarity regarding the O_RDONLY and friends in the documentation so that all knew they could not shoot themselves in the foot, or die trying to make it so ...
+
+Also, if I _chose_ to allow a nonblocking flag in the future on line 98, it would be a trivial change at the top with no adjustment here. That supports code stability and reduced fragility.
+

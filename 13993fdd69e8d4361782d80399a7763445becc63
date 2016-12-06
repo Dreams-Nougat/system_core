@@ -9,3 +9,10 @@ UUID: 4d19e30d_1a89f943
 Bytes: 103
 Q: for danalbert@ regarding hash<const char*, size_t len> == hash<std::string(const char*, size_t len)>
 
+306:43-306:74
+Tue Dec 06 23:13:23 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_60b888c8
+Bytes: 83
+NULL return from mmap not documented, but seems a reasonable value to check anyway?
+

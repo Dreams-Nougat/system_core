@@ -17,6 +17,14 @@ UUID: 4d19e30d_eb0d59ae
 Bytes: 11
 Don't know.
 
+67
+Tue Dec 06 23:39:45 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_eb0d59ae
+UUID: 4d19e30d_8b1ffdd2
+Bytes: 163
+What about this, the real question is how stable do you expect __do_string_hash() will be in the stl headers? Have you tracked the history of this internal helper?
+
 306:43-306:74
 Tue Dec 06 23:13:23 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,18 @@
+Revision: c8d0b9fb3ad3a471ba097203424eb72c999e0cb9
+Patch-set: 7
+File: libbacktrace/BacktraceOffline.cpp
+
+653:35-653:36
+Tue Dec 06 22:51:01 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_20513027
+Bytes: 74
+Is the 8 check to make sure that you have at least one entry in the table?
+
+657:32-657:33
+Tue Dec 06 22:51:01 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_60f16824
+Bytes: 33
+Probably better as sizeof(sdata).
+

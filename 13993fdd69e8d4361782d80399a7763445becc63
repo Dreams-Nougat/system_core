@@ -16,3 +16,11 @@ UUID: 4d19e30d_60b888c8
 Bytes: 83
 NULL return from mmap not documented, but seems a reasonable value to check anyway?
 
+306:43-306:74
+Tue Dec 06 23:26:11 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_60b888c8
+UUID: 4d19e30d_cb917533
+Bytes: 265
+Paranoid cargo cult (worry that someone manages to set MAP_FIXED and pick up the zero page for example). Matches the existing checking. Did not feel like changing the basic underlying behavior, just a refactor to switch to using unordered_map plus some fiddly bits.
+

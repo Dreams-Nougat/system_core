@@ -1,0 +1,11 @@
+Revision: 13993fdd69e8d4361782d80399a7763445becc63
+Patch-set: 6
+File: liblog/event_tag_map.cpp
+
+67:8-67:65
+Tue Dec 06 19:30:35 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_1a89f943
+Bytes: 103
+Q: for danalbert@ regarding hash<const char*, size_t len> == hash<std::string(const char*, size_t len)>
+

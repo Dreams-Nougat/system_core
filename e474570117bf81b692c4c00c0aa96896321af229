@@ -1,0 +1,27 @@
+Revision: e474570117bf81b692c4c00c0aa96896321af229
+Patch-set: 1
+File: /COMMIT_MSG
+
+13:0-13:9
+Wed Dec 07 21:54:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_d922a6c8
+Bytes: 10
+overridden
+
+18:11-18:18
+Wed Dec 07 21:54:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_79083a4a
+Bytes: 8
+at least
+
+File: rootdir/init.rc
+
+129:36-129:45
+Wed Dec 07 21:54:33 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_f9fc4a01
+Bytes: 10
+overridden
+

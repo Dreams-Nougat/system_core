@@ -9,10 +9,26 @@ UUID: 4d19e30d_20513027
 Bytes: 74
 Is the 8 check to make sure that you have at least one entry in the table?
 
+653:35-653:36
+Wed Dec 07 18:26:50 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_20513027
+UUID: 4d19e30d_0370b1fb
+Bytes: 22
+yes, comment is added.
+
 657:32-657:33
 Tue Dec 06 22:51:01 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d19e30d_60f16824
 Bytes: 33
 Probably better as sizeof(sdata).
+
+657:32-657:33
+Wed Dec 07 18:26:50 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_60f16824
+UUID: 4d19e30d_63d64db0
+Bytes: 4
+Done
 

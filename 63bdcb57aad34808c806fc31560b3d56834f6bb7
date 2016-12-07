@@ -1,0 +1,20 @@
+Revision: 63bdcb57aad34808c806fc31560b3d56834f6bb7
+Patch-set: 2
+File: base/logging.cpp
+
+122:33-122:45
+Wed Dec 07 14:23:54 2016 +0000
+Author: Vladimir Marko <1018108@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 2d602f88_a62226c7
+Bytes: 360
+This constructor is constexpr, except for Windows where we fake the std::mutex. We should use
+
+    #ifdef _WIN32
+    // Avoid destruction order issues by leaking the mutex.
+    static auto& logging_lock = *new std::mutex();
+    #else
+    std::mutex logging_lock;  // Statically initialized.
+    #endif
+
+and avoid the dynamic initialization and heap allocation.
+

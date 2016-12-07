@@ -83,6 +83,14 @@ UUID: 6d506749_22dc6f75
 Bytes: 83
 instead of using test_option, changed to test with customized libbacktrace_test.so.
 
+52:8-52:23
+Wed Dec 07 01:55:24 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 6d506749_22dc6f75
+UUID: 4d19e30d_263708a1
+Bytes: 162
+(see also https://github.com/google/googletest/blob/master/googletest/docs/AdvancedGuide.md#testing-private-code for more on this subject, including FRIEND_TEST.)
+
 58:30-59:3
 Wed Nov 30 00:10:51 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>

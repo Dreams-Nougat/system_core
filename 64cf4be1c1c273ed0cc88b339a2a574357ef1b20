@@ -1,0 +1,18 @@
+Revision: 64cf4be1c1c273ed0cc88b339a2a574357ef1b20
+Patch-set: 2
+File: libappfuse/FuseBuffer.cc
+
+54
+Thu Dec 08 18:16:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_c9117319
+Bytes: 18
+libbase ReadFully?
+
+96
+Thu Dec 08 18:16:39 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_891b7b35
+Bytes: 19
+libbase WriteFully?
+

@@ -1,0 +1,18 @@
+Revision: 2fc3ad991385ffaff9847c452d8c4367304073ec
+Patch-set: 1
+File: libappfuse/FuseBuffer.cc
+
+42:44-42:54
+Thu Dec 08 17:49:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_49c3239b
+Bytes: 109
+isn't this still invalid? (the condition on L39 would be easier to read if `size` was on the left each time.)
+
+54:63-54:64
+Thu Dec 08 17:49:45 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 4d19e30d_09cd2bc2
+Bytes: 46
+this will look weird when ": ..." is appended.
+

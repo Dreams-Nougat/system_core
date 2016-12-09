@@ -9,6 +9,16 @@ UUID: ba37f7d9_6c03572c
 Bytes: 17
 not just typedef?
 
+39
+Fri Dec 09 21:43:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_6c03572c
+UUID: ba37f7d9_cc36c3f8
+Bytes: 362
+As indicated, IS-A was a strong temptation here, but it gets real ugly ripping it back again as we expand MapString to also support std::string initializers and HAS-AN.
+
+Maybe I should include the next patch in the set so that all can see how this is about to expand, maybe a better approach in the next patch in this set will guide a better implementation here.
+
 63:0-71:2
 Fri Dec 09 21:37:31 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

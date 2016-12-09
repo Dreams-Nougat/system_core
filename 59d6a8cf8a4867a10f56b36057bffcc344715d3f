@@ -1,0 +1,13 @@
+Revision: 59d6a8cf8a4867a10f56b36057bffcc344715d3f
+Patch-set: 7
+File: rootdir/init.rc
+
+362:31-362:35
+Fri Dec 09 22:19:00 2016 +0000
+Author: Jakub Pawlowski <1087037@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_4c44131a
+Bytes: 79
+make it into 02770
+
+http://www.toptip.ca/2010/03/linux-setgid-on-directory.html
+

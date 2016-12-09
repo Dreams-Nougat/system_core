@@ -1,0 +1,25 @@
+Revision: 0d470f1a4af94e3c769285e9b14e0218c1af631b
+Patch-set: 7
+File: liblog/event_tag_map.cpp
+
+39
+Fri Dec 09 21:37:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_6c03572c
+Bytes: 17
+not just typedef?
+
+63:0-71:2
+Fri Dec 09 21:37:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_4cf89308
+Bytes: 41
+you'd get this for free with typedef, no?
+
+73:0-83:2
+Fri Dec 09 21:37:31 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_2cfd4ff8
+Bytes: 8
+typedef?
+

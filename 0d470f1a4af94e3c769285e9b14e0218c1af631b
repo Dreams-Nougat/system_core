@@ -19,6 +19,16 @@ As indicated, IS-A was a strong temptation here, but it gets real ugly ripping i
 
 Maybe I should include the next patch in the set so that all can see how this is about to expand, maybe a better approach in the next patch in this set will guide a better implementation here.
 
+39
+Fri Dec 09 22:56:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_cc36c3f8
+UUID: ba37f7d9_67a6d061
+Bytes: 362
+Switched to typedef (thus dropping FastStrcmp.h dependency too), and we lost about 2.5ns in performance (instead of a random 52 or 53ns, we would get a solid 55ns with an occasional 56ns).
+
+Somewhat on the fence, but I can overrule this class in the followon CL to incorporate FastStrcmp.h and the support for both std::string_view and std::string in this class.
+
 63:0-71:2
 Fri Dec 09 21:37:31 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -32,4 +42,14 @@ Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: ba37f7d9_2cfd4ff8
 Bytes: 8
 typedef?
+
+73:0-83:2
+Fri Dec 09 22:56:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_2cfd4ff8
+UUID: ba37f7d9_e7b1a091
+Bytes: 123
+typedef, and switch to using std::make_pair(MapString(), MapString()) worked great, and had no performance impact.
+
+So yes.
 

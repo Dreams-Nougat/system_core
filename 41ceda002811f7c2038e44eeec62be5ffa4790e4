@@ -19,6 +19,14 @@ For the record, this ordering problem _and_ the const constraint are why this mu
 
 If we relax the const constraint, we may be able to force the initialization order by using std::experimental::string_view as a (IS-A) base class?
 
+45:0-46:54
+Fri Dec 09 23:51:20 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_2cd66f08
+UUID: ba37f7d9_5973b454
+Bytes: 94
+the STL assumes you're not subclassing it, so you'll only make trouble for yourself if you do.
+
 43:0-77:2
 Fri Dec 09 22:00:25 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -16,6 +16,20 @@ UUID: ba37f7d9_eccd07c5
 Bytes: 83
 This whole class would go from typedef or IS-A to this because of the requirements.
 
+91:0-94:5
+Fri Dec 09 22:24:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_ec0507c4
+Bytes: 45
+Confirm that this is the default == operator?
+
+96:0-101:48
+Fri Dec 09 22:24:53 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_0c096be0
+Bytes: 171
+If this is made a typedef, then initializer would be a std::make_pair(MapString(), MapString()) for both cases, and should work ... check for any performance implications.
+
 89:0-102:2
 Fri Dec 09 22:00:25 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

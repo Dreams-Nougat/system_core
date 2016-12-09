@@ -1,0 +1,25 @@
+Revision: 41ceda002811f7c2038e44eeec62be5ffa4790e4
+Patch-set: 1
+File: liblog/event_tag_map.cpp
+
+45:0-46:54
+Fri Dec 09 22:00:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_6ca917c7
+Bytes: 63
+order important because alloc has to be initialized before str.
+
+43:0-77:2
+Fri Dec 09 22:00:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_eccd07c5
+Bytes: 83
+This whole class would go from typedef or IS-A to this because of the requirements.
+
+89:0-102:2
+Fri Dec 09 22:00:25 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_ccda4379
+Bytes: 83
+This whole class would go from typedef or IS-A to this because of the requirements.
+

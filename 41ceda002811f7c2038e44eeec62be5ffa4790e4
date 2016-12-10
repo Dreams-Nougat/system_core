@@ -27,6 +27,14 @@ UUID: ba37f7d9_5973b454
 Bytes: 94
 the STL assumes you're not subclassing it, so you'll only make trouble for yourself if you do.
 
+45:0-46:54
+Sat Dec 10 00:02:44 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_5973b454
+UUID: ba37f7d9_f94f08db
+Bytes: 44
+Good to know, so this approach is 'best' ;->
+
 43:0-77:2
 Fri Dec 09 22:00:25 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>

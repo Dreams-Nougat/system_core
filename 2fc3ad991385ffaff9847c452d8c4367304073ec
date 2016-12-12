@@ -9,10 +9,26 @@ UUID: 4d19e30d_49c3239b
 Bytes: 109
 isn't this still invalid? (the condition on L39 would be easier to read if `size` was on the left each time.)
 
+42
+Mon Dec 12 05:35:02 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_49c3239b
+UUID: 6d5147f4_70d99084
+Bytes: 41
+Yes, this should be size actually. Fixed.
+
 54:63-54:64
 Thu Dec 08 17:49:45 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 4d19e30d_09cd2bc2
 Bytes: 46
 this will look weird when ": ..." is appended.
+
+54
+Mon Dec 12 05:35:02 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 4d19e30d_09cd2bc2
+UUID: 6d5147f4_90a6f4f5
+Bytes: 4
+Done
 

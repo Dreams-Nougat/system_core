@@ -11,3 +11,19 @@ make it into 02770
 
 http://www.toptip.ca/2010/03/linux-setgid-on-directory.html
 
+362:31-362:35
+Mon Dec 12 18:20:24 2016 +0000
+Author: Ajay Panicker <1077498@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_4c44131a
+UUID: ba37f7d9_b27cf588
+Bytes: 79
+Will do in follow up patch as this patch is effectively a cherry pick from AOSP
+
+362:31-362:35
+Mon Dec 12 18:20:24 2016 +0000
+Author: Ajay Panicker <1077498@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_4c44131a
+UUID: ba37f7d9_92bd710d
+Bytes: 69
+Will do in a follow up patch as this patch is a cherry pick from AOSP
+

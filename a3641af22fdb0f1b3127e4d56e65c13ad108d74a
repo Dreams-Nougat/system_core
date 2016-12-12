@@ -1,0 +1,11 @@
+Revision: a3641af22fdb0f1b3127e4d56e65c13ad108d74a
+Patch-set: 8
+File: init/bootchart.cpp
+
+202:5-202:21
+Mon Dec 12 19:26:26 2016 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_3bf8eb07
+Bytes: 130
+may not for this CL, but can we move sampling into its own thread? Then bootchart will have less impact to boot-up process itself>
+

@@ -9,3 +9,13 @@ UUID: ba37f7d9_3bf8eb07
 Bytes: 130
 may not for this CL, but can we move sampling into its own thread? Then bootchart will have less impact to boot-up process itself>
 
+202:5-202:21
+Tue Dec 13 01:58:10 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: ba37f7d9_3bf8eb07
+UUID: ba37f7d9_a364a25f
+Bytes: 296
+normally adding threads to init is scary (because none of the init code has any locks), but in this case it might not be too bad --- this file is self-contained enough that we can probably draw a boundary, add one big lock, and call it done.
+
+but does this patch as-is solve your current problem?
+

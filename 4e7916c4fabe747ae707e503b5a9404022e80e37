@@ -1,0 +1,51 @@
+Revision: 4e7916c4fabe747ae707e503b5a9404022e80e37
+Patch-set: 3
+File: fs_mgr/fs_mgr.c
+
+540:19-540:44
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_33cf12bb
+Bytes: 36
+Load/verify all vbmeta images first.
+
+582:55-582:61
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_53dc9675
+Bytes: 74
+Similar to MF_VERIFY, only enable AVB for fstab->recs[i] with MF_AVB flag.
+
+File: fs_mgr/fs_mgr_avb.cpp
+
+98:12-98:37
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_13d20e66
+Bytes: 193
+androidboot.* will be imported by init to ro.boot.*.
+
+However, the sha512 digest in hex string (len: 128) will exceed PROPERTY_VALUE_MAX (92) so we need to parse it from /proc/cmdline directly.
+
+102:40-102:55
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_f3ccaac8
+Bytes: 56
+Should be: androidboot.vbmeta.*, same for the following.
+
+137:0-138:28
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_d3c7a6a3
+Bytes: 103
+Need this CL to make avb_sha* functions public:
+  - https://android-review.googlesource.com/#/c/313243/
+
+205:3-205:69
+Tue Dec 13 08:05:03 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_73d99a84
+Bytes: 93
+Will have separated CLs for ECC and verify_mode (VERITY_MODE_RESTART or VERITY_MODE_RESTART).
+

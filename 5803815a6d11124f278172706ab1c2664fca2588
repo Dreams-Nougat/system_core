@@ -1,0 +1,11 @@
+Revision: 5803815a6d11124f278172706ab1c2664fca2588
+Patch-set: 1
+File: include/private/android_filesystem_config.h
+
+161:0-162:54
+Tue Dec 13 19:52:52 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: ba37f7d9_748c328b
+Bytes: 87
+great idea, long overdue. mark AID_APP as "TODO: switch callers over to AID_APP_START"?
+

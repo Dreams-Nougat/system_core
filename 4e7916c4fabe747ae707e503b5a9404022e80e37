@@ -49,3 +49,12 @@ UUID: 6d5147f4_73d99a84
 Bytes: 93
 Will have separated CLs for ECC and verify_mode (VERITY_MODE_RESTART or VERITY_MODE_RESTART).
 
+File: fs_mgr/fs_mgr_main.c
+
+96:0-109:13
+Tue Dec 13 13:49:50 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 6d5147f4_138f6e4b
+Bytes: 40
+Just for testing, will be removed later.
+

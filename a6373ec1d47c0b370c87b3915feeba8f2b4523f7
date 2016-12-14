@@ -9,3 +9,11 @@ UUID: 3a7867ff_ba1d19dc
 Bytes: 77
 is this right? don't you need an "errno = -result" or "<< strerror(-result)"?
 
+54
+Wed Dec 14 06:41:02 2016 +0000
+Author: Daichi Hirono <1091002@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_ba1d19dc
+UUID: fae08f14_2c027373
+Bytes: 153
+The method needs to be invoked just after invoking read and write. For failure case, result should contain -1 and errno should contains the error number.
+

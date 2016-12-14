@@ -9,6 +9,14 @@ UUID: 3a7867ff_5575d6a6
 Bytes: 69
 except for 32-bit arm/x86, the comments and code don't seem to match?
 
+330:22-330:29
+Wed Dec 14 16:24:20 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_5575d6a6
+UUID: 3a7867ff_f57c028a
+Bytes: 295
+This comment refers to the range of kernel-supported entropy values for 64-bit processes, which have a minimum of 18 and a maximum of 33.  32-bit address spaces have different values: 8 - 16 and are the same for both x86 and arm, so this comment explains where 33 came from below and 32 for x86.
+
 356
 Wed Dec 14 16:16:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -17,4 +25,12 @@ Bytes: 164
 this bug is marked fixed, but it's not obvious from the bug that it actually was fixed, and this #ifdef is still present internally.
 
 what's the actual status here?
+
+356
+Wed Dec 14 16:24:20 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_35977a97
+UUID: 3a7867ff_35c21a98
+Bytes: 198
+Bug was specifically to fix devices not booting due to this surprise.  Not sure on present status.  +leecam@ as to whether or not we can remove this or if a different tracking bug ought to be added.
 

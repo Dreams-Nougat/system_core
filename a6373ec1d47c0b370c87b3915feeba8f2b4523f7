@@ -1,0 +1,11 @@
+Revision: a6373ec1d47c0b370c87b3915feeba8f2b4523f7
+Patch-set: 2
+File: libappfuse/FuseBuffer.cc
+
+54
+Wed Dec 14 06:24:25 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_ba1d19dc
+Bytes: 77
+is this right? don't you need an "errno = -result" or "<< strerror(-result)"?
+

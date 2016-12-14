@@ -17,3 +17,11 @@ UUID: fae08f14_2c027373
 Bytes: 153
 The method needs to be invoked just after invoking read and write. For failure case, result should contain -1 and errno should contains the error number.
 
+54
+Wed Dec 14 07:04:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fae08f14_2c027373
+UUID: 3a7867ff_3a4be9cd
+Bytes: 112
+(ah, right... i assumed this was a FUSE result, but looking at the callers below i see it's just what you said.)
+

@@ -17,6 +17,16 @@ UUID: 3a7867ff_f57c028a
 Bytes: 295
 This comment refers to the range of kernel-supported entropy values for 64-bit processes, which have a minimum of 18 and a maximum of 33.  32-bit address spaces have different values: 8 - 16 and are the same for both x86 and arm, so this comment explains where 33 came from below and 32 for x86.
 
+330:22-330:29
+Wed Dec 14 16:27:59 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_f57c028a
+UUID: 3a7867ff_f5d7a24d
+Bytes: 97
+but why 18 here and 16 in the code?
+
+the upper bounds all match, but none of the lower bounds do.
+
 356
 Wed Dec 14 16:16:12 2016 +0000
 Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>

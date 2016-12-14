@@ -1,0 +1,20 @@
+Revision: baccc4084113f0190d9880c3effcecf4b870e3ed
+Patch-set: 3
+File: init/init.cpp
+
+330:22-330:29
+Wed Dec 14 16:16:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_5575d6a6
+Bytes: 69
+except for 32-bit arm/x86, the comments and code don't seem to match?
+
+356
+Wed Dec 14 16:16:12 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_35977a97
+Bytes: 164
+this bug is marked fixed, but it's not obvious from the bug that it actually was fixed, and this #ifdef is still present internally.
+
+what's the actual status here?
+

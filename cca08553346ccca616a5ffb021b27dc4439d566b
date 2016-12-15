@@ -1,0 +1,20 @@
+Revision: cca08553346ccca616a5ffb021b27dc4439d566b
+Patch-set: 2
+File: /COMMIT_MSG
+
+9:35-9:43
+Thu Dec 15 19:36:37 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_267d381f
+Bytes: 33
+suggest: an iovec of log messages
+
+File: liblog/log_hash.h
+
+34
+Thu Dec 15 19:36:37 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_a3ad9a86
+Bytes: 40
+suggest add: /* __LIBLOG_LOG_HASH_H__ */
+

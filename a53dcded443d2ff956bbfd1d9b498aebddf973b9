@@ -11,3 +11,13 @@ can we track this somewhere? so QA/test/android-boottime@ can chase folks down a
 
 (i like this as a mitigation, but want a way to find and fix the bad code.)
 
+269
+Thu Dec 15 18:55:46 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_546b0ed1
+UUID: dabe6b36_c3537656
+Bytes: 381
+With https://android-review.googlesource.com/#/c/314074 we have the data in the logs, and in the statistics. I could add additional statistics in 'logcat -b all -S' to highlight separately the top abusers that have had multiple lines suppressed/joined.
+
+It has been three years I have been asking Q/A to capture the log statistics and take action on the data, without any traction.
+

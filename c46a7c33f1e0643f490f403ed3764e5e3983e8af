@@ -1,0 +1,13 @@
+Revision: c46a7c33f1e0643f490f403ed3764e5e3983e8af
+Patch-set: 1
+File: base/test_utils.cpp
+
+129
+Thu Dec 15 02:37:07 2016 +0000
+Author: Josh Gao <1079148@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_b70287ea
+Bytes: 186
+Instead of using setvbuf in init(), should we have this flush stderr and std::cerr instead?
+
+(We might want to do that in init as well, to avoid getting the tail end of unflushed output)
+

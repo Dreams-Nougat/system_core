@@ -1,0 +1,13 @@
+Revision: a53dcded443d2ff956bbfd1d9b498aebddf973b9
+Patch-set: 2
+File: liblog/logger_write.c
+
+269
+Thu Dec 15 17:20:46 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_546b0ed1
+Bytes: 188
+can we track this somewhere? so QA/test/android-boottime@ can chase folks down and get them to fix their stuff.
+
+(i like this as a mitigation, but want a way to find and fix the bad code.)
+

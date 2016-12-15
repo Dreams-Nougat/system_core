@@ -1,0 +1,11 @@
+Revision: 0f2d293f9aaeae170e968ddacf5a4eea3c19c21d
+Patch-set: 2
+File: liblog/logd_reader.h
+
+24:0-26:6
+Thu Dec 15 22:06:18 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_6cec2f4b
+Bytes: 40
+log_portability has a macro for this ...
+

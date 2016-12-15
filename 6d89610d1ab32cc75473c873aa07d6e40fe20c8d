@@ -1,0 +1,11 @@
+Revision: 6d89610d1ab32cc75473c873aa07d6e40fe20c8d
+Patch-set: 2
+File: fs_mgr/fs_mgr_priv.h
+
+88:8-88:23
+Thu Dec 15 23:43:29 2016 +0000
+Author: Jin Qian <1051712@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_328c4e58
+Bytes: 27
+is this related with quota?
+

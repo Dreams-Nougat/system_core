@@ -9,6 +9,14 @@ UUID: 3a7867ff_97ccabcb
 Bytes: 32
 Where did these flags come from?
 
+145:8-147:32
+Thu Dec 15 02:57:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_97ccabcb
+UUID: 3a7867ff_171efb24
+Bytes: 180
+These had been inserted by llvm-*-build.mk, along with a random variety of other stuff.  I copied the bare minimum here.  These are required to avoid an #error in the LLVM headers.
+
 214:8-214:13
 Thu Dec 15 02:22:21 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -16,10 +24,26 @@ UUID: 3a7867ff_f7da3f78
 Bytes: 166
 When building the host backtest_test executable for x86, x86_64 the flags -Wno-extern-c-compat and -fno-omit-frame-pointer are added. Are these flags unnecessary now?
 
+214:8-214:13
+Thu Dec 15 02:57:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_f7da3f78
+UUID: 3a7867ff_d73aa385
+Bytes: 200
+This doesn't pull in all of the defines from llvm-host-build.mk, just the headers, so it doesn't get -fomit-frame-pointer any more.  I don't see any warnings when I build without -Wno-extern-c-compat.
+
 219:17-219:26
 Thu Dec 15 02:22:21 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 3a7867ff_37bdb70b
 Bytes: 25
 Where did this come from?
+
+219:17-219:26
+Thu Dec 15 02:57:13 2016 +0000
+Author: Colin Cross <1002751@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_37bdb70b
+UUID: 3a7867ff_374a172a
+Bytes: 99
+This was coming from llvm-host-build.mk, and is necessary for one of the libLLVM* static libraries.
 

@@ -11,3 +11,11 @@ Instead of using setvbuf in init(), should we have this flush stderr and std::ce
 
 (We might want to do that in init as well, to avoid getting the tail end of unflushed output)
 
+129
+Thu Dec 15 19:08:50 2016 +0000
+Author: Yabin Cui <1056364@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 3a7867ff_b70287ea
+UUID: dabe6b36_83133e41
+Bytes: 281
+Original users of CapturedStderr use CapturedStderr::fd() to read output. It means we also need to fflush(stderr) in fd(), which is a little surprising (and what if user can cache fd() value). Or we need to change all users to use output(), (which I think can be in another patch).
+

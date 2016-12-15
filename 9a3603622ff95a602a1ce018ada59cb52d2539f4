@@ -1,0 +1,25 @@
+Revision: 9a3603622ff95a602a1ce018ada59cb52d2539f4
+Patch-set: 1
+File: libbacktrace/Android.bp
+
+145:8-147:32
+Thu Dec 15 02:22:21 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_97ccabcb
+Bytes: 32
+Where did these flags come from?
+
+214:8-214:13
+Thu Dec 15 02:22:21 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_f7da3f78
+Bytes: 166
+When building the host backtest_test executable for x86, x86_64 the flags -Wno-extern-c-compat and -fno-omit-frame-pointer are added. Are these flags unnecessary now?
+
+219:17-219:26
+Thu Dec 15 02:22:21 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 3a7867ff_37bdb70b
+Bytes: 25
+Where did this come from?
+

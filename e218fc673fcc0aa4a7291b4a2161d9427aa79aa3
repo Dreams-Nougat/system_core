@@ -1,0 +1,11 @@
+Revision: e218fc673fcc0aa4a7291b4a2161d9427aa79aa3
+Base-for-patch-set: 8
+File: init/bootchart.cpp
+
+43:8-43:16
+Thu Dec 15 20:33:04 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_866fccdb
+Bytes: 117
+The code related to this was removed. There is no mention of this in the comment description about why this was done.
+

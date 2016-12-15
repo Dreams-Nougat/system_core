@@ -2,6 +2,18 @@ Revision: a3641af22fdb0f1b3127e4d56e65c13ad108d74a
 Patch-set: 8
 File: init/bootchart.cpp
 
+187:4-187:34
+Thu Dec 15 20:33:04 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_c63ee4cb
+Bytes: 212
+Since this function only ever returns 0, maybe it would be better to have this void, and the call below be:
+
+do_bootchart_stop();
+return 0;
+
+As is, it looks like this function could return something other than 0.
+
 202:5-202:21
 Mon Dec 12 19:26:26 2016 +0000
 Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>

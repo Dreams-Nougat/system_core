@@ -36,6 +36,14 @@ UUID: 1af2c318_039452ce
 Bytes: 46
 No need, these live in an anonymous namespace.
 
+72
+Fri Dec 16 00:53:03 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_039452ce
+UUID: dabe6b36_ec777a3d
+Bytes: 94
+can we use static instead? most of our code does, and i made the same mistake looking at this.
+
 73:13-73:16
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

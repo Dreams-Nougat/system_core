@@ -1,0 +1,18 @@
+Revision: ab3bda2aba7cca96da2cef38a7a724c6deafe361
+Patch-set: 5
+File: init/init.cpp
+
+526
+Fri Dec 16 04:10:13 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_d75a3e0d
+Bytes: 83
+What would the partition be? Which .cil file does the vendor policy get built into?
+
+546
+Fri Dec 16 04:10:13 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_176596c7
+Bytes: 43
+Is the cil routine setting errno, why PLOG?
+

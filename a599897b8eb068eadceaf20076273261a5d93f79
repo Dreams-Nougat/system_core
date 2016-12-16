@@ -58,6 +58,14 @@ UUID: 1af2c318_e3532656
 Bytes: 63
 I feel like if we only do it once, we can probably be thorough.
 
+73:34-73:35
+Fri Dec 16 00:50:29 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_e3532656
+UUID: dabe6b36_5835a991
+Bytes: 264
+I guess if you want to support kernels without, for instance, CAP_SETUID, then sure.  :-) Anything before CAP_NET_RAW (cap #13) has been around since before the dawn of time. I'm not sure what additional confidence this gives you, but it does have a non-zero cost.
+
 83
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -129,4 +137,14 @@ Bytes: 482
 That's a fair point. The only reason to put it here was to hide the implementation details of the number of caps from the users of this file -- arguably, you might not want to force every caller of this interface to have to find the runtime value of cap_last_cap. If you still think losing that encapsulation in the name of performance is worth it, I'm happy to move things around.
 
 Alternatively, we could just cache things in this file, with a lazy initializer. What do you think?
+
+155:0-164:5
+Fri Dec 16 00:50:29 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_63855698
+UUID: dabe6b36_98e0c1e4
+Bytes: 310
+If you keep it here, you'd still miss the error message if the service doesn't execute. For instance, if it's a disabled service. Moving it to the service parsing would emit an error even if the service itself is never triggered.
+
+Lazy initializer SGTM. I think it's thread safe too, but enh would know better.
 

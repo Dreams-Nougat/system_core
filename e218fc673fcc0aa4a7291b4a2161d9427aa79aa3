@@ -9,3 +9,13 @@ UUID: dabe6b36_866fccdb
 Bytes: 117
 The code related to this was removed. There is no mention of this in the comment description about why this was done.
 
+43:8-43:16
+Fri Dec 16 18:28:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_866fccdb
+UUID: fa6fafa9_88bc2769
+Bytes: 200
+sorry, didn't see your comments until afterwards. (this thread had got too long.)
+
+it was explained earlier in the thread, but now i need a follow-on CL to remove this line i can explain it there too!
+

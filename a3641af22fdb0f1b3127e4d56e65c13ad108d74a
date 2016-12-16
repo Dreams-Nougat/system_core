@@ -14,6 +14,14 @@ return 0;
 
 As is, it looks like this function could return something other than 0.
 
+187:4-187:34
+Fri Dec 16 18:28:56 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_c63ee4cb
+UUID: fa6fafa9_087ad798
+Bytes: 375
+it was just to match the style in do_bootchart, which is a function pointer in the big table of init builtins. init scripts can't actually use the return values, and there's no particularly consistent meaning for the different return values anyway. one day i think we'd probably be better just removing it all and forcing commands to directly log any problems they encounter.
+
 202:5-202:21
 Mon Dec 12 19:26:26 2016 +0000
 Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>

@@ -1,0 +1,11 @@
+Revision: af9adc9416e1b943bc9232fcae9e90905666909c
+Patch-set: 4
+File: init/capabilities.cpp
+
+95:47-95:70
+Fri Dec 16 16:31:13 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_5db2cf2d
+Bytes: 189
+don't we want to drop this portion then? Otherwise we may fail to drop capabilities from the bounding set if the kernel is newer and this code hasn't been updated with the new capabilities.
+

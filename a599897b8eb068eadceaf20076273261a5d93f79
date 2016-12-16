@@ -1,5 +1,14 @@
 Revision: a599897b8eb068eadceaf20076273261a5d93f79
 Patch-set: 1
+File: /COMMIT_MSG
+
+16
+Fri Dec 16 00:19:26 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_98e601ce
+Bytes: 82
+doesn't this mean we're doing that on every exec? should we be caching the result?
+
 File: init/capabilities.cpp
 
 72

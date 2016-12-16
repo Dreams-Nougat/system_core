@@ -11,6 +11,13 @@ Is this needed anymore? Service::ParseCapabilities errors out if last_valid_cap 
 
 (same comment on line 109 and 137)
 
+148
+Fri Dec 16 03:33:54 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_5771cef6
+Bytes: 150
+Here you return an int, but below you return an unsigned long. I suspect you should return an unsigned long here too. At a minimum, it's inconsistent.
+
 File: init/service.cpp
 
 320:0-323:5
@@ -27,4 +34,11 @@ Instead, perhaps it makes more sense to only error out if the config file reques
     *err = StringPrintf("...");
     return false;
   }
+
+327:8-327:11
+Fri Dec 16 03:33:54 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_d7931ee7
+Bytes: 49
+int vs unsigned long for capability integer type.
 

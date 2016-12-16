@@ -2,6 +2,13 @@ Revision: c7ed1685c5a615e68b0ae27f798055622a30fb97
 Patch-set: 3
 File: /COMMIT_MSG
 
+7:23-7:32
+Fri Dec 16 20:27:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_4362f0c0
+Bytes: 9
+debuggerd
+
 9:33-9:39
 Fri Dec 16 15:32:40 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -29,4 +36,22 @@ Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fa6fafa9_fdc63b00
 Bytes: 6
 single
+
+File: debuggerd/tombstone.cpp
+
+266:6-266:32
+Fri Dec 16 20:27:00 2016 +0000
+Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_433bd08a
+Bytes: 563
+There should be a comment here describing why you are doing this.
+
+For example, something like:
+
+// Only attempt to find function names in executable maps.
+// This avoids problems trying to open the file associated
+// with the map that can cause a deadlock if the file is
+// associated with a device and the driver is single-threaded.
+
+By the way, is there any easy way that we could modify the open call to determine this? It might be better to modify the call in libbacktrace/libunwind to avoid even trying to open device files to completely avoid this problem.
 

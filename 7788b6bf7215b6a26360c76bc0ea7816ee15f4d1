@@ -11,3 +11,11 @@ return (last_valid_cap - 1);
 
 Otherwise, there's cognitive overhead recalling the difference between prefix notation and postfix notation. And you're performing an unnecessary write to last_valid_cap which will eventually get thrown away.
 
+82
+Fri Dec 16 18:10:56 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_a80c83b5
+UUID: 5a2fdb70_e7f4e2d4
+Bytes: 4
+Done
+

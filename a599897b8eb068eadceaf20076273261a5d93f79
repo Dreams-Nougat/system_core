@@ -76,6 +76,14 @@ UUID: 1af2c318_432dbaa7
 Bytes: 8
 Will do.
 
+72
+Fri Dec 16 02:55:11 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_432dbaa7
+UUID: 1af2c318_23898e48
+Bytes: 4
+Done
+
 73:13-73:16
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -105,6 +113,14 @@ Parent: 1af2c318_e3532656
 UUID: dabe6b36_5835a991
 Bytes: 264
 I guess if you want to support kernels without, for instance, CAP_SETUID, then sure.  :-) Anything before CAP_NET_RAW (cap #13) has been around since before the dawn of time. I'm not sure what additional confidence this gives you, but it does have a non-zero cost.
+
+73:34-73:35
+Fri Dec 16 02:55:11 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_5835a991
+UUID: 1af2c318_e376867a
+Bytes: 26
+Done (with CAP_WAKE_ALARM)
 
 83
 Fri Dec 16 00:04:47 2016 +0000
@@ -202,4 +218,20 @@ yeah, the usual
   }
 
 idiom is thread-safe. the compiler inserts the necessary locking.
+
+155:0-164:5
+Fri Dec 16 02:55:11 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_ccba7ea3
+UUID: 1af2c318_03729288
+Bytes: 4
+Done
+
+155:0-164:5
+Fri Dec 16 02:55:11 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_98e0c1e4
+UUID: 1af2c318_a37c7e5e
+Bytes: 4
+Done
 

@@ -32,3 +32,11 @@ UUID: fa6fafa9_a3f3c47d
 Bytes: 151
 I did not add any errno setting.  As for PLOG vs. LOG, dunno, I just followed the existing usage (enh@ would know previous justification here, if any).
 
+546
+Fri Dec 16 19:28:21 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_a3f3c47d
+UUID: fa6fafa9_83ffa83b
+Bytes: 63
+if what you called set errno, you should use PLOG. if not, LOG.
+

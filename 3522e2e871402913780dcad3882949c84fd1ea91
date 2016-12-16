@@ -11,6 +11,16 @@ No.  Not even as an option.
 
 There are too many options for vendor code loaded from bluetooth, telephony, etc. to trigger this and take down an important system service.
 
+16:37-17:60
+Fri Dec 16 00:38:34 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_787185f7
+UUID: dabe6b36_786985d2
+Bytes: 297
+Easy to remove. But it is off by default and is not available on "user".
+
+But the good news is this is not triggering on a healthy device. This option is for Q/A to report and light a fire under the callers, and allow them to supply a clear bugreport and tombstone so that they can fix their code.
+
 File: logd/README.property
 
 49:0-51:4

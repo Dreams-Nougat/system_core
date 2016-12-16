@@ -1,5 +1,16 @@
 Revision: 3522e2e871402913780dcad3882949c84fd1ea91
 Patch-set: 3
+File: /COMMIT_MSG
+
+16:37-17:60
+Fri Dec 16 00:29:50 2016 +0000
+Author: Greg Hackmann <1015340@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_787185f7
+Bytes: 169
+No.  Not even as an option.
+
+There are too many options for vendor code loaded from bluetooth, telephony, etc. to trigger this and take down an important system service.
+
 File: logd/README.property
 
 49:0-51:4

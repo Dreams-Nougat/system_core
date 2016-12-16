@@ -16,3 +16,11 @@ UUID: dabe6b36_b8f5bdd3
 Bytes: 86
 Comment says function returns "number of timestamps", not a boolean comparison result.
 
+82:11-82:23
+Fri Dec 16 16:52:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_b8f5bdd3
+UUID: fa6fafa9_9d72a701
+Bytes: 80
+Good catch, changed the function for usage simplicity and forgot the comment ...
+

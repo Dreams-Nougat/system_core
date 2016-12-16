@@ -1,0 +1,11 @@
+Revision: fe425d63d444a7010ba1db8c2952f8058610bd04
+Patch-set: 1
+File: logd/README.property
+
+51:0-51:5
+Fri Dec 16 16:53:58 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_1d8cd757
+Bytes: 36
+again with these infectious tabs ...
+

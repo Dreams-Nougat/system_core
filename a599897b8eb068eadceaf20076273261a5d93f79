@@ -20,6 +20,14 @@ Missing static.
 
 "static unsigned int GetLastValidCap() {"
 
+72
+Fri Dec 16 00:40:39 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_7d633723
+UUID: 1af2c318_039452ce
+Bytes: 46
+No need, these live in an anonymous namespace.
+
 73:13-73:16
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -43,6 +51,14 @@ Missing static
 
 "static bool DropBoundingSet ..."
 
+83
+Fri Dec 16 00:40:39 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_5dbc7b67
+UUID: 1af2c318_e3984606
+Bytes: 47
+No need, this is inside an anonymous namespace.
+
 97
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -52,6 +68,14 @@ Missing static
 
 "static bool SetProcCaps ..."
 
+97
+Fri Dec 16 00:40:39 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_9d7713f1
+UUID: 1af2c318_438e5ac2
+Bytes: 33
+Same, inside anonymous namespace.
+
 131
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -60,6 +84,14 @@ Bytes: 47
 missing static
 
 "static bool SetAmbientCaps..."
+
+131
+Fri Dec 16 00:40:39 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_5d6e3b1b
+UUID: 1af2c318_238b4eb2
+Bytes: 7
+Same =)
 
 155:0-164:5
 Fri Dec 16 00:04:47 2016 +0000
@@ -71,4 +103,14 @@ this feels like an awkward place for this. Before the invocation of every servic
 Instead, it feels like this would be better placed in service.cpp function ParseCapabilities, so the check only occurs on service parsing, not service execution. That way, even if the service isn't executed or is disabled, an error message will still be generated.
 
 Extra points for caching this value to avoid recomputing this over and over again.
+
+155:0-164:5
+Fri Dec 16 00:40:39 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_fd9d67a5
+UUID: 1af2c318_63855698
+Bytes: 482
+That's a fair point. The only reason to put it here was to hide the implementation details of the number of caps from the users of this file -- arguably, you might not want to force every caller of this interface to have to find the runtime value of cap_last_cap. If you still think losing that encapsulation in the name of performance is worth it, I'm happy to move things around.
+
+Alternatively, we could just cache things in this file, with a lazy initializer. What do you think?
 

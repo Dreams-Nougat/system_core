@@ -1,0 +1,41 @@
+Revision: 60659a45aae2f0a437654b214692f8574abdadc4
+Patch-set: 3
+File: /COMMIT_MSG
+
+11:5-11:7
+Fri Dec 16 20:00:17 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_e374dcad
+Bytes: 3
+too
+
+File: liblog/log_hash.cpp
+
+46:23-46:34
+Fri Dec 16 20:00:17 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_6369acd2
+Bytes: 30
+the maximum allowed number [?]
+
+78:37-78:47
+Fri Dec 16 20:00:17 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_c3960099
+Bytes: 9
+incidents
+
+78:61-78:69
+Fri Dec 16 20:00:17 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_a39104a4
+Bytes: 9
+algorithm
+
+79:49-79:59
+Fri Dec 16 20:00:17 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_e38bfc71
+Bytes: 9
+incidents
+

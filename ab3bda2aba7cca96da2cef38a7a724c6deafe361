@@ -48,3 +48,11 @@ UUID: fa6fafa9_ae164b70
 Bytes: 113
 I looked through the cil code, it doesn't appear to handle errno, so you def LOG here... PLOG is akin to perror()
 
+546
+Fri Dec 16 22:33:27 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_ae164b70
+UUID: fa6fafa9_49a1317a
+Bytes: 4
+Done
+

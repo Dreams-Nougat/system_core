@@ -1,0 +1,32 @@
+Revision: e1528359d201d9806998dff63cccef033231b584
+Patch-set: 2
+File: /COMMIT_MSG
+
+10:46-10:57
+Fri Dec 16 19:51:48 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_8337a80a
+Bytes: 10
+understand
+
+10:5-10:8
+Fri Dec 16 19:51:48 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_c31b6099
+Bytes: 13
+delete "the"?
+
+11:47-12:6
+Fri Dec 16 19:51:48 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_83124876
+Bytes: 48
+This typically takes 22ns to perform the lookup,
+
+17:0-18:33
+Fri Dec 16 19:51:48 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_6337ecf4
+Bytes: 117
+implements a fast conversion to lower case of the first character of the logd.ratelimit.identical property value. [?]
+

@@ -43,3 +43,11 @@ In addition, even if an overflow occurred, it would still require that "prctl(PR
 
 (if you can write a unittest which exercises the "else" block if this test, I'd be curious to see it.  Maybe possible with seccomp? Dunno...)
 
+82
+Fri Dec 16 17:26:45 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_68b98ba8
+UUID: 5a2fdb70_e7a222e1
+Bytes: 83
+Agreed. This is ready to go in. Let me know if you want me to +2 or if you will +2.
+

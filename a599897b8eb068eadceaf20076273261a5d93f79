@@ -18,6 +18,13 @@ UUID: dabe6b36_4637940b
 Bytes: 173
 to match the signature of prctl(), should be unsigned long. "man prctl". (although the bionic declaration is "int prctl(int option, ...);", so I'm not 100% sure on this one)
 
+73:34-73:35
+Fri Dec 16 00:10:26 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_dd76ab7a
+Bytes: 133
+The minimum kernel we support is 3.8, so you could reduce a few system calls by starting this at CAP_WAKE_ALARM (Linux 3.0 timeframe)
+
 83
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

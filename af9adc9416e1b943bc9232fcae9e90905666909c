@@ -9,3 +9,11 @@ UUID: fa6fafa9_5db2cf2d
 Bytes: 189
 don't we want to drop this portion then? Otherwise we may fail to drop capabilities from the bounding set if the kernel is newer and this code hasn't been updated with the new capabilities.
 
+95:47-95:70
+Fri Dec 16 16:40:25 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_5db2cf2d
+UUID: 5a2fdb70_275c3a35
+Bytes: 104
+That's a fair point -- if folks ever ship a new kernel without updating headers, as unlikely as that is.
+

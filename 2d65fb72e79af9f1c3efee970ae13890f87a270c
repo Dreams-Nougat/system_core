@@ -9,3 +9,11 @@ UUID: fa6fafa9_7a9b114d
 Bytes: 13
 #pragma once?
 
+14
+Fri Dec 16 16:19:33 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_7a9b114d
+UUID: 5a2fdb70_070bb64a
+Bytes: 29
+I added proper #ifdef guards.
+

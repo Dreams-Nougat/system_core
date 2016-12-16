@@ -1,0 +1,58 @@
+Revision: a599897b8eb068eadceaf20076273261a5d93f79
+Patch-set: 1
+File: init/capabilities.cpp
+
+72
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_7d633723
+Bytes: 58
+Missing static.
+
+"static unsigned int GetLastValidCap() {"
+
+73:13-73:16
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_4637940b
+Bytes: 173
+to match the signature of prctl(), should be unsigned long. "man prctl". (although the bionic declaration is "int prctl(int option, ...);", so I'm not 100% sure on this one)
+
+83
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_5dbc7b67
+Bytes: 49
+Missing static
+
+"static bool DropBoundingSet ..."
+
+97
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_9d7713f1
+Bytes: 45
+Missing static
+
+"static bool SetProcCaps ..."
+
+131
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_5d6e3b1b
+Bytes: 47
+missing static
+
+"static bool SetAmbientCaps..."
+
+155:0-164:5
+Fri Dec 16 00:04:47 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_fd9d67a5
+Bytes: 600
+this feels like an awkward place for this. Before the invocation of every service which uses capabilities, you call GetLastValidCap. This recomputes the exact same value over and over again. This is going to have overhead on every service invocation.
+
+Instead, it feels like this would be better placed in service.cpp function ParseCapabilities, so the check only occurs on service parsing, not service execution. That way, even if the service isn't executed or is disabled, an error message will still be generated.
+
+Extra points for caching this value to avoid recomputing this over and over again.
+

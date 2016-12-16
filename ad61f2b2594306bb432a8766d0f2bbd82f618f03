@@ -59,6 +59,16 @@ UUID: 1af2c318_c3db8a3a
 Bytes: 167
 That's reasonable. I'm not sure how often we update actual kernels beyond kernel headers, but no need to be overly strict when it doesn't provide a security guarantee.
 
+320:0-323:5
+Fri Dec 16 03:59:08 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_c3db8a3a
+UUID: 1af2c318_43f01aae
+Bytes: 478
+Actually, thinking more about this, if the kernel gets updated but the headers don't, then LookupCap will return -1 -- LookupCap looks at the kernel headers. So there's really no way to identify the case where the user is requesting a capability not present in the current headers vs a capability that doesn't exist at all in the upstream headers.
+
+So what I'm gonna do is warn but not error (i.e. not return false) if we find the runtime has more capabilities than the headers.
+
 327:8-327:11
 Fri Dec 16 03:33:54 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

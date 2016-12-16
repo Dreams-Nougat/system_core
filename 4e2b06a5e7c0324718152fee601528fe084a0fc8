@@ -1,0 +1,22 @@
+Revision: 4e2b06a5e7c0324718152fee601528fe084a0fc8
+Patch-set: 2
+File: liblog/log_hash.cpp
+
+25:0-25:35
+Fri Dec 16 16:52:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_7d6cebb1
+Bytes: 145
+And this one is correct as we pick up log_time.h this way.
+
+For hardening we should still include time.h here since we are using struct timespec.
+
+File: liblog/log_hash.h
+
+21:0-21:35
+Fri Dec 16 16:52:39 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_5d6f2fa7
+Bytes: 27
+use #include <time> instead
+

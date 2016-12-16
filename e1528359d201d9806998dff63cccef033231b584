@@ -30,3 +30,11 @@ UUID: fa6fafa9_6337ecf4
 Bytes: 117
 implements a fast conversion to lower case of the first character of the logd.ratelimit.identical property value. [?]
 
+17:0-18:33
+Fri Dec 16 20:13:16 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_6337ecf4
+UUID: fa6fafa9_e35a1c0d
+Bytes: 199
+This new internal property handler __android_log_ratelimit_identical implements a fast lookup of logd.ratelimit.identical, and a conversion of the first character to lowercase for caller convenience.
+

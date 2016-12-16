@@ -1,0 +1,13 @@
+Revision: 170a3c546879bbff4d6179a5d58fd43e2f586f5b
+Patch-set: 2
+File: debuggerd/tombstone.cpp
+
+266:6-266:9
+Fri Dec 16 07:05:38 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_fa76417a
+Bytes: 61
+"if ("
+
+(i thought jmgao had turned on clang-format in here?)
+

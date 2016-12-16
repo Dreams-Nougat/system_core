@@ -9,6 +9,14 @@ UUID: dabe6b36_98e601ce
 Bytes: 82
 doesn't this mean we're doing that on every exec? should we be caching the result?
 
+16
+Fri Dec 16 00:41:37 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_98e601ce
+UUID: 1af2c318_a3491eae
+Bytes: 154
+Yes, and that's a fair point. As I mentioned in a comment to Nick, who do we feel about a LazyInstance kind of thing that caches the result on first call?
+
 File: init/capabilities.cpp
 
 72

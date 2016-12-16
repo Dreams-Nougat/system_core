@@ -1,0 +1,18 @@
+Revision: f46d01232bb666597154241bb7543456b6ef4f95
+Patch-set: 1
+File: liblog/log_hash.cpp
+
+46:59-46:65
+Fri Dec 16 00:58:15 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_6cb6eab8
+Bytes: 163
+This name "number" seems a bit vague, especially as it apparently describes a size value.  Maybe just need more description of params and how to use this function.
+
+82:11-82:23
+Fri Dec 16 00:58:15 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: dabe6b36_b8f5bdd3
+Bytes: 86
+Comment says function returns "number of timestamps", not a boolean comparison result.
+

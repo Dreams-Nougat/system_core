@@ -1,0 +1,11 @@
+Revision: 7a020e36855c6fd5c249bebf1192fecc260d0550
+Patch-set: 4
+File: logd/README.property
+
+49:0-49:6
+Fri Dec 16 18:13:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_dd717f85
+Bytes: 23
+I forgot these tabs :-(
+

@@ -1,0 +1,11 @@
+Revision: 2d65fb72e79af9f1c3efee970ae13890f87a270c
+Patch-set: 3
+File: init/capabilities.h
+
+14
+Fri Dec 16 04:41:09 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_7a9b114d
+Bytes: 13
+#pragma once?
+

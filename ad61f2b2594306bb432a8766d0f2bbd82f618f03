@@ -76,3 +76,11 @@ UUID: fa6fafa9_d7931ee7
 Bytes: 49
 int vs unsigned long for capability integer type.
 
+327:8-327:11
+Fri Dec 16 04:08:47 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_d7931ee7
+UUID: 1af2c318_a3cbde63
+Bytes: 74
+True. I'll change the check below to < 0 and convert using explicit casts.
+

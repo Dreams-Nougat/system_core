@@ -21,6 +21,15 @@ Easy to remove. But it is off by default and is not available on "user".
 
 But the good news is this is not triggering on a healthy device. This option is for Q/A to report and light a fire under the callers, and allow them to supply a clear bugreport and tombstone so that they can fix their code.
 
+File: liblog/tests/liblog_benchmark.cpp
+
+91:32-91:38
+Fri Dec 16 18:13:31 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_3d64333a
+Bytes: 105
+build error because of long private patchset introducing inttypes.h and needed to be picked off for this.
+
 File: logd/README.property
 
 49:0-51:4

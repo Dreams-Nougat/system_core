@@ -17,6 +17,14 @@ UUID: 1af2c318_a3491eae
 Bytes: 154
 Yes, and that's a fair point. As I mentioned in a comment to Nick, who do we feel about a LazyInstance kind of thing that caches the result on first call?
 
+16
+Fri Dec 16 00:55:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 1af2c318_a3491eae
+UUID: dabe6b36_cc8f1e10
+Bytes: 5
+sgtm.
+
 File: init/capabilities.cpp
 
 72
@@ -155,4 +163,19 @@ Bytes: 310
 If you keep it here, you'd still miss the error message if the service doesn't execute. For instance, if it's a disabled service. Moving it to the service parsing would emit an error even if the service itself is never triggered.
 
 Lazy initializer SGTM. I think it's thread safe too, but enh would know better.
+
+155:0-164:5
+Fri Dec 16 00:55:37 2016 +0000
+Author: Elliott Hughes <1003224@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_98e0c1e4
+UUID: dabe6b36_ccba7ea3
+Bytes: 196
+yeah, the usual
+
+  static unsigned GetLastValidCap() {
+    static unsigned result = ComputeLastValidCap();
+    return result;
+  }
+
+idiom is thread-safe. the compiler inserts the necessary locking.
 

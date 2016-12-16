@@ -11,12 +11,28 @@ Is this needed anymore? Service::ParseCapabilities errors out if last_valid_cap 
 
 (same comment on line 109 and 137)
 
+89:45-89:70
+Fri Dec 16 03:49:12 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_b7e6a2cd
+UUID: 1af2c318_6310b6ff
+Bytes: 173
+That's a good point. You could argue that this code should be resilient even if the caller has not checked what the max runtime supported cap is, but I think KISS wins here.
+
 148
 Fri Dec 16 03:33:54 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fa6fafa9_5771cef6
 Bytes: 150
 Here you return an int, but below you return an unsigned long. I suspect you should return an unsigned long here too. At a minimum, it's inconsistent.
+
+148
+Fri Dec 16 03:49:12 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_5771cef6
+UUID: 1af2c318_8313420c
+Bytes: 278
+Maybe it makes sense to make them all unsigned ints. unsigned int -> unsigned long promotion is defined and doesn't do anything unexpected. The int args would get promoted to long when passed to prctl. With 40 capabilities, unsigned int is clearly big enough. What do you think?
 
 File: init/service.cpp
 
@@ -34,6 +50,14 @@ Instead, perhaps it makes more sense to only error out if the config file reques
     *err = StringPrintf("...");
     return false;
   }
+
+320:0-323:5
+Fri Dec 16 03:49:12 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_d7723e50
+UUID: 1af2c318_c3db8a3a
+Bytes: 167
+That's reasonable. I'm not sure how often we update actual kernels beyond kernel headers, but no need to be overly strict when it doesn't provide a security guarantee.
 
 327:8-327:11
 Fri Dec 16 03:33:54 2016 +0000

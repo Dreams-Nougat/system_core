@@ -21,3 +21,11 @@ That CL seems to have been reverted though. Did it land again?
 
 Since we're starting at CAP_WAKE_ALARM, we might not need the sanitizing. If you confirm that the CL you mentioned has actually landed, I'm happy to remove.
 
+82
+Fri Dec 16 17:21:13 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 5a2fdb70_a7c10a95
+UUID: 5a2fdb70_67d8f280
+Bytes: 111
+Not sure what happened with that CL but the LOCAL_SANITIZE line is still available in the .mk file, so will do.
+

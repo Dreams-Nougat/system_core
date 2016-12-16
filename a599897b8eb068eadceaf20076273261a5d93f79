@@ -52,6 +52,14 @@ UUID: dabe6b36_ec777a3d
 Bytes: 94
 can we use static instead? most of our code does, and i made the same mistake looking at this.
 
+72
+Fri Dec 16 01:02:10 2016 +0000
+Author: Jorge Lucangeli Obes <1076138@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: dabe6b36_ec777a3d
+UUID: 1af2c318_a302be25
+Bytes: 86
+Do you want me to remove the anonymous namespace, or just add static to the functions?
+
 73:13-73:16
 Fri Dec 16 00:04:47 2016 +0000
 Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>

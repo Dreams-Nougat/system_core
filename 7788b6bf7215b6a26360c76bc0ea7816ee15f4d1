@@ -1,0 +1,13 @@
+Revision: 7788b6bf7215b6a26360c76bc0ea7816ee15f4d1
+Patch-set: 6
+File: init/capabilities.cpp
+
+82
+Fri Dec 16 17:28:22 2016 +0000
+Author: Nick Kralevich <1003966@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_a80c83b5
+Bytes: 238
+return (last_valid_cap - 1);
+
+Otherwise, there's cognitive overhead recalling the difference between prefix notation and postfix notation. And you're performing an unnecessary write to last_valid_cap which will eventually get thrown away.
+

@@ -9,10 +9,26 @@ UUID: fa6fafa9_d75a3e0d
 Bytes: 83
 What would the partition be? Which .cil file does the vendor policy get built into?
 
+526
+Fri Dec 16 19:26:07 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_d75a3e0d
+UUID: fa6fafa9_23d6d4de
+Bytes: 497
+final partition tbd.  The .cil file corresponding to device policy is nonplat_sepolicy.cil, which has in it the public policy included from the platform version it targets in addition to any new device-specific types, attributes and avc rules (just about everything else is verboten at present).  /plat_sepolicy.cil corresponds to the new platform version's policy, and /mapping_sepolicy.cil is all of the policy provided by the platform to make sure that the other two files work nicely together.
+
 546
 Fri Dec 16 04:10:13 2016 +0000
 Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fa6fafa9_176596c7
 Bytes: 43
 Is the cil routine setting errno, why PLOG?
+
+546
+Fri Dec 16 19:26:07 2016 +0000
+Author: Daniel Cashman <1026058@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_176596c7
+UUID: fa6fafa9_a3f3c47d
+Bytes: 151
+I did not add any errno setting.  As for PLOG vs. LOG, dunno, I just followed the existing usage (enh@ would know previous justification here, if any).
 

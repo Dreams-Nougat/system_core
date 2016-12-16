@@ -40,3 +40,11 @@ UUID: fa6fafa9_83ffa83b
 Bytes: 63
 if what you called set errno, you should use PLOG. if not, LOG.
 
+546
+Fri Dec 16 21:35:57 2016 +0000
+Author: William C Roberts <1013433@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_83ffa83b
+UUID: fa6fafa9_ae164b70
+Bytes: 113
+I looked through the cil code, it doesn't appear to handle errno, so you def LOG here... PLOG is akin to perror()
+

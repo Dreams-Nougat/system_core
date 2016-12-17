@@ -1,0 +1,18 @@
+Revision: 046c8b5cda473a5e03de54b4c88f3f276ee14bca
+Patch-set: 1
+File: rootdir/init.rc
+
+151:4-151:46
+Sat Dec 17 01:32:22 2016 +0000
+Author: YongQin Liu <1041813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: da93cbd8_5bbf435d
+Bytes: 86
+should settings like this be done after boot complete as well for boot time reduction?
+
+479:10-479:26
+Sat Dec 17 01:32:22 2016 +0000
+Author: YongQin Liu <1041813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: da93cbd8_3bb27796
+Bytes: 121
+On 32bit only arch, there will be no zygote_secondary defined I think. could we use something like "class_start zygote" ?
+

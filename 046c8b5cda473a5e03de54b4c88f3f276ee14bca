@@ -9,10 +9,26 @@ UUID: da93cbd8_5bbf435d
 Bytes: 86
 should settings like this be done after boot complete as well for boot time reduction?
 
+151:4-151:46
+Sat Dec 17 01:38:06 2016 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: da93cbd8_5bbf435d
+UUID: fa6fafa9_11775b78
+Bytes: 89
+good point. I did not try changing this. If it has impact, that should go as separate CL.
+
 479:10-479:26
 Sat Dec 17 01:32:22 2016 +0000
 Author: YongQin Liu <1041813@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: da93cbd8_3bb27796
 Bytes: 121
 On 32bit only arch, there will be no zygote_secondary defined I think. could we use something like "class_start zygote" ?
+
+479:10-479:26
+Sat Dec 17 01:38:06 2016 +0000
+Author: Keun-young Park <1010465@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: da93cbd8_3bb27796
+UUID: fa6fafa9_f12c9f60
+Bytes: 231
+starting non-existing service was no-op. I considered having separate stage only for zygote but that does not allow me to do this at this point. restorecon below, which is not necessary for zygote, was adding some additional delay.
 

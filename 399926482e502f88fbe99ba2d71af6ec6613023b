@@ -1,0 +1,11 @@
+Revision: 399926482e502f88fbe99ba2d71af6ec6613023b
+Patch-set: 2
+File: include/log/log.h
+
+821:29-821:37
+Sat Dec 17 00:23:03 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_7eea1ec1
+Bytes: 5
+ooops
+

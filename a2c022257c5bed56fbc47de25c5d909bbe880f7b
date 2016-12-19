@@ -1,0 +1,23 @@
+Revision: a2c022257c5bed56fbc47de25c5d909bbe880f7b
+Patch-set: 3
+File: logd/LogBuffer.cpp
+
+229:0-237:9
+Mon Dec 19 19:26:05 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_a5602116
+Bytes: 211
+Incorrect, should be:
+
+if (dropped) {
+    if (count) {
+       log(dropped);
+    } else {
+        delete dropped;
+    }
+    droppedElements[log_id] = NULL;
+    log(currentLast);
+} else {
+    delete currentLast;
+}
+

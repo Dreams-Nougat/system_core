@@ -1,0 +1,11 @@
+Revision: d7723a2133d98b213d04358774b5bcd1bb27a4b6
+Patch-set: 4
+File: liblog/logd_reader.h
+
+24:0-26:6
+Mon Dec 19 16:08:59 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: fa6fafa9_6a05f879
+Bytes: 32
+Still remains to be replaced ...
+

@@ -9,6 +9,14 @@ UUID: fa6fafa9_23a25491
 Bytes: 50
 This should be defined(__BIONIC__) to avoid typos.
 
+393:4-393:14
+Mon Dec 19 23:12:50 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_23a25491
+UUID: fa6fafa9_ae5e4b91
+Bytes: 223
+I will be aware of that, this is _everywhere_. Should fix so that people like me that cut and paste, or partners and vendors have good examples everywhere to draw upon. A clean pass through all the code cleanup is in order.
+
 397:20-397:28
 Fri Dec 16 20:37:27 2016 +0000
 Author: Christopher Ferris <1019050@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -19,4 +27,22 @@ As Greg mentioned, it's much better to dump something to the log which includes 
 I'd recommend doing a basic dump of the process information, and then maybe add something behind a system property that, if enabled, will attempt to dump the offending process stack.
 
 I would recommend also talking to the testing team to have them scrap their logs for these messages.
+
+397:20-397:28
+Mon Dec 19 23:12:50 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_03ad5881
+UUID: fa6fafa9_6e027374
+Bytes: 925
+We do not want liblog.so to depend on libunwind.so ...
+
+_everyone_ would require the permissions as this is inside the context of the process performing the logging. Ick )(?)
+
+In https://android-review.googlesource.com/#/c/314074 logd will report multiple identical log messages with a (midstream, which makes it unique) chatty deduping the identical messages. They can scrape for that.
+
+Or I can enhance logd to add a statistic to 'logcat -b all -S' that can add them to the wall of shame ... (i.e. worst multiple identical messages per UID).
+
+This CL is about recording a stack trace so the person triaging can figure out the state of his software and figure out _why_ they are storming the logs. This is less about Q/A finding offenders, and more about giving the person traiging the logspam problem enough details to find out _why_.
+
+Can we unravel our own local stack and log that to the crash buffer (w/o libunwind.so)?
 

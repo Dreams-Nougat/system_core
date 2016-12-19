@@ -9,12 +9,28 @@ UUID: fa6fafa9_4362f0c0
 Bytes: 9
 debuggerd
 
+7:23-7:32
+Mon Dec 19 00:53:02 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_4362f0c0
+UUID: da93cbd8_db4ef3b2
+Bytes: 4
+Done
+
 9:33-9:39
 Fri Dec 16 15:32:40 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fa6fafa9_9dc70700
 Bytes: 6
 single
+
+9:33-9:39
+Mon Dec 19 00:53:02 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_9dc70700
+UUID: da93cbd8_fb53af55
+Bytes: 4
+Done
 
 11:15-11:16
 Fri Dec 16 15:32:40 2016 +0000
@@ -23,6 +39,14 @@ UUID: fa6fafa9_bdccc324
 Bytes: 8
 ,<space>
 
+11:15-11:16
+Mon Dec 19 00:53:02 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_bdccc324
+UUID: da93cbd8_1b593b77
+Bytes: 4
+Done
+
 15:21-15:22
 Fri Dec 16 15:32:40 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -30,12 +54,28 @@ UUID: fa6fafa9_ddc17feb
 Bytes: 8
 ,<space>
 
+15:21-15:22
+Mon Dec 19 00:53:02 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_ddc17feb
+UUID: da93cbd8_3b56f745
+Bytes: 4
+Done
+
 16:12-16:18
 Fri Dec 16 15:32:40 2016 +0000
 Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: fa6fafa9_fdc63b00
 Bytes: 6
 single
+
+16:12-16:18
+Mon Dec 19 00:53:02 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_fdc63b00
+UUID: da93cbd8_5b63c322
+Bytes: 4
+Done
 
 File: debuggerd/tombstone.cpp
 

@@ -95,3 +95,14 @@ For example, something like:
 
 By the way, is there any easy way that we could modify the open call to determine this? It might be better to modify the call in libbacktrace/libunwind to avoid even trying to open device files to completely avoid this problem.
 
+266:6-266:32
+Mon Dec 19 05:37:57 2016 +0000
+Author: 金时 宋 <1103638@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: fa6fafa9_433bd08a
+UUID: da93cbd8_3b5c3735
+Bytes: 295
+I have submit another CL that modify the libunwind to completely avoid this issue:
+https://android-review.googlesource.com/#/c/315946/
+
+By the way, althought the debuggerd is calling the libunwind to get the symbols and offset, but the libunwind to do this check is meet the design of libunwind?
+

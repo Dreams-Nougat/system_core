@@ -1,0 +1,15 @@
+Revision: b8164cb5ecc10f51b9513d98e6ed13b8019c0951
+Patch-set: 1
+File: libcutils/properties.c
+
+39:4-39:42
+Tue Dec 20 15:24:41 2016 +0000
+Author: Myles Watson <1076123@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_3790222b
+Bytes: 125
+I removed the comma so that clang-format wouldn't insert newlines.
+
+    char buf[PROPERTY_VALUE_MAX] = {
+        '\0',
+    };
+

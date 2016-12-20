@@ -1,0 +1,54 @@
+Revision: 6b445d4a9a528dfbab69339982f273482b528b9d
+Patch-set: 4
+File: /COMMIT_MSG
+
+9:1-9:64
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_4fdc1e2f
+Bytes: 199
+nit: This almost looks like a macro return value of true is an error meaning a message was ratelimited, suggest:
+
+IF_ALOG_RATELIMIT() ALOGI("Only one of these messages may appear every ten seconds");
+
+File: include/log/log.h
+
+840:8-840:12
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_eff2b226
+Bytes: 4
+ALOG
+
+File: liblog/log_ratelimit.c
+
+25:0-26:27
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_4fae5e7f
+Bytes: 34
+Suggest comments explaining these.
+
+27:23-27:37
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_52c92147
+Bytes: 116
+Assuming this global lock doesn't become a contention point, if lots of ratelimiting threads could become a problem?
+
+52:18-52:20
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_6f41e25b
+Bytes: 36
+Suggest symbols for these constants.
+
+File: liblog/tests/liblog_test.cpp
+
+2883:4-2884:53
+Tue Dec 20 22:24:12 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_0f5b863e
+Bytes: 94
+Scheduling jitter may occasionally cause this to fail?  Maybe leave a little more wiggle room?
+

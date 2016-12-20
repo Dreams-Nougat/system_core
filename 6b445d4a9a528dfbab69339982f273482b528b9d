@@ -20,6 +20,14 @@ UUID: 77b2fac6_eff2b226
 Bytes: 4
 ALOG
 
+840:8-840:12
+Tue Dec 20 23:30:00 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 77b2fac6_eff2b226
+UUID: 77b2fac6_053e05ea
+Bytes: 134
+Good catch, I _felt_ there was something wrong here, but could not see it. I need to listen to the other voices in my head a bit more!
+
 File: liblog/log_ratelimit.c
 
 25:0-26:27
@@ -36,6 +44,16 @@ UUID: 77b2fac6_52c92147
 Bytes: 116
 Assuming this global lock doesn't become a contention point, if lots of ratelimiting threads could become a problem?
 
+27:23-27:37
+Tue Dec 20 23:30:00 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 77b2fac6_52c92147
+UUID: 77b2fac6_c55ead5b
+Bytes: 275
+I did use trylock for a reason, I allow contention issues to also be a signal to ratelimit the messages.
+
+The only other mitigation I can propose is to leave locking in the hands of the caller. At that point they can do the whole thing and the library provides no advantages.
+
 52:18-52:20
 Tue Dec 20 22:24:12 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
@@ -51,4 +69,14 @@ Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
 UUID: 77b2fac6_0f5b863e
 Bytes: 94
 Scheduling jitter may occasionally cause this to fail?  Maybe leave a little more wiggle room?
+
+2883:4-2884:53
+Tue Dec 20 23:30:00 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 77b2fac6_0f5b863e
+UUID: 77b2fac6_e5409176
+Bytes: 310
+I only made it tight because we have to conserve time. I can add a second more.
+
+We are already burning 6 seconds to test this, added to all the other testing delays, go/apct stops working at 60 seconds for the group of tests (might be a problem, will need to double check), or for individual tests (low risk).
 

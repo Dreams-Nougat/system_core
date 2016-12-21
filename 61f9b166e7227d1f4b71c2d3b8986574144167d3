@@ -1,0 +1,20 @@
+Revision: 61f9b166e7227d1f4b71c2d3b8986574144167d3
+Patch-set: 7
+File: /COMMIT_MSG
+
+21:12-21:20
+Wed Dec 21 21:27:57 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_00e26c16
+Bytes: 128
+(The ALOGE calls in the examples above may, however, update the errno value. [?]
+
+Not sure if you really need to spell this out?
+
+21:36-21:44
+Wed Dec 21 21:27:57 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_805f3cfb
+Bytes: 18
+in the example [?]
+

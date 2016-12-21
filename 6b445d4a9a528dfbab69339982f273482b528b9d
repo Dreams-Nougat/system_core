@@ -54,6 +54,14 @@ I did use trylock for a reason, I allow contention issues to also be a signal to
 
 The only other mitigation I can propose is to leave locking in the hands of the caller. At that point they can do the whole thing and the library provides no advantages.
 
+27:23-27:37
+Wed Dec 21 00:11:18 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+Parent: 77b2fac6_c55ead5b
+UUID: 77b2fac6_a88590f4
+Bytes: 90
+Yeah, let's just leave this as is for now, but maybe something to watch for in the future.
+
 52:18-52:20
 Tue Dec 20 22:24:12 2016 +0000
 Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>

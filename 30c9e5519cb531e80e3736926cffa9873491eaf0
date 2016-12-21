@@ -1,0 +1,11 @@
+Revision: 30c9e5519cb531e80e3736926cffa9873491eaf0
+Patch-set: 1
+File: logd/LogBuffer.cpp
+
+540:0-540:3
+Wed Dec 21 19:30:50 2016 +0000
+Author: Todd Poynor <1004277@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_7d92f1a5
+Bytes: 38
+Can just delete this now? (And below.)
+

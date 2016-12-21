@@ -1,0 +1,17 @@
+Revision: ab733efab265d25e8c7c98f379f58a5131641584
+Patch-set: 2
+File: libziparchive/Android.bp
+
+63
+Wed Dec 21 21:49:30 2016 +0000
+Author: Dan Willemsen <1074628@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_e0115805
+Bytes: 99
+Just use:
+
+  host: {
+      static_libs: ["libutils"],
+  }
+
+instead of adding it to every host type.
+

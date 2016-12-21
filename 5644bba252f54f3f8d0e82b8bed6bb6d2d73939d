@@ -1,0 +1,13 @@
+Revision: 5644bba252f54f3f8d0e82b8bed6bb6d2d73939d
+Patch-set: 5
+File: /COMMIT_MSG
+
+19:0-20:32
+Wed Dec 21 18:48:21 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_3d4f99dd
+Bytes: 393
+Change to "This new function is guaranteed ..."
+
+NB: the same can _not_ be said of the ALOGE calls above, but at least errno is preserved up to the point it is passed as an argument as a precursor to the liblog logging APIs. Most of the library is tuned to return -errno values, but nothing has been done to preserve the global errno. This can be a gotcha, but is outside the scope of this CL.
+

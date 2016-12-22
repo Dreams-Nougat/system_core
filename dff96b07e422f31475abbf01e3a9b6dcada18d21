@@ -1,0 +1,46 @@
+Revision: dff96b07e422f31475abbf01e3a9b6dcada18d21
+Patch-set: 7
+File: logd/LogTags.cpp
+
+131:39-131:47
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_955f71fb
+Bytes: 21
+need write lock here?
+
+162:49-162:51
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_b52dd5c5
+Bytes: 106
+wouldn't it be better to declare this above as a const int instead of a magic number embedded in the code?
+
+360:15-360:23
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_b59395aa
+Bytes: 72
+I can't remember... is it safe to evaluate .end() without the read lock?
+
+413:15-413:21
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_b541555e
+Bytes: 7
+perform
+
+416:27-416:36
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_15b06122
+Bytes: 183
+Is "_unlocked" supposed to be telling me that the caller must acquire the readlock? I would think "_locked" would be better in that case since you are saying the lock is already held.
+
+744
+Thu Dec 22 19:58:56 2016 +0000
+Author: Todd Kjos <1069543@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_154ce18b
+Bytes: 121
+Don't you need the readlock for tag2uid and tag2name lookups? It looks like the caller doesn't always have it (line 766).
+

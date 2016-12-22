@@ -1,0 +1,25 @@
+Revision: 802c982e06a8f243e1fe320ceae0243d85b1b874
+Patch-set: 9
+File: logd/LogTags.cpp
+
+55:0-58:34
+Thu Dec 22 23:35:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_c627817b
+Bytes: 61
+Maybe use FastStrcmp class here, easier to read and maintain.
+
+383:0-392:33
+Thu Dec 22 23:35:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_a6792d6f
+Bytes: 69
+Move readLock out like we did in tagToName above to cover all pieces.
+
+403:0-408:5
+Thu Dec 22 23:35:15 2016 +0000
+Author: Mark Salyzyn <1032276@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 77b2fac6_268d3d54
+Bytes: 46
+scope may be silly, as it is the same without.
+

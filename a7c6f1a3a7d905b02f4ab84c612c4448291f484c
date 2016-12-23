@@ -1,0 +1,11 @@
+Revision: a7c6f1a3a7d905b02f4ab84c612c4448291f484c
+Patch-set: 4
+File: fs_mgr/fs_mgr_avb.cpp
+
+229:17-229:23
+Fri Dec 23 03:24:37 2016 +0000
+Author: Bowgo Tsai <1080813@85c56323-6fa9-3386-8a01-6480fb634889>
+UUID: 17961e08_a035b4ee
+Bytes: 22
+s/buffer/verity_params
+
